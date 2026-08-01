@@ -1,5 +1,10 @@
 ---
 name: pubmed-gene-drug-research
+description: 使用 NCBI 擴展資料庫（Gene、PubChem、ClinVar）進行基因功能、藥物化合物、遺傳變異的跨資料庫研究。
+---
+
+---
+name: pubmed-gene-drug-research
 description: Gene, drug compound, and disease research using NCBI Extended databases. Triggers: 基因, gene, 藥物, drug, compound, PubChem, ClinVar, 變異, variant, 臨床意義
 ---
 

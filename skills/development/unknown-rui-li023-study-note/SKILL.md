@@ -1,3 +1,8 @@
+---
+name: unknown-rui-li023-study-note
+description: 官网：https://www.maniskill.ai/research
+---
+
 # SAPIEN Open-Source Manipulation Skill (ManiSkill)
 
 官网：https://www.maniskill.ai/research
@@ -94,7 +99,7 @@ class PushCubeEnv(BaseEnv):
 
 #### 模拟物体
 
-ManiSkill/SAPIEN 有两个通用的物体类别： Actor 和 Articulations 
+ManiSkill/SAPIEN 有两个通用的物体类别： Actor 和 Articulations
 
 ##### Actor
 

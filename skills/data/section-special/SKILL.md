@@ -1,5 +1,11 @@
 ---
 name: section-special
+description: 生成特殊应用领域教程 (.rmd/.qmd)，涵盖领域背景、专业方法、完整流程、结果解释，强调 "领域背景 → 专业术语 → 分析框架 →
+  实践流程 → 结果解读"。
+---
+
+---
+name: section-special
 description: Generate comprehensive R tutorials for specialized applications (health economics, qualitative research, signal processing, environmental epidemiology) with theory + practice workflow. Use when: (1) User requests domain-specific tutorials, (2) File names match [number]-[topic].rmd pattern, (3) Keywords: TreeAge, CEA, text mining, wavelet, VMD, DLNM, WQS, BKMR.
 ---
 ## 核心任务

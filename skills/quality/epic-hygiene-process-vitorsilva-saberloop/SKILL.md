@@ -1,5 +1,10 @@
 ---
 name: epic-hygiene-process
+description: 'Last Updated: 2026-01-15'
+---
+
+---
+name: epic-hygiene-process
 description: Execute systematic code quality tasks following Epic 10 hygiene standards
 version: 1.0.0
 author: Saberloop Project
@@ -10,7 +15,7 @@ usage: |
   - Performance optimization projects
   - Technical debt reduction
   - Code quality improvements
-  
+
   Examples:
   "Execute dead code removal using the epic-hygiene-process skill"
   "Perform architecture compliance cleanup using the epic-hygiene-process skill"
@@ -539,6 +544,6 @@ For multiple hygiene tasks:
 
 ---
 
-**Version:** 1.0.0  
-**Last Updated:** 2026-01-15  
+**Version:** 1.0.0
+**Last Updated:** 2026-01-15
 **Compatible with:** Saberloop v2.0.0+

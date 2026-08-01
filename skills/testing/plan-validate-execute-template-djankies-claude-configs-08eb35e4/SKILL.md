@@ -1,5 +1,11 @@
 ---
 name: plan-validate-execute-template
+description: '[REPLACE] Plan changes, validate before execution, execute with verification.
+  Use when [REPLACE with specific triggers].'
+---
+
+---
+name: plan-validate-execute-template
 description: [REPLACE] Plan changes, validate before execution, execute with verification. Use when [REPLACE with specific triggers].
 allowed-tools: Read, Write, Edit, Grep, Glob, Bash, TodoWrite
 ---

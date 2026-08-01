@@ -1,5 +1,12 @@
 ---
 name: asyncredux-dispatching-actions
+description: 'The foundational principle of AsyncRedux: the only way to change the
+  application state is by dispatching actions. You can dispatch from widgets (via
+  context extensions) or from within other actions.'
+---
+
+---
+name: asyncredux-dispatching-actions
 description: Dispatch actions using all available methods: `dispatch()`, `dispatchAndWait()`, `dispatchAll()`, `dispatchAndWaitAll()`, and `dispatchSync()`. Covers dispatching from widgets via context extensions and from within other actions.
 ---
 

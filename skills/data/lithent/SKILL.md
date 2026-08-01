@@ -1,5 +1,10 @@
 ---
 name: lithent
+description: '> Version: {{VERSION}}'
+---
+
+---
+name: lithent
 title: Lithent Agent Skills
 version: {{VERSION}}
 description: AI agent skills for working with the Lithent library.

@@ -1,3 +1,9 @@
+---
+name: skills-christowles-dotfiles
+description: This skill helps generate Last Epoch stash search filters and lookup
+  items.
+---
+
 # Last Epoch Item Filter Generator
 
 This skill helps generate Last Epoch stash search filters and lookup items.
@@ -105,7 +111,7 @@ This DSL is **community-developed**, not official EHG documentation.
 - https://checkmatez.github.io/eternity/search/ - Filter builder
   - It's got some bugs but good for learning syntax
   - doesn't correctly generate some complex filters like percent greater than 25% logic
-- 
+-
 - lastepochtools.com - Database with search
 - Maxroll filters - Popular presets
 

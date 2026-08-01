@@ -1,5 +1,12 @@
 ---
 name: test-updates
+description: 'Update and maintain tests following TDD/BDD principles with detailedquality
+  assurance.Triggers: test updates, test maintenance, test generation, TDD workflow,BDD
+  patterns, test coverage, pytest, test'
+---
+
+---
+name: test-updates
 description: |
 
 Triggers: quality-assurance, test-generation, test, bdd, pytest

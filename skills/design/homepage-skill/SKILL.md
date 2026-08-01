@@ -1,4 +1,9 @@
 ---
+name: homepage-skill
+description: Calm, confident messaging with pink glass highlights (same as auth/dashboard)
+---
+
+---
 name: todo-homepage-ui
 version: 2.0.0
 level: Senior / 10+ Years UI Design Standard

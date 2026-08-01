@@ -1,5 +1,11 @@
 ---
 name: architecture-paradigm-cqrs-es
+description: '- When read and write workloads have vastly different performance characteristics
+  or scaling requirements.'
+---
+
+---
+name: architecture-paradigm-cqrs-es
 description: |
 
 Triggers: event-sourcing, architecture, scalability, distributed-systems, audit-trail

@@ -1,5 +1,10 @@
 ---
 name: test-model-field
+description: 'Goal: Verify that model: haiku in frontmatter actually uses haiku model.'
+---
+
+---
+name: test-model-field
 description: Test if model: field in skill frontmatter works
 context: fork
 model: haiku

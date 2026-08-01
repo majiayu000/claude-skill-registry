@@ -1,5 +1,10 @@
 ---
 name: react-state-management
+description: '| Library | Best For | Install |'
+---
+
+---
+name: react-state-management
 description: Complete React state management system. PROACTIVELY activate for: (1) Context API patterns and optimization, (2) Zustand store setup and usage, (3) Jotai atomic state, (4) TanStack Query (React Query) for server state, (5) SWR data fetching, (6) useState vs useReducer decisions, (7) State normalization, (8) Avoiding prop drilling. Provides: Store configuration, context optimization, server state caching, optimistic updates, infinite queries. Ensures scalable state architecture with proper tool selection.
 ---
 

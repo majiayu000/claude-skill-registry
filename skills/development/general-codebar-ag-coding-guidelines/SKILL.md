@@ -1,5 +1,10 @@
 ---
 name: general
+description: 'Name: Laravel General Conventions'
+---
+
+---
+name: general
 description: Project-wide Laravel conventions that always apply: configuration access, database patterns, logging, activity logging, and code formatting.
 ---
 

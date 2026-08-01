@@ -1,5 +1,12 @@
 ---
 name: refine
+description: Transform ideas into Product Backlog Items with acceptance criteria.
+  Use when converting ideas to PBIs, adding acceptance criteria, or refining requirements.
+  Triggers on keywords like "create pbi", "r
+---
+
+---
+name: refine
 version: 2.1.0
 description: "[Project Management] Transform ideas into Product Backlog Items using BA best practices, hypothesis validation, and domain research. Use when converting ideas to PBIs, validating problem hypotheses, adding acceptance criteria, or refining requirements. Triggers on "create pbi", "refine idea", "convert to pbi", "acceptance criteria", "make actionable", "validate hypothesis"."
 allowed-tools: Read, Write, Edit, Grep, Glob, TaskCreate, WebSearch, AskUserQuestion

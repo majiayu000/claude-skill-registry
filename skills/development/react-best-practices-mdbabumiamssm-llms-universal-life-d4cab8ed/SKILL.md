@@ -1,3 +1,8 @@
+---
+name: react-best-practices
+description: '---name: react-best-practices'
+---
+
 ---name: react-best-practices
 description: A comprehensive guide and rule set for writing clean, performant, and maintainable React code.
 license: MIT
@@ -55,6 +60,6 @@ This skill provides a set of architectural and coding standards for React applic
     ```tsx
     // user-profile.tsx
     import { useQuery } from '@tanstack/react-query';
-    
+
     // ... implementation following rules ...
     ```

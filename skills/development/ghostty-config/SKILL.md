@@ -1,5 +1,12 @@
 ---
 name: ghostty-config
+description: Configure and optimize Ghostty terminal with themes, fonts, keybindings,
+  and performance settings. Use when setting up Ghostty, creating terminal configs,
+  customizing keybinds, or troubleshooting term
+---
+
+---
+name: ghostty-config
 description: Configure and optimize Ghostty terminal with themes, fonts, keybindings, and performance settings. Use when setting up Ghostty, creating terminal configs, customizing keybinds, or troubleshooting terminal behavior. Keywords: ghostty, terminal, config, keybind, theme, font, terminal config, ghostty.conf
 ---
 

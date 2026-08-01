@@ -1,4 +1,10 @@
 ---
+name: conventional-commits-skill
+description: 'CRITICAL: All commits must follow Conventional Commits format: <type>(<scope>):
+  <description>'
+---
+
+---
 name: Conventional Commits
 description: Conventional Commits specification format. Use when creating commit messages. Format: <type>(<scope>): <description>. Types: feat, fix, chore, docs, test, refactor, style, perf. CRITICAL: All commits must follow conventional commit format.
 allowed-tools: Read, Write, Edit, Bash, Grep, Glob

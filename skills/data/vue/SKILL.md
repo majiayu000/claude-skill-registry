@@ -1,3 +1,8 @@
+---
+name: vue
+description: Archived skill guidance for vue.
+---
+
 ## Vuex 기술 요소
 > [참고자료](https://joshua1988.github.io/vue-camp/vuex/state.html)
 
@@ -18,7 +23,7 @@
 - 기능을 좀더 함수화해서 기능별로 호출 가능하게끔 한거
 
 ### 3. mutation
-- state 값을 변경하는 **유일한 방법** 
+- state 값을 변경하는 **유일한 방법**
 - `commit()` 으로 동작!
 
 #### 3-1. 😛 왜 state 직접 변경하지 않을까?
@@ -26,7 +31,7 @@
 - 특정 시점에 어떤 컴포넌트가 state 접근하여 변경한 건지 확인 어려움
 - 뷰의 반응성 거스르지 않게 명시적으로 상태 변화 수행 >> **반응성, 디버깅, 테스팅 혜택**
 
-### 4. actions 
+### 4. actions
 - 뮤테이션 중 비동기 처리 로직들을 정의하는 속성
   - 동기 처리 >> 뮤테이션
   - 비동기 처리 >> 액션

@@ -1,3 +1,8 @@
+---
+name: session-documentation
+description: '> Purpose: Enforce comprehensive documentation as part of work completion'
+---
+
 # Session Documentation Skill
 
 > **Purpose:** Enforce comprehensive documentation as part of work completion

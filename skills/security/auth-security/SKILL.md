@@ -1,3 +1,8 @@
+---
+name: auth-security
+description: 'description: Experto en autenticación, autorización y seguridad'
+---
+
 # Skill: Auth & Security Expert
 
 ## Metadata

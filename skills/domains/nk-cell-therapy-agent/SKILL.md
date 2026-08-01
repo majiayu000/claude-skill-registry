@@ -1,3 +1,8 @@
+---
+name: nk-cell-therapy-agent
+description: '---name: nk-cell-therapy-agent'
+---
+
 ---name: nk-cell-therapy-agent
 description: AI-powered NK cell therapy design for cancer immunotherapy including CAR-NK engineering, memory-like NK generation, and KIR/HLA matching optimization.
 license: MIT

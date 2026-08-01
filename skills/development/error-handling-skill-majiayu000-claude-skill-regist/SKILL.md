@@ -1,4 +1,10 @@
 ---
+name: error-handling-skill-majiayu000-claude-skill-regist
+description: Provides standardized error handling across the application with consistent
+  formatting, logging, and user-friendly messages.
+---
+
+---
 name: error-handling-skill
 description: Standardized error handling functions for formatting, logging, and returning user-friendly error messages across the application.
 functions:

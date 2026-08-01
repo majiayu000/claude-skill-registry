@@ -1,3 +1,8 @@
+---
+name: phase2-discovery
+description: '- skillname: phase2-discovery'
+---
+
 # Phase 2: Project Discovery Skill
 
 ## Metadata

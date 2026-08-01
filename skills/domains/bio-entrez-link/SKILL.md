@@ -1,3 +1,9 @@
+---
+name: bio-entrez-link
+description: Navigate between NCBI databases using Biopython's Entrez module (ELink
+  utility).
+---
+
 <!--
 # COPYRIGHT NOTICE
 # This file is part of the "Universal Biomedical Skills" project.

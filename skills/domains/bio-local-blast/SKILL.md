@@ -1,3 +1,8 @@
+---
+name: bio-local-blast
+description: Run BLAST searches locally using NCBI BLAST+ command-line tools.
+---
+
 <!--
 # COPYRIGHT NOTICE
 # This file is part of the "Universal Biomedical Skills" project.

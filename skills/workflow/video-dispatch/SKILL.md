@@ -1,3 +1,8 @@
+---
+name: video-dispatch
+description: validate → guard → phase 実行の順で処理を行います。
+---
+
 # Skill: Execution Dispatch
 
 ## Status

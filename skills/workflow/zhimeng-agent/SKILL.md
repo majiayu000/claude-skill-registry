@@ -1,3 +1,8 @@
+---
+name: zhimeng-agent
+description: '> 个人自动化任务集合，通过 macOS launchd 定时调度，自动执行日常任务并同步到多个平台。'
+---
+
 # zhimeng-agent 自动化任务技能
 
 > 个人自动化任务集合，通过 macOS launchd 定时调度，自动执行日常任务并同步到多个平台。

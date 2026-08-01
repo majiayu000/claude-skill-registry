@@ -1,3 +1,10 @@
+---
+name: code-cleanup
+description: After iterating on code with multiple changes, reversals, or simplifications
+  - technical debt accumulates. Use this skill to systematically identify and clean
+  it up.
+---
+
 # Code Cleanup Skill
 
 ## When to Use

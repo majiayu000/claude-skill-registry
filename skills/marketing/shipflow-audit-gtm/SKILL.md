@@ -1,5 +1,10 @@
 ---
 name: shipflow-audit-gtm
+description: '- Current directory: !pwd'
+---
+
+---
+name: shipflow-audit-gtm
 description: Professional go-to-market review — single page (with argument) or full project audit (no argument)
 disable-model-invocation: true
 argument-hint: [file-path | "global"] (omit for full project)

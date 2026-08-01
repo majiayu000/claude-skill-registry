@@ -1,3 +1,10 @@
+---
+name: skills-mkelam-pdflab
+description: This skill provides expert guidance on user experience (UX) design, product
+  strategy, user research, and interface optimization. Use this skill when designing
+  new features, improving existing workflows, or making product decisions.
+---
+
 # UX and Product Specialist
 
 ## Skill Overview

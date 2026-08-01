@@ -1,5 +1,12 @@
 ---
 name: marketing-social-media
+description: This skill contains actionable, non-theoretical operational systems for
+  sustainable social media marketing across LinkedIn, TikTok, Meta (FB/IG), YouTube,
+  and X.
+---
+
+---
+name: marketing-social-media
 description: Sustainable social media marketing and paid social: content systems, community management, influencer ops, social commerce, and attribution (2026).
 ---
 

@@ -1,3 +1,9 @@
+---
+name: api-mocking
+description: สร้าง mock APIs สำหรับ frontend development และ testing โดยไม่ต้องพึ่ง
+  backend จริง
+---
+
 # 🎭 API Mocking Skill
 
 ---
@@ -31,7 +37,7 @@ export const handlers = [
       { id: 2, name: 'Jane' },
     ]);
   }),
-  
+
   http.post('/api/users', async ({ request }) => {
     const data = await request.json();
     return HttpResponse.json({ id: 3, ...data }, { status: 201 });
@@ -101,7 +107,7 @@ function generateUsers(count: number) {
 const thaiMockData = {
   names: ['สมชาย', 'สมหญิง', 'วิชัย', 'วันดี'],
   addresses: ['กรุงเทพฯ', 'เชียงใหม่', 'ขอนแก่น'],
-  
+
   getRandomName: () => thaiMockData.names[Math.floor(Math.random() * thaiMockData.names.length)],
 };
 ```

@@ -1,5 +1,10 @@
 ---
 name: shipflow-changelog
+description: '- Current directory: !pwd'
+---
+
+---
+name: shipflow-changelog
 description: Auto-generate CHANGELOG.md from git history — Keep a Changelog format, grouped and categorized
 argument-hint: [since-tag | since-date | "all"] (omit for since last entry)
 ---

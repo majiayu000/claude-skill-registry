@@ -1,5 +1,10 @@
 ---
 name: outcome-review
+description: 'This skill supports three modes: Create, Update, and Find.'
+---
+
+---
+name: outcome-review
 description: Create or update an outcome review for learning
 argument-hint: [initiative or launch name] or [update path/to/review.md]
 ---

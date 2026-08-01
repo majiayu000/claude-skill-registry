@@ -1,3 +1,8 @@
+---
+name: epic-validation
+description: '> Compiler: skill-compiler/1.0.0'
+---
+
 # Epic Validation Skill
 
 > Version: 1.0.0

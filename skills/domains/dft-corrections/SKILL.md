@@ -1,5 +1,12 @@
 ---
 name: dft-corrections
+description: Beyond-standard-DFT corrections for improved accuracy in specific material
+  classes. These corrections address known deficiencies of semi-local DFT functionals
+  (GGA/LDA) and should be applied when the physics demands it.
+---
+
+---
+name: dft-corrections
 description: DFT Corrections (3 sub-skills: hubbard-u, spin-orbit-coupling, vdw-correction)
 ---
 

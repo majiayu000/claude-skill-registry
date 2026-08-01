@@ -1,5 +1,12 @@
 ---
 name: scan
+description: 'Control scanners via scan-mcp MCP server to capture documents, photos,
+  receipts, and pages. Use when user mentions scanning, scanners, or document types.
+  CRITICAL: call start_scan_job with {} (no para'
+---
+
+---
+name: scan
 description: Control scanners via scan-mcp MCP server to capture documents, photos, receipts, and pages. Use when user mentions scanning, scanners, or document types. CRITICAL: call start_scan_job with {} (no params) unless user specifies requirements—server handles intelligent device selection and defaults. Override only for explicit needs like photos (Flatbed+Color+high-res) or duplex stacks (ADF Duplex).
 ---
 

@@ -1,3 +1,8 @@
+---
+name: transit-project-ideas
+description: Paul Swartz
+---
+
 # Smart Speaker Skill for "When's the next X bus"
 
 ## Author
@@ -11,7 +16,7 @@ With more homes having a smart speaker, people are accustomed to asking the spea
 
 The MBTA's [V3 API](https://api-v3.mbta.com/) provides the relevant data:
 Predictions for upcoming vehicles can be queried around a location (given the latitude/longitude)
-Static information about the stop and route are available through the Stops and Routes endpoints 
+Static information about the stop and route are available through the Stops and Routes endpoints
 
 Both [Google](https://developers.google.com/assistant) and [Amazon](https://developer.amazon.com/en-US/alexa/alexa-skills-kit) provide APIs to build skills for their speakers.
 

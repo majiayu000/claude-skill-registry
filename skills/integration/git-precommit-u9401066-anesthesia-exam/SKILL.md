@@ -1,5 +1,10 @@
 ---
 name: git-precommit
+description: 協調多個 Skills 完成 Git 提交前的所有準備工作。這是一個「編排器」Skill，負責調用其他 Skills。
+---
+
+---
+name: git-precommit
 description: Orchestrate pre-commit workflow including Memory Bank sync, README/CHANGELOG/ROADMAP updates. Triggers: GIT, gc, push, commit, 提交, 準備 commit, 要提交了, git commit, pre-commit, 推送, stage, 暫存, checkin, 簽入, submit, save, 準備發布, ready to commit, 要推了.
 version: 2.2.0
 category: workflow

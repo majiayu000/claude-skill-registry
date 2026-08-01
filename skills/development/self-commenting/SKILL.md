@@ -1,5 +1,12 @@
 ---
 name: self-commenting
+description: 'AI-native code commenting system with grep-searchable AICODE-* markers
+  for cross-session memory. Use when: working with code files, leaving notes for future
+  sessions, breaking down complex tasks, docu'
+---
+
+---
+name: self-commenting
 description: AI-native code commenting system with grep-searchable AICODE-* markers for cross-session memory. Use when: working with code files, leaving notes for future sessions, breaking down complex tasks, documenting non-obvious logic, recording bug fixes. Triggers: start coding session, edit code, complex logic, leave note, todo for later, debug session, bug fix, AICODE markers, self-commenting.
 allowed-tools: Read, Write, Bash(grep:*)
 ---

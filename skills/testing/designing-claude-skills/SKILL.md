@@ -1,5 +1,12 @@
 ---
 name: designing-claude-skills
+description: 'Comprehensive guide for creating, reviewing, and improving skills that
+  extend Claude''s capabilities with specialized knowledge, workflows, and tool integrations.
+  Use this skill when: (1) Creating a ne'
+---
+
+---
+name: designing-claude-skills
 description: Comprehensive guide for creating, reviewing, and improving skills that extend Claude's capabilities with specialized knowledge, workflows, and tool integrations. Use this skill when: (1) Creating a new skill from scratch, (2) Reviewing or auditing an existing skill for quality and adherence to best practices, (3) Updating or refactoring an existing skill, (4) Understanding skill architecture, anatomy, and design patterns, (5) Troubleshooting skill loading, triggering, or packaging issues, (6) Learning how to effectively use bundled resources like scripts, references, and assets, (7) Planning what type of skill structure is appropriate for a given use case.
 ---
 

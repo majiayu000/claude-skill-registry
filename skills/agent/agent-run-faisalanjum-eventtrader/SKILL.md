@@ -1,5 +1,10 @@
 ---
 name: agent-run
+description: 'Run with user''s arguments:'
+---
+
+---
+name: agent-run
 description: Run prompt with OpenAI or Gemini provider via agent CLI
 user-invocable: true
 allowed-tools: Bash

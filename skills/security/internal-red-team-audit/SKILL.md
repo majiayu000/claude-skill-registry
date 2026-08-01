@@ -1,3 +1,9 @@
+---
+name: internal-red-team-audit
+description: Execute internal red team security audits to identify protocol vulnerabilities
+  and alignment risks.
+---
+
 # Internal Red Team Audit
 
 ## Skill Metadata

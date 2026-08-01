@@ -1,3 +1,8 @@
+---
+name: sdd-tasks
+description: 設計書に基づき実装タスクを分解し、タスクリスト（tasks.md）を作成する。
+---
+
 # sdd-tasks
 
 ## Description

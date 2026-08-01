@@ -1,3 +1,9 @@
+---
+name: skills-novusaevum-dev-agents-orchestr
+description: Master storytelling skill that transforms technical content into impactful
+  narratives. Integrates cyber ops, AI, and marketing domains for resonant communication.
+---
+
 # Narrative & Storytelling Skill
 
 ## Description

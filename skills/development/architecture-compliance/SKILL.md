@@ -1,5 +1,10 @@
 ---
 name: architecture-compliance
+description: 'Last Updated: 2026-01-15'
+---
+
+---
+name: architecture-compliance
 description: Ensure code follows strict layer boundaries and dependency rules
 version: 1.0.0
 author: Saberloop Project
@@ -10,7 +15,7 @@ usage: |
   - Generating dependency graphs for visualization
   - Identifying and fixing circular dependencies
   - Architectural refactoring to improve layer separation
-  
+
   Examples:
   "Validate new service architecture using the architecture-compliance skill"
   "Check dependency rules for new component using the architecture-compliance skill"
@@ -161,7 +166,7 @@ import { fetchQuiz } from '@/api/api.real.js';
 
 export function QuizComponent() {
   const [quiz, setQuiz] = useState(null);
-  
+
   useEffect(() => {
     fetchQuiz().then(setQuiz); // API call in component
   }, []);
@@ -221,7 +226,7 @@ import { fetchQuiz } from '@/api/api.real.js';
 
 export function QuizComponent({ topic }) {
   const [quiz, setQuiz] = useState(null);
-  
+
   useEffect(() => {
     fetchQuiz(topic).then(setQuiz);
   }, [topic]);
@@ -230,7 +235,7 @@ export function QuizComponent({ topic }) {
 // AFTER (Compliant)
 export function QuizComponent({ topic, onQuizGenerated }) {
   const [quiz, setQuiz] = useState(null);
-  
+
   useEffect(() => {
     onQuizGenerated(topic).then(setQuiz);
   }, [topic, onQuizGenerated]);
@@ -243,7 +248,7 @@ export function ParentComponent() {
   const handleQuizGenerated = async (topic) => {
     return await fetchQuiz(topic);
   };
-  
+
   return <QuizComponent topic="science" onQuizGenerated={handleQuizGenerated} />;
 }
 ```
@@ -263,12 +268,12 @@ export async function generateQuiz(topic) {
 // AFTER (Compliant)
 export async function generateQuiz(topic, dbConnection = null) {
   const quiz = createQuizData(topic);
-  
+
   // Accept DB connection as parameter
   if (dbConnection) {
     await dbConnection.save(quiz);
   }
-  
+
   return quiz;
 }
 
@@ -316,7 +321,7 @@ export const quizService = {
   // High-level operations
   async createQuiz(topic, options = {}) {
     logger.info('Creating quiz', { topic, options });
-    
+
     try {
       const quiz = await generateQuiz(topic, options);
       await saveQuiz(quiz);
@@ -381,25 +386,25 @@ export function createQuizService() {
 
 ```javascript
 // Only handle UI, receive data via props
-export function QuizCard({ 
-  quiz, 
-  onQuizStart, 
-  onQuizShare, 
-  isDisabled = false 
+export function QuizCard({
+  quiz,
+  onQuizStart,
+  onQuizShare,
+  isDisabled = false
 }) {
   return (
     <div className="quiz-card" data-testid="quiz-card">
       <h3>{quiz.title}</h3>
       <p>{quiz.description}</p>
       <div className="quiz-actions">
-        <button 
+        <button
           onClick={() => onQuizStart(quiz.id)}
           disabled={isDisabled}
           data-testid="start-quiz-btn"
         >
           Start Quiz
         </button>
-        <button 
+        <button
           onClick={() => onQuizShare(quiz.id)}
           data-testid="share-quiz-btn"
         >
@@ -415,7 +420,7 @@ import { quizService } from '@/services/quiz-service.js';
 
 export function QuizContainer({ quizId }) {
   const [quiz, setQuiz] = useState(null);
-  
+
   useEffect(() => {
     quizService.loadQuiz(quizId).then(setQuiz);
   }, [quizId]);
@@ -429,7 +434,7 @@ export function QuizContainer({ quizId }) {
   };
 
   return quiz ? (
-    <QuizCard 
+    <QuizCard
       quiz={quiz}
       onQuizStart={handleStart}
       onQuizShare={handleShare}
@@ -469,7 +474,7 @@ dot -Tpng dependency-graph.dot -o architecture.png
 dot -Tsvg dependency-graph.dot -o architecture.svg
 
 # Focus on specific module
-npx depcruise src/ --config .dependency-cruiser.cjs --output-type dot | 
+npx depcruise src/ --config .dependency-cruiser.cjs --output-type dot |
   dot -Tpng -o focused-architecture.png
 ```
 
@@ -480,7 +485,7 @@ npx depcruise src/ --config .dependency-cruiser.cjs --output-type dot |
 npm run arch:test | grep -A5 -B5 "circular"
 
 # Visualize cycles
-npx depcruise src/ --config .dependency-cruiser.cjs --output-type dot | 
+npx depcruise src/ --config .dependency-cruiser.cjs --output-type dot |
   dot -Tpng -o cycles.png
 
 # Fix by extracting common interface
@@ -536,7 +541,7 @@ export default class QuizView extends BaseView {
     if (this.isNewFlow) {
       return await newService.createQuiz(this.topic);
     }
-    
+
     // Keep legacy for old flow
     return await legacyAPICall(this.topic);
   }
@@ -577,6 +582,6 @@ This skill integrates with:
 
 ---
 
-**Version:** 1.0.0  
-**Last Updated:** 2026-01-15  
+**Version:** 1.0.0
+**Last Updated:** 2026-01-15
 **Compatible with:** Saberloop v2.0.0+

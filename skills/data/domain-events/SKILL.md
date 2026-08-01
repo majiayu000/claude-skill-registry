@@ -1,5 +1,10 @@
 ---
 name: domain-events
+description: 'Regel 06: Domain Events. Use when implementing DDD patterns.'
+---
+
+---
+name: domain-events
 description: Regel 06: Domain Events. Use when implementing DDD patterns.
 ---
 

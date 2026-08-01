@@ -1,5 +1,16 @@
 ---
 name: ha-operations
+description: 'Interact with Home Assistant in the network infrastructure setup. Provides
+  guidance for
+
+  API access, health checks, sending notifications, and calling services via REST
+  API.
+
+  Use when working with Home'
+---
+
+---
+name: ha-operations
 description: |
   Interacts with Home Assistant via REST API for health checks, notifications, and service calls.
   Provides guidance for API access with long-lived tokens, sending notifications, calling services,
@@ -47,7 +58,7 @@ curl -X POST "${HA_BASE_URL}/api/services/notify/${HA_NOTIFY_SERVICE#*.}" \
 
 **Triggers:**
 - "Interact with Home Assistant"
-- "Call HA service"  
+- "Call HA service"
 - "Send HA notification"
 - "Check HA health"
 - "Home Assistant returns 405"

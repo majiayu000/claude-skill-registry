@@ -1,5 +1,12 @@
 ---
 name: backend-data-processor
+description: Process vehicle insurance Excel data using Pandas - file handling, data
+  cleaning, merging, validation. Use when processing Excel/CSV files, handling data
+  imports, implementing business rules (negative
+---
+
+---
+name: backend-data-processor
 description: Process vehicle insurance Excel data using Pandas - file handling, data cleaning, merging, validation. Use when processing Excel/CSV files, handling data imports, implementing business rules (negative premiums, zero commissions), debugging data pipelines, or optimizing Pandas performance. Keywords: data_processor.py, Excel, CSV, Pandas, merge, deduplication, date normalization.
 allowed-tools: Read, Edit, Grep, Glob
 ---

@@ -1,3 +1,8 @@
+---
+name: textbook-exercises-generator
+description: Skill from AreebaZafarChohan/physical-ai-and-robotics
+---
+
 # Textbook Exercises & Capstone Generator
 
 A skill for generating exercises, mini-projects, and capstone checkpoints for textbook chapters in Physical AI & Humanoid Robotics.

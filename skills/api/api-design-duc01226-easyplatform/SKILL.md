@@ -1,5 +1,12 @@
 ---
 name: api-design
+description: '> [IMPORTANT] Use TaskCreate to break ALL work into small tasks BEFORE
+  starting — including tasks for each file read. This prevents context loss from long
+  files. For simple tasks, AI MUST ask user whether to skip.'
+---
+
+---
+name: api-design
 version: 2.1.0
 description: "[Architecture] Use when designing or modifying REST API endpoints, controller structure, route patterns, request/response DTOs. Triggers on keywords like "API endpoint", "REST", "controller", "route", "HTTP", "request body", "response"."
 allowed-tools: Read, Write, Edit, Bash, Grep, Glob, Task, TaskCreate

@@ -1,5 +1,11 @@
 ---
 name: train-convo-steering
+description: Voice-first runtime steering + nightly deep analysis to learn per-user
+  conversation steering priors.
+---
+
+---
+name: train-convo-steering
 description: Voice-first runtime steering + nightly deep analysis to learn per-user conversation priors.
 triggers:
   - train convo steering

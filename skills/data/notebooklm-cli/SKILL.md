@@ -1,5 +1,13 @@
 ---
 name: notebooklm-cli
+description: This skill provides complete access to Google NotebookLM through a command-line
+  interface. Manage notebooks, sources, and generate various content formats including
+  audio podcasts, reports, quizzes, flashcards, mind maps, slides, infographics, videos,
+  and data tables.
+---
+
+---
+name: notebooklm-cli
 description: Comprehensive CLI for Google NotebookLM including notebooks, sources, audio podcasts, reports, quizzes, flashcards, mind maps, slides, infographics, videos, and data tables. Use when working with NotebookLM programmatically: managing notebooks/sources, generating audio overviews (podcasts), creating study materials (quizzes, flashcards), producing presentations (slides, infographics), or querying sources via chat.
 ---
 

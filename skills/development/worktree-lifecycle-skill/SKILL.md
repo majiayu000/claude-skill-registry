@@ -1,4 +1,10 @@
 ---
+name: worktree-lifecycle-skill
+description: 'CRITICAL: Use /createworktree command for worktree management. Never
+  use manual git worktree commands. Ports are auto-calculated.'
+---
+
+---
 name: Worktree Lifecycle
 description: Manage git worktree lifecycle for parallel development. Create worktrees with port isolation, manage multiple branches simultaneously, clean up worktrees. CRITICAL: Use /create_worktree command, never manual git worktree commands. Ports auto-calculated to avoid conflicts.
 allowed-tools: SlashCommand, Bash, Read, Write, Edit, Glob, Grep
@@ -184,12 +190,12 @@ git commit -m "feat(dashboard): add user dashboard"
 
 # Output example:
 # 🌳 Worktrees:
-# 
+#
 # 1. feature/user-dashboard
 #    📁 Path: trees/feature-user-dashboard/
 #    📡 Server: http://localhost:4010 (Running, PID: 12345)
 #    🌐 Client: http://localhost:5183 (Running, PID: 12346)
-# 
+#
 # 2. fix/login-bug
 #    📁 Path: trees/fix-login-bug/
 #    📡 Server: http://localhost:4020 (Stopped)

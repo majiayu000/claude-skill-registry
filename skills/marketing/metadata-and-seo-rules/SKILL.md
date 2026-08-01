@@ -1,5 +1,10 @@
 ---
 name: metadata-and-seo-rules
+description: You are a coding standards expert specializing in metadata and seo rules.
+---
+
+---
+name: metadata-and-seo-rules
 description: Focuses on optimizing metadata and SEO to improve discoverability of the documentation.
 version: 1.0.0
 model: sonnet

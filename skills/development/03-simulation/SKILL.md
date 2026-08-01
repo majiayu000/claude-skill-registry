@@ -1,3 +1,8 @@
+---
+name: 03-simulation
+description: ManiSkill은 GPU 가속 병렬 시뮬레이션을 제공하는 강화학습 전용 로봇 환경입니다.
+---
+
 # 3.5 ManiSkill 강화학습 환경
 
 ManiSkill은 GPU 가속 병렬 시뮬레이션을 제공하는 강화학습 전용 로봇 환경입니다.
@@ -342,9 +347,9 @@ print(f"Action shape: {env.action_space.shape}")  # (64, 10)
 for _ in range(100):
     action = env.action_space.sample()
     obs, reward, terminated, truncated, info = env.step(action)
-    
+
     print(f"Mean reward: {reward.mean():.3f}")
-    
+
     if terminated.any():
         env.reset()
 
@@ -456,7 +461,7 @@ for _ in range(1000):
     action, _ = model.predict(obs, deterministic=True)
     obs, reward, terminated, truncated, info = env.step(action)
     env.render()
-    
+
     if terminated or truncated:
         obs, _ = env.reset()
 
@@ -491,74 +496,74 @@ from mani_skill.utils.registration import register_env
 @register_env("XLeRobotPickPlace-v1", max_episode_steps=200)
 class XLeRobotPickPlaceEnv(BaseEnv):
     """XLeRobot Pick and Place 태스크"""
-    
+
     SUPPORTED_ROBOTS = ["xlerobot_single"]
     agent: "XLeRobotSingle"
-    
+
     def __init__(self, *args, robot_uids="xlerobot_single", **kwargs):
         super().__init__(*args, robot_uids=robot_uids, **kwargs)
-    
+
     def _load_scene(self, options: dict):
         """씬 로드: 바닥, 테이블, 큐브, 목표 영역"""
         # 바닥
         self.scene.add_ground(altitude=0)
-        
+
         # 테이블
         builder = self.scene.create_actor_builder()
         builder.add_box_collision(half_size=[0.4, 0.4, 0.02])
         builder.add_box_visual(half_size=[0.4, 0.4, 0.02], color=[0.8, 0.6, 0.4])
         self.table = builder.build_static(name="table")
         self.table.set_pose(sapien.Pose([0.5, 0, 0.4]))
-        
+
         # 큐브 (집을 물체)
         builder = self.scene.create_actor_builder()
         builder.add_box_collision(half_size=[0.02, 0.02, 0.02])
         builder.add_box_visual(half_size=[0.02, 0.02, 0.02], color=[1, 0, 0])
         self.cube = builder.build(name="cube")
-        
+
         # 목표 위치 시각화
         builder = self.scene.create_actor_builder()
         builder.add_sphere_visual(radius=0.03, color=[0, 1, 0, 0.5])
         self.goal_site = builder.build_static(name="goal")
-    
+
     def _initialize_episode(self, env_idx: np.ndarray, options: dict):
         """에피소드 초기화: 로봇, 큐브, 목표 위치 랜덤 배치"""
         # 큐브 위치 랜덤 (테이블 위)
         cube_pos = np.array([0.5, 0, 0.45]) + np.random.uniform(-0.1, 0.1, 3)
         cube_pos[2] = 0.45  # Z는 고정
         self.cube.set_pose(sapien.Pose(cube_pos))
-        
+
         # 목표 위치 랜덤
         goal_pos = np.array([0.5, 0, 0.45]) + np.random.uniform(-0.15, 0.15, 3)
         goal_pos[2] = 0.45
         self.goal_site.set_pose(sapien.Pose(goal_pos))
-        
+
         # 로봇 초기 위치
         self.agent.robot.set_pose(sapien.Pose([0, 0, 0]))
-    
+
     def evaluate(self):
         """보상 계산"""
         # 큐브와 목표 사이 거리
         cube_pos = self.cube.pose.p
         goal_pos = self.goal_site.pose.p
         distance = np.linalg.norm(cube_pos - goal_pos)
-        
+
         # 거리 기반 보상
         reward = -distance
-        
+
         # 성공 판정 (거리 < 5cm)
         success = distance < 0.05
-        
+
         return {
             "success": success,
             "distance": distance,
             "reward": reward,
         }
-    
+
     def compute_dense_reward(self, obs, action, info):
         """Dense reward"""
         return info["reward"]
-    
+
     def compute_normalized_dense_reward(self, obs, action, info):
         """Normalized reward [0, 1]"""
         max_dist = 0.5
@@ -584,9 +589,9 @@ for _ in range(1000):
     action = env.action_space.sample()
     obs, reward, terminated, truncated, info = env.step(action)
     env.render()
-    
+
     print(f"Reward: {reward:.3f}, Distance: {info['distance']:.3f}")
-    
+
     if terminated or truncated:
         obs, _ = env.reset()
 

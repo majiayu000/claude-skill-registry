@@ -1,4 +1,9 @@
 ---
+name: milestone
+description: Analyze and summarize GitHub milestone status for this repository.
+---
+
+---
 description: When users mention a milestone version (e.g., "0.4.0", "v0.4.0") or ask about release status, invoke this skill to analyze GitHub milestone progress, issues, and suggest next steps.
 argument-hint: [version] | list
 allowed-tools: Bash(gh api:*), Bash(gh issue list:*), Bash(gh issue view:*)

@@ -1,5 +1,12 @@
 ---
 name: json-render-ui
+description: Transform natural language UI requests into working dashboards and applications.
+  Claude acts as the translation layer (prompt → JSON), the skill provides the rendering
+  runtime (JSON → UI).
+---
+
+---
+name: json-render-ui
 description: Generate guardrailed UI from natural language. Claude emits constrained JSON, skill runtime renders via Preact. Use when user provides json and requests: Dashboards with metrics, charts, tables; Admin panels; Data visualization interfaces; Form-based applications
 metadata:
   version: 0.0.1

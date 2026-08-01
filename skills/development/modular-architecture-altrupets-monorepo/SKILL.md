@@ -1,3 +1,8 @@
+---
+name: modular-architecture
+description: '| ID | flutter-modular-architecture |'
+---
+
 # 🎨 Skill: Arquitectura Modular
 
 ## 📋 Metadata

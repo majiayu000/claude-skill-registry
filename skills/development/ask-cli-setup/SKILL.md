@@ -1,3 +1,9 @@
+---
+name: ask-cli-setup
+description: AWS Account | AWS CLI | AWS CLI Profile | Amazon Developer Account |
+  ASK CLI | ASK CLI Profile | Deploy a Skill
+---
+
 # AWS & ASK CLI Setup Guide
 [AWS Account](new-aws-account.md) | [AWS CLI](aws-cli-setup-intro.md) | [AWS CLI Profile](aws-cli-setup-profile.md) | [Amazon Developer Account](dev-portal-intro.md) | [ASK CLI](ask-cli-setup-intro.md) | [ASK CLI Profile](ask-cli-setup-profile.md) | **[Deploy a Skill](deploy-sample-skill.md)**
 
@@ -33,7 +39,7 @@ The sample uses
 
 ## 1 – Create a new skill
 
-In this step, you will get a copy of the sample skill code on your local computer and prepare a deployment package (a zip file that you create out of the Hello World skill code) to upload to Lambda in the next step. 
+In this step, you will get a copy of the sample skill code on your local computer and prepare a deployment package (a zip file that you create out of the Hello World skill code) to upload to Lambda in the next step.
 
 1. Initialize the ASK CLI
 
@@ -48,13 +54,13 @@ It will ask you for a skill name, choose whatever (e.g. hello-world)
 cd hello-world
 ```
 
-​       
+​
 
 ## 2 – Deploy The Sample Skill to Your Account
 
-Once the ASK CLI is configured, it will create the skill and associated Lambda function. 
+Once the ASK CLI is configured, it will create the skill and associated Lambda function.
 
-Deploy the skill and associated function with the following command: 
+Deploy the skill and associated function with the following command:
 
 ```bash
 ask deploy
@@ -62,9 +68,9 @@ ask deploy
 
 
 
-## 3 – Test the Skill 
+## 3 – Test the Skill
 
-The skill can be invoked and tested on an Echo device as well. 
+The skill can be invoked and tested on an Echo device as well.
 
 1. Login to the [Alexa Developer Console](https://developer.amazon.com/alexa/console/ask).
 
@@ -76,11 +82,11 @@ The skill can be invoked and tested on an Echo device as well.
 
    ![test-tab](lab1-devportal-test-tab.png)
 
-4. Enable Test for the skill by clicking the **Test** switch in the top left. 
+4. Enable Test for the skill by clicking the **Test** switch in the top left.
 
    ![test-switch](lab1-devportal-test-switch.png)
 
-Now you can use any Echo device logged in to the same developer account to test the skill: 
+Now you can use any Echo device logged in to the same developer account to test the skill:
 
 ​     *“Alexa, open hello world.”*
 

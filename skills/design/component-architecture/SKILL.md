@@ -1,4 +1,9 @@
 ---
+name: component-architecture
+description: '> Template for project-specific component patterns skill'
+---
+
+---
 name: [PROJECT]-component-patterns
 description: [PROJECT] frontend component architecture and patterns
 globs: ["**/*.{tsx,jsx,ts,js,vue,svelte}"]

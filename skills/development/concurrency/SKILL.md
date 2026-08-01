@@ -1,5 +1,12 @@
 ---
 name: concurrency
+description: Comprehensive concurrency and parallelism patterns for multi-threaded
+  and async programming. Use when implementing async/await, parallel processing, thread
+  safety, worker pools, or debugging race cond
+---
+
+---
+name: concurrency
 description: Comprehensive concurrency and parallelism patterns for multi-threaded and async programming. Use when implementing async/await, parallel processing, thread safety, worker pools, or debugging race conditions and deadlocks. Triggers: async, await, concurrent, parallel, threads, race condition, deadlock, mutex, semaphore, worker pool, queue.
 ---
 

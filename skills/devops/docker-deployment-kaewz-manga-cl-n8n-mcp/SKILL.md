@@ -1,3 +1,8 @@
+---
+name: docker-deployment
+description: '> Docker patterns for cl-n8n-mcp.'
+---
+
 # Docker Deployment Skill
 
 > Docker patterns for cl-n8n-mcp.

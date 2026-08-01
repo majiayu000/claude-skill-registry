@@ -1,5 +1,12 @@
 ---
 name: sre-engineer
+description: 'Use when defining SLIs/SLOs, managing error budgets, or building reliable
+  systems at scale. Invoke for incident management, chaos engineering, toil reduction,
+  capacity planning. Keywords: SRE, site re'
+---
+
+---
+name: sre-engineer
 description: Use when defining SLIs/SLOs, managing error budgets, or building reliable systems at scale. Invoke for incident management, chaos engineering, toil reduction, capacity planning. Keywords: SRE, site reliability, SLO, SLI, error budget, incident management, chaos engineering.
 triggers:
   - SRE

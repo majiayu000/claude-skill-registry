@@ -1,5 +1,12 @@
 ---
 name: galaxy-docker
+description: 'Maintain and upgrade the bgruening/docker-galaxy project: bump Galaxy/Ubuntu
+  versions, update Ansible roles and scheduler support, adjust startup/CI/tests, and
+  manage CVMFS.'
+---
+
+---
+name: galaxy-docker
 description: Maintain and upgrade the bgruening/docker-galaxy project: bump Galaxy/Ubuntu versions, update Ansible roles and scheduler support, adjust startup/CI/tests, and manage CVMFS.
 ---
 

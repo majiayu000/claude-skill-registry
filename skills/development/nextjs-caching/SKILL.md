@@ -1,5 +1,10 @@
 ---
 name: nextjs-caching
+description: '| Cache Layer | Location | Duration | Purpose |'
+---
+
+---
+name: nextjs-caching
 description: Complete Next.js caching system with 'use cache' directive (Next.js 16). PROACTIVELY activate for: (1) Understanding 4 caching layers (Request Memoization, Data Cache, Full Route Cache, Router Cache), (2) Cache Components with 'use cache' directive, (3) fetch() caching options, (4) cacheLife() and cacheTag() functions, (5) Time-based revalidation, (6) On-demand revalidation with revalidatePath/revalidateTag, (7) Static generation with generateStaticParams, (8) Cache debugging. Provides: 'use cache' patterns, Cache Components, caching strategies, revalidation patterns, ISR setup, cache headers. Ensures optimal performance with correct cache invalidation.
 ---
 

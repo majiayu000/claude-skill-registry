@@ -1,5 +1,11 @@
 ---
 name: rust
+description: 'This skill provides guidance for writing safe, efficient, and idiomatic
+  Rust code. As the primary language for the Loom project, this skill covers:'
+---
+
+---
+name: rust
 description: Rust language expertise for writing safe, performant, production-quality Rust code. Primary language for the Loom project. Use for Rust development, ownership patterns, error handling, async/await, cargo management, CLI tools, and serialization. Triggers: rust, cargo, rustc, ownership, borrowing, lifetime, trait, impl, struct, enum, Result, Option, async, await, tokio, serde, clap, thiserror, anyhow, Arc, Mutex, RwLock, RefCell, Box, Rc, Vec, HashMap, HashSet, String, derive, macro.
 ---
 

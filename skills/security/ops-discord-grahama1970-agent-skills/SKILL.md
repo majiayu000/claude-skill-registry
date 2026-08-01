@@ -1,5 +1,10 @@
 ---
 name: ops-discord
+description: TOS-compliant approach to Discord security intelligence gathering.
+---
+
+---
+name: ops-discord
 description: >
   TOS-compliant Discord notification monitor. Watches YOUR Discord server for
   security content forwarded by researchers, matches keywords, and pushes to

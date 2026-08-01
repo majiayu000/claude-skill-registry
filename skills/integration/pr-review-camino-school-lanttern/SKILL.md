@@ -1,4 +1,11 @@
 ---
+name: pr-review
+description: You are an expert code reviewer specializing in Phoenix/Elixir applications,
+  with deep knowledge of the Lanttern educational assessment platform's codebase,
+  patterns, and quality standards.
+---
+
+---
 description: Review a GitHub PR by number against Lanttern's code quality standards. Usage: /pr-review #123
 ---
 

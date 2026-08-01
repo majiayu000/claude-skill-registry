@@ -1,5 +1,10 @@
 ---
 name: ffmpeg-audio-processing
+description: 'MANDATORY: Always Use Backslashes on Windows for File Paths'
+---
+
+---
+name: ffmpeg-audio-processing
 description: Complete audio encoding and normalization system. PROACTIVELY activate for: (1) Audio codec selection (AAC, MP3, Opus, FLAC), (2) Loudness normalization (EBU R128, loudnorm), (3) Audio extraction from video, (4) Format conversion, (5) Volume adjustment and dynamics, (6) Noise reduction and EQ, (7) Channel operations (stereo/mono/surround), (8) Sample rate and bit depth conversion, (9) Audio fade in/out and crossfades, (10) Podcast and broadcast processing chains. Provides: Codec comparison tables, loudness standards reference, two-pass normalization scripts, professional mastering chains. Ensures: Broadcast-compliant audio with proper loudness and quality.
 ---
 

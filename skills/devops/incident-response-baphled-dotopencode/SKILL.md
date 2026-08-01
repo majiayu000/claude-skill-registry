@@ -1,5 +1,13 @@
 ---
 name: incident-response
+description: I provide the technical expertise to handle production incidents effectively.
+  I focus on rapid diagnosis, swift mitigation to restore service, and systematic
+  resolution of the underlying issue, all while ensuring that every failure becomes
+  a learning opportunity.
+---
+
+---
+name: incident-response
 description: Handle production incidents: diagnose, mitigate, resolve, learn from failures
 category: DevOps Operations
 ---

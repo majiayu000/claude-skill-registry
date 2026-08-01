@@ -1,3 +1,8 @@
+---
+name: skills-dcramer-ash
+description: Create or update Ash skills in ~/.ash/workspace/skills/.
+---
+
 # /create-skill
 
 Create or update Ash skills in `~/.ash/workspace/skills/`.

@@ -1,3 +1,9 @@
+---
+name: item-provenance
+description: Adds origin/provenance + rumor hooks to Emberwild item entries and updates
+  indexes.
+---
+
 name: item-provenance
 description: Adds origin/provenance + rumor hooks to Emberwild item entries and updates indexes.
 metadata:

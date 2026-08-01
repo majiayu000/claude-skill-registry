@@ -1,5 +1,11 @@
 ---
 name: pubmed-paper-exploration
+description: 'Deep exploration from a key paper. Triggers: 這篇論文的相關研究, 誰引用這篇, 類似文章,
+  related articles, citation tree, paper exploration'
+---
+
+---
+name: pubmed-paper-exploration
 description: Deep exploration from a key paper. Triggers: 這篇論文的相關研究, 誰引用這篇, 類似文章, related articles, citation tree, paper exploration
 ---
 

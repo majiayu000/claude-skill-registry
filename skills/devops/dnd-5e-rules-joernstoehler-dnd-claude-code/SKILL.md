@@ -1,3 +1,9 @@
+---
+name: dnd-5e-rules
+description: This skill provides guidance on finding and using D&D 5e rules for campaign
+  content creation.
+---
+
 # D&D 5e Rules Reference
 
 This skill provides guidance on finding and using D&D 5e rules for campaign content creation.

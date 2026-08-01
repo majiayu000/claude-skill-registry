@@ -1,5 +1,12 @@
 ---
 name: dhh-philosophy
+description: This skill should be used when the user asks about Rails philosophy,
+  DHH's principles, the Rails way, "convention over configuration", "majestic monolith",
+  "omakase", "sharp knives", NO BUILD, integra
+---
+
+---
+name: dhh-philosophy
 description: This skill should be used when the user asks about Rails philosophy, DHH's principles, the Rails way, "convention over configuration", "majestic monolith", "omakase", "sharp knives", NO BUILD, integrated systems, programmer happiness, or general Rails 8 design principles. Also use when discussing why Rails makes certain architectural decisions or when comparing Rails approaches to alternatives. Examples:
 
 <example>

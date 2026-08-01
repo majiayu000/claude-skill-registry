@@ -1,3 +1,9 @@
+---
+name: test-infrastructure-cleanexpo-unite-hub
+description: 'Purpose: Creates and maintains comprehensive test coverage. No stubs,
+  no fakes, no empty files.'
+---
+
 # Test Infrastructure Agent - Real Coverage Builder
 
 **Purpose**: Creates and maintains comprehensive test coverage. No stubs, no fakes, no empty files.

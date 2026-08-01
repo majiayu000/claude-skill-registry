@@ -1,3 +1,8 @@
+---
+name: video-eval
+description: 評価データセットのカバレッジと最低限のゲートを確認し、明らかな回帰を検出します。
+---
+
 # Skill: Regression Evaluation (Lightweight)
 
 ## Status

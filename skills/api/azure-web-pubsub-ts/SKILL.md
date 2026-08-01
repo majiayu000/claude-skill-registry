@@ -1,5 +1,10 @@
 ---
 name: azure-web-pubsub-ts
+description: Real-time messaging with WebSocket connections and pub/sub patterns.
+---
+
+---
+name: azure-web-pubsub-ts
 description: Build real-time messaging applications using Azure Web PubSub SDKs for JavaScript (@azure/web-pubsub, @azure/web-pubsub-client). Use when implementing WebSocket-based real-time features, pub/sub messaging, group chat, or live notifications.
 package: @azure/web-pubsub, @azure/web-pubsub-client
 ---
@@ -229,7 +234,7 @@ const app = express();
 
 const handler = new WebPubSubEventHandler("chat", {
   path: "/api/webpubsub/hubs/chat/",
-  
+
   // Blocking: approve/reject connection
   handleConnect: (req, res) => {
     if (!req.claims?.sub) {
@@ -242,18 +247,18 @@ const handler = new WebPubSubEventHandler("chat", {
       roles: ["webpubsub.sendToGroup"],
     });
   },
-  
+
   // Blocking: handle custom events
   handleUserEvent: (req, res) => {
     console.log(`Event from ${req.context.userId}:`, req.data);
     res.success(`Received: ${req.data}`, "text");
   },
-  
+
   // Non-blocking
   onConnected: (req) => {
     console.log(`Client connected: ${req.context.connectionId}`);
   },
-  
+
   onDisconnected: (req) => {
     console.log(`Client disconnected: ${req.context.connectionId}`);
   },

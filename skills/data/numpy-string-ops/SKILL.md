@@ -1,5 +1,13 @@
 ---
 name: numpy-string-ops
+description: NumPy's char submodule provides vectorized versions of standard Python
+  string operations. It allows for efficient processing of arrays containing str or
+  bytes types, though it is being transitioned to a newer strings module in recent
+  versions.
+---
+
+---
+name: numpy-string-ops
 description: Vectorized string manipulation using the char module and modern string alternatives, including cleaning and search operations. Triggers: string operations, numpy.char, text cleaning, substring search.
 ---
 

@@ -1,3 +1,8 @@
+---
+name: video-notify
+description: 'bash scripts/phase5-notify.sh <anomalydetected: 0|1>'
+---
+
 # Skill: Notification
 
 ## Status

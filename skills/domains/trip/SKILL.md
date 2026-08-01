@@ -1,3 +1,8 @@
+---
+name: trip
+description: Quick-create a trip planning note.
+---
+
 # Trip Skill
 
 Quick-create a trip planning note.

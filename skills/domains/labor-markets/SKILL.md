@@ -1,3 +1,9 @@
+---
+name: labor-markets
+description: 'description: Labor market economics — unemployment, wages, Phillips
+  Curve. Cover NAIRU, Phillips Curve, Okun''s law.'
+---
+
 # Labor Market Economics
 
 name: labor-markets

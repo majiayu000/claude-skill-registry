@@ -1,5 +1,12 @@
 ---
 name: notion-workflows
+description: Provides Notion workspace organization patterns, layout preferences,
+  and workflow automation for personal productivity systems. Includes structure guidelines,
+  content reuse patterns, and integration w
+---
+
+---
+name: notion-workflows
 description: Provides Notion workspace organization patterns, layout preferences, and workflow automation for personal productivity systems. Includes structure guidelines, content reuse patterns, and integration with external tools. MANDATORY: Claude must read this skill file before using any Notion MCP tools.
 ---
 

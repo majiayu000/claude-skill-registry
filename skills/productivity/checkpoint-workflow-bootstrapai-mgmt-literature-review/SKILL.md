@@ -1,5 +1,12 @@
 ---
 name: checkpoint-workflow
+description: Enforces incremental saving during complex tasks to prevent progress
+  loss. Use this skill whenever working on multi-step tasks, creating multiple files,
+  or doing work that takes more than 5 minutes. T
+---
+
+---
+name: checkpoint-workflow
 description: Enforces incremental saving during complex tasks to prevent progress loss. Use this skill whenever working on multi-step tasks, creating multiple files, or doing work that takes more than 5 minutes. Triggers on: file creation, documentation updates, code changes, workflow execution, any task with multiple steps.
 ---
 

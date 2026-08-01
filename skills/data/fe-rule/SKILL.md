@@ -1,3 +1,8 @@
+---
+name: fe-rule
+description: const timer = setInterval(() => {}, 1000);
+---
+
 #1 @hook那些事儿
 
 ```vue
@@ -122,7 +127,7 @@ const routes = [
     export default {
         data() {
             return {
-                count: 1      
+                count: 1
             }
         },
         watch: {
@@ -139,7 +144,7 @@ const routes = [
     export default {
         data() {
             return {
-                count: 1      
+                count: 1
             }
         },
         created() {
@@ -197,7 +202,7 @@ this.$watch('count', function(newVal){
 </template>
 ```
 
-> 同样的，我们也可以在 `<template>` 上使用 `v-for` 指令，这种当时还能解决 `v-for` 和 `v-if` 同时使用报出的警告问题。   
+> 同样的，我们也可以在 `<template>` 上使用 `v-for` 指令，这种当时还能解决 `v-for` 和 `v-if` 同时使用报出的警告问题。
 
 ```html
 <template v-for="item in 10">
@@ -301,7 +306,7 @@ export default {
       printValue () {
         console.log(this.value)
       }
-    } 
+    }
 }
 ```
 

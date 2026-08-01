@@ -1,5 +1,12 @@
 ---
 name: rust-systems-engineering
+description: 'Expert-level Rust systems programming for high-performance, critical
+  systems like Reth (Ethereum execution client). Use when working on: performance
+  optimization, systems-level code, blockchain execut'
+---
+
+---
+name: rust-systems-engineering
 description: Expert-level Rust systems programming for high-performance, critical systems like Reth (Ethereum execution client). Use when working on: performance optimization, systems-level code, blockchain execution layers, memory-critical paths, concurrent systems, or production-grade infrastructure requiring staff engineer precision. Specializes in: allocation reduction, redundancy elimination, prefetching, parallelization, and simplicity-first optimization.
 ---
 

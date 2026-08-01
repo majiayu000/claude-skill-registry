@@ -1,3 +1,8 @@
+---
+name: dashboard-scaffold
+description: '> Generate Admin Dashboard: Sidebar, stats, tables, and charts.'
+---
+
 # Dashboard Scaffold Skill
 
 > **Generate Admin Dashboard**: Sidebar, stats, tables, and charts.

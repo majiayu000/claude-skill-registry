@@ -1,5 +1,11 @@
 ---
 name: react-debugging
+description: React's render cycle can cause infinite loops and performance issues.
+  This skill covers the most common patterns that cause problems in StepLeague.
+---
+
+---
+name: react-debugging
 description: Debugging React render loops, infinite re-renders, and performance issues in Next.js. Use when encountering "Maximum update depth exceeded", useMemo/useCallback issues, useEffect dependency problems, or useSearchParams loops. Keywords: infinite loop, re-render, useMemo, useCallback, useEffect, Maximum update depth, React error 185.
 compatibility: Antigravity, Claude Code, Cursor
 metadata:
@@ -68,7 +74,7 @@ useEffect(() => {
     const urlValue = searchParams.get(String(key));
     if (urlValue !== null) result[key] = urlValue;
   });
-  
+
   setFiltersState(result);
   setIsHydrated(true);
 }, []); // Empty deps - only run once on mount
@@ -95,7 +101,7 @@ useEffect(() => {
 
 ```typescript
 // ✅ CORRECT - Memoize the filtered array (submit-steps/page.tsx lines 78-82)
-// Comment in code: "Memoize to prevent new array reference each render 
+// Comment in code: "Memoize to prevent new array reference each render
 // (which would cause infinite useEffect loops)"
 const adminLeagues = useMemo(() =>
   leagues.filter(l => l.role === "owner" || l.role === "admin"),

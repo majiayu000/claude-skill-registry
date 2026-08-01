@@ -1,3 +1,8 @@
+---
+name: code-skill
+description: python scripts/extracttext.py input.pdf > output.txt
+---
+
 # Code Skill Template
 
 스크립트를 포함하는 스킬용
@@ -115,31 +120,31 @@ def main():
     if len(sys.argv) != 2:
         print("Usage: python analyze.py input.pdf", file=sys.stderr)
         sys.exit(1)
-    
+
     pdf_path = sys.argv[1]
-    
+
     try:
         reader = PdfReader(pdf_path)
     except Exception as e:
         print(f"Error reading PDF: {e}", file=sys.stderr)
         sys.exit(1)
-    
+
     result = {
         "page_count": len(reader.pages),
         "form_fields": [],
         "has_text": False
     }
-    
+
     # Form fields
     if reader.get_form_text_fields():
         result["form_fields"] = list(reader.get_form_text_fields().keys())
-    
+
     # Check for text
     for page in reader.pages:
         if page.extract_text().strip():
             result["has_text"] = True
             break
-    
+
     print(json.dumps(result, indent=2))
 
 if __name__ == "__main__":

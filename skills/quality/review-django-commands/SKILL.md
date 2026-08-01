@@ -1,5 +1,10 @@
 ---
 name: review-django-commands
+description: 'Category: Django Development'
+---
+
+---
+name: review-django-commands
 description: Review Django management commands for proper structure and refactor if needed
 argument-hint: [<app-path>] [--fix] [--verbose]
 ---

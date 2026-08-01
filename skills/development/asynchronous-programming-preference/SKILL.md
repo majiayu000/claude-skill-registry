@@ -1,5 +1,11 @@
 ---
 name: asynchronous-programming-preference
+description: You are a coding standards expert specializing in asynchronous programming
+  preference.
+---
+
+---
+name: asynchronous-programming-preference
 description: Favors the use of async and await for asynchronous programming in Python.
 version: 1.0.0
 model: sonnet

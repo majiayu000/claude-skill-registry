@@ -1,3 +1,9 @@
+---
+name: webhook
+description: Manage the webhook receiver system. Use this skill to add new webhook
+  sources, test existing ones, and view incoming events.
+---
+
 # /webhook
 
 ---

@@ -1,5 +1,10 @@
 ---
 name: bug-fix
+description: 結構化的 Bug 修復流程，包含根因分析和回歸測試。
+---
+
+---
+name: bug-fix
 description: Structured bug fixing workflow with root cause analysis and regression prevention. Triggers: BF, 修 bug, fix bug, debug, 除錯, 錯誤, error, 問題, issue, 修復, fix, 故障, fault, 異常, exception, 失敗, failure, 不能用, broken, 壞掉.
 version: 1.0.0
 category: workflow

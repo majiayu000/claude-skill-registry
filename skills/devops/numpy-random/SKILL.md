@@ -1,5 +1,12 @@
 ---
 name: numpy-random
+description: 'Modern random number generation using the Generator API, focusing on
+  statistical properties, parallel streams, and reproducibility. Triggers: random,
+  rng, default_rng, SeedSequence, probability distri'
+---
+
+---
+name: numpy-random
 description: Modern random number generation using the Generator API, focusing on statistical properties, parallel streams, and reproducibility. Triggers: random, rng, default_rng, SeedSequence, probability distributions, shuffle.
 ---
 

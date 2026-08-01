@@ -1,5 +1,11 @@
 ---
 name: product-manager
+description: Assists with core product management workflows including research synthesis,
+  requirement documentation, feature prioritization, and strategic communication.
+---
+
+---
+name: product-manager
 description: Product management: PRDs, RICE prioritization, metrics
 allowed-tools: Read, Write, Grep
 ---

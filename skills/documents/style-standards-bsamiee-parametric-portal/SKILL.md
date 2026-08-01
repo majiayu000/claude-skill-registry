@@ -1,5 +1,12 @@
 ---
 name: style-standards
+description: 'Enforces style consistency for documentation and code with support for
+  taxonomy, voice, and formatting domains. Use when creating or modifying files requiring:
+  (1) markdown structure (headers, lists,'
+---
+
+---
+name: style-standards
 type: standard
 depth: extended
 description: Enforces style consistency for documentation and code with support for taxonomy, voice, and formatting domains. Use when creating or modifying files requiring: (1) markdown structure (headers, lists, tables, Dictums, separators), (2) code organization (comments, section dividers, naming conventions), (3) voice compliance (tone, grammar, imperative phrasing), or (4) formatting validation against project standards.

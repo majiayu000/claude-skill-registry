@@ -1,3 +1,8 @@
+---
+name: quality-gates
+description: '> Skill Purpose: Automated quality thresholds and enforcement patterns'
+---
+
 # Quality Gates
 
 > **Skill Purpose:** Automated quality thresholds and enforcement patterns
@@ -86,13 +91,13 @@ module.exports = {
         'no-console': 'warn', // Allow in development, warn in production
       },
     },
-    
+
     // Prettier compliance
     prettier: {
       check: true,
       enforce: true,
     },
-    
+
     // TypeScript strictness
     typescript: {
       strict: true,
@@ -100,7 +105,7 @@ module.exports = {
       noImplicitReturns: true,
     },
   },
-  
+
   // Test coverage thresholds
   coverage: {
     global: {
@@ -135,7 +140,7 @@ module.exports = {
       '**/spec/**',
     ],
   },
-  
+
   // Performance thresholds
   performance: {
     // Bundle size limits (in bytes)
@@ -144,12 +149,12 @@ module.exports = {
       'vendor.js': 300000,    // 300KB
       'framework.js': 50000,  // 50KB
     },
-    
+
     // Build performance
     buildTime: {
       maxDuration: 300000, // 5 minutes in milliseconds
     },
-    
+
     // Lighthouse scores
     lighthouse: {
       performance: 90,
@@ -158,7 +163,7 @@ module.exports = {
       seo: 90,
     },
   },
-  
+
   // Security thresholds
   security: {
     // Vulnerability thresholds
@@ -167,13 +172,13 @@ module.exports = {
       moderate: 0,
       low: 5,
     },
-    
+
     // Dependency audit
     audit: {
       failOn: ['moderate', 'high', 'critical'],
     },
   },
-  
+
   // Documentation requirements
   documentation: {
     // JSDoc coverage
@@ -182,7 +187,7 @@ module.exports = {
       classes: 90,
       variables: 60,
     },
-    
+
     // README requirements
     readme: {
       required: true,
@@ -195,7 +200,7 @@ module.exports = {
       ],
     },
   },
-  
+
   // Code complexity metrics
   complexity: {
     // Cyclomatic complexity
@@ -203,26 +208,26 @@ module.exports = {
       max: 10,
       warn: 7,
     },
-    
+
     // Cognitive complexity
     cognitiveComplexity: {
       max: 15,
       warn: 10,
     },
-    
+
     // Function length
     functionLength: {
       max: 50,
       warn: 30,
     },
-    
+
     // File length
     fileLength: {
       max: 300,
       warn: 200,
     },
   },
-  
+
   // Integration requirements
   integration: {
     // API compatibility
@@ -230,14 +235,14 @@ module.exports = {
       version: '1.0.0',
       breakingChanges: false,
     },
-    
+
     // Database migrations
     migrations: {
       reversible: true,
       tested: true,
     },
   },
-  
+
   // Deployment requirements
   deployment: {
     // Environment parity
@@ -245,7 +250,7 @@ module.exports = {
       dev: 'staging',
       staging: 'production',
     },
-    
+
     // Health checks
     healthChecks: {
       endpoints: ['/health', '/api/health'],
@@ -287,33 +292,33 @@ class QualityGateRunner {
     this.results = [];
     this.startTime = Date.now();
   }
-  
+
   runCommand(command, description, options = {}) {
     const startTime = Date.now();
-    
+
     try {
       colorLog(`🔍 Running: ${description}`, 'blue');
-      
+
       const output = execSync(command, {
         encoding: 'utf8',
         stdio: options.quiet ? 'pipe' : 'inherit',
         maxBuffer: 1024 * 1024 * 10, // 10MB buffer
       });
-      
+
       const duration = Date.now() - startTime;
-      
+
       this.results.push({
         name: description,
         status: 'passed',
         duration,
         output: options.quiet ? output : undefined,
       });
-      
+
       colorLog(`✅ ${description} - PASSED (${duration}ms)`, 'green');
       return { success: true, output, duration };
     } catch (error) {
       const duration = Date.now() - startTime;
-      
+
       this.results.push({
         name: description,
         status: 'failed',
@@ -321,29 +326,29 @@ class QualityGateRunner {
         error: error.message,
         output: options.quiet ? error.stdout : undefined,
       });
-      
+
       colorLog(`❌ ${description} - FAILED (${duration}ms)`, 'red');
       if (!options.quiet) {
         colorLog(`Error: ${error.message}`, 'red');
       }
-      
+
       return { success: false, error: error.message, duration };
     }
   }
-  
+
   async checkCodeQuality() {
     colorLog('\n📝 Checking Code Quality', 'magenta');
     colorLog('========================', 'magenta');
-    
+
     // TypeScript compilation
     this.runCommand('npm run type-check', 'TypeScript compilation');
-    
+
     // ESLint
     this.runCommand('npm run lint', 'ESLint linting');
-    
+
     // Prettier formatting
     this.runCommand('npm run format:check', 'Prettier formatting');
-    
+
     // Code complexity (if tools available)
     try {
       this.runCommand('npx complexity-report src/', 'Code complexity analysis');
@@ -351,30 +356,30 @@ class QualityGateRunner {
       colorLog('⚠️  Code complexity analysis not available', 'yellow');
     }
   }
-  
+
   async checkTestCoverage() {
     colorLog('\n🧪 Checking Test Coverage', 'magenta');
     colorLog('=======================', 'magenta');
-    
+
     const result = this.runCommand('npm run test:coverage', 'Test coverage', { quiet: true });
-    
+
     if (result.success) {
       // Parse coverage report
       try {
         const coveragePath = 'coverage/coverage-summary.json';
         if (fs.existsSync(coveragePath)) {
           const coverage = JSON.parse(fs.readFileSync(coveragePath, 'utf8'));
-          
+
           colorLog('\n📊 Coverage Summary:', 'cyan');
           const thresholds = config.coverage.global;
-          
+
           Object.entries(thresholds).forEach(([metric, threshold]) => {
             const coveragePercent = coverage.total[metric]?.pct || 0;
             const status = coveragePercent >= threshold ? '✅' : '❌';
             const color = coveragePercent >= threshold ? 'green' : 'red';
-            
+
             colorLog(`   ${status} ${metric}: ${coveragePercent}% (required: ${threshold}%)`, color);
-            
+
             if (coveragePercent < threshold) {
               this.results.push({
                 name: `Coverage threshold: ${metric}`,
@@ -389,16 +394,16 @@ class QualityGateRunner {
       }
     }
   }
-  
+
   async checkPerformance() {
     colorLog('\n⚡ Checking Performance', 'magenta');
     colorLog('=====================', 'magenta');
-    
+
     // Build performance
     const buildStart = Date.now();
     const buildResult = this.runCommand('npm run build', 'Build performance');
     const buildDuration = Date.now() - buildStart;
-    
+
     if (buildDuration > config.performance.buildTime.maxDuration) {
       this.results.push({
         name: 'Build time',
@@ -406,7 +411,7 @@ class QualityGateRunner {
         error: `${buildDuration}ms > ${config.performance.buildTime.maxDuration}ms`,
       });
     }
-    
+
     // Bundle size analysis
     if (fs.existsSync('.next')) {
       try {
@@ -415,9 +420,9 @@ class QualityGateRunner {
           const actualSize = bundleStats[file] || 0;
           const status = actualSize <= maxSize ? '✅' : '❌';
           const color = actualSize <= maxSize ? 'green' : 'red';
-          
+
           colorLog(`   ${status} ${file}: ${this.formatBytes(actualSize)} (max: ${this.formatBytes(maxSize)})`, color);
-          
+
           if (actualSize > maxSize) {
             this.results.push({
               name: `Bundle size: ${file}`,
@@ -431,34 +436,34 @@ class QualityGateRunner {
       }
     }
   }
-  
+
   async checkSecurity() {
     colorLog('\n🔒 Checking Security', 'magenta');
     colorLog('==================', 'magenta');
-    
+
     // Security audit
     const auditResult = this.runCommand('npm audit --json', 'Security audit', { quiet: true });
-    
+
     if (auditResult.success) {
       try {
         const audit = JSON.parse(auditResult.output);
         const vulnerabilities = audit.vulnerabilities || {};
-        
+
         const thresholds = config.security.vulnerabilities;
         let failed = false;
-        
+
         Object.entries(thresholds).forEach(([level, maxAllowed]) => {
           const count = vulnerabilities[level] || 0;
           const status = count <= maxAllowed ? '✅' : '❌';
           const color = count <= maxAllowed ? 'green' : 'red';
-          
+
           colorLog(`   ${status} ${level}: ${count} (max: ${maxAllowed})`, color);
-          
+
           if (count > maxAllowed) {
             failed = true;
           }
         });
-        
+
         if (failed) {
           this.results.push({
             name: 'Security audit',
@@ -471,16 +476,16 @@ class QualityGateRunner {
       }
     }
   }
-  
+
   analyzeBundleSize() {
     const stats = {};
-    
+
     try {
       // Analyze .next build output
       const buildDir = '.next';
       if (fs.existsSync(buildDir)) {
         const files = this.getAllFiles(buildDir, '.js');
-        
+
         files.forEach(file => {
           const size = fs.statSync(file).size;
           const name = path.basename(file);
@@ -490,20 +495,20 @@ class QualityGateRunner {
     } catch (error) {
       colorLog('Bundle size analysis failed', 'red');
     }
-    
+
     return stats;
   }
-  
+
   getAllFiles(dir, extension) {
     const files = [];
-    
+
     function traverse(currentDir) {
       const items = fs.readdirSync(currentDir);
-      
+
       for (const item of items) {
         const fullPath = path.join(currentDir, item);
         const stat = fs.statSync(fullPath);
-        
+
         if (stat.isDirectory()) {
           traverse(fullPath);
         } else if (item.endsWith(extension)) {
@@ -511,33 +516,33 @@ class QualityGateRunner {
         }
       }
     }
-    
+
     traverse(dir);
     return files;
   }
-  
+
   formatBytes(bytes) {
     if (bytes === 0) return '0 Bytes';
-    
+
     const k = 1024;
     const sizes = ['Bytes', 'KB', 'MB', 'GB'];
     const i = Math.floor(Math.log(bytes) / Math.log(k));
-    
+
     return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
   }
-  
+
   generateReport() {
     const totalDuration = Date.now() - this.startTime;
     const passed = this.results.filter(r => r.status === 'passed').length;
     const failed = this.results.filter(r => r.status === 'failed').length;
-    
+
     colorLog('\n📊 Quality Gates Report', 'magenta');
     colorLog('======================', 'magenta');
-    
+
     colorLog(`Total Duration: ${totalDuration}ms`, 'cyan');
     colorLog(`Passed: ${passed}`, 'green');
     colorLog(`Failed: ${failed}`, failed > 0 ? 'red' : 'green');
-    
+
     if (failed > 0) {
       colorLog('\n❌ Failed Checks:', 'red');
       this.results
@@ -546,7 +551,7 @@ class QualityGateRunner {
           colorLog(`   • ${result.name}: ${result.error}`, 'red');
         });
     }
-    
+
     // Save detailed report
     const report = {
       timestamp: new Date().toISOString(),
@@ -558,29 +563,29 @@ class QualityGateRunner {
         total: this.results.length,
       },
     };
-    
+
     try {
       fs.writeFileSync('quality-gates-report.json', JSON.stringify(report, null, 2));
       colorLog('\n📄 Detailed report saved to: quality-gates-report.json', 'cyan');
     } catch (error) {
       colorLog('⚠️  Could not save detailed report', 'yellow');
     }
-    
+
     return failed === 0;
   }
-  
+
   async run() {
     colorLog('🚀 Running Zeus Framework Quality Gates', 'magenta');
     colorLog('=====================================', 'magenta');
-    
+
     try {
       await this.checkCodeQuality();
       await this.checkTestCoverage();
       await this.checkPerformance();
       await this.checkSecurity();
-      
+
       const success = this.generateReport();
-      
+
       if (success) {
         colorLog('\n✅ All quality gates passed!', 'green');
         process.exit(0);
@@ -617,20 +622,20 @@ class CIQualityGateRunner extends QualityGateRunner {
   async run() {
     colorLog('🚀 Running CI Quality Gates', 'magenta');
     colorLog('========================', 'magenta');
-    
+
     // CI-specific checks
     await this.checkCodeQuality();
     await this.checkTestCoverage();
     await this.checkPerformance();
     await this.checkSecurity();
-    
+
     // Additional CI checks
     await this.checkDependencies();
     await this.checkDocumentation();
     await this.checkIntegration();
-    
+
     const success = this.generateReport();
-    
+
     if (success) {
       colorLog('\n✅ CI quality gates passed!', 'green');
       process.exit(0);
@@ -639,22 +644,22 @@ class CIQualityGateRunner extends QualityGateRunner {
       process.exit(1);
     }
   }
-  
+
   async checkDependencies() {
     colorLog('\n📦 Checking Dependencies', 'magenta');
     colorLog('=====================', 'magenta');
-    
+
     // Check for outdated dependencies
     this.runCommand('npm-check-updates --dep', 'Outdated dependencies check', { quiet: true });
-    
+
     // Check for security updates
     this.runCommand('npm audit --audit-level moderate', 'Security updates check');
   }
-  
+
   async checkDocumentation() {
     colorLog('\n📚 Checking Documentation', 'magenta');
     colorLog('========================', 'magenta');
-    
+
     // Check README exists
     if (fs.existsSync('README.md')) {
       colorLog('✅ README.md exists', 'green');
@@ -665,7 +670,7 @@ class CIQualityGateRunner extends QualityGateRunner {
         error: 'README.md not found',
       });
     }
-    
+
     // Check API documentation
     if (fs.existsSync('docs/api.md')) {
       colorLog('✅ API documentation exists', 'green');
@@ -673,20 +678,20 @@ class CIQualityGateRunner extends QualityGateRunner {
       colorLog('⚠️  API documentation not found', 'yellow');
     }
   }
-  
+
   async checkIntegration() {
     colorLog('\n🔗 Checking Integration', 'magenta');
     colorLog('=====================', 'magenta');
-    
+
     // Check environment variables
     const requiredEnvVars = [
       'NEXT_PUBLIC_SUPABASE_URL',
       'NEXTAUTH_SECRET',
       'NEXT_PUBLIC_APP_URL',
     ];
-    
+
     const missingVars = requiredEnvVars.filter(varName => !process.env[varName]);
-    
+
     if (missingVars.length === 0) {
       colorLog('✅ Required environment variables present', 'green');
     } else {
@@ -720,16 +725,16 @@ class PreDeploymentGateRunner extends QualityGateRunner {
   async run() {
     colorLog('🚀 Running Pre-Deployment Quality Gates', 'magenta');
     colorLog('=====================================', 'magenta');
-    
+
     // Pre-deployment specific checks
     await this.checkCodeQuality();
     await this.checkTestCoverage();
     await this.checkPerformance();
     await this.checkSecurity();
     await this.checkDeploymentReadiness();
-    
+
     const success = this.generateReport();
-    
+
     if (success) {
       colorLog('\n✅ Pre-deployment quality gates passed!', 'green');
       process.exit(0);
@@ -738,11 +743,11 @@ class PreDeploymentGateRunner extends QualityGateRunner {
       process.exit(1);
     }
   }
-  
+
   async checkDeploymentReadiness() {
     colorLog('\n🚀 Checking Deployment Readiness', 'magenta');
     colorLog('=============================', 'magenta');
-    
+
     // Check build artifacts
     if (fs.existsSync('.next')) {
       colorLog('✅ Build artifacts exist', 'green');
@@ -753,17 +758,17 @@ class PreDeploymentGateRunner extends QualityGateRunner {
         error: 'Build artifacts not found',
       });
     }
-    
+
     // Check environment-specific files
     const envFiles = ['.env.production', '.env.production.local'];
     const hasEnvFiles = envFiles.some(file => fs.existsSync(file));
-    
+
     if (hasEnvFiles) {
       colorLog('✅ Production environment files exist', 'green');
     } else {
       colorLog('⚠️  Production environment files not found', 'yellow');
     }
-    
+
     // Check deployment configuration
     if (fs.existsSync('vercel.json') || fs.existsSync('next.config.js')) {
       colorLog('✅ Deployment configuration exists', 'green');
@@ -800,7 +805,7 @@ class QualityMonitor {
     this.reportPath = 'quality-gates-report.json';
     this.historyPath = 'quality-history.json';
   }
-  
+
   loadCurrentReport() {
     try {
       if (fs.existsSync(this.reportPath)) {
@@ -811,7 +816,7 @@ class QualityMonitor {
     }
     return null;
   }
-  
+
   loadHistory() {
     try {
       if (fs.existsSync(this.historyPath)) {
@@ -822,7 +827,7 @@ class QualityMonitor {
     }
     return [];
   }
-  
+
   saveHistory(history) {
     try {
       fs.writeFileSync(this.historyPath, JSON.stringify(history, null, 2));
@@ -830,69 +835,69 @@ class QualityMonitor {
       console.error('Could not save history:', error.message);
     }
   }
-  
+
   addToHistory(report) {
     const history = this.loadHistory();
-    
+
     history.push({
       timestamp: report.timestamp,
       duration: report.duration,
       summary: report.summary,
     });
-    
+
     // Keep only last 100 entries
     if (history.length > 100) {
       history.splice(0, history.length - 100);
     }
-    
+
     this.saveHistory(history);
   }
-  
+
   generateTrends() {
     const history = this.loadHistory();
-    
+
     if (history.length < 2) {
       console.log('Not enough data for trend analysis');
       return;
     }
-    
+
     const latest = history[history.length - 1];
     const previous = history[history.length - 2];
-    
+
     console.log('\n📈 Quality Trends', 'cyan');
     console.log('================', 'cyan');
-    
+
     // Duration trend
     const durationChange = latest.duration - previous.duration;
     const durationTrend = durationChange > 0 ? '📈' : '📉';
     console.log(`${durationTrend} Duration: ${durationChange > 0 ? '+' : ''}${durationChange}ms`);
-    
+
     // Success rate trend
     const latestRate = (latest.summary.passed / latest.summary.total) * 100;
     const previousRate = (previous.summary.passed / previous.summary.total) * 100;
     const rateChange = latestRate - previousRate;
     const rateTrend = rateChange >= 0 ? '📈' : '📉';
     console.log(`${rateTrend} Success Rate: ${rateChange >= 0 ? '+' : ''}${rateChange.toFixed(1)}%`);
-    
+
     // Recent performance
     const recent = history.slice(-10);
     const avgDuration = recent.reduce((sum, entry) => sum + entry.duration, 0) / recent.length;
     const avgSuccessRate = recent.reduce((sum, entry) => sum + (entry.summary.passed / entry.summary.total) * 100, 0) / recent.length;
-    
+
     console.log('\n📊 Recent Averages (last 10 runs):', 'cyan');
     console.log(`   Duration: ${avgDuration.toFixed(0)}ms`);
     console.log(`   Success Rate: ${avgSuccessRate.toFixed(1)}%`);
   }
-  
+
   run() {
     const currentReport = this.loadCurrentReport();
-    
+
     if (!currentReport) {
       console.log('❌ No current quality gates report found');
       console.log('   Run "npm run quality-gates" first');
       process.exit(1);
     }
-    
+
     this.addToHistory(currentReport);
     this.generateTrends();
   }
@@ -939,29 +944,29 @@ on:
 jobs:
   quality-gates:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-        
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
           cache: 'npm'
-          
+
       - name: Install dependencies
         run: npm ci
-        
+
       - name: Run quality gates
         run: npm run quality-gates:ci
-        
+
       - name: Upload quality report
         uses: actions/upload-artifact@v3
         with:
           name: quality-report
           path: quality-gates-report.json
-          
+
       - name: Upload coverage reports
         uses: codecov/codecov-action@v3
         with:
@@ -1037,13 +1042,13 @@ jobs:
         with:
           node-version: '18'
           cache: 'npm'
-      
+
       - name: Install dependencies
         run: npm ci
-      
+
       - name: Run quality gates
         run: npm run quality-gates:ci
-      
+
       - name: Comment PR with results
         if: github.event_name == 'pull_request'
         uses: actions/github-script@v6
@@ -1051,17 +1056,17 @@ jobs:
           script: |
             const fs = require('fs');
             const report = JSON.parse(fs.readFileSync('quality-gates-report.json', 'utf8'));
-            
+
             const comment = `
             ## Quality Gates Report
-            
+
             **Duration:** ${report.duration}ms
             **Passed:** ${report.summary.passed}/${report.summary.total}
             **Status:** ${report.summary.failed === 0 ? '✅ PASSED' : '❌ FAILED'}
-            
+
             ${report.summary.failed > 0 ? '### Failed Checks:\n' + report.results.filter(r => r.status === 'failed').map(r => `- ${r.name}: ${r.error}`).join('\n') : ''}
             `;
-            
+
             github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,

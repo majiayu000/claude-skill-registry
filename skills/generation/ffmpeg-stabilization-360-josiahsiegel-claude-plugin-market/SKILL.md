@@ -1,5 +1,10 @@
 ---
 name: ffmpeg-stabilization-360
+description: 'MANDATORY: Always Use Backslashes on Windows for File Paths'
+---
+
+---
+name: ffmpeg-stabilization-360
 description: Complete FFmpeg video stabilization and 360/VR video processing. PROACTIVELY activate for: (1) Video stabilization (deshake, vidstab), (2) Hardware-accelerated stabilization (deshake_opencl), (3) 360/VR video transforms (v360), (4) Perspective correction (perspective), (5) Ken Burns/zoom-pan effects (zoompan), (6) Lens distortion correction (lenscorrection, lensfun), (7) Action camera footage, (8) Drone video processing, (9) VR headset formats. Provides: Stabilization workflows, 360 projection conversions, motion effects, lens correction.
 ---
 

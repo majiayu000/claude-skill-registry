@@ -1,5 +1,12 @@
 ---
 name: reality-check-sparta
+description: ADVERSARIAL data quality assessment for the SPARTA QRA pipeline with
+  self-correction loop. Actively hunts for flaws using multiple fresh verification
+  techniques.
+---
+
+---
+name: reality-check-sparta
 description: Adversarial data quality assessment for the SPARTA QRA pipeline with self-correction loop. Actively hunts for flaws using multiple fresh verification techniques. Models The Aerospace Corporation's SPARTA Framework.
 triggers: reality check sparta, sparta check, sparta quality, adversarial check, sparta fidelity, brandon review
 

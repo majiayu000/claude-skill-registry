@@ -1,5 +1,10 @@
 ---
 name: lark-agent-simple
+description: 'tags: [lark, testing, automation, markdown, token-efficient, mcp]'
+---
+
+---
+name: lark-agent-simple
 description: |
   Token-efficient Lark task creation from markdown test files.
   Uses 60-70% fewer tokens than lark-agent by executing MCP calls directly.

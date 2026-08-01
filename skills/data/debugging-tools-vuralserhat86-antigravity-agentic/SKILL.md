@@ -1,4 +1,9 @@
 ---
+name: debugging-tools-vuralserhat86-antigravity-agentic
+description: '> Debugging araçları ve teknikleri.'
+---
+
+---
 name: debugging_tools
 router_kit: FullStackKit
 description: Debugging araçları - console, debugger, network, profiling.

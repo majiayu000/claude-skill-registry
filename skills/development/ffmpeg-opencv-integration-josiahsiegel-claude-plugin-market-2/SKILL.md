@@ -1,5 +1,10 @@
 ---
 name: ffmpeg-opencv-integration
+description: '| Task | Best Library | Why |'
+---
+
+---
+name: ffmpeg-opencv-integration
 description: Complete FFmpeg + OpenCV + Python integration guide for video processing pipelines. PROACTIVELY activate for: (1) FFmpeg to OpenCV frame handoff, (2) cv2.VideoCapture vs ffmpeg subprocess, (3) BGR/RGB color format conversion gotchas, (4) Frame dimension order img[y,x] vs img[x,y], (5) ffmpegcv GPU-accelerated video I/O, (6) VidGear multi-threaded streaming, (7) Decord batch video loading for ML, (8) PyAV frame-level processing, (9) Audio stream preservation with video filters, (10) Memory-efficient frame generators, (11) OpenCV + FFmpeg + Modal parallel processing, (12) Pipe frames between FFmpeg and OpenCV. Provides: Color format conversion patterns, coordinate system gotchas, library selection guide, memory management, subprocess pipe patterns, GPU-accelerated alternatives to cv2.VideoCapture. Ensures: Correct integration between FFmpeg and OpenCV without color/coordinate bugs. See also: ffmpeg-python-integration-reference for type-safe parameter mappings.
 ---
 

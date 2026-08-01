@@ -1,5 +1,12 @@
 ---
 name: chaingraph-concepts
+description: Core ChainGraph domain concepts - flows, nodes, ports, edges, and execution.
+  Use for ANY ChainGraph development to understand the fundamental abstractions. Explains
+  what flows are, how nodes process d
+---
+
+---
+name: chaingraph-concepts
 description: Core ChainGraph domain concepts - flows, nodes, ports, edges, and execution. Use for ANY ChainGraph development to understand the fundamental abstractions. Explains what flows are, how nodes process data, port types (9 types), edge data transfer, and execution lifecycle. 19 FlowEventTypes, 21 ExecutionEventEnums. Triggers: chaingraph, flow, node, port, edge, execution, what is, how does, concept, architecture, event types.
 ---
 

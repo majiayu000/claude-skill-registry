@@ -1,5 +1,10 @@
 ---
 name: python-best-practices
+description: Expert guidance for writing clean, maintainable Python 3.12+ code.
+---
+
+---
+name: python-best-practices
 description: Expert guidance on Python 3.12+ best practices for clean, maintainable code. Use when writing or reviewing Python code requiring: (1) Type hints and generic types, (2) Async/await patterns, (3) Pydantic v2 models, (4) Clean code principles (DRY, SOLID), (5) Dependency injection, (6) Error handling patterns, (7) Code organization. Invoke when user asks about Python patterns, code quality, or when writing production Python code.
 ---
 

@@ -1,3 +1,9 @@
+---
+name: k8s-manifests-generator
+description: 'Purpose: Generate production-ready Kubernetes manifests for todo app
+  deployment (Phase V preparation).'
+---
+
 # Skill: Kubernetes Manifests Generator
 
 **Purpose**: Generate production-ready Kubernetes manifests for todo app deployment (Phase V preparation).

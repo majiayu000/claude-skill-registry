@@ -1,4 +1,10 @@
 ---
+name: fuzzing
+description: 'Essential fuzzing payloads: SQL injection, command injection, special
+  characters. Curated essentials for vulnerability testing.'
+---
+
+---
 name: SecLists Fuzzing (Curated)
 description: Essential fuzzing payloads: SQL injection, command injection, special characters. Curated essentials for vulnerability testing.
 ---
@@ -49,7 +55,7 @@ for root, dirs, files in os.walk(skill_path):
         if file.endswith('.txt'):
             filepath = os.path.join(root, file)
             print(f"Found: {filepath}")
-            
+
             # Read file content
             with open(filepath, 'r', errors='ignore') as f:
                 content = f.read().splitlines()

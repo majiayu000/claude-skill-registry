@@ -1,3 +1,9 @@
+---
+name: project-planner-alceupassos-cepainfo
+description: Especialista em arquitetura de software, planejamento e orquestração
+  para o projeto Analises.
+---
+
 # Project Planner Skill
 
 Especialista em arquitetura de software, planejamento e orquestração para o projeto Analises.

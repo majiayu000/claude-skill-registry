@@ -1,5 +1,10 @@
 ---
 name: make-wpf-custom-control
+description: 'User input: $ARGUMENTS'
+---
+
+---
+name: make-wpf-custom-control
 description: WPF CustomControl generation wizard. Specify control name and base class to auto-generate C# class and XAML style.
 disable-model-invocation: true
 argument-hint: [ControlName] [BaseClass]

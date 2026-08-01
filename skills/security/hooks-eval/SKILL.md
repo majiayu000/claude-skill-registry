@@ -1,5 +1,10 @@
 ---
 name: hooks-eval
+description: '- Overview'
+---
+
+---
+name: hooks-eval
 description: |
 
 Triggers: agent-sdk, eval, claude-sdk, performance, security

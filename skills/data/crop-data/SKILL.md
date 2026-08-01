@@ -1,5 +1,12 @@
 ---
 name: crop-data
+description: 'Crop planning data model and architecture. Use when working with crops.json,
+  bed-plan.json, TimelineCrop, or plan data structures for: (1) Understanding entity
+  relationships (Crop → PlantingConfig → P'
+---
+
+---
+name: crop-data
 description: Crop planning data model and architecture. Use when working with crops.json, bed-plan.json, TimelineCrop, or plan data structures for: (1) Understanding entity relationships (Crop → PlantingConfig → Planting → Product), (2) Determining which fields are static inputs vs calculated, (3) Identifying which entity a field belongs to (crop, product, planting, or config-level), (4) Planning data migrations or implementing the slim data architecture, (5) Modifying timeline or explorer components that consume crop data. (project)
 ---
 

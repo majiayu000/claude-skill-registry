@@ -1,5 +1,10 @@
 ---
 name: collaboration-check
+description: 'This skill supports three modes: Create, Update, and Find.'
+---
+
+---
+name: collaboration-check
 description: Create or update a RACI and stakeholder consultation validation
 argument-hint: [decision or initiative] or [update path/to/check.md]
 ---

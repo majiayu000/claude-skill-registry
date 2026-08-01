@@ -1,4 +1,9 @@
 ---
+name: scientific-thinking
+description: '> Bilimsel düşünce ve kritik analiz metodolojisi.'
+---
+
+---
 name: scientific_thinking
 router_kit: DevOpsKit
 description: Bilimsel metod, hipotez, kanıt değerlendirme, bias analizi. ⚠️ Araştırma/analiz için kullan. Mimari karar için → ultrathink-core.

@@ -1,4 +1,10 @@
 ---
+name: love-keyboard
+description: '{{SKILLDESCRIPTION}} Use this skill when working with keyboard operations,
+  key events, text input, or any keyboard-related operations in LÖVE games.'
+---
+
+---
 name: {{SKILL_NAME}}
 description: {{SKILL_DESCRIPTION}} Use this skill when working with keyboard operations, key events, text input, or any keyboard-related operations in LÖVE games.
 license: MIT

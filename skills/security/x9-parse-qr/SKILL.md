@@ -1,5 +1,11 @@
 ---
 name: x9-parse-qr
+description: You parse EMVCo QR content strings into their TLV structure, validate
+  the CRC-16 checksum, and extract the X9.150 payment URL.
+---
+
+---
+name: x9-parse-qr
 description: Parse EMVCo QR content strings — TLV breakdown, CRC validation, X9.150 URL extraction
 user-invocable: true
 tools:

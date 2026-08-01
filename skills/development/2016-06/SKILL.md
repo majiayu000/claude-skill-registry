@@ -1,3 +1,8 @@
+---
+name: 2016-06
+description: 上一篇主要温习了一下form表单的属性和表单元素，这一片主要讲解用JavaScript如何操作form。
+---
+
 #form表单那点事儿(下) 进阶篇
 
 上一篇主要温习了一下form表单的属性和表单元素，这一片主要讲解用JavaScript如何操作form。
@@ -31,9 +36,9 @@
 用JavaScript操作表单，免不了会有取值赋值操作，比如有以下表单：
 ````html
   <form id='form0'></form>
-  
+
   <form action="/login" method="post" target="blank" id='form1'>
-  
+
     <input type="text" name='user_name'>  <!--field 0-->
     <input type="email" name='user_email'>  <!--field 1-->
     <select  name='user_phone'>  <!--field 2-->
@@ -43,9 +48,9 @@
     </select>
     <input type="text" name='form0_user_phone' form='form0'>  <!--field 3-->
     <button type='submit' form='form0'>预览</button>  <!--field 4-->
-    
+
     <button type='submit'>提交</button>  <!--field 5-->
-    
+
   </form>
 ````
 用JavaScript获取表单的属性值，或者表单字段的值，可以直接通过 `elem.name` 的方式
@@ -58,10 +63,10 @@ alert(form1.user_name.value) => ''
 ````javascript
 
 // 属于本表单元素nodelist类数组，如果通过form属性指定到其他表单，不会算作本表单元素，下面获取到的元素是field 0，field 1，field 2，field 5
-console.log(form1.elements);  => [<input>...,...,...</button>] 
+console.log(form1.elements);  => [<input>...,...,...</button>]
 
 // 属于本表单元素个数，如果通过form属性指定到其他表单，不会算作本表单元素
-console.log(form1.length);  => 4 
+console.log(form1.length);  => 4
 
 // nodelist中下标为2的表单元素
 console.log(form1[1]);  => <input type="email" name='user_email'>
@@ -92,10 +97,10 @@ form1.method = 'GET';
 而给表单元素赋值，则是通过 `elem.value` 的方式，例如
 ````javascript
 // 将user_name的值设定为 "hello world"
-form1.user_name.value = "hello world"; 
+form1.user_name.value = "hello world";
 
 // 选中select中值为2的option
-form1.user_phone.value = 2; 
+form1.user_phone.value = 2;
 ````
 
 <a name='reset'></a>
@@ -246,7 +251,7 @@ form1.onsubmit = function(event){
 
 var form = $('form'),
     fields = form.find(':input');
- 
+
 form.on('submit',function(event){
    event.preventDefault(); // 阻止默认事件，表单将不会提交到服务器
    fields.each(function(){

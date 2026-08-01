@@ -1,3 +1,9 @@
+---
+name: auth-scaffold
+description: '> Generate Complete Auth System: Login, register, forgot password, and
+  session management.'
+---
+
 # Auth Scaffold Skill
 
 > **Generate Complete Auth System**: Login, register, forgot password, and session management.
@@ -140,7 +146,7 @@ export function LoginForm() {
 
   const onSubmit = async (data: z.infer<typeof loginSchema>) => {
     setError("")
-    
+
     const result = await signIn("credentials", {
       email: data.email,
       password: data.password,

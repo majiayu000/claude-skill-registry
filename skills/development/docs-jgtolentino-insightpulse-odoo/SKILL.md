@@ -1,8 +1,13 @@
+---
+name: docs-jgtolentino-insightpulse-odoo
+description: 'Date: November 1, 2025'
+---
+
 # Audit Skill Implementation Summary
 
-**Date**: November 1, 2025  
-**Task**: Equip agent with comprehensive audit skills and capabilities  
-**Reference**: https://github.com/anthropics/skills  
+**Date**: November 1, 2025
+**Task**: Equip agent with comprehensive audit skills and capabilities
+**Reference**: https://github.com/anthropics/skills
 **Status**: ✅ **COMPLETE**
 
 ---
@@ -331,7 +336,7 @@ The audit skill implementation is **complete and production ready**. It provides
 
 ---
 
-**Implementation Date**: 2025-11-01  
-**Version**: 1.0.0  
-**Maintainer**: InsightPulse Team  
+**Implementation Date**: 2025-11-01
+**Version**: 1.0.0
+**Maintainer**: InsightPulse Team
 **Status**: ✅ Production Ready

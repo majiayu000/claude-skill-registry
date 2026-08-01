@@ -1,5 +1,13 @@
 ---
 name: wix-embedded-script
+description: Creates embedded script extensions for Wix CLI applications. Embedded
+  scripts are HTML code fragments that get injected into the DOM of Wix sites, enabling
+  integration with third-party services, analytics tracking, advertising, and custom
+  JavaScript functionality.
+---
+
+---
+name: wix-embedded-script
 description: Creates embedded scripts for Wix sites that inject HTML/JavaScript code into the DOM. Used for analytics tracking, advertising pixels, third-party integrations, custom JavaScript functionality, and dynamic client-side behavior. Use when adding tracking code (Google Analytics, Hotjar, Mixpanel), advertising pixels (Facebook Pixel, Google Ads), chat widgets, custom popups/modals, cookie consent banners, or dynamic client-side features. Triggers: embed, script, inject, tracking, analytics, pixel, advertising, popup, modal, chat widget, third-party, integration, JavaScript, HTML, DOM, client-side, cookie, consent, head, body.
 license: MIT
 compatibility: Requires Wix CLI project with embedded script extension support

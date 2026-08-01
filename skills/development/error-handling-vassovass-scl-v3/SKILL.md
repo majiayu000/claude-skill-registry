@@ -1,4 +1,11 @@
 ---
+name: error-handling-vassovass-scl-v3
+description: Centralized error handling system for StepLeague using AppError class,
+  error codes, and reporting. Use when implementing error handling, catching exceptions,
+  or displaying error messages to users. Key
+---
+
+---
 name: error-handling
 description: Centralized error handling system for StepLeague using AppError class, error codes, and reporting. Use when implementing error handling, catching exceptions, or displaying error messages to users. Keywords: error, exception, AppError, ErrorCode, catch, try, toast, logging.
 compatibility: Antigravity, Claude Code, Cursor
@@ -247,7 +254,7 @@ When adding new features that need specific error handling:
 ```typescript
 export enum ErrorCode {
   // ... existing codes
-  
+
   // New feature errors
   MY_FEATURE_FAILED = 'MY_FEATURE_FAILED',
   MY_FEATURE_INVALID = 'MY_FEATURE_INVALID',

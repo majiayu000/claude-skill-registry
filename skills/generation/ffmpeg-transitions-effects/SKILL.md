@@ -1,5 +1,10 @@
 ---
 name: ffmpeg-transitions-effects
+description: 'MANDATORY: Always Use Backslashes on Windows for File Paths'
+---
+
+---
+name: ffmpeg-transitions-effects
 description: Complete video transition system. PROACTIVELY activate for: (1) xfade transitions (40+ types), (2) Fade in/out effects, (3) Crossfades and dissolves, (4) Wipe transitions (directional), (5) Slide and push effects, (6) Circle/iris transitions, (7) Multi-clip transition sequences, (8) Slideshow creation, (9) Custom transition expressions, (10) Audio crossfade synchronization. Provides: Complete xfade type reference, offset calculation formulas, multi-clip examples, custom expression guide, troubleshooting for resolution/framerate mismatches. Ensures: Smooth professional transitions between video clips.
 ---
 

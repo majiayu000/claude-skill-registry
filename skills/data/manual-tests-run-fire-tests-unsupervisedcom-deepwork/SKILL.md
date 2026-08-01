@@ -1,4 +1,10 @@
 ---
+name: manual-tests-run-fire-tests
+description: Runs all 'should fire' tests serially with git reverts between each.
+  Use after NOT-fire tests to verify rules fire correctly.
+---
+
+---
 name: manual_tests.run_fire_tests
 description: "Runs all 6 'should fire' tests serially with resets between each. Use after NOT-fire tests to verify rules fire correctly."user-invocable: false---
 

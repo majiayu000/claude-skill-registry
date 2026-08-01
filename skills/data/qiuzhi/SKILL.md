@@ -1,3 +1,8 @@
+---
+name: qiuzhi
+description: 指导Claude按照二哥的风格撰写求职类文章，包括公司薪资爆料、年终奖盘点、求职攻略、offer选择建议等内容。
+---
+
 # 求职类文章写作 Skill
 
 ## 概述

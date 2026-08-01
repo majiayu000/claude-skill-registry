@@ -1,5 +1,11 @@
 ---
 name: tdd
+description: 'Comprehensive testing workflow: TDD cycle, test suggestions, generation,
+  and property-based testing.'
+---
+
+---
+name: tdd
 description: Comprehensive test-driven development: TDD workflow, test suggestions from diff,
 test generation, and property-based testing. Use when: (1) implementing new features,
 (2) fixing bugs, (3) refactoring code, (4) reviewing test coverage.

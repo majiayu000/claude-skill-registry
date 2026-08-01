@@ -1,5 +1,15 @@
 ---
 name: squid-game-survival-thriller-cinematic-portrait
+description: 'This prompt instructs an image-generation system to produce a photorealistic,
+  portrait-oriented survival-thriller scene: a waist-up central protagonist in a worn
+  green “016” tracksuit, lit by a single overhead spotlight in a foggy, dark enclosed
+  arena, while five to six red-hooded, geometrically masked guards form a symmetrical
+  semicircle behind. It specifies camera framing, depth of field, lighting color temperature,
+  palette contrast, textures, and subtle blood details, and it constrains the ou'
+---
+
+---
+name: squid-game-survival-thriller-cinematic-portrait
 description: This prompt instructs an image-generation system to produce a photorealistic, portrait-oriented survival-thriller scene: a waist-up central protagonist in a worn green “016” tracksuit, lit by a single overhead spotlight in a foggy, dark enclosed arena, while five to six red-hooded, geometrically masked guards form a symmetrical semicircle behind. It specifies camera framing, depth of field, lighting color temperature, palette contrast, textures, and subtle blood details, and it constrains the output to preserve the subject’s exact facial identity, hair, and skin tone from a reference image, resulting in an 8K, matte film-graded cinematic portrait emphasizing tension and defiance.
 skillVersionId: 019a240d-3f32-74b6-a201-3961112cd042
 ---

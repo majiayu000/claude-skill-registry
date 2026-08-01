@@ -1,3 +1,8 @@
+---
+name: definition-of-done
+description: Skill from jarosser06/da-vinci
+---
+
 # Definition of Done
 
 **Description**: Validate completed work against issue requirements and acceptance criteria. Use when finishing work on an issue to ensure all requirements are met.

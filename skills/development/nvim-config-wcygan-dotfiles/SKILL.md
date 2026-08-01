@@ -1,5 +1,11 @@
 ---
 name: nvim-config
+description: Manages Neovim configuration through Lua-based init files and modular
+  configuration structure.
+---
+
+---
+name: nvim-config
 description: Configure Neovim editor with init.lua, plugin management, LSP setup, keymaps, and options. Use when setting up Neovim, adding plugins, configuring language servers, or customizing keybindings. Keywords: neovim, nvim, init.lua, vim, plugin, LSP, keymap, configure, vimscript
 allowed-tools: Read, Write, Edit, Bash(cat:*), Bash(nvim:*)
 ---

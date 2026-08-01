@@ -1,4 +1,9 @@
 ---
+name: research-synthesizer
+description: '> Araştırma özetleme ve insight çıkarma rehberi.'
+---
+
+---
 name: research_synthesizer
 router_kit: ManagementKit
 description: Araştırma bulgularını özetleme, insight çıkarma ve actionable recommendations oluşturma rehberi.

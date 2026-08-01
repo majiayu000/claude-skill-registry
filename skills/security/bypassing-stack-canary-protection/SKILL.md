@@ -1,3 +1,8 @@
+---
+name: bypassing-stack-canary-protection
+description: <!-- Copyright (c) 2026 defconxt. All rights reserved. -->
+---
+
 <!-- Copyright (c) 2026 defconxt. All rights reserved. -->
 <!-- Licensed under AGPL-3.0 — see LICENSE file for details. -->
 <!-- CIPHER is a trademark of defconxt. -->
@@ -66,7 +71,7 @@ canary = int(p.recvline().strip(), 16)
 log.success(f"Canary: {hex(canary)}")
 
 # Verify: canary ends in \x00 on Linux
-assert canary & 0xff == 0, "Invalid canary (should end in null byte)" 
+assert canary & 0xff == 0, "Invalid canary (should end in null byte)"
 ```
 
 ### Step 3: Brute Force Canary on Forking Server

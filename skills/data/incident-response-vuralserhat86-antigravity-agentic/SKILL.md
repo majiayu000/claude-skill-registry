@@ -1,4 +1,11 @@
 ---
+name: incident-response-vuralserhat86-antigravity-agentic
+description: This skill empowers Claude to guide you through the security incident
+  response process, ensuring a structured and effective approach to handling security
+  breaches and attacks. It helps you classify in
+---
+
+---
 name: incident_response
 router_kit: DevOpsKit
 description: Coordinate security incident response efforts. Includes classification, playbook generation, evidence gathering, and remediation planning. Validates response strategies against best practices.

@@ -1,5 +1,10 @@
 ---
 name: gtm-brief
+description: 'This skill supports three modes: Create, Update, and Find.'
+---
+
+---
+name: gtm-brief
 description: Create or update a go-to-market brief
 argument-hint: [product/feature name] or [update path/to/gtm-brief.md]
 ---

@@ -1,5 +1,12 @@
 ---
 name: east
+description: 'East programming language - a statically typed, expression-based language
+  embedded in TypeScript. Use when writing East programs with @elaraai/east. Triggers
+  for: (1) Writing East functions with East.'
+---
+
+---
+name: east
 description: East programming language - a statically typed, expression-based language embedded in TypeScript. Use when writing East programs with @elaraai/east. Triggers for: (1) Writing East functions with East.function() or East.asyncFunction(), (2) Defining types (IntegerType, StringType, ArrayType, StructType, VariantType, etc.), (3) Using platform functions with East.platform() or East.asyncPlatform(), (4) Compiling East programs with East.compile(), (5) Working with East expressions (arithmetic, collections, control flow), (6) Serializing East IR with .toIR() and EastIR.fromJSON(), (7) Standard library operations (formatting, rounding, generation).
 ---
 

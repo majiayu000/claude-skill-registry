@@ -1,4 +1,9 @@
 ---
+name: review-renovate
+description: Execute /review-renovate slash command.
+---
+
+---
 name: reviewing-renovate-prs
 description: Reviews and merges Renovate dependency update PRs. Use when: user wants to review renovate PRs, handle dependency updates, or merge renovate changes.
 ---

@@ -1,5 +1,10 @@
 ---
 name: testing-python
+description: This skill provides guidelines and best practices.
+---
+
+---
+name: testing-python
 description: Regla 07: Pruebas. Use when writing tests, reviewing test coverage, or setting up testing.
 ---
 

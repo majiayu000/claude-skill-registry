@@ -1,5 +1,10 @@
 ---
 name: market-segment
+description: 'This skill supports three modes: Create, Update, and Find.'
+---
+
+---
+name: market-segment
 description: Create or update a market segment definition
 argument-hint: [segment name] or [update path/to/segment.md]
 ---

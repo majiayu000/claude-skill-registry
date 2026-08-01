@@ -1,5 +1,11 @@
 ---
 name: bonding-analysis
+description: Chemical bonding analysis using Quantum ESPRESSO and Python post-processing
+  tools.
+---
+
+---
+name: bonding-analysis
 description: Bonding Analysis (10 sub-skills: bader2pqr, bader-charge, charge-density, charge-density-difference, charge-format-conversion, elf-analysis, lobster-cohp, orbital-projection, planar-charge, stm-simula
 ---
 

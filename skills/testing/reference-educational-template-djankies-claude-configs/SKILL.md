@@ -1,5 +1,11 @@
 ---
 name: reference-educational-template
+description: '[REPLACE] Teach concepts and demonstrate patterns with examples. Use
+  when [REPLACE with specific triggers].'
+---
+
+---
+name: reference-educational-template
 description: [REPLACE] Teach concepts and demonstrate patterns with examples. Use when [REPLACE with specific triggers].
 allowed-tools: Read, TodoWrite
 ---

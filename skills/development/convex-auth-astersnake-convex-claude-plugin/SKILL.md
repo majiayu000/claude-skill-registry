@@ -1,5 +1,11 @@
 ---
 name: convex-auth
+description: Convex Auth - authentication, user management, protected functions, and
+  session handling
+---
+
+---
+name: convex-auth
 description: Convex Auth - authentication, user management, protected functions, and session handling
 globs:
   - "convex/**/*.ts"

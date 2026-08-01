@@ -1,3 +1,8 @@
+---
+name: nextjs-best-practices
+description: '---name: nextjs-best-practices'
+---
+
 ---name: nextjs-best-practices
 description: Guidelines for building scalable, SEO-friendly applications with Next.js (App Router).
 license: MIT

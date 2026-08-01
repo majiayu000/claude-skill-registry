@@ -1,4 +1,10 @@
 ---
+name: skill-quality-gates
+description: Complete pre-PR validation combining linting, testing, and quality checks.
+  Ensures all changes meet project standards before opening a pull request.
+---
+
+---
 name: quality-gates
 description: Complete pre-PR quality gates combining linting and testing. Use before opening a pull request, after completing a task, or when comprehensive validation is needed. Sequentially runs: lint → unit tests → integration tests → E2E tests. Triggers on "quality gates", "pre-pr check", "before PR", "validate changes", "run all checks".
 ---
@@ -297,16 +303,16 @@ Required before:
 
 1. Linting
    - Use: skill-linting-complete
-   
+
 2. Unit Tests
    - Use: Wallaby MCP or npm test
-   
+
 3. Integration Tests
    - Use: npm run test:integration
-   
+
 4. E2E Tests
    - Use: TestSprite MCP (skill-testsprite-pre-pr)
-   
+
 Note: Agent Browser CLI not available in codespace
 ```
 
@@ -317,13 +323,13 @@ Note: Agent Browser CLI not available in codespace
 
 1. Linting
    - Use: skill-linting-complete
-   
+
 2. Unit Tests
    - Use: Wallaby MCP (live feedback)
-   
+
 3. Integration Tests
    - Use: npm test:integration
-   
+
 4. E2E Tests
    - Quick: Agent Browser CLI (exploration)
    - Full: TestSprite MCP (regression)
@@ -338,16 +344,16 @@ All gates run automatically:
 
 1. Linting
    - npm run lint
-   
+
 2. Unit Tests
    - npm test -- --coverage
-   
+
 3. Integration Tests
    - npm run test:integration
-   
+
 4. E2E Tests
    - TestSprite MCP in headless mode
-   
+
 Fail fast: Stop at first failing gate
 ```
 

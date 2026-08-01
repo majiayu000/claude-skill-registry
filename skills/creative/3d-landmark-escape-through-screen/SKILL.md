@@ -1,5 +1,16 @@
 ---
 name: 3d-landmark-escape-through-screen
+description: 'This prompt instructs an AI image generator to create a hyper-realistic,
+  square travel advertisement featuring a hand holding a sleek, glossy, minimal-bezel
+  device that acts as a 3D portal: an iconic landmark from the specified country appears
+  on the screen and seamlessly extends into the real-world background. The resulting
+  image includes warm natural lighting, regional scenery, birds and an airplane in
+  a bright blue sky, and prominent bold sans-serif text displaying the country name
+  above the'
+---
+
+---
+name: 3d-landmark-escape-through-screen
 description: This prompt instructs an AI image generator to create a hyper-realistic, square travel advertisement featuring a hand holding a sleek, glossy, minimal-bezel device that acts as a 3D portal: an iconic landmark from the specified country appears on the screen and seamlessly extends into the real-world background. The resulting image includes warm natural lighting, regional scenery, birds and an airplane in a bright blue sky, and prominent bold sans-serif text displaying the country name above the scene.
 skillVersionId: 019816b9-c1b0-7d79-9f32-a7102bbf7bdd
 ---

@@ -1,3 +1,8 @@
+---
+name: when-training-neural-networks-use-flow-nexus-neural
+description: 'skillname: when-training-neural-networks-use-flow-nexus-neural'
+---
+
 # Flow Nexus Neural Network Training SOP
 
 ```yaml

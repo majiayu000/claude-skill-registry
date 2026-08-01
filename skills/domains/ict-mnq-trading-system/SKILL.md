@@ -1,4 +1,9 @@
 ---
+name: ict-mnq-trading-system
+description: '| Parameter | Value |'
+---
+
+---
 name: ict-mnq-trading
 description: ICT-based MNQ futures trading analysis system for MFFU prop firm evaluation. Use when user provides market data (PDH, PDL, FVG levels, liquidity sweeps) and asks for trade analysis, entry/exit points, or bias confirmation. Also handles advanced concepts: breaker blocks, rejection blocks, SMT divergence, Power of 3, Judas Swing, OTE, NWOG, NDOG. Triggers on keywords like "trade setup", "NQ analysis", "entry", "SL", "TP", "bias", "liquidity sweep", "FVG", "order block", "ICT", "MMXM", "MMBM", "MMSM", "market maker model", "smart money reversal", "SMR", "breaker", "rejection block", "SMT", "Power of 3", "Judas swing", "OTE", "opening gap", "NWOG", "NDOG".
 ---
@@ -98,7 +103,7 @@ For standard LONG setups:
 - TP2: HTF draw on liquidity
 
 For standard SHORT setups:
-- Entry: 50% of bearish FVG or bottom of bearish OB  
+- Entry: 50% of bearish FVG or bottom of bearish OB
 - SL: Above FVG/OB high OR above liquidity sweep high (max 25 points)
 - TP1: Nearest buy-side liquidity (equal lows, PDL, session low)
 - TP2: HTF draw on liquidity

@@ -1,3 +1,8 @@
+---
+name: mechanics
+description: Executes another MetaSkill, which must be located in
+---
+
 ## Description
 
 Executes another [MetaSkill](/Skills/Metaskills), which must be located in
@@ -15,11 +20,11 @@ targeter is specified.
 | executeafterdeath | continueafterdeath | Whether the metaskill should be able to be called after the caster's death                                                                                 | false   |
 | snapshotcasterstats | snapshotstats, scs | Whether the caster's stats at the moment of the skill execution should be "saved in memory", so that every subsequent check/fetch operation made against them returns the saved amount. This can be useful if the metaskill includes somewhat big delays and the caster's stats can change during the metaskill execution | false |
 ### Branch Attribute
-Every time a skill is triggered from the mob file via a trigger, a `SkillTree` is generated. The `SkillTree` holds many informations, and among them there are the [Skill-Scoped Variables](/Skills/Variables#variable-scopes) and the [Skill Parameters](/Skills/Metaskills#skill-parameters-premium-feature) and their value.  
+Every time a skill is triggered from the mob file via a trigger, a `SkillTree` is generated. The `SkillTree` holds many informations, and among them there are the [Skill-Scoped Variables](/Skills/Variables#variable-scopes) and the [Skill Parameters](/Skills/Metaskills#skill-parameters-premium-feature) and their value.
 
 This makes their value accessible from any mechanic or metaskill that is being called from the same skilltree they are in, but it also makes them **unique**: there can exist only one `Skill Scoped Variable` or one `Skill Parameter` with the same name in the `SkillTree`, and setting more than one will override the value.
 
-## 
+##
 
 ```yaml
 TestSkill_1:
@@ -39,7 +44,7 @@ TestSkill_3:
 ```
 > In this instance you can see how this all works out: the value of the skill scoped variable is set on all called metaskills, but since the skilltree is only one, the value is overridden multiple times, until, at the end, the value "3" is returned
 
-## 
+##
 
 The `branch` Attribute, meanwhile, makes this no longer true: if set to true on a skill mechanic, it makes the called metaskill have a brand new `SkillTree`, without it sharing any skill scoped variable or skill parameter
 
@@ -72,7 +77,7 @@ TestSkill_3:
 The attribute "sync=true" will be inherited by any sub-skills and cannot
 be set to *false* later in a skill-tree.
 
-## 
+##
 
 ```yaml
   Skills:

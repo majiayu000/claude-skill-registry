@@ -1,4 +1,11 @@
 ---
+name: bio-basecalling-gptomics-bioskills
+description: Convert raw Nanopore signal data (FAST5/POD5) to nucleotide sequences
+  using Dorado basecaller. Covers model selection, GPU acceleration, modified base
+  detection, and quality filtering. Use when proces
+---
+
+---
 name: bio-basecalling
 description: Convert raw Nanopore signal data (FAST5/POD5) to nucleotide sequences using Dorado basecaller. Covers model selection, GPU acceleration, modified base detection, and quality filtering. Use when processing raw Nanopore data before alignment. Note: Guppy is deprecated; use Dorado for all new analyses.
 tool_type: cli

@@ -1,5 +1,12 @@
 ---
 name: astro-patterns
+description: Astro best practices, routing patterns, component architecture, and static
+  site generation techniques. Use when building Astro websites, setting up routing,
+  designing component architecture, configuri
+---
+
+---
+name: astro-patterns
 description: Astro best practices, routing patterns, component architecture, and static site generation techniques. Use when building Astro websites, setting up routing, designing component architecture, configuring static site generation, optimizing build performance, implementing content strategies, or when user mentions Astro patterns, routing, component design, SSG, static sites, or Astro best practices.
 allowed-tools: - Read
   - Write

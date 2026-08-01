@@ -1,5 +1,10 @@
 ---
 name: memory-checkpoint
+description: 在對話被 Summarize 壓縮前，主動將詳細記憶外部化到 Memory Bank，避免重要上下文遺失。
+---
+
+---
+name: memory-checkpoint
 description: Externalize detailed memory to Memory Bank before conversation summarization to prevent context loss. Triggers: CP, checkpoint, save, 存檔, 記一下, 保存, sync memory, dump, 先記著, 備份, backup, snapshot, 快照, 記錄, 等等, 先停, pause, 離開前, before leaving, 收工.
 version: 2.1.0
 category: memory

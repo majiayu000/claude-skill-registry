@@ -1,5 +1,11 @@
 ---
 name: notebooklm-cli
+description: This skill provides complete access to Google NotebookLM through the
+  nlm CLI.
+---
+
+---
+name: notebooklm-cli
 description: Comprehensive CLI for Google NotebookLM including notebooks, sources, and generated artifacts (audio, reports, quizzes, flashcards, mind maps, slides, infographics, videos, data tables). Use when working with NotebookLM programmatically: managing notebooks/sources, generating artifacts, querying sources via chat, or importing research.
 ---
 

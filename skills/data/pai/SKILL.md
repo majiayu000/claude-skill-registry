@@ -1,3 +1,8 @@
+---
+name: pai
+description: 🔨 GENERATED FILE - Do not edit directly
+---
+
 <!--
   🔨 GENERATED FILE - Do not edit directly
   Edit:   ~/.claude/skills/PAI/Components/

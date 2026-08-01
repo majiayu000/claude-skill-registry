@@ -1,3 +1,9 @@
+---
+name: planning-congdon1207-agents-md
+description: 'description: Use when you need to plan technical solutions that are
+  scalable, secure, and maintainable.'
+---
+
 ﻿---
 name: planning
 description: Use when you need to plan technical solutions that are scalable, secure, and maintainable.

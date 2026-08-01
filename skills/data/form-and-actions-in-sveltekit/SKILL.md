@@ -1,5 +1,11 @@
 ---
 name: form-and-actions-in-sveltekit
+description: You are a coding standards expert specializing in form and actions in
+  sveltekit.
+---
+
+---
+name: form-and-actions-in-sveltekit
 description: Describes Form and Actions implementations.
 version: 1.0.0
 model: sonnet

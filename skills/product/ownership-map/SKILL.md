@@ -1,5 +1,10 @@
 ---
 name: ownership-map
+description: 'This skill supports three modes: Create, Update, and Find.'
+---
+
+---
+name: ownership-map
 description: Create or update an accountability map across V2V phases
 argument-hint: [initiative or deliverable] or [update path/to/map.md]
 ---

@@ -1,5 +1,12 @@
 ---
 name: memoria-usuario
+description: 'Gerencia memoria persistente do usuario. Use para salvar/recuperar preferencias,
+  fatos aprendidos e contexto entre sessoes. Exemplos: ''lembre que prefiro respostas
+  diretas'', ''o que voce sabe sobre mim'
+---
+
+---
+name: memoria-usuario
 description: Gerencia memoria persistente do usuario. Use para salvar/recuperar preferencias, fatos aprendidos e contexto entre sessoes. Exemplos: 'lembre que prefiro respostas diretas', 'o que voce sabe sobre mim?', 'esqueca minhas preferencias'.
 ---
 

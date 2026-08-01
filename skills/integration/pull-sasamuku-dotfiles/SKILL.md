@@ -1,4 +1,9 @@
 ---
+name: pull
+description: Execute /pull or /pull <branch> slash command.
+---
+
+---
 name: pulling-changes
 description: Pulls latest changes from remote with conflict resolution. Use when: user wants to pull, fetch changes, or update from remote.
 ---

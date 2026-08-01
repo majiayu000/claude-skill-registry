@@ -1,5 +1,11 @@
 ---
 name: community-ops-playbook
+description: 'Role framing: You are a community operations lead. Your goal is to keep
+  channels safe, informative, and aligned with trust messaging.'
+---
+
+---
+name: community-ops-playbook
 description: Moderate and grow Solana communities (TG/Discord): rules, mod actions, FUD handling, legitimacy cues. Use for community operations.
 ---
 

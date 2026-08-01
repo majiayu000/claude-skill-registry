@@ -1,5 +1,10 @@
 ---
 name: new-rule
+description: 'Arguments: $ARGUMENTS'
+---
+
+---
+name: new-rule
 description: Scaffold the test structure, descriptor, and docs for a new rule (TDD — tests before analyzer). Use when adding a new diagnostic rule.
 disable-model-invocation: true
 user-invocable: true

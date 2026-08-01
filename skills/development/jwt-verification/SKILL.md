@@ -1,3 +1,10 @@
+---
+name: jwt-verification
+description: Verify JWT tokens in backend services and enforce authenticated user
+  context. This skill establishes patterns for token validation, claim extraction,
+  and user context propagation throughout the backend request lifecycle.
+---
+
 # Skill: jwt-verification
 
 ## Purpose

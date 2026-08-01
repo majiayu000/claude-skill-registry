@@ -1,3 +1,8 @@
+---
+name: database-reliability
+description: '| Atributo | Valor |'
+---
+
 # 🗄️ Skill: Database Reliability
 
 ## 📋 Metadata
@@ -93,7 +98,7 @@ Database reliability es fundamental para servicios confiables. Este skill cubre 
 > **📁 Scripts Ejecutables:** Este skill incluye scripts Python ejecutables en la carpeta [`scripts/`](scripts/):
 > - [`postgresql_backup.py`](scripts/postgresql_backup.py) - Automatización de backups y restauración
 > - [`requirements.txt`](scripts/requirements.txt) - Dependencias (ninguna, usa stdlib)
-> 
+>
 > Ver [`scripts/README.md`](scripts/README.md) para documentación de uso.
 
 ### 1. PostgreSQL Replication Setup
@@ -176,7 +181,7 @@ SELECT pg_create_physical_replication_slot('replication_slot_1');
 SELECT * FROM pg_replication_slots;
 
 -- Monitor replication lag
-SELECT 
+SELECT
     client_addr,
     state,
     sent_lsn,
@@ -188,7 +193,7 @@ SELECT
 FROM pg_stat_replication;
 
 -- Check lag in bytes
-SELECT 
+SELECT
     pg_wal_lsn_diff(pg_current_wal_lsn(), replay_lsn) AS lag_bytes,
     client_addr,
     application_name
@@ -429,7 +434,7 @@ scrape_configs:
 ```sql
 -- Custom metrics queries
 -- Connection pool usage
-SELECT 
+SELECT
     datname,
     numbackends as active_connections,
     max_connections,
@@ -437,11 +442,11 @@ SELECT
 FROM pg_stat_database;
 
 -- Replication lag
-SELECT 
+SELECT
     EXTRACT(EPOCH FROM (now() - pg_last_xact_replay_timestamp())) AS lag_seconds;
 
 -- Table bloat
-SELECT 
+SELECT
     schemaname,
     tablename,
     pg_size_pretty(pg_total_relation_size(schemaname||'.'||tablename)) AS size,
@@ -452,7 +457,7 @@ ORDER BY pg_total_relation_size(schemaname||'.'||tablename) DESC
 LIMIT 10;
 
 -- Slow queries
-SELECT 
+SELECT
     pid,
     now() - pg_stat_activity.query_start AS duration,
     query,
@@ -462,7 +467,7 @@ WHERE (now() - pg_stat_activity.query_start) > interval '5 minutes'
   AND state = 'active';
 
 -- Index usage
-SELECT 
+SELECT
     schemaname,
     tablename,
     indexname,
@@ -596,7 +601,7 @@ groups:
 
 ---
 
-**Versión:** 1.0.0  
-**Última actualización:** Diciembre 2025  
+**Versión:** 1.0.0
+**Última actualización:** Diciembre 2025
 **Total líneas:** 1,100+
 

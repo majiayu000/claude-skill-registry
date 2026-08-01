@@ -1,3 +1,8 @@
+---
+name: post-mortem
+description: '| ID | sre-post-mortem |'
+---
+
 # 📋 Skill: Post-Mortem Process
 
 ## 📋 Metadata
@@ -119,13 +124,13 @@ Un post-mortem es un análisis estructurado y blameless de un incidente que busc
 ```markdown
 # Post-Mortem: [Incident Title]
 
-**Incident ID:** [INC-YYYYMMDD-HHMMSS]  
-**Date:** [Date]  
-**Duration:** [Start Time] - [End Time] (X minutes/hours)  
-**Severity:** [SEV1/SEV2/SEV3]  
-**Affected Services:** [Service names]  
-**On-Call Engineer:** [Name]  
-**Post-Mortem Lead:** [Name]  
+**Incident ID:** [INC-YYYYMMDD-HHMMSS]
+**Date:** [Date]
+**Duration:** [Start Time] - [End Time] (X minutes/hours)
+**Severity:** [SEV1/SEV2/SEV3]
+**Affected Services:** [Service names]
+**On-Call Engineer:** [Name]
+**Post-Mortem Lead:** [Name]
 **Status:** [Draft/Review/Final]
 
 ---
@@ -377,8 +382,8 @@ Un post-mortem es un análisis estructurado y blameless de un incidente que busc
 
 ---
 
-**Document Version:** 1.0  
-**Last Updated:** [Date]  
+**Document Version:** 1.0
+**Last Updated:** [Date]
 **Next Review:** [Date]
 ```
 
@@ -428,13 +433,13 @@ class PostMortem:
     on_call_engineer: str
     post_mortem_lead: str
     status: str = "draft"  # draft, review, final
-    
+
     # Impact
     users_affected: Optional[int] = None
     revenue_impact: Optional[float] = None
     sla_breach: bool = False
     error_budget_consumption: Optional[float] = None
-    
+
     # Content
     executive_summary: str = ""
     root_cause: str = ""
@@ -443,7 +448,7 @@ class PostMortem:
     timeline: List[TimelineEvent] = field(default_factory=list)
     action_items: List[ActionItem] = field(default_factory=list)
     lessons_learned: Dict[str, List[str]] = field(default_factory=dict)
-    
+
     # Metrics
     mttr_minutes: Optional[int] = None
     mttd_minutes: Optional[int] = None
@@ -453,12 +458,12 @@ class PostMortem:
 class PostMortemGenerator:
     def __init__(self):
         self.template_path = "templates/postmortem.md"
-    
+
     def generate(self, postmortem: PostMortem) -> str:
         """Generate post-mortem document from data structure"""
         with open(self.template_path, 'r') as f:
             template = f.read()
-        
+
         # Replace template variables
         content = template.replace("{{INCIDENT_ID}}", postmortem.incident_id)
         content = content.replace("{{TITLE}}", postmortem.title)
@@ -469,24 +474,24 @@ class PostMortemGenerator:
         content = content.replace("{{EXECUTIVE_SUMMARY}}", postmortem.executive_summary)
         content = content.replace("{{ROOT_CAUSE}}", postmortem.root_cause)
         content = content.replace("{{RESOLUTION}}", postmortem.resolution)
-        
+
         # Generate timeline table
         timeline_table = self._generate_timeline_table(postmortem.timeline)
         content = content.replace("{{TIMELINE}}", timeline_table)
-        
+
         # Generate action items
         action_items = self._generate_action_items(postmortem.action_items)
         content = content.replace("{{ACTION_ITEMS}}", action_items)
-        
+
         return content
-    
+
     def _generate_timeline_table(self, events: List[TimelineEvent]) -> str:
         """Generate markdown table from timeline events"""
         rows = ["| Time | Event | Actor | Notes |", "|------|-------|-------|-------|"]
         for event in sorted(events, key=lambda e: e.time):
             rows.append(f"| {event.time.strftime('%H:%M %p')} | {event.event} | {event.actor} | {event.notes or ''} |")
         return "\n".join(rows)
-    
+
     def _generate_action_items(self, items: List[ActionItem]) -> str:
         """Generate action items list"""
         sections = {
@@ -494,10 +499,10 @@ class PostMortemGenerator:
             "short-term": [],
             "long-term": []
         }
-        
+
         for item in items:
             sections[item.priority].append(item)
-        
+
         output = []
         for priority, title in [("immediate", "Immediate (Next 24 hours)"),
                                 ("short-term", "Short-term (Next week)"),
@@ -507,9 +512,9 @@ class PostMortemGenerator:
                 for item in sections[priority]:
                     status_icon = "✅" if item.status == "completed" else "⏳" if item.status == "in-progress" else "📋"
                     output.append(f"- {status_icon} **{item.description}** - Owner: {item.owner} - Due: {item.due_date.strftime('%Y-%m-%d')}")
-        
+
         return "\n".join(output)
-    
+
     def export_json(self, postmortem: PostMortem) -> str:
         """Export post-mortem as JSON"""
         data = {
@@ -544,7 +549,7 @@ class PostMortemGenerator:
 # Example usage
 if __name__ == "__main__":
     generator = PostMortemGenerator()
-    
+
     postmortem = PostMortem(
         incident_id="INC-20240115-1000",
         title="Database Connection Pool Exhaustion",
@@ -568,7 +573,7 @@ if __name__ == "__main__":
             ActionItem("AI-002", "Add connection pool monitoring", "sre@example.com", datetime(2024, 1, 22), "short-term"),
         ]
     )
-    
+
     markdown = generator.generate(postmortem)
     print(markdown)
 ```
@@ -828,7 +833,7 @@ if __name__ == "__main__":
 
 ---
 
-**Versión:** 1.0.0  
-**Última actualización:** Diciembre 2025  
+**Versión:** 1.0.0
+**Última actualización:** Diciembre 2025
 **Total líneas:** 800+
 

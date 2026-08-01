@@ -1,3 +1,8 @@
+---
+name: feature-validator
+description: 'name: Validate features'
+---
+
 ﻿---
 name: Validate features
 description: Validate features_backlog.md for an idea against concept_summary.md and epics_backlog.md (writes report to ideas/<IDEA_ID>/runs and updates ideas/<IDEA_ID>/latest; optional patch if allowed)

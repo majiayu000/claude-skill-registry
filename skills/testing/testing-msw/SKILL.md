@@ -1,5 +1,11 @@
 ---
 name: testing-msw
+description: 'Apply when mocking API calls in tests or development: intercepting requests,
+  simulating error states, and testing loading states.'
+---
+
+---
+name: testing-msw
 description: Apply when mocking API calls in tests or development: intercepting requests, simulating error states, and testing loading states.
 version: 1.0.0
 tokens: ~600

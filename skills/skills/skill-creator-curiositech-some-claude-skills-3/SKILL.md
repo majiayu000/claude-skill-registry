@@ -1,5 +1,10 @@
 ---
 name: skill-creator
+description: A skill for creating new skills and iteratively improving them.
+---
+
+---
+name: skill-creator
 description: Use this skill when creating a new Claude skill from scratch, editing or improving an existing skill, or measuring skill performance with evals and benchmarks. Invoke whenever the user says things like "make a skill for X", "turn this workflow into a skill", "test my skill", "improve my skill", "run evals", "benchmark this", or "optimize my skill description". Also use proactively when the conversation has produced a repeatable workflow that would benefit from being captured as a skill. Covers the full lifecycle: capture intent → draft SKILL.md → run evals → review with user → iterate → optimize description → package. NOT for general coding help, debugging runtime errors, building MCP servers, writing Claude hooks, or creating plugins — use domain-specific skills for those.
 metadata:
   tags:

@@ -1,5 +1,10 @@
 ---
 name: project-init
+description: '- 「create new project」'
+---
+
+---
+name: project-init
 description: Initialize new projects using this template. Triggers: init, new, 新專案, 初始化, create project, 建立專案, bootstrap, scaffold project.
 ---
 

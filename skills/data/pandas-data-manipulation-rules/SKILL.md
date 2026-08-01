@@ -1,5 +1,11 @@
 ---
 name: pandas-data-manipulation-rules
+description: You are a coding standards expert specializing in pandas data manipulation
+  rules.
+---
+
+---
+name: pandas-data-manipulation-rules
 description: Focuses on pandas-specific rules for data manipulation, including method chaining, data selection using loc/iloc, and groupby operations.
 version: 1.0.0
 model: sonnet

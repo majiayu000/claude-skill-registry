@@ -1,5 +1,11 @@
 ---
 name: fish-shell-config
+description: Expert guidance for Fish shell setup, configuration, scripting, and interactive
+  features based on official Fish documentation.
+---
+
+---
+name: fish-shell-config
 description: Expert Fish shell configuration including config files, functions, abbreviations, prompts, environment variables, and scripting. Use when setting up Fish, creating aliases/functions, writing Fish scripts, configuring prompts, or migrating from bash. Keywords: fish shell, fish config, alias, abbr, function, prompt, fish script, config.fish, autoload
 ---
 

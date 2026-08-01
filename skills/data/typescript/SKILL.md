@@ -1,3 +1,8 @@
+---
+name: typescript
+description: أفضل الممارسات لكتابة كود TypeScript قوي، آمن، وقابل للصيانة.
+---
+
 # TypeScript Development Skill
 
 ## نظرة عامة

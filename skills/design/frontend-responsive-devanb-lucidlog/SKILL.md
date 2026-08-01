@@ -1,4 +1,10 @@
 ---
+name: frontend-responsive
+description: This Skill provides Claude Code with specific guidance on how to adhere
+  to coding standards as they relate to how it should handle frontend responsive.
+---
+
+---
 name: Frontend Responsive
 description: Implement mobile-first responsive designs with fluid layouts, breakpoints, relative units, and touch-friendly interfaces that work across all device sizes. Use this skill when writing or modifying React components (.tsx, .jsx files), when implementing CSS or Tailwind responsive utilities (sm:, md:, lg:, xl: breakpoints), when working on layout components, navigation menus, grid systems, when optimizing for mobile devices, tablets, or desktop screens, when implementing media queries, when ensuring touch-friendly UI elements, or when testing cross-device compatibility.
 ---

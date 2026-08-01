@@ -1,5 +1,10 @@
 ---
 name: media-composition
+description: '- Overview'
+---
+
+---
+name: media-composition
 description: |
 
 Triggers: tutorial, composition, stitch, ffmpeg, media

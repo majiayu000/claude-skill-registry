@@ -1,5 +1,11 @@
 ---
 name: ln-402-task-reviewer
+description: MANDATORY after every task execution. Reviews a single task in To Review
+  and decides Done vs To Rework with immediate fixes or clear rework notes.
+---
+
+---
+name: ln-402-task-reviewer
 description: Reviews completed tasks (To Review) and moves them to Done or To Rework. Zero tolerance: all issues fixed now.
 ---
 
@@ -38,8 +44,8 @@ description: Reviews completed tasks (To Review) and moves them to Done or To Re
    - Naming: consistent conventions; descriptive names; no single-letter variables (except loops).
    - Docs updated where required.
    - Tests updated/run: for impl/refactor ensure affected tests adjusted; for test tasks verify risk-based limits and priority (≤15) per planner template.
-4) **Decision:**  
-   - If only nits: apply minor fixes and set Done.  
+4) **Decision:**
+   - If only nits: apply minor fixes and set Done.
    - If issues remain: set To Rework with comment explaining why (best-practice ref) and how to fix.
 5) **Update:** Set task status in Linear; update kanban: if Done → **remove task from kanban** (Done section tracks Stories only, not individual Tasks); if To Rework → move task to To Rework section; add review comment with findings/actions.
 

@@ -1,4 +1,9 @@
 ---
+name: unknown
+description: The most comprehensive Claude Code skills registry - 50,000+ skills indexed
+---
+
+---
 name: skill-generator
 description: Generate new skills with standardized structure and frontmatter. Triggers: SG, new skill, 新增 skill, 建立技能, create skill, 新技能, 產生技能, generate skill, 技能模板, skill template, add skill, 加技能, make skill.
 category: meta

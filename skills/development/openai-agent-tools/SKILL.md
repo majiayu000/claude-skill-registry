@@ -1,3 +1,8 @@
+---
+name: openai-agent-tools
+description: Define reusable function tools for OpenAI Agents using the
+---
+
 # Skill: OpenAI Agent Tools
 
 ## Purpose

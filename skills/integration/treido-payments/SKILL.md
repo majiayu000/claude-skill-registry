@@ -1,6 +1,12 @@
+---
+name: treido-payments
+description: '> Scope: Stripe integration, checkout flows, webhooks, subscriptions,
+  Connect payouts, fee model'
+---
+
 # treido-payments — Stripe Payments Skill
 
-> **Scope:** Stripe integration, checkout flows, webhooks, subscriptions, Connect payouts, fee model  
+> **Scope:** Stripe integration, checkout flows, webhooks, subscriptions, Connect payouts, fee model
 > **Triggers:** `stripe`, `payment`, `checkout`, `subscription`, `billing`, `webhook`, `price`, `customer`, `invoice`, `refund`, `payout`, `connect`, `transfer`, `card`, `payment method`, `payment intent`, `checkout session`, `customer portal`, `boost`, `fee`, `buyer protection`
 
 ---

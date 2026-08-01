@@ -1,4 +1,11 @@
 ---
+name: dr
+description: 'Alias skill that invokes /dry-run with all arguments passed through.
+  Provides shorthand for dry-run mode. Triggers on keywords: dr, dry run shorthand,
+  alias'
+---
+
+---
 name: dry-run
 description: Simulates command execution in dry-run mode without file modifications. Sets dry_run flag, executes command with read-only constraint, then resets flag. Useful for testing workflows safely. Triggers on keywords: dry run, simulate, test command, preview changes, safe mode, no write
 project-agnostic: true

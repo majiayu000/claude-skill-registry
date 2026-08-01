@@ -1,3 +1,10 @@
+---
+name: templates-ryancnelson-deli-gator
+description: This skill implements the delegation pattern for SERVICE queries, keeping
+  the main Claude context clean by offloading SERVICE-specific operations to a specialized
+  sub-agent.
+---
+
 # SERVICE Delegation Skill
 
 ## Overview

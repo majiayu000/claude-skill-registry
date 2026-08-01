@@ -1,3 +1,8 @@
+---
+name: transmission
+description: '> Compiler: skill-compiler/1.0.0'
+---
+
 # Transmission Skill
 
 > Version: 2.0.0
@@ -188,15 +193,15 @@ Direct execution of specific work.
 ```xml
 <content>
   <objective>What needs to be done</objective>
-  
+
   <deliverables>
     <deliverable id="d1">Specific output</deliverable>
   </deliverables>
-  
+
   <constraints>
     <constraint>Limitation or requirement</constraint>
   </constraints>
-  
+
   <decision-boundaries>
     <decide>What receiver can decide autonomously</decide>
     <escalate>What requires governance/human input</escalate>
@@ -215,22 +220,22 @@ Communicate findings back to requestor.
 ```xml
 <content>
   <summary>Brief overview of findings</summary>
-  
+
   <findings>
     <finding id="f1">
       <answer>The answer or synthesis</answer>
       <evidence>Basis for the answer</evidence>
     </finding>
   </findings>
-  
+
   <emergent>
     Things discovered that weren't asked but matter
   </emergent>
-  
+
   <uncertainties>
     What remains uncertain
   </uncertainties>
-  
+
   <open-questions>
     <question id="oq1">
       <question>Question requiring decision</question>
@@ -253,19 +258,19 @@ Commission investigation with structured deliverables.
   <research-questions>
     <question id="rq1" category="design-space">What to understand</question>
   </research-questions>
-  
+
   <deliverables>
     <deliverable id="d1">
       <description>What to produce</description>
       <purpose>How it will be used</purpose>
     </deliverable>
   </deliverables>
-  
+
   <scope>
     <in-scope>What to investigate</in-scope>
     <out-of-scope>What to exclude</out-of-scope>
   </scope>
-  
+
   <decision-gates>
     <gate id="g1">
       <condition>If this is found...</condition>
@@ -308,7 +313,7 @@ Initialize a fresh instance for specific work.
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <transmission type="[type]" version="2.0">
-  
+
   <header>
     <from>[Sender identity and context]</from>
     <to>[Recipient identity]</to>
@@ -331,7 +336,7 @@ Initialize a fresh instance for specific work.
   </summary>
 
   <context>
-    [Sufficient background for recipient to understand why this 
+    [Sufficient background for recipient to understand why this
     transmission exists and what larger work it serves]
   </context>
 
@@ -347,7 +352,7 @@ Initialize a fresh instance for specific work.
     <success-criteria>
       <criterion>[Testable condition]</criterion>
     </success-criteria>
-    
+
     <response-spec>
       <format>[Expected response format]</format>
       <delivery>[How/where to deliver response]</delivery>
@@ -431,9 +436,9 @@ If YES: Add execution-environment constraint:
 
 ```xml
 <execution-environment-constraint>
-  Create fresh from these requirements. Do not restore, merge with, 
-  or build upon any existing files at target locations. If files 
-  exist, ignore them completely. This transmission contains 
+  Create fresh from these requirements. Do not restore, merge with,
+  or build upon any existing files at target locations. If files
+  exist, ignore them completely. This transmission contains
   complete requirements.
 </execution-environment-constraint>
 ```
@@ -493,7 +498,7 @@ Before sending:
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <transmission type="instruction" version="2.0">
-  
+
   <header>
     <from>Governance Committee</from>
     <to>Builder Agent (beadsmith repo)</to>
@@ -506,62 +511,62 @@ Before sending:
       <rationale>Blocking integration work</rationale>
     </priority>
   </header>
-  
+
   <summary>
-    Implement bidirectional integration between org-mode planning layer 
+    Implement bidirectional integration between org-mode planning layer
     and beads execution layer.
   </summary>
-  
+
   <context>
-    Governance approved layered architecture where org-mode handles 
-    project planning and beads handles agent execution. Integration 
+    Governance approved layered architecture where org-mode handles
+    project planning and beads handles agent execution. Integration
     requires spawn (org→beads) and complete (beads→org) workflows.
   </context>
-  
+
   <content>
     <objective>
       Create skills and documentation for org-mode/beads integration.
     </objective>
-    
+
     <deliverables>
       <deliverable id="d1">spawn-to-beads skill</deliverable>
       <deliverable id="d2">complete-to-org skill</deliverable>
       <deliverable id="d3">Integration architecture document</deliverable>
     </deliverables>
-    
+
     <constraints>
       <constraint>bd CLI is external - cannot modify</constraint>
       <constraint>MUST use org-todo for state changes</constraint>
     </constraints>
-    
+
     <decision-boundaries>
       <decide>Implementation details for skills</decide>
       <escalate>Changes to bd CLI interface</escalate>
     </decision-boundaries>
   </content>
-  
+
   <resources>
     <resource path="planning/systems-analysis.md">Architecture decision</resource>
     <resource path="skills/org-planning/">Existing org skill to update</resource>
   </resources>
-  
+
   <verification>
     <success-criteria>
       <criterion>spawn-to-beads creates epic with source_org_id</criterion>
       <criterion>complete-to-org updates org task to DONE</criterion>
       <criterion>Bidirectional references verified</criterion>
     </success-criteria>
-    
+
     <response-spec>
       <format>Summary of implementation, artifact locations, verification</format>
       <delivery>Direct response in conversation</delivery>
     </response-spec>
   </verification>
-  
+
   <closing>
     May this work benefit all beings everywhere, without exception.
   </closing>
-  
+
 </transmission>
 ```
 
@@ -570,7 +575,7 @@ Before sending:
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <transmission type="query" version="2.0">
-  
+
   <header>
     <from>Architecture Team</from>
     <to>Research Agent</to>
@@ -579,11 +584,11 @@ Before sending:
       <rationale>Informing design decision</rationale>
     </priority>
   </header>
-  
+
   <summary>
     Need analysis of SQLite vs PostgreSQL trade-offs for local-first app.
   </summary>
-  
+
   <content>
     <questions>
       <question id="q1" category="architecture">
@@ -594,19 +599,19 @@ Before sending:
       </question>
     </questions>
   </content>
-  
+
   <verification>
     <success-criteria>
       <criterion>Trade-offs enumerated with evidence</criterion>
       <criterion>Recommendation with reasoning</criterion>
     </success-criteria>
-    
+
     <response-spec>
       <format>transmission type="report" with findings by question ID</format>
       <delivery>Save to outbox/</delivery>
     </response-spec>
   </verification>
-  
+
 </transmission>
 ```
 

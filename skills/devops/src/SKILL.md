@@ -1,3 +1,8 @@
+---
+name: src
+description: APP从启动到显示流程
+---
+
 ### :house:Android进阶知识 ###
 
 [APP从启动到显示流程](https://www.jianshu.com/p/08855d69c0bf)

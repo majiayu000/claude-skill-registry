@@ -1,5 +1,10 @@
 ---
 name: team-idea
+description: Capture raw ideas as structured artifacts for backlog consideration.
+---
+
+---
+name: team-idea
 description: "[Team] Capture and structure product ideas as backlog artifacts. Use when capturing new ideas, feature requests, or concepts for future refinement. Triggers on keywords like "capture idea", "new idea", "feature idea", "add to backlog", "quick idea"."
 argument-hint: "[title] - Brief title for the idea (optional, will prompt if not provided)"
 infer: true

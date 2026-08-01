@@ -1,4 +1,10 @@
 ---
+name: event-style-guide
+description: 'มาตรฐานการออกแบบ events สำหรับ event-driven architecture: envelope format,
+  naming, versioning, และ schema evolution ที่ทำให้ระบบ decouple ได้อย่างปลอดภัย'
+---
+
+---
 name: Event Style Guide
 description: Event-driven design conventions: event envelope, naming, versioning, schema evolution rules, idempotency, ordering/partitioning, retry and dead-letter handling
 ---

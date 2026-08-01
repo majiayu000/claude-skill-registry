@@ -1,3 +1,8 @@
+---
+name: '317'
+description: This packet sends a specific skill.
+---
+
 # Send Skill
 This packet sends a specific skill.
 

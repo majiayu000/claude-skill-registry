@@ -1,5 +1,11 @@
 ---
 name: samara
+description: Diagnose and manage Samara.app, the message broker that connects iMessage
+  to Claude.
+---
+
+---
+name: samara
 description: Debug, check, or restart Samara.app - the message broker. Use when messages aren't being detected, Samara crashed, need to view logs, check Full Disk Access, or restart the app. Trigger words: samara, messages not working, restart, logs, FDA, broker.
 context: fork
 allowed-tools:

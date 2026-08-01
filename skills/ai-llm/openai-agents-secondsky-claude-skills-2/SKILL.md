@@ -1,5 +1,12 @@
 ---
 name: openai-agents
+description: Complete skill for building AI applications with OpenAI Agents SDK (JavaScript/TypeScript),
+  covering text agents, realtime voice agents, multi-agent workflows, and production
+  deployment patterns.
+---
+
+---
+name: openai-agents
 description: OpenAI Agents SDK for JavaScript/TypeScript (text + voice agents). Use for multi-agent workflows, tools, guardrails, or encountering Zod errors, MCP failures, infinite loops, tool call issues.
 
   Keywords: OpenAI Agents SDK, @openai/agents, @openai/agents-realtime, openai agents javascript, openai agents typescript, text agents, voice agents, realtime agents, multi-agent workflows, agent handoffs, agent tools, zod schemas agents, structured outputs agents, agent streaming, agent guardrails, input guardrails, output guardrails, human-in-the-loop, cloudflare workers agents, nextjs openai agents, react openai agents, hono agents, agent debugging, Zod schema type error, MCP tracing failure, agent infinite loop, tool call failures, schema mismatch agents

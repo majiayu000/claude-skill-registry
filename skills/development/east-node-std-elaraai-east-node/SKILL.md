@@ -1,5 +1,12 @@
 ---
 name: east-node-std
+description: Node.js platform functions for the East language. Use when writing East
+  programs that need Console I/O, FileSystem operations, HTTP Fetch requests, Cryptography,
+  Time operations, Path manipulation, Ra
+---
+
+---
+name: east-node-std
 description: Node.js platform functions for the East language. Use when writing East programs that need Console I/O, FileSystem operations, HTTP Fetch requests, Cryptography, Time operations, Path manipulation, Random number generation, or Testing. Triggers for: (1) Writing East programs with @elaraai/east-node-std, (2) Using platform functions like Console.log, FileSystem.readFile, Fetch.get, Crypto.uuid, Time.now, Path.join, Random.normal, (3) Testing East code with describeEast and Assert.
 ---
 

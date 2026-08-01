@@ -1,5 +1,14 @@
 ---
 name: concurrency
+description: Concurrency enables programs to handle multiple tasks efficiently. This
+  skill covers async/await patterns across Rust (tokio), Python (asyncio), TypeScript
+  (Promises), and Go (goroutines). Includes parallelism strategies, race condition
+  prevention, deadlock handling, thread safety patterns, channel-based communication,
+  and work queue implementations.
+---
+
+---
+name: concurrency
 description: Comprehensive concurrency and parallelism patterns for multi-threaded and async programming. Use when implementing async/await, parallel processing, thread safety, worker pools, or debugging race conditions and deadlocks. Triggers: async, await, thread, mutex, lock, semaphore, channel, actor, parallel, concurrent, race condition, deadlock, livelock, atomic, futures, promises, tokio, asyncio, goroutine, spawn, Arc, Mutex, RwLock, mpsc, select, join, worker pool, queue, synchronization, critical section, context switch.
 ---
 

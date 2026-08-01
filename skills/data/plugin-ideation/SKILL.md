@@ -1,5 +1,12 @@
 ---
 name: plugin-ideation
+description: 'Adaptive brainstorming for plugin concepts and improvements when exploring
+  ideas, not implementing. Autonomous triggers: "I want to make...", "Explore improvements
+  to...", "brainstorm", "ideate", "new'
+---
+
+---
+name: plugin-ideation
 description: Adaptive brainstorming for plugin concepts and improvements when exploring ideas, not implementing. Autonomous triggers: "I want to make...", "Explore improvements to...", "brainstorm", "ideate", "new plugin idea", "what if I added". NOT for implementing existing improvement proposals (use plugin-improve skill).
 allowed-tools:
   - Read

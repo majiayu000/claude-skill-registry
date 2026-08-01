@@ -1,5 +1,10 @@
 ---
 name: cmd-builder
+description: Use this skill when creating or modifying command entrypoints under cmd/.
+---
+
+---
+name: cmd-builder
 description: Guides adding and structuring Go command entrypoints under cmd/: when to create a new cmd, layout, wiring only (no business logic), and use of internal packages. Use when creating or refactoring code under cmd/, adding a new executable, or when the user asks about cmd or entrypoint structure.
 ---
 

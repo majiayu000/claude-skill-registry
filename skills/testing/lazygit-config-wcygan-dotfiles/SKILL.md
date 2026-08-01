@@ -1,5 +1,12 @@
 ---
 name: lazygit-config
+description: Configure lazygit TUI including config.yml setup, custom pagers (especially
+  delta integration), themes, keybindings, and custom commands. Use when setting up
+  lazygit, configuring git diff viewers, int
+---
+
+---
+name: lazygit-config
 description: Configure lazygit TUI including config.yml setup, custom pagers (especially delta integration), themes, keybindings, and custom commands. Use when setting up lazygit, configuring git diff viewers, integrating delta, or customizing lazygit behavior. Keywords: lazygit, delta, git diff, pager, lazygit config, config.yml, git TUI, diff viewer
 ---
 

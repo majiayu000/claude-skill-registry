@@ -1,3 +1,8 @@
+---
+name: hgb-standards
+description: 'description: German GAAP (HGB) — Bilanzierung, GoB, Maßgeblichkeitsprinzip'
+---
+
 # HGB Standards (German GAAP)
 
 name: hgb-standards

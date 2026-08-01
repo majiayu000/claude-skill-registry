@@ -1,3 +1,9 @@
+---
+name: avaamo
+description: An intro message is a small introductory message that precedes the answer
+  from the agent.&#x20;
+---
+
 # Source: https://docs.avaamo.com/user-guide/tutorials-and-exercises/part-1-creating-my-agent/chapter-3-building-a-q-and-a-skill/exercise-3.4-adding-an-introductory-message-to-q-and-a-skill.md
 
 # Exercise 3.4: Adding an Introductory Message to Q\&A Skill

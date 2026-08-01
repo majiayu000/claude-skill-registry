@@ -1,5 +1,12 @@
 ---
 name: wix-cms-collection
+description: Creates CMS collections (databases) for Wix CLI apps. Collections store
+  structured data that can be accessed from dashboard pages, site pages, backend code,
+  and external applications.
+---
+
+---
+name: wix-cms-collection
 description: Creates and configures Wix CMS collections for storing structured data. Defines collection schemas with fields, field types, validation rules, permissions, and relationships between collections. Use when creating a database or collection, defining schemas, adding fields (text, number, date, image, etc.), setting up references/relationships, configuring permissions, or making fields required/unique. Triggers: CMS, collection, database, schema, fields, data model, storage, persist, save, store, table, entity, record, reference, relationship, permissions, required, unique.
 license: MIT
 compatibility: Requires Wix CLI project with CMS/data support

@@ -1,5 +1,11 @@
 ---
 name: multitenant
+description: 'Regel 08: Multitenant - Isolation und Sicherheit. Use when working with
+  multitenant.'
+---
+
+---
+name: multitenant
 description: Regel 08: Multitenant - Isolation und Sicherheit. Use when working with multitenant.
 ---
 

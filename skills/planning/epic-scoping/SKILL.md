@@ -1,3 +1,8 @@
+---
+name: epic-scoping
+description: Interactive question bank-driven scoping for epic workflows.
+---
+
 # Epic Scoping Skill
 
 Interactive question bank-driven scoping for epic workflows.

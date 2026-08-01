@@ -1,3 +1,10 @@
+---
+name: specs
+description: This skill instructs Claude Code to find and qualify real estate agencies
+  in a given suburb. It uses web search and browser automation to gather comprehensive
+  agency data.
+---
+
 # 02 - Agency Researcher Skill
 
 ## Overview

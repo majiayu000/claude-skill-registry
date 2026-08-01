@@ -1,4 +1,11 @@
 ---
+name: scrum-master
+description: A production-ready Scrum Master assistant designed for SaaS startups
+  and application engineering teams. This skill provides intelligent sprint analytics,
+  capacity planning, backlog prioritization, and
+---
+
+---
 name: scrum_master
 router_kit: ManagementKit
 description: Comprehensive Scrum Master assistant for sprint planning, backlog grooming, retrospectives, capacity planning, and daily standups with intelligent context-aware reporting

@@ -1,3 +1,8 @@
+---
+name: research
+description: '> Compiler: manual (bootstrap)'
+---
+
 # Research Skill
 
 > Version: 1.0.0
@@ -186,7 +191,7 @@ When you find such knowledge, preserve context:
 ### For Query Decomposition
 
 ```
-Break down this research question into 3-5 specific sub-questions 
+Break down this research question into 3-5 specific sub-questions
 that together provide a complete answer:
 
 Question: [QUESTION]
@@ -208,7 +213,7 @@ Include:
 - Version/date applicability
 - Relevance assessment (high/medium/low)
 
-If content doesn't address the question, state that briefly and note 
+If content doesn't address the question, state that briefly and note
 any tangentially useful information.
 ```
 

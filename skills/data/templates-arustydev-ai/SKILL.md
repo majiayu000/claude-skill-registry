@@ -1,4 +1,9 @@
 ---
+name: templates-arustydev-ai
+description: '{{ONELINEDESCRIPTION}}'
+---
+
+---
 name: {{SKILL_NAME}}
 description: {{DESCRIPTION}}
 created: {{CREATED_DATE}}

@@ -1,3 +1,8 @@
+---
+name: feature-flags
+description: '| ID | flutter-feature-flags |'
+---
+
 # 🚩 Skill: Feature Flags & Remote Config
 
 ## 📋 Metadata

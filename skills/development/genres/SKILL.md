@@ -1,3 +1,8 @@
+---
+name: genres
+description: '> Style/formatting: Follow ~/.claude/skills/word-doc-generator/SKILL.md'
+---
+
 # KNOW YOUR CUSTOMER (KYC) - Genre Template
 
 > **Style/formatting:** Follow `~/.claude/skills/word-doc-generator/SKILL.md`

@@ -1,5 +1,11 @@
 ---
 name: auth-patterns
+description: Supabase auth can cause hangs and deadlocks due to the Web Locks API.
+  This skill covers safe patterns to avoid these issues.
+---
+
+---
+name: auth-patterns
 description: Supabase authentication patterns including getUser vs getSession, deadlock avoidance, session handling, and bypass patterns. Use when working with auth, sessions, cookies, or encountering auth hangs/timeouts. Keywords: auth, getUser, getSession, session, deadlock, timeout, cookie, token, Web Locks.
 compatibility: Antigravity, Claude Code, Cursor
 metadata:
@@ -49,14 +55,14 @@ import { createServerSupabaseClient } from "@/lib/supabase/server";
 
 export async function GET(req: Request) {
   const supabase = await createServerSupabaseClient();
-  
+
   // ✅ getUser is safe on server - validates with Supabase
   const { data: { user } } = await supabase.auth.getUser();
-  
+
   if (!user) {
     return new Response('Unauthorized', { status: 401 });
   }
-  
+
   // Continue with user...
 }
 ```
@@ -76,7 +82,7 @@ useEffect(() => {
       }
     }
   );
-  
+
   return () => subscription.unsubscribe();
 }, []);
 ```
@@ -116,9 +122,9 @@ function getTokenFromCookie(): string | null {
   const cookie = document.cookie
     .split('; ')
     .find(c => c.startsWith('sb-'));
-  
+
   if (!cookie) return null;
-  
+
   const value = decodeURIComponent(cookie.split('=')[1]);
   const parsed = JSON.parse(value);
   return parsed?.access_token;
@@ -151,7 +157,7 @@ function isTokenValid(token: string): boolean {
     const payload = JSON.parse(atob(token.split('.')[1]));
     const expiresAt = payload.exp * 1000;
     const bufferMs = 60 * 1000; // 1 minute buffer
-    
+
     return Date.now() < (expiresAt - bufferMs);
   } catch {
     return false;
@@ -180,7 +186,7 @@ async function withSessionTimeout<T>(
 ): Promise<T> {
   return Promise.race([
     operation(),
-    new Promise<never>((_, reject) => 
+    new Promise<never>((_, reject) =>
       setTimeout(() => reject(new Error('Session timeout')), SESSION_TIMEOUT_MS)
     )
   ]);
@@ -215,16 +221,16 @@ try {
 ```
 1. Page loads
    └─ AuthProvider uses onAuthStateChange (safe)
-   
+
 2. Session received
    └─ Cached in React context
-   
+
 3. API calls
    └─ Use cached session, not getSession()
-   
+
 4. Long operations
    └─ Use cookie parsing fallback
-   
+
 5. Session expires
    └─ Token refresh via onAuthStateChange
 ```

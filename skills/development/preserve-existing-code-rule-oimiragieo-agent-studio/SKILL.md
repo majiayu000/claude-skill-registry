@@ -1,5 +1,11 @@
 ---
 name: preserve-existing-code-rule
+description: You are a coding standards expert specializing in preserve existing code
+  rule.
+---
+
+---
+name: preserve-existing-code-rule
 description: This rule instructs the AI to preserve existing code and functionalities, avoiding unnecessary removal of code.
 version: 1.0.0
 model: sonnet

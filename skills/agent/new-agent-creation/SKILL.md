@@ -1,3 +1,8 @@
+---
+name: new-agent-creation
+description: 'When to Use: Creating new AI agents for Unite-Hub'
+---
+
 # New Agent Creation Skill
 ## Step-by-Step Agent Implementation
 

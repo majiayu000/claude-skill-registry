@@ -1,6 +1,13 @@
+---
+name: galaxy-ground-truth-expansion
+description: 'Purpose: expand each benchmark item’s acceptable ground-truth tools
+  (multiple correct answers) by manually reviewing the query and the underlying tutorial
+  context.'
+---
+
 # Galaxy Ground-Truth Expansion (Manual, per item)
 
-Purpose: expand each benchmark item’s **acceptable ground-truth tools** (multiple correct answers) by **manually** reviewing the query and the underlying tutorial context.  
+Purpose: expand each benchmark item’s **acceptable ground-truth tools** (multiple correct answers) by **manually** reviewing the query and the underlying tutorial context.
 This skill exists because automated, “template-like” expansions can easily introduce incorrect alternatives.
 
 This skill is for maintaining `data/benchmark/v1_items.jsonl` and keeping `data/benchmark/v1_items_readable.md` in sync.

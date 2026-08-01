@@ -1,5 +1,10 @@
 ---
 name: init-very-good
+description: 确保 verygoodcli 已安装并可用。
+---
+
+---
+name: init-very-good
 description: Install Very Good CLI for Flutter project tooling. Use when user needs very_good_cli, wants to use Very Good templates, or gets "very_good: command not found". Triggers on "install very_good", "init very good", "very good cli", "setup very_good".
 ---
 

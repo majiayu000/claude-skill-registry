@@ -1,5 +1,10 @@
 ---
 name: tooling
+description: This skill provides guidelines and best practices.
+---
+
+---
+name: tooling
 description: Regla 06: Herramientas. Use when working with tooling.
 ---
 

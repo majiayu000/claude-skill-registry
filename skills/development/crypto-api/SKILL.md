@@ -1,3 +1,10 @@
+---
+name: crypto-api
+description: 'Access: Access keys using .env file. Do not view the keys. They may
+  be accessed for the API by accessing COINBASEAPIKEY and COINBASESECRETKEY. Do not
+  modify the keys.'
+---
+
 # skills/crypto-api/coinbase-advanced-skill.md
 ---
 name: "Coinbase Advanced Trade API"

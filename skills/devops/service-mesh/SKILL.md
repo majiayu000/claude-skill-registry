@@ -1,3 +1,8 @@
+---
+name: service-mesh
+description: '| ID | sre-service-mesh |'
+---
+
 # 🌐 Skill: Service Mesh
 
 ## 📋 Metadata
@@ -87,7 +92,7 @@ Service mesh proporciona observabilidad, seguridad y confiabilidad para comunica
 > **📁 Scripts Ejecutables:** Este skill incluye scripts bash ejecutables en la carpeta [`scripts/`](scripts/):
 > - **Install Istio:** [`scripts/install-istio.sh`](scripts/install-istio.sh) - Instalación automatizada de Istio
 > - **Verify Istio:** [`scripts/verify-istio.sh`](scripts/verify-istio.sh) - Verificación de instalación
-> 
+>
 > Ver [`scripts/README.md`](scripts/README.md) para documentación de uso completa.
 
 ### 1. Istio Installation
@@ -364,7 +369,7 @@ spec:
 
 ---
 
-**Versión:** 1.0.0  
-**Última actualización:** Diciembre 2025  
+**Versión:** 1.0.0
+**Última actualización:** Diciembre 2025
 **Total líneas:** 1,100+
 

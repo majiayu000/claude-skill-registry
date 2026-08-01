@@ -1,5 +1,11 @@
 ---
 name: documentation-patterns
+description: 'Apply when writing code documentation: JSDoc comments, README files,
+  API documentation, and inline comments.'
+---
+
+---
+name: documentation-patterns
 description: Apply when writing code documentation: JSDoc comments, README files, API documentation, and inline comments.
 version: 1.0.0
 tokens: ~550

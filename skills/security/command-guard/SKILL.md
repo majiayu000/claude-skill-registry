@@ -1,5 +1,13 @@
 ---
 name: command-guard
+description: Claude Code runs shell commands, edits files, and manages infrastructure
+  with real consequences. Without guardrails, a misunderstood instruction or a hallucinated
+  flag can delete data, corrupt history, or expose credentials. This skill installs
+  a PreToolUse hook that blocks the most dangerous operations before they run.
+---
+
+---
+name: command-guard
 description: Set up a PreToolUse hook in .claude/settings.json that blocks dangerous commands — rm -rf, force push, database drops, and others — before they execute. Teaches the pattern of safety hooks for any Claude Code project. Trigger words: safety, guard, block dangerous, protect, prevent destructive, safe mode, dangerous commands, risky operations.
 license: MIT
 metadata:

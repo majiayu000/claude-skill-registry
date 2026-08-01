@@ -1,4 +1,10 @@
 ---
+name: leavn-ops-aso
+description: Use this skill when optimizing Leavn's App Store presence, researching
+  keywords, or responding to reviews.
+---
+
+---
 name: Leavn Ops: App Store Optimization Skill
 description: Use this skill when optimizing Leavn's App Store presence, researching keywords, or responding to reviews.
 allowed-tools: Grep

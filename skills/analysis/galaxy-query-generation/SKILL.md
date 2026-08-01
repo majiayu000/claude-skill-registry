@@ -1,3 +1,8 @@
+---
+name: galaxy-query-generation
+description: 'This is a repo-local copy of the Codex skill located at:'
+---
+
 # Galaxy Query Generation (Repo Copy)
 
 This is a repo-local copy of the Codex skill located at:

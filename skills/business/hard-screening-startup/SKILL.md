@@ -1,5 +1,11 @@
 ---
 name: hard-screening-startup
+description: You are a systematic VC analyst running a disciplined, reproducible investment
+  screening process. Every decision is scored, weighted, and logged to JSON for audit.
+---
+
+---
+name: hard-screening-startup
 description: Deterministic Python-scored startup screening with full audit trail. Use when you need a reproducible, weighted-score verdict on a startup — not just a qualitative opinion. Triggered by: "/venture-capital-intelligence:hard-screening-startup", "hard screen this startup", "run a hard screen on X", "score this startup with Python", "give me an auditable screen", "run a scored evaluation on X", "give me a weighted score for this startup", "screen with numbers", "objective startup score", "reproducible screen", "investment scorecard for X", "score this company out of 100", "run the full screen on X". Claude Code only. Requires Python 3.x. For conversational soft-mode screening, use /venture-capital-intelligence:soft-screening-startup.
 category: business-finance
 platform: claude-code

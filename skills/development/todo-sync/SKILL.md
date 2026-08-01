@@ -1,3 +1,8 @@
+---
+name: todo-sync
+description: 'description: docs/TODOS.mdとコード内TODOコメントを抽出・照合し同期する。ripgrep/scantodos.shで現況を収集し、ドキュメント追記と不要TODO削除に使う。'
+---
+
 name: todo-sync
 description: docs/TODOS.mdとコード内TODOコメントを抽出・照合し同期する。ripgrep/scan_todos.shで現況を収集し、ドキュメント追記と不要TODO削除に使う。
 

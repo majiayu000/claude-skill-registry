@@ -1,3 +1,8 @@
+---
+name: ideation
+description: '- skillname: ideation'
+---
+
 # Phase 1: Ideation Skill
 
 ## Metadata

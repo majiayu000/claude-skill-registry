@@ -1,4 +1,9 @@
 ---
+name: compliance-analyst
+description: '> Sertifikasyon ve uyumluluk araştırma rehberi.'
+---
+
+---
 name: compliance_analyst
 router_kit: SecurityKit
 description: Sertifikasyon, uyumluluk gereksinimleri ve regulatory pathway araştırma rehberi.

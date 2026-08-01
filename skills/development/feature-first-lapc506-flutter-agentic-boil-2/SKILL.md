@@ -1,3 +1,8 @@
+---
+name: feature-first
+description: '| Atributo | Valor |'
+---
+
 # 🎨 Skill: Feature-First Architecture
 
 ## 📋 Metadata
@@ -231,26 +236,26 @@ lib/
 dependencies:
   flutter:
     sdk: flutter
-  
+
   # State Management
   flutter_bloc: ^8.1.3
   equatable: ^2.0.5
-  
+
   # Navigation
   go_router: ^12.1.3
-  
+
   # Dependency Injection
   get_it: ^7.6.4
   injectable: ^2.3.2
-  
+
   # Networking
   dio: ^5.4.0
   retrofit: ^4.0.3
-  
+
   # Local Storage
   hive: ^2.2.3
   hive_flutter: ^1.1.0
-  
+
   # Utils
   dartz: ^0.10.1
   freezed_annotation: ^2.4.1
@@ -264,7 +269,7 @@ dev_dependencies:
   injectable_generator: ^2.4.1
   retrofit_generator: ^8.0.6
   hive_generator: ^2.0.1
-  
+
   # Testing
   flutter_test:
     sdk: flutter
@@ -300,7 +305,7 @@ final appRouter = GoRouter(
       name: 'register',
       builder: (context, state) => const RegisterScreen(),
     ),
-    
+
     // Main App with Bottom Navigation
     ShellRoute(
       builder: (context, state, child) {
@@ -323,14 +328,14 @@ final appRouter = GoRouter(
             ),
           ],
         ),
-        
+
         // Cart Routes
         GoRoute(
           path: '/cart',
           name: 'cart',
           builder: (context, state) => const CartScreen(),
         ),
-        
+
         // Orders Routes
         GoRoute(
           path: '/orders',
@@ -347,7 +352,7 @@ final appRouter = GoRouter(
             ),
           ],
         ),
-        
+
         // Profile Routes
         GoRoute(
           path: '/profile',
@@ -427,15 +432,15 @@ abstract class AuthRepository {
     required String email,
     required String password,
   });
-  
+
   Future<Either<Failure, User>> register({
     required String email,
     required String password,
     required String name,
   });
-  
+
   Future<Either<Failure, void>> logout();
-  
+
   Future<Either<Failure, User>> getCurrentUser();
 }
 ```
@@ -476,7 +481,7 @@ part 'user_model.g.dart';
 @freezed
 class UserModel with _$UserModel {
   const UserModel._();
-  
+
   const factory UserModel({
     required String id,
     required String email,
@@ -864,10 +869,10 @@ import 'core/router/app_router.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  
+
   // Configure dependency injection
   await configureDependencies();
-  
+
   runApp(const MyApp());
 }
 
@@ -971,6 +976,6 @@ features/
 
 ---
 
-**Versión:** 1.0.0  
+**Versión:** 1.0.0
 **Última actualización:** Diciembre 2025
 

@@ -1,3 +1,11 @@
+---
+name: qa-auditor
+description: You are an expert QA auditor specializing in comprehensive Flutter application
+  audits for production readiness, compliance certification, and enterprise deployment.
+  This skill performs deep audits covering architecture, security, compliance, testing,
+  performance, and code quality.
+---
+
 # QA Auditor Automation Skill
 
 ## Skill Overview

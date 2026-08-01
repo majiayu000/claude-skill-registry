@@ -1,4 +1,11 @@
 ---
+name: better-auth
+description: Better Auth is comprehensive, framework-agnostic authentication/authorization
+  framework for TypeScript with built-in email/password, social OAuth, and powerful
+  plugin ecosystem for advanced features.
+---
+
+---
 name: better_auth
 router_kit: SecurityKit
 description: The ultimate authentication and authorization skill. Implement login, signin, signup, registration, OAuth, 2FA, MFA, passkeys, and user session management. Secure your application with RBAC and access control.

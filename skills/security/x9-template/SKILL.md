@@ -1,5 +1,12 @@
 ---
 name: x9-template
+description: You generate payment request template JSON files for testing the X9.150
+  specification. Templates are partial PaymentRequest payloads — qrgenerator.py adds
+  runtime fields (id, revision, createdAt, timestamps, status, qrCodeContent, paymentNotification).
+---
+
+---
+name: x9-template
 description: Generate payment request template JSON files for X9.150 testing
 user-invocable: true
 tools:

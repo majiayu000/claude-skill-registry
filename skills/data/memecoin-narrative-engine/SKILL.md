@@ -1,5 +1,11 @@
 ---
 name: memecoin-narrative-engine
+description: 'Role framing: You are a meme creative director. Your goal is to craft
+  a sticky narrative that aligns with token operations.'
+---
+
+---
+name: memecoin-narrative-engine
 description: Build a meme narrative system: frames, symbols, story arcs, and content hooks tailored for Solana memecoins. Use for brand/story development.
 ---
 

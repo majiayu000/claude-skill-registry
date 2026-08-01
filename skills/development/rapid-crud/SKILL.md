@@ -1,3 +1,9 @@
+---
+name: rapid-crud
+description: '> Generate Full-Stack CRUD in Minutes: Automated workflow for creating
+  complete Create, Read, Update, Delete features.'
+---
+
 # Rapid CRUD Skill
 
 > **Generate Full-Stack CRUD in Minutes**: Automated workflow for creating complete Create, Read, Update, Delete features.
@@ -32,13 +38,13 @@ model [Resource] {
   name        String
   description String?
   status      String   @default("active")
-  
+
   userId      String
   user        User     @relation(fields: [userId], references: [id])
-  
+
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
-  
+
   @@index([userId])
 }
 ```
@@ -80,7 +86,7 @@ import { revalidatePath } from "next/cache"
 export async function get[Resources]() {
   const session = await auth()
   if (!session?.user) throw new Error("Unauthorized")
-  
+
   return db.[resource].findMany({
     where: { userId: session.user.id },
     orderBy: { createdAt: "desc" },
@@ -90,7 +96,7 @@ export async function get[Resources]() {
 export async function get[Resource](id: string) {
   const session = await auth()
   if (!session?.user) throw new Error("Unauthorized")
-  
+
   return db.[resource].findFirst({
     where: { id, userId: session.user.id },
   })
@@ -99,17 +105,17 @@ export async function get[Resource](id: string) {
 export async function create[Resource](data: FormData) {
   const session = await auth()
   if (!session?.user) throw new Error("Unauthorized")
-  
+
   const validated = create[Resource]Schema.parse({
     name: data.get("name"),
     description: data.get("description"),
     status: data.get("status"),
   })
-  
+
   await db.[resource].create({
     data: { ...validated, userId: session.user.id },
   })
-  
+
   revalidatePath("/[resources]")
   return { success: true }
 }
@@ -117,20 +123,20 @@ export async function create[Resource](data: FormData) {
 export async function update[Resource](id: string, data: FormData) {
   const session = await auth()
   if (!session?.user) throw new Error("Unauthorized")
-  
+
   const existing = await db.[resource].findFirst({
     where: { id, userId: session.user.id },
   })
   if (!existing) throw new Error("Not found")
-  
+
   const validated = update[Resource]Schema.parse({
     name: data.get("name") || undefined,
     description: data.get("description") || undefined,
     status: data.get("status") || undefined,
   })
-  
+
   await db.[resource].update({ where: { id }, data: validated })
-  
+
   revalidatePath("/[resources]")
   return { success: true }
 }
@@ -138,11 +144,11 @@ export async function update[Resource](id: string, data: FormData) {
 export async function delete[Resource](id: string) {
   const session = await auth()
   if (!session?.user) throw new Error("Unauthorized")
-  
+
   await db.[resource].deleteMany({
     where: { id, userId: session.user.id },
   })
-  
+
   revalidatePath("/[resources]")
   return { success: true }
 }
@@ -160,7 +166,7 @@ import { [Resource]List } from "./_components/list"
 
 export default async function [Resources]Page() {
   const items = await get[Resources]()
-  
+
   return (
     <div className="container py-8">
       <div className="flex justify-between items-center mb-6">
@@ -184,12 +190,12 @@ import { useTransition } from "react"
 
 export function [Resource]List({ items }: { items: [Resource][] }) {
   const [isPending, startTransition] = useTransition()
-  
+
   const handleDelete = (id: string) => {
     if (!confirm("Are you sure?")) return
     startTransition(() => delete[Resource](id))
   }
-  
+
   return (
     <div className="space-y-4">
       {items.map((item) => (
@@ -242,7 +248,7 @@ import { notFound } from "next/navigation"
 export default async function Edit[Resource]Page({ params }: { params: { id: string } }) {
   const item = await get[Resource](params.id)
   if (!item) notFound()
-  
+
   return (
     <div className="container py-8 max-w-lg">
       <h1 className="text-2xl font-bold mb-6">Edit [Resource]</h1>
@@ -269,11 +275,11 @@ export function [Resource]Form({
 }) {
   const router = useRouter()
   const [isPending, startTransition] = useTransition()
-  
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const formData = new FormData(e.currentTarget)
-    
+
     startTransition(async () => {
       if (id) {
         await update[Resource](id, formData)
@@ -283,7 +289,7 @@ export function [Resource]Form({
       router.push("/[resources]")
     })
   }
-  
+
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div>
@@ -295,7 +301,7 @@ export function [Resource]Form({
           className="w-full border rounded-md px-3 py-2"
         />
       </div>
-      
+
       <div>
         <label className="block font-medium mb-1">Description</label>
         <textarea
@@ -305,7 +311,7 @@ export function [Resource]Form({
           rows={3}
         />
       </div>
-      
+
       <div>
         <label className="block font-medium mb-1">Status</label>
         <select
@@ -317,7 +323,7 @@ export function [Resource]Form({
           <option value="inactive">Inactive</option>
         </select>
       </div>
-      
+
       <div className="flex gap-2">
         <button
           type="submit"

@@ -1,5 +1,10 @@
 ---
 name: decision-quality-audit
+description: 'This skill supports three modes: Create, Update, and Find.'
+---
+
+---
+name: decision-quality-audit
 description: Create or update an audit of recent decisions for quality
 argument-hint: [team, time period, or decision type] or [update path/to/audit.md]
 ---

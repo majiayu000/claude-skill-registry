@@ -1,5 +1,12 @@
 ---
 name: docker-compose
+description: Docker Compose simplifies the management of multi-container applications.
+  It enables service discovery through internal hostnames and provides mechanisms
+  for environment-specific configurations using profiles.
+---
+
+---
+name: docker-compose
 description: Multi-service orchestration with Docker Compose, focusing on network isolation, environment-specific profiles, and service discovery. Triggers: docker-compose, container-networking, docker-profiles, service-discovery, yaml-config.
 ---
 
@@ -14,11 +21,11 @@ Docker Compose simplifies the management of multi-container applications. It ena
 - **Microservices**: Orchestrating communication between multiple independent services.
 
 ## Decision Tree
-1. Do you have services only needed for debugging? 
+1. Do you have services only needed for debugging?
    - YES: Use `profiles` to keep them optional.
-2. Do you need to hide a database from the public proxy? 
+2. Do you need to hide a database from the public proxy?
    - YES: Create isolated custom `networks`.
-3. Do you need to connect to a service outside the current YAML file? 
+3. Do you need to connect to a service outside the current YAML file?
    - YES: Use `external: true` for that network.
 
 ## Workflows

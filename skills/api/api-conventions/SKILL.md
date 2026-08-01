@@ -1,3 +1,8 @@
+---
+name: api-conventions
+description: '> REST API patterns for cl-n8n-mcp.'
+---
+
 # API Conventions Skill
 
 > REST API patterns for cl-n8n-mcp.

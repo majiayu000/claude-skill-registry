@@ -1,4 +1,11 @@
 ---
+name: project-name-api
+description: HTTP client for {{PROJECT_NAME}} REST API at {{API_BASE_URL}}. Use when
+  making API requests, testing endpoints, handling authentication, or working with
+  {{PROJECT_NAME}} API documentation.
+---
+
+---
 name: {{PROJECT_NAME}}-api
 description: HTTP client for {{PROJECT_NAME}} REST API at {{API_BASE_URL}}. Use when making API requests, testing endpoints, handling authentication, or working with {{PROJECT_NAME}} API documentation.
 # Template version: 1.0 (2025-11-02)

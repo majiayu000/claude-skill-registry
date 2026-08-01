@@ -1,5 +1,10 @@
 ---
 name: ddd-architect
+description: 確保前後端程式碼遵循 DDD 架構與 DAL 分離原則。
+---
+
+---
+name: ddd-architect
 description: Ensure code follows DDD architecture and DAL separation for both frontend and backend. Triggers: DDD, arch, 架構, 新功能, 新模組, new feature, scaffold, 骨架, domain, layer, 分層, structure, 結構, backend, frontend, React, Vue, Python, TypeScript, 前端, 後端, component, 元件.
 version: 2.1.0
 category: architecture

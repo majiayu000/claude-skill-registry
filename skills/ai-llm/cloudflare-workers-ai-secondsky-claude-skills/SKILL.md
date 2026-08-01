@@ -1,5 +1,11 @@
 ---
 name: cloudflare-workers-ai
+description: Production-ready knowledge domain for building AI-powered applications
+  with Cloudflare Workers AI.
+---
+
+---
+name: cloudflare-workers-ai
 description: Cloudflare Workers AI for serverless GPU inference. Use for LLMs, text/image generation, embeddings, or encountering AI_ERROR, rate limits, token exceeded errors.
 
   Keywords: workers ai, cloudflare ai, ai bindings, llm workers, @cf/meta/llama, workers ai models,

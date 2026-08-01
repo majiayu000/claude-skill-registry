@@ -1,5 +1,10 @@
 ---
 name: portfolio-tradeoff
+description: 'This skill supports three modes: Create, Update, and Find.'
+---
+
+---
+name: portfolio-tradeoff
 description: Create or update a portfolio-level tradeoff decision
 argument-hint: [tradeoff description] or [update path/to/tradeoff.md]
 ---

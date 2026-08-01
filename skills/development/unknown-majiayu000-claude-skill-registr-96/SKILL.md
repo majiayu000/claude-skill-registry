@@ -1,4 +1,9 @@
 ---
+name: unknown
+description: The most comprehensive Claude Code skills registry - 50,000+ skills indexed
+---
+
+---
 name: numpy-string-ops
 description: Vectorized string manipulation using the char module and modern string alternatives, including cleaning and search operations. Triggers: string operations, numpy.char, text cleaning, substring search.
 ---

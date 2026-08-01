@@ -1,3 +1,8 @@
+---
+name: tunit-advanced
+description: 本技能涵蓋 TUnit 進階應用技巧，從資料驅動測試到依賴注入，從執行控制到 ASP.NET Core 整合測試實戰。
+---
+
 # TUnit 進階應用：資料驅動測試、依賴注入與整合測試實戰
 
 ---
@@ -51,9 +56,9 @@ tags: [tunit, testing, data-driven, dependency-injection, integration-testing, t
 [Test]
 [MethodDataSource(nameof(GetOrderTestData))]
 public async Task CreateOrder_各種情況_應正確處理(
-    string customerId, 
-    CustomerLevel level, 
-    List<OrderItem> items, 
+    string customerId,
+    CustomerLevel level,
+    List<OrderItem> items,
     decimal expectedTotal)
 {
     // Arrange
@@ -85,7 +90,7 @@ public static IEnumerable<object[]> GetOrderTestData()
     // VIP會員訂單
     yield return new object[]
     {
-        "CUST002", 
+        "CUST002",
         CustomerLevel.VIP會員,
         new List<OrderItem>
         {
@@ -102,10 +107,10 @@ public static IEnumerable<object[]> GetOrderTestData()
 [Test]
 [MethodDataSource(nameof(GetDiscountTestDataFromFile))]
 public async Task CalculateDiscount_從檔案讀取_應套用正確折扣(
-    string scenario, 
-    decimal originalAmount, 
-    CustomerLevel level, 
-    string discountCode, 
+    string scenario,
+    decimal originalAmount,
+    CustomerLevel level,
+    string discountCode,
     decimal expectedDiscount)
 {
     var calculator = new DiscountCalculator(new MockDiscountRepository(), new MockLogger<DiscountCalculator>());
@@ -126,7 +131,7 @@ public static IEnumerable<object[]> GetDiscountTestDataFromFile()
     var jsonData = File.ReadAllText(filePath);
     var scenarios = JsonSerializer.Deserialize<List<DiscountScenario>>(jsonData);
     if (scenarios == null) yield break;
-    
+
     foreach (var s in scenarios)
     {
         yield return new object[] { s.Scenario, s.Amount, (CustomerLevel)s.Level, s.Code, s.Expected };
@@ -208,7 +213,7 @@ public class AutoFixtureOrderTestData : IEnumerable<Order>
     public AutoFixtureOrderTestData()
     {
         _fixture = new Fixture();
-        
+
         _fixture.Customize<Order>(composer => composer
             .With(o => o.CustomerId, () => $"CUST{_fixture.Create<int>() % 1000:D3}")
             .With(o => o.CustomerLevel, () => _fixture.Create<CustomerLevel>())
@@ -333,13 +338,13 @@ public static class TestProperties
     public const string CATEGORY_UNIT = "Unit";
     public const string CATEGORY_INTEGRATION = "Integration";
     public const string CATEGORY_E2E = "E2E";
-    
+
     // 優先級
     public const string PRIORITY_CRITICAL = "Critical";
     public const string PRIORITY_HIGH = "High";
     public const string PRIORITY_MEDIUM = "Medium";
     public const string PRIORITY_LOW = "Low";
-    
+
     // 環境
     public const string ENV_DEVELOPMENT = "Development";
     public const string ENV_STAGING = "Staging";
@@ -612,11 +617,11 @@ public async Task LongRunningOperation_應在時限內完成()
 public async Task SearchFunction_效能基準_應符合SLA要求()
 {
     var stopwatch = Stopwatch.StartNew();
-    
+
     var searchResults = await PerformSearch("test query");
-    
+
     stopwatch.Stop();
-    
+
     await Assert.That(searchResults).IsNotNull();
     await Assert.That(searchResults.Count()).IsGreaterThan(0);
     await Assert.That(stopwatch.ElapsedMilliseconds).IsLessThan(500);
@@ -705,7 +710,7 @@ public class WebApiIntegrationTests : IDisposable
         var response = await _client.GetAsync("/weatherforecast");
 
         await Assert.That(response.IsSuccessStatusCode).IsTrue();
-        
+
         var contentType = response.Content.Headers.ContentType?.MediaType;
         await Assert.That(contentType).IsEqualTo("application/json");
     }

@@ -1,5 +1,10 @@
 ---
 name: architecture-paradigm-microservices
+description: '- When to Employ This Paradigm'
+---
+
+---
+name: architecture-paradigm-microservices
 description: |
 
 Triggers: architecture, team-autonomy, scalability, distributed-systems, microservices

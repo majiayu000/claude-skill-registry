@@ -1,5 +1,12 @@
 ---
 name: tutorial-writing
+description: Technical tutorial writing in modified DigitalOcean style. Use when (1)
+  writing step-by-step technical tutorials, (2) creating documentation for code/applications,
+  (3) explaining technical concepts pr
+---
+
+---
+name: tutorial-writing
 description: Technical tutorial writing in modified DigitalOcean style. Use when (1) writing step-by-step technical tutorials, (2) creating documentation for code/applications, (3) explaining technical concepts procedurally, (4) working with Temporal applications/tutorials, or (5) the user asks to write, create, or help with a tutorial. Follows specific style constraints: friendly but formal tone, comprehensive explanations, code sandwich approach, assumes English is reader's second language, and never generates new code (only references provided code).
 ---
 

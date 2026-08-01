@@ -1,4 +1,11 @@
 ---
+name: fork-terminal-skill
+description: 'Fork a terminal session to a new terminal window. Use this when the
+  user requests ''fork terminal'' or ''create a new terminal'' or ''new terminal:
+  <command>'' or ''fork session: <command>''.'
+---
+
+---
 name: Fork Terminal Skill
 description: Fork a terminal session to a new terminal window. Use this when the user requests 'fork terminal' or 'create a new terminal' or 'new terminal: <command>' or 'fork session: <command>'.
 ---
@@ -23,8 +30,8 @@ AGENTIC_CODING_TOOLS: claude-code, codex-cli, gemini-cli
 ### Fork Summary User Prompts
 
 - IF: The user requests a fork terminal with a summary. This ONLY works for our agentic coding tools `AGENTIC_CODING_TOOLS`. The tool MUST BE enabled as well.
-- THEN: 
-  - Read, and REPLACE the `.claude/skills/fork-terminal/prompts/fork_summary_user_prompt.md` with the history of the conversation between you and the user so far. 
+- THEN:
+  - Read, and REPLACE the `.claude/skills/fork-terminal/prompts/fork_summary_user_prompt.md` with the history of the conversation between you and the user so far.
   - Include the next users request in the `Next User Request` section.
   - This will be what you pass into the PROMPT parameter of the agentic coding tool.
   - IMPORTANT: To be clear, don't update the file directly, just read it, fill it out IN YOUR MEMORY and use it to craft a new prompt in the structure provided for the new fork agent.
@@ -47,7 +54,7 @@ AGENTIC_CODING_TOOLS: claude-code, codex-cli, gemini-cli
 ### Raw CLI Commands
 
 - IF: The user requests a non-agentic coding tool AND `ENABLE_RAW_CLI_COMMANDS` is true.
-- THEN: Read and execute: `.claude/skills/fork-terminal/cookbook/cli-command.md` 
+- THEN: Read and execute: `.claude/skills/fork-terminal/cookbook/cli-command.md`
 - EXAMPLES:
   - "Create a new terminal to <xyz> with ffmpeg"
   - "Create a new terminal to <xyz> with curl"

@@ -1,3 +1,8 @@
+---
+name: when-verifying-quality-use-verification-quality
+description: /============================================================================/
+---
+
 /*============================================================================*/
 /* WHEN-VERIFYING-QUALITY-USE-VERIFICATION-QUALITY SKILL :: VERILINGUA x VERIX EDITION                      */
 /*============================================================================*/

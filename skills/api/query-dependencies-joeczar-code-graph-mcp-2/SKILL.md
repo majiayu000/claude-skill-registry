@@ -1,3 +1,8 @@
+---
+name: query-dependencies
+description: Shows what blocks an issue and what it blocks.
+---
+
 # Query Issue Dependencies
 
 Shows what blocks an issue and what it blocks.

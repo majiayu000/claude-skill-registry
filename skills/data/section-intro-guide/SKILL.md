@@ -1,5 +1,11 @@
 ---
 name: section-intro-guide
+description: 生成符合初学者需求的入门指南类教程 (.rmd/.qmd)，强调 "概念 → 流程 → 代码 → 解释" 结构，确保 70% 文字 + 30%
+  代码比例。
+---
+
+---
+name: section-intro-guide
 description: Generate comprehensive R introductory guides (learning paths, basic concepts, beginner tutorials) with theory + practice workflow. Use when: (1) User requests R introductory tutorials, (2) File names match 00xx-*.rmd pattern, (3) Keywords: beginner, learning path, basic knowledge, RStudio setup, RMarkdown intro.
 ---
 ## 核心任务

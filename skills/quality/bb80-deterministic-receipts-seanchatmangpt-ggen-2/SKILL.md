@@ -1,3 +1,9 @@
+---
+name: bb80-deterministic-receipts
+description: Replace human review with reproducible evidence. Always provide deterministic
+  receipts, never narratives.
+---
+
 # Big Bang 80/20: Deterministic Receipts Skill
 
 **Auto-trigger**: Whenever you see "validation", "test passed", "review", "evidence", "proof", "benchmark", "receipt"

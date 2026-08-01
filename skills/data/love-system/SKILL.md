@@ -1,4 +1,11 @@
 ---
+name: love-system
+description: '{{SKILLDESCRIPTION}} Use this skill when working with system operations,
+  platform detection, system information retrieval, or any system-related operations
+  in LÖVE games.'
+---
+
+---
 name: {{SKILL_NAME}}
 description: {{SKILL_DESCRIPTION}} Use this skill when working with system operations, platform detection, system information retrieval, or any system-related operations in LÖVE games.
 license: MIT

@@ -1,6 +1,11 @@
+---
+name: 35-pb64-storage
+description: 이 문서는 pb64 저장(포장) 규약의 정본이다.
+---
+
 # 35-pb64-storage
 
-Status: ACTIVE  
+Status: ACTIVE
 AppliesTo: v10
 
 ## SSOT

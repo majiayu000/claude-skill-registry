@@ -1,5 +1,10 @@
 ---
 name: gif-generation
+description: '- Overview'
+---
+
+---
+name: gif-generation
 description: |
 
 Triggers: optimization, ffmpeg, generation, gif, video

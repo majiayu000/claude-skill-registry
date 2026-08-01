@@ -1,5 +1,12 @@
 ---
 name: numpy-fft
+description: NumPy's fft module provides routines for computing Discrete Fourier Transforms
+  (DFT). It is widely used for signal processing, image frequency analysis, and solving
+  differential equations in the frequ
+---
+
+---
+name: numpy-fft
 description: Discrete Fourier Transform routines for spectral analysis, signal filtering, and frequency-domain operations. Triggers: fft, fourier transform, spectral analysis, rfft, fftshift, ifft.
 ---
 

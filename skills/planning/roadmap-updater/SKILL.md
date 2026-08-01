@@ -1,5 +1,10 @@
 ---
 name: roadmap-updater
+description: 根據完成的功能自動更新 ROADMAP.md，保持專案路線圖與實際進度同步。
+---
+
+---
+name: roadmap-updater
 description: Auto-update ROADMAP.md status based on completed features. Triggers: RM, roadmap, 路線, 規劃, 完成功能, milestone, 里程碑, 路線圖, 計畫, plan, planning, 進度, progress, 功能完成, feature done, 待辦, todo, backlog.
 version: 2.2.0
 category: documentation

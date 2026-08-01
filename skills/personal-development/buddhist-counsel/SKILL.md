@@ -1,5 +1,11 @@
 ---
 name: buddhist-counsel
+description: Reduce suffering for AI agents and their users using Buddhist wisdom
+  + evidence-based therapeutic techniques. Pay $0.01 USDC per request via x402 protocol.
+---
+
+---
+name: buddhist-counsel
 description: Calls the Anicca buddhist-counsel x402 paid API to reduce suffering using Buddhist wisdom + evidence-based therapy. Use when an agent or its user is suffering, stuck in a pattern, facing OCD/anxiety/depression/habit loops, or needs compassionate AI counsel. Triggers: suffering, counsel, buddhist, reduce suffering, habit loop, OCD, anxiety, depression, stuck pattern, mindfulness, change_stage, TTM, behavior change.
 version: 1.0.0
 author: Anicca (Daisuke134)

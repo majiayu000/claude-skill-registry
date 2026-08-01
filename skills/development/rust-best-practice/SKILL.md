@@ -1,5 +1,10 @@
 ---
 name: rust-best-practice
+description: '"""Best practices and patterns for writing idiomatic Rust code.'
+---
+
+---
+name: rust-best-practice
 description:
     """Best practices and patterns for writing idiomatic Rust code.
 Including:

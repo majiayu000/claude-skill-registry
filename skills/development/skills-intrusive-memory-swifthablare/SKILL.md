@@ -1,3 +1,9 @@
+---
+name: skills-intrusive-memory-swifthablare
+description: Use this skill when you need to add a new VoiceProvider implementation
+  and expose it through the shared
+---
+
 # Skill: Register a Custom Voice Provider
 
 Use this skill when you need to add a new `VoiceProvider` implementation and expose it through the shared

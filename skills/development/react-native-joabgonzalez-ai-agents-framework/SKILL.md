@@ -1,5 +1,10 @@
 ---
 name: react-native
+description: Mobile development patterns with React Native for iOS and Android applications.
+---
+
+---
+name: react-native
 description: React Native mobile development patterns and best practices. Platform-specific code, navigation, native modules, performance optimization. Trigger: When developing React Native mobile apps, implementing platform-specific features, or optimizing mobile performance.
 skills:
   - conventions

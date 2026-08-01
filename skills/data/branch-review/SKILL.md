@@ -1,5 +1,10 @@
 ---
 name: branch-review
+description: 'Review code changes on a feature branch, checking for:'
+---
+
+---
+name: branch-review
 description: Review code changes on a feature branch compared to a base branch (default: master). Checks for pattern consistency, code duplication, unnecessary variables, and proper use of existing utilities. Use when you want a thorough code review before merging.
 allowed-tools:
   - Bash

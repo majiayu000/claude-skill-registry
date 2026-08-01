@@ -1,3 +1,9 @@
+---
+name: buildskill
+description: Claude Code-specific features for skills. This supplements the generic
+  skill conventions in SKILL.md.
+---
+
 # Claude Code Skill Conventions
 
 Claude Code-specific features for skills. This supplements the generic skill conventions in SKILL.md.

@@ -1,5 +1,12 @@
 ---
 name: content-writing
+description: This skill enables writing of project descriptions that communicate business
+  value, outcomes, and impact while deliberately avoiding disclosure of technical
+  implementation details, code logic, or proprietary information.
+---
+
+---
+name: content-writing
 description: Write compelling project descriptions and business communications that focus on outcomes, impact, and value without exposing technical implementation details or internal logic. Use this skill when creating: (1) Project descriptions for stakeholders, executives, or portfolios, (2) Business impact summaries and outcome documentation, (3) Executive summaries that explain "what" we're building without revealing "how" it works, (4) Marketing materials or external-facing project communications, (5) Any content that needs to persuade stakeholders by emphasizing business value over technical details. Perfect for explaining projects to non-technical audiences while maintaining appropriate boundaries around proprietary information.
 ---
 

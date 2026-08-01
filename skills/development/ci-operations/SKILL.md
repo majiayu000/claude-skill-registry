@@ -1,3 +1,8 @@
+---
+name: ci-operations
+description: Maintain CI reliability, required status checks, and build matrix health.
+---
+
 # CI Operations
 
 ## Purpose

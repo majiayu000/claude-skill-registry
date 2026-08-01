@@ -1,5 +1,10 @@
 ---
 name: svelte5-cloudflare
+description: Use this skill for any SvelteKit-on-Cloudflare task.
+---
+
+---
+name: svelte5-cloudflare
 description: Deploy and operate Svelte 5 + SvelteKit projects on Cloudflare Workers safely.
 Use when adding server routes, configuring adapters, setting Wrangler secrets,
 deploying with CLI, or debugging waitlist/form flows that proxy to external services.

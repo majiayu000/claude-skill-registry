@@ -1,5 +1,11 @@
 ---
 name: electronic-structure
+description: 'This skill group covers first-principles and machine-learning-potential-based
+  electronic structure calculations. Two main approaches are available:'
+---
+
+---
+name: electronic-structure
 description: Electronic Structure Calculations (8 sub-skills: band-structure, convergence-testing, density-of-states, inverse-participation-ratio, projected-dos, scf-relax, spatially-resolved-dos, vasp-bands)
 ---
 

@@ -1,3 +1,8 @@
+---
+name: rfp-source-expansion
+description: 'name: rfp-source-expansion'
+---
+
 name: rfp-source-expansion
 description: Integrate additional RFP data sources (SAM.gov, eMMA, GovTribe, BidNet). Use when expanding or refining ingestion sources.
 ---
@@ -26,40 +31,40 @@ interface NormalizedRfp {
   id: string;                    // Convex-generated
   externalId: string;            // Source platform ID
   source: RfpSource;             // Enum of sources
-  
+
   // Core fields
   title: string;
   summary: string;
   fullDescription?: string;
   url: string;
-  
+
   // Dates
   postedDate?: Date;
   deadline?: Date;
   questionDeadline?: Date;
-  
+
   // Location
   location?: string;
   state?: string;
   country?: string;
   isRemoteAllowed?: boolean;
-  
+
   // Classification
   category?: string;
   naicsCode?: string;
   pscCode?: string;
-  
+
   // Budget
   budgetMin?: number;
   budgetMax?: number;
   budgetText?: string;
-  
+
   // Eligibility
   eligibility?: EligibilityInfo;
-  
+
   // Attachments
   attachments?: Attachment[];
-  
+
   // Metadata
   fetchedAt: Date;
   rawData?: string; // JSON of original response
@@ -121,7 +126,7 @@ async function fetchSamGovOpportunities(params: SamGovSearchParams) {
     ...(params.postedFrom && { postedFrom: params.postedFrom }),
     ...(params.title && { title: params.title }),
   });
-  
+
   const response = await fetch(`${baseUrl}?${queryParams}`);
   return response.json();
 }
@@ -175,7 +180,7 @@ function checkEligibility(rfp: NormalizedRfp, companyProfile: CompanyProfile): E
       action: companyProfile.hasUsPartner ? 'partner_needed' : 'reject',
     };
   }
-  
+
   // Check onshore requirement
   if (rfp.eligibility?.requiresOnshore && !companyProfile.hasOnshoreStaff) {
     return {
@@ -184,7 +189,7 @@ function checkEligibility(rfp: NormalizedRfp, companyProfile: CompanyProfile): E
       action: 'partner_needed',
     };
   }
-  
+
   // Check set-aside requirements
   if (rfp.eligibility?.setAsideType?.length) {
     const hasQualification = rfp.eligibility.setAsideType.some(
@@ -198,7 +203,7 @@ function checkEligibility(rfp: NormalizedRfp, companyProfile: CompanyProfile): E
       };
     }
   }
-  
+
   // Check security clearance
   if (rfp.eligibility?.securityClearance && !companyProfile.hasSecurityClearance) {
     return {
@@ -207,7 +212,7 @@ function checkEligibility(rfp: NormalizedRfp, companyProfile: CompanyProfile): E
       action: 'reject',
     };
   }
-  
+
   return { eligible: true, action: 'ok' };
 }
 ```
@@ -244,10 +249,10 @@ const ELIGIBILITY_PATTERNS = {
 
 function detectEligibilityFromText(text: string): Partial<EligibilityInfo> {
   const eligibility: Partial<EligibilityInfo> = {};
-  
+
   eligibility.usaOrgOnly = ELIGIBILITY_PATTERNS.usaOrgOnly.some(p => p.test(text));
   eligibility.requiresOnshore = ELIGIBILITY_PATTERNS.requiresOnshore.some(p => p.test(text));
-  
+
   return eligibility;
 }
 ```
@@ -261,11 +266,11 @@ async function deduplicateRfp(newRfp: NormalizedRfp, ctx: MutationCtx): Promise<
   // Check by external ID + source
   const existingByExternalId = await ctx.db
     .query("rfps")
-    .withIndex("by_external_id", q => 
+    .withIndex("by_external_id", q =>
       q.eq("externalId", newRfp.externalId).eq("source", newRfp.source)
     )
     .first();
-  
+
   if (existingByExternalId) {
     // Update existing
     await ctx.db.patch(existingByExternalId._id, {
@@ -274,7 +279,7 @@ async function deduplicateRfp(newRfp: NormalizedRfp, ctx: MutationCtx): Promise<
     });
     return false; // Not a new RFP
   }
-  
+
   // Check by title similarity (fuzzy match)
   // If same title from different source, link them
   const similar = await findSimilarByTitle(ctx, newRfp.title);
@@ -286,7 +291,7 @@ async function deduplicateRfp(newRfp: NormalizedRfp, ctx: MutationCtx): Promise<
     });
     return true;
   }
-  
+
   // Insert as new
   await ctx.db.insert("rfps", newRfp);
   return true;
@@ -311,7 +316,7 @@ crons.interval(
 );
 
 crons.interval(
-  "refresh-rfpmart", 
+  "refresh-rfpmart",
   { hours: 24 }, // Daily
   internal.rfpIngestion.refreshRfpmart
 );
@@ -333,11 +338,11 @@ interface RfpSourceConnector {
 
 class SamGovConnector implements RfpSourceConnector {
   source = RfpSource.SAM_GOV;
-  
+
   async fetch(params: FetchParams): Promise<NormalizedRfp[]> {
     // Implementation
   }
-  
+
   async healthCheck(): Promise<boolean> {
     // Check API availability
   }

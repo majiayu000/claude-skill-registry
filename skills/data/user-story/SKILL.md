@@ -1,5 +1,10 @@
 ---
 name: user-story
+description: 'This skill supports three modes: Create, Update, and Find.'
+---
+
+---
+name: user-story
 description: Create or update a user story with acceptance criteria
 argument-hint: [story description] or [update path/to/story.md]
 ---

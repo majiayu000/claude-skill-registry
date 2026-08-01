@@ -1,3 +1,8 @@
+---
+name: jsdoc
+description: '関連クラス: WindowSkillList, WindowSkillStatus <br />'
+---
+
 # Class: Scene_Skill
 
 ## Extends: [Scene_ItemBase](Scene_ItemBase.md)

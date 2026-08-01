@@ -1,5 +1,12 @@
 ---
 name: rcc
+description: 'Expert help with RCC (Repeatable, Contained Code): creating/running
+  robots, robot.yaml + conda.yaml, holotree environment caching, rcc task testrun
+  vs rcc run, dependency management (conda-forge + pip'
+---
+
+---
+name: rcc
 description: Expert help with RCC (Repeatable, Contained Code): creating/running robots, robot.yaml + conda.yaml, holotree environment caching, rcc task testrun vs rcc run, dependency management (conda-forge + pip), Playwright/robotframework-browser install (rccPostInstall: rfbrowser init), Control Room (rcc cloud), troubleshooting enterprise networks/proxies, and performance profiling with --pprof/--timeline/--trace.
 allowed-tools: Bash, Read, Write, Edit, Grep, Glob
 ---

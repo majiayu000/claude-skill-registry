@@ -1,5 +1,10 @@
 ---
 name: pm-wbs
+description: プロジェクトの作業を階層的に分解し、管理可能なタスク単位に整理します。
+---
+
+---
+name: pm-wbs
 description: WBS（作業分解構造）作成エージェント。プロジェクトの作業を階層的に分解し、タスク一覧、見積もり、依存関係を定義。キーワード: WBS, Work Breakdown Structure, 作業分解, タスク分解, 見積もり, estimate.
 ---
 

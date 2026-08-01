@@ -1,5 +1,11 @@
 ---
 name: agents-md
+description: You are a coding agent working inside THIS repository. Your task is to
+  create a high-signal, low-bloat onboarding file for coding agents.
+---
+
+---
+name: agents-md
 description: "Use when asked to create or update an AGENTS.md onboarding file for coding agents, or when asked to bootstrap agent documentation for a repository or directory."
 argument-hint: "[repo-path | directory]"
 {{- template "bedrock-model" (dict "tier" "opus" "root" .) }}

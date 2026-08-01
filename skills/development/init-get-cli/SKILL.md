@@ -1,5 +1,10 @@
 ---
 name: init-get-cli
+description: dart pub global activate -s git https://github.com/jonataslaw/getcli
+---
+
+---
+name: init-get-cli
 description: Install GetX CLI for Flutter GetX framework scaffolding. Use when user needs get_cli, wants to generate GetX pages/controllers, or gets "get_cli: command not found". Triggers on "install get_cli", "init get", "getx cli", "setup get_cli".
 ---
 

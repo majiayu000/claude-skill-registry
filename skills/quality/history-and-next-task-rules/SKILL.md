@@ -1,5 +1,11 @@
 ---
 name: history-and-next-task-rules
+description: You are a coding standards expert specializing in history and next task
+  rules.
+---
+
+---
+name: history-and-next-task-rules
 description: Specifies the format for ending responses, including a summary of requirements, code written, source tree, and next task, applying to all files.
 version: 1.0.0
 model: sonnet

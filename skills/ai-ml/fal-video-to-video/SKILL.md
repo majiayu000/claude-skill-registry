@@ -1,5 +1,10 @@
 ---
 name: fal-video-to-video
+description: '| Task | Endpoint | Key Parameter |'
+---
+
+---
+name: fal-video-to-video
 description: Complete fal.ai video-to-video system. PROACTIVELY activate for: (1) Kling O1 video editing, (2) Sora Remix transformation, (3) Video upscaling, (4) Frame interpolation, (5) Style transfer (anime, painting), (6) Object replacement/removal, (7) Color correction, (8) Video enhancement pipelines. Provides: Edit types (general/style/object), upscaling options, style keywords, enhancement workflows. Ensures consistent video transformation without flickering.
 ---
 

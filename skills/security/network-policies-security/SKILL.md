@@ -1,3 +1,8 @@
+---
+name: network-policies-security
+description: '| ID | sre-network-policies-security |'
+---
+
 # 🔐 Skill: Network Policies & Security
 
 ## 📋 Metadata
@@ -77,7 +82,7 @@ External/Internal Services
 
 > **📁 Scripts Ejecutables:** Este skill incluye scripts ejecutables en la carpeta [`scripts/`](scripts/):
 > - **Network Policy Manager:** [`scripts/network_policy_manager.py`](scripts/network_policy_manager.py) - Gestión de network policies (Python CLI)
-> 
+>
 > Ver [`scripts/README.md`](scripts/README.md) para documentación de uso completa.
 
 ### 1. Basic Network Policies
@@ -392,7 +397,7 @@ python scripts/network_policy_manager.py validate --policy policy.json
 
 ---
 
-**Versión:** 1.0.0  
-**Última actualización:** Diciembre 2025  
+**Versión:** 1.0.0
+**Última actualización:** Diciembre 2025
 **Total líneas:** 1,100+
 

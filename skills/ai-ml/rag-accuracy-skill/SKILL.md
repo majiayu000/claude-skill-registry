@@ -1,4 +1,11 @@
 ---
+name: rag-accuracy-skill
+description: 'Measure RAG answer quality through three core metrics: Faithfulness
+  (accuracy to context), Relevance (retrieval quality), and Answer Quality (overall
+  usefulness).'
+---
+
+---
 name: rag-accuracy
 version: 1.0
 last_updated: 2025-12-04

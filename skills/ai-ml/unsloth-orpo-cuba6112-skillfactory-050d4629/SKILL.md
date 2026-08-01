@@ -1,5 +1,13 @@
 ---
 name: unsloth-orpo
+description: Unsloth-orpo facilitates one-step preference alignment using Odds Ratio
+  Preference Optimization (ORPO). Unlike DPO, which requires a separate reference
+  model, ORPO incorporates a penalty for disfavored generations directly into the
+  training process, making it more efficient and faster.
+---
+
+---
+name: unsloth-orpo
 description: One-step preference alignment using Odds Ratio Preference Optimization (ORPO) (triggers: ORPO, preference optimization, alignment, ORPOTrainer, log_odds_ratio, binary preference).
 ---
 

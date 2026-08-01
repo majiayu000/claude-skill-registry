@@ -1,5 +1,12 @@
 ---
 name: agentdb-reinforcement-learning-training
+description: Train AI learning plugins with AgentDB's 9 reinforcement learning algorithms
+  including Decision Transformer, Q-Learning, SARSA, Actor-Critic, PPO, and more.
+  Build self-learning agents, implement RL, and optimize agent behavior through experience.
+---
+
+---
+name: agentdb-reinforcement-learning-training
 description: AgentDB Reinforcement Learning Training operates on 3 fundamental principles:
 allowed-tools: Read, Write, Edit, Task, TodoWrite, Glob, Grep
 ---

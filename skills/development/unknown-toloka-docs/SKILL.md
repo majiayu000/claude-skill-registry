@@ -1,3 +1,8 @@
+---
+name: unknown
+description: Documentation for Toloka products
+---
+
 # Удалить навык у исполнителя
 
 {% include [announce](../_includes/announce.md) %}

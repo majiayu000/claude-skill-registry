@@ -1,5 +1,12 @@
 ---
 name: write-subagent
+description: 'CRITICAL: Before deploying any subagent, spawn a reviewer agent with
+  REVIEW.md to audit tools. Overly permissive tool access can cause data loss or leak
+  secrets.'
+---
+
+---
+name: write-subagent
 description: Use when the user wants to create a new Claude Code subagent. Guides subagent creation with focused prompts and constrained tool access.
 argument-hint: "[global|local] [subagent-name] [purpose...]"
 {{- template "bedrock-model" (dict "tier" "opus" "root" .) }}

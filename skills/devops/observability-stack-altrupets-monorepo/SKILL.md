@@ -1,3 +1,8 @@
+---
+name: observability-stack
+description: '| ID | sre-observability-stack |'
+---
+
 # 📊 Skill: Observability Stack
 
 ## 📋 Metadata

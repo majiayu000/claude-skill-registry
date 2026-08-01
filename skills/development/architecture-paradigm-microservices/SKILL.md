@@ -1,5 +1,11 @@
 ---
 name: architecture-paradigm-microservices
+description: '- When the organizational structure requires high levels of team autonomy
+  and independent release cycles.'
+---
+
+---
+name: architecture-paradigm-microservices
 description: |
 
 Triggers: architecture, team-autonomy, scalability, distributed-systems, microservices

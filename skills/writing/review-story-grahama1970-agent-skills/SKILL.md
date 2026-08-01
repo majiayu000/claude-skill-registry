@@ -1,5 +1,11 @@
 ---
 name: review-story
+description: Multi-provider creative writing critique for Horus persona. Analyzes
+  stories across four dimensions and returns structured feedback for iterative refinement.
+---
+
+---
+name: review-story
 description: >
   Multi-provider creative writing critique for stories, screenplays, and narratives.
   Analyzes structural, emotional, craft, and persona dimensions. Integrates with

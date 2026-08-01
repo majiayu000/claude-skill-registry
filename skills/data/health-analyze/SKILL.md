@@ -1,3 +1,8 @@
+---
+name: health-analyze
+description: 分析健康数据，计算健康评分并识别异常指标
+---
+
 # health-analyze
 
 **用途**: 分析健康数据，计算健康评分

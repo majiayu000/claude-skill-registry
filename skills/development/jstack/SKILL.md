@@ -1,3 +1,9 @@
+---
+name: jstack
+description: You are analyzing a Java thread dump to identify deadlocks, performance
+  issues, and thread contention.
+---
+
 You are analyzing a Java thread dump to identify deadlocks, performance issues, and thread contention.
 
 ## Step 1: Capture the thread dump

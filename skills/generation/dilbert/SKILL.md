@@ -1,3 +1,8 @@
+---
+name: dilbert
+description: 'Description: Fetches and sends random Dilbert comics'
+---
+
 # Dilbert Skill
 
 **Name:** dilbert

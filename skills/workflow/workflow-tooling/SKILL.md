@@ -1,5 +1,11 @@
 ---
 name: workflow-tooling
+description: Use the workflow utilities and validation scripts when editing workflow
+  JSON or serialization logic.
+---
+
+---
+name: workflow-tooling
 description: Validate and maintain workflow JSON and workflow utilities. Use when: editing workflows in workflows/, validating node connections, updating workflow serialization or loaders.
 ---
 

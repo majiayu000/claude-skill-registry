@@ -1,3 +1,8 @@
+---
+name: autofixture-basics
+description: '- test data generation'
+---
+
 # AutoFixture 基礎：自動產生測試資料
 
 ---
@@ -90,7 +95,7 @@ public void CreateMany_產生集合_應有多個元素()
 
     // 預設產生 3 個元素
     var products = fixture.CreateMany<Product>().ToList();
-    
+
     // 指定數量
     var moreProducts = fixture.CreateMany<Product>(10).ToList();
 
@@ -185,10 +190,10 @@ public void OmitAutoProperties_僅設定必要屬性()
 public void 循環參考_預設行為_拋出例外()
 {
     var fixture = new Fixture();
-    
+
     // Category 有 Parent 屬性指向自己，造成循環參考
     Action act = () => fixture.Create<Category>();
-    
+
     act.Should().Throw<ObjectCreationException>();
 }
 ```
@@ -200,11 +205,11 @@ public void 循環參考_預設行為_拋出例外()
 public void 循環參考_使用OmitOnRecursion_成功建立()
 {
     var fixture = new Fixture();
-    
+
     // 移除預設的拋出例外行為
     fixture.Behaviors.OfType<ThrowingRecursionBehavior>().ToList()
         .ForEach(b => fixture.Behaviors.Remove(b));
-    
+
     // 加入忽略循環參考行為
     fixture.Behaviors.Add(new OmitOnRecursionBehavior());
 
@@ -241,7 +246,7 @@ public class CustomerServiceTests : AutoFixtureTestBase
     {
         var fixture = CreateFixture();
         var customer = fixture.Create<Customer>();
-        
+
         // 測試邏輯...
     }
 }
@@ -259,7 +264,7 @@ public class ProductServiceTests
     public ProductServiceTests()
     {
         _fixture = new Fixture();
-        
+
         // 共同的客製化設定
         _fixture.Customize<ProductCreateRequest>(c => c
             .With(x => x.Price, () => _fixture.Create<decimal>() % 10000)
@@ -291,11 +296,11 @@ public class ProductServiceTests
 public void CalculateDiscount_不同客戶類型_應套用正確折扣(CustomerType customerType)
 {
     var fixture = new Fixture();
-    
+
     var customer = fixture.Build<Customer>()
         .With(x => x.Type, customerType)
         .Create();
-        
+
     var order = fixture.Create<Order>();
     var calculator = new DiscountCalculator();
 
@@ -374,19 +379,19 @@ public class OrderBuilder
     private int _id = 1;
     private Customer _customer = new Customer { Name = "Default" };
     private List<OrderItem> _items = new();
-    
+
     public OrderBuilder WithCustomer(Customer customer)
     {
         _customer = customer;
         return this;
     }
-    
+
     public OrderBuilder WithItems(params OrderItem[] items)
     {
         _items = items.ToList();
         return this;
     }
-    
+
     public Order Build() => new Order
     {
         Id = _id,
@@ -446,7 +451,7 @@ public void GetLevel_不同消費金額_應回傳正確等級(decimal totalSpent
 public void ValidateRequest_有效資料_應通過驗證()
 {
     var fixture = new Fixture();
-    
+
     var request = fixture.Build<CreateCustomerRequest>()
         .With(x => x.Name, fixture.Create<string>()[..50])
         .With(x => x.Email, fixture.Create<MailAddress>().Address)
@@ -504,14 +509,14 @@ public void ProcessBatch_大量資料_應正確處理()
 public static class TestDataFactory
 {
     private static readonly Fixture _fixture = new();
-    
+
     // 用 AutoFixture 建立基礎資料，再用 Builder 加工
     public static OrderBuilder AnOrder()
     {
         var baseOrder = _fixture.Create<Order>();
         return new OrderBuilder(baseOrder);
     }
-    
+
     // 大量隨機資料產生
     public static IEnumerable<User> CreateRandomUsers(int count)
     {

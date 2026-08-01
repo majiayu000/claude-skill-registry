@@ -1,5 +1,13 @@
 ---
 name: celltypeannotation
+description: 'Annotates cell clusters with biological cell type labels using multiple
+  methods: direct assignment, ScType, scCATCH, hitype, or CellTypist. This process
+  is essential for interpreting clustering results by assigning meaningful biological
+  identities to each cluster.'
+---
+
+---
+name: celltypeannotation
 description: Annotates cell clusters with biological cell type labels using multiple methods: direct assignment, ScType, scCATCH, hitype, or CellTypist. This process is essential for interpreting clustering results by assigning meaningful biological identities to each cluster.
 ---
 

@@ -1,3 +1,9 @@
+---
+name: examples
+description: This example shows a minimal, well-structured skill following all thecattoolkitv3
+  standards.
+---
+
 # Example: Basic Skill
 
 This example shows a minimal, well-structured skill following all thecattoolkit_v3 standards.

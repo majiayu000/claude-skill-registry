@@ -1,5 +1,12 @@
 ---
 name: frontend-production-quality
+description: 'Use before implementing UI changes or frontend PRs. Enforces TodoWrite
+  with 18+ items. Triggers: "accessibility audit", "WCAG", "Lighthouse", "screen reader",
+  "a11y", "NVDA", "VoiceOver", "keyboard na'
+---
+
+---
+name: frontend-production-quality
 description: Use before implementing UI changes or frontend PRs. Enforces TodoWrite with 18+ items. Triggers: "accessibility audit", "WCAG", "Lighthouse", "screen reader", "a11y", "NVDA", "VoiceOver", "keyboard navigation", "focus indicator". For "Core Web Vitals" in frontend/UI context, use this skill. For pure backend/API performance optimization, use performance-optimization instead. If thinking "WIP doesn't need this" - use it anyway.
 ---
 

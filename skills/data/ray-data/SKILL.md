@@ -1,5 +1,10 @@
 ---
 name: ray-data
+description: Distributed data processing library for ML and AI workloads.
+---
+
+---
+name: ray-data
 description: Scalable data processing for ML workloads. Streaming execution across CPU/GPU, supports Parquet/CSV/JSON/images. Integrates with Ray Train, PyTorch, TensorFlow. Scales from single machine to 100s of nodes. Use for batch inference, data preprocessing, multi-modal data loading, or distributed ETL pipelines.
 version: 1.0.0
 author: Orchestra Research

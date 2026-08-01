@@ -1,4 +1,9 @@
 ---
+name: merge
+description: Execute /merge or /merge <branch> slash command.
+---
+
+---
 name: merging-branch
 description: Merges a branch into current branch with conflict resolution. Use when: user wants to merge, combine branches, or integrate changes.
 ---

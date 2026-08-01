@@ -1,5 +1,11 @@
 ---
 name: gemini-peer-review
+description: 🖥️ Claude Code Only - Requires terminal access to execute Gemini CLI
+  commands.
+---
+
+---
+name: gemini-peer-review
 description: [CLAUDE CODE ONLY] Leverage Gemini CLI for AI peer review, second opinions on architecture and design decisions, cross-validation of implementations, security analysis, alternative approaches, and holistic codebase analysis. Requires terminal access to execute Gemini CLI commands. Use when making high-stakes decisions, reviewing complex architecture, analyzing large codebases (1M token context window), or when explicitly requested for a second AI perspective. Must be explicitly invoked using skill syntax.
 license: Complete terms in LICENSE.txt
 environment: claude-code

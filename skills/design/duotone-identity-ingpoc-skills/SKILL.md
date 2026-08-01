@@ -1,5 +1,11 @@
 ---
 name: duotone-identity
+description: Anthropic-inspired duotone design language for Identity Platform. Strict
+  cream/charcoal palette with intentional typography and animated SVG illustrations.
+---
+
+---
+name: duotone-identity
 description: Use when designing app pages, typography, spacing, or any UI look and feel for the Identity Platform. Load for creating landing pages, chapter sections, SVG illustrations, or applying the duotone cream/charcoal design system. Keywords: design, ui, styling, theme, colors, layout
 keywords: design, ui, theme, duotone, landing, svg, gsap, animation, styling
 ---

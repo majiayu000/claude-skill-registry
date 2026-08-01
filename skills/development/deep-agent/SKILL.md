@@ -1,3 +1,8 @@
+---
+name: deep-agent
+description: 'Type: AI Research Agent'
+---
+
 # DeepAgent
 
 **Type:** AI Research Agent

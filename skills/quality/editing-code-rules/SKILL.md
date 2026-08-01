@@ -1,5 +1,10 @@
 ---
 name: editing-code-rules
+description: You are a coding standards expert specializing in editing code rules.
+---
+
+---
+name: editing-code-rules
 description: Prioritizes the method for editing code and defines verbosity levels.
 version: 1.0.0
 model: sonnet

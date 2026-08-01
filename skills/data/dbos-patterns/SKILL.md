@@ -1,5 +1,12 @@
 ---
 name: dbos-patterns
+description: DBOS durable execution patterns and CRITICAL constraints for ChainGraph
+  executor. Use when working on workflows, steps, execution, or any DBOS-related code.
+  Contains MUST-FOLLOW constraints about what
+---
+
+---
+name: dbos-patterns
 description: DBOS durable execution patterns and CRITICAL constraints for ChainGraph executor. Use when working on workflows, steps, execution, or any DBOS-related code. Contains MUST-FOLLOW constraints about what can be called from workflows vs steps. Triggers: dbos, workflow, step, durable, execution, startWorkflow, writeStream, recv, send, runStep, atomic, checkpoint, WorkflowQueue, queue, cancelWorkflow, Promise.allSettled. (project)
 ---
 

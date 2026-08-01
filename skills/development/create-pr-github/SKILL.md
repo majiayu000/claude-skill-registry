@@ -1,5 +1,12 @@
 ---
 name: create-pr-github
+description: Create and (optionally) merge a GitHub pull request (prefer GitHub chat
+  tools; gh/wrappers are fallback), following the repo policy to use rebase and merge
+  for a linear history.
+---
+
+---
+name: create-pr-github
 description: Create and (optionally) merge a GitHub pull request (prefer GitHub chat tools; gh/wrappers are fallback), following the repo policy to use rebase and merge for a linear history.
 compatibility: Preferred: GitHub chat tools configured for the repo. Fallback: git + GitHub CLI (gh) authenticated, plus network access.
 ---

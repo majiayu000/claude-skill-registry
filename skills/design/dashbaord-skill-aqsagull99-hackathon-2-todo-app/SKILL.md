@@ -1,4 +1,9 @@
 ---
+name: dashbaord-skill
+description: Dark luxury UI with pink glass highlights (same as signup/signin)
+---
+
+---
 name: todo-dashboard-ui
 version: 2.0.0
 level: Senior / 10+ Years UI Design Standard

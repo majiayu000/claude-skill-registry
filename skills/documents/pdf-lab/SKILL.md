@@ -1,5 +1,10 @@
 ---
 name: pdf-lab
+description: /pdf-lab is a convergence loop that diagnoses PDF extraction failures,
+---
+
+---
+name: pdf-lab
 description: >
   Self-improving PDF extraction convergence loop. Diagnoses extraction failures
   by computing the delta between S00 estimates and actual extraction, reproduces

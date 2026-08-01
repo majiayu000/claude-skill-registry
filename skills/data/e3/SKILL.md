@@ -1,5 +1,12 @@
 ---
 name: e3
+description: 'East Execution Engine (e3) - durable dataflow execution for East programs.
+  Use when: (1) Authoring e3 packages with @elaraai/e3 (e3.input, e3.task, e3.package,
+  e3.export), (2) Running e3 CLI commands'
+---
+
+---
+name: e3
 description: East Execution Engine (e3) - durable dataflow execution for East programs. Use when: (1) Authoring e3 packages with @elaraai/e3 (e3.input, e3.task, e3.package, e3.export), (2) Running e3 CLI commands (e3 init, e3 start, e3 watch, e3 get, e3 set), (3) Working with workspaces and packages, (4) Content-addressable caching and dataflow execution.
 ---
 

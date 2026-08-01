@@ -1,5 +1,12 @@
 ---
 name: knowledge-locator
+description: 'Spatial indexing and retrieval system for finding information within
+  memorypalaces using multi-modal search.Triggers: knowledge search, find information,
+  locate concept, recall, spatialquery, cross-re'
+---
+
+---
+name: knowledge-locator
 description: |
 
 Triggers: spatial-memory, indexing, search, locator, retrieval

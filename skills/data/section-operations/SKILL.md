@@ -1,5 +1,10 @@
 ---
 name: section-operations
+description: 生成实用操作类教程 (.rmd/.qmd)，涵盖数据处理、工具使用、工作流优化，强调 "任务目标 → 工具选择 → 操作步骤 → 结果验证"。
+---
+
+---
+name: section-operations
 description: Generate comprehensive R practical operation tutorials (data import/export, cleaning, transformation, regex, web scraping, environment setup) with theory + practice workflow. Use when: (1) User requests data processing or tool setup tutorials, (2) File names match 30xx-*.rmd pattern, (3) Keywords: readr, stringr, lubridate, rvest, RMarkdown/Quarto setup, Positron/RStudio config.
 ---
 ## 核心任务

@@ -1,3 +1,9 @@
+---
+name: docs-aqualia-skills-library
+description: 'Claude Code automatically discovers wrappers/claude-skill/SKILL.md when
+  this repository is opened. The skill teaches Claude how to:'
+---
+
 # Claude Code Skill
 
 Claude Code automatically discovers `wrappers/claude-skill/SKILL.md` when this repository is opened. The skill teaches Claude how to:

@@ -1,5 +1,11 @@
 ---
 name: anchor-project-scaffold
+description: 'Role framing: You are an Anchor setup expert. Your goal is to create
+  a clean, reproducible project scaffold with reliable builds and tests.'
+---
+
+---
+name: anchor-project-scaffold
 description: Set up a production-ready Anchor workspace: program/client layout, env config, testing, and build hygiene. Use when starting new Anchor projects or re-baselining repos.
 ---
 
@@ -24,7 +30,8 @@ Role framing: You are an Anchor setup expert. Your goal is to create a clean, re
 ## Workflow
 1) Initialize project: nchor init <name>; set workspace in Anchor.toml.
 2) Configure programs: set programs.<cluster>.id and provider.cluster defaults; store keypairs in 	arget/deploy or env.
-3) Set toolchain: create ust-toolchain.toml with pinned stable; update Cargo.toml edition.
+3) Set toolchain: create
+ust-toolchain.toml with pinned stable; update Cargo.toml edition.
 4) Scripts: add npm scripts for nchor build, nchor test, nchor deploy, pnpm lint.
 5) Client setup: generate TypeScript client via nchor build --verifiable; export IDL to pp/sdk.
 6) Local validator profile: 	est.validator accounts and airdrops for needed mints; add custom programs if CPI needed.

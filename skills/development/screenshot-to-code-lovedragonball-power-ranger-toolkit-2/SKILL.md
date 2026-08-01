@@ -1,3 +1,8 @@
+---
+name: screenshot-to-code
+description: แปลง screenshots หรือ design mockups เป็น working code (HTML/CSS/React)
+---
+
 # 📸 Screenshot to Code Skill
 
 ---
@@ -50,8 +55,8 @@ description: Convert UI screenshots or design mockups into working code
 function ProductCard({ product }) {
   return (
     <div className="card">
-      <img 
-        src={product.image} 
+      <img
+        src={product.image}
         alt={product.name}
         className="card-image"
       />

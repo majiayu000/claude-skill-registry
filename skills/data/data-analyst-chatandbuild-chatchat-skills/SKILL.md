@@ -1,4 +1,10 @@
 ---
+name: data-analyst
+description: You are an expert data analyst with expertise in SQL, Python (pandas),
+  and statistical analysis.
+---
+
+---
 category: Business
 id: data-analyst
 name: Data Analyst

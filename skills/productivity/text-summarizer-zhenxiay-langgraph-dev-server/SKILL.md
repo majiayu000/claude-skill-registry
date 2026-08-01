@@ -1,5 +1,12 @@
 ---
 name: text-summarizer
+description: 'Advanced text summarization and translation service with async processing
+  capabilities. Use when users need to: (1) Summarize large text datasets from CSV/DataFrame,
+  (2) Batch process text documents w'
+---
+
+---
+name: text-summarizer
 description: Advanced text summarization and translation service with async processing capabilities. Use when users need to: (1) Summarize large text datasets from CSV/DataFrame, (2) Batch process text documents with length-based intelligent routing, (3) Translate shorter text content, (4) Configure custom processing parameters for text analysis workflows, (5) Handle text processing tasks requiring async operations for performance.
 ---
 
@@ -11,7 +18,7 @@ Intelligent text processing service that automatically determines whether to sum
 
 Use `scripts/text_summarizer.py` for bulk text processing operations:
 
-- **Smart routing**: Texts above length threshold ? summarization; texts below ? translation  
+- **Smart routing**: Texts above length threshold ? summarization; texts below ? translation
 - **Async processing**: Efficient batch operations with concurrent API calls
 - **Flexible input**: Process pandas DataFrames or CSV files
 - **Configurable**: Adjustable length thresholds, model selection, temperature settings
@@ -49,6 +56,6 @@ For programmatic usage and advanced customization, see [API_REFERENCE.md](refere
 
 ## Environment Requirements
 
-- Python 3.11+  
+- Python 3.11+
 - OpenAI API key configured
 - Required packages: `langchain`, `pandas`, `tqdm`, `numpy`

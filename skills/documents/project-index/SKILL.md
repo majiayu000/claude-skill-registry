@@ -1,3 +1,8 @@
+---
+name: project-index
+description: Copy .* folder and AGENTS.md then paste  /root of project
+---
+
 ﻿---
 name: project-index
 description: Generate and maintain project structure index for fast AI navigation. Creates docs/structure.md with optimized file index. Load this skill when starting new project, after major changes, or when docs/structure.md is outdated.
@@ -45,7 +50,7 @@ node .codex/skills/project-index/scripts/scan-structure.js . 4 json
 # Basic usage
 python .codex/skills/project-index/scripts/scan_structure.py . 4
 
-# Output to file  
+# Output to file
 python .codex/skills/project-index/scripts/scan_structure.py . 4 > docs/structure.md
 
 # JSON format

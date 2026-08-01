@@ -1,5 +1,10 @@
 ---
 name: ui-spec
+description: UI/UX設計に基づいた画面仕様書の作成を担当します。
+---
+
+---
+name: ui-spec
 description: 画面仕様書作成エージェント。UI/UX設計、画面レイアウト、コンポーネント仕様、画面遷移、インタラクション定義を行う。キーワード: 画面仕様書, UI仕様, screen spec, UI design, 画面設計, ワイヤーフレーム, wireframe.
 ---
 

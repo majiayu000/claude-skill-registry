@@ -1,3 +1,9 @@
+---
+name: neon-db-setup
+description: 'Purpose: Automate Neon PostgreSQL database connection setup for FastAPI
+  + SQLModel projects.'
+---
+
 # Skill: Neon DB Setup
 
 **Purpose**: Automate Neon PostgreSQL database connection setup for FastAPI + SQLModel projects.

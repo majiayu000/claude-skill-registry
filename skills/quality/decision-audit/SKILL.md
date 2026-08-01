@@ -1,3 +1,8 @@
+---
+name: decision-audit
+description: '> Compiler: skill-compiler/1.0.0'
+---
+
 # Decision Audit Skill
 
 > Version: 1.0.0

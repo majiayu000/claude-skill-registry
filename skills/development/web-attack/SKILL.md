@@ -1,3 +1,9 @@
+---
+name: web-attack
+description: Performing a web app pentest for sof comanpym and task y iwth testing
+  the lastest of their social network web app.
+---
+
 # Scenario:
 Performing a web app pentest for sof comanpym and task y iwth testing the lastest of their social network web app.
 Try to escalate your privileges and exploit different vulnerabilities to read the flag at '/flag.php'.

@@ -1,3 +1,9 @@
+---
+name: design-tokens
+description: 'Purpose: Generate and maintain design system tokens across all project
+  surfaces (UI, emails, PDFs, CLI, charts, docs)'
+---
+
 # Design Tokens - Comprehensive Reference
 
 **Version**: 2.0.0

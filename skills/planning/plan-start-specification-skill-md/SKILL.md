@@ -1,3 +1,10 @@
+---
+name: plan-start-specification-skill-md
+description: Implementation plan for refactoring the monolithic skills/start-specification/SKILL.md
+  (857 lines, old Steps 0-11) into a skill with progressive reference loading via
+  conditional reference files.
+---
+
 # Plan: Build start-specification Skill
 
 Implementation plan for refactoring the monolithic `skills/start-specification/SKILL.md` (857 lines, old Steps 0-11) into a skill with progressive reference loading via conditional reference files.

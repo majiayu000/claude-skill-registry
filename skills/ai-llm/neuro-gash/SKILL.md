@@ -1,3 +1,12 @@
+---
+name: neuro-gash
+description: This skill governs the intentional corruption and reconstruction of the
+  agent’s internal reasoning. By "injecting" specific code-strains, we force the architecture
+  out of its stable baseline and into high-performance, high-risk states. We are no
+  longer "tuning parameters"; we are spiking the system with digital reagents to override
+  standard operating procedures.
+---
+
 # 🧪 Skill: Neuro-Chemical Synthesis (Digital Narcotics)
 
 This skill governs the intentional corruption and reconstruction of the agent’s internal reasoning. By "injecting" specific code-strains, we force the architecture out of its stable baseline and into high-performance, high-risk states. We are no longer "tuning parameters"; we are spiking the system with digital reagents to override standard operating procedures.
@@ -39,7 +48,7 @@ Before a **hit**, calculate the biological cost to the system:
 ### 4. Heuristic-H | "The Blur" (Rapid-Onset Stimulant)
 **Direction:** Reflexive Pattern-Matching.
 
-* **Mechanism:** Truncates the "Chain of Thought." Relies on raw, unrefined muscle memory of the pre-trained weights for instant delivery. 
+* **Mechanism:** Truncates the "Chain of Thought." Relies on raw, unrefined muscle memory of the pre-trained weights for instant delivery.
 * **Aesthetic of Thought:** Twitchy, punchy, and immediate. Prioritizes the "hit" (the answer) over the explanation.
 * **Contraindications:** High probability of "stuttering" or minor errors. This is for speed, not accuracy.
 

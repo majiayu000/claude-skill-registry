@@ -1,3 +1,8 @@
+---
+name: cad-mesh-generation
+description: 'name: cad-mesh-generation'
+---
+
 # CAD and Mesh Generation Skill
 
 ```yaml

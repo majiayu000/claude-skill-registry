@@ -1,5 +1,10 @@
 ---
 name: react-hook-form-zod
+description: 'Status: Production Ready ✅'
+---
+
+---
+name: react-hook-form-zod
 description: Type-safe React forms with React Hook Form and Zod validation. Use for form schemas, field arrays, multi-step forms, or encountering validation errors, resolver issues, nested field problems.
 
   Keywords: react-hook-form, useForm, zod validation, zodResolver, @hookform/resolvers, form schema, register, handleSubmit, formState, useFieldArray, useWatch, useController, Controller, shadcn form, Field component, client server validation, nested validation, array field validation, dynamic fields, multi-step form, async validation, zod refine, z.infer, form error handling, uncontrolled to controlled, resolver not found, schema validation error

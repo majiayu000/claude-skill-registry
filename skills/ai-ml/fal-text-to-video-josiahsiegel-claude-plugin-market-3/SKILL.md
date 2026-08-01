@@ -1,5 +1,10 @@
 ---
 name: fal-text-to-video
+description: '| Model | Endpoint | Duration | Audio | Speed |'
+---
+
+---
+name: fal-text-to-video
 description: Complete fal.ai text-to-video system. PROACTIVELY activate for: (1) Kling 2.0/2.5/2.6 Pro video generation, (2) Sora 2 for creative videos, (3) LTX Video with audio, (4) Runway Gen-3 Turbo for fast iteration, (5) Luma Dream Machine, (6) Video duration and aspect ratio, (7) Motion prompt engineering, (8) Camera movement keywords. Provides: Model endpoints, quality tiers, prompt structure, duration options. Ensures cinematic video generation with proper motion description.
 ---
 

@@ -1,5 +1,10 @@
 ---
 name: domain-events
+description: This skill provides guidelines and best practices.
+---
+
+---
+name: domain-events
 description: Règle 06 : Domain Events. Use when implementing DDD patterns.
 ---
 

@@ -1,5 +1,10 @@
 ---
 name: command-phase-report
+description: Run the /phase-report workflow defined in .claude/commands/phase-report.md.
+---
+
+---
+name: command-phase-report
 description: Use the /phase-report slash command to generate progress updates and log them. Use when: reporting status or phase completion.
 ---
 

@@ -1,3 +1,8 @@
+---
+name: ios-cli-tasks
+description: QuickTypeの`.vscode/tasks.json`に定義されたiOSアプリ開発用コマンド（Simulator起動、xcodebuild、simctlインストール/起動など）をCLIから再現する。タスクごとの依存関係を解決してシミュレータ検証を自動化したいときに使用する。
+---
+
 name: ios-cli-tasks
 description: QuickTypeの`.vscode/tasks.json`に定義されたiOSアプリ開発用コマンド（Simulator起動、xcodebuild、simctlインストール/起動など）をCLIから再現する。タスクごとの依存関係を解決してシミュレータ検証を自動化したいときに使用する。
 ---

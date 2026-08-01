@@ -1,3 +1,8 @@
+---
+name: firebase
+description: '| ID | flutter-firebase |'
+---
+
 # 🔥 Skill: Firebase Integration
 
 ## 📋 Metadata

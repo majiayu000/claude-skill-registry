@@ -1,3 +1,8 @@
+---
+name: optionalresumeskill
+description: Name | Type | Description | Notes
+---
+
 # # OptionalResumeSkill
 
 ## Properties

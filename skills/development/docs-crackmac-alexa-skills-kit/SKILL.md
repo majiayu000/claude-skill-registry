@@ -1,3 +1,8 @@
+---
+name: docs-crackmac-alexa-skills-kit
+description: 1. Delete stack in CloudFormation
+---
+
 ### Delete a skill
 
 1. Delete stack in CloudFormation

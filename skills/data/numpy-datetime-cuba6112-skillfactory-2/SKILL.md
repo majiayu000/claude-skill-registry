@@ -1,5 +1,12 @@
 ---
 name: numpy-datetime
+description: NumPy implements datetime64 for fixed-point dates and timedelta64 for
+  durations. Unlike Python's standard datetime, NumPy's implementation is "naive"
+  (no timezones) and designed for high-performance v
+---
+
+---
+name: numpy-datetime
 description: Date and time handling with datetime64 and timedelta64, including business day offsets and naive time parsing. Triggers: datetime64, timedelta64, busday, time series, naive time.
 ---
 

@@ -1,4 +1,11 @@
 ---
+name: back-end-structure
+description: 'Build NestJS backend following Orchestrator AI patterns. Module/Service/Controller
+  structure, A2A protocol compliance, transport types, error handling. CRITICAL: Files
+  follow kebab-case naming. Contro'
+---
+
+---
 name: Back-End Structure
 description: Build NestJS backend following Orchestrator AI patterns. Module/Service/Controller structure, A2A protocol compliance, transport types, error handling. CRITICAL: Files follow kebab-case naming. Controllers handle HTTP, Services contain business logic, Modules organize dependencies.
 allowed-tools: Read, Write, Edit, Bash, Grep, Glob

@@ -1,3 +1,8 @@
+---
+name: code-quality
+description: 디버깅, 리팩토링, 성능 분석 통합 가이드.
+---
+
 # Code Quality Skill
 
 디버깅, 리팩토링, 성능 분석 통합 가이드.

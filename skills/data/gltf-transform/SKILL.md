@@ -1,5 +1,12 @@
 ---
 name: gltf-transform
+description: Optimize and post-process GLB/glTF 3D models. Use when compressing models
+  for web delivery, reducing file size, simplifying geometry, inspecting model stats,
+  merging models, or converting textures. Tr
+---
+
+---
+name: gltf-transform
 description: Optimize and post-process GLB/glTF 3D models. Use when compressing models for web delivery, reducing file size, simplifying geometry, inspecting model stats, merging models, or converting textures. Triggers on: optimize GLB, compress model, reduce file size, simplify mesh, draco compression, meshopt, webp textures, inspect model, merge GLB, model optimization.
 ---
 

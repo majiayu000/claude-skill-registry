@@ -1,3 +1,8 @@
+---
+name: offline-first
+description: '| ID | flutter-offline-first |'
+---
+
 # 📴 Skill: Offline-First Architecture
 
 ## 📋 Metadata

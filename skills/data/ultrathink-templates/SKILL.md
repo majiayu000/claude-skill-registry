@@ -1,4 +1,9 @@
 ---
+name: ultrathink-templates
+description: '> Analiz ve karar şablonları.'
+---
+
+---
 name: ultrathink_templates
 router_kit: FullStackKit
 description: UltraThink analiz şablonları - hipotez, alternatif, karar ve risk matrisleri.

@@ -1,3 +1,8 @@
+---
+name: pre
+description: 'title = "PRECSKILL (Global: PRErequisite)"'
+---
+
 +++
 date = "2016-08-01"
 title = "PRECSKILL (Global: PRErequisite)"

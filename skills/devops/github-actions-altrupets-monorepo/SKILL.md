@@ -1,3 +1,8 @@
+---
+name: github-actions
+description: '| ID | cicd-github-actions |'
+---
+
 # 🚀 Skill: GitHub Actions CI/CD
 
 ## 📋 Metadata

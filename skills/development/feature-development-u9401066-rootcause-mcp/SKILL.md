@@ -1,5 +1,10 @@
 ---
 name: feature-development
+description: 完整的功能開發流程，從規劃到部署，編排多個 Skills 協同工作。
+---
+
+---
+name: feature-development
 description: Complete feature development workflow orchestrating multiple skills from planning to deployment. Triggers: FD, 新功能, 開發功能, feature, implement, 實作, 實現, 建立功能, create feature, develop, 開發新, add feature, 加功能, 功能開發.
 version: 1.0.0
 category: workflow

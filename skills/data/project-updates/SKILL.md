@@ -1,5 +1,10 @@
 ---
 name: project-updates
+description: 'MANDATORY: Every completed feature must be tracked in:'
+---
+
+---
+name: project-updates
 description: How to update roadmap, changelog, and Kanban when completing features. Use after finishing any feature, bug fix, or improvement to ensure proper documentation and tracking. Keywords: changelog, roadmap, kanban, feedback, documentation, completion, tracking, MCP.
 compatibility: Antigravity, Claude Code, Cursor
 metadata:
@@ -118,8 +123,8 @@ Use the Supabase MCP to directly query and update the database.
 mcp_supabase-mcp-server_execute_sql({
   project_id: "your-project-id",
   query: `
-    SELECT id, subject, board_status, completed_at 
-    FROM feedback 
+    SELECT id, subject, board_status, completed_at
+    FROM feedback
     WHERE subject ILIKE '%feature name%'
     LIMIT 5
   `
@@ -151,8 +156,8 @@ mcp_supabase-mcp-server_execute_sql({
 mcp_supabase-mcp-server_execute_sql({
   project_id: "your-project-id",
   query: `
-    UPDATE feedback 
-    SET board_status = 'done', 
+    UPDATE feedback
+    SET board_status = 'done',
         completed_at = '2026-01-16'
     WHERE id = 'item-uuid-here'
     RETURNING id, subject, board_status, completed_at
@@ -166,8 +171,8 @@ mcp_supabase-mcp-server_execute_sql({
 mcp_supabase-mcp-server_execute_sql({
   project_id: "your-project-id",
   query: `
-    SELECT id, subject, board_status, completed_at 
-    FROM feedback 
+    SELECT id, subject, board_status, completed_at
+    FROM feedback
     WHERE id = 'item-uuid-here'
   `
 })
@@ -267,7 +272,7 @@ mcp_supabase-mcp-server_execute_sql({
 // Update it
 mcp_supabase-mcp-server_execute_sql({
   query: `
-    UPDATE feedback 
+    UPDATE feedback
     SET board_status = 'done', completed_at = '2026-01-16'
     WHERE id = 'found-uuid'
     RETURNING id, subject, board_status, completed_at

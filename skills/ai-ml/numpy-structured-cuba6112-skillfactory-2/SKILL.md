@@ -1,5 +1,12 @@
 ---
 name: numpy-structured
+description: Structured arrays allow ndarrays to contain data with different types
+  in named "fields," mimicking C structs. They are used primarily for interfacing
+  with binary data from external sources and interpr
+---
+
+---
+name: numpy-structured
 description: Structured and record arrays for C-interoperability, binary blob interpretation, and multi-field tabular data handling. Triggers: structured array, record array, compound dtype, multi-field index.
 ---
 

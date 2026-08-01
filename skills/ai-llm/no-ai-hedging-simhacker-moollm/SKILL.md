@@ -1,3 +1,8 @@
+---
+name: no-ai-hedging
+description: '> "Don''t hide behind qualifiers."'
+---
+
 # NO-AI-HEDGING™ — Protocol
 
 > *"Don't hide behind qualifiers."*

@@ -1,5 +1,12 @@
 ---
 name: skill-creator-blk
+description: 'Create skills for BL1NK workspace with proven patterns and best practices.
+  Use this skill to: (1) Build new skills aligned with BL1NK architecture and 4-phase
+  implementation, (2) Understand skill stru'
+---
+
+---
+name: skill-creator-blk
 description: Create skills for BL1NK workspace with proven patterns and best practices. Use this skill to: (1) Build new skills aligned with BL1NK architecture and 4-phase implementation, (2) Understand skill structure from real BL1NK examples (text-processor, log-analyzer, notification-router, etc.), (3) Follow workspace patterns for text processing, integrations, GitHub/Poe/notification systems, (4) Create skills that integrate with existing BL1NK infrastructure, (5) Learn from the 10 skills identified in workspace analysis (Phase 1-4)
 license: Complete terms in LICENSE.txt
 ---
@@ -22,7 +29,7 @@ BL1NK skills are modular packages that extend Claude's capabilities by providing
 The BL1NK workspace has been thoroughly analyzed (50+ files), identifying 10 skills needed across 4 implementation phases:
 
 - **Phase 1 (Week 1, 5-8h)**: Critical foundation skills
-- **Phase 2 (Week 2, 9-12h)**: Integration-enabled skills  
+- **Phase 2 (Week 2, 9-12h)**: Integration-enabled skills
 - **Phase 3 (Week 3-4, 10-13h)**: Platform maturity skills
 - **Phase 4 (Backlog, 4-5h)**: Advanced capabilities
 
@@ -106,7 +113,7 @@ Documentation intended to be loaded as needed to inform Claude's process.
 
 **When to include**: For documentation Claude should reference while working
 
-**Examples**: 
+**Examples**:
 - `api_docs.md` - API specifications
 - `patterns.md` - Common workflow patterns
 - `schemas.md` - Data structure definitions
@@ -118,7 +125,7 @@ Files not loaded into context but used in the output Claude produces.
 
 **When to include**: When the skill needs templates, boilerplate, or sample files
 
-**Examples**: 
+**Examples**:
 - `template.py` - Python boilerplate
 - `example-skill/` - Sample skill structure
 - `checklist.md` - Implementation checklist
@@ -200,7 +207,7 @@ Skills are organized by implementation complexity and urgency:
 - Examples: text-processor, log-analyzer, notification-router
 - Characteristics: Simple operations, high business value, no complex dependencies
 
-### Phase 2: Integration-Enabled (Week 2, 9-12h)  
+### Phase 2: Integration-Enabled (Week 2, 9-12h)
 - External system integration
 - Examples: github-repo-analyzer, prompt-optimizer, poe-bot-generator
 - Characteristics: External APIs, moderate complexity, high value
@@ -254,7 +261,7 @@ When creating a skill, update:
 
 **DON'T REINVENT** - Check if code already exists:
 - NotificationManager → for notification-router
-- GithubClient → for github-repo-analyzer  
+- GithubClient → for github-repo-analyzer
 - GeminiClient → for prompt-optimizer
 - SkillLoader → for skill-chain-executor
 
@@ -343,7 +350,7 @@ scripts/init_blk_skill.py my-skill --path /home/user/skills/
 - Write YAML frontmatter (name, description)
 - Write body with instructions and guidance
 
-**BL1NK-specific**: 
+**BL1NK-specific**:
 - Reference integration patterns from `references/blk-patterns.md`
 - Consider which phase it belongs to
 - Check if it needs notification/GitHub/POE integration

@@ -1,5 +1,12 @@
 ---
 name: action-bias
+description: '"Am I *doing* or just *describing* that I should do?" - Counters documentation-over-action
+  patterns. Triggers when: (1) about to say "should create", "need to fix", "I recommend"
+  instead of acting, (2'
+---
+
+---
+name: action-bias
 description: "Am I *doing* or just *describing* that I should do?" - Counters documentation-over-action patterns. Triggers when: (1) about to say "should create", "need to fix", "I recommend" instead of acting, (2) end of work blocks before reporting completion, (3) reporting success while failures exist, (4) creating docs/plans without executing, (5) explaining fixes instead of implementing. Enforces ACT FIRST, DOCUMENT AFTER. Does NOT trigger for: genuine planning phases, user-requested documentation, or blocked situations requiring input.
 ---
 

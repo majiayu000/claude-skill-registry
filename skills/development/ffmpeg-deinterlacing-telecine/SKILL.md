@@ -1,5 +1,10 @@
 ---
 name: ffmpeg-deinterlacing-telecine
+description: 'MANDATORY: Always Use Backslashes on Windows for File Paths'
+---
+
+---
+name: ffmpeg-deinterlacing-telecine
 description: Complete FFmpeg deinterlacing, field processing, and telecine removal for broadcast and professional video. PROACTIVELY activate for: (1) Deinterlacing interlaced video (yadif, bwdif, w3fdif), (2) Hardware-accelerated deinterlacing (yadif_cuda, bwdif_cuda, bwdif_vulkan), (3) Inverse telecine/pulldown removal (pullup, fieldmatch), (4) Field order correction (fieldorder), (5) Field separation/weaving (separatefields, weave, tinterlace), (6) Interlace detection (idet), (7) DVD/Blu-ray processing, (8) Broadcast content conversion. Provides: Deinterlacing filters, telecine removal, field processing, hardware acceleration options.
 ---
 

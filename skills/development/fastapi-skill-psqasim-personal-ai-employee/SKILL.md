@@ -1,5 +1,10 @@
 ---
 name: fastapi-skill
+description: Expert guidance for building modern FastAPI backends.
+---
+
+---
+name: fastapi-skill
 description: Expert guidance on FastAPI backend development. Use when building or reviewing FastAPI applications requiring: (1) App structure and routing organization, (2) Pydantic models for request/response validation, (3) Dependency injection with Depends(), (4) CORS configuration for frontend integration, (5) Async route handlers, (6) SQLModel for database operations. Invoke when creating APIs, endpoints, middleware, or database integrations in FastAPI.
 ---
 

@@ -1,4 +1,10 @@
 ---
+name: pattern-matching
+description: 'Sensitive data patterns for security testing: API keys, credit cards,
+  emails, SSNs, phone numbers, IPs, and more. Use for data discovery and validation.'
+---
+
+---
 name: SecLists Pattern-Matching
 description: Sensitive data patterns for security testing: API keys, credit cards, emails, SSNs, phone numbers, IPs, and more. Use for data discovery and validation.
 ---
@@ -50,7 +56,7 @@ for root, dirs, files in os.walk(skill_path):
         if file.endswith('.txt'):
             filepath = os.path.join(root, file)
             print(f"Found: {filepath}")
-            
+
             # Read file content
             with open(filepath, 'r', errors='ignore') as f:
                 content = f.read().splitlines()

@@ -1,4 +1,11 @@
 ---
+name: numpy-string-ops-majiayu000-claude-skill-regist
+description: 'Vectorized string manipulation using the char module and modern string
+  alternatives, including cleaning and search operations. Triggers: string operations,
+  numpy.char, text cleaning, substring search.'
+---
+
+---
 name: numpy-string-ops
 description: Vectorized string manipulation using the char module and modern string alternatives, including cleaning and search operations. Triggers: string operations, numpy.char, text cleaning, substring search.
 ---

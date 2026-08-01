@@ -1,5 +1,11 @@
 ---
 name: make-skill
+description: Create, update, or edit skills with strict consistency across ../skills
+  and ../hooks.
+---
+
+---
+name: make-skill
 description: Create, update, or edit skills in this repository using the canonical taxonomy.
 Use when: (1) adding a new skill, (2) renaming or recategorizing a skill,
 (3) updating skill metadata/docs to match hooks validation contracts,

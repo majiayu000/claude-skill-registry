@@ -1,5 +1,10 @@
 ---
 name: gitingest
+description: '- Full URL: use directly'
+---
+
+---
+name: gitingest
 description: Use when the user wants to fetch and contextualize a GitHub repository for future reference.
 argument-hint: [url | user/repo | repo-name] [filters...]
 allowed-tools:

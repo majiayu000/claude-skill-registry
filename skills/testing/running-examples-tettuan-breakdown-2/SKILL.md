@@ -1,5 +1,10 @@
 ---
 name: running-examples
+description: Breakdown の examples/ を実行し、ユーザー視点での動作確認を行う。
+---
+
+---
+name: running-examples
 description: Runs Breakdown CLI examples for user-perspective verification. Use when testing Breakdown as a real user would, verifying use cases work correctly, checking environment-related issues, running example scripts (03-22), setting up examples environment, or cleaning up after examples. Keywords: examples, run examples, user test, use case test, setup examples, clean examples, verify breakdown.
 allowed-tools: Bash, Read
 ---

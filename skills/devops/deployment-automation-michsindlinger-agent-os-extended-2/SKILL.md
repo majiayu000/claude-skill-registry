@@ -1,4 +1,9 @@
 ---
+name: deployment-automation
+description: '> Template for project-specific deployment patterns skill'
+---
+
+---
 name: [PROJECT]-deployment-patterns
 description: [PROJECT] CI/CD pipeline and deployment automation patterns
 globs: [".github/workflows/**/*.yml", ".gitlab-ci.yml", "Jenkinsfile", "**/Dockerfile", "docker-compose.yml"]

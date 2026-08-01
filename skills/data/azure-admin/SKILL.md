@@ -1,3 +1,8 @@
+---
+name: azure-admin
+description: 'category: cloud-infrastructure'
+---
+
 # Azure Administration Skill
 
 ## Skill Metadata

@@ -1,4 +1,10 @@
 ---
+name: yaml-syntax-error
+description: This skill has intentionally malformed YAML frontmatter to test error
+  handling.
+---
+
+---
 name: yaml-error-skill
 description: A skill with malformed YAML to test error handling
 metadata:

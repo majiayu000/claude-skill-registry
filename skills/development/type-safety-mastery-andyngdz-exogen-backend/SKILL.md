@@ -1,5 +1,11 @@
 ---
 name: type-safety-mastery
+description: 'Master type safety patterns - fix type errors at source, never use type:
+  ignore or any, prefer Pydantic models, use type stubs for external libraries'
+---
+
+---
+name: type-safety-mastery
 description: Master type safety patterns - fix type errors at source, never use type: ignore or any, prefer Pydantic models, use type stubs for external libraries
 ---
 

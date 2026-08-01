@@ -1,3 +1,9 @@
+---
+name: econometrics
+description: 'description: Econometric methods — regression, panel data, IV. Cover
+  OLS, panel (FE/RE), instrumental variables, VAR.'
+---
+
 # Econometrics
 
 name: econometrics

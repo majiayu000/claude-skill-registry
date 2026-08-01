@@ -1,5 +1,12 @@
 ---
 name: openkbs
+description: OpenKBS AI agent development framework. Use when creating, modifying,
+  or deploying AI agents with backend handlers (onRequest, onResponse, actions.js),
+  frontend components (contentRender.js), or elast
+---
+
+---
+name: openkbs
 description: OpenKBS AI agent development framework. Use when creating, modifying, or deploying AI agents with backend handlers (onRequest, onResponse, actions.js), frontend components (contentRender.js), or elastic services (functions, postgres, storage, pulse). Trigger keywords: openkbs, kb, agent, handler, contentRender, elastic, memory, scheduled task.
 ---
 

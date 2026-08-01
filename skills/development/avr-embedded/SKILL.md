@@ -1,4 +1,9 @@
 ---
+name: avr-embedded
+description: Archived skill guidance for avr-embedded.
+---
+
+---
 name: "avr-bare-metal-embedded"
 version: "1.0.0"
 stack: "avr"

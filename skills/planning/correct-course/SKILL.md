@@ -1,3 +1,10 @@
+---
+name: correct-course
+description: 'description: Use when handling sprint changes or scope adjustments.
+  Analyzes change impacts, re-estimates affected stories, and adjusts sprint capacity
+  using PRISM principles.'
+---
+
 ﻿---
 name: correct-course
 description: Use when handling sprint changes or scope adjustments. Analyzes change impacts, re-estimates affected stories, and adjusts sprint capacity using PRISM principles.
@@ -68,18 +75,18 @@ re_estimation:
     story_points: X
     size_category: Y
     hours: Z
-  
+
   change_impact:
     scope_change: "+/-N%"
     complexity_change: "increased|decreased|same"
     risk_change: "higher|lower|same"
-  
+
   new_estimate:
     story_points: X'
     size_category: Y'
     hours: Z'
     confidence: "high|medium|low"
-  
+
   justification: "Clear explanation of estimate change"
 ```
 
@@ -91,12 +98,12 @@ sprint_metrics:
     total_points: X
     total_hours: Y
     team_capacity: Z
-  
+
   after_change:
     total_points: X'
     total_hours: Y'
     team_capacity: Z'
-    
+
   options:
     - absorb: "Take the hit, extend hours"
     - defer: "Move stories to next sprint"
@@ -115,7 +122,7 @@ Create proposal document with:
 
 **Metrics Impact:**
 - Velocity change: X â†’ Y points
-- Capacity change: A â†’ B hours  
+- Capacity change: A â†’ B hours
 - Risk score change: Low â†’ Medium
 - Confidence level: 85% â†’ 70%
 

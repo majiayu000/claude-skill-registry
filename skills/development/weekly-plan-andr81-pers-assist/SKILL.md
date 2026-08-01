@@ -1,5 +1,12 @@
 ---
 name: weekly-plan
+description: Проводит интерактивное недельное планирование по методологии Дорофеева.
+  Собирает данные из Singularity, Google Calendar, новости, погоду. СПРАШИВАЕТ пользователя
+  о просроченных задачах, входящих задач
+---
+
+---
+name: weekly-plan
 description: Проводит интерактивное недельное планирование по методологии Дорофеева. Собирает данные из Singularity, Google Calendar, новости, погоду. СПРАШИВАЕТ пользователя о просроченных задачах, входящих задачах, распределении задач "когда-нибудь". Записывает финальный план в Notion. ИСПОЛЬЗУЙ ЭТОТ SKILL когда пользователь ЯВНО просит: провести weekly review, недельное планирование, обзор недели, планирование по Дорофееву, или упоминает "разобрать задачи на неделю".
 license: MIT
 allowed-tools: Read, Bash(curl:*), MCPSearch, mcp__singularity__list_tasks, mcp__singularity__get_task, mcp__singularity__update_task, mcp__singularity__complete_task, mcp__singularity__get_inbox_tasks, mcp__singularity__list_projects, mcp__google-calendar__list-calendars, mcp__google-calendar__list-events, mcp__notion__API-post-search, mcp__notion__API-post-page, mcp__notion__API-patch-block-children, WebSearch, WebFetch, AskUserQuestion

@@ -1,5 +1,12 @@
 ---
 name: nx-monorepo-generator
+description: Use when adding Jest testing configuration to Nx projects, running `nx
+  g @nx/jest:configuration`, setting up testing infrastructure, or troubleshooting
+  tests that fail after running the Jest generator
+---
+
+---
+name: nx-monorepo-generator
 description: Use when adding Jest testing configuration to Nx projects, running `nx g @nx/jest:configuration`, setting up testing infrastructure, or troubleshooting tests that fail after running the Jest generator. Ensures proper TypeScript moduleResolution (nodenext), testing enhancement libraries (jest-dom, user-event, MSW), and monorepo pattern adherence. Triggers: "add tests", "setup Jest", "configure testing", "Jest not working", "moduleResolution error", "tests failing after generator"
 ---
 

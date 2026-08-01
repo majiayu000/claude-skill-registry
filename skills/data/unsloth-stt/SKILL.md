@@ -1,5 +1,12 @@
 ---
 name: unsloth-stt
+description: Unsloth supports fine-tuning for Speech-to-Text (STT) models like OpenAI
+  Whisper. By applying its optimized LoRA pipeline to Whisper architecture, Unsloth
+  achieves 1.5x faster training with 50% less memory usage compared to standard methods.
+---
+
+---
+name: unsloth-stt
 description: Fine-tuning Speech-to-Text models like Whisper using Unsloth's optimized LoRA pipeline. Triggers: stt, whisper, transcription, audio fine-tuning, speech-to-text, audio normalization.
 ---
 

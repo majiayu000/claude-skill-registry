@@ -1,5 +1,10 @@
 ---
 name: doc-updates
+description: '- When to Use'
+---
+
+---
+name: doc-updates
 description: |
 
 Triggers: consolidation, docstrings, writing, adr, readme

@@ -1,3 +1,8 @@
+---
+name: bloc-advanced
+description: '| ID | flutter-bloc-advanced |'
+---
+
 # 🎨 Skill: State Management con BLoC Avanzado
 
 ## 📋 Metadata

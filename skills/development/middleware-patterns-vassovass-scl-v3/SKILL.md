@@ -1,5 +1,11 @@
 ---
 name: middleware-patterns
+description: Next.js middleware runs before every request. StepLeague uses it for
+  auth protection and redirects.
+---
+
+---
+name: middleware-patterns
 description: Next.js middleware patterns for protected routes, auth redirects, and URL handling. Use when working with middleware.ts, protected routes, or auth redirects. Keywords: middleware, protected routes, redirect, auth check, URL, searchParams.
 compatibility: Antigravity, Claude Code, Cursor
 metadata:
@@ -37,7 +43,7 @@ export const config = {
     '/settings/:path*',
     '/submit-steps/:path*',
     '/claim/:path*',
-    
+
     // Admin routes
     '/admin/:path*',
   ],
@@ -68,20 +74,20 @@ import { NextResponse, type NextRequest } from 'next/server';
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
-  
+
   // Check for auth token in cookies
   const hasAuthToken = request.cookies.has('sb-access-token') ||
                        request.cookies.getAll().some(c => c.name.includes('-auth-token'));
-  
+
   if (!hasAuthToken) {
     // Preserve full URL including query params
     const signInUrl = new URL('/sign-in', request.url);
     const fullPath = pathname + (request.nextUrl.search || '');
     signInUrl.searchParams.set('redirect', fullPath);
-    
+
     return NextResponse.redirect(signInUrl);
   }
-  
+
   return NextResponse.next();
 }
 ```
@@ -114,14 +120,14 @@ export async function middleware(request: NextRequest) {
 ```typescript
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
-  
+
   // Public routes - skip auth
-  if (pathname.startsWith('/api/public') || 
+  if (pathname.startsWith('/api/public') ||
       pathname === '/sign-in' ||
       pathname === '/sign-up') {
     return NextResponse.next();
   }
-  
+
   // Admin routes - require superadmin
   if (pathname.startsWith('/admin')) {
     // Note: Full superadmin check happens in API/page
@@ -130,12 +136,12 @@ export async function middleware(request: NextRequest) {
       return NextResponse.redirect(new URL('/sign-in', request.url));
     }
   }
-  
+
   // Protected routes - require any auth
   if (!hasAuth) {
     return redirectToSignIn(request);
   }
-  
+
   return NextResponse.next();
 }
 ```
@@ -149,13 +155,13 @@ Add custom headers for downstream use:
 ```typescript
 export async function middleware(request: NextRequest) {
   const response = NextResponse.next();
-  
+
   // Add pathname for layouts
   response.headers.set('x-pathname', request.nextUrl.pathname);
-  
+
   // Add timestamp for debugging
   response.headers.set('x-middleware-ts', Date.now().toString());
-  
+
   return response;
 }
 ```
@@ -180,25 +186,25 @@ const PROTECTED_PATHS = [
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
-  
+
   // Check if route needs protection
   const isProtected = PROTECTED_PATHS.some(p => pathname.startsWith(p));
-  
+
   if (!isProtected) {
     return NextResponse.next();
   }
-  
+
   // Check for auth cookie
   const authCookie = request.cookies.getAll()
     .find(c => c.name.includes('-auth-token'));
-  
+
   if (!authCookie) {
     const signInUrl = new URL('/sign-in', request.url);
     const fullPath = pathname + (request.nextUrl.search || '');
     signInUrl.searchParams.set('redirect', fullPath);
     return NextResponse.redirect(signInUrl);
   }
-  
+
   return NextResponse.next();
 }
 

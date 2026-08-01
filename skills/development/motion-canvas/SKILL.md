@@ -1,5 +1,12 @@
 ---
 name: motion-canvas
+description: Complete production-ready guide for Motion Canvas with ESM/CommonJS workarounds,
+  full setup templates, and troubleshooting for programmatic video creation using
+  TypeScript
+---
+
+---
+name: motion-canvas
 description: Complete production-ready guide for Motion Canvas with ESM/CommonJS workarounds, full setup templates, and troubleshooting for programmatic video creation using TypeScript
 version: 2.0.0
 author: motion-canvas

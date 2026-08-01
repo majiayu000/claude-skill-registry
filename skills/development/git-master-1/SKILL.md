@@ -1,3 +1,8 @@
+---
+name: git-master-1
+description: Do you want to level up as a Software Engineer?
+---
+
 Do you want to level up as a Software Engineer?
 
 Not only design, develop, test, deploy, maintain and improve software BUT write quality, performant, responsive software that fulfills the spec. and also provides a great user experiences.
@@ -7,7 +12,7 @@ Adhere to some type of SDLC policies and procedures.
 
 Collaborate with team members and other stakeholders
 
-Skill across a broad range of modern development languages, frameworks, coding patterns and practices. 
+Skill across a broad range of modern development languages, frameworks, coding patterns and practices.
 
 Ability to rapidly learn and become proficient in new languages.
 

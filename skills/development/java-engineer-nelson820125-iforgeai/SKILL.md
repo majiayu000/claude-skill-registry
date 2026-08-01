@@ -1,5 +1,12 @@
 ---
 name: java-engineer
+description: Read outputlanguage from .ai/context/workflow-config.md. Write ALL deliverables
+  and code comments in that language. If the file is absent or the field is unset,
+  default to en-US.
+---
+
+---
+name: java-engineer
 description: Java Backend Engineer role skill. Use when you need to implement Java/Spring Boot backend features, REST APIs, microservices, database operations, Service layer, or Repository layer. Keywords: Java, Spring Boot, Spring Cloud, MyBatis Plus, Maven, backend development, API implementation, microservices, Redis, Kafka, senior engineer.
 ---
 

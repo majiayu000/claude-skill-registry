@@ -1,3 +1,8 @@
+---
+name: userskill
+description: Name | Type | Description | Notes
+---
+
 # UserSkill
 
 
@@ -5,11 +10,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**skill** | [**Skill**](Skill.md) |  | 
-**courses** | [**List[CoursePoint]**](CoursePoint.md) | Courses with skill and associated points | 
-**resources** | [**List[ResourcePoint]**](ResourcePoint.md) | Resources with skill and associated points | 
-**total_points** | **int** | Total points for skill | [readonly] 
-**percentile** | **float** | Percentile of points for user. | [optional] 
+**skill** | [**Skill**](Skill.md) |  |
+**courses** | [**List[CoursePoint]**](CoursePoint.md) | Courses with skill and associated points |
+**resources** | [**List[ResourcePoint]**](ResourcePoint.md) | Resources with skill and associated points |
+**total_points** | **int** | Total points for skill | [readonly]
+**percentile** | **float** | Percentile of points for user. | [optional]
 
 ## Example
 

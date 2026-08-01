@@ -1,5 +1,12 @@
 ---
 name: 1password-direnv-secrets
+description: 'Configures 1Password CLI with direnv for fast secret loading using op-run
+  pattern. Activates for: 1Password + direnv setup, slow secrets (>2 sec), environment
+  variables from 1Password, .env.op files,'
+---
+
+---
+name: 1password-direnv-secrets
 description: Configures 1Password CLI with direnv for fast, secure credential loading. Activates for: 1Password + direnv setup, slow secrets (>2 sec), .env.op files, op:// references, AWS credentials via env vars, --reveal flag issues, repeated biometric prompts, creating 1Password items programmatically, op item get errors. Not for: 1Password GUI usage, SSH keys (use 1Password SSH agent).
 ---
 

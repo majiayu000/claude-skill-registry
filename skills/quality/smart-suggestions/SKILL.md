@@ -1,3 +1,9 @@
+---
+name: smart-suggestions
+description: Proactively suggest improvements, optimizations, and next steps based
+  on context analysis.
+---
+
 # 💡 Smart Suggestions Skill
 
 ---

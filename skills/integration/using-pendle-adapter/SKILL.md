@@ -1,5 +1,10 @@
 ---
 name: using-pendle-adapter
+description: 'Use this skill when you are:'
+---
+
+---
+name: using-pendle-adapter
 description: How to use the Pendle adapter in Wayfinder Paths for PTs (Principal Tokens) and YTs (Yield Tokens): market discovery, historical data, and Hosted SDK swap tx building (inputs/outputs, chain IDs, unit handling, and approvals).
 metadata:
   tags: wayfinder, pendle, pt, yt, yield, swap, execution

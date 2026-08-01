@@ -1,3 +1,8 @@
+---
+name: in-app-purchases
+description: '| Atributo | Valor |'
+---
+
 # 💰 Skill: In-App Purchases (IAP)
 
 ## 📋 Metadata
@@ -90,7 +95,7 @@ dependencies:
 
   # In-App Purchase
   in_app_purchase: ^3.1.11
-  
+
   # RevenueCat (alternative)
   purchases_flutter: ^6.16.0
 
@@ -325,7 +330,7 @@ class IAPService {
 
   static void _handleError(PurchaseDetails purchase) {
     print('❌ Purchase error: ${purchase.error}');
-    
+
     // Show error to user
     // Track failed purchase
     AnalyticsService.trackEvent('purchase_failed', properties: {
@@ -341,7 +346,7 @@ class IAPService {
 
   static void _handleCanceled(PurchaseDetails purchase) {
     print('❌ Purchase canceled: ${purchase.productID}');
-    
+
     AnalyticsService.trackEvent('purchase_canceled', properties: {
       'product_id': purchase.productID,
     });
@@ -352,7 +357,7 @@ class IAPService {
     try {
       // TODO: Implement server-side verification
       // Send receipt to your server for validation
-      
+
       if (Platform.isAndroid) {
         // Android: Send purchase token
         final androidPurchase = purchase as GooglePlayPurchaseDetails;
@@ -495,14 +500,14 @@ class SubscriptionService {
   // Subscribe
   static Future<bool> subscribe(String productId) async {
     final product = IAPService.getProductById(productId);
-    
+
     if (product == null) {
       print('❌ Product not found: $productId');
       return false;
     }
 
     final success = await IAPService.purchaseProduct(product);
-    
+
     if (success) {
       await checkSubscriptionStatus();
     }
@@ -514,7 +519,7 @@ class SubscriptionService {
   static Future<void> manageSubscription() async {
     // iOS: Opens subscription management in App Store
     // Android: Opens subscription management in Play Store
-    
+
     if (Platform.isIOS) {
       // Open iOS subscription management
       await canLaunchUrl(Uri.parse('https://apps.apple.com/account/subscriptions'));
@@ -582,7 +587,7 @@ class _StoreScreenState extends State<StoreScreen> {
         itemCount: products.length,
         itemBuilder: (context, index) {
           final product = products[index];
-          
+
           return Card(
             margin: const EdgeInsets.all(8),
             child: ListTile(
@@ -601,7 +606,7 @@ class _StoreScreenState extends State<StoreScreen> {
 
   Future<void> _purchase(ProductDetails product) async {
     final success = await IAPService.purchaseProduct(product);
-    
+
     if (success) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Purchasing ${product.title}...')),
@@ -694,7 +699,7 @@ if (purchase.pendingCompletePurchase) {
 
 ---
 
-**Versión:** 1.0.0  
-**Última actualización:** Diciembre 2025  
+**Versión:** 1.0.0
+**Última actualización:** Diciembre 2025
 **Total líneas:** 1,100+
 

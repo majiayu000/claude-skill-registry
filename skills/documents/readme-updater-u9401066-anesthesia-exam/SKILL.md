@@ -1,5 +1,10 @@
 ---
 name: readme-updater
+description: 智能更新 README.md，保持與程式碼變更同步。
+---
+
+---
+name: readme-updater
 description: Intelligently update README.md to sync with code changes. Triggers: readme, 說明, 更新說明, update readme, 文檔同步, documentation, doc, 文件, 說明文件, 更新文檔, sync readme, 同步說明, 專案說明.
 version: 2.2.0
 category: documentation

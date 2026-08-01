@@ -1,4 +1,9 @@
 ---
+name: creating-atomic-prs
+description: このSkillは、mainブランチでの直接作業を防止し、小さく分割された「アトミック」なPRを作成するための包括的なワークフローを提供します。
+---
+
+---
 name: Creating Atomic PRs
 description: Create small, focused Pull Requests by splitting implementations into atomic steps. Prevents direct work on main/master branches and enforces safe Git workflows. Use when the user asks to commit changes, create PRs, or mentions git operations. Keywords: commit, PR, pull request, git, branch, main, master, コミット, プルリクエスト.
 ---

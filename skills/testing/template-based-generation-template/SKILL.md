@@ -1,5 +1,11 @@
 ---
 name: template-based-generation-template
+description: '[REPLACE] Generate structured content from templates. Use when [REPLACE
+  with specific triggers].'
+---
+
+---
+name: template-based-generation-template
 description: [REPLACE] Generate structured content from templates. Use when [REPLACE with specific triggers].
 allowed-tools: Write, Read, TodoWrite
 ---

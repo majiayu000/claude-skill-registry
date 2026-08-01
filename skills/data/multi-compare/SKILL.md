@@ -1,5 +1,10 @@
 ---
 name: multi-compare
+description: 'Run this command with user''s arguments:'
+---
+
+---
+name: multi-compare
 description: Run the same prompt with Claude, OpenAI, and Gemini in parallel, then return back exact replies you got back without modifying the results one bit.
 user-invocable: true
 allowed-tools: Bash

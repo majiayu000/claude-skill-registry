@@ -1,5 +1,10 @@
 ---
 name: business-case
+description: 'This skill supports three modes: Create, Update, and Find.'
+---
+
+---
+name: business-case
 description: Create or update a comprehensive business case
 argument-hint: [initiative or investment name] or [update path/to/business-case.md]
 ---

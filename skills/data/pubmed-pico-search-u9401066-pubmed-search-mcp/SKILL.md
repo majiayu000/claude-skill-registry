@@ -1,5 +1,11 @@
 ---
 name: pubmed-pico-search
+description: 針對 PICO 格式的臨床問題進行結構化搜尋，自動解析 Population, Intervention, Comparison, Outcome
+  元素。
+---
+
+---
+name: pubmed-pico-search
 description: PICO-based clinical question search. Triggers: PICO, 臨床問題, A比B好嗎, treatment comparison, clinical question, 療效比較
 ---
 
@@ -197,7 +203,7 @@ o_materials = generate_search_queries("hospitalization")
 # Step 3: 組合查詢
 query = '''
 ("Diabetes Mellitus, Type 2"[MeSH] AND "Heart Failure"[MeSH])
-AND ("Sodium-Glucose Transporter 2 Inhibitors"[MeSH] 
+AND ("Sodium-Glucose Transporter 2 Inhibitors"[MeSH]
      OR empagliflozin OR dapagliflozin OR canagliflozin)
 AND ("Hospitalization"[MeSH] OR hospitalization[tiab] OR rehospitalization)
 AND therapy[filter]
@@ -217,7 +223,7 @@ search_literature(query=query, limit=100, min_year=2018)
 # 治療比較 → therapy
 "A 藥比 B 藥好嗎？"
 
-# 診斷準確度 → diagnosis  
+# 診斷準確度 → diagnosis
 "CT 診斷肺癌的敏感度？"
 
 # 預後評估 → prognosis

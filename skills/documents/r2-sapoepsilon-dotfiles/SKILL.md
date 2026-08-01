@@ -1,5 +1,12 @@
 ---
 name: r2
+description: Manage Cloudflare R2 object storage buckets and objects using Wrangler
+  CLI. Use when working with R2 buckets, uploading/downloading files, configuring
+  custom domains, CORS, lifecycle policies, or mana
+---
+
+---
+name: r2
 description: Manage Cloudflare R2 object storage buckets and objects using Wrangler CLI. Use when working with R2 buckets, uploading/downloading files, configuring custom domains, CORS, lifecycle policies, or managing R2 storage. Trigger keywords: R2, bucket, object storage, Cloudflare storage, wrangler r2.
 allowed-tools: Bash, Read, Grep, Glob
 ---

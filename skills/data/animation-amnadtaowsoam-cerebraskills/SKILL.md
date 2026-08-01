@@ -1,3 +1,8 @@
+---
+name: animation
+description: 'Animation ใน React สามารถแบ่งออกเป็น 4 ประเภทหลัก:'
+---
+
 # Animation Patterns in React
 
 ---
@@ -131,17 +136,17 @@ interface AnimationProps {
   direction?: 'up' | 'down' | 'left' | 'right' | 'none'
 }
 
-export function AnimatedSection({ 
-  children, 
-  delay = 0, 
+export function AnimatedSection({
+  children,
+  delay = 0,
   duration = 0.5,
-  direction = 'up' 
+  direction = 'up'
 }: AnimationProps) {
   const prefersReducedMotion = useReducedMotion()
-  
+
   const getInitialPosition = () => {
     if (prefersReducedMotion) return { opacity: 0 }
-    
+
     switch (direction) {
       case 'up': return { opacity: 0, y: 50 }
       case 'down': return { opacity: 0, y: -50 }
@@ -155,7 +160,7 @@ export function AnimatedSection({
     <motion.div
       initial={getInitialPosition()}
       animate={{ opacity: 1, x: 0, y: 0 }}
-      transition={{ 
+      transition={{
         duration: prefersReducedMotion ? 0 : duration,
         delay: prefersReducedMotion ? 0 : delay,
         ease: "easeOut"

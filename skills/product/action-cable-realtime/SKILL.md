@@ -1,5 +1,12 @@
 ---
 name: action-cable-realtime
+description: This skill should be used when the user asks about Action Cable, WebSockets,
+  real-time features, channels, broadcasting, subscriptions, chat applications, live
+  notifications, presence indicators, coll
+---
+
+---
+name: action-cable-realtime
 description: This skill should be used when the user asks about Action Cable, WebSockets, real-time features, channels, broadcasting, subscriptions, chat applications, live notifications, presence indicators, collaborative editing, server push, pub/sub patterns, Solid Cable, or streaming updates. Also use when discussing real-time architecture, WebSocket deployment, or alternatives like polling and Server-Sent Events. Examples:
 
 <example>

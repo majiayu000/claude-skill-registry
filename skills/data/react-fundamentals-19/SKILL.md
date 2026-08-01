@@ -1,5 +1,10 @@
 ---
 name: react-fundamentals-19
+description: '| Feature | Pattern | Example |'
+---
+
+---
+name: react-fundamentals-19
 description: Complete React 19 fundamentals system. PROACTIVELY activate for: (1) React 19 new features and changes, (2) Server vs Client Components, (3) Server Actions setup, (4) use() hook usage, (5) JSX and component basics, (6) Props and state patterns, (7) Suspense and Error Boundaries, (8) Fragments and Portals. Provides: React 19 syntax, Server Component patterns, async data handling, component composition, best practices. Ensures modern React 19 patterns with proper server/client architecture.
 ---
 

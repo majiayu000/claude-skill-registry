@@ -1,3 +1,8 @@
+---
+name: appendix-antarctics-noname
+description: <summary>图片展示</summary>
+---
+
 # 附录C：充能条技能示例
 
 ## 1. 效果展示
@@ -81,16 +86,16 @@ Color: "linear-gradient(90deg, #c01c28 0%, #ff7800 50%, #ffb380 100%, #c01c28 20
 * 其中，historyLimit为历史记录长度，为0时不显示。
 * event.style为能量显示类型，若为1，则以UI形式显示，若为2，则以标记形式显示。
 * 若仅需部分角色使用，请为lib.skill._zmld_np添加filter
-* 
+*
 支持参数：
 * 修改玩家充能
 * @param {Object} player - 修改对象，默认为自身
 * @param {number} number - 修改数值，支持正负。
 * @param {string} reason - 修改原因，不填则采用事件名。
-* 
+*
 	game.changeNp(): 充能修改
 	game.changeMaxNp(): 充能上限修改
-	
+
 数据获取：
 player.zmld.Np: 当前充能
 player.zmld.Max: 充能最大值
@@ -102,16 +107,16 @@ player.zmld.Name: 充能名称
 player.zmld.Color: 充能颜色
 player.zmld.Enable: 是否启用
 player.zmld.Image: 标记显示下，采用图片展示能量。
-	
+
 * 角色充能跳过规则
 * 用于声明当前角色跳过的充能事件集合，支持两种配置方式：
-* 
+*
 * 1. 函数式条件 (Function)
 *    - 命名规则：函数名必须与目标事件名称严格一致（如'useCardBegin'对应同名事件）
 *    - 返回值：返回 true 时跳过充能，false 则正常执行
 *    - 示例：检测到使用筹码卡时跳过充能
-*      player.zmld.Skip.push(function useCardBegin() { 
-*          return this.cards.some(c => c.gaintag.includes('zm_chouma')) 
+*      player.zmld.Skip.push(function useCardBegin() {
+*          return this.cards.some(c => c.gaintag.includes('zm_chouma'))
 *      })
 *    // 对应事件自动传参，使用this调用。
 * 2. 字符串直接匹配 (String)
@@ -119,7 +124,7 @@ player.zmld.Image: 标记显示下，采用图片展示能量。
 *    - 示例：无条件跳过'gameStart'和技能'wusheng'事件
 *      player.zmld.Skip.push(['gameStart',"wusheng"])
 *   可用事件： gameStart、phaseBeginStart、useCardBegin、damageBegin、gainBegin
-* 
+*
 * 示例：
 * init(player){
 * player.zmld = {
@@ -135,7 +140,7 @@ player.zmld.Image: 标记显示下，采用图片展示能量。
 *   }
 * }
 * // 效果：游戏开始、获得牌时、使用技能武圣时、使用“杀”时、使用“赏誉”牌时，无法获得能量。
-* 
+*
 player.zmld.Skip:[]
 */
 game.NpContent = function (player) {

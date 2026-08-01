@@ -1,3 +1,10 @@
+---
+name: epic-extractor
+description: 'description: Extract 2â€“12 epics (depending on complexity) for an idea
+  using conceptsummary.md as the semantic anchor (writes to ideas/<IDEAID>/runs and
+  updates ideas/<IDEAID>/latest)'
+---
+
 ﻿---
 name: Extract epics
 description: Extract 2â€“12 epics (depending on complexity) for an idea using concept_summary.md as the semantic anchor (writes to ideas/<IDEA_ID>/runs and updates ideas/<IDEA_ID>/latest)
@@ -132,7 +139,7 @@ Include the content via file references:
 
 - Optional config (only if it exists):
   @docs/forge/ideas/<IDEA_ID>/inputs/epic_config.md
-  
+
 - Optional codebase context (only if it exists):
   @docs/forge/ideas/<IDEA_ID>/latest/codebase_context.md
 
@@ -308,8 +315,8 @@ Markdown rendering (required):
 
 ## EPIC-001: <Title>
 
-**Outcome:** <...>  
-**Release Target:** <...> **Priority:** <...>  
+**Outcome:** <...>
+**Release Target:** <...> **Priority:** <...>
 **Description:** <...>
 
 **In Scope:**

@@ -1,3 +1,8 @@
+---
+name: fondamenti
+description: Level 0|Level 1|Level 2|Level 3
+---
+
 # Computer Science Skills
 
 ## Legenda skills

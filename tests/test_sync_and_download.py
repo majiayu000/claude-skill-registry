@@ -764,6 +764,15 @@ def test_bundled_file_allowlist_is_scoped_and_size_limited():
     assert "Curated short source description." in normalized
     assert "x" * 501 not in normalized
 
+    repaired = support.normalize_skill_frontmatter_description(
+        "# Demo\n\nA body paragraph that remains after frontmatter repair.\n",
+        {"name": "Demo Skill", "description": "Curated source description."},
+    )
+    assert repaired.startswith(
+        "---\nname: demo-skill\ndescription: Curated source description.\n---\n\n"
+    )
+    assert "A body paragraph that remains" in repaired
+
 
 def test_bundles_root_helpers_src_and_design_subskills(tmp_path, monkeypatch):
     module = load_module()

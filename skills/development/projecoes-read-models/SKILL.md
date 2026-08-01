@@ -1,4 +1,10 @@
 ---
+name: projecoes-read-models
+description: Use para criar projeções como 9BOX, dashboards e visões de leitura otimizadas
+  para decisão.
+---
+
+---
 
 name: projecoes-read-models
 description: Use para criar projeções como 9BOX, dashboards e visões de leitura otimizadas para decisão.

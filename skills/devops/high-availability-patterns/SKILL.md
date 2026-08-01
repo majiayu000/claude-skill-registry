@@ -1,3 +1,9 @@
+---
+name: high-availability-patterns
+description: Production-ready HA patterns for cryptocurrency trading systems with
+  99.99% uptime.
+---
+
 # High Availability Patterns
 
 Production-ready HA patterns for cryptocurrency trading systems with 99.99% uptime.

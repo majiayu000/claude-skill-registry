@@ -1,3 +1,9 @@
+---
+name: pilot-1-code-formatter
+description: Automatically format code files using the appropriate formatter based
+  on file type, providing clear feedback on changes made
+---
+
 /*============================================================================*/
 /* CODE-FORMATTER SKILL :: VERILINGUA x VERIX EDITION                      */
 /*============================================================================*/

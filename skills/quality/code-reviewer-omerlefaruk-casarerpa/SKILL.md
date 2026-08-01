@@ -1,5 +1,10 @@
 ---
 name: code-reviewer
+description: Structured format for code reviews.
+---
+
+---
+name: code-reviewer
 description: Structured code review output format for the reviewer agent. Provides APPROVED/ISSUES format with file:line references. Use when: reviewing code changes, code quality checks, architecture compliance checks, approving code for merge, identifying critical/major/minor issues.
 ---
 

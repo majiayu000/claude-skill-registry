@@ -1,5 +1,10 @@
 ---
 name: structured-output
+description: '- When to Use'
+---
+
+---
+name: structured-output
 description: |
 
 Triggers: consistency, reporting, structured, structure, formatting

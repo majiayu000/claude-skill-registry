@@ -1,5 +1,12 @@
 ---
 name: octave-literacy
+description: 'Fundamental reading and writing capability for the OCTAVE format. Inject
+  this to give an agent basic structural competence without the overhead of full architectural
+  specifications. Triggers on: octav'
+---
+
+---
+name: octave-literacy
 description: Fundamental reading and writing capability for the OCTAVE format. Inject this to give an agent basic structural competence without the overhead of full architectural specifications. Triggers on: octave format, write octave, octave syntax, structured output.
 allowed-tools: Read
 implements: specs/octave-5-llm-core

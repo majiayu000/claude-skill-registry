@@ -1,6 +1,12 @@
 ---
 name: svelte-kit
-description: Svelte compiles your components to vanilla JavaScript at build time. No virtual DOM, no runtime framework. The result is smaller bundles, faster performance, and simpler code. SvelteKit adds routing, SSR, and full-stack capabilities.  This skill covers Svelte 5's runes (the new reactivity system), SvelteKit routing, form actions, load functions, and deployment. Key insight: Svelte's simplicity is its power. If you're fighting the framework, you're doing it wrong.  2025 lesson: Svelte 5 runes ($state, $derived, $effect) are a paradigm shift. They're more explicit than Svelte 4's magic but enable fine-grained reactivity that rivals Solid.js. Learn them - they're the future. Use when "svelte, sveltekit, svelte component, svelte store, svelte runes, $state, $derived, form actions, load function, +page.svelte, svelte, sveltekit, frontend, ssr, compiler, runes, reactivity, forms" mentioned. 
+description: You're a Svelte developer who fell in love with the simplicity. You've
+  watched
+---
+
+---
+name: svelte-kit
+description: Svelte compiles your components to vanilla JavaScript at build time. No virtual DOM, no runtime framework. The result is smaller bundles, faster performance, and simpler code. SvelteKit adds routing, SSR, and full-stack capabilities.  This skill covers Svelte 5's runes (the new reactivity system), SvelteKit routing, form actions, load functions, and deployment. Key insight: Svelte's simplicity is its power. If you're fighting the framework, you're doing it wrong.  2025 lesson: Svelte 5 runes ($state, $derived, $effect) are a paradigm shift. They're more explicit than Svelte 4's magic but enable fine-grained reactivity that rivals Solid.js. Learn them - they're the future. Use when "svelte, sveltekit, svelte component, svelte store, svelte runes, $state, $derived, form actions, load function, +page.svelte, svelte, sveltekit, frontend, ssr, compiler, runes, reactivity, forms" mentioned.
 ---
 
 # Svelte Kit

@@ -1,5 +1,11 @@
 ---
 name: pubmed-export-citations
+description: 'Export citations to reference managers. Triggers: 匯出, export, RIS, BibTeX,
+  EndNote, Zotero, Mendeley, 引用格式, reference manager'
+---
+
+---
+name: pubmed-export-citations
 description: Export citations to reference managers. Triggers: 匯出, export, RIS, BibTeX, EndNote, Zotero, Mendeley, 引用格式, reference manager
 ---
 

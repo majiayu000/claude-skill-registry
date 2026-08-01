@@ -1,3 +1,8 @@
+---
+name: research-agent
+description: 'Model: Claude Haiku 4.5'
+---
+
 # Research Agent
 
 **Model**: Claude Haiku 4.5

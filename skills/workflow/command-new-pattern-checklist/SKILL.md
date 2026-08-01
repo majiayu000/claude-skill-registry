@@ -1,5 +1,10 @@
 ---
 name: command-new-pattern-checklist
+description: Run the /new-pattern-checklist workflow defined in .claude/commands/new-pattern-checklist.md.
+---
+
+---
+name: command-new-pattern-checklist
 description: Use the /new-pattern-checklist slash command to capture new reusable patterns and update docs. Use when: codifying new rules or patterns.
 ---
 

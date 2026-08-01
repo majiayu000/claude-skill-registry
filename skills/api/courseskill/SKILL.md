@@ -1,3 +1,8 @@
+---
+name: courseskill
+description: Name | Type | Description | Notes
+---
+
 # CourseSkill
 
 
@@ -5,8 +10,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**course_id** | **str** | The edX course ID string for the course. | 
-**skills** | [**List[Skill]**](Skill.md) |  | 
+**course_id** | **str** | The edX course ID string for the course. |
+**skills** | [**List[Skill]**](Skill.md) |  |
 
 ## Example
 

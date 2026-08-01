@@ -1,3 +1,8 @@
+---
+name: detailed
+description: Claude Code Skills and Agent Architecture in DiPeO
+---
+
 Claude Code Skills and Agent Architecture in DiPeO
 
 

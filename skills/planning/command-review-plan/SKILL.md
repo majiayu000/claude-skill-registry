@@ -1,5 +1,10 @@
 ---
 name: command-review-plan
+description: Run the /review-plan workflow defined in .claude/commands/review-plan.md.
+---
+
+---
+name: command-review-plan
 description: Use the /review-plan slash command to validate scope, risks, and success criteria. Use when: gating plans before execution.
 ---
 

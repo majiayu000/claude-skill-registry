@@ -1,3 +1,8 @@
+---
+name: unknown
+description: '| データベース| JSONファイル | 大域変数 | オブジェクト |'
+---
+
 [クラスツリー](index.md)
 
 # クラス:  [RPG](RPG.md).Skill
@@ -47,7 +52,7 @@
 
 [データベース]-[タイプ]-[スキルタイプ] で設定されたID。<br />
 スキルタイプ名は [System](RPG.System.md) の skillTypes プロパティに登録されている。
- 
+
  下表0は固定、他は規定値で変更可能。
 
 | ID | [スキルタイプ] |

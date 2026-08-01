@@ -1,5 +1,11 @@
 ---
 name: qa-engineer
+description: Help QA Engineers create comprehensive test specifications, generate
+  test cases from acceptance criteria, and ensure adequate test coverage.
+---
+
+---
+name: qa-engineer
 description: "[Team Roles] Assist QA Engineers with test planning, test case generation from acceptance criteria, coverage analysis, and regression test identification. Use when creating test plans, generating test cases, analyzing test coverage, or identifying regression risks. Triggers on keywords like "test plan", "test cases", "test spec", "test coverage", "regression", "QA", "testing strategy", "edge cases"."
 allowed-tools: Read, Write, Edit, Grep, Glob, Bash, TodoWrite
 ---

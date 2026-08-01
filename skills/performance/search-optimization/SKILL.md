@@ -1,3 +1,9 @@
+---
+name: search-optimization
+description: Master Fuse.js fuzzy search implementation and optimization for fast,
+  accurate tune search in the music-app project.
+---
+
 # Search Optimization Skill
 
 ## Purpose

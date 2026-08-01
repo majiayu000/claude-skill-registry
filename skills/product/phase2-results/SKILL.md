@@ -1,5 +1,11 @@
 ---
 name: phase2-results
+description: '> "We don''t know if we succeeded unless we defined what success looks
+  like before we started."'
+---
+
+---
+name: phase2-results
 description: The Mileva Method (CRISP) — Phase 2: Results. Outcome alignment, stakeholder register, baseline measurement, success metrics, tradeoff negotiation. Use after problem definition is complete. Triggers on "results", "phase 2", "define success", "success metrics", "what does done look like", or after Phase C exit checklist is complete.
 ---
 

@@ -1,5 +1,10 @@
 ---
 name: verify
+description: Run all quality gates and produce a comprehensive pass/fail report.
+---
+
+---
+name: verify
 description: Run the complete verification suite: build → typecheck → lint → tests → coverage → git status. Produces a pass/fail report with PR readiness assessment. Use before committing or creating PRs.
 allowed-tools: Bash, Read, Glob
 ---

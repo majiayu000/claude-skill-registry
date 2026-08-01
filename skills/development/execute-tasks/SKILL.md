@@ -1,3 +1,10 @@
+---
+name: execute-tasks
+description: Sequentially executes tasks from tasks.yaml with proper context gathering,
+  skill invocation, and result tracking. Ensures consistent execution across all development
+  tasks.
+---
+
 # Execute-Tasks Skill
 
 ## Purpose

@@ -1,5 +1,11 @@
 ---
 name: team-review
+description: 'Orchestrate multi-agent code review: scanner -> reviewer -> fixer. Toolchain
+  + LLM scan, deep analysis with root cause enrichment, and automated fix with rollback-on-failure.'
+---
+
+---
+name: team-review
 description: Unified team skill for code review. 3-role pipeline: scanner, reviewer, fixer. Triggers on "team-review".
 allowed-tools: TeamCreate(*), TeamDelete(*), SendMessage(*), TaskCreate(*), TaskUpdate(*), TaskList(*), TaskGet(*), Agent(*), AskUserQuestion(*), Read(*), Write(*), Edit(*), Bash(*), Glob(*), Grep(*), mcp__ace-tool__search_context(*)
 ---

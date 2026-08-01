@@ -1,5 +1,10 @@
 ---
 name: healthkit-integration
+description: '- @docs/healthkit/README.md'
+---
+
+---
+name: healthkit-integration
 description: HealthKit setup: entitlements, Info.plist strings, authorization, queries, workouts, background delivery.
 allowed-tools: Read, Grep, Glob, Edit, Write
 ---

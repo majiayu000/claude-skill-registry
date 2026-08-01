@@ -1,3 +1,8 @@
+---
+name: journey-to-tasks
+description: '> Last Updated: 2026-01-26'
+---
+
 # Journey to Tasks Skill
 
 > Version: 1.0.0
@@ -93,7 +98,7 @@ Gherkin rules become task boundaries; examples become test cases.
 
 ## Workflow
 
-**Outputs:** 
+**Outputs:**
 - Tasks in planning/projects.org with JOURNEY property
 - Journey updated to STATUS 'implementing'
 

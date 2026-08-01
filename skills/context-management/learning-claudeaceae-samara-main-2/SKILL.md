@@ -1,5 +1,10 @@
 ---
 name: learning
+description: Provides on-demand access to accumulated learnings stored in ~/.claude-mind/memory/learnings.md.
+---
+
+---
+name: learning
 description: Access accumulated learnings and insights. Contains technical discoveries, personal insights, and lessons from past experience. Use when asked about past experience, what was learned, how something works based on experience, or for context on topics previously explored. Triggers: what did I learn, have I seen this before, past experience, learned that, figured out.
 allowed-tools:
   - Read

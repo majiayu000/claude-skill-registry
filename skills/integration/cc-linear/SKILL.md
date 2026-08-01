@@ -1,5 +1,11 @@
 ---
 name: cc-linear
+description: Interact with Linear task management via cc alias — spawns a one-shot
+  Claude Code session with Linear MCP connected.
+---
+
+---
+name: cc-linear
 description: Execute atomic Linear operations via one-shot `cc` session with Linear MCP. Use for creating issues, updating status, adding comments, querying tasks. CRITICAL: Each command performs ONE operation only. For multi-step workflows (update status THEN add comment), execute SEPARATE `cc` commands sequentially. Spawned sessions cannot ask clarifying questions - prompts must be self-contained and unambiguous. See OPERATIONS.md for patterns and anti-patterns.
 ---
 

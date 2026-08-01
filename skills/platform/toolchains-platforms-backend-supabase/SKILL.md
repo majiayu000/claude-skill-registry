@@ -1,3 +1,8 @@
+---
+name: toolchains-platforms-backend-supabase
+description: 'Open-source Firebase alternative built on:'
+---
+
 # Supabase Backend Platform Skill
 
 ---

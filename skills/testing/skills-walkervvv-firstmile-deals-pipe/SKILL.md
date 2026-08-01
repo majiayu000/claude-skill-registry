@@ -1,3 +1,9 @@
+---
+name: skills-walkervvv-firstmile-deals-pipe
+description: 'Purpose: Autonomous overnight research to identify new shipping leads
+  from target industries.'
+---
+
 # Brand Scout Agent Skill
 
 **Purpose**: Autonomous overnight research to identify new shipping leads from target industries.

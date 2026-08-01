@@ -1,3 +1,9 @@
+---
+name: github-actions
+description: Master GitHub Actions workflow patterns, triggers, optimization, and
+  best practices for CI/CD pipelines.
+---
+
 # GitHub Actions Skill
 
 ## Purpose

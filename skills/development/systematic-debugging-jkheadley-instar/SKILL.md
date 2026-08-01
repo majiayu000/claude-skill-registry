@@ -1,5 +1,13 @@
 ---
 name: systematic-debugging
+description: When something breaks, the instinct is to start changing code — adding
+  logs, tweaking values, commenting things out. This is probing, not debugging. Probing
+  works sometimes, but it scales poorly and teaches nothing. Structured debugging
+  finds the root cause, fixes it once, and leaves you understanding why.
+---
+
+---
+name: systematic-debugging
 description: Structured 4-phase debugging methodology that prevents blind probing and guesswork. Forces root cause identification before any fix attempt. Use when encountering bugs, errors, unexpected behavior, test failures, or when something "just stopped working." Trigger words: debug, bug, error, broken, not working, fix this, something's wrong, investigate, root cause, why is this failing, trace the issue.
 license: MIT
 metadata:

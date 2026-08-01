@@ -1,3 +1,7 @@
+---
+name: skill-creator
+description: '- A pattern is used repeatedly and AI needs guidance'
+---
 
 ---
 name: skill-creator

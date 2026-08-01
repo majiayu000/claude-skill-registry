@@ -1,11 +1,18 @@
 ---
+name: tdd-process-majiayu000-claude-skill-regist
+description: Strict test-driven development state machine with red-green-refactor
+  cycles. Enforces test-first development, meaningful failures, minimum implementations,
+  and full verification. Activates when user r
+---
+
+---
 name: TDD Process
 description: Strict test-driven development state machine with red-green-refactor cycles. Enforces test-first development, meaningful failures, minimum implementations, and full verification. Activates when user requests: 'use a TDD approach', 'start TDD', 'test-drive this'.
 ---
 
 # GitHub Copilot Skill: tdd-process
 
-> **Note:** This skill has been adapted from [claude-skillz](https://github.com/NTCoding/claude-skillz) 
+> **Note:** This skill has been adapted from [claude-skillz](https://github.com/NTCoding/claude-skillz)
 > for use with GitHub Copilot Agent Skills.
 
 ---

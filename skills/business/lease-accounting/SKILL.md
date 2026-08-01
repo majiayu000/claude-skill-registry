@@ -1,3 +1,8 @@
+---
+name: lease-accounting
+description: 'name: lease-accounting'
+---
+
 # Lease Accounting
 
 name: lease-accounting

@@ -1,3 +1,8 @@
+---
+name: static-analysis
+description: '| ID | static-analysis |'
+---
+
 # 🔍 Skill: Static Analysis
 
 ## 📋 Metadata

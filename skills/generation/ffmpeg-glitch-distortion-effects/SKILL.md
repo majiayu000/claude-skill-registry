@@ -1,5 +1,10 @@
 ---
 name: ffmpeg-glitch-distortion-effects
+description: 'MANDATORY: Always Use Backslashes on Windows for File Paths'
+---
+
+---
+name: ffmpeg-glitch-distortion-effects
 description: Complete glitch art, datamosh, and video distortion effects system. PROACTIVELY activate for: (1) Datamosh/pixel bleeding effects, (2) VHS/analog glitch simulation, (3) Digital corruption effects, (4) Displacement mapping, (5) Wave/ripple distortions, (6) Pixelation and mosaic effects, (7) Chromatic aberration, (8) Scan line effects, (9) Time-based distortions (echo, trails), (10) Lens distortion and barrel effects. Provides: minterpolate for datamosh, displacement filter, geq pixel manipulation, noise and artifacts, rgbashift/chromashift for color separation, lagfun for trails, tmix for frame blending, tblend for frame difference effects.
 ---
 

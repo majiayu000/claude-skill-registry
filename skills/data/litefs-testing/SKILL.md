@@ -1,5 +1,12 @@
 ---
 name: litefs-testing
+description: 'Testing patterns for litefs-py and litefs-django. Use when writing tests,
+  setting up fixtures, understanding test organization, or configuring pytest marks.
+  Triggers: test, pytest, unit test, integrat'
+---
+
+---
+name: litefs-testing
 description: Testing patterns for litefs-py and litefs-django. Use when writing tests, setting up fixtures, understanding test organization, or configuring pytest marks. Triggers: test, pytest, unit test, integration test, property-based testing, hypothesis, fixtures, in-memory adapters.
 ---
 

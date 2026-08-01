@@ -1,3 +1,9 @@
+---
+name: skill-creator
+description: Use this skill when creating a new agent skill. Skills provide specialized
+  instructions for specific tasks.
+---
+
 # Skill Creator Skill
 
 Use this skill when creating a new agent skill. Skills provide specialized instructions for specific tasks.
@@ -133,7 +139,7 @@ command --flag value
    - Documentation in `docs/`
 
 5. **Test the skill**
-   - Symlink to workspace: 
+   - Symlink to workspace:
      ```bash
      ln -s ~/Developer/Projects/agent-skills/skills/{skill-name} ~/.openclaw/workspace/skills/{skill-name}
      ```

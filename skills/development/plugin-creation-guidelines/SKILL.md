@@ -1,5 +1,12 @@
 ---
 name: plugin-creation-guidelines
+description: 'Comprehensive plugin architecture patterns, best practices, templates,
+  and validation guidelines distilled from research sources. Use when: creating new
+  plugins, designing plugin architecture, validat'
+---
+
+---
+name: plugin-creation-guidelines
 description: Comprehensive plugin architecture patterns, best practices, templates, and validation guidelines distilled from research sources. Use when: creating new plugins, designing plugin architecture, validating plugin structure, or optimizing token usage. Do NOT use for: general coding tasks, non-plugin development, or debugging existing code.
 ---
 

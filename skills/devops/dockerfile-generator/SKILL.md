@@ -1,3 +1,9 @@
+---
+name: dockerfile-generator
+description: 'Purpose: Generate optimized Dockerfiles for Next.js frontend and FastAPI
+  backend (Phase IV preparation).'
+---
+
 # Skill: Dockerfile Generator
 
 **Purpose**: Generate optimized Dockerfiles for Next.js frontend and FastAPI backend (Phase IV preparation).

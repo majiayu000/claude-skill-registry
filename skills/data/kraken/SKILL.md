@@ -1,3 +1,9 @@
+---
+name: kraken
+description: Query Kraken crypto account balances, portfolio, trades, and staking
+  positions.
+---
+
 # Kraken Crypto Skill
 
 Use the kraken_cli.py wrapper to query your Kraken account.

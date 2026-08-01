@@ -1,3 +1,8 @@
+---
+name: organoid-drug-response-agent
+description: '---name: organoid-drug-response-agent'
+---
+
 ---name: organoid-drug-response-agent
 description: AI-powered analysis of patient-derived organoid (PDO) drug screening for personalized oncology treatment selection and biomarker discovery.
 license: MIT

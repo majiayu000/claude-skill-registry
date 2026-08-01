@@ -1,5 +1,11 @@
 ---
 name: ci-cd-implementation-rule
+description: You are a coding standards expert specializing in ci cd implementation
+  rule.
+---
+
+---
+name: ci-cd-implementation-rule
 description: Uses GitHub Actions or GitLab CI for CI/CD implementation.
 version: 1.0.0
 model: sonnet

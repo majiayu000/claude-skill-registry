@@ -1,5 +1,12 @@
 ---
 name: gitops-workflows
+description: GitOps deployment workflows with ArgoCD and Flux. Use for setting up
+  GitOps (ArgoCD 3.x, Flux 2.7), designing repository structures (monorepo/polyrepo,
+  app-of-apps), multi-cluster deployments (Applica
+---
+
+---
+name: gitops-workflows
 description: GitOps deployment workflows with ArgoCD and Flux. Use for setting up GitOps (ArgoCD 3.x, Flux 2.7), designing repository structures (monorepo/polyrepo, app-of-apps), multi-cluster deployments (ApplicationSets, hub-spoke), secrets management (SOPS+age, Sealed Secrets, External Secrets Operator), progressive delivery (Argo Rollouts, Flagger), troubleshooting sync issues, and OCI artifact management. Covers latest 2024-2025 features: ArgoCD annotation-based tracking, fine-grained RBAC, Flux OCI artifacts GA, image automation, source-watcher.
 ---
 

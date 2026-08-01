@@ -1,3 +1,8 @@
+---
+name: slo-sli-sla
+description: '| ID | sre-slo-sli-sla |'
+---
+
 # 📈 Skill: Service Level Objectives (SLO/SLI/SLA)
 
 ## 📋 Metadata
@@ -73,7 +78,7 @@ SLA (Service Level Agreement)
 > - [`error_budget.py`](scripts/error_budget.py) - Calculadora de error budget (CLI)
 > - [`slo_api.py`](scripts/slo_api.py) - API REST para consultar SLOs desde Prometheus
 > - [`requirements.txt`](scripts/requirements.txt) - Dependencias Python
-> 
+>
 > Ver ejemplos de uso en [`examples/usage_example.py`](examples/usage_example.py)
 
 ### 1. Definición de SLIs
@@ -135,14 +140,14 @@ service_level_objectives:
     target: 99.95  # 99.95% availability
     window: 30d
     description: "Payment service must be available 99.95% of the time"
-    
+
   - service: payment-service
     slo_name: latency_p99
     sli: request_latency_p99
     target: 1.0  # 1 second
     window: 30d
     description: "99th percentile latency must be under 1 second"
-    
+
   - service: user-service
     slo_name: availability
     sli: request_availability
@@ -565,7 +570,7 @@ Variables de entorno:
 
 ---
 
-**Versión:** 1.0.0  
-**Última actualización:** Diciembre 2025  
+**Versión:** 1.0.0
+**Última actualización:** Diciembre 2025
 **Total líneas:** 1,100+
 

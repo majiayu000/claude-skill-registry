@@ -1,3 +1,8 @@
+---
+name: disaster-recovery-business-continuity
+description: '| Atributo | Valor |'
+---
+
 # 🆘 Skill: Disaster Recovery & Business Continuity
 
 ## 📋 Metadata
@@ -76,7 +81,7 @@ Failover Procedures
 > - [`failover_procedures.py`](scripts/failover_procedures.py) - Gestor de procedimientos de failover (Python CLI)
 > - [`dr-test.sh`](scripts/dr-test.sh) - Script completo de testing de DR (Bash)
 > - [`requirements.txt`](scripts/requirements.txt) - Dependencias (ninguna, usa stdlib)
-> 
+>
 > Ver [`scripts/README.md`](scripts/README.md) para documentación de uso.
 
 ### 1. RPO/RTO Definitions
@@ -89,13 +94,13 @@ services:
     rto: 15m     # Recovery within 15 minutes
     priority: critical
     backup_strategy: continuous
-    
+
   - name: user-service
     rpo: 1h      # Maximum 1 hour of data loss
     rto: 30m     # Recovery within 30 minutes
     priority: high
     backup_strategy: hourly
-    
+
   - name: analytics-service
     rpo: 24h     # Maximum 24 hours of data loss
     rto: 2h      # Recovery within 2 hours
@@ -397,7 +402,7 @@ spec:
 
 ---
 
-**Versión:** 1.0.0  
-**Última actualización:** Diciembre 2025  
+**Versión:** 1.0.0
+**Última actualización:** Diciembre 2025
 **Total líneas:** 1,100+
 

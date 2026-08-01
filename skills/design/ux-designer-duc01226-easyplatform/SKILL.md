@@ -1,5 +1,12 @@
 ---
 name: ux-designer
+description: '> [IMPORTANT] Use TaskCreate to break ALL work into small tasks BEFORE
+  starting — including tasks for each file read. This prevents context loss from long
+  files. For simple tasks, AI MUST ask user whether to skip.'
+---
+
+---
+name: ux-designer
 version: 1.0.0
 description: "[Project Management] Assist UX Designers with design specifications, component documentation, accessibility audits, and design-to-development handoffs. Use when creating design specs, documenting components, auditing accessibility, or preparing handoffs. Triggers on keywords like "design spec", "component spec", "accessibility audit", "design handoff", "design system", "design tokens", "UI specification", "wireframe"."
 allowed-tools: Read, Write, Edit, Grep, Glob, WebSearch, Task

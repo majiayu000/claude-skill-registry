@@ -1,5 +1,12 @@
 ---
 name: greenshift-blocks
+description: Generate WordPress Gutenberg blocks using Greenshift/GreenLight plugin.
+  Use when user asks to create WordPress sections, blocks, layouts, hero sections,
+  galleries, or any Gutenberg element. Triggers o
+---
+
+---
+name: greenshift-blocks
 description: Generate WordPress Gutenberg blocks using Greenshift/GreenLight plugin. Use when user asks to create WordPress sections, blocks, layouts, hero sections, galleries, or any Gutenberg element. Triggers on keywords: wordpress, gutenberg, greenshift, section, block, layout, hero, gallery, columns, element.
 ---
 

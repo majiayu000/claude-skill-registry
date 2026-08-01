@@ -1,5 +1,12 @@
 ---
 name: wix-service-plugin
+description: Creates service plugin extensions for Wix CLI applications. Service plugins
+  implement custom backend logic that integrates with Wix eCommerce flows, enabling
+  customization of shipping, fees, taxes, validations, and more.
+---
+
+---
+name: wix-service-plugin
 description: Creates service plugins (SPIs) for Wix eCommerce that extend checkout and order functionality. Implements custom logic for shipping rates, additional fees, tax calculations, cart validations, gift cards, product recommendations, and catalog integrations. Use when adding custom shipping rate calculations, dynamic fees (handling, rush), tax calculation logic, cart/checkout validations, gift card/voucher systems, product recommendations, external catalog integrations, or custom discount triggers. Triggers: SPI, service plugin, shipping rates, shipping, fees, additional fees, tax, tax calculation, validation, checkout validation, gift card, voucher, recommendations, catalog, eCommerce, ecom, checkout, cart, handler.
 license: MIT
 compatibility: Requires Wix CLI project with eCommerce service plugin support

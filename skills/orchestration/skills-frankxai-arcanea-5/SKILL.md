@@ -1,3 +1,7 @@
+---
+name: skills
+description: Use this skill to delegate specific engineering tasks to sub-agents.
+---
 
 ---
 name: starlight-engineering

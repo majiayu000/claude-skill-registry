@@ -1,5 +1,10 @@
 ---
 name: pubmed-fulltext-access
+description: 透過 Europe PMC、CORE 等開放取用來源取得論文全文，包含 PDF 連結和全文內容。
+---
+
+---
+name: pubmed-fulltext-access
 description: Full text access via Europe PMC, CORE, and other open access sources. Triggers: 全文, fulltext, PDF, open access, 免費下載, PMC, 開放取用
 ---
 

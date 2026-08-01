@@ -1,5 +1,13 @@
 ---
 name: arcore
+description: ARCore is Google's SDK for building augmented reality experiences on
+  Android devices. It enables motion tracking, environmental understanding, and light
+  estimation to overlay digital content on the real world. Use it to create AR apps
+  that interact with the physical environment.
+---
+
+---
+name: arcore
 cluster: ar-vr
 description: "ARCore is Google\'s SDK for creating augmented reality experiences on Android using motion tracking and environmental und"
 tags: ["ar","android","augmented-reality"]

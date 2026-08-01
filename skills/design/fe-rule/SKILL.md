@@ -1,3 +1,9 @@
+---
+name: fe-rule
+description: '> v-if 和 v-show 理论上都是作用于元素的显示隐藏，只是一个是直接对DOM，一个是通过CSS的display来操作的，在项目中大部分的时候我们都是直接使用
+  v-if 直接代替使用 v-show，只有当DOM频繁进行先和隐藏的时候，但是这种场景非常少见。'
+---
+
 # 优先使用v-if
 
 > v-if 和 v-show 理论上都是作用于元素的显示隐藏，只是一个是直接对DOM，一个是通过CSS的display来操作的，在项目中大部分的时候我们都是直接使用 v-if 直接代替使用 v-show，只有当DOM频繁进行先和隐藏的时候，但是这种场景非常少见。
@@ -105,12 +111,12 @@ new webpack.optimize.CommonsChunkPlugin({
 
 ```js
     // 在html引入script标签后。在vue的配置中，进行声明
-    
+
     configureWebpack: {
         externals: {
         'echarts': 'echarts' // 配置使用CDN
         }
-    } 
+    }
 ```
 
 # GZIP

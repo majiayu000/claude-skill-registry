@@ -1,5 +1,11 @@
 ---
 name: thermal-properties
+description: Phonon calculations, molecular dynamics, free energy calculations, and
+  quasi-harmonic thermodynamics for crystalline and amorphous materials.
+---
+
+---
+name: thermal-properties
 description: Thermal Properties (13 sub-skills: anharmonicity, bond-distribution, free-energy-calculation, gruneisen-qha, md-trajectory-tools, molecular-dynamics, msd-diffusion, phonon, phonon-from-outcar, quasi-harmonic-debye, rdf-analysis, thermal-conductivity, vacf-vdos)
 ---
 

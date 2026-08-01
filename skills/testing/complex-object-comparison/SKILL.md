@@ -1,3 +1,8 @@
+---
+name: complex-object-comparison
+description: 此技能專注於 .NET 測試中的複雜物件比對場景，使用 AwesomeAssertions 的 BeEquivalentTo API 處理各種進階比對需求。
+---
+
 # Complex Object Comparison Skill
 
 ---
@@ -89,10 +94,10 @@ public void Entity_排除自動欄位_應驗證業務欄位()
         Version = 1
     };
 
-    var updatedEntity = userService.UpdateUser(1, new UpdateUserRequest 
-    { 
+    var updatedEntity = userService.UpdateUser(1, new UpdateUserRequest
+    {
         Name = "John Doe",
-        Email = "john@example.com" 
+        Email = "john@example.com"
     });
 
     // 排除自動更新的欄位
@@ -118,7 +123,7 @@ public static class SmartExclusionExtensions
         this EquivalencyOptions<T> options)
     {
         return options
-            .Excluding(ctx => ctx.Path.EndsWith("Id") && 
+            .Excluding(ctx => ctx.Path.EndsWith("Id") &&
                             ctx.SelectedMemberInfo.Name.StartsWith("Generated"))
             .Excluding(ctx => ctx.Path.EndsWith("At"))
             .Excluding(ctx => ctx.Path.EndsWith("Time"))
@@ -164,11 +169,11 @@ public void ComplexEntity_排除巢狀時間戳記_應正常運作()
         CreatedAt = DateTime.Now,
         Items = new[]
         {
-            new OrderItem 
-            { 
-                Id = 1, 
+            new OrderItem
+            {
+                Id = 1,
                 ProductName = "Laptop",
-                AddedAt = DateTime.Now 
+                AddedAt = DateTime.Now
             }
         },
         AuditInfo = new AuditInfo
@@ -197,11 +202,11 @@ public void ComplexEntity_排除巢狀時間戳記_應正常運作()
 public void LargeDataSet_選擇性比對_應高效執行()
 {
     var largeDataset = Enumerable.Range(1, 100000)
-        .Select(i => new DataRecord 
-        { 
-            Id = i, 
+        .Select(i => new DataRecord
+        {
+            Id = i,
             Value = $"Record_{i}",
-            Timestamp = DateTime.Now 
+            Timestamp = DateTime.Now
         })
         .ToList();
 
@@ -253,15 +258,15 @@ public void LargeCollection_抽樣驗證_應平衡效能與準確性()
 public static class PerformanceOptimizedAssertions
 {
     public static void AssertKeyPropertiesOnly<T>(
-        T actual, 
-        T expected, 
+        T actual,
+        T expected,
         params Expression<Func<T, object>>[] keySelectors)
     {
         foreach (var selector in keySelectors)
         {
             var actualValue = selector.Compile()(actual);
             var expectedValue = selector.Compile()(expected);
-            actualValue.Should().Be(expectedValue, 
+            actualValue.Should().Be(expectedValue,
                 $"關鍵屬性 {selector} 應該相符");
         }
     }
@@ -270,19 +275,19 @@ public static class PerformanceOptimizedAssertions
 [Fact]
 public void Order_關鍵屬性驗證_應快速完成()
 {
-    var expected = new Order 
-    { 
-        Id = 1, 
+    var expected = new Order
+    {
+        Id = 1,
         CustomerName = "John",
         TotalAmount = 999.99m,
-        CreatedAt = DateTime.Now 
+        CreatedAt = DateTime.Now
     };
 
     var actual = orderService.GetOrder(1);
 
     // 只比對關鍵屬性，忽略時間戳記
     PerformanceOptimizedAssertions.AssertKeyPropertiesOnly(
-        actual, 
+        actual,
         expected,
         o => o.Id,
         o => o.CustomerName,
@@ -350,10 +355,10 @@ public void EFEntity_資料庫實體_應排除導航屬性()
 [Fact]
 public void ApiResponse_JSON反序列化_應忽略額外欄位()
 {
-    var expected = new UserDto 
-    { 
-        Id = 1, 
-        Username = "john_doe" 
+    var expected = new UserDto
+    {
+        Id = 1,
+        Username = "john_doe"
     };
 
     var response = await httpClient.GetAsync("/api/users/1");

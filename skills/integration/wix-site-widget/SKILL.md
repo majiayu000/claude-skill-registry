@@ -1,5 +1,12 @@
 ---
 name: wix-site-widget
+description: Creates custom element widgets (site widgets) for Wix sites with React
+  components and built-in settings panels. Generates interactive widgets that site
+  owners can add to pages via the Wix Editor, with
+---
+
+---
+name: wix-site-widget
 description: Creates custom element widgets (site widgets) for Wix sites with React components and built-in settings panels. Generates interactive widgets that site owners can add to pages via the Wix Editor, with configurable properties managed through a settings panel. Use when building interactive widgets (countdown timers, progress bars, calculators), custom data displays (product showcases, testimonials, galleries), configurable components with visual customization, reusable components, or widgets displaying data from Wix Data collections. Triggers: widget, custom element, site widget, interactive component, countdown, timer, calculator, display, showcase, gallery, form widget, interactive, configurable, settings panel, editor component, web component.
 license: MIT
 compatibility: Requires Wix CLI project with custom element extension support

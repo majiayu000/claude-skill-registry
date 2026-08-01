@@ -1,3 +1,8 @@
+---
+name: git-worktree
+description: Multi-step workflow for parallel development using git worktrees.
+---
+
 # Git Worktree Workflow
 
 Multi-step workflow for parallel development using git worktrees.

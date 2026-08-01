@@ -1,5 +1,10 @@
 ---
 name: ffmpeg-python-integration-reference
+description: 'MANDATORY: Always Use Backslashes on Windows for File Paths'
+---
+
+---
+name: ffmpeg-python-integration-reference
 description: Authoritative Python-FFmpeg parameter integration reference ensuring type safety, accurate parameter mappings, and proper unit conversions. PROACTIVELY activate for: (1) ffmpeg-python library usage, (2) Python subprocess FFmpeg calls, (3) Caption/subtitle parameter mapping (drawtext, ASS), (4) Color format conversions (BGR, RGB, ABGR, ASS &HAABBGGRR), (5) Time unit conversions (seconds, centiseconds, milliseconds), (6) Type safety validation (int, float, string), (7) Coordinate systems, (8) Parameter range enforcement, (9) Frame pipe handling, (10) Error detection for type mismatches. Provides: Complete parameter type reference, color format conversion tables, time unit conversion formulas, validation patterns, working Python examples with proper typing.
 ---
 

@@ -1,5 +1,13 @@
 ---
 name: user-empathy-lens
+description: Empathy-driven design skill. Helps think through how real people will
+  experience the software. Uses inference and scenario-building rather than formal
+  user research — surface assumptions, challenge them, and design for actual human
+  behaviour.
+---
+
+---
+name: user-empathy-lens
 description: Empathy-driven design: think through how real people experience the software; surface and challenge assumptions.
 user-invocable: false
 effort: low

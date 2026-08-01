@@ -1,3 +1,8 @@
+---
+name: manage-generate-subskill-md
+description: Skill from boringdata/kurt-demo
+---
+
 # Generate Extraction Subskill Subskill
 
 **Purpose:** Generate extraction subskill from template for custom rule type

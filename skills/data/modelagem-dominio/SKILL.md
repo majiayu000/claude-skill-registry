@@ -1,4 +1,9 @@
 ---
+name: modelagem-dominio
+description: Archived skill guidance for modelagem-dominio.
+---
+
+---
 
 name: modelagem-dominio-9box
 description: Use para modelar entidades, value objects e relacionamentos do domínio de gestão de desempenho baseado em evidências e 9BOX.

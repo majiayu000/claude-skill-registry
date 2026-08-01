@@ -1,3 +1,8 @@
+---
+name: protein-structure
+description: '---name: protein-structure-prediction'
+---
+
 ---name: protein-structure-prediction
 description: Predicts 3D protein structures from amino acid sequences using ESMFold or AlphaFold3 (mock).
 license: MIT

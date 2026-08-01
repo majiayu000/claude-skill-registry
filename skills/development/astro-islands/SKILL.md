@@ -1,3 +1,8 @@
+---
+name: astro-islands
+description: '- Adding interactive components to Astro pages'
+---
+
 # Astro Islands Architecture Skill
 
 ## When to Use This Skill

@@ -1,3 +1,9 @@
+---
+name: code-review-s7r1d3r-claude-starter
+description: Transform Claude into an expert code reviewer following industry best
+  practices.
+---
+
 # Code Review Skill
 
 Transform Claude into an expert code reviewer following industry best practices.

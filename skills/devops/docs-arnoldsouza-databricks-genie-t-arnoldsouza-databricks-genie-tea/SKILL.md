@@ -1,10 +1,16 @@
+---
+name: docs-arnoldsouza-databricks-genie-t
+description: How to wire Genie into Copilot Studio as an External Web Service with
+  a Simple and an Advanced skill.
+---
+
 # Copilot Studio skill (two patterns)
 
 *How to wire Genie into Copilot Studio as an External Web Service with a Simple and an Advanced skill.*
 
 This guide helps **makers/admins** connect your Genie web app to **Microsoft Copilot Studio** so copilots can call Genie inside flows, topics, or actions.
 
-## Simple Genie skill 
+## Simple Genie skill
 
 In this skill, you can access Genie directly. Copilot will pass the value of `Activity.Text` to Genie for processing.
 
@@ -36,6 +42,6 @@ This skill interacts with Genie in a more controlled way. You can choose what to
 2. fullfill the **Skill Manifest URL** and point to your bot:
    - Terraform already deployed a manifest.json file in `genie-M365-agent/public/manifest.json`
    - Manifest URL is: `https://<your-webapp>.azurewebsites.net/public/manifest.json`
-3. Then you will see the Skill enabled in your project. 
+3. Then you will see the Skill enabled in your project.
 
    <img src="images/18-add-skill-2.png" alt="Add skill" width="450"/>

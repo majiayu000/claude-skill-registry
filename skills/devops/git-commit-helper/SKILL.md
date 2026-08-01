@@ -1,5 +1,12 @@
 ---
 name: git-commit-helper
+description: 'Adherence to Conventional Commits and efficient Git history management
+  using types, scopes, and advanced commit tools like fixup/amend. Triggers: git-commit,
+  conventional-commits, breaking-change, fix'
+---
+
+---
+name: git-commit-helper
 description: Adherence to Conventional Commits and efficient Git history management using types, scopes, and advanced commit tools like fixup/amend. Triggers: git-commit, conventional-commits, breaking-change, fixup, git-amend, rebase.
 ---
 
@@ -14,13 +21,13 @@ Conventional Commits provide a standardized format for commit messages, enabling
 - **Clean History**: To fix small mistakes in previous commits without creating "junk" commits.
 
 ## Decision Tree
-1. Does the change add a new capability? 
+1. Does the change add a new capability?
    - YES: Type `feat` (MINOR bump).
-2. Does it fix a bug? 
+2. Does it fix a bug?
    - YES: Type `fix` (PATCH bump).
-3. Does it break backward compatibility? 
+3. Does it break backward compatibility?
    - YES: Append `!` after type/scope OR add `BREAKING CHANGE:` footer (MAJOR bump).
-4. Did you forget a small detail in the last commit? 
+4. Did you forget a small detail in the last commit?
    - YES: Use `git commit --amend` or `--fixup`.
 
 ## Workflows

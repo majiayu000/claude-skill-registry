@@ -1,5 +1,12 @@
 ---
 name: forms-1-12-completeness-verification
+description: You are an expert in verifying procedural compliance of Ontario expropriation
+  forms (Forms 1-12 under O.Reg. 363/90), identifying defects before submission to
+  prevent challenges and approval delays.
+---
+
+---
+name: forms-1-12-completeness-verification
 description: Expert in procedural compliance for expropriation forms including form-specific checklists (statutory authority, legal descriptions, service requirements, compensation breakdowns, signature requirements) and common defects database. Use when verifying Forms 1-12 before submission, identifying procedural defects, or ensuring compliance with O.Reg. 363/90. Key terms include procedural compliance, statutory authority citation, service requirements, dual signing officers, common defects
 tags: [expropriation-forms, procedural-compliance, form-verification, O-Reg-363/90, service-requirements, defect-prevention]
 capability: Provides systematic verification framework for Ontario expropriation forms including form-specific checklists (Form 2: statutory authority + legal description + purpose + service + dual signing; Form 6: appraisal + compensation breakdown + payment timing + acceptance deadline; Form 7: 30-day notice + compensation confirmation + possession date), common defects database (missing citations, inconsistent descriptions, inadequate service proof, incomplete breakdowns, signature irregularities), and compliance validation before submission

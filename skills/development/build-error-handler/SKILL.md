@@ -1,3 +1,9 @@
+---
+name: build-error-handler
+description: 'Purpose: Automatically diagnose and resolve common build errors for
+  Next.js frontend and FastAPI backend.'
+---
+
 # Skill: Build Error Handler
 
 **Purpose**: Automatically diagnose and resolve common build errors for Next.js frontend and FastAPI backend.

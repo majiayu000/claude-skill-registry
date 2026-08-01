@@ -1,3 +1,8 @@
+---
+name: video-production
+description: '- taiyou-taiyo/content/creative/video/production-guide.md'
+---
+
 # 動画制作スキル
 
 ## When to Use

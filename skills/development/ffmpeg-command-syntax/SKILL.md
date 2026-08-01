@@ -1,5 +1,12 @@
 ---
 name: ffmpeg-command-syntax
+description: The most common FFmpeg mistake is putting options in the wrong place.
+  Options in FFmpeg are position-sensitive and apply to the NEXT file specified after
+  them.
+---
+
+---
+name: ffmpeg-command-syntax
 description: Complete FFmpeg command syntax reference covering option ordering, input vs output options, stream specifiers, and position-sensitive options. PROACTIVELY activate for: (1) Command syntax questions, (2) Option placement issues, (3) Input vs output option confusion, (4) Stream specifier syntax, (5) -ss/-t/-to position questions, (6) Global vs per-file options, (7) Multiple input/output handling, (8) Option order errors. Provides: Correct option placement rules, input-only vs output-only options, position-sensitive option behavior, stream specifier syntax, common mistakes and fixes.
 ---
 

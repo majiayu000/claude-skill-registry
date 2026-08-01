@@ -1,5 +1,12 @@
 ---
 name: selector-strategies
+description: 'CSS/XPath selector best practices for web automation (dropdowns, dynamic
+  tables, nested components). Use when: writing selectors, handling dynamic content,
+  React apps, robust attributes, dynamic eleme'
+---
+
+---
+name: selector-strategies
 description: CSS/XPath selector best practices for web automation (dropdowns, dynamic tables, nested components). Use when: writing selectors, handling dynamic content, React apps, robust attributes, dynamic element handling, selector maintenance.
 ---
 

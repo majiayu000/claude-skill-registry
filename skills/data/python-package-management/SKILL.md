@@ -1,5 +1,10 @@
 ---
 name: python-package-management
+description: '| uv Command | Purpose |'
+---
+
+---
+name: python-package-management
 description: Complete Python package management system. PROACTIVELY activate for: (1) uv package manager (10-100x faster), (2) pyproject.toml configuration, (3) Virtual environment setup, (4) Dependency management with uv.lock, (5) Ruff linting and formatting, (6) src layout project structure, (7) Publishing to PyPI, (8) pip and requirements.txt. Provides: uv commands, pyproject.toml templates, ruff config, pre-commit setup. Ensures modern Python project setup with fast tooling.
 ---
 

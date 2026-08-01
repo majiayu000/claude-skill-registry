@@ -1,5 +1,10 @@
 ---
 name: python-cloudflare
+description: '| Platform | Cold Start | Packages | Best For |'
+---
+
+---
+name: python-cloudflare
 description: Complete Python Cloudflare deployment system. PROACTIVELY activate for: (1) Python Workers with Pyodide, (2) FastAPI on Workers, (3) Cloudflare Containers for heavy compute, (4) Service bindings (RPC), (5) Environment variables in Workers, (6) Cold start optimization, (7) Workflows for durable execution, (8) GPU containers for AI. Provides: Worker code patterns, wrangler config, Dockerfile templates, FastAPI integration. Ensures edge deployment with proper architecture choices.
 ---
 

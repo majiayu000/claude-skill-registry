@@ -1,3 +1,8 @@
+---
+name: logging-masharratt-claude-flow-novice
+description: 'Version: 1.0.0 (Phase 1 - Quick Fix)'
+---
+
 # CFN Docker Logging Skill
 
 **Version:** 1.0.0 (Phase 1 - Quick Fix)

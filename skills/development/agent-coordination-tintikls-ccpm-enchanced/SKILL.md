@@ -1,4 +1,11 @@
 ---
+name: agent-coordination-tintikls-ccpm-enchanced
+description: Use this skill to coordinate agent execution, validate sequential workflow
+  compliance, and manage agent handoffs. This skill provides deterministic coordination
+  between agents using bash scripts and v
+---
+
+---
 name: agent-coordination
 description: Use this skill to coordinate agent execution, validate sequential workflow compliance, and manage agent handoffs. This skill provides deterministic coordination between agents using bash scripts and validation systems. Replaces LLM-based coordination with reliable script-based enforcement.
 

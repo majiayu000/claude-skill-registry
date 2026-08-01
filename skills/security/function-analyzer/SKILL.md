@@ -1,5 +1,12 @@
 ---
 name: function-analyzer
+description: Perform ultra-granular, per-function deep analysis to build security
+  audit context. The sole purpose is pure context building---never identify vulnerabilities,
+  propose fixes, or model exploits.
+---
+
+---
+name: function-analyzer
 description: Performs ultra-granular per-function deep analysis for security audit context building.
 Use when: (1) analyzing dense functions with complex control flow, (2) tracing data-flow
 chains across modules, (3) understanding cryptographic or state machine implementations.

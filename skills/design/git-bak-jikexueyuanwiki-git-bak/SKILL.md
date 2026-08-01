@@ -1,3 +1,8 @@
+---
+name: git-bak
+description: 在结束本章之前，我还想和大家分享一些 Git 使用的技巧和窍门。很多使用 Git 的开发者可能根本就没用过这些技巧，我们也不是说在读过本书后非得用这些技巧不可，但至少应该有所了解吧。说实话，有了这些小窍门，我们的工作可以变得更简单，更轻松，更高效。
+---
+
 # Git 技巧和窍门
 
 在结束本章之前，我还想和大家分享一些 Git 使用的技巧和窍门。很多使用 Git 的开发者可能根本就没用过这些技巧，我们也不是说在读过本书后非得用这些技巧不可，但至少应该有所了解吧。说实话，有了这些小窍门，我们的工作可以变得更简单，更轻松，更高效。
@@ -18,7 +23,7 @@ source ~/.git-completion.bash
 
 ```
 $ git co
-    
+
        commit config
 
 ```
@@ -29,9 +34,9 @@ $ git co
 
 ```
 $ git log --s
-    
+
       --shortstat  --since=  --src-prefix=  --stat   --summary
-    
+
 ```
 
 这个技巧不错吧，可以节省很多输入和查阅文档的时间。
@@ -73,13 +78,13 @@ $ git config --global alias.last 'log -1 HEAD'
 ```
 $ git last
 commit 66938dae3329c7aebe598c2246a8e6af90d04646
-Author: Josh Goebel 
+Author: Josh Goebel
 
 Date:   Tue Aug 26 19:48:51 2008 +0800
 
     test for current head
 
-    Signed-off-by: Scott Chacon  
+    Signed-off-by: Scott Chacon
 ```
 
 可以看出，实际上 Git 只是简单地在命令中替换了你设置的别名。不过有时候我们希望运行某个外部命令，而非 Git 的附属工具，这个好办，只需要在命令前加上 ! 就行。如果你自己写了些处理 Git 仓库信息的脚本的话，就可以用这种技术包装起来。作为演示，我们可以设置用 git visual 启动gitk：

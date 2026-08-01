@@ -1,3 +1,8 @@
+---
+name: angular-i18n-maintenance
+description: 'name: angular-i18n-maintenance'
+---
+
 ﻿---
 name: angular-i18n-maintenance
 description: Maintain runtime i18n in Angular apps using `@ngx-translate/core` by replacing new hardcoded UI text with translation keys, `TranslatePipe`, and synchronized entries in all locale JSON files. Use when adding labels, headings, buttons, messages, placeholders, or titles in projects that already use JSON locale files.

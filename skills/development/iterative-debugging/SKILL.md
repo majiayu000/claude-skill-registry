@@ -1,3 +1,8 @@
+---
+name: iterative-debugging
+description: '> Compiler: manual (bootstrap)'
+---
+
 # Iterative Debugging Skill
 
 > Version: 1.0.0

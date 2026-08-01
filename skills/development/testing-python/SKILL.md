@@ -1,5 +1,11 @@
 ---
 name: testing-python
+description: 'Regra 07: Testes. Use when writing tests, reviewing test coverage, or
+  setting up testing.'
+---
+
+---
+name: testing-python
 description: Regra 07: Testes. Use when writing tests, reviewing test coverage, or setting up testing.
 ---
 

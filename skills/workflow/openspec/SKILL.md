@@ -1,4 +1,9 @@
 ---
+name: openspec
+description: Archived skill guidance for openspec.
+---
+
+---
 
 name: openspec
 description: "OpenSpec artifact-driven workflow. Covers OPSX commands, schemas, project config. Keywords: OPSX, artifact graph, /opsx:."

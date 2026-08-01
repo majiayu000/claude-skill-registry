@@ -1,5 +1,12 @@
 ---
 name: git-workspace-review
+description: Use this skill before workflows that depend on repository state, such
+  as commit message generation, PR preparation, or release notes. Run it once per
+  session or whenever staged changes are modified.
+---
+
+---
+name: git-workspace-review
 description: |
 
 Triggers: staged, preflight, git, review, status

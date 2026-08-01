@@ -1,5 +1,10 @@
 ---
 name: shipflow-deps
+description: '- Current directory: !pwd'
+---
+
+---
+name: shipflow-deps
 description: Deep dependency audit — vulnerabilities, outdated packages, unused deps, license compliance, type definitions, configuration health
 disable-model-invocation: true
 argument-hint: ["global"] (omit for current project)

@@ -1,3 +1,8 @@
+---
+name: observability-stack
+description: '| ID | sre-observability-stack |'
+---
+
 # 📊 Skill: Observability Stack
 
 ## 📋 Metadata
@@ -365,7 +370,7 @@ datasources:
 > - **Node.js Custom Spans:** [`scripts/nodejs/userService.js`](scripts/nodejs/userService.js) - Ejemplo de custom spans
 > - **Rust Instrumentation:** [`scripts/rust/src/telemetry.rs`](scripts/rust/src/telemetry.rs) - Setup de OpenTelemetry para Rust
 > - **Rust Custom Spans:** [`scripts/rust/src/services/user_service.rs`](scripts/rust/src/services/user_service.rs) - Ejemplo de custom spans en Rust
-> 
+>
 > Ver [`scripts/README.md`](scripts/README.md) para documentación de uso completa.
 
 #### 3.1 OpenTelemetry Collector Configuration
@@ -614,12 +619,12 @@ async fn health() -> Result<&'static str> {
 async fn get_users() -> Result<web::Json<Vec<User>>> {
     // Incrementar contador
     metrics::HTTP_REQUESTS_TOTAL.inc();
-    
+
     // Medir duración
     let timer = metrics::HTTP_REQUEST_DURATION.start_timer();
     let users = fetch_users().await?;
     timer.observe_duration();
-    
+
     Ok(web::Json(users))
 }
 ```
@@ -1072,7 +1077,7 @@ sampling:
 
 ---
 
-**Versión:** 1.0.0  
-**Última actualización:** Diciembre 2025  
+**Versión:** 1.0.0
+**Última actualización:** Diciembre 2025
 **Total líneas:** 1,500+
 

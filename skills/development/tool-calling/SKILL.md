@@ -1,5 +1,12 @@
 ---
 name: tool-calling
+description: Define and run tool-calling patterns for LLMs (schema design, call loops,
+  validation, parallel calls). Use when building function/tool calling workflows or
+  debugging tool selection and arguments; trig
+---
+
+---
+name: tool-calling
 description: Define and run tool-calling patterns for LLMs (schema design, call loops, validation, parallel calls). Use when building function/tool calling workflows or debugging tool selection and arguments; triggers: tool-calling, function-calling, tool schema, tool declaration, parallel function calling.
 ---
 

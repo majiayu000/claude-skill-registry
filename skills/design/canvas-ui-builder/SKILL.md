@@ -1,5 +1,11 @@
 ---
 name: canvas-ui-builder
+description: Follow the theme system, slot rules, and panel coordination patterns
+  for all UI work.
+---
+
+---
+name: canvas-ui-builder
 description: Build PySide6 canvas UI components with the theme system and signal/slot rules. Use when: editing dialogs, panels, widgets, styles, or canvas UI behavior.
 ---
 

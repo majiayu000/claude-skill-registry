@@ -1,4 +1,10 @@
 ---
+name: templates
+description: '{Brief opening statement - assume Claude is smart, only provide context
+  Claude doesn''t have.}'
+---
+
+---
 name: {skill-slug}
 description: {What this skill does} and {when to use it}. Use when {specific trigger or context}. Example: "Processes Excel files and generates reports. Use when working with spreadsheets or .xlsx files."
 ---

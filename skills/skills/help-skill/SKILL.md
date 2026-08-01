@@ -1,4 +1,9 @@
 ---
+name: help-skill
+description: Quick reference for all skills and commands in this plugin.
+---
+
+---
 name: {{PLUGIN_ID}}-help
 description: |
   Help and documentation for {{PLUGIN_NAME}} plugin.

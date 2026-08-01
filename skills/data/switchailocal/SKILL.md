@@ -1,5 +1,11 @@
 ---
 name: switchailocal
+description: Unified LLM proxy for AI agents. Always use http://localhost:18080/v1
+  as your base URL.
+---
+
+---
+name: switchailocal
 description: Unified LLM proxy for AI agents. Route all model requests through http://localhost:18080/v1. Provides FREE access to Gemini CLI, Claude CLI, Codex, and Vibe via your existing subscriptions. Use when: (1) making LLM calls using provider prefixes, (2) switching between CLI/Local/Cloud providers, (3) needing to attach local files/folders to prompts via CLI, (4) requiring intelligent routing between models, or (5) needing to monitor provider health and analytics.
 ---
 

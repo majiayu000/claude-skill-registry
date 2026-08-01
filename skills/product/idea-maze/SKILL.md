@@ -1,6 +1,16 @@
 ---
 name: idea-maze
-description: Most startup ideas are bad. Not because founders lack creativity, but because they're solving invented problems instead of lived ones.  Paul Graham's essays reveal a pattern: the best ideas come from living in the future and noticing what's missing. Schlep blindness hides gold. Organic ideas beat brainstormed ones. Frighteningly ambitious ideas are often easier.  This skill synthesizes PG's idea-finding wisdom into actionable guidance. Use when "keywords, contexts, " mentioned. 
+description: '- {''name'': ''Live in the future, notice what is missing'', ''description'':
+  ''The best ideas come from living on the edge of technology or culture,\nthen noticing
+  problems that don\''t exist yet for most people but will.\nNot "what should exist"
+  but "what\''s obviously missing from my life."\n'', ''source'': ''How to Get Startup
+  Ideas'', ''examples'': {''good'': ''I build AI tools daily and keep hitting this
+  friction...'', ''bad'': ''I bet people will want a social network for pet owners''}}'
+---
+
+---
+name: idea-maze
+description: Most startup ideas are bad. Not because founders lack creativity, but because they're solving invented problems instead of lived ones.  Paul Graham's essays reveal a pattern: the best ideas come from living in the future and noticing what's missing. Schlep blindness hides gold. Organic ideas beat brainstormed ones. Frighteningly ambitious ideas are often easier.  This skill synthesizes PG's idea-finding wisdom into actionable guidance. Use when "keywords, contexts, " mentioned.
 ---
 
 # Idea Maze

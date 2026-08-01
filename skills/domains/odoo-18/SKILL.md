@@ -1,4 +1,9 @@
 ---
+name: odoo-18
+description: Archived skill guidance for odoo-18.
+---
+
+---
 
 ## name: odoo-18
 description: Master Odoo 18 skill index. Wrapper pointing to the shared Odoo docs.

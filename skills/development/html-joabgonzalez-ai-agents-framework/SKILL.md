@@ -1,5 +1,10 @@
 ---
 name: html
+description: Guidance for writing semantic, accessible HTML following modern web standards.
+---
+
+---
+name: html
 description: Semantic HTML best practices for web development. Proper element usage, document structure, forms, metadata. Trigger: When writing HTML markup, creating document structure, or implementing semantic HTML elements.
 skills:
   - conventions

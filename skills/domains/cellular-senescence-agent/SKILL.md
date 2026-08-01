@@ -1,3 +1,8 @@
+---
+name: cellular-senescence-agent
+description: '---name: cellular-senescence-agent'
+---
+
 ---name: cellular-senescence-agent
 description: AI-powered analysis of cellular senescence for aging research, cancer therapy response, and senolytic drug development.
 license: MIT

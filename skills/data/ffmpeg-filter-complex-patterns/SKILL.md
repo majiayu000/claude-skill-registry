@@ -1,5 +1,10 @@
 ---
 name: ffmpeg-filter-complex-patterns
+description: 'MANDATORY: Always Use Backslashes on Windows for File Paths'
+---
+
+---
+name: ffmpeg-filter-complex-patterns
 description: Complete guide to FFmpeg filter_complex syntax, multi-input/output pipelines, and composition patterns. PROACTIVELY activate for: (1) filter_complex syntax questions, (2) Multi-input video composition (PiP, grids, overlays), (3) Video transitions (xfade, fades, wipes), (4) Audio mixing (amix, amerge), (5) Stream splitting and routing, (6) Named stream labels, (7) Complex filtergraphs, (8) GPU + CPU hybrid filter chains, (9) ABR encoding ladders, (10) Text and watermark overlays. Provides: Syntax reference, composition patterns, audio mixing examples, transition effects, GPU-accelerated filtergraphs, debugging tips.
 ---
 

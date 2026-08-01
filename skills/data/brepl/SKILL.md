@@ -1,5 +1,11 @@
 ---
 name: brepl
+description: You MUST load this skill before using brepl. Do NOT attempt to use brepl
+  without loading this skill first, or you will use incorrect syntax.
+---
+
+---
+name: brepl
 description: **MANDATORY** - Load this skill BEFORE using brepl in any way. Teaches the heredoc pattern for reliable code evaluation.
 ---
 

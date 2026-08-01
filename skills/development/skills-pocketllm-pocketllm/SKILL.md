@@ -1,3 +1,8 @@
+---
+name: skills-pocketllm-pocketllm
+description: Claude Docs home page![light logo!dark logo](https://docs.claude.com/)
+---
+
 # Create Skill - Claude Docs> Source: https://docs.claude.com/en/api/skills/create-skillAgent Skills are now available! [Learn more about extending Claude's capabilities with Agent Skills](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview).
 [Claude Docs home page![light logo](https://mintcdn.com/anthropic-claude-docs/DcI2Ybid7ZEnFaf0/logo/light.svg?fit=max&auto=format&n=DcI2Ybid7ZEnFaf0&q=85&s=c877c45432515ee69194cb19e9f983a2)![dark logo](https://mintcdn.com/anthropic-claude-docs/DcI2Ybid7ZEnFaf0/logo/dark.svg?fit=max&auto=format&n=DcI2Ybid7ZEnFaf0&q=85&s=f5bb877be0cb3cba86cf6d7c88185216)](https://docs.claude.com/)
 ![US](https://d3gk2c5xim1je2.cloudfront.net/flags/US.svg)

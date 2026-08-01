@@ -1,4 +1,10 @@
 ---
+name: add-test
+description: I'll create comprehensive unit tests for $ARGUMENTS following the project's
+  testing patterns.
+---
+
+---
 skill: add-test
 description: Add unit tests for component or function: $ARGUMENTS
 location: project

@@ -1,5 +1,11 @@
 ---
 name: commit
+description: Stage changes and create well-structured git commits following Conventional
+  Commits format.
+---
+
+---
+name: commit
 description: "[Git & Release] Stage changes and create git commits with conventional commit messages. Use when asked to "commit", "stage and commit", "save changes", or after completing implementation tasks. Alias for /git/cm."
 allowed-tools: Bash, Read, Glob, Grep
 ---

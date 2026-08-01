@@ -1,5 +1,10 @@
 ---
 name: shipflow-perf
+description: '- Current directory: !pwd'
+---
+
+---
+name: shipflow-perf
 description: Deep performance audit — bundle analysis, rendering, Core Web Vitals, data fetching, database optimization. Single file, full project, or global.
 disable-model-invocation: true
 argument-hint: [file-path | "global"] (omit for full project)

@@ -1,13 +1,18 @@
+---
+name: applefoundationmodels
+description: '- On-Device Foundation Model: Apple''s Foundation Models framework'
+---
+
    ---
     name: "AppleFoundationModels"
     description: "Use Apple's on-device **Foundation Models** framework (iOS/iPadOS/macOS 26.0+) for natural language understanding, structured data generation, and tool-assisted tasks in apps."
     version: "1.0"
     dependencies:
       - iOS 26.0 or later (Apple Intelligence enabled)
-      - iPadOS 26.0 or later 
-      - macOS 26.0 or later 
-      - Mac Catalyst 26.0 or later 
-      - visionOS 26.0 or later 
+      - iPadOS 26.0 or later
+      - macOS 26.0 or later
+      - Mac Catalyst 26.0 or later
+      - visionOS 26.0 or later
     ---
 
 # Instructions

@@ -1,3 +1,9 @@
+---
+name: deferred-taxes
+description: 'description: Deferred tax accounting — temporary differences, DTA recognition.
+  Cover temp vs permanent, DTA/DTL, tax loss carryforwards.'
+---
+
 # Deferred Tax Accounting
 
 name: deferred-taxes

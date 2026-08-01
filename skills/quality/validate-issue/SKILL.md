@@ -1,3 +1,9 @@
+---
+name: validate-issue
+description: 'description: Use to validate reported issues. Confirms reproducibility
+  and documents validation evidence.'
+---
+
 ﻿---
 name: validate-issue
 description: Use to validate reported issues. Confirms reproducibility and documents validation evidence.
@@ -68,20 +74,20 @@ evidence_collection:
 validation_result:
   reproducible: true/false
   severity: P0/P1/P2/P3
-  
+
   reproduction_details:
     steps_taken: [exact Playwright commands used]
     success_rate: "3/3 attempts reproduced issue"
-    environment: 
+    environment:
       browser: "Chrome 120"
       viewport: "1920x1080"
       account_type: "trial/paid/admin"
-  
+
   evidence:
     screenshots: [list of captured images]
     console_errors: [any JavaScript errors]
     network_failures: [failed requests]
-    
+
   impact_assessment:
     affected_users: "All users on checkout flow"
     business_impact: "Blocking purchases"
@@ -95,26 +101,26 @@ validation_result:
 async function run(page) {
   // Navigate to the problem area
   await page.goto('/checkout');
-  
+
   // Capture initial state
   const initialScreenshot = await page.screenshot();
-  
+
   // Reproduce customer actions
   await page.fill('#email', 'customer@example.com');
   await page.fill('#card-number', '4242424242424242');
-  
+
   // Check for the reported issue
   const submitButton = await page.locator('#submit-payment');
   await submitButton.click();
-  
+
   // Wait and check for infinite spinner (customer's complaint)
   await page.waitForTimeout(5000);
   const spinnerStillVisible = await page.locator('.spinner').isVisible();
-  
+
   // Capture console errors
   const consoleLogs = [];
   page.on('console', msg => consoleLogs.push(msg.text()));
-  
+
   // Return validation result
   return {
     reproduced: spinnerStillVisible,

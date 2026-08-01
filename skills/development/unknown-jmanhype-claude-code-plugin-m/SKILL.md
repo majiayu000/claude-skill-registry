@@ -1,3 +1,9 @@
+---
+name: unknown
+description: Multi-agent trading, swarm intelligence, and GitHub automation plugins
+  for Claude Code. 19 production-grade plugins built from 68+ specialized agents.
+---
+
 # ACE Context Engineering Skill
 
 **Name:** ace-context-engineering

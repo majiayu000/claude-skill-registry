@@ -1,5 +1,11 @@
 ---
 name: beautiful-data-viz
+description: Use this skill whenever the user asks to create, restyle, or “make nicer”
+  a data visualization in Python / Jupyter notebooks.
+---
+
+---
+name: beautiful-data-viz
 description: Create publication-quality, aesthetically refined charts in Python/Jupyter (matplotlib/seaborn): readable axes, tight whitespace, and curated palettes (categorical/sequential/diverging).
 argument-hint: "[medium=notebook|paper|slides] [background=light|dark]"
 ---
@@ -12,9 +18,9 @@ Use this skill whenever the user asks to **create, restyle, or “make nicer”*
 
 Toyplot’s ethos is a good North Star for high-quality plots:
 
-> Always look your best.  
-> Share your things.  
-> Play well with others.  
+> Always look your best.
+> Share your things.
+> Play well with others.
 > Never tell a lie.
 
 (Reference: https://toyplot.readthedocs.io/en/stable/ethos.html)

@@ -1,4 +1,9 @@
 ---
+name: create-sub-issue
+description: Execute /create-sub-issue <parent-issue> slash command.
+---
+
+---
 name: creating-sub-issue
 description: Creates a sub-issue linked to a parent GitHub issue. Use when: user wants to create a sub-issue, break down an issue, or add child task.
 ---

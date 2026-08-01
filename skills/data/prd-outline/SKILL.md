@@ -1,5 +1,10 @@
 ---
 name: prd-outline
+description: 'This skill supports three modes: Create, Update, and Find.'
+---
+
+---
+name: prd-outline
 description: Create or update a PRD outline
 argument-hint: [product/feature name] or [update path/to/outline.md]
 ---

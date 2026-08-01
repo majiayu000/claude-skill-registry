@@ -1,5 +1,10 @@
 ---
 name: file-manager
+description: Archived skill guidance for file-manager.
+---
+
+---
+name: file-manager
 description: Reads, writes, and manages files and directories using a secure Python script.
 version: 1.1.0
 operations:

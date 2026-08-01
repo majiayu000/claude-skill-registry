@@ -1,5 +1,12 @@
 ---
 name: aerospace
+description: Configure and manage AeroSpace tiling window manager for macOS. Use when
+  working with window layouts, tiling configurations, workspace management, monitor
+  assignments, or AeroSpace keybindings. Keywor
+---
+
+---
+name: aerospace
 description: Configure and manage AeroSpace tiling window manager for macOS. Use when working with window layouts, tiling configurations, workspace management, monitor assignments, or AeroSpace keybindings. Keywords: aerospace, tiling, workspaces, window manager, i3-like.
 ---
 

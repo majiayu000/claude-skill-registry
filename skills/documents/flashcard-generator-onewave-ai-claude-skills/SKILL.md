@@ -1,5 +1,11 @@
 ---
 name: flashcard-generator
+description: 'Extract key concepts from any content and create spaced-repetition flashcards.
+  Multiple formats: Anki-compatible, printable PDFs, interactive web.'
+---
+
+---
+name: flashcard-generator
 description: Extract key concepts from any content and create spaced-repetition flashcards. Multiple formats: Anki-compatible, printable PDFs, interactive web.
 ---
 

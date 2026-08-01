@@ -1,3 +1,9 @@
+---
+name: verify
+description: File structure verification - ensuring skill directory exists with all
+  3 reference files in correct locations.
+---
+
 # Checkpoint: Create review-standards skill
 
 ## Verification Strategy

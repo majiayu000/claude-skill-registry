@@ -1,5 +1,12 @@
 ---
 name: git-advanced
+description: I provide expertise in advanced Git operations to manage complex version
+  control scenarios. I focus on history management, regression hunting, and clean
+  collaboration workflows.
+---
+
+---
+name: git-advanced
 description: Advanced Git operations: rebasing, cherry-picking, bisect, history management
 category: Git
 ---

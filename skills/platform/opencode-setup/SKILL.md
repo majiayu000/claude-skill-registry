@@ -1,3 +1,8 @@
+---
+name: opencode-setup
+description: opt-in設計のセットアップ支援スキルです。
+---
+
 # OpenCode/OMO セットアップ確認と導入ガイド
 
 opt-in設計のセットアップ支援スキルです。

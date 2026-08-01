@@ -1,5 +1,11 @@
 ---
 name: md-tables
+description: Utility for fixing markdown table alignment and spacing. Normalizes column
+  widths, ensures consistent padding, and preserves alignment markers.
+---
+
+---
+name: md-tables
 description: Fix markdown table alignment and spacing issues. Use when formatting tables in markdown files, aligning columns, normalizing cell padding, or ensuring proper table structure. Triggers: markdown table, md table, table formatting, column alignment, pipe table, GFM table, table generator, align columns, table spacing, table layout, fix table, format table, table structure.
 ---
 

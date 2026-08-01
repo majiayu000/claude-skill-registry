@@ -1,5 +1,13 @@
 ---
 name: advanced-agentdb-vector-search-implementation
+description: Master advanced AgentDB features including QUIC synchronization, multi-database
+  management, custom distance metrics, hybrid search, and distributed systems integration
+  for building distributed AI systems, multi-agent coordination, and advanced vector
+  search applications.
+---
+
+---
+name: advanced-agentdb-vector-search-implementation
 description: Advanced AgentDB Vector Search Implementation operates on 3 fundamental principles:
 allowed-tools: Read, Write, Edit, Task, TodoWrite, Glob, Grep
 ---

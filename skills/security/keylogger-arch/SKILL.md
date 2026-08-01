@@ -1,4 +1,9 @@
 ---
+name: keylogger-arch
+description: '- Understanding input capture mechanisms for red team implants'
+---
+
+---
 name: keylogger-architecture
 description: Low-level keylogger architecture — SetWindowsHookEx, raw input devices, ETW-based capture, kernel drivers, stealth techniques, IOC analysis
 metadata:

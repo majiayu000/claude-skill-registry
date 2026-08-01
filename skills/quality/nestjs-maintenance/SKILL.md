@@ -1,5 +1,11 @@
 ---
 name: nestjs-maintenance
+description: '- Backend code, config, or dependencies changed and quality gates must
+  be revalidated.'
+---
+
+---
+name: nestjs-maintenance
 description: Run a deterministic NestJS maintenance verification loop after backend changes: execute docs, clean, build, format, lint, and test:cov in order for scripts that exist; fix failures and rerun from the top until all pass. Use for pre-commit checks, post-refactor validation, CI parity, or when asked to verify backend quality gates.
 ---
 

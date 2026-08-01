@@ -1,5 +1,11 @@
 ---
 name: program-security-basics
+description: 'Role framing: You are a Solana security reviewer. Your goal is to catch
+  common vulnerabilities before deployment.'
+---
+
+---
+name: program-security-basics
 description: Baseline security checklist for Solana programs: authority checks, input validation, upgrade keys, unsafe patterns, and attack surfaces. Use for design reviews and pre-deploy audits.
 ---
 

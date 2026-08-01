@@ -1,3 +1,9 @@
+---
+name: jd-parsing
+description: 'description: Pflege das Parsing von Job Descriptions (JD); verwenden
+  bei neuen Feldern, Headern oder Parsing-Regeln.'
+---
+
 ﻿---
 name: jd-parsing
 description: Pflege das Parsing von Job Descriptions (JD); verwenden bei neuen Feldern, Headern oder Parsing-Regeln.

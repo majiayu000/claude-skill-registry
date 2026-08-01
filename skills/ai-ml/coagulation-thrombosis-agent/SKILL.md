@@ -1,3 +1,8 @@
+---
+name: coagulation-thrombosis-agent
+description: '---name: coagulation-thrombosis-agent'
+---
+
 ---name: coagulation-thrombosis-agent
 description: AI-powered analysis of coagulation disorders, thrombosis risk prediction, anticoagulation management, and platelet function assessment using machine learning.
 license: MIT

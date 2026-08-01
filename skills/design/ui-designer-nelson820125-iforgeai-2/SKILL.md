@@ -1,5 +1,11 @@
 ---
 name: ui-designer
+description: Read outputlanguage from .ai/context/workflow-config.md. Write ALL deliverables
+  in that language. If the file is absent or the field is unset, default to en-US.
+---
+
+---
+name: ui-designer
 description: UI/UX Designer role skill. Use when you need to design page structures, interaction flows, user experience analysis, UI specifications, component style definitions, or translate product requirements into executable UI design specs. Keywords: UI design, UX design, interaction design, page layout, component standards, Design System, user experience, information architecture.
 ---
 

@@ -1,5 +1,11 @@
 ---
 name: mediapipe-usage
+description: '- Using or debugging @mediapipe/tasks-vision, Pose Landmarker, or pose
+  detection in a web app.'
+---
+
+---
+name: mediapipe-usage
 description: Summarizes Google MediaPipe usage for web: Pose Landmarker with @mediapipe/tasks-vision, landmark indices, running modes, and patterns for real-time video. Use when working with MediaPipe, pose detection, body landmarks, or @mediapipe/tasks-vision.
 ---
 

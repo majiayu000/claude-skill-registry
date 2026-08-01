@@ -1,5 +1,11 @@
 ---
 name: plan
+description: Create detailed implementation plans by analyzing requirements, architecture,
+  and dependencies.
+---
+
+---
+name: plan
 description: |
   Create or update implementation plans for features, MVPs, and milestones.
   TRIGGER when: user wants to plan a feature ("create a plan for X", "plan this feature", "how should we implement Y", "break down this task").

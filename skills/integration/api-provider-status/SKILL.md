@@ -1,3 +1,8 @@
+---
+name: api-provider-status
+description: '| 供应商 | 查询方式 | 登录状态存储 |'
+---
+
 # API Provider Status Skill
 
 API 供应商状态查询与余额监控。

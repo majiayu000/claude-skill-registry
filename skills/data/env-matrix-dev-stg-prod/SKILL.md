@@ -1,4 +1,10 @@
 ---
+name: env-matrix-dev-stg-prod
+description: มาตรฐานการจัดการ environments (development, staging, production) รวมถึง
+  configs, data policies, access controls ที่แตกต่างกันแต่ละ environment
+---
+
+---
 name: Environment Matrix: Dev/Stg/Prod
 description: Environment standards for development, staging, and production: parity principles, data and access policies, configuration boundaries, and deployment controls
 ---

@@ -1,3 +1,8 @@
+---
+name: gpt-sovits-tts
+description: 高品質な音声クローニング・TTS（Text-to-Speech）システム。
+---
+
 # GPT-SoVITS TTS スキル
 
 高品質な音声クローニング・TTS（Text-to-Speech）システム。

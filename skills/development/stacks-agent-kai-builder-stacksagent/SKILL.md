@@ -1,3 +1,8 @@
+---
+name: stacks-agent
+description: Stacks blockchain development intelligence for Codex.
+---
+
 # Stacks Agent - OpenAI Codex Skill
 
 Stacks blockchain development intelligence for Codex.

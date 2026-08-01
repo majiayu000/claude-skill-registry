@@ -1,3 +1,8 @@
+---
+name: deploy-toolkit
+description: 'description: 部署工具包，4种部署方式、环境配置、部署测试、CI/CD流程'
+---
+
 ﻿---
 name: deploy-toolkit
 description: 部署工具包，4种部署方式、环境配置、部署测试、CI/CD流程
@@ -78,7 +83,7 @@ Jenkins:
 OSS配置（CDN部署需要）:
   环境变量:
     ALI_OSS_REGION
-    ALI_OSS_BUCKET  
+    ALI_OSS_BUCKET
     ALI_OSS_ACCESS_KEY_ID
     ALI_OSS_ACCESS_KEY_SECRET
 

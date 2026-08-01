@@ -1,3 +1,8 @@
+---
+name: project-guidelines-example
+description: '> Core Standard: This file is enforced by rules/meta-protocol.md.'
+---
+
 # Project Guidelines Skill (Example)
 
 > **Core Standard**: This file is enforced by `rules/meta-protocol.md`.

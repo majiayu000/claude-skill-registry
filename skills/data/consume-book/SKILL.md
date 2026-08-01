@@ -1,3 +1,9 @@
+---
+name: consume-book
+description: Search and annotate ingested books. Works with content already processed
+  by /ingest-book
+---
+
 ````markdown
 ---
 name: consume-book

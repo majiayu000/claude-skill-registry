@@ -1,4 +1,9 @@
 ---
+name: plan-work-vuralserhat86-antigravity-agentic
+description: '> Kodlamadan önce kapsamlı planlama ve araştırma rehberi.'
+---
+
+---
 name: plan_work
 router_kit: ManagementKit
 description: Koddan önce planlama, repo araştırması, risk analizi ve implementation plan oluşturma rehberi.

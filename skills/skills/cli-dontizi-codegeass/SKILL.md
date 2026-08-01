@@ -1,3 +1,8 @@
+---
+name: cli
+description: Manage skills - reusable, parameterized prompts.
+---
+
 # skill
 
 Manage skills - reusable, parameterized prompts.

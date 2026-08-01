@@ -1,4 +1,10 @@
 ---
+name: e2e-testing-skill
+description: 'Test complete RAG pipeline: query → embedding → retrieval → reranking
+  → generation → answer validation.'
+---
+
+---
 name: e2e-testing
 version: 1.0
 last_updated: 2025-12-04

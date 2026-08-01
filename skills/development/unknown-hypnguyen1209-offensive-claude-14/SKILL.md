@@ -1,4 +1,9 @@
 ---
+name: unknown
+description: '- Planning privilege escalation paths through security boundaries'
+---
+
+---
 name: windows-boundaries
 description: Windows security boundary attacks — kernel/user boundary, sandbox escape, AppContainer/LPAC bypass, COM/RPC boundary, integrity levels, PPL exploitation
 metadata:
@@ -115,17 +120,17 @@ whoami /groups | findstr "Mandatory"
    - File picker broker (allows file access)
    - Print broker
    - Clipboard broker
-   
+
 2. Kernel vulnerabilities — AppContainer is userland enforcement
    - win32k syscalls still accessible (reduced but not eliminated)
    - Kernel bug = full escape
-   
+
 3. COM object abuse — some COM servers run at higher integrity
    - Find COM objects accessible from AppContainer
    - Exploit logic bugs in COM server
-   
+
 4. Named pipe/ALPC — if broker exposes pipe without proper ACL
-   
+
 5. Capability abuse — overly permissive capabilities granted
    - internetClient, privateNetworkClientServer
    - documentsLibrary, picturesLibrary

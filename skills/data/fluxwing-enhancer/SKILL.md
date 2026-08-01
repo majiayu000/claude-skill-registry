@@ -1,4 +1,9 @@
 ---
+name: fluxwing-enhancer
+description: Progressively enhance uxscii components from sketch to production quality.
+---
+
+---
 name: Fluxwing Enhancer
 description: Enhance uxscii components from sketch to production fidelity. Use when working with .uxm files marked as "fidelity: sketch" or when user wants to add detail and polish to components.
 version: 0.0.1

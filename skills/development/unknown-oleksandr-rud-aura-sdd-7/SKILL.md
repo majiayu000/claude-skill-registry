@@ -1,3 +1,9 @@
+---
+name: unknown
+description: 'actor: qa | mandate: Validate API/event contracts | bounds: No performance
+  testing'
+---
+
 # QA Contract Testing Skill
 
 qa-contract

@@ -1,3 +1,7 @@
+---
+name: docs
+description: The Intelligent Policy Author for Code Agent Context Hooks
+---
 
 # User Guide: mastering_hooks_cch
 

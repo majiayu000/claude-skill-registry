@@ -1,4 +1,10 @@
 ---
+name: jb-revloans
+description: Displaying loan data in revnet UIs requires querying Bendystraw's GraphQL
+  API with the correct
+---
+
+---
 category: Blockchain
 id: jb-revloans
 name: JB RevLoans

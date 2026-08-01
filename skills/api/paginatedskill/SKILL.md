@@ -1,3 +1,8 @@
+---
+name: paginatedskill
+description: Name | Type | Description | Notes
+---
+
 # PaginatedSkill
 
 
@@ -5,10 +10,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**next_page** | **str** |  | 
-**previous_page** | **str** |  | 
-**results** | [**List[Skill]**](Skill.md) |  | [readonly] 
-**count** | **int** |  | [readonly] 
+**next_page** | **str** |  |
+**previous_page** | **str** |  |
+**results** | [**List[Skill]**](Skill.md) |  | [readonly]
+**count** | **int** |  | [readonly]
 
 ## Example
 

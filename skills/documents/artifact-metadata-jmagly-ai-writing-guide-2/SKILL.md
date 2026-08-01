@@ -1,3 +1,9 @@
+---
+name: artifact-metadata
+description: Manage artifact metadata, versioning, ownership, and history tracking.
+  Use when relevant to the task.
+---
+
 # artifact-metadata
 
 Manage artifact metadata, versioning, ownership, and history tracking.

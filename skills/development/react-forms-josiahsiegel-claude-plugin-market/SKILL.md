@@ -1,5 +1,10 @@
 ---
 name: react-forms
+description: '| Approach | Best For | Example |'
+---
+
+---
+name: react-forms
 description: Complete React forms system. PROACTIVELY activate for: (1) Controlled form patterns, (2) React Hook Form setup and validation, (3) Zod schema validation, (4) Dynamic fields with useFieldArray, (5) Server Actions with forms, (6) useOptimistic for optimistic updates, (7) File upload handling, (8) Multi-step form wizards. Provides: Form validation, error handling, field arrays, file drag-drop, form state management. Ensures robust form handling with proper validation and UX.
 ---
 

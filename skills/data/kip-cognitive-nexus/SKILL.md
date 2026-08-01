@@ -1,5 +1,12 @@
 ---
 name: kip-cognitive-nexus
+description: Persistent graph-based memory for AI agents via KIP (Knowledge Interaction
+  Protocol). Provides structured knowledge storage (concepts, propositions), retrieval
+  (KQL queries), schema discovery (META),
+---
+
+---
+name: kip-cognitive-nexus
 description: Persistent graph-based memory for AI agents via KIP (Knowledge Interaction Protocol). Provides retrieval-first memory operations (KQL), durable writes (KML), schema discovery (META), and memory hygiene patterns. Use whenever the agent needs to consult or update persistent memory, especially for: remembering user preferences/identity/relationships, storing conversation events, answering questions that depend on past sessions, and any task involving `execute_kip`.
 ---
 

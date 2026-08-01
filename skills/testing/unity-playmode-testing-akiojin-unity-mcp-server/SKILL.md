@@ -1,5 +1,12 @@
 ---
 name: unity-playmode-testing
+description: 'Supports Unity Play Mode control, input simulation, UI automation, and
+  visual verification. Integrates test execution, screenshot/video capture, and console
+  log checking. Use when: starting Play Mode,'
+---
+
+---
+name: unity-playmode-testing
 description: Supports Unity Play Mode control, input simulation, UI automation, and visual verification. Integrates test execution, screenshot/video capture, and console log checking. Use when: starting Play Mode, input simulation, UI clicks, screenshots, video recording, test execution
 allowed-tools: Read, Grep, Glob
 ---

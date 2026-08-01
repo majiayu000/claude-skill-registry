@@ -1,5 +1,11 @@
 ---
 name: adr
+description: Write Architecture Decision Records through collaborative exploration,
+  not transcription.
+---
+
+---
+name: adr
 description: Use when writing Architecture Decision Records. Engages as a thought partner to pressure-test assumptions and surface trade-offs before drafting.
 argument-hint: "[decision topic or question]"
 {{- template "bedrock-model" (dict "tier" "opus" "root" .) }}

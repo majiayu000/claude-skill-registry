@@ -1,5 +1,11 @@
 ---
 name: figma-design
+description: 'Goal: Extract design specifications (dimensions, layout, colors, typography)
+  from Figma designs via MCP server for implementation.'
+---
+
+---
+name: figma-design
 version: 1.1.0
 description: "[Design & Content] Extract design specifications from Figma designs using MCP server. Triggers on Figma URLs, design context extraction, or design-to-code workflows. Formerly also known as "figma-extract"."
 infer: true

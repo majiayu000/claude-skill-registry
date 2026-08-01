@@ -1,3 +1,8 @@
+---
+name: native-integration
+description: '| ID | flutter-native-integration |'
+---
+
 # 🔧 Skill: Native Integration (Swift/Kotlin)
 
 ## 📋 Metadata

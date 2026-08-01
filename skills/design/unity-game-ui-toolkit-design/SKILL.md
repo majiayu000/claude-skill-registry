@@ -1,5 +1,12 @@
 ---
 name: unity-game-ui-toolkit-design
+description: 'Game UI design using Unity''s UI Toolkit (USS/UXML/Flexbox). Includes
+  game UI elements like HUD, health bars, inventory, skill bars, PanelSettings scaling,
+  and Safe Area support. Use when: game UI desi'
+---
+
+---
+name: unity-game-ui-toolkit-design
 description: Game UI design using Unity's UI Toolkit (USS/UXML/Flexbox). Includes game UI elements like HUD, health bars, inventory, skill bars, PanelSettings scaling, and Safe Area support. Use when: game UI design, HUD creation, USS/UXML styling, Flexbox layout, PanelSettings configuration
 allowed-tools:
   - mcp__unity-mcp-server__find_ui_elements

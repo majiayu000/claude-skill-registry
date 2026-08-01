@@ -1,5 +1,10 @@
 ---
 name: shipflow-audit-copywriting
+description: '- Current directory: !pwd'
+---
+
+---
+name: shipflow-audit-copywriting
 description: Audit copywriting & marketing — analyse le parcours client depuis le persona jusqu'à la conversion. Évalue la stratégie de persuasion, pas la qualité rédactionnelle.
 argument-hint: [file-path | "global"] (omit for full project)
 ---

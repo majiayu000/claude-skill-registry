@@ -1,5 +1,11 @@
 ---
 name: google-home
+description: Control Google Nest devices via the Smart Device Management (SDM) API
+  using curl + jq.
+---
+
+---
+name: google-home
 description: Control Google Nest devices (thermostats, cameras, doorbells) via the Google Smart Device Management API using curl and jq.
 metadata: {"clawdbot":{"emoji":"🏠","requires":{"bins":["curl","jq"]}}
 ---

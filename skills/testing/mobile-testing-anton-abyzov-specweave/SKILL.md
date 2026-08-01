@@ -1,4 +1,11 @@
 ---
+name: mobile-testing
+description: Comprehensive mobile testing expertise across iOS, Android, React Native,
+  and Flutter. Covers the full testing pyramid from unit tests through E2E, plus CI/CD
+  integration, device farms, performance testing, and accessibility automation.
+---
+
+---
 description: Mobile testing expert across all platforms. iOS XCTest/XCUITest, Android JUnit/Espresso/Compose, React Native Jest/Detox, Flutter widget/integration tests, Maestro E2E, device farms, performance testing, accessibility. Activates for: mobile testing, XCTest, XCUITest, Espresso, Robolectric, Detox, Maestro, mobile e2e, device farm, Firebase Test Lab, AWS Device Farm, mobile CI.
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep
 model: opus

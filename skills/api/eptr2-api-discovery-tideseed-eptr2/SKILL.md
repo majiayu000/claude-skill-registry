@@ -1,5 +1,12 @@
 ---
 name: eptr2-api-discovery
+description: This skill helps you discover and explore the 213+ API endpoints available
+  in eptr2 for Turkish electricity market data. Use this when you need to find the
+  right endpoint for your data needs.
+---
+
+---
+name: eptr2-api-discovery
 description: Discover and explore available eptr2 API endpoints for Turkish electricity market data. List all 213+ API calls, find endpoints by category (GÖP, GİP, DGP, Üretim, Tüketim), search for specific data types, and get parameter requirements. Use when asking what data is available, how to find endpoints, or exploring the API. Triggers on: available endpoints, API calls, list endpoints, what data, which API, how to find, hangi veri, mevcut servisler.
 allowed-tools: Read, Bash(python:*)
 ---

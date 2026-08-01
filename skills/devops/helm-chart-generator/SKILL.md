@@ -1,4 +1,11 @@
 ---
+name: helm-chart-generator
+description: 'Generate production-ready Helm charts for Kubernetes apps. Use when:
+  (1) Deploying applications to Kubernetes, (2) Containerizing apps for Minikube/K8s,
+  (3) Creating reusable deployment packages, (4)'
+---
+
+---
 name: Helm Chart Generator
 description: Generate production-ready Helm charts for Kubernetes apps. Use when: (1) Deploying applications to Kubernetes, (2) Containerizing apps for Minikube/K8s, (3) Creating reusable deployment packages, (4) Needing parameterized K8s manifests, (5) Scaffolding new chart structures. Includes security contexts, resource limits, RBAC, NetworkPolicies, and multi-environment support (dev/prod). Provides templates for frontend, backend, and MCP server components.
 ---
@@ -63,16 +70,16 @@ Every component MUST have:
 <component>:
   enabled: true
   replicaCount: 2
-  
+
   image:
     repository: <name>
     tag: "1.0.0"          # Never "latest"
     pullPolicy: IfNotPresent
-  
+
   service:
     type: ClusterIP
     port: <port>
-  
+
   resources:
     requests:
       cpu: 100m
@@ -80,7 +87,7 @@ Every component MUST have:
     limits:
       cpu: 500m
       memory: 256Mi
-  
+
   securityContext:
     runAsNonRoot: true
     runAsUser: 1000

@@ -1,3 +1,8 @@
+---
+name: buslog
+description: Skill from PoulpYBifle/BusLog
+---
+
 # BusLog Skill - Business Logic Documentation
 
 **Purpose**: Use BusLog to analyze and document business logic workflows in the current codebase.

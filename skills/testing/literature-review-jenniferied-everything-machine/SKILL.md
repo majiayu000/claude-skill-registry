@@ -1,3 +1,8 @@
+---
+name: literature-review
+description: /literature-review [phase]
+---
+
 # Literature Reviewer Skill
 
 ## Invocation

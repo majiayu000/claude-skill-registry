@@ -1,3 +1,8 @@
+---
+name: descriptions
+description: Load or unload skills into the agent's memory.
+---
+
 # Skill
 
 Load or unload skills into the agent's memory.

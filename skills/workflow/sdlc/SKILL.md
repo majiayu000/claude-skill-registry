@@ -1,5 +1,11 @@
 ---
 name: sdlc
+description: 'This skill automates the software development lifecycle workflow for
+  implementing features:'
+---
+
+---
+name: sdlc
 description: SDLC workflow automation that implements features using TDD skill, runs test-runner skill, and prepares commit commands for user review. Use when user provides a spec/plan for a new feature. Workflow: (1) invokes test-driven-development skill with spec, (2) invokes test-runner skill, (3) prepares git commands for user to execute manually.
 ---
 

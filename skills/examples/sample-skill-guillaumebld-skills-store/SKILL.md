@@ -1,3 +1,11 @@
+---
+name: sample-skill
+description: The Sample Text Processor is a simple skill designed to demonstrate the
+  basic structure and functionality expected in the claude-skills ecosystem. This
+  skill provides fundamental text processing capabilities including word counting,
+  character analysis, and basic text transformations.
+---
+
 # Sample Text Processor
 
 ---

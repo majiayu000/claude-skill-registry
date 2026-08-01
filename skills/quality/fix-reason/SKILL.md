@@ -1,5 +1,10 @@
 ---
 name: fix-reason
+description: ::GENE{fix-reason|conf:confirmed|scope:global}
+---
+
+---
+name: fix-reason
 description: Step 2 of debugging: reason about root cause based on observed symptoms.
 version: 5.0.0
 ---

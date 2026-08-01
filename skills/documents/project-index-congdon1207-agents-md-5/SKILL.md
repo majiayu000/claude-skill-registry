@@ -1,3 +1,10 @@
+---
+name: project-index
+description: 'description: Generate and maintain a project structure index for fast
+  AI navigation. Creates docs/structure.md with an AI-friendly map + tree. Use when
+  starting a new project, after major changes, or when docs/structure.md is stale.'
+---
+
 ﻿---
 name: project-index
 description: Generate and maintain a project structure index for fast AI navigation. Creates docs/structure.md with an AI-friendly map + tree. Use when starting a new project, after major changes, or when docs/structure.md is stale.

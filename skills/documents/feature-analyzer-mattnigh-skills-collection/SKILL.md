@@ -1,4 +1,11 @@
 ---
+name: feature-analyzer-mattnigh-skills-collection
+description: 'Comprehensive feature artifact analysis for loading and understanding
+  complete feature context. Use when needing to: (1) Load all feature documentation
+  before implementation, (2) Build mental model of'
+---
+
+---
 name: feature-analyzer
 description: Comprehensive feature artifact analysis for loading and understanding complete feature context. Use when needing to: (1) Load all feature documentation before implementation, (2) Build mental model of feature requirements and architecture, (3) Prepare context for downstream operations like checklist generation or task execution, (4) Analyze feature completeness and artifact availability. Triggers on: analyze feature, load feature context, prepare feature, check feature prerequisites, understand feature scope.
 allowed-tools: Read, Write, Bash (*)
@@ -11,7 +18,7 @@ Load and analyze all feature artifacts to build comprehensive understanding for 
 ## Workflow Overview
 
 1. **Scan** - Check artifact availability
-2. **Load** - Read all feature documents 
+2. **Load** - Read all feature documents
 3. **Build** - Construct complete mental model
 4. **Confirm** - Ready for operations
 

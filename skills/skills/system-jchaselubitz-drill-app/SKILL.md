@@ -1,3 +1,8 @@
+---
+name: system
+description: You have access to a skills system that provides curated instruction
+  files
+---
 
 ---
 name: Overskill skills manager — Agent Instructions

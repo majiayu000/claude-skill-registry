@@ -1,5 +1,11 @@
 ---
 name: ln-500-story-quality-gate
+description: Two-pass Story review that fails fast, creates needed fix/refactor/test
+  tasks, and finalizes the Story only after tests are verified.
+---
+
+---
+name: ln-500-story-quality-gate
 description: Story-level quality orchestrator. Pass 1: code quality -> regression -> manual testing (fail fast). Pass 2: verify tests/coverage -> mark Story Done. Auto-discovers team/config.
 ---
 

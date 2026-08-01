@@ -1,4 +1,9 @@
 ---
+name: commands
+description: '@.claude/skills/skill-builder/SKILL.md'
+---
+
+---
 description: Refine existing skill via skill-builder workflow (project)
 argument-hint: [skill-path] [type: simple|standard|complex] [depth: base|extended|full]
 ---

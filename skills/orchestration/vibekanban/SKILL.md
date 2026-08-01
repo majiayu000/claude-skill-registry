@@ -1,4 +1,9 @@
 ---
+name: vibekanban
+description: Archived skill guidance for vibekanban.
+---
+
+---
 
 name: vibekanban
 description: "Vibe Kanban orchestration platform for AI coding agents: workspaces, sessions, task management, code review, git worktrees, multi-agent support. Keywords: Vibe Kanban, AI agents, Claude Code, Codex, Gemini, kanban board, git worktree, code review, MCP server, workspaces, sessions."

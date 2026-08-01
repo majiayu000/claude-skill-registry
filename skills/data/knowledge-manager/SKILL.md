@@ -1,5 +1,10 @@
 ---
 name: knowledge-manager
+description: 智能知识管理助手,自动分析和优化知识库结构。
+---
+
+---
+name: knowledge-manager
 description: 智能知识管理助手,自动分析、组织和优化知识库
 trigger:
   - on_add: true

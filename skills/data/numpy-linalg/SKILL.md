@@ -1,5 +1,13 @@
 ---
 name: numpy-linalg
+description: NumPy's linalg module provides high-performance implementations for standard
+  linear algebra routines. It leverages optimized backends (like BLAS/LAPACK) for
+  operations such as Singular Value Decomposition (SVD), batch equation solving, and
+  least-squares optimization.
+---
+
+---
+name: numpy-linalg
 description: Linear algebra operations in NumPy, including matrix multiplication, SVD, system solving, and least squares fitting. Triggers: linalg, matrix multiplication, SVD, eigenvalues, matrix decomposition, lstsq, multi_dot.
 ---
 

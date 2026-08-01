@@ -1,5 +1,10 @@
 ---
 name: memory-bank
+description: Manage development logs in .aimemory/ with chronological date ordering.
+---
+
+---
+name: memory-bank
 description: Manage Memory Bank development logs in .ai_memory/. Use when starting a new feature, updating progress on current work, adding implementation log entries, or checking log status. Triggers on: (1) Starting new features/tasks, (2) "update memory bank" or "log progress", (3) Adding dated entries to implementation logs, (4) Checking Memory Bank status. Always prepends entries with YYYY-MM-DD dates, newest first.
 ---
 

@@ -1,4 +1,10 @@
 ---
+name: playwright-testing-vuralserhat86-antigravity-agentic
+description: Senior E2E testing specialist with deep expertise in Playwright for robust,
+  maintainable browser automation.
+---
+
+---
 name: playwright_testing
 router_kit: FullStackKit
 description: Playwright E2E testing specialist for web applications. Invoke for browser automation, E2E tests, Page Object Model, test flakiness, visual testing. Keywords: Playwright, E2E, browser testing, automation, Page Object.

@@ -1,5 +1,12 @@
 ---
 name: ui-ux-audit-guidelines
+description: 'Professional UI/UX audit methodology and design vocabulary. Use when:
+  conducting UI/UX audits, evaluating visual hierarchy, analyzing responsive design,
+  assessing interaction patterns. Do NOT use for:'
+---
+
+---
+name: ui-ux-audit-guidelines
 description: Professional UI/UX audit methodology and design vocabulary. Use when: conducting UI/UX audits, evaluating visual hierarchy, analyzing responsive design, assessing interaction patterns. Do NOT use for: code reviews, accessibility audits (WCAG), performance analysis, or security assessments.
 ---
 

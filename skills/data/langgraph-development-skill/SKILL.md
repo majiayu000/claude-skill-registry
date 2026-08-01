@@ -1,4 +1,11 @@
 ---
+name: langgraph-development-skill
+description: 'CRITICAL: LangGraph workflows are NestJS applications under apps/langgraph/.
+  They receive the same parameters as n8n workflows and use the same webhook status
+  pattern. Wrap them as API agents.'
+---
+
+---
 name: LangGraph Development
 description: Create LangGraph workflows as NestJS applications under apps/langgraph/. Use same webhook pattern as n8n, receive same parameters (taskId, conversationId, userId, provider, model, statusWebhook). Wrap as API agents with request/response transforms. CRITICAL: Status webhook URL must read from environment variables. All endpoints follow A2A protocol.
 allowed-tools: Read, Write, Edit, Bash, Grep, Glob
@@ -52,10 +59,10 @@ import { AppModule } from './app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  
+
   // Port from environment or default
   const port = process.env.PORT || 8000;
-  
+
   await app.listen(port);
   console.log(`LangGraph service running on port ${port}`);
 }
@@ -134,7 +141,7 @@ export class LangGraphController {
   @Post()
   async executeWorkflow(@Body() request: LangGraphWorkflowRequest) {
     this.logger.log(`Executing LangGraph workflow for task ${request.taskId}`);
-    
+
     // Send start status if statusWebhook provided
     if (request.statusWebhook) {
       await this.sendStatus(request.statusWebhook, {
@@ -327,10 +334,10 @@ async streamWorkflow(@Body() request: LangGraphWorkflowRequest, @Res() res: Resp
 @Post('async')
 async executeAsync(@Body() request: LangGraphWorkflowRequest) {
   const taskId = request.taskId;
-  
+
   // Start workflow in background
   this.langGraphService.executeAsync(request);
-  
+
   return {
     taskId,
     status: 'processing',
@@ -380,7 +387,7 @@ export class LangGraphService {
   async execute(request: LangGraphWorkflowRequest) {
     // Build LangGraph state machine
     const workflow = this.buildWorkflow(request);
-    
+
     // Execute workflow
     const result = await workflow.invoke({
       messages: [{ role: 'user', content: request.userMessage }],

@@ -1,5 +1,11 @@
 ---
 name: zls-integration
+description: Zig Language Server (ZLS) provides IDE features for Zig development.
+  This skill covers installation, configuration, build-on-save diagnostics, and troubleshooting.
+---
+
+---
+name: zls-integration
 description: "zls-integration skill"
   Zig Language Server (ZLS) integration for IDE features - autocomplete, goto definition,
   diagnostics, hover docs, and build-on-save. Use when setting up ZLS, debugging LSP issues,
@@ -107,7 +113,7 @@ pub fn build(b: *std.Build) void {
         .target = target,
         .optimize = optimize,
     });
-    
+
     const check_step = b.step("check", "Check compilation (for ZLS)");
     check_step.dependOn(&check.step);
 }

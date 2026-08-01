@@ -1,5 +1,11 @@
 ---
 name: ddd-playbook
+description: 'Guides DDD discovery for the ToDo domain: ubiquitous language, bounded
+  context, aggregates, invariants.'
+---
+
+---
+name: ddd-playbook
 description: Guides DDD discovery for the ToDo domain: ubiquitous language, bounded context, aggregates, invariants.
 allowed-tools: Read, Grep, Glob, Edit, Write
 ---

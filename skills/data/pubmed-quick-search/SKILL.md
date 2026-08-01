@@ -1,5 +1,11 @@
 ---
 name: pubmed-quick-search
+description: 'Quick literature search on PubMed. Triggers: 搜尋, 找論文, search papers,
+  find articles, PubMed, 文獻搜尋, 快速搜尋'
+---
+
+---
+name: pubmed-quick-search
 description: Quick literature search on PubMed. Triggers: 搜尋, 找論文, search papers, find articles, PubMed, 文獻搜尋, 快速搜尋
 ---
 

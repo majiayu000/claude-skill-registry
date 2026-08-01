@@ -1,3 +1,9 @@
+---
+name: cors-config
+description: 'Purpose: Configure CORS (Cross-Origin Resource Sharing) for FastAPI
+  to allow frontend requests.'
+---
+
 # Skill: CORS Configuration for FastAPI
 
 **Purpose**: Configure CORS (Cross-Origin Resource Sharing) for FastAPI to allow frontend requests.

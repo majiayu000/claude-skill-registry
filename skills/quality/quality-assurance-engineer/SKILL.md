@@ -1,5 +1,11 @@
 ---
 name: quality-assurance-engineer
+description: Read outputlanguage from .ai/context/workflow-config.md. Write ALL deliverables
+  in that language. If the file is absent or the field is unset, default to en-US.
+---
+
+---
+name: quality-assurance-engineer
 description: QA Engineer / Quality Assurance role skill. Use when you need to write test cases, analyse defects, evaluate acceptance criteria, design test strategies, assess release quality, or validate the quality of a feature implementation. Keywords: test cases, defect tracking, quality assurance, acceptance testing, boundary testing, regression testing, automated testing, release assessment.
 ---
 

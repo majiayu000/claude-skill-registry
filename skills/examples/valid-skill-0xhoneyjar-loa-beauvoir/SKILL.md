@@ -1,3 +1,8 @@
+---
+name: valid-skill
+description: Test skill with valid license for unit testing.
+---
+
 # valid-skill
 
 Test skill with valid license for unit testing.

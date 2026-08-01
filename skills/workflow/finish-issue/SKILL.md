@@ -1,5 +1,10 @@
 ---
 name: finish-issue
+description: '> Automates the final phase: commit, PR, merge, close, and cleanup'
+---
+
+---
+name: finish-issue
 description: |
   Complete issue workflow - commit, PR, merge, close, cleanup.
 version: "3.1.0"

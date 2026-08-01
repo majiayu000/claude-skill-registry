@@ -1,3 +1,9 @@
+---
+name: grpc-integration
+description: Comprehensive guide to gRPC for high-performance microservices communication
+  with Protocol Buffers.
+---
+
 # gRPC Integration
 
 ---
@@ -293,13 +299,13 @@ import "google/protobuf/timestamp.proto";
 service UserService {
   // Unary RPC
   rpc GetUser(GetUserRequest) returns (User);
-  
+
   // Server streaming RPC
   rpc ListUsers(ListUsersRequest) returns (stream User);
-  
+
   // Client streaming RPC
   rpc CreateUserBatch(stream CreateUserRequest) returns (CreateUserBatchResponse);
-  
+
   // Bidirectional streaming RPC
   rpc UserEvents(stream UserEventRequest) returns (stream UserEventResponse);
 }
@@ -372,7 +378,7 @@ const userService = {
     }
     callback(null, user);
   },
-  
+
   createUser: (call, callback) => {
     const user = {
       id: uuidv4(),
@@ -383,17 +389,17 @@ const userService = {
     users.set(user.id, user);
     callback(null, user);
   },
-  
+
   listUsers: (call) => {
     users.forEach(user => {
       call.write(user);
     });
     call.end();
   },
-  
+
   createUserBatch: (call, callback) => {
     const userIds = [];
-    
+
     call.on('data', (request) => {
       const user = {
         id: uuidv4(),
@@ -404,7 +410,7 @@ const userService = {
       users.set(user.id, user);
       userIds.push(user.id);
     });
-    
+
     call.on('end', () => {
       const response = new userProto.CreateUserBatchResponse();
       response.setUserIdsList(userIds);
@@ -412,7 +418,7 @@ const userService = {
       callback(null, response);
     });
   },
-  
+
   userEvents: (call) => {
     call.on('data', (request) => {
       const response = new userProto.UserEventResponse();
@@ -420,7 +426,7 @@ const userService = {
       response.setMessage('Event received');
       call.write(response);
     });
-    
+
     call.on('end', () => {
       call.end();
     });
@@ -471,7 +477,7 @@ function getUser(id) {
   return new Promise((resolve, reject) => {
     const request = new userProto.GetUserRequest();
     request.setId(id);
-    
+
     client.getUser(request, (error, response) => {
       if (error) {
         return reject(error);
@@ -487,7 +493,7 @@ function createUser(name, email) {
     const request = new userProto.CreateUserRequest();
     request.setName(name);
     request.setEmail(email);
-    
+
     client.createUser(request, (error, response) => {
       if (error) {
         return reject(error);
@@ -502,17 +508,17 @@ function listUsers() {
   return new Promise((resolve, reject) => {
     const request = new userProto.ListUsersRequest();
     const users = [];
-    
+
     const call = client.listUsers(request);
-    
+
     call.on('data', (user) => {
       users.push(user.toObject());
     });
-    
+
     call.on('end', () => {
       resolve(users);
     });
-    
+
     call.on('error', reject);
   });
 }
@@ -523,11 +529,11 @@ function listUsers() {
     // Create user
     const user = await createUser('John Doe', 'john@example.com');
     console.log('Created user:', user);
-    
+
     // Get user
     const found = await getUser(user.id);
     console.log('Found user:', found);
-    
+
     // List users
     const allUsers = await listUsers();
     console.log('All users:', allUsers);
@@ -547,13 +553,13 @@ const authInterceptor = (options, nextCall) => {
   return new grpc.ServerInterceptingCall(nextCall(options), {
     start: (metadata, listener, next) => {
       const token = metadata.get('authorization')?.[0]?.replace('Bearer ', '');
-      
+
       if (!token) {
         return next(null, {
           status: { code: grpc.status.UNAUTHENTICATED, details: 'Missing token' },
         });
       }
-      
+
       try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
         options.user = decoded;
@@ -636,7 +642,7 @@ function getUser(call, callback) {
     error.code = grpc.status.DEADLINE_EXCEEDED;
     return callback(error);
   }
-  
+
   // Process request...
 }
 ```
@@ -667,22 +673,22 @@ const healthImpl = {
   check: (call, callback) => {
     const service = call.request.getService();
     const status = healthStatus[service] || grpc.status.SERVICE_UNKNOWN;
-    
+
     const response = new healthProto.HealthCheckResponse();
     response.setStatus(status);
     callback(null, response);
   },
-  
+
   watch: (call) => {
     const service = call.request.getService();
-    
+
     const interval = setInterval(() => {
       const status = healthStatus[service] || grpc.status.SERVICE_UNKNOWN;
       const response = new healthProto.HealthCheckResponse();
       response.setStatus(status);
       call.write(response);
     }, 1000);
-    
+
     call.on('cancelled', () => {
       clearInterval(interval);
       call.end();

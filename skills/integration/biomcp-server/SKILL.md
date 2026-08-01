@@ -1,3 +1,10 @@
+---
+name: biomcp-server
+description: Deploy and operate the BioMCP server so MCP-compatible clients (Claude
+  Desktop, LobeChat, etc.) can query biomedical databases via a single standardized
+  interface.
+---
+
 <!--
 # COPYRIGHT NOTICE
 # This file is part of the "Universal Biomedical Skills" project.

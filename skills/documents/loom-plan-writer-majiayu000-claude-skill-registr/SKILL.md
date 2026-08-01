@@ -1,5 +1,12 @@
 ---
 name: loom-plan-writer
+description: REQUIRED skill for creating Loom execution plans. Designs DAG-based plans
+  with mandatory knowledge-bootstrap and integration-verify bookends, parallel subagent
+  execution within stages, and concurrent
+---
+
+---
+name: loom-plan-writer
 description: REQUIRED skill for creating Loom execution plans. Designs DAG-based plans with mandatory knowledge-bootstrap and integration-verify bookends, parallel subagent execution within stages, and concurrent worktree stages for maximum throughput. Trigger keywords: loom, plan, stage, worktree, orchestration, parallel execution, parallel stages, concurrent execution, knowledge-bootstrap, integration-verify, acceptance criteria, signal, handoff, execution graph, dag, dependencies, loom plan, create plan, write plan, execution plan, orchestration plan, stage dependencies, parallel subagents, functional verification, wiring verification, smoke test.
 allowed-tools: Read, Grep, Glob, Write, Edit
 ---

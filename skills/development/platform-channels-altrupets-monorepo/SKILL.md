@@ -1,3 +1,8 @@
+---
+name: platform-channels
+description: '| ID | flutter-platform-channels |'
+---
+
 # 📱 Skill: Platform Channels & Native Integration
 
 ## 📋 Metadata

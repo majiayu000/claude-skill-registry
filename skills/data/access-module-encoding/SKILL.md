@@ -1,3 +1,10 @@
+---
+name: access-module-encoding
+description: Check encoding consistency and mojibake risks for Access/VBA exported
+  modules (.bas/.cls) and related files. Use when asked to review codificacion/encoding
+  issues, to verify UTF-8 vs ANSI, or to detec
+---
+
 # SKILL.md — Skill para workflow Access/VBA (Export → Trabajo → Sync → Compilar → ERD → Cierre)
 
 ## Objetivo
@@ -25,7 +32,7 @@ Definir un **skill** (implementación a realizar por otra IA) que automatice el 
   - `-BackendPath <ruta>` (Backend para ERD)
   - `-DestinationRoot <carpeta>`
   - `-ErdPath <ruta archivo>`
-  - `-ModuleName <string[]>` (múltiples).  
+  - `-ModuleName <string[]>` (múltiples).
   Si NO soporta array, el skill debe iterar e invocar Import 1×módulo.
 
 ---
@@ -34,7 +41,7 @@ Definir un **skill** (implementación a realizar por otra IA) que automatice el 
 ### R1. Inicio de sesión (start)
 - Detectar `AccessPath`:
   - Si el usuario lo pasa: usarlo (aceptar rutas relativas a project root).
-  - Si no: autodetectar en project root: `.accdb/.accde/.mdb/.mde`.  
+  - Si no: autodetectar en project root: `.accdb/.accde/.mdb/.mde`.
     Si hay varias, elegir determinista (alfabético) y avisar.
 - Ejecutar: `VBAManager.ps1 -Action Export -AccessPath ... -DestinationRoot ...`
 - Persistir estado de sesión en disco (para que `sync/end/status` funcionen sin mantener proceso vivo):

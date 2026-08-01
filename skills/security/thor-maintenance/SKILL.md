@@ -1,5 +1,10 @@
 ---
 name: thor-maintenance
+description: '- Be precise about thor-util verbs:'
+---
+
+---
+name: thor-maintenance
 description: Maintain THOR installs using thor-util: update signatures, upgrade versions, download offline packs, generate reports, manage YARA-Forge. Use when the user asks about updating/upgrading/report generation.
 ---
 # THOR Maintenance Skill

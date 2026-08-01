@@ -1,5 +1,10 @@
 ---
 name: create-walkthrough
+description: Generate honest, argumentative walkthrough documents for complex implementations.
+---
+
+---
+name: create-walkthrough
 description: >
   Collaborative argumentative walkthrough for complex implementations. REQUIRES
   /interview (user context) and /ask consult (persona review) BEFORE writing.

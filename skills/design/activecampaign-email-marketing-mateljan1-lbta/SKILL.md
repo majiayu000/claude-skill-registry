@@ -1,5 +1,12 @@
 ---
 name: activecampaign-email-marketing
+description: 'Create, manage, and optimize email campaigns for Laguna Beach Tennis
+  Academy using ActiveCampaign. Use when Claude needs to: (1) Create email campaigns
+  for program launches, camps, or events, (2) Buil'
+---
+
+---
+name: activecampaign-email-marketing
 description: Create, manage, and optimize email campaigns for Laguna Beach Tennis Academy using ActiveCampaign. Use when Claude needs to: (1) Create email campaigns for program launches, camps, or events, (2) Build automation workflows and nurture sequences, (3) Manage contact lists and segmentation, (4) Design luxury-branded email templates following LBTA brand guidelines, (5) Set up triggered emails for registrations or trials, (6) Analyze campaign performance or optimize email strategy.
 ---
 

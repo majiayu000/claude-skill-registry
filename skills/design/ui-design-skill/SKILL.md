@@ -1,5 +1,11 @@
 ---
 name: ui-design-skill
+description: Expert guidance for creating beautiful, accessible, and user-friendly
+  interfaces.
+---
+
+---
+name: ui-design-skill
 description: Expert guidance on UI/UX design for console and web interfaces. Use when designing, implementing, or reviewing: (1) Console UIs with Rich library for terminal apps, (2) Web UIs with Tailwind CSS, (3) Responsive layouts and mobile-first design, (4) Accessible interfaces following WCAG guidelines, (5) Design systems and component consistency, (6) User-centered design decisions. Invoke when user asks about colors, layouts, typography, user flows, or interface patterns.
 ---
 

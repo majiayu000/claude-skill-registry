@@ -1,5 +1,10 @@
 ---
 name: codex
+description: Codex CLI を read-only sandbox で実行し、OpenAI 側のセカンドオピニオンを得る。
+---
+
+---
+name: codex
 description: OpenAI Codex CLI（read-only sandbox）を汎用セカンドオピニオンとして実行する。Use when 設計相談、バグ調査、コードレビュー、文章校閲、セカンドオピニオンが必要な場面。キーワード: codex, codexに聞いて, セカンドオピニオン, 別視点.
 ---
 

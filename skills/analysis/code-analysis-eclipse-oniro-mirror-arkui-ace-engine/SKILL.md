@@ -1,5 +1,11 @@
 ---
 name: code-analysis
+description: Comprehensive code analysis guidelines for ACE Engine (OpenHarmony ArkUI)
+  development.
+---
+
+---
+name: code-analysis
 description: This skill should be used when analyzing ACE Engine (OpenHarmony ArkUI) code including components, patterns, models, and properties. Supports multiple analysis levels: quick diagnosis (5-15 min), comprehensive analysis (30-45 min), and deep audit (1-2 hr). Covers architecture review, bug analysis, performance optimization, component design guidance, API review, and test coverage analysis. Emphasizes code-first principle - always verify with actual code using Read/Grep tools and provide file:line references.
 version: 1.0.0
 ---

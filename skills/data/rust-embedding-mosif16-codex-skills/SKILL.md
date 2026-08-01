@@ -1,3 +1,8 @@
+---
+name: rust-embedding
+description: '------------------------------------------------------------------------'
+---
+
 ------------------------------------------------------------------------
 
 title: GraphEmbed CLI Tool Specification\
@@ -433,8 +438,8 @@ and their relationships, as well as some textual data to embed.
 <!-- -->
 
 - $ graphembed query "Alice -> knows -> ?who"
-      Alice knows Bob  
-      Alice knows Carol  
+      Alice knows Bob
+      Alice knows Carol
       Alice knows Dave
 
   *Output:* The query finds all `?who` such that Alice *knows* them. The

@@ -1,3 +1,8 @@
+---
+name: crispr-prediction
+description: '---name: crispr-offtarget-predictor'
+---
+
 ---name: crispr-offtarget-predictor
 description: Predicts potential off-target sites for a given sgRNA sequence using mismatch analysis.
 license: MIT

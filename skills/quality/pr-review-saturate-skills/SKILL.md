@@ -1,5 +1,12 @@
 ---
 name: pr-review
+description: Review code like a senior engineer - thorough but practical. Focus on
+  things that actually matter. Don't waste time on style nitpicks a linter should
+  catch.
+---
+
+---
+name: pr-review
 description: Performs comprehensive code reviews checking for bugs, security issues, performance problems, testing gaps, and code quality. Accepts branch names or PR URLs (GitHub/Azure DevOps) to automatically checkout and review. Use when reviewing PRs, pull requests, code changes, commits, diffs, or when asked to review code, check code, audit changes, review my changes, check PR, review branch, or perform code review.
 compatibility: Basic tools - grep, file reading. Optional: gh CLI for GitHub PRs, az CLI for Azure DevOps PRs
 allowed-tools: Read Grep Glob Bash

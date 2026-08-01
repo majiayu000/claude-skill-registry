@@ -1,3 +1,8 @@
+---
+name: study-your-lessons
+description: Supreme Mathematics Analysis Protocol
+---
+
 # Study Your Lessons
 
 **Supreme Mathematics Analysis Protocol**

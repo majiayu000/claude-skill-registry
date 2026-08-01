@@ -1,3 +1,9 @@
+---
+name: domain-memory
+description: '> Standardized boot-up ritual and memory access patterns for stateless
+  agent workflows.'
+---
+
 # Domain Memory Skill
 
 > Standardized boot-up ritual and memory access patterns for stateless agent workflows.

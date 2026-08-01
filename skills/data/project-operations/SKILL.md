@@ -1,5 +1,12 @@
 ---
 name: project-operations
+description: Provides intelligent project setup and management with agent-based architecture
+  to minimize token usage. Auto-activates when user mentions project setup, "add project",
+  "configure project", "monorepo"
+---
+
+---
+name: project-operations
 description: Provides intelligent project setup and management with agent-based architecture to minimize token usage. Auto-activates when user mentions project setup, "add project", "configure project", "monorepo", "subdirectories", "switch project", or "project info". Uses three specialized agents internally: project-detector (detect active), project-config-loader (load settings with validation), project-context-manager (manage active project). Guides through four workflows: Add New Project (setup + templates), Configure Monorepo (pattern matching + subdirectories), Switch Between Projects (auto or manual), View Project Information. Provides templates for common architectures (fullstack-with-jira, fullstack-linear-only, mobile-app, monorepo). Validates configuration and suggests fixes for errors. Handles context-aware error handling with specific fix suggestions.
 ---
 

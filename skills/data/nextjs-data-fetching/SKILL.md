@@ -1,5 +1,11 @@
 ---
 name: nextjs-data-fetching
+description: 'Apply when fetching data in Next.js App Router: server components, caching
+  strategies, revalidation, and streaming.'
+---
+
+---
+name: nextjs-data-fetching
 description: Apply when fetching data in Next.js App Router: server components, caching strategies, revalidation, and streaming.
 version: 1.0.0
 tokens: ~700

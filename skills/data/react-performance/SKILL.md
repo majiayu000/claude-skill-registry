@@ -1,5 +1,10 @@
 ---
 name: react-performance
+description: '| Unnecessary re-renders | React.memo, useMemo, useCallback |'
+---
+
+---
+name: react-performance
 description: Complete React performance optimization system. PROACTIVELY activate for: (1) React.memo and memoization, (2) useMemo and useCallback usage, (3) Code splitting with React.lazy, (4) List virtualization (react-window, react-virtuoso), (5) Avoiding unnecessary re-renders, (6) useTransition and useDeferredValue, (7) Bundle optimization, (8) Web Vitals and profiling. Provides: Profiler setup, memoization patterns, lazy loading, virtualization config, state colocation. Ensures optimal React performance with measurable improvements.
 ---
 

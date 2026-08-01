@@ -1,5 +1,10 @@
 ---
 name: gate-4a-unit-tests
+description: 'Purpose: Validate unit test quality, mocking strategy, and coverage'
+---
+
+---
+name: gate-4a-unit-tests
 description: Gate 4a validation: Unit test creation and nock-only enforcement
 ---
 

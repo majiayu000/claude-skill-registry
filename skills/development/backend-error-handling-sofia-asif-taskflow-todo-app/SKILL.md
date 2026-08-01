@@ -1,3 +1,9 @@
+---
+name: backend-error-handling
+description: 'Purpose: Guidance for consistent error handling, error response format,
+  and HTTPException usage.'
+---
+
 # Backend Error Handling Skill
 
 **Purpose**: Guidance for consistent error handling, error response format, and HTTPException usage.
@@ -135,14 +141,14 @@ def create_task(db: Session, user_id: str, task_data: TaskCreateRequest):
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="Title must be 200 characters or less"
         )
-    
+
     # Validate description length
     if task_data.description and len(task_data.description) > 1000:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="Description must be 1000 characters or less"
         )
-    
+
     # Validate priority enum
     if task_data.priority not in ["low", "medium", "high", None]:
         raise HTTPException(
@@ -167,7 +173,7 @@ from jose import ExpiredSignatureError, JWTError
 
 def verify_jwt_token(credentials: HTTPAuthorizationCredentials):
     token = credentials.credentials
-    
+
     try:
         payload = jwt.decode(token, BETTER_AUTH_SECRET, algorithms=["HS256"])
         # ... extract user info
@@ -208,7 +214,7 @@ async def get_task(
             status_code=status.HTTP_403_FORBIDDEN,
             detail="User ID mismatch: You can only access your own data"
         )
-    
+
     # Verify task belongs to user
     task = task_service.get_task_by_id(db, user_id, task_id)
     if not task:
@@ -241,7 +247,7 @@ async def create_task(
     try:
         task = task_service.create_task(db, user_id, task_data)
         return {"success": True, "data": task}
-    
+
     except IntegrityError as e:
         db.rollback()
         raise HTTPException(
@@ -347,7 +353,7 @@ from fastapi import HTTPException, status
 
 class ErrorResponse:
     """Standard error response format"""
-    
+
     @staticmethod
     def validation_error(message: str, details: dict = None):
         raise HTTPException(
@@ -358,7 +364,7 @@ class ErrorResponse:
                 "details": details
             }
         )
-    
+
     @staticmethod
     def authentication_error(message: str = "Invalid or missing JWT token"):
         raise HTTPException(
@@ -368,7 +374,7 @@ class ErrorResponse:
                 "message": message
             }
         )
-    
+
     @staticmethod
     def authorization_error(message: str = "User ID mismatch"):
         raise HTTPException(
@@ -378,7 +384,7 @@ class ErrorResponse:
                 "message": message
             }
         )
-    
+
     @staticmethod
     def not_found(resource: str = "Resource"):
         raise HTTPException(

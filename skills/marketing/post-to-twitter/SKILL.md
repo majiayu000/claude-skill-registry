@@ -1,3 +1,11 @@
+---
+name: post-to-twitter
+description: Automate Twitter/X content creation for professional thought leadership
+  and engagement. This skill generates platform-optimized tweets and threads that
+  maintain brand voice, follow Twitter best practices, and require human approval
+  before publishing.
+---
+
 # post-to-twitter Skill
 
 ---

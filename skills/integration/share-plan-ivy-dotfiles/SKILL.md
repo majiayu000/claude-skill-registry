@@ -1,5 +1,12 @@
 ---
 name: share-plan
+description: Format an implementation plan into a GitHub issue using collapsible <details><summary>
+  sections. The issue stays scannable at a glance while preserving full implementation
+  depth for whoever picks it up.
+---
+
+---
+name: share-plan
 description: Use when sharing an implementation plan to a GitHub issue. Formats plans with collapsible details sections so issues are scannable but comprehensive.
 argument-hint: "[#issue-number | new] [plan source or context]"
 {{- template "bedrock-model" (dict "tier" "sonnet" "root" .) }}

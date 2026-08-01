@@ -1,3 +1,8 @@
+---
+name: theming
+description: '| ID | flutter-theming-advanced |'
+---
+
 # 🎨 Skill: Theming Avanzado
 
 ## 📋 Metadata

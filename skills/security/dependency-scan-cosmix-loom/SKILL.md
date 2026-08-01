@@ -1,5 +1,13 @@
 ---
 name: dependency-scan
+description: This skill focuses on identifying security vulnerabilities, outdated
+  packages, and license compliance issues in project dependencies. It covers multiple
+  package ecosystems (JavaScript/Node.js, Python, Rust, Go, Ruby, Java, .NET, PHP)
+  and provides remediation guidance, SBOM generation, and supply chain security analysis.
+---
+
+---
+name: dependency-scan
 description: Scans project dependencies for known vulnerabilities, outdated packages, and license compliance issues. Supports vulnerability scanning (CVE detection), SBOM generation, license compliance checking, and supply chain security analysis across multiple ecosystems (npm, pip, cargo, go, maven, etc.). Trigger keywords: dependency scan, vulnerability, CVE, Snyk, Dependabot, Renovate, npm audit, cargo audit, pip-audit, safety, outdated packages, SBOM, software bill of materials, license compliance, supply chain, security advisory, transitive dependency, lock file.
 allowed-tools: Read, Grep, Glob, Bash
 ---

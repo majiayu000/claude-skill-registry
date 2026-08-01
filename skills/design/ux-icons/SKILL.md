@@ -1,5 +1,12 @@
 ---
 name: ux-icons
+description: Render local and remote SVG icons in Twig templates. Icons can come from
+  local files, Iconify.design (200+ icon sets, 200,000+ icons), or custom icon sets.
+  Icons are inlined as <svg> elements -- no icon fonts, no external requests at runtime.
+---
+
+---
+name: ux-icons
 description: Symfony UX Icons for rendering SVG icons in Twig templates. Supports 200,000+ Iconify icons (Lucide, Heroicons, Tabler, Material Design, etc.), local SVG files, and custom icon sets with aliases. Use when displaying icons, configuring icon defaults, importing or locking on-demand icons, creating icon aliases, or styling SVG icons with CSS. Code triggers: <twig:ux:icon />, ux_icon(), UX_ICONS_DEFAULT_ICON_ATTRIBUTES, icon.yaml, icons/, iconify:, lucide:, heroicons:, tabler:, mdi:, bin/console ux:icons:lock, bin/console ux:icons:import. Also trigger when the user asks "how to add an icon", "how to use Lucide/Heroicons/Tabler icons", "how to render an SVG icon in Twig", "how to lock icons for production", "how to create icon aliases", "how to style an icon", "icon not found", "icon not rendering". Do NOT trigger for interactive maps (use ux-map) or general Twig components (use twig-component).
 license: MIT
 metadata:

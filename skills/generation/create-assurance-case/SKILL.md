@@ -1,5 +1,11 @@
 ---
 name: create-assurance-case
+description: Generate Goal Structuring Notation (GSN) assurance case diagrams from
+  the
+---
+
+---
+name: create-assurance-case
 description: GSN (Goal Structuring Notation) assurance case diagrams from compliance graph
 triggers:
   - "assurance case"

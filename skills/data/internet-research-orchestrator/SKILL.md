@@ -1,5 +1,12 @@
 ---
 name: internet-research-orchestrator
+description: Orchestrate comprehensive TODAS research for novel/emerging domains (1-7
+  subagents adaptive). Specializes in unprecedented topics, post-training data, and
+  emerging technologies. Uses adaptive depth-ba
+---
+
+---
+name: internet-research-orchestrator
 description: Orchestrate comprehensive TODAS research for novel/emerging domains (1-7 subagents adaptive). Specializes in unprecedented topics, post-training data, and emerging technologies. Uses adaptive depth-based methodology: straightforward queries (1 agent), standard queries (2-3 agents), complex queries (5-7 agents). Handles depth-first (multiple perspectives), breadth-first (distinct sub-topics), and straightforward investigations. Triggers include "novel", "emerging", "2025", "2026", "unprecedented", "new technology", research on topics that didn't exist during training cutoff.
 ---
 

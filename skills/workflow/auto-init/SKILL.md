@@ -1,5 +1,10 @@
 ---
 name: auto-init
+description: DO ZADAWANIA PYTAŃ MUSISZ UŻYĆ NARZĘDZIA AskUserQuestion!
+---
+
+---
+name: auto-init
 description: CCv2 inicjalizacja trybu auto - wywiad + CONTINUITY + VALIDATION. Triggers: auto-init, auto init, inicjuj auto, plan auto
 allowed-tools: AskUserQuestion, Read, Write, Edit, Glob, Grep, Task
 ---

@@ -1,3 +1,8 @@
+---
+name: sc-tutorial-generator
+description: 'Enable AI agents to autonomously generate VHS tape files that:'
+---
+
 ```skill
 ---
 name: sc-tutorial-generator
@@ -149,7 +154,7 @@ When choosing commands to demonstrate:
    ```tape
    # ❌ BAD: Real credentials
    Type "api-key-abc123xyz"
-   
+
    # ✅ GOOD: Placeholder
    Type "your-api-key-here"
    ```

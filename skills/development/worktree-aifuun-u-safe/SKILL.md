@@ -1,5 +1,11 @@
 ---
 name: worktree
+description: Manage git worktrees for parallel issue development with interactive
+  selection and cleanup.
+---
+
+---
+name: worktree
 description: |
   Manage git worktrees for parallel issue development - list, switch, clean, and prune.
 version: "1.0.0"

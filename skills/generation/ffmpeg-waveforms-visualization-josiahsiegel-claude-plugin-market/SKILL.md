@@ -1,5 +1,10 @@
 ---
 name: ffmpeg-waveforms-visualization
+description: 'MANDATORY: Always Use Backslashes on Windows for File Paths'
+---
+
+---
+name: ffmpeg-waveforms-visualization
 description: Complete audio visualization system. PROACTIVELY activate for: (1) Animated waveforms (showwaves), (2) Static waveform images (showwavespic), (3) Spectrum analyzers (showspectrum), (4) Frequency bar visualizations (showfreqs), (5) Stereo vectorscope (avectorscope), (6) Musical note display (showcqt), (7) SoundCloud-style waveforms, (8) Music video visualizers, (9) Podcast waveform videos, (10) Combined visualization dashboards. Provides: Filter parameter tables, color scheme options, scale comparisons, template commands for music videos and podcasts. Ensures: Professional audio visualizations for content creation.
 ---
 

@@ -1,3 +1,8 @@
+---
+name: alerting-incident-management
+description: '| ID | sre-alerting-incident-management |'
+---
+
 # 🚨 Skill: Alerting & Incident Management
 
 ## 📋 Metadata

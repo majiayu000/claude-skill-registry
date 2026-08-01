@@ -1,4 +1,11 @@
 ---
+name: better-auth-configuration
+description: 'Creates Better Auth configuration for frontend and backend: handlers,
+  providers, middleware, session/token options. Uses Context7 MCP to retrieve Better
+  Auth docs.'
+---
+
+---
 name: Better Auth Configuration
 description: Creates Better Auth configuration for frontend and backend: handlers, providers, middleware, session/token options. Uses Context7 MCP to retrieve Better Auth docs.
 ---

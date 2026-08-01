@@ -1,5 +1,11 @@
 ---
 name: game-builder
+description: 'Convert any topic into playable browser games. Types: trivia, matching,
+  word puzzles, adventure games. Uses Phaser.js or Kaboom.js.'
+---
+
+---
+name: game-builder
 description: Convert any topic into playable browser games. Types: trivia, matching, word puzzles, adventure games. Uses Phaser.js or Kaboom.js.
 ---
 

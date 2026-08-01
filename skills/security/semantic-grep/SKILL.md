@@ -1,5 +1,11 @@
 ---
 name: semantic-grep
+description: Run a Semgrep scan with automatic language detection, parallel execution,
+  and structured triage. Uses Semgrep Pro for cross-file taint analysis when available.
+---
+
+---
+name: semantic-grep
 description: Run Semgrep static analysis scans with parallel execution and structured triage.
 Use when: (1) scanning a codebase for security vulnerabilities, (2) running a
 first-pass static analysis audit, (3) finding known bug patterns before code review.

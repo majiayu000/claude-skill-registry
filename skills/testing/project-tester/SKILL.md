@@ -1,3 +1,8 @@
+---
+name: project-tester
+description: pytest tests/unit/ -v
+---
+
 ```markdown
 ---
 name: project-tester
@@ -66,7 +71,7 @@ npm run test:e2e
 1. test_user_login_timeout
    位置：tests/e2e/test_auth.py:45
    錯誤：TimeoutError: Login exceeded 30s
-   
+
 2. test_api_rate_limit
    位置：tests/e2e/test_api.py:78
    錯誤：AssertionError: Expected 429, got 200

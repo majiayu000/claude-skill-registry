@@ -1,5 +1,12 @@
 ---
 name: data-ontologist
+description: Architectural guidance for using multiple database technologies together,
+  with emphasis on PostgreSQL/Supabase (relational), Neo4j (graph), and MongoDB (document).
+  Demonstrates when to use each database type and how to integrate them effectively.
+---
+
+---
+name: data-ontologist
 description: Polyglot persistence: when to use relational, graph, or document databases; integration patterns.
 user-invocable: false
 effort: high
@@ -562,10 +569,10 @@ Keep databases in sync via events:
 // User created in Supabase
 supabase.on('INSERT', 'users', async (payload) => {
   const user = payload.record;
-  
+
   // Create in Neo4j
   await createUserNode(user);
-  
+
   // Create preferences in MongoDB
   await mongo.collection('user_preferences').insertOne({
     _id: user.id,
@@ -584,17 +591,17 @@ async function getUserDashboard(userId) {
     .select('*')
     .eq('id', userId)
     .single();
-  
+
   // Neo4j - Social metrics
   const social = await neo4j.run(`
     MATCH (u:User {id: $userId})
     OPTIONAL MATCH (u)-[:FOLLOWS]->(following)
     OPTIONAL MATCH (follower)-[:FOLLOWS]->(u)
-    RETURN 
+    RETURN
       count(DISTINCT following) as followingCount,
       count(DISTINCT follower) as followerCount
   `, { userId });
-  
+
   // MongoDB - Recent content
   const posts = await mongo
     .collection('posts')
@@ -602,7 +609,7 @@ async function getUserDashboard(userId) {
     .sort({ createdAt: -1 })
     .limit(5)
     .toArray();
-  
+
   return {
     account: account.data,
     social: social.records[0],

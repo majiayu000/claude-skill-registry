@@ -1,4 +1,10 @@
 ---
+name: payloads
+description: 'Essential exploitation payloads: anti-virus test files, file name exploits,
+  malicious files. Curated for testing.'
+---
+
+---
 name: SecLists Payloads (Curated)
 description: Essential exploitation payloads: anti-virus test files, file name exploits, malicious files. Curated for testing.
 ---
@@ -45,7 +51,7 @@ for root, dirs, files in os.walk(skill_path):
         if file.endswith('.txt'):
             filepath = os.path.join(root, file)
             print(f"Found: {filepath}")
-            
+
             # Read file content
             with open(filepath, 'r', errors='ignore') as f:
                 content = f.read().splitlines()

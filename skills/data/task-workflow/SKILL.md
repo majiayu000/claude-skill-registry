@@ -1,11 +1,16 @@
 ---
+name: task-workflow
+description: '> Note: This skill has been adapted from claude-skillz'
+---
+
+---
 name: Lightweight Task Workflow
 description: FOLLOW THE STATE MACHINE IN SKILL.MD. When user says 'continue': (1) FIRST: Run pwd, (2) Announce STATE: CHECK_STATUS, (3) Read .claude/session.md to check Status field, (4) Route based on Status. NEVER auto-advance tasks. NEVER use TodoWrite. NEVER create git commits.
 ---
 
 # GitHub Copilot Skill: task-workflow
 
-> **Note:** This skill has been adapted from [claude-skillz](https://github.com/NTCoding/claude-skillz) 
+> **Note:** This skill has been adapted from [claude-skillz](https://github.com/NTCoding/claude-skillz)
 > for use with GitHub Copilot Agent Skills.
 
 ---

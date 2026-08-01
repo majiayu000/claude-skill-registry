@@ -1,3 +1,9 @@
+---
+name: skills
+description: Ensemble Plugin Ecosystem - Modular Claude Code plugins for AI-augmented
+  development workflows
+---
+
 # Blazor Framework - Quick Reference (SKILL.md)
 
 **Version**: 1.0.0

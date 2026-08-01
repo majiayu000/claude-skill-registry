@@ -1,5 +1,10 @@
 ---
 name: diff-review
+description: Security-focused code review for PRs, commits, and diffs.
+---
+
+---
+name: diff-review
 description: Performs security-focused differential review of code changes (PRs, commits, diffs).
 Adapts analysis depth to codebase size, uses git history for context, calculates
 blast radius, checks test coverage, and generates comprehensive markdown reports.

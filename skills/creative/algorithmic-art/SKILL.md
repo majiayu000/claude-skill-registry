@@ -1,4 +1,9 @@
 ---
+name: algorithmic-art
+description: '> p5.js ile generative art rehberi.'
+---
+
+---
 name: algorithmic_art
 router_kit: FullStackKit
 description: p5.js ile generative art, flow fields ve interactive visuals oluşturma rehberi.
@@ -64,7 +69,7 @@ function setup() {
   createCanvas(800, 600);
   cols = floor(width / scale);
   rows = floor(height / scale);
-  
+
   // Create flow field
   for (let y = 0; y < rows; y++) {
     for (let x = 0; x < cols; x++) {
@@ -86,14 +91,14 @@ class Particle {
     this.vel = createVector(0, 0);
     this.acc = createVector(0, 0);
   }
-  
+
   update() {
     this.vel.add(this.acc);
     this.vel.limit(4);
     this.pos.add(this.vel);
     this.acc.mult(0);
   }
-  
+
   show() {
     point(this.pos.x, this.pos.y);
   }

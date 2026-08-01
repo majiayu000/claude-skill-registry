@@ -1,3 +1,8 @@
+---
+name: ifrs-standards
+description: 'description: Key IFRS standards — IFRS 9, 15, 16, IAS 36, IFRS 3'
+---
+
 # IFRS Standards
 
 name: ifrs-standards

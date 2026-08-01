@@ -1,5 +1,10 @@
 ---
 name: learn
+description: '[learn] topic|url|repo→discover→fetch→synthesize→SKILL.md+soul'
+---
+
+---
+name: learn
 description: Learn from web sources, generate SKILL.md, and store key patterns in soul memory. Trigger keywords: learn, skill-gen, web-learn, documentation, tutorial.
 execution: direct
 aliases: [web-learn, skill-gen]

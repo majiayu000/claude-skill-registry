@@ -1,5 +1,13 @@
 ---
 name: search
+description: Search functionality is a critical component of modern applications,
+  enabling users to find relevant content quickly. This skill covers Elasticsearch
+  fundamentals, full-text search patterns, indexing strategies, and advanced features
+  like faceted search and autocomplete.
+---
+
+---
+name: search
 description: Full-text search and search engine implementation. Use when implementing search functionality, autocomplete, faceted search, relevance tuning, or working with search indexes. Keywords: search, full-text search, Elasticsearch, OpenSearch, Meilisearch, Typesense, fuzzy search, autocomplete, faceted search, facets, inverted index, relevance, ranking, scoring, tokenizer, analyzer, search-as-you-type, aggregations, synonyms, indexing, query, filtering, highlighting, search UI, typeahead, suggestions.
 ---
 

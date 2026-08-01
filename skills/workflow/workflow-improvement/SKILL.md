@@ -1,5 +1,11 @@
 ---
 name: workflow-improvement
+description: Use this skill after running a command or completing a short session
+  slice where execution felt slow, confusing, repetitive, or fragile.
+---
+
+---
+name: workflow-improvement
 description: |
 
 Triggers: skills, retrospective, efficiency, workflow, improvement

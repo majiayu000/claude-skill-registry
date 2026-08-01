@@ -1,4 +1,9 @@
 ---
+name: fix-issue
+description: Execute /fix-issue <issue-number> slash command.
+---
+
+---
 name: fixing-github-issue
 description: Fetches a GitHub issue, implements the fix, and verifies it. Use when: user wants to fix an issue, implement issue changes, or resolve a bug.
 ---

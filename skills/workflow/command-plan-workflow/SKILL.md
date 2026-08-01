@@ -1,5 +1,10 @@
 ---
 name: command-plan-workflow
+description: Run the /plan-workflow workflow defined in .claude/commands/plan-workflow.md.
+---
+
+---
+name: command-plan-workflow
 description: Use the /plan-workflow slash command to design workflow structures and required nodes. Use when: planning workflows before implementation.
 ---
 

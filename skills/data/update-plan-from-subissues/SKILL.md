@@ -1,4 +1,9 @@
 ---
+name: update-plan-from-subissues
+description: Execute /update-plan-from-subissues slash command.
+---
+
+---
 name: updating-plan-from-subissues
 description: Updates PLANS.md based on linked sub-issues status. Use when: user wants to update plan from sub-issues, reflect issue progress, or sync sub-issue status.
 ---

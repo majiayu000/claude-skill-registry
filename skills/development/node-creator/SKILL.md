@@ -1,5 +1,11 @@
 ---
 name: node-creator
+description: Build nodes with the modern schema-driven pattern and keep registry/visual
+  nodes in sync.
+---
+
+---
+name: node-creator
 description: Create or update CasareRPA nodes using schema-driven patterns and registry updates. Use when: adding new nodes, modifying node properties or ports, registering visual nodes, writing node tests.
 ---
 

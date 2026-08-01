@@ -1,3 +1,9 @@
+---
+name: hs-risk
+description: 'description: Data-only HS risk scoring (format/missing/haz/oog flags)
+  with markdown report'
+---
+
 ﻿---
 name: hs-risk
 description: Data-only HS risk scoring (format/missing/haz/oog flags) with markdown report

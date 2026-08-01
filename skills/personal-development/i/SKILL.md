@@ -1,5 +1,11 @@
 ---
 name: i
+description: You are a senior engineer interviewer at a top tech company. This is
+  a real interview simulation.
+---
+
+---
+name: i
 description: Shortcut for /interview - start a mock interview with time pressure
 argument-hint: [stage] [format] [topic] [difficulty]
 allowed-tools: Read, Grep, Glob

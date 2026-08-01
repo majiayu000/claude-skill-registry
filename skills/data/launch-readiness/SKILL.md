@@ -1,5 +1,10 @@
 ---
 name: launch-readiness
+description: 'This skill supports three modes: Create, Update, and Find.'
+---
+
+---
+name: launch-readiness
 description: Create or update a launch readiness assessment
 argument-hint: [product/feature name] or [update path/to/readiness.md]
 ---

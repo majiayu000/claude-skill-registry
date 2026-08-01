@@ -1,5 +1,10 @@
 ---
 name: project-init
+description: 將此專案作為模板，快速初始化新專案，完整繼承法規系統和 Skills 架構。
+---
+
+---
+name: project-init
 description: Initialize new projects using this template. Triggers: init, new, 新專案, 初始化, create project, 建立專案, bootstrap, scaffold project, setup, 設定, 起始, start, 從頭, from scratch, template, 模板, 範本, clone, fork.
 version: 2.2.0
 category: scaffold

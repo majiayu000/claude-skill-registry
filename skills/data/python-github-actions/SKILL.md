@@ -1,5 +1,10 @@
 ---
 name: python-github-actions
+description: '| Action | Purpose | Speed |'
+---
+
+---
+name: python-github-actions
 description: Complete Python GitHub Actions system. PROACTIVELY activate for: (1) uv-based CI workflows (10-100x faster), (2) Matrix testing across Python versions, (3) Dependency caching with setup-uv, (4) Parallel test execution, (5) Reusable workflows, (6) Publishing to PyPI with trusted publishing, (7) Code coverage with codecov, (8) Security scanning. Provides: Workflow templates, caching config, matrix strategies, composite actions. Ensures fast, reliable CI/CD pipelines.
 ---
 

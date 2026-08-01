@@ -1,3 +1,10 @@
+---
+name: imagine
+description: 'description: Imagine (Idea Intake) â€” Start or refine an idea. If given
+  free-form text, create a new IDEA-XXXX folder, ask clarifying questions, draft idea.md,
+  then (after user review) save to inputs/idea.md and log the run.'
+---
+
 ﻿---
 name: Imagine
 description: Imagine (Idea Intake) â€” Start or refine an idea. If given free-form text, create a new IDEA-XXXX folder, ask clarifying questions, draft idea.md, then (after user review) save to inputs/idea.md and log the run.
@@ -45,7 +52,7 @@ Turn a rough idea into a **first, reviewable** `idea.md` stored at:
 - `docs/forge/ideas/<IDEA_ID>/inputs/idea.md`
 
 This command is **interactive** by default:
-- Phase 1: draft an idea.md + ask clarifying questions 
+- Phase 1: draft an idea.md + ask clarifying questions
 - Phase 2: after user replies, save the final `idea.md` and capture answers for future stages
 
 ---

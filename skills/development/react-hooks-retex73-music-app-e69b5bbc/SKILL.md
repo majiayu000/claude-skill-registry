@@ -1,3 +1,9 @@
+---
+name: react-hooks
+description: Master React hooks patterns including useState, useEffect, useContext,
+  useMemo, useCallback, and custom hooks for the music-app project.
+---
+
 # React Hooks Skill
 
 ## Purpose

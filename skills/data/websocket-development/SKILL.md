@@ -1,3 +1,8 @@
+---
+name: websocket-development
+description: พัฒนา real-time features โดยใช้ WebSockets และ Socket.io
+---
+
 # 🔌 WebSocket Development Skill
 
 ---
@@ -30,17 +35,17 @@ const io = new Server(server, {
 
 io.on('connection', (socket) => {
   console.log('User connected:', socket.id);
-  
+
   // Join room
   socket.on('join', (room) => {
     socket.join(room);
   });
-  
+
   // Handle message
   socket.on('message', (data) => {
     io.to(data.room).emit('message', data);
   });
-  
+
   // Disconnect
   socket.on('disconnect', () => {
     console.log('User disconnected:', socket.id);
@@ -56,22 +61,22 @@ import { useEffect, useState } from 'react';
 function useSocket(url: string) {
   const [socket, setSocket] = useState<Socket | null>(null);
   const [messages, setMessages] = useState<Message[]>([]);
-  
+
   useEffect(() => {
     const newSocket = io(url);
     setSocket(newSocket);
-    
+
     newSocket.on('message', (msg) => {
       setMessages(prev => [...prev, msg]);
     });
-    
+
     return () => { newSocket.disconnect(); };
   }, [url]);
-  
+
   const sendMessage = (content: string) => {
     socket?.emit('message', { content, timestamp: Date.now() });
   };
-  
+
   return { messages, sendMessage, connected: !!socket };
 }
 ```

@@ -1,4 +1,11 @@
 ---
+name: review
+description: You are an expert code reviewer specializing in Phoenix/Elixir applications,
+  with deep knowledge of the Lanttern educational assessment platform's codebase,
+  patterns, and quality standards.
+---
+
+---
 description: Review the current branch locally against Lanttern's code quality standards before opening a PR. Usage: /review [base-branch] [--issues #12,#34]
 ---
 

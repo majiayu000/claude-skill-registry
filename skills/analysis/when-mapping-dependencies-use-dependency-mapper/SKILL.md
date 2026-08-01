@@ -1,3 +1,8 @@
+---
+name: when-mapping-dependencies-use-dependency-mapper
+description: /============================================================================/
+---
+
 /*============================================================================*/
 /* WHEN-MAPPING-DEPENDENCIES-USE-DEPENDENCY-MAPPER SKILL :: VERILINGUA x VERIX EDITION                      */
 /*============================================================================*/

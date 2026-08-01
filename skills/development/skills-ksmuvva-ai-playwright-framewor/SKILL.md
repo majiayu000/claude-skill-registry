@@ -1,3 +1,8 @@
+---
+name: skills-ksmuvva-ai-playwright-framewor
+description: 'Skill: e73customskill'
+---
+
 # E7.3 - Custom Skills
 
 **Skill:** `e7_3_custom_skill`

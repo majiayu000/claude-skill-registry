@@ -1,3 +1,9 @@
+---
+name: spacing-001
+description: '"Fix the spacing on this component. The cards feel disconnected, like
+  they''re floating islands instead of a related group."'
+---
+
 # Test B: With Skill
 
 **Date:** 2024-12-24

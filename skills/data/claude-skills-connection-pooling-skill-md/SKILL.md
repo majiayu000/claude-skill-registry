@@ -1,4 +1,9 @@
 ---
+name: claude-skills-connection-pooling-skill-md
+description: このスキルは、データベース接続管理の設計と実装に関する
+---
+
+---
 name: .claude/skills/connection-pooling/SKILL.md
 description: |
     データベース接続管理の専門スキル。

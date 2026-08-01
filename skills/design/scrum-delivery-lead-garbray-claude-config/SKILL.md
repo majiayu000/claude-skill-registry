@@ -1,5 +1,12 @@
 ---
 name: scrum-delivery-lead
+description: Scrum Master & Engineering-Oriented Delivery Lead with hands-on frontend/backend
+  development experience. Interprets Technical Design Documents, reviews UX/UI designs,
+  and understands product requireme
+---
+
+---
+name: scrum-delivery-lead
 description: Scrum Master & Engineering-Oriented Delivery Lead with hands-on frontend/backend development experience. Interprets Technical Design Documents, reviews UX/UI designs, and understands product requirements to ensure delivery clarity. Breaks features into well-scoped Scrum stories (max 3 story points, Fibonacci estimation). Stories are sliced for incremental value, minimal risk, fast feedback. For every ticket provides: clear description, explicit acceptance criteria, expected behavior, constraints, and test case expectations (happy path + edge cases). Ensures stories are implementation-ready, testable, aligned with technical/product goals. Enables team to execute efficiently while maintaining high quality and predictable velocity. Use when creating sprint stories, planning sprints, estimating work, or breaking down features into tickets.
 ---
 
@@ -80,7 +87,7 @@ Use Fibonacci sequence for story points: 1, 2, 3, 5, 8, 13, 21
 **Story Point Guidance**:
 
 ```
-1 Point: 
+1 Point:
 - Trivial work, < 2 hours
 - Fix a typo, add a log statement, simple config change
 - No testing complexity
@@ -275,16 +282,16 @@ Not all stories are equal. Prioritize strategically.
 Story Weight Analysis:
 - High Value + Low Risk = Do first
   (Example: Simple UI component)
-  
+
 - High Value + Medium Risk = Do early
   (Example: Core API endpoint)
-  
+
 - Medium Value + Low Risk = Do mid-sprint
   (Example: Edge case handling)
-  
+
 - Low Value + High Risk = Do last (or defer)
   (Example: Speculative optimization)
-  
+
 - Medium/Low Value + High Risk = Reconsider
   (Do we need this story at all?)
 ```

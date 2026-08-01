@@ -1,3 +1,9 @@
+---
+name: auto-architect
+description: 'Purpose: Intelligent meta-skill that monitors project patterns, detects
+  automation opportunities, and auto-generates new skills.'
+---
+
 # Skill: Auto-Architect Super Skill
 
 **Purpose**: Intelligent meta-skill that monitors project patterns, detects automation opportunities, and auto-generates new skills.

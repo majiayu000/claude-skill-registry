@@ -1,5 +1,12 @@
 ---
 name: cognitive-load-reviewer
+description: Analyze and reduce cognitive load in code by identifying complex conditionals,
+  deep nesting, shallow modules, excessive abstractions, and architectural over-engineering.
+  Use when reviewing code qualit
+---
+
+---
+name: cognitive-load-reviewer
 description: Analyze and reduce cognitive load in code by identifying complex conditionals, deep nesting, shallow modules, excessive abstractions, and architectural over-engineering. Use when reviewing code quality, refactoring for maintainability, or simplifying systems. Keywords: cognitive load, complexity, refactor, simplify, maintainability, readability, mental overhead, abstraction, architecture review
 ---
 

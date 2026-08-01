@@ -1,3 +1,9 @@
+---
+name: astro-images
+description: Use astro:assets for all images. This enables automatic optimization
+  (resizing, WebP/AVIF conversion, lazy loading).
+---
+
 # Astro Image Optimization
 
 Use `astro:assets` for all images. This enables automatic optimization (resizing, WebP/AVIF conversion, lazy loading).

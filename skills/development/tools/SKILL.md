@@ -1,3 +1,8 @@
+---
+name: tools
+description: Control + Shift + Enter
+---
+
 - IDEA自动收尾
 Control + Shift + Enter
 

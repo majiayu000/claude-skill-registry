@@ -1,5 +1,12 @@
 ---
 name: cookoff
+description: 'MANDATORY implementation wrapper. ALWAYS invoke when moving from design→code.
+  Present 3 options: (1) Cookoff - 2-5 parallel agents compete, each creates own plan,
+  pick best, (2) Single subagent, (3) L'
+---
+
+---
+name: cookoff
 description: MANDATORY implementation wrapper. ALWAYS invoke when moving from design→code. Present 3 options: (1) Cookoff - 2-5 parallel agents compete, each creates own plan, pick best, (2) Single subagent, (3) Local. Triggers: "let's build", "implement", "looks good", user picks implementation option, ANY signal to start coding after design. This skill MUST run before writing-plans/executing-plans at design boundaries. For exploring DIFFERENT designs, use omakase-off.
 ---
 

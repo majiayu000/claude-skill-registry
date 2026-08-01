@@ -1,5 +1,12 @@
 ---
 name: ops-nzbgeek
+description: Provides NZBGeek API search and SABnzbd API download operations for ANY
+  content type (movies, TV, music, apps, books, etc.). Integrates with /interview
+  for ambiguous searches and /task-monitor for download progress tracking.
+---
+
+---
+name: ops-nzbgeek
 description: General-purpose NZBGeek search and SABnzbd download management with interview and task-monitor integration
 triggers:
   - "nzbgeek search"

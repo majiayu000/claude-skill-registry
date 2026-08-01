@@ -1,5 +1,10 @@
 ---
 name: swift-navigation-uikit
+description: 'UIKit navigation tools: bindings, animations, and navigation stack management'
+---
+
+---
+name: swift-navigation-uikit
 description: UIKit navigation tools: bindings, animations, and navigation stack management
 ---
 

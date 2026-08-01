@@ -1,5 +1,10 @@
 ---
 name: python-gotchas
+description: '| Gotcha | Problem | Fix |'
+---
+
+---
+name: python-gotchas
 description: Complete Python gotchas reference. PROACTIVELY activate for: (1) Mutable default arguments, (2) Mutating lists while iterating, (3) is vs == comparison, (4) Late binding in closures, (5) Variable scope (LEGB), (6) Floating point precision, (7) Exception handling pitfalls, (8) Dict mutation during iteration, (9) Circular imports, (10) Class vs instance attributes. Provides: Problem explanations, code examples, fixes for each gotcha. Ensures bug-free Python code.
 ---
 

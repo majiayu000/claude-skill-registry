@@ -1,3 +1,9 @@
+---
+name: nl-router
+description: Route natural language requests to appropriate skills and workflows.
+  Use when relevant to the task.
+---
+
 # nl-router
 
 Route natural language requests to appropriate skills and workflows.

@@ -1,3 +1,9 @@
+---
+name: unknown
+description: Generate customized PRPROMPTS for Flutter projects from PRD - HIPAA,
+  PCI-DSS, GDPR compliant with Clean Architecture and BLoC patterns
+---
+
 # QA Auditor Automation Skill
 
 ## Skill Overview

@@ -1,5 +1,11 @@
 ---
 name: autocut-shorts
+description: This is the main orchestration skill that combines all other skills to
+  automatically create short-form content from long videos.
+---
+
+---
+name: autocut-shorts
 description: Main orchestration skill for automatic creation of short-form content (TikTok, YouTube Shorts, Instagram Reels) from long videos. Fully automated workflow: download video, transcribe, detect highlights (transcript + laughter + sentiment + scenes), trim segments, resize to 9:16 portrait, and add subtitles. Finds viral-worthy moments like OpusClip and Vizard.ai.
 allowed-tools: Bash(ffmpeg:*) Bash(yt-dlp:*) Bash(python:*)
 compatibility: Requires all trimer-clip dependencies and FFmpeg
@@ -149,7 +155,7 @@ Runs detection modules:
 
 Combines all signals:
 ```
-Virality Score = 
+Virality Score =
   35% Transcript (hooks, viral content) +
   25% Laughter (humor) +
   25% Sentiment (emotion) +

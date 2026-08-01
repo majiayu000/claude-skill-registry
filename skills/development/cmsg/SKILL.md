@@ -1,3 +1,8 @@
+---
+name: cmsg
+description: 'Direction: Client -> Server'
+---
+
 # CMSG_USE_SKILL (0x0017)
 
 **Direction**: Client -> Server

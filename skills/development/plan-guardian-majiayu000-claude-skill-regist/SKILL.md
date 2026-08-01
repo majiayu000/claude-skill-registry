@@ -1,3 +1,8 @@
+---
+name: plan-guardian-majiayu000-claude-skill-regist
+description: '- skillname: plan-guardian'
+---
+
 # Plan Guardian Skill
 
 ## Metadata

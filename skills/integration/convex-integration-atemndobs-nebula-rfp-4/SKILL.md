@@ -1,3 +1,8 @@
+---
+name: convex-integration
+description: 'name: convex-integration'
+---
+
 name: convex-integration
 description: Integrate Convex as the real-time backend (schema, queries, auth). Use when adding Convex persistence or wiring Convex APIs.
 ---
@@ -30,27 +35,27 @@ export default defineSchema({
     title: v.string(),
     summary: v.string(),
     url: v.string(),
-    
+
     // Dates
     postedDate: v.optional(v.string()),
     deadline: v.optional(v.string()),
     questionDeadline: v.optional(v.string()),
-    
+
     // Location/Category
     location: v.optional(v.string()),
     category: v.optional(v.string()),
     state: v.optional(v.string()),
     country: v.optional(v.string()),
-    
+
     // Budget
     budget: v.optional(v.string()),
-    
+
     // Eligibility
     eligibility: v.optional(v.string()),
     isUsaOnly: v.optional(v.boolean()),
     requiresOnshore: v.optional(v.boolean()),
     setAsideType: v.optional(v.string()),
-    
+
     // Metadata
     fetchedAt: v.number(),
     rawData: v.optional(v.string()),
@@ -61,12 +66,12 @@ export default defineSchema({
   evaluations: defineTable({
     rfpId: v.id("rfps"),
     userId: v.optional(v.string()), // Clerk user ID
-    
+
     // Overall result
     isFit: v.boolean(),
     score: v.number(),
     maxScore: v.number(),
-    
+
     // Per-criterion results
     technicalRelevance: v.object({
       met: v.boolean(),
@@ -92,12 +97,12 @@ export default defineSchema({
       met: v.boolean(),
       details: v.optional(v.string()),
     }),
-    
+
     // AI analysis
     aiProvider: v.optional(v.string()),
     aiAnalysis: v.optional(v.string()), // JSON string
     reasoning: v.optional(v.string()),
-    
+
     // Timestamps
     evaluatedAt: v.number(),
   }).index("by_rfp", ["rfpId"])
@@ -106,7 +111,7 @@ export default defineSchema({
   pursuits: defineTable({
     rfpId: v.id("rfps"),
     userId: v.string(), // Clerk user ID
-    
+
     // Pipeline stage
     stage: v.union(
       v.literal("new"),
@@ -118,7 +123,7 @@ export default defineSchema({
       v.literal("won"),
       v.literal("lost")
     ),
-    
+
     // Decision tracking
     decision: v.optional(v.union(
       v.literal("pursue"),
@@ -126,10 +131,10 @@ export default defineSchema({
       v.literal("reject")
     )),
     decisionReason: v.optional(v.string()),
-    
+
     // Notes
     notes: v.optional(v.string()),
-    
+
     // Timestamps
     createdAt: v.number(),
     updatedAt: v.number(),
@@ -138,19 +143,19 @@ export default defineSchema({
 
   userSettings: defineTable({
     userId: v.string(), // Clerk user ID
-    
+
     // AI Settings
     selectedAiProvider: v.string(),
     aiProviderConfigs: v.optional(v.string()), // JSON
     corePromptTemplate: v.optional(v.string()),
     useAiForEvaluation: v.boolean(),
-    
+
     // Criteria Config
     criteriaConfig: v.optional(v.string()), // JSON
-    
+
     // Refresh Settings
     autoRefreshIntervalHours: v.number(),
-    
+
     // UI Preferences
     theme: v.union(v.literal("light"), v.literal("dark")),
   }).index("by_user", ["userId"]),
@@ -166,23 +171,23 @@ import { query } from "./_generated/server";
 import { v } from "convex/values";
 
 export const listWithEvaluations = query({
-  args: { 
+  args: {
     source: v.optional(v.string()),
-    limit: v.optional(v.number()) 
+    limit: v.optional(v.number())
   },
   handler: async (ctx, args) => {
     let rfpsQuery = ctx.db.query("rfps");
-    
+
     if (args.source) {
-      rfpsQuery = rfpsQuery.withIndex("by_source", (q) => 
+      rfpsQuery = rfpsQuery.withIndex("by_source", (q) =>
         q.eq("source", args.source)
       );
     }
-    
+
     const rfps = await rfpsQuery
       .order("desc")
       .take(args.limit ?? 50);
-    
+
     // Fetch evaluations for each RFP
     const rfpsWithEvals = await Promise.all(
       rfps.map(async (rfp) => {
@@ -193,7 +198,7 @@ export const listWithEvaluations = query({
         return { ...rfp, evaluation };
       })
     );
-    
+
     return rfpsWithEvals;
   },
 });
@@ -225,7 +230,7 @@ export const saveEvaluation = mutation({
   },
   handler: async (ctx, args) => {
     const identity = await ctx.auth.getUserIdentity();
-    
+
     return await ctx.db.insert("evaluations", {
       rfpId: args.rfpId,
       userId: identity?.subject,
@@ -264,7 +269,7 @@ import { api } from "../convex/_generated/api";
 function RfpList() {
   const rfps = useQuery(api.rfps.listWithEvaluations, { limit: 50 });
   const saveEvaluation = useMutation(api.evaluations.saveEvaluation);
-  
+
   // Component implementation
 }
 ```

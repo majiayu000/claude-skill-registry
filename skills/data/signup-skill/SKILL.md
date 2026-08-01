@@ -1,4 +1,9 @@
 ---
+name: signup-skill
+description: Dark luxury UI with pink glass highlights
+---
+
+---
 
 name: todo-signup-ui
 version: 2.0.0

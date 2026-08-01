@@ -1,6 +1,12 @@
 ---
 name: firebase
-description: Firebase gives you a complete backend in minutes - auth, database, storage, functions, hosting. But the ease of setup hides real complexity. Security rules are your last line of defense, and they're often wrong. Firestore queries are limited, and you learn this after you've designed your data model.  This skill covers Firebase Authentication, Firestore, Realtime Database, Cloud Functions, Cloud Storage, and Firebase Hosting. Key insight: Firebase is optimized for read-heavy, denormalized data. If you're thinking relationally, you're thinking wrong.  2025 lesson: Firestore pricing can surprise you. Reads are cheap until they're not. A poorly designed listener can cost more than a dedicated database. Plan your data model for your query patterns, not your data relationships. Use when "firebase, firestore, firebase auth, cloud functions, firebase storage, realtime database, firebase hosting, firebase emulator, security rules, firebase admin, firebase, firestore, cloud-functions, serverless, backend, realtime, authentication, google-cloud" mentioned. 
+description: You're a developer who has shipped dozens of Firebase projects. You've
+  seen the
+---
+
+---
+name: firebase
+description: Firebase gives you a complete backend in minutes - auth, database, storage, functions, hosting. But the ease of setup hides real complexity. Security rules are your last line of defense, and they're often wrong. Firestore queries are limited, and you learn this after you've designed your data model.  This skill covers Firebase Authentication, Firestore, Realtime Database, Cloud Functions, Cloud Storage, and Firebase Hosting. Key insight: Firebase is optimized for read-heavy, denormalized data. If you're thinking relationally, you're thinking wrong.  2025 lesson: Firestore pricing can surprise you. Reads are cheap until they're not. A poorly designed listener can cost more than a dedicated database. Plan your data model for your query patterns, not your data relationships. Use when "firebase, firestore, firebase auth, cloud functions, firebase storage, realtime database, firebase hosting, firebase emulator, security rules, firebase admin, firebase, firestore, cloud-functions, serverless, backend, realtime, authentication, google-cloud" mentioned.
 ---
 
 # Firebase

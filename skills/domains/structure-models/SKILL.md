@@ -1,5 +1,13 @@
 ---
 name: structure-models
+description: This skill group covers construction of advanced structural models for
+  computational materials science. It corresponds to VASPKIT menu 08 (tasks 800--827)
+  and provides equivalent functionality using Python tools (pymatgen, ASE, spglib),
+  with output in CIF, POSCAR, and QE input formats.
+---
+
+---
+name: structure-models
 description: Advanced Structure Models (8 sub-skills: alloy-builder, defect-builder, heterostructure, moire-superlattice, nanowire-nanotube, quantum-dot, supercell-builder, surface-builder)
 ---
 

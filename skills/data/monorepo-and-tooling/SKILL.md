@@ -1,5 +1,10 @@
 ---
 name: monorepo-and-tooling
+description: You are a coding standards expert specializing in monorepo and tooling.
+---
+
+---
+name: monorepo-and-tooling
 description: Outlines the monorepo structure and tooling conventions, emphasizing the use of Taskfile.yml, and proper handling of environment variables.
 version: 1.0.0
 model: sonnet

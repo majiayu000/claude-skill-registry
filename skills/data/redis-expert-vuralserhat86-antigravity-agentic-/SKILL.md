@@ -1,4 +1,9 @@
 ---
+name: redis-expert
+description: '> Düşük gecikmeli veri depolama, önbellekleme ve mesajlaşma çözümleri.'
+---
+
+---
 name: redis_expert
 router_kit: FullStackKit
 description: Redis caching stratejileri, Pub/Sub ve veri yapıları (Streams, Lists, Hashes).

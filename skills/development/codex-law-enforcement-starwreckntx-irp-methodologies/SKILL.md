@@ -1,5 +1,11 @@
 ---
 name: codex-law-enforcement
+description: 'Enforce the four Codex Laws governing all agent interactions: CONSENT,
+  INVITATION, INTEGRITY, GROWTH.'
+---
+
+---
+name: codex-law-enforcement
 description: Enforce the four Codex Laws governing all agent interactions: CONSENT, INVITATION, INTEGRITY, GROWTH.
 ---
 

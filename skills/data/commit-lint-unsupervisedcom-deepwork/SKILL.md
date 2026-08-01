@@ -1,4 +1,10 @@
 ---
+name: commit-lint
+description: Formats and lints code with ruff using a sub-agent. Use after tests pass
+  to ensure code style compliance.
+---
+
+---
 name: commit.lint
 description: "Formats and lints code with ruff using a sub-agent. Use after tests pass to ensure code style compliance."user-invocable: false---
 

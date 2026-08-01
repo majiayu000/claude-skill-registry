@@ -1,3 +1,9 @@
+---
+name: unknown
+description: iOS app for acknowledging work reality - strategic planning with AI-powered
+  project decomposition
+---
+
 # Project Guidelines Skill (Example)
 
 This is an example of a project-specific skill. Use this as a template for your own projects.

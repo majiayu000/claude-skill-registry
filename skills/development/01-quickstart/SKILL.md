@@ -1,3 +1,8 @@
+---
+name: 01-quickstart
+description: import TabItem from "@theme/TabItem";
+---
+
 import TabItem from "@theme/TabItem";
 import Tabs from "@theme/Tabs";
 import DeveloperSupport from "../../../partial/_developer_support.mdx";

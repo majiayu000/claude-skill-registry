@@ -1,4 +1,9 @@
 ---
+name: database-design
+description: '> Schema tasarımı, migration ve query optimization rehberi.'
+---
+
+---
 name: database_design
 router_kit: FullStackKit
 description: Schema tasarımı, migration stratejileri, indexing, query optimization ve database best practices.
@@ -140,7 +145,7 @@ SELECT * FROM orders WHERE user_id IN (1, 2, 3);
 SELECT * FROM users WHERE YEAR(created_at) = 2025;
 
 -- ✅ DOĞRU: Range query
-SELECT * FROM users 
+SELECT * FROM users
 WHERE created_at >= '2025-01-01' AND created_at < '2026-01-01';
 ```
 
@@ -150,9 +155,9 @@ WHERE created_at >= '2025-01-01' AND created_at < '2026-01-01';
 SELECT * FROM users ORDER BY id LIMIT 20 OFFSET 40;
 
 -- Cursor-based (büyük veri setleri, önerilen)
-SELECT * FROM users 
-WHERE id > :last_id 
-ORDER BY id 
+SELECT * FROM users
+WHERE id > :last_id
+ORDER BY id
 LIMIT 20;
 ```
 
@@ -209,7 +214,7 @@ DROP TABLE deprecated_table;
 // users collection
 { _id: ObjectId("..."), name: "John" }
 
-// orders collection  
+// orders collection
 { _id: ObjectId("..."), user_id: ObjectId("..."), total: 100 }
 ```
 

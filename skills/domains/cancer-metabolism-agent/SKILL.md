@@ -1,3 +1,8 @@
+---
+name: cancer-metabolism-agent
+description: '---name: cancer-metabolism-agent'
+---
+
 ---name: cancer-metabolism-agent
 description: AI-powered analysis of cancer metabolic reprogramming including Warburg effect, glutamine addiction, lipid metabolism, and metabolic vulnerabilities for therapeutic targeting.
 license: MIT

@@ -1,3 +1,9 @@
+---
+name: yaml-configuration
+description: Master YAML syntax for GitHub Actions workflows, avoiding common pitfalls
+  and special character issues.
+---
+
 # YAML Configuration Skill
 
 ## Purpose

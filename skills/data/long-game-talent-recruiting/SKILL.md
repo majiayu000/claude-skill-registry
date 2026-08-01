@@ -1,3 +1,10 @@
+---
+name: long-game-talent-recruiting
+description: This framework shifts hiring from a reactive "search for a shiny object"
+  to a proactive cultivation of "step-up" talent. It prioritizes long-term rapport
+  and market pulse over transactional outreach.
+---
+
 ```yaml
 ---
 name: long-game-talent-recruiting

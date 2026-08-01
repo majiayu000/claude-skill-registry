@@ -1,5 +1,10 @@
 ---
 name: mine-transcripts
+description: Mine real human conversations from CLI agents for bridge classifier training.
+---
+
+---
+name: mine-transcripts
 description: >
   Mine real human CLI conversation transcripts into labeled training data for
   bridge/classifier improvement.

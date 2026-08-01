@@ -1,5 +1,12 @@
 ---
 name: team-sync
+description: '> [IMPORTANT] Use TaskCreate to break ALL work into small tasks BEFORE
+  starting — including tasks for each file read. This prevents context loss from long
+  files. For simple tasks, AI may ask user whether to skip.'
+---
+
+---
+name: team-sync
 version: 1.0.0
 description: "[Project Management] Generate meeting agendas and facilitate team coordination. Use when preparing standups, sprint reviews, retros, weekly syncs, or team meetings. Triggers on keywords like "standup", "team sync", "meeting agenda", "daily", "sprint review", "retro", "weekly sync"."
 allowed-tools: Read, Write, Grep, Glob, TaskCreate

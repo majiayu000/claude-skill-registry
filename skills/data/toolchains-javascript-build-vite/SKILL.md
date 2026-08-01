@@ -1,3 +1,8 @@
+---
+name: toolchains-javascript-build-vite
+description: ESM-First Architecture
+---
+
 # Vite Build Tool Skill
 
 ---

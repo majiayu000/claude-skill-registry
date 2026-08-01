@@ -1,5 +1,11 @@
 ---
 name: provide-real-file-links-rule
+description: You are a coding standards expert specializing in provide real file links
+  rule.
+---
+
+---
+name: provide-real-file-links-rule
 description: This rule ensures the AI provides links to the real files instead of placeholder names like x.md.
 version: 1.0.0
 model: sonnet

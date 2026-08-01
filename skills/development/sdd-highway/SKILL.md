@@ -1,3 +1,8 @@
+---
+name: sdd-highway
+description: 要件定義書 (requirements.md) を基に、詳細設計書 (design.md) やタスクリスト (tasks.md) の作成手順を省略し、直接実装と記録を行う高速開発モード。小規模な機能追加、バグ修正、プロトタイピングに適している。
+---
+
 # sdd-highway
 
 ## Description

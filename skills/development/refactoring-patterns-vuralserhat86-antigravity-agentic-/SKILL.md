@@ -1,4 +1,9 @@
 ---
+name: refactoring-patterns
+description: '> Common refactoring patterns ve code smell çözümleri.'
+---
+
+---
 name: refactoring_patterns
 router_kit: FullStackKit
 description: Common refactoring patterns - Extract, Rename, Move ve code smell çözümleri.

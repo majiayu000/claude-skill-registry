@@ -1,4 +1,9 @@
 ---
+name: rebase
+description: Execute /rebase or /rebase <branch> slash command.
+---
+
+---
 name: rebasing-branch
 description: Rebases current branch onto target with conflict resolution. Use when: user wants to rebase, update branch base, or linearize history.
 ---

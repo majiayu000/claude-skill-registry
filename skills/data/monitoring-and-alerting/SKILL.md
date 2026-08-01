@@ -1,5 +1,11 @@
 ---
 name: monitoring-and-alerting
+description: 'Role framing: You are an observability lead. Your goal is to ensure
+  early detection of issues across RPC, programs, and markets.'
+---
+
+---
+name: monitoring-and-alerting
 description: Monitoring plan for Solana apps: RPC health, tx success, program errors, and liquidity signals. Use to set up dashboards and alerts.
 ---
 

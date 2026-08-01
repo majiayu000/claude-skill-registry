@@ -1,4 +1,11 @@
 ---
+name: frontend-verification
+description: Verify and test Angular 18 frontend changes using Chrome DevTools MCP.
+  Automatically check console errors, network requests, and visual rendering after
+  implementing tasks or when fixing UI bugs. Use w
+---
+
+---
 name: Frontend Verification & Testing
 description: Verify and test Angular 18 frontend changes using Chrome DevTools MCP. Automatically check console errors, network requests, and visual rendering after implementing tasks or when fixing UI bugs. Use when creating components, debugging visual issues, validating API integration, or ensuring UI requirements are met. File types: .ts, .html, .css, .scss
 allowed-tools: Read, Bash, mcp__chrome-devtools__*

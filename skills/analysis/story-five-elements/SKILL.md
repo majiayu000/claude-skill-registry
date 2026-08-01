@@ -1,5 +1,12 @@
 ---
 name: story-five-elements
+description: 'Analyze five core elements of stories: genre type and creative element
+  extraction, story summary, character biographies, character relationships, major
+  plot points.'
+---
+
+---
+name: story-five-elements
 description: Comprehensively analyze story five elements: genre type, story summary, character biographies, character relationships, major plot points. Suitable for deep story analysis, script adaptation preparation, story development documentation
 category: story-analysis
 version: 2.1.0

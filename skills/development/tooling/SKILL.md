@@ -1,5 +1,10 @@
 ---
 name: tooling
+description: Flutter Tooling - Tools and Commands. Use when working with tooling.
+---
+
+---
+name: tooling
 description: Regra 06: Ferramentas. Use when working with tooling.
 ---
 

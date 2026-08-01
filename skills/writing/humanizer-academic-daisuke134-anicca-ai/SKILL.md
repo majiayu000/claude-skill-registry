@@ -1,4 +1,9 @@
 ---
+name: humanizer-academic
+description: humanizeracademic は、学術・医療領域の英語文を「正確さを維持したまま」自然で読みやすい文体に整えるためのスキル。
+---
+
+---
 name: humanizer_academic
 description: 学術・医療文書を AI らしい硬さから自然な英語へ人間化するスキル。Use when 論文、研究計画書、学会抄録、医療文書、カバーレターの英文を自然化したい場面。キーワード: humanize, academic writing, medical writing, manuscript polish.
 ---

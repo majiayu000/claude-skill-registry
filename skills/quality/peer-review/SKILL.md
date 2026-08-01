@@ -1,4 +1,9 @@
 ---
+name: peer-review
+description: '> Akademik ve teknik peer review metodolojisi rehberi.'
+---
+
+---
 name: peer_review
 router_kit: FullStackKit
 description: Akademik/teknik doküman review, methodology değerlendirme. ⚠️ Doküman/araştırma için kullan. Kod review için → code-review.
@@ -89,10 +94,10 @@ metadata:
 
 ### İyi Feedback
 ```
-✅ "Bu fonksiyon X durumunda hata verebilir. 
+✅ "Bu fonksiyon X durumunda hata verebilir.
     Try-catch eklemeyi düşünebilir misin?"
 
-✅ "Güzel implementasyon! Bir öneri: 
+✅ "Güzel implementasyon! Bir öneri:
     Bu method extract edilse daha okunabilir olur."
 ```
 

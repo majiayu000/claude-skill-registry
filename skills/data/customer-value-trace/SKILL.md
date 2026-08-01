@@ -1,5 +1,10 @@
 ---
 name: customer-value-trace
+description: 'This skill supports three modes: Create, Update, and Find.'
+---
+
+---
+name: customer-value-trace
 description: Create or update a trace validating work connects to customer value
 argument-hint: [decision, feature, or initiative] or [update path/to/trace.md]
 ---

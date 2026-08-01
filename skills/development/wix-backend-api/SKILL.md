@@ -1,5 +1,14 @@
 ---
 name: wix-backend-api
+description: Creates Astro server endpoint extensions for Wix CLI applications. Backend
+  APIs are server-side routes that handle HTTP requests, process data, and return
+  responses. They are automatically discovered and don't require extension registration.
+  Endpoints are generated based on API specifications and are designed to integrate
+  well with frontend applications in fullstack applications.
+---
+
+---
+name: wix-backend-api
 description: Creates Astro server endpoints (API routes) for Wix CLI applications. Generates backend API routes based on API specifications that handle HTTP requests, integrate with Wix Data collections, and provide server-side functionality. Use when building REST API endpoints, data APIs, server-side processing logic, APIs for frontend applications, form submissions, data mutations, or server-side validation. Triggers: API, endpoint, backend, server, route, HTTP, REST, GET, POST, PUT, DELETE, PATCH, server-side, backend logic, data API, CRUD API.
 license: MIT
 compatibility: Requires Wix CLI project with Astro server endpoint support

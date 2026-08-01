@@ -1,5 +1,11 @@
 ---
 name: dependencies-management-rules
+description: You are a coding standards expert specializing in dependencies management
+  rules.
+---
+
+---
+name: dependencies-management-rules
 description: Mandates the usage of UV when installing dependencies to ensure consistency and efficiency across all environments.
 version: 1.0.0
 model: sonnet

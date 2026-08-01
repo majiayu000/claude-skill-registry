@@ -1,5 +1,13 @@
 ---
 name: materials-databases
+description: This skill group covers querying and using computational materials databases
+  for structure retrieval, property screening, and phase diagram construction. It
+  corresponds to VASPKIT menu 07 (tasks 702, 705) and leverages the Materials Project
+  API (mp-api) and computational 2D materials databases.
+---
+
+---
+name: materials-databases
 description: Materials Databases Toolkit (2 sub-skills: 2d-semiconductors, materials-project)
 ---
 

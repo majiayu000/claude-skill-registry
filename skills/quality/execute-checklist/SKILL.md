@@ -1,3 +1,8 @@
+---
+name: execute-checklist
+description: 'name: execute-checklist'
+---
+
 ﻿---
 name: execute-checklist
 description: Use to systematically validate documents, stories, or processes against defined checklists. Ensures quality and completeness.
@@ -15,7 +20,7 @@ Systematically validate documents, stories, or processes against defined checkli
 
 Check ../checklists/ folder for:
 - story-dod-checklist.md - Story definition of done
-- story-draft-checklist.md - Story draft validation  
+- story-draft-checklist.md - Story draft validation
 - sprint-planning-checklist.md - Sprint planning completeness
 - retrospective-checklist.md - Retrospective effectiveness
 - strangler-migration-checklist.md - Legacy migration validation
@@ -151,7 +156,7 @@ For story checklists, include:
 For sprint checklists:
 - Team role assignments complete
 - Velocity goals defined
-- Quality metrics established  
+- Quality metrics established
 - Measurement plan in place
 
 ### 8. Follow-Up Actions

@@ -1,5 +1,12 @@
 ---
 name: websocket-toolkit-googleai-dart
+description: 'Automates updating googleai_dart when Gemini Live API WebSocket schema
+  changes. Fetches latest schema, compares against current, generates changelogs and
+  prioritized implementation plans. Use for: (1)'
+---
+
+---
+name: websocket-toolkit-googleai-dart
 description: Automates updating googleai_dart when Gemini Live API WebSocket schema changes. Fetches latest schema, compares against current, generates changelogs and prioritized implementation plans. Use for: (1) Checking for Live API updates, (2) Generating implementation plans for WebSocket changes, (3) Creating new message types from schema, (4) Syncing local schema with upstream. Triggers: "update live api", "sync websocket", "new messages", "live api changes", "check for live updates", "update live schema", "websocket version", "fetch live schema", "compare live schema", "what changed in live api", "live implementation plan".
 ---
 

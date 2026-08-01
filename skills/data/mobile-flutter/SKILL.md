@@ -1,4 +1,9 @@
 ---
+name: mobile-flutter
+description: '> Flutter/Dart best practices ve performance optimization.'
+---
+
+---
 name: mobile_flutter
 router_kit: FullStackKit
 description: Flutter/Dart best practices, Riverpod state management ve performance optimization.
@@ -62,7 +67,7 @@ final authProvider = StateNotifierProvider<AuthNotifier, AuthState>((ref) {
 
 class AuthNotifier extends StateNotifier<AuthState> {
   AuthNotifier(this._repo) : super(const AuthState());
-  
+
   Future<void> login(String email, String password) async {
     state = state.copyWith(isLoading: true);
     final user = await _repo.login(email, password);

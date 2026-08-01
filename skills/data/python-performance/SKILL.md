@@ -1,5 +1,10 @@
 ---
 name: python-performance
+description: Profiling and optimization patterns for Python code.
+---
+
+---
+name: python-performance
 description: |
 
 Triggers: memory, profiling, optimization, performance, python

@@ -1,4 +1,9 @@
 ---
+name: templates
+description: '{{Clear statement of what this skill accomplishes}}'
+---
+
+---
 name: {{SKILL_NAME}}
 description: {{What it does}} Use when {{trigger conditions}}.
 ---

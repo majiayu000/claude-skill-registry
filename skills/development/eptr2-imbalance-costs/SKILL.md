@@ -1,5 +1,12 @@
 ---
 name: eptr2-imbalance-costs
+description: Calculate and analyze Turkish electricity imbalance costs including KUPST
+  (Kesinleşmiş Üretim Planından Sapma Tutarı/Production Plan Deviation Cost), positive/negative
+  imbalance penalties, and DSG (De
+---
+
+---
+name: eptr2-imbalance-costs
 description: Calculate and analyze Turkish electricity imbalance costs including KUPST (Kesinleşmiş Üretim Planından Sapma Tutarı/Production Plan Deviation Cost), positive/negative imbalance penalties, and DSG (Dengeden Sorumlu Grup) tolerance calculations. Use when asking about imbalance settlement, deviation costs, KUPST, energy surplus/deficit penalties, or imbalance calculations in Turkey. Triggers on: dengesizlik maliyeti, sapma tutarı, KUPST, KÜPST, enerji açığı, enerji fazlası, imbalance penalty.
 allowed-tools: Read, Bash(python:*)
 ---

@@ -1,3 +1,8 @@
+---
+name: crispr-design-agent
+description: '---name: crispr-design-agent'
+---
+
 ---name: crispr-design-agent
 description: A specialized tool for designing efficient and specific gRNA sequences for CRISPR-Cas9 experiments.
 license: MIT

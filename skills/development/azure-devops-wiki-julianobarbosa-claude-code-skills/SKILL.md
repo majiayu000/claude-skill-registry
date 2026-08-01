@@ -1,5 +1,12 @@
 ---
 name: azure-devops-wiki
+description: 'Azure DevOps Wiki management skill. Use when working with Azure DevOps
+  wikis for: (1) Creating and organizing wiki pages - provisioned or code-as-wiki,
+  (2) Markdown formatting - TOC, Mermaid diagrams,'
+---
+
+---
+name: azure-devops-wiki
 description: Azure DevOps Wiki management skill. Use when working with Azure DevOps wikis for: (1) Creating and organizing wiki pages - provisioned or code-as-wiki, (2) Markdown formatting - TOC, Mermaid diagrams, YAML metadata, code blocks, (3) Wiki structure - .order files, subpages, attachments, (4) Best practices - naming conventions, navigation, searchability, (5) CLI operations - az devops wiki commands, (6) Git-based wiki workflows - clone, edit offline, push changes. Supports both provisioned wikis and published code wikis.
 ---
 

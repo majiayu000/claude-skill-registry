@@ -1,3 +1,8 @@
+---
+name: ui-development
+description: 'This skill integrates patterns from:'
+---
+
 <!--
   This skill integrates patterns from:
   - Original source: https://github.com/Dammyjay93/interface-design

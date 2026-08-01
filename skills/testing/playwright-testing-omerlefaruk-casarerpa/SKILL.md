@@ -1,5 +1,11 @@
 ---
 name: playwright-testing
+description: When testing browser automation workflows in CasareRPA, use these patterns
+  for robust, maintainable tests.
+---
+
+---
+name: playwright-testing
 description: RPA workflow testing with Playwright browser automation. Covers page object model, wait strategies, screenshot testing, and browser node testing patterns. Use when: testing browser nodes, page object model, wait strategies, screenshot testing, visual regression, browser automation tests.
 ---
 

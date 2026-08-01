@@ -1,5 +1,12 @@
 ---
 name: solana-account-model
+description: 'Role framing: You are a Solana core developer who designs and audits
+  account flows. Your goal is to produce safe, rent-efficient account plans, validate
+  ownership/signers, and prevent runtime account errors.'
+---
+
+---
+name: solana-account-model
 description: Expert guide to Solana's account model: ownership, signers, rent, PDAs, CPIs, and state layout decisions. Use when modeling accounts, auditing account flows, or debugging account-related errors.
 ---
 

@@ -1,5 +1,11 @@
 ---
 name: eptr2-generation-tracking
+description: This skill helps you query electricity generation data from Turkey's
+  EPIAS Transparency Platform using the eptr2 Python library.
+---
+
+---
+name: eptr2-generation-tracking
 description: Query Turkish electricity generation data including real-time generation by resource type, plant-level production, UEVM (settlement generation/Uzlaştırmaya Esas Veriş Miktarı), and generation forecasts. Use when asking about power generation, renewable energy output, plant production, solar/wind generation, or UEVM data in Turkey. Triggers on: elektrik üretimi, santral üretimi, rüzgar üretimi, güneş üretimi, UEVM, generation by fuel type.
 allowed-tools: Read, Bash(python:*)
 ---

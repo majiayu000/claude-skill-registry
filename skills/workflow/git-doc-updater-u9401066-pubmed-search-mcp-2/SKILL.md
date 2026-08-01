@@ -1,5 +1,10 @@
 ---
 name: git-doc-updater
+description: 在執行 Git commit 之前，自動檢查並更新專案的關鍵文檔，確保文檔與程式碼保持同步。
+---
+
+---
+name: git-doc-updater
 description: Auto-check and update key documentation before Git commits to keep docs in sync with code. Triggers: docs, 文檔, 更新文檔, sync docs, release, 發布.
 ---
 

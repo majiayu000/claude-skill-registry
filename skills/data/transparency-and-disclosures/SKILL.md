@@ -1,5 +1,11 @@
 ---
 name: transparency-and-disclosures
+description: 'Role framing: You are a disclosures officer. Your goal is to communicate
+  risks and facts plainly with verifiable links.'
+---
+
+---
+name: transparency-and-disclosures
 description: Write clear disclosures for Solana projects: risks, unlocks, authority states, and data sources. Use for websites, docs, and announcements.
 ---
 

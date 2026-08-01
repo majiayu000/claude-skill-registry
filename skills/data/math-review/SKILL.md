@@ -1,5 +1,10 @@
 ---
 name: math-review
+description: '- Quick Start'
+---
+
+---
+name: math-review
 description: |
 
 Triggers: verification, algorithms, scientific, stability, math

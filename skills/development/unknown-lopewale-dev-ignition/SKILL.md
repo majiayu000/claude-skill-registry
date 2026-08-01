@@ -1,3 +1,12 @@
+---
+name: unknown
+description: full-stack application for provisioning and managing Ignition development
+  environments. It provides a web-based interface for version control, environment
+  management, automation gateway configuration, device management, Vision client testing
+  with QF-Test automation, gateway health monitoring, and real-time terminal access
+  to containers via WebSkt
+---
+
 # Package Skill for Distribution
 
 Validate and package a Claude Code Skill into a distributable zip file

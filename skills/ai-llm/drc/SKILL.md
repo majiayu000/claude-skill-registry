@@ -1,3 +1,8 @@
+---
+name: drc
+description: Archived skill guidance for drc.
+---
+
 # Skill: Deterministic Reasoning Chains (DRC)
 
 **Version:** 1.0

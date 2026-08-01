@@ -1,5 +1,10 @@
 ---
 name: expert-routing
+description: 领域专家路由。当知识库无法回答用户问题时，根据问题领域查找并通知对应专家。仅在 IM 模式下可用。触发条件：6阶段检索无结果时。
+---
+
+---
+name: expert-routing
 description: Domain expert routing. When the knowledge base cannot answer user questions, find and notify the corresponding expert based on the question domain. Only available in IM mode. Trigger condition: No results in 6-stage retrieval.
 ---
 

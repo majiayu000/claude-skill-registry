@@ -1,5 +1,12 @@
 ---
 name: 1password-direnv-secrets
+description: 'Configures 1Password CLI with direnv for fast secret loading using op-run
+  pattern. Activates for: 1Password + direnv setup, slow secrets (>2 sec), environment
+  variables from 1Password, .env.op files,'
+---
+
+---
+name: 1password-direnv-secrets
 description: Configures 1Password CLI with direnv for fast secret loading using op-run pattern. Activates for: 1Password + direnv setup, slow secrets (>2 sec), environment variables from 1Password, .env.op files, op:// references, or migrating from multiple op-read calls to single op-run.
 ---
 

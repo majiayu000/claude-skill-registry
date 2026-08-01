@@ -1,5 +1,12 @@
 ---
 name: active-record-db
+description: This skill should be used when the user asks about Active Record models,
+  database migrations, queries, associations (belongs_to, has_many, has_one, has_and_belongs_to_many),
+  validations, callbacks, sc
+---
+
+---
+name: active-record-db
 description: This skill should be used when the user asks about Active Record models, database migrations, queries, associations (belongs_to, has_many, has_one, has_and_belongs_to_many), validations, callbacks, scopes, database schema design, SQL optimization, N+1 queries, eager loading, joins, or database-specific features (PostgreSQL, MySQL, SQLite). Also use when discussing ORM patterns, data modeling, or database best practices. Examples:
 
 <example>

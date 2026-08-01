@@ -1,3 +1,9 @@
+---
+name: galaxy-query-rewrite
+description: 'Use this skill when you want an agent to review all benchmark queries
+  and rewrite any that are:'
+---
+
 # Galaxy Query Rewrite + Review (Repo Skill)
 
 Use this skill when you want an agent to **review all benchmark queries** and **rewrite** any that are:

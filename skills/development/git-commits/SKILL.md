@@ -1,5 +1,12 @@
 ---
 name: git-commits
+description: 'Create well-structured git commits. ALWAYS use this skill when committing
+  - even for simple single-file commits. Triggers: "commit", "stage", "add and commit",
+  or after completing any code changes.'
+---
+
+---
+name: git-commits
 description: Create well-structured git commits. ALWAYS use this skill when committing - even for simple single-file commits. Triggers: "commit", "stage", "add and commit", or after completing any code changes.
 ---
 

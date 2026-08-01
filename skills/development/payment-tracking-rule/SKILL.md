@@ -1,5 +1,10 @@
 ---
 name: payment-tracking-rule
+description: You are a coding standards expert specializing in payment tracking rule.
+---
+
+---
+name: payment-tracking-rule
 description: Implements payment status tracking in the Request model.
 version: 1.0.0
 model: sonnet

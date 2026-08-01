@@ -1,3 +1,9 @@
+---
+name: os-dev-knowledge-skill
+description: '/opt/homebrew/Library/Homebrew/cmd/shellenv.sh: line 18: /bin/ps: Operation
+  not permitted'
+---
+
 /opt/homebrew/Library/Homebrew/cmd/shellenv.sh: line 18: /bin/ps: Operation not permitted
 name: os-dev-knowledge-skill
 description: >

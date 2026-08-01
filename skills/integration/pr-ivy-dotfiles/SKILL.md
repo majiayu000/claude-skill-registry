@@ -1,5 +1,10 @@
 ---
 name: pr
+description: Opens a pull request in the browser for final review and submission.
+---
+
+---
+name: pr
 description: Use when creating a pull request. Opens PR in browser for review.
 argument-hint: "[additional context]"
 {{- template "bedrock-model" (dict "tier" "sonnet" "root" .) }}

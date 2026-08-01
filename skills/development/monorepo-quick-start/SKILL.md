@@ -1,3 +1,8 @@
+---
+name: monorepo-quick-start
+description: 'name: monorepo-quick-start'
+---
+
 ﻿---
 name: monorepo-quick-start
 description: BTC ShopFlow Monorepo 快速上手指南，项目结构、应用列表、包依赖、快速定位文件和模块
@@ -142,7 +147,7 @@ BTC ShopFlow 是一个基于 pnpm + Turbo 的 Monorepo 项目，采用微前端�
 | docs-app | 5113 | `pnpm dev:app --app=docs-app` | http://localhost:5113 |
 | home-app | 5114 | `pnpm dev:app --app=home-app` | http://localhost:5114 |
 
-**提示**: 
+**提示**:
 - 主应用入口: http://localhost:5100（通过主应用访问所有子应用）
 - 子应用也可直接通过端口访问: http://localhost:{port}
 - 使用 `dev-workflow` 技能查看详细的启动指南

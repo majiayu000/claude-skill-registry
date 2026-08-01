@@ -1,3 +1,9 @@
+---
+name: addon-system
+description: 'Purpose: Enforce consistent patterns when creating new features/addons
+  with proper feature gates'
+---
+
 # Addon/Feature System Development Guide
 
 **Version:** 1.0

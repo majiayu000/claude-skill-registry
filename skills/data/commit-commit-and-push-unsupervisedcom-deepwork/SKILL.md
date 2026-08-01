@@ -1,4 +1,10 @@
 ---
+name: commit-commit-and-push
+description: Verifies changed files, creates commit, and pushes to remote. Use after
+  linting passes to finalize changes.
+---
+
+---
 name: commit.commit_and_push
 description: "Verifies changed files, creates commit, and pushes to remote. Use after linting passes to finalize changes."user-invocable: false---
 

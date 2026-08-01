@@ -1,3 +1,9 @@
+---
+name: avaamo
+description: 'In case you are unable to receive the expected response from the Dialog
+  skill, you can debug using the following troubleshooting tips:'
+---
+
 # Source: https://docs.avaamo.com/user-guide/how-to/build-skills/create-skill/using-dialog-designer/debug-skill.md
 
 # Debug Dialog skill

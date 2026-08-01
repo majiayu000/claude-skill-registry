@@ -1,5 +1,12 @@
 ---
 name: manage-commands
+description: 'MUST INVOKE this skill when creating custom slash commands, standardizing
+  workflows, or adding reusable operations. Secondary: understanding command structure,
+  learning YAML configuration, or optimizi'
+---
+
+---
+name: manage-commands
 description: MUST INVOKE this skill when creating custom slash commands, standardizing workflows, or adding reusable operations. Secondary: understanding command structure, learning YAML configuration, or optimizing existing commands. Create, audit, and maintain custom slash commands.
 ---
 

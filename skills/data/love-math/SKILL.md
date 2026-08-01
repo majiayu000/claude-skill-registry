@@ -1,4 +1,11 @@
 ---
+name: love-math
+description: '{{SKILLDESCRIPTION}} Use this skill when working with mathematical operations,
+  random number generation, geometric calculations, or any math-related operations
+  in LÖVE games.'
+---
+
+---
 name: {{SKILL_NAME}}
 description: {{SKILL_DESCRIPTION}} Use this skill when working with mathematical operations, random number generation, geometric calculations, or any math-related operations in LÖVE games.
 license: MIT

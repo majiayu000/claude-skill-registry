@@ -1,3 +1,8 @@
+---
+name: mock-detector
+description: '- skillname: mock-detector'
+---
+
 # Mock Detector Skill
 
 ## Metadata
@@ -63,17 +68,17 @@ find . -name "*test*" -prune -o -type f -exec grep -l "mock" {} \;
 class MockDetector:
     FORBIDDEN_PATTERNS = [
         r"class\s+Mock",
-        r"class\s+Fake", 
+        r"class\s+Fake",
         r"def\s+simulate_",
         r"return\s+['\"]success['\"]",
         r"#.*fake|mock|placeholder",
         r"TODO.*implement.*real"
     ]
-    
+
     def scan_file(self, filepath):
         if self.is_test_file(filepath):
             return []  # Mocks allowed in tests
-        
+
         violations = []
         for pattern in self.FORBIDDEN_PATTERNS:
             if re.search(pattern, content, re.IGNORECASE):

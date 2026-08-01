@@ -1,3 +1,9 @@
+---
+name: workflows
+description: 'Purpose: Add workflows or modify an existing skill while maintaining
+  canonical structure and TitleCase naming.'
+---
+
 # UpdateSkill Workflow
 
 **Purpose:** Add workflows or modify an existing skill while maintaining canonical structure and TitleCase naming.

@@ -1,5 +1,12 @@
 ---
 name: numpy-linalg
+description: 'Linear algebra operations in NumPy, including matrix multiplication,
+  SVD, system solving, and least squares fitting. Triggers: linalg, matrix multiplication,
+  SVD, eigenvalues, matrix decomposition, ls'
+---
+
+---
+name: numpy-linalg
 description: Linear algebra operations in NumPy, including matrix multiplication, SVD, system solving, and least squares fitting. Triggers: linalg, matrix multiplication, SVD, eigenvalues, matrix decomposition, lstsq, multi_dot.
 ---
 

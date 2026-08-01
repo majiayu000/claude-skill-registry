@@ -1,3 +1,8 @@
+---
+name: complete-to-org
+description: '> Compiler: skill-compiler/1.0.0'
+---
+
 # Complete to Org Skill
 
 > Version: 1.0.0

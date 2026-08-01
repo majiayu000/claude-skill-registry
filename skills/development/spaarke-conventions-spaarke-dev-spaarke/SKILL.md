@@ -1,3 +1,10 @@
+---
+name: spaarke-conventions
+description: Enforces Spaarke-specific coding conventions when generating or reviewing
+  code. This skill is always applied to ensure consistency across the codebase. It
+  codifies the standards from root CLAUDE.md into actionable rules.
+---
+
 # spaarke-conventions
 
 ---
@@ -127,12 +134,12 @@ public static class DocumentEndpoints
     {
         var group = app.MapGroup("/api/documents")
             .WithTags("Documents");
-        
+
         group.MapGet("/", GetAllDocuments);
         group.MapGet("/{id}", GetDocument);
         group.MapPost("/", CreateDocument);
     }
-    
+
     private static async Task<Results<Ok<DocumentDto>, NotFound>> GetDocument(
         string id,
         DocumentService service)
@@ -193,11 +200,11 @@ public class ValidateDocumentPlugin : IPlugin
     {
         var context = (IPluginExecutionContext)serviceProvider.GetService(typeof(IPluginExecutionContext));
         var target = context.InputParameters["Target"] as Entity;
-        
+
         ValidateRequiredFields(target);
         // That's it - no HTTP calls, no external services
     }
-    
+
     private void ValidateRequiredFields(Entity entity)
     {
         if (!entity.Contains("sp_name"))
@@ -227,7 +234,7 @@ app.MapGet("/api/documents/{id}", async (string id, DocumentService service) =>
     try
     {
         var doc = await service.GetByIdAsync(id);
-        return doc is null 
+        return doc is null
             ? Results.Problem(
                 statusCode: 404,
                 title: "Document not found",

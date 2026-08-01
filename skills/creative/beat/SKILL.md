@@ -1,5 +1,10 @@
 ---
 name: beat
+description: 16ステップビートシーケンサー。スタイルプロンプトから JSON / MIDI / WAV / MP3 を生成する。
+---
+
+---
+name: beat
 description: 16ステップビートを生成 (JSON + ASCII grid + MIDI + WAV)。スタイルプロンプトからビートを作成。トリガー: /beat, ビートを生成, ビートを作って
 allowed-tools: Read, Write, Bash(date:*), Bash(which:*), Bash(mkdir:*), Bash(uv:*), Bash(ffmpeg:*), Bash(cp:*)
 ---

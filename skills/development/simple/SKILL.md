@@ -1,3 +1,9 @@
+---
+name: simple
+description: Generates descriptive commit messages from git diffs. Use when writing
+  commits or reviewing staged changes.
+---
+
 # Simple Skill Template
 
 코드 없이 지침만 제공하는 단순 스킬용

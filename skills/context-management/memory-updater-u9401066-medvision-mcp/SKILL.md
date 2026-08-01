@@ -1,5 +1,10 @@
 ---
 name: memory-updater
+description: 維護和更新專案的 Memory Bank 記憶系統，確保專案狀態在對話間持久化。
+---
+
+---
+name: memory-updater
 description: Update and maintain Memory Bank files (activeContext, progress, decisionLog). Triggers: MB, memory, 記憶, 進度, 更新記憶, update memory, 記錄進度, 更新上下文, sync, 同步, 記下來, note, 筆記, context, 脈絡, 追蹤, track, 狀態, status.
 version: 2.2.0
 category: memory

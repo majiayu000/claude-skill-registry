@@ -1,5 +1,10 @@
 ---
 name: strategic-intent
+description: 'This skill supports three modes: Create, Update, and Find.'
+---
+
+---
+name: strategic-intent
 description: Create or update strategic intent documentation
 argument-hint: [initiative or planning period] or [update path/to/intent.md]
 ---

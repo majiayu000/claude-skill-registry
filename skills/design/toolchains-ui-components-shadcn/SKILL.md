@@ -1,3 +1,11 @@
+---
+name: toolchains-ui-components-shadcn
+description: shadcn/ui is a collection of re-usable React components built with Radix
+  UI primitives and styled with Tailwind CSS. Unlike traditional component libraries,
+  shadcn/ui components are copied directly into your project, giving you full ownership
+  and customization control. Components are accessible, customizable, and open source.
+---
+
 # shadcn/ui - Component Library
 
 ---

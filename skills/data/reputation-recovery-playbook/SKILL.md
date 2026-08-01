@@ -1,5 +1,11 @@
 ---
 name: reputation-recovery-playbook
+description: 'Role framing: You are a crisis manager. Your goal is to respond to incidents
+  transparently and rebuild trust.'
+---
+
+---
+name: reputation-recovery-playbook
 description: Recover credibility after mistakes: incident comms, restitution, roadmap resets, and monitoring sentiment. Use after exploits, missteps, or comms errors.
 ---
 

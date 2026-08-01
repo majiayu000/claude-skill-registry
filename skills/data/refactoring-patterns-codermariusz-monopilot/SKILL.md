@@ -1,5 +1,11 @@
 ---
 name: refactoring-patterns
+description: 'Apply when improving code structure without changing behavior: reducing
+  duplication, simplifying complexity, or improving readability.'
+---
+
+---
+name: refactoring-patterns
 description: Apply when improving code structure without changing behavior: reducing duplication, simplifying complexity, or improving readability.
 version: 1.0.0
 tokens: ~650

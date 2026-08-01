@@ -1,5 +1,12 @@
 ---
 name: openwebf-app-devserver-network
+description: 'Troubleshoot dev server reachability and HMR for WebF apps on real devices
+  (Vite/Webpack): LAN IP vs localhost, 0.0.0.0/--host binding, firewall/ports, and
+  websocket/HMR (ws://) issues. Use when the u'
+---
+
+---
+name: openwebf-app-devserver-network
 description: Troubleshoot dev server reachability and HMR for WebF apps on real devices (Vite/Webpack): LAN IP vs localhost, 0.0.0.0/--host binding, firewall/ports, and websocket/HMR (ws://) issues. Use when the user mentions HMR, websocket, ws://, --host, 0.0.0.0, LAN IP, firewall, or a device that can load HTML but not assets/HMR.
 allowed-tools: Read, Grep, Glob, Bash, Edit, Write, mcp__openwebf__docs_search, mcp__openwebf__docs_get_section, mcp__openwebf__docs_related
 ---

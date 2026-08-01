@@ -1,5 +1,12 @@
 ---
 name: webhooks
+description: Webhooks are HTTP callbacks that notify external systems when events
+  occur. They enable real-time communication between services without polling. This
+  skill covers webhook design patterns, security, r
+---
+
+---
+name: webhooks
 description: Webhook implementation and consumption patterns. Use when implementing webhook endpoints, webhook receivers, webhook senders, HTTP callbacks, event notifications, push notifications, or real-time integrations. Covers signature verification (HMAC, crypto), retry strategies (exponential backoff), idempotency keys, delivery guarantees, webhook security, payload design, and monitoring. Keywords: webhook, webhooks, callback, callbacks, HTTP callback, event notification, push notification, signature verification, HMAC, hmac, crypto signature, retry, exponential backoff, idempotency, idempotent, delivery guarantee, at-least-once delivery, webhook receiver, webhook sender, webhook security, webhook authentication, replay attack, dead letter queue, webhook monitoring.
 ---
 

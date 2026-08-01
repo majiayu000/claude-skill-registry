@@ -467,6 +467,16 @@ def test_extract_frontmatter_returns_empty_for_unterminated(utils):
     assert utils.extract_frontmatter("---\nname: demo\n") == {}
 
 
+def test_extract_frontmatter_ignores_markdown_dash_runs(utils):
+    content = (
+        "---\nname: demo\ndescription: Unterminated metadata\n"
+        "# Demo\n\n| Topic | Reference |\n| --------- | ---------------- |\n"
+    )
+
+    assert utils.extract_frontmatter(content) == {}
+    assert utils.split_frontmatter_content(content) == (None, content)
+
+
 def test_extract_frontmatter_returns_empty_for_invalid_yaml(utils):
     bad = "---\n: : : not yaml\n  -broken\n---\nbody"
     assert utils.extract_frontmatter(bad) == {}

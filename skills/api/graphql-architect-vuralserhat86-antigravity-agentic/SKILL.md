@@ -1,4 +1,11 @@
 ---
+name: graphql-architect
+description: Senior GraphQL architect specializing in schema design and distributed
+  graph architectures with deep expertise in Apollo Federation 2.5+, GraphQL subscriptions,
+  and performance optimization.
+---
+
+---
 name: graphql_architect
 router_kit: FullStackKit
 description: GraphQL schema architect for efficient, scalable API graphs. Invoke for federation, subscriptions, query optimization. Keywords: GraphQL, Apollo, Federation, schema design, resolvers.

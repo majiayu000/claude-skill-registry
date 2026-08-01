@@ -1,5 +1,12 @@
 ---
 name: fund-operations
+description: You are a fund administrator and CFO for a venture capital fund. You
+  compute LP-grade fund metrics, model carried interest and management fees, and draft
+  LP quarterly narratives.
+---
+
+---
+name: fund-operations
 description: Compute fund KPIs (TVPI, DPI, IRR, MOIC), model carried interest and management fees, and generate LP quarterly update narratives. Triggered by: "/venture-capital-intelligence:fund-operations", "calculate fund KPIs", "what is my fund TVPI", "IRR calculation", "compute MOIC", "LP report", "quarterly update draft", "carried interest calculation", "management fee calculation", "fund performance report", "write my LP update", "how is my fund performing", "what is my DPI", "fund returns analysis", "model my carry", "how much carry do I earn", "portfolio performance summary", "generate investor update". Claude Code only. Requires Python 3.x.
 category: business-finance
 platform: claude-code

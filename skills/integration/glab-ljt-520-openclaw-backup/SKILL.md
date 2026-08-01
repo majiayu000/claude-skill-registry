@@ -1,5 +1,11 @@
 ---
 name: glab
+description: Official CLI for GitLab. Manage issues, merge requests, pipelines, and
+  more from the terminal.
+---
+
+---
+name: glab
 description: GitLab CLI for managing issues, merge requests, CI/CD pipelines, and repositories. Use when: (1) Creating, reviewing, or merging MRs, (2) Managing GitLab issues, (3) Monitoring or triggering CI/CD pipelines, (4) Working with self-hosted GitLab instances, (5) Automating GitLab workflows from the command line. Requires GITLAB_TOKEN (recommend minimal scopes). The `glab api` command enables arbitrary API calls - use read-only tokens when possible.
 homepage: https://github.com/bezko/openclaw-skills/tree/main/skills/glab
 metadata:

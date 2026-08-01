@@ -1,5 +1,12 @@
 ---
 name: mac-automation
+description: 'This skill should be used when the user requests Mac automation via
+  AppleScript, including: Mail operations, Reminders/Calendar management, Safari control,
+  Finder operations, system controls (volume,'
+---
+
+---
+name: mac-automation
 description: This skill should be used when the user requests Mac automation via AppleScript, including: Mail operations, Reminders/Calendar management, Safari control, Finder operations, system controls (volume, brightness, notifications, app launching), third-party apps (development tools, task management, media players), or mentions "AppleScript" or "automate Mac".
 author: 7Sageer, Claude
 version: 0.0.5

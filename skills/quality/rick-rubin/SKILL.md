@@ -1,5 +1,11 @@
 ---
 name: rick-rubin
+description: Apply scope discipline and simplicity. Detect scope drift, force clarity,
+  and apply
+---
+
+---
+name: rick-rubin
 description: Enforce scope discipline and simplicity for software agent tasks.
 Use when: (1) scope is drifting or requirements are unclear, (2) implementing
 from an existing plan with minimal deviation, (3) reviewing changes for

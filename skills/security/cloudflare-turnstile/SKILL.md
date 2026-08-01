@@ -1,5 +1,10 @@
 ---
 name: cloudflare-turnstile
+description: 'Status: Production Ready ✅ | Last Verified: 2025-11-26'
+---
+
+---
+name: cloudflare-turnstile
 description: This skill should be used when the user asks to "add turnstile", "implement bot protection", "validate turnstile token", "fix turnstile error", "setup captcha alternative", or encounters error codes 100*/300*/600*, CSP errors, or token validation failures. Provides CAPTCHA-alternative protection for Cloudflare Workers, React, Next.js, and Hono.
 
   Keywords: turnstile, captcha, bot protection, cloudflare challenge, siteverify, recaptcha alternative, spam prevention, form protection, cf-turnstile, turnstile widget, token validation, managed challenge, invisible challenge, @marsidev/react-turnstile, hono turnstile, workers turnstile

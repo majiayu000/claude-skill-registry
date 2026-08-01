@@ -1,5 +1,12 @@
 ---
 name: test-development
+description: Create comprehensive test suites by discovering and adapting to any testing
+  framework, following project test patterns and ensuring robust coverage. Use when
+  writing tests, improving coverage, validat
+---
+
+---
+name: test-development
 description: Create comprehensive test suites by discovering and adapting to any testing framework, following project test patterns and ensuring robust coverage. Use when writing tests, improving coverage, validating functionality. Triggers: 'test', 'coverage', 'unit test', 'integration test', 'E2E', 'spec', '테스트', '커버리지', '단위 테스트', '통합 테스트', '테스트 작성', working with *.test.*, *.spec.*, test/, __tests__/.
 allowed-tools:
   - Read

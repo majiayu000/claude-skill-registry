@@ -1,5 +1,11 @@
 ---
 name: bdd-playbook
+description: 'Guides BDD example-writing: intent-based steps, observable outcomes,
+  and mapping steps to services.'
+---
+
+---
+name: bdd-playbook
 description: Guides BDD example-writing: intent-based steps, observable outcomes, and mapping steps to services.
 allowed-tools: Read, Edit, Grep, Glob
 ---

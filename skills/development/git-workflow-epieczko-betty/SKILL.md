@@ -1,3 +1,10 @@
+---
+name: git-workflow-epieczko-betty
+description: Create GitHub pull requests with auto-generated titles and descriptions
+  based on commit analysis. Analyzes commit history, identifies related issues, and
+  creates well-formatted PRs with proper linking and metadata.
+---
+
 # Name: git.createpr
 
 # Version: 1.0.0

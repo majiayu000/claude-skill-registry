@@ -1,5 +1,10 @@
 ---
 name: coding-standards
+description: This skill provides guidelines and best practices.
+---
+
+---
+name: coding-standards
 description: Regra 03: Padrões de Codificação. Use when reviewing code style or formatting.
 ---
 

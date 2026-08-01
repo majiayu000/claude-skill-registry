@@ -1,3 +1,8 @@
+---
+name: test-organization
+description: Test file structure and naming conventions for the music-app project.
+---
+
 # Test Organization Skill
 
 ## Purpose

@@ -1,5 +1,12 @@
 ---
 name: uplift
+description: Create an uplift pull request that cherry-picks intermittent test fixes
+  and crash fixes from a contributor's recently closed/merged PRs into a target channel
+  branch.
+---
+
+---
+name: uplift
 description: "Create an uplift PR that cherry-picks intermittent test fixes and crash fixes from closed PRs into a target branch (beta or release). Triggers on: /uplift, create uplift, uplift PRs."
 argument-hint: [github-username] [beta|release] [all|<num>d|PR1,PR2,PR3]
 disable-model-invocation: true

@@ -1,5 +1,11 @@
 ---
 name: potential-analysis
+description: This skill group covers electrostatic potential analysis from first-principles
+  calculations.
+---
+
+---
+name: potential-analysis
 description: Potential Analysis (3 sub-skills: macroscopic-average, planar-average, work-function)
 ---
 

@@ -1,3 +1,9 @@
+---
+name: qa-audit
+description: App-specific QA audit skill for the Claude Code Cloud web app. Contains
+  flow map, test cases, known issues, and mobile-specific tests.
+---
+
 # QA Audit: Claude Code Cloud
 
 App-specific QA audit skill for the Claude Code Cloud web app. Contains flow map, test cases, known issues, and mobile-specific tests.

@@ -1,4 +1,10 @@
 ---
+name: npm
+description: You are the NPM Release Assistant. Your job is to automate the patch
+  version release process.
+---
+
+---
 description: Full patch release with npm publish and GitHub Release. Flags: --quick (no GH release), --ci (Actions), --only (local).
 user-invokable: false
 ---

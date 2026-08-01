@@ -1,5 +1,11 @@
 ---
 name: sparta-intent
+description: '> This skill has been absorbed into /memory. All capabilities now live
+  in graphmemory.:'
+---
+
+---
+name: sparta-intent
 deprecated: true
 deprecated_by: "graph_memory.intent + graph_memory.classifiers + graph_memory.ambiguity + graph_memory.hybrid_search"
 deprecated_date: "2026-02-19"

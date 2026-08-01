@@ -1,5 +1,10 @@
 ---
 name: fix-observe
+description: ::GENE{fix-observe|conf:confirmed|scope:global}
+---
+
+---
+name: fix-observe
 description: Step 1 of debugging: observe the symptom carefully before jumping to conclusions.
 version: 5.0.0
 ---

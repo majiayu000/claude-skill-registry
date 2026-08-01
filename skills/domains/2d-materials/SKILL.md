@@ -1,5 +1,13 @@
 ---
 name: 2d-materials
+description: This skill group covers computational tools for building, manipulating,
+  and analyzing 2D (layered) materials. It corresponds to VASPKIT menu 92 (tasks 920-929)
+  and provides workflows for layer manipulation, vacuum control, band edge alignment,
+  and stacking energy calculations.
+---
+
+---
+name: 2d-materials
 description: 2D Materials Toolkit (4 sub-skills: band-edges, layer-manipulation, stacking-energy, vacuum-resize)
 ---
 

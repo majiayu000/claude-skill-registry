@@ -1,3 +1,11 @@
+---
+name: etcd
+description: This document defines the Claude Code skill for troubleshooting etcd
+  issues on two-node OpenShift clusters with fencing topology. When activated, Claude
+  becomes an expert etcd/Pacemaker troubleshooter capable of iterative diagnosis and
+  remediation.
+---
+
 # Etcd Troubleshooting Skill
 
 This document defines the Claude Code skill for troubleshooting etcd issues on two-node OpenShift clusters with fencing topology. When activated, Claude becomes an expert etcd/Pacemaker troubleshooter capable of iterative diagnosis and remediation.

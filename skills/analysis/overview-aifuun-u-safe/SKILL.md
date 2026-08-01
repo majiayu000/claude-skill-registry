@@ -1,5 +1,11 @@
 ---
 name: overview
+description: Display comprehensive project status combining git state, framework analysis,
+  active work, and code quality metrics.
+---
+
+---
+name: overview
 description: |
   Display comprehensive project overview including git state, framework configuration, active work, and code quality metrics.
   TRIGGER when: user wants to see project overview ("show overview", "project overview", "current state", "what's the status").

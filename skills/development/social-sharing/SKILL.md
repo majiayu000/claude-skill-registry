@@ -1,5 +1,10 @@
 ---
 name: social-sharing
+description: 'This skill documents patterns for social sharing in StepLeague, including:'
+---
+
+---
+name: social-sharing
 description: Social sharing patterns for StepLeague - OG image generation, share hooks, WhatsApp optimization, and shareable URLs. Use when implementing sharing features, generating OG images, creating share modals, or working with social platform integrations. Keywords: share, OG image, Open Graph, WhatsApp, social, sharing, useShare, share card, metric.
 compatibility: Antigravity, Claude Code, Cursor
 metadata:

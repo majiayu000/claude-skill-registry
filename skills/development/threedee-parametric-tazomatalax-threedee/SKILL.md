@@ -1,5 +1,12 @@
 ---
 name: threedee-parametric
+description: 'Create and modify 3D parametric models in the threedee design environment.
+  Use when: (1) creating new 3D objects, geometries, or meshes, (2) modifying parameters
+  like dimensions, colors, materials, (3'
+---
+
+---
+name: threedee-parametric
 description: Create and modify 3D parametric models in the threedee design environment. Use when: (1) creating new 3D objects, geometries, or meshes, (2) modifying parameters like dimensions, colors, materials, (3) adding primitives (boxes, spheres, cylinders, torus knots), (4) setting up lighting or camera, (5) exporting models to STL/OBJ/glTF, (6) working with Three.js code in this project. Triggers on requests involving 3D modeling, CAD-like operations, parametric design, or mesh creation.
 ---
 

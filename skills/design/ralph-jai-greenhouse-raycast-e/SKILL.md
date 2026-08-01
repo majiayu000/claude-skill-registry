@@ -1,3 +1,9 @@
+---
+name: ralph
+description: This skill guides users through setting up and running Ralph - an autonomous
+  coding loop that repeatedly feeds prompts to Claude until a project is complete.
+---
+
 # Ralph Playbook Skill
 
 This skill guides users through setting up and running Ralph - an autonomous coding loop that repeatedly feeds prompts to Claude until a project is complete.

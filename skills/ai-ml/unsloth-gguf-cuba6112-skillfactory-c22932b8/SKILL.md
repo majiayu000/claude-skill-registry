@@ -1,5 +1,12 @@
 ---
 name: unsloth-gguf
+description: Unsloth provides a streamlined method to export fine-tuned models directly
+  to GGUF format. It features "Dynamic 2.0" quantization, which protects sensitive
+  weights to maintain high accuracy, and automates the merging of LoRA adapters.
+---
+
+---
+name: unsloth-gguf
 description: Exporting fine-tuned models to GGUF format for deployment in llama.cpp, Ollama, and local serving tools. Triggers: gguf, quantization export, llama.cpp, ollama, save_pretrained_gguf, modelfile.
 ---
 

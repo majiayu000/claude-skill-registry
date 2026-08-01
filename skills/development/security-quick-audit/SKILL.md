@@ -1,3 +1,8 @@
+---
+name: security-quick-audit
+description: 変更差分に対する簡易セキュリティ監査を行い、リスクを洗い出す。
+---
+
 # security-quick-audit
 
 ## Description

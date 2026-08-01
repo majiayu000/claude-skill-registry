@@ -1,5 +1,10 @@
 ---
 name: thermoconductivity
+description: '| Skill | Path | Description |'
+---
+
+---
+name: thermoconductivity
 description: Thermal Conductivity (1 sub-skills: lattice-thermal-conductivity)
 ---
 

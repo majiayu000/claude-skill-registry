@@ -1,5 +1,11 @@
 ---
 name: runner-dev
+description: Development guide for the lemline-runner module. Use when working with
+  messaging (commands/events
+---
+
+---
+name: runner-dev
 description: Development guide for the lemline-runner module. Use when working with messaging (commands/events
 channels),
 database tables (waits, retries, parents, schedules, failures, forks), outbox pattern, CLI commands, configuration,

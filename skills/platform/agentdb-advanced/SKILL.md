@@ -1,3 +1,10 @@
+---
+name: agentdb-advanced
+description: 'Context Cascade - Nested Plugin Architecture for Claude Code Official
+  Claude Code Plugin | Version 3.1.0 | Last updated: 2026-01-09 (see docs/COMPONENT-COUNTS.json
+  for source counts)  Context-saving n'
+---
+
 /*============================================================================*/
 /* AGENTDB-ADVANCED-FEATURES SKILL :: VERILINGUA x VERIX EDITION                      */
 /*============================================================================*/

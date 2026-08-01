@@ -1,3 +1,8 @@
+---
+name: 9-4008-delskill
+description: '|:----    |:-------    |:--- |---|------      |'
+---
+
 ### 删除技能
 `delskill`
 
@@ -14,7 +19,7 @@ function main(self)
         say(self,"删除雷电术")
     else
         addskill(self, 11, 3)
-        say(self,"获得雷电术") 
+        say(self,"获得雷电术")
     end
 end
 ```

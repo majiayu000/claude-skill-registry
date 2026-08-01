@@ -1,3 +1,9 @@
+---
+name: rtc-consensus-synthesis
+description: Execute the Recursive Thought Committee (RTC) protocol by generating
+  and harmonizing inputs from 5 specialized cognitive personas.
+---
+
 # RTC Consensus Synthesis
 
 ## Skill Metadata

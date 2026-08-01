@@ -1,5 +1,10 @@
 ---
 name: voiceover
+description: '|------|------|------|'
+---
+
+---
+name: voiceover
 description: 使用 edge-tts 生成多语言配音（中文/英文）。当需要为视频生成语音旁白、基于时间线同步配音时使用。支持语速调整、多种声音选择和配音验证。
 argument-hint: [配音文案或时间线文件] [语言: zh/en]
 ---

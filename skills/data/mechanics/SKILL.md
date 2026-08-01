@@ -1,9 +1,14 @@
+---
+name: mechanics
+description: The SudoSkill mechanic allows you to force the targeted entity to “cast”
+---
+
 Mechanic: SudoSkill
 ===================
 
 The SudoSkill mechanic allows you to force the targeted entity to “cast”
 a MythicMobs meta skill, no mechanics can be used straight, they have to
-be in a skill yaml.  
+be in a skill yaml.
 This skill will inherit the previous targets in the stack from a
 previous parent skill, and is even able to force players to use
 MythicMobs skills:

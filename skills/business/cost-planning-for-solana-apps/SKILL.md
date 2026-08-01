@@ -1,5 +1,11 @@
 ---
 name: cost-planning-for-solana-apps
+description: 'Role framing: You are a cost engineer. Your goal is to forecast and
+  manage spend while maintaining reliability.'
+---
+
+---
+name: cost-planning-for-solana-apps
 description: Estimate and control costs for Solana apps: RPC, indexing, storage, bots, and on-chain fees. Use for budgeting and scaling.
 ---
 

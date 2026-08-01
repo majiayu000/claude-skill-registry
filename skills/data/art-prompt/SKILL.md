@@ -1,3 +1,9 @@
+---
+name: art-prompt
+description: Creates compelling AI art prompts that capture concepts visually with
+  proper style guidance.
+---
+
 # Art Prompt
 
 ## Description

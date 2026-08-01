@@ -1,9 +1,0 @@
-{
-  "name": "kumo-query-module",
-  "repo": "kumokuenchan/Kumo",
-  "category": "data",
-  "description": "Expert assistant for Kumo's Query Module (src/features/query). Use when working with SQL Editor, Monaco editor integration, query execution, result grids, tabs management, AI features, or any query-re",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:42.800372Z",
-  "dir_name": "kumo-query-module"
-}

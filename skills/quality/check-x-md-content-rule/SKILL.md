@@ -1,5 +1,11 @@
 ---
 name: check-x-md-content-rule
+description: You are a coding standards expert specializing in check x md content
+  rule.
+---
+
+---
+name: check-x-md-content-rule
 description: This rule reminds the AI to check the x.md file for the current file contents and implementations.
 version: 1.0.0
 model: sonnet

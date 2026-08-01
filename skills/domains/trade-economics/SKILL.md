@@ -1,3 +1,8 @@
+---
+name: trade-economics
+description: 'name: trade-economics'
+---
+
 # Trade Economics
 
 name: trade-economics

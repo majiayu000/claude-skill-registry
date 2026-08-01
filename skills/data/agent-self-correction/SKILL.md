@@ -1,4 +1,10 @@
 ---
+name: agent-self-correction
+description: Protocols for the agent to autonomously detect failures, analyze root
+  causes, and attempt recovery strategies before requesting user intervention.
+---
+
+---
 name: Agent Self-Correction
 description: AI agent self-correction mechanisms: error detection, validation loops, recovery strategies, confidence scoring, and iterative refinement
 ---

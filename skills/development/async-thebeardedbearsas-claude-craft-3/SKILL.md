@@ -1,5 +1,10 @@
 ---
 name: async
+description: This skill provides guidelines and best practices.
+---
+
+---
+name: async
 description: Regla 10: Async-First con Symfony Messenger. Use when working with async.
 ---
 

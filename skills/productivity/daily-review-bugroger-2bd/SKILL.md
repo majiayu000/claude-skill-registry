@@ -1,5 +1,12 @@
 ---
 name: daily-review
+description: This skill guides you through an evening review ritual that helps reflect
+  on the day, complete wins and insights sections with personalized coaching, synthesize
+  learnings to semantic notes, and archive the day to Periodic.
+---
+
+---
+name: daily-review
 description: Review and archive a day's work. Guides reflection on wins and insights, synthesizes learnings to semantic notes (People, Projects, Insights, Resources), and archives to Periodic. Accepts an optional target date (default: today).
 argument-hint: "[target-date: today|yesterday|YYYY-MM-DD]"
 metadata:

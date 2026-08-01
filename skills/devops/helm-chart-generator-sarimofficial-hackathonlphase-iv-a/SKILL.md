@@ -1,3 +1,9 @@
+---
+name: helm-chart-generator
+description: 'Purpose: Generate Helm charts for todo app with templated values for
+  different environments (Phase V advanced).'
+---
+
 # Skill: Helm Chart Generator
 
 **Purpose**: Generate Helm charts for todo app with templated values for different environments (Phase V advanced).

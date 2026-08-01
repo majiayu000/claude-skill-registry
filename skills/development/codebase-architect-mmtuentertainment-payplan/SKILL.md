@@ -1,5 +1,10 @@
 ---
 name: codebase-architect
+description: Skill from mmtuentertainment/PayPlan
+---
+
+---
+name: codebase-architect
 description: Analyze and reorganize project file structures, identify dependencies, clean technical debt, and establish architectural patterns. Use when users need to: organize messy codebases, understand file dependencies and import chains, refactor folder hierarchies, identify unused files or circular dependencies, detect cross-file connections, or establish consistent naming conventions and module boundaries for any programming language project.
 ---
 

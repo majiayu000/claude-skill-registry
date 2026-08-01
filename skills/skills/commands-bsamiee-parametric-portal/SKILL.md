@@ -1,4 +1,10 @@
 ---
+name: commands
+description: '>Dictum: Delegated synthesis preserves tokens while conveying complete
+  knowledge.'
+---
+
+---
 description: Load skill knowledge via skill-summarizer agent
 argument-hint: [skill-name] [section?]
 allowed-tools: Task

@@ -1,4 +1,10 @@
 ---
+name: repo-facts
+description: 'Summarize an arbitrary code repo (git or non-git) into a small, high-signal
+  facts packet: languages, build/test tooling clues, notable paths, and size stats.'
+---
+
+---
 name: repo_facts
 description: Summarize an arbitrary code repo (git or non-git) into a small, high-signal facts packet: languages, build/test tooling clues, notable paths, and size stats.
 ---

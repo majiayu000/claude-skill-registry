@@ -1,3 +1,9 @@
+---
+name: db-timeout-handler
+description: 'Purpose: Automatically diagnose and resolve database connection timeout
+  issues for Neon PostgreSQL.'
+---
+
 # Skill: Database Timeout Handler
 
 **Purpose**: Automatically diagnose and resolve database connection timeout issues for Neon PostgreSQL.

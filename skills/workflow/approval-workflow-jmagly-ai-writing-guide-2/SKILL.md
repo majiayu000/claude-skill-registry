@@ -1,3 +1,9 @@
+---
+name: approval-workflow
+description: Multi-stakeholder approval routing with status tracking and escalation.
+  Use when relevant to the task.
+---
+
 # approval-workflow
 
 Multi-stakeholder approval routing with status tracking and escalation.

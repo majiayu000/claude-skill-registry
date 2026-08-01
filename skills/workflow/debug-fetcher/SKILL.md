@@ -1,5 +1,10 @@
 ---
 name: debug-fetcher
+description: 'Automated fetch failure handling that:'
+---
+
+---
+name: debug-fetcher
 description: >
   Automated URL fetch failure handling with strategy exhaustion, memory learning,
   and human-in-the-loop recovery. Use when fetches fail and you need intelligent

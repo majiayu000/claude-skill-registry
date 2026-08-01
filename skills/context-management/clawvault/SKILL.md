@@ -1,5 +1,10 @@
 ---
 name: clawvault
+description: An elephant never forgets. Structured memory for OpenClaw agents.
+---
+
+---
+name: clawvault
 version: "2.5.11"
 description: Agent memory system with memory graph, context profiles, checkpoint/recover, structured storage, semantic search, and observational memory. Use when: storing/searching memories, preventing context death, graph-aware context retrieval, repairing broken sessions. Don't use when: general file I/O.
 author: Versatly

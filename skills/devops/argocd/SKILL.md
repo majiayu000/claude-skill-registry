@@ -1,5 +1,12 @@
 ---
 name: argocd
+description: 'GitOps continuous delivery with Argo CD for Kubernetes deployments.
+  Use when implementing GitOps workflows, application sync, multi-cluster deployments,
+  or progressive delivery. Triggers: argocd, argo'
+---
+
+---
+name: argocd
 description: GitOps continuous delivery with Argo CD for Kubernetes deployments. Use when implementing GitOps workflows, application sync, multi-cluster deployments, or progressive delivery. Triggers: argocd, argo cd, gitops, application, applicationset, sync, app of apps, progressive delivery.
 allowed-tools: Read, Grep, Glob, Edit, Write, Bash
 ---

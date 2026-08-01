@@ -1,3 +1,8 @@
+---
+name: proposals
+description: '--- .claude/skills/git-pushing/SKILL.md (original)'
+---
+
 --- .claude/skills/git-pushing/SKILL.md (original)
 +++ .claude/skills/git-pushing/SKILL.md (proposed)
 @@ -1,6 +1,45 @@

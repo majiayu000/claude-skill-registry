@@ -1,5 +1,11 @@
 ---
 name: tts-train
+description: This skill provides a general, composable workflow for building datasets
+  and training
+---
+
+---
+name: tts-train
 description: >
   Build TTS datasets and train Qwen3-TTS voice models from audiobooks or curated clips.
   Use for voice cloning, dataset prep, WhisperX alignment, Qwen3-TTS training, and inference.

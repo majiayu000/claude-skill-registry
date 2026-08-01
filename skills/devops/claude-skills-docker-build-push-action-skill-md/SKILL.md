@@ -1,4 +1,9 @@
 ---
+name: claude-skills-docker-build-push-action-skill-md
+description: GitHub Actions で Docker イメージをビルド・プッシュするための専門知識を提供します。
+---
+
+---
 name: .claude/skills/docker-build-push-action/SKILL.md
 description: |
     GitHub ActionsにおけるDockerイメージのビルドとプッシュの専門知識。

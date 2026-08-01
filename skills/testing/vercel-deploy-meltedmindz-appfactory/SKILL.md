@@ -1,3 +1,8 @@
+---
+name: vercel-deploy
+description: 'Purpose: One-click deployment to Vercel with transferable ownership.'
+---
+
 # Vercel Deploy
 
 **Purpose:** One-click deployment to Vercel with transferable ownership.

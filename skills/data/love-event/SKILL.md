@@ -1,4 +1,10 @@
 ---
+name: love-event
+description: '{{SKILLDESCRIPTION}} Use this skill when working with event management,
+  event callbacks, event pumping, or any event-related operations in LÖVE games.'
+---
+
+---
 name: {{SKILL_NAME}}
 description: {{SKILL_DESCRIPTION}} Use this skill when working with event management, event callbacks, event pumping, or any event-related operations in LÖVE games.
 license: MIT

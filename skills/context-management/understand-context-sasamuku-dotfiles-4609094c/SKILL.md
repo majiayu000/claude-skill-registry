@@ -1,4 +1,9 @@
 ---
+name: understand-context
+description: Execute /understand-context slash command.
+---
+
+---
 name: understanding-work-context
 description: Analyzes current git status and work in progress. Use when: user wants to understand current state, check work status, or see what's changed.
 ---

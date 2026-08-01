@@ -1,4 +1,9 @@
 ---
+name: ultrathink-core
+description: '> Maksimum düşünme kapasitesi protokolü.'
+---
+
+---
 name: ultrathink_core
 router_kit: FullStackKit
 description: Derin analiz protokolü - meta-planlama, hipotez üretimi ve kritik değerlendirme.

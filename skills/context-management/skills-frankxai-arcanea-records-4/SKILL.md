@@ -1,3 +1,7 @@
+---
+name: skills
+description: Use this skill to Record Information into the Starlight Vaults.
+---
 
 ---
 name: starlight-memex

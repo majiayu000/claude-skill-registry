@@ -1,3 +1,8 @@
+---
+name: apireference
+description: import "mind/core/framework/skill"
+---
+
 # skill
 ----
     import "mind/core/framework/skill"

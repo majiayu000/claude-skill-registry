@@ -1,3 +1,8 @@
+---
+name: advanced-zhangguixu-sourcecode
+description: JavaScript内置的类型检测并非完全可靠
+---
+
 # JavaScript 高级技巧
 
 ## 一、高级函数

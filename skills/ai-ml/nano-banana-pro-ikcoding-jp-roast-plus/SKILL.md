@@ -1,5 +1,10 @@
 ---
 name: nano-banana-pro
+description: Use the bundled script to generate or edit images.
+---
+
+---
+name: nano-banana-pro
 description: Generate or edit images via Gemini 3 Pro Image (Nano Banana Pro). RoastPlusでの用途: コーヒー豆の視覚化、焙煎度合いの比較画像、クイズ用の画像生成、設定画面のアイコン作成等。
 homepage: https://ai.google.dev/
 metadata: {"clawdbot":{"emoji":"🍌","requires":{"bins":["uv"],"env":["GEMINI_API_KEY"]},"primaryEnv":"GEMINI_API_KEY","install":[{"id":"uv-brew","kind":"brew","formula":"uv","bins":["uv"],"label":"Install uv (brew)"}]}}

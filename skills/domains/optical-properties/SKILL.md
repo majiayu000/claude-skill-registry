@@ -1,5 +1,13 @@
 ---
 name: optical-properties
+description: This skill group covers the calculation of optical properties from first
+  principles using Quantum ESPRESSO. The central quantity is the frequency-dependent
+  dielectric function, from which all other optical properties (absorption coefficient,
+  reflectivity, refractive index, optical conductivity) are derived.
+---
+
+---
+name: optical-properties
 description: Optical Properties Calculations (6 sub-skills: absorption-spectrum, dielectric-function, joint-dos, optical-conductivity, slme, transition-dipole)
 ---
 

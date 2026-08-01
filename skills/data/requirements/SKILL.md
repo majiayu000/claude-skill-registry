@@ -1,5 +1,10 @@
 ---
 name: requirements
+description: プロジェクトの要件定義を担当し、開発チームが実装可能な形式で要件をドキュメント化します。
+---
+
+---
+name: requirements
 description: 要件定義エージェント。機能要件、ユースケース、ユーザーストーリー、受入基準を定義。キーワード: 要件定義, requirements, ユースケース, use case, ユーザーストーリー, user story, PRD.
 ---
 

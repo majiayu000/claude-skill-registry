@@ -1,3 +1,8 @@
+---
+name: unknown
+description: 'actor: {{actor}} | mandate: {{mandate}} | bounds: {{bounds}}'
+---
+
 # Planning Skill
 
 planning

@@ -1,4 +1,9 @@
 ---
+name: figma-integration
+description: '> Figma design-to-code workflow rehberi.'
+---
+
+---
 name: figma_integration
 router_kit: FullStackKit
 description: Figma design-to-code, design system extraction ve component generation rehberi.
@@ -22,12 +27,12 @@ metadata:
   /* Colors from Figma */
   --color-primary: #3b82f6;
   --color-secondary: #10b981;
-  
+
   /* Spacing from Figma */
   --spacing-sm: 8px;
   --spacing-md: 16px;
   --spacing-lg: 24px;
-  
+
   /* Typography */
   --font-size-sm: 14px;
   --font-size-base: 16px;

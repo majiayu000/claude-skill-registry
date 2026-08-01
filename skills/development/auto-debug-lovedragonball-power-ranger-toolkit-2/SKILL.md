@@ -1,3 +1,9 @@
+---
+name: auto-debug
+description: ตรวจจับ errors จาก terminal output อัตโนมัติ และแนะนำหรือแก้ไขปัญหาทันที
+  ลดเวลา debug ลงอย่างมาก
+---
+
 # 🐛 Auto Debug Skill
 
 ---
@@ -112,7 +118,7 @@ while error_exists and attempt < MAX_ATTEMPTS:
     fix = generate_fix(error)
     apply_fix(fix)
     result = run_command_again()
-    
+
     if result.success:
         log_solution(error, fix)  # Save for future
         break

@@ -1,5 +1,12 @@
 ---
 name: rocaille-shader
+description: Generate organic, swirling light effects through progressive domain warping
+  - a technique that creates increasingly complex patterns by iteratively displacing
+  coordinates using sinusoidal functions.
+---
+
+---
+name: rocaille-shader
 description: Generate Rocaille-style domain warping shaders with sinusoidal displacement. This skill should be used when building WebGL/GLSL visualizations, shader art, procedural backgrounds, or adding organic swirling light effects. Creates characteristic flowing patterns through iterative coordinate warping using the formula v += sin(v.yx + t) / amplitude.
 argument-hint: [warp-count] [color-mode] [format]
 ---

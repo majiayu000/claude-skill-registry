@@ -1,5 +1,10 @@
 ---
 name: add-hook
+description: '새 커스텀 훅을 생성합니다. TanStack Query 패턴을 적용합니다. 사용법: /add-hook useXxx [--mutation]'
+---
+
+---
+name: add-hook
 description: 새 커스텀 훅을 생성합니다. TanStack Query 패턴을 적용합니다. 사용법: /add-hook useXxx [--mutation]
 ---
 

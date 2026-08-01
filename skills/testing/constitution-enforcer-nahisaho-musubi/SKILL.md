@@ -1,4 +1,11 @@
 ---
+name: constitution-enforcer
+description: 'Validates compliance with 9 Constitutional Articles and Phase -1 Gates
+  before implementation.Trigger terms: constitution, governance, compliance, validation,
+  constitutional compliance,Phase -1 Gates,'
+---
+
+---
 name: Constitution Enforcer
 description: Validate Kubernetes manifests, Helm charts, and Dapr configs against security and governance rules. Use when: (1) Generating K8s manifests, (2) Creating Helm charts, (3) Building Docker configurations, (4) Reviewing Dapr components, (5) After any infrastructure code generation, (6) Before deployment reviews. Validates container security, RBAC policies, resource limits, Dapr standards, and network policies.
 ---

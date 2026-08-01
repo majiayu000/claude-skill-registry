@@ -1,3 +1,8 @@
+---
+name: i18n-manager
+description: 'description: 国际化管理器，获取翻译文件、添加新key、检查冲突、推荐命名'
+---
+
 ﻿---
 name: i18n-manager
 description: 国际化管理器，获取翻译文件、添加新key、检查冲突、推荐命名

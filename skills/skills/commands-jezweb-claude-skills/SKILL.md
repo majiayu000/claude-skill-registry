@@ -1,3 +1,8 @@
+---
+name: commands
+description: Interactive wizard for creating new Claude Code skills from templates.
+---
+
 # Create Skill
 
 Interactive wizard for creating new Claude Code skills from templates.

@@ -1,3 +1,8 @@
+---
+name: sdlc-import
+description: 'Category: Automation'
+---
+
 # SKILL: sdlc-import
 
 **Version:** 2.0.0

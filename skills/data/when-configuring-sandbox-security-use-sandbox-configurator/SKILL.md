@@ -1,3 +1,8 @@
+---
+name: when-configuring-sandbox-security-use-sandbox-configurator
+description: 'skillname: when-configuring-sandbox-security-use-sandbox-configurator'
+---
+
 # Sandbox Security Configuration SOP
 
 ```yaml

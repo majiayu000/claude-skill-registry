@@ -1,5 +1,12 @@
 ---
 name: refine
+description: '> [IMPORTANT] Use TaskCreate to break ALL work into small tasks BEFORE
+  starting — including tasks for each file read. This prevents context loss from long
+  files. For simple tasks, AI MUST ask user whether to skip.'
+---
+
+---
+name: refine
 version: 2.2.0
 description: "[Project Management] Transform ideas into Product Backlog Items using BA best practices, hypothesis validation, and domain research. Use when converting ideas to PBIs, validating problem hypotheses, adding acceptance criteria, or refining requirements. Triggers on "create pbi", "refine idea", "convert to pbi", "acceptance criteria", "make actionable", "validate hypothesis"."
 allowed-tools: Read, Write, Edit, Grep, Glob, TaskCreate, WebSearch, AskUserQuestion

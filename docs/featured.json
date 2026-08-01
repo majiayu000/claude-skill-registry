@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-01T12:21:54.891931Z",
+  "updated_at": "2026-08-01T19:11:23.074403Z",
   "count": 100,
   "skills": [
     {
@@ -879,11 +879,11 @@
       "source": "github.com/medusajs/medusa",
       "id": "nmx8ot7gcogpwrjjeuhu-bj7z3kq29dsiw0suzwx9lm",
       "owner": "medusajs",
-      "quality_grade": "blocked",
-      "quality_score": 50,
-      "security_status": "failed",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -901,11 +901,11 @@
       "source": "github.com/medusajs/medusa",
       "id": "gz1f7kvrbm4zri7p-nueiunp74l_nqugbn4tovpljny",
       "owner": "medusajs",
-      "quality_grade": "blocked",
-      "quality_score": 50,
-      "security_status": "failed",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -923,11 +923,11 @@
       "source": "github.com/medusajs/medusa",
       "id": "s7ronku06fiozttfc6wld2lb8rxtcubopahwtschzm8",
       "owner": "medusajs",
-      "quality_grade": "blocked",
-      "quality_score": 50,
-      "security_status": "failed",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -945,11 +945,11 @@
       "source": "github.com/medusajs/medusa",
       "id": "1v1lo4pclvuy0guo5uaj17qugueijxdayijbzxyrhck",
       "owner": "medusajs",
-      "quality_grade": "blocked",
-      "quality_score": 50,
-      "security_status": "failed",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -967,11 +967,11 @@
       "source": "github.com/medusajs/medusa",
       "id": "fukdmufadluja6dn3s-pw8qeb5cdopw--haj2fel9sg",
       "owner": "medusajs",
-      "quality_grade": "blocked",
-      "quality_score": 50,
-      "security_status": "failed",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -989,11 +989,11 @@
       "source": "github.com/medusajs/medusa",
       "id": "5vdltzlq4_akd0l6ueaggy4-czrsc3zfgn-qv26bfmq",
       "owner": "medusajs",
-      "quality_grade": "blocked",
-      "quality_score": 50,
-      "security_status": "failed",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -1011,11 +1011,11 @@
       "source": "github.com/medusajs/medusa",
       "id": "awmkqbycbycokymgwvd0ysogvx5rskip4llqdrnpl1s",
       "owner": "medusajs",
-      "quality_grade": "blocked",
-      "quality_score": 50,
-      "security_status": "failed",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -1258,11 +1258,11 @@
       "source": "github.com/haizlin/fe-interview",
       "id": "2dhvdqfiplegkvlqas_iz7f245rn2tbl7kwltsux6om",
       "owner": "haizlin",
-      "quality_grade": "blocked",
-      "quality_score": 50,
-      "security_status": "failed",
+      "quality_grade": "A",
+      "quality_score": 74,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": []
     },
     {
@@ -1344,11 +1344,11 @@
       "source": "github.com/affaan-m/everything-claude-code",
       "id": "hihulrvbliljsynxgq758rrftqqzn3fdfhekgoawnki",
       "owner": "affaan-m",
-      "quality_grade": "blocked",
-      "quality_score": 50,
-      "security_status": "failed",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -1388,11 +1388,11 @@
       "source": "github.com/affaan-m/everything-claude-code",
       "id": "odxwdzudqorgxlchoe-g1kk_l5plbskpdjamjdpznhu",
       "owner": "affaan-m",
-      "quality_grade": "blocked",
-      "quality_score": 50,
-      "security_status": "failed",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -1757,11 +1757,11 @@
       "source": "github.com/yamadashy/repomix",
       "id": "xzkbrvflaguukholm2t_rwdusf8emkarb3obo5hz6ec",
       "owner": "yamadashy",
-      "quality_grade": "blocked",
-      "quality_score": 50,
-      "security_status": "failed",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": []
     },
     {
@@ -1777,11 +1777,11 @@
       "source": "GitHub Code Search Results",
       "id": "ipyp4bi7f-wleibossnxm0ykr_ohvzarhcqu9shcndw",
       "owner": "yamadashy",
-      "quality_grade": "blocked",
-      "quality_score": 50,
-      "security_status": "failed",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code",
         "Gemini CLI"
@@ -1800,11 +1800,11 @@
       "source": "GitHub Code Search Results",
       "id": "cvpkm6vgtfftungiac8bmxqnh7-dqec29o22-4e80ha",
       "owner": "yamadashy",
-      "quality_grade": "blocked",
-      "quality_score": 50,
-      "security_status": "failed",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code",
         "Gemini CLI"
@@ -1823,11 +1823,11 @@
       "source": "GitHub Code Search Results",
       "id": "jmheuwpzqmz9j4leltb7atri5zmbs9nj9ds9f9qduou",
       "owner": "yamadashy",
-      "quality_grade": "blocked",
-      "quality_score": 50,
-      "security_status": "failed",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code",
         "Gemini CLI"
@@ -1846,11 +1846,11 @@
       "source": "github.com/yamadashy/repomix",
       "id": "eb1eja0txgioi-4ejn58smvjwvlsor53dlydmirqgjy",
       "owner": "yamadashy",
-      "quality_grade": "blocked",
-      "quality_score": 50,
-      "security_status": "failed",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": []
     },
     {
@@ -1866,11 +1866,11 @@
       "source": "GitHub Code Search Results",
       "id": "yuespo7kw0byldexatt5triqmd7cgyldg5hfox5bgyg",
       "owner": "yamadashy",
-      "quality_grade": "blocked",
-      "quality_score": 50,
-      "security_status": "failed",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code",
         "Gemini CLI"
@@ -1889,11 +1889,11 @@
       "source": "GitHub Code Search Results",
       "id": "jlo-uqtqeeud2gqig4zayluenilvw2czwx_edl8igv0",
       "owner": "yamadashy",
-      "quality_grade": "blocked",
-      "quality_score": 50,
-      "security_status": "failed",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code",
         "Gemini CLI"
@@ -1912,11 +1912,11 @@
       "source": "GitHub Code Search Results",
       "id": "l0crg0exvmmyidi_iel8pczwajc8kw0uobodqwj76j0",
       "owner": "yamadashy",
-      "quality_grade": "blocked",
-      "quality_score": 50,
-      "security_status": "failed",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code",
         "Gemini CLI"
@@ -1935,11 +1935,11 @@
       "source": "GitHub Code Search Results",
       "id": "s8-wmeegr58sgf5rollb1tvmmdiigjac9qj9tecm868",
       "owner": "yamadashy",
-      "quality_grade": "blocked",
-      "quality_score": 50,
-      "security_status": "failed",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code",
         "Gemini CLI"
@@ -1958,11 +1958,11 @@
       "source": "GitHub Code Search Results",
       "id": "uygto199rjalebxcd8xelskctzokyxocuvaol78tfie",
       "owner": "yamadashy",
-      "quality_grade": "blocked",
-      "quality_score": 50,
-      "security_status": "failed",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code",
         "Gemini CLI"
@@ -1981,11 +1981,11 @@
       "source": "GitHub Code Search Results",
       "id": "9oqxpdkmuxlykekzpfnzfyqziryfsyhc2db6c0rdq3i",
       "owner": "yamadashy",
-      "quality_grade": "blocked",
-      "quality_score": 50,
-      "security_status": "failed",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code",
         "Gemini CLI"
@@ -2004,11 +2004,11 @@
       "source": "GitHub Code Search Results",
       "id": "jey01sb90dneqwekhffswk_rwkxc1arkn4czza7tw9g",
       "owner": "yamadashy",
-      "quality_grade": "blocked",
-      "quality_score": 50,
-      "security_status": "failed",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code",
         "Gemini CLI"
@@ -2027,11 +2027,11 @@
       "source": "GitHub Code Search Results",
       "id": "_asttoejmmrnf6s5ducbzscp0oyr31c0rituoxkpc_k",
       "owner": "yamadashy",
-      "quality_grade": "blocked",
-      "quality_score": 50,
-      "security_status": "failed",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code",
         "Gemini CLI"
@@ -2050,11 +2050,11 @@
       "source": "GitHub Code Search Results",
       "id": "dga6ffqyb68ieuymvuz5wmmkh-by20luwyv9sdzvmmk",
       "owner": "yamadashy",
-      "quality_grade": "blocked",
-      "quality_score": 50,
-      "security_status": "failed",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code",
         "Gemini CLI"

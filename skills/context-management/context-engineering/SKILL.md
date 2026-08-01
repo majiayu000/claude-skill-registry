@@ -1,4 +1,13 @@
 ---
+name: context-engineering
+description: Context optimization extends the effective capacity of limited context
+  windows through strategic compression, masking, caching, and partitioning. The goal
+  is not to magically increase context windows but to make better use of available
+  capacity. Effective optimization can double or triple effective context capacity
+  without requiring larger models or longer contexts.
+---
+
+---
 name: context_engineering
 router_kit: AIKit
 description: Apply optimization techniques to extend effective context capacity. Use when context limits constrain agent performance, when optimizing for cost or latency, or when implementing long-running agent systems.

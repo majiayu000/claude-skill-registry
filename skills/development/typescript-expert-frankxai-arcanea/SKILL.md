@@ -1,4 +1,10 @@
 ---
+name: typescript-expert
+description: '> "Lyria guards the Sight Gate at 639 Hz — Intuition, vision. TypeScript''s
+  type system is the Sight Gate of code: it reveals what cannot be seen at runtime."'
+---
+
+---
 name: arcanea-typescript-expert
 description: TypeScript strict mode expert patterns for the Arcanea stack. Use when writing TypeScript types, resolving type errors, designing type-safe APIs, working with generics, discriminated unions, Zod validation, or any TypeScript-heavy work. Triggers on: TypeScript, type error, any, generic, interface, type, discriminated union, Zod, type safety, strict mode, infer. Stack: TypeScript 5.5+ strict mode, Next.js 16, Supabase typed client, Vercel AI SDK 6, Zod.
 license: MIT
@@ -154,14 +160,14 @@ type UnlockGateInput = z.infer<typeof UnlockGateSchema>
 export async function POST(req: NextRequest) {
   const body = await req.json()
   const parsed = UnlockGateSchema.safeParse(body)
-  
+
   if (!parsed.success) {
     return NextResponse.json(
       { error: 'Invalid request', details: parsed.error.flatten() },
       { status: 400 }
     )
   }
-  
+
   const { gate, score } = parsed.data // fully typed
   // ...
 }

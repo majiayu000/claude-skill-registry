@@ -1,5 +1,10 @@
 ---
 name: aggregates
+description: This skill provides guidelines and best practices.
+---
+
+---
+name: aggregates
 description: Regel 05: Aggregates und Aggregate Roots. Use when implementing DDD patterns.
 ---
 

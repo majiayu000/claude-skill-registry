@@ -1,3 +1,9 @@
+---
+name: epic-walkthrough
+description: Generate comprehensive walkthrough documentation and trigger self-improvement
+  for epic workflows.
+---
+
 # Epic Walkthrough Skill
 
 Generate comprehensive walkthrough documentation and trigger self-improvement for epic workflows.

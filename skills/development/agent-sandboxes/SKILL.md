@@ -1,4 +1,11 @@
 ---
+name: agent-sandboxes
+description: 'Operate E2B agent sandboxes using the CLI. Use when user needs to run
+  code in isolation, test packages, execute commands safely, or work with binary files
+  in a sandbox environment. Keywords: sandbox,'
+---
+
+---
 name: Agent Sandboxes
 description: Operate E2B agent sandboxes using the CLI. Use when user needs to run code in isolation, test packages, execute commands safely, or work with binary files in a sandbox environment. Keywords: sandbox, e2b, isolated environment, run code, test code, safe execution.
 ---

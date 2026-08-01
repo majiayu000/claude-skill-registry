@@ -1,5 +1,12 @@
 ---
 name: stackit
+description: Manage stacked Git branches with Stackit. Use when creating/managing
+  stacked branches, submitting PRs for branch stacks, navigating branch trees, rebasing
+  stacks, syncing with main/trunk, troubleshoot
+---
+
+---
+name: stackit
 description: Manage stacked Git branches with Stackit. Use when creating/managing stacked branches, submitting PRs for branch stacks, navigating branch trees, rebasing stacks, syncing with main/trunk, troubleshooting stack issues, absorbing changes, resolving rebase conflicts, or any workflow involving dependent Git branches. Keywords stackit, stacked changes, stacked PRs, branch stack, restack, absorb, git stack.
 allowed-tools: Bash(stackit:*), Bash(git:*), Bash(~/.claude/skills/stackit/scripts/*:*), Read, Grep, Glob
 version: {{VERSION}}

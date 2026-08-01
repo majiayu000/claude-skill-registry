@@ -1,3 +1,9 @@
+---
+name: flutter-agent
+description: 'Purpose: Flutter app build, test, deployment automation, and code generation
+  workflows for BooksTrack'
+---
+
 # Flutter Build & Deploy Agent
 
 **Purpose:** Flutter app build, test, deployment automation, and code generation workflows for BooksTrack

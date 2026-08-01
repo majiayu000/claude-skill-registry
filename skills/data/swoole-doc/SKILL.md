@@ -1,4 +1,9 @@
-## swoole_process::kill 
+---
+name: swoole-doc
+description: int swooleprocess::kill($pid, $signo = SIGTERM);
+---
+
+## swoole_process::kill
 向进程发送信号
 
 ~~~

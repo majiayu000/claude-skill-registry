@@ -1,5 +1,10 @@
 ---
 name: tooling
+description: This skill provides guidelines and best practices.
+---
+
+---
+name: tooling
 description: Rule 06: Tooling. Use when working with tooling.
 ---
 

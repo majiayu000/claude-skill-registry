@@ -1,4 +1,9 @@
 ---
+name: coderabbit
+description: Archived skill guidance for coderabbit.
+---
+
+---
 
 name: coderabbit
 description: "CodeRabbit AI code review. Covers CLI, configuration, triage workflow. Keywords: @coderabbitai, code review."

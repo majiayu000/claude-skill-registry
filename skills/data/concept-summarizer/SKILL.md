@@ -1,3 +1,9 @@
+---
+name: concept-summarizer
+description: 'description: Create conceptsummary.md as the invariant semantic anchor
+  for an idea (writes to ideas/<IDEAID>/runs and updates ideas/<IDEAID>/latest)'
+---
+
 ﻿---
 name: Summarize
 description: Create concept_summary.md as the invariant semantic anchor for an idea (writes to ideas/<IDEA_ID>/runs and updates ideas/<IDEA_ID>/latest)

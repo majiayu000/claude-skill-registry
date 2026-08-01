@@ -1,3 +1,8 @@
+---
+name: ansible-awx
+description: '| ID | cicd-ansible-awx |'
+---
+
 # 🔧 Skill: Ansible AWX Automation
 
 ## 📋 Metadata

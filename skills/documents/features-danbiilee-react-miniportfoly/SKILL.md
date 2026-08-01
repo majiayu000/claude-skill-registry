@@ -1,14 +1,19 @@
-# D3.js 
+---
+name: features
+description: import React, { useRef, useEffect } from 'react';
+---
 
-## 기술 
+# D3.js
+
+## 기술
 
 ```js
 import React, { useRef, useEffect } from 'react';
 import * as d3 from 'd3';
 
 const Skills = ({ title }) => {
-  const widthRef = useRef(); 
-  const svgRef = useRef(); 
+  const widthRef = useRef();
+  const svgRef = useRef();
 
   const skillData = [
     {
@@ -58,11 +63,11 @@ const Skills = ({ title }) => {
     const chart = svg.append('g').attr('transform', `translate(40, 20)`);
 
     const margin = 50;
-    // width: 렌더링될 때의 화면 너비에 맞춤 
-    const width = widthRef.current.clientWidth - margin * 2; 
+    // width: 렌더링될 때의 화면 너비에 맞춤
+    const width = widthRef.current.clientWidth - margin * 2;
     const height = 350 - margin * 2;
 
-    // scaleLinear() 사용 
+    // scaleLinear() 사용
     const yScale = d3.scaleLinear().range([height, 0]).domain([0, 100]);
     const xScale = d3
       .scaleBand()
@@ -161,4 +166,4 @@ const Skills = ({ title }) => {
 };
 ```
 
- 
+

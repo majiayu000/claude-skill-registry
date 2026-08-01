@@ -1,3 +1,8 @@
+---
+name: webflow-publish
+description: Publish blog posts with images to the OpenEd Webflow CMS via API.
+---
+
 # Webflow Publish Skill
 
 Publish blog posts with images to the OpenEd Webflow CMS via API.

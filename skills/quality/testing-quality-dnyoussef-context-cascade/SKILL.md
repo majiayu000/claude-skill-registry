@@ -1,3 +1,8 @@
+---
+name: testing-quality
+description: /============================================================================/
+---
+
 /*============================================================================*/
 /* TESTING-QUALITY SKILL :: VERILINGUA x VERIX EDITION                      */
 /*============================================================================*/
@@ -207,7 +212,7 @@ In practice:
 - Flaky test rate must be <1% with any non-deterministic tests immediately investigated and fixed
 - Test isolation prevents interdependence where one test's side effects affect another's results
 - Reproducible test environments (seeded random data, controlled timing) eliminate environmental variability
-- Test execution monitoring tracks consistency over multiple 
+- Test execution monitoring tracks consistency over multiple
 
 /*----------------------------------------------------------------------------*/
 /* S4 SUCCESS CRITERIA                                                         */

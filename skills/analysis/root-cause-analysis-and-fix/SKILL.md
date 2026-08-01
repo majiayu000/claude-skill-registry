@@ -1,5 +1,11 @@
 ---
 name: root-cause-analysis-and-fix
+description: This skill is for debugging failed Bauplan runs. It assumes a failure
+  has already occurred and prioritizes evidence collection before any change.
+---
+
+---
+name: root-cause-analysis-and-fix
 description: “Inspect a failed Bauplan pipeline run on a dev branch, reconstruct the frozen data state, collect evidence, propose a minimal code fix using Git, and rerun deterministically where possible.”
 allowed-tools:
 	•	Bash(bauplan:*)

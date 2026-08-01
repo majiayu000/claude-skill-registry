@@ -1,4 +1,11 @@
 ---
+name: skills
+description: Complete C/C++ development reference combining local documentation with
+  live examples from cppcheatsheet.com, covering everything from basic syntax to advanced
+  GPU programming and system-level development.
+---
+
+---
 name: cpp
 description: Comprehensive C/C++ programming reference covering everything from C11-C23 and C++11-C++23, system programming, CUDA GPU computing, debugging tools, Rust interop, and advanced topics. Use for: C/C++ questions, modern language features, RAII/memory management, templates/generics, CUDA programming, system programming, debugging/profiling, performance optimization, cross-platform development, build systems, assembly, shell scripting, and any C/C++/CUDA development tasks.
 ---

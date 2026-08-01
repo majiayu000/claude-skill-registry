@@ -1,3 +1,8 @@
+---
+name: web-design-guidelines-eburairu-squat-tracker
+description: Vercel Web Interface Guidelines に準拠しているか UI コードをレビューする。
+---
+
 # web-design-guidelines
 
 ## Description

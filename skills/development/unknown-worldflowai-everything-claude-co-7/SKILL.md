@@ -1,3 +1,9 @@
+---
+name: unknown
+description: Claude Code toolkit - agents, commands, skills, rules, and hooks for
+  productive AI-assisted development
+---
+
 # Project Guidelines Skill (Example)
 
 This is an example of a project-specific skill. Use this as a template for your own projects.

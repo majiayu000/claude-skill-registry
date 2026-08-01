@@ -1,3 +1,8 @@
+---
+name: ovhcloud
+description: '| ID | cicd-ovhcloud |'
+---
+
 # Skill: OVHCloud Backend Deployment
 
 ## Metadata

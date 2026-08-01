@@ -1,4 +1,9 @@
 ---
+name: security-audit
+description: 'I''ll perform a comprehensive security audit for: $ARGUMENTS'
+---
+
+---
 skill: security-audit
 description: Perform comprehensive security vulnerability scan: $ARGUMENTS (feature name)
 location: project

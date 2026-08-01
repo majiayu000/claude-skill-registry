@@ -1,3 +1,8 @@
+---
+name: pr-review-checklist
+description: Pull Request のレビュー観点を標準化し、見落としを防ぐためのチェックリストを提供する。
+---
+
 # pr-review-checklist
 
 ## Description

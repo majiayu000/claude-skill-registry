@@ -1,3 +1,8 @@
+---
+name: rollback-procedures
+description: '> Skill Purpose: Deployment failure recovery and rollback strategies'
+---
+
 # Rollback Procedures
 
 > **Skill Purpose:** Deployment failure recovery and rollback strategies
@@ -60,19 +65,19 @@ module.exports = {
   rollback: {
     // Maximum number of previous deployments to keep
     maxPreviousDeployments: 10,
-    
+
     // Time window for automatic rollback (in minutes)
     autoRollbackWindow: 15,
-    
+
     // Error rate threshold for automatic rollback
     errorRateThreshold: 0.1, // 10%
-    
+
     // Response time threshold for automatic rollback (in ms)
     responseTimeThreshold: 5000,
-    
+
     // Health check failures threshold
     healthCheckThreshold: 3,
-    
+
     // Rollback strategies
     strategies: {
       'immediate': {
@@ -92,7 +97,7 @@ module.exports = {
       },
     },
   },
-  
+
   // Monitoring settings
   monitoring: {
     // Health check endpoints
@@ -101,7 +106,7 @@ module.exports = {
       '/api/health',
       '/api/status',
     ],
-    
+
     // Metrics to monitor
     metrics: [
       'error_rate',
@@ -110,7 +115,7 @@ module.exports = {
       'cpu_usage',
       'memory_usage',
     ],
-    
+
     // Alerting thresholds
     alerts: {
       error_rate: {
@@ -126,7 +131,7 @@ module.exports = {
       },
     },
   },
-  
+
   // Deployment platforms
   platforms: {
     vercel: {
@@ -145,7 +150,7 @@ module.exports = {
       promoteCommand: 'aws deploy push',
     },
   },
-  
+
   // Notification settings
   notifications: {
     channels: ['slack', 'email', 'webhook'],
@@ -208,23 +213,23 @@ class RollbackManager {
 
   async getDeploymentHistory() {
     colorLog('📋 Getting deployment history...', 'blue');
-    
+
     try {
       const platformConfig = config.platforms[this.platform];
       const output = execSync(platformConfig.listCommand, { encoding: 'utf8' });
-      
+
       // Parse deployment history based on platform
       let deployments = [];
-      
+
       if (this.platform === 'vercel') {
         deployments = this.parseVercelDeployments(output);
       } else if (this.platform === 'netlify') {
         deployments = this.parseNetlifyDeployments(output);
       }
-      
+
       this.deploymentHistory = deployments;
       this.currentDeployment = deployments[0];
-      
+
       colorLog(`✅ Found ${deployments.length} deployments`, 'green');
       return deployments;
     } catch (error) {
@@ -283,28 +288,28 @@ class RollbackManager {
 
   async checkDeploymentHealth(deployment) {
     colorLog(`🏥 Checking health of deployment: ${deployment.url}`, 'blue');
-    
+
     const healthChecks = config.monitoring.healthEndpoints;
     const results = [];
-    
+
     for (const endpoint of healthChecks) {
       try {
         const url = `${deployment.url}${endpoint}`;
-        const response = await fetch(url, { 
+        const response = await fetch(url, {
           method: 'GET',
           timeout: 5000,
         });
-        
+
         const isHealthy = response.ok;
         const responseTime = Date.now() - startTime;
-        
+
         results.push({
           endpoint,
           healthy: isHealthy,
           responseTime,
           status: response.status,
         });
-        
+
         if (!isHealthy) {
           colorLog(`❌ Health check failed: ${endpoint} (${response.status})`, 'red');
         } else {
@@ -319,10 +324,10 @@ class RollbackManager {
         colorLog(`❌ Health check error: ${endpoint} - ${error.message}`, 'red');
       }
     }
-    
+
     const failedChecks = results.filter(r => !r.healthy);
     const isHealthy = failedChecks.length < config.monitoring.alerts.health_check.failure_threshold;
-    
+
     return {
       healthy: isHealthy,
       results,
@@ -332,7 +337,7 @@ class RollbackManager {
 
   async getDeploymentMetrics(deployment) {
     colorLog(`📊 Getting metrics for deployment: ${deployment.url}`, 'blue');
-    
+
     // This would typically connect to your monitoring system
     // For now, we'll simulate metrics
     const metrics = {
@@ -342,43 +347,43 @@ class RollbackManager {
       cpu_usage: Math.random() * 100, // 0-100%
       memory_usage: Math.random() * 100, // 0-100%
     };
-    
+
     colorLog('📈 Current Metrics:', 'cyan');
     colorLog(`   Error Rate: ${(metrics.error_rate * 100).toFixed(2)}%`, 'cyan');
     colorLog(`   Response Time: ${metrics.response_time.toFixed(0)}ms`, 'cyan');
     colorLog(`   Throughput: ${metrics.throughput.toFixed(0)} req/s`, 'cyan');
-    
+
     return metrics;
   }
 
   shouldRollback(health, metrics) {
     const thresholds = config.rollback;
-    
+
     // Check health check failures
     if (health.failedChecks >= thresholds.healthCheckThreshold) {
       return { shouldRollback: true, reason: 'health_check_failure', severity: 'high' };
     }
-    
+
     // Check error rate
     if (metrics.error_rate >= thresholds.errorRateThreshold) {
       return { shouldRollback: true, reason: 'high_error_rate', severity: 'medium' };
     }
-    
+
     // Check response time
     if (metrics.response_time >= thresholds.responseTimeThreshold) {
       return { shouldRollback: true, reason: 'slow_response', severity: 'medium' };
     }
-    
+
     return { shouldRollback: false, reason: null, severity: null };
   }
 
   async executeRollback(targetDeployment, strategy = 'immediate') {
     colorLog(`🔄 Executing rollback to: ${targetDeployment.url}`, 'magenta');
     colorLog(`Strategy: ${strategy}`, 'cyan');
-    
+
     try {
       const platformConfig = config.platforms[this.platform];
-      
+
       switch (this.platform) {
         case 'vercel':
           return await this.executeVercelRollback(targetDeployment, platformConfig, strategy);
@@ -400,7 +405,7 @@ class RollbackManager {
         const command = `${platformConfig.promoteCommand} ${targetDeployment.id}`;
         colorLog(`🚀 Running: ${command}`, 'blue');
         execSync(command, { stdio: 'inherit' });
-        
+
         colorLog('✅ Vercel rollback completed', 'green');
         return { success: true, deployment: targetDeployment };
       } else {
@@ -419,7 +424,7 @@ class RollbackManager {
         const command = `${platformConfig.rollbackCommand} ${targetDeployment.id}`;
         colorLog(`🚀 Running: ${command}`, 'blue');
         execSync(command, { stdio: 'inherit' });
-        
+
         colorLog('✅ Netlify rollback completed', 'green');
         return { success: true, deployment: targetDeployment };
       } else {
@@ -433,7 +438,7 @@ class RollbackManager {
 
   async sendNotification(type, data) {
     colorLog(`📢 Sending notification: ${type}`, 'blue');
-    
+
     const notification = {
       type,
       timestamp: new Date().toISOString(),
@@ -441,7 +446,7 @@ class RollbackManager {
       reason: data.reason,
       platform: this.platform,
     };
-    
+
     // Save notification to file (in real implementation, send to notification service)
     try {
       const notificationFile = `rollback-notification-${Date.now()}.json`;
@@ -454,34 +459,34 @@ class RollbackManager {
 
   async monitorDeployment(deployment, duration = 600000) { // 10 minutes default
     colorLog(`🔍 Monitoring deployment for ${duration / 60000} minutes...`, 'blue');
-    
+
     const startTime = Date.now();
     const checkInterval = 30000; // 30 seconds
     let rollbackTriggered = false;
-    
+
     const monitor = async () => {
       if (Date.now() - startTime > duration || rollbackTriggered) {
         return;
       }
-      
+
       const health = await this.checkDeploymentHealth(deployment);
       const metrics = await this.getDeploymentMetrics(deployment);
       const rollbackDecision = this.shouldRollback(health, metrics);
-      
+
       if (rollbackDecision.shouldRollback) {
         colorLog(`🚨 Rollback triggered: ${rollbackDecision.reason}`, 'red');
         colorLog(`Severity: ${rollbackDecision.severity}`, 'yellow');
-        
+
         await this.sendNotification('rollback_initiated', {
           deployment,
           reason: rollbackDecision.reason,
           severity: rollbackDecision.severity,
         });
-        
-        const previousDeployment = this.deploymentHistory.find(d => 
+
+        const previousDeployment = this.deploymentHistory.find(d =>
           d.id !== deployment.id && d.state === 'READY'
         );
-        
+
         if (previousDeployment) {
           const strategy = rollbackDecision.severity === 'high' ? 'immediate' : 'gradual';
           await this.executeRollback(previousDeployment, strategy);
@@ -496,17 +501,17 @@ class RollbackManager {
             reason: 'No previous deployment available',
           });
         }
-        
+
         rollbackTriggered = true;
         return;
       }
-      
+
       // Continue monitoring
       setTimeout(monitor, checkInterval);
     };
-    
+
     await monitor();
-    
+
     if (!rollbackTriggered) {
       colorLog('✅ Monitoring completed - no rollback needed', 'green');
     }
@@ -516,43 +521,43 @@ class RollbackManager {
     const args = process.argv.slice(2);
     const command = args[0] || 'monitor';
     const deploymentId = args[1];
-    
+
     colorLog('🔄 Rollback Manager', 'magenta');
     colorLog('==================', 'magenta');
-    
+
     await this.getDeploymentHistory();
-    
+
     if (this.deploymentHistory.length === 0) {
       colorLog('❌ No deployments found', 'red');
       return;
     }
-    
+
     switch (command) {
       case 'monitor':
-        const deployment = deploymentId 
+        const deployment = deploymentId
           ? this.deploymentHistory.find(d => d.id === deploymentId)
           : this.currentDeployment;
-        
+
         if (!deployment) {
           colorLog('❌ Deployment not found', 'red');
           return;
         }
-        
+
         await this.monitorDeployment(deployment);
         break;
-        
+
       case 'rollback':
         const targetId = deploymentId || this.deploymentHistory[1]?.id;
         const targetDeployment = this.deploymentHistory.find(d => d.id === targetId);
-        
+
         if (!targetDeployment) {
           colorLog('❌ Target deployment not found', 'red');
           return;
         }
-        
+
         await this.executeRollback(targetDeployment);
         break;
-        
+
       case 'list':
         colorLog('📋 Deployment History:', 'cyan');
         this.deploymentHistory.forEach((dep, index) => {
@@ -561,20 +566,20 @@ class RollbackManager {
           colorLog(`${status} ${index + 1}. ${dep.id} - ${dep.url}${prod}`, 'cyan');
         });
         break;
-        
+
       case 'health':
-        const healthDeployment = deploymentId 
+        const healthDeployment = deploymentId
           ? this.deploymentHistory.find(d => d.id === deploymentId)
           : this.currentDeployment;
-        
+
         if (!healthDeployment) {
           colorLog('❌ Deployment not found', 'red');
           return;
         }
-        
+
         await this.checkDeploymentHealth(healthDeployment);
         break;
-        
+
       default:
         colorLog('❌ Unknown command', 'red');
         colorLog('Available commands:', 'cyan');
@@ -619,7 +624,7 @@ class AutoRollback extends RollbackManager {
 
     this.isRunning = true;
     const deployment = this.deploymentHistory.find(d => d.id === deploymentId);
-    
+
     if (!deployment) {
       console.log('❌ Deployment not found');
       return;
@@ -627,36 +632,36 @@ class AutoRollback extends RollbackManager {
 
     console.log('🤖 Starting auto-rollback monitoring...');
     console.log(`📡 Monitoring deployment: ${deployment.url}`);
-    
+
     const checkInterval = options.interval || 30000; // 30 seconds
     const maxDuration = options.duration || 600000; // 10 minutes
-    
+
     const startTime = Date.now();
-    
+
     this.monitoringInterval = setInterval(async () => {
       if (Date.now() - startTime > maxDuration) {
         console.log('⏰ Auto-rollback monitoring completed');
         this.stopAutoMonitoring();
         return;
       }
-      
+
       if (!this.isRunning) {
         return;
       }
-      
+
       console.log(`🔍 Auto-check at ${new Date().toLocaleTimeString()}`);
-      
+
       const health = await this.checkDeploymentHealth(deployment);
       const metrics = await this.getDeploymentMetrics(deployment);
       const rollbackDecision = this.shouldRollback(health, metrics);
-      
+
       if (rollbackDecision.shouldRollback) {
         console.log(`🚨 Auto-rollback triggered: ${rollbackDecision.reason}`);
-        
-        const previousDeployment = this.deploymentHistory.find(d => 
+
+        const previousDeployment = this.deploymentHistory.find(d =>
           d.id !== deployment.id && d.state === 'READY'
         );
-        
+
         if (previousDeployment) {
           console.log(`🔄 Auto-rolling back to: ${previousDeployment.url}`);
           await this.executeRollback(previousDeployment, 'immediate');
@@ -682,7 +687,7 @@ class AutoRollback extends RollbackManager {
     const args = process.argv.slice(2);
     const command = args[0] || 'start';
     const deploymentId = args[1];
-    
+
     switch (command) {
       case 'start':
         if (!deploymentId) {
@@ -690,19 +695,19 @@ class AutoRollback extends RollbackManager {
           console.log('Usage: npm run auto-rollback start <deployment-id>');
           return;
         }
-        
+
         await this.getDeploymentHistory();
         await this.startAutoMonitoring(deploymentId);
         break;
-        
+
       case 'stop':
         this.stopAutoMonitoring();
         break;
-        
+
       case 'status':
         console.log(`🤖 Auto-rollback status: ${this.isRunning ? 'running' : 'stopped'}`);
         break;
-        
+
       default:
         console.log('❌ Unknown command');
         console.log('Available commands:');
@@ -755,17 +760,17 @@ class RollbackRecovery {
 
   createBackup(deploymentId) {
     colorLog(`💾 Creating backup for deployment: ${deploymentId}`, 'blue');
-    
+
     if (!fs.existsSync(this.backupDir)) {
       fs.mkdirSync(this.backupDir, { recursive: true });
     }
-    
+
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
     const backupDir = path.join(this.backupDir, `${deploymentId}-${timestamp}`);
-    
+
     try {
       fs.mkdirSync(backupDir, { recursive: true });
-      
+
       // Backup important files
       const filesToBackup = [
         '.next',
@@ -775,11 +780,11 @@ class RollbackRecovery {
         'vercel.json',
         '.env.local',
       ];
-      
+
       for (const file of filesToBackup) {
         const sourcePath = path.join(process.cwd(), file);
         const targetPath = path.join(backupDir, file);
-        
+
         if (fs.existsSync(sourcePath)) {
           if (fs.statSync(sourcePath).isDirectory()) {
             this.copyDirectory(sourcePath, targetPath);
@@ -789,7 +794,7 @@ class RollbackRecovery {
           colorLog(`✅ Backed up: ${file}`, 'green');
         }
       }
-      
+
       // Create backup metadata
       const metadata = {
         deploymentId,
@@ -797,12 +802,12 @@ class RollbackRecovery {
         files: filesToBackup,
         platform: this.detectPlatform(),
       };
-      
+
       fs.writeFileSync(
         path.join(backupDir, 'backup-metadata.json'),
         JSON.stringify(metadata, null, 2)
       );
-      
+
       colorLog(`✅ Backup created: ${backupDir}`, 'green');
       return backupDir;
     } catch (error) {
@@ -815,13 +820,13 @@ class RollbackRecovery {
     if (!fs.existsSync(target)) {
       fs.mkdirSync(target, { recursive: true });
     }
-    
+
     const files = fs.readdirSync(source);
-    
+
     for (const file of files) {
       const sourcePath = path.join(source, file);
       const targetPath = path.join(target, file);
-      
+
       if (fs.statSync(sourcePath).isDirectory()) {
         this.copyDirectory(sourcePath, targetPath);
       } else {
@@ -839,29 +844,29 @@ class RollbackRecovery {
   listBackups() {
     colorLog('📋 Available Rollback Backups:', 'magenta');
     colorLog('=============================', 'magenta');
-    
+
     if (!fs.existsSync(this.backupDir)) {
       colorLog('❌ No backup directory found', 'red');
       return;
     }
-    
+
     const backups = fs.readdirSync(this.backupDir)
       .filter(dir => fs.statSync(path.join(this.backupDir, dir)).isDirectory())
       .sort((a, b) => b.localeCompare(a)); // Sort by newest first
-    
+
     if (backups.length === 0) {
       colorLog('❌ No backups found', 'red');
       return;
     }
-    
+
     backups.forEach((backup, index) => {
       const backupPath = path.join(this.backupDir, backup);
       const metadataPath = path.join(backupPath, 'backup-metadata.json');
-      
+
       if (fs.existsSync(metadataPath)) {
         const metadata = JSON.parse(fs.readFileSync(metadataPath, 'utf8'));
         const date = new Date(metadata.timestamp).toLocaleString();
-        
+
         colorLog(`${index + 1}. ${backup}`, 'cyan');
         colorLog(`   Deployment: ${metadata.deploymentId}`, 'yellow');
         colorLog(`   Platform: ${metadata.platform}`, 'yellow');
@@ -876,29 +881,29 @@ class RollbackRecovery {
 
   restoreBackup(backupName) {
     colorLog(`🔄 Restoring backup: ${backupName}`, 'blue');
-    
+
     const backupPath = path.join(this.backupDir, backupName);
-    
+
     if (!fs.existsSync(backupPath)) {
       colorLog('❌ Backup not found', 'red');
       return false;
     }
-    
+
     const metadataPath = path.join(backupPath, 'backup-metadata.json');
-    
+
     if (!fs.existsSync(metadataPath)) {
       colorLog('❌ Backup metadata not found', 'red');
       return false;
     }
-    
+
     try {
       const metadata = JSON.parse(fs.readFileSync(metadataPath, 'utf8'));
-      
+
       // Restore files from backup
       for (const file of metadata.files) {
         const sourcePath = path.join(backupPath, file);
         const targetPath = path.join(process.cwd(), file);
-        
+
         if (fs.existsSync(sourcePath)) {
           // Remove existing file/directory
           if (fs.existsSync(targetPath)) {
@@ -908,24 +913,24 @@ class RollbackRecovery {
               fs.unlinkSync(targetPath);
             }
           }
-          
+
           // Copy from backup
           if (fs.statSync(sourcePath).isDirectory()) {
             this.copyDirectory(sourcePath, targetPath);
           } else {
             fs.copyFileSync(sourcePath, targetPath);
           }
-          
+
           colorLog(`✅ Restored: ${file}`, 'green');
         }
       }
-      
+
       colorLog('✅ Backup restored successfully', 'green');
       colorLog('📝 Next steps:', 'cyan');
       colorLog('1. Run: npm install', 'cyan');
       colorLog('2. Run: npm run build', 'cyan');
       colorLog('3. Deploy the restored version', 'cyan');
-      
+
       return true;
     } catch (error) {
       colorLog(`❌ Restore failed: ${error.message}`, 'red');
@@ -935,29 +940,29 @@ class RollbackRecovery {
 
   cleanupBackups(keepCount = 5) {
     colorLog(`🧹 Cleaning up old backups (keeping ${keepCount})...`, 'blue');
-    
+
     if (!fs.existsSync(this.backupDir)) {
       colorLog('❌ No backup directory found', 'red');
       return;
     }
-    
+
     const backups = fs.readdirSync(this.backupDir)
       .filter(dir => fs.statSync(path.join(this.backupDir, dir)).isDirectory())
       .sort((a, b) => b.localeCompare(a)); // Sort by newest first
-    
+
     if (backups.length <= keepCount) {
       colorLog('✅ No cleanup needed', 'green');
       return;
     }
-    
+
     const toDelete = backups.slice(keepCount);
-    
+
     for (const backup of toDelete) {
       const backupPath = path.join(this.backupDir, backup);
       fs.rmSync(backupPath, { recursive: true, force: true });
       colorLog(`🗑️  Deleted: ${backup}`, 'yellow');
     }
-    
+
     colorLog(`✅ Cleaned up ${toDelete.length} old backups`, 'green');
   }
 
@@ -969,9 +974,9 @@ class RollbackRecovery {
       success,
       details,
     };
-    
+
     const logLine = JSON.stringify(logEntry);
-    
+
     try {
       fs.appendFileSync(this.recoveryLog, logLine + '\n');
     } catch (error) {
@@ -983,7 +988,7 @@ class RollbackRecovery {
     const args = process.argv.slice(2);
     const command = args[0] || 'list';
     const target = args[1];
-    
+
     switch (command) {
       case 'backup':
         if (!target) {
@@ -993,7 +998,7 @@ class RollbackRecovery {
         }
         this.createBackup(target);
         break;
-        
+
       case 'restore':
         if (!target) {
           colorLog('❌ Backup name required', 'red');
@@ -1002,16 +1007,16 @@ class RollbackRecovery {
         }
         this.restoreBackup(target);
         break;
-        
+
       case 'list':
         this.listBackups();
         break;
-        
+
       case 'cleanup':
         const keepCount = parseInt(args[1]) || 5;
         this.cleanupBackups(keepCount);
         break;
-        
+
       default:
         colorLog('❌ Unknown command', 'red');
         colorLog('Available commands:', 'cyan');
@@ -1129,16 +1134,16 @@ function shouldRollback(health, metrics, customRules) {
   // Default checks
   if (health.failedChecks >= 3) return true;
   if (metrics.error_rate >= 0.1) return true;
-  
+
   // Custom rules
   if (customRules.businessLogic && metrics.business_errors > 10) {
     return true;
   }
-  
+
   if (customRules.userExperience && metrics.page_load_time > 8000) {
     return true;
   }
-  
+
   return false;
 }
 ```

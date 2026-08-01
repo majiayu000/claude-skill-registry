@@ -1,5 +1,12 @@
 ---
 name: ui-design-guidelines
+description: 'UI/UX design guidelines focusing on what AI commonly overlooks or fails
+  to verify. **CRITICAL**: Emphasizes concrete checklists, measurement criteria, and
+  verification steps that AI tends to skip duri'
+---
+
+---
+name: ui-design-guidelines
 description: UI/UX design guidelines focusing on what AI commonly overlooks or fails to verify. **CRITICAL**: Emphasizes concrete checklists, measurement criteria, and verification steps that AI tends to skip during design reviews. Reference during Phase 1 (UI/UX Design Review).
 ---
 

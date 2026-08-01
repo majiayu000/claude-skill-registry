@@ -1,5 +1,10 @@
+---
+name: build-guide
+description: 'description: BTC ShopFlow 构建指南，包括4种构建模式、单应用/全量构建、预览构建等'
+---
+
 ﻿---
-name: build-guide  
+name: build-guide
 description: BTC ShopFlow 构建指南，包括4种构建模式、单应用/全量构建、预览构建等
 ---
 
@@ -26,7 +31,7 @@ description: BTC ShopFlow 构建指南，包括4种构建模式、单应用/全�
 
 模式3 - build-dist（集中构建）:
   用途: 服务器部署
-  命令: pnpm build-dist:all / pnpm build-dist:system  
+  命令: pnpm build-dist:all / pnpm build-dist:system
   产物: dist/{app}/ (根目录)
   特点: 产物集中，方便部署
 
@@ -208,7 +213,7 @@ Build hangs:
 
 scripts/commands/build/:
   - cdn-build.mjs
-  - dist-build.mjs  
+  - dist-build.mjs
   - dist-cdn-build.mjs
   - preview-build.mjs
 

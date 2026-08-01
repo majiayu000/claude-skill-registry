@@ -1,3 +1,8 @@
+---
+name: bone-marrow-ai-agent
+description: '---name: bone-marrow-ai-agent'
+---
+
 ---name: bone-marrow-ai-agent
 description: AI-powered bone marrow morphology analysis, cell classification, and hematologic disorder diagnosis using deep learning on aspirate and biopsy images.
 license: MIT

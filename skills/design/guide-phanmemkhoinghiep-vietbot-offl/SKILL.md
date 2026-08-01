@@ -1,3 +1,8 @@
+---
+name: guide-phanmemkhoinghiep-vietbot-offl
+description: '1.1. Luồng xử lý thông thường:'
+---
+
 ### STEP1. Hiểu luồng xử lý
 
 1.1. Luồng xử lý thông thường:
@@ -25,7 +30,7 @@ Trong ví dụ này, sẽ tạo 2 custom skill, 1 là skill hỏi ngày này nă
 Custom_skill_process: Kiểm tra data thỏa mãn điều kiện để gọi skill kỉ niệm ngày này năm xưa, nếu không thỏa mãn thì gọi skill sử dụng AI bot Dify để trả lời, như vậy skill AI bot Dify sẽ trả lời toàn bộ các câu hỏi không thỏa mãn tại các skill mặc định và các skill custom
 
 ```
- 
+
 ### STEP2. Khai báo trong json
 
 2.1. Chuyển user về level 2 bằng cách cập nhật config.json tại dòng 275
@@ -42,12 +47,12 @@ Ví dụ nếu khai các tham số config của các skill trong config.json:
 ```sh
 	"today_history": {
 		"url":"https://lichngaytot.com/ajax/NgayNayNamXuaAjax""
-	},  
+	},
         "dify": {
             "api_key": "app-qVedgdfg7kO",
-			      "url":"https://api.dify.ai/v1/chat-messages",			
-			      "error":"Lỗi xử lý từ AI chatbot",	
-			      "no_answer":"Không có trả lời từ AI chatbot"	
+			      "url":"https://api.dify.ai/v1/chat-messages",
+			      "error":"Lỗi xử lý từ AI chatbot",
+			      "no_answer":"Không có trả lời từ AI chatbot"
         }
 ```
 2.2.2. Tạo và lưu điều kiện để kiểm tra skill ngày này năm xưa trong file object.json
@@ -84,7 +89,7 @@ Sử dụng biến toàn cục, nếu muốn đọc hoặc chỉnh sửa biến 
 
 ### STEP3. Code def xử lý
 
-Trong script custom_skill_process.py tạo các def xử lý data và trả về text hoặc text và link 
+Trong script custom_skill_process.py tạo các def xử lý data và trả về text hoặc text và link
 
 3.1. Code def xử lý
 
@@ -135,7 +140,7 @@ def dify_process(data):
         response = requests.post(global_constants.dify_url, headers=dify_headers, json=request_json, stream=True)
         if response.status_code != 200:
             raise ValueError(f"HTTP Error: {response.status_code} - {response.text}")
-        
+
         for line in response.iter_lines(decode_unicode=True):
             if line.strip():  # Kiểm tra dòng không rỗng
                 if line.startswith("data: "):
@@ -144,10 +149,10 @@ def dify_process(data):
                     response_data = json.loads(line)  # Parse JSON
                     data_section = response_data.get("data", global_constants.dify_no_answer)
                     if not data_section:
-                        continue                    
+                        continue
                     inputs_section = data_section.get("inputs", global_constants.dify_no_answer)
                     if not inputs_section:
-                        continue                    
+                        continue
                     context_value = inputs_section.get("#context#", global_constants.dify_no_answer)
                     if context_value:
                         # Chỉ lấy dòng đầu tiên
@@ -174,14 +179,14 @@ def custom_skill_process(data):
         if any(item in data for item in global_constant.obj_yesterday):
             answer=today_history_process('YESTERDAY')
         elif any(item in data for item in global_constant.obj_today):
-            answer=today_history_process('TODAY')            
+            answer=today_history_process('TODAY')
         elif any(item in data for item in global_constant.obj_tomorrow):
-            answer=today_history_process('TOMORROW')     
+            answer=today_history_process('TOMORROW')
         elif any(item in data for item in global_constant.obj_next_day):
-            answer=today_history_process('NEXT_DAY')                 
+            answer=today_history_process('NEXT_DAY')
         elif any(item in data for item in global_constant.obj_next_week):
-            answer=today_history_process('NEXT_WEEK')    
+            answer=today_history_process('NEXT_WEEK')
     else:
-        answer=dify_process(data)    
+        answer=dify_process(data)
     return answer
 ```

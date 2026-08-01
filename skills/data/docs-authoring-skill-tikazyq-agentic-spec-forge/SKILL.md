@@ -1,3 +1,8 @@
+---
+name: docs-authoring-skill
+description: '> 目标：重命名一个 SKILL（目录名 + name 字段 + 索引）'
+---
+
 # 重命名 SKILL
 
 > **目标**：重命名一个 SKILL（目录名 + name 字段 + 索引）

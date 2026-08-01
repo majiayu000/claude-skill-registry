@@ -1,5 +1,12 @@
 ---
 name: project-manager
+description: 'Manage project planning, documentation, and ticket coordination. Use
+  this skill for: (1) Project planning and roadmap management, (2) Creating and coordinating
+  tickets (T0000N), (3) Managing docs/ dir'
+---
+
+---
+name: project-manager
 description: Manage project planning, documentation, and ticket coordination. Use this skill for: (1) Project planning and roadmap management, (2) Creating and coordinating tickets (T0000N), (3) Managing docs/ directory structure and CRUD operations, (4) Post-ticket completion tasks (export tests, update planning docs).
 ---
 

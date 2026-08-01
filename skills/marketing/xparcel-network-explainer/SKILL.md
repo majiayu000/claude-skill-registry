@@ -1,3 +1,10 @@
+---
+name: xparcel-network-explainer
+description: 'Transform abstract shipping network concepts into concrete, visual explanations
+  that help prospects and customers understand FirstMile''s competitive advantage
+  through:'
+---
+
 # Xparcel Network Explainer Skill
 
 ---

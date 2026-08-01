@@ -1,5 +1,10 @@
 ---
 name: tailor-resume
+description: 'Load and execute: workflows/tailor-resume/workflow.md'
+---
+
+---
+name: tailor-resume
 description: Modify an existing resume for a specific job posting. Requires a starting resume to modify, then enhances it with corpus content and interview-discovered experiences.
 argument-hint: [company-name] [starting-resume-path]
 ---

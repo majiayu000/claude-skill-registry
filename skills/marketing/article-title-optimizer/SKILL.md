@@ -1,5 +1,12 @@
 ---
 name: article-title-optimizer
+description: 'This skill analyzes article content in-depth and generates optimized,
+  marketable titles in the format ''Title: Subtitle'' (10-12 words maximum). The skill
+  should be used when users request title optimiz'
+---
+
+---
+name: article-title-optimizer
 description: This skill analyzes article content in-depth and generates optimized, marketable titles in the format 'Title: Subtitle' (10-12 words maximum). The skill should be used when users request title optimization, title generation, or title improvement for articles, blog posts, or written content. It generates 5 title candidates using proven formulas, evaluates them against success criteria (clickability, SEO, clarity, emotional impact, memorability, shareability), and replaces the article's title with the winning candidate.
 ---
 

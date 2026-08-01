@@ -1,3 +1,8 @@
+---
+name: toolchains-platforms-deployment-netlify
+description: '- Sites: Static sites deployed to Netlify''s global CDN'
+---
+
 # Netlify Platform Skill
 
 ---

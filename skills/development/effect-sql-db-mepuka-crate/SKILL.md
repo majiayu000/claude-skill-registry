@@ -1,5 +1,11 @@
 ---
 name: effect-sql-db
+description: '- You are integrating a SQL client (Drizzle, Kysely, Prisma, mysql2/pg)
+  with Effect'
+---
+
+---
+name: effect-sql-db
 description: Effect patterns for SQL databases (Drizzle/Kysely/Prisma): services, transactions, retries, streaming, and observability.
 allowed-tools: Read, Grep, Glob, Edit, Write
 ---

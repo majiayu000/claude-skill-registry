@@ -1,3 +1,8 @@
+---
+name: raffle-winner-picker
+description: '---name: raffle-winner-picker'
+---
+
 ---name: raffle-winner-picker
 description: Picks random winners from lists, spreadsheets, or Google Sheets for giveaways, raffles, and contests. Ensures fair, unbiased selection with transparency.
 
@@ -35,7 +40,7 @@ This skill randomly selects winners from lists, spreadsheets, or Google Sheets f
 ### From Google Sheets
 
 ```
-Pick a random row from this Google Sheet to select a winner 
+Pick a random row from this Google Sheet to select a winner
 for a giveaway: [Sheet URL]
 ```
 
@@ -58,7 +63,7 @@ Pick a random winner from this list:
 ### Multiple Winners
 
 ```
-Pick 5 random winners from contest-entries.xlsx, 
+Pick 5 random winners from contest-entries.xlsx,
 make sure no duplicates
 ```
 
@@ -102,13 +107,13 @@ Would you like to:
 
 ### Exclusions
 ```
-Pick a random winner excluding previous winners: 
+Pick a random winner excluding previous winners:
 Alice, Bob, Carol
 ```
 
 ### Weighted Selection
 ```
-Pick a winner with weighted probability based on 
+Pick a winner with weighted probability based on
 the "entries" column (1 entry = 1 ticket)
 ```
 

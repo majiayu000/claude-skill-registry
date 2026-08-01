@@ -1,4 +1,11 @@
 ---
+name: love-image
+description: '{{SKILLDESCRIPTION}} Use this skill when working with image operations,
+  texture management, image data manipulation, or any image-related operations in
+  LÖVE games.'
+---
+
+---
 name: {{SKILL_NAME}}
 description: {{SKILL_DESCRIPTION}} Use this skill when working with image operations, texture management, image data manipulation, or any image-related operations in LÖVE games.
 license: MIT

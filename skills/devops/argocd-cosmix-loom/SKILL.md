@@ -1,5 +1,13 @@
 ---
 name: argocd
+description: Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes
+  that automates application deployment and lifecycle management. It follows the GitOps
+  pattern where Git repositories are the source of truth for defining the desired
+  application state.
+---
+
+---
+name: argocd
 description: GitOps continuous delivery with Argo CD for Kubernetes deployments. Use when implementing declarative GitOps workflows, application sync/rollback, multi-cluster deployments, progressive delivery, or CD automation. Triggers: argocd, argo cd, gitops, application, sync, rollback, app of apps, applicationset, declarative, continuous delivery, CD, deployment automation, kubernetes deployment, multi-cluster, canary deployment, blue-green.
 allowed-tools: Read, Grep, Glob, Edit, Write, Bash
 ---

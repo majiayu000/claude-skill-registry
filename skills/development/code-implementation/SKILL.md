@@ -1,5 +1,12 @@
 ---
 name: code-implementation
+description: Implement code changes by learning from and precisely matching existing
+  codebase patterns, ensuring seamless integration with surrounding code. Use when
+  writing new features, modifying logic, adding f
+---
+
+---
+name: code-implementation
 description: Implement code changes by learning from and precisely matching existing codebase patterns, ensuring seamless integration with surrounding code. Use when writing new features, modifying logic, adding functionality. Triggers: 'implement', 'write code', 'add feature', 'create', 'build', 'fix bug', '구현', '코드 작성', '기능 추가', '생성', '빌드', '버그 수정', '만들어', working with *.ts, *.go, *.java, *.py, *.nix, *.rs files.
 allowed-tools:
   - Read

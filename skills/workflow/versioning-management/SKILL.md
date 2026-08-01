@@ -1,3 +1,8 @@
+---
+name: versioning-management
+description: '| ID | versioning-management |'
+---
+
 # 🏷️ Skill: Versioning Management
 
 ## 📋 Metadata

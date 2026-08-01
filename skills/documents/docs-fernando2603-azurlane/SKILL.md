@@ -1,3 +1,8 @@
+---
+name: docs-fernando2603-azurlane
+description: '- Overview'
+---
+
 # SKILL
 
 - [Overview](#overview)
@@ -32,7 +37,7 @@ The first thing we need to do is implement a function to resolve skill name and 
 
 <details>
   <summary>Typescript</summary>
-  
+
   ```Typescript
   // ** this is for example purpose, using 'fetch' in every run is not advisable **
   const REPO_LINK = "https://raw.githubusercontent.com/AzurLaneTools/AzurLaneData/main/EN/ShareCfg";
@@ -176,7 +181,7 @@ The first thing we need to do is implement a function to resolve skill name and 
 
 <details>
   <summary>Python</summary>
-  
+
   ```Python
   # Python
   import re

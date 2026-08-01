@@ -1,3 +1,8 @@
+---
+name: ansible-awx
+description: '| ID | cicd-ansible-awx |'
+---
+
 # 🔧 Skill: Ansible AWX Automation
 
 ## 📋 Metadata
@@ -67,26 +72,26 @@ spec:
     app_name: myapp-backend
     app_version: "{{ version | default('latest') }}"
     app_port: 3000
-    
+
   tasks:
     - name: Pull Docker image
       docker_image:
         name: "myorg/{{ app_name }}"
         tag: "{{ app_version }}"
         source: pull
-    
+
     - name: Stop existing container
       docker_container:
         name: "{{ app_name }}"
         state: stopped
       ignore_errors: yes
-    
+
     - name: Remove existing container
       docker_container:
         name: "{{ app_name }}"
         state: absent
       ignore_errors: yes
-    
+
     - name: Start new container
       docker_container:
         name: "{{ app_name }}"
@@ -101,7 +106,7 @@ spec:
           REDIS_URL: "{{ redis_url }}"
         networks:
           - name: backend-network
-    
+
     - name: Wait for service to be ready
       uri:
         url: "http://localhost:{{ app_port }}/health"
@@ -122,7 +127,7 @@ spec:
   vars:
     db_host: "{{ lookup('env', 'DB_HOST') }}"
     db_name: myapp_prod
-    
+
   tasks:
     - name: Check if migrations table exists
       postgresql_query:
@@ -132,7 +137,7 @@ spec:
         db: "{{ db_name }}"
         query: "SELECT EXISTS (SELECT FROM pg_tables WHERE tablename = 'migrations');"
       register: migrations_exist
-    
+
     - name: Run migrations
       command: npm run migrate
       args:
@@ -153,7 +158,7 @@ spec:
     namespace: production
     app_name: myapp-backend
     image_tag: "{{ version }}"
-    
+
   tasks:
     - name: Create namespace if not exists
       k8s:
@@ -163,7 +168,7 @@ spec:
           kind: Namespace
           metadata:
             name: "{{ namespace }}"
-    
+
     - name: Deploy application
       k8s:
         state: present
@@ -191,7 +196,7 @@ spec:
                   env:
                   - name: NODE_ENV
                     value: production
-    
+
     - name: Expose service
       k8s:
         state: present

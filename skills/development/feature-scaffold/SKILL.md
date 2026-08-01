@@ -1,3 +1,9 @@
+---
+name: feature-scaffold
+description: '> Generate Complete Features: Create entire feature folders with all
+  files in the correct structure.'
+---
+
 # Feature Scaffold Skill
 
 > **Generate Complete Features**: Create entire feature folders with all files in the correct structure.
@@ -98,7 +104,7 @@ import { revalidatePath } from "next/cache"
 export async function get[Features]() {
   const session = await auth()
   if (!session?.user) throw new Error("Unauthorized")
-  
+
   return db.[feature].findMany({
     where: { userId: session.user.id },
     orderBy: { createdAt: "desc" },
@@ -108,7 +114,7 @@ export async function get[Features]() {
 export async function get[Feature](id: string) {
   const session = await auth()
   if (!session?.user) throw new Error("Unauthorized")
-  
+
   return db.[feature].findFirst({
     where: { id, userId: session.user.id },
   })
@@ -117,15 +123,15 @@ export async function get[Feature](id: string) {
 export async function create[Feature](formData: FormData) {
   const session = await auth()
   if (!session?.user) throw new Error("Unauthorized")
-  
+
   const data = create[Feature]Schema.parse({
     name: formData.get("name"),
   })
-  
+
   await db.[feature].create({
     data: { ...data, userId: session.user.id },
   })
-  
+
   revalidatePath("/[features]")
   return { success: true }
 }
@@ -133,18 +139,18 @@ export async function create[Feature](formData: FormData) {
 export async function update[Feature](id: string, formData: FormData) {
   const session = await auth()
   if (!session?.user) throw new Error("Unauthorized")
-  
+
   const existing = await db.[feature].findFirst({
     where: { id, userId: session.user.id },
   })
   if (!existing) throw new Error("Not found")
-  
+
   const data = create[Feature]Schema.partial().parse({
     name: formData.get("name") || undefined,
   })
-  
+
   await db.[feature].update({ where: { id }, data })
-  
+
   revalidatePath("/[features]")
   return { success: true }
 }
@@ -152,11 +158,11 @@ export async function update[Feature](id: string, formData: FormData) {
 export async function delete[Feature](id: string) {
   const session = await auth()
   if (!session?.user) throw new Error("Unauthorized")
-  
+
   await db.[feature].deleteMany({
     where: { id, userId: session.user.id },
   })
-  
+
   revalidatePath("/[features]")
   return { success: true }
 }
@@ -175,7 +181,7 @@ import Link from "next/link"
 
 export default async function [Features]Page() {
   const items = await get[Features]()
-  
+
   return (
     <div className="container py-8">
       <div className="flex items-center justify-between mb-6">
@@ -249,7 +255,7 @@ export function [Feature]List({ items }: { items: [Feature][] }) {
       </div>
     )
   }
-  
+
   return (
     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
       {items.map((item) => (
@@ -292,12 +298,12 @@ import { useTransition } from "react"
 
 export function DeleteButton({ id }: { id: string }) {
   const [isPending, startTransition] = useTransition()
-  
+
   const handleDelete = () => {
     if (!confirm("Delete this item?")) return
     startTransition(() => delete[Feature](id))
   }
-  
+
   return (
     <Button
       variant="destructive"

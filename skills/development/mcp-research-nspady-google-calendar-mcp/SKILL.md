@@ -1,5 +1,12 @@
 ---
 name: mcp-research
+description: Expert research tool for Model Context Protocol implementations. PROACTIVELY
+  use when reviewing MCP server code, planning new MCP tools/resources/prompts, investigating
+  protocol compliance issues, or
+---
+
+---
+name: mcp-research
 description: Expert research tool for Model Context Protocol implementations. PROACTIVELY use when reviewing MCP server code, planning new MCP tools/resources/prompts, investigating protocol compliance issues, or validating architecture. Specializes in protocol compliance (JSON-RPC 2.0), security patterns, transport layers, and production best practices. Current spec: 2025-06-18.
 allowed-tools: Read, Grep, Glob, WebFetch, WebSearch
 ---

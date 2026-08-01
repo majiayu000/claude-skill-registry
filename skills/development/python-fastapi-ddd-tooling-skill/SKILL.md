@@ -1,5 +1,11 @@
 ---
 name: python-fastapi-ddd-tooling-skill
+description: This skill is about developer experience and quality automation for a
+  DDD FastAPI project, following the conventions in dddpy.
+---
+
+---
+name: python-fastapi-ddd-tooling-skill
 description: Guides project tooling for a Python FastAPI + SQLAlchemy DDD/Onion Architecture codebase: uv-based environment setup, Makefile workflows, ruff formatting/linting, mypy typing, pytest, and CI (GitHub Actions), based on the dddpy reference. Use when bootstrapping a repo or tightening developer experience and quality gates.
 license: Apache-2.0
 metadata:

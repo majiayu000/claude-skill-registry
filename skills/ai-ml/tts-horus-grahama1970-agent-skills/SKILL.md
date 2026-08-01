@@ -1,5 +1,10 @@
 ---
 name: tts-horus
+description: This skill standardizes the end-to-end Horus voice workflow using uvx-style
+---
+
+---
+name: tts-horus
 description: >
   Build and operate the Horus TTS pipeline from cleared audiobooks.
   Includes dataset prep, WhisperX alignment, XTTS training, voice coloring,

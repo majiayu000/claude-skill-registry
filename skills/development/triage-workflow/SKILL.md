@@ -1,3 +1,9 @@
+---
+name: triage-workflow
+description: Standardize issue and pull request triage so incoming work is labeled,
+  prioritized, and routed consistently.
+---
+
 # Triage Workflow
 
 ## Purpose

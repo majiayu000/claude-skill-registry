@@ -1,5 +1,10 @@
 ---
 name: cloudflare-kv
+description: 'Status: Production Ready ✅ | Last Verified: 2025-12-27'
+---
+
+---
+name: cloudflare-kv
 description: Cloudflare Workers KV global key-value storage. Use for namespaces, caching, TTL, or encountering KV_ERROR, 429 rate limits, consistency issues.
 
   Keywords: kv storage, cloudflare kv, workers kv, kv namespace, kv bindings, kv cache, kv ttl, kv metadata,

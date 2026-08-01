@@ -1,3 +1,8 @@
+---
+name: security-review
+description: 在代码提交前识别和防止常见安全漏洞（针对 Tauri 桌面应用）。
+---
+
 # 安全审查 Skill
 
 ## 核心目标

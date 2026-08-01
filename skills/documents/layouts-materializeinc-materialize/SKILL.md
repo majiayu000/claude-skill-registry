@@ -1,3 +1,8 @@
+---
+name: layouts
+description: '{{- / Home page template - generates SKILL.md for Claude / -}}'
+---
+
 {{- /* Home page template - generates SKILL.md for Claude */ -}}
 ---
 name: materialize-docs

@@ -1,3 +1,8 @@
+---
+name: notion-knowledge-capture
+description: '---name: notion-knowledge-capture'
+---
+
 ---name: notion-knowledge-capture
 description: Transforms conversations and discussions into structured documentation pages in Notion. Captures insights, decisions, and knowledge from chat context, formats appropriately, and saves to wikis or databases with proper organization and linking for easy discovery.
 
@@ -94,12 +99,12 @@ Link the new page so others can find it:
    - Add link to wiki table of contents page
    - Add link from relevant project page
    - Add link from category/topic page (e.g., "Engineering Docs")
-   
+
 2. If page is in a database:
    - Set appropriate tags/categories
    - Set status (e.g., "Published")
    - Add to relevant views
-   
+
 3. Optionally update parent page:
    - If saved under a project, add to project's "Documentation" section
    - If in team wiki, ensure it's linked from team homepage

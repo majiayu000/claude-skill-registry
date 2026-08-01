@@ -1,3 +1,8 @@
+---
+name: manga-production
+description: '- taiyou-taiyo/content/creative/manga/production-guide.md'
+---
+
 # 漫画制作スキル
 
 ## When to Use

@@ -1,3 +1,8 @@
+---
+name: opentrons-agent
+description: '---name: opentrons-protocol-agent'
+---
+
 ---name: opentrons-protocol-agent
 description: Generates executable Python protocols for Opentrons OT-2 and Flex robots from natural language descriptions.
 license: MIT

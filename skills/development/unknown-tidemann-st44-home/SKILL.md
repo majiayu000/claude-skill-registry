@@ -1,3 +1,9 @@
+---
+name: unknown
+description: Flutter expert for cross-platform mobile app development with Dart, Riverpod
+  state management, GoRouter navigation, Dio HTTP client, and widget-based architecture.
+---
+
 # Flutter Skill - Mobile App Development
 
 ## Description

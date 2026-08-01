@@ -1,5 +1,11 @@
 ---
 name: 1-determine-techstack
+description: 'Determine the type of project and summarize the tech stack. Your summary
+  should include:'
+---
+
+---
+name: 1-determine-techstack
 description: Determine the type of project and summarize the tech stack. Your summary should include:
 ---
 

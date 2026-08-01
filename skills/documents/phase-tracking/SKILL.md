@@ -1,3 +1,8 @@
+---
+name: phase-tracking
+description: 다단계(Multi-Phase) 기능 구현을 체계적으로 추적하고 관리하는 프로세스.
+---
+
 # Phase Tracking Skill
 
 다단계(Multi-Phase) 기능 구현을 체계적으로 추적하고 관리하는 프로세스.

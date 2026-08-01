@@ -1,3 +1,8 @@
+---
+name: academic-paper
+description: Skill from tolgaio/neo
+---
+
 # Academic Paper
 
 ## Description

@@ -1,5 +1,10 @@
 ---
 name: roadmap-item
+description: 'This skill supports three modes: Create, Update, and Find.'
+---
+
+---
+name: roadmap-item
 description: Create or update a specific roadmap item
 argument-hint: [item name] or [update path/to/item.md]
 ---

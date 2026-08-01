@@ -1,5 +1,10 @@
 ---
 name: sales-enablement
+description: 'This skill supports three modes: Create, Update, and Find.'
+---
+
+---
+name: sales-enablement
 description: Create or update a sales enablement package
 argument-hint: [product or feature name] or [update path/to/enablement.md]
 ---

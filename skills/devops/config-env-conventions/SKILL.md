@@ -1,4 +1,11 @@
 ---
+name: config-env-conventions
+description: 'มาตรฐานการจัดการ configuration และ environment variables ทุก service:
+  naming, validation, defaults, และ secret handling ที่ทำให้ deploy ข้าม environments
+  ได้อย่างมั่นใจ'
+---
+
+---
 name: Config & Environment Conventions
 description: Conventions for service configuration and environment variables: naming, precedence, validation at startup, secrets handling, environment detection, and documentation patterns
 ---

@@ -1,5 +1,10 @@
 ---
 name: vhs-recording
+description: Generate professional terminal recordings from VHS tape files.
+---
+
+---
+name: vhs-recording
 description: |
 
 Triggers: tutorial, vhs, gif, terminal, recording

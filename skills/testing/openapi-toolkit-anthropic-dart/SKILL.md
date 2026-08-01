@@ -1,5 +1,12 @@
 ---
 name: openapi-toolkit-anthropic-dart
+description: 'Automates updating anthropic_sdk_dart when Anthropic OpenAPI spec changes.
+  Fetches latest spec, compares against current, generates changelogs and prioritized
+  implementation plans. Use for: (1) Checki'
+---
+
+---
+name: openapi-toolkit-anthropic-dart
 description: Automates updating anthropic_sdk_dart when Anthropic OpenAPI spec changes. Fetches latest spec, compares against current, generates changelogs and prioritized implementation plans. Use for: (1) Checking for API updates, (2) Generating implementation plans for spec changes, (3) Creating new models/endpoints from spec, (4) Syncing local spec with upstream. Triggers: "update api", "sync openapi", "new endpoints", "api changes", "check for updates", "update spec", "api version", "fetch spec", "compare spec", "what changed in the api", "implementation plan".
 ---
 

@@ -1,3 +1,8 @@
+---
+name: code-review-culture
+description: '|---------|---------|'
+---
+
 # Code Review Culture
 
 ## Why Code Review Matters
@@ -92,7 +97,7 @@ describe('calculateTotal', () => {
         const items = [{ price: 10 }, { price: 20 }];
         expect(calculateTotal(items)).toBe(30);
     });
-    
+
     it('handles empty array', () => {
         expect(calculateTotal([])).toBe(0);
     });
@@ -184,7 +189,7 @@ migrations/ @db-team
 
 ```javascript
 // Good review comment
-// "I noticed that this function doesn't handle the case where `items` is null. 
+// "I noticed that this function doesn't handle the case where `items` is null.
 // Consider adding a null check or using optional chaining."
 function calculateTotal(items) {
     return items.reduce((sum, item) => sum + item.price, 0);
@@ -266,7 +271,7 @@ function calculateTotal(items) {
 
 ```javascript
 // Good: Constructive feedback
-// "I think we could simplify this by using array methods. 
+// "I think we could simplify this by using array methods.
 // What do you think about using reduce() instead of a for loop?"
 
 // Bad: Harsh feedback
@@ -277,8 +282,8 @@ function calculateTotal(items) {
 
 ```javascript
 // Good: Explains why
-// "I noticed you're using `var` instead of `const`. 
-// Using `const` is better because it prevents reassignment 
+// "I noticed you're using `var` instead of `const`.
+// Using `const` is better because it prevents reassignment
 // and makes the code more predictable."
 
 // Bad: No explanation
@@ -289,7 +294,7 @@ function calculateTotal(items) {
 
 ```javascript
 // Good: Suggests alternatives
-// "Instead of using a for loop, we could use map() 
+// "Instead of using a for loop, we could use map()
 // which is more functional and easier to read."
 
 // Example:
@@ -307,7 +312,7 @@ const doubled = numbers.map(n => n * 2);
 
 ```javascript
 // Good: Asks questions
-// "Have you considered using TypeScript here? 
+// "Have you considered using TypeScript here?
 // It might help catch type errors at compile time."
 
 // Bad: Demands
@@ -318,7 +323,7 @@ const doubled = numbers.map(n => n * 2);
 
 ```javascript
 // Good: Praises good work
-// "Great job on the tests! They're comprehensive 
+// "Great job on the tests! They're comprehensive
 // and easy to understand."
 ```
 
@@ -328,7 +333,7 @@ const doubled = numbers.map(n => n * 2);
 
 ```javascript
 // Must fix before merge
-// "This function has a security vulnerability. 
+// "This function has a security vulnerability.
 // Please use parameterized queries instead of string interpolation."
 function getUser(id) {
     const query = `SELECT * FROM users WHERE id = ${id}`;
@@ -340,7 +345,7 @@ function getUser(id) {
 
 ```javascript
 // Nice-to-have, not required
-// "Consider adding a comment explaining why we're using 
+// "Consider adding a comment explaining why we're using
 // this particular algorithm."
 function calculateTotal(items) {
     return items.reduce((sum, item) => sum + item.price, 0);
@@ -351,7 +356,7 @@ function calculateTotal(items) {
 
 ```javascript
 // Asking for clarification
-// "I'm not sure why we're using this approach. 
+// "I'm not sure why we're using this approach.
 // Could you explain the reasoning?"
 function processOrder(order) {
     // Complex logic
@@ -362,7 +367,7 @@ function processOrder(order) {
 
 ```javascript
 // Recognizing good work
-// "Great job on the error handling! 
+// "Great job on the error handling!
 // It's comprehensive and user-friendly."
 function processOrder(order) {
     try {
@@ -386,7 +391,7 @@ function processOrder(order) {
 
 ```javascript
 // If unclear, ask for clarification
-// "Could you explain why you think we should use 
+// "Could you explain why you think we should use
 // this approach? I'm not sure I understand."
 ```
 
@@ -394,7 +399,7 @@ function processOrder(order) {
 
 ```javascript
 // Good: Respectful discussion
-// "I see your point, but I think this approach is 
+// "I see your point, but I think this approach is
 // better because... What do you think?"
 
 // Bad: Argumentative
@@ -405,7 +410,7 @@ function processOrder(order) {
 
 ```javascript
 // Use feedback to improve
-// "Thanks for the feedback! I'll keep that in mind 
+// "Thanks for the feedback! I'll keep that in mind
 // for future PRs."
 ```
 
@@ -860,20 +865,20 @@ bitbucket pr merge
 
 ```javascript
 // Good: Constructive feedback
-// "I noticed that this function doesn't handle the case where `items` is null. 
+// "I noticed that this function doesn't handle the case where `items` is null.
 // Consider adding a null check or using optional chaining."
 
 // Good: Explains why
-// "I noticed you're using `var` instead of `const`. 
-// Using `const` is better because it prevents reassignment 
+// "I noticed you're using `var` instead of `const`.
+// Using `const` is better because it prevents reassignment
 // and makes the code more predictable."
 
 // Good: Suggests alternatives
-// "Instead of using a for loop, we could use map() 
+// "Instead of using a for loop, we could use map()
 // which is more functional and easier to read."
 
 // Good: Praises good work
-// "Great job on the tests! They're comprehensive 
+// "Great job on the tests! They're comprehensive
 // and easy to understand."
 ```
 

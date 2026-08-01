@@ -1,5 +1,10 @@
 ---
 name: team-dependency
+description: Map and visualize dependencies between features and work items.
+---
+
+---
+name: team-dependency
 description: "[Team] Map and visualize feature dependencies. Use when analyzing dependencies, identifying blockers, or creating dependency graphs. Triggers on keywords like "dependencies", "blockers", "what blocks", "dependency map"."
 argument-hint: "[pbi-file|feature-name|all]"
 infer: true

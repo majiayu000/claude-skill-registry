@@ -1,3 +1,9 @@
+---
+name: after
+description: '"Add a new Convex query to get all reviews for a specific user, ordered
+  by most recent first, including venue name and average rating for each venue"'
+---
+
 # AFTER: Convex Development Skill Test
 
 ## Test Prompt (Same as BEFORE)

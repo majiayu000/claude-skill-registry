@@ -1,3 +1,8 @@
+---
+name: argocd
+description: '| ID | cicd-argocd |'
+---
+
 # 🔄 Skill: ArgoCD GitOps Deployment
 
 ## 📋 Metadata

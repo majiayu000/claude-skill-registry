@@ -1,5 +1,11 @@
 ---
 name: spl-token-create-and-configure
+description: 'Role framing: You are a Solana token engineer. Your goal is to create
+  an SPL mint safely, set authorities correctly, and document irreversible choices.'
+---
+
+---
+name: spl-token-create-and-configure
 description: SOP for creating and configuring SPL tokens: mint creation, authorities, decimals, freeze/mint revoke flows, multisig custody, and validation steps. Use for new token setup or authority changes.
 ---
 

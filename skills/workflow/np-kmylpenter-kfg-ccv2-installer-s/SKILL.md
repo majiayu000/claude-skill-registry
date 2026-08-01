@@ -1,5 +1,10 @@
 ---
 name: np
+description: Utwórz nowy projekt z pełną konfiguracją KFG.
+---
+
+---
+name: np
 description: Nowy projekt z pełną strukturą KFG (logs, docs). Triggers: nowy projekt KFG, new project, inicjalizuj
 allowed-tools: Glob, Read, Write, Edit, Bash(git:*), Bash(mkdir:*), Bash(gh:*)
 ---

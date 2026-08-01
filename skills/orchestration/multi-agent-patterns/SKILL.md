@@ -1,4 +1,9 @@
 ---
+name: multi-agent-patterns
+description: '> Çoklu agent mimarisi ve orchestration rehberi.'
+---
+
+---
 name: multi_agent_patterns
 router_kit: AIKit
 description: Çoklu agent mimarisi tasarımı, orchestration patterns ve agent collaboration rehberi.
@@ -96,7 +101,7 @@ class Agent:
         self.name = name
         self.role = role
         self.skills = skills
-    
+
     def process(self, task):
         # Agent logic
         pass
@@ -107,12 +112,12 @@ class Agent:
 class Orchestrator:
     def __init__(self, agents):
         self.agents = agents
-    
+
     def route(self, task):
         # Determine which agent handles task
         agent = self.select_agent(task)
         return agent.process(task)
-    
+
     def select_agent(self, task):
         # Routing logic
         pass

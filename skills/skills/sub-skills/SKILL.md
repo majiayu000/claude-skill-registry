@@ -1,3 +1,9 @@
+---
+name: sub-skills
+description: 'Every skill consists of a required SKILL.md file and optional bundled
+  resources:'
+---
+
 # Anatomy of a Skill
 
 Every skill consists of a required SKILL.md file and optional bundled resources:

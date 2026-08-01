@@ -1,3 +1,9 @@
+---
+name: existing-solution-map
+description: 'description: Produce existingsolutionmap.md to ground task generation
+  in the current repo.'
+---
+
 ﻿---
 description: Produce existing_solution_map.md to ground task generation in the current repo.
 argument-hint: "<IDEA_ID> [--epic EPIC-00X]"

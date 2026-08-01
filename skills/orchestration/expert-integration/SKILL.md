@@ -1,3 +1,9 @@
+---
+name: expert-integration
+description: Meta-orchestration system that connects all Agent Experts for seamless
+  workflow execution.
+---
+
 # Expert Integration Layer
 
 Meta-orchestration system that connects all Agent Experts for seamless workflow execution.

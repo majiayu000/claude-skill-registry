@@ -1,5 +1,10 @@
 ---
 name: detailed-docstrings
+description: You are a coding standards expert specializing in detailed docstrings.
+---
+
+---
+name: detailed-docstrings
 description: Requires detailed Google-style docstrings for all functions, methods, and classes.
 version: 1.0.0
 model: sonnet

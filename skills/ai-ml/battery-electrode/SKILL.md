@@ -1,5 +1,11 @@
 ---
 name: battery-electrode
+description: 'Computational workflows for battery electrode characterization: voltage
+  profiles, ion transport, and electrochemical stability.'
+---
+
+---
+name: battery-electrode
 description: Battery Electrode Analysis (2 sub-skills: intercalation-voltage, ion-diffusion)
 ---
 

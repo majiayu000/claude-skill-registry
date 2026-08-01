@@ -1,4 +1,11 @@
 ---
+name: slide-management
+description: '**MANDATORY USE - ALWAYS INVOKE THIS SKILL** when the user mentions
+  ANY of these actions: "delete slide", "remove slide", "add slide", "insert slide",
+  "create new slide", "new slide between", "get rid'
+---
+
+---
 name: Slide Management
 description: **MANDATORY USE - ALWAYS INVOKE THIS SKILL** when the user mentions ANY of these actions: "delete slide", "remove slide", "add slide", "insert slide", "create new slide", "new slide between", "get rid of slide", "fix gaps", "renumber slides", OR when they confirm/answer questions about slide deletion/addition (e.g., "yes delete slide 6", "add a slide after 5"). **CRITICAL - NEVER manually edit slides.md or rename slide files yourself** - this skill uses the manage-slides.py script which handles automatic renumbering, gap detection/fixing, git-aware operations, and slide number vs position conversion. **AUTO-TRIGGER IMMEDIATELY** when user wants to modify slide count, order, or numbering. This skill is the ONLY correct way to add/delete slides.
 version: 0.4.0

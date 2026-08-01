@@ -1,5 +1,11 @@
 ---
 name: docs
+description: Generate Mintlify MDX documentation for new Fair-Forge modules. Creates
+  properly formatted documentation pages and updates navigation.
+---
+
+---
+name: docs
 description: Generate Mintlify documentation for new Fair-Forge features. Use when adding new metrics, runners, generators, storage backends, or any new module. Automatically creates MDX files and updates docs.json navigation.
 argument-hint: [module-type] [module-name]
 ---

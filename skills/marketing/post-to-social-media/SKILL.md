@@ -1,3 +1,11 @@
+---
+name: post-to-social-media
+description: Automate Facebook and Instagram content creation for multi-platform social
+  media presence. This skill generates platform-optimized posts that maintain brand
+  consistency, follow platform-specific best practices, and require human approval
+  before publishing.
+---
+
 # post-to-social-media Skill
 
 ---

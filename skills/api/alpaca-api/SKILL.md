@@ -1,5 +1,12 @@
 ---
 name: alpaca-api
+description: This skill allows the AI to interact with Alpaca's API for executing
+  stock trades, retrieving market data, and managing accounts, using HTTP requests
+  to Alpaca's endpoints.
+---
+
+---
+name: alpaca-api
 cluster: financial
 description: "Interact with Alpaca\'s API for stock trading and market data retrieval."
 tags: ["finance","api","stock-trading","alpaca"]

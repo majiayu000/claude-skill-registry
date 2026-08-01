@@ -1,4 +1,9 @@
 ---
+name: fixup-commit
+description: Execute /fixup-commit <commit-hash> slash command.
+---
+
+---
 name: fixup-committing
 description: Creates a fixup commit and performs autosquash rebase. Use when: user wants to fixup a commit, amend a previous commit, or squash into existing commit.
 ---

@@ -1,3 +1,8 @@
+---
+name: proposal-templates
+description: 'name: proposal-templates'
+---
+
 name: proposal-templates
 description: Build and manage reusable proposal templates and content libraries. Use when creating, updating, or applying standardized proposal content.
 ---
@@ -192,27 +197,27 @@ interface PursuitBrief {
   rfpId: string;
   title: string;
   client: string;
-  
+
   // Quick facts
   deadline: Date;
   budget: string;
   duration: string;
-  
+
   // Fit assessment
   primaryCapabilities: string[];    // Our relevant capabilities
   gapAreas: string[];               // Where we may need partners
   competitiveAdvantages: string[];  // Why we'd win
   risks: string[];                  // Key concerns
-  
+
   // Strategy
   winThemes: string[];              // 2-3 key messages
   partnerNeeded: boolean;
   partnerType?: string;             // e.g., "Content strategy firm"
-  
+
   // Resources
   estimatedBidEffort: string;       // e.g., "20-40 hours"
   keyPersonnel: string[];           // Who would work on this
-  
+
   // Decision
   recommendation: 'pursue' | 'no_bid' | 'conditional';
   conditions?: string[];
@@ -227,21 +232,21 @@ function generatePursuitBrief(rfp: RFPWithEvaluation): PursuitBrief {
     deadline: new Date(rfp.deadline),
     budget: rfp.budget || 'Not specified',
     duration: extractDuration(rfp),
-    
+
     primaryCapabilities: mapEvaluationToCapabilities(rfp.evaluation),
     gapAreas: identifyGaps(rfp.evaluation),
     competitiveAdvantages: generateAdvantages(rfp),
     risks: identifyRisks(rfp),
-    
+
     winThemes: generateWinThemes(rfp),
     partnerNeeded: rfp.evaluation?.eligibility === 'partner_needed',
-    
+
     estimatedBidEffort: estimateBidEffort(rfp),
     keyPersonnel: suggestPersonnel(rfp),
-    
+
     recommendation: determineRecommendation(rfp.evaluation),
   };
-  
+
   return brief;
 }
 ```
@@ -318,7 +323,7 @@ proposals: defineTable({
   rfpId: v.id("rfps"),
   pursuitId: v.id("pursuits"),
   userId: v.string(),
-  
+
   // Content
   sections: v.array(v.object({
     name: v.string(),
@@ -327,17 +332,17 @@ proposals: defineTable({
     lastModified: v.number(),
     modifiedBy: v.string(),
   })),
-  
+
   // Compliance
   complianceMatrix: v.optional(v.string()), // JSON
-  
+
   // Files
   attachments: v.array(v.object({
     name: v.string(),
     url: v.string(),
     type: v.string(),
   })),
-  
+
   // Status
   status: v.union(
     v.literal("drafting"),
@@ -345,7 +350,7 @@ proposals: defineTable({
     v.literal("final"),
     v.literal("submitted")
   ),
-  
+
   // Timestamps
   createdAt: v.number(),
   updatedAt: v.number(),
@@ -360,28 +365,28 @@ proposals: defineTable({
 function ProposalBuilder({ rfpId }: { rfpId: string }) {
   const proposal = useQuery(api.proposals.getByRfp, { rfpId });
   const updateSection = useMutation(api.proposals.updateSection);
-  
+
   return (
     <div className="proposal-builder">
       <aside className="template-library">
         <h3>Content Library</h3>
         <ContentBlockList onInsert={handleInsert} />
       </aside>
-      
+
       <main className="proposal-editor">
         {proposal?.sections.map(section => (
           <SectionEditor
             key={section.name}
             section={section}
-            onSave={(content) => updateSection({ 
-              proposalId: proposal._id, 
-              sectionName: section.name, 
-              content 
+            onSave={(content) => updateSection({
+              proposalId: proposal._id,
+              sectionName: section.name,
+              content
             })}
           />
         ))}
       </main>
-      
+
       <aside className="compliance-tracker">
         <h3>Compliance Matrix</h3>
         <ComplianceChecklist proposalId={proposal?._id} />

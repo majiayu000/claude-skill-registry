@@ -1,3 +1,8 @@
+---
+name: video-ci-scheduling
+description: Phase2/Phase3 を定期実行およびオンデマンドで実行します。
+---
+
 # Skill: CI Scheduling (GitHub Actions)
 
 ## Status

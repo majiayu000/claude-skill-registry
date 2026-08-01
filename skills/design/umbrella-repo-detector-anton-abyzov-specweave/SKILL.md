@@ -1,5 +1,12 @@
 ---
 name: umbrella-repo-detector
+description: 'Detects multi-repo architecture from user prompts and guides setup.
+  Activates for: multiple repos, 3 repos, frontend repo, backend repo, shared library
+  repo, monorepo services, microservices, separate'
+---
+
+---
+name: umbrella-repo-detector
 description: Detects multi-repo architecture from user prompts and guides setup. Activates for: multiple repos, 3 repos, frontend repo, backend repo, shared library repo, monorepo services, microservices, separate repos, FE/BE/Shared, multi-repo architecture, independent repos.
 ---
 

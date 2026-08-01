@@ -1,4 +1,10 @@
 ---
+name: orchestrator-git-standards-skill
+description: 'CRITICAL: Follow Orchestrator AI Git standards: conventional branch
+  names, conventional commits, clean history.'
+---
+
+---
 name: Orchestrator Git Standards
 description: Orchestrator AI-specific Git conventions and standards. Branch naming, commit workflow, repository organization. CRITICAL: Follow conventional branch names, use conventional commits, maintain clean git history.
 allowed-tools: Read, Write, Edit, Bash, Grep, Glob

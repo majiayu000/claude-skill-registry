@@ -1,3 +1,9 @@
+---
+name: references
+description: This is what a completed voice skill looks like after running through
+  the wizard.
+---
+
 # Example Voice Skill
 
 *This is what a completed voice skill looks like after running through the wizard.*

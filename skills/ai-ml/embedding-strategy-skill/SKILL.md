@@ -1,4 +1,10 @@
 ---
+name: embedding-strategy-skill
+description: 'PROTECTED: Manage chunking strategies and embedding dimensions. Changes
+  require user approval + full impact analysis.'
+---
+
+---
 name: embedding-strategy
 version: 1.0
 last_updated: 2025-12-04

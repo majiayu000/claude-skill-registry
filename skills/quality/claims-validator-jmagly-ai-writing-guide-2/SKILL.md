@@ -1,3 +1,9 @@
+---
+name: claims-validator
+description: Validate documentation for unsupported claims, made-up metrics, and unverifiable
+  statements. Use when relevant to the task.
+---
+
 # claims-validator
 
 Validate documentation for unsupported claims, made-up metrics, and unverifiable statements.

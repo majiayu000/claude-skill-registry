@@ -1,5 +1,14 @@
 ---
 name: surface-energy
+description: This skill group covers the calculation of surface energies and the prediction
+  of equilibrium crystal shapes via the Wulff construction. Surface energies quantify
+  the thermodynamic cost of cleaving a crystal along a given Miller plane and are
+  fundamental to understanding crystal growth, catalysis, nanoparticle morphology,
+  and interface stability.
+---
+
+---
+name: surface-energy
 description: Surface Energy Calculations (2 sub-skills: surface-energy-calc, wulff-construction)
 ---
 

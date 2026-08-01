@@ -1,3 +1,9 @@
+---
+name: fiscal-policy
+description: 'description: Fiscal policy — spending, taxation, debt sustainability.
+  Cover multipliers, automatic stabilizers, debt/GDP dynamics.'
+---
+
 # Fiscal Policy
 
 name: fiscal-policy

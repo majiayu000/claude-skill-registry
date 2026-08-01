@@ -1,5 +1,12 @@
 ---
 name: fluxcd
+description: Flux CD is a declarative, GitOps continuous delivery solution for Kubernetes.
+  It automatically ensures that the state of your Kubernetes cluster matches the configuration
+  stored in Git repositories.
+---
+
+---
+name: fluxcd
 description: GitOps continuous delivery toolkit for Kubernetes with Flux CD. Use when implementing GitOps workflows, declarative deployments, Helm chart automation, Kustomize overlays, image update automation, multi-tenancy, or Git-based continuous delivery. Triggers: flux, fluxcd, gitops, kustomization, helmrelease, gitrepository, helmrepository, imagerepository, imagepolicy, image automation, source controller, continuous delivery, kubernetes deployment automation, helm automation, kustomize automation, git sync, declarative deployment.
 allowed-tools: Read, Grep, Glob, Edit, Write, Bash
 ---

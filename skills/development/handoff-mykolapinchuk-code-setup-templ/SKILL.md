@@ -1,4 +1,10 @@
 ---
+name: handoff-mykolapinchuk-code-setup-templ
+description: 'Prepare handoff: update HANDOFF/REPO_MAP, rotate logs, update .gitignore
+  if needed, and create a safe handoff git commit.'
+---
+
+---
 name: handoff
 description: Prepare handoff: update HANDOFF/REPO_MAP, rotate logs, update .gitignore if needed, and create a safe handoff git commit.
 ---

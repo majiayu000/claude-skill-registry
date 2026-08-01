@@ -1,3 +1,9 @@
+---
+name: mcp-lister
+description: インストール済みの MCP サーバー一覧を表示するスキル。「MCP 一覧」「MCP サーバー確認」「インストール済み MCP」「MCP を見せて」「mcp
+  list」「MCP サーバー一覧」「利用可能な MCP」などで起動。
+---
+
 # MCP Lister
 
 インストール済みの MCP サーバー一覧を表示するスキル。「MCP 一覧」「MCP サーバー確認」「インストール済み MCP」「MCP を見せて」「mcp list」「MCP サーバー一覧」「利用可能な MCP」などで起動。

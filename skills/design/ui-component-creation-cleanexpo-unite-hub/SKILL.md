@@ -1,3 +1,8 @@
+---
+name: ui-component-creation
+description: Skill from CleanExpo/Unite-Hub
+---
+
 # UI Component Creation Skill
 ## shadcn/ui + Design System Patterns
 

@@ -1,3 +1,9 @@
+---
+name: pdf-leadmagnet
+description: Generate professional PDF lead magnets (ebooks, checklists, cheatsheets)
+  with consistent branding and high-quality typography.
+---
+
 # PDF Lead Magnet Generator
 
 Generate professional PDF lead magnets (ebooks, checklists, cheatsheets) with consistent branding and high-quality typography.

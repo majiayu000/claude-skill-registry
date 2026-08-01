@@ -1,5 +1,11 @@
 ---
 name: technical-accuracy-and-usability-rules
+description: You are a coding standards expert specializing in technical accuracy
+  and usability rules.
+---
+
+---
+name: technical-accuracy-and-usability-rules
 description: Ensures the documentation is technically accurate and highly usable for the target audience.
 version: 1.0.0
 model: sonnet

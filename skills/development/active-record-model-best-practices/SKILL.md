@@ -1,5 +1,12 @@
 ---
 name: active-record-model-best-practices
+description: When refactoring a Rails model, analyze the file and extract code into
+  the appropriate pattern based on what the code does. The model itself should only
+  contain associations, enums, basic validations, and concern includes.
+---
+
+---
+name: active-record-model-best-practices
 description: Best practices for Ruby on Rails models, splitting code into well-organized, maintainable code. Use when a model exceeds ~100 lines, has mixed responsibilities, or when the user asks to refactor, extract, clean up, or organize a Rails model. Applies patterns: concerns, service objects, query objects, form objects, and value objects.
 ---
 

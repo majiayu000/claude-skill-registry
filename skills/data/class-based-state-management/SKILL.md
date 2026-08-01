@@ -1,5 +1,10 @@
 ---
 name: class-based-state-management
+description: You are a coding standards expert specializing in class based state management.
+---
+
+---
+name: class-based-state-management
 description: Enforces the use of classes for complex state management (state machines) in Svelte components. Applies specifically to `.svelte.ts` files.
 version: 1.0.0
 model: sonnet

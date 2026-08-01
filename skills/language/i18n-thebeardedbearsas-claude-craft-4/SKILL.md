@@ -1,5 +1,10 @@
 ---
 name: i18n
+description: This skill provides guidelines and best practices.
+---
+
+---
+name: i18n
 description: Regla 09: Internacionalización (i18n). Use when implementing internationalization.
 ---
 

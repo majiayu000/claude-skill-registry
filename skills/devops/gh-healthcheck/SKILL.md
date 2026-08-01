@@ -1,5 +1,11 @@
 ---
 name: gh-healthcheck
+description: Analyze GitHub Actions workflow health and provide a comprehensive diagnostic
+  report.
+---
+
+---
+name: gh-healthcheck
 description: Run health check on GitHub Actions workflow with root cause analysis and recommendations. Use for quick CI status overview and pattern analysis.
 argument-hint: [--workflow build.yml] [--run-id <id>] [--detail low|medium|high]
 context: fork

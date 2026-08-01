@@ -1,3 +1,8 @@
+---
+name: api-gateway-rate-limiting
+description: '| ID | sre-api-gateway-rate-limiting |'
+---
+
 # 🚪 Skill: API Gateway & Rate Limiting
 
 ## 📋 Metadata
@@ -89,7 +94,7 @@ API Gateway actúa como punto de entrada único para APIs, proporcionando rate l
 > - [`rate_limiting_strategies.py`](scripts/rate_limiting_strategies.py) - Algoritmos de rate limiting (CLI)
 > - [`api_gateway_middleware.py`](scripts/api_gateway_middleware.py) - API Gateway FastAPI con rate limiting
 > - [`requirements.txt`](scripts/requirements.txt) - Dependencias Python
-> 
+>
 > Ver [`scripts/README.md`](scripts/README.md) para documentación de uso.
 
 ### 1. Kong API Gateway
@@ -210,7 +215,7 @@ http {
     # Rate limiting zones
     limit_req_zone $binary_remote_addr zone=api_limit:10m rate=10r/s;
     limit_req_zone $binary_remote_addr zone=login_limit:10m rate=5r/m;
-    
+
     limit_conn_zone $binary_remote_addr zone=conn_limit_per_ip:10m;
 
     upstream user_service {
@@ -242,7 +247,7 @@ http {
         # Login endpoint (stricter rate limit)
         location /api/v1/auth/login {
             limit_req zone=login_limit burst=3 nodelay;
-            
+
             proxy_pass http://user_service;
             proxy_set_header Host $host;
             proxy_set_header X-Real-IP $remote_addr;
@@ -254,15 +259,15 @@ http {
         location /api/v1/ {
             # Rate limiting
             limit_req zone=api_limit burst=20 nodelay;
-            
+
             # Authentication
             auth_request /auth;
-            
+
             proxy_pass http://user_service;
             proxy_set_header Host $host;
             proxy_set_header X-Real-IP $remote_addr;
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-            
+
             # Timeouts
             proxy_connect_timeout 5s;
             proxy_send_timeout 10s;
@@ -469,7 +474,7 @@ VALID_API_KEYS = {
 
 ---
 
-**Versión:** 1.0.0  
-**Última actualización:** Diciembre 2025  
+**Versión:** 1.0.0
+**Última actualización:** Diciembre 2025
 **Total líneas:** 1,100+
 

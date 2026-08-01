@@ -1,4 +1,9 @@
 ---
+name: skill-shell-quality-plus
+description: '> "Talk is cheap. Show me the code." - Linus Torvalds'
+---
+
+---
 name: shell-quality-plus
 description: Unified shell script quality: ShellCheck linting + BATS testing. Use for CLI scripts, headless agent commands (gemini, codex, droid, claude, kilo), or any bash script. IRON RULE: Lint first, test always. Triggers on "shell script", "bash test", "shellcheck", "CLI script", "agent command".
 allowed-tools: [shellcheck, Write, Bash, Read, Glob]
@@ -213,7 +218,7 @@ error() {
 execute_agent_command() {
     local agent="$1"
     local cmd="$2"
-    
+
     case "$agent" in
         gemini)
             gemini-cli exec --script="$cmd" --approval="$APPROVAL_MODE" --format="$OUTPUT_FORMAT"
@@ -298,23 +303,23 @@ main() {
                 ;;
         esac
     done
-    
+
     # Validate
     [[ -n "$SCRIPT_PATH" ]] || error "Script path is required (--script)"
     [[ -f "$SCRIPT_PATH" ]] || error "Script not found: $SCRIPT_PATH"
-    
+
     log "Agent: $AGENT_TYPE"
     log "Approval: $APPROVAL_MODE"
     log "Format: $OUTPUT_FORMAT"
     log "Script: $SCRIPT_PATH"
-    
+
     # Validate prerequisites
     validate_prerequisites "$AGENT_TYPE"
-    
+
     # Execute
     log "Executing agent command..."
     execute_agent_command "$AGENT_TYPE" "$SCRIPT_PATH"
-    
+
     log "Done!"
 }
 
@@ -447,26 +452,26 @@ on: [push, pull_request]
 jobs:
   shell-quality:
     runs-on: ubuntu-latest
-    
+
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Install ShellCheck
         run: sudo apt-get install -y shellcheck
-      
+
       - name: Install BATS
         run: |
           git clone https://github.com/bats-core/bats-core.git
           ./bats-core/install.sh /usr/local
-      
+
       - name: Run ShellCheck
         run: |
           find . -name "*.sh" -exec shellcheck --exclude=SC1091 {} \;
-      
+
       - name: Run BATS tests
         run: |
           bats --formatter junit --output ./reports test/
-      
+
       - name: Publish test results
         uses: EnricoMi/publish-unit-test-result-action@v2
         if: always()

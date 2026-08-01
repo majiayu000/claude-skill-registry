@@ -1,3 +1,8 @@
+---
+name: core-python-best-practices
+description: '---name: core-python-best-practices'
+---
+
 ---name: core-python-best-practices
 description: Essential guidelines for writing modern, type-safe, and idiomatic Python 3 code.
 license: MIT

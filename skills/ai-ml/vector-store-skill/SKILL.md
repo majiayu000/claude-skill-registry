@@ -1,4 +1,10 @@
 ---
+name: vector-store-skill
+description: 'PROTECTED: Vector store schema management. Changes require pre-modification
+  checklist validation.'
+---
+
+---
 name: vector-store
 version: 1.0
 last_updated: 2025-12-04

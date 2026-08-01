@@ -1,3 +1,8 @@
+---
+name: ui-improver-addictive-ux
+description: 'Agent: ui-improver'
+---
+
 # UI Improver: Addictive UX & Visual Consistency Skill
 
 **Version**: 2.0.0

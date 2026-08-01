@@ -1,3 +1,8 @@
+---
+name: multimodal-radpath-fusion-agent
+description: '---name: multimodal-radpath-fusion-agent'
+---
+
 ---name: multimodal-radpath-fusion-agent
 description: AI-powered multimodal diagnostic fusion integrating radiology imaging (CT/MRI/PET), digital pathology (WSI), genomics, and clinical data for comprehensive cancer diagnosis and treatment planning.
 license: MIT

@@ -1,3 +1,8 @@
+---
+name: tcr-pmhc-prediction-agent
+description: '---name: tcr-pmhc-prediction-agent'
+---
+
 ---name: tcr-pmhc-prediction-agent
 description: AI-powered TCR-peptide-MHC interaction prediction using AlphaFold3 and deep learning for therapeutic TCR discovery, neoantigen validation, and T cell immunogenicity assessment.
 license: MIT

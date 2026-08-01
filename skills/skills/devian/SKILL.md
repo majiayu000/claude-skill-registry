@@ -1,3 +1,8 @@
+---
+name: devian
+description: '| SSOT | skills/devian-core/03-ssot — 모든 정책/경로/규칙의 정본 |'
+---
+
 # Devian v10 — Index
 
 Status: ACTIVE

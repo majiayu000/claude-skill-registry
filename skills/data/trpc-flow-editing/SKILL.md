@@ -1,5 +1,12 @@
 ---
 name: trpc-flow-editing
+description: ChainGraph flow editing tRPC layer for visual flow editor operations.
+  Use when working on apps/chaingraph-backend or packages/chaingraph-trpc/server.
+  Covers flow CRUD, node/edge operations, port updat
+---
+
+---
+name: trpc-flow-editing
 description: ChainGraph flow editing tRPC layer for visual flow editor operations. Use when working on apps/chaingraph-backend or packages/chaingraph-trpc/server. Covers flow CRUD, node/edge operations, port updates, real-time subscriptions, locking, version control. Triggers: flow procedure, addNode, removeNode, connectPorts, updatePortValue, subscribeToEvents, flowContextProcedure, chaingraph-backend, chaingraph-trpc, flowStore.
 ---
 

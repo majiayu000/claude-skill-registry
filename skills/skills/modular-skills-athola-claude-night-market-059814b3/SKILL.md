@@ -1,5 +1,10 @@
 ---
 name: modular-skills
+description: '- Overview'
+---
+
+---
+name: modular-skills
 description: |
 
 Triggers: skills, architecture, modular, design-patterns, modularity

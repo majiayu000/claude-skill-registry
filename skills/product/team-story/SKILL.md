@@ -1,5 +1,11 @@
 ---
 name: team-story
+description: Break Product Backlog Items into implementable user stories using vertical
+  slicing and SPIDR patterns.
+---
+
+---
+name: team-story
 version: 1.2.0
 description: "[Team] Break PBIs into user stories using vertical slicing, SPIDR splitting, and INVEST criteria. Use when creating user stories from PBIs, slicing features, or breaking down requirements. Triggers on keywords like "user story", "create stories", "slice pbi", "story breakdown", "vertical slice", "split story"."
 argument-hint: "<path-to-pbi-file-or-PBI-ID>"

@@ -1,5 +1,10 @@
 ---
 name: abandon
+description: 'Usage: /sw:abandon <increment-id> --reason="<reason>"'
+---
+
+---
+name: abandon
 description: Abandon an incomplete increment (requirements changed, obsolete)
 argument-hint: [increment-id] --reason="reason"
 ---

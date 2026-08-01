@@ -1,3 +1,10 @@
+---
+name: lighthouse-user-incubation
+description: The Lighthouse User Incubation framework allows product teams within
+  large organizations to operate like "starups" by creating artificial scarcity and
+  protecting "ugly baby" ideas from being smothered by mature-company processes.
+---
+
 ```yaml
 ---
 name: lighthouse-user-incubation
@@ -22,7 +29,7 @@ Instead of focusing on Monthly Active Users (MAU), scale your user base in fixed
 
 ### Phase 1: The First 10 (Qualitative Truth)
 *   **Goal:** Prove the solution solves the core problem for a "Lighthouse" segment that represents your future mass market.
-*   **Tactics:** 
+*   **Tactics:**
     *   Recruit 10 users you know by name.
     *   Build a direct feedback loop (e.g., a shared Slack channel).
     *   Engage the whole team (Engineers/Designers) in Zoom calls with these 10 users to build empathy.
@@ -30,7 +37,7 @@ Instead of focusing on Monthly Active Users (MAU), scale your user base in fixed
 
 ### Phase 2: The 100 (Edge Case Identification)
 *   **Goal:** Identify variations in user scenarios and technical constraints.
-*   **Tactics:** 
+*   **Tactics:**
     *   Expand to different company sizes or industries.
     *   Stay in "Alpha." Manual onboarding is still acceptable.
     *   Focus on the "Safety Funnel"—purposely limit the number of users to prevent a bad experience from damaging the brand.
@@ -38,7 +45,7 @@ Instead of focusing on Monthly Active Users (MAU), scale your user base in fixed
 
 ### Phase 3: The 1,000 (Self-Service & Reliability)
 *   **Goal:** Prove the product can survive without the "hand-holding" of the product team.
-*   **Tactics:** 
+*   **Tactics:**
     *   Move to "Beta."
     *   Optimize for self-service onboarding.
     *   Build out documentation and support triggers.

@@ -1,5 +1,12 @@
 ---
 name: unity-development
+description: Comprehensive guide for Unity development. Provides architecture patterns,
+  MCP tool selection, and composite task workflows. Parent skill always referenced
+  for Unity-related tasks. See child skills fo
+---
+
+---
+name: unity-development
 description: Comprehensive guide for Unity development. Provides architecture patterns, MCP tool selection, and composite task workflows. Parent skill always referenced for Unity-related tasks. See child skills for detailed implementation. Use when: Unity development in general, C# editing, scene operations, UI implementation, asset management, PlayMode testing
 allowed-tools: Read, Grep, Glob
 ---

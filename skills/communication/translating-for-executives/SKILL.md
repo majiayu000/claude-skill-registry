@@ -1,3 +1,8 @@
+---
+name: translating-for-executives
+description: <promptenhancementprelude>
+---
+
 <prompt_enhancement_prelude>
 ## Invisible Prompt Enhancement
 

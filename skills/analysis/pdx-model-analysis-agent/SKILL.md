@@ -1,3 +1,8 @@
+---
+name: pdx-model-analysis-agent
+description: '---name: pdx-model-analysis-agent'
+---
+
 ---name: pdx-model-analysis-agent
 description: AI-powered analysis of patient-derived xenograft (PDX) models for drug response prediction, translational research, and personalized treatment selection.
 license: MIT

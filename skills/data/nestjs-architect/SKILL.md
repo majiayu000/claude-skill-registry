@@ -1,3 +1,10 @@
+---
+name: nestjs-architect
+description: Guia arquitetural para desenvolvimento NestJS com DDD, Clean Architecture
+  e padrões avançados. Use quando codificar serviços, módulos, agregados, use cases
+  ou refatorar código NestJS.
+---
+
 # NestJS Architect – Lite
 
 **Uso:** tarefas rápidas de domínio/NestJS que cabem em uma única interação. Máx. 200 linhas; vá para `SKILL.md` para padrões avançados.

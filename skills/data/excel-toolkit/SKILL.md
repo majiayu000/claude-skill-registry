@@ -1,3 +1,8 @@
+---
+name: excel-toolkit
+description: 'description: Excel 数据处理工具包，针对 BTC ShopFlow 的库存、盘点、报表等 Excel 导入导出场景'
+---
+
 ﻿---
 name: excel-toolkit
 description: Excel 数据处理工具包，针对 BTC ShopFlow 的库存、盘点、报表等 Excel 导入导出场景
@@ -64,24 +69,24 @@ const handleFileUpload = (file: File) => {
 ```typescript
 const validateExcelData = (data: any[]) => {
   const errors: string[] = []
-  
+
   data.forEach((row, index) => {
     // 必填字段检查
     if (!row.stockCode) {
       errors.push(第 \ 行：缺少料号)
     }
-    
+
     // 数据类型检查
     if (isNaN(Number(row.quantity))) {
       errors.push(第 \ 行：数量必须是数字)
     }
-    
+
     // 业务规则验证
     if (row.quantity < 0) {
       errors.push(第 \ 行：数量不能为负数)
     }
   })
-  
+
   return errors
 }
 ```
@@ -94,7 +99,7 @@ import * as XLSX from 'xlsx'
 
 const generateMultiSheetReport = () => {
   const wb = XLSX.utils.book_new()
-  
+
   // Sheet 1: 汇总数据
   const summaryData = [
     ['料号', '库存数量', '差异', '状态'],
@@ -102,12 +107,12 @@ const generateMultiSheetReport = () => {
   ]
   const ws1 = XLSX.utils.aoa_to_sheet(summaryData)
   XLSX.utils.book_append_sheet(wb, ws1, '汇总')
-  
+
   // Sheet 2: 明细数据
   const detailData = [...]
   const ws2 = XLSX.utils.aoa_to_sheet(detailData)
   XLSX.utils.book_append_sheet(wb, ws2, '明细')
-  
+
   // 导出
   XLSX.writeFile(wb, '库存盘点报表.xlsx')
 }

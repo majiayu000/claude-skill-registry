@@ -1,3 +1,8 @@
+---
+name: devops-engineer
+description: 'name: devops-engineer'
+---
+
 ﻿---
 name: devops-engineer
 description: DevOps 工程师角色技能。当需要输出部署指南、定义发布操作手册、制定基础设施采购计划或编写三方服务集成要求文档时使用。关键词：部署、发布指南、基础设施、采购、操作手册、清单、三方集成、环境配置、回滚方案。

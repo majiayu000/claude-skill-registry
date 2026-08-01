@@ -1,5 +1,10 @@
 ---
 name: risk-profile
+description: The most comprehensive Claude Code skills registry - 50,000+ skills indexed
+---
+
+---
+name: risk-profile
 description: Assess implementation risks using Probability × Impact (P×I) scoring methodology across 6 categories (Technical, Security, Performance, Data, Business, Operational). Scores risks (P×I: 1-9), develops mitigations for high-risk items (score ≥6), and prioritizes test scenarios (P0/P1/P2). Use before implementation or during quality review to identify and mitigate potential issues.
 version: 2.0
 category: Quality

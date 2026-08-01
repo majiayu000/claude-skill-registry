@@ -1,4 +1,11 @@
 ---
+name: context-engineering
+description: Comprehensive context engineering and management system based on the
+  framework C = A(c₁, c₂, c₃, c₄, c₅, c₆). Use this skill when users work with context
+  files, ask about context engineering, need to
+---
+
+---
 name: Context Engineering
 description: Comprehensive context engineering and management system based on the framework C = A(c₁, c₂, c₃, c₄, c₅, c₆). Use this skill when users work with context files, ask about context engineering, need to create/update/analyze contexts, validate context quality, detect discrepancies between contexts, or manage their Context Engineering system. Triggers include: "create a context", "analyze context", "check for inconsistencies", "validate context quality", "update context", "context engineering", "manage contexts", "c1-c6 components", or when working with .claude/contexts/ directories.
 ---

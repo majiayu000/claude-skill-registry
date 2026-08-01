@@ -1,5 +1,11 @@
 ---
 name: abm-landing-page
+description: Create highly personalized landing pages for specific prospects that
+  maximize conversion while avoiding AI detection patterns.
+---
+
+---
+name: abm-landing-page
 description: Create personalized ABM (Account-Based Marketing) landing pages for specific prospects. Takes a LinkedIn URL, analyzes their background, and creates a targeted landing page that feels authentic (not AI-generated). Trigger words: "create landing page", "personalized page", "abm", "prospect page", "target page for"
 allowed-tools: Bash, Read, Write, Edit, WebFetch, WebSearch, Task
 ---

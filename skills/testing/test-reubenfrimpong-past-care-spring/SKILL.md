@@ -1,5 +1,10 @@
 ---
 name: test
+description: Run or write tests following PastCare testing requirements.
+---
+
+---
+name: test
 description: Run tests or write tests following PastCare testing requirements
 disable-model-invocation: true
 argument-hint: [run|write] [optional: specific test or feature]

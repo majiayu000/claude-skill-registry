@@ -1,3 +1,8 @@
+---
+name: api-integration
+description: 'name: api-integration'
+---
+
 # API Integration Skill
 
 ```yaml

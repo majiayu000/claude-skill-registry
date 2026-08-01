@@ -1,3 +1,8 @@
+---
+name: doc
+description: '> rem：利用它能实现强大的屏幕适配布局'
+---
+
 ## 你一定要会的适配技巧和组件化思想
 
 > rem：利用它能实现强大的屏幕适配布局
@@ -37,7 +42,7 @@
     预设基准值
     我习惯设100px，这样感觉用起来比较方便。比如：32px可以写作32rem/@baseFontSize
 */
-@baseFontSize:100px; 
+@baseFontSize:100px;
 
 //设备种类数量
 @len:length(@adapterDeviceList);
@@ -45,7 +50,7 @@
 
 
 
-2.新建 mixins.less（这是一个表示函数的less文件） 
+2.新建 mixins.less（这是一个表示函数的less文件）
 
 ~~~ javascript
 /*
@@ -57,7 +62,7 @@
       font-size: @baseFontSize/@psdwidth* extract(@adapterDeviceList,@index);
     }
   }
-  .adapterMixin(@index - 1); 
+  .adapterMixin(@index - 1);
 }
 ~~~
 
@@ -82,7 +87,7 @@
 
 ~~~html
 <link rel="stylesheet" type="text/less" href="/less/index.less">
-<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>	  
+<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>
 ~~~
 
 [less官网](http://lesscss.org/)
@@ -124,7 +129,7 @@
 
 
 
-详情介绍：   [art-template官网](https://aui.github.io/art-template/zh-cn/docs/index.html) 
+详情介绍：   [art-template官网](https://aui.github.io/art-template/zh-cn/docs/index.html)
 
 
 

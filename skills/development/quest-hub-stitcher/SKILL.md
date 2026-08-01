@@ -1,3 +1,8 @@
+---
+name: quest-hub-stitcher
+description: Expand a quest hub with recurring NPC voices, items, and artifacts.
+---
+
 name: quest-hub-stitcher
 description: Expand a quest hub with recurring NPC voices, items, and artifacts.
 metadata:

@@ -1,5 +1,10 @@
 ---
 name: fal-api-reference
+description: '| Method | Use Case | Code |'
+---
+
+---
+name: fal-api-reference
 description: Complete fal.ai API reference system. PROACTIVELY activate for: (1) @fal-ai/client JavaScript setup, (2) fal_client Python setup, (3) fal.subscribe/run/stream methods, (4) Queue management (submit/status/result), (5) Webhook configuration, (6) File upload to fal.media, (7) REST API endpoints, (8) Real-time WebSocket connections, (9) Error handling patterns. Provides: Client configuration, method signatures, queue workflow, webhook payloads, common parameters. Ensures correct API usage with proper authentication and error handling.
 ---
 

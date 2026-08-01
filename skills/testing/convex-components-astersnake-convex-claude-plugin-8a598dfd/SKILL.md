@@ -1,5 +1,11 @@
 ---
 name: convex-components
+description: Convex Components - Presence, ProseMirror/BlockNote collaborative editing,
+  and Resend email integration
+---
+
+---
+name: convex-components
 description: Convex Components - Presence, ProseMirror/BlockNote collaborative editing, and Resend email integration
 globs:
   - "convex/**/*.ts"

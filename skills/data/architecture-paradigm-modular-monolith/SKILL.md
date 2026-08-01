@@ -1,5 +1,11 @@
 ---
 name: architecture-paradigm-modular-monolith
+description: '- When you desire team autonomy similar to that of microservices, but
+  without the operational overhead of a distributed system.'
+---
+
+---
+name: architecture-paradigm-modular-monolith
 description: |
 
 Triggers: monolith, architecture, modular, team-autonomy, modular-monolith

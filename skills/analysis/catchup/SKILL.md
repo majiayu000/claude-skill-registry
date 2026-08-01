@@ -1,5 +1,12 @@
 ---
 name: catchup
+description: Structured method for quickly understanding recent changes in git repositories,
+  meeting notes, sprint progress, document revisions, or system logs. Answers "what
+  changed and what matters?" efficiently.
+---
+
+---
+name: catchup
 description: |
 
 Triggers: follow-ups, catchup, insights, context-acquisition, summarization

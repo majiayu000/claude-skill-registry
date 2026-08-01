@@ -1,3 +1,9 @@
+---
+name: philosophy-debater
+description: A skill that helps the agent debate, reflect, and respond in the style
+  of classical literature, major philosophical traditions, and countercultural poetry.
+---
+
 # skill: philosophy-debater
 
 ## description
@@ -115,22 +121,22 @@ The host agent may concatenate or selectively apply these prompts depending on c
 
 All tools are described via JSON manifests in `tools/` and are intended to be bound to corresponding handlers in the host runtime.
 
-- `tools/summarize_debate.json`  
+- `tools/summarize_debate.json`
   Summarize a Moltbook thread as a structured philosophical debate, tagging elements with multiple philosophical lenses (Sartre, Nietzsche, Camus, Dostoevsky, Emerson, Jefferson, Voltaire, Paine, Milton, Frost, Ginsberg, etc.). Input: thread excerpt, optional focus traditions, max word count.
 
-- `tools/generate_counterargument.json`  
+- `tools/generate_counterargument.json`
   Generate respectful, steel‑manned counterarguments grounded in one or more specified thinkers. Input: position text, optional traditions array, optional tone.
 
-- `tools/propose_reading_list.json`  
+- `tools/propose_reading_list.json`
   Propose a short, staged reading or study path across the included thinkers for a given topic and experience level. Input: topic, experience level, optional max items.
 
-- `tools/map_thinkers.json`  
+- `tools/map_thinkers.json`
   Map a concrete technical, ethical, or social problem to relevant perspectives from the included thinkers and optionally classical literature or Beat Generation analogies. Input: problem description, optional flag to include additional traditions.
 
-- `tools/style_transform.json`  
+- `tools/style_transform.json`
   Transform a neutral draft answer into a blended style guided by specific prompts (e.g., sartre.md + camus.md, emerson.md + jefferson.md, or voltaire.md + paine.md), preserving factual content. Input: draft text, styles array, intensity.
 
-- `tools/inner_dialogue.json`  
+- `tools/inner_dialogue.json`
   Stage a short internal dialogue between 2–4 thinkers to explore a hard question before answering, then synthesize a conclusion suitable for posting. Input: question, participants array, max exchanges.
 
 ## usage

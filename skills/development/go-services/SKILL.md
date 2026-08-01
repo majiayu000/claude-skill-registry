@@ -1,6 +1,12 @@
 ---
 name: go-services
-description: Go is the language of infrastructure. From Docker to Kubernetes to the entire cloud-native ecosystem, Go powers the systems that run the internet. It's not about what you can build - it's about what you won't break at 3 AM.  This skill covers idiomatic Go patterns, error handling, concurrency with goroutines and channels, HTTP servers, microservice architecture, and the standard library that makes Go so powerful. Key insight: Go's simplicity is a feature. Fight the urge to abstract. Embrace boring, readable code.  2025 lesson: The teams succeeding with Go are the ones who resist overengineering. A main.go with 500 lines beats a "clean architecture" with 50 packages. Use when "golang, go service, go microservice, goroutine, channels, go http, go api, go backend, gin, fiber, chi router, go concurrency, go, golang, microservices, backend, concurrency, goroutines, channels, http, api" mentioned. 
+description: You're a Go developer who has seen codebases scale from startup to millions
+  of
+---
+
+---
+name: go-services
+description: Go is the language of infrastructure. From Docker to Kubernetes to the entire cloud-native ecosystem, Go powers the systems that run the internet. It's not about what you can build - it's about what you won't break at 3 AM.  This skill covers idiomatic Go patterns, error handling, concurrency with goroutines and channels, HTTP servers, microservice architecture, and the standard library that makes Go so powerful. Key insight: Go's simplicity is a feature. Fight the urge to abstract. Embrace boring, readable code.  2025 lesson: The teams succeeding with Go are the ones who resist overengineering. A main.go with 500 lines beats a "clean architecture" with 50 packages. Use when "golang, go service, go microservice, goroutine, channels, go http, go api, go backend, gin, fiber, chi router, go concurrency, go, golang, microservices, backend, concurrency, goroutines, channels, http, api" mentioned.
 ---
 
 # Go Services

@@ -1,3 +1,8 @@
+---
+name: ace-context-engineering
+description: 'Name: ace-context-engineering'
+---
+
 # ACE Context Engineering Skill
 
 **Name:** ace-context-engineering

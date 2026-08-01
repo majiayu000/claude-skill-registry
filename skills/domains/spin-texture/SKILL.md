@@ -1,5 +1,11 @@
 ---
 name: spin-texture
+description: This skill group covers the calculation and visualization of spin textures
+  from
+---
+
+---
+name: spin-texture
 description: Spin Texture (2 sub-skills: 2d-spin-texture, 3d-spin-texture)
 ---
 

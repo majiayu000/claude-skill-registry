@@ -1,5 +1,12 @@
 ---
 name: new-release
+description: Automate complete Multicluster Global Hub release workflow across 6 repositories
+  including branch creation, OpenShift CI configuration, catalog OCP version management,
+  bundle updates, and PR creation.
+---
+
+---
+name: new-release
 description: Automate complete Multicluster Global Hub release workflow across 6 repositories including branch creation, OpenShift CI configuration, catalog OCP version management, bundle updates, and PR creation. REQUIRES explicit RELEASE_BRANCH specification (e.g., RELEASE_BRANCH=release-2.17). Supports two modes - CREATE_BRANCHES=true (create branches) or false (update via PR). Keywords: release branch, global hub, openshift/release, catalog, bundle, CI configuration, OCP versions.
 allowed-tools: [Read, Write, Bash, Glob, Grep]
 ---

@@ -1,3 +1,8 @@
+---
+name: features
+description: '负责模块: SkillManager组件'
+---
+
 # V技能特殊攻击 - 设计与实现文档
 
 **创建时间**: 2026-01-25

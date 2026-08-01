@@ -1,3 +1,8 @@
+---
+name: when-auditing-security-use-security-analyzer
+description: /============================================================================/
+---
+
 /*============================================================================*/
 /* WHEN-AUDITING-SECURITY-USE-SECURITY-ANALYZER SKILL :: VERILINGUA x VERIX EDITION                      */
 /*============================================================================*/

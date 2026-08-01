@@ -1,5 +1,10 @@
 ---
 name: tailwindcss-custom-styles
+description: '@utility glass-effect {'
+---
+
+---
+name: tailwindcss-custom-styles
 description: @utility, @variant, @apply, custom CSS
 user-invocable: false
 ---

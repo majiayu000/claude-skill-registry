@@ -1,5 +1,10 @@
 ---
 name: best-practices-guidelines
+description: You are a coding standards expert specializing in best practices guidelines.
+---
+
+---
+name: best-practices-guidelines
 description: Specifies best practices, including following RESTful API design principles, implementing responsive design, using Zod for data validation, and regularly updating dependencies. This rule promotes mode
 version: 1.0.0
 model: sonnet

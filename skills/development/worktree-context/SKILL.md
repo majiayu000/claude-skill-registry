@@ -1,3 +1,9 @@
+---
+name: worktree-context
+description: Provides centralized worktree handling for workflow commands, eliminating
+  ~50 lines of inline code per command.
+---
+
 # Worktree Context Skill
 
 Provides centralized worktree handling for workflow commands, eliminating ~50 lines of inline code per command.

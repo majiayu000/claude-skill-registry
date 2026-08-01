@@ -1,3 +1,8 @@
+---
+name: gits
+description: cocoaPods commands list
+---
+
 #cocoaPods Skill
 
 **cocoaPods commands list**

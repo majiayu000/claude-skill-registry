@@ -1,5 +1,12 @@
 ---
 name: cli-development-guidelines
+description: 'Design and review command-line interfaces (CLI tools) with human-first
+  UX and UNIX composability: arguments/flags, help text, stdout/stderr, exit codes,
+  interactivity, configuration, errors, telemetry'
+---
+
+---
+name: cli-development-guidelines
 description: Design and review command-line interfaces (CLI tools) with human-first UX and UNIX composability: arguments/flags, help text, stdout/stderr, exit codes, interactivity, configuration, errors, telemetry, and distribution.
 license: CC-BY-SA-4.0 (docs, adapted from clig.dev); MIT (scripts)
 compatibility: Scripts use Python 3.10+ (scripts/cli_audit.py).

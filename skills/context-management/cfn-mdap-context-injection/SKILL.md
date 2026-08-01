@@ -1,5 +1,10 @@
 ---
 name: cfn-mdap-context-injection
+description: Archived skill guidance for cfn-mdap-context-injection.
+---
+
+---
+name: cfn-mdap-context-injection
 description: Inject MDAP codebase files for troubleshooting (coordinator, implementers, validators, Docker, orchestration)
 version: 1.0.0
 tags: context-injection, debugging, mdap
@@ -10,7 +15,7 @@ Outputs portions of CFN MDAP codebase grouped by functional area for debugging. 
 
 # When to use
 1. Docker mode failures → --docker flag
-2. CLI mode issues → --cli flag  
+2. CLI mode issues → --cli flag
 3. Orchestration deadlocks → --cfn-loop flag
 4. Full MDAP workflow → --all flag
 

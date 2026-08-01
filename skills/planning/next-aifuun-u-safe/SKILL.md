@@ -1,5 +1,11 @@
 ---
 name: next
+description: Get the next actionable task from your current implementation plan with
+  context and progress tracking.
+---
+
+---
+name: next
 description: |
   Get next task from active implementation plan - shows task details, progress, and dependencies.
   TRIGGER when: user wants next task ("what's next", "next task", "what should I work on", "get next").

@@ -1,5 +1,12 @@
 ---
 name: numpy-sorting
+description: 'Sorting and searching algorithms including O(n) partitioning, binary
+  search, and hierarchical multi-key sorting. Triggers: sort, argsort, partition,
+  searchsorted, lexsort, nan sort order.'
+---
+
+---
+name: numpy-sorting
 description: Sorting and searching algorithms including O(n) partitioning, binary search, and hierarchical multi-key sorting. Triggers: sort, argsort, partition, searchsorted, lexsort, nan sort order.
 ---
 

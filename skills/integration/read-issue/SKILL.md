@@ -1,4 +1,9 @@
 ---
+name: read-issue
+description: Execute /read-issue <issue-number> slash command.
+---
+
+---
 name: reading-github-issue
 description: Fetches and displays a GitHub issue with sub-issues. Use when: user wants to read an issue, view issue details, or understand issue context.
 ---

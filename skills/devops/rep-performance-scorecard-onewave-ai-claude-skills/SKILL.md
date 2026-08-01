@@ -1,5 +1,11 @@
 ---
 name: rep-performance-scorecard
+description: 'Multi-dimensional rep evaluation: activity, conversion, velocity, deal
+  size. Peer benchmarking and coaching priority identification.'
+---
+
+---
+name: rep-performance-scorecard
 description: Multi-dimensional rep evaluation: activity, conversion, velocity, deal size. Peer benchmarking and coaching priority identification.
 ---
 

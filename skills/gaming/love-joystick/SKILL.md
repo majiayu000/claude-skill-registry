@@ -1,4 +1,11 @@
 ---
+name: love-joystick
+description: '{{SKILLDESCRIPTION}} Use this skill when working with game controllers,
+  joystick input, gamepad operations, or any input device-related operations in LÖVE
+  games.'
+---
+
+---
 name: {{SKILL_NAME}}
 description: {{SKILL_DESCRIPTION}} Use this skill when working with game controllers, joystick input, gamepad operations, or any input device-related operations in LÖVE games.
 license: MIT

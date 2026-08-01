@@ -1,4 +1,9 @@
 ---
+name: evidencias-eventos
+description: Archived skill guidance for evidencias-eventos.
+---
+
+---
 
 name: evidencias-e-eventos
 description: Use para implementar registro de evidências, eventos de domínio e listeners no Laravel.

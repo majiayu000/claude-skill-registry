@@ -1,5 +1,11 @@
 ---
 name: mechanical-properties
+description: 'This skill group covers calculations of mechanical properties of crystalline
+  materials. Two main approaches are available:'
+---
+
+---
+name: mechanical-properties
 description: Mechanical Properties (5 sub-skills: angular-mechanics, elastic-constants, energy-strain-method, equation-of-state, stress-strain-method)
 ---
 

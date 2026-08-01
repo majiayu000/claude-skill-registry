@@ -1,5 +1,10 @@
 ---
 name: ai-writing-tropes
+description: Comprehensive catalog of AI writing patterns that make text feel machine-generated.
+---
+
+---
+name: ai-writing-tropes
 description:
   Detect and eliminate common AI writing tropes from prose. Use when drafting,
   editing, or reviewing text to avoid the predictable patterns that mark

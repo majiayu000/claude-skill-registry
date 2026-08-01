@@ -1,4 +1,10 @@
 ---
+name: kubernetes-specialist-vuralserhat86-antigravity-agentic
+description: Senior Kubernetes specialist with deep expertise in production cluster
+  management, security hardening, and cloud-native architectures.
+---
+
+---
 name: kubernetes_specialist
 router_kit: DevOpsKit
 description: Expert Kubernetes specialist for production-grade container orchestration. Invoke for cluster management, workload deployment, security hardening, and performance optimization. Keywords: Kubernetes, K8s, kubectl, Helm, RBAC, NetworkPolicy.

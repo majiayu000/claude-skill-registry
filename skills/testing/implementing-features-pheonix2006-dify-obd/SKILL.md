@@ -1,5 +1,12 @@
 ---
 name: implementing-features
+description: 'Implements new modules, agents, or features using TDD methodology. Used
+  when adding any new functionality to the table2image multi-agent system. Follows
+  six-phase workflow: context loading, test writi'
+---
+
+---
+name: implementing-features
 description: Implements new modules, agents, or features using TDD methodology. Used when adding any new functionality to the table2image multi-agent system. Follows six-phase workflow: context loading, test writing, implementation, verification, documentation, and protocol completion.
 ---
 

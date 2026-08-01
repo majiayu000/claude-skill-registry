@@ -1,5 +1,12 @@
 ---
 name: i18n
+description: 'Internationalization and localization implementation. Use when implementing
+  multi-language support, translation systems, locale-specific formatting, or RTL
+  layouts. Keywords: i18n, l10n, international'
+---
+
+---
+name: i18n
 description: Internationalization and localization implementation. Use when implementing multi-language support, translation systems, locale-specific formatting, or RTL layouts. Keywords: i18n, l10n, internationalization, localization, translation, locale, RTL, pluralization, i18next, react-intl, gettext, ICU, formatting.
 ---
 

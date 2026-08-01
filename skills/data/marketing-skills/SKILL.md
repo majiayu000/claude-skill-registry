@@ -1,5 +1,12 @@
 ---
 name: marketing-skills
+description: One installed skill containing 23 marketing modules. Pick the relevant
+  module under references/ to get practical checklists, frameworks, and copy/paste
+  deliverables.
+---
+
+---
+name: marketing-skills
 description: TL;DR: 23 marketing playbooks (CRO, SEO, copy, analytics, experiments, pricing, launches, ads, social). Use to get checklists + copy/paste deliverables fast.
 ---
 

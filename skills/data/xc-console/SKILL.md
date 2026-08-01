@@ -1,5 +1,12 @@
 ---
 name: xc-console
+description: Automate F5 Distributed Cloud web console operations through browser
+  automation using mcp__claude-in-chrome MCP tools. Handles multi-provider authentication
+  (Azure SSO, Google, Okta, SAML, native user
+---
+
+---
+name: xc-console
 description: Automate F5 Distributed Cloud web console operations through browser automation using mcp__chrome-devtools MCP tools. Handles multi-provider authentication (Azure SSO, Google, Okta, SAML, native username/password), detecting session expiry and navigating login flows. Warns when VPN is required. Use when creating HTTP/TCP load balancers, origin pools, WAF policies, deploying cloud sites (AWS/Azure/GCP), managing DNS zones, configuring service policies, or executing any F5 XC GUI-based tasks. Triggers on: F5 XC console, GUI automation, browser automation, login, SSO, authenticate, tenant management, visual configuration, Web App and API Protection, WAAP.
 allowed_args: true
 ---

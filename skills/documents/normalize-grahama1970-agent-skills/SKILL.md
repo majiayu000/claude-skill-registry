@@ -1,5 +1,11 @@
 ---
 name: normalize
+description: Comprehensive text normalization for handling PDF and Unicode encoding
+  issues.
+---
+
+---
+name: normalize
 description: >
   Normalize text to handle PDF/Unicode encoding issues.
   Converts Windows-1252, curly quotes, em/en dashes, ligatures,

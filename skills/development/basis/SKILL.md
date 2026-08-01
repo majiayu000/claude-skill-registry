@@ -1,3 +1,8 @@
+---
+name: basis
+description: '> 来源：https://annatarhe.github.io/2016/04/19/hack-js-code.html'
+---
+
 # JavaScript小技巧
 
 > 来源：https://annatarhe.github.io/2016/04/19/hack-js-code.html

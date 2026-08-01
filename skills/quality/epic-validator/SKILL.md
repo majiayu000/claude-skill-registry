@@ -1,3 +1,10 @@
+---
+name: epic-validator
+description: 'description: Validate epicsbacklog.md for an idea against conceptsummary.md
+  (writes report to ideas/<IDEAID>/runs and updates ideas/<IDEAID>/latest; optional
+  patch if allowed)'
+---
+
 ﻿---
 name: Validate epics
 description: Validate epics_backlog.md for an idea against concept_summary.md (writes report to ideas/<IDEA_ID>/runs and updates ideas/<IDEA_ID>/latest; optional patch if allowed)

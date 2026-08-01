@@ -1,3 +1,9 @@
+---
+name: eval-recipes-runner-rysweet-amplihack
+description: Run Microsoft's eval-recipes benchmarks to validate amplihack improvements
+  against baseline agents.
+---
+
 # eval-recipes Runner Skill
 
 ## Purpose

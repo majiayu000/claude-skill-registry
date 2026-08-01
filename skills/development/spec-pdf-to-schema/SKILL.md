@@ -1,3 +1,9 @@
+---
+name: spec-pdf-to-schema
+description: Ensure protocol facts derived from MIDI spec PDFs are reflected in canonical
+  JSON schema/OpenAPI sources.
+---
+
 # Spec PDF to Schema Mapping
 
 ## Purpose

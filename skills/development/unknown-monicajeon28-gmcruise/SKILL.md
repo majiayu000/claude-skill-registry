@@ -1,3 +1,8 @@
+---
+name: unknown
+description: 코드 없이 지침만 제공하는 단순 스킬용
+---
+
 # Simple Skill Template
 
 코드 없이 지침만 제공하는 단순 스킬용

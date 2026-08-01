@@ -1,3 +1,8 @@
+---
+name: chromosomal-instability-agent
+description: '---name: chromosomal-instability-agent'
+---
+
 ---name: chromosomal-instability-agent
 description: AI-powered analysis of chromosomal instability (CIN) signatures for cancer prognosis, immunotherapy response prediction, and therapeutic vulnerability identification.
 license: MIT

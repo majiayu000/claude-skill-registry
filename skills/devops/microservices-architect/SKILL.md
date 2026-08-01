@@ -1,5 +1,12 @@
 ---
 name: microservices-architect
+description: Use when designing distributed systems, decomposing monoliths, or implementing
+  microservices patterns. Invoke for service boundaries, DDD, saga patterns, event
+  sourcing, service mesh, distributed trac
+---
+
+---
+name: microservices-architect
 description: Use when designing distributed systems, decomposing monoliths, or implementing microservices patterns. Invoke for service boundaries, DDD, saga patterns, event sourcing, service mesh, distributed tracing. Keywords: microservices, service mesh, distributed systems, Kubernetes, event-driven.
 triggers:
   - microservices

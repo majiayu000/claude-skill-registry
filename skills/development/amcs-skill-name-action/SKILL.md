@@ -1,4 +1,9 @@
 ---
+name: amcs-skill-name-action
+description: '{ONE_SENTENCE_PURPOSE}. Use when {TRIGGER_CONDITION}.'
+---
+
+---
 name: amcs-{SKILL_NAME}-{ACTION}
 description: {ONE_SENTENCE_PURPOSE}. Use when {TRIGGER_CONDITION}.
 ---

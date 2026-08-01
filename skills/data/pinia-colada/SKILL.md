@@ -1,5 +1,10 @@
 ---
 name: pinia-colada
+description: 'Status: Production Ready ✅ | Last Updated: 2025-11-28'
+---
+
+---
+name: pinia-colada
 description: Pinia Colada data fetching for Vue/Nuxt with useQuery, useMutation. Use for async state, query cache, SSR, or encountering invalidation, hydration, TanStack Vue Query migration errors.
 
   Keywords: Pinia Colada, @pinia/colada, useQuery, useMutation, useQueryCache, data fetching, async state, Vue 3, Nuxt, Pinia, server state, caching, staleTime, gcTime, query invalidation, prefetching, optimistic updates, mutations, query keys, paginated queries, SSR, server-side rendering, Nuxt module, @pinia/colada-nuxt, query cache, auto-refetch, cache invalidation, request deduplication, loading states, error handling, onSettled, onSuccess, onError, defineColadaLoader

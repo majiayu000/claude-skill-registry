@@ -1,5 +1,11 @@
 ---
 name: regenerate-types
+description: 'CRITICAL: After ANY changes to api.yml, TypeScript interfaces MUST be
+  regenerated before proceeding to implementation.'
+---
+
+---
+name: regenerate-types
 description: Type regeneration workflow - when and how to run npm run clean description: Type regeneration workflow - when and how to run npm run clean && npm run generatedescription: Type regeneration workflow - when and how to run npm run clean && npm run generate npm run generate
 ---
 

@@ -1,3 +1,8 @@
+---
+name: error-tracking
+description: '| ID | flutter-error-tracking |'
+---
+
 # 🐛 Skill: Error Tracking & Crash Reporting
 
 ## 📋 Metadata

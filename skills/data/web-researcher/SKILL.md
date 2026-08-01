@@ -1,3 +1,8 @@
+---
+name: web-researcher
+description: '- skillname: web-researcher'
+---
+
 # Web Researcher Skill
 
 ## Metadata

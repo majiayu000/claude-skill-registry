@@ -1,3 +1,8 @@
+---
+name: casaos-onecloud
+description: 本文件记录本人使用玩客云 Armbian+CasaOS 遇到的一些坑和使用技巧。
+---
+
 # README_skill
 
 本文件记录本人使用玩客云 Armbian+CasaOS 遇到的一些坑和使用技巧。

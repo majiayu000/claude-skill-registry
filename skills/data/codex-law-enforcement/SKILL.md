@@ -1,3 +1,9 @@
+---
+name: codex-law-enforcement
+description: 'Enforce the four Codex Laws governing all agent interactions: CONSENT,
+  INVITATION, INTEGRITY, GROWTH.'
+---
+
 # Codex Law Enforcement
 
 ## Skill Metadata

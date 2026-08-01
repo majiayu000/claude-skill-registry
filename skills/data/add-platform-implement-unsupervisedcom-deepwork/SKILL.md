@@ -1,4 +1,10 @@
 ---
+name: add-platform-implement
+description: Creates platform adapter, templates, tests with 100% coverage, and README
+  documentation. Use after adding hook capabilities.
+---
+
+---
 name: add_platform.implement
 description: "Creates platform adapter, templates, tests with 100% coverage, and README documentation. Use after adding hook capabilities."user-invocable: falsehooks:  Stop:
     - hooks:        - type: command

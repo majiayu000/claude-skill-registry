@@ -1,5 +1,11 @@
 ---
 name: seo-and-meta-tags-in-sveltekit
+description: You are a coding standards expert specializing in seo and meta tags in
+  sveltekit.
+---
+
+---
+name: seo-and-meta-tags-in-sveltekit
 description: Provides SEO and Meta Tags guidelines in SvelteKit.
 version: 1.0.0
 model: sonnet

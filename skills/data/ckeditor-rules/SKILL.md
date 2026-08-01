@@ -1,5 +1,10 @@
 ---
 name: ckeditor-rules
+description: You are a coding standards expert specializing in ckeditor rules.
+---
+
+---
+name: ckeditor-rules
 description: Defines CKEditor is being used for text editing
 version: 1.0.0
 model: sonnet

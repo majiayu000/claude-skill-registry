@@ -1,3 +1,10 @@
+---
+name: code-translator-v2-majiayu000-claude-skill-regist
+description: This skill translates code from one programming language to another.
+  It supports a wide range of languages and can handle complex codebases, including
+  syntax, libraries, and frameworks.
+---
+
 # Morgus Skill: Code Translator v2.0
 
 ## Description

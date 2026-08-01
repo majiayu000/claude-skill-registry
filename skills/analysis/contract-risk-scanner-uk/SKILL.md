@@ -1,5 +1,12 @@
 ---
 name: contract-risk-scanner-uk
+description: Analyze UK property conveyancing and pensions contracts to extract key
+  terms, identify legal risks, compare against standard terms, and generate compliance
+  checklists. Specialized for UK legal requirements.
+---
+
+---
+name: contract-risk-scanner-uk
 description: Review UK property and pensions contracts, extract key terms, identify legal risks, compare against standard terms, generate compliance checklist. Use when reviewing contracts, agreements, legal documents, conveyancing, pensions agreements. Keywords: contract, risk, terms, compliance, conveyancing, pensions, legal, agreement, clause, liability.
 allowed-tools: Read, Bash(grep:*), Glob, mcp__neo4j-apex__*, mcp__neo4j-cms-handbook__*, mcp__archon__rag_search_knowledge_base
 model: claude-opus-4-5-20251101

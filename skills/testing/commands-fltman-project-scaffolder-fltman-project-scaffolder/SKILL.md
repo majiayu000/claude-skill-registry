@@ -1,3 +1,8 @@
+---
+name: commands-fltman-project-scaffolder
+description: Create a new Agent Skill for specialized tasks.
+---
+
 # Create a New Agent Skill
 
 Create a new Agent Skill for specialized tasks.

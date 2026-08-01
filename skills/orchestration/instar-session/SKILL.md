@@ -1,5 +1,13 @@
 ---
 name: instar-session
+description: Instar lets you spawn, monitor, and communicate with Claude Code sessions
+  running as background processes in tmux. Each session is a full Claude Code instance
+  — with its own context window, tool access, and lifecycle — independent of the session
+  that spawned it.
+---
+
+---
+name: instar-session
 description: Spawn, monitor, and communicate with persistent Claude Code sessions running in the background. Use when a task needs to run without blocking the current session, when the user asks to do something in the background, or when a long-running task needs its own context window. Trigger words: background task, spawn session, persistent, run in background, parallel, separate session, async task.
 license: MIT
 metadata:

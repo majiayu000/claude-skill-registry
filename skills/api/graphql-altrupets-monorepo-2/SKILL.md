@@ -1,3 +1,8 @@
+---
+name: graphql
+description: '| ID | flutter-graphql |'
+---
+
 # 🔗 Skill: GraphQL Integration
 
 ## 📋 Metadata

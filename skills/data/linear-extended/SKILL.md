@@ -1,5 +1,12 @@
 ---
 name: linear-extended
+description: Extended Linear operations - manage project milestones and download images
+  from issues. Use for project phases (Alpha, Beta, Launch), milestone management,
+  or extracting images/screenshots from issues
+---
+
+---
+name: linear-extended
 description: Extended Linear operations - manage project milestones and download images from issues. Use for project phases (Alpha, Beta, Launch), milestone management, or extracting images/screenshots from issues. Triggers: "show milestones", "create milestone", "update milestone", "project phases", "download images from issue", "get issue images", "extract screenshots".
 ---
 

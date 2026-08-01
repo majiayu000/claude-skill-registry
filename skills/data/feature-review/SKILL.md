@@ -1,5 +1,10 @@
 ---
 name: feature-review
+description: '- Philosophy'
+---
+
+---
+name: feature-review
 description: |
 
 Triggers: feature, backlog, prioritization, roadmap, wsjf

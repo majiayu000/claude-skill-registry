@@ -1,3 +1,8 @@
+---
+name: implementation-verifier
+description: '- skillname: implementation-verifier'
+---
+
 # Implementation Verifier Skill
 
 ## Metadata

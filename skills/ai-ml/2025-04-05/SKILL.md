@@ -1,3 +1,9 @@
+---
+name: '2025-04-05'
+description: '> GROVE: A Generalized Reward for Learning Open-Vocabulary Physical
+  Skill'
+---
+
 # GROVE：一种用于学习开放词汇物理技能的通用奖励机制
 
 发布时间：2025年04月05日

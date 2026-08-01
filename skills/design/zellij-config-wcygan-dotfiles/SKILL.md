@@ -1,5 +1,12 @@
 ---
 name: zellij-config
+description: Configure Zellij terminal multiplexer with layouts, themes, keybindings,
+  and behavior settings using KDL format. Use when setting up Zellij, creating layouts,
+  customizing themes, or configuring keybin
+---
+
+---
+name: zellij-config
 description: Configure Zellij terminal multiplexer with layouts, themes, keybindings, and behavior settings using KDL format. Use when setting up Zellij, creating layouts, customizing themes, or configuring keybinds. Keywords: zellij, terminal multiplexer, layout, theme, keybind, KDL, config, tmux alternative, terminal workspace
 ---
 

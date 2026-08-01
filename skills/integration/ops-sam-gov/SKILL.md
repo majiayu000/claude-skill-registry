@@ -1,5 +1,11 @@
 ---
 name: ops-sam-gov
+description: 'Query the U.S. federal government''s System for Award Management (SAM.gov)
+  for:'
+---
+
+---
+name: ops-sam-gov
 description: >
   Query SAM.gov for federal contracts, entity registrations, exclusions, and opportunities.
   Uses official GSA APIs for government contractor intelligence and OSINT research.

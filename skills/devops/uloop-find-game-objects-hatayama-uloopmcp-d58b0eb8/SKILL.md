@@ -1,5 +1,12 @@
 ---
 name: uloop-find-game-objects
+description: 'Find GameObjects with search criteria via uloop CLI. Use when you need
+  to: (1) Locate GameObjects by name pattern, (2) Find objects by tag or layer, (3)
+  Search for objects with specific component type'
+---
+
+---
+name: uloop-find-game-objects
 description: Find GameObjects with search criteria via uloop CLI. Use when you need to: (1) Locate GameObjects by name pattern, (2) Find objects by tag or layer, (3) Search for objects with specific component types.
 ---
 

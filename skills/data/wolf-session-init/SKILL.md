@@ -1,5 +1,12 @@
 ---
 name: wolf-session-init
+description: '**MANDATORY** Use at the start of EVERY session before any work - establishes
+  Wolf behavioral framework and ensures all required skills are loaded and chained
+  properly'
+---
+
+---
+name: wolf-session-init
 description: **MANDATORY** Use at the start of EVERY session before any work - establishes Wolf behavioral framework and ensures all required skills are loaded and chained properly
 version: 1.0.0
 triggers:

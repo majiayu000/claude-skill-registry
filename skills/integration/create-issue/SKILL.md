@@ -1,4 +1,9 @@
 ---
+name: create-issue
+description: Execute /create-issue <description> slash command.
+---
+
+---
 name: creating-github-issue
 description: Creates a GitHub issue with structured content using gh CLI. Use when: user wants to create an issue, report a bug, or propose a feature.
 ---

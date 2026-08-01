@@ -1,5 +1,11 @@
 ---
 name: architecture-paradigm-hexagonal
+description: '- When you anticipate frequent changes to databases, frameworks, or
+  user interfaces and need the core domain logic to remain stable.'
+---
+
+---
+name: architecture-paradigm-hexagonal
 description: |
 
 Triggers: hexagonal, architecture, ports-adapters, testability, infrastructure-independence

@@ -1,3 +1,8 @@
+---
+name: time-system
+description: 'name: Time System & Loop Mechanics'
+---
+
 Y---
 name: Time System & Loop Mechanics
 description: Understanding the game's timekeeping, day/night cycle, hourly events, and time loop mechanics. Use when working with time-based features, scheduling, or loop system.

@@ -1,4 +1,11 @@
 ---
+name: test-rxtech-lab-argo-trading
+description: 'Run code quality checks and tests for the argo-trading project. Use
+  this skill when: (1) User asks to test the code or run tests, (2) User asks to lint
+  or check code quality, (3) User wants to verify'
+---
+
+---
 name: test
 description: Run code quality checks and tests for the argo-trading project. Use this skill when: (1) User asks to test the code or run tests, (2) User asks to lint or check code quality, (3) User wants to verify code changes work correctly, (4) User says "/test" or asks to run the test suite.
 ---

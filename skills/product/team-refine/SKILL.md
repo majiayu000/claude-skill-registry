@@ -1,5 +1,11 @@
 ---
 name: team-refine
+description: Transform captured ideas into actionable Product Backlog Items using
+  BA best practices, Hypothesis-Driven Development, and domain research.
+---
+
+---
+name: team-refine
 version: 2.1.0
 description: "[Team] Transform ideas into Product Backlog Items using BA best practices, hypothesis validation, and domain research. Use when converting ideas to PBIs, validating problem hypotheses, adding acceptance criteria, or refining requirements. Triggers on "create pbi", "refine idea", "convert to pbi", "acceptance criteria", "make actionable", "validate hypothesis"."
 argument-hint: "<path-to-idea-file-or-IDEA-ID> [--research] [--skip-hypothesis]"

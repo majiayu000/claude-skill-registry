@@ -1,5 +1,10 @@
 ---
 name: shipflow-audit-design
+description: '- Current directory: !pwd'
+---
+
+---
+name: shipflow-audit-design
 description: Professional UI/UX design review — single page (with argument) or full project audit (no argument)
 disable-model-invocation: true
 argument-hint: [file-path | "global"] (omit for full project)

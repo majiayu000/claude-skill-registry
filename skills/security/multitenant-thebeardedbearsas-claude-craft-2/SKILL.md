@@ -1,5 +1,10 @@
 ---
 name: multitenant
+description: This skill provides guidelines and best practices.
+---
+
+---
+name: multitenant
 description: Règle 08 : Multitenant - Isolation et Sécurité. Use when working with multitenant.
 ---
 

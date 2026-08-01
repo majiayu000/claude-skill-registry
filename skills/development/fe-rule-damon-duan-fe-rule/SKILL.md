@@ -1,3 +1,8 @@
+---
+name: fe-rule
+description: 1 String技巧
+---
+
 [1 String技巧](#1-String技巧)
 
 [2 Number技巧](#2-Number技巧)
@@ -58,7 +63,7 @@ const user = {
   }
 }
 
-const printUserInfo = (user) => { 
+const printUserInfo = (user) => {
   const text = `The user is ${user.name} ${user.surname}. Email: ${user.details.email}. Display Name: ${user.details.displayName}. ${user.name} has ${user.details.followers} followers.`
   console.log(text);
 }
@@ -345,7 +350,7 @@ const product = { name: 'Milk', packaging: 'Plastic', price: '5$' }
 const manufacturer = { name: 'Company Name', address: 'The Company Address' }
 
 const productManufacturer = { ...product, ...manufacturer };
-console.log(productManufacturer); 
+console.log(productManufacturer);
 // outputs { name: "Company Name", packaging: "Plastic", price: "5$", address: "The Company Address" }
 
 // merging an array of objects into one

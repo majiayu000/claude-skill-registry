@@ -1,3 +1,8 @@
+---
+name: investigate-and-plan
+description: 'name: investigate-and-plan'
+---
+
 ﻿---
 name: investigate-and-plan
 description: Investigate errors, incidents, or product ideas using both internet research and repo-wide codebase research, then propose a concrete changeset plan with clarifying questions before any implementation. Use when a user asks to investigate, root-cause, or plan changes, or when an Issue or PR is referenced and needs a plan.

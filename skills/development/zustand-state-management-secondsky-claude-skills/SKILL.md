@@ -1,5 +1,10 @@
 ---
 name: zustand-state-management
+description: 'Status: Production Ready ✅'
+---
+
+---
+name: zustand-state-management
 description: Zustand state management for React with TypeScript. Use for global state, Redux/Context API migration, localStorage persistence, slices pattern, devtools, Next.js SSR, or encountering hydration errors, TypeScript inference issues, persist middleware problems, infinite render loops.
 
   Keywords: zustand, state management, React state, TypeScript state, persist middleware,

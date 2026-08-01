@@ -1,3 +1,8 @@
+---
+name: analytics-tracking
+description: '| ID | flutter-analytics-tracking |'
+---
+
 # 📊 Skill: Analytics & Tracking
 
 ## 📋 Metadata

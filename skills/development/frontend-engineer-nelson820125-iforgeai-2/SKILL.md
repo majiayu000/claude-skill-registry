@@ -1,5 +1,12 @@
 ---
 name: frontend-engineer
+description: Read outputlanguage from .ai/context/workflow-config.md. Write ALL deliverables
+  and code comments in that language. If the file is absent or the field is unset,
+  default to en-US.
+---
+
+---
+name: frontend-engineer
 description: Frontend Engineer role skill. Use when you need to implement frontend features based on product requirements, UI design specs, and architecture constraints. Keywords: frontend development, component implementation, state management, Vue 3, React, TypeScript, SCSS, page layout, interaction implementation, API integration, routing, performance optimisation, code standards, engineering quality.
 ---
 

@@ -1,5 +1,12 @@
 ---
 name: write-skill
+description: 'CRITICAL: Before deploying any skill, spawn a reviewer agent with REVIEW.md
+  to audit allowed-tools. Overly permissive tool access (e.g., Bash(git:)) can cause
+  data loss or leak secrets.'
+---
+
+---
+name: write-skill
 description: Use when the user wants to create a new Claude Code skill. Guides skill creation with playbook patterns.
 argument-hint: "[global|local] [skill-name] [purpose...]"
 {{- template "bedrock-model" (dict "tier" "opus" "root" .) }}

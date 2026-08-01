@@ -1,5 +1,11 @@
 ---
 name: zod
+description: TypeScript-first schema validation library with automatic type inference
+  and excellent developer experience.
+---
+
+---
+name: zod
 description: TypeScript-first schema validation with static type inference. Type-safe validation, parsing, refinements, transformations. Trigger: When creating validation schemas, parsing user input, or ensuring type-safe data validation with Zod.
 skills:
   - conventions

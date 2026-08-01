@@ -1,4 +1,11 @@
 ---
+name: love-timer
+description: '{{SKILLDESCRIPTION}} Use this skill when working with time measurement,
+  frame rate control, performance monitoring, or any time-related operations in LÖVE
+  games.'
+---
+
+---
 name: {{SKILL_NAME}}
 description: {{SKILL_DESCRIPTION}} Use this skill when working with time measurement, frame rate control, performance monitoring, or any time-related operations in LÖVE games.
 license: MIT

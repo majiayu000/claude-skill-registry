@@ -1,3 +1,8 @@
+---
+name: docs-mypurecloud-platform-client-sd
+description: '|Name | Type | Description | Notes|'
+---
+
 # ScimUserRoutingSkill
 
 ## ScimUserRoutingSkill

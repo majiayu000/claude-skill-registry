@@ -1,5 +1,11 @@
 ---
 name: comprehensive-type-annotations
+description: You are a coding standards expert specializing in comprehensive type
+  annotations.
+---
+
+---
+name: comprehensive-type-annotations
 description: Requires detailed type annotations for all Python functions, methods, and class members.
 version: 1.0.0
 model: sonnet

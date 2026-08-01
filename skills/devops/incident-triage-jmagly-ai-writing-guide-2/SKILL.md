@@ -1,3 +1,9 @@
+---
+name: incident-triage
+description: Rapid incident classification, severity assessment, and response coordination.
+  Use when relevant to the task.
+---
+
 # incident-triage
 
 Rapid incident classification, severity assessment, and response coordination.

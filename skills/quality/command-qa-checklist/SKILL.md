@@ -1,5 +1,10 @@
 ---
 name: command-qa-checklist
+description: Run the /qa-checklist workflow defined in .claude/commands/qa-checklist.md.
+---
+
+---
+name: command-qa-checklist
 description: Use the /qa-checklist slash command for QA and self-review before delivery. Use when: validating changes and tests.
 ---
 

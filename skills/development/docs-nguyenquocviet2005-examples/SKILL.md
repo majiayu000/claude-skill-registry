@@ -1,3 +1,10 @@
+---
+name: docs-nguyenquocviet2005-examples
+description: The Text Analyzer skill is a comprehensive example of how to build agent
+  skills in AnythingLLM. It demonstrates all key patterns and best practices for skill
+  development.
+---
+
 # Example Agent Skill: Text Analyzer
 
 ## Overview
@@ -64,13 +71,13 @@ setup(aibitat) {
     // Function metadata and schema
     name: this.name,
     description: "What this skill does",
-    
+
     // JSON Schema for input validation
     parameters: { ... },
-    
+
     // Examples for LLM few-shot learning
     examples: [ ... ],
-    
+
     // Main execution handler
     handler: async function({ text, analysis_type }) { ... }
   });

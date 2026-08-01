@@ -1,4 +1,10 @@
 ---
+name: hti-expert
+description: '> Expert knowledge base for all things HUBZone Technology Initiative
+  (HTI) - mission, brand, programs, technical processes, and content generation.'
+---
+
+---
 name: HTI Expert - HUBZone Technology Initiative Knowledge Base
 description: > **Expert knowledge base for all things HUBZone Technology Initiative (HTI)** - mission, brand, programs, technical processes, and content generat...
 allowed-tools: Read, Grep

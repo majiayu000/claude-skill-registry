@@ -1,3 +1,9 @@
+---
+name: opencode-plugins
+description: Guide for creating OpenCode plugins. Use when building plugins to extend
+  OpenCode with custom hooks, tools, or integrations.
+---
+
 # OpenCode Plugins
 
 Guide for creating OpenCode plugins. Use when building plugins to extend OpenCode with custom hooks, tools, or integrations.
@@ -19,7 +25,7 @@ export const MyPlugin: Plugin = async ({ project, client, $, directory, worktree
   // $: Bun shell API for executing commands
   // directory: Current working directory
   // worktree: Git worktree path
-  
+
   return {
     // Hook implementations
   }

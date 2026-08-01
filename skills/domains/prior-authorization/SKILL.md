@@ -1,3 +1,8 @@
+---
+name: prior-authorization
+description: '---name: prior-auth-coworker'
+---
+
 ---name: prior-auth-coworker
 description: Prior Auth Review
 keywords:

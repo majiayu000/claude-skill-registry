@@ -1,5 +1,10 @@
 ---
 name: feishu-sync
+description: '> 使用Playwright自动化同步Markdown文档到飞书Wiki/文档'
+---
+
+---
+name: feishu-sync
 description: 使用Playwright自动同步文档到飞书。Use for tasks like syncing markdown to Feishu, automating Feishu document updates, browser automation for Feishu. Keywords: 飞书同步, feishu sync, playwright, 文档同步, 自动化
 ---
 

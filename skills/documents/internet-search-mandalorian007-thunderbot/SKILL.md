@@ -1,4 +1,10 @@
 ---
+name: internet-search
+description: 'Search the internet using Perplexity API. Use for current information,
+  news, or web research. Keywords: search, web, internet, perplexity, news, research.'
+---
+
+---
 name: Internet Search
 description: Search the internet using Perplexity API. Use for current information, news, or web research. Keywords: search, web, internet, perplexity, news, research.
 ---

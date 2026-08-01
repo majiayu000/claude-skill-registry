@@ -1,5 +1,10 @@
 ---
 name: ln-500-story-quality-gate
+description: Story quality validation coordinator with gates
+---
+
+---
+name: ln-500-story-quality-gate
 description: Story-level quality orchestrator. Pass 1: code quality -> regression -> manual testing (fail fast). Pass 2: verify tests/coverage -> mark Story Done. Auto-discovers team/config.
 ---
 

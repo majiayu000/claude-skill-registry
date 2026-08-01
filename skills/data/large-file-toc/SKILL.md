@@ -1,5 +1,11 @@
 ---
 name: large-file-toc
+description: 为大文件生成目录概要。当入库的 Markdown 文件超过阈值（默认30KB）时，提取标题结构创建导航文件。触发条件：Markdown 文件大小
+  >= 30KB。
+---
+
+---
+name: large-file-toc
 description: Generate table of contents overview for large files. When onboarded Markdown file exceeds threshold (default 30KB), extract heading structure to create navigation file. Trigger condition: Markdown file size >= 30KB.
 ---
 

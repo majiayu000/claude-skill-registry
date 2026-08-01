@@ -1,5 +1,12 @@
 ---
 name: complete-idea
+description: 'Mark an idea as completed when all its derived tasks are done. Note:
+  Ideas are automatically closed when converted to tasks via /feed-backlog. Use this
+  skill only for edge cases (manually created task'
+---
+
+---
+name: complete-idea
 description: Mark an idea as completed when all its derived tasks are done. Note: Ideas are automatically closed when converted to tasks via /feed-backlog. Use this skill only for edge cases (manually created tasks, legacy ideas, etc.).
 ---
 

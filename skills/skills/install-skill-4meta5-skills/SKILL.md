@@ -1,5 +1,11 @@
 ---
 name: install-skill
+description: Install skills using local repos (../skills + ../hooks) first. Do not
+  require npm publish.
+---
+
+---
+name: install-skill
 description: Install skills from ../skills into a target project via local ../hooks CLI,
 including pre-publish local-path workflows after make-skill changes.
 Use when: (1) a new or renamed skill was added in ../skills, (2) hooks packages

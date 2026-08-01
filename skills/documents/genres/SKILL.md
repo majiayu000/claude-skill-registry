@@ -1,3 +1,8 @@
+---
+name: genres
+description: '> Style/formatting: Follow ~/.claude/skills/word-doc-generator/SKILL.md'
+---
+
 # INTEGRITY CHECK - Genre Template
 
 > **Style/formatting:** Follow `~/.claude/skills/word-doc-generator/SKILL.md`
@@ -13,7 +18,7 @@ Quick integrity screening covering sanctions, watchlists, adverse media, and bas
 ### Required Sections (In Order)
 
 
-1. **Subject Identification** 
+1. **Subject Identification**
 
 
 2. **Sanctions and Watchlists** → `sections/universal/SANCTIONS_WATCHLISTS.skill.md`
@@ -22,10 +27,10 @@ Quick integrity screening covering sanctions, watchlists, adverse media, and bas
 3. **Adverse Media** → `sections/universal/ADVERSE_MEDIA.skill.md`
 
 
-4. **Court Records** 
+4. **Court Records**
 
 
-5. **Assessment Summary** 
+5. **Assessment Summary**
 
 
 

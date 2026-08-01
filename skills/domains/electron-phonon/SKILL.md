@@ -1,5 +1,11 @@
 ---
 name: electron-phonon
+description: Skills for computing electron-phonon interactions and related transport
+  properties using Quantum ESPRESSO and Python post-processing tools.
+---
+
+---
+name: electron-phonon
 description: Electron-Phonon Properties (4 sub-skills: deformation-potential, electronic-transport, elph-coupling, superconductivity)
 ---
 

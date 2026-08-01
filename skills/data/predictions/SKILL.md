@@ -1,3 +1,8 @@
+---
+name: predictions
+description: Extracts predictions, confidence levels, and verification methods.
+---
+
 # Extract Predictions
 
 ## Description

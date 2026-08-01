@@ -1,5 +1,12 @@
 ---
 name: dipeo-backend
+description: 'Router skill for DiPeO backend ecosystem (server/ and cli/): FastAPI
+  server, CLI tools, database, MCP integration. Use when task mentions CLI commands,
+  server endpoints, database queries, or MCP tools'
+---
+
+---
+name: dipeo-backend
 description: Router skill for DiPeO backend ecosystem (server/ and cli/): FastAPI server, CLI tools, database, MCP integration. Use when task mentions CLI commands, server endpoints, database queries, or MCP tools. For simple tasks, handle directly; for complex work, escalate to dipeo-backend agent.
 allowed-tools: Read, Grep, Glob, Bash, Skill
 ---

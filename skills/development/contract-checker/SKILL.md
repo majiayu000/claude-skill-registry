@@ -1,3 +1,9 @@
+---
+name: contract-checker
+description: Validates contract JSON Schemas and fixtures, fails fast on breaking
+  format issues.
+---
+
 # Contract Checker Skill
 
 ## Inputs

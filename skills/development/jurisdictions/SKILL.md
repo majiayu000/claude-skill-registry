@@ -1,3 +1,8 @@
+---
+name: jurisdictions
+description: '> Style/formatting: Follow ~/.claude/skills/word-doc-generator/SKILL.md'
+---
+
 # SERBIA - Jurisdiction Template
 
 > **Style/formatting:** Follow `~/.claude/skills/word-doc-generator/SKILL.md`

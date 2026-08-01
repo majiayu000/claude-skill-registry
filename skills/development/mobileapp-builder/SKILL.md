@@ -1,5 +1,11 @@
 ---
 name: mobileapp-builder
+description: Given a spec.md, autonomously build and ship a Swift/SwiftUI iOS app
+  to the App Store.
+---
+
+---
+name: mobileapp-builder
 description: Builds and ships a Swift/SwiftUI iOS app to the App Store from a natural language idea. Handles all phases autonomously: trend research (X + TikTok + App Store) → SDD spec → Xcode scaffold → SwiftUI implementation → landing page → ASC subscription setup → IAP 175-territory pricing → app icon + App Store screenshots → build → TestFlight → App Store submission. Three human stops: (1) spec approval before build, (2) TestFlight testing before submission, (3) App Privacy manual setup. Use when told to "build an app", "ship an iOS app", "make money with apps", or when triggered by app-factory cron.
 ---
 

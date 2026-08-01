@@ -1,15 +1,20 @@
+---
+name: docs
+description: Name | Type | Description | Notes
+---
+
 # Skill
 
-`Skill` 
+`Skill`
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**index** | **str** | Resource index for shorthand searching. | [optional] 
-**name** | **str** | Name of the referenced resource. | [optional] 
-**url** | **str** | URL of the referenced resource. | [optional] 
-**desc** | **List[str]** | Description of the resource. | [optional] 
-**ability_score** | [**APIReference**](APIReference.md) |  | [optional] 
+**index** | **str** | Resource index for shorthand searching. | [optional]
+**name** | **str** | Name of the referenced resource. | [optional]
+**url** | **str** | URL of the referenced resource. | [optional]
+**desc** | **List[str]** | Description of the resource. | [optional]
+**ability_score** | [**APIReference**](APIReference.md) |  | [optional]
 
 ## Example
 

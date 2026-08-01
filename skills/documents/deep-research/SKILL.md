@@ -1,5 +1,12 @@
 ---
 name: deep-research
+description: Use PROACTIVELY for comprehensive, multi-source research combining web
+  browsing, codebase exploration, and third-party code analysis. Orchestrates multiple
+  specialized agents using Graph of Thoughts m
+---
+
+---
+name: deep-research
 description: Use PROACTIVELY for comprehensive, multi-source research combining web browsing, codebase exploration, and third-party code analysis. Orchestrates multiple specialized agents using Graph of Thoughts methodology. Ideal for: complex technical questions, comparing documentation vs implementation, understanding library internals, performance analysis, or resolving contradictory information.
 allowed-tools: TodoWrite, Task, AskUserQuestion, Read, Grep, Glob
 ---

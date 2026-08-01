@@ -1,10 +1,15 @@
+---
+name: system-create-skill
+description: '用途: 创建一个完整的 System/Project'
+---
+
 # system-create-skill
 
 **用途**: 创建一个完整的 System/Project
 
 **触发**: 当用户表达想要创建一个系统时（如："创建一个健康管理系统"）
 
-**核心理念**: 
+**核心理念**:
 - 人只说意图，AI 自己设计
 - 做选择题，不做填空题
 - 问最关键的一题（最大信息增益）
@@ -24,19 +29,19 @@ workflow:
   name: system-create-skill
   description: 创建一个完整的 System/Project
   version: 1.0.0
-  
+
   input:
     user_intent: string  # 用户的模糊意图
-  
+
   output:
     system_path: string  # 创建的系统路径
     summary: object      # 系统摘要
-  
+
   # ========================================
   # 节点定义
   # ========================================
   nodes:
-    
+
     # ────────────────────────────────────
     # 阶段 1: 快速澄清（最大信息增益）
     # ────────────────────────────────────
@@ -48,7 +53,7 @@ workflow:
         mode: "multiple_choice"
         strategy: "max_information_gain"
       output_to: $clarified_requirements
-    
+
     # ────────────────────────────────────
     # 阶段 2: 自主设计
     # ────────────────────────────────────
@@ -58,7 +63,7 @@ workflow:
       input:
         requirements: $clarified_requirements
       output_to: $design_plan
-    
+
     # ────────────────────────────────────
     # 阶段 3: 展示方案（判别式确认）
     # ────────────────────────────────────
@@ -70,14 +75,14 @@ workflow:
         format: "visual_summary"
         question: "这个方案符合你的预期吗？需要调整哪里？"
       output_to: $user_feedback
-    
+
     # ────────────────────────────────────
     # 条件判断：是否通过
     # ────────────────────────────────────
     check_approval:
       type: condition
       expression: "$user_feedback.approved == true"
-    
+
     # ────────────────────────────────────
     # 分支 A: 执行创建
     # ────────────────────────────────────
@@ -87,7 +92,7 @@ workflow:
       input:
         plan: $design_plan
       output_to: $execution_result
-    
+
     # ────────────────────────────────────
     # 分支 B: 调整设计
     # ────────────────────────────────────
@@ -98,7 +103,7 @@ workflow:
         artifact: $design_plan
         feedback: $user_feedback.comments
       output_to: $adjusted_plan
-    
+
     # ────────────────────────────────────
     # 循环控制器
     # ────────────────────────────────────
@@ -106,7 +111,7 @@ workflow:
       type: loop
       max_iterations: 3
       condition: "$user_feedback.approved == false"
-    
+
     # ────────────────────────────────────
     # 阶段 5: 验证结果
     # ────────────────────────────────────
@@ -118,14 +123,14 @@ workflow:
         format: "file_list_with_summary"
         question: "试用一下，有没有不符合预期的地方？"
       output_to: $validation_feedback
-    
+
     # ────────────────────────────────────
     # 最终检查
     # ────────────────────────────────────
     final_check:
       type: condition
       expression: "$validation_feedback.satisfied == true"
-    
+
     # ────────────────────────────────────
     # 如果不满意：记录反馈
     # ────────────────────────────────────
@@ -135,7 +140,7 @@ workflow:
       input:
         message: "System created but user requested improvements"
         data: $validation_feedback
-  
+
   # ========================================
   # 边定义（控制流）
   # ========================================
@@ -143,52 +148,52 @@ workflow:
     # 主流程
     - from: clarify_intent
       to: design_system
-    
+
     - from: design_system
       to: show_plan
-    
+
     - from: show_plan
       to: check_approval
-    
+
     # 条件分支
     - from: check_approval
       to: execute_creation
       condition: true
-    
+
     - from: check_approval
       to: adjust_design
       condition: false
-    
+
     # 循环：调整后重新进入设计
     - from: adjust_design
       to: iteration_controller
-    
+
     - from: iteration_controller
       to: design_system
       condition: "$loop.should_continue"
-    
+
     - from: iteration_controller
       to: execute_creation
       condition: "$loop.should_exit"  # 超过最大次数，强制执行
-    
+
     # 验证流程
     - from: execute_creation
       to: validate_result
-    
+
     - from: validate_result
       to: final_check
-    
+
     - from: final_check
       to: END
       condition: true
-    
+
     - from: final_check
       to: log_feedback
       condition: false
-    
+
     - from: log_feedback
       to: END
-  
+
   # ========================================
   # 入口和出口
   # ========================================
@@ -204,13 +209,13 @@ workflow:
 workflow:
   name: system-design-workflow
   description: 设计系统的详细方案
-  
+
   input:
     requirements: object  # 澄清后的需求
-  
+
   output:
     design_plan: object   # 设计方案
-  
+
   nodes:
     # 调研最佳实践
     research:
@@ -219,7 +224,7 @@ workflow:
       input:
         topic: $workflow.input.requirements.domain
         focus: "best_practices, patterns, tools"
-    
+
     # 制定计划
     plan:
       type: skill
@@ -227,14 +232,14 @@ workflow:
       input:
         goal: $workflow.input.requirements
         knowledge: $research.output
-    
+
     # 设计目录结构
     design_structure:
       type: skill
       skill: structure-design-skill
       input:
         plan: $plan.output
-    
+
     # 设计 Workflows
     design_workflows:
       type: skill
@@ -242,7 +247,7 @@ workflow:
       input:
         requirements: $workflow.input.requirements
         structure: $design_structure.output
-    
+
     # 设计 Skills
     design_skills:
       type: skill
@@ -250,7 +255,7 @@ workflow:
       input:
         workflows: $design_workflows.output
         structure: $design_structure.output
-    
+
     # 设计 Agents（如果需要）
     design_agents:
       type: skill
@@ -258,7 +263,7 @@ workflow:
       input:
         skills: $design_skills.output
         workflows: $design_workflows.output
-    
+
     # 汇总方案
     synthesize:
       type: skill
@@ -268,7 +273,7 @@ workflow:
         workflows: $design_workflows.output
         skills: $design_skills.output
         agents: $design_agents.output
-  
+
   edges:
     - from: research
       to: plan
@@ -284,7 +289,7 @@ workflow:
       to: synthesize
     - from: synthesize
       to: END
-  
+
   entry: research
   exit: END
 ```
@@ -297,13 +302,13 @@ workflow:
 workflow:
   name: system-execute-workflow
   description: 执行创建系统的文件和代码
-  
+
   input:
     plan: object  # 设计方案
-  
+
   output:
     result: object  # 执行结果
-  
+
   nodes:
     # 创建目录结构
     create_structure:
@@ -311,35 +316,35 @@ workflow:
       skill: create-file
       input:
         plan: $workflow.input.plan.structure
-    
+
     # 创建 Workflows
     create_workflows:
       type: skill
       skill: create-file
       input:
         files: $workflow.input.plan.workflows
-    
+
     # 创建 Skills
     create_skills:
       type: skill
       skill: create-skill
       input:
         specs: $workflow.input.plan.skills
-    
+
     # 创建 Agents
     create_agents:
       type: skill
       skill: create-file
       input:
         files: $workflow.input.plan.agents
-    
+
     # 创建 README 和文档
     create_docs:
       type: skill
       skill: create-file
       input:
         files: $workflow.input.plan.docs
-    
+
     # 汇总结果
     summarize:
       type: skill
@@ -351,7 +356,7 @@ workflow:
           - $create_skills.output
           - $create_agents.output
           - $create_docs.output
-  
+
   edges:
     - from: create_structure
       to: create_workflows
@@ -365,7 +370,7 @@ workflow:
       to: summarize
     - from: summarize
       to: END
-  
+
   entry: create_structure
   exit: END
 ```
@@ -468,11 +473,11 @@ workflows:
   - name: daily-check
     trigger: tick (21:00)
     steps: [collect_data, analyze, generate_report, notify]
-  
+
   - name: weekly-report
     trigger: tick (Sunday 20:00)
     steps: [aggregate_week, analyze_trends, generate_insights, notify]
-  
+
   - name: checkup-analysis
     trigger: event (file_uploaded)
     steps: [parse_report, compare_history, assess_risks, generate_recommendations]

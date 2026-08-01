@@ -1,3 +1,8 @@
+---
+name: embedding-models
+description: Comprehensive guide for text embedding models and usage.
+---
+
 # Embedding Models
 
 ## Overview

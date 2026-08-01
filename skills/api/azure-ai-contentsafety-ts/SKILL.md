@@ -1,5 +1,10 @@
 ---
 name: azure-ai-contentsafety-ts
+description: Analyze text and images for harmful content with customizable blocklists.
+---
+
+---
+name: azure-ai-contentsafety-ts
 description: Analyze text and images for harmful content using Azure AI Content Safety (@azure-rest/ai-content-safety). Use when moderating user-generated content, detecting hate speech, violence, sexual content, or self-harm, or managing custom blocklists.
 package: @azure-rest/ai-content-safety
 ---
@@ -218,9 +223,9 @@ await client.path("/text/blocklists/{blocklistName}", "my-blocklist").delete();
 ## Content Moderation Helper
 
 ```typescript
-import ContentSafetyClient, { 
-  isUnexpected, 
-  TextCategoriesAnalysisOutput 
+import ContentSafetyClient, {
+  isUnexpected,
+  TextCategoriesAnalysisOutput
 } from "@azure-rest/ai-content-safety";
 
 interface ModerationResult {

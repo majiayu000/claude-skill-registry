@@ -1,3 +1,9 @@
+---
+name: gay-mcp
+description: Deterministic color generation with SplitMix64, GF(3) trits, and MCP.
+  Colors are the perceptual rendering of solved constraint systems.
+---
+
 <!-- Propagated to cursor | Trit: -1 | Source: .ruler/skills/gay-mcp -->
 
 # Gay-MCP Skill: Deterministic Color Generation
@@ -128,7 +134,7 @@ Hue 180-300°        → -1 (MINUS, cold)
 
 ```ruby
 proof = SplitMixTernary.prove_out_of_order(seed)
-# => { 
+# => {
 #      ordered_equals_reversed: true,
 #      ordered_equals_shuffled: true,
 #      proof: "QED: Math is doable out of order"

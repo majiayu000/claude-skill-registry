@@ -1,3 +1,8 @@
+---
+name: git-kingreatwill-open
+description: 1. 通过 git blame 找到谁动了某行代码
+---
+
 1. 通过 git blame 找到谁动了某行代码
 ```
 $ cd linux-stable

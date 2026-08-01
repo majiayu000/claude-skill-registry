@@ -1,5 +1,12 @@
 ---
 name: md-tables
+description: 'Fix markdown table alignment and spacing issues. Use when formatting
+  tables in markdown files, aligning columns, normalizing cell padding, or ensuring
+  proper table structure. Triggers: markdown table,'
+---
+
+---
+name: md-tables
 description: Fix markdown table alignment and spacing issues. Use when formatting tables in markdown files, aligning columns, normalizing cell padding, or ensuring proper table structure. Triggers: markdown table, table alignment, table formatting, md table, align columns.
 ---
 

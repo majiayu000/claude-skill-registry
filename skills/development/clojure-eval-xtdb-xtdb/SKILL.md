@@ -1,3 +1,8 @@
+---
+name: clojure-eval-xtdb-xtdb
+description: Evaluate Clojure code via nREPL using clj-nrepl-eval.
+---
+
 # Clojure REPL Evaluation
 
 Evaluate Clojure code via nREPL using `clj-nrepl-eval`.

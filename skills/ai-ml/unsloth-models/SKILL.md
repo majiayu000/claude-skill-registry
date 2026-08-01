@@ -1,5 +1,13 @@
 ---
 name: unsloth-models
+description: Unsloth supports a wide range of state-of-the-art model architectures,
+  providing pre-quantized Hub variants and optimized kernels for models like Llama
+  4, DeepSeek-R1, and Qwen3. Selecting the right variant (Instruct vs Base) is critical
+  for training success.
+---
+
+---
+name: unsloth-models
 description: Guidance on selecting and configuring supported model architectures like Llama 4, DeepSeek-R1, and Qwen3. Triggers: llama 4, deepseek-r1, qwen3, gemma 3, model selection, instruct vs base.
 ---
 

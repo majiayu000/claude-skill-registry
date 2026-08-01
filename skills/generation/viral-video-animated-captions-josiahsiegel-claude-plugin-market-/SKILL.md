@@ -1,5 +1,10 @@
 ---
 name: viral-video-animated-captions
+description: 'MANDATORY: Always Use Backslashes on Windows for File Paths'
+---
+
+---
+name: viral-video-animated-captions
 description: CapCut-style animated word-level captions for viral video with FFmpeg. PROACTIVELY activate for: (1) Word-by-word caption highlighting, (2) Animated subtitle effects, (3) CapCut-style captions, (4) Karaoke-style text, (5) Bounce/pop text animations, (6) Color-changing words, (7) Emoji integration in captions, (8) Multi-style caption presets, (9) Trending caption styles, (10) Social media caption optimization. Provides: ASS subtitle generation scripts, word-level timing workflows, animation presets, color schemes, font recommendations, and platform-specific caption styles for TikTok, YouTube Shorts, and Instagram Reels.
 ---
 

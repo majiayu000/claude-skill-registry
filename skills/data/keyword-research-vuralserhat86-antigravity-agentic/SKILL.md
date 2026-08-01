@@ -1,4 +1,9 @@
 ---
+name: keyword-research-vuralserhat86-antigravity-agentic
+description: '> SEO keyword araştırma ve içerik stratejisi rehberi.'
+---
+
+---
 name: keyword_research
 router_kit: ManagementKit
 description: SEO keyword araştırma, arama hacmi analizi ve içerik stratejisi rehberi.

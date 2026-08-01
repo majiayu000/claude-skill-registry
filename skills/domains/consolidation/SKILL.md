@@ -1,3 +1,9 @@
+---
+name: consolidation
+description: 'description: Group consolidation — IFRS 10, intercompany elimination,
+  minority interests'
+---
+
 # Group Consolidation
 
 name: consolidation

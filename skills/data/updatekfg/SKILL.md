@@ -1,5 +1,10 @@
 ---
 name: updatekfg
+description: Skill do synchronizacji zmian KFG na wszystkie urządzenia.
+---
+
+---
+name: updatekfg
 description: Synchronizacja KFG między urządzeniami (Windows/Android). Triggers: sync KFG, updatekfg, zaktualizuj
 ---
 

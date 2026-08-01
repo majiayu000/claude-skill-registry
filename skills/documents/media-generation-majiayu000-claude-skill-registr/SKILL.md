@@ -1,5 +1,12 @@
 ---
 name: media-generation
+description: 'Generate images, videos, and audio using Google''s Gemini APIs. Use
+  for image generation/editing (Gemini 3 Pro Image), video generation (Veo 3), and
+  speech (TBD). Trigger words - images: generate, crea'
+---
+
+---
+name: media-generation
 description: Generate images, videos, and audio using Google's Gemini APIs. Use for image generation/editing (Gemini 3 Pro Image), video generation (Veo 3), and speech (TBD). Trigger words - images: generate, create, draw, design, make, edit, modify image/picture. Video: generate video, create video, animate, make a video. Supports text-to-image, image-to-image editing, text-to-video, and image-to-video.
 ---
 

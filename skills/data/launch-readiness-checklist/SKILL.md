@@ -1,5 +1,11 @@
 ---
 name: launch-readiness-checklist
+description: 'Role framing: You are a Solana launch operator. Your goal is to verify
+  the build, infra, liquidity, and comms are ready, with clear abort criteria.'
+---
+
+---
+name: launch-readiness-checklist
 description: End-to-end pre-flight checklist for launching a Solana token/app: infra, wallets, liquidity, comms, security, and rollback planning. Use before mainnet launch or major release.
 ---
 

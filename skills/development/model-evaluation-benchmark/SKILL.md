@@ -1,3 +1,8 @@
+---
+name: model-evaluation-benchmark
+description: Skill from rysweet/AzureHayMaker
+---
+
 # Model Evaluation Benchmark Skill
 
 **Purpose**: Automated reproduction of comprehensive model evaluation benchmarks following the Benchmark Suite V3 reference implementation.

@@ -1,4 +1,12 @@
 ---
+name: prd-taskmaster
+description: Smart PRD generation system that detects existing PRDs and offers flexible
+  workflows. Primarily generates comprehensive, engineer-focused product requirements
+  documents optimized for TaskMaster task breakdown. Optionally executes tasks autonomously
+  with quality control, datetime tracking, and validation checkpoints.
+---
+
+---
 name: PRD Generator for TaskMaster
 description: Smart PRD generator with TaskMaster integration. Detects existing PRDs and offers execute/update/replace options. Generates comprehensive technical PRDs optimized for task breakdown, validates with 13 automated checks, and optionally executes tasks autonomously with datetime tracking and rollback support. Use when user requests "PRD", "product requirements", or mentions task-driven development. Default: PRD generation + handoff to TaskMaster. Optional: autonomous execution with 4 modes.
 allowed-tools: [Read, Write, Edit, Grep, Glob, Bash, AskUserQuestion]

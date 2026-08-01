@@ -1,3 +1,10 @@
+---
+name: adr-aware
+description: Ensures Architecture Decision Records (ADRs) are automatically considered
+  when AI agents create or modify code. This skill provides proactive ADR awareness
+  versus reactive checking (which is handled by adr-check).
+---
+
 # adr-aware
 
 ---
@@ -120,12 +127,12 @@ IF detected violation pattern:
   1. STOP before writing
   2. NOTIFY user with:
      🔔 **ADR Conflict Detected**
-     
+
      **ADR**: {ADR-XXX} - {Title}
      **Constraint**: {Specific rule being violated}
      **Intended Code**: {What you were about to write}
      **Compliant Alternative**: {What to write instead}
-     
+
      Proceed with compliant alternative? (y/n)
   3. AWAIT confirmation before continuing
 ```
@@ -170,7 +177,7 @@ Reference this table for common constraints. The source of truth is:
 - Phase 2 (Context) should invoke ADR lookup using the mapping table
 - Generated CLAUDE.md should list applicable ADRs
 
-### task-create  
+### task-create
 - Task `<constraints>` should include ADR references
 - Task `<files>` should include ADRs to read
 

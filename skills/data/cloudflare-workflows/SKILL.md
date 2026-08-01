@@ -1,5 +1,10 @@
 ---
 name: cloudflare-workflows
+description: 'Status: Production Ready ✅ | Last Verified: 2025-12-27 | Version: 3.0.0'
+---
+
+---
+name: cloudflare-workflows
 description: Cloudflare Workflows for durable long-running execution. Use for multi-step workflows, retries, state persistence, or encountering NonRetryableError, execution failed errors.
 
   Keywords: cloudflare workflows, workflows workers, durable execution, workflow step,

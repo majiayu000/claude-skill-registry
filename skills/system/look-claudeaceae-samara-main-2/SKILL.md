@@ -1,5 +1,10 @@
 ---
 name: look
+description: Use the Logitech C920 webcam to see what's around.
+---
+
+---
+name: look
 description: Capture image from webcam and optionally view or send it. Use when wanting to see surroundings, take a photo, check what's visible, or share a view with collaborator. Trigger words: look, see, webcam, camera, photo, capture, what's around, show me.
 ---
 

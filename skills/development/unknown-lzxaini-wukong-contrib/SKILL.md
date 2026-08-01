@@ -1,3 +1,8 @@
+---
+name: unknown
+description: 本章将一步步教你如何上手并学会开发 wukong-robot 的技能插件。
+---
+
 # 技能开发教程
 
 本章将一步步教你如何上手并学会开发 wukong-robot 的技能插件。

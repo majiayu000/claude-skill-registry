@@ -1,4 +1,10 @@
 ---
+name: audit-and-fix
+description: 'I''ll perform a comprehensive security audit and automatically fix vulnerabilities
+  for: $ARGUMENTS'
+---
+
+---
 skill: audit-and-fix
 description: Security audit with automatic fixes: $ARGUMENTS (package names or '.')
 location: project

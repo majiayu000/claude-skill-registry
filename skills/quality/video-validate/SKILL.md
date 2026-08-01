@@ -1,3 +1,8 @@
+---
+name: video-validate
+description: 入力パラメータ（phase, mode, reason）を検証します。
+---
+
 # Skill: Input Validation
 
 ## Status

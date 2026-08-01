@@ -1,4 +1,11 @@
 ---
+name: skillz-integration
+description: Skillz is an MCP server that turns Claude-style skills (SKILL.md files
+  plus optional resources) into callable tools for any MCP client. It discovers each
+  skill, exposes instructions and resources, and
+---
+
+---
 name: skills
 description: Using Skillz MCP Server with Docker
 Summarize documentation files

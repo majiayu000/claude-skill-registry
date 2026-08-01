@@ -1,3 +1,9 @@
+---
+name: skills-walkervvv-firstmile-deals-pipe
+description: 'Purpose: Generate shipping profile analyses, rate comparisons, and FirstMile
+  performance reports.'
+---
+
 # Analysis Agent Skill
 
 **Purpose**: Generate shipping profile analyses, rate comparisons, and FirstMile performance reports.

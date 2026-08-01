@@ -1,5 +1,11 @@
 ---
 name: testing-quality-standards
+description: Shared quality standards and metrics for testing across all plugins in
+  the Claude Night Market ecosystem.
+---
+
+---
+name: testing-quality-standards
 description: |
 
 Triggers: quality, metrics, test coverage, unit test, standards

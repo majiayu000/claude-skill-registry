@@ -1,5 +1,11 @@
 ---
 name: secretary-orchestrator
+description: 'Orchestrate project work: detect intent, run ADD checkpoints, and coordinate
+  project-brief, task-engine, delegation-advisor, and project-logger.'
+---
+
+---
+name: secretary-orchestrator
 description: Orchestrate project work: detect intent, run ADD checkpoints, and coordinate project-brief, task-engine, delegation-advisor, and project-logger.
 triggers:
   - מזכירה

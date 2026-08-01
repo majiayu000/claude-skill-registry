@@ -1,3 +1,10 @@
+---
+name: chemistry-agent
+description: The Chemistry Agent is a specialized module for autonomous chemical reasoning,
+  synthesis planning, and property prediction. It integrates with computational chemistry
+  tools and potentially lab automation hardware.
+---
+
 <!--
 # COPYRIGHT NOTICE
 # This file is part of the "Universal Biomedical Skills" project.

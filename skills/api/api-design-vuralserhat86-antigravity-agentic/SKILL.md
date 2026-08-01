@@ -1,4 +1,9 @@
 ---
+name: api-design
+description: '> RESTful ve GraphQL API tasarımı rehberi.'
+---
+
+---
 name: api_design
 router_kit: FullStackKit
 description: API tasarımı, GraphQL schema, OpenAPI spec, versioning. ⚠️ Tasarım aşaması için kullan. Uygulama/security için → backend-api.
@@ -52,7 +57,7 @@ Pattern: /api/v{n}/{resource}/{id?}/{sub-resource?}
 // Success
 { success: true, data: T, meta?: { page, total } }
 
-// Error  
+// Error
 { success: false, error: { code: string, message: string, details?: [] } }
 ```
 

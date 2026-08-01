@@ -1,3 +1,8 @@
+---
+name: config-scan
+description: Security review of configuration files and infrastructure as code.
+---
+
 # Config Scan
 
 Security review of configuration files and infrastructure as code.

@@ -1,12 +1,17 @@
+---
+name: docs
+description: Name | Type | Description | Notes
+---
+
 # Skill
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Synonyms** | Pointer to **[]string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
-**GroupPriority** | Pointer to **int32** |  | [optional] 
+**Synonyms** | Pointer to **[]string** |  | [optional]
+**Description** | Pointer to **string** |  | [optional]
+**GroupPriority** | Pointer to **int32** |  | [optional]
 **Important** | Pointer to **bool** |  | [optional] [default to false]
 
 ## Methods

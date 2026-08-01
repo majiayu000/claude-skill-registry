@@ -1,5 +1,12 @@
 ---
 name: ralph-execute
+description: Autonomously implement user stories from the PRD, running quality gates
+  and committing after each successful story. Maintains progress across sessions.
+  Ships features while you sleep.
+---
+
+---
+name: ralph-execute
 description: Execute iterative development loop through user stories. Implements one story at a time with quality gates, commits, and learning persistence. Ships features autonomously.
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, TodoWrite, Task
 user_invocable: true

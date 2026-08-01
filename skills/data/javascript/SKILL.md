@@ -1,3 +1,8 @@
+---
+name: javascript
+description: 'const { part1: { name, age } } = obj'
+---
+
 # JavaScript 小技巧 笔记
 
 ★★★★★★★★★★
@@ -55,16 +60,16 @@
 1. 获取当前调用栈
 
     ```javascript
-    function firstFunction() { secondFunction(); } 
-    function secondFunction() { thridFunction(); } 
-    function thridFunction() { console.log(new Error().stack); } 
+    function firstFunction() { secondFunction(); }
+    function secondFunction() { thridFunction(); }
+    function thridFunction() { console.log(new Error().stack); }
 
     firstFunction();
 
-    //=> Error 
-    //  at thridFunction (<anonymous>:2:17) 
-    //  at secondFunction (<anonymous>:5:5) 
-    //  at firstFunction (<anonymous>:8:5) 
+    //=> Error
+    //  at thridFunction (<anonymous>:2:17)
+    //  at secondFunction (<anonymous>:5:5)
+    //  at firstFunction (<anonymous>:8:5)
     //  at <anonymous>:10:1
     ```
 
@@ -84,9 +89,9 @@
     ```javascript
     <div id="zero2one"></div>
 
-    const el = document.getElementById('zero2one')  
+    const el = document.getElementById('zero2one')
     console.log(el) // <div id="zero2one"></div>
-    
+
     // 等同于
     console.log(zero2one) // <div id="zero2one"></div>
     ```

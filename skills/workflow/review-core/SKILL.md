@@ -1,5 +1,11 @@
 ---
 name: review-core
+description: '- Use this skill at the beginning of any detailed review workflow (e.g.,
+  for architecture, math, or an API).'
+---
+
+---
+name: review-core
 description: |
 
 Triggers: scaffolding, evidence, reporting, analysis, core

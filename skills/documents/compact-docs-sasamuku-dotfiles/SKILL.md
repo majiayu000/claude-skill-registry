@@ -1,4 +1,9 @@
 ---
+name: compact-docs
+description: Execute /compact-docs <file-path> slash command.
+---
+
+---
 name: compacting-documentation
 description: Compresses and optimizes markdown documentation by removing redundancy. Use when: user wants to reduce doc size, compress docs, or remove duplicate content.
 ---

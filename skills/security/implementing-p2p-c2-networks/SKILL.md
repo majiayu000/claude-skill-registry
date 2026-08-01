@@ -1,3 +1,8 @@
+---
+name: implementing-p2p-c2-networks
+description: <!-- Copyright (c) 2026 defconxt. All rights reserved. -->
+---
+
 <!-- Copyright (c) 2026 defconxt. All rights reserved. -->
 <!-- Licensed under AGPL-3.0 — see LICENSE file for details. -->
 <!-- CIPHER is a trademark of defconxt. -->

@@ -1,5 +1,12 @@
 ---
 name: weekly-review
+description: This skill guides you through a weekly review ritual that synthesizes
+  the week's work, reflects on leadership intentions and patterns, extracts learnings
+  to semantic notes, and archives to Periodic/Weekly/.
+---
+
+---
+name: weekly-review
 description: Review and archive a week's work. Synthesizes daily archives into weekly patterns, guides reflection on leadership and themes, extracts insights to semantic notes (People, Projects, Insights), and archives to Periodic/Weekly/. Accepts an optional target week (default: current week).
 argument-hint: "[target-week: (empty)|last week|YYYY-Www]"
 metadata:

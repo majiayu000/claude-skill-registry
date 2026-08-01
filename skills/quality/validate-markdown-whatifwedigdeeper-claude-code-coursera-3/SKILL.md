@@ -1,4 +1,10 @@
 ---
+name: validate-markdown
+description: I'll validate markdown files for common formatting issues and optionally
+  fix them.
+---
+
+---
 skill: validate-markdown
 description: Validate and fix markdown formatting issues: $ARGUMENTS (file path or '.' for all)
 location: project

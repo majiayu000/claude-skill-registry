@@ -1,5 +1,11 @@
 ---
 name: run-shell-command-with-long-output
+description: Run shell commands where long (many tokens) output is expected. Use when
+  you need to
+---
+
+---
+name: run-shell-command-with-long-output
 description: Run shell commands where long (many tokens) output is expected. Use when you need to
 run some command where you care only about gist of the output (like what failed, or if command was successful).
 ---

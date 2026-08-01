@@ -1,3 +1,9 @@
+---
+name: templates-mike-coulbourn-claude-vibes
+description: Use this template for simple Skills that don't need scripts, utilities,
+  or extensive documentation.
+---
+
 # Basic Skill Template
 
 Use this template for simple Skills that don't need scripts, utilities, or extensive documentation.

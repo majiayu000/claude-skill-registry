@@ -1,3 +1,8 @@
+---
+name: fixme-todo-cleanup
+description: '| Date | 2026-01-01 |'
+---
+
 # FIXME/TODO Cleanup Skill
 
 | Field | Value |

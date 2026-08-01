@@ -1,5 +1,11 @@
 ---
 name: iterate
+description: Enable self-referential iteration to complete complex tasks that require
+  multiple attempts, trial-and-error exploration, or persistent effort until success.
+---
+
+---
+name: iterate
 description: Self-referential iteration mode for completing complex tasks autonomously. Use when a task requires multiple attempts, trial-and-error, or persistent effort until success. Based on the Ralph Wiggum methodology. Trigger words: iterate, keep trying, until it works, autonomous, persist, retry.
 context: fork
 ---

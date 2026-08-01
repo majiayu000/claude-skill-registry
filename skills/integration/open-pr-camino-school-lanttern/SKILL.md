@@ -1,4 +1,10 @@
 ---
+name: open-pr
+description: The user may have specified a base branch in their invocation (e.g. /open-pr
+  main or /open-pr develop).
+---
+
+---
 description: Run precommit checks, write a PR description, get approval, and open the PR on GitHub. Usage: /open-pr [base-branch] (e.g. /open-pr main)
 ---
 

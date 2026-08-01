@@ -1,4 +1,10 @@
 ---
+name: project-domain
+description: '"Domain vocabulary and entity relationships for {project}. Ensures consistent
+  terminology and model understanding."'
+---
+
+---
 name: {project}-domain
 description: "Domain vocabulary and entity relationships for {project}. Ensures consistent terminology and model understanding."
 generated_by: ai-dev-kit:recommend-skills

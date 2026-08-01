@@ -1,5 +1,12 @@
 ---
 name: neo4j-schema-documenter
+description: Automatically generate comprehensive markdown documentation from Neo4j
+  database schemas including node types, relationships, properties, and visual diagrams.
+  Helps developers understand graph structure and write effective Cypher queries.
+---
+
+---
+name: neo4j-schema-documenter
 description: Generate markdown documentation from Neo4j schema with relationship diagrams, node types, property descriptions. Use when documenting Neo4j databases, creating schema references, onboarding developers. Keywords: Neo4j, schema, documentation, graph, relationships, nodes, Cypher, diagram.
 allowed-tools: mcp__neo4j-apex__*, mcp__neo4j-psps__*, mcp__neo4j-cms-handbook__*, mcp__neo4j-scheme-docs__*, Write, Bash
 model: claude-sonnet-4-5

@@ -1,3 +1,8 @@
+---
+name: templates
+description: For skills that aggregate information from multiple sources.
+---
+
 # Research Skill Template
 
 For skills that aggregate information from multiple sources.

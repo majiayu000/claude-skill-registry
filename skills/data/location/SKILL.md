@@ -1,5 +1,10 @@
 ---
 name: location
+description: Understand where É is (and by extension, where "I" am situated).
+---
+
+---
+name: location
 description: Current location context with nearby places and pattern insights. Use when checking where you are, understanding local context, finding nearby places, or getting location-aware information. Trigger words: location, where, nearby, place, context, here.
 ---
 

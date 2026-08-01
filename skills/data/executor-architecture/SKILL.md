@@ -1,5 +1,12 @@
 ---
 name: executor-architecture
+description: Executor package architecture for ChainGraph flow execution engine. Use
+  when working on packages/chaingraph-executor, execution services, DBOS workflows,
+  event bus, task queues, tRPC routes, or execut
+---
+
+---
+name: executor-architecture
 description: Executor package architecture for ChainGraph flow execution engine. Use when working on packages/chaingraph-executor, execution services, DBOS workflows, event bus, task queues, tRPC routes, or execution-related database operations. Triggers: executor, execution, service, worker, queue, event bus, dbos, workflow, tRPC execution, execution-api, execution-worker.
 ---
 

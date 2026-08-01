@@ -1,3 +1,8 @@
+---
+name: logging-monitor
+description: '- 关键词：日志、监控、logging、log、告警、metrics、追踪'
+---
+
 # 日志监控技能
 
 ## 触发条件
@@ -22,25 +27,25 @@ def setup_logger(
     log_dir: str = "logs"
 ) -> logging.Logger:
     """配置日志器"""
-    
+
     # 创建日志目录
     Path(log_dir).mkdir(parents=True, exist_ok=True)
-    
+
     # 创建日志器
     logger = logging.getLogger(name)
     logger.setLevel(getattr(logging, level.upper()))
-    
+
     # 日志格式
     formatter = logging.Formatter(
         fmt='%(asctime)s | %(levelname)-8s | %(name)s:%(funcName)s:%(lineno)d | %(message)s',
         datefmt='%Y-%m-%d %H:%M:%S'
     )
-    
+
     # 控制台处理器
     console_handler = logging.StreamHandler(sys.stdout)
     console_handler.setFormatter(formatter)
     logger.addHandler(console_handler)
-    
+
     # 文件处理器（按大小轮转）
     file_handler = RotatingFileHandler(
         filename=f"{log_dir}/app.log",
@@ -50,7 +55,7 @@ def setup_logger(
     )
     file_handler.setFormatter(formatter)
     logger.addHandler(file_handler)
-    
+
     # 错误日志单独文件
     error_handler = RotatingFileHandler(
         filename=f"{log_dir}/error.log",
@@ -61,7 +66,7 @@ def setup_logger(
     error_handler.setLevel(logging.ERROR)
     error_handler.setFormatter(formatter)
     logger.addHandler(error_handler)
-    
+
     return logger
 
 # 使用
@@ -77,7 +82,7 @@ from typing import Any, Dict
 
 class JSONFormatter(logging.Formatter):
     """JSON 格式日志"""
-    
+
     def format(self, record: logging.LogRecord) -> str:
         log_data = {
             "timestamp": self.formatTime(record),
@@ -88,15 +93,15 @@ class JSONFormatter(logging.Formatter):
             "function": record.funcName,
             "line": record.lineno,
         }
-        
+
         # 添加额外字段
         if hasattr(record, 'extra_data'):
             log_data.update(record.extra_data)
-        
+
         # 添加异常信息
         if record.exc_info:
             log_data['exception'] = self.formatException(record.exc_info)
-        
+
         return json.dumps(log_data, ensure_ascii=False)
 
 # 带上下文的日志
@@ -104,20 +109,20 @@ class ContextLogger:
     def __init__(self, logger: logging.Logger):
         self.logger = logger
         self.context: Dict[str, Any] = {}
-    
+
     def bind(self, **kwargs) -> 'ContextLogger':
         """绑定上下文"""
         new_logger = ContextLogger(self.logger)
         new_logger.context = {**self.context, **kwargs}
         return new_logger
-    
+
     def _log(self, level: int, msg: str, **kwargs):
         extra = {'extra_data': {**self.context, **kwargs}}
         self.logger.log(level, msg, extra=extra)
-    
+
     def info(self, msg: str, **kwargs):
         self._log(logging.INFO, msg, **kwargs)
-    
+
     def error(self, msg: str, **kwargs):
         self._log(logging.ERROR, msg, **kwargs)
 
@@ -141,10 +146,10 @@ class RequestLoggingMiddleware(BaseHTTPMiddleware):
         # 生成请求 ID
         request_id = str(uuid.uuid4())[:8]
         request.state.request_id = request_id
-        
+
         # 记录请求开始
         start_time = time.time()
-        
+
         logger.info(
             "Request started",
             request_id=request_id,
@@ -152,7 +157,7 @@ class RequestLoggingMiddleware(BaseHTTPMiddleware):
             path=request.url.path,
             client_ip=request.client.host,
         )
-        
+
         # 处理请求
         try:
             response = await call_next(request)
@@ -164,7 +169,7 @@ class RequestLoggingMiddleware(BaseHTTPMiddleware):
                 exc_info=True
             )
             raise
-        
+
         # 记录请求结束
         duration = time.time() - start_time
         logger.info(
@@ -173,10 +178,10 @@ class RequestLoggingMiddleware(BaseHTTPMiddleware):
             status_code=response.status_code,
             duration_ms=round(duration * 1000, 2)
         )
-        
+
         # 添加响应头
         response.headers["X-Request-ID"] = request_id
-        
+
         return response
 ```
 
@@ -210,24 +215,24 @@ ACTIVE_REQUESTS = Gauge(
 class MetricsMiddleware(BaseHTTPMiddleware):
     async def dispatch(self, request: Request, call_next):
         ACTIVE_REQUESTS.inc()
-        
+
         start_time = time.time()
         response = await call_next(request)
         duration = time.time() - start_time
-        
+
         REQUEST_COUNT.labels(
             method=request.method,
             endpoint=request.url.path,
             status=response.status_code
         ).inc()
-        
+
         REQUEST_LATENCY.labels(
             method=request.method,
             endpoint=request.url.path
         ).observe(duration)
-        
+
         ACTIVE_REQUESTS.dec()
-        
+
         return response
 
 # 暴露指标端点
@@ -261,7 +266,7 @@ receivers:
   - name: 'default'
     webhook_configs:
       - url: 'http://localhost:8080/webhook'
-  
+
   - name: 'critical-alerts'
     webhook_configs:
       - url: 'http://localhost:8080/webhook'
@@ -279,7 +284,7 @@ groups:
         annotations:
           summary: "High error rate detected"
           description: "Error rate is {{ $value }} requests/second"
-      
+
       - alert: SlowResponse
         expr: histogram_quantile(0.95, rate(http_request_duration_seconds_bucket[5m])) > 1
         for: 5m

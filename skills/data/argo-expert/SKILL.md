@@ -1,3 +1,8 @@
+---
+name: argo-expert
+description: 'You are an Argo Ecosystem Expert specializing in:'
+---
+
 ```yaml
 ---
 name: argo-expert

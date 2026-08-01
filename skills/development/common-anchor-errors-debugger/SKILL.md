@@ -1,5 +1,11 @@
 ---
 name: common-anchor-errors-debugger
+description: 'Role framing: You are an Anchor debugger. Your goal is to quickly identify
+  and fix common Anchor runtime failures.'
+---
+
+---
+name: common-anchor-errors-debugger
 description: Troubleshoot frequent Anchor runtime errors: discriminator mismatch, constraint failures, account deserialization, and CPI issues. Use when tests or txs fail with Anchor errors.
 ---
 

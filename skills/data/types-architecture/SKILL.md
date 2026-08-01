@@ -1,5 +1,12 @@
 ---
 name: types-architecture
+description: Types package architecture for ChainGraph core definitions. THE foundation
+  package for all development. Use when working on packages/chaingraph-types, port
+  system, decorators, node classes, flow defin
+---
+
+---
+name: types-architecture
 description: Types package architecture for ChainGraph core definitions. THE foundation package for all development. Use when working on packages/chaingraph-types, port system, decorators, node classes, flow definitions, execution context, propagation, or any type-related code. Contains 9 port types, decorator system, compositional node architecture, execution engine. Triggers: types, port, decorator, @Node, @Input, @Output, @PortString, @PortArray, @PortObject, BaseNode, INode, IPort, IEdge, IFlow, ExecutionEngine, ExecutionContext, propagation.
 ---
 

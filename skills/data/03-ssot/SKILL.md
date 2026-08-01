@@ -1,3 +1,8 @@
+---
+name: 03-ssot
+description: 'ParentSSOT: skills/devian-core/03-ssot/SKILL.md'
+---
+
 # 03-ssot — Data
 
 Status: ACTIVE

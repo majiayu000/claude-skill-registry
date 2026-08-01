@@ -1,3 +1,8 @@
+---
+name: tumor-heterogeneity-agent
+description: '---name: tumor-heterogeneity-agent'
+---
+
 ---name: tumor-heterogeneity-agent
 description: AI-powered intratumor heterogeneity analysis for clonal architecture reconstruction, subclonal evolution tracking, and therapy resistance prediction using multi-region and longitudinal sequencing.
 license: MIT

@@ -1,3 +1,8 @@
+---
+name: 02-guides
+description: import DeveloperSupport from "../../../partial/developersupport.mdx";
+---
+
 import DeveloperSupport from "../../../partial/_developer_support.mdx";
 import CopyPageButton from "@site/src/components/CopyPageButton";
 

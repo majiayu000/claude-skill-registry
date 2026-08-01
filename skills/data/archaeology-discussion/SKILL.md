@@ -1,5 +1,12 @@
 ---
 name: archaeology-discussion
+description: 고고학 발굴조사보고서 고찰 자동 작성 파이프라인. "고찰 작성해줘" 한 번의 명령으로 완료된 보고서+논문+주변유적 보고서를
+  분석하여 문화재청 표준양식 고찰을 생성. 폴더1(주보고서), 폴더2(논문), 폴더3(비교유적)을 자동 분석. Use for automated archaeological
+  excavation report discussion writing
+---
+
+---
+name: archaeology-discussion
 description: 고고학 발굴조사보고서 고찰 자동 작성 파이프라인. "고찰 작성해줘" 한 번의 명령으로 완료된 보고서+논문+주변유적 보고서를 분석하여 문화재청 표준양식 고찰을 생성. 폴더1(주보고서), 폴더2(논문), 폴더3(비교유적)을 자동 분석. Use for automated archaeological excavation report discussion writing pipeline: analyzes main report + papers + comparison sites to generate discussion following Korean Cultural Heritage Administration standards. One command processes all folders.
 allowed-tools: Read, Grep, Glob
 ---

@@ -1,3 +1,8 @@
+---
+name: phase1-tools
+description: Document processing and development tools for TAISUN v2.
+---
+
 # Phase 1 Execution Foundation Tools
 
 Document processing and development tools for TAISUN v2.

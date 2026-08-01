@@ -1,3 +1,9 @@
+---
+name: treido-testing
+description: '> Testing orchestrator for Treido''s Playwright E2E and Vitest unit
+  test suites.'
+---
+
 ```skill
 ---
 name: treido-testing

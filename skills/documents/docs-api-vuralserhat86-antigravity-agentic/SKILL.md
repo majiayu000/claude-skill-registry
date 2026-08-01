@@ -1,4 +1,9 @@
 ---
+name: docs-api
+description: '> API documentation ve OpenAPI best practices.'
+---
+
+---
 name: docs_api
 router_kit: ManagementKit
 description: OpenAPI/Swagger API documentation ve endpoint belgeleme şablonları.

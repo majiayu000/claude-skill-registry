@@ -1,11 +1,16 @@
 ---
+name: implementation-analysis
+description: '> Note: This skill has been adapted from claude-skillz'
+---
+
+---
 name: Lightweight Implementation Analysis Protocol
 description: This skill should be used when fixing bugs, implementing features, debugging issues, or making code changes. Ensures understanding of code flow before implementation by: (1) Tracing execution path with specific file:line references, (2) Creating lightweight text diagrams showing class.method() flows, (3) Verifying understanding with user. Prevents wasted effort from assumptions or guessing. Triggers when users request: bug fixes, feature implementations, refactoring, TDD cycles, debugging, code analysis.
 ---
 
 # GitHub Copilot Skill: implementation-analysis
 
-> **Note:** This skill has been adapted from [claude-skillz](https://github.com/NTCoding/claude-skillz) 
+> **Note:** This skill has been adapted from [claude-skillz](https://github.com/NTCoding/claude-skillz)
 > for use with GitHub Copilot Agent Skills.
 
 ---

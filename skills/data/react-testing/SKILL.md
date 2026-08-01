@@ -1,5 +1,10 @@
 ---
 name: react-testing
+description: '| Tool | Purpose | Install |'
+---
+
+---
+name: react-testing
 description: Complete React testing system. PROACTIVELY activate for: (1) Vitest/Jest setup and configuration, (2) React Testing Library patterns, (3) Component testing with userEvent, (4) Custom hook testing with renderHook, (5) Mocking modules and components, (6) Async component testing, (7) Context and provider testing, (8) Accessibility testing with jest-axe. Provides: Test setup, query priority, user simulation, mock patterns, integration testing. Ensures reliable tests that focus on user behavior.
 ---
 

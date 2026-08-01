@@ -1,5 +1,11 @@
 ---
 name: open-interpreter
+description: Desktop control for Claude Code via OpenInterpreter (62k stars, AGPL-3.0).
+  Mouse, keyboard, screenshot, and OCR primitives backed by pyautogui + pytesseract.
+---
+
+---
+name: open-interpreter
 description: Desktop GUI automation via OpenInterpreter — mouse, keyboard, screenshot,
   and OCR control for native macOS/Linux applications. Three modes: Library (Claude
   reasons, OI executes), OS subprocess (full autonomous computer use), and Local agent

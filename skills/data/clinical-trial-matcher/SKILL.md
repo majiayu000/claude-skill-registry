@@ -1,3 +1,8 @@
+---
+name: clinical-trial-matcher
+description: '---name: clinical-trial-matcher'
+---
+
 ---name: clinical-trial-matcher
 description: Matches patient profiles to open clinical trials using vector similarity and inclusion/exclusion criteria. Use when a user provides patient data and asks for relevant trials.
 

@@ -1,3 +1,8 @@
+---
+name: ml-training-debugger
+description: 'Type: Agent-based skill with SDK implementation'
+---
+
 # ML Training Debugger
 
 **Version**: 1.0.0

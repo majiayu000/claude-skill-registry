@@ -1,3 +1,8 @@
+---
+name: unknown
+description: Quickstart SDK for INDA HR API v2 integration
+---
+
 # # ResumeSkill
 
 ## Properties

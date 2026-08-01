@@ -1,5 +1,12 @@
 ---
 name: model-evaluation
+description: 'Evaluates machine learning models for performance, fairness, and reliability
+  using appropriate metrics and validation techniques. Trigger keywords: model evaluation,
+  metrics, accuracy, precision, reca'
+---
+
+---
+name: model-evaluation
 description: Evaluates machine learning models for performance, fairness, and reliability using appropriate metrics and validation techniques. Trigger keywords: model evaluation, metrics, accuracy, precision, recall, F1, ROC, AUC, cross-validation, ML testing.
 allowed-tools: Read, Grep, Glob, Edit, Write, Bash
 ---

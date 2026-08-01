@@ -1,3 +1,8 @@
+---
+name: performance
+description: '| ID | flutter-performance |'
+---
+
 # ⚡ Skill: Performance Optimization
 
 ## 📋 Metadata

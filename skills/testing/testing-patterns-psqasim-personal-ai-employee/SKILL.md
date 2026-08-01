@@ -1,5 +1,10 @@
 ---
 name: testing-patterns
+description: Expert guidance for writing effective Python tests with pytest.
+---
+
+---
+name: testing-patterns
 description: Expert guidance on Python testing with pytest. Use when writing or reviewing tests requiring: (1) Pytest setup and configuration, (2) Unit tests with mocks and fixtures, (3) Integration testing workflows, (4) Async testing with pytest-asyncio, (5) Test coverage strategies (80%+ target), (6) TDD (Test-Driven Development) workflow. Invoke when user asks about testing patterns, writes tests, or needs test quality guidance.
 ---
 

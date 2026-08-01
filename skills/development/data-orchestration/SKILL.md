@@ -1,3 +1,9 @@
+---
+name: data-orchestration
+description: '> Purpose: Build multi-system integrations, ETL workflows, and API connections.
+  Design Make/n8n scenarios, implement webhooks, and create event-driven data pipelines.'
+---
+
 # Data Orchestration & API Integration Skill
 
 > **Purpose:** Build multi-system integrations, ETL workflows, and API connections. Design Make/n8n scenarios, implement webhooks, and create event-driven data pipelines.

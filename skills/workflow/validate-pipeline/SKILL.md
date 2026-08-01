@@ -1,3 +1,8 @@
+---
+name: validate-pipeline
+description: '> Compiler: skill-compiler/1.0.0'
+---
+
 # Validate Pipeline Skill
 
 > Version: 1.0.0
@@ -126,15 +131,15 @@ steps:
   - name: cargo-test
     command: cargo test --no-fail-fast -- --nocapture
     blocking: hard    # No override possible
-    
+
   - name: cargo-clippy
     command: cargo clippy --all-targets -- -D warnings
     blocking: false   # Advisory only (warning)
-    
+
   - name: fixture-validate
     command: beadsmith validate fixtures
     blocking: hybrid  # Agent can override with justification
-    
+
   - name: cargo-fmt
     command: cargo fmt --check
     blocking: false   # Advisory only
@@ -161,7 +166,7 @@ steps:
   - name: cargo-test
     command: cargo test
     blocking: hard
-    
+
   - name: cargo-clippy
     command: cargo clippy --all-targets
     blocking: false
@@ -174,7 +179,7 @@ steps:
   - name: npm-test
     command: npm test
     blocking: hard
-    
+
   - name: npm-lint
     command: npm run lint
     blocking: false
@@ -243,13 +248,13 @@ LOOP:
   ...
   4. EXECUTE THE BEAD
      Implement per acceptance criteria
-     
+
   5. VERIFY COMPLETION
      Run: /validate-pipeline   <-- This skill
      If blocked -> Fix issues, GOTO step 5
      If warnings -> Log to notes
      If passed -> Continue to step 6
-     
+
   6. CLOSE THE BEAD
      Run: bd close <id> -r "Completed: <summary>"
   ...

@@ -1,5 +1,12 @@
 ---
 name: omakase-off
+description: 'ALWAYS invoke FIRST on ANY "build/create/implement/add feature" request.
+  This skill WRAPS brainstorming - it decides the approach. Present choice BEFORE
+  any brainstorming starts: (1) Brainstorm togeth'
+---
+
+---
+name: omakase-off
 description: ALWAYS invoke FIRST on ANY "build/create/implement/add feature" request. This skill WRAPS brainstorming - it decides the approach. Present choice BEFORE any brainstorming starts: (1) Brainstorm together step-by-step, OR (2) Omakase - I generate 3-5 best approaches, implement in parallel, tests pick winner. If user picks brainstorming, check if brainstorming skill exists - if yes use it, if no do brainstorming yourself (ask questions, propose options, validate). Also triggers DURING brainstorming on 2+ "not sure"/"don't know" responses. For same design competing implementations, use cookoff.
 ---
 

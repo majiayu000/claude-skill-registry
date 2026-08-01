@@ -1,5 +1,10 @@
 ---
 name: stakeholder-brief
+description: 'This skill supports three modes: Create, Update, and Find.'
+---
+
+---
+name: stakeholder-brief
 description: Create or update a stakeholder communication brief
 argument-hint: [topic or update] or [update path/to/brief.md]
 ---

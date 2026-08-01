@@ -1,3 +1,8 @@
+---
+name: auto-coherence
+description: The skill you cannot invoke. It invokes itself.
+---
+
 # Auto-Coherence
 
 **The skill you cannot invoke. It invokes itself.**

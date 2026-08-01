@@ -1,5 +1,12 @@
 ---
 name: svelte-ninja
+description: Comprehensive guide to Svelte 5 and SvelteKit development patterns. Emphasizes
+  runes-based reactivity ($state, $derived, $effect, $props), component composition,
+  SvelteKit routing, data loading, form handling, and performance optimization.
+---
+
+---
+name: svelte-ninja
 description: Svelte 5 and SvelteKit: runes reactivity, component composition, routing, data loading, form handling.
 user-invocable: false
 effort: medium
@@ -53,7 +60,7 @@ Use this skill when:
 ```svelte
 <script>
 	let count = $state(0);
-	
+
 	function increment() {
 		count++; // Just a number, no wrapper needed
 	}
@@ -75,12 +82,12 @@ Use this skill when:
 	let todos = $state([
 		{ id: 1, text: 'Learn Svelte 5', done: false }
 	]);
-	
+
 	function toggle(id) {
 		const todo = todos.find(t => t.id === id);
 		todo.done = !todo.done; // Deep reactivity works
 	}
-	
+
 	function addTodo(text) {
 		todos.push({ id: Date.now(), text, done: false });
 		// Array methods trigger reactivity
@@ -98,7 +105,7 @@ Use this skill when:
 // counter.svelte.js
 export function createCounter(initial = 0) {
 	let count = $state(initial);
-	
+
 	return {
 		get count() { return count; },
 		increment: () => count++,
@@ -110,7 +117,7 @@ export function createCounter(initial = 0) {
 <!-- App.svelte -->
 <script>
 	import { createCounter } from './counter.svelte.js';
-	
+
 	const counter = createCounter(5);
 </script>
 
@@ -149,7 +156,7 @@ export function createCounter(initial = 0) {
 ```svelte
 <script>
 	let numbers = $state([1, 2, 3, 4, 5]);
-	
+
 	let stats = $derived.by(() => {
 		const total = numbers.reduce((a, b) => a + b, 0);
 		const average = total / numbers.length;
@@ -179,7 +186,7 @@ export function createCounter(initial = 0) {
 ```svelte
 <script>
 	let count = $state(0);
-	
+
 	$effect(() => {
 		console.log('Count changed:', count); // ✓ Good
 	});
@@ -194,7 +201,7 @@ export function createCounter(initial = 0) {
 ```svelte
 <script>
 	let count = $state(0);
-	
+
 	$effect(() => {
 		// Runs on mount and whenever count changes
 		document.title = `Count: ${count}`;
@@ -212,12 +219,12 @@ export function createCounter(initial = 0) {
 <script>
 	let intervalId = $state(null);
 	let elapsed = $state(0);
-	
+
 	$effect(() => {
 		const id = setInterval(() => {
 			elapsed++;
 		}, 1000);
-		
+
 		// Cleanup runs when effect re-runs or component unmounts
 		return () => clearInterval(id);
 	});
@@ -229,11 +236,11 @@ export function createCounter(initial = 0) {
 <script>
 	let messages = $state([]);
 	let div;
-	
+
 	$effect.pre(() => {
-		const isAtBottom = 
+		const isAtBottom =
 			div.scrollHeight - div.scrollTop === div.clientHeight;
-		
+
 		if (isAtBottom) {
 			// After DOM updates, scroll to bottom
 			$effect(() => {
@@ -252,7 +259,7 @@ export function createCounter(initial = 0) {
 	let preferences = $state(JSON.parse(
 		localStorage.getItem('prefs') || '{}'
 	));
-	
+
 	$effect(() => {
 		localStorage.setItem('prefs', JSON.stringify(preferences));
 	});
@@ -264,7 +271,7 @@ export function createCounter(initial = 0) {
 <script>
 	let userId = $state('123');
 	let user = $state(null);
-	
+
 	$effect(() => {
 		fetch(`/api/users/${userId}`)
 			.then(r => r.json())
@@ -307,7 +314,7 @@ export function createCounter(initial = 0) {
 		variant?: 'primary' | 'secondary' | 'danger';
 		onclick?: () => void;
 	}
-	
+
 	let { label, variant = 'primary', onclick }: Props = $props();
 </script>
 
@@ -383,9 +390,9 @@ export function createCounter(initial = 0) {
 	<svelte:fragment slot="header">
 		<h2>Title</h2>
 	</svelte:fragment>
-	
+
 	<p>Content here</p>
-	
+
 	<svelte:fragment slot="footer">
 		<button>Close</button>
 	</svelte:fragment>
@@ -425,7 +432,7 @@ export function createCounter(initial = 0) {
 <script>
 	let { children } = $props();
 	let activeTab = $state(0);
-	
+
 	export function setActive(index) {
 		activeTab = index;
 	}
@@ -508,7 +515,7 @@ Matches:
 // src/routes/blog/[slug]/+page.js
 export async function load({ params, fetch }) {
 	const post = await fetch(`/api/posts/${params.slug}`).then(r => r.json());
-	
+
 	return {
 		post
 	};
@@ -530,7 +537,7 @@ import { db } from '$lib/server/database';
 export async function load({ locals }) {
 	const user = locals.user;
 	const stats = await db.query('SELECT * FROM stats WHERE user_id = $1', [user.id]);
-	
+
 	return {
 		stats
 	};
@@ -548,7 +555,7 @@ export async function load({ locals }) {
 export async function load({ fetch }) {
 	const quick = fetch('/api/quick').then(r => r.json());
 	const slow = fetch('/api/slow').then(r => r.json());
-	
+
 	return {
 		quick: await quick,  // Wait for this
 		slow                  // Stream this
@@ -582,13 +589,13 @@ export const actions = {
 		const data = await request.formData();
 		const email = data.get('email');
 		const password = data.get('password');
-		
+
 		const user = await authenticate(email, password);
-		
+
 		if (!user) {
 			return { success: false, error: 'Invalid credentials' };
 		}
-		
+
 		cookies.set('session', user.sessionId, { path: '/' });
 		return { success: true };
 	}
@@ -605,7 +612,7 @@ export const actions = {
 	<input name="email" type="email" required />
 	<input name="password" type="password" required />
 	<button>Log in</button>
-	
+
 	{#if form?.error}
 		<p class="error">{form.error}</p>
 	{/if}
@@ -643,14 +650,14 @@ export const actions = {
 	import { enhance } from '$app/forms';
 </script>
 
-<form 
-	method="POST" 
+<form
+	method="POST"
 	use:enhance={({ formData, cancel }) => {
 		// Run before submission
 		if (!confirm('Are you sure?')) {
 			cancel();
 		}
-		
+
 		return async ({ result, update }) => {
 			// Run after response
 			if (result.type === 'success') {
@@ -672,9 +679,9 @@ export const actions = {
 ```svelte
 <script>
 	import { onMount } from 'svelte';
-	
+
 	let HeavyComponent;
-	
+
 	onMount(async () => {
 		const module = await import('./HeavyComponent.svelte');
 		HeavyComponent = module.default;
@@ -691,10 +698,10 @@ export const actions = {
 <script>
 	let items = $state(Array.from({ length: 10000 }, (_, i) => i));
 	let scrollTop = $state(0);
-	
+
 	const itemHeight = 50;
 	const visibleCount = 20;
-	
+
 	let visibleItems = $derived(() => {
 		const start = Math.floor(scrollTop / itemHeight);
 		return items.slice(start, start + visibleCount);
@@ -716,7 +723,7 @@ export const actions = {
 ```svelte
 <script>
 	let data = $state([/* large dataset */]);
-	
+
 	// Automatically memoized
 	let processed = $derived.by(() => {
 		return data
@@ -733,7 +740,7 @@ export const actions = {
 	let todos = $state([
 		{ id: 1, text: 'Task 1', done: false }
 	]);
-	
+
 	// Each todo is keyed, only changed todos re-render
 </script>
 
@@ -751,24 +758,24 @@ export const actions = {
 <script>
 	let email = $state('');
 	let password = $state('');
-	
+
 	let errors = $derived.by(() => {
 		const errs = {};
 		if (!email.includes('@')) errs.email = 'Invalid email';
 		if (password.length < 8) errs.password = 'Too short';
 		return errs;
 	});
-	
+
 	let isValid = $derived(Object.keys(errors).length === 0);
 </script>
 
 <form>
 	<input bind:value={email} />
 	{#if errors.email}<span class="error">{errors.email}</span>{/if}
-	
+
 	<input type="password" bind:value={password} />
 	{#if errors.password}<span class="error">{errors.password}</span>{/if}
-	
+
 	<button disabled={!isValid}>Submit</button>
 </form>
 ```
@@ -777,12 +784,12 @@ export const actions = {
 ```svelte
 <script>
 	let isOpen = $state(false);
-	
+
 	$effect(() => {
 		if (isOpen) {
 			document.body.style.overflow = 'hidden';
 		}
-		
+
 		return () => {
 			document.body.style.overflow = '';
 		};
@@ -806,15 +813,15 @@ export const actions = {
 <script>
 	let searchQuery = $state('');
 	let debouncedQuery = $state('');
-	
+
 	$effect(() => {
 		const timeout = setTimeout(() => {
 			debouncedQuery = searchQuery;
 		}, 300);
-		
+
 		return () => clearTimeout(timeout);
 	});
-	
+
 	// Use debouncedQuery for API calls
 	$effect(() => {
 		if (debouncedQuery) {
@@ -836,7 +843,7 @@ export const actions = {
 <script>
 	let count = $state(0);
 	let doubled = $state(0);
-	
+
 	$effect(() => {
 		doubled = count * 2; // Wrong! Use $derived
 	});
@@ -854,7 +861,7 @@ export const actions = {
 <!-- ✗ Bad -->
 <script>
 	let { user } = $props();
-	
+
 	function updateName() {
 		user.name = 'New Name'; // Wrong! Props are read-only
 	}
@@ -863,7 +870,7 @@ export const actions = {
 <!-- ✓ Good -->
 <script>
 	let { user, onUpdate } = $props();
-	
+
 	function updateName() {
 		onUpdate({ ...user, name: 'New Name' });
 	}
@@ -877,7 +884,7 @@ export const actions = {
 	let count = $state(0);
 	let doubled = $state(0);
 	let isEven = $state(false);
-	
+
 	function increment() {
 		count++;
 		doubled = count * 2;     // Derived!

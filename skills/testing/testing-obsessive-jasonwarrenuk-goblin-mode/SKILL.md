@@ -1,5 +1,12 @@
 ---
 name: testing-obsessive
+description: Comprehensive testing guidance for JavaScript/TypeScript applications,
+  with emphasis on Vitest, Svelte component testing, and pragmatic test-after development.
+  Addresses testing as a professional skill for portfolio evidence and code quality.
+---
+
+---
+name: testing-obsessive
 description: Pragmatic testing with Vitest: risk-based strategy, Svelte component testing, test-after development.
 user-invocable: false
 effort: medium
@@ -260,7 +267,7 @@ Implement the fix:
 ```typescript
 function calculateOrderTotal(items, discounts, taxRate) {
   if (items.length === 0) return 0; // Fix
-  
+
   // Rest of logic...
 }
 ```
@@ -355,10 +362,10 @@ it('should update user profile', () => {
   // Arrange - Set up test data
   const user = { id: '1', name: 'Alice' };
   const updates = { name: 'Alicia' };
-  
+
   // Act - Execute the code under test
   const result = updateProfile(user, updates);
-  
+
   // Assert - Verify the outcome
   expect(result.name).toBe('Alicia');
   expect(result.id).toBe('1');
@@ -378,16 +385,16 @@ import Counter from './Counter.svelte';
 describe('Counter', () => {
   it('should render initial count', () => {
     render(Counter, { props: { initialCount: 0 } });
-    
+
     expect(screen.getByText('Count: 0')).toBeInTheDocument();
   });
 
   it('should increment count on button click', async () => {
     render(Counter, { props: { initialCount: 0 } });
-    
+
     const button = screen.getByRole('button', { name: /increment/i });
     await fireEvent.click(button);
-    
+
     expect(screen.getByText('Count: 1')).toBeInTheDocument();
   });
 });
@@ -396,13 +403,13 @@ describe('Counter', () => {
 ### Testing Component Props
 ```typescript
 it('should accept and display custom label', () => {
-  render(Button, { 
-    props: { 
+  render(Button, {
+    props: {
       label: 'Click Me',
-      variant: 'primary' 
-    } 
+      variant: 'primary'
+    }
   });
-  
+
   const button = screen.getByRole('button');
   expect(button).toHaveTextContent('Click Me');
   expect(button).toHaveClass('btn--primary');
@@ -413,13 +420,13 @@ it('should accept and display custom label', () => {
 ```typescript
 it('should emit custom event on click', async () => {
   const { component } = render(Button);
-  
+
   const handleClick = vi.fn();
   component.$on('click', handleClick);
-  
+
   const button = screen.getByRole('button');
   await fireEvent.click(button);
-  
+
   expect(handleClick).toHaveBeenCalledTimes(1);
 });
 ```
@@ -430,11 +437,11 @@ import { tick } from 'svelte';
 
 it('should update derived value when input changes', async () => {
   const { component } = render(Calculator);
-  
+
   const input = screen.getByLabelText('Number');
   await fireEvent.input(input, { target: { value: '5' } });
   await tick(); // Wait for reactive statements to run
-  
+
   expect(screen.getByText('Doubled: 10')).toBeInTheDocument();
 });
 ```
@@ -452,11 +459,11 @@ it('should call API with correct parameters', async () => {
     ok: true,
     json: async () => ({ id: '1', name: 'Test' })
   });
-  
+
   global.fetch = mockFetch;
-  
+
   await fetchUser('1');
-  
+
   expect(mockFetch).toHaveBeenCalledWith('/api/users/1');
 });
 ```
@@ -520,9 +527,9 @@ vi.mock('$lib/stores/user', () => ({
 it('should update store on success', async () => {
   const { subscribe, set } = writable(null);
   const setSpy = vi.spyOn({ set }, 'set');
-  
+
   await loadUserData();
-  
+
   expect(setSpy).toHaveBeenCalledWith({ id: '1', name: 'Alice' });
 });
 ```
@@ -535,7 +542,7 @@ it('should update store on success', async () => {
 ```typescript
 it('should fetch user data', async () => {
   const user = await fetchUser('1');
-  
+
   expect(user).toEqual({
     id: '1',
     name: 'Alice'
@@ -559,9 +566,9 @@ import { waitFor } from '@testing-library/svelte';
 
 it('should show loading then data', async () => {
   render(UserProfile, { props: { userId: '1' } });
-  
+
   expect(screen.getByText('Loading...')).toBeInTheDocument();
-  
+
   await waitFor(() => {
     expect(screen.getByText('Alice')).toBeInTheDocument();
   });
@@ -689,9 +696,9 @@ it('should update user', async () => {
 it('should update user', async () => {
   const mockFetch = vi.fn().mockResolvedValue({ ok: true });
   global.fetch = mockFetch;
-  
+
   const result = await updateUser(user);
-  
+
   expect(mockFetch).toHaveBeenCalledWith('/api/users/1', {
     method: 'PUT',
     body: JSON.stringify(user)
@@ -741,7 +748,7 @@ describe('fetchUser', () => {
 
   it('should throw on network error', async () => {
     global.fetch = vi.fn().mockRejectedValue(new Error('Network error'));
-    
+
     await expect(fetchUser('1')).rejects.toThrow('Network error');
   });
 
@@ -750,7 +757,7 @@ describe('fetchUser', () => {
       ok: false,
       status: 404
     });
-    
+
     const user = await fetchUser('999');
     expect(user).toBeNull();
   });

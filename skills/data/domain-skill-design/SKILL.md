@@ -1,8 +1,13 @@
+---
+name: domain-skill-design
+description: '用途: 设计领域专用的 Skills（区别于 Core Skills）'
+---
+
 # domain-skill-design
 
 **用途**: 设计领域专用的 Skills（区别于 Core Skills）
 
-**输入**: 
+**输入**:
 - Workflows 列表（需要什么能力）
 - 系统结构（数据在哪）
 - 领域特点（health / finance / learning...）
@@ -29,11 +34,11 @@ input:
     - name: string
       steps: array              # 步骤描述
       required_skills: array    # 需要的能力
-  
+
   structure:                    # 系统结构
     data_locations: object      # 数据在哪
     output_locations: object    # 产出在哪
-  
+
   domain: string                # 领域
   requirements: object          # 需求细节
 ```
@@ -52,13 +57,13 @@ output:
       dependencies: array       # 依赖的 Core Skills
       complexity: string        # 复杂度（simple/medium/complex）
       priority: string          # 优先级（high/medium/low）
-      
+
       # 实现提示
       implementation_hints:
         approach: string        # 实现思路
         key_logic: string       # 核心逻辑
         edge_cases: array       # 边缘情况
-      
+
       # 评价维度
       evaluation_dimensions:
         - name: string
@@ -78,7 +83,7 @@ def extract_required_skills(workflows):
     从 Workflow 步骤中提取需要的 Skills
     """
     skills = set()
-    
+
     for workflow in workflows:
         for step in workflow.steps:
             # 识别动词 → 能力
@@ -90,7 +95,7 @@ def extract_required_skills(workflows):
                 skills.add("generate-skill")
             if "notify" in step:
                 skills.add("notify-skill")
-    
+
     return list(skills)
 ```
 
@@ -102,7 +107,7 @@ def extract_required_skills(workflows):
 
 ```yaml
 # 通用能力 → 领域 Skills
-analyze → 
+analyze →
   - checkup-analysis-skill（体检报告分析）
   - health-indicators-skill（健康指标分析）
   - risk-assessment-skill（风险评估）
@@ -152,13 +157,13 @@ implementation_hints:
     3. 与标准范围对比，找出异常项
     4. 结合历史数据，分析趋势
     5. 基于医学知识，评估风险
-  
+
   key_logic: |
     - OCR: pypdf + pytesseract
     - NLP: 正则表达式 + 模式匹配
     - 医学知识: 预定义的指标范围表
     - 趋势分析: 简单统计（增长/下降）
-  
+
   edge_cases:
     - 扫描件质量差，OCR 失败
     - 不同医院的报告格式不同
@@ -169,15 +174,15 @@ evaluation_dimensions:
   - name: 提取准确度
     weight: 40%
     criteria: 指标和数值提取的正确率
-  
+
   - name: 异常识别准确度
     weight: 30%
     criteria: 异常指标识别的准确率
-  
+
   - name: 建议合理性
     weight: 20%
     criteria: 建议是否科学、可行
-  
+
   - name: 鲁棒性
     weight: 10%
     criteria: 处理各种格式和边缘情况的能力
@@ -194,13 +199,13 @@ notify-user-skill:
     - daily-check workflow
     - weekly-report workflow
     - checkup-analysis workflow
-  
+
   # 通用设计
   input:
     message: string
     priority: string (normal/high/urgent)
     channel: string (file/email/...)
-  
+
   output:
     notified: boolean
     timestamp: string
@@ -225,7 +230,7 @@ workflows:
       - health-indicators-skill
       - daily-review-skill
       - notify-user-skill
-  
+
   - name: weekly-report
     steps:
       - aggregate_week_data
@@ -237,7 +242,7 @@ workflows:
       - trend-analysis-skill
       - weekly-report-skill
       - notify-user-skill
-  
+
   - name: checkup-analysis
     steps:
       - parse_report
@@ -255,7 +260,7 @@ structure:
     profile: data/profile/profile.json
     indicators: data/indicators/{date}.json
     checkups: data/checkups/
-  
+
   output_locations:
     reports: outputs/reports/
 
@@ -282,7 +287,7 @@ skills:
     output:
       collected_data: object
     dependencies: []
-  
+
   # ────────────────────────────────────
   # 分析相关
   # ────────────────────────────────────
@@ -310,7 +315,7 @@ skills:
         weight: 40%
       - name: 异常识别准确度
         weight: 30%
-  
+
   - name: health-indicators-skill
     purpose: 分析每日健康指标
     complexity: medium
@@ -322,7 +327,7 @@ skills:
       analysis: object
       alerts: array
     dependencies: []
-  
+
   - name: risk-assessment-skill
     purpose: 评估健康风险
     complexity: medium
@@ -337,7 +342,7 @@ skills:
       suggestions: array
     dependencies:
       - research-skill
-  
+
   - name: trend-analysis-skill
     purpose: 分析健康指标趋势
     complexity: medium
@@ -349,7 +354,7 @@ skills:
       trends: object
       insights: array
     dependencies: []
-  
+
   # ────────────────────────────────────
   # 报告生成相关
   # ────────────────────────────────────
@@ -363,7 +368,7 @@ skills:
     output:
       report: string (Markdown)
     dependencies: []
-  
+
   - name: weekly-report-skill
     purpose: 生成每周健康报告
     complexity: medium
@@ -374,7 +379,7 @@ skills:
     output:
       report: string (Markdown)
     dependencies: []
-  
+
   - name: recommendation-skill
     purpose: 生成健康建议
     complexity: medium
@@ -386,7 +391,7 @@ skills:
       recommendations: array
     dependencies:
       - research-skill
-  
+
   # ────────────────────────────────────
   # 通知相关
   # ────────────────────────────────────

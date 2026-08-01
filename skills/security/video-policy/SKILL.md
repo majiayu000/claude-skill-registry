@@ -1,3 +1,8 @@
+---
+name: video-policy
+description: Secrets 漏れと .env の追跡を防止します。
+---
+
 # Skill: Governance Policy Checks
 
 ## Status

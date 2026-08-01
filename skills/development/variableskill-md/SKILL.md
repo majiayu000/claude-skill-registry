@@ -1,7 +1,12 @@
+---
+name: variableskill-md
+description: Skill from iceBear67/mythicmobswiki
+---
+
 ## Description
-Executes another meta-skill like the [Skill mechanic](/skills/mechanics/skill), but allows for placeholders inside the skill attribute.  
+Executes another meta-skill like the [Skill mechanic](/skills/mechanics/skill), but allows for placeholders inside the skill attribute.
 The attribute "sync=true" will be inherited by any sub-skills and cannot
-be set to *false* later in a skill-tree.  
+be set to *false* later in a skill-tree.
 
 
 ## Attributes

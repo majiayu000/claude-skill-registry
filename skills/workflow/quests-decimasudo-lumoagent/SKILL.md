@@ -1,5 +1,13 @@
 ---
 name: quests
+description: A standardized framework for AI agents to track and guide humans through
+  complex long-term tasks. The quest is the single source of truth — context, decisions,
+  contacts, risks, and progress live inside the quest, not scattered across memory
+  files.
+---
+
+---
+name: quests
 description: Track and guide humans through complex multi-step real-world processes. Use when a user needs help with a bureaucratic, legal, technical, or any multi-step procedure that requires organized tracking, step-by-step guidance, and progress monitoring. Triggers on requests like "help me with this process", "guide me through", "track this project", "create a quest", or any complex task that benefits from being broken into manageable steps presented one at a time. Also triggers for existing quests: "how's my quest going", "what's next on [process]", "update my progress". This is for multi-session/multi-day processes, not simple one-off tasks. The quest replaces scattered memory files — it IS the memory for long-running processes.
 ---
 

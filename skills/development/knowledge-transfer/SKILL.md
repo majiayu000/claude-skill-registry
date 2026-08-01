@@ -1,4 +1,11 @@
 ---
+name: knowledge-transfer
+description: Progressive learning methodology for structured onboarding using time-boxed
+  learning paths (Day-1, Week-1, Month-1), validation checkpoints, and scaffolding
+  principles. Use when onboarding new contrib
+---
+
+---
 name: Knowledge Transfer
 description: Progressive learning methodology for structured onboarding using time-boxed learning paths (Day-1, Week-1, Month-1), validation checkpoints, and scaffolding principles. Use when onboarding new contributors, reducing ramp-up time from weeks to days, creating self-service learning paths, systematizing ad-hoc knowledge sharing, or building institutional knowledge preservation. Provides 3 learning path templates (Day-1: 4-8h setup→contribution, Week-1: 20-40h architecture→feature, Month-1: 40-160h expertise→mentoring), progressive disclosure pattern, validation checkpoint principle, module mastery best practice. Validated with 3-8x onboarding speedup (structured vs. unstructured), 95%+ transferability to any software project (Go, Rust, Python, TypeScript). Learning theory principles applied: progressive disclosure, scaffolding, validation checkpoints, time-boxing.
 allowed-tools: Read, Write, Edit, Grep, Glob

@@ -1,5 +1,10 @@
 ---
 name: ffmpeg-shapes-graphics
+description: 'MANDATORY: Always Use Backslashes on Windows for File Paths'
+---
+
+---
+name: ffmpeg-shapes-graphics
 description: Complete shape and graphics overlay system. PROACTIVELY activate for: (1) Drawing rectangles (drawbox), (2) Grid overlays (drawgrid), (3) Circles and ellipses (geq), (4) Image watermarks and logos, (5) Lower third graphics, (6) Progress bars and indicators, (7) Animated overlays, (8) Blend modes and compositing, (9) Safe area guides, (10) Generated patterns (gradients, noise, checkerboards). Provides: Filter syntax reference, position expressions, color format guide, blend mode examples, performance optimization tips. Ensures: Professional graphics overlays and visual effects on video.
 ---
 

@@ -1,3 +1,9 @@
+---
+name: commands
+description: Generer en komplett SKILL.md dokumentasjon fra denne FHIR Implementation
+  Guide.
+---
+
 # Generate FHIR Profile Skill
 
 Generer en komplett SKILL.md dokumentasjon fra denne FHIR Implementation Guide.
@@ -103,7 +109,7 @@ description: Komplett dokumentasjon for LMDI (Legemiddelregisteret Data Inn) FHI
 ## ValueSets
 
 ### [ValueSetNavn]
-- **Id**: `[id]`  
+- **Id**: `[id]`
 - **URL**: `[canonical url]`
 
 | System | Code | Display |

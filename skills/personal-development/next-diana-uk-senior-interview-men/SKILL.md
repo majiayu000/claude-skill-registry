@@ -1,5 +1,10 @@
 ---
 name: next
+description: The user wants a recommendation for what to practice next.
+---
+
+---
+name: next
 description: Get the next recommended problem based on your weak patterns and mistake history. Use after completing a problem.
 argument-hint: [difficulty: easy|medium|hard] (optional)
 allowed-tools: Read, Glob, Grep

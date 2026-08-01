@@ -1,5 +1,11 @@
 ---
 name: pg-doc-schema-review
+description: Follow this workflow when reviewing or editing PRD/BP Markdown that contains
+  database schema / SQL examples.
+---
+
+---
+name: pg-doc-schema-review
 description: Review and fix PRD/BP/tech design Markdown that includes PostgreSQL table DDL and API examples. Use to enforce these conventions: no auto-increment primary keys, no foreign keys, avoid join-based designs, unique constraints written with UNIQUE (not CREATE UNIQUE INDEX), detailed COMMENTs for tables/columns, and entity/aggregate-root tables include create_time and update_time.
 ---
 

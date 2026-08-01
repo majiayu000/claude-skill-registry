@@ -1,3 +1,9 @@
+---
+name: e2e-testing
+description: '- Keywords: teste, e2e, playwright, browser test, visual test, smoke
+  test'
+---
+
 # E2E Testing Skill
 
 ## Trigger

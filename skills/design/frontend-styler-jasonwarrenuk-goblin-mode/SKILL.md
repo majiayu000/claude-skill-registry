@@ -1,5 +1,12 @@
 ---
 name: frontend-styler
+description: Comprehensive guidance for debugging layout issues, ensuring style consistency,
+  and applying best practices in frontend development, with emphasis on Svelte/SvelteKit
+  projects.
+---
+
+---
+name: frontend-styler
 description: Frontend styling: layout debugging, style consistency, CSS best practices for Svelte/SvelteKit.
 user-invocable: false
 effort: medium
@@ -105,7 +112,7 @@ Svelte's `<style>` blocks are scoped by default - leverage this:
     padding: 0.5rem 1rem;
     border-radius: 0.25rem;
   }
-  
+
   .button--primary {
     background: var(--color-primary);
   }
@@ -141,8 +148,8 @@ Prefer CSS variables for theming and consistency:
 Use Svelte's class directive for dynamic styling:
 
 ```svelte
-<button 
-  class="btn" 
+<button
+  class="btn"
   class:btn--active={isActive}
   class:btn--disabled={disabled}
 >

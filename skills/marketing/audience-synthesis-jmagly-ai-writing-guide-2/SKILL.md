@@ -1,3 +1,9 @@
+---
+name: audience-synthesis
+description: Synthesize audience insights from multiple data sources into unified
+  personas and segments. Use when relevant to the task.
+---
+
 # audience-synthesis
 
 Synthesize audience insights from multiple data sources into unified personas and segments.

@@ -1,5 +1,11 @@
 ---
 name: file-system
+description: Apply safe path handling and temporary file patterns so reads and writes
+  are reliable, even with untrusted input or large intermediate data.
+---
+
+---
+name: file-system
 description: Safe filesystem operations for agents, including path normalization vs resolution, temp file handling, atomic replacement, and spooled buffers. Use when reading/writing user-supplied paths, staging outputs, or managing temporary files; triggers: filesystem, os.path, tempfile, path normalization, realpath, atomic write.
 ---
 

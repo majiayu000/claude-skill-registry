@@ -1,3 +1,9 @@
+---
+name: commands-udecode-plate
+description: 'Scan package tests, update @.claude/rules/testing.mdc with new patterns.
+  Follow writing-skills: DRY, ultra-concise, token-efficient.'
+---
+
 Scan package tests, update @.claude/rules/testing.mdc with new patterns. Follow writing-skills: DRY, ultra-concise, token-efficient.
 
 **Process:**

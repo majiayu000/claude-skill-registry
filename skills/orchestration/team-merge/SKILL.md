@@ -1,4 +1,10 @@
 ---
+name: team-merge
+description: Verify all teammates completed, run quality gates, close increments,
+  and trigger sync.
+---
+
+---
 description: Merge completed parallel agent work and trigger GitHub sync per increment. Activates for: team merge, merge agents, combine work, team finish.
 ---
 

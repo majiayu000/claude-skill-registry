@@ -1,5 +1,12 @@
 ---
 name: kustomize
+description: 'Kubernetes native configuration management with Kustomize. Use when
+  managing environment-specific configs, patching resources, or organizing Kubernetes
+  manifests. Triggers: kustomize, kustomization, o'
+---
+
+---
+name: kustomize
 description: Kubernetes native configuration management with Kustomize. Use when managing environment-specific configs, patching resources, or organizing Kubernetes manifests. Triggers: kustomize, kustomization, overlay, patch, base, strategic merge, json patch, config management.
 allowed-tools: Read, Grep, Glob, Edit, Write, Bash
 ---

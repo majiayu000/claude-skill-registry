@@ -1,3 +1,10 @@
+---
+name: db-anti-patterns
+description: Detection rules and grep patterns for database performance anti-patterns.
+  Use when scanning codebase for N+1 queries, sequential queries, or connection pool
+  issues.
+---
+
 # Database Anti-Patterns
 
 Detection and fix patterns for common database performance issues.

@@ -1,3 +1,8 @@
+---
+name: i18n-checker
+description: '|-----|------|---------|'
+---
+
 # i18n Checker
 
 i18n 硬編碼檢查和批量處理工具。

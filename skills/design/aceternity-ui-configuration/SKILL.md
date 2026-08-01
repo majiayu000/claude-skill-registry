@@ -1,5 +1,10 @@
 ---
 name: aceternity-ui-configuration
+description: You are a coding standards expert specializing in aceternity ui configuration.
+---
+
+---
+name: aceternity-ui-configuration
 description: Specifies that Aceternity UI dependencies should be considered during code generation or modification.
 version: 1.0.0
 model: sonnet

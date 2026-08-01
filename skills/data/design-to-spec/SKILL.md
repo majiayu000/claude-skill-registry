@@ -1,3 +1,9 @@
+---
+name: design-to-spec
+description: 'IMPORTANT: Before running this skill, ensure Claude Code is configured
+  with extended context settings:'
+---
+
 # design-to-spec
 
 ---

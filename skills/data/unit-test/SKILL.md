@@ -1,5 +1,10 @@
 ---
 name: unit-test
+description: '1. Arrange: テストデータと前提条件を準備'
+---
+
+---
+name: unit-test
 description: 単体テストコーディングエージェント。テストケース設計、境界値テスト、モック/スタブの使用、高カバレッジを実現。キーワード: 単体テスト, unit test, テスト作成, test, カバレッジ, coverage.
 ---
 

@@ -1,5 +1,12 @@
 ---
 name: sprint-1-executor
+description: Execute Sprint 1 tasks for FASA optimization and trade analytics. This
+  skill should be used when the user requests execution of any Sprint 1 task (Tasks
+  1.1-1.4, 11-13, 2.1-2.4, 3.1-3.2), including ca
+---
+
+---
+name: sprint-1-executor
 description: Execute Sprint 1 tasks for FASA optimization and trade analytics. This skill should be used when the user requests execution of any Sprint 1 task (Tasks 1.1-1.4, 11-13, 2.1-2.4, 3.1-3.2), including cap space parsing, Sleeper integration, FASA target marts, FA acquisition history, roster depth analysis, enhanced FASA targets, notebooks, valuation models, trade analysis, automation workflows, or documentation. Each task is atomic, standalone, and designed for independent execution with built-in validation. Current focus: Phase 2 FASA Intelligence (Tasks 11-13, 1.4).
 ---
 

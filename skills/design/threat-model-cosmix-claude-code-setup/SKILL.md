@@ -1,5 +1,12 @@
 ---
 name: threat-model
+description: Threat modeling methodologies (STRIDE, DREAD, PASTA, attack trees) for
+  secure architecture design. Use when planning new systems, reviewing architecture
+  security, identifying threats, or assessing ris
+---
+
+---
+name: threat-model
 description: Threat modeling methodologies (STRIDE, DREAD, PASTA, attack trees) for secure architecture design. Use when planning new systems, reviewing architecture security, identifying threats, or assessing risk. Triggers: threat model, STRIDE, DREAD, attack surface, security architecture, trust boundary, threat vector, risk assessment.
 allowed-tools: Read, Grep, Glob, Bash, WebFetch
 ---

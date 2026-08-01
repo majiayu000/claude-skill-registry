@@ -1,3 +1,8 @@
+---
+name: when-setting-network-security-use-network-security-setup
+description: 'skillname: when-setting-network-security-use-network-security-setup'
+---
+
 # Network Security Setup SOP
 
 ```yaml
@@ -88,7 +93,7 @@ cat > network-security/policies/network-policy.json << 'EOF'
     "mode": "whitelist",
     "trusted_domains": [
       "*.anthropic.com",
-      "api.openai.com", 
+      "api.openai.com",
       "github.com",
       "*.github.com",
       "raw.githubusercontent.com",

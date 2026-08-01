@@ -1,3 +1,9 @@
+---
+name: foundry-iq-python
+description: Build agentic retrieval pipelines using Azure AI Search knowledge bases
+  with the Python SDK.
+---
+
 ````skill
 ---
 name: foundry-iq-python

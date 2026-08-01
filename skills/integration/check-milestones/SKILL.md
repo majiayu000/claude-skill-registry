@@ -1,5 +1,11 @@
 ---
 name: check-milestones
+description: Check and fix milestones on a contributor's merged PRs and their associated
+  GitHub issues.
+---
+
+---
+name: check-milestones
 description: "Check and fix milestones on PRs and their associated issues. Sets PR milestones based on the branch they merged into, and issue milestones based on the smallest version with a merged uplift. Triggers on: check milestones, fix milestones, /check-milestones."
 argument-hint: [github-username] [all|PR1,PR2,PR3]
 disable-model-invocation: true

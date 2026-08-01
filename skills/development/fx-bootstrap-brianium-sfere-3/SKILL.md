@@ -1,5 +1,10 @@
 ---
 name: fx-bootstrap
+description: Set up Sandestin effect dispatch in a new project or library.
+---
+
+---
+name: fx-bootstrap
 description: Set up Sandestin in a new project. Use when integrating sandestin into an application or library, creating dispatch namespaces, or wiring registries together. Keywords: setup, bootstrap, create-dispatch, wire, integrate, project.
 ---
 

@@ -1,3 +1,9 @@
+---
+name: error-analytics
+description: วิเคราะห์ error patterns, หา root causes, และเสนอ systematic solutions
+  เพื่อลด recurring errors
+---
+
 # 📊 Error Analytics Skill
 
 ---
@@ -80,7 +86,7 @@ try {
 // Pattern: Network failures
 Error: Network request failed
 
-// Analysis: 
+// Analysis:
 // - 30% timeout (> 30s response)
 // - 50% server errors (500)
 // - 20% client errors (400)

@@ -1,3 +1,8 @@
+---
+name: skill-starter
+description: '> Category: [Project | Development | Quality | Operations]'
+---
+
 ```yaml
 ---
 description: [Replace with brief phrase matching natural requests (5-10 words)]
@@ -10,7 +15,7 @@ alwaysApply: false  # Set to true only if this should load for EVERY task
 
 # [Skill Name]
 
-> **Category**: [Project | Development | Quality | Operations]  
+> **Category**: [Project | Development | Quality | Operations]
 > **Last Updated**: [Date]
 
 ---

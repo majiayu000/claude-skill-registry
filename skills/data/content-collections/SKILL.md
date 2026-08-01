@@ -1,5 +1,10 @@
 ---
 name: content-collections
+description: 'Status: Production Ready ✅'
+---
+
+---
+name: content-collections
 description: Content Collections TypeScript-first build tool for Markdown/MDX content. Use for blogs, docs, content sites with Vite + React, MDX components, type-safe Zod schemas, Contentlayer migration, or encountering TypeScript import errors, path alias issues, collection validation errors.
 
   Keywords: content-collections, @content-collections/core, @content-collections/vite,

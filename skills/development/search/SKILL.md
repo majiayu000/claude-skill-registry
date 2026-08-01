@@ -1,5 +1,12 @@
 ---
 name: search
+description: 'Elasticsearch and full-text search implementation. Use when implementing
+  search functionality, autocomplete, faceted search, relevance tuning, or working
+  with search indexes. Keywords: elasticsearch,'
+---
+
+---
+name: search
 description: Elasticsearch and full-text search implementation. Use when implementing search functionality, autocomplete, faceted search, relevance tuning, or working with search indexes. Keywords: elasticsearch, search, full-text, indexing, relevance, facets, autocomplete, analyzers, synonyms, aggregations.
 ---
 

@@ -1,3 +1,8 @@
+---
+name: budgeting
+description: 'description: Annual and quarterly budgeting process and methodology'
+---
+
 # Budgeting
 
 name: budgeting

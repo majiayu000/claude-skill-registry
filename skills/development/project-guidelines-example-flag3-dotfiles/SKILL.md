@@ -1,3 +1,9 @@
+---
+name: project-guidelines-example
+description: This is an example of a project-specific skill. Use this as a template
+  for your own projects.
+---
+
 # Project Guidelines Skill (Example)
 
 This is an example of a project-specific skill. Use this as a template for your own projects.

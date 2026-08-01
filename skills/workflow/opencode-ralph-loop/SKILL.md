@@ -1,3 +1,8 @@
+---
+name: opencode-ralph-loop
+description: opt-in、既定OFF、乱用禁止の反復開発スキルです。
+---
+
 # OpenCode Ralph Loop - 反復開発支援
 
 **opt-in、既定OFF、乱用禁止**の反復開発スキルです。

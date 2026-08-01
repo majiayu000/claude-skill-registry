@@ -1,3 +1,8 @@
+---
+name: blazor-framework
+description: 'Target: .NET 8.0+ with Blazor Server/WebAssembly'
+---
+
 # Blazor Framework - Quick Reference (SKILL.md)
 
 **Version**: 1.0.0

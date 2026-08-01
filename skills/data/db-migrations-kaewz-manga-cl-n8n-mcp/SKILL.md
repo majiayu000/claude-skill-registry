@@ -1,3 +1,8 @@
+---
+name: db-migrations
+description: '> D1 schema patterns for SaaS wrapper.'
+---
+
 # Database Migrations Skill
 
 > D1 schema patterns for SaaS wrapper.

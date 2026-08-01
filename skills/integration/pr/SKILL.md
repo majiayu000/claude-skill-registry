@@ -1,5 +1,10 @@
 ---
 name: pr
+description: gh CLI を使用して Pull Request の作成と管理を行う。
+---
+
+---
+name: pr
 description: GitHub Pull Requestの作成・確認を行う。「PR作って」「プルリク作成」「PRの状態確認」などのリクエストで使用する。
 allowed-tools: Read, Bash, Glob, Grep
 argument-hint: [create|status|list] [タイトル（省略可）]

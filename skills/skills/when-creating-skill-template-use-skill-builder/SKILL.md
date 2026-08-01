@@ -1,3 +1,8 @@
+---
+name: when-creating-skill-template-use-skill-builder
+description: /============================================================================/
+---
+
 /*============================================================================*/
 /* WHEN-CREATING-SKILL-TEMPLATE-USE-SKILL-BUILDER SKILL :: VERILINGUA x VERIX EDITION                      */
 /*============================================================================*/

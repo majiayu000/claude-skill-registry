@@ -1,3 +1,8 @@
+---
+name: standards-queries
+description: 'name: Queries Standards'
+---
+
 --
 name: Queries Standards
 description: Write secure, optimized database queries using parameterized queries, eager loading to prevent N+1 problems, and strategic indexing for performance. Use this skill when writing SQL queries, ORM queries, database interactions, or optimizing data fetching logic. Apply when working with query files, repository patterns, data access layers, SQL statements, ORM methods (ActiveRecord, Sequelize, Prisma queries), JOIN operations, WHERE clauses, preventing SQL injection, implementing eager loading or includes, adding query timeouts, wrapping operations in transactions, or caching expensive queries. Use for any task involving database reads, writes, complex queries, query optimization, or data fetching performance.

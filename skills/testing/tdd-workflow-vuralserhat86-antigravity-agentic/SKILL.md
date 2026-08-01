@@ -1,4 +1,11 @@
 ---
+name: tdd-workflow
+description: A comprehensive Test Driven Development skill that provides intelligent
+  test generation, coverage analysis, framework integration, and TDD workflow guidance
+  across multiple languages and testing frameworks.
+---
+
+---
 name: tdd_workflow
 router_kit: QualityKit
 description: Comprehensive Test Driven Development guide. Master testing, debugging, fixing bugs, QA workflows, unit tests, integration tests, and coverage analysis.

@@ -1,5 +1,12 @@
 ---
 name: frontend-architecture
+description: Frontend package architecture for ChainGraph visual flow editor. Use
+  when working on apps/chaingraph-frontend, React components, Effector stores, XYFlow
+  integration, UI components, providers, or hooks
+---
+
+---
+name: frontend-architecture
 description: Frontend package architecture for ChainGraph visual flow editor. Use when working on apps/chaingraph-frontend, React components, Effector stores, XYFlow integration, UI components, providers, or hooks. Covers directory structure, domain organization, provider hierarchy, component patterns. Triggers: frontend, react, component, provider, hook, ui, sidebar, flow editor, chaingraph-frontend, vite, tailwind.
 ---
 

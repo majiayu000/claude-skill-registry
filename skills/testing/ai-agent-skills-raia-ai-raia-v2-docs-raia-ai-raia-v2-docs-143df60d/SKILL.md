@@ -1,3 +1,11 @@
+---
+name: ai-agent-skills-raia-ai-raia-v2-docs
+description: The retriever skill is a mechanism that allows the system (an agent)
+  to fetch contextual information from an external vector database, such as Pinecone,
+  in real time. The retrieved data is then passed to OpenAI's models as additional
+  context, enhancing the accuracy and specificity of the AI's responses.
+---
+
 # Retrieval Skill
 
 ### 🧠 What Is the Retriever Skill?

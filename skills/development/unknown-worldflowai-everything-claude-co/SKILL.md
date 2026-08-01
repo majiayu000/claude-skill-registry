@@ -1,3 +1,9 @@
+---
+name: unknown
+description: Claude Code toolkit - agents, commands, skills, rules, and hooks for
+  productive AI-assisted development
+---
+
 # Eval Harness Skill
 
 A formal evaluation framework for Claude Code sessions, implementing eval-driven development (EDD) principles.

@@ -1,3 +1,8 @@
+---
+name: coreseek-learning
+description: SetIDRange （设置查询ID范围）
+---
+
 # Coreseek使用技巧
 
 ### 1. 结果集过滤

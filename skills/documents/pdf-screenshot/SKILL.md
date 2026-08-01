@@ -1,5 +1,13 @@
 ---
 name: pdf-screenshot
+description: This skill renders pages or specific regions (bounding boxes) of a PDF
+  into PNG images. It is designed for human-agent collaboration workflows where the
+  agent needs to show the human what it has detected (e.g., tables, figures) for verification
+  or calibration.
+---
+
+---
+name: pdf-screenshot
 description: Render PDF pages or cropped regions to PNG images for visual verification.
 triggers:
   - screenshot pdf

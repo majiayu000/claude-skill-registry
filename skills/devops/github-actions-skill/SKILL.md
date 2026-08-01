@@ -1,5 +1,10 @@
 ---
 name: github-actions-skill
+description: Expert guidance for building CI/CD pipelines with GitHub Actions.
+---
+
+---
+name: github-actions-skill
 description: Expert guidance on GitHub Actions CI/CD workflows. Use when creating or modifying: (1) GitHub Actions workflow files, (2) CI/CD pipelines for testing and deployment, (3) Matrix strategies for multi-version testing, (4) Secrets and environment variable configuration, (5) Docker build and push workflows, (6) Deployment automation to cloud providers. Invoke when setting up automation, configuring pipelines, or troubleshooting workflow issues.
 ---
 

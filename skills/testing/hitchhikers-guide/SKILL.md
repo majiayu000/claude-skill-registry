@@ -1,3 +1,8 @@
+---
+name: hitchhikers-guide
+description: 미래교육의 화두, 배우는 법을 배우기
+---
+
 #### 동료학습, 프로젝트 기반 학습을 하는 학생들이 참고할 동영상등
 
 ### 학습 방법과 과정에 대한 이해
@@ -22,7 +27,7 @@
 ### 소그룹활동
 * [학습조직은 어떻게 만드나?](https://www.youtube.com/watch?v=majhzabHzuY)
 * [갈등관리](https://www.youtube.com/watch?v=C9_oN3YpAi0)
-* [소통과 갈등관리](https://www.youtube.com/watch?v=lp6j74dxA3s) 
+* [소통과 갈등관리](https://www.youtube.com/watch?v=lp6j74dxA3s)
 * [결과는 내는 법](https://www.youtube.com/watch?v=g2_SRdYL-ZE)
 
 ### 커뮤니케이션 스킬

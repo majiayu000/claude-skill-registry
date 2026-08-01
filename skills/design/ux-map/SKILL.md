@@ -1,5 +1,12 @@
 ---
 name: ux-map
+description: Interactive maps in Symfony with Leaflet or Google Maps. Build maps in
+  PHP, render them in Twig, and extend them with Stimulus controllers. Supports markers,
+  polygons, polylines, circles, info windows, and LiveComponent integration.
+---
+
+---
+name: ux-map
 description: Symfony UX Map for interactive maps with Leaflet or Google Maps in Symfony. Covers markers, polygons, polylines, circles, info windows, and LiveComponent integration. Use when displaying maps, placing markers, drawing shapes or routes, handling map events, building store locators, using custom tile layers, or making maps reactive with LiveComponent. Code triggers: <twig:ux:map />, Map(), Point(), Marker(), Polygon(), Polyline(), Circle(), InfoWindow(), MapOptionsInterface, ComponentWithMapTrait, fitBoundsToMarkers, ux:map:marker:before-create, ux:map:connect, SYMFONY_UX_MAP_DSN. Also trigger when the user asks "how to display a map", "how to add markers", "how to draw a polygon on a map", "how to handle map click events", "how to make a reactive map", "how to use Leaflet in Symfony", "how to use Google Maps in Symfony", "map not showing", "map has zero height". Do NOT trigger for SVG icons (use ux-icons) or general frontend interactivity (use stimulus).
 license: MIT
 metadata:

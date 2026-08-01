@@ -1,5 +1,10 @@
 ---
 name: bug-review
+description: '- Quick Start'
+---
+
+---
+name: bug-review
 description: |
 
 Triggers: verification, fixes, defects, code-quality, review

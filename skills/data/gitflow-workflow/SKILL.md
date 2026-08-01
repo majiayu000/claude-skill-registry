@@ -1,5 +1,11 @@
 ---
 name: gitflow-workflow
+description: All detailed command manuals live under ./references/ and should be consulted
+  when you need exact flags/options.
+---
+
+---
+name: gitflow-workflow
 description: Use this skill for GitFlow tasks: starting/finishing features, releases, hotfixes; managing branches; versioning; or general GitFlow operations.
 user-invocable: false
 allowed-tools: Read

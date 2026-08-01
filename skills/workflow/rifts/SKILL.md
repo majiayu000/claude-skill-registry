@@ -1,5 +1,11 @@
 ---
 name: rifts
+description: 'Rifts is the umbrella workflow: Speedrift (drift + contracts) plus optional
+  Specrift (spec/doc drift) and optional UXrift (UX checks), integrated into Workgraph.'
+---
+
+---
+name: rifts
 description: Workgraph + Rifts (aka Driftdriver orchestrator: Speedrift + optional Specrift/UXrift) autopilot workflow for starting/resuming a repo, creating an end-to-end Workgraph plan with dependencies, and keeping code/spec/intent drift under control via advisory checks and follow-up tasks (no hard blocks). Use when working with workgraph (`wg`), Driftdriver, Speedrift, Specrift, UXrift, drift control, task contracts (`wg-contract`), or when the user wants agents to “plan everything in Workgraph and get to work”.
 ---
 

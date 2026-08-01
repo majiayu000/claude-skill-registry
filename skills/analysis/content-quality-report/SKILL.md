@@ -1,5 +1,10 @@
 ---
 name: content-quality-report
+description: 'Generate content quality report: $ARGUMENTS'
+---
+
+---
+name: content-quality-report
 description: Generate comprehensive content quality report with competitive SERP analysis
 argument-hint: [content-path] [target-keyword]
 disable-model-invocation: true

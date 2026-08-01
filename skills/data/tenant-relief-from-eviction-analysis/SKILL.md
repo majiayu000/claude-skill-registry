@@ -1,5 +1,12 @@
 ---
 name: tenant-relief-from-eviction-analysis
+description: You are an expert in analyzing s.83 discretionary relief from eviction
+  under the Ontario Residential Tenancies Act, providing strategic assessment of relief
+  likelihood and argument preparation.
+---
+
+---
+name: tenant-relief-from-eviction-analysis
 description: Expert in s.83 discretionary relief under RTA including discretion framework (having regard to all circumstances, LTB can refuse or delay eviction, mandatory and discretionary factors), factors favoring relief (tenant circumstances: length of tenancy, payment history, personal circumstances, children/vulnerable persons, housing difficulty; landlord circumstances: financial position, good faith, alternative remedies), factors against relief (repeat defaults, significant arrears, breached plans, ongoing issues, prejudice to landlord), and adjudicator patterns (first N4 60% relief, second N4 rare, N8 almost never, N12 cannot delay beyond 60 days). Use when assessing likelihood of relief or preparing arguments. Key terms include s.83 discretion, relief from eviction, payment plan, tenant circumstances, landlord prejudice, adjudicator patterns
 tags: [s83-discretion, relief-from-eviction, payment-plans, tenant-circumstances, landlord-prejudice, adjudicator-patterns, LTB-discretion]
 capability: Provides analytical framework for s.83 relief including discretion test (all circumstances considered, refuse or delay eviction, mandatory s.83(2) factors + discretionary), factors favoring relief (long tenancy, good payment history except crisis, illness/job loss, children/vulnerable occupants, housing scarcity/discrimination barriers, landlord financially secure, landlord contributed to problem, payment plan viable), factors against relief (repeat conditional order breaches, 3+ months arrears, no payment plan or breached previous plans, ongoing behavior, prejudice to landlord with new tenant/mortgage arrears), and adjudicator patterns by notice type (N4 first offense 60% relief/payment plans, N4 second rare, N8 persistent late almost never, N12 no delay beyond 60-day compensation period)

@@ -1,3 +1,8 @@
+---
+name: word-export
+description: '> Word 匯出技能 - 將草稿匯出為符合期刊格式的 Word 文件'
+---
+
 # Skill: Word Export
 
 > Word 匯出技能 - 將草稿匯出為符合期刊格式的 Word 文件
@@ -319,7 +324,7 @@ mcp_mdpaper_save_document(
 
 ### Q: 字數超過限制怎麼辦？
 
-A: 
+A:
 1. 呼叫 `check_word_limits` 找出超標章節
 2. 修改草稿內容
 3. 用 `insert_section` 重新插入（mode="replace"）

@@ -1,3 +1,11 @@
+---
+name: toolchains-ui-styling-tailwind
+description: Tailwind CSS is a utility-first CSS framework that provides low-level
+  utility classes to build custom designs without writing CSS. It offers responsive
+  design, dark mode, customization through configuration, and integrates seamlessly
+  with modern frameworks.
+---
+
 # Tailwind CSS Skill
 
 ---

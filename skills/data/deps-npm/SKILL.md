@@ -1,4 +1,9 @@
 ---
+name: deps-npm
+description: '> npm dependency management ve best practices.'
+---
+
+---
 name: deps_npm
 router_kit: FullStackKit
 description: npm/yarn dependency management, package.json best practices ve version control.

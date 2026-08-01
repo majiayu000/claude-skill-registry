@@ -1,5 +1,11 @@
 ---
 name: api-validation
+description: 'Apply when validating API request inputs: body, query params, path params,
+  and headers. This skill covers Zod v4 patterns.'
+---
+
+---
+name: api-validation
 description: Apply when validating API request inputs: body, query params, path params, and headers. This skill covers Zod v4 patterns.
 version: 1.1.0
 tokens: ~700

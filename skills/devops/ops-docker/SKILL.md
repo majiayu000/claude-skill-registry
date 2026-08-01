@@ -1,5 +1,10 @@
 ---
 name: ops-docker
+description: Safe Docker management with dry-run defaults.
+---
+
+---
+name: ops-docker
 description: >
   Safe Docker cleanup and compose stack management.
   Prune unused containers/images/volumes, redeploy stacks.

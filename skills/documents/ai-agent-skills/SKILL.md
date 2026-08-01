@@ -1,3 +1,12 @@
+---
+name: ai-agent-skills
+description: The Web Search Skill enables AI agents on the Raia platform to access
+  real-time information from the internet, allowing them to provide up-to-date, relevant,
+  and context-aware answers. This dynamic capability helps bridge gaps in static training
+  data and ensures more responsive and informed conversations across a variety of
+  use cases.
+---
+
 # Web Search Skill
 
 

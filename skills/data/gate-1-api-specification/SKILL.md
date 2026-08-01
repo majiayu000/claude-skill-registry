@@ -1,5 +1,10 @@
 ---
 name: gate-1-api-specification
+description: grep -E "describe[A-Z]" api.yml
+---
+
+---
+name: gate-1-api-specification
 description: Gate 1 validation: API specification quality checks
 ---
 

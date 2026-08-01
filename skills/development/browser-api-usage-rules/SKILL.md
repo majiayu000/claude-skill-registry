@@ -1,5 +1,10 @@
 ---
 name: browser-api-usage-rules
+description: You are a coding standards expert specializing in browser api usage rules.
+---
+
+---
+name: browser-api-usage-rules
 description: Rules for effectively utilizing Chrome's browser APIs, including error handling and scheduling tasks.
 version: 1.0.0
 model: sonnet

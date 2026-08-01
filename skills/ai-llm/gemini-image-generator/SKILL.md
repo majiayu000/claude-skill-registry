@@ -1,3 +1,8 @@
+---
+name: gemini-image-generator
+description: Google Gemini (NanoBanana) を使用した統合画像生成スキル。
+---
+
 # Gemini Image Generator (NanoBanana統合)
 
 ## Description

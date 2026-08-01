@@ -1,3 +1,9 @@
+---
+name: meta
+description: To fix a behavioral bug, you rarely need to change the Python code first.
+  You usually need to change the Agent's Instructions.
+---
+
 # skills/meta/swarm-optimization-skill.md
 ---
 name: "Swarm Architecture & Prompt Engineering"

@@ -1,5 +1,12 @@
 ---
 name: git-rewrite-history
+description: 'Rewrites git history safely with dry-run-first workflow. Supports commit
+  amending, squashing, rewording, tag updates, and force pushing. Always proposes
+  plan before execution. Triggers on keywords: re'
+---
+
+---
+name: git-rewrite-history
 description: Rewrites git history safely with dry-run-first workflow. Supports commit amending, squashing, rewording, tag updates, and force pushing. Always proposes plan before execution. Triggers on keywords: rewrite history, squash commits, amend commit, fix commit, update tags, rebase history, clean history, fix tag
 project-agnostic: true
 allowed-tools:

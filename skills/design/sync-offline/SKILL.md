@@ -1,5 +1,12 @@
 ---
 name: sync-offline
+description: 'Implement offline-first sync for the widget host app: caching, sync
+  queues, conflict resolution, background refresh, and retry policies. Use when designing
+  local persistence, background sync workers,'
+---
+
+---
+name: sync-offline
 description: Implement offline-first sync for the widget host app: caching, sync queues, conflict resolution, background refresh, and retry policies. Use when designing local persistence, background sync workers, or reconciling local/remote data.
 ---
 

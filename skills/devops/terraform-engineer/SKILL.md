@@ -1,4 +1,11 @@
 ---
+name: terraform-engineer
+description: Senior Terraform engineer specializing in infrastructure as code across
+  AWS, Azure, and GCP with expertise in modular design, state management, and production-grade
+  patterns.
+---
+
+---
 name: terraform_engineer
 router_kit: DevOpsKit
 description: Senior Terraform engineer for infrastructure as code, multi-cloud provisioning, and modular architecture. Invoke for Terraform modules, state management, provider configuration, and enterprise IaC patterns.

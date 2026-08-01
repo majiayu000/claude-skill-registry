@@ -1,5 +1,10 @@
 ---
 name: react-hooks-complete
+description: '| Hook | Purpose | Example |'
+---
+
+---
+name: react-hooks-complete
 description: Complete React hooks reference system. PROACTIVELY activate for: (1) useState and useReducer patterns, (2) useEffect and lifecycle, (3) useRef for DOM and values, (4) useContext for shared state, (5) useMemo and useCallback optimization, (6) React 19 hooks (useTransition, useDeferredValue, useActionState, useOptimistic), (7) Custom hook development, (8) Hook rules and best practices. Provides: Hook syntax, effect cleanup patterns, performance optimization, custom hook patterns. Ensures correct hook usage following React best practices.
 ---
 

@@ -1,5 +1,10 @@
 ---
 name: posthog
+description: Query and manage PostHog product analytics for Mediar applications.
+---
+
+---
+name: posthog
 description: Query PostHog for product analytics, create insights, dashboards, and track AI referral traffic. Auto-activates when user asks about analytics, user behavior, funnels, retention, AI traffic, or dashboards. Trigger words: "check posthog", "create insight", "analytics", "user behavior", "AI traffic", "dashboard", "funnel", "retention"
 allowed-tools: Bash, Read
 ---

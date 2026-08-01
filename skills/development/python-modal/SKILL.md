@@ -1,5 +1,10 @@
 ---
 name: python-modal
+description: '| Pattern | Decorator | Use Case |'
+---
+
+---
+name: python-modal
 description: Modern Python patterns for Modal.com serverless platform. PROACTIVELY activate for: (1) Modal function deployment, (2) Type-safe Modal with Pydantic, (3) Async patterns in Modal, (4) GPU workloads (ML inference, training), (5) FastAPI web endpoints on Modal, (6) Scheduled tasks and cron jobs, (7) Modal Volumes and storage, (8) Testing Modal functions with pytest, (9) Modal classes and lifecycle methods, (10) Parallel processing with map/starmap. Provides: Type hints patterns, Pydantic integration, async/await patterns, pytest testing, FastAPI integration, scheduled tasks, Volume usage, cost optimization, and production-ready examples following Python 3.11+ best practices.
 ---
 

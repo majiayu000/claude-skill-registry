@@ -1,3 +1,8 @@
+---
+name: addon-system
+description: 'Version: 1.0'
+---
+
 # Addon/Feature System Development Guide
 
 **Version:** 1.0

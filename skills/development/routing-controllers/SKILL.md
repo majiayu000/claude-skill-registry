@@ -1,5 +1,12 @@
 ---
 name: routing-controllers
+description: This skill should be used when the user asks about Rails routing, URL
+  patterns, RESTful routes, route helpers, controller actions, strong parameters,
+  before_action callbacks, rendering, redirecting, t
+---
+
+---
+name: routing-controllers
 description: This skill should be used when the user asks about Rails routing, URL patterns, RESTful routes, route helpers, controller actions, strong parameters, before_action callbacks, rendering, redirecting, the params hash, nested resources, route constraints, controller concerns, or request/response handling. Also use when discussing how URLs map to code, route organization, or controller best practices. Examples:
 
 <example>

@@ -1,3 +1,9 @@
+---
+name: business-context
+description: This skill helps understand business requirements, user personas, market
+  positioning, and translate them into technical decisions.
+---
+
 # 💼 Business Context Skill
 
 ---

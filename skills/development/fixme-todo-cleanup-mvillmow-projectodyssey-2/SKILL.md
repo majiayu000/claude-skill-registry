@@ -1,3 +1,8 @@
+---
+name: fixme-todo-cleanup
+description: '| Field | Value |'
+---
+
 # FIXME/TODO Cleanup Skill
 
 | Field | Value |

@@ -1,5 +1,12 @@
 ---
 name: managing-permissions
+description: 'Guide for configuring Claude Code permissions in settings.json with
+  security best practices for allow, ask, and deny rules. Use when: (1) Setting up
+  or modifying permissions in settings.json, (2) Disc'
+---
+
+---
+name: managing-permissions
 description: Guide for configuring Claude Code permissions in settings.json with security best practices for allow, ask, and deny rules. Use when: (1) Setting up or modifying permissions in settings.json, (2) Discussing tool permissions, access control, or security configuration, (3) User mentions allowing, blocking, or restricting specific tools or file access, (4) Configuring Bash command permissions, file access (Read/Edit/Write), or WebFetch restrictions, (5) Questions about what permissions are safe vs risky, (6) Troubleshooting permission-related errors or "permission denied" issues, (7) Reviewing security configuration or hardening Claude Code access.
 ---
 

@@ -1,3 +1,8 @@
+---
+name: hexagonal-architecture
+description: '| ID | backend-hexagonal-architecture |'
+---
+
 # 🗄️ Skill: Arquitectura Hexagonal (Backend)
 
 ## 📋 Metadata

@@ -1,3 +1,9 @@
+---
+name: stagent
+description: 'description: A multimodal LLM-based AI agent for deep spatial transcriptomics
+  research, capable of dynamic code generation, visual reasoning, and literature retrieval.'
+---
+
 ---name: st-agent
 description: A multimodal LLM-based AI agent for deep spatial transcriptomics research, capable of dynamic code generation, visual reasoning, and literature retrieval.
 license: MIT

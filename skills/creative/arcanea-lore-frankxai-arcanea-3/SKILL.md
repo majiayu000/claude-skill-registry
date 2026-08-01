@@ -1,3 +1,10 @@
+---
+name: arcanea-lore
+description: This skill ensures consistent, elegant world-building across the Arcanea
+  platform - a global standard for magical AI-powered creation where anyone can create
+  anything through music, story, and visual magic.
+---
+
 <<<<<<< HEAD
 ---
 name: Arcanea Lore Master

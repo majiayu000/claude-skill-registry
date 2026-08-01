@@ -1,5 +1,11 @@
 ---
 name: monitor-taxonomy
+description: Taxonomy quality monitor that assesses correctness of bridgeattributes
+  and
+---
+
+---
+name: monitor-taxonomy
 description: >
   Three-tier cascade taxonomy quality monitor. Assesses whether bridge_attributes
   and collection_tags on memory documents are CORRECT (not just present).

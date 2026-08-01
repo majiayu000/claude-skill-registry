@@ -1,5 +1,10 @@
 ---
 name: skills-eval
+description: '- Overview'
+---
+
+---
+name: skills-eval
 description: |
 
 Triggers: quality-assurance, skills, optimization, tool-use, performance-metrics

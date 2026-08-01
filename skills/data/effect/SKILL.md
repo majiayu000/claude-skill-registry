@@ -1,5 +1,11 @@
 ---
 name: effect
+description: Before implementing Effect features, run effect-solutions list and read
+  the relevant guide.
+---
+
+---
+name: effect
 description: Effect TypeScript best practices. Use when implementing Effect features like services, layers, error handling, or patterns. Triggers on: Effect, service, layer, schema, error handling.
 ---
 

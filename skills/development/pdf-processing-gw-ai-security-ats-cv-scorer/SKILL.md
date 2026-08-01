@@ -1,3 +1,9 @@
+---
+name: pdf-processing-gw-ai-security-ats-cv-scorer
+description: 'description: Implementiere oder aendere PDF-Upload-Validierung und Textextraktion;
+  verwenden bei Anpassungen an Upload-Regeln, Parsing oder Fehlerbehandlung.'
+---
+
 ﻿---
 name: pdf-processing
 description: Implementiere oder aendere PDF-Upload-Validierung und Textextraktion; verwenden bei Anpassungen an Upload-Regeln, Parsing oder Fehlerbehandlung.

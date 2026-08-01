@@ -1,5 +1,10 @@
 ---
 name: shipflow-audit-seo
+description: '- Current directory: !pwd'
+---
+
+---
+name: shipflow-audit-seo
 description: Professional SEO audit — single page (with argument) or full technical + on-page site audit (no argument)
 disable-model-invocation: true
 argument-hint: [file-path | "global"] (omit for full project)

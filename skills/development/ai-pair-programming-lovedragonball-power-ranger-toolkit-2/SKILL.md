@@ -1,3 +1,9 @@
+---
+name: ai-pair-programming
+description: ทำงานร่วมกับ AI แบบ pair programming เพื่อเพิ่ม productivity และ code
+  quality
+---
+
 # 🤝 AI Pair Programming Skill
 
 ---

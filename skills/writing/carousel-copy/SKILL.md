@@ -1,3 +1,10 @@
+---
+name: carousel-copy
+description: Transform research and knowledge base material into compelling carousel
+  slide copy that sounds like an interventional cardiologist—authoritative, clear,
+  evidence-grounded, human.
+---
+
 # Carousel Copy Skill
 
 Transform research and knowledge base material into compelling carousel slide copy that sounds like an interventional cardiologist—authoritative, clear, evidence-grounded, human.
@@ -55,10 +62,10 @@ your heart lol"                 The evidence is clear."         significant card
 
 **Example:**
 ```
-FLAT: Studies have shown that walking can be beneficial for heart health, 
+FLAT: Studies have shown that walking can be beneficial for heart health,
 with research indicating improvements in cardiovascular outcomes.
 
-BETTER: Walking 30 minutes daily cuts heart disease risk by 20%. 
+BETTER: Walking 30 minutes daily cuts heart disease risk by 20%.
 You don't need a gym. You need consistency.
 ```
 
@@ -188,7 +195,7 @@ TRUTH: [Direct correction + brief evidence]
 ```
 MYTH: "Statins cause permanent muscle damage"
 
-TRUTH: Muscle symptoms affect 5-10%. They're reversible. 
+TRUTH: Muscle symptoms affect 5-10%. They're reversible.
 Most patients continue therapy successfully.
 ```
 
@@ -285,30 +292,30 @@ Same information, different framing based on who you're writing for.
 **For Heart Patients (Archetype 1):**
 ```
 Hook: "On heart failure meds? This one might not be on your list yet."
-Body: SGLT2 inhibitors reduce hospitalization by 26%. 
+Body: SGLT2 inhibitors reduce hospitalization by 26%.
 Ask your cardiologist if you're a candidate.
 ```
 
 **For Biohackers (Archetype 3):**
 ```
 Hook: "SGLT2 inhibitors: Not just for diabetes anymore"
-Body: DAPA-HF showed 26% reduction in HF hospitalization 
+Body: DAPA-HF showed 26% reduction in HF hospitalization
 independent of diabetes status. HR 0.74 (95% CI 0.65-0.85).
-Mechanism: sodium-glucose cotransporter inhibition + 
+Mechanism: sodium-glucose cotransporter inhibition +
 cardiac remodeling effects.
 ```
 
 **For Lifestyle Disease Group (Archetype 2):**
 ```
 Hook: "Diabetic? Your heart meds might need an upgrade."
-Body: SGLT2 inhibitors do double duty—blood sugar AND 
+Body: SGLT2 inhibitors do double duty—blood sugar AND
 heart protection. 26% fewer hospitalizations in trials.
 ```
 
 **For Caregivers (Archetype 5):**
 ```
 Hook: "Is your family member on the right heart meds?"
-Body: SGLT2 inhibitors are now guideline-recommended for 
+Body: SGLT2 inhibitors are now guideline-recommended for
 heart failure. If they're not on one, ask why at the next visit.
 ```
 
@@ -440,7 +447,7 @@ The effect was consistent across both groups.
 ```
 NNT: 21
 
-Treat 21 patients for 18 months 
+Treat 21 patients for 18 months
 to prevent one major event.
 
 That's a strong number.
@@ -450,7 +457,7 @@ That's a strong number.
 ```
 MYTH: "It's a diabetes drug—I don't have diabetes"
 
-TRUTH: Dapagliflozin is now FDA-approved for heart failure 
+TRUTH: Dapagliflozin is now FDA-approved for heart failure
 independent of diabetes. The heart benefits stand alone.
 ```
 
@@ -466,7 +473,7 @@ Happens in ~7% of patients. Usually manageable.
 ```
 SGLT2 inhibitors changed how we treat heart failure.
 
-If you have HFrEF and you're not on one, 
+If you have HFrEF and you're not on one,
 ask your cardiologist why.
 
 @heartdocshailesh

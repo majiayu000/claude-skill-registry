@@ -1,3 +1,9 @@
+---
+name: epic-expert-learning
+description: 'This skill enables systematic acquisition of Epic EMR domain expertise
+  through:'
+---
+
 # Epic Expert Learning
 
 ---
@@ -108,7 +114,7 @@ Activate when:
 
 ### 3. Task Closure Learning (Automatic)
 
-**Primary Script:** `scripts/task_closure_monitor.py`  
+**Primary Script:** `scripts/task_closure_monitor.py`
 **Alternative:** `scripts/task_closure_hook.py`
 
 **Trigger:** WorkOS task state change (status → "done" or "complete")
@@ -163,11 +169,11 @@ Activate when:
 "Capture solution from task #123"
 ```
 
-**Scripts:** 
+**Scripts:**
 - `scripts/task_closure_monitor.py` (primary - polling/webhook)
 - `scripts/task_closure_hook.py` (alternative - one-off processing)
 
-**Integration:** 
+**Integration:**
 - **Webhook:** WorkOS → POST to endpoint → call monitor with task JSON
 - **Polling:** Monitor runs continuously, checks WorkOS API every N seconds
 - **Manual:** User triggers capture for specific task ID
@@ -189,23 +195,23 @@ See `MONITOR_INTEGRATION.md` for complete setup.
 5. Generate summary:
    ```
    📊 Epic Learning Summary - Feb 1, 2026
-   
+
    ✅ Solutions captured: 3
    - VersaCare interface debugging (Interfaces, complexity: 4)
    - Orderset phantom defaults (Orderset Builds, complexity: 3)
-   
+
    💡 Concepts learned: 5
    - OCC phantom default behavior
    - Provider matching NPI vs internal ID logic
-   
+
    📈 Domain progress:
    - Orderset Builds: Beginner → Intermediate (12 → 18 concepts)
    - Interfaces: Novice → Beginner (3 → 8 concepts)
-   
+
    🎯 Knowledge gaps identified:
    - Bridges configuration workflow
    - HL7 segment ordering rules
-   
+
    💭 Suggested next learning:
    Ask about Bridges when next interface task comes up
    ```
@@ -363,7 +369,7 @@ Agent runs capture_solution.py:
 - Alternatives considered? → Custom identifier bridge
 - Do differently? → Check NPI availability first next time
 
-Agent: "✅ Captured! Tagged as Interfaces (complexity 4). 
+Agent: "✅ Captured! Tagged as Interfaces (complexity 4).
 Your Interfaces domain is now Beginner (8 concepts learned)."
 ```
 

@@ -1,5 +1,12 @@
 ---
 name: deliverable-tracking
+description: 'Create GitHub Issues for client deliverables in DaveX2001/deliverable-tracking
+  repo (discovery: requirements-clarity). Evaluate at requirements-clarity when user
+  mentions tracking, deliverables, commi'
+---
+
+---
+name: deliverable-tracking
 description: Create GitHub Issues for client deliverables in DaveX2001/deliverable-tracking repo (discovery: requirements-clarity). Evaluate at requirements-clarity when user mentions tracking, deliverables, commitments, or "create deliverable". Extracts What/Why/Done from conversation context, prompts for missing info via AskUserQuestion, applies dynamic client labels.
 ---
 

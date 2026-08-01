@@ -1,3 +1,8 @@
+---
+name: agent-7-skill-roadmaptracker
+description: Roadmap Tracker - Automated 1M€ 18-Month Business KPI Tracking
+---
+
 # Skill: Roadmap Tracker
 
 ## Name

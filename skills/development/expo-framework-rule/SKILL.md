@@ -1,5 +1,10 @@
 ---
 name: expo-framework-rule
+description: You are a coding standards expert specializing in expo framework rule.
+---
+
+---
+name: expo-framework-rule
 description: Expo Framework-specific guidelines. Includes best practices for Views, Blueprints, and Extensions.
 version: 1.0.0
 model: sonnet

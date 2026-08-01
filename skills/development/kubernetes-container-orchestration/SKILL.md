@@ -1,3 +1,10 @@
+---
+name: kubernetes-container-orchestration
+description: 'Kubernetes deployment and management. Activate when: (1) Creating or
+  modifying K8s manifests, (2) Working with Helm charts, (3) Configuring ArgoCD GitOps,
+  (4) Managing cluster resources, or (5) Troubl'
+---
+
 # Skills and Capabilities
 
 ## Environment Skills

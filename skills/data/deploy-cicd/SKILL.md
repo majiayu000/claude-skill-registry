@@ -1,4 +1,9 @@
 ---
+name: deploy-cicd
+description: '> CI/CD pipeline ve automated deployment.'
+---
+
+---
 name: deploy_cicd
 router_kit: DevOpsKit
 description: CI/CD pipeline, GitHub Actions, automated deployment, release management, production shipping, and software delivery.

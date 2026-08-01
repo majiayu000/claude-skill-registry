@@ -1,3 +1,8 @@
+---
+name: when-configuring-sandbox-security-use-sandbox-configurator
+description: /============================================================================/
+---
+
 /*============================================================================*/
 /* WHEN-CONFIGURING-SANDBOX-SECURITY-USE-SANDBOX-CONFIGURATOR SKILL :: VERILINGUA x VERIX EDITION                      */
 /*============================================================================*/

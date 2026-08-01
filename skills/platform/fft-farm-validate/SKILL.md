@@ -1,5 +1,10 @@
 ---
 name: fft-farm-validate
+description: Use this skill to enforce control safety gate in production.
+---
+
+---
+name: fft-farm-validate
 description: Validate production readiness for farm control: HA connectivity/auth, required mappings, service availability, and dashboard path checks.
 ---
 

@@ -1,5 +1,12 @@
 ---
 name: x9-troubleshoot
+description: You diagnose common issues with X9.150 implementations. You check the
+  environment, validate key/cert setup, test server connectivity, and explain error
+  messages.
+---
+
+---
+name: x9-troubleshoot
 description: Diagnose X9.150 implementation issues — keys, certs, servers, JWKS, common errors
 user-invocable: true
 tools:

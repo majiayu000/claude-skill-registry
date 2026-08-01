@@ -1,5 +1,10 @@
 ---
 name: campaign-brief
+description: 'This skill supports three modes: Create, Update, and Find.'
+---
+
+---
+name: campaign-brief
 description: Create or update a marketing campaign brief
 argument-hint: [campaign name or objective] or [update path/to/campaign.md]
 ---

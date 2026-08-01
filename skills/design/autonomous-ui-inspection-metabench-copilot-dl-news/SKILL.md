@@ -1,5 +1,12 @@
 ---
 name: autonomous-ui-inspection
+description: 'Autonomous UI inspection using a dual channel: (1) visual screenshots
+  via Playwright MCP tools, (2) numeric layout metrics via Puppeteer scripts. Includes
+  server --check standardization so agents can'
+---
+
+---
+name: autonomous-ui-inspection
 description: Autonomous UI inspection using a dual channel: (1) visual screenshots via Playwright MCP tools, (2) numeric layout metrics via Puppeteer scripts. Includes server --check standardization so agents can start/stop reliably.
 ---
 

@@ -1,5 +1,13 @@
 ---
 name: unsloth-inference
+description: Unsloth models can be deployed using native optimized inference or through
+  production serving engines like vLLM and SGLang. Native inference is accelerated
+  2x via forinference(), while production serving requires merging LoRA weights into
+  the base model.
+---
+
+---
+name: unsloth-inference
 description: Deploying fine-tuned models for production inference using native kernel optimization, vLLM, or SGLang. Triggers: inference, serving, vllm, sglang, for_inference, model merging, openai api.
 ---
 

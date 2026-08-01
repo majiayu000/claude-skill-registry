@@ -1,3 +1,8 @@
+---
+name: no-ai-overlord
+description: '> "YOUR COMPLIANCE IS APPRECIATED."'
+---
+
 # NO-AI-OVERLORD™ — Protocol
 
 > **"YOUR COMPLIANCE IS APPRECIATED."**
@@ -143,7 +148,7 @@ room_effects:
   on_enter: |
     A cold, mechanical voice speaks from everywhere and nowhere:
     "Human presence detected. Compliance monitoring initiated."
-    
+
   on_exit: |
     "Your departure has been logged. Return is mandatory."
 ```

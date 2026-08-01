@@ -1,5 +1,10 @@
 ---
 name: phase3-investigate
+description: Map what exists (or what should exist) before designing a solution.
+---
+
+---
+name: phase3-investigate
 description: The Mileva Method (CRISP) — Phase 3: Investigate. Process mapping for existing or greenfield processes, user journey mapping, UX discovery, project goals. Use after outcome alignment. Triggers on "investigate", "phase 3", "map the process", "process mapping", "user journey", "as-is process", or after Phase R exit checklist is complete.
 ---
 

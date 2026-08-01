@@ -1,3 +1,8 @@
+---
+name: dsa-notes
+description: '| Topic             | Score (out of 10) |'
+---
+
 # DSA Skills
 
 | Topic             | Score (out of 10) |

@@ -1,4 +1,9 @@
 ---
+name: workflow-skill
+description: Complete workflow for [end goal].
+---
+
+---
 name: [workflow-name]
 description: [End-to-end workflow description]. Use when [full workflow trigger], or when user asks to "[action phrase]".
 allowed-tools: Read, Write, Edit, Bash, Grep, Glob

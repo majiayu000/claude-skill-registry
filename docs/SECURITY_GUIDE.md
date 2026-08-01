@@ -93,6 +93,48 @@ python scripts/security_scanner.py skills/ --strict
   - network_access: Imports requests module
 ```
 
+### Archive Remediation (`scripts/remediate_archive_security.py`)
+
+Maintainers can repair a failing data archive without weakening the scanner.
+The remediation tool is dry-run by default and accepts only a full report from
+the same scanner version and ruleset, generated with `--require-metadata`.
+
+```bash
+# 1. Produce the authoritative report from the core checkout.
+python scripts/security_scanner.py \
+  ../claude-skill-registry-data \
+  --quiet \
+  --require-metadata \
+  --output /tmp/archive-security-report.json
+
+# 2. Review a bounded audit plan. This does not modify the data checkout.
+python scripts/remediate_archive_security.py \
+  --skills-dir ../claude-skill-registry-data \
+  --security-report /tmp/archive-security-report.json \
+  --output /tmp/archive-remediation-plan.json
+
+# 3. Apply the same validated plan and write the result outside the archive.
+python scripts/remediate_archive_security.py \
+  --skills-dir ../claude-skill-registry-data \
+  --security-report /tmp/archive-security-report.json \
+  --output /tmp/archive-remediation-result.json \
+  --apply
+
+# 4. Prove that the strict publication scan is clean.
+python scripts/security_scanner.py \
+  ../claude-skill-registry-data \
+  --quiet \
+  --require-metadata \
+  --output /tmp/archive-security-report-after.json
+```
+
+Entries failing only frontmatter parsing are normalized. Entries with any
+security error are removed from the data checkout, where the change remains
+reviewable and recoverable through Git. Before the first mutation, the tool
+validates every content hash and pre-scans every normalized result. The audit
+contains paths, error types, hashes, and source identity, but no raw finding
+snippets that could expose credentials.
+
 ### 3. GitHub Actions Workflow
 
 Automatically runs on:

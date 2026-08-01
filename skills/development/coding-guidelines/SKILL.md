@@ -1,5 +1,12 @@
 ---
 name: coding-guidelines
+description: 'Comprehensive React component coding guidelines, refactoring principles,
+  and architectural patterns. **CRITICAL**: Focuses on patterns AI commonly fails
+  to implement correctly, especially testability,'
+---
+
+---
+name: coding-guidelines
 description: Comprehensive React component coding guidelines, refactoring principles, and architectural patterns. **CRITICAL**: Focuses on patterns AI commonly fails to implement correctly, especially testability, props control, and component responsibility separation. Reference this skill when implementing or refactoring React components during Phase 2.
 ---
 

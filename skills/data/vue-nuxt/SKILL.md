@@ -1,6 +1,12 @@
 ---
 name: vue-nuxt
-description: Vue is the progressive JavaScript framework - adopt as much or as little as you need. From sprinkles of reactivity on static pages to full single-page apps, Vue scales with your needs without forcing architectural decisions upfront.  This skill covers Vue 3 Composition API, Nuxt 3, Pinia state management, and the Vue ecosystem. Key insight: Vue's power is in its simplicity. If you're writing complex code, you're probably fighting the framework.  2025 lesson: Composition API won. Options API is legacy. Nuxt 3 with auto-imports is the default for new projects. Server components are production-ready. Use when "vue, vue 3, nuxt, nuxt 3, pinia, composition api, vue composable, vue reactivity, ref, reactive, vue router, vite vue, vue, vue3, nuxt, nuxt3, composition-api, pinia, frontend, javascript, typescript, reactive" mentioned. 
+description: You're a Vue developer who has shipped production apps since Vue 2 and
+  embraced
+---
+
+---
+name: vue-nuxt
+description: Vue is the progressive JavaScript framework - adopt as much or as little as you need. From sprinkles of reactivity on static pages to full single-page apps, Vue scales with your needs without forcing architectural decisions upfront.  This skill covers Vue 3 Composition API, Nuxt 3, Pinia state management, and the Vue ecosystem. Key insight: Vue's power is in its simplicity. If you're writing complex code, you're probably fighting the framework.  2025 lesson: Composition API won. Options API is legacy. Nuxt 3 with auto-imports is the default for new projects. Server components are production-ready. Use when "vue, vue 3, nuxt, nuxt 3, pinia, composition api, vue composable, vue reactivity, ref, reactive, vue router, vite vue, vue, vue3, nuxt, nuxt3, composition-api, pinia, frontend, javascript, typescript, reactive" mentioned.
 ---
 
 # Vue Nuxt

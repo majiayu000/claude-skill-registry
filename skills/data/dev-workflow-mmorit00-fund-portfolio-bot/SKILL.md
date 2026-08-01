@@ -1,5 +1,10 @@
 ---
 name: dev-workflow
+description: 'Use this Skill when the user asks to:'
+---
+
+---
+name: dev-workflow
 description: Enforces the standard development workflow for the fund-portfolio-bot project: read docs first, propose a small scoped design, respect version scope, and limit code changes. Use when implementing, modifying, or refactoring functionality in this repository.
 ---
 

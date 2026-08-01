@@ -1,3 +1,8 @@
+---
+name: when-optimizing-agent-learning-use-reasoningbank-intelligence
+description: /============================================================================/
+---
+
 /*============================================================================*/
 /* WHEN-OPTIMIZING-AGENT-LEARNING-USE-REASONINGBANK-INTELLIGENCE SKILL :: VERILINGUA x VERIX EDITION                      */
 /*============================================================================*/

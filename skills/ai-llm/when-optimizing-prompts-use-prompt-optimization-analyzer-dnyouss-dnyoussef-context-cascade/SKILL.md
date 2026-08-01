@@ -1,3 +1,8 @@
+---
+name: when-optimizing-prompts-use-prompt-optimization-analyzer
+description: /============================================================================/
+---
+
 /*============================================================================*/
 /* WHEN-OPTIMIZING-PROMPTS-USE-PROMPT-OPTIMIZATION-ANALYZER SKILL :: VERILINGUA x VERIX EDITION                      */
 /*============================================================================*/
@@ -170,7 +175,7 @@ function analyzeTokenWaste(promptText) {
     totalWords: promptText.split(/\s+/).length,
     totalChars: promptText.length,
     redundancyScore: 0,
-    verbosityScore: 
+    verbosityScore:
 
 /*----------------------------------------------------------------------------*/
 /* S4 SUCCESS CRITERIA                                                         */

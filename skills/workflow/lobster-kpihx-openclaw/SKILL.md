@@ -1,3 +1,9 @@
+---
+name: lobster
+description: 'Lobster executes multi-step workflows with approval checkpoints. Use
+  it when:'
+---
+
 # Lobster
 
 Lobster executes multi-step workflows with approval checkpoints. Use it when:

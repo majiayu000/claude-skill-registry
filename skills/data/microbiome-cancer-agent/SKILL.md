@@ -1,3 +1,8 @@
+---
+name: microbiome-cancer-agent
+description: '---name: microbiome-cancer-agent'
+---
+
 ---name: microbiome-cancer-agent
 description: AI-powered analysis of microbiome-cancer interactions including tumor microbiome profiling, immunotherapy response prediction, and microbiome-targeted therapeutic opportunities.
 license: MIT

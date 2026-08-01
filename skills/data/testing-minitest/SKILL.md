@@ -1,5 +1,12 @@
 ---
 name: testing-minitest
+description: This skill should be used when the user asks about testing Rails applications,
+  Minitest, test-driven development (TDD), unit tests, integration tests, system tests,
+  fixtures, factories, mocking, stubb
+---
+
+---
+name: testing-minitest
 description: This skill should be used when the user asks about testing Rails applications, Minitest, test-driven development (TDD), unit tests, integration tests, system tests, fixtures, factories, mocking, stubbing, test coverage, continuous integration, test organization, or Rails testing best practices. Also use when discussing testing philosophy, test speed, or debugging failing tests. Examples:
 
 <example>

@@ -1,5 +1,10 @@
 ---
 name: gh-review-comment
+description: '`gh` コマンドを用いて GitHub の PR レビューコメントを操作します。レビューコメントへの返信（Reply）や解決（Resolve）するときに必ず使用してください。'
+---
+
+---
+name: gh-review-comment
 description: `gh` コマンドを用いて GitHub の PR レビューコメントを操作します。レビューコメントへの返信（Reply）や解決（Resolve）するときに必ず使用してください。
 ---
 

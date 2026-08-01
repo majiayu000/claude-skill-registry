@@ -1,3 +1,9 @@
+---
+name: list-files
+description: Display the list of files in the current directory with optional detailed
+  information.
+---
+
 # List Files
 
 ## Description

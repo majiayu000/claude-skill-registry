@@ -1,19 +1,23 @@
-
+---
+name: claudecode
+description: Agent Skill（Claude Skill）是 Anthropic 推出的一种基于文件系统的模块化能力标准。它本质上是一种“渐进式披露”
+  (Progressive Disclosure)的提示词管理机制。
+---
 
 ## 1.  概念：Agent Skill
 
 **定义**：
 Agent Skill（Claude Skill）是 Anthropic 推出的一种**基于文件系统的模块化能力标准**。它本质上是一种“渐进式披露” (Progressive Disclosure)的提示词管理机制。
-### 核心比喻：一本“带目录的书” 
+### 核心比喻：一本“带目录的书”
 传统的 System Prompt 往往把所有规则一次性塞给 AI，既浪费 Token 又容易让模型混淆。Agent Skill 将能力分层管理，就像一本书：
-*   **第1层：元数据 (Metadata) ≈ 目录** 
+*   **第1层：元数据 (Metadata) ≈ 目录**
     *   **内容**：技能的名称 (`name`) 和简短描述 (`description`)。
     *   **加载机制**：**始终加载**。AI 只看目录，判断“用户的问题我需不需要查这本书”。
     *   **优势**：极度节省 Token，几乎不占内存。
-*   **第2层：指令 (Instructions) ≈ 正文** 
+*   **第2层：指令 (Instructions) ≈ 正文**
     *   **内容**：具体的 Prompt、操作步骤、约束条件。
     *   **加载机制**：**按需加载**。只有当 AI 决定调用该技能时，才会读取这部分内容进入上下文。
-*   **第3层：资源 (Resources) ≈ 附录** 
+*   **第3层：资源 (Resources) ≈ 附录**
     *   **内容**：辅助脚本 (`scripts/`)、模板文件 (`templates/`) 或参考数据。
     *   **加载机制**：**按需调用**。在指令执行过程中被引用时才读取。
 ### Agent Skill的特点

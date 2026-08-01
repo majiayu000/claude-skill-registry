@@ -1,3 +1,8 @@
+---
+name: systemdesign
+description: 'Train yourself to automatically structure answers using:'
+---
+
 # How to Train Yourself to Give Better Interview Answers
 
 ## 1. Use the STAR+L Framework

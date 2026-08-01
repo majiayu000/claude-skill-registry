@@ -1,11 +1,16 @@
 ---
+name: switch-persona
+description: '> Note: This skill has been adapted from claude-skillz'
+---
+
+---
 name: Switch Persona
 description: Quick persona switching. Triggers: 'switch persona', 'switch to X', 'become X'. Lists personas, reads selected file, switches immediately.
 ---
 
 # GitHub Copilot Skill: switch-persona
 
-> **Note:** This skill has been adapted from [claude-skillz](https://github.com/NTCoding/claude-skillz) 
+> **Note:** This skill has been adapted from [claude-skillz](https://github.com/NTCoding/claude-skillz)
 > for use with GitHub Copilot Agent Skills.
 
 ---

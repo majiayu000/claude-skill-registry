@@ -432,15 +432,28 @@ def ensure_unique_dir(parent: Path, base_name: str, key: str = "", repo: str = "
 CATEGORY_KEYWORDS = category_keywords()
 
 
+def split_frontmatter_content(content: str) -> tuple[str | None, str]:
+    """Return an exact YAML frontmatter block and body.
+
+    Delimiters must occupy their own lines. Treating any three hyphens as a
+    delimiter corrupts Markdown tables and prose containing longer dash runs.
+    """
+    opening = re.match(r"\A---[ \t]*\r?\n", content)
+    if not opening:
+        return None, content
+    remainder = content[opening.end() :]
+    closing = re.search(r"(?m)^---[ \t]*(?:\r?\n|\Z)", remainder)
+    if not closing:
+        return None, content
+    return remainder[: closing.start()], remainder[closing.end() :]
+
+
 def extract_frontmatter(content: str) -> dict:
     """Extract YAML frontmatter from SKILL.md content using safe_load."""
-    if not content.startswith("---"):
+    frontmatter, _body = split_frontmatter_content(content)
+    if frontmatter is None:
         return {}
     try:
-        end_idx = content.find("---", 3)
-        if end_idx == -1:
-            return {}
-        frontmatter = content[3:end_idx].strip()
         data = yaml.safe_load(frontmatter)
         return data if isinstance(data, dict) else {}
     except yaml.YAMLError:

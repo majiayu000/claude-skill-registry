@@ -1,5 +1,12 @@
 ---
 name: story
+description: Break PBIs into user stories using vertical slicing and INVEST criteria.
+  Use when creating user stories from PBIs, slicing features, or breaking down requirements.
+  Triggers on keywords like "user stor
+---
+
+---
+name: story
 version: 1.1.1
 description: "[Project Management] Break PBIs into user stories using vertical slicing, SPIDR splitting, and INVEST criteria. Use when creating user stories from PBIs, slicing features, or breaking down requirements. Triggers on keywords like "user story", "create stories", "slice pbi", "story breakdown", "vertical slice", "split story"."
 allowed-tools: Read, Write, Edit, Grep, Glob, TaskCreate

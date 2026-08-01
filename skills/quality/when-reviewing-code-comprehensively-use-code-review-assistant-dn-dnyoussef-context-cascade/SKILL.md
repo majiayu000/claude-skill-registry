@@ -1,3 +1,8 @@
+---
+name: when-reviewing-code-comprehensively-use-code-review-assistant
+description: /============================================================================/
+---
+
 /*============================================================================*/
 /* WHEN-REVIEWING-CODE-COMPREHENSIVELY-USE-CODE-REVIEW-ASSISTANT SKILL :: VERILINGUA x VERIX EDITION                      */
 /*============================================================================*/

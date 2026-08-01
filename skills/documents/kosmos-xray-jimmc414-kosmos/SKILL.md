@@ -1,5 +1,12 @@
 ---
 name: kosmos-xray
+description: 'Context-efficient codebase exploration using AST analysis. Use when
+  exploring Kosmos architecture, understanding code structure, or preparing documentation
+  for AI programmers. Triggers: xray, map stru'
+---
+
+---
+name: kosmos-xray
 description: Context-efficient codebase exploration using AST analysis. Use when exploring Kosmos architecture, understanding code structure, or preparing documentation for AI programmers. Triggers: xray, map structure, skeleton, interface, architecture, explore kosmos, warm start, token budget, context compression.
 ---
 

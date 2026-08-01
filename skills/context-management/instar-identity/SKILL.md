@@ -1,5 +1,12 @@
 ---
 name: instar-identity
+description: Instar's identity system gives agents a continuous self that survives
+  context compaction, session restarts, and autonomous operation. Identity isn't stored
+  in context — it's stored in infrastructure. Structure over willpower.
+---
+
+---
+name: instar-identity
 description: Establish and recover persistent agent identity that survives context compaction, session restarts, and autonomous operation. Use when an agent needs to know who it is, recover after context compression, orient at session start, or understand the identity infrastructure. Trigger words: who am I, remember, identity, after restart, compaction, context loss, who am I working with, my principles.
 license: MIT
 metadata:

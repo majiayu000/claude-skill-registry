@@ -1,5 +1,12 @@
 ---
 name: liquidity-depth-analyzer
+description: 'DEX liquidity analysis and slippage estimation for MEV trading. Use
+  when implementing swaps, route selection, or position sizing. Triggers on: liquidity,
+  slippage, price impact, depth, AMM math, Unisw'
+---
+
+---
+name: liquidity-depth-analyzer
 description: DEX liquidity analysis and slippage estimation for MEV trading. Use when implementing swaps, route selection, or position sizing. Triggers on: liquidity, slippage, price impact, depth, AMM math, Uniswap, Curve.
 ---
 

@@ -1,4 +1,10 @@
 ---
+name: update-job
+description: Edits standard job source files in src/ and runs deepwork install to
+  sync changes. Use when updating job.yml or step instructions.
+---
+
+---
 name: update.job
 description: "Edits standard job source files in src/ and runs deepwork install to sync changes. Use when updating job.yml or step instructions."user-invocable: false---
 

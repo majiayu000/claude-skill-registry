@@ -1,5 +1,12 @@
 ---
 name: hypothesis-testing-engine
+description: 'Take any claim and design + execute a complete research protocol to
+  test it. Apply scientific method automatically: design study, gather data, run analysis,
+  provide verdict with confidence level.'
+---
+
+---
+name: hypothesis-testing-engine
 description: Take any claim and design + execute a complete research protocol to test it. Apply scientific method automatically: design study, gather data, run analysis, provide verdict with confidence level.
 ---
 

@@ -1,3 +1,8 @@
+---
+name: video-anomaly
+description: 直近 N 件のメトリクスを分析し、異常を検出します。
+---
+
 # Skill: Anomaly Detection
 
 ## Status

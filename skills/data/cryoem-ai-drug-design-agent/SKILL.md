@@ -1,3 +1,8 @@
+---
+name: cryoem-ai-drug-design-agent
+description: '---name: cryoem-ai-drug-design-agent'
+---
+
 ---name: cryoem-ai-drug-design-agent
 description: AI-powered integration of cryo-EM structural data with generative AI and molecular dynamics for structure-based drug design targeting flexible proteins and membrane complexes.
 license: MIT

@@ -1,4 +1,9 @@
 ---
+name: templates
+description: <essentialprinciples>
+---
+
+---
 name: {{SKILL_NAME}}
 description: {{What it does}} Use when {{trigger conditions}}.
 ---

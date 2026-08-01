@@ -1,3 +1,11 @@
+---
+name: unknown
+description: 📦 Repomix is a powerful tool that packs your entire repository into a
+  single, AI-friendly file. Perfect for when you need to feed your codebase to Large
+  Language Models (LLMs) or other AI tools like Claude, ChatGPT, DeepSeek, Perplexity,
+  Gemini, Gemma, Llama, Grok, and more.
+---
+
 # Repomix Explorer Skill (Agent Skills)
 
 Repomix एक रेडी-टू-यूज **Repomix Explorer** स्किल प्रदान करता है जो AI कोडिंग असिस्टेंट को Repomix CLI का उपयोग करके कोडबेस का विश्लेषण और अन्वेषण करने में सक्षम बनाता है।

@@ -1,3 +1,8 @@
+---
+name: riverpod
+description: '| ID | flutter-riverpod-state |'
+---
+
 # 🎨 Skill: State Management con Riverpod
 
 ## 📋 Metadata

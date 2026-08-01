@@ -1,3 +1,9 @@
+---
+name: memories
+description: Created a new skill called "create JSON file" for generating JSON files
+  from JavaScript/TypeScript objects with proper error handling.
+---
+
 # JSON File Creation Skill
 
 ## Overview

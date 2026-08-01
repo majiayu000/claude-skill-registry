@@ -1,5 +1,10 @@
 ---
 name: gate-3-implementation
+description: grep "Promise<any>" src/.ts
+---
+
+---
+name: gate-3-implementation
 description: Gate 3 validation: Implementation quality and type safety
 ---
 

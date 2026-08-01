@@ -1,5 +1,12 @@
 ---
 name: lambda-workflow
+description: Use this skill whenever you touch delivery end-to-end—from grabbing a
+  bd issue through merge/closure. Each phase builds on the last; do not skip ahead
+  unless a human explicitly says so.
+---
+
+---
+name: lambda-workflow
 description: One lifecycle for Lambda repos: choose a bd task, start work, land the PR, and watch GitHub via Dumbwaiter MCP until it merges.
 ---
 
@@ -8,7 +15,7 @@ description: One lifecycle for Lambda repos: choose a bd task, start work, land 
 Use this skill whenever you touch delivery end-to-end—from grabbing a bd issue through merge/closure. Each phase builds on the last; do not skip ahead unless a human explicitly says so.
 
 ## Lifecycle Map
-1. **Select & Claim Work** – pick an unblocked bd issue, understand scope, and claim it 
+1. **Select & Claim Work** – pick an unblocked bd issue, understand scope, and claim it
 2. **Kick Off & Draft** – baseline tests, branch, and open a draft PR immediately so CI starts.
 3. **Build & Validate** – implement with tests-first habits, keeping trackers and notes fresh.
 4. **Land the Plane** – ready-for-review PR with full test/QA + repo hygiene.
@@ -78,7 +85,7 @@ Once the PR is Ready, hand monitoring to the Dumbwaiter MCP so you don’t poll 
    - If you only need polling, call `wait.status` on an interval; cancel via `wait.cancel` if superseded.
 3. **React to outcomes**
    - On green checks → post the success + `wait_id` back to bd/PR notes.
-   - On failures or change requests → surface the failing context and return to step 3. 
+   - On failures or change requests → surface the failing context and return to step 3.
    - For comment streams, enable `condition: "comment_received"` with `filters.since` so every new review/comment notifies you in real time.
    - On merge, we're done, report success to user.
    - On approval: if we got approval _and_ we are in ready-for-review _and_ all the checks are passing _and_ we are rebased on top of origin/main, we are also done, but in this case we should report back to the user that the PR can now be merged, along with the URL of the PR for easy access. If everything but the rebasing is done, we can rebase and try again, again commenting "@codex review" after the commit lands and the tests pass in CI.

@@ -1,5 +1,10 @@
 ---
 name: nextjs-modal-integration
+description: '| Pattern | Use Case | Cold Start |'
+---
+
+---
+name: nextjs-modal-integration
 description: Modal.com integration patterns for Next.js applications. PROACTIVELY activate for: (1) Next.js + Modal backend setup, (2) AI inference from Next.js (LLMs, image generation), (3) Video/audio processing backends, (4) Heavy compute offloading from Vercel, (5) GPU workloads for Next.js apps, (6) Webhook integration between Next.js and Modal, (7) File upload processing, (8) Background job processing, (9) Serverless AI API endpoints, (10) Next.js + Modal authentication patterns. Provides: Architecture patterns, API route integration, webhook handling, file upload workflows, CORS configuration, warm container patterns, streaming responses, and production-ready examples.
 ---
 

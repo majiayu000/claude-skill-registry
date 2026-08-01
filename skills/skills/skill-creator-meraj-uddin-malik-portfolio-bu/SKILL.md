@@ -1,3 +1,9 @@
+---
+name: skill-creator-meraj-uddin-malik-portfolio-bu
+description: A meta-skill that helps you create new skills for your portfolio website
+  project.
+---
+
 # Skill Creator
 
 A meta-skill that helps you create new skills for your portfolio website project.

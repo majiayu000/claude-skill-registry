@@ -1,3 +1,7 @@
+---
+name: vscode-bridge
+description: '<!-- name: vscode-bridge'
+---
 
 <!-- name: vscode-bridge
 description: >-

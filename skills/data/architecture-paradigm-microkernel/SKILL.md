@@ -1,5 +1,12 @@
 ---
 name: architecture-paradigm-microkernel
+description: '- When building platforms, Integrated Development Environments (IDEs),
+  data ingestion pipelines, or marketplaces where third parties need to extend core
+  functionality.'
+---
+
+---
+name: architecture-paradigm-microkernel
 description: |
 
 Triggers: extensibility, architecture, platform-design, plugin, microkernel

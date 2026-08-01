@@ -1,5 +1,10 @@
 ---
 name: my-skills-manager
+description: 'Manage skills in your local repository (~/.my-skills-collection):'
+---
+
+---
+name: my-skills-manager
 description: USE WHEN managing skills in ~/.my-skills-collection: adding, removing, syncing, or installing skills to AI agents (OpenCode, VSCode Copilot). Triggers on 'add a skill', 'remove skill', 'sync skills', 'install skills', 'list my skills'.
 ---
 

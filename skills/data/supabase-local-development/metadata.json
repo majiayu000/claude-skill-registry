@@ -1,9 +1,0 @@
-{
-  "name": "supabase-local-development",
-  "repo": "constellos/claude-code-plugins",
-  "category": "data",
-  "description": "This skill should be used when the user asks to \"start supabase locally\", \"set up local supabase\", \"run supabase dev\", \"initialize supabase project\", \"configure local database\", \"start local postgres\"",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:27.483073Z",
-  "dir_name": "supabase-local-development"
-}

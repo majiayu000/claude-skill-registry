@@ -1,5 +1,10 @@
 ---
 name: testing-conventions
+description: Complements the vue-integration-testing skill with project-specific conventions.
+---
+
+---
+name: testing-conventions
 description: Vitest 4 + Playwright testing conventions: query priority (getByRole > getByText > getByTestId), seed-resilient patterns, realistic user flows (happy path & early finish), virtualized lists, fake-indexeddb isolation, factories, and gotchas (database reset, userEvent, expect.poll). Triggers: "query priority", "getByRole", "getByTestId", "getByLabelText", "querySelector", "seed data", "test invariants", "test isolation", "fake-indexeddb", "database reset", "expect.poll", "expect.element", "assertion", "userEvent", "realistic flows", "early finish", "virtualized list", "virtual scroll", "scoped query", "animation test", "visual state", "factory", "workoutBuilder", "flaky test", "navigation test", "exercise selection", "data attribute query", "test cleanup", "test gotchas".
 ---
 

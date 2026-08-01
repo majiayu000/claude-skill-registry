@@ -1,3 +1,9 @@
+---
+name: examples
+description: 'Purpose: Execute tasks when user invokes via /command or direct skill
+  call.'
+---
+
 # Instruction-Type Skill Template
 
 **Purpose**: Execute tasks when user invokes via `/command` or direct skill call.

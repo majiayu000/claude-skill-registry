@@ -1,4 +1,10 @@
 ---
+name: features
+description: 'Goal: Transform setbacks into actionable intelligence (Post-Traumatic
+  Growth).'
+---
+
+---
 Name: Core Feature Specifications
 Description: This document outlines the foundational features for the Antifragile learning and reflection platform. The core philosophy is based on Nassim Taleb’s concept of Antifragility: systems that gain from disorder, stressors, and volatility.
 

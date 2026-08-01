@@ -1,5 +1,10 @@
 ---
 name: plantuml
+description: 'ALWAYS use this skill when the user mentions:'
+---
+
+---
+name: plantuml
 description: Provides comprehensive guidance for creating PlantUML diagrams. PlantUML is a component that allows you to create various UML diagrams through simple textual descriptions. From sequence diagrams to deployment diagrams and beyond, PlantUML provides an easy way to create visual representations of complex systems. PlantUML is primarily focused on UML standards and is ideal for UML diagrams, enterprise architecture, C4 models, and diagrams requiring precise UML notation. Use when the user wants to draw, create, generate, make, build, or visualize any UML diagram, architecture diagram, or PlantUML-supported diagram type. This skill covers ALL PlantUML diagram types: UML Diagrams (sequence, use case, class, object, activity, component, deployment, state, timing diagrams), and Non-UML Diagrams (JSON/YAML data, EBNF, regex, network diagrams, Salt wireframes, Archimate, SDL, Ditaa, Gantt, chronology, mindmap, WBS, mathematical notations, ER diagrams, IE diagrams, ER Chen's notation, C4 model diagrams). Always use this skill when the user mentions PlantUML, UML diagrams, or complex architecture diagrams that require precise UML notation or C4 model support.
 license: Complete terms in LICENSE.txt
 ---
@@ -52,7 +57,7 @@ PlantUML and Mermaid are two different diagramming tools with different purposes
 To create a PlantUML diagram:
 
 1. **Identify the diagram type** from the user's request:
-   
+
    **UML Diagrams:**
    - Sequence diagram/时序图 → `@startuml` ... `@enduml` with `participant` or `actor`
    - Use case diagram/用例图 → `@startuml` ... `@enduml` with `actor`, `usecase`
@@ -63,7 +68,7 @@ To create a PlantUML diagram:
    - Deployment diagram/部署图 → `@startuml` ... `@enduml` with `node`, `database`, `cloud`
    - State diagram/状态图 → `@startuml` ... `@enduml` with `state`, `[*]`
    - Timing diagram/时序图 → `@startuml` ... `@enduml` with `concise` or `robust`
-   
+
    **Non-UML Diagrams:**
    - JSON data/JSON 数据图 → `@startjson` ... `@endjson`
    - YAML data/YAML 数据图 → `@startyaml` ... `@endyaml`
@@ -85,7 +90,7 @@ To create a PlantUML diagram:
    - C4 diagram/C4 模型图 → `@startuml` ... `@enduml` with C4-PlantUML library
 
 2. **Load the appropriate example file** from the `examples/` directory:
-   
+
    **UML Diagrams:**
    - `examples/sequence.md` - For sequence diagrams showing interactions
    - `examples/use-case.md` - For use case diagrams
@@ -96,7 +101,7 @@ To create a PlantUML diagram:
    - `examples/deployment.md` - For deployment diagrams and infrastructure
    - `examples/state.md` - For state diagrams and state machines
    - `examples/timing.md` - For timing diagrams
-   
+
    **Non-UML Diagrams:**
    - `examples/json-yaml.md` - For JSON/YAML data visualization
    - `examples/ebnf.md` - For EBNF grammar diagrams
@@ -127,9 +132,9 @@ To create a PlantUML diagram:
    - For C4 diagrams, use `!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml`
 
 4. **Generate the PlantUML code** wrapped in a Markdown code block with proper syntax highlighting:
-   
+
    **IMPORTANT**: Always wrap the PlantUML code in a Markdown code block with `plantuml` language tag. This ensures the format is preserved when users copy the content.
-   
+
    **Example format** (use actual PlantUML syntax, not placeholders):
    ```plantuml
    @startuml
@@ -137,7 +142,7 @@ To create a PlantUML diagram:
    Bob -> Alice: Hi
    @enduml
    ```
-   
+
    **Output Format Requirements**:
    - Always use triple backticks (```) with `plantuml` language tag
    - Never output raw PlantUML code without code block markers

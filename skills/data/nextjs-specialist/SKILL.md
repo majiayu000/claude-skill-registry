@@ -1,4 +1,9 @@
 ---
+name: nextjs-specialist
+description: '> Next.js 15 App Router ve Server Components rehberi.'
+---
+
+---
 name: nextjs_specialist
 router_kit: DevOpsKit
 description: Next.js 15 App Router, Server Components, SSR/SSG optimizasyonu ve modern Next.js best practices.
@@ -79,7 +84,7 @@ app/
 
 async function UsersPage() {
   const users = await db.users.findMany(); // Direkt DB erişimi
-  
+
   return (
     <ul>
       {users.map(user => (
@@ -100,7 +105,7 @@ import { useState } from 'react';
 
 export function Counter() {
   const [count, setCount] = useState(0);
-  
+
   return (
     <button onClick={() => setCount(c => c + 1)}>
       Count: {count}
@@ -116,7 +121,7 @@ import { Counter } from './Counter'; // Client Component
 
 async function Dashboard() {
   const data = await fetchData(); // Server'da çalışır
-  
+
   return (
     <div>
       <h1>{data.title}</h1>

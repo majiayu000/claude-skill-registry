@@ -1,3 +1,8 @@
+---
+name: terraform
+description: '| ID | cicd-terraform |'
+---
+
 # 🏗️ Skill: Terraform Infrastructure as Code
 
 ## 📋 Metadata

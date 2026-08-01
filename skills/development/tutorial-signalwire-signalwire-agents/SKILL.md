@@ -1,3 +1,9 @@
+---
+name: tutorial-signalwire-signalwire-agents
+description: Now we'll give Fred the ability to search Wikipedia! The SignalWire SDK's
+  skills system makes this incredibly easy.
+---
+
 # Lesson 4: Adding the Wikipedia Search Skill
 
 Now we'll give Fred the ability to search Wikipedia! The SignalWire SDK's skills system makes this incredibly easy.
@@ -185,20 +191,20 @@ def main():
     print("  • 'Who was Marie Curie?'")
     print("  • 'Search for information about the solar system'")
     print()
-    
+
     # Create Fred
     fred = FredTheWikiBot()
-    
+
     # Show loaded skills
     loaded_skills = fred.list_skills()
     print(f"Fred's capabilities: {', '.join(loaded_skills)}")
     print()
-    
+
     # The skill automatically adds tools to the agent
     # You can verify this by checking registered functions
     print("Wikipedia search is ready!")
     print("Fred can now search Wikipedia for any topic.")
-    
+
 if __name__ == "__main__":
     main()
 ```

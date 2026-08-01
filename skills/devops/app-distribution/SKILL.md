@@ -1,3 +1,8 @@
+---
+name: app-distribution
+description: '| ID | flutter-app-distribution |'
+---
+
 # 📦 Skill: App Distribution & Deployment
 
 ## 📋 Metadata
@@ -295,7 +300,7 @@ android {
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
-        
+
         debug {
             applicationIdSuffix ".debug"
         }
@@ -708,9 +713,9 @@ jobs:
 class AppConfig {
   static const String version = '1.0.0';
   static const int buildNumber = 1;
-  
+
   static String get versionString => '$version+$buildNumber';
-  
+
   static String get fullVersionString {
     final flavor = FlavorConfig.instance.name;
     return '$version+$buildNumber ($flavor)';
@@ -820,7 +825,7 @@ versionCode buildNumber.toInteger()
 
 ---
 
-**Versión:** 1.0.0  
-**Última actualización:** Diciembre 2025  
+**Versión:** 1.0.0
+**Última actualización:** Diciembre 2025
 **Total líneas:** 1,100+
 

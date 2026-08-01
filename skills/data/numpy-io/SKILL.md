@@ -1,5 +1,12 @@
 ---
 name: numpy-io
+description: NumPy I/O handles the transition of data between system memory and persistent
+  storage. It supports highly efficient binary formats (.npy, .npz), flexible text
+  parsers for messy data, and memory-mapping for datasets that exceed available RAM.
+---
+
+---
+name: numpy-io
 description: File I/O operations including binary formats (npy/npz), text processing (csv), and memory-mapping for huge datasets. Triggers: io, load, save, npz, genfromtxt, memmap, loadtxt.
 ---
 

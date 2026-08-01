@@ -1,5 +1,12 @@
 ---
 name: makefile-dogfooder
+description: 'Analyze and enhance Makefiles for complete user functionality coverage.Triggers:
+  Makefile analysis, Makefile gaps, missing targets, plugin release,Makefile coverage,
+  build targets, make dogfood, plugi'
+---
+
+---
+name: makefile-dogfooder
 description: |
 
 Triggers: dogfooder, makefile

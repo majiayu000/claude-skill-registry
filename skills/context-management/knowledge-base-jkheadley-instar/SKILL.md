@@ -1,5 +1,11 @@
 ---
 name: knowledge-base
+description: Build a searchable knowledge base from external sources -- URLs, documents,
+  transcripts, PDFs. Uses the existing MemoryIndex (FTS5) for search, so no new dependencies.
+---
+
+---
+name: knowledge-base
 description: Ingest URLs, documents, and transcripts into a searchable knowledge base. Query past research and curated documentation using full-text search. Trigger words: ingest, knowledge base, look up, search knowledge, what do we know about, research, index this, add to knowledge base.
 license: MIT
 metadata:

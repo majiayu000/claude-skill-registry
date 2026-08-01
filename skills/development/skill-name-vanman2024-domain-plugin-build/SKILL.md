@@ -1,4 +1,9 @@
 ---
+name: skill-name-vanman2024-domain-plugin-build
+description: '{{DESCRIPTION_WHAT_IT_DOES}}. Use when {{TRIGGER_KEYWORDS_AND_CONTEXT}}.'
+---
+
+---
 name: {{SKILL_NAME}}
 description: {{DESCRIPTION_WHAT_IT_DOES}}. Use when {{TRIGGER_KEYWORDS_AND_CONTEXT}}.
 {{ALLOWED_TOOLS}}

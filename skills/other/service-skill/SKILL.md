@@ -1,4 +1,9 @@
 ---
+name: service-skill
+description: Brief 1-2 sentence overview of what this skill does.
+---
+
+---
 name: [service-name]-operations
 description: [Action verb] [service name] for [specific use cases]. Use when [trigger condition 1], [trigger condition 2], or when user mentions "[keyword 1]", "[keyword 2]".
 allowed-tools: Read, Write, Edit, Bash, Grep

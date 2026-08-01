@@ -1,5 +1,12 @@
 ---
 name: agent-orchestrator-manager
+description: Orchestrates multi-agent workflows by delegating ALL tasks to spawned
+  subagents via /spawn command. Parallelizes independent work, supervises execution,
+  tracks progress in UUID-based output directorie
+---
+
+---
+name: agent-orchestrator-manager
 description: Orchestrates multi-agent workflows by delegating ALL tasks to spawned subagents via /spawn command. Parallelizes independent work, supervises execution, tracks progress in UUID-based output directories, and generates summary reports. Never executes tasks directly. Triggers on keywords: orchestrate, manage agents, spawn agents, parallel tasks, coordinate agents, multi-agent, orc, delegate tasks
 project-agnostic: true
 allowed-tools:

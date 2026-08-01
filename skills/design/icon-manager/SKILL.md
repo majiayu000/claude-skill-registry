@@ -1,3 +1,8 @@
+---
+name: icon-manager
+description: 'description: 图标管理器，列出所有SVG图标、推荐图标、添加新图标'
+---
+
 ﻿---
 name: icon-manager
 description: 图标管理器，列出所有SVG图标、推荐图标、添加新图标

@@ -1,5 +1,13 @@
 ---
 name: model-evaluation
+description: This skill focuses on comprehensive evaluation of machine learning models
+  across the entire ML lifecycle. It covers metric selection, validation strategies,
+  fairness assessment, training debugging, hyperparameter tuning, LLM evaluation,
+  A/B testing, and production monitoring for ensuring model quality and reliability.
+---
+
+---
+name: model-evaluation
 description: Evaluates machine learning models for performance, fairness, and reliability using appropriate metrics and validation techniques. Covers training debugging, hyperparameter tuning, and production monitoring. Trigger keywords: model evaluation, metrics, accuracy, precision, recall, F1, F1-score, ROC, AUC, ROC-AUC, confusion matrix, cross-validation, k-fold, stratified, overfitting, underfitting, bias, variance, bias-variance tradeoff, hyperparameter, hyperparameter tuning, loss, loss function, metric, benchmark, benchmarking, model performance, classification metrics, regression metrics, RMSE, MSE, MAE, MAPE, R2, R-squared, train-test split, validation set, test set, hold-out, learning curve, validation curve, model selection, error analysis, residual analysis, ML testing, training issues, convergence, gradient, vanishing gradient, exploding gradient, training instability, LLM evaluation, language model evaluation, prompt engineering evaluation, A/B testing, champion-challenger, model monitoring, model drift, data drift, concept drift, model decay.
 allowed-tools: Read, Grep, Glob, Edit, Write, Bash
 ---

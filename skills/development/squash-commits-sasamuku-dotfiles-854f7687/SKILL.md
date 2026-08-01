@@ -1,4 +1,9 @@
 ---
+name: squash-commits
+description: Execute /squash-commits slash command.
+---
+
+---
 name: squashing-commits
 description: Reorganizes commits and working changes into optimal structure. Use when: user wants to squash commits, reorganize history, or clean up commits.
 ---

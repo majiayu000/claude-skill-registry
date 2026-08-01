@@ -1,3 +1,9 @@
+---
+name: unknown
+description: 'Purpose: Provides fast, local, natural-language search over the repository
+  using osgrep CLI for semantic code analysis without requiring MCP servers.'
+---
+
 # OSGrep - Semantic Code Search
 
 **Purpose**: Provides fast, local, natural-language search over the repository using osgrep CLI for semantic code analysis without requiring MCP servers.

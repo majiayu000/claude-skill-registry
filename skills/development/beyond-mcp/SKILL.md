@@ -1,3 +1,8 @@
+---
+name: beyond-mcp
+description: 'Agent: Sub-Agent 4'
+---
+
 # Skill Approach Analysis
 
 **Agent:** Sub-Agent 4

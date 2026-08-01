@@ -1,5 +1,11 @@
 ---
 name: exam-processor
+description: Process Word documents containing exam/test papers into structured markdown
+  with proper image analysis and organization.
+---
+
+---
+name: exam-processor
 description: Process exam/test paper documents from DOCX format into structured markdown. Use when Claude needs to: (1) Extract exam content from Word documents (.docx), (2) Analyze images in exam papers using vision tools, (3) Convert questions to structured markdown with proper image references, (4) Understand question context to match images with appropriate questions, (5) Create organized exam output with YAML frontmatter and sections
 ---
 

@@ -1,3 +1,8 @@
+---
+name: dcf-valuation
+description: 'description: DCF valuation methodology — WACC, terminal value, sensitivity'
+---
+
 # DCF Valuation
 
 name: dcf-valuation

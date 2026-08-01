@@ -1,7 +1,12 @@
+---
+name: environment-ops
+description: Skill from Parlay-Kei/stratanoble-site
+---
+
 # Environment Operations Skill
 
-**Purpose:** Manage environment variables and configurations across all platforms  
-**Version:** 1.0.0  
+**Purpose:** Manage environment variables and configurations across all platforms
+**Version:** 1.0.0
 **Created:** 2025-11-06
 
 ---
@@ -131,5 +136,5 @@ ops-cli env audit                   # Security audit
 
 ---
 
-**Last Updated:** 2025-11-06  
+**Last Updated:** 2025-11-06
 **Maintained By:** Production Ops Team

@@ -1,3 +1,8 @@
+---
+name: docs-jetbuilt-connect-wise
+description: '| Name | Type | Description | Notes |'
+---
+
 # ConnectWise::MemberSkill
 
 ## Properties

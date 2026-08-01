@@ -1,3 +1,8 @@
+---
+name: tweakcc-system-prompts
+description: 'name: ''Tool Description: Skill'''
+---
+
 <!--
 name: 'Tool Description: Skill'
 description: Tool description for executing skills in the main conversation

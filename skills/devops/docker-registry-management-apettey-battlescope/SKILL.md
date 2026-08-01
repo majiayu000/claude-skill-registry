@@ -1,3 +1,8 @@
+---
+name: docker-registry-management
+description: Skill from apettey/BattleScope
+---
+
 # Claude Skill: Docker Registry Management for BattleScope
 
 **Purpose**: Guide all Docker image building, tagging, versioning, and registry management for BattleScope services.

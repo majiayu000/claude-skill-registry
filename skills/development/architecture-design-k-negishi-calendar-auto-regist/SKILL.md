@@ -1,3 +1,7 @@
+---
+name: architecture-design
+description: このスキルは、高品質なアーキテクチャ設計書を作成するための詳細ガイドです。
+---
 
 ---
 name: architecture-design

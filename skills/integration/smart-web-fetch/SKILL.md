@@ -1,5 +1,13 @@
 ---
 name: smart-web-fetch
+description: Fetching a webpage with the default WebFetch tool retrieves full HTML
+  — navigation menus, footers, ads, cookie banners, and all. For a documentation page,
+  90% of the tokens go to chrome, not content. This script fixes that by trying cleaner
+  sources first.
+---
+
+---
+name: smart-web-fetch
 description: Fetch web content efficiently by checking llms.txt first, then Cloudflare markdown endpoints, then falling back to HTML. Reduces token usage by 80% on sites that support clean markdown delivery. No external dependencies — installs a single Python script. Trigger words: fetch URL, web content, read website, scrape page, download page, get webpage, read this link.
 license: MIT
 metadata:

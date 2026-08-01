@@ -1,5 +1,13 @@
 ---
 name: istio
+description: Istio is an open-source service mesh that provides traffic management,
+  security, and observability for microservices architectures. It uses a sidecar proxy
+  pattern with Envoy proxies to intercept and control all network communication between
+  services.
+---
+
+---
+name: istio
 description: Service mesh implementation with Istio for microservices traffic management, security, and observability. Use when implementing service mesh, mTLS, traffic routing, load balancing, circuit breakers, retries, timeouts, canary deployments, A/B testing, or service-to-service communication. Triggers: istio, service mesh, envoy, sidecar, virtualservice, destinationrule, gateway, mtls, peerauthentication, authorizationpolicy, serviceentry, traffic management, traffic splitting, canary, blue-green, circuit breaker, retry, timeout, load balancing, ingress, egress, observability, tracing, telemetry.
 allowed-tools: Read, Grep, Glob, Edit, Write, Bash
 ---

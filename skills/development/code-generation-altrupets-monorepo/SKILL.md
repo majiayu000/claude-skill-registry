@@ -1,3 +1,8 @@
+---
+name: code-generation
+description: '| ID | flutter-code-generation |'
+---
+
 # 🔧 Skill: Code Generation Workflows
 
 ## 📋 Metadata

@@ -1,4 +1,9 @@
 ---
+name: unknown
+description: The most comprehensive Claude Code skills registry - 50,000+ skills indexed
+---
+
+---
 name: food-order
 description: Reorder Foodora orders + track ETA/status with ordercli. Never confirm without explicit user approval. Triggers: order food, reorder, track ETA.
 homepage: https://ordercli.sh

@@ -1,3 +1,9 @@
+---
+name: security-list
+description: '- https://github.com/arpitjindal97/technologybooks    --编程语言晋级。Premium
+  eBook free for Geeks'
+---
+
 # 计算机技术
 - https://github.com/arpitjindal97/technology_books    --编程语言晋级。Premium eBook free for Geeks
 - https://github.com/insoxin/API    --PHP。基于Docker开源免费不限制提供生活常用、出行服务、开发工具、金融服务、通讯服务和公益大数据的平台
@@ -199,4 +205,3 @@
 - https://github.com/duoergun0729/nlp    --一本开源的NLP（神经语言程序学）入门书籍
 - https://zhuanlan.zhihu.com/p/64895011    --神经网络深度学习框架PyTorch
 - https://github.com/poloclub/cnn-explainer    --Js。CNN解释器细节可视化。
-  

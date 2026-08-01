@@ -1,5 +1,11 @@
 ---
 name: agent-organizer
+description: 'Assemble and coordinate multi-agent teams: decompose tasks, select skills/agents,
+  design workflows, and manage execution with monitoring and recovery.'
+---
+
+---
+name: agent-organizer
 description: Assemble and coordinate multi-agent teams: decompose tasks, select skills/agents, design workflows, and manage execution with monitoring and recovery.
 metadata:
   short-description: Multi-agent orchestration + workflow optimization

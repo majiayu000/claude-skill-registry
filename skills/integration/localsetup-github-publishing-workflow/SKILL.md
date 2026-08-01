@@ -1,5 +1,12 @@
 ---
 name: localsetup-github-publishing-workflow
+description: 'Purpose: Follow a consistent, research-backed workflow to get a repo
+  ready for public GitHub publication: documentation layout, licensing, scrub for
+  sensitive or context-specific content, and a repeatable checklist.'
+---
+
+---
+name: localsetup-github-publishing-workflow
 description: Prepare a repository for public GitHub publishing: doc best practices, README structure, licensing, scrub for PII and secrets, publishing checklist. Use when publishing to GitHub, preparing a public release, or when the user asks about publishing workflow or repo readiness.
 metadata:
   version: "1.1"

@@ -1,3 +1,9 @@
+---
+name: unknown
+description: Client and server-side fetch utilities for Next.js applications with
+  API route proxying to FastAPI backends.
+---
+
 # Fetch Architecture Skill
 
 Client and server-side fetch utilities for Next.js applications with API route proxying to FastAPI backends.

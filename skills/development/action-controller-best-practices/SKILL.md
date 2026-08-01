@@ -1,5 +1,12 @@
 ---
 name: action-controller-best-practices
+description: Controllers should be thin traffic cops — they receive input via params,
+  delegate to the appropriate object, and decide what to render or redirect. Each
+  action should be roughly 5-10 lines. If an action is longer, logic needs to be extracted.
+---
+
+---
+name: action-controller-best-practices
 description: Build or Refactor large Rails controller files into clean, maintainable code. Use when a controller action exceeds ~10 lines, a controller has custom non-RESTful actions, or when the user asks to refactor, slim down, clean up, or organize a Rails controller. Applies patterns: service objects, query objects, form objects, controller concerns, presenters/decorators, and RESTful resource extraction.
 ---
 

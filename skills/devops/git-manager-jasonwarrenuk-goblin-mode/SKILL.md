@@ -1,5 +1,13 @@
 ---
 name: git-manager
+description: Comprehensive git workflow guidance covering branch management, commit
+  conventions, pull request best practices, conflict resolution, and LazyGit integration.
+  Emphasizes clean history, collaboration patterns, and the user's established branch
+  naming conventions.
+---
+
+---
+name: git-manager
 description: Git workflow: branch management, commit conventions, PR patterns, conflict resolution.
 user-invocable: false
 effort: low

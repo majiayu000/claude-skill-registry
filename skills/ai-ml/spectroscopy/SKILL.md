@@ -1,5 +1,12 @@
 ---
 name: spectroscopy
+description: 'Skills for computing spectroscopic observables from first principles:
+  vibrational spectra (IR, Raman) and core-level X-ray absorption spectra (XAS/XANES).
+  These connect atomistic simulations to experimental measurements.'
+---
+
+---
+name: spectroscopy
 description: Spectroscopy Simulation (2 sub-skills: raman-ir, xas-xanes)
 ---
 

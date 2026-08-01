@@ -1,5 +1,10 @@
 ---
 name: release
+description: 完整的版本發布準備流程，包含版本號更新、CHANGELOG 生成、文檔同步和部署檢查。
+---
+
+---
+name: release
 description: Version release preparation workflow including changelog, version bump, and deployment checks. Triggers: REL, release, 發布, 版本發布, deploy, 部署, publish, 上線, ship, tag, 打標籤, 版本, version bump, 升版.
 version: 1.0.0
 category: workflow

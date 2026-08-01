@@ -1,3 +1,8 @@
+---
+name: records
+description: Archived skill guidance for records.
+---
+
 # Record 039: User Stories Skill
 
 ## Status

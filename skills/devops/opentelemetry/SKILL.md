@@ -1,4 +1,12 @@
 ---
+name: opentelemetry
+description: Design and implement comprehensive observability using OpenTelemetry
+  (OTel). Provide expert guidance on instrumentation, collector deployment, backend
+  selection, and cost-effective telemetry pipelines across all major languages and
+  platforms.
+---
+
+---
 description: OpenTelemetry expert for full-stack observability including distributed tracing, metrics, and log correlation. Covers OTel Collector configuration, auto-instrumentation for Node.js/Python/Java/.NET/Go, sampling strategies, backend integration (Grafana, Jaeger, Datadog), and cost optimization. Activates for: OpenTelemetry, OTel, distributed tracing, tracing, spans, metrics, observability, Jaeger, Grafana Tempo, OTLP.
 allowed-tools: Read, Write, Edit, Bash
 model: opus

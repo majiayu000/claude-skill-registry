@@ -1,3 +1,10 @@
+---
+name: idea-normalizer
+description: 'description: Normalize an idea into a consistent structure (writes to
+  ideas/<IDEAID>/runs and updates ideas/<IDEAID>/latest). If Open Questions exist,
+  ask the user and finalize with captured answers.'
+---
+
 ﻿---
 name: Normalize idea
 description: Normalize an idea into a consistent structure (writes to ideas/<IDEA_ID>/runs and updates ideas/<IDEA_ID>/latest). If Open Questions exist, ask the user and finalize with captured answers.

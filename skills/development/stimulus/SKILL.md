@@ -1,5 +1,12 @@
 ---
 name: stimulus
+description: Modest JavaScript framework that connects JS objects to HTML via data
+  attributes. Stimulus does not render HTML -- it augments server-rendered HTML with
+  behavior.
+---
+
+---
+name: stimulus
 description: Stimulus JS framework for Symfony UX -- client-side behavior via HTML data attributes, zero server round-trips. Use when creating controllers for DOM manipulation, handling click/input/submit events, managing targets and values, wiring outlets between controllers, wrapping third-party JS libraries, or building toggles, dropdowns, modals, tabs, clipboard interactions. Code triggers: data-controller, data-action, data-target, data-*-value, data-*-class, data-*-outlet, stimulusFetch lazy, connect(), disconnect(), static targets, static values. Also trigger when the user asks "how do I add a click handler", "how to toggle a class", "how to build a dropdown/modal/tabs", "how to wrap a JS library in Symfony", "add keyboard shortcuts", "lazy-load a controller", "listen to global events", "communicate between controllers". Do NOT trigger for partial page updates without JS (use turbo), server-rendered reactivity (use live-component), or reusable Twig templates (use twig-component).
 license: MIT
 metadata:

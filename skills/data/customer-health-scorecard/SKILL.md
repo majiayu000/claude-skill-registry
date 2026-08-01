@@ -1,5 +1,10 @@
 ---
 name: customer-health-scorecard
+description: 'This skill supports three modes: Create, Update, and Find.'
+---
+
+---
+name: customer-health-scorecard
 description: Create or update a customer health scorecard
 argument-hint: [customer name or segment] or [update path/to/scorecard.md]
 ---

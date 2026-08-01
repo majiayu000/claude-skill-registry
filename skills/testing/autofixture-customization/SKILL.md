@@ -1,3 +1,8 @@
+---
+name: autofixture-customization
+description: '- autofixture customization'
+---
+
 # AutoFixture 進階：自訂化測試資料生成策略
 
 ---
@@ -49,13 +54,13 @@ using System.ComponentModel.DataAnnotations;
 public class Person
 {
     public Guid Id { get; set; }
-    
+
     [StringLength(10)]
     public string Name { get; set; } = string.Empty;
-    
+
     [Range(10, 80)]
     public int Age { get; set; }
-    
+
     public DateTime CreateTime { get; set; }
 }
 
@@ -151,8 +156,8 @@ public class RandomRangedDateTimeBuilder : ISpecimenBuilder
     private readonly HashSet<string> _targetProperties;
 
     public RandomRangedDateTimeBuilder(
-        DateTime minDate, 
-        DateTime maxDate, 
+        DateTime minDate,
+        DateTime maxDate,
         params string[] targetProperties)
     {
         _minDate = minDate;
@@ -186,7 +191,7 @@ public void 只控制特定DateTime屬性()
 
     var minDate = new DateTime(2025, 1, 1);
     var maxDate = new DateTime(2025, 12, 31);
-    
+
     // 只控制 UpdateTime 屬性
     fixture.Customizations.Add(
         new RandomRangedDateTimeBuilder(minDate, maxDate, "UpdateTime"));
@@ -195,7 +200,7 @@ public void 只控制特定DateTime屬性()
 
     // UpdateTime 在指定範圍
     member.UpdateTime.Should().BeOnOrAfter(minDate).And.BeOnOrBefore(maxDate);
-    
+
     // CreateTime 不受影響
 }
 ```
@@ -210,13 +215,13 @@ public object Create(object request, ISpecimenContext context)
     // 不是我們的目標 → 回傳 NoSpecimen
     if (request is not PropertyInfo propertyInfo)
         return new NoSpecimen();
-        
+
     if (propertyInfo.PropertyType != typeof(DateTime))
         return new NoSpecimen();
-        
+
     if (!_targetProperties.Contains(propertyInfo.Name))
         return new NoSpecimen();
-    
+
     // 是我們的目標 → 產生值
     return GenerateRandomDateTime();
 }
@@ -246,8 +251,8 @@ public class ImprovedRandomRangedNumericSequenceBuilder : ISpecimenBuilder
     private readonly Func<PropertyInfo, bool> _predicate;
 
     public ImprovedRandomRangedNumericSequenceBuilder(
-        int min, 
-        int max, 
+        int min,
+        int max,
         Func<PropertyInfo, bool> predicate)
     {
         _min = min;
@@ -276,11 +281,11 @@ public class ImprovedRandomRangedNumericSequenceBuilder : ISpecimenBuilder
 public void 使用Insert0確保優先順序()
 {
     var fixture = new Fixture();
-    
+
     // 使用 Insert(0) 確保最高優先順序
-    fixture.Customizations.Insert(0, 
+    fixture.Customizations.Insert(0,
         new ImprovedRandomRangedNumericSequenceBuilder(
-            30, 50, 
+            30, 50,
             prop => prop.Name == "Age" && prop.DeclaringType == typeof(Member)));
 
     var members = fixture.CreateMany<Member>(20).ToList();
@@ -302,8 +307,8 @@ public class NumericRangeBuilder<TValue> : ISpecimenBuilder
     private readonly Func<PropertyInfo, bool> _predicate;
 
     public NumericRangeBuilder(
-        TValue min, 
-        TValue max, 
+        TValue min,
+        TValue max,
         Func<PropertyInfo, bool> predicate)
     {
         _min = min;
@@ -351,13 +356,13 @@ public class NumericRangeBuilder<TValue> : ISpecimenBuilder
 public static class FixtureRangedNumericExtensions
 {
     public static IFixture AddRandomRange<T, TValue>(
-        this IFixture fixture, 
-        TValue min, 
-        TValue max, 
+        this IFixture fixture,
+        TValue min,
+        TValue max,
         Func<PropertyInfo, bool> predicate)
         where TValue : struct, IComparable, IConvertible
     {
-        fixture.Customizations.Insert(0, 
+        fixture.Customizations.Insert(0,
             new NumericRangeBuilder<TValue>(min, max, predicate));
         return fixture;
     }

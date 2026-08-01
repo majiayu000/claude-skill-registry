@@ -1,3 +1,8 @@
+---
+name: remove-skill
+description: '> 目标：安全地移除一个 SKILL（推荐废弃而非直接删除）'
+---
+
 # 删除/废弃 SKILL
 
 > **目标**：安全地移除一个 SKILL（推荐废弃而非直接删除）

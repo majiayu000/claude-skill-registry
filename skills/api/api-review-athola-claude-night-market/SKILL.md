@@ -1,5 +1,12 @@
 ---
 name: api-review
+description: Use this skill to review public API changes, design new surfaces, audit
+  consistency, and validate documentation completeness. Run it before any API release
+  to confirm alignment with project guidelines.
+---
+
+---
+name: api-review
 description: |
 
 Triggers: consistency, versioning, design, review, documentation

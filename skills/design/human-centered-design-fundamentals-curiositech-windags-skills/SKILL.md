@@ -1,3 +1,9 @@
+---
+name: human-centered-design-fundamentals
+description: Design products that accommodate actual human cognition and behavior
+  rather than expecting humans to adapt to arbitrary system requirements.
+---
+
 ```markdown
 ---
 name: human-centered-design-fundamentals
@@ -9,7 +15,7 @@ allowed-tools: Read
 Design products that accommodate actual human cognition and behavior rather than expecting humans to adapt to arbitrary system requirements.
 
 ## When to Use
-✅ Use for: 
+✅ Use for:
 - Physical product design (doors, appliances, controls, tools)
 - Digital interface design (software, touchscreens, dashboards)
 - System design where human error is critical (medical devices, industrial controls, aircraft)
@@ -17,7 +23,7 @@ Design products that accommodate actual human cognition and behavior rather than
 - Creating instructions and documentation
 - Error prevention and safety-critical systems
 
-❌ NOT for: 
+❌ NOT for:
 - Pure visual design without functional components
 - Marketing and brand identity
 - Autonomous systems with no human interaction
@@ -32,7 +38,7 @@ START: User encounters system
 │
 ├─→ Is this GOAL-DRIVEN (user has objective)?
 │   ├─→ YES: Begin at Stage 1 (Form Goal)
-│   │   ├─→ Can user identify what they want? 
+│   │   ├─→ Can user identify what they want?
 │   │   │   ├─→ NO: MISTAKE likely → Provide clear conceptual model
 │   │   │   └─→ YES: Proceed to Stage 2
 │   │   │
@@ -166,7 +172,7 @@ INCIDENT OCCURS
 
 **Novice approach:**
 - Incident occurs
-- Investigation identifies operator action as proximate cause  
+- Investigation identifies operator action as proximate cause
 - Conclusion: "Human error - operator needs retraining"
 - Action: Discipline/replace operator, add more warnings
 - Timeline: Immediate blame assignment within hours/days

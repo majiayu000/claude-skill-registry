@@ -1,5 +1,10 @@
 ---
 name: escalation-rule
+description: 'This skill supports three modes: Create, Update, and Find.'
+---
+
+---
+name: escalation-rule
 description: Create or update escalation rules for a decision area
 argument-hint: [decision area] or [update path/to/rule.md]
 ---

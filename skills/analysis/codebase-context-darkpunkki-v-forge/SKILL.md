@@ -1,3 +1,8 @@
+---
+name: codebase-context
+description: 'name: Codebase context'
+---
+
 ﻿---
 name: Codebase context
 description: Create a lightweight codebase_context.md that anchors the idea in the existing repo (modules, constraints, extension points). Generic framework prompt.

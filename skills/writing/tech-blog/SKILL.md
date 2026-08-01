@@ -1,5 +1,10 @@
 ---
 name: tech-blog
+description: Zenn 向けテックブログ記事を作成する。
+---
+
+---
+name: tech-blog
 description: Zenn向けテックブログ記事の作成支援。プロジェクト紹介、技術解説、TIL/学習記録など様々な記事タイプに対応。トリガー: (1) ブログを書いて、(2) 記事を作成、(3) Zenn記事、(4) 技術記事、(5) /tech-blog
 ---
 

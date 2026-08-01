@@ -1,3 +1,8 @@
+---
+name: variant-interpretation
+description: '---name: variant-interpretation-acmg'
+---
+
 ---name: variant-interpretation-acmg
 description: Classifies genetic variants according to ACMG (American College of Medical Genetics) guidelines.
 keywords:

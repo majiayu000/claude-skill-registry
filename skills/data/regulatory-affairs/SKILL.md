@@ -1,3 +1,8 @@
+---
+name: regulatory-affairs
+description: '---name: regulatory-drafter'
+---
+
 ---name: regulatory-drafter
 description: Automates the drafting of regulatory documents (e.g., FDA CTD sections) with citation management and audit trails.
 keywords:

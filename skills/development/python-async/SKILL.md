@@ -1,5 +1,12 @@
 ---
 name: python-async
+description: Asyncio is a concurrency model designed for IO-bound and high-level structured
+  network code. It uses cooperative multitasking on a single thread, allowing routines
+  to pause while waiting for I/O, yielding control back to the event loop.
+---
+
+---
+name: python-async
 description: Asyncio patterns in Python for high-concurrency IO-bound tasks. Includes coroutines, task management, and asynchronous resource handling. Triggers: asyncio, python-async, coroutine, await, async-gather, async-generator, event-loop.
 ---
 
@@ -14,11 +21,11 @@ Asyncio is a concurrency model designed for IO-bound and high-level structured n
 - **Concurrent Tasks**: Running multiple independent IO-bound operations simultaneously.
 
 ## Decision Tree
-1. Is the task CPU-bound (e.g., heavy math, image processing)? 
+1. Is the task CPU-bound (e.g., heavy math, image processing)?
    - YES: Use `multiprocessing` instead.
-   - NO: Is the task waiting for external resources (API, Disk)? 
+   - NO: Is the task waiting for external resources (API, Disk)?
      - YES: Use `asyncio`.
-2. Are you using `time.sleep`? 
+2. Are you using `time.sleep`?
    - YES: Replace with `await asyncio.sleep` to avoid blocking the event loop.
 
 ## Workflows

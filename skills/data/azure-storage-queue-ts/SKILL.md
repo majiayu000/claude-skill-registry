@@ -1,5 +1,11 @@
 ---
 name: azure-storage-queue-ts
+description: SDK for Azure Queue Storage operations — send, receive, peek, and manage
+  messages in queues.
+---
+
+---
+name: azure-storage-queue-ts
 description: |
   Azure Queue Storage JavaScript/TypeScript SDK (@azure/storage-queue) for message queue operations. Use for sending, receiving, peeking, and deleting messages in queues. Supports visibility timeout, message encoding, and batch operations. Triggers: "queue storage", "@azure/storage-queue", "QueueServiceClient", "QueueClient", "send message", "receive message", "dequeue", "visibility timeout".
 package: @azure/storage-queue
@@ -15,7 +21,7 @@ SDK for Azure Queue Storage operations — send, receive, peek, and manage messa
 npm install @azure/storage-queue @azure/identity
 ```
 
-**Current Version**: 12.x  
+**Current Version**: 12.x
 **Node.js**: >= 18.0.0
 
 ## Environment Variables
@@ -174,9 +180,9 @@ for (const message of response.receivedMessageItems) {
   console.log("Content:", message.messageText);
   console.log("Dequeue Count:", message.dequeueCount);
   console.log("Pop Receipt:", message.popReceipt);
-  
+
   // Process the message...
-  
+
   // Delete after processing
   await queueClient.deleteMessage(message.messageId, message.popReceipt);
 }
@@ -215,7 +221,7 @@ if (message) {
     "Updated content",
     60 // New visibility timeout in seconds
   );
-  
+
   // Use new popReceipt for subsequent operations
   console.log("New pop receipt:", updateResponse.popReceipt);
 }

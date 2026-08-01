@@ -1,5 +1,12 @@
 ---
 name: multi-project-spec-mapper
+description: 'Purpose: Automatically detect multiple projects in SpecWeave setup,
+  analyze user stories to map them to the correct project (FE, BE, MOBILE, INFRA),
+  and organize specs into project-specific folders with proper JIRA/GitHub sync.'
+---
+
+---
+name: multi-project-spec-mapper
 description: Intelligent multi-project specification splitting and organization. Analyzes user stories to map them to correct projects (FE, BE, MOBILE, INFRA) based on content, tech stack, and component architecture. Creates project-specific folder structure and splits monolithic specs. Activates for multi-project JIRA/GitHub setups, brownfield projects with multiple teams, microservices architecture. Keywords: multi-project, project mapping, spec splitting, JIRA projects, multiple projects, microservices, FE/BE/MOBILE split, intelligent classification.
 ---
 

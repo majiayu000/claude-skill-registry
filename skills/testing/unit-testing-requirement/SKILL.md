@@ -1,5 +1,10 @@
 ---
 name: unit-testing-requirement
+description: You are a coding standards expert specializing in unit testing requirement.
+---
+
+---
+name: unit-testing-requirement
 description: Enforces the implementation of unit tests to guarantee code reliability and maintainability, especially within the 'tests' directory.
 version: 1.0.0
 model: sonnet

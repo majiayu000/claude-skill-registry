@@ -1,3 +1,8 @@
+---
+name: arch
+description: 패시브 및 액티브 스킬의 베이스가 되는 클래스
+---
+
 Skill
 ====
 

@@ -1,5 +1,12 @@
 ---
 name: uloop-get-menu-items
+description: 'Retrieve Unity MenuItems via uloop CLI. Use when you need to: (1) Discover
+  available menu commands in Unity Editor, (2) Find menu paths for automation, (3)
+  Prepare for executing menu items programmati'
+---
+
+---
+name: uloop-get-menu-items
 description: Retrieve Unity MenuItems via uloop CLI. Use when you need to: (1) Discover available menu commands in Unity Editor, (2) Find menu paths for automation, (3) Prepare for executing menu items programmatically.
 ---
 

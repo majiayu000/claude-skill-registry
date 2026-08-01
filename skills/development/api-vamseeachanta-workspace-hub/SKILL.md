@@ -1,3 +1,9 @@
+---
+name: api-vamseeachanta-workspace-hub
+description: '> American Petroleum Institute (API) codes and standards for oil & gas
+  production, refining, and offshore structures.'
+---
+
 # API Standards Specialist
 
 > American Petroleum Institute (API) codes and standards for oil & gas production, refining, and offshore structures.
@@ -61,11 +67,11 @@ def check_api_6a_compliance(pressure_rating, temp_class, material_class):
     valid_pressures = [2000, 3000, 5000, 10000, 15000, 20000]
     if pressure_rating not in valid_pressures:
         return False, f"Invalid API 6A pressure rating: {pressure_rating}"
-        
+
     valid_temp_classes = ['K', 'L', 'P', 'R', 'S', 'T', 'U', 'V']
     if temp_class not in valid_temp_classes:
         return False, f"Invalid API 6A temp class: {temp_class}"
-        
+
     return True, "Compliant"
 ```
 

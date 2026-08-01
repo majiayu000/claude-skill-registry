@@ -1,5 +1,11 @@
 ---
 name: phase-implementation
+description: This skill defines the standard workflow for implementing features from
+  your project's requirements or implementation plan.
+---
+
+---
+name: phase-implementation
 description: Guides implementation of features following an established workflow pattern. Use when implementing any feature to ensure consistent process: read requirements, create todos, implement code, write tests, update documentation, commit and push.
 license: MIT
 metadata:

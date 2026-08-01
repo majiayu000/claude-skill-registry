@@ -1,4 +1,9 @@
 ---
+name: agregadores-calculo
+description: Archived skill guidance for agregadores-calculo.
+---
+
+---
 
 name: agregadores-performance-potencial
 description: Use para implementar serviços de agregação que calculam os eixos de Performance e Potencial a partir de evidências.

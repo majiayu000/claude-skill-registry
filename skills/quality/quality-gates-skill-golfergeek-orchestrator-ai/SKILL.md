@@ -1,4 +1,10 @@
 ---
+name: quality-gates-skill
+description: 'CRITICAL: Code must pass all quality gates before committing: lint,
+  format, test, build.'
+---
+
+---
 name: Quality Gates
 description: Ensure code quality before commits. Run lint, format, test, build. Use npm scripts: npm run lint, npm run format, npm test, npm run build. CRITICAL: All tests must pass, no lint errors, code must be formatted before committing.
 allowed-tools: Read, Write, Edit, Bash, Grep, Glob

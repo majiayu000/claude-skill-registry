@@ -1,4 +1,10 @@
 ---
+name: format-processor
+description: Process and analyze {{FORMAT}} files. Use when {{TRIGGER_CONTEXTS}}.
+  Supports {{CAPABILITIES}}.
+---
+
+---
 name: {{FORMAT}}-processor
 description: Process and analyze {{FORMAT}} files. Use when {{TRIGGER_CONTEXTS}}. Supports {{CAPABILITIES}}.
 ---

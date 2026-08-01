@@ -1,5 +1,10 @@
 ---
 name: value-realization-report
+description: 'This skill supports three modes: Create, Update, and Find.'
+---
+
+---
+name: value-realization-report
 description: Create or update a value realization report
 argument-hint: [customer, cohort, or product] or [update path/to/report.md]
 ---

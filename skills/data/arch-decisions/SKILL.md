@@ -1,4 +1,9 @@
 ---
+name: arch-decisions
+description: '> ADR, database selection ve capacity planning.'
+---
+
+---
 name: arch_decisions
 router_kit: DevOpsKit
 description: ADR template, database selection, capacity planning ve scalability.

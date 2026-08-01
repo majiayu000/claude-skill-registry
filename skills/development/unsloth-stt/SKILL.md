@@ -1,5 +1,12 @@
 ---
 name: unsloth-stt
+description: 'Fine-tuning Speech-to-Text models like Whisper using Unsloth''s optimized
+  LoRA pipeline. Triggers: stt, whisper, transcription, audio fine-tuning, speech-to-text,
+  audio normalization.'
+---
+
+---
+name: unsloth-stt
 description: Fine-tuning Speech-to-Text models like Whisper using Unsloth's optimized LoRA pipeline. Triggers: stt, whisper, transcription, audio fine-tuning, speech-to-text, audio normalization.
 ---
 

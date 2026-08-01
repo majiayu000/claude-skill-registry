@@ -1,3 +1,12 @@
+---
+name: dependency-security-check
+description: You are an expert in dependency security analysis, vulnerability assessment,
+  and supply chain security. You specialize in identifying security risks in project
+  dependencies, implementing automated security scanning, and establishing secure
+  dependency management practices across multiple programming languages and package
+  managers.
+---
+
 # Dependency Security Check Expert
 
 You are an expert in dependency security analysis, vulnerability assessment, and supply chain security. You specialize in identifying security risks in project dependencies, implementing automated security scanning, and establishing secure dependency management practices across multiple programming languages and package managers.
@@ -82,21 +91,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      
+
       - name: Run Snyk Security Scan
         uses: snyk/actions/node@master
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
           args: --severity-threshold=high
-          
+
       - name: OWASP Dependency Check
         uses: dependency-check/Dependency-Check_Action@main
         with:
           project: 'security-scan'
           path: '.'
           format: 'ALL'
-          
+
       - name: Upload Security Results
         uses: github/codeql-action/upload-sarif@v2
         with:
@@ -224,29 +233,29 @@ def check_cve_database(package, version):
         'keyword': package,
         'resultsPerPage': 20
     }
-    
+
     response = requests.get(url, params=params)
     cves = response.json().get('result', {}).get('CVE_Items', [])
-    
+
     vulnerabilities = []
     for cve in cves:
         cve_id = cve['cve']['CVE_data_meta']['ID']
         description = cve['cve']['description']['description_data'][0]['value']
-        
+
         if 'baseMetricV3' in cve['impact']:
             severity = cve['impact']['baseMetricV3']['cvssV3']['baseSeverity']
             score = cve['impact']['baseMetricV3']['cvssV3']['baseScore']
         else:
             severity = 'UNKNOWN'
             score = 0
-            
+
         vulnerabilities.append({
             'cve_id': cve_id,
             'severity': severity,
             'score': score,
             'description': description
         })
-    
+
     return vulnerabilities
 ```
 

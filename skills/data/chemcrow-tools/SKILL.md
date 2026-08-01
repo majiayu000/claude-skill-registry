@@ -1,3 +1,8 @@
+---
+name: chemcrow-tools
+description: '---name: chemcrow-drug-discovery'
+---
+
 ---name: chemcrow-drug-discovery
 description: An LLM chemistry agent with expert-designed tools for organic synthesis, drug discovery, and materials design.
 license: MIT

@@ -1,4 +1,9 @@
 ---
+name: sync-plan
+description: Execute /sync-plan slash command.
+---
+
+---
 name: syncing-plan-to-issue
 description: Syncs PLANS.md content to linked GitHub issue comment. Use when: user wants to sync plan, update issue with plan, or push plan changes.
 ---

@@ -1,4 +1,10 @@
 ---
+name: love-video
+description: '{{SKILLDESCRIPTION}} Use this skill when working with video operations,
+  video decoding, video streaming, or any video-related operations in LÖVE games.'
+---
+
+---
 name: {{SKILL_NAME}}
 description: {{SKILL_DESCRIPTION}} Use this skill when working with video operations, video decoding, video streaming, or any video-related operations in LÖVE games.
 license: MIT

@@ -1,5 +1,12 @@
 ---
 name: code-consistency-validator
+description: 'Validates type consistency across Rust, TypeScript, PostgreSQL boundaries.
+  Use when reviewing code, debugging type mismatches, or validating API contracts.
+  Triggers on: check consistency, validate typ'
+---
+
+---
+name: code-consistency-validator
 description: Validates type consistency across Rust, TypeScript, PostgreSQL boundaries. Use when reviewing code, debugging type mismatches, or validating API contracts. Triggers on: check consistency, validate types, find mismatches, cross-language.
 ---
 

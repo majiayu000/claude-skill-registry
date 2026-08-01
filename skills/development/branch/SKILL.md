@@ -1,5 +1,10 @@
 ---
 name: branch
+description: フィーチャーブランチの作成、切り替え、一覧表示、削除を行う。
+---
+
+---
+name: branch
 description: gitブランチの作成・切り替え・一覧・削除を行う。「ブランチ作って」「ブランチ切り替えて」「ブランチ整理して」などのリクエストで使用する。
 allowed-tools: Bash
 argument-hint: [create|switch|list|delete] [ブランチ名]

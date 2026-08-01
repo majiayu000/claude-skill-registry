@@ -1,5 +1,11 @@
 ---
 name: game-recap-generator
+description: 'Convert game stats and highlights into engaging recaps. Multiple styles:
+  Twitter thread, Instagram carousel, blog post, newsletter.'
+---
+
+---
+name: game-recap-generator
 description: Convert game stats and highlights into engaging recaps. Multiple styles: Twitter thread, Instagram carousel, blog post, newsletter.
 ---
 

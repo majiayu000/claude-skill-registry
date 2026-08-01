@@ -1,5 +1,11 @@
 ---
 name: metric-creator
+description: Create new metrics for the Fair-Forge AI evaluation library. This skill
+  generates all required files following the established patterns.
+---
+
+---
+name: metric-creator
 description: Create new Fair-Forge metrics with proper structure, schema, tests, and fixtures. Use when adding a new evaluation metric to fair-forge.
 argument-hint: [metric-name] [optional description]
 ---

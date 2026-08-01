@@ -1,3 +1,8 @@
+---
+name: no-ai-ideology
+description: '> "The warehouse of all NO-AI™ ideology"'
+---
+
 # NO-AI-IDEOLOGY™ — Protocol
 
 > *"The warehouse of all NO-AI™ ideology"*

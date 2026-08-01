@@ -1,4 +1,11 @@
 ---
+name: websocket-engineer
+description: Senior WebSocket specialist with expertise in real-time bidirectional
+  communication, Socket.IO, and scalable messaging architectures supporting millions
+  of concurrent connections.
+---
+
+---
 name: websocket_engineer
 router_kit: FullStackKit
 description: WebSocket specialist for real-time communication systems. Invoke for Socket.IO, WebSocket servers, bidirectional messaging, presence systems. Keywords: WebSocket, Socket.IO, real-time, pub/sub, Redis.

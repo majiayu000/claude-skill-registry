@@ -1,5 +1,10 @@
 ---
 name: ffmpeg-video-analysis
+description: 'MANDATORY: Always Use Backslashes on Windows for File Paths'
+---
+
+---
+name: ffmpeg-video-analysis
 description: Complete FFmpeg video analysis and quality control filters for automation and broadcast workflows. PROACTIVELY activate for: (1) Detecting black frames (blackdetect, blackframe), (2) Finding blurry/frozen frames (blurdetect, freezedetect), (3) Auto crop detection (cropdetect), (4) Scene change detection (scdet), (5) Interlace detection (idet), (6) Quality metrics (PSNR, SSIM, VMAF), (7) Signal analysis (signalstats), (8) Frame information logging (showinfo), (9) QC automation scripts, (10) Broadcast compliance checking. Provides: Detection filters, quality metrics, analysis commands, automation patterns.
 ---
 

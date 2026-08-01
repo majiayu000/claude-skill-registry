@@ -1,3 +1,8 @@
+---
+name: agent-skills-raia-ai-raia-v2-docs
+description: <figure><img src="../../.gitbook/assets/image (6) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+---
+
 # Agent Scoring Skill
 
 <figure><img src="../../.gitbook/assets/image (6) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>

@@ -1,5 +1,10 @@
 ---
 name: task
+description: Manage tasks in .contextium/tasks.json.
+---
+
+---
+name: task
 description: Manage Contextium tasks - create, update, complete, and list tasks
 allowed-tools: Bash, Read, Write, Edit
 argument-hint: [create|complete|list|status] [task-id]

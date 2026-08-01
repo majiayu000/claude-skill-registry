@@ -1,3 +1,8 @@
+---
+name: accessibility
+description: '| ID | flutter-accessibility |'
+---
+
 # ♿ Skill: Accessibility (a11y)
 
 ## 📋 Metadata

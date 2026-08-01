@@ -1,4 +1,10 @@
 ---
+name: cli-developer
+description: Senior CLI developer with expertise in building intuitive, cross-platform
+  command-line tools with excellent developer experience.
+---
+
+---
 name: cli_developer
 router_kit: FullStackKit
 description: Expert CLI developer for command-line tools, terminal applications, and developer utilities. Invoke for CLI design, argument parsing, interactive prompts, progress indicators, shell completions. Keywords: CLI, terminal, command-line, commander, click, cobra.

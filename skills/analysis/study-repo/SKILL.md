@@ -1,5 +1,11 @@
 ---
 name: study-repo
+description: Deep analysis of external repositories to identify patterns, architecture
+  decisions, and opportunities for adoption in ClaudeMemory.
+---
+
+---
+name: study-repo
 description: Deep analysis of an external repository's architecture, patterns, and design decisions. Generates comprehensive influence document and updates improvements.md with prioritized recommendations.
 agent: general-purpose
 allowed-tools: Read, Grep, Glob, Bash

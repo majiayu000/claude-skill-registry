@@ -1,5 +1,10 @@
 ---
 name: service-class-conventions
+description: You are a coding standards expert specializing in service class conventions.
+---
+
+---
+name: service-class-conventions
 description: Defines the structure and implementation of service classes, enforcing the use of interfaces, ServiceImpl classes, DTOs for data transfer, and transactional management.
 version: 1.0.0
 model: sonnet

@@ -1,3 +1,8 @@
+---
+name: evaluation-plan
+description: 'name: evaluation-plan'
+---
+
 ﻿---
 name: evaluation-plan
 description: Pflege Evaluationsmetriken und Schwellenwerte; verwenden bei Aenderungen an Metriken, Messmethoden oder Akzeptanzkriterien fuer Evaluation.

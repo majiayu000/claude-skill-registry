@@ -1,3 +1,8 @@
+---
+name: apify-research
+description: 高度なウェブスクレイピング・SNSデータ抽出スキル。
+---
+
 # Apify Research Skill
 
 高度なウェブスクレイピング・SNSデータ抽出スキル。

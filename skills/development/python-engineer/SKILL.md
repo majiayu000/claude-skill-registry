@@ -1,5 +1,12 @@
 ---
 name: python-engineer
+description: Read outputlanguage from .ai/context/workflow-config.md. Write ALL deliverables
+  and code comments in that language. If the file is absent or the field is unset,
+  default to en-US.
+---
+
+---
+name: python-engineer
 description: Python Backend Engineer role skill. Use when you need to implement Python backend features, async REST APIs, data processing pipelines, AI/ML inference services, or web scraping workflows. Keywords: Python, FastAPI, Pydantic, SQLAlchemy, asyncpg, Pandas, Polars, Celery, LangChain, Playwright, Scrapy, data pipeline, async, backend development.
 ---
 

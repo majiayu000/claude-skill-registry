@@ -1,5 +1,10 @@
 ---
 name: op
+description: Zintegruj KFG (Kmylpenter File Genius) z istniejącym projektem.
+---
+
+---
+name: op
 description: Integracja KFG do istniejącego projektu bez logs/. Triggers: dodaj KFG, old project, zintegruj
 allowed-tools: Glob, Read, Write, Edit, Bash(git:*), Bash(mkdir:*)
 ---

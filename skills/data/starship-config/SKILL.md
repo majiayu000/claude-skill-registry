@@ -1,5 +1,11 @@
 ---
 name: starship-config
+description: Manages complete Starship prompt configuration lifecycle including setup,
+  customization, and optimization.
+---
+
+---
+name: starship-config
 description: Configure and optimize Starship cross-shell prompt with presets, custom modules, and performance tuning. Use when setting up Starship, creating prompt configs, customizing prompt appearance, or troubleshooting prompt issues. Keywords: starship, prompt, shell prompt, PS1, starship.toml, preset, prompt config, shell theme
 ---
 

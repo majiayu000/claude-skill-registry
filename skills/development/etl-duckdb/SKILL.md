@@ -1,3 +1,9 @@
+---
+name: etl-duckdb
+description: 'description: Load CSV/XLSX into DuckDB with validation and an ETL markdown
+  report'
+---
+
 ﻿---
 name: etl-duckdb
 description: Load CSV/XLSX into DuckDB with validation and an ETL markdown report

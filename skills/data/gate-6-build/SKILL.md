@@ -1,5 +1,10 @@
 ---
 name: gate-6-build
+description: ls npm-shrinkwrap.json
+---
+
+---
+name: gate-6-build
 description: Gate 6 validation: Build success and dependency locking
 ---
 

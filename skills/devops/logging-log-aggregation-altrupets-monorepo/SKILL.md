@@ -1,3 +1,8 @@
+---
+name: logging-log-aggregation
+description: '| ID | sre-logging-log-aggregation |'
+---
+
 # 📝 Skill: Logging & Log Aggregation
 
 ## 📋 Metadata

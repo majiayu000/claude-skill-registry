@@ -1,3 +1,8 @@
+---
+name: human-gating-antipattern
+description: '> Compiler: manual (bootstrap)'
+---
+
 # Human Gating Anti-Pattern Skill
 
 > Version: 1.0.0

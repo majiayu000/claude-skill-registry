@@ -1,3 +1,8 @@
+---
+name: virtual-lab-agent
+description: '---name: virtual-lab-agent'
+---
+
 ---name: virtual-lab-agent
 description: AI-powered virtual laboratory orchestrating multi-agent scientific research teams for autonomous hypothesis generation, experimental design, and validation in biomedical research.
 license: MIT

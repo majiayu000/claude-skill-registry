@@ -1,5 +1,12 @@
 ---
 name: uloop-get-logs
+description: 'Retrieve Unity Console logs via uloop CLI. Use when you need to: (1)
+  Check for errors or warnings after operations, (2) Debug runtime issues in Unity
+  Editor, (3) Investigate unexpected behavior or exc'
+---
+
+---
+name: uloop-get-logs
 description: Retrieve Unity Console logs via uloop CLI. Use when you need to: (1) Check for errors or warnings after operations, (2) Debug runtime issues in Unity Editor, (3) Investigate unexpected behavior or exceptions.
 ---
 

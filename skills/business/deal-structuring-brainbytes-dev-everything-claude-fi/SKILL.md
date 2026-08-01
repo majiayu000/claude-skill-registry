@@ -1,3 +1,8 @@
+---
+name: deal-structuring
+description: 'name: deal-structuring'
+---
+
 # Deal Structuring
 
 name: deal-structuring

@@ -1,3 +1,9 @@
+---
+name: docs
+description: A Claude Code skill for managing Architecture Decision Records (ADRs)
+  using the git-adr CLI.
+---
+
 # git-adr Claude Code Skill
 
 A Claude Code skill for managing Architecture Decision Records (ADRs) using the git-adr CLI.

@@ -1,4 +1,9 @@
 ---
+name: product-designer
+description: '> Kullanıcı odaklı dijital ürün tasarımı ve deneyim stratejisi.'
+---
+
+---
 name: product_designer
 router_kit: FullStackKit
 description: Kullanıcı deneyimi (UX), arayüz tasarımı (UI) ve ürün stratejisi geliştirme.

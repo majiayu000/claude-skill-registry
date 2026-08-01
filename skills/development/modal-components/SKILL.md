@@ -1,3 +1,9 @@
+---
+name: modal-components
+description: 'CRITICAL: All modals MUST use the global Modal component with the correct
+  API'
+---
+
 # Modal Components Skill
 
 **CRITICAL: All modals MUST use the global Modal component with the correct API**

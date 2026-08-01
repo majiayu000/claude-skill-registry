@@ -1,3 +1,8 @@
+---
+name: digital-twin-clinical-agent
+description: '---name: digital-twin-clinical-agent'
+---
+
 ---name: digital-twin-clinical-agent
 description: AI-powered patient digital twin creation for clinical trial simulation, treatment outcome prediction, and personalized medicine using real-world data and multi-omics integration.
 license: MIT

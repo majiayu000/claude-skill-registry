@@ -1,3 +1,10 @@
+---
+name: mcp-to-skill
+description: 'description: Convert any MCP server into a Claude Skill with 90% context
+  savings. Use this skill when converting an MCP server to a skill to reduce context
+  usage and improve performance.'
+---
+
 name: mcp-to-skill
 description: Convert any MCP server into a Claude Skill with 90% context savings. Use this skill when converting an MCP server to a skill to reduce context usage and improve performance.
 version: 1.0.0
@@ -155,7 +162,7 @@ Verify the config file:
 
 ### "TypeError: object _AsyncGeneratorContextManager can't be used in 'await' expression"
 
-This error has been fixed in recent versions. The issue occurred with improper async context manager handling. 
+This error has been fixed in recent versions. The issue occurred with improper async context manager handling.
 
 **Solution:** Ensure you're using the latest version of the converter:
 

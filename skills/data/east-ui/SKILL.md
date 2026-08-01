@@ -1,5 +1,12 @@
 ---
 name: east-ui
+description: 'UI component definitions for the East language. Use when building UIs
+  with @elaraai/east-ui. Triggers for: (1) Creating UI components with Stack, Box,
+  Grid, Card, Text, Button, (2) Building forms with'
+---
+
+---
+name: east-ui
 description: UI component definitions for the East language. Use when building UIs with @elaraai/east-ui. Triggers for: (1) Creating UI components with Stack, Box, Grid, Card, Text, Button, (2) Building forms with Input, Select, Checkbox, Switch, Slider, (3) Displaying data with Table, DataList, Chart, Badge, Tag, Stat, (4) Using overlays like Dialog, Drawer, Popover, Tooltip, Menu, (5) Working with UIComponentType, (6) Styling with variants (FontWeight, TextAlign, ColorScheme, Size).
 ---
 

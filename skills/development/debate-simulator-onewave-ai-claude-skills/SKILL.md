@@ -1,5 +1,11 @@
 ---
 name: debate-simulator
+description: 'Spin up 2-3 expert personas to debate any topic from different angles.
+  Structure: Opening statements, rebuttals, cross-examination, closing arguments.'
+---
+
+---
+name: debate-simulator
 description: Spin up 2-3 expert personas to debate any topic from different angles. Structure: Opening statements, rebuttals, cross-examination, closing arguments.
 ---
 

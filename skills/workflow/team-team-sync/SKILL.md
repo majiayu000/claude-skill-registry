@@ -1,5 +1,10 @@
 ---
 name: team-team-sync
+description: Generate meeting agendas and action item tracking.
+---
+
+---
+name: team-team-sync
 description: "[Team] Generate meeting agendas and facilitate team coordination. Use when preparing standups, sprint reviews, or team meetings. Triggers on keywords like "standup", "team sync", "meeting agenda", "daily", "sprint review"."
 argument-hint: "daily | weekly | sprint-review | sprint-planning"
 infer: true

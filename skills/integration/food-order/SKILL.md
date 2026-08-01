@@ -1,5 +1,11 @@
 ---
 name: food-order
+description: Your own personal AI assistant. Any OS. Any Platform. The lobster way.
+  🦞
+---
+
+---
+name: food-order
 description: Reorder Foodora orders + track ETA/status with ordercli. Never confirm without explicit user approval. Triggers: order food, reorder, track ETA.
 homepage: https://ordercli.sh
 metadata: {"openclaw":{"emoji":"🥡","requires":{"bins":["ordercli"]},"install":[{"id":"go","kind":"go","module":"github.com/steipete/ordercli/cmd/ordercli@latest","bins":["ordercli"],"label":"Install ordercli (go)"}]}}

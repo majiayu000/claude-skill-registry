@@ -1,5 +1,11 @@
 ---
 name: azure-cosmos-ts
+description: Data plane SDK for Azure Cosmos DB NoSQL API operations — CRUD on documents,
+  queries, bulk operations.
+---
+
+---
+name: azure-cosmos-ts
 description: |
   Azure Cosmos DB JavaScript/TypeScript SDK (@azure/cosmos) for data plane operations. Use for CRUD operations on documents, queries, bulk operations, and container management. Triggers: "Cosmos DB", "@azure/cosmos", "CosmosClient", "document CRUD", "NoSQL queries", "bulk operations", "partition key", "container.items".
 package: @azure/cosmos
@@ -19,7 +25,7 @@ Data plane SDK for Azure Cosmos DB NoSQL API operations — CRUD on documents, q
 npm install @azure/cosmos @azure/identity
 ```
 
-**Current Version**: 4.9.0  
+**Current Version**: 4.9.0
 **Node.js**: >= 20.0.0
 
 ## Environment Variables
@@ -355,7 +361,7 @@ const { resource, etag } = await container
 
 if (resource && etag) {
   resource.price = 899.99;
-  
+
   try {
     // Replace only if ETag matches
     await container.item("product-1", "electronics").replace(resource, {
@@ -379,27 +385,27 @@ import {
   Container,
   Item,
   Items,
-  
+
   // Operations
   OperationInput,
   BulkOperationType,
   PatchOperation,
-  
+
   // Queries
   SqlQuerySpec,
   SqlParameter,
   FeedOptions,
-  
+
   // Partition Keys
   PartitionKeyDefinition,
   PartitionKeyDefinitionVersion,
   PartitionKeyKind,
-  
+
   // Responses
   ItemResponse,
   FeedResponse,
   ResourceResponse,
-  
+
   // Errors
   ErrorResponse,
 } from "@azure/cosmos";

@@ -1,3 +1,8 @@
+---
+name: gaap-standards
+description: 'description: Key US GAAP standards — ASC 606, 842, 350, 805'
+---
+
 # US GAAP Standards
 
 name: gaap-standards

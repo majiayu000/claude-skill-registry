@@ -1,5 +1,11 @@
 ---
 name: testing-playwright
+description: 'Apply when writing end-to-end tests: user flows, cross-browser testing,
+  visual regression, and API testing.'
+---
+
+---
+name: testing-playwright
 description: Apply when writing end-to-end tests: user flows, cross-browser testing, visual regression, and API testing.
 version: 1.0.0
 tokens: ~650

@@ -1,5 +1,11 @@
 ---
 name: streamdeck-lab
+description: Iterate, evaluate, generate dynamic pages, and push context-aware layouts
+  to Stream Deck.
+---
+
+---
+name: streamdeck-lab
 description: >
   Iterate, evaluate, generate dynamic pages, and push context-aware layouts to Stream Deck.
 triggers:

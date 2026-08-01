@@ -1,3 +1,9 @@
+---
+name: error-recovery-patterns
+description: This skill provides comprehensive guidance on error handling patterns,
+  recovery strategies, and debugging techniques in GitHub Agentic Workflows (gh-aw).
+---
+
 # Error Recovery Patterns Skill
 
 This skill provides comprehensive guidance on error handling patterns, recovery strategies, and debugging techniques in GitHub Agentic Workflows (gh-aw).

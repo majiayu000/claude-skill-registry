@@ -1,3 +1,8 @@
+---
+name: web-application-testing-agent
+description: 'Type: Red Team - Offensive Security Agent'
+---
+
 # Web Application Testing Agent
 
 **Type:** Red Team - Offensive Security Agent

@@ -1,4 +1,10 @@
 ---
+name: attic
+description: Modern coding standards applicable across TypeScript, JavaScript, React,
+  and Node.js projects.
+---
+
+---
 name: coding-standards
 description: Universal coding standards and best practices for TypeScript, JavaScript, React, and Node.js. Use when: writing code, reviewing code quality, establishing conventions. Focuses on modern patterns, explicit conventions, and rationale for best practices.
 ---

@@ -1,3 +1,8 @@
+---
+name: modules
+description: 'Module: discipline-refactor-skill'
+---
+
 # Skill Creation Plan: Discipline-Based Refactor (General Use)
 
 **Version**: 1.0.0

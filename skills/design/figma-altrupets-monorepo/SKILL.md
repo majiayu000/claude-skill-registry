@@ -1,3 +1,8 @@
+---
+name: figma
+description: '| ID | figma-dev-mode |'
+---
+
 # 🎨 Skill: Figma Dev Mode Integration
 
 ## 📋 Metadata

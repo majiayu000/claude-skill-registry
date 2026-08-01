@@ -1,3 +1,8 @@
+---
+name: claims-appeals
+description: This skill implements the Claims Appeals workflow using Anthropic's Claude.
+---
+
 <!--
 # COPYRIGHT NOTICE
 # This file is part of the "Universal Biomedical Skills" project.

@@ -1,5 +1,10 @@
 ---
 name: monitor-security
+description: 'This skill is always-on. It:'
+---
+
+---
+name: monitor-security
 description: >
   Nightly self-hack orchestrator and continuous security monitoring for embry-os.
   Four-tier probe system: T0 deterministic (Semgrep, pip-audit, gitleaks), T0.5

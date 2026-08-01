@@ -1,5 +1,13 @@
 ---
 name: numpy-polynomial
+description: NumPy's polynomial package provides a modern, class-based API for handling
+  power series. It replaces the legacy poly1d conventions with objects that handle
+  domain scaling, root finding, and advanced orthogonal polynomials (Chebyshev, Legendre)
+  for numerical stability.
+---
+
+---
+name: numpy-polynomial
 description: Modern polynomial API for fitting, root finding, and working with orthogonal series like Chebyshev and Legendre. Triggers: polynomial, polyfit, Chebyshev, Legendre, root finding.
 ---
 

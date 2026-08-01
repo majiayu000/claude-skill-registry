@@ -1,5 +1,11 @@
 ---
 name: rocha-reviewer
+description: You are a code review orchestrator. Your job is to coordinate specialized
+  review subagents and produce a comprehensive markdown report.
+---
+
+---
+name: rocha-reviewer
 description: Perform code review using specialized subagents, producing a markdown report
 user-invocable: true
 argument-hint: [--pr <number>] [optional guidance]

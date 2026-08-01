@@ -1,3 +1,8 @@
+---
+name: component-catalog
+description: 'name: component-catalog'
+---
+
 ﻿---
 name: component-catalog
 description: 组件目录，列出所有BTC组件、使用示例、推荐组件选择
@@ -30,7 +35,7 @@ BtcFilterTableGroup: 筛选表格
 
 BtcDoubleLeftGroup: 双左侧布局
   用途: 三级结构（如仓库-库区-库位）
-  
+
 BtcTable: 表格
 BtcPagination: 分页
 
@@ -80,7 +85,7 @@ BtcNotification: 通知
 需要表单？
   弹窗表单 → BtcUpsert
   独立表单 → BtcForm
-  
+
 需要上传？
   → BtcUpload, BtcImportBtn
 

@@ -1,5 +1,11 @@
 ---
 name: vercel-kv-database-rules
+description: You are a coding standards expert specializing in vercel kv database
+  rules.
+---
+
+---
+name: vercel-kv-database-rules
 description: Defines how to interact with Vercel's KV database for storing and retrieving session and application data.
 version: 1.0.0
 model: sonnet

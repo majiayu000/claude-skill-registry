@@ -1,5 +1,12 @@
 ---
 name: abtesting-analysis
+description: This skill enables detailed analysis of A/B test results, including uplift
+  calculations, statistical significance interpretation, evaluation of long-run effects,
+  detection of Simpson's paradox, and assessment of novelty effects to inform decisions.
+---
+
+---
+name: abtesting-analysis
 cluster: abtesting
 description: "Results: uplift calculation, significance interpretation, long-run effects, Simpson\'s paradox, novelty effect"
 tags: ["analysis","uplift","novelty-effect","decision"]

@@ -1,5 +1,12 @@
 ---
 name: writing-guide
+description: 'Use when creating or reviewing technical documentation. Provides guidelines
+  for natural, readable Japanese writing without AI-generated artifacts. Triggers:
+  (1) creating technical documents or READMEs'
+---
+
+---
+name: writing-guide
 description: Use when creating or reviewing technical documentation. Provides guidelines for natural, readable Japanese writing without AI-generated artifacts. Triggers: (1) creating technical documents or READMEs, (2) proofreading or reviewing existing documents, (3) writing blog posts or technical explanations.
 ---
 

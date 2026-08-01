@@ -1,5 +1,12 @@
 ---
 name: team-workflow
+description: Deterministic team development workflow for Claude Code. Enforces a mandatory
+  sequence of phases (Setup → Brainstorm → Plan → Execute → Quality Check → Ship)
+  with Linear integration, TDD requirements,
+---
+
+---
+name: team-workflow
 description: Deterministic team development workflow for Claude Code. Enforces a mandatory sequence of phases (Setup → Brainstorm → Plan → Execute → Quality Check → Ship) with Linear integration, TDD requirements, and quality gates. Activates when working on issues/tasks, when user mentions Linear issues (e.g., ENG-123), when starting development work, or when preparing to ship code. Commands: /team:task, /team:quality-check, /team:ship.
 ---
 
@@ -35,7 +42,7 @@ Run all quality gates. Blocks PR creation on failure.
 
 Gates:
 - `npm test` - ZERO failures
-- `npm run lint` - ZERO errors  
+- `npm run lint` - ZERO errors
 - `npm run typecheck` - ZERO errors
 - `/code-review` - ZERO high-confidence (≥80%) issues
 

@@ -1,5 +1,13 @@
 ---
 name: unsloth-core
+description: Unsloth-core provides the foundational framework for accelerating Large
+  Language Model (LLM) fine-tuning. It leverages specialized kernels and optimized
+  gradient checkpointing to achieve up to 2x faster native inference and significant
+  VRAM savings compared to standard Hugging Face implementations.
+---
+
+---
+name: unsloth-core
 description: Core fundamentals of Unsloth for fast LLM fine-tuning, covering FastLanguageModel setup, optimized gradient checkpointing, and native inference acceleration (triggers: unsloth, FastLanguageModel, from_pretrained, get_peft_model, for_inference, gradient checkpointing).
 ---
 

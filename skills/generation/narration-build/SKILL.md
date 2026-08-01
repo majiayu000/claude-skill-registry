@@ -1,3 +1,8 @@
+---
+name: narration-build
+description: Generate voice narration scripts and audio files using ElevenLabs API.
+---
+
 # Narration Build
 
 Generate voice narration scripts and audio files using ElevenLabs API.

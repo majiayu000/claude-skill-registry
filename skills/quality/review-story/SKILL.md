@@ -1,3 +1,9 @@
+---
+name: review-story
+description: 'description: Use to perform comprehensive test architecture review with
+  quality gate decision. Creates both story updates and detailed gate files.'
+---
+
 ﻿---
 name: review-story
 version: 1.0.0

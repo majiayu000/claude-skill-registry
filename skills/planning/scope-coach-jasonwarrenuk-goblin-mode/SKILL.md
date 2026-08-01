@@ -1,5 +1,12 @@
 ---
 name: scope-coach
+description: 'Anti-scope-creep skill. Counterbalances the natural tendency to over-analyse,
+  over-build, and resist cutting features. Forces the question: "What''s the smallest
+  thing that delivers value?"'
+---
+
+---
+name: scope-coach
 description: Anti-scope-creep. Forces the question: what is the smallest thing that delivers value?
 user-invocable: false
 effort: low

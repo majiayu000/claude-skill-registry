@@ -1,3 +1,8 @@
+---
+name: claude-oneshot2001-omnisight-dev
+description: '> Claude Skill for OMNISIGHT ACAP Development'
+---
+
 # OMNISIGHT Development Skill
 
 > **Claude Skill for OMNISIGHT ACAP Development**

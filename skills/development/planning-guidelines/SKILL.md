@@ -1,5 +1,12 @@
 ---
 name: planning-guidelines
+description: 'Core planning principles for Portfolio Buddy 2 development. Use when:
+  planning any feature implementation, modification, or refactoring. Ensures code
+  preservation, mobile/desktop optimization, and tho'
+---
+
+---
+name: planning-guidelines
 description: Core planning principles for Portfolio Buddy 2 development. Use when: planning any feature implementation, modification, or refactoring. Ensures code preservation, mobile/desktop optimization, and thorough requirement gathering.
 ---
 

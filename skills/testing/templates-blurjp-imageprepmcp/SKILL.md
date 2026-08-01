@@ -1,3 +1,9 @@
+---
+name: templates
+description: Use this template for static analysis tools (Semgrep, CodeQL), web tools
+  (Burp Suite), and similar standalone tools.
+---
+
 # Tool Skill Template
 
 Use this template for static analysis tools (Semgrep, CodeQL), web tools (Burp Suite), and similar standalone tools.

@@ -1,5 +1,10 @@
 ---
 name: ffmpeg-noise-reduction
+description: 'MANDATORY: Always Use Backslashes on Windows for File Paths'
+---
+
+---
+name: ffmpeg-noise-reduction
 description: Complete FFmpeg noise reduction and denoising for video and audio. PROACTIVELY activate for: (1) Video denoising (nlmeans, hqdn3d, vaguedenoiser), (2) Hardware-accelerated denoising (nlmeans_opencl, nlmeans_vulkan), (3) Audio noise reduction (afftdn, anlmdn), (4) Film grain removal, (5) Low-light footage enhancement, (6) Compression artifact removal, (7) Broadcast noise reduction, (8) Clean audio recordings. Provides: Denoising filters, parameter tuning, hardware acceleration, quality/speed tradeoffs.
 ---
 

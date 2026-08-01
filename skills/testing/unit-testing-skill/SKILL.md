@@ -1,4 +1,10 @@
 ---
+name: unit-testing-skill
+description: Test individual RAG components in isolation using mocking and dependency
+  injection.
+---
+
+---
 name: unit-testing
 version: 1.0
 last_updated: 2025-12-04

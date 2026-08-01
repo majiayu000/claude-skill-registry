@@ -1,5 +1,10 @@
 ---
 name: strategy-communication
+description: 'This skill supports three modes: Create, Update, and Find.'
+---
+
+---
+name: strategy-communication
 description: Create or update a strategy communication package
 argument-hint: [strategy or initiative name] or [update path/to/communication.md]
 ---

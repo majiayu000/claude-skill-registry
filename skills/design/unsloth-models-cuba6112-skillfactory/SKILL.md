@@ -1,5 +1,12 @@
 ---
 name: unsloth-models
+description: 'Guidance on selecting and configuring supported model architectures
+  like Llama 4, DeepSeek-R1, and Qwen3. Triggers: llama 4, deepseek-r1, qwen3, gemma
+  3, model selection, instruct vs base.'
+---
+
+---
+name: unsloth-models
 description: Guidance on selecting and configuring supported model architectures like Llama 4, DeepSeek-R1, and Qwen3. Triggers: llama 4, deepseek-r1, qwen3, gemma 3, model selection, instruct vs base.
 ---
 

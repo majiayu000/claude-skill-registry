@@ -1,3 +1,9 @@
+---
+name: code-translation
+description: แปลง code ระหว่างภาษา programming ต่างๆ โดยรักษา logic และใช้ idioms
+  ที่เหมาะสมกับภาษาปลายทาง
+---
+
 # 🌐 Code Translation Skill
 
 ---
@@ -76,7 +82,7 @@ const filtered = squares.filter(x => x > 10);
 // React
 function Counter() {
   const [count, setCount] = useState(0);
-  
+
   return (
     <button onClick={() => setCount(count + 1)}>
       Count: {count}

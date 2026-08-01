@@ -1,3 +1,9 @@
+---
+name: fixtures-generator
+description: Generates valid and invalid JSON fixtures for CommandDTO and DecisionDTO
+  based on current contract schemas.
+---
+
 # Fixtures Generator Skill
 
 ## Inputs

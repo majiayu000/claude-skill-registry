@@ -1,3 +1,8 @@
+---
+name: workflow-orchestration
+description: '> Design and execute typed, multi-step workflows with approval gates.'
+---
+
 # Workflow Orchestration Skill
 
 > Design and execute typed, multi-step workflows with approval gates.

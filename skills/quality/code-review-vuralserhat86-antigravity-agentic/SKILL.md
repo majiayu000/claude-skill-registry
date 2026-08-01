@@ -1,4 +1,9 @@
 ---
+name: code-review
+description: '> Etkili kod inceleme ve kalite kontrol rehberi.'
+---
+
+---
 name: code_review
 router_kit: FullStackKit
 description: PR review, code smell detection, best practice kontrolü. ⚠️ Kod incelerken kullan. Deliverable kontrolü için → quality-validator, doküman review için → peer-review.

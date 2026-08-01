@@ -1,5 +1,12 @@
 ---
 name: rr-system
+description: System setup, tool information, and AI configuration management for development
+  environments. Use when setting up new machines, explaining available tools (shell-config,
+  ai-rules, wt), managing AI ass
+---
+
+---
+name: rr-system
 description: System setup, tool information, and AI configuration management for development environments. Use when setting up new machines, explaining available tools (shell-config, ai-rules, wt), managing AI assistant configurations (Claude/Codex/Gemini/OpenCode), checking system configuration, or troubleshooting environment issues. Also triggers when working with configuration files (.json, .toml, .fish, .zsh, .bash), Brewfiles, or installation scripts. Example triggers: "Set up my development environment", "Install tools on new machine", "Configure AI assistant", "What tools do I have?", "Update my shell config", "Add MCP server to Claude", "Check system configuration"
 ---
 

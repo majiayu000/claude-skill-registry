@@ -1,3 +1,9 @@
+---
+name: skills-oleksandr-rud-aura-sdd
+description: 'actor: product-ops | mandate: Capture requirements and acceptance criteria
+  | bounds: No technical implementation details'
+---
+
 # Product PRD Skill
 
 product-prd

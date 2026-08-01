@@ -1,5 +1,11 @@
 ---
 name: test
+description: Run stateless tests from tests/queries/0stateless/ or integration tests
+  from tests/integration/.
+---
+
+---
+name: test
 description: Run ClickHouse stateless or integration tests. Use when the user wants to run or execute tests.
 argument-hint: [test-name] [--flags]
 disable-model-invocation: false

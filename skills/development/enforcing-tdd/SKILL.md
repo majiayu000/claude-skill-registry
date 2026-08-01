@@ -1,5 +1,12 @@
 ---
 name: enforcing-tdd
+description: 'Use when implementing features, fixing bugs, or making code changes.
+  Ensures scope is defined before coding, then enforces RED → GREEN → REFACTOR test
+  discipline. Triggers: ''implement'', ''add'', ''build'''
+---
+
+---
+name: enforcing-tdd
 description: Use when implementing features, fixing bugs, or making code changes. Ensures scope is defined before coding, then enforces RED → GREEN → REFACTOR test discipline. Triggers: 'implement', 'add', 'build', 'create', 'fix', 'change', 'feature', 'bug'.
 allowed-tools: '*'
 ---

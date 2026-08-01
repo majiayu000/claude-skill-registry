@@ -1,3 +1,8 @@
+---
+name: taskmaster-skill
+description: '> Agent-optimized task management system for AgentFabric.'
+---
+
 # TaskMaster Skill
 
 > Agent-optimized task management system for AgentFabric.

@@ -1,3 +1,8 @@
+---
+name: commands-tencentcloudbase-cloudbase-mcp
+description: Add a new skill (prompt rule) to the CloudBase AI Toolkit project.
+---
+
 # Add Skill
 
 ## Function
@@ -28,23 +33,23 @@ Create the rule file(s) in `config/rules/{skill-id}/` directory:
      description: Brief description of the skill
      alwaysApply: false
      ---
-     
+
      # Skill Title
-     
+
      Brief description of when to use this skill.
-     
+
      ## When to use this skill
-     
+
      Use this skill when...
-     
+
      ## How to use this skill (for a coding agent)
-     
+
      1. First step
      2. Second step
      ...
-     
+
      ## Core Knowledge
-     
+
      Detailed knowledge and guidelines...
      ```
 

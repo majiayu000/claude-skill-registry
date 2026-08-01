@@ -1,5 +1,12 @@
 ---
 name: syncing-branch
+description: 'Standard workflow for all sync operations (''sync branch'', ''pull latest'',
+  ''get latest changes'', ''sync with upstream''): replaces bash-based git fetch/pull/merge
+  workflows—detects fork vs origin, fetches'
+---
+
+---
+name: syncing-branch
 description: Standard workflow for all sync operations ('sync branch', 'pull latest', 'get latest changes', 'sync with upstream'): replaces bash-based git fetch/pull/merge workflows—detects fork vs origin, fetches from correct remotes, safely merges with fast-forward checks. Canonical branch synchronization implementation for git-workflows.
 ---
 

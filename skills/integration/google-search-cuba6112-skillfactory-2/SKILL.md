@@ -1,5 +1,12 @@
 ---
 name: google-search
+description: Google Search grounding allows LLM applications to access real-time information
+  and provide verifiable citations. This skill covers both direct tool integration
+  (like Gemini's googlesearch) and custom
+---
+
+---
+name: google-search
 description: Integration patterns for web search grounding, including query operator usage, API-based search orchestration, and citation metadata mapping. Triggers: google-search, grounding, search-api, citations, search-operators, web-search.
 ---
 
@@ -14,12 +21,12 @@ Google Search grounding allows LLM applications to access real-time information 
 - **Niche Research**: Using operators like `site:` to restrict information to specific domains.
 
 ## Decision Tree
-1. Does the model support built-in grounding (e.g., Gemini)? 
+1. Does the model support built-in grounding (e.g., Gemini)?
    - YES: Enable `google_search` tool.
    - NO: Use Custom Search API.
-2. Do you need to restrict search to specific sites? 
+2. Do you need to restrict search to specific sites?
    - YES: Use `site:example.com` operator (no spaces).
-3. Do you need to exclude terms? 
+3. Do you need to exclude terms?
    - YES: Use `-term` operator.
 
 ## Workflows

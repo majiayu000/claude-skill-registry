@@ -1,3 +1,8 @@
+---
+name: spatial-transcriptomics
+description: 'Author: MD BABU MIA, PhD'
+---
+
 # Spatial Transcriptomics Skill
 
 **Version:** 1.0.0

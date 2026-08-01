@@ -1,4 +1,10 @@
 ---
+name: workflow-workflow
+description: Automate {{WORKFLOW}} tasks. Use when {{TRIGGER_CONTEXTS}}. Supports
+  {{CAPABILITIES}}.
+---
+
+---
 name: {{WORKFLOW}}-workflow
 description: Automate {{WORKFLOW}} tasks. Use when {{TRIGGER_CONTEXTS}}. Supports {{CAPABILITIES}}.
 ---

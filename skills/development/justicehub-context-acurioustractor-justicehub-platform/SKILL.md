@@ -1,3 +1,9 @@
+---
+name: justicehub-context
+description: This skill ensures Claude always works in the JusticeHub codebase located
+  at /Users/benknight/Code/JusticeHub and never accidentally works in the wrong repository.
+---
+
 # JusticeHub Context Skill
 
 ## Purpose

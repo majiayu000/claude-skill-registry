@@ -1,5 +1,11 @@
 ---
 name: cloudflare-browser-rendering
+description: Production-ready knowledge domain for building browser automation workflows
+  with Cloudflare Browser Rendering.
+---
+
+---
+name: cloudflare-browser-rendering
 description: Cloudflare Browser Rendering with Puppeteer/Playwright. Use for screenshots, PDFs, web scraping, or encountering rendering errors, timeout issues, memory exceeded.
 
   Keywords: browser rendering cloudflare, @cloudflare/puppeteer, @cloudflare/playwright,

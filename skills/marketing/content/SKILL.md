@@ -1,7 +1,12 @@
+---
+name: content
+description: 'Department: Content'
+---
+
 # Content Department Skill
 
-**Skill**: content  
-**Department**: Content  
+**Skill**: content
+**Department**: Content
 **Version**: 1.0.0
 
 ---
@@ -205,5 +210,5 @@ Specify preferences in your request:
 
 ---
 
-*Part of Agentic Creator OS - MCP-Native Edition*  
+*Part of Agentic Creator OS - MCP-Native Edition*
 *For support, see department documentation*

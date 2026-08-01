@@ -1,3 +1,8 @@
+---
+name: in-app-purchases
+description: '| ID | flutter-iap |'
+---
+
 # 💰 Skill: In-App Purchases (IAP)
 
 ## 📋 Metadata

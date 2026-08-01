@@ -1,3 +1,9 @@
+---
+name: smart-routing
+description: Automatically determine the best location, handler, or approach for files,
+  requests, and tasks.
+---
+
 # 🛤️ Smart Routing Skill
 
 ---
@@ -111,7 +117,7 @@ function routeFile(filename, purpose) {
   if (filename.endsWith('.test.ts')) {
     return 'alongside source';
   }
-  
+
   // By purpose
   const routes = {
     'component': 'src/components/',
@@ -121,7 +127,7 @@ function routeFile(filename, purpose) {
     'type': 'src/types/',
     'api': 'src/api/'
   };
-  
+
   return routes[purpose] || 'src/';
 }
 ```

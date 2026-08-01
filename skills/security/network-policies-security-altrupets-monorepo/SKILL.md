@@ -1,3 +1,8 @@
+---
+name: network-policies-security
+description: '| ID | sre-network-policies-security |'
+---
+
 # 🔐 Skill: Network Policies & Security
 
 ## 📋 Metadata

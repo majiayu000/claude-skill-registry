@@ -1,5 +1,11 @@
 ---
 name: turbo
+description: 'Hotwire Turbo provides SPA-like speed with server-rendered HTML. No
+  JavaScript to write. Three components work together:'
+---
+
+---
+name: turbo
 description: Hotwire Turbo for Symfony UX -- SPA-like speed with zero JavaScript. Covers Drive (full-page navigation), Frames (partial page sections), and Streams (multi-target updates). Use when building ajax navigation, lazy-loaded page sections, inline editing, pagination without reload, modals loaded from the server, flash messages via streams, real-time updates via Mercure/SSE, or multi-section page updates. Code triggers: turbo-frame, turbo-stream, data-turbo-frame, data-turbo, data-turbo-action, turbo-stream-source, TurboStreamResponse, <twig:Turbo:Frame>, <twig:Turbo:Stream:Append>, <twig:Turbo:Stream:Replace>, turbo:before-fetch-request. Also trigger when the user asks "how to update part of the page without reload", "how to make navigation feel like SPA", "how to lazy-load a section", "how to do inline editing", "how to push real-time updates from server", "how to use Mercure with Turbo". Do NOT trigger for client-side JS behavior (use stimulus), server-rendered reactive components (use live-component), or reusable static UI (use twig-component).
 license: MIT
 metadata:

@@ -1,3 +1,8 @@
+---
+name: meta-skill
+description: '- Commands: You type /command to trigger'
+---
+
 ## Skills vs Commands
 
 - **Commands**: You type `/command` to trigger

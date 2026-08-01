@@ -1,5 +1,12 @@
 ---
 name: render-glb
+description: 'Render GLB 3D models to PNG images for visual verification. Use when
+  you need to SEE your generated 3D model, verify geometry, check visual correctness,
+  or show results to users. Triggers on: render G'
+---
+
+---
+name: render-glb
 description: Render GLB 3D models to PNG images for visual verification. Use when you need to SEE your generated 3D model, verify geometry, check visual correctness, or show results to users. Triggers on: render GLB, preview model, visualize 3D, see my model, check geometry, visual verification, screenshot model, model preview.
 ---
 

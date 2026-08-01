@@ -1,3 +1,8 @@
+---
+name: skill-a
+description: Test skill A from test-pack for unit testing.
+---
+
 # skill-a
 
 Test skill A from test-pack for unit testing.

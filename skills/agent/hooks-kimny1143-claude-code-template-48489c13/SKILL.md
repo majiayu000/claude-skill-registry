@@ -1,3 +1,8 @@
+---
+name: hooks
+description: Claude Code の Hook 作成・管理ガイド。
+---
+
 # hooks - Claude Code Hooks
 
 Claude Code の Hook 作成・管理ガイド。

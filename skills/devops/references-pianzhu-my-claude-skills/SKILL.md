@@ -1,3 +1,8 @@
+---
+name: references
+description: '> Inherits: All rules from rules-universal.md'
+---
+
 # Skill Audit Rules
 
 > **Inherits**: All rules from `rules-universal.md`

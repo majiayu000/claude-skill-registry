@@ -1,3 +1,8 @@
+---
+name: mobile-test-skill
+description: Archived skill guidance for mobile-test-skill.
+---
+
 移动端测试技能
 ---
 1.冒烟测试—Monkey自动化
@@ -110,7 +115,7 @@ Android内存泄露的检查工具DDMS+MAT
 > • 外网测试主要覆盖到wifi\2G\3G、net\wap、电 信\移动\联通， 所有可能的组合进行测试。
 >
 >  • 原则：
->  
+>
     • 1.尽可能全面覆盖用户的使用场景,测试用例中需 要包含不同网络排列组合的各种可能；
     • 2.还有模拟信号被屏蔽时候，客户端的影响等。
     • 3.还要做外部场景测试，在高山、丘陵、火车上 等特殊环境下进行全面测试。

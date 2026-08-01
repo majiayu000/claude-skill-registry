@@ -1,5 +1,10 @@
 ---
 name: gate-2-type-generation
+description: 'STOP AND CHECK:'
+---
+
+---
+name: gate-2-type-generation
 description: Gate 2 validation: TypeScript type generation from OpenAPI spec
 ---
 

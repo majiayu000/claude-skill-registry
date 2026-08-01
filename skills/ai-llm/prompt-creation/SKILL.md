@@ -1,5 +1,13 @@
 ---
 name: prompt-creation
+description: 'Create standardized context prompts for AI assistants in prompts/ directory.
+  Two types: technology-stack (project config with versions/policies) or behavioral
+  (assistant persona/rules). Enforces context gathering, validates schema compliance,
+  ensures token efficiency. Uses JSON or markdown frontmatter format.'
+---
+
+---
+name: prompt-creation
 description: Create context prompts for AI assistants in JSON or markdown frontmatter. Enforces mandatory context gathering (10 questions), validates schema compliance, ensures token efficiency. All content must be in English. Two types: technology-stack (project config) or behavioral (assistant persona). Trigger: When creating context prompts for AI assistants or documenting project configuration.
 skills:
   - critical-partner

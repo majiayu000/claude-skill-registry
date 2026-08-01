@@ -1,9 +1,0 @@
-{
-  "name": "rails-aisecurity",
-  "repo": "zerobearing2/rails-ai",
-  "category": "data",
-  "description": "CRITICAL - Use when securing Rails applications - XSS, SQL injection, CSRF, file uploads, command injection prevention",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:15.302840Z",
-  "dir_name": "rails-aisecurity"
-}

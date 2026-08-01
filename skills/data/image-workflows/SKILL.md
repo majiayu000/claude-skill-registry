@@ -1,5 +1,12 @@
 ---
 name: image-workflows
+description: Create and execute image workflows using floimg. Use when the user needs
+  to generate AI images, transform existing images (resize, caption, filters), or
+  create multi-step pipelines. Also handles chart
+---
+
+---
+name: image-workflows
 description: Create and execute image workflows using floimg. Use when the user needs to generate AI images, transform existing images (resize, caption, filters), or create multi-step pipelines. Also handles charts, diagrams, QR codes, and screenshots. Trigger words: image, picture, photo, illustration, hero, thumbnail, resize, transform, caption, watermark, generate, AI, DALL-E, chart, diagram, QR, screenshot.
 allowed-tools: mcp__floimg__generate_image, mcp__floimg__transform_image, mcp__floimg__save_image, mcp__floimg__run_pipeline, mcp__floimg__analyze_image, Bash
 ---

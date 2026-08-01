@@ -1,5 +1,11 @@
 ---
 name: ci-github-actions
+description: 'Apply when setting up CI/CD pipelines: automated testing, linting, building,
+  and deployment with GitHub Actions.'
+---
+
+---
+name: ci-github-actions
 description: Apply when setting up CI/CD pipelines: automated testing, linting, building, and deployment with GitHub Actions.
 version: 1.1.0
 tokens: ~700

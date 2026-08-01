@@ -1,5 +1,11 @@
 ---
 name: gate-4b-integration-tests
+description: 'Purpose: Validate integration test quality, test data management, and
+  credential handling'
+---
+
+---
+name: gate-4b-integration-tests
 description: Gate 4b validation: Integration test creation and no-hardcoded-values enforcement
 ---
 

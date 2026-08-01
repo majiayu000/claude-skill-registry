@@ -1,5 +1,10 @@
 ---
 name: ui-ux-principles
+description: '> "Simplicity is the ultimate sophistication." - Leonardo da Vinci'
+---
+
+---
+name: ui-ux-principles
 description: Modern UI/UX: minimalist, keyboard-driven, accessible
 allowed-tools: Read, Grep, Write, Edit
 ---

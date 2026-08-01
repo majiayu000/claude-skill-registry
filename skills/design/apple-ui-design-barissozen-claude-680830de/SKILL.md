@@ -1,5 +1,12 @@
 ---
 name: apple-ui-design
+description: 'Apple-inspired clean, minimal, premium UI design. Use when building
+  modern interfaces requiring exceptional UX, clean aesthetics, or Apple-like polish.
+  Triggers on: clean UI, modern design, Apple styl'
+---
+
+---
+name: apple-ui-design
 description: Apple-inspired clean, minimal, premium UI design. Use when building modern interfaces requiring exceptional UX, clean aesthetics, or Apple-like polish. Triggers on: clean UI, modern design, Apple style, minimal, premium, user-friendly, UX.
 ---
 

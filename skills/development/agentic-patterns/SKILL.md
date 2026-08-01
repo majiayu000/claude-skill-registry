@@ -1,5 +1,12 @@
 ---
 name: agentic-patterns
+description: Design and operate multi-agent orchestration patterns (ReAct loops, evaluator-optimizer,
+  orchestrator-workers, tool routing) for LLM systems. Use when building or debugging
+  agent workflows, tool-use l
+---
+
+---
+name: agentic-patterns
 description: Design and operate multi-agent orchestration patterns (ReAct loops, evaluator-optimizer, orchestrator-workers, tool routing) for LLM systems. Use when building or debugging agent workflows, tool-use loops, or multi-step task delegation; triggers: agentic, multi-agent, orchestration, ReAct, evaluator-optimizer, tool-use, handoff.
 ---
 

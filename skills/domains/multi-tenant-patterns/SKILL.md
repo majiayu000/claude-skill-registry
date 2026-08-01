@@ -1,3 +1,8 @@
+---
+name: multi-tenant-patterns
+description: '> Header-based multi-tenant authentication patterns.'
+---
+
 # Multi-Tenant Patterns Skill
 
 > Header-based multi-tenant authentication patterns.

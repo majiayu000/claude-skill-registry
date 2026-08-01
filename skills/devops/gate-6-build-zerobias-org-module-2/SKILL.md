@@ -1,5 +1,10 @@
 ---
 name: gate-6-build
+description: 'STOP AND CHECK:'
+---
+
+---
+name: gate-6-build
 description: Gate 6 validation: Build success and dependency locking
 ---
 

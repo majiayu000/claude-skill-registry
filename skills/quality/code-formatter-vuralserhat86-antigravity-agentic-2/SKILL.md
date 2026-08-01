@@ -1,4 +1,9 @@
 ---
+name: code-formatter
+description: '> Otomatik kod formatlama ve stil tutarlılığı rehberi.'
+---
+
+---
 name: code_formatter
 router_kit: FullStackKit
 description: Otomatik kod formatlama, Prettier/ESLint entegrasyonu ve kod stil tutarlılığı rehberi.

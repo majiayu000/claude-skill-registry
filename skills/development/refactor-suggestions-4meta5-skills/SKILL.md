@@ -1,5 +1,10 @@
 ---
 name: refactor-suggestions
+description: Inspect the repository for code changes and recommend refactors.
+---
+
+---
+name: refactor-suggestions
 description: Suggest refactors for modified code focusing on security, maintainability, readability,
 and functional programming purity.
 Use when: (1) reviewing changed functions for cleanup opportunities,

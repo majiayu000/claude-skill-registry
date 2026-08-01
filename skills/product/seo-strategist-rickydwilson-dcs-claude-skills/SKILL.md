@@ -1,4 +1,11 @@
 ---
+name: seo-strategist
+description: Strategic SEO planning and analysis toolkit for site-wide optimization,
+  keyword research, technical SEO audits, and competitive positioning. Complements
+  content-creator's on-page SEO with strategic pl
+---
+
+---
 
 # === CORE IDENTITY ===
 name: seo-strategist

@@ -1,3 +1,8 @@
+---
+name: epigenomics-methylgpt-agent
+description: '---name: epigenomics-methylgpt-agent'
+---
+
 ---name: epigenomics-methylgpt-agent
 description: AI-powered DNA methylation analysis using MethylGPT foundation models for epigenomic profiling, differential methylation detection, and cancer epigenome characterization.
 license: MIT

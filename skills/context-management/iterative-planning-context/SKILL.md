@@ -1,3 +1,8 @@
+---
+name: iterative-planning-context
+description: '> Compiler: skill-compiler/1.0.0'
+---
+
 # Iterative Planning Context Skill
 
 > Version: 1.0.0

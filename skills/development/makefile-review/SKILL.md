@@ -1,5 +1,12 @@
 ---
 name: makefile-review
+description: 'Audit Makefiles for duplication, portability, and idiomatic GNU Make
+  usage.Triggers: Makefile review, build system, GNU Make, portability, deduplication,pattern
+  rules, automatic variables, dependency'
+---
+
+---
+name: makefile-review
 description: |
 
 Triggers: makefile, make, automation, portability, review

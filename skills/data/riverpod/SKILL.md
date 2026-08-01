@@ -1,3 +1,8 @@
+---
+name: riverpod
+description: '| Atributo | Valor |'
+---
+
 # 🎨 Skill: State Management con Riverpod
 
 ## 📋 Metadata
@@ -121,13 +126,13 @@ lib/
 dependencies:
   flutter:
     sdk: flutter
-  
+
   # Riverpod para state management
   flutter_riverpod: ^2.4.9
   # O usa hooks_riverpod si prefieres hooks
   # hooks_riverpod: ^2.4.9
   # flutter_hooks: ^0.20.3
-  
+
   # Freezed para immutability (opcional pero recomendado)
   freezed_annotation: ^2.4.1
   json_annotation: ^4.8.1
@@ -137,7 +142,7 @@ dev_dependencies:
   build_runner: ^2.4.6
   freezed: ^2.4.5
   json_serializable: ^6.7.1
-  
+
   # Testing
   mockito: ^5.4.4
 ```
@@ -174,7 +179,7 @@ class MyApp extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     // Acceso a providers sin BuildContext
     final themeMode = ref.watch(themeModeProvider);
-    
+
     return MaterialApp(
       title: 'Riverpod App',
       theme: ThemeData.light(),
@@ -238,7 +243,7 @@ class CounterScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final count = ref.watch(counterProvider);
-    
+
     return Scaffold(
       body: Center(
         child: Text('Count: $count'),
@@ -306,7 +311,7 @@ class ProductsNotifier extends StateNotifier<ProductsState> {
 
   Future<void> loadProducts() async {
     state = state.copyWith(isLoading: true, error: null);
-    
+
     try {
       final products = await _repository.getProducts();
       state = state.copyWith(
@@ -371,13 +376,13 @@ final productDetailProvider = FutureProvider.family<Product, String>((ref, produ
 // Uso en widget
 class ProductDetailScreen extends ConsumerWidget {
   final String productId;
-  
+
   const ProductDetailScreen({required this.productId});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final productAsync = ref.watch(productDetailProvider(productId));
-    
+
     return Scaffold(
       appBar: AppBar(title: Text('Product Detail')),
       body: productAsync.when(
@@ -435,7 +440,7 @@ class ProductsScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final productsState = ref.watch(productsProvider);
-    
+
     // Ejecutar acción al montar el widget
     ref.listen<ProductsState>(productsProvider, (previous, next) {
       if (next.error != null) {
@@ -444,7 +449,7 @@ class ProductsScreen extends ConsumerWidget {
         );
       }
     });
-    
+
     return Scaffold(
       appBar: AppBar(title: Text('Products')),
       body: productsState.isLoading
@@ -473,7 +478,7 @@ class ProductsScreen extends ConsumerWidget {
 ```dart
 class OptimizedProductCard extends StatelessWidget {
   final Product product;
-  
+
   const OptimizedProductCard({required this.product});
 
   @override
@@ -520,12 +525,12 @@ class SearchProductsScreen extends HookConsumerWidget {
     // Hooks para estado local
     final searchController = useTextEditingController();
     final searchQuery = useState('');
-    
+
     // Provider que depende del query
     final searchResults = ref.watch(
       searchProductsProvider(searchQuery.value),
     );
-    
+
     // Effect para ejecutar búsqueda
     useEffect(() {
       final timer = Timer(Duration(milliseconds: 500), () {
@@ -533,7 +538,7 @@ class SearchProductsScreen extends HookConsumerWidget {
       });
       return timer.cancel;
     }, [searchController.text]);
-    
+
     return Scaffold(
       appBar: AppBar(
         title: TextField(
@@ -566,12 +571,12 @@ class SearchProductsScreen extends HookConsumerWidget {
 // Provider que se elimina automáticamente cuando no está en uso
 final tempDataProvider = FutureProvider.autoDispose<Data>((ref) async {
   final data = await fetchData();
-  
+
   // Limpieza al dispose
   ref.onDispose(() {
     debugPrint('Provider disposed');
   });
-  
+
   return data;
 });
 
@@ -590,18 +595,18 @@ final productDetailProvider = FutureProvider.autoDispose.family<Product, String>
 final cacheableProvider = FutureProvider.autoDispose<Data>((ref) async {
   // Mantener el provider vivo incluso si no hay listeners
   final link = ref.keepAlive();
-  
+
   // Opcionalmente, configurar un timer para limpiar después
   Timer? timer;
   ref.onDispose(() => timer?.cancel());
-  
+
   // Mantener cache por 5 minutos
   ref.onCancel(() {
     timer = Timer(Duration(minutes: 5), () {
       link.close();
     });
   });
-  
+
   return fetchData();
 });
 ```
@@ -622,7 +627,7 @@ final dioProvider = Provider<Dio>((ref) {
       receiveTimeout: Duration(seconds: 3),
     ),
   );
-  
+
   // Interceptors
   dio.interceptors.add(
     InterceptorsWrapper(
@@ -641,7 +646,7 @@ final dioProvider = Provider<Dio>((ref) {
       },
     ),
   );
-  
+
   return dio;
 });
 
@@ -704,22 +709,22 @@ void main() {
           .thenAnswer((_) async => mockProducts);
 
       final notifier = container.read(productsProvider.notifier);
-      
+
       // Iniciar carga
       final loadFuture = notifier.loadProducts();
-      
+
       // Verificar estado de loading
       expect(container.read(productsProvider).isLoading, true);
-      
+
       // Esperar a que complete
       await loadFuture;
-      
+
       // Verificar estado final
       final finalState = container.read(productsProvider);
       expect(finalState.isLoading, false);
       expect(finalState.products, mockProducts);
       expect(finalState.error, isNull);
-      
+
       verify(mockRepository.getProducts()).called(1);
     });
 
@@ -872,7 +877,7 @@ final authRepositoryProvider = Provider<AuthRepository>((ref) {
 class AuthNotifier extends StateNotifier<AuthState> {
   final AuthRepository _repository;
   AuthNotifier(this._repository) : super(AuthState.initial());
-  
+
   Future<void> login(String email, String password) async {
     // Lógica aquí
   }
@@ -951,6 +956,6 @@ final productDetailProvider = FutureProvider.family<Product, String>(
 
 ---
 
-**Versión:** 1.0.0  
+**Versión:** 1.0.0
 **Última actualización:** Diciembre 2025
 

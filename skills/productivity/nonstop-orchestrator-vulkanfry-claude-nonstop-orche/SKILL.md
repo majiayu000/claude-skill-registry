@@ -1,5 +1,12 @@
 ---
 name: nonstop-orchestrator
+description: 'NONSTOP v2.1 - Unstoppable task executor with ULTRATHINK planning, parallel
+  agents, and perfectionist verification. Full lib integration. Keywords: nonstop,
+  sprint, unstoppable, perfect, parallel, ult'
+---
+
+---
+name: nonstop-orchestrator
 description: NONSTOP v2.1 - Unstoppable task executor with ULTRATHINK planning, parallel agents, and perfectionist verification. Full lib integration. Keywords: nonstop, sprint, unstoppable, perfect, parallel, ultrathink
 ---
 

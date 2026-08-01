@@ -1,3 +1,9 @@
+---
+name: examples
+description: This is a production-ready skill that demonstrates all key concepts of
+  Jazz's Agent Skills system.
+---
+
 # Example: Complete Deployment Skill
 
 This is a production-ready skill that demonstrates all key concepts of Jazz's Agent Skills system.

@@ -1,3 +1,9 @@
+---
+name: archive
+description: Step-by-step guide for testing the launchd service skill on existing
+  nahuatl projects.
+---
+
 # Testing Guide: macos-launchd-service Skill
 
 Step-by-step guide for testing the launchd service skill on existing nahuatl projects.

@@ -1,5 +1,12 @@
 ---
 name: workout-domain
+description: Workout block model, types, and operations. Use when building workouts,
+  managing block kinds (strength/AMRAP/EMOM/Tabata/ForTime/cardio), handling sets/reps,
+  or working with workout persistence and be
+---
+
+---
+name: workout-domain
 description: Workout block model, types, and operations. Use when building workouts, managing block kinds (strength/AMRAP/EMOM/Tabata/ForTime/cardio), handling sets/reps, or working with workout persistence and benchmarks. Triggers: "workout", "block", "strength", "cardio", "AMRAP", "EMOM", "Tabata", "ForTime", "exercise", "set", "reps", "weight", "RIR", "timed block", "create workout", "build workout", "block kind", "discriminated union", "block result", "round", "interval", "benchmark", "template", "persist workout", "complete workout".
 ---
 

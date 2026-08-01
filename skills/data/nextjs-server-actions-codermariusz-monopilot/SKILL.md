@@ -1,5 +1,11 @@
 ---
 name: nextjs-server-actions
+description: When handling form submissions, data mutations, or any action that modifies
+  server-side data.
+---
+
+---
+name: nextjs-server-actions
 description: When handling form submissions, data mutations, or any action that modifies server-side data. **Version Context**: Next.js 16.0+ uses `useActionState` (replaces deprecated `useFormState`).
 version: 1.1.0
 tokens: ~550

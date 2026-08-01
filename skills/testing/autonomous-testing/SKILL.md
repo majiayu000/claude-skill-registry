@@ -1,3 +1,8 @@
+---
+name: autonomous-testing
+description: '> Compiler: manual (bootstrap)'
+---
+
 # Autonomous Testing Skill
 
 > Version: 1.0.0

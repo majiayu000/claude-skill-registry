@@ -1,3 +1,8 @@
+---
+name: agent-run
+description: 'Tags: agents, execution, claude-api, orchestration, layer2'
+---
+
 # agent.run
 
 **Version:** 0.1.0

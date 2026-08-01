@@ -1,5 +1,10 @@
 ---
 name: html-specific-rules
+description: You are a coding standards expert specializing in html specific rules.
+---
+
+---
+name: html-specific-rules
 description: Rules specific to HTML files, focusing on accessibility and Tailwind styling.
 version: 1.0.0
 model: sonnet

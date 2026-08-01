@@ -1,5 +1,10 @@
 ---
 name: cfn-redis-data-extraction
+description: Archived skill guidance for cfn-redis-data-extraction.
+---
+
+---
+name: cfn-redis-data-extraction
 description: Extract complete Redis coordination data from completed CFN Loop tasks and structure into comprehensive JSON analysis files
 version: 1.0.0
 author: CFN System

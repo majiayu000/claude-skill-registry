@@ -1,5 +1,10 @@
 ---
 name: handle-incomplete-tasks
+description: You are a coding standards expert specializing in handle incomplete tasks.
+---
+
+---
+name: handle-incomplete-tasks
 description: Configure the behaviour for the handler of incomplete tasks.
 version: 1.0.0
 model: sonnet

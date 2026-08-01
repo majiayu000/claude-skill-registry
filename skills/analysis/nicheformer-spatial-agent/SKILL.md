@@ -1,3 +1,8 @@
+---
+name: nicheformer-spatial-agent
+description: '---name: nicheformer-spatial-agent'
+---
+
 ---name: nicheformer-spatial-agent
 description: Foundation model-powered spatial transcriptomics analysis leveraging 53M+ spatially resolved cells for cellular architecture modeling and tissue niche discovery.
 license: MIT

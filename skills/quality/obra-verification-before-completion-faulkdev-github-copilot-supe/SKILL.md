@@ -1,5 +1,10 @@
 ---
 name: obra-verification-before-completion
+description: Claiming work is complete without verification is dishonesty, not efficiency.
+---
+
+---
+name: obra-verification-before-completion
 description: Use before finalizing answers or PRs: confirm requirements met, run checks, and avoid “looks good” without evidence in VS Code Copilot Agent mode.
 ---
 

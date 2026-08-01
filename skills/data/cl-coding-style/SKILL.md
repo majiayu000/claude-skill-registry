@@ -1,5 +1,10 @@
 ---
 name: cl-coding-style
+description: Based on Google Common Lisp Style Guide (@references/google-common-lisp-style-guide.md)
+---
+
+---
+name: cl-coding-style
 description: Common Lispのコーディング規約を適用。Lispコード作成・レビュー時に使用
 allowed-tools: Read, Grep, Glob
 references:

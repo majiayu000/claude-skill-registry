@@ -1,5 +1,12 @@
 ---
 name: yaml-validator
+description: 'Comprehensive YAML syntax validation, error fixing, and schema validation
+  for various formats (GitHub Actions, Docker Compose, Kubernetes, GitLab CI). Use
+  when Claude needs to: (1) Validate YAML synta'
+---
+
+---
+name: yaml-validator
 description: Comprehensive YAML syntax validation, error fixing, and schema validation for various formats (GitHub Actions, Docker Compose, Kubernetes, GitLab CI). Use when Claude needs to: (1) Validate YAML syntax, (2) Check YAML files for errors, (3) Fix common YAML formatting issues, (4) Validate against schemas like GitHub Actions workflows, Docker Compose files, Kubernetes manifests, or GitLab CI pipelines, (5) Debug YAML parsing errors. Triggers on phrases like "check yaml", "validate yaml", "fix yaml errors", "yaml syntax".
 ---
 

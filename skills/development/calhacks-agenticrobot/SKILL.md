@@ -1,3 +1,9 @@
+---
+name: calhacks-agenticrobot
+description: This guide sets up MERLIN to control XLeRobot in ManiSkill simulation
+  for sim2real validation.
+---
+
 # ManiSkill + XLeRobot Setup Guide
 
 This guide sets up MERLIN to control XLeRobot in ManiSkill simulation for sim2real validation.
@@ -28,7 +34,7 @@ python -m mani_skill.utils.download_asset "ReplicaCAD"
    ```bash
    # Find your ManiSkill installation
    MANI_PATH=$(python -c "import mani_skill; print(mani_skill.__path__[0])")
-   
+
    # Copy XLeRobot files
    cp -r xle-robot/sim/maniskill/agents/xlerobot/ $MANI_PATH/agents/robots/
    cp -r xle-robot/sim/maniskill/assets/xlerobot/ $MANI_PATH/assets/robots/
@@ -68,7 +74,7 @@ export PYTHONPATH=/path/to/calhacks:$PYTHONPATH
 python examples/test_maniskill.py
 ```
 
-**Expected:** 
+**Expected:**
 - ManiSkill environment loads
 - Agent executes pick-and-place in sim
 - Results printed to console

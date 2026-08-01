@@ -1,3 +1,9 @@
+---
+name: migration-assistant
+description: ช่วย migrate ระหว่าง frameworks, libraries, และ versions อย่างปลอดภัย
+  พร้อม automated refactoring
+---
+
 # 🔄 Migration Assistant Skill
 
 ---
@@ -26,11 +32,11 @@ description: Assist with migrating frameworks, libraries, and language versions 
 // Before: Class Component
 class Counter extends React.Component {
   state = { count: 0 };
-  
+
   increment = () => {
     this.setState({ count: this.state.count + 1 });
   };
-  
+
   render() {
     return (
       <button onClick={this.increment}>
@@ -43,11 +49,11 @@ class Counter extends React.Component {
 // After: Function Component with Hooks
 function Counter() {
   const [count, setCount] = useState(0);
-  
+
   const increment = () => {
     setCount(count + 1);
   };
-  
+
   return (
     <button onClick={increment}>
       Count: {count}

@@ -1,3 +1,9 @@
+---
+name: into-wps
+description: 'description: Queue next Work Package(s) from an ideaâ€™s backlog (tasks
+  â†’ workpackages.md), without modifying tasks.md'
+---
+
 ﻿---
 name: Make WPs
 description: Queue next Work Package(s) from an ideaâ€™s backlog (tasks â†’ work_packages.md), without modifying tasks.md

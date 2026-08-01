@@ -1,5 +1,12 @@
 ---
 name: unity-csharp-editing
+description: 'Supports Unity C# script editing, searching, and refactoring. Enables
+  TDD cycle code editing, symbol navigation, reference searching, and structured editing.
+  Use when: C# editing, script search, symbo'
+---
+
+---
+name: unity-csharp-editing
 description: Supports Unity C# script editing, searching, and refactoring. Enables TDD cycle code editing, symbol navigation, reference searching, and structured editing. Use when: C# editing, script search, symbol search, refactoring, code indexing, class creation, method addition
 allowed-tools: Read, Grep, Glob
 ---

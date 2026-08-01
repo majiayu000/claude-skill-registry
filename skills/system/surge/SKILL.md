@@ -1,5 +1,10 @@
 ---
 name: surge
+description: Blazing fast TUI download manager with multi-connection downloads.
+---
+
+---
+name: surge
 description: Blazing fast TUI download manager with multi-connection downloads. Use when: (1) Fast downloads with parallel connections, (2) Queue management, (3) Server/daemon mode for headless downloads, (4) Beautiful TUI interface, (5) Multiple mirror support.
 version: 1.1.0
 changelog: "v1.1.0: Added reasoning framework, decision tree, troubleshooting, self-checks"

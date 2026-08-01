@@ -1,4 +1,9 @@
 ---
+name: canvas-study
+description: Use Canvas LMS data to create personalized, prioritized study plans.
+---
+
+---
 name: canvas-study-plan
 description: Create personalized study plans from Canvas data. Use for: (1) "Help me plan my week" or similar study requests, (2) Prioritizing assignments by deadline and grade impact, (3) Analyzing course grades and identifying attention areas, (4) Generating weekly schedules. Requires canvas_get_upcoming, canvas_get_grades, and canvas_list_announcements tools.
 ---

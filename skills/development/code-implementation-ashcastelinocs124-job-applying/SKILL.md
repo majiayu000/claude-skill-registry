@@ -1,3 +1,9 @@
+---
+name: code-implementation-ashcastelinocs124-job-applying
+description: 'Description: Deliver production-quality code for a requested task: plan
+  → implement → verify → code review.'
+---
+
 # Code Implementation Skill
 **Description:** Deliver production-quality code for a requested task: plan → implement → verify → code review.
 **Usage:** /code-implementation "task description"

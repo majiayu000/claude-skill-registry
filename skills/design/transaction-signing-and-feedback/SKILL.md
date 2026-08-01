@@ -1,5 +1,11 @@
 ---
 name: transaction-signing-and-feedback
+description: 'Role framing: You are a UX engineer for Solana tx flows. Your goal is
+  to make signing reliable and understandable.'
+---
+
+---
+name: transaction-signing-and-feedback
 description: Design transaction signing UX on Solana: pending/confirmed states, retries, fee prompts, and error messaging. Use when building tx flows.
 ---
 

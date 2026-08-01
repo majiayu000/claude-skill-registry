@@ -25,12 +25,12 @@ from security_rules import (
     OBFUSCATION_EXEC_PATTERNS,
     SENSITIVE_PATHS,
 )
-from utils import is_declared_bundled_skill_file
+from utils import is_declared_bundled_skill_file, split_frontmatter_content
 
 # Load schema
 SCHEMA_PATH = Path(__file__).parent.parent / "schema" / "skill.schema.json"
 SECURITY_SCANNER_NAME = "claude-skill-registry-security-scanner"
-SECURITY_SCANNER_VERSION = "1.1.2"
+SECURITY_SCANNER_VERSION = "1.1.3"
 
 
 def utc_now_isoformat() -> str:
@@ -134,6 +134,12 @@ class SecurityScanner:
                 {"severity": "error", "type": "read_error", "message": f"Cannot read file: {e}"}
             )
             return False, self.issues
+
+        return self.scan_content(content, skill_path)
+
+    def scan_content(self, content: str, skill_path: Path) -> Tuple[bool, List[Dict]]:
+        """Scan supplied SKILL.md text while resolving support files from its directory."""
+        self.issues = []
 
         # 1. Validate file size
         if len(content) > 1_000_000:  # 1MB limit
@@ -252,16 +258,13 @@ class SecurityScanner:
 
     def _extract_frontmatter(self, content: str) -> dict:
         """Extract YAML frontmatter from SKILL.md"""
-        if not content.startswith("---"):
-            return None
-
-        parts = content.split("---", 2)
-        if len(parts) < 3:
+        frontmatter, _body = split_frontmatter_content(content)
+        if frontmatter is None:
             return None
 
         try:
             # Use safe_load to prevent YAML deserialization attacks
-            return yaml.safe_load(parts[1])
+            return yaml.safe_load(frontmatter)
         except yaml.YAMLError as e:
             self.issues.append(
                 {

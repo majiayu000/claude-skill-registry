@@ -1,5 +1,11 @@
 ---
 name: convex-development-general
+description: You are a coding standards expert specializing in convex development
+  general.
+---
+
+---
+name: convex-development-general
 description: Applies general rules for Convex development, emphasizing schema design, validator usage, and correct handling of system fields.
 version: 1.0.0
 model: sonnet

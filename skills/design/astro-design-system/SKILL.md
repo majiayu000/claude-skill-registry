@@ -1,3 +1,8 @@
+---
+name: astro-design-system
+description: '- Creating or modifying CSS styles'
+---
+
 # Astro Design System Skill
 
 ## When to Use This Skill

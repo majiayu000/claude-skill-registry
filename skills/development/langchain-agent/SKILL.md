@@ -1,3 +1,9 @@
+---
+name: langchain-agent
+description: This document explains the custom GitHub Copilot skill created for LangChain
+  agent development in this project.
+---
+
 # GitHub Copilot Custom Skills
 
 This document explains the custom GitHub Copilot skill created for LangChain agent development in this project.

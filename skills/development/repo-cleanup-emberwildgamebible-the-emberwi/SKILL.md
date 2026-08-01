@@ -1,3 +1,8 @@
+---
+name: repo-cleanup-emberwildgamebible-the-emberwi
+description: '- Scan all .md/.lua and list: path, H1 title, category guess, link targets.'
+---
+
 # Repo Cleanup Skill
 
 ---

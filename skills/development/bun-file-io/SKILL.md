@@ -1,4 +1,9 @@
 ---
+name: bun-file-io
+description: Bun provides fast, optimized file operations via Bun.file() and Bun.write().
+---
+
+---
 name: Bun File I/O
 description: Use for Bun file I/O: Bun.file, Bun.write, streams, directories, glob patterns, metadata.
 version: 1.0.0

@@ -1,3 +1,8 @@
+---
+name: skills-deancochran-gradientpeak
+description: 'Last Updated: 2026-01-21'
+---
+
 # Testing Skill
 
 **Last Updated**: 2026-01-21

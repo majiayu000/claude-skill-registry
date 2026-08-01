@@ -1,5 +1,11 @@
 ---
 name: nexus-elements-transfer
+description: Install the FastTransfer component (registry item name is transfer) for
+  intent-based cross-chain transfers with allowance flow and progress UI.
+---
+
+---
+name: nexus-elements-transfer
 description: Install and use the Fast Transfer widget (registry name: transfer) from Nexus Elements. Use for intent-based cross-chain transfers to a recipient.
 ---
 

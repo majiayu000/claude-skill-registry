@@ -1,5 +1,11 @@
 ---
 name: review-design
+description: Multi-provider AI design review skill. Submits UI screenshots + design
+  tokens to vision-capable LLMs for structured UX audits.
+---
+
+---
+name: review-design
 description: >
   Multi-provider AI design review of UI screenshots and design tokens for UX audits.
 triggers:

@@ -1,5 +1,12 @@
 ---
 name: serialization
+description: Serialization is the process of converting data structures into a format
+  that can be stored or transmitted and later reconstructed. This skill covers JSON
+  best practices, binary formats like Protocol
+---
+
+---
+name: serialization
 description: Data serialization and deserialization patterns across formats. Use when implementing data exchange, API payloads, storage formats, encoding/decoding, or cross-language communication. Keywords: serialize, deserialize, serialization, deserialization, JSON, YAML, TOML, XML, Protocol Buffers, protobuf, MessagePack, CBOR, serde, encoding, decoding, schema, schema evolution, versioning, backward compatibility, forward compatibility, binary format, text format, data interchange, gRPC, API contracts.
 ---
 

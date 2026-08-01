@@ -1,5 +1,11 @@
 ---
 name: ray-train
+description: Ray Train scales machine learning training from single GPU to multi-node
+  clusters with minimal code changes.
+---
+
+---
+name: ray-train
 description: Distributed training orchestration across clusters. Scales PyTorch/TensorFlow/HuggingFace from laptop to 1000s of nodes. Built-in hyperparameter tuning with Ray Tune, fault tolerance, elastic scaling. Use when training massive models across multiple machines or running distributed hyperparameter sweeps.
 version: 1.0.0
 author: Orchestra Research

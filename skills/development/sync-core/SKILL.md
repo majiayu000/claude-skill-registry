@@ -1,4 +1,9 @@
 ---
+name: sync-core
+description: '> Multi-file synchronization ve atomic changes.'
+---
+
+---
 name: sync_core
 router_kit: FullStackKit
 description: Multi-file sync - atomic changes, dependency tracking ve conflict resolution.

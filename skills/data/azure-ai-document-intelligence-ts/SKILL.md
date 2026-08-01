@@ -1,5 +1,11 @@
 ---
 name: azure-ai-document-intelligence-ts
+description: Extract text, tables, and structured data from documents using prebuilt
+  and custom models.
+---
+
+---
+name: azure-ai-document-intelligence-ts
 description: Extract text, tables, and structured data from documents using Azure Document Intelligence (@azure-rest/ai-document-intelligence). Use when processing invoices, receipts, IDs, forms, or building custom document models.
 package: @azure-rest/ai-document-intelligence
 ---
@@ -157,7 +163,7 @@ const receipt = result.analyzeResult?.documents?.[0];
 if (receipt) {
   console.log("Merchant:", receipt.fields?.MerchantName?.content);
   console.log("Total:", receipt.fields?.Total?.content);
-  
+
   for (const item of receipt.fields?.Items?.values || []) {
     console.log("Item:", item.properties?.Description?.content);
     console.log("Price:", item.properties?.TotalPrice?.content);

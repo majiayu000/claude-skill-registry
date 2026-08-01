@@ -1,3 +1,8 @@
+---
+name: portfolio-raohai-claudequant
+description: 查看持仓概况 - 显示所有持仓股票的实时行情和涨跌幅
+---
+
 # Portfolio
 
 查看持仓概况 - 显示所有持仓股票的实时行情和涨跌幅

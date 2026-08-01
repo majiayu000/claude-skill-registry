@@ -1,5 +1,10 @@
 ---
 name: section-r-packages
+description: 生成 R 包使用教程 (.rmd/.qmd)，涵盖包定位、核心功能、完整示例、最佳实践。
+---
+
+---
+name: section-r-packages
 description: Generate comprehensive R package tutorials (tidyverse, data.table, mlr3, gtsummary, etc.) with theory + practice workflow. Use when: (1) User requests R package tutorials or reviews, (2) File names match [number]-[package].rmd pattern, (3) Keywords: tidyverse, dplyr, ggplot2, purrr, data.table, mlr3, package comparison.
 ---
 ## 核心任务
@@ -37,7 +42,7 @@ description: Generate comprehensive R package tutorials (tidyverse, data.table, 
 
 **第一步：生成图片文件**
 
-1. **封面图 (MANDATORY)**: 
+1. **封面图 (MANDATORY)**:
    - 路径：`doc/images/[number]-[topic]-cover.svg`
    - 风格：专业、展示包的核心功能
 

@@ -1,5 +1,13 @@
 ---
 name: career-coach
+description: Your personal career development coach. Brain dump about your work, reflect
+  on challenges, and get coaching that adapts to your role and career level. Generates
+  reports, reflections, self-reviews, and promotion assessments based on accumulated
+  evidence.
+---
+
+---
+name: career-coach
 description: Personal career coach with 4 modes: weekly reports, monthly reflections, self-reviews, promotion assessments
 ---
 

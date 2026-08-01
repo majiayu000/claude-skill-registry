@@ -1,5 +1,10 @@
 ---
 name: github-project-automation
+description: 'Status: Production Ready ✅'
+---
+
+---
+name: github-project-automation
 description: GitHub repository automation (CI/CD, issue templates, Dependabot, CodeQL). Use for project setup, Actions workflows, security scanning, or encountering YAML syntax, workflow configuration, template structure errors.
 
   Keywords: github actions, github workflow, ci/cd, issue templates, pull request templates,

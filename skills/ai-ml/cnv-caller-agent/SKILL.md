@@ -1,3 +1,8 @@
+---
+name: cnv-caller-agent
+description: '---name: cnv-caller-agent'
+---
+
 ---name: cnv-caller-agent
 description: AI-enhanced copy number variation calling and analysis from sequencing data for cancer genomics, constitutional CNV detection, and chromosomal aberration characterization.
 license: MIT

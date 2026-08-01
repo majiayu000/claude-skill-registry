@@ -1,4 +1,10 @@
 ---
+name: leavn-ops-research
+description: Use this skill when conducting competitor analysis, sentiment monitoring,
+  or user research for Leavn.
+---
+
+---
 name: Leavn Ops: Research & Competitive Analysis Skill
 description: Use this skill when conducting competitor analysis, sentiment monitoring, or user research for Leavn.
 allowed-tools: Grep

@@ -1,5 +1,10 @@
 ---
 name: cloudflare-cron-triggers
+description: 'Status: Production Ready ✅'
+---
+
+---
+name: cloudflare-cron-triggers
 description: Cloudflare Cron Triggers for scheduled Workers execution. Use for periodic tasks, scheduled jobs, or encountering handler not found, invalid cron expression, timezone errors.
 
   Keywords: cloudflare cron, cron triggers, scheduled workers, scheduled handler, periodic tasks,

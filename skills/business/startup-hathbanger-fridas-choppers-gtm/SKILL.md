@@ -1,3 +1,9 @@
+---
+name: startup
+description: The startup journey from idea to scale, informed by Paul Graham + Garry
+  Tan wisdom.
+---
+
 # Startup Skill
 
 The startup journey from idea to scale, informed by Paul Graham + Garry Tan wisdom.

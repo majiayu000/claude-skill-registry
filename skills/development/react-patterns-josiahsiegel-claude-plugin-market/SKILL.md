@@ -1,5 +1,10 @@
 ---
 name: react-patterns
+description: '| Pattern | Use Case | Example |'
+---
+
+---
+name: react-patterns
 description: Complete React component patterns system. PROACTIVELY activate for: (1) Compound components with context, (2) Render props pattern, (3) Higher-Order Components (HOC), (4) Custom hooks as patterns, (5) Provider pattern with reducer, (6) Controlled vs uncontrolled components, (7) Prop getter pattern, (8) State reducer pattern. Provides: Pattern implementations, composition strategies, reusable component APIs, flexible state control. Ensures clean, maintainable component architecture.
 ---
 

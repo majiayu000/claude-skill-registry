@@ -1,5 +1,11 @@
 ---
 name: discover-contacts
+description: Research and enrich professional contacts and marketing prospects. Takes
+  a contact
+---
+
+---
+name: discover-contacts
 description: >
   Research and enrich professional contacts and marketing prospects.
   Uses /dogpile to find current company, role, recent news, and company intelligence.

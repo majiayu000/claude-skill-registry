@@ -1,4 +1,10 @@
 ---
+name: thor-skill
+description: This is the root skill. It routes requests to the right sub-skill and
+  enforces a few global rules.
+---
+
+---
 name: thor-skills
 description: Entry point and router for THOR-related work: running scans, analyzing THOR logs, troubleshooting THOR behavior, maintaining THOR installs, THOR Lens workflows, writing THOR plugins (v11+), and creating custom signatures/IOCs.
 ---

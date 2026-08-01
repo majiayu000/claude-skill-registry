@@ -1,5 +1,11 @@
 ---
 name: token-conservation
+description: '- Run at the start of every session and whenever prompt sizes or tool
+  calls begin to spike.'
+---
+
+---
+name: token-conservation
 description: |
 
 Triggers: token, conservation

@@ -1,3 +1,8 @@
+---
+name: snippet-manager
+description: จัดการ, จัดระเบียบ, และเข้าถึง code snippets ที่ใช้บ่อยอย่างรวดเร็ว
+---
+
 # 📦 Snippet Manager Skill
 
 ---
@@ -45,11 +50,11 @@ description: Manage, organize, and quickly access reusable code snippets
 // Custom Hook Template
 function useCustomHook<T>(initialValue: T) {
   const [value, setValue] = useState<T>(initialValue);
-  
+
   const update = useCallback((newValue: T) => {
     setValue(newValue);
   }, []);
-  
+
   return { value, update };
 }
 ```
@@ -59,11 +64,11 @@ function useCustomHook<T>(initialValue: T) {
 // Fetch with Error Handling
 async function fetchData<T>(url: string): Promise<T> {
   const response = await fetch(url);
-  
+
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
   }
-  
+
   return response.json();
 }
 ```
@@ -82,7 +87,7 @@ function MyForm() {
   const { register, handleSubmit, formState: { errors } } = useForm<FormData>({
     resolver: zodResolver(schema),
   });
-  
+
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <input {...register('email')} />
@@ -162,7 +167,7 @@ const grouped = array.reduce((acc, item) => {
 }, {});
 
 // Chunk array
-const chunk = (arr, size) => 
+const chunk = (arr, size) =>
   Array.from({ length: Math.ceil(arr.length / size) }, (_, i) =>
     arr.slice(i * size, i * size + size)
   );
@@ -174,18 +179,18 @@ const chunk = (arr, size) =>
 const capitalize = (s) => s.charAt(0).toUpperCase() + s.slice(1);
 
 // Truncate
-const truncate = (s, length) => 
+const truncate = (s, length) =>
   s.length > length ? s.slice(0, length) + '...' : s;
 
 // Slug
-const slug = (s) => 
+const slug = (s) =>
   s.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
 ```
 
 ### Date Utilities
 ```typescript
 // Format date
-const formatDate = (date) => 
+const formatDate = (date) =>
   new Intl.DateTimeFormat('th-TH').format(new Date(date));
 
 // Relative time

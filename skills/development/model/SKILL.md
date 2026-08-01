@@ -1,3 +1,8 @@
+---
+name: model
+description: Name | Type | Description | Notes
+---
+
 # # SlimSkill
 
 ## Properties

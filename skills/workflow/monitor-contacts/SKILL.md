@@ -1,5 +1,10 @@
 ---
 name: monitor-contacts
+description: Always-on contact freshness monitoring service. Runs on a schedule (via
+---
+
+---
+name: monitor-contacts
 description: >
   Always-on contact freshness monitoring service. Periodically re-researches
   stale contacts via /dogpile, detects job changes and company news, and

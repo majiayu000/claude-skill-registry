@@ -1,5 +1,10 @@
 ---
 name: digital-garden-cultivator
+description: '- What It Is'
+---
+
+---
+name: digital-garden-cultivator
 description: |
 
 Triggers: garden, linking, curation, knowledge-base, digital

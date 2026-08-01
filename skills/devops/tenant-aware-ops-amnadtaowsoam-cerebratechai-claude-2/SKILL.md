@@ -1,4 +1,10 @@
 ---
+name: tenant-aware-ops
+description: วิธีการทำ operations (debugging, monitoring, maintenance) ใน multi-tenant
+  environment โดยไม่กระทบ tenants อื่น และมี visibility per tenant
+---
+
+---
 name: Tenant-Aware Ops
 description: Operational patterns for multi-tenant systems: tenant-safe debugging and monitoring, per-tenant maintenance and migrations, fairness controls, and compliance-aware access
 ---

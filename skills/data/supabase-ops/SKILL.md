@@ -1,5 +1,10 @@
 ---
 name: supabase-ops
+description: 'Host: mocerqjnksmhcjzxrewo.supabase.co'
+---
+
+---
+name: supabase-ops
 description: Supabase database operations for BidDeed.AI and Life OS ecosystems. Handles inserts, queries, and data management for tables including insights, historical_auctions, activities, daily_metrics, michael_swim_times, learning_sessions. Use when logging data, querying Supabase, running insert_insight.yml workflows, or managing persistent storage. Database: mocerqjnksmhcjzxrewo.supabase.co
 ---
 
@@ -150,15 +155,15 @@ jobs:
 
 ### Get Recent Insights
 ```sql
-SELECT * FROM insights 
-WHERE source = 'biddeed' 
-ORDER BY created_at DESC 
+SELECT * FROM insights
+WHERE source = 'biddeed'
+ORDER BY created_at DESC
 LIMIT 10;
 ```
 
 ### Auction Performance Analysis
 ```sql
-SELECT 
+SELECT
   plaintiff,
   COUNT(*) as cases,
   AVG(CASE WHEN third_party_won THEN 1 ELSE 0 END) as third_party_rate,

@@ -1,3 +1,8 @@
+---
+name: project-phase-planner
+description: 'name: project-phase-planner'
+---
+
 ﻿---
 name: project-phase-planner
 description: Erstelle und pflege den phasenbasierten Projektplan fuer ATS CV Scorer; verwenden, wenn der Gesamtplan, Phasen oder Aufgaben aktualisiert werden muessen.

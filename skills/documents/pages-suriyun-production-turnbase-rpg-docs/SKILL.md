@@ -1,3 +1,9 @@
+---
+name: pages
+description: An characters can have skills, skill can be buff skill, nerf skill, attack
+  skill or may mix all of them as you wish
+---
+
 # Skill
 
 An characters can have skills, skill can be buff skill, nerf skill, attack skill or may mix all of them as you wish

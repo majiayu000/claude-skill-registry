@@ -1,5 +1,12 @@
 ---
 name: ccpm-mcp-management
+description: 'Discovers, manages, and troubleshoots MCP servers with three-tier classification
+  (required: Linear/GitHub/Context7, optional: Jira/Confluence/Slack/BitBucket). Auto-activates
+  when user asks "MCP serve'
+---
+
+---
+name: ccpm-mcp-management
 description: Discovers, manages, and troubleshoots MCP servers with three-tier classification (required: Linear/GitHub/Context7, optional: Jira/Confluence/Slack/BitBucket). Auto-activates when user asks "MCP server", "tools available", "Linear not working", "what tools do I have", or when plugin installation fails. Provides automatic server discovery, configuration validation, and health monitoring. Diagnoses connection issues (missing env vars, wrong config, network problems) with specific fix suggestions. Requires setup confirmation for optional PM integrations. Shows rate limit status and recommends optimizations when performance degrades.
 ---
 

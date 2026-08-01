@@ -1,4 +1,9 @@
 ---
+name: add-feature
+description: 'I''ll create a complete new feature for the expense tracker app: $ARGUMENTS'
+---
+
+---
 skill: add-feature
 description: Add new feature with full validation: $ARGUMENTS (feature name)
 location: project

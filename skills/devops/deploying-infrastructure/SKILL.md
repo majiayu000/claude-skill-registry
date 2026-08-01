@@ -1,3 +1,8 @@
+---
+name: deploying-infrastructure
+description: Before main skill execution, perform guardrail checks.
+---
+
 <input_guardrails>
 ## Pre-Execution Validation
 

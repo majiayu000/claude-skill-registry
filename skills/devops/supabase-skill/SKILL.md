@@ -1,3 +1,8 @@
+---
+name: supabase-skill
+description: ALWAYS consolidate all database changes in project/supabase/migrations/00000000000000schema.sql
+---
+
 # Supabase Skill for Agritech Project
 
 ## Core Principle
@@ -67,9 +72,9 @@ STABLE
 SET search_path = public
 AS $$
   SELECT EXISTS (
-    SELECT 1 
-    FROM public.organization_users 
-    WHERE user_id = auth.uid() 
+    SELECT 1
+    FROM public.organization_users
+    WHERE user_id = auth.uid()
       AND organization_id = p_organization_id
       AND is_active = true
   );

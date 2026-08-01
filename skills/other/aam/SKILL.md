@@ -1,3 +1,8 @@
+---
+name: aam
+description: put address in faucet
+---
+
 # create a skill
 
     start a github repo

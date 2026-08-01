@@ -1,3 +1,8 @@
+---
+name: tdd-workflow
+description: 强制要求：所有新功能、Bug 修复、重构必须达到 80% 以上测试覆盖率。
+---
+
 # TDD 工作流 Skill
 
 ## 核心原则

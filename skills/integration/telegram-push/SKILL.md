@@ -1,3 +1,8 @@
+---
+name: telegram-push
+description: 通过独立的 Telegram Bot 推送消息到群聊或私聊，不依赖 OpenClaw 的 telegram channel 配置。
+---
+
 # Telegram Push Skill
 
 通过独立的 Telegram Bot 推送消息到群聊或私聊，不依赖 OpenClaw 的 telegram channel 配置。

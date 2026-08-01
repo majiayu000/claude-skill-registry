@@ -1,3 +1,10 @@
+---
+name: guide
+description: Repomix bietet einen sofort einsatzbereiten Repomix Explorer Skill, der
+  KI-Codierungsassistenten ermöglicht, Codebasen mit der Repomix CLI zu analysieren
+  und zu erkunden.
+---
+
 # Repomix Explorer Skill (Agent Skills)
 
 Repomix bietet einen sofort einsatzbereiten **Repomix Explorer** Skill, der KI-Codierungsassistenten ermöglicht, Codebasen mit der Repomix CLI zu analysieren und zu erkunden.

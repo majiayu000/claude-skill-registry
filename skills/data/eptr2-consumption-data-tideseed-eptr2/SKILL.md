@@ -1,5 +1,11 @@
 ---
 name: eptr2-consumption-data
+description: This skill helps you query electricity consumption and demand forecast
+  data from Turkey's EPIAS Transparency Platform using the eptr2 Python library.
+---
+
+---
+name: eptr2-consumption-data
 description: Query Turkish electricity consumption and demand forecast data including real-time consumption, UECM (settlement consumption/Uzlaştırmaya Esas Çekiş Miktarı), and load plan forecasts. Use when asking about electricity demand, consumption patterns, load forecasting, or UECM data in Turkey. Triggers on: elektrik tüketimi, talep tahmini, yük planı, UEÇM, consumption forecast.
 allowed-tools: Read, Bash(python:*)
 ---

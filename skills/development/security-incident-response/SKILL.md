@@ -1,3 +1,9 @@
+---
+name: security-incident-response
+description: Handle vulnerability reports with coordinated disclosure, timely patches,
+  and clear communication.
+---
+
 # Security Incident Response
 
 ## Purpose

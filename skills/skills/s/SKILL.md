@@ -1,5 +1,10 @@
 ---
 name: s
+description: Dynamically discover all available skills and subagent types.
+---
+
+---
+name: s
 description: Discover available skills and subagents. Auto-triggers on: /s, show skills, list skills, available skills, what can you do, help with skills, what agents, list agents
 allowed-tools: Bash, Read
 ---

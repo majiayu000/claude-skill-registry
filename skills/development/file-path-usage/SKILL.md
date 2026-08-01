@@ -1,5 +1,10 @@
 ---
 name: file-path-usage
+description: You are a coding standards expert specializing in file path usage.
+---
+
+---
+name: file-path-usage
 description: Enforces the use of full file paths when referencing, editing, or creating files in the project. This rule ensures consistency and accuracy in file operations across the entire project.
 version: 1.0.0
 model: sonnet

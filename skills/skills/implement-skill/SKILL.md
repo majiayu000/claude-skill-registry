@@ -1,3 +1,8 @@
+---
+name: implement-skill
+description: '| 項目     | 内容           |'
+---
+
 # Task仕様書：implement-skill
 
 ## 1. メタ情報

@@ -1,3 +1,8 @@
+---
+name: video-metrics
+description: 実行結果を JSONL 形式で継続的に記録します。
+---
+
 # Skill: Metrics Collection
 
 ## Status

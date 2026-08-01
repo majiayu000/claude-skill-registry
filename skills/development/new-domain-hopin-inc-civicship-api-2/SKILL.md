@@ -1,5 +1,10 @@
 ---
 name: new-domain
+description: DDD（ドメイン駆動設計） と Clean Architecture の原則に従い、完全なディレクトリ構造、テンプレートファイル、依存性注入の設定を含む新しいドメインを作成します。
+---
+
+---
+name: new-domain
 description: 新規ドメイン作成
 user-invocable: true
 argument-hint: [ドメイン名] [親カテゴリ]

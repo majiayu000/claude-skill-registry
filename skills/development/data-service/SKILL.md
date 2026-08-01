@@ -1,5 +1,13 @@
 ---
 name: data-service
+description: This skill documents the complete file and folder organization for MetaSaver
+  data service packages (e.g., rugby-crm-service). Data services are Express-based
+  API packages that coordinate between database clients and HTTP handlers using a
+  feature-based structure.
+---
+
+---
+name: data-service
 description: Use when scaffolding, auditing, or validating MetaSaver data service packages. Covers feature-based structure, service/controller/routes pattern, middleware integration, and API endpoint setup. Requires @metasaver/core-service-utils, {project}-contracts, {project}-database packages. File types: .ts, package.json.
 allowed-tools: Read, Write, Edit, Bash, Glob
 ---

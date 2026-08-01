@@ -1,5 +1,10 @@
 ---
 name: architecture-paradigm-layered
+description: '- When to Employ This Paradigm'
+---
+
+---
+name: architecture-paradigm-layered
 description: |
 
 Triggers: monolith, separation-of-concerns, n-tier, architecture, layered

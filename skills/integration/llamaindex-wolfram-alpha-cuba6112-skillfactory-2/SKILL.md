@@ -1,5 +1,12 @@
 ---
 name: llamaindex-wolfram-alpha
+description: The LlamaIndex Wolfram Alpha tool enables agents to interface with the
+  Wolfram|Alpha LLM API for computational knowledge queries. It provides concise text-based
+  answers optimized for LLM consumption,
+---
+
+---
+name: llamaindex-wolfram-alpha
 description: LlamaIndex Wolfram Alpha tool for computational knowledge queries, math solving, scientific calculations, and agent integration. Triggers: wolfram alpha, computational query, math solver, scientific calculation, WolframAlphaToolSpec.
 ---
 

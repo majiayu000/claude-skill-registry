@@ -1,3 +1,8 @@
+---
+name: create-failing-test
+description: 'name: create-failing-test'
+---
+
 ﻿---
 name: create-failing-test
 description: Use to create failing tests before implementing features (TDD approach). Ensures test-first development workflow.
@@ -25,14 +30,14 @@ Support agents validate issues but CANNOT write test code. This task creates a d
 ```yaml
 validation_data:
   issue_id: "{ticket_number}"
-  
+
   reproduction_evidence:
     - Playwright validation results
     - Screenshots showing issue
     - Console errors captured
     - Network failures logged
     - Exact user steps taken
-    
+
   environment:
     - Browser and version
     - User role/permissions
@@ -49,7 +54,7 @@ test_setup:
     - Specific data records required
     - System configuration state
     - External service dependencies
-    
+
   initial_state:
     - URL to start from
     - Login credentials needed
@@ -65,25 +70,25 @@ reproduction_steps:
     action: "Navigate to {specific URL}"
     expected: "Page loads successfully"
     actual: "Page loads successfully"
-    
+
   - step: 2
     action: "Click on {specific element}"
     element_selector: "#button-id or .class-name"
     expected: "Modal opens"
     actual: "Modal opens"
-    
+
   - step: 3
     action: "Enter '{value}' in {field}"
     element_selector: "input[name='fieldname']"
     expected: "Field accepts input"
     actual: "Field accepts input"
-    
+
   - step: 4
     action: "Submit form"
     element_selector: "button[type='submit']"
     expected: "Success message appears"
     actual: "ERROR: {exact error message}"
-    
+
   failure_point:
     step_number: 4
     expected_behavior: "Form submits and shows success"
@@ -102,15 +107,15 @@ test_assertions:
     - description: "Form submission should succeed"
       assertion: "expect(successMessage).toBeVisible()"
       current_result: "FAILS - Error message appears instead"
-      
+
     - description: "API should return 200"
       assertion: "expect(response.status).toBe(200)"
       current_result: "FAILS - Returns 500"
-      
+
     - description: "Data should be saved"
       assertion: "expect(database.record).toExist()"
       current_result: "FAILS - No record created"
-      
+
   regression_prevention:
     - "Test should fail before fix applied"
     - "Test should pass after fix applied"
@@ -155,13 +160,13 @@ Currently FAILS due to {brief description of bug}.
 test('Customer Issue {ID}: {Title}', () => {
   // Setup
   {setup_steps}
-  
+
   // Action
   {action_steps}
-  
+
   // This assertion currently FAILS
   expect({element}).{assertion}
-  
+
   // After fix, this should PASS
 });
 ```
@@ -187,13 +192,13 @@ deliverables:
     - Failing assertions to verify
     - Environment requirements
     - Expected behavior after fix
-    
+
   for_qa_team:
     - Test specification document
     - Selectors and assertions
     - Test data requirements
     - Regression suite placement
-    
+
   tracking:
     - Link test to issue ticket
     - Add to test coverage matrix

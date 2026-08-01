@@ -1,4 +1,9 @@
 ---
+name: commit-and-push
+description: Execute /commit-and-push slash command.
+---
+
+---
 name: committing-and-pushing
 description: Commits changes and pushes to remote repository. Use when: user wants to commit and push in one flow.
 ---

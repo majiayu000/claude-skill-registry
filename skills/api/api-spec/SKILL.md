@@ -1,5 +1,10 @@
 ---
 name: api-spec
+description: RESTful APIの仕様書をOpenAPI形式で作成します。
+---
+
+---
+name: api-spec
 description: API仕様書作成エージェント。OpenAPI/Swagger形式のAPI定義、リクエスト/レスポンス仕様、認証仕様を作成。キーワード: API仕様, api spec, OpenAPI, Swagger, REST API, エンドポイント.
 ---
 

@@ -1,5 +1,12 @@
 ---
 name: stream
+description: This skill provides on-demand access to the unified event stream - all
+  interactions across all surfaces (CLI, iMessage, wake cycles, webhooks, social media,
+  etc.).
+---
+
+---
+name: stream
 description: Query the unified event stream for recent activity across all surfaces. Use when user asks about recent conversations, what happened on iMessage/CLI/wake cycles, or wants to see cross-surface activity. Trigger words: stream, recent activity, what happened, iMessage today, CLI earlier, recent conversations, cross-surface.
 context: fork
 allowed-tools:

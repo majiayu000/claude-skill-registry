@@ -1,3 +1,8 @@
+---
+name: features
+description: 'Feature: Bootstrap Skill (Dogfooding)'
+---
+
 # Bootstrap Skill - Self-Hosting (v2.7.0)
 
 **Version:** 2.7.0

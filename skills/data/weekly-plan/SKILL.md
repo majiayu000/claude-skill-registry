@@ -1,5 +1,12 @@
 ---
 name: weekly-plan
+description: Проводит интерактивное недельное планирование по методологии Дорофеева.
+  Собирает данные из Singularity, Google Calendar, новости, погоду. СПРАШИВАЕТ пользователя
+  о просроченных задачах, входящих задач
+---
+
+---
+name: weekly-plan
 description: Проводит интерактивное недельное планирование по методологии Дорофеева. Собирает данные из Singularity, Google Calendar, новости, погоду. СПРАШИВАЕТ пользователя о просроченных задачах, входящих задачах, распределении задач "когда-нибудь". Сохраняет финальный план в markdown файл artifacts/weekly-reports/. ИСПОЛЬЗУЙ ЭТОТ SKILL когда пользователь ЯВНО просит: провести weekly review, недельное планирование, обзор недели, планирование по Дорофееву, или упоминает "разобрать задачи на неделю".
 license: MIT
 allowed-tools: Read, Write, Bash(curl:*), mcp__singularity__list_tasks, mcp__singularity__get_task, mcp__singularity__update_task, mcp__singularity__complete_task, mcp__singularity__get_inbox_tasks, mcp__singularity__list_projects, mcp__google-calendar__list-calendars, mcp__google-calendar__list-events, WebSearch, WebFetch, AskUserQuestion
@@ -189,18 +196,18 @@ by_project = defaultdict(lambda: {'week': [], 'later': [], 'deferred': []})
 for task in tasks:
     if task.get('checked') == 1:
         continue  # Пропускаем выполненные
-    
+
     project_id = task.get('projectId', 'No Project')
     start = task.get('start')
     deferred = task.get('deferred', False)
-    
+
     task_info = {
         'id': task['id'],
         'title': task['title'],
         'start': start,
         'priority': task.get('priority', 1)
     }
-    
+
     if deferred and not start:
         by_project[project_id]['deferred'].append(task_info)
     elif start:
@@ -335,7 +342,7 @@ WebSearch(query="Минск транспорт метро дороги инфр�
   _Краткое содержание: ..._
 - [Заголовок новости 2](url2) — Источник
 
-### 📋 Налоги и законодательство  
+### 📋 Налоги и законодательство
 - [Изменения с 1 января](url) — Источник
   _Что изменилось: ..._
 
@@ -364,7 +371,7 @@ WebSearch(query="Минск транспорт метро дороги инфр�
 5. **Рекомендации:** [конкретные действия на основе новостей]
 ```
 
-**Цель:** 
+**Цель:**
 - 20-30 новостей по категориям
 - Краткое содержание для важных новостей
 - **ДАЙДЖЕСТ с выводами — что это значит для пользователя и что делать**

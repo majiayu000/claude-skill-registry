@@ -1,3 +1,9 @@
+---
+name: ai-agent-skills-raia-ai-raia-v2-docs
+description: The Escalation Skill ensures that critical user requests are addressed
+  quickly and accurately by enabling seamless escalation from AI to human support.\
+---
+
 # Escalation Skill
 
 ## 🆘 Escalation Skill

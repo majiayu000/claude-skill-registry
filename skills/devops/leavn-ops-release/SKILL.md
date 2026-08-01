@@ -1,4 +1,10 @@
 ---
+name: leavn-ops-release
+description: Use this skill when preparing releases, generating changelogs, or creating
+  release announcements.
+---
+
+---
 name: Leavn Ops: Release Pipeline Skill
 description: Use this skill when preparing releases, generating changelogs, or creating release announcements.
 allowed-tools: Edit, Grep

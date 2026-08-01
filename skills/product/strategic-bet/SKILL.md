@@ -1,5 +1,10 @@
 ---
 name: strategic-bet
+description: 'This skill supports three modes: Create, Update, and Find.'
+---
+
+---
+name: strategic-bet
 description: Create or update a strategic bet with explicit assumptions
 argument-hint: [bet name or area] or [update SB-2026-001]
 ---

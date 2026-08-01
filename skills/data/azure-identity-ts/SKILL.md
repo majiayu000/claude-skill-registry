@@ -1,5 +1,10 @@
 ---
 name: azure-identity-ts
+description: Authenticate to Azure services with various credential types.
+---
+
+---
+name: azure-identity-ts
 description: Authenticate to Azure services using Azure Identity SDK for JavaScript (@azure/identity). Use when configuring authentication with DefaultAzureCredential, managed identity, service principals, or interactive browser login.
 package: @azure/identity
 ---
@@ -120,7 +125,7 @@ const credential = new ClientCertificateCredential(
 const credentialWithPwd = new ClientCertificateCredential(
   "<tenant-id>",
   "<client-id>",
-  { 
+  {
     certificatePath: "/path/to/cert.pem",
     certificatePassword: "<password>"
   }
@@ -159,7 +164,7 @@ const credential = new DeviceCodeCredential({
 ## Custom Credential Chain
 
 ```typescript
-import { 
+import {
   ChainedTokenCredential,
   ManagedIdentityCredential,
   AzureCliCredential
@@ -239,10 +244,10 @@ const token = await getAccessToken();
 ## Key Types
 
 ```typescript
-import type { 
-  TokenCredential, 
-  AccessToken, 
-  GetTokenOptions 
+import type {
+  TokenCredential,
+  AccessToken,
+  GetTokenOptions
 } from "@azure/core-auth";
 
 import {

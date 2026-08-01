@@ -1,3 +1,8 @@
+---
+name: feature-discovery
+description: '> Last Updated: 2026-01-26'
+---
+
 # Feature Discovery Skill
 
 > Version: 1.0.0

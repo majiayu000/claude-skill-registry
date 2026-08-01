@@ -1,3 +1,8 @@
+---
+name: diff-doc-sync
+description: 'description: git差分/未コミット変更を走査し、影響するdocs/やAGENTS.mdを更新する手順を案内する。コード変更とドキュメント同期が必要なときに使用。'
+---
+
 name: diff-doc-sync
 description: git差分/未コミット変更を走査し、影響するdocs/やAGENTS.mdを更新する手順を案内する。コード変更とドキュメント同期が必要なときに使用。
 

@@ -1,3 +1,8 @@
+---
+name: when-analyzing-performance-use-performance-analysis
+description: /============================================================================/
+---
+
 /*============================================================================*/
 /* WHEN-ANALYZING-PERFORMANCE-USE-PERFORMANCE-ANALYSIS SKILL :: VERILINGUA x VERIX EDITION                      */
 /*============================================================================*/

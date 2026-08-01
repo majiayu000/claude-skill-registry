@@ -1,4 +1,11 @@
 ---
+name: hermetic-speckit
+description: Build software using isolated container-use environments with SpecKit
+  workflow. Use when user needs to build a feature, application, or complex task that
+  benefits from spec-driven development. Keyword
+---
+
+---
 name: Hermetic SpecKit
 description: Build software using isolated container-use environments with SpecKit workflow. Use when user needs to build a feature, application, or complex task that benefits from spec-driven development. Keywords: build, create, implement, feature, app, application, spec, plan, hermetic, isolated, dagger.
 ---

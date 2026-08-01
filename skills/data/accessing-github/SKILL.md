@@ -1,5 +1,12 @@
 ---
 name: accessing-github
+description: 'Performs git operations and interacts with GitHub. Used when git-related
+  operations are needed, including: git commands (commit, push, pull, branch, merge,
+  etc.), GitHub API interactions, gh CLI opera'
+---
+
+---
+name: accessing-github
 description: Performs git operations and interacts with GitHub. Used when git-related operations are needed, including: git commands (commit, push, pull, branch, merge, etc.), GitHub API interactions, gh CLI operations, pull request operations, issue analysis and operations.
 ---
 # GitHub Integration

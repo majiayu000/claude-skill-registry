@@ -1,4 +1,9 @@
 ---
+name: powershell-7-5-features
+description: '| Version | Status | .NET | Release |'
+---
+
+---
 name: powershell-7.5-features
 description: PowerShell 7.5/7.6 features and enhancements. PROACTIVELY activate for: (1) PowerShell 7.5 stable features, (2) PowerShell 7.6 preview features, (3) ConvertTo-CliXml/ConvertFrom-CliXml, (4) Test-Path -OlderThan/-NewerThan, (5) += operator optimization (8x-16x faster), (6) PSResourceGet 1.1.1/1.2.0, (7) Get-Clipboard -Delimiter, (8) Get-Command -ExcludeModule, (9) DSC v3 resources, (10) .NET 9/.NET 10 integration. Provides: Latest cmdlet usage, performance benchmarks, migration patterns.
 ---

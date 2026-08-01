@@ -1,5 +1,12 @@
 ---
 name: manage-workloads
+description: '**Autonomously create** filters, throttles, and classification rules
+  to implement new workloads or manage workload lifecycle in response to changing
+  operational needs'
+---
+
+---
+name: manage-workloads
 description: **Autonomously create** filters, throttles, and classification rules to implement new workloads or manage workload lifecycle in response to changing operational needs
 ---
 

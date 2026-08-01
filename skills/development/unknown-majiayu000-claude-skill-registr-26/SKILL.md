@@ -1,4 +1,9 @@
 ---
+name: unknown
+description: The most comprehensive Claude Code skills registry - 50,000+ skills indexed
+---
+
+---
 name: bio-basecalling
 description: Convert raw Nanopore signal data (FAST5/POD5) to nucleotide sequences using Dorado basecaller. Covers model selection, GPU acceleration, modified base detection, and quality filtering. Use when processing raw Nanopore data before alignment. Note: Guppy is deprecated; use Dorado for all new analyses.
 tool_type: cli

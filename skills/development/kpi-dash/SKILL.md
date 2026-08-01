@@ -1,3 +1,8 @@
+---
+name: kpi-dash
+description: 'description: Generate weekly KPI report (3PL/WMS) from shipments/events'
+---
+
 ﻿---
 name: kpi-dash
 description: Generate weekly KPI report (3PL/WMS) from shipments/events

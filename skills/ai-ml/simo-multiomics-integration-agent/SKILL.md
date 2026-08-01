@@ -1,3 +1,8 @@
+---
+name: simo-multiomics-integration-agent
+description: '---name: simo-multiomics-integration-agent'
+---
+
 ---name: simo-multiomics-integration-agent
 description: AI-powered spatial integration of multi-omics datasets using probabilistic alignment for comprehensive tissue atlas construction and cellular state mapping.
 license: MIT

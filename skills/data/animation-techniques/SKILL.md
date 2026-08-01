@@ -1,3 +1,8 @@
+---
+name: animation-techniques
+description: '> Decision-tree routing for animation pattern selection'
+---
+
 # Animation Techniques
 
 > Decision-tree routing for animation pattern selection

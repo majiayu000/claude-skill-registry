@@ -1,5 +1,10 @@
 ---
 name: moai-lang-rust
+description: '- Rust 1.91.1 (Latest stable, November 2025)'
+---
+
+---
+name: moai-lang-rust
 version: 4.0.0
 updated: '2025-11-19'
 status: stable
@@ -14,7 +19,7 @@ allowed-tools:
 
 
 
-# Rust Systems Programming — Enterprise  
+# Rust Systems Programming — Enterprise
 
 ## Technology Stack (November 2025 Stable)
 
@@ -79,14 +84,14 @@ allowed-tools:
 fn main() {
     let s1 = String::from("hello");
     let s2 = s1; // Move: s1 no longer valid
-    
+
     // println!("{}", s1); // Compile error!
     println!("{}", s2); // OK
-    
+
     let s3 = String::from("world");
     let s4 = &s3; // Borrow: s3 still valid
     let s5 = &s3; // Multiple immutable borrows OK
-    
+
     println!("{} {}", s4, s5);
     println!("{}", s3); // Still valid
 }
@@ -102,7 +107,7 @@ fn main() {
     let mut s = String::from("hello");
     change_string(&mut s);
     println!("{}", s); // "hello world"
-    
+
     // Can't have immutable references while mutable borrow exists
     let r1 = &mut s;
     // let r2 = &s; // Compile error!
@@ -142,7 +147,7 @@ async fn main() {
         sleep(Duration::from_secs(1)).await;
         println!("Task completed!");
     });
-    
+
     // Wait for task
     handle.await.unwrap();
 }
@@ -162,7 +167,7 @@ fn main() {
         Ok(contents) => println!("{}", contents),
         Err(e) => eprintln!("Error: {}", e),
     }
-    
+
     // Shorthand
     let result = read_file("data.txt").expect("Failed to read");
 }
@@ -197,11 +202,11 @@ impl std::error::Error for ParseError {}
 fn parse_number(s: &str) -> Result<i32, ParseError> {
     let num = s.parse::<i32>()
         .map_err(|_| ParseError::InvalidFormat)?;
-    
+
     if num < 0 || num > 100 {
         return Err(ParseError::OutOfRange);
     }
-    
+
     Ok(num)
 }
 ```
@@ -223,7 +228,7 @@ use syn::{parse_macro_input, DeriveInput};
 pub fn my_derive(input: TokenStream) -> TokenStream {
     let input = parse_macro_input!(input as DeriveInput);
     let name = &input.ident;
-    
+
     let expanded = quote! {
         impl #name {
             fn describe() -> &'static str {
@@ -231,7 +236,7 @@ pub fn my_derive(input: TokenStream) -> TokenStream {
             }
         }
     };
-    
+
     TokenStream::from(expanded)
 }
 
@@ -254,13 +259,13 @@ use tokio::task;
 #[tokio::main]
 async fn main() {
     let (tx, mut rx) = mpsc::channel(32);
-    
+
     task::spawn(async move {
         for i in 0..10 {
             tx.send(i).await.ok();
         }
     });
-    
+
     while let Some(value) = rx.recv().await {
         println!("Received: {}", value);
     }
@@ -338,19 +343,19 @@ async fn main() {
 #[cfg(test)]
 mod tests {
     use super::*;
-    
+
     #[test]
     fn test_addition() {
         assert_eq!(2 + 2, 4);
     }
-    
+
     #[test]
     fn test_error_handling() {
         match parse_number("50") {
             Ok(num) => assert_eq!(num, 50),
             Err(_) => panic!("Should not error"),
         }
-        
+
         assert!(parse_number("150").is_err());
         assert!(parse_number("abc").is_err());
     }
@@ -377,7 +382,7 @@ async fn test_web_server() {
             .unwrap())
         .await
         .unwrap();
-    
+
     assert_eq!(response.status(), StatusCode::OK);
 }
 ```
@@ -451,6 +456,6 @@ CMD ["app"]
 
 ---
 
-**Version**: 4.0.0 Enterprise  
-**Last Updated**: 2025-11-13  
+**Version**: 4.0.0 Enterprise
+**Last Updated**: 2025-11-13
 **Status**: Production Ready

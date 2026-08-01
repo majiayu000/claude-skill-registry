@@ -1,5 +1,11 @@
 ---
 name: start-issue
+description: 'Automate the setup for working on a GitHub issue: fetch details, create
+  branch, generate plan, and prepare environment.'
+---
+
+---
+name: start-issue
 description: |
   Start working on a GitHub issue with automated branch creation and planning.
   TRIGGER when: user wants to begin work on an issue (e.g., "start issue #23", "begin working on #45", "work on that bug", "let's tackle the auth issue").

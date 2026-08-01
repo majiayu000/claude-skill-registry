@@ -1,4 +1,9 @@
 ---
+name: docs-readme
+description: '> README ve proje dokümantasyonu best practices.'
+---
+
+---
 name: docs_readme
 router_kit: ManagementKit
 description: README best practices ve proje dokümantasyon şablonları.

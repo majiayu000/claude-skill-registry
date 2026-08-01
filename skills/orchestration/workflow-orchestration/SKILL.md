@@ -1,5 +1,12 @@
 ---
 name: workflow-orchestration
+description: 'Purpose: This skill defines the standard agent pipelines for different
+  task types. The /ms command uses this skill to orchestrate complex tasks with consistent
+  agent ordering and handoffs.'
+---
+
+---
+name: workflow-orchestration
 description: Standard agent pipelines for audit, coding, new project, refactor, and simple workflows. Defines 5 workflow types with specific agent sequences (AUDIT: BA→PM→Workers→Reviewer→PM, CODING: Architect→PM→Workers→Validator→Reviewer→PM, NEW_PROJECT and REFACTOR follow coding pipeline, SIMPLE: direct processing). Includes agent contracts, workflow detection logic, and orchestration best practices. Use when /ms command needs to determine workflow type and coordinate multi-agent execution.
 ---
 

@@ -1,3 +1,8 @@
+---
+name: python-cli
+description: Annotated[str, typer.Option(
+---
+
 # Skill: Python CLI Development
 
 ## Overview

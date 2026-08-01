@@ -1,5 +1,12 @@
 ---
 name: moai-platform-baas
+description: 'Comprehensive unified BaaS (Backend-as-a-Service) integration hub for
+  9 major providers: Auth0, Clerk, Firebase Auth, Supabase, Neon, Convex, Firebase
+  Firestore, Vercel, and Railway with AI-powered pr'
+---
+
+---
+name: moai-platform-baas
 description: Comprehensive unified BaaS (Backend-as-a-Service) integration hub for 9 major providers: Auth0, Clerk, Firebase Auth, Supabase, Neon, Convex, Firebase Firestore, Vercel, and Railway with AI-powered provider selection, cross-provider patterns, and migration guides.
 version: 2.0.0
 aliases: [moai-platform-baas]
@@ -78,13 +85,13 @@ recommendation = ai_selector.select_optimal_stack({
 ```python
 async def analyze_baas_requirements(project_context: ProjectContext) -> ProviderRecommendation:
     """AI-powered provider selection based on project requirements."""
-    
+
     # Get latest Context7 documentation for all providers
     context7_docs = await fetch_all_provider_docs()
-    
+
     # Analyze requirements against provider capabilities
     analysis = ProviderAnalyzer().analyze_requirements(project_context, context7_docs)
-    
+
     # Generate weighted recommendation
     return ProviderRecommender().generate_recommendation(analysis)
 ```
@@ -100,7 +107,7 @@ auth_config = provider_manager.configure_auth({
     "features": ["social_auth", "mfa", "organizations"]
 })
 
-# Database setup  
+# Database setup
 db_config = provider_manager.configure_database({
     "provider": "supabase",  # or "neon", "convex", "firestore"
     "schema_path": "./schema.sql",
@@ -172,12 +179,12 @@ deploy_config = provider_manager.configure_deployment({
 ```python
 class ModernWebStack:
     """Vercel + Clerk + Supabase integration."""
-    
+
     def setup_integration(self):
         """Seamless integration setup."""
         return {
             "authentication": "clerk",
-            "database": "supabase", 
+            "database": "supabase",
             "deployment": "vercel",
             "real_time_features": True,
             "server_functions": True,

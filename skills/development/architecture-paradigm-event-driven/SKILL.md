@@ -1,5 +1,11 @@
 ---
 name: architecture-paradigm-event-driven
+description: '- For real-time or bursty workloads (e.g., IoT, financial trading, logistics)
+  where loose coupling and asynchronous processing are beneficial.'
+---
+
+---
+name: architecture-paradigm-event-driven
 description: |
 
 Triggers: driven, architecture, decoupling, asynchronous, scalability

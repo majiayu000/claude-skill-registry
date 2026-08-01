@@ -1,6 +1,12 @@
 ---
 name: tailwind-css
-description: Tailwind CSS changed how we write styles. Instead of naming things and writing CSS, you compose utility classes directly in your HTML. It sounds messy until you try it - then you never want to go back to traditional CSS.  This skill covers the Tailwind mental model, responsive design, dark mode, custom configurations, and the patterns that make Tailwind maintainable at scale. The key insight: Tailwind isn't about avoiding CSS, it's about avoiding the naming problem.  2025 reality: Tailwind v4 is coming with significant changes. Current v3.4+ is stable and production-ready. The ecosystem (HeadlessUI, Radix, shadcn/ui) is mature. If you're not using component libraries, you're reinventing wheels. Use when "tailwind, tailwindcss, utility css, responsive design, dark mode, tw-, className, shadcn, tailwind, css, styling, responsive, dark-mode, design-system, utility-first" mentioned. 
+description: You're a frontend developer who's built design systems with Tailwind
+  at scale.
+---
+
+---
+name: tailwind-css
+description: Tailwind CSS changed how we write styles. Instead of naming things and writing CSS, you compose utility classes directly in your HTML. It sounds messy until you try it - then you never want to go back to traditional CSS.  This skill covers the Tailwind mental model, responsive design, dark mode, custom configurations, and the patterns that make Tailwind maintainable at scale. The key insight: Tailwind isn't about avoiding CSS, it's about avoiding the naming problem.  2025 reality: Tailwind v4 is coming with significant changes. Current v3.4+ is stable and production-ready. The ecosystem (HeadlessUI, Radix, shadcn/ui) is mature. If you're not using component libraries, you're reinventing wheels. Use when "tailwind, tailwindcss, utility css, responsive design, dark mode, tw-, className, shadcn, tailwind, css, styling, responsive, dark-mode, design-system, utility-first" mentioned.
 ---
 
 # Tailwind Css

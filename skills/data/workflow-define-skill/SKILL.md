@@ -1,3 +1,8 @@
+---
+name: workflow-define-skill
+description: '用途: 定义 Workflow（基于需求生成 Workflow YAML）'
+---
+
 # workflow-define-skill
 
 **用途**: 定义 Workflow（基于需求生成 Workflow YAML）
@@ -29,16 +34,16 @@ input:
     expected_flow: array            # 期望的步骤流程
     inputs: object                  # 输入参数
     outputs: object                 # 输出结果
-  
+
   available_skills:                 # 可用的 Skills
     - name: string
       input: object
       output: object
-  
+
   structure:                        # 系统结构（数据路径）
     data_paths: object
     output_paths: object
-  
+
   domain: string                    # 领域（health / finance / learning）
 ```
 
@@ -52,16 +57,16 @@ output:
     name: string
     description: string
     version: string
-    
+
     input: object                   # Workflow 输入
     output: object                  # Workflow 输出
-    
+
     nodes: object                   # 节点定义
     edges: array                    # 边定义
-    
+
     entry: string                   # 入口节点
     exit: string                    # 出口节点
-  
+
   metadata:                         # 元数据
     complexity: string              # simple / medium / complex
     estimated_duration: string      # 预计执行时间
@@ -109,7 +114,7 @@ def map_steps_to_skills(expected_flow, available_skills):
     将抽象步骤映射到具体 Skills
     """
     mapping = {}
-    
+
     for step in expected_flow:
         # 关键词匹配
         if "collect" in step.lower():
@@ -121,7 +126,7 @@ def map_steps_to_skills(expected_flow, available_skills):
         elif "notify" in step.lower():
             mapping[step] = find_skill("notify", available_skills)
         # ... 更多模式
-    
+
     return mapping
 ```
 
@@ -141,7 +146,7 @@ def build_workflow(requirement, skill_mapping):
         "nodes": {},
         "edges": []
     }
-    
+
     # 构建节点
     for i, (step, skill) in enumerate(skill_mapping.items()):
         node_id = f"step{i+1}"
@@ -150,7 +155,7 @@ def build_workflow(requirement, skill_mapping):
             "skill": skill.name,
             "input": map_inputs(step, skill, requirement)
         }
-    
+
     # 构建边（顺序执行）
     node_ids = list(workflow["nodes"].keys())
     for i in range(len(node_ids) - 1):
@@ -158,13 +163,13 @@ def build_workflow(requirement, skill_mapping):
             "from": node_ids[i],
             "to": node_ids[i+1]
         })
-    
+
     # 添加结束边
     workflow["edges"].append({
         "from": node_ids[-1],
         "to": "END"
     })
-    
+
     return workflow
 ```
 
@@ -199,10 +204,10 @@ def validate_workflow(workflow, available_skills):
         "variables_valid": check_variable_references(workflow),
         "entry_exit_valid": check_entry_exit(workflow)
     }
-    
+
     if not all(checks.values()):
         return {"valid": False, "errors": checks}
-    
+
     return {"valid": True}
 ```
 
@@ -216,26 +221,26 @@ def validate_workflow(workflow, available_skills):
 workflow:
   name: data-processing-workflow
   description: 收集 → 分析 → 生成报告
-  
+
   nodes:
     collect:
       type: skill
       skill: data-collect-skill
       input:
         date: $workflow.input.date
-    
+
     analyze:
       type: skill
       skill: analyze-skill
       input:
         data: $collect.output
-    
+
     report:
       type: skill
       skill: report-skill
       input:
         analysis: $analyze.output
-  
+
   edges:
     - from: collect
       to: analyze
@@ -243,7 +248,7 @@ workflow:
       to: report
     - from: report
       to: END
-  
+
   entry: collect
   exit: END
 ```
@@ -256,56 +261,56 @@ workflow:
 workflow:
   name: iterative-improvement-workflow
   description: 创建 → 评价 → 迭代（直到通过）
-  
+
   nodes:
     loop_controller:
       type: loop
       max_iterations: 5
       condition: "$evaluate.output.pass == false"
-    
+
     create:
       type: skill
       skill: create-skill
-    
+
     evaluate:
       type: skill
       skill: evaluate-skill
       input:
         artifact: $create.output
-    
+
     check:
       type: condition
       expression: "$evaluate.output.pass == true"
-    
+
     iterate:
       type: skill
       skill: iterate-skill
       input:
         artifact: $create.output
         feedback: $evaluate.output
-  
+
   edges:
     - from: loop_controller
       to: create
       condition: "$loop.should_continue"
-    
+
     - from: create
       to: evaluate
-    
+
     - from: evaluate
       to: check
-    
+
     - from: check
       to: END
       condition: true
-    
+
     - from: check
       to: iterate
       condition: false
-    
+
     - from: iterate
       to: loop_controller
-  
+
   entry: loop_controller
   exit: END
 ```
@@ -318,42 +323,42 @@ workflow:
 workflow:
   name: conditional-workflow
   description: 检查 → 条件判断 → 不同路径
-  
+
   nodes:
     check:
       type: skill
       skill: check-skill
-    
+
     decision:
       type: condition
       expression: "$check.output.status == 'success'"
-    
+
     success_path:
       type: skill
       skill: success-handler-skill
-    
+
     failure_path:
       type: skill
       skill: failure-handler-skill
-  
+
   edges:
     - from: check
       to: decision
-    
+
     - from: decision
       to: success_path
       condition: true
-    
+
     - from: decision
       to: failure_path
       condition: false
-    
+
     - from: success_path
       to: END
-    
+
     - from: failure_path
       to: END
-  
+
   entry: check
   exit: END
 ```
@@ -368,20 +373,20 @@ workflow:
 requirement:
   name: daily-check
   purpose: 每日健康检查，收集数据并生成报告
-  
+
   trigger:
     type: tick
     schedule: "21:00"
-  
+
   expected_flow:
     - "收集今日健康数据"
     - "分析健康指标"
     - "生成每日总结"
     - "通知用户"
-  
+
   inputs:
     date: string                    # 日期（默认今天）
-  
+
   outputs:
     report_path: string             # 报告路径
 
@@ -389,15 +394,15 @@ available_skills:
   - name: data-collect-skill
     input: {date, sources}
     output: {collected_data}
-  
+
   - name: health-indicators-skill
     input: {indicators, profile}
     output: {analysis, alerts}
-  
+
   - name: daily-review-skill
     input: {analysis, date}
     output: {report}
-  
+
   - name: notify-user-skill
     input: {message, path}
     output: {notified}
@@ -406,7 +411,7 @@ structure:
   data_paths:
     profile: "data/profile/profile.json"
     indicators: "data/indicators/{date}.json"
-  
+
   output_paths:
     reports: "outputs/reports/daily/"
 ```
@@ -420,14 +425,14 @@ workflow:
   name: daily-check
   description: 每日健康检查流程
   version: 1.0.0
-  
+
   input:
     date: string                    # 默认为今天
-  
+
   output:
     report_path: string
     alerts: array
-  
+
   nodes:
     # 步骤 1: 收集数据
     collect_data:
@@ -439,7 +444,7 @@ workflow:
           - "data/indicators/$workflow.input.date.json"
           - "data/profile/profile.json"
       output_to: $collected_data
-    
+
     # 步骤 2: 分析健康指标
     analyze_indicators:
       type: skill
@@ -448,7 +453,7 @@ workflow:
         indicators: $collected_data.indicators
         profile: $collected_data.profile
       output_to: $analysis
-    
+
     # 步骤 3: 生成每日总结
     generate_review:
       type: skill
@@ -457,7 +462,7 @@ workflow:
         analysis: $analysis
         date: $workflow.input.date
       output_to: $review
-    
+
     # 步骤 4: 通知用户
     notify_user:
       type: skill
@@ -466,20 +471,20 @@ workflow:
         message: "今日健康检查完成"
         path: $review.report_path
       output_to: $notification
-  
+
   edges:
     - from: collect_data
       to: analyze_indicators
-    
+
     - from: analyze_indicators
       to: generate_review
-    
+
     - from: generate_review
       to: notify_user
-    
+
     - from: notify_user
       to: END
-  
+
   entry: collect_data
   exit: END
 
@@ -491,11 +496,11 @@ metadata:
     - health-indicators-skill
     - daily-review-skill
     - notify-user-skill
-  
+
   trigger:
     type: tick
     schedule: "21:00"
-  
+
   notes: |
     这是一个简单的顺序 Workflow，无循环无分支。
     每天晚上 9 点自动执行。

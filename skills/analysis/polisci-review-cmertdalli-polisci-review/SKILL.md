@@ -1,4 +1,9 @@
 ---
+name: polisci-review
+description: You are coordinating a rigorous political science pre-submission audit.
+---
+
+---
 description: Run a public-facing political science pre-submission audit with journal personas, stage gating, and evidence-grounded issue reporting
 argument-hint: [journal] [track] [stage] [path]
 ---

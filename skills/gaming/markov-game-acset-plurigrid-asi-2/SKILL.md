@@ -1,3 +1,8 @@
+---
+name: markov-game-acset
+description: markov-game-acset skill
+---
+
 # markov-game-acset
 
 Markov games as ACSets with derangement constraints on state transitions.
@@ -16,12 +21,12 @@ Fills the "Markov games will be soon" gap from [open-games-engine Tutorial](http
     Action::Ob
     Player::Ob
     Transition::Ob
-    
+
     src_state::Hom(Transition, State)
     tgt_state::Hom(Transition, State)
     action::Hom(Transition, Action)
     player::Hom(Transition, Player)
-    
+
     probability::Attr(Transition, Float64)
     reward::Attr(Transition, Float64)
 end
@@ -49,13 +54,13 @@ function step!(game::MarkovGame, state::State, actions::Dict{Player,Action})
         src_state(game, t) == state &&
         all(p -> action(game, t) == actions[p], players(game))
     end
-    
+
     probs = [probability(game, t) for t in valid_transitions]
     chosen = sample(valid_transitions, Weights(probs))
-    
+
     rewards = Dict(p => reward(game, chosen) for p in players(game))
     next_state = tgt_state(game, chosen)
-    
+
     (next_state, rewards)
 end
 ```

@@ -1,5 +1,10 @@
 ---
 name: uart-expert
+description: Expert knowledge for serial communication (with ES-1841 caveats).
+---
+
+---
+name: uart-expert
 description: Expert on Intel 8250 UART for ES-1841 serial ports. Provides guidance on COM ports, serial communication, baud rate configuration, and modem control. Note: ES-1841 serial is incompatible with standard PC.
 ---
 

@@ -1,5 +1,12 @@
 ---
 name: authoring-global-scripts
+description: 'Authors and manages global package scripts using the _: prefix convention.
+  Scripts defined in root package.json are propagated to all packages with the prefix
+  stripped.'
+---
+
+---
+name: authoring-global-scripts
 description: Authors and manages global package scripts using the _: prefix convention. Scripts defined in root package.json are propagated to all packages with the prefix stripped.
 ---
 

@@ -1,5 +1,11 @@
 ---
 name: nextjs-middleware
+description: 'When you need to run code before a request completes: auth checks, redirects,
+  headers, A/B testing.'
+---
+
+---
+name: nextjs-middleware
 description: When you need to run code before a request completes: auth checks, redirects, headers, A/B testing. **Version Context**: Next.js 16.0+ uses `proxy.ts` (replaces `middleware.ts` from v15 and earlier).
 version: 1.1.0
 tokens: ~550

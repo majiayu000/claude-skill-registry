@@ -1,5 +1,11 @@
 ---
 name: task-planning
+description: Transforms specifications and implementation plans into actionable, dependency-ordered
+  tasks. Creates phased breakdowns that guide systematic implementation.
+---
+
+---
+name: task-planning
 description: |
 
 Triggers: dependencies, tasks, speckit, planning, implementation

@@ -1,4 +1,9 @@
 ---
+name: write-article
+description: Starting a new article from an idea or rough topic
+---
+
+---
 
 name: write-article
 description: End-to-end workflow for writing an article in the Real World AI Log project, focusing on practice-first, workflow-first collaboration.

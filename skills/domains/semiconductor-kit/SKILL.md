@@ -1,5 +1,13 @@
 ---
 name: semiconductor-kit
+description: This skill group covers essential semiconductor property calculations
+  from first principles. It provides tools to extract band gaps (direct and indirect),
+  carrier effective masses, and Fermi velocities from DFT band structures computed
+  with Quantum ESPRESSO or VASP.
+---
+
+---
+name: semiconductor-kit
 description: Semiconductor Kit (4 sub-skills: angular-effective-mass, band-gap, effective-mass, fermi-velocity)
 ---
 

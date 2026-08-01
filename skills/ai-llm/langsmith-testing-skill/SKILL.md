@@ -1,4 +1,10 @@
 ---
+name: langsmith-testing-skill
+description: 'CRITICAL for RAG: Every RAG query MUST be traced in LangSmith for observability.
+  Silent failures (bad retrieval, hallucinations) are only detectable through tracing.'
+---
+
+---
 name: langsmith-testing
 version: 1.0
 last_updated: 2025-12-04

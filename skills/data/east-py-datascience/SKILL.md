@@ -1,5 +1,12 @@
 ---
 name: east-py-datascience
+description: Data science and machine learning platform functions for the East language
+  (TypeScript types). Use when writing East programs that need optimization (MADS,
+  Optuna, SimAnneal, Scipy), machine learning
+---
+
+---
+name: east-py-datascience
 description: Data science and machine learning platform functions for the East language (TypeScript types). Use when writing East programs that need optimization (MADS, Optuna, SimAnneal, Scipy), machine learning (XGBoost, LightGBM, NGBoost, Torch MLP, Lightning, GP), ML utilities (Sklearn preprocessing, metrics, splits), or model explainability (SHAP). Triggers for: (1) Writing East programs with @elaraai/east-py-datascience, (2) Derivative-free optimization with MADS, (3) Bayesian optimization with Optuna, (4) Discrete/combinatorial optimization with SimAnneal, (5) Gradient boosting with XGBoost or LightGBM, (6) Probabilistic predictions with NGBoost or GP, (7) Neural networks with Torch MLP or Lightning, (8) Data preprocessing and metrics with Sklearn, (9) Model explainability with Shap.
 ---
 

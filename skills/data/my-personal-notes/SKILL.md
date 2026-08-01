@@ -1,3 +1,9 @@
+---
+name: my-personal-notes
+description: '- I have literally learnt a lot from my great mentor, Ayush Jain. He
+  shared not only tips but also many of useful links to learn from.'
+---
+
 # Introduction
 
 - I have literally learnt a lot from my great mentor, [Ayush Jain](https://ayushj240.github.io/). He shared not only tips but also many of useful links to learn from.
@@ -11,7 +17,7 @@
   2. Methodological paper -> "Why your method is interesting?"
      - Identify a problem/issue in the existing methods and propose a solution to tackle that issue.
      - If your hypothesis is correct, then you would naturally beat the SOTA.
-       - But beating SOTA is not the main point. Contribution is still about the problem you identified and solved.  
+       - But beating SOTA is not the main point. Contribution is still about the problem you identified and solved.
        ** SOTAs come and go, but ideas are transferable and reusable.
 
 - Other ways to make research contributions;
@@ -53,32 +59,32 @@
         - <img src="./images/ex-summary-slide1.png" alt="drawing" width="150"/>
         - <img src="./images/ex-summary-slide2.png" alt="drawing" width="150"/>
       - Other formats: [Prof. Yoichi Ochiai's template](https://www.slideshare.net/Ochyai/1-ftma15?ref=https://www.chem-station.com/blog/2017/12/shoroku.html) / [Arxiv Times](https://github.com/arXivTimes/arXivTimes)
-        
+
     - Organise/categorise the related works
-    
+
       - Of course, mendeley or other reference mgrs are okay but didn't work for me... So here is my way;
         - <img src="./images/ex-list-of-lit-review-slides.png" alt="drawing" width="150"/>
-    
+
     - Make sure to check the codebase
-    
+
       - If you have time, then run the existing open-source code / Try implementing it yourself to understand it better
-      
+
     - Discuss with co-workers after going over a few seemingly relevant papers
-    
+
       - Discussing with ppl helps you to understand them better and you might be able to get some new interesting questions from your co-workers
       - Make sure to take note of the discussion!!
-      
+
     - Tips: `What does "Carefully read a paper"` mean? by `Ayush`
-    
+
       - Analyse the exps results to see if the proposed method really works or it has some flaw
       - Check if the proposition is evaluated correctly through exp results
       - See if the paper is critical to the project from various perspectives
         - eg., What's our contribution? what can we improve? any limitation
-    
+
   - Looking around yourself to find real-world issues is important
-  
+
     - Lit review is good but sometimes just listening to your coworkers helps you to find the practical issues of existing methods too!
-    
+
   - Draft the storyline
     - Prepare the following slides as a very short form of paper while working on the next todo(ie, Init exp)
       - Motivating example + Problem Setting: To explain the importance of project
@@ -116,7 +122,7 @@
       - Hot topic, not low-hanging fruit (ie., high significance)
       - Impactful applications
       - Impactful and reachable storyline
-  
+
 - Experiments
   - Selection of env/task/dataset
 	- Think about if the existing env offers such challenge correctly and or too artificial
@@ -223,7 +229,7 @@
   - *Be Early and Stay Late*
     - There are fewer people *before* and *after* the scheduled poster session. Don't miss the great opportunity to have interesting, long conversation with people genuinely interested in your work.
   - *Be Concise*
-    - Bad: Present linearly from top to bottom for 10 mins. 
+    - Bad: Present linearly from top to bottom for 10 mins.
     - Good: Present an elevator pitch for 30 seconds. Hook the audience and then respond to any questions.
   - *Use Tools*
     - Poster is just a *static* visual abstract. If your work involve other *dynamic* mediums (e.g., video, sound), bringing a laptop or tablet would make your presentation a lot more engaging.
@@ -262,7 +268,7 @@
 - Tips of paper structure: [link](https://docs.google.com/document/d/1o9rqRaALSpvCs1Psu-IHVdt2gflhIodCV9MD1dApfLk/edit?usp=sharing)
 
 ## Writing tips: Ayush shared me [this website](https://raghavan.usc.edu/2021-spring-crafting-a-research-agenda/#:~:text=%2D-,M%204/5%0AWriting,-%2D)
-- [The Craft of Writing Effectively, McEnerney](https://www.youtube.com/watch?v=vtIzMaLkCaM)  
+- [The Craft of Writing Effectively, McEnerney](https://www.youtube.com/watch?v=vtIzMaLkCaM)
   - (1) Think about who your readers are and what value your writing offers to them,
   - (2) Use the code/terms commonly used in the community to illustrate the value to readers
     - Otherwise ppl don't care about your work/writing BECAUSE they can't find the motivation to read _not because_ your work/writing is bad/valueless/trivial/not-original

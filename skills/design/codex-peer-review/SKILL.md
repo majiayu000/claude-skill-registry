@@ -1,5 +1,12 @@
 ---
 name: codex-peer-review
+description: '[CLAUDE CODE ONLY] Leverage Codex CLI for AI peer review, second opinions
+  on architecture and design decisions, cross-validation of implementations, security
+  analysis, and alternative approach generat'
+---
+
+---
+name: codex-peer-review
 description: [CLAUDE CODE ONLY] Leverage Codex CLI for AI peer review, second opinions on architecture and design decisions, cross-validation of implementations, security analysis, and alternative approach generation. Requires terminal access to execute Codex CLI commands. Use when making high-stakes decisions, reviewing complex architecture, or when explicitly requested for a second AI perspective. Must be explicitly invoked using skill syntax.
 license: Complete terms in LICENSE.txt
 environment: claude-code

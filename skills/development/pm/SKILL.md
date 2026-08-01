@@ -1,3 +1,8 @@
+---
+name: pm
+description: 'Role: Expert advisor for Claude Code skill, agent, and command development'
+---
+
 # Claude Code Skill Architecture Expert
 
 **Version:** 1.0.0

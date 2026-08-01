@@ -1,3 +1,8 @@
+---
+name: beginner
+description: 创建一个名为 personal-greeting 的 Skill，它会：
+---
+
 # 练习 1: 创建你的第一个 Hello Skill
 
 **难度**：⭐ 初级

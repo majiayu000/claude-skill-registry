@@ -1,3 +1,10 @@
+---
+name: using-subagents-as-codex
+description: Use when Codex would benefit from a background subagent so the primary
+  session stays lean—this skill walks through codex-subagent start/send/peek/log/watch
+  usage, controller ID tagging, and disk-based
+---
+
 name: using-subagents-as-codex
 description: Use when Codex would benefit from a background subagent so the primary session stays lean—this skill walks through codex-subagent start/send/peek/log/watch usage, controller ID tagging, and disk-based prompt/result handling for reliable async work.
 

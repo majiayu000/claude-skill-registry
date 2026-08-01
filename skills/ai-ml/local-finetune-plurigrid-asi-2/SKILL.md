@@ -1,3 +1,8 @@
+---
+name: local-finetune
+description: local-finetune
+---
+
 # local-finetune
 
 > Local model fine-tuning pipeline using ACSets + DuckDB + MLX

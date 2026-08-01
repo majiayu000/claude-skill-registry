@@ -1,5 +1,12 @@
 ---
 name: subscription-sync
+description: Real-time data synchronization patterns for ChainGraph frontend. Use
+  when working on WebSocket subscriptions, event buffers, tRPC subscriptions, flow
+  synchronization, or execution event streaming. Cov
+---
+
+---
+name: subscription-sync
 description: Real-time data synchronization patterns for ChainGraph frontend. Use when working on WebSocket subscriptions, event buffers, tRPC subscriptions, flow synchronization, or execution event streaming. Covers subscription lifecycle, event buffering, race condition solutions. Triggers: subscription, sync, real-time, websocket, event buffer, tRPC subscription, flow events, onData, patronum interval.
 ---
 

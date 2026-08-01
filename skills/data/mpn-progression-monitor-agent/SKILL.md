@@ -1,3 +1,8 @@
+---
+name: mpn-progression-monitor-agent
+description: '---name: mpn-progression-monitor-agent'
+---
+
 ---name: mpn-progression-monitor-agent
 description: AI-powered myeloproliferative neoplasm monitoring for disease progression prediction, treatment response tracking, and transformation risk assessment in PV, ET, and myelofibrosis.
 license: MIT

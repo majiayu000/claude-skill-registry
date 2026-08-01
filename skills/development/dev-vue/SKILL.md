@@ -1,5 +1,11 @@
 ---
 name: dev-vue
+description: This skill provides Vue 3 component development with Composition API
+  and TypeScript for the Pomo-Flow productivity application.
+---
+
+---
+name: dev-vue
 description: COMPREHENSIVE Vue 3 development with Composition API, TypeScript, and advanced reactivity debugging. Create reactive components, handle props/events, implement lifecycle hooks, integrate with Pinia state management, debug reactivity issues, and optimize component performance. CRITICAL: All component changes MUST be tested with Playwright before claiming success. Use DevTools for debugging when available.
 ---
 

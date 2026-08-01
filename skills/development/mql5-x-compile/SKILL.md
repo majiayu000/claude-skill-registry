@@ -1,5 +1,12 @@
 ---
 name: mql5-x-compile
+description: 'Compile MQL5 indicators via CLI using X: drive mapping to bypass ''Program
+  Files'' path spaces issue. Use when compiling MQL5, MetaEditor, indicators, scripts,
+  or when user mentions compilation errors r'
+---
+
+---
+name: mql5-x-compile
 description: Compile MQL5 indicators via CLI using X: drive mapping to bypass 'Program Files' path spaces issue. Use PROACTIVELY after editing ANY .mq5 or .mqh file. Triggers - after editing MQL5 code, compile, build, MetaEditor, .mq5, .mqh, indicator, script, EA, expert advisor, "test it", "try it", "run it", path space errors. (project)
 allowed-tools: Bash, Read
 ---

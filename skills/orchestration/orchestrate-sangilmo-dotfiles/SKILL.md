@@ -1,5 +1,11 @@
 ---
 name: orchestrate
+description: Leader가 직접 스펙을 작성하고 Executor 세션으로 실행합니다. Tester는 Executor가 필요 시 on-demand로
+  생성합니다.
+---
+
+---
+name: orchestrate
 description: Leader → Executor → Tester → Review 전체 워크플로우 실행
 user-invocable: true
 argument: [--new] 기능 설명 (예: "로그인 기능")

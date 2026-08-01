@@ -1,3 +1,8 @@
+---
+name: sdd-requirements
+description: 実装したい機能の要件と受け入れ基準を定義し、要件定義書（requirements.md）を作成する。
+---
+
 # sdd-requirements
 
 ## Description

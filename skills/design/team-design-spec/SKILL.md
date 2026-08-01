@@ -1,5 +1,10 @@
 ---
 name: team-design-spec
+description: Create comprehensive UI/UX specifications for implementation.
+---
+
+---
+name: team-design-spec
 description: "[Team] Create UI/UX design specifications from requirements or Figma designs. Covers component specs (Atom/Molecule/Organism), accessibility audits (WCAG 2.1 AA), design tokens, responsive behavior, and dev handoffs. Triggers on "design spec", "ui spec", "component spec", "accessibility audit", "design handoff", "design tokens", "wireframe", "mockup"."
 argument-hint: "<path-to-PBI-or-Figma-URL>"
 infer: true

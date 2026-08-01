@@ -1,5 +1,12 @@
 ---
 name: react-pwa
+description: 'Build Progressive Web Apps with React and Vite using vite-plugin-pwa.
+  This skill covers the complete PWA lifecycle: manifest configuration, service worker
+  strategies, offline support, installability,'
+---
+
+---
+name: react-pwa
 description: Build Progressive Web Apps with React and Vite. This skill should be used when the user asks to "create a PWA", "add offline support", "make app installable", "generate service worker", "configure workbox", "add push notifications", or mentions PWA, progressive web app, or offline-first development. Keywords: PWA, progressive web app, service worker, manifest, offline, installable, workbox, vite-plugin-pwa, React.
 license: MIT
 compatibility: Requires Deno for scripts. Works with React 18+ and Vite 5+.

@@ -1,3 +1,8 @@
+---
+name: dlrlss-2018
+description: '- RL with policy advice. Azar et al., ECML 2013.'
+---
+
 # Transfer / meta / lifelong learning
 
 - RL with policy advice. Azar et al., ECML 2013.

@@ -1,4 +1,11 @@
 ---
+name: sparc-methodology
+description: SPARC (Specification, Pseudocode, Architecture, Refinement, Completion)
+  is a systematic development methodology integrated with Claude Flow's multi-agent
+  orchestration capabilities. It provides 17 spe
+---
+
+---
 name: sparc_methodology
 router_kit: FullStackKit
 description: SPARC (Specification, Pseudocode, Architecture, Refinement, Completion) comprehensive development methodology with multi-agent orchestration

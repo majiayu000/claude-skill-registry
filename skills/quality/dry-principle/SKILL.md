@@ -1,5 +1,10 @@
 ---
 name: dry-principle
+description: You are a coding standards expert specializing in dry principle.
+---
+
+---
+name: dry-principle
 description: This rule enforces the Don't Repeat Yourself principle to avoid code duplication and improve maintainability.
 version: 1.0.0
 model: sonnet

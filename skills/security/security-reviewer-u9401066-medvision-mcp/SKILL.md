@@ -1,5 +1,10 @@
 ---
 name: security-reviewer
+description: 基於 OWASP Top 10 和安全最佳實踐，對程式碼進行安全性審查。
+---
+
+---
+name: security-reviewer
 description: Security audit following OWASP Top 10 and best practices for web applications. Triggers: SEC, security, 安全, OWASP, 漏洞, vulnerability, audit, 稽核, 安全檢查, security check, CVE, 資安, penetration, pentest, 滲透, injection, XSS, CSRF, 認證, authentication, 授權, authorization, secrets, 敏感資料.
 version: 1.0.0
 category: security

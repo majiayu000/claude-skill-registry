@@ -1,5 +1,10 @@
 ---
 name: episode
+description: View or append to the daily episode log.
+---
+
+---
+name: episode
 description: View or add to today's episode log. Use when reviewing what happened today, adding a notable event, checking daily progress, or appending to the day's record. Trigger words: episode, today, log, daily, happened, record.
 ---
 

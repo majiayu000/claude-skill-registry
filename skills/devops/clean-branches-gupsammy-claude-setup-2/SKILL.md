@@ -1,5 +1,10 @@
 ---
 name: clean-branches
+description: Safely remove merged and stale git branches with confirmation.
+---
+
+---
+name: clean-branches
 description: >
   Use when user says "clean up branches", "delete merged branches",
   "prune stale branches", "git branch cleanup", "remove old branches",

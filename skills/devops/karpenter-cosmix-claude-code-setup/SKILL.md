@@ -1,5 +1,12 @@
 ---
 name: karpenter
+description: 'Kubernetes node autoscaling with Karpenter for efficient cluster scaling.
+  Use when implementing node provisioning, consolidation, spot instance handling,
+  or optimizing compute costs. Triggers: karpent'
+---
+
+---
+name: karpenter
 description: Kubernetes node autoscaling with Karpenter for efficient cluster scaling. Use when implementing node provisioning, consolidation, spot instance handling, or optimizing compute costs. Triggers: karpenter, node autoscaling, provisioner, nodepool, spot instances, cluster autoscaling, node consolidation.
 allowed-tools: Read, Grep, Glob, Edit, Write, Bash
 ---

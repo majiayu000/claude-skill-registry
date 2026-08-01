@@ -1,3 +1,8 @@
+---
+name: cellfree-rna-agent
+description: '---name: cellfree-rna-agent'
+---
+
 ---name: cellfree-rna-agent
 description: AI-powered cell-free RNA analysis from liquid biopsy for cancer detection, tissue-of-origin identification, and non-invasive transcriptomic profiling.
 license: MIT

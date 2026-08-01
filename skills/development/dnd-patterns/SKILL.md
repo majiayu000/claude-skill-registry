@@ -1,3 +1,8 @@
+---
+name: dnd-patterns
+description: Drag and drop implementation using DND Kit for reordering tune versions.
+---
+
 # DND Patterns Skill
 
 ## Purpose

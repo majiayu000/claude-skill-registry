@@ -1,3 +1,9 @@
+---
+name: skills-eliaalberti-superbeads-univers
+description: Updates the project's CLAUDE.md with key learnings from this session,
+  optimized for context efficiency.
+---
+
 # /preserve - Preserve Session Knowledge to CLAUDE.md
 
 ## Description

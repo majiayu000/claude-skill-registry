@@ -1,5 +1,11 @@
 ---
 name: react-state-management
+description: 'Apply when deciding state management approach: local state, context,
+  Zustand for client state, or TanStack Query for server state.'
+---
+
+---
+name: react-state-management
 description: Apply when deciding state management approach: local state, context, Zustand for client state, or TanStack Query for server state.
 version: 1.0.0
 tokens: ~750

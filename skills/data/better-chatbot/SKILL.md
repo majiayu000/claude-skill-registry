@@ -1,5 +1,10 @@
 ---
 name: better-chatbot
+description: 'Status: Production Ready'
+---
+
+---
+name: better-chatbot
 description: better-chatbot project conventions and standards. Use for contributing code, following three-tier tool system (MCP/Workflow/Default), or encountering server action validators, repository patterns, component design errors.
 
   Keywords: better-chatbot, chatbot contribution, better-chatbot standards, chatbot development, AI chatbot patterns, API architecture, three-tier tool system, repository pattern, progressive enhancement, defensive programming, streaming-first, compound component pattern, Next.js chatbot, Vercel AI SDK chatbot, MCP tools, workflow builder, server action validators, tool abstraction, DAG workflows, shared business logic, safe() wrapper, tool lifecycle

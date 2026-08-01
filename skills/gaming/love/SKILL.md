@@ -1,4 +1,10 @@
 ---
+name: love
+description: '{{SKILLDESCRIPTION}} Use this skill when working with core functionality
+  for LÖVE games.'
+---
+
+---
 name: {{SKILL_NAME}}
 description: {{SKILL_DESCRIPTION}} Use this skill when working with core functionality for LÖVE games.
 license: MIT

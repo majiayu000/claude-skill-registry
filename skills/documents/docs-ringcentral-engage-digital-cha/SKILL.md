@@ -1,3 +1,8 @@
+---
+name: docs-ringcentral-engage-digital-cha
+description: 'For a simple ping-pong bot skill:'
+---
+
 # Write/use a bot skill
 
 ## Write a bot skill

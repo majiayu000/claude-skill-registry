@@ -1,5 +1,10 @@
 ---
 name: phase-diagram
+description: Tools for thermodynamic and electrochemical phase stability analysis.
+---
+
+---
+name: phase-diagram
 description: Phase Diagram Skills (2 sub-skills: convex-hull, pourbaix-diagram)
 ---
 

@@ -1,11 +1,16 @@
+---
+name: prompts
+description: Sonnet 4.5 · Claude Pro
+---
+
 # Generate OODA MicroSim with Claude Code Skill
 Claude Code v2.0.36
 Sonnet 4.5 · Claude Pro
 
 !!! prompt
-    Use the microsim-p5 skill to create a new microsim called 'ooda' that is 
-    based around the OODA_loop page on Wikipedia.  
-    https://en.wikipedia.org/wiki/OODA_loop 
+    Use the microsim-p5 skill to create a new microsim called 'ooda' that is
+    based around the OODA_loop page on Wikipedia.
+    https://en.wikipedia.org/wiki/OODA_loop
 
 ⏺ I'll help you create a new MicroSim about the OODA loop. Let me first fetch information
   about the OODA loop from Wikipedia, then use the microsim-p5 skill to create the
@@ -17,14 +22,14 @@ Sonnet 4.5 · Claude Pro
 ⏺ Let me try a web search instead to gather information about the OODA loop:
 
 ⏺ Web Search("OODA loop Observe Orient Decide Act John Boyd decision making")
-  ⎿  Did 1 search in 20s                                                                   
+  ⎿  Did 1 search in 20s
 
 ⏺ Perfect! Now I have good information about the OODA loop. Let me invoke the microsim-p5
   skill to create an interactive educational simulation:
 
-> The "microsim-p5" skill is running 
+> The "microsim-p5" skill is running
 
-> The "microsim-p5" skill is running 
+> The "microsim-p5" skill is running
 
 ⏺ Perfect! I now have all the information I need to create an OODA Loop MicroSim. Let me
   create a comprehensive, educational simulation that demonstrates how the OODA loop works
@@ -34,7 +39,7 @@ Sonnet 4.5 · Claude Pro
   ⎿  (No content)
 
 ⏺ Write(docs/sims/ooda/ooda.js)
-  ⎿  Wrote 225 lines to docs/sims/ooda/ooda.js                            
+  ⎿  Wrote 225 lines to docs/sims/ooda/ooda.js
      // OODA Loop MicroSim
      // Demonstrates the Observe-Orient-Decide-Act decision-making cycle
      // Created by: Claude and Dan McCreary
@@ -47,7 +52,7 @@ Sonnet 4.5 · Claude Pro
      … +215 lines (ctrl+o to expand)
 
 ⏺ Write(docs/sims/ooda/main.html)
-  ⎿  Wrote 22 lines to docs/sims/ooda/main.html                                   
+  ⎿  Wrote 22 lines to docs/sims/ooda/main.html
      <!DOCTYPE html>
      <html lang="en">
      <head>
@@ -61,7 +66,7 @@ Sonnet 4.5 · Claude Pro
      … +12 lines (ctrl+o to expand)
 
 ⏺ Write(docs/sims/ooda/index.md)
-  ⎿  Wrote 167 lines to docs/sims/ooda/index.md                                            
+  ⎿  Wrote 167 lines to docs/sims/ooda/index.md
      ---
      title: OODA Loop
      description: An interactive simulation of the OODA Loop (Observe, Orient, Decide, Act)
@@ -150,13 +155,13 @@ Sonnet 4.5 · Claude Pro
    speed through the decision cycle provides competitive advantage - a key insight
   applicable to business, military strategy, cybersecurity, and personal decision-making!
 
-> update the mkdocs.yml nav to include this new MicroSim 
+> update the mkdocs.yml nav to include this new MicroSim
 
 ⏺ Read(mkdocs.yml)
   ⎿  Read 208 lines
 
 ⏺ Update(mkdocs.yml)
-  ⎿  Updated mkdocs.yml with 1 addition                           
+  ⎿  Updated mkdocs.yml with 1 addition
        116        - Named Colors: sims/named-colors/index.md
        117        - NeoPixel: sims/neopixel/index.md
        118        - Neural Network: sims/neural-network/index.md
@@ -180,7 +185,7 @@ Sonnet 4.5 · Claude Pro
 
   mkdocs gh-deploy
 
-> how many tokens did you use and how long did it take to generate this microsim? 
+> how many tokens did you use and how long did it take to generate this microsim?
 
 ⏺ Based on the token usage tracking throughout our conversation:
 

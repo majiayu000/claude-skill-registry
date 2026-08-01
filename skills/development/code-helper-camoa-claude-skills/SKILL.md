@@ -1,5 +1,10 @@
 ---
 name: code-helper
+description: Provides guidance for code quality improvements.
+---
+
+---
+name: code-helper
 description: Assists with code quality tasks. Use when reviewing code, checking for issues, or improving code quality. NOT for: writing new features from scratch.
 model: sonnet
 hooks:

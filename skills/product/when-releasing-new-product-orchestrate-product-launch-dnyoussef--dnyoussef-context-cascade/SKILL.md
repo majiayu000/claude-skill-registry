@@ -1,3 +1,8 @@
+---
+name: when-releasing-new-product-orchestrate-product-launch
+description: /============================================================================/
+---
+
 /*============================================================================*/
 /* WHEN-RELEASING-NEW-PRODUCT-ORCHESTRATE-PRODUCT-LAUNCH SKILL :: VERILINGUA x VERIX EDITION                      */
 /*============================================================================*/
@@ -126,7 +131,7 @@ Use this workflow when:
    Spawn `market-researcher` agent to:
    - Analyze target market size, demographics, and segmentation
    - Research competitors (features, pricing, positioning, market share)
-   - Identify market trends, opportunities, 
+   - Identify market trends, opportunities,
 
 /*----------------------------------------------------------------------------*/
 /* S4 SUCCESS CRITERIA                                                         */

@@ -1,3 +1,9 @@
+---
+name: guides-valory-xyz-open-autonomy
+description: Recall that the {{fsmapp}} skill is the core part of the agent blueprint
+  that encodes the business logic of the AI agent. Developing the {{fsmapp}} is possibly
+  most demanding step in the development process.
+---
 
 Recall that the [{{fsm_app}} skill](../key_concepts/fsm_app_introduction.md) is the core part of the agent blueprint that encodes the business logic of the AI agent. Developing the {{fsm_app}} is possibly most demanding step in the development process.
 
@@ -37,7 +43,7 @@ You must ensure that your machine satisfies the [framework requirements](./set_u
       * `payloads.py`.
 
     You should also define a number of test classes. You can review how the [demo AI agents](https://stack.olas.network/demos/) are implemented, or read about the [internals of {{fsm_app}}s](../key_concepts/fsm_app_introduction.md) to learn how to populate the template classes.
-    
+
     !!! tip
-    	
+
     	If you are a new user and want to skip coding the {{fsm_app}}, in the next guides we show you how you can use an existing {{fsm_app}} or an existing agent blueprint from the default [packages shipped with the framework](../package_list.md).

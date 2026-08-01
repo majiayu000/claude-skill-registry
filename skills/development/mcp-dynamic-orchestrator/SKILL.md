@@ -1,5 +1,12 @@
 ---
 name: mcp-dynamic-orchestrator
+description: Dynamic MCP server discovery and code-mode execution via central registry.
+  Use for multiple MCP integrations, tool discovery, progressive disclosure, or encountering
+  MCP context bloat, changing server
+---
+
+---
+name: mcp-dynamic-orchestrator
 description: Dynamic MCP server discovery and code-mode execution via central registry. Use for multiple MCP integrations, tool discovery, progressive disclosure, or encountering MCP context bloat, changing server sets, large tool sets.
 
   Keywords: MCP, code-mode, registry, dynamic tools, tool discovery, progressive disclosure

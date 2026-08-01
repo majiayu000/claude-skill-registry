@@ -1,5 +1,12 @@
 ---
 name: fluxcd
+description: 'GitOps toolkit with Flux CD for Kubernetes continuous delivery. Use
+  when implementing GitOps workflows, Helm releases, Kustomize deployments, or image
+  automation. Triggers: fluxcd, flux, gitops, gitre'
+---
+
+---
+name: fluxcd
 description: GitOps toolkit with Flux CD for Kubernetes continuous delivery. Use when implementing GitOps workflows, Helm releases, Kustomize deployments, or image automation. Triggers: fluxcd, flux, gitops, gitrepository, kustomization, helmrelease, image automation, source controller.
 allowed-tools: Read, Grep, Glob, Edit, Write, Bash
 ---

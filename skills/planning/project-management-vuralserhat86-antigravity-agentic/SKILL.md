@@ -1,4 +1,10 @@
 ---
+name: project-management
+description: PROJECT.md-first project management, goal setting, scope definition,
+  and sprint planning.
+---
+
+---
 name: project_management
 router_kit: ManagementKit
 version: 1.0.0

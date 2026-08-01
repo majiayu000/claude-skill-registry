@@ -1,5 +1,13 @@
 ---
 name: agent-identity
+description: Without identity infrastructure, every Claude Code session starts from
+  zero. The agent has no name, no remembered preferences, no sense of who it works
+  with or what it has learned. Context compaction erases everything mid-session. This
+  skill fixes that — no external tools required.
+---
+
+---
+name: agent-identity
 description: Set up persistent agent identity files (AGENT.md, USER.md, MEMORY.md) and teach the agent to read them at every session start. Works in any Claude Code project — no external dependencies required. Trigger words: who am I, identity, remember me, agent name, my principles, who are you, what are my values.
 license: MIT
 metadata:

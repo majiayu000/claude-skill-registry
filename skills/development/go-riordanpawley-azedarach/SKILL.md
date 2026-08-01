@@ -1,3 +1,9 @@
+---
+name: go-riordanpawley-azedarach
+description: 'Purpose: Idiomatic Bubbletea patterns learned from Glow, Soft Serve,
+  and community best practices'
+---
+
 # Bubbletea Patterns Skill
 
 **Version:** 1.0

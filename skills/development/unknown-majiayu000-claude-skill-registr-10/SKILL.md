@@ -1,4 +1,9 @@
 ---
+name: unknown
+description: The most comprehensive Claude Code skills registry - 50,000+ skills indexed
+---
+
+---
 name: memorylane
 description: Zero-config persistent memory for Claude with automatic cost savings. Use when you need to remember project context, reduce API token costs, track learned patterns, manage memories across sessions, or curate/clean up memories. Automatically compresses context 6x and saves 84% on API costs. Keywords: memory, remember, recall, context, cost savings, reduce tokens, learn, patterns, insights, curate, clean up memories, review memories.
 allowed-tools: Bash, Read, Write, Glob, Grep

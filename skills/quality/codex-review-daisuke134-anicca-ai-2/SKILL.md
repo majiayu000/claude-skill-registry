@@ -1,5 +1,10 @@
 ---
 name: codex-review
+description: '規模判定 → Codex規模別レビュー → Claude Code修正 → 再レビュー（ok: trueまで反復）'
+---
+
+---
+name: codex-review
 description: Codex CLI（read-only）を用いて、レビュー→Claude Code修正→再レビュー（ok: true まで）を反復し収束させるレビューゲート。仕様書/SPEC/PRD/要件定義/設計、実装計画（PLANS.md等）の作成・更新直後、major step（>=5 files / 新規モジュール / 公開API / infra・config変更）完了後、および git commit / PR / merge / release 前に使用する。キーワード: Codexレビュー, codex review, レビューゲート.
 ---
 

@@ -1,5 +1,12 @@
 ---
 name: kaggle-workflow
+description: Guide through complete Kaggle competition workflow from TODO updates
+  to submission. Use PROACTIVELY when user starts new experiments, prepares submissions,
+  or asks about competition workflow. Keywords
+---
+
+---
+name: kaggle-workflow
 description: Guide through complete Kaggle competition workflow from TODO updates to submission. Use PROACTIVELY when user starts new experiments, prepares submissions, or asks about competition workflow. Keywords: Kaggle, 提出, submission, workflow, ワークフロー, コンペ
 ---
 

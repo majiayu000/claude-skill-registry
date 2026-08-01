@@ -1,3 +1,8 @@
+---
+name: schema
+description: '- CoolDown string[]'
+---
+
 ## TOSSkill :: TOSEntity
 
 #### Properties

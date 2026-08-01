@@ -1,5 +1,10 @@
 ---
 name: cpu-gpu-performance
+description: '- When to Use'
+---
+
+---
+name: cpu-gpu-performance
 description: |
 
 Triggers: performance

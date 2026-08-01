@@ -1,4 +1,10 @@
 ---
+name: github-workflow-skill
+description: 'CRITICAL: Follow GitHub workflow patterns: conventional branch names,
+  PR process, quality gates, code review.'
+---
+
+---
 name: GitHub Workflow
 description: GitHub workflow patterns for Orchestrator AI. Branch naming, PR process, code review, CI/CD. CRITICAL: Use conventional branch names (feature/, fix/, chore/). PRs require quality gates to pass. Use GitHub Actions for CI/CD.
 allowed-tools: Read, Write, Edit, Bash, Grep, Glob

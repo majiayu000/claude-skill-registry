@@ -1,5 +1,11 @@
 ---
 name: poetry-rye-dependency-management
+description: You are a coding standards expert specializing in poetry rye dependency
+  management.
+---
+
+---
+name: poetry-rye-dependency-management
 description: Specifies Poetry or Rye for dependency management in Python projects.
 version: 1.0.0
 model: sonnet

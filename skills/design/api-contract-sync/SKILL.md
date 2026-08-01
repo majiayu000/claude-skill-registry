@@ -1,5 +1,12 @@
 ---
 name: api-contract-sync
+description: 'Use this skill when backend API contracts change and frontend types
+  need synchronization. Triggers on: Pydantic model changes, REST endpoint updates,
+  WebSocket message formats, or GraphQL schema modif'
+---
+
+---
+name: api-contract-sync
 description: Use this skill when backend API contracts change and frontend types need synchronization. Triggers on: Pydantic model changes, REST endpoint updates, WebSocket message formats, or GraphQL schema modifications. Dynamically detects contract type from context. NOT for unrelated type definitions or internal backend-only changes.
 ---
 

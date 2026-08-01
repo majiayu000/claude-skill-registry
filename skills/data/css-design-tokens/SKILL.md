@@ -1,5 +1,12 @@
 ---
 name: css-design-tokens
+description: 'CSS design tokens and color system for vehicle insurance platform. Use
+  when defining colors, spacing, typography, or design variables. Keywords: eye-care
+  colors #5B8DEF/#8B95A5/#C5CAD3, CSS variables,'
+---
+
+---
+name: css-design-tokens
 description: CSS design tokens and color system for vehicle insurance platform. Use when defining colors, spacing, typography, or design variables. Keywords: eye-care colors #5B8DEF/#8B95A5/#C5CAD3, CSS variables, spacing system, color palette, typography scale, design tokens, variables.css, theme colors.
 allowed-tools: Read, Edit, Grep, Glob
 ---

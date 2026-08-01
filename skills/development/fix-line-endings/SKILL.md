@@ -1,5 +1,11 @@
 ---
 name: fix-line-endings
+description: 'Fix CRLF (Windows) to LF (Unix) line endings in files. Use when encountering
+  `/bin/bash: line 1: $''\r'': command not found` errors.'
+---
+
+---
+name: fix-line-endings
 description: Fix CRLF (Windows) to LF (Unix) line endings in files. Use when encountering `/bin/bash: line 1: $'\r': command not found` errors.
 ---
 

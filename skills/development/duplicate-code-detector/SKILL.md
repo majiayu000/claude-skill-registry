@@ -1,5 +1,12 @@
 ---
 name: duplicate-code-detector
+description: 'Use when asked about code quality or duplication. Runs jscpd analysis
+  for quantitative metrics and TDD refactoring plans. Triggers: "duplicate code",
+  "code quality", "find clones", "copy-paste detecti'
+---
+
+---
+name: duplicate-code-detector
 description: Use when asked about code quality or duplication. Runs jscpd analysis for quantitative metrics and TDD refactoring plans. Triggers: "duplicate code", "code quality", "find clones", "copy-paste detection". If thinking "manual review is fine" - automate instead. NOTE: For "refactor" or "technical debt" → use this skill FIRST to identify targets, THEN use incremental-refactoring to implement changes.
 ---
 

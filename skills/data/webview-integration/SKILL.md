@@ -1,3 +1,8 @@
+---
+name: webview-integration
+description: '| Atributo | Valor |'
+---
+
 # 🌐 Skill: WebView Integration
 
 ## 📋 Metadata
@@ -228,7 +233,7 @@ class JavaScriptHandler {
       callback: (args) {
         // Handle message from JavaScript
         print('Message from JS: $args');
-        
+
         // Return response to JavaScript
         return {'status': 'success', 'message': 'Received in Flutter'};
       },
@@ -274,10 +279,10 @@ class JavaScriptHandler {
       handlerName: 'navigate',
       callback: (args) {
         final route = args[0] as String;
-        
+
         // Navigate in Flutter app
         Navigator.pushNamed(context, route);
-        
+
         return {'status': 'navigated'};
       },
     );
@@ -483,12 +488,12 @@ class _HtmlWebViewScreenState extends State<HtmlWebViewScreen> {
 </head>
 <body>
     <h1>Flutter ↔ JavaScript Bridge</h1>
-    
+
     <button onclick="sendToFlutter()">Send Message to Flutter</button>
     <button onclick="getUserInfo()">Get User Info</button>
     <button onclick="makeApiCall()">Make API Call</button>
     <button onclick="navigateInFlutter()">Navigate in Flutter</button>
-    
+
     <div id="result"></div>
 
     <script>
@@ -496,7 +501,7 @@ class _HtmlWebViewScreenState extends State<HtmlWebViewScreen> {
         const isFlutter = window.flutter_inappwebview !== undefined;
 
         function showResult(message) {
-            document.getElementById('result').innerHTML = 
+            document.getElementById('result').innerHTML =
                 '<strong>Result:</strong><br>' + JSON.stringify(message, null, 2);
         }
 
@@ -713,7 +718,7 @@ onReceivedServerTrustAuthRequest: (controller, challenge) async {
 
 ---
 
-**Versión:** 1.0.0  
-**Última actualización:** Diciembre 2025  
+**Versión:** 1.0.0
+**Última actualización:** Diciembre 2025
 **Total líneas:** 1,100+
 

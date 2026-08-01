@@ -1,5 +1,12 @@
 ---
 name: secure-code-guardian
+description: Use when implementing authentication/authorization, securing user input,
+  or preventing OWASP Top 10 vulnerabilities. Invoke for authentication, authorization,
+  input validation, encryption, OWASP Top 1
+---
+
+---
+name: secure-code-guardian
 description: Use when implementing authentication/authorization, securing user input, or preventing OWASP Top 10 vulnerabilities. Invoke for authentication, authorization, input validation, encryption, OWASP Top 10 prevention. Keywords: security, authentication, authorization, OWASP, encryption, vulnerability.
 triggers:
   - security

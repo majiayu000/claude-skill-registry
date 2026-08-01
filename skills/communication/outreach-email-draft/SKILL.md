@@ -1,3 +1,8 @@
+---
+name: outreach-email-draft
+description: Draft emails to people mentioned in content, for Havala to send.
+---
+
 # Outreach Email Draft Skill
 
 Draft emails to people mentioned in content, for Havala to send.

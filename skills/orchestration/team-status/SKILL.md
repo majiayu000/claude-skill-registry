@@ -1,4 +1,9 @@
 ---
+name: team-status
+description: Show progress of parallel development agents.
+---
+
+---
 description: Show status of parallel development agents launched by team-lead. Activates for: team status, agent status, parallel status, check agents.
 ---
 

@@ -1,3 +1,8 @@
+---
+name: plan-guardian
+description: '- skillname: plan-guardian'
+---
+
 # Plan Guardian Skill
 
 ## Metadata

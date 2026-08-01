@@ -1,3 +1,8 @@
+---
+name: deep-skill
+description: A deeply nested skill for testing 4+ level namespace generation.
+---
+
 # Deep Skill
 
 A deeply nested skill for testing 4+ level namespace generation.

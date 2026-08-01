@@ -1,3 +1,8 @@
+---
+name: email-templates
+description: '> Generate Email Templates: React Email templates for common scenarios.'
+---
+
 # Email Templates Skill
 
 > **Generate Email Templates**: React Email templates for common scenarios.
@@ -263,14 +268,14 @@ export function OrderConfirmationEmail({
 
           <Section style={{ backgroundColor: "#f3f4f6", padding: "16px", borderRadius: "8px" }}>
             <Text style={{ fontWeight: "bold", margin: "0 0 8px" }}>Order #{orderNumber}</Text>
-            
+
             {items.map((item, i) => (
               <Row key={i}>
                 <Column>{item.name} × {item.quantity}</Column>
                 <Column style={{ textAlign: "right" }}>${item.price.toFixed(2)}</Column>
               </Row>
             ))}
-            
+
             <Hr />
             <Row>
               <Column style={{ fontWeight: "bold" }}>Total</Column>

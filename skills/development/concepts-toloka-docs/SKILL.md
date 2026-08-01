@@ -1,3 +1,8 @@
+---
+name: concepts-toloka-docs
+description: '{% include announce %}'
+---
+
 # Задать значение навыка
 
 {% include [announce](../_includes/announce.md) %}

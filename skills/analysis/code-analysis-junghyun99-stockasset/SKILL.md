@@ -1,5 +1,10 @@
 ---
 name: code-analysis
+description: 지정된 디렉토리 또는 파일을 분석하여 문제점, 모호한 점, 개선이 필요한 사항을 식별하고 각각을 GitHub 이슈로 등록합니다.
+---
+
+---
+name: code-analysis
 description: 지정된 디렉토리/파일의 문제점을 분석하고 각 문제를 개별 GitHub 이슈로 등록합니다.
 allowed-tools:
   - Bash(gh issue create *)

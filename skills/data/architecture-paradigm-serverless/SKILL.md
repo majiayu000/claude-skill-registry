@@ -1,5 +1,12 @@
 ---
 name: architecture-paradigm-serverless
+description: 'Serverless FaaS for event-driven workloads with minimal infrastructure
+  management.Triggers: serverless, FaaS, Lambda, event-driven, pay-per-useUse when:
+  workloads are event-driven with bursty trafficD'
+---
+
+---
+name: architecture-paradigm-serverless
 description: |
 
 Triggers: serverless, cost-optimization, architecture, faas, event-driven

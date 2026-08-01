@@ -1,3 +1,8 @@
+---
+name: license-checker
+description: ตรวจสอบ licenses ของ dependencies เพื่อความถูกต้องตามกฎหมายและนโยบายบริษัท
+---
+
 # ⚖️ License Checker Skill
 
 ---

@@ -1,6 +1,12 @@
 ---
 name: auto-analysis-219c9431a85d
-description: Auto-generated skill for analysis. Triggers on: analyze this brd, analyze the brd. 
+description: 'Auto-generated skill for analysis. Triggers on: analyze this brd, analyze
+  the brd.'
+---
+
+---
+name: auto-analysis-219c9431a85d
+description: Auto-generated skill for analysis. Triggers on: analyze this brd, analyze the brd.
 version: 1.0.0
 auto_generated: true
 created: 2025-10-17T08:06:17.594765

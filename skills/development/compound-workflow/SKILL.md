@@ -1,5 +1,11 @@
 ---
 name: compound-workflow
+description: A structured development cycle with five phases. Each phase has a clear
+  purpose and handoff to the next.
+---
+
+---
+name: compound-workflow
 description: Structured development workflow: brainstorm, plan, work, review, compound.
 Use when: (1) starting a new feature end-to-end, (2) coordinating multi-phase
 development work, (3) ensuring each phase completes before the next begins.

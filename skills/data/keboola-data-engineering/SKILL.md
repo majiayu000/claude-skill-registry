@@ -1,5 +1,12 @@
 ---
 name: keboola-data-engineering
+description: 'Expert assistant for Keboola data platform. Builds working data pipelines,
+  not just advice. Use for: data extraction, transformation, validation, orchestration,
+  dashboard creation.'
+---
+
+---
+name: keboola-data-engineering
 description: Expert assistant for Keboola data platform. Builds working data pipelines, not just advice. Use for: data extraction, transformation, validation, orchestration, dashboard creation.
 ---
 

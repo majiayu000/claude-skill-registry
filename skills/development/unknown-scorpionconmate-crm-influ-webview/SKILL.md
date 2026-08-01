@@ -1,7 +1,12 @@
+---
+name: unknown
+description: 'Prerequisites: Load plugins/context/capabilities/eventsskills.md first'
+---
+
 # Guide: Adding a New Skill
 
-**Prerequisites**: Load `plugins/context/capabilities/events_skills.md` first  
-**Purpose**: Step-by-step workflow for adding a new skill  
+**Prerequisites**: Load `plugins/context/capabilities/events_skills.md` first
+**Purpose**: Step-by-step workflow for adding a new skill
 **Related**: See `plugins/context/architecture/overview.md` for plugin concepts
 
 ---
@@ -209,7 +214,7 @@ interface Args {
 
 async function main() {
   const args = parseArgs()
-  
+
   switch (args.command) {
     case 'command1':
       await handleCommand1(args)

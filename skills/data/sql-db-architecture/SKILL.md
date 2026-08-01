@@ -1,5 +1,12 @@
 ---
 name: sql-db-architecture
+description: Understand the toy relational database architecture, crate organization,
+  data flow, and implementation patterns. Use when exploring the database codebase,
+  understanding query execution, debugging stor
+---
+
+---
+name: sql-db-architecture
 description: Understand the toy relational database architecture, crate organization, data flow, and implementation patterns. Use when exploring the database codebase, understanding query execution, debugging storage/indexing, or planning new features. Keywords: sql-database, database, crate, storage, executor, planner, parser, catalog, WAL, buffer pool, index, architecture
 ---
 

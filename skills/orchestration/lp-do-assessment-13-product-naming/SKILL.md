@@ -1,5 +1,13 @@
 ---
 name: lp-do-assessment-13-product-naming
+description: Orchestrates the complete four-part product naming pipeline from a standing
+  start to a TM-prescreened, ranked shortlist. The operator receives a shortlist where
+  every name has a DWPEIC quality score and TM search direction URLs pre-generated
+  for immediate review.
+---
+
+---
+name: lp-do-assessment-13-product-naming
 description: Full product naming pipeline orchestrator (ASSESSMENT-13). Runs four parts in sequence: (1) produce <YYYY-MM-DD>-product-naming-spec.md from ASSESSMENT docs, (2) agent generates 75 scored candidates across naming territories, (3) TM pre-screen direction for all candidates via tm-prescreen-cli.ts, (4) filter and rank to produce a top-20 shortlist. Delivers a final operator-ready shortlist of scored candidates with EUIPO/WIPO/UIBM search direction pre-generated.
 ---
 

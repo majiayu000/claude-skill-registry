@@ -1,3 +1,8 @@
+---
+name: logging-log-aggregation
+description: '| ID | sre-logging-log-aggregation |'
+---
+
 # 📝 Skill: Logging & Log Aggregation
 
 ## 📋 Metadata
@@ -100,7 +105,7 @@ Logging efectivo y agregación centralizada son fundamentales para debugging, mo
 > - **Node.js Logger:** [`scripts/nodejs/structured-logger.js`](scripts/nodejs/structured-logger.js) - Structured logging con Winston
 > - **Python Logger:** [`scripts/python/structured_logger.py`](scripts/python/structured_logger.py) - Structured logging con JSON
 > - **Log Archiver:** [`scripts/python/log_archiver.py`](scripts/python/log_archiver.py) - Archivado y retención de logs con S3
-> 
+>
 > Ver [`scripts/README.md`](scripts/README.md) para documentación de uso completa.
 
 ### 1. Structured Logging
@@ -221,7 +226,7 @@ limits_config:
   max_query_parallelism: 32
   max_streams_per_user: 10000
   max_line_size: 256KB
-  
+
   # Retention
   retention_period: 720h  # 30 days
   per_stream_rate_limit: 3MB
@@ -258,7 +263,7 @@ scrape_configs:
     pipeline_stages:
       # Parse Docker logs
       - docker: {}
-      
+
       # Extract labels
       - json:
           expressions:
@@ -272,17 +277,17 @@ scrape_configs:
       - regex:
           expression: (?P<container_name>(?:[^|]*))\|
           source: tag
-      
+
       # Extract log level
       - regex:
           expression: '.*level=(?P<level>\w+).*'
           source: output
-      
+
       # Parse timestamp
       - timestamp:
           format: RFC3339Nano
           source: time
-      
+
       # Add labels
       - labels:
           stream:
@@ -291,7 +296,7 @@ scrape_configs:
           namespace:
           pod:
           app:
-      
+
       # Output
       - output:
           source: output
@@ -314,17 +319,17 @@ scrape_configs:
             service: service
             trace_id: trace_id
             user_id: user_id
-      
+
       # Add labels
       - labels:
           level:
           service:
-      
+
       # Timestamp
       - timestamp:
           source: timestamp
           format: RFC3339
-      
+
       # Output
       - output:
           source: message
@@ -380,8 +385,8 @@ topk(10, sum by (message) (count_over_time({job="application"} | json | level="e
 sum by (service) (count_over_time({job="application"} | json [5m]))
 
 # Error rate per service
-sum by (service) (rate({job="application"} | json | level="error" [5m])) 
-/ 
+sum by (service) (rate({job="application"} | json | level="error" [5m]))
+/
 sum by (service) (rate({job="application"} | json [5m]))
 ```
 
@@ -557,7 +562,7 @@ python log_archiver.py restore \
 
 ---
 
-**Versión:** 1.0.0  
-**Última actualización:** Diciembre 2025  
+**Versión:** 1.0.0
+**Última actualización:** Diciembre 2025
 **Total líneas:** 1,100+
 

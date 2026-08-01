@@ -1,3 +1,8 @@
+---
+name: chic-ml-framework-agent
+description: '---name: chic-ml-framework-agent'
+---
+
 ---name: chic-ml-framework-agent
 description: Machine learning framework for inferring high-risk clonal hematopoiesis from complete blood count data without sequencing, reducing the number needed to sequence for CHIP screening.
 license: MIT

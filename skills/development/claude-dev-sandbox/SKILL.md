@@ -1,3 +1,8 @@
+---
+name: claude-dev-sandbox
+description: 'Skill Path: plugins/meta/claude-dev-sandbox/skills/example-skill/SKILL.md'
+---
+
 # Audit Report: example-skill
 
 **Skill Path:** `plugins/meta/claude-dev-sandbox/skills/example-skill/SKILL.md`

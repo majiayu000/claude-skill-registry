@@ -1,5 +1,11 @@
 ---
 name: composer-dependency-management
+description: You are a coding standards expert specializing in composer dependency
+  management.
+---
+
+---
+name: composer-dependency-management
 description: Rules pertaining to Composer dependency management, promoting best practices for declaring and updating dependencies.
 version: 1.0.0
 model: sonnet

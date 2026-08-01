@@ -1,5 +1,10 @@
 ---
 name: fal-text-to-image
+description: '| Model | Endpoint | Speed | Quality | Cost |'
+---
+
+---
+name: fal-text-to-image
 description: Complete fal.ai text-to-image system. PROACTIVELY activate for: (1) FLUX.1/2 Pro/Dev/Schnell generation, (2) SDXL and Fast SDXL, (3) Image size presets (square_hd, landscape_16_9), (4) Guidance scale and inference steps, (5) LoRA model application, (6) Seed for reproducibility, (7) Batch generation (num_images), (8) Ideogram for text in images, (9) Recraft for design assets. Provides: Model endpoints, parameter reference, prompt engineering, quality vs speed trade-offs. Ensures optimal text-to-image generation.
 ---
 

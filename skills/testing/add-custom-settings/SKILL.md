@@ -1,5 +1,11 @@
 ---
 name: add-custom-settings
+description: 'Full workflow for adding custom settings: create model, wire to variant,
+  test locally'
+---
+
+---
+name: add-custom-settings
 description: Full workflow for adding custom settings: create model, wire to variant, test locally
 ---
 
@@ -32,16 +38,16 @@ bash(f"mkdir -p {workspace}", on_error="raise")
 while True:
     result = bash(f"python3 skills/add-custom-settings/next-step.py {workspace}", on_error="raise")
     action = json.loads(result)
-    
+
     if action["type"] == "done":
         final = fs_read("Line", f"{workspace}/FINAL.md", 1, -1)
         log(final)
         break
-    
+
     if action["type"] == "gate_failed":
         log(f"Gate failed: {action['reason']}")
         break
-    
+
     if action["type"] == "spawn":
         r = spawn(
             action["prompt"],

@@ -1,5 +1,10 @@
 ---
 name: piezoelectric
+description: '| Skill | Path | Description |'
+---
+
+---
+name: piezoelectric
 description: Piezoelectric Properties (1 sub-skills: piezoelectric-tensor)
 ---
 

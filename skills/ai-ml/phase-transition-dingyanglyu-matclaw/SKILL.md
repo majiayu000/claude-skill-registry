@@ -1,5 +1,12 @@
 ---
 name: phase-transition
+description: Melting point determination, amorphous structure generation, free energy
+  surface exploration via metadynamics, and solid-solid phase transition analysis
+  using molecular dynamics and energy-based methods.
+---
+
+---
+name: phase-transition
 description: Phase Transitions (6 sub-skills: amorphous-structure, melting-point-coexistence, metadynamics, mpmorph-melting, order-parameter, phase-diagram)
 ---
 

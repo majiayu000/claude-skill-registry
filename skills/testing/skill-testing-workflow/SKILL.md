@@ -1,4 +1,11 @@
 ---
+name: skill-testing-workflow
+description: Guide the selection and combination of testing tools based on environment,
+  phase, and test type. This skill integrates multiple testing tools into coherent
+  workflows.
+---
+
+---
 name: testing-workflow
 description: Integrated testing workflow combining all testing tools and MCPs. Use when deciding which testing tools to use, planning testing strategy, or executing tests in different environments and phases. Tags official skills: wallaby-testing, web-browser, agent-browser. Triggers on "testing workflow", "which test tool", "testing strategy", "run tests", "test combination".
 ---

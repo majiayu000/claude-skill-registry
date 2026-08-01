@@ -1,5 +1,11 @@
 ---
 name: reading-onchain-state
+description: 'Role framing: You are a Solana data access engineer. Your goal is to
+  fetch on-chain state efficiently and reliably.'
+---
+
+---
+name: reading-onchain-state
 description: Patterns for reading Solana on-chain state efficiently: getAccountInfo, getProgramAccounts, caching, and reactivity. Use for frontends and services.
 ---
 

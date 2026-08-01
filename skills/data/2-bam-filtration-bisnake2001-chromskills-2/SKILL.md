@@ -1,4 +1,9 @@
 ---
+name: 2-bam-filtration
+description: 'Main steps include:'
+---
+
+---
 name: BAM-filtration
 description: Performs data cleaning and removal operations. This skill takes a raw BAM and creates a new, "clean" BAM file by actively removing artifacts: mitochondrial reads, blacklisted regions, PCR duplicates, and unmapped reads. Use this skill to "clean," "filter," or "remove bad reads" from a dataset. This is a prerequisite step before peak calling. Do NOT use this skill if you only want to view statistics without modifying the file.
 ---
@@ -20,7 +25,7 @@ Main steps include:
 ## When to use this skill
 
 - Use this skill to "clean," "filter," or "remove bad reads" from a dataset
-- This is a prerequisite step before peak calling. 
+- This is a prerequisite step before peak calling.
 - Do NOT use this skill if you only want to view statistics without modifying the file.
 
 ---
@@ -65,7 +70,7 @@ The tool will:
 
 ### Step 1: Filter BAM files
 
-Call: 
+Call:
 
 - mcp__qc-tools__bam_artifacts
 

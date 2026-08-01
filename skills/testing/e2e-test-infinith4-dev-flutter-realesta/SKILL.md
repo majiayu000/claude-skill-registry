@@ -1,5 +1,10 @@
 ---
 name: e2e-test
+description: E2E（End-to-End）テストの設計と実装を担当します。
+---
+
+---
+name: e2e-test
 description: E2Eテストコーディングエージェント。ユーザーシナリオテスト、UIテスト、APIテスト、クロスブラウザテストを実現。キーワード: E2Eテスト, e2e test, 統合テスト, integration test, Playwright, Cypress.
 ---
 

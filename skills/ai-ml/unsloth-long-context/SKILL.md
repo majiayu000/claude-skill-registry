@@ -1,5 +1,13 @@
 ---
 name: unsloth-long-context
+description: Unsloth enables training on extreme context lengths (up to 89K+ on a
+  single 80GB GPU) by utilizing manually derived Triton kernels for RoPE and attention.
+  It optimizes memory usage by a further 30% compared to Flash Attention 2, allowing
+  for 4x longer context windows.
+---
+
+---
+name: unsloth-long-context
 description: Training models on extended context lengths using optimized RoPE scaling and memory-efficient attention kernels. Triggers: long context, max_seq_length, rope scaling, large context window, flex attention.
 ---
 

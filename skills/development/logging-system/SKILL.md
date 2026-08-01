@@ -1,3 +1,8 @@
+---
+name: logging-system
+description: 'description: 日志系统完整指南，包括应用日志、脚本日志、错误监控上报、请求日志等'
+---
+
 ﻿---
 name: logging-system
 description: 日志系统完整指南，包括应用日志、脚本日志、错误监控上报、请求日志等
@@ -23,7 +28,7 @@ description: 日志系统完整指南，包括应用日志、脚本日志、错�
 
 使用：
   import { logger } from '@build-utils/logger'
-  
+
   logger.info('构建开始')
   logger.warn('警告信息')
   logger.error('错误信息')
@@ -41,7 +46,7 @@ description: 日志系统完整指南，包括应用日志、脚本日志、错�
 
 使用：
   import { logger } from '@btc/shared-core'
-  
+
   logger.info('用户登录', { username: 'admin' })
   logger.warn('Token即将过期')
   logger.error('API调用失败', error)
@@ -66,13 +71,13 @@ description: 日志系统完整指南，包括应用日志、脚本日志、错�
 
 使用：
   import { captureError, getErrorList } from '@btc/shared-core'
-  
+
   // 手动上报错误
   captureError(new Error('自定义错误'), {
     type: 'business',
     context: { userId: 123 }
   })
-  
+
   // 获取错误列表
   const errors = getErrorList()
 
@@ -101,7 +106,7 @@ description: 日志系统完整指南，包括应用日志、脚本日志、错�
 
 在应用入口（main.ts）中已自动启用：
   import { initErrorMonitor } from '@btc/shared-core'
-  
+
   initErrorMonitor({
     appName: 'admin-app',
     version: '1.0.0',
@@ -217,7 +222,7 @@ description: 日志系统完整指南，包括应用日志、脚本日志、错�
 ### 错误监控页面
 
   访问：http://localhost:5109/operations/error-monitor
-  
+
   功能：
   - 查看所有捕获的错误
   - 按来源、类型、时间筛选
@@ -238,7 +243,7 @@ description: 日志系统完整指南，包括应用日志、脚本日志、错�
 ### 查看请求日志
 
   import { getRequestLogs } from '@/utils/request-logger'
-  
+
   const logs = getRequestLogs()
   console.table(logs)
 
@@ -265,7 +270,7 @@ description: 日志系统完整指南，包括应用日志、脚本日志、错�
   logger.info('页面加载耗时', {
     loadTime: performance.now()
   })
-  
+
   logger.info('API调用耗时', {
     api: '/api/data',
     duration: 350
@@ -298,9 +303,9 @@ description: 日志系统完整指南，包括应用日志、脚本日志、错�
 ### Sentry
 
   pnpm add @sentry/vue
-  
+
   import * as Sentry from '@sentry/vue'
-  
+
   Sentry.init({
     app,
     dsn: 'your-sentry-dsn',

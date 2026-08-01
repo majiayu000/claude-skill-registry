@@ -1,5 +1,12 @@
 ---
 name: skill-developer
+description: Comprehensive guide for creating and managing skills in Claude Code with
+  auto-activation system, following Anthropic's official best practices including
+  the 500-line rule and progressive disclosure pattern.
+---
+
+---
+name: skill-developer
 description: Skill system infrastructure manager. Create/modify skills, configure skill-rules.json, design trigger patterns, debug activation, implement hooks (UserPromptSubmit/PreToolUse). Scope: meta-level operations only - NOT domain content (UI/backend/workflows). Covers: YAML frontmatter, keyword/intent patterns, enforcement levels, progressive disclosure, 500-line rule, Anthropic best practices.
 ---
 

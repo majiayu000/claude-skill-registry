@@ -1,3 +1,9 @@
+---
+name: voice-blend
+description: Combine multiple voice profiles with weighted mixing to create hybrid
+  voices. Use when relevant to the task.
+---
+
 # voice-blend
 
 Combine multiple voice profiles with weighted mixing to create hybrid voices.

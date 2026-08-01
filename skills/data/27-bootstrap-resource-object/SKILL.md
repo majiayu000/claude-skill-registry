@@ -1,3 +1,8 @@
+---
+name: 27-bootstrap-resource-object
+description: 씬과 무관하게 Devian BootstrapRoot를 DDOL로 보장한다.
+---
+
 # Bootstrap Resource Object
 
 ## 0. 목적

@@ -1,5 +1,12 @@
 ---
 name: portfolio-context
+description: 'Auto-loaded context for Portfolio Buddy 2 development. Use for ANY task
+  involving: React 19 development, TypeScript, portfolio analysis features, metrics
+  calculations, trading strategy comparison, or'
+---
+
+---
+name: portfolio-context
 description: Auto-loaded context for Portfolio Buddy 2 development. Use for ANY task involving: React 19 development, TypeScript, portfolio analysis features, metrics calculations, trading strategy comparison, or working with the Portfolio Buddy 2 codebase. Contains tech stack, known issues, and architectural constraints.
 ---
 

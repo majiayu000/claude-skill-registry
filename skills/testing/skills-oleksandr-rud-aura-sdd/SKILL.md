@@ -1,3 +1,9 @@
+---
+name: skills-oleksandr-rud-aura-sdd
+description: 'actor: qa | mandate: Verify end-to-end user journeys | bounds: No performance
+  optimization'
+---
+
 # QA E2E Testing Skill
 
 qa-e2e

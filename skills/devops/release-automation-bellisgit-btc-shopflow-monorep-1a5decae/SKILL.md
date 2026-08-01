@@ -1,3 +1,8 @@
+---
+name: release-automation
+description: 'name: release-automation'
+---
+
 ﻿---
 name: release-automation
 description: 发布自动化工具，全自动发布流程、CHANGELOG更新、Git标签管理

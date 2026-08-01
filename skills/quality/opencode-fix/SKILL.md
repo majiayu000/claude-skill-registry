@@ -1,3 +1,8 @@
+---
+name: opencode-fix
+description: mistakes.md参照・最小差分・大出力はmemoryadd退避のバグ修正スキルです。
+---
+
 # OpenCode バグ修正支援
 
 mistakes.md参照・最小差分・大出力はmemory_add退避のバグ修正スキルです。

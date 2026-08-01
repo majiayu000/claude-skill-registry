@@ -1,3 +1,8 @@
+---
+name: gcp-vm-init
+description: GCP VM 초기 설정 자동화. 시스템 업데이트, 타임존, 방화벽, fail2ban, 스왑 설정.
+---
+
 # GCP VM Initial Setup
 
 GCP VM 초기 설정 자동화. 시스템 업데이트, 타임존, 방화벽, fail2ban, 스왑 설정.

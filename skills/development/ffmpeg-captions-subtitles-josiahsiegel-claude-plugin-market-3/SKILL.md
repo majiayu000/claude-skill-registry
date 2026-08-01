@@ -1,5 +1,10 @@
 ---
 name: ffmpeg-captions-subtitles
+description: 'MANDATORY: Always Use Backslashes on Windows for File Paths'
+---
+
+---
+name: ffmpeg-captions-subtitles
 description: Complete subtitle and caption system for FFmpeg 7.1 LTS and 8.0.1 (latest stable, released 2025-11-20). PROACTIVELY activate for: (1) Burning subtitles (hardcoding SRT/ASS/VTT), (2) Adding soft subtitle tracks, (3) Extracting subtitles from video, (4) Subtitle format conversion, (5) Styled captions (font, color, outline, shadow), (6) Subtitle positioning and alignment, (7) CEA-608/708 closed captions, (8) Text overlays with drawtext, (9) Whisper AI automatic transcription (FFmpeg 8.0+ with VAD, multi-language, GPU), (10) Batch subtitle processing. Provides: Format reference tables, styling parameter guide, position alignment charts, Whisper model comparison, VAD configuration, dynamic text examples, accessibility best practices. Ensures: Professional captions with proper styling and accessibility compliance.
 ---
 

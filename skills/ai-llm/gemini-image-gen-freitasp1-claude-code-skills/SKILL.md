@@ -1,5 +1,10 @@
 ---
 name: gemini-image-gen
+description: Generate images directly from Claude Code CLI using Google's Gemini API.
+---
+
+---
+name: gemini-image-gen
 description: Image generation with Google Gemini API. Models: gemini-2.5-flash-image (fast) or gemini-3-pro-image-preview (quality). For social media graphics, marketing, infographics.
 ---
 

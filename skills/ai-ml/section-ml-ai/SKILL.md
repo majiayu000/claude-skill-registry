@@ -1,5 +1,11 @@
 ---
 name: section-ml-ai
+description: 生成机器学习与 AI 类教程 (.rmd/.qmd)，涵盖算法原理、工程实践、模型评估、可解释性，强调 "问题定义 → 数据准备 → 模型训练
+  → 评估优化 → 可解释性"。
+---
+
+---
+name: section-ml-ai
 description: Generate comprehensive R machine learning and AI tutorials (mlr3, tidymodels, xgboost, torch, etc.) with theory + practice workflow. Use when: (1) User requests ML/AI tutorials, (2) File names match 10xx-*.rmd pattern, (3) Keywords: classification, regression, clustering, feature engineering, hyperparameter tuning, random forest, SVM, neural networks.
 ---
 ## 核心任务
@@ -42,7 +48,7 @@ description: Generate comprehensive R machine learning and AI tutorials (mlr3, t
 
 **第一步：生成图片文件**
 
-1. **封面图 (MANDATORY)**: 
+1. **封面图 (MANDATORY)**:
    - 路径：`doc/images/[number]-[topic]-cover.svg`
    - 风格：现代、专业、与主题相关
    - 工具：使用 `write` 工具创建 SVG 文件
@@ -87,7 +93,7 @@ description: Generate comprehensive R machine learning and AI tutorials (mlr3, t
    **错误做法**（生成了图但不引用）：
    ```markdown
    ## 算法对比分析
-   
+
    下面我们对比六种算法...
    （没有 ![...](images/...) 语法，图片不会显示）
    ```

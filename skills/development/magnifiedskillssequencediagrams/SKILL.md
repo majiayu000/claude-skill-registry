@@ -1,3 +1,8 @@
+---
+name: magnifiedskillssequencediagrams
+description: participant BotFrameworkAdapter
+---
+
 ```mermaid
 sequenceDiagram
     participant BotFrameworkAdapter
@@ -18,7 +23,7 @@ sequenceDiagram
     activate BotFrameworkAdapter
         Note right of BotFrameworkAdapter: Deserialize Activity
         Note right of BotFrameworkAdapter: Get Bearer Token from Auth Header
-        
+
         BotFrameworkAdapter ->> BotFrameworkAdapter: authenticateRequestInternal()
         activate BotFrameworkAdapter
             BotFrameworkAdapter ->> JwtTokenValidation: authenticateRequest()
@@ -35,7 +40,7 @@ sequenceDiagram
 
                             else is Emulator Token
                                 JwtTokenValidation ->> ChannelValidationClass: EmulatorValidation.authenticateEmulatorToken()
-                            
+
                             else is Public Azure Channel
                                 JwtTokenValidation ->> ChannelValidationClass: ChannelValidation.authenticateChannelToken()
 
@@ -50,7 +55,7 @@ sequenceDiagram
                         activate ChannelValidationClass
                             Note over ChannelValidationClass, OpenIdMetadata: Verify Auth header has Bearer Token (JWT)
                             Note over ChannelValidationClass, OpenIdMetadata: Decode JWT (header, payload, signature)
-                            
+
                             ChannelValidationClass ->> ChannelValidationClass: isSkillClaim()
                             activate ChannelValidationClass
                                 Note over ChannelValidationClass, JwtTokenExtractor: Assert that we have following claims:
@@ -63,12 +68,12 @@ sequenceDiagram
                         ChannelValidationClass -->> JwtTokenValidation: Return true, using isSkillToken
                         deactivate ChannelValidationClass
                         deactivate JwtTokenValidation
-                
+
                         JwtTokenValidation ->> ChannelValidationClass: SkillValidation.authenticateChannelToken()
                         activate JwtTokenValidation
                         activate ChannelValidationClass
                             Note over ChannelValidationClass, TurnContext: openIdMetadatUrl: "https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration" (non-gov't channel)
-                            
+
                             ChannelValidationClass ->> JwtTokenExtractor: new JwtTokenExtractor
                             activate ChannelValidationClass
                             activate JwtTokenExtractor
@@ -87,7 +92,7 @@ sequenceDiagram
                                 JwtTokenExtractor ->> JwtTokenExtractor: validateToken()
                                 activate JwtTokenExtractor
                                     Note over JwtTokenExtractor, OpenIdMetadata: Decode Token (header, payload, signature)
-                                    
+
                                     JwtTokenExtractor ->> OpenIdMetadata: Get signing key using "kid" from Token header
                                     activate JwtTokenExtractor
                                     activate OpenIdMetadata
@@ -99,13 +104,13 @@ sequenceDiagram
                                     Note over JwtTokenExtractor, CredentialProvider: and endorsed, if any endoresments associated with key
                                     Note over JwtTokenExtractor, CredentialProvider: and that valid signing algorithm was used to sign
                                     Note over JwtTokenExtractor, CredentialProvider: Get claims from Token payload
-                                    
+
                                     JwtTokenExtractor -->> JwtTokenExtractor: return new ClaimsIdentity created w/claims from payload
                                 deactivate JwtTokenExtractor
                                 JwtTokenExtractor -->> ChannelValidationClass: return ClaimsIdentity
                             deactivate JwtTokenExtractor
                             deactivate ChannelValidationClass
-            
+
                             ChannelValidationClass ->> ChannelValidationClass: validateIdentity()
                             activate ChannelValidationClass
                                 Note over ChannelValidationClass: Validate that ClaimsIdentity:
@@ -117,14 +122,14 @@ sequenceDiagram
                                 CredentialProvider -->> ChannelValidationClass: return true
                                 deactivate CredentialProvider
                             deactivate ChannelValidationClass
-        
+
                             ChannelValidationClass -->> JwtTokenValidation: return ClaimsIdentity
                         deactivate ChannelValidationClass
                         JwtTokenValidation -->> JwtTokenValidation: return ClaimsIdentity
                         deactivate JwtTokenValidation
                     deactivate JwtTokenValidation
                 deactivate JwtTokenValidation
-                
+
                 Note over JwtTokenValidation, AppCredentials: Add Servive Url's host to Trusted Hosts
                 JwtTokenValidation ->> AppCredentials: trustServiceUrl()
                 activate AppCredentials
@@ -135,12 +140,12 @@ sequenceDiagram
         deactivate BotFrameworkAdapter
 
         Note over BotFrameworkAdapter: Create TurnContext
-        
+
         BotFrameworkAdapter ->> BotFrameworkAdapter: createConnectorClientWithIdentity()
         activate BotFrameworkAdapter
             Note over BotFrameworkAdapter, ChannelValidationClass: Set botAppId to "aud" claim (Skill's AppId)
             Note over BotFrameworkAdapter, ChannelValidationClass: Set scope to be the root bot (use root's AppId)
-            
+
             opt if botAppId and isSkillClaim
                 Note over BotFrameworkAdapter, JwtTokenExtractor: Create AppCredentials instance w/correct scope for consumer-skill communication
                 BotFrameworkAdapter ->> JwtTokenValidation: getAppIdFromClaims()
@@ -153,7 +158,7 @@ sequenceDiagram
 
             alt if OAuthScope in credentials == RootBot's AppId
                 Note over BotFrameworkAdapter, JwtTokenExtractor: Do nothing. Credential's scope already configured properly for consumer-skill communcation
-                
+
                 else scope is not RootBot's AppId
                     Note over BotFrameworkAdapter: (OAuthScope defaults to 'https://api.botframework.com')
                     Note over BotFrameworkAdapter: Build new AppCredentials instance
@@ -176,14 +181,14 @@ sequenceDiagram
                         Note over BotFrameworkAdapter, ChannelValidationClass: And has AppCredentials that have Skill's AppId as AppId
                         Note over BotFrameworkAdapter, ChannelValidationClass: and OAuthScope set to RootBot's AppId
                         BotFrameworkAdapter -->> BotFrameworkAdapter: return ConnectorClient
-                   deactivate BotFrameworkAdapter 
+                   deactivate BotFrameworkAdapter
             end
         deactivate BotFrameworkAdapter
 
         BotFrameworkAdapter ->> TurnContext: Add BotIdentity (ClaimsIdentity), ConnectorClient, BotCallBackHandler to TurnState
         activate BotFrameworkAdapter
         activate TurnContext
-            TurnContext -->> BotFrameworkAdapter: 
+            TurnContext -->> BotFrameworkAdapter:
         deactivate TurnContext
         deactivate BotFrameworkAdapter
 

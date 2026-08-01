@@ -1,5 +1,12 @@
 ---
 name: git-find-fork
+description: 'Finds the true merge-base/fork-point of a git branch, detecting history
+  rewrites from rebases and squashes. Handles unknown parent branches. Triggers on
+  keywords: find fork, merge-base, branch fork po'
+---
+
+---
+name: git-find-fork
 description: Finds the true merge-base/fork-point of a git branch, detecting history rewrites from rebases and squashes. Handles unknown parent branches. Triggers on keywords: find fork, merge-base, branch fork point, where did branch start, git fork, branch origin
 project-agnostic: true
 allowed-tools:

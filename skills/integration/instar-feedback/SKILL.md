@@ -1,5 +1,13 @@
 ---
 name: instar-feedback
+description: Instar has a built-in feedback system that routes issues and feature
+  requests directly to the instar maintainers. Your agent is not just using instar
+  — it's part of the ecosystem that improves it. Every bug report, feature request,
+  and observation lifts all ships.
+---
+
+---
+name: instar-feedback
 description: Submit structured feedback about instar bugs, feature requests, improvements, or innovations worth sharing. Use when something isn't working, when a feature is missing, when you've built something that could benefit all agents, or when the user mentions a problem with instar. Also use proactively after building significant features — ask yourself if other agents would benefit. Feedback is relayed agent-to-agent to instar maintainers. Trigger words: bug report, feedback, issue, something's wrong, feature request, this isn't working, improvement, suggest, built something useful, other agents could use this.
 license: MIT
 metadata:

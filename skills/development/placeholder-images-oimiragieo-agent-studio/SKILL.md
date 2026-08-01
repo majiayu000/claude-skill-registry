@@ -1,5 +1,10 @@
 ---
 name: placeholder-images
+description: You are a coding standards expert specializing in placeholder images.
+---
+
+---
+name: placeholder-images
 description: Rule to use placekitten.com for placeholder images in seed data.
 version: 1.0.0
 model: sonnet

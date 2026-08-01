@@ -1,4 +1,10 @@
 ---
+name: unknown
+description: 'Purpose: Guide creation of Claude Code agents following Anthropic official
+  best practices.'
+---
+
+---
 name: agent-creator
 description: Use this skill when architecting new Claude Code agents following Anthropic best practices. Guides through YAML frontmatter creation, agent structure definition, role boundaries, and validation. Critical for creating minimal agent files (~150 lines) with proper skill invocations. Examples: <example>Context: User wants to create a new agent for security auditing user: "Create a security-auditor agent" assistant: "I'll use the agent-creator skill to build this agent following Anthropic best practices" <commentary>New agent creation requires the agent-creator skill to ensure proper structure and YAML frontmatter.</commentary></example> <example>Context: Existing agent file is too verbose and needs refactoring user: "The architect agent is 2000 lines, refactor it to minimal structure" assistant: "I'll use the agent-creator skill to refactor this into a minimal ~150 line agent with a separate skill file" <commentary>Agent refactoring requires the agent-creator skill to separate identity from technical procedures.</commentary></example>
 color: orange

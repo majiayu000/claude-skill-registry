@@ -1,5 +1,10 @@
 ---
 name: kaizen-infrastructure
+description: '- Creating or modifying Kubernetes manifests'
+---
+
+---
+name: kaizen-infrastructure
 description: Kaizen infrastructure management. Use when working on Kubernetes manifests, Talos configuration, Flux GitOps, or cluster operations. Triggers on: k8s, kubernetes, flux, talos, cluster, node, deployment, helm, kustomize.
 allowed-tools: Read, Write, Bash, Grep, Glob
 ---

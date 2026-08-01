@@ -1,3 +1,8 @@
+---
+name: org-planning
+description: '> Compiler: skill-compiler/1.0.0'
+---
+
 # Org Planning Skill
 
 > Version: 1.1.0
@@ -329,9 +334,9 @@ done
 **Custom query for high-priority tasks due this week**
 
 ```bash
-emacsclient --eval '(beadsmith/agent-query 
-  (quote (and (todo) 
-              (priority "A") 
+emacsclient --eval '(beadsmith/agent-query
+  (quote (and (todo)
+              (priority "A")
               (deadline :to 7))))' | parse_json
 ```
 
@@ -345,7 +350,7 @@ task_id="task-implement-auth"
 # This returns the bead epic ID and updates the org task
 
 # 3. Later, check delegated tasks status
-emacsclient --eval '(beadsmith/agent-query 
+emacsclient --eval '(beadsmith/agent-query
   (quote (and (todo "WAITING") (property "DELEGATED_TO"))))' | parse_json
 
 # 4. For each delegated task, check bead epic status
@@ -493,7 +498,7 @@ During GTD weekly review, check for orphaned epics:
 
 ```bash
 # Find DONE tasks with DELEGATED_TO still set
-emacsclient --eval '(beadsmith/agent-query 
+emacsclient --eval '(beadsmith/agent-query
   (quote (and (todo "DONE") (property "DELEGATED_TO"))))' | parse_json
 
 # For each, check if epic is still open

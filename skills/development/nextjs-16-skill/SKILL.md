@@ -1,5 +1,11 @@
 ---
 name: nextjs-16-skill
+description: Expert guidance for building modern Next.js 16 applications with App
+  Router.
+---
+
+---
+name: nextjs-16-skill
 description: Expert guidance on Next.js 16 App Router development. Use when building or reviewing Next.js applications requiring: (1) App Router architecture and file-based routing, (2) Server Components vs Client Components decisions, (3) Server Actions for data mutations, (4) Better Auth authentication integration, (5) API route handlers, (6) React 19 patterns (useFormStatus, useActionState). Invoke when creating pages, components, authentication flows, or API endpoints in Next.js 16.
 ---
 

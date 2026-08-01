@@ -1,3 +1,8 @@
+---
+name: research-publication
+description: /============================================================================/
+---
+
 /*============================================================================*/
 /* SKILL SKILL :: VERILINGUA x VERIX EDITION                      */
 /*============================================================================*/
@@ -208,7 +213,7 @@ python scripts/prepare_acm_artifact.py \
 
 \section{Introduction}
 % - Motivation (why is this problem important?)
-% - Limitations of existing work 
+% - Limitations of existing work
 
 /*----------------------------------------------------------------------------*/
 /* S4 SUCCESS CRITERIA                                                         */

@@ -1,5 +1,12 @@
 ---
 name: numpy-polynomial
+description: 'Modern polynomial API for fitting, root finding, and working with orthogonal
+  series like Chebyshev and Legendre. Triggers: polynomial, polyfit, Chebyshev, Legendre,
+  root finding.'
+---
+
+---
+name: numpy-polynomial
 description: Modern polynomial API for fitting, root finding, and working with orthogonal series like Chebyshev and Legendre. Triggers: polynomial, polyfit, Chebyshev, Legendre, root finding.
 ---
 

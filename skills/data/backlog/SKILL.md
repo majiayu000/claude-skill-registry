@@ -1,5 +1,10 @@
 ---
 name: backlog
+description: 'Usage: /sw:backlog <increment-id> --reason="<reason>"'
+---
+
+---
+name: backlog
 description: Move an increment to backlog (planned but not ready to start)
 argument-hint: [increment-id] --reason="reason"
 ---

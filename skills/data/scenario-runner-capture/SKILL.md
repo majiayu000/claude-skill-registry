@@ -1,3 +1,8 @@
+---
+name: scenario-runner-capture
+description: Implement deterministic Scenario Runner + capture outputs for agents
+---
+
 # Skill: Scenario Runner + capture
 
 Goal:

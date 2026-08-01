@@ -1,5 +1,10 @@
 ---
 name: lark-agent
+description: 'tags: [lark, testing, automation, markdown, json, task-management]'
+---
+
+---
+name: lark-agent
 description: |
   Create hierarchical Lark tasks from markdown test plans.
 

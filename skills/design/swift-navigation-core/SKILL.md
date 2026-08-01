@@ -1,5 +1,11 @@
 ---
 name: swift-navigation-core
+description: 'Core navigation primitives for Swift: AlertState, ConfirmationDialogState,
+  UIBinding, and observation tools'
+---
+
+---
+name: swift-navigation-core
 description: Core navigation primitives for Swift: AlertState, ConfirmationDialogState, UIBinding, and observation tools
 ---
 

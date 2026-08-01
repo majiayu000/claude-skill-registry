@@ -1,5 +1,12 @@
 ---
 name: marketplace
+description: Comprehensive skill for creating, managing, and maintaining Claude Code
+  Marketplaces including plugin development, validation, deployment, and lifecycle
+  management
+---
+
+---
+name: marketplace
 description: Comprehensive skill for creating, managing, and maintaining Claude Code Marketplaces including plugin development, validation, deployment, and lifecycle management
 category: development
 version: 1.0.0

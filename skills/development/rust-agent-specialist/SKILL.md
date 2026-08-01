@@ -1,3 +1,8 @@
+---
+name: rust-agent-specialist
+description: Apply Rust-native patterns to ccswarm codebase development.
+---
+
 # Rust Agent Specialist Workflow
 
 Apply Rust-native patterns to ccswarm codebase development.

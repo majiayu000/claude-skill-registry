@@ -1,5 +1,12 @@
 ---
 name: email-manager
+description: Gestionnaire d'emails Gmail PERSONNELS en français pour scanner, trier
+  et archiver automatiquement les emails de l'INBOX selon des règles prédéfinies.
+  **Utiliser pour TOUS les emails personnels (envoy
+---
+
+---
+name: email-manager
 description: Gestionnaire d'emails Gmail PERSONNELS en français pour scanner, trier et archiver automatiquement les emails de l'INBOX selon des règles prédéfinies. **Utiliser pour TOUS les emails personnels (envoyer, lire, trier).** Utiliser quand l'utilisateur demande de "scanner les emails", "trier mes emails", "gérer ma boîte mail", "envoyer un email", "envoyer un mail" (sans préciser "professionnel"), ou toute tâche de gestion d'emails. Scanne UNIQUEMENT l'INBOX et déplace les emails vers les labels appropriés (personal/ecole, personal/voyage, personal/commandes, personal/Maison, pro/L'Oréal). **Note: Pour les emails professionnels L'Oréal, utiliser o365-manager.**
 ---
 

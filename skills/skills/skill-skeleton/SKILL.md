@@ -1,4 +1,9 @@
 ---
+name: skill-skeleton
+description: '> {{ONELINEDESCRIPTION}}'
+---
+
+---
 name: {{SKILL_NAME}}
 description: {{DESCRIPTION}}
 # allowed-tools: Read, Grep, Glob  # Uncomment to restrict tool access

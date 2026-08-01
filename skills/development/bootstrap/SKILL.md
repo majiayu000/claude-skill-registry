@@ -1,5 +1,11 @@
 ---
 name: bootstrap
+description: 'Two-phase codebase analysis. Phase 1: discover features from code. Phase
+  2: trace workflows.'
+---
+
+---
+name: bootstrap
 description: Two-phase codebase analysis. Phase 1: discover features from code. Phase 2: trace workflows.
 ---
 

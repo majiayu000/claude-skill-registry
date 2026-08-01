@@ -1,3 +1,9 @@
+---
+name: setup-typescript-project
+description: Comprehensive configuration templates and guidance for setting up TypeScript
+  projects with modern tooling, testing frameworks, and code quality enforcement.
+---
+
 # TypeScript Project Setup
 
 Comprehensive configuration templates and guidance for setting up TypeScript projects with modern tooling, testing frameworks, and code quality enforcement.

@@ -1,3 +1,8 @@
+---
+name: docs-klaudworks-universal-skills
+description: A short, actionable guide to how I use skills.
+---
+
 A short, actionable guide to how I use skills.
 
 High-level:

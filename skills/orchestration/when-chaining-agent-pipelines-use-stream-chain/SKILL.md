@@ -1,3 +1,8 @@
+---
+name: when-chaining-agent-pipelines-use-stream-chain
+description: /============================================================================/
+---
+
 /*============================================================================*/
 /* WHEN-CHAINING-AGENT-PIPELINES-USE-STREAM-CHAIN SKILL :: VERILINGUA x VERIX EDITION                      */
 /*============================================================================*/

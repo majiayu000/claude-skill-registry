@@ -1,3 +1,8 @@
+---
+name: security-compliance-automation
+description: '| ID | sre-security-compliance-automation |'
+---
+
 # 🔒 Skill: Security & Compliance Automation
 
 ## 📋 Metadata

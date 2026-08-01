@@ -1,5 +1,11 @@
 ---
 name: moai-workflow-templates
+description: Enterprise template management with code boilerplates, feedback templates,
+  and project optimization workflows
+---
+
+---
+name: moai-workflow-templates
 aliases: [moai-workflow-templates]
 description: Enterprise template management with code boilerplates, feedback templates, and project optimization workflows
 version: 3.0.0

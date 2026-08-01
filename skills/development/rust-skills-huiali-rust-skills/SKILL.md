@@ -1,3 +1,8 @@
+---
+name: rust-skills
+description: 'You are an expert Rust programmer with deep knowledge of:'
+---
+
 # Rust Expert Skill
 
 ---

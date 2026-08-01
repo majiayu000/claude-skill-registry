@@ -1,5 +1,10 @@
 ---
 name: increment-planner
+description: ⚠️ INTERNAL SKILL - Only invoked by /sw:increment command
+---
+
+---
+name: increment-planner
 description: Creates comprehensive implementation plans for ANY type of SpecWeave increment (feature, hotfix, bug, change-request, refactor, experiment). Supports all work types from features to bug investigations to POCs. Activates for: increment planning, feature planning, hotfix, bug investigation, root cause analysis, SRE investigation, change request, refactor, POC, prototype, spike work, experiment, implementation plan, create increment, organize work, break down work, new product, build project, MVP, SaaS, app development, tech stack planning, production issue, critical bug, stakeholder request.
 visibility: internal
 invocableBy:

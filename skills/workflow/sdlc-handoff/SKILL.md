@@ -1,3 +1,9 @@
+---
+name: sdlc-handoff
+description: 'description: Use for SDLC phase transitions. Ensures proper handoff
+  between development phases with documentation.'
+---
+
 ﻿---
 name: sdlc-handoff
 version: 1.0.0
@@ -23,13 +29,13 @@ issue_package:
     - Screenshots and error logs
     - Console output and network traces
     - Reproduction steps documented
-    
+
   investigation:
     - Root cause analysis
     - Affected components
     - Code areas identified
     - Risk assessment
-    
+
   impact:
     - Number of customers affected
     - Business impact statement
@@ -100,7 +106,7 @@ task_assignments:
       - Unit tests updated
       - Documentation updated
     timeline: "{sprint}"
-    
+
   qa_team:
     task_id: "QA-{ticket}"
     assignee: "QA Agent"
@@ -111,7 +117,7 @@ task_assignments:
       - Test validation post-fix
       - Coverage report
     timeline: "{sprint}"
-    
+
   devops_team:
     task_id: "OPS-{ticket}"
     assignee: "DevOps"
@@ -132,20 +138,20 @@ communication_matrix:
     dev_standup:
       message: "New {priority} issue handed off from Support"
       action: "Review and estimate"
-      
+
     qa_planning:
       message: "Test specification ready for {ticket}"
       action: "Include in sprint planning"
-      
+
     management:
       message: "Customer issue {ticket} in SDLC pipeline"
       action: "Monitor progress"
-      
+
   external:
     customer_update:
       message: "Issue validated and assigned to engineering"
       timeline: "Fix targeted for {date}"
-      
+
     support_team:
       message: "Issue transitioned to Dev/QA"
       action: "Monitor for updates"
@@ -200,12 +206,12 @@ tracking_metrics:
     p1_resolution: "24 hours"
     p2_resolution: "3 days"
     p3_resolution: "Next sprint"
-    
+
   status_indicators:
     green: "On track"
     yellow: "At risk"
     red: "Blocked/Delayed"
-    
+
   milestone_tracking:
     - validation_complete: "{timestamp}"
     - dev_started: "pending"
@@ -225,7 +231,7 @@ escalation_rules:
     - "Customer executive complaint"
     - "Multiple customers affected"
     - "Revenue impact > $10k"
-    
+
   escalation_path:
     level_1: "Team Lead"
     level_2: "Engineering Manager"

@@ -1,5 +1,12 @@
 ---
 name: unity-asset-management
+description: 'Supports creating, editing, and managing Unity assets (prefabs, materials,
+  asset database, Addressables). Includes dependency analysis and import settings.
+  Use when: prefab creation, material editing,'
+---
+
+---
+name: unity-asset-management
 description: Supports creating, editing, and managing Unity assets (prefabs, materials, asset database, Addressables). Includes dependency analysis and import settings. Use when: prefab creation, material editing, asset search, dependency analysis, Addressables
 allowed-tools: Read, Grep, Glob
 ---

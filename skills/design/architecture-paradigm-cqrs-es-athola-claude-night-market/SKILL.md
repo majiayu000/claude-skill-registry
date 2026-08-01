@@ -1,5 +1,12 @@
 ---
 name: architecture-paradigm-cqrs-es
+description: 'CQRS and Event Sourcing for auditability, read/write separation, and
+  temporal queries.Triggers: CQRS, event sourcing, audit trail, temporal queriesUse
+  when: read/write scaling differs or audit trail r'
+---
+
+---
+name: architecture-paradigm-cqrs-es
 description: |
 
 Triggers: event-sourcing, architecture, scalability, distributed-systems, audit-trail

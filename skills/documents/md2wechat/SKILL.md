@@ -1,5 +1,11 @@
 ---
 name: md2wechat
+description: 'Converts Markdown articles to WeChat Official Account formatted HTML
+  with inline CSS and optionally uploads to draft box. Supports two modes:'
+---
+
+---
+name: md2wechat
 description: Convert Markdown articles to WeChat Official Account formatted HTML with styled CSS and optionally upload to draft box. Supports API mode for quick conversion and AI mode for beautiful themed layouts (autumn-warm, spring-fresh, ocean-calm). Also supports assisted writing with customizable creator styles (default: Dan Koe - profound, sharp, grounded) and AI trace removal (humanizer) to make AI-generated text sound more natural. Users can add custom styles in writers/ directory. Use when user wants to write articles, convert markdown to WeChat format, remove AI writing traces, or publish to WeChat Official Account.
 ---
 

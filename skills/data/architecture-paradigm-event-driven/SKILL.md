@@ -1,5 +1,12 @@
 ---
 name: architecture-paradigm-event-driven
+description: 'Asynchronous event-based communication to decouple producers/consumers
+  for scalability and resilience.Triggers: event-driven, message queue, pub/sub, asynchronous
+  processingUse when: real-time workloa'
+---
+
+---
+name: architecture-paradigm-event-driven
 description: |
 
 Triggers: driven, architecture, decoupling, asynchronous, scalability

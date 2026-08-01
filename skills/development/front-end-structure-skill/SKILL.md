@@ -1,4 +1,11 @@
 ---
+name: front-end-structure-skill
+description: 'CRITICAL ARCHITECTURE RULE: Stores hold data only. Services handle API
+  calls. Components use services and read stores. Vue reactivity handles UI updates
+  automatically.'
+---
+
+---
 name: Front-End Structure
 description: Build Vue 3 + Ionic front-end components following Orchestrator AI's strict architecture: stores hold state only, services handle API calls with transport types, components use services and read stores. CRITICAL: Maintain view reactivity by keeping stores simple - no methods, no API calls, no business logic.
 allowed-tools: Read, Write, Edit, Bash, Grep, Glob
@@ -223,18 +230,18 @@ export const usePrivacyStore = defineStore('privacy', () => {
 // ❌ WRONG - This breaks the architecture
 export const useMyStore = defineStore('myStore', () => {
   const data = ref(null);
-  
+
   // ❌ FORBIDDEN - Async method in store
   async function fetchData() {
     const response = await fetch('/api/data');
     data.value = await response.json();
   }
-  
+
   // ❌ FORBIDDEN - Business logic in store
   function processData() {
     data.value = data.value.map(/* complex logic */);
   }
-  
+
   return { data, fetchData, processData };
 });
 ```
@@ -486,23 +493,23 @@ export const useConversationsStore = defineStore('conversations', () => {
   const conversations = ref<Conversation[]>([]);
   const isLoading = ref(false);
   const error = ref<string | null>(null);
-  
-  const currentConversation = computed(() => 
+
+  const currentConversation = computed(() =>
     conversations.value.find(c => c.id === currentConversationId.value)
   );
-  
+
   function setConversations(newConversations: Conversation[]) {
     conversations.value = newConversations; // ← State update
   }
-  
+
   function setLoading(loading: boolean) {
     isLoading.value = loading; // ← State update
   }
-  
+
   function setError(errorMessage: string | null) {
     error.value = errorMessage; // ← State update
   }
-  
+
   return { conversations, isLoading, error, currentConversation, setConversations, setLoading, setError };
 });
 ```
@@ -517,20 +524,20 @@ import { agent2AgentApi } from '@/services/agent2agent/api/agent2agent.api';
 export const conversationsService = {
   async loadConversations() {
     const store = useConversationsStore();
-    
+
     store.setLoading(true); // ← Update store
     store.setError(null);   // ← Update store
-    
+
     try {
       // Build request with transport types
       const request = buildRequest.plan.list({ conversationId: 'current' });
-      
+
       // Make API call
       const response = await agent2AgentApi.executeStrictRequest(request);
-      
+
       // Update store with response
       store.setConversations(response.result.conversations); // ← Update store
-      
+
       return response.result;
     } catch (error) {
       store.setError(error.message); // ← Update store
@@ -589,12 +596,12 @@ onMounted(() => {
 // ❌ WRONG
 export const useMyStore = defineStore('myStore', () => {
   const data = ref(null);
-  
+
   async function fetchData() {
     const response = await fetch('/api/data');
     data.value = await response.json();
   }
-  
+
   return { data, fetchData };
 });
 ```

@@ -1,5 +1,10 @@
 ---
 name: python-fundamentals-313
+description: '| Feature | Version | Syntax |'
+---
+
+---
+name: python-fundamentals-313
 description: Complete Python 3.13+ fundamentals system. PROACTIVELY activate for: (1) Python 3.13 free-threading (no-GIL), (2) JIT compiler usage, (3) Pattern matching syntax, (4) Walrus operator, (5) F-string features 3.12+, (6) Type parameter syntax 3.12+, (7) Exception groups, (8) Dataclasses and enums, (9) Context managers. Provides: Modern syntax, performance features, best practices, naming conventions. Ensures correct Python 3.13+ patterns with optimal performance.
 ---
 

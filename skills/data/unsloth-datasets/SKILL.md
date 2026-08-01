@@ -1,5 +1,13 @@
 ---
 name: unsloth-datasets
+description: Unsloth-datasets provides tools to prepare and optimize data for fine-tuning.
+  Key features include standardizing external datasets (like ShareGPT/Alpaca) into
+  a unified format, synthetically extending single-turn data into multi-turn conversations,
+  and handling custom special tokens.
+---
+
+---
+name: unsloth-datasets
 description: Standardizing and formatting datasets for Unsloth, including chat template conversion and synthetic data generation (triggers: chat templates, ShareGPT, Alpaca, conversation_extension, add_new_tokens, standardize_sharegpt, formatting_prompts_func).
 ---
 

@@ -1,3 +1,11 @@
+---
+name: skills-coopeverything-togetheros
+description: This skill helps maintainers and contributors build the TogetherOS Reward
+  System module efficiently. It provides templates, patterns, and guidance for creating
+  well-structured, contributor-friendly issues and implementing features that follow
+  TogetherOS principles.
+---
+
 # Reward Builder Skill
 
 ## Purpose
@@ -17,7 +25,7 @@ This skill helps maintainers and contributors build the TogetherOS Reward System
 ## Skill Capabilities
 
 ### 1. Issue Creation Templates
-### 2. Code Implementation Patterns  
+### 2. Code Implementation Patterns
 ### 3. Testing Strategies
 ### 4. PR Review Checklists
 ### 5. Documentation Standards
@@ -332,35 +340,35 @@ See "UI Component Accessibility" section in this skill.
 
 /**
  * Represents a contribution event that earns rewards.
- * 
+ *
  * Events are immutable records of actions taken by members
  * that contribute value to the cooperative.
  */
 export interface RewardEvent {
   /** Unique identifier (UUID v4) */
   id: string
-  
+
   /** Member who performed the action */
   actor_id: string
-  
+
   /** Type of contribution event */
   event_type: RewardEventType
-  
+
   /** When the event occurred (ISO 8601) */
   timestamp: Date
-  
+
   /** Domain-specific metadata */
   context: EventContext
-  
+
   /** Origin system (github, forum, bridge) */
   source: string
-  
+
   /** Support Points value */
   weight: number
-  
+
   /** Processing status */
   status: 'pending' | 'processed' | 'rejected'
-  
+
   /** When event was processed */
   processed_at?: Date
 }
@@ -389,7 +397,7 @@ export interface EventContext {
   files_changed?: number
   lines_changed?: number
   repository?: string
-  
+
   // Extensible for other domains
   [key: string]: any
 }
@@ -413,52 +421,52 @@ import { RewardEvent, RewardEventType, EventContext } from '@togetheros/types'
 
 /**
  * Repository interface for managing reward events.
- * 
+ *
  * Implementations can use in-memory storage, databases,
  * or external services while maintaining the same contract.
  */
 export interface RewardEventRepo {
   /**
    * Create a new reward event.
-   * 
+   *
    * @throws {ValidationError} If input invalid
    * @throws {DuplicateError} If event already exists
    */
   create(input: CreateRewardEventInput): Promise<RewardEvent>
-  
+
   /**
    * Find event by unique ID.
-   * 
+   *
    * @returns Event if found, null otherwise
    */
   findById(id: string): Promise<RewardEvent | null>
-  
+
   /**
    * List events for a specific member.
-   * 
+   *
    * @param memberId - Member UUID
    * @param filters - Optional filtering criteria
    * @returns Array of matching events
    */
   findByMember(memberId: string, filters?: EventFilters): Promise<RewardEvent[]>
-  
+
   /**
    * Find all pending (unprocessed) events.
-   * 
+   *
    * Used by reward processing job to calculate balances.
    */
   findPending(): Promise<RewardEvent[]>
-  
+
   /**
    * Mark event as processed.
-   * 
+   *
    * Called after Support Points calculated and awarded.
    */
   markProcessed(id: string): Promise<void>
-  
+
   /**
    * Check if event already exists.
-   * 
+   *
    * Prevents duplicate rewards for same action.
    */
   checkDuplicate(source: string, context: EventContext): Promise<boolean>
@@ -506,7 +514,7 @@ import { calculateWeight } from '../lib/calculateWeight'
 
 /**
  * In-memory implementation of RewardEventRepo.
- * 
+ *
  * Used for testing and MVP phase before database integration.
  * NOT suitable for production (data lost on restart).
  */
@@ -550,7 +558,7 @@ export class InMemoryRewardEventRepo implements RewardEventRepo {
     }
 
     if (filters?.date_range) {
-      results = results.filter(e => 
+      results = results.filter(e =>
         e.timestamp >= filters.date_range!.start &&
         e.timestamp <= filters.date_range!.end
       )
@@ -581,8 +589,8 @@ export class InMemoryRewardEventRepo implements RewardEventRepo {
   async checkDuplicate(source: string, context: EventContext): Promise<boolean> {
     // Simple duplicate check based on source + key context fields
     const key = this.generateDuplicateKey(source, context)
-    
-    return Array.from(this.events.values()).some(e => 
+
+    return Array.from(this.events.values()).some(e =>
       this.generateDuplicateKey(e.source, e.context) === key
     )
   }
@@ -683,7 +691,7 @@ import { RewardEventRepo } from '@togetheros/rewards-domain/repos'
 
 /**
  * Handle POST /api/rewards/events
- * 
+ *
  * Creates a new reward event from external systems.
  */
 export async function createEvent(
@@ -1008,15 +1016,15 @@ Every module needs a comprehensive spec in `docs/modules/[module].md`:
 ```typescript
 /**
  * Brief one-line description of what this does.
- * 
+ *
  * More detailed explanation if needed. Explain why this exists,
  * what problem it solves, and any important constraints.
- * 
+ *
  * @param paramName - Description of parameter
  * @param optionalParam - Optional parameter description
  * @returns Description of return value
  * @throws {ErrorType} When this error occurs
- * 
+ *
  * @example
  * ```typescript
  * const result = functionName('input')

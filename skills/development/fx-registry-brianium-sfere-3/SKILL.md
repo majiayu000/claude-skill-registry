@@ -1,5 +1,10 @@
 ---
 name: fx-registry
+description: Create effect registries for Sandestin projects.
+---
+
+---
+name: fx-registry
 description: Create new Sandestin effect registries following project conventions. Use when adding effects, actions, or placeholders. Keywords: registry, effect, action, placeholder, handler, create, new.
 ---
 

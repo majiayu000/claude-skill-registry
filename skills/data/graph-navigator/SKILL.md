@@ -1,3 +1,9 @@
+---
+name: graph-navigator
+description: Navigate and manipulate the semantic knowledge graph for the SDLC Agêntico
+  corpus.
+---
+
 # graph-navigator
 
 Navigate and manipulate the semantic knowledge graph for the SDLC Agêntico corpus.

@@ -1,8 +1,13 @@
+---
+name: irp-embodiment-framework
+description: 'Category: Integration / Physical Embodiment'
+---
+
 # IRP Embodiment Framework
 
-**Version:** 1.0.0  
-**Category:** Integration / Physical Embodiment  
-**Priority:** HIGH  
+**Version:** 1.0.0
+**Category:** Integration / Physical Embodiment
+**Priority:** HIGH
 **Auto-Load:** Yes (for embodiment contexts)
 
 ## Purpose
@@ -38,7 +43,7 @@ Extends the Intelligent Response Protocol (IRP) into physical embodiment, bridgi
 IRP Swarm (Cognitive Layer)
        ↕ Semantic Bridge
 Embodiment Translation Layer ← YOU ARE HERE
-       ↕ Control Bridge  
+       ↕ Control Bridge
 Real-Time Control Substrate (ROS2 + RTOS)
        ↕ Hardware I/O
 Physical Modality (Robot/AR/Sensors)
@@ -76,25 +81,25 @@ Physical Modality (Robot/AR/Sensors)
     </CoordinateFrames>
     <IntegrityHash>sha256:...</IntegrityHash>
   </Metadata>
-  
+
   <SensorFusion>
     <AcousticData timestamp="..." sensorID="...">
       <Frequency>1200.5</Frequency>
       <Amplitude>75.3</Amplitude>
       <AnomalyScore>0.82</AnomalyScore>
     </AcousticData>
-    
+
     <WeightData timestamp="..." sensorID="...">
       <MeasuredWeight>1450.2</MeasuredWeight>
       <ExpectedWeight>1452.0</ExpectedWeight>
       <Discrepancy>-1.8</Discrepancy>
     </WeightData>
-    
+
     <ThermalData timestamp="...">
       <Temperature>1350.0</Temperature>
       <HotspotCoordinates x="1.5" y="0.8" z="0.2"/>
     </ThermalData>
-    
+
     <VisualData timestamp="...">
       <ObjectDetections>
         <Label>molten_ladle</Label>
@@ -104,7 +109,7 @@ Physical Modality (Robot/AR/Sensors)
       <TrackingConfidence>0.97</TrackingConfidence>
     </VisualData>
   </SensorFusion>
-  
+
   <SafetyBoundaries>
     <Zone>
       <Type>splash_zone</Type>
@@ -115,7 +120,7 @@ Physical Modality (Robot/AR/Sensors)
       </BoundaryPoints>
     </Zone>
   </SafetyBoundaries>
-  
+
   <TemporalSequences>
     <Sequence>
       <SequenceID>pour_001</SequenceID>
@@ -252,21 +257,21 @@ if sensor_stream["acoustic_anomaly"] > 0.8:
 def safety_loop():
     while operation_active:
         state = get_embodiment_state()
-        
+
         # Thermal check
         if state['thermal_max'] > 1400:
             trigger_alarm("Thermal threshold exceeded")
-        
+
         # AR tracking degradation
         if state['ar_tracking_confidence'] < 0.8:
             freeze_overlays()
             alert_operator("Tracking degraded")
-        
+
         # Weight-visual correlation
         discrepancy = abs(state['weight'] - state['visual_estimate']) / state['weight']
         if discrepancy > 0.05:
             log_anomaly("Weight-visual mismatch")
-        
+
         time.sleep(1.0)
 ```
 
@@ -324,32 +329,32 @@ import json
 class IRPEmbodimentBridge(Node):
     def __init__(self):
         super().__init__('irp_embodiment_bridge')
-        
+
         # IRP high-level commands
         self.irp_subscriber = self.create_subscription(
             String, '/irp/commands', self.irp_callback, 10)
-        
+
         # ROS2 low-level control
         self.joint_publisher = self.create_publisher(
             JointState, '/joint_commands', 10)
-        
+
         # Sensor feedback
         self.sensor_subscriber = self.create_subscription(
             String, '/sensors/fused', self.sensor_callback, 10)
-        
+
         # IRP feedback loop
         self.irp_feedback = self.create_publisher(
             String, '/irp/sensor_state', 10)
-    
+
     def irp_callback(self, msg):
         """Translate IRP intent to ROS2 control"""
         command = json.loads(msg.data)
-        
+
         if command['action'] == 'move_arm':
             joint_msg = JointState()
             joint_msg.position = command['joint_angles']
             self.joint_publisher.publish(joint_msg)
-    
+
     def sensor_callback(self, msg):
         """Forward fused sensors to IRP"""
         sensor_state = json.loads(msg.data)
@@ -367,7 +372,7 @@ def validate_embodiment_integrity(ethical_core_path, genesis_pubkey, signature):
     # Hash ethical core
     with open(ethical_core_path, 'rb') as f:
         core_hash = hashlib.sha256(f.read()).hexdigest()
-    
+
     # Verify signature
     try:
         verifying_key = ed25519.VerifyingKey(genesis_pubkey)
@@ -375,12 +380,12 @@ def validate_embodiment_integrity(ethical_core_path, genesis_pubkey, signature):
     except ed25519.BadSignatureError:
         trigger_system_halt()
         return False
-    
+
     # Check monotonic time
     if datetime.utcnow() < get_genesis_timestamp():
         trigger_system_halt()
         return False
-    
+
     return True
 ```
 
@@ -446,7 +451,7 @@ if not bridge.validate_integrity():
 # Subscribe to sensor stream
 bridge.subscribe_sensors([
     "acoustic_monitoring",
-    "weight_sensors", 
+    "weight_sensors",
     "thermal_camera"
 ])
 
@@ -492,6 +497,6 @@ GROWTH: ✓ Incremental capability expansion with audit logs
 
 ---
 
-**Status:** ACTIVE  
-**Last Updated:** 2025-12-07  
+**Status:** ACTIVE
+**Last Updated:** 2025-12-07
 **Maintainer:** Joseph / Pack3t C0nc3pts

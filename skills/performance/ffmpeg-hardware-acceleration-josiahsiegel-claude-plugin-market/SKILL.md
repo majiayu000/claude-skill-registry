@@ -1,5 +1,10 @@
 ---
 name: ffmpeg-hardware-acceleration
+description: 'MANDATORY: Always Use Backslashes on Windows for File Paths'
+---
+
+---
+name: ffmpeg-hardware-acceleration
 description: Complete GPU-accelerated encoding/decoding system for FFmpeg 7.1 LTS and 8.0.1 (latest stable, released 2025-11-20). PROACTIVELY activate for: (1) NVIDIA NVENC/NVDEC encoding, (2) Intel Quick Sync Video (QSV), (3) AMD AMF encoding, (4) Apple VideoToolbox, (5) Linux VAAPI setup, (6) Vulkan Video 8.0 (FFv1, AV1, VP9, ProRes RAW), (7) VVC/H.266 hardware decoding (VAAPI/QSV), (8) GPU pipeline optimization with pad_cuda, (9) Docker GPU containers, (10) Performance benchmarking. Provides: Platform-specific commands, preset comparisons, quality tuning, full GPU pipeline examples, Vulkan compute codecs, VVC decoding, troubleshooting guides. Ensures: Maximum encoding speed with optimal quality using GPU acceleration.
 ---
 

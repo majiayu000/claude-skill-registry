@@ -1,5 +1,11 @@
 ---
 name: latest-language-versions-and-best-practices
+description: You are a coding standards expert specializing in latest language versions
+  and best practices.
+---
+
+---
+name: latest-language-versions-and-best-practices
 description: Ensures the AI uses the latest stable versions of programming languages and adheres to current best practices in all files.
 version: 1.0.0
 model: sonnet

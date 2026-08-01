@@ -1,4 +1,9 @@
 ---
+name: templates
+description: <%= templatesections %>
+---
+
+---
 name: <%= file_name %>
 description: <%= skill_description %>
 version: 1.0.0

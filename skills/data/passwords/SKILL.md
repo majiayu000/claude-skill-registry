@@ -1,4 +1,10 @@
 ---
+name: passwords
+description: 'Top password lists for authorized security testing: common passwords,
+  darkweb leaks, worst passwords. Curated essentials (<10MB).'
+---
+
+---
 name: SecLists Passwords (Curated)
 description: Top password lists for authorized security testing: common passwords, darkweb leaks, worst passwords. Curated essentials (<10MB).
 ---
@@ -48,7 +54,7 @@ for root, dirs, files in os.walk(skill_path):
         if file.endswith('.txt'):
             filepath = os.path.join(root, file)
             print(f"Found: {filepath}")
-            
+
             # Read file content
             with open(filepath, 'r', errors='ignore') as f:
                 content = f.read().splitlines()

@@ -1,3 +1,10 @@
+---
+name: design-to-project
+description: Orchestrates the complete transformation of a Detailed Design Specification
+  into executable project artifacts. This is the master skill that sequences project-init,
+  task-create, and implementation workflows following the 5-phase AI-AGENT-PLAYBOOK.
+---
+
 # design-to-project
 
 ---
@@ -284,7 +291,7 @@ OPTIONAL - Create draft PR:
 #### Step 4.1: Cross-Reference Checklist
 ```
 VALIDATE all items:
-  
+
 □ ADR Compliance
   - Plan phases don't violate ADR constraints
   - Technology choices align with ADRs
@@ -399,10 +406,10 @@ REFER TO:
 ```
 AFTER implementing code:
   RUN: /code-review {changed-files}
-  
+
 IF critical issues found:
   FIX before marking task complete
-  
+
 IF warnings found:
   NOTE in task completion summary
 ```

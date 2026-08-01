@@ -1,3 +1,10 @@
+---
+name: ai-agent-skills
+description: Here’s a complete breakdown of how to configure and set up the SMS Skill
+  in raiaAI’s Launch Pad. This skill allows your AI agent to engage with users through
+  two-way text messaging using a phone number assigned via Twilio.
+---
+
 # SMS Skill
 
 Here’s a complete breakdown of how to **configure and set up the SMS Skill** in raiaAI’s Launch Pad. This skill allows your AI agent to engage with users through two-way text messaging using a phone number assigned via Twilio.

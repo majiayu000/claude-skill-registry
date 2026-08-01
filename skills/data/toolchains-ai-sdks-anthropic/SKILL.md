@@ -1,3 +1,8 @@
+---
+name: toolchains-ai-sdks-anthropic
+description: pip install anthropic
+---
+
 # Anthropic SDK - Official Claude AI Integration
 
 ---

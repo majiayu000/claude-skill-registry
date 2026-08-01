@@ -1,3 +1,8 @@
+---
+name: prd-compliance-validator
+description: '- skillname: prd-compliance-validator'
+---
+
 # PRD Compliance Validator Skill
 
 ## Metadata
@@ -47,7 +52,7 @@ class PRDComplianceValidator:
         }
         # Parse PRD for requirement patterns
         return requirements
-    
+
     def validate_implementation(self, requirements, src_path):
         """Validate against extracted requirements"""
         violations = []

@@ -1,3 +1,8 @@
+---
+name: scfoundation-model-agent
+description: '---name: scfoundation-model-agent'
+---
+
 ---name: scfoundation-model-agent
 description: Unified agent for leveraging single-cell foundation models (scGPT, scBERT, Geneformer, scFoundation) for cross-species annotation, perturbation prediction, and gene network inference.
 license: MIT

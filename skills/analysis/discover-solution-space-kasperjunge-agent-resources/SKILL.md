@@ -1,5 +1,11 @@
 ---
 name: discover-solution-space
+description: Deeply explore the solution space to find the optimal approach before
+  committing to a plan.
+---
+
+---
+name: discover-solution-space
 description: Use when research phase is complete and you need to explore implementation
   options before planning. Triggers after /research, when facing architectural decisions,
   or when multiple valid approaches exist for a task.

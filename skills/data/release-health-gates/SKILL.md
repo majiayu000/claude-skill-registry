@@ -1,5 +1,11 @@
 ---
 name: release-health-gates
+description: Standardize release approvals by expressing gates as GitHub-aware checklists.
+  Ensure code, docs, comms, and observability items are green before deployment.
+---
+
+---
+name: release-health-gates
 description: |
 
 Triggers: github, governance, health, readiness, quality

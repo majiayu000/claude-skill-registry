@@ -1,5 +1,10 @@
 ---
 name: ffmpeg-modal-containers
+description: '| Container Type | Image Setup | GPU | Use Case |'
+---
+
+---
+name: ffmpeg-modal-containers
 description: Complete Modal.com FFmpeg deployment system for serverless video processing. PROACTIVELY activate for: (1) Modal.com FFmpeg container setup, (2) GPU-accelerated video encoding on Modal (NVIDIA, NVENC), (3) Parallel video processing with Modal map/starmap, (4) Volume mounting for large video files, (5) CPU vs GPU container cost optimization, (6) apt_install/pip_install for FFmpeg, (7) Python subprocess FFmpeg patterns, (8) Batch video transcoding at scale, (9) Modal pricing for video workloads, (10) Audio/video processing with Whisper. Provides: Image configuration examples, GPU container patterns, parallel processing code, volume usage, cost comparisons, production-ready FFmpeg deployments. Ensures: Efficient, scalable video processing on Modal serverless infrastructure.
 ---
 

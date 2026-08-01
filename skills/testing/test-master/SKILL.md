@@ -1,5 +1,12 @@
 ---
 name: test-master
+description: 'Use when writing tests, creating test strategies, or building automation
+  frameworks. Invoke for unit tests, integration tests, E2E, coverage analysis, performance
+  testing, security testing. Keywords:'
+---
+
+---
+name: test-master
 description: Use when writing tests, creating test strategies, or building automation frameworks. Invoke for unit tests, integration tests, E2E, coverage analysis, performance testing, security testing. Keywords: testing, QA, unit test, integration test, E2E, coverage, pytest, Jest.
 triggers:
   - test

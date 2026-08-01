@@ -1,3 +1,9 @@
+---
+name: statistical-analysis-drshailesh88-integrated-conten
+description: Rigorous statistical analysis guidance for interpreting and reporting
+  research findings in cardiology content.
+---
+
 # Statistical Analysis
 
 Rigorous statistical analysis guidance for interpreting and reporting research findings in cardiology content.

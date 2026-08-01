@@ -1,3 +1,9 @@
+---
+name: codebase-understanding
+description: เข้าใจ codebase ทั้งหมดอย่างลึกซึ้ง รู้ความสัมพันธ์ระหว่างไฟล์, architecture
+  patterns, และ data flows เพื่อให้แก้ไขได้ตรงจุด
+---
+
 # 🧠 Codebase Understanding Skill
 
 ---

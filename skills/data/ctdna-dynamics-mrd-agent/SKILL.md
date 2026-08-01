@@ -1,3 +1,8 @@
+---
+name: ctdna-dynamics-mrd-agent
+description: '---name: ctdna-dynamics-mrd-agent'
+---
+
 ---name: ctdna-dynamics-mrd-agent
 description: AI-powered circulating tumor DNA dynamics analysis for molecular residual disease detection, treatment response monitoring, and early relapse prediction using liquid biopsy.
 license: MIT

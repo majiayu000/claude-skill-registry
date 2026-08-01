@@ -1,3 +1,8 @@
+---
+name: 30-example-network-server
+description: '| Server | framework-ts/apps/GameServer/ |'
+---
+
 # 30-example-network-server — Game Protocol TS 서버 예제
 
 Status: ACTIVE

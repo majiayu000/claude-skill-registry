@@ -1,3 +1,8 @@
+---
+name: crossplane
+description: '| ID | cicd-crossplane |'
+---
+
 # 🔀 Skill: Crossplane Multi-Cloud Management
 
 ## 📋 Metadata

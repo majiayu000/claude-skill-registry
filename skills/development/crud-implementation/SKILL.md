@@ -1,5 +1,10 @@
 ---
 name: crud-implementation
+description: Entry point for implementing a new entity with full CRUD operations.
+---
+
+---
+name: crud-implementation
 description: Complete workflow guide for implementing new CRUD entities. Use when adding a new resource, implementing full CRUD operations, or needing an overview of the database-to-API flow. Triggers: "new entity", "add resource", "implement CRUD", "create table and API". Orchestrates add-database-table, add-domain-entity, and add-api-endpoint skills.
 ---
 

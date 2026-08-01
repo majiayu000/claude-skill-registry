@@ -1,3 +1,8 @@
+---
+name: devlog
+description: 'Date: 2025-11-20 17:51'
+---
+
 # Journal Entry: Simplifying the Journal Skill
 
 **Date:** 2025-11-20 17:51

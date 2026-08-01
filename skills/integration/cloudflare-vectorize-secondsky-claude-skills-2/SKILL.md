@@ -1,5 +1,12 @@
 ---
 name: cloudflare-vectorize
+description: Complete implementation guide for Cloudflare Vectorize - a globally distributed
+  vector database for building semantic search, RAG (Retrieval Augmented Generation),
+  and AI-powered applications with Clo
+---
+
+---
+name: cloudflare-vectorize
 description: Cloudflare Vectorize vector database for semantic search and RAG. Use for vector indexes, embeddings, similarity search, or encountering dimension mismatches, filter errors.
 
   Keywords: vectorize, vector database, vector index, vector search, similarity search, semantic search,

@@ -1,3 +1,8 @@
+---
+name: skillsresponsesskill
+description: Name | Type | Description | Notes
+---
+
 # # SkillsResponsesSkill
 
 ## Properties

@@ -1,5 +1,12 @@
 ---
 name: component-integration
+description: React, MDX, and Tailwind CSS integration patterns for Astro websites.
+  Use when adding React components, configuring MDX content, setting up Tailwind styling,
+  integrating component libraries, building
+---
+
+---
+name: component-integration
 description: React, MDX, and Tailwind CSS integration patterns for Astro websites. Use when adding React components, configuring MDX content, setting up Tailwind styling, integrating component libraries, building interactive UI elements, or when user mentions React integration, MDX setup, Tailwind configuration, component patterns, or UI frameworks.
 allowed-tools: - Read
   - Write

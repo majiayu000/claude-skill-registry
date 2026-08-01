@@ -1,5 +1,10 @@
 ---
 name: positioning-statement
+description: 'This skill supports three modes: Create, Update, and Find.'
+---
+
+---
+name: positioning-statement
 description: Create or update a positioning statement
 argument-hint: [product name] or [update path/to/positioning.md]
 ---

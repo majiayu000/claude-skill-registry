@@ -1,7 +1,13 @@
+---
+name: docs-snipsco-snips-actions-template
+description: The goal of this document is to explain the various things required in
+  a snips skill.
+---
+
 # Snips skill specification
 The goal of this document is to explain the various things required in a snips skill.
 
-A snips skill is a folder containing the code needed to handle intents generated from the snips platform. 
+A snips skill is a folder containing the code needed to handle intents generated from the snips platform.
 
 This folder is given to the snips-skills-server that will ensure the skill is running.
 
@@ -9,7 +15,7 @@ This folder is given to the snips-skills-server that will ensure the skill is ru
 
 The skill server expects files named `action-*` to be at the root of the folder. These files must be executables and are expected to contain code connecting to the MQTT server and "looping forever" on it. Typical example of such an executable is a python script using the `hermes-python` library.
 
-Each of these executable will be started by the skill server (and restarted in case the process exits/cashes). 
+Each of these executable will be started by the skill server (and restarted in case the process exits/cashes).
 
 If a subfolder named `venv` exists, the `snips-skill-server` will try to activate the virtualenv before starting the executables (ie sourcing `venv/bin/activate` before starting the executable). This can be used to easily install dependencies for a pyhton script.
 

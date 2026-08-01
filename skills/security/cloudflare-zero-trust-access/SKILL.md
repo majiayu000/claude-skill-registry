@@ -1,5 +1,11 @@
 ---
 name: cloudflare-zero-trust-access
+description: Integrate Cloudflare Zero Trust Access authentication with Cloudflare
+  Workers applications using proven patterns and templates.
+---
+
+---
+name: cloudflare-zero-trust-access
 description: Cloudflare Zero Trust Access authentication for Workers. Use for JWT validation, service tokens, CORS, or encountering preflight blocking, cache race conditions, missing JWT headers.
 
   Keywords: Cloudflare Access, Zero Trust, Cloudflare Zero Trust Access, Access authentication, JWT validation, access jwt, service tokens, hono cloudflare access, hono-cloudflare-access middleware, workers authentication, protect worker routes, admin authentication, access policy, identity providers, azure ad access, google workspace access, okta access, github access, rbac cloudflare, geographic restrictions, multi-tenant access, cors access, CORS preflight blocked, JWT header missing, access key cache, team mismatch, access claims

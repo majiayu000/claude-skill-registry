@@ -1,3 +1,8 @@
+---
+name: content-creator
+description: 日報の自動生成とSNSコンテンツへの変換を行うスキル。
+---
+
 # Content Creator
 
 日報の自動生成とSNSコンテンツへの変換を行うスキル。

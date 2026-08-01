@@ -1,3 +1,9 @@
+---
+name: flatline-knowledge
+description: Provides optional NotebookLM integration for the Flatline Protocol, enabling
+  external knowledge retrieval from curated AI-powered notebooks.
+---
+
 # Flatline Knowledge Skill
 
 ## Purpose

@@ -1,3 +1,9 @@
+---
+name: markdown-novel-viewer
+description: Background HTTP server rendering markdown files with calm, book-like
+  reading experience.
+---
+
 # markdown-novel-viewer
 
 Background HTTP server rendering markdown files with calm, book-like reading experience.

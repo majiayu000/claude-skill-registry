@@ -1,3 +1,8 @@
+---
+name: default
+description: '{{- / Single page template for Claude skill output / -}}'
+---
+
 {{- /* Single page template for Claude skill output */ -}}
 {{- $excludedSections := .Site.Params.excludeFromSkill | default slice -}}
 {{- if not (in $excludedSections .Section) -}}

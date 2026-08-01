@@ -1,5 +1,10 @@
 ---
 name: yt
+description: Pobiera transkrypcję z YouTube i umożliwia analizę/pytania o film.
+---
+
+---
+name: yt
 description: Pobranie i analiza transkrypcji YouTube. Triggers: youtube, yt, transkrypcja, transcript
 allowed-tools: Bash, Read, Write, Grep, Task, Glob
 ---

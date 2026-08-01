@@ -1,3 +1,8 @@
+---
+name: autodata-xunit-integration
+description: '- xUnit AutoFixture 整合'
+---
+
 # AutoData 屬性家族：xUnit 與 AutoFixture 的整合應用
 
 ---
@@ -54,13 +59,13 @@ using AutoFixture.Xunit2;
 public class Person
 {
     public Guid Id { get; set; }
-    
+
     [StringLength(10)]
     public string Name { get; set; } = string.Empty;
-    
+
     [Range(18, 80)]
     public int Age { get; set; }
-    
+
     public string Email { get; set; } = string.Empty;
     public DateTime CreateTime { get; set; }
 }
@@ -324,7 +329,7 @@ public void 使用BusinessAutoData(Order order)
 ```csharp
 public class CompositeAutoDataAttribute : AutoDataAttribute
 {
-    public CompositeAutoDataAttribute(params Type[] autoDataAttributeTypes) 
+    public CompositeAutoDataAttribute(params Type[] autoDataAttributeTypes)
         : base(() => CreateFixture(autoDataAttributeTypes))
     {
     }
@@ -476,7 +481,7 @@ public void CollectionSize_控制自動產生集合大小(
     <Content Include="TestData\*.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    
+
     <!-- JSON 檔案 -->
     <Content Include="TestData\*.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -513,17 +518,17 @@ public class ExternalDataIntegrationTests
     public static IEnumerable<object[]> GetProductsFromCsv()
     {
         var csvPath = Path.Combine(Directory.GetCurrentDirectory(), "TestData", "products.csv");
-        
+
         using var reader = new StreamReader(csvPath);
         var config = new CsvConfiguration(CultureInfo.InvariantCulture)
         {
             HeaderValidated = null,
             MissingFieldFound = null
         };
-        
+
         using var csv = new CsvReader(reader, config);
         var records = csv.GetRecords<ProductCsvRecord>().ToList();
-        
+
         foreach (var record in records)
         {
             yield return new object[]
@@ -602,14 +607,14 @@ public static IEnumerable<object[]> GetCustomersFromJson()
 {
     var jsonPath = Path.Combine(Directory.GetCurrentDirectory(), "TestData", "customers.json");
     var jsonContent = File.ReadAllText(jsonPath);
-    
+
     var options = new JsonSerializerOptions
     {
         PropertyNameCaseInsensitive = true
     };
-    
+
     var customers = JsonSerializer.Deserialize<List<CustomerJsonRecord>>(jsonContent, options)!;
-    
+
     foreach (var customer in customers)
     {
         yield return new object[]
@@ -759,7 +764,7 @@ public void AutoData與AwesomeAssertions協作_客戶等級驗證(
     customer.Type.Should().Be(customerLevel);
     customer.CreditLimit.Should().Be(expectedCreditLimit);
     customer.CreditLimit.Should().BePositive();
-    
+
     order.Amount.Should().BeInRange(1000m, 15000m);
     canPlaceOrder.Should().BeTrue();
     discountRate.Should().BeInRange(0m, 0.3m);

@@ -1,3 +1,8 @@
+---
+name: probe-estimation
+description: 'name: probe-estimation'
+---
+
 ﻿---
 name: probe-estimation
 description: Use to apply PROBE (PROxy-Based Estimation) method for story sizing. Uses historical data for accurate effort estimation.
@@ -20,7 +25,7 @@ PROBE uses relative size categories and historical performance to create statist
 ### 1. Gather Historical Data (if available)
 
 Check for previous stories in `devStoryLocation` and extract:
-- Story complexity ratings (VS, S, M, L, VL)  
+- Story complexity ratings (VS, S, M, L, VL)
 - Estimated hours from story files
 - Actual completion time (from Status timestamps)
 - Story points if available
@@ -46,32 +51,32 @@ story_point_mapping:
   3: medium
   5: large
   8: very_large
-  
+
 size_categories:
   very_small:
     story_points: 1
     description: "Simple config change or single-file update"
     typical_tasks: 1-2
     complexity: "Trivial logic, no dependencies"
-    
+
   small:
     story_points: 2
     description: "Single feature or bug fix"
     typical_tasks: 3-5
     complexity: "Simple logic, minimal dependencies"
-    
+
   medium:
     story_points: 3
     description: "Multi-component feature"
     typical_tasks: 6-10
     complexity: "Moderate logic, some integration"
-    
+
   large:
     story_points: 5
     description: "Cross-system feature"
     typical_tasks: 11-20
     complexity: "Complex logic, significant integration"
-    
+
   very_large:
     story_points: 8
     description: "Architectural change or major feature"
@@ -107,7 +112,7 @@ probe_calculation:
       optimistic: estimate * 0.7
       likely: estimate
       pessimistic: estimate * 1.5
-  
+
   # Without historical data
   without_history:
     estimate: selected_proxy_value
@@ -126,7 +131,7 @@ psp_estimation:
   method: "PROBE"
   story_points: {1|2|3|5|8}  # From sprint planning
   size_category: "{very_small|small|medium|large|very_large}"  # Mapped from points
-  proxy_stories: 
+  proxy_stories:
     - "{epic.story} - {actual_hours}h"
   estimated_hours:
     optimistic: X
@@ -195,7 +200,7 @@ Add Step 2.5: "Execute PROBE Estimation"
 
 The estimation data becomes part of the story record, enabling:
 - Velocity tracking
-- Capacity planning  
+- Capacity planning
 - Continuous estimation improvement
 - Team performance metrics
 
@@ -214,7 +219,7 @@ For story file Dev Notes section:
 ### PSP Estimation (PROBE Method)
 
 - **Size Category**: Medium
-- **Similar Stories Used**: 
+- **Similar Stories Used**:
   - 1.2 User Auth (12h actual)
   - 1.5 API Integration (14h actual)
 - **Estimate**: 8-13-20 hours (optimistic-likely-pessimistic)

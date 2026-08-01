@@ -1,4 +1,9 @@
 ---
+name: arch-patterns
+description: '> Sistem mimarisi pattern''ları.'
+---
+
+---
 name: arch_patterns
 router_kit: FullStackKit
 description: Architecture patterns - monolith vs microservices, layered, event-driven, CQRS.

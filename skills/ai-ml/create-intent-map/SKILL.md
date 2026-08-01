@@ -1,5 +1,11 @@
 ---
 name: create-intent-map
+description: Train LoRA adapters for converting natural language queries into structured
+  QuerySpec JSON.
+---
+
+---
+name: create-intent-map
 description: >
   Train LoRA intent mappers for structured query generation using GRPO with execution feedback.
   Uses DeepSeek-R1-Distill-Qwen-7B as base model. Supports SFT warmup, GRPO training with

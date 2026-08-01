@@ -1,5 +1,12 @@
 ---
 name: react-app-structure
+description: Use when auditing, scaffolding, or validating MetaSaver React portal
+  app directory structure. Includes file organization patterns, domain grouping, feature
+  composition, routing configuration, and Auth
+---
+
+---
+name: react-app-structure
 description: Use when auditing, scaffolding, or validating MetaSaver React portal app directory structure. Includes file organization patterns, domain grouping, feature composition, routing configuration, and Auth0 integration setup. File types: .tsx, .ts, directory layouts.
 allowed-tools: Read, Write, Edit, Bash, Glob
 ---

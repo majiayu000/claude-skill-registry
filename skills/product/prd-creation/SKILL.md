@@ -1,5 +1,10 @@
 ---
 name: prd-creation
+description: 'Before creating any PRD:'
+---
+
+---
+name: prd-creation
 description: Creating outcome-based PRDs for StepLeague. Use when planning new features, writing requirements documents, discussing feature specifications, or defining what a feature should achieve. PRDs define WHAT to achieve, not HOW to implement. Keywords: PRD, product requirements, planning, specification, feature design, outcomes, requirements document.
 compatibility: Antigravity, Claude Code, Cursor
 metadata:
@@ -91,8 +96,8 @@ docs/prds/admin-feedback-system/
 ```markdown
 # PRD [Number]: [Title]
 
-> **Order:** [Number]  
-> **Status:** 🟢 Complete | 🟡 Planning | 🔴 Blocked  
+> **Order:** [Number]
+> **Status:** 🟢 Complete | 🟡 Planning | 🔴 Blocked
 > **Type:** Feature | Architecture | Refactor | Bug
 
 ---

@@ -1,5 +1,11 @@
 ---
 name: pubmed-systematic-search
+description: 'Comprehensive systematic search using MeSH and synonyms. Triggers: 系統性搜尋,
+  完整搜尋, 文獻回顧, systematic search, comprehensive, MeSH expansion, 同義詞'
+---
+
+---
+name: pubmed-systematic-search
 description: Comprehensive systematic search using MeSH and synonyms. Triggers: 系統性搜尋, 完整搜尋, 文獻回顧, systematic search, comprehensive, MeSH expansion, 同義詞
 ---
 

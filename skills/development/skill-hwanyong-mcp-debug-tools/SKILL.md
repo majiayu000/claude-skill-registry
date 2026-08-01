@@ -1,3 +1,7 @@
+---
+name: skill-hwanyong-mcp-debug-tools
+description: 2. MCP와 Skill의 근본적 차이
+---
 
 # MCP와 Skill 통합 가이드: 차세대 AI 개발 도구의 시너지
 

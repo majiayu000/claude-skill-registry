@@ -1,3 +1,8 @@
+---
+name: coding-rules
+description: import { useState } from 'react';
+---
+
 # coding-rules - コーディング規約
 
 プロジェクト共通のコーディングルール。

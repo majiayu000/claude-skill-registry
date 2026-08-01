@@ -1,4 +1,9 @@
 ---
+name: opportunity-scorer
+description: '> Fırsat puanlama ve karar verme rehberi.'
+---
+
+---
 name: opportunity_scorer
 router_kit: FullStackKit
 description: Fırsat puanlama, scoring rubric ve go/no-go karar verme rehberi.

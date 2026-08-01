@@ -1,9 +1,0 @@
-{
-  "name": "supabase-operations",
-  "repo": "bout3fiddy/agents",
-  "category": "data",
-  "description": "This skill should be used when the user asks to \"list posters\", \"get poster info\", \"fetch context document\", \"get latest poster\", \"check poster count\", \"show poster details\", \"get context for poster\",",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:38.566566Z",
-  "dir_name": "supabase-operations"
-}

@@ -1,3 +1,9 @@
+---
+name: records
+description: 'description: Java coding standards for enterprise applications. Includes
+  naming conventions, modern Java features, and recommended tooling.'
+---
+
 # Record 031: Java Developer Skill
 
 ## Status

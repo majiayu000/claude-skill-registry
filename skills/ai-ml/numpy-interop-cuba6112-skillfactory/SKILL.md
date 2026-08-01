@@ -1,5 +1,13 @@
 ---
 name: numpy-interop
+description: NumPy Interoperability encompasses the protocols that allow different
+  numerical libraries (PyTorch, TensorFlow, SciPy) to exchange data without redundant
+  copies. It focuses on modern standards like DLPack and the implementation of custom
+  behavior for non-NumPy objects using the arrayufunc protocol.
+---
+
+---
+name: numpy-interop
 description: Protocols for cross-library data exchange including DLPack, buffer interfaces, and __array_ufunc__ for overriding NumPy functions. Triggers: DLPack, interoperability, __array_interface__, __array_ufunc__, buffer protocol.
 ---
 

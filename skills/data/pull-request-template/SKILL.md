@@ -1,3 +1,8 @@
+---
+name: pull-request-template
+description: 'Skill name: skills/SKILL-NAME'
+---
+
 ## New Skill
 
 **Skill name:** `skills/SKILL-NAME`

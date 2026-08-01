@@ -1,3 +1,8 @@
+---
+name: gitrules-skill
+description: Critical rules to prevent accidental data loss from destructive git operations.
+---
+
 # Git Safety Protocol
 
 Critical rules to prevent accidental data loss from destructive git operations.

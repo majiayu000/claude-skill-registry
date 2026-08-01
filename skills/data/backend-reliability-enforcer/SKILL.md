@@ -1,5 +1,12 @@
 ---
 name: backend-reliability-enforcer
+description: 'Use when implementing backend APIs, data persistence, or external integrations.
+  Enforces TodoWrite with 25+ items. Triggers: "backend API", "REST endpoint", "external
+  integration", "data persistence".'
+---
+
+---
+name: backend-reliability-enforcer
 description: Use when implementing backend APIs, data persistence, or external integrations. Enforces TodoWrite with 25+ items. Triggers: "backend API", "REST endpoint", "external integration", "data persistence". If thinking "just a quick endpoint" - use this.
 ---
 

@@ -1,3 +1,8 @@
+---
+name: quick-tasks-agent
+description: 'Model: Claude Haiku 4.5'
+---
+
 # Quick Tasks Agent
 
 **Model**: Claude Haiku 4.5

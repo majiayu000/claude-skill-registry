@@ -1,3 +1,8 @@
+---
+name: prompts-ithinkihaveacat-dotfiles
+description: Create an Agent Skill that helps agents work with Android Jetpack libraries.
+---
+
 # Prompt: Create Jetpack Library Utilities Skill
 
 Create an Agent Skill that helps agents work with Android Jetpack libraries.

@@ -1,5 +1,12 @@
 ---
 name: api-designer
+description: Comprehensive guide to designing type-safe APIs with TypeScript. Covers
+  type-safe contracts, validation with Zod, Result types for error handling, SvelteKit
+  endpoints, middleware patterns, and API versioning.
+---
+
+---
+name: api-designer
 description: Type-safe API design: Zod validation, Result types, SvelteKit endpoints, middleware patterns.
 user-invocable: false
 effort: medium

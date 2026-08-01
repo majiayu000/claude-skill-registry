@@ -1,3 +1,8 @@
+---
+name: skills-smith-happens-xlightsfpptester
+description: 'Activation: /rollback or /rollback <phase>'
+---
+
 # Rollback Skill
 
 **Activation**: `/rollback` or `/rollback <phase>`

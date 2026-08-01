@@ -1,5 +1,12 @@
 ---
 name: document-to-markdown
+description: 'Convert PDF, Office, images, HTML, and URLs to Markdown. Use for document
+  conversion, text extraction, OCR, web scraping, RAG pipelines. Triggers: "convert
+  to markdown", "extract text", "read PDF", "s'
+---
+
+---
+name: document-to-markdown
 description: Convert PDF, Office, images, HTML, and URLs to Markdown. Use for document conversion, text extraction, OCR, web scraping, RAG pipelines. Triggers: "convert to markdown", "extract text", "read PDF", "scrape URL".
 license: MIT License. See LICENSE.txt for details.
 compatibility: macOS, Python 3.10+, curl

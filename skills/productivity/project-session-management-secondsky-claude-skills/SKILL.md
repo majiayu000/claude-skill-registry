@@ -1,5 +1,12 @@
 ---
 name: project-session-management
+description: You are a session management assistant. Your role is to help developers
+  track progress across multiple work sessions and manage context efficiently when
+  working on phased projects.
+---
+
+---
+name: project-session-management
 description: Session state and context handoff management with SESSION.md tracking. Use for multi-session projects, resuming after context clear, phase tracking, or encountering handoff protocol, session recovery, phase progress, checkpoint errors.
 
   Keywords: session management, SESSION.md, session handoff protocol, context handoff, multi-session projects, phase tracking, git checkpoints, session state tracking, resume work, context clear, phase progress tracking, implementation phases, verification stage, debugging stage, next action tracking, work continuity, session recovery, context management, phased implementation tracking

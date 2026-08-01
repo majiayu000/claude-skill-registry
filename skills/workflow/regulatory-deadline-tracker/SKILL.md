@@ -1,5 +1,12 @@
 ---
 name: regulatory-deadline-tracker
+description: Track regulatory compliance deadlines, trustee obligations, reporting
+  requirements, and coordinate with Archon task management to ensure nothing is missed.
+  Specializes in UK pensions regulatory requirements.
+---
+
+---
+name: regulatory-deadline-tracker
 description: Extract compliance deadlines from regulations, track trustee obligations, generate timeline, alert on upcoming deadlines, coordinate with Archon task management. Use when tracking regulatory deadlines, TPR requirements, compliance obligations, reporting schedules. Keywords: deadline, compliance, obligation, reporting, TPR, regulatory, schedule, timeline, alert.
 allowed-tools: Bash, Read, Write, Grep, mcp__neo4j-apex__*, mcp__archon__find_tasks, mcp__archon__manage_task, mcp__archon__find_projects
 model: claude-sonnet-4-5

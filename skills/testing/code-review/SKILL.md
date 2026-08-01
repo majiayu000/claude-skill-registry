@@ -1,5 +1,12 @@
 ---
 name: code-review
+description: Review, analyze, and inspect code for Photo Map MVP project following
+  Spring Boot, Angular 18, and shared project conventions. Check security, performance,
+  naming, testing, and MVP scope compliance. U
+---
+
+---
+name: code-review
 description: Review, analyze, and inspect code for Photo Map MVP project following Spring Boot, Angular 18, and shared project conventions. Check security, performance, naming, testing, and MVP scope compliance. Use when reviewing pull requests, conducting code audits, analyzing code quality, inspecting Java or TypeScript files, or ensuring quality before commits. File types: .java, .ts, .html, .xml, .properties, .css, .scss
 allowed-tools: Read, Grep, Glob
 ---

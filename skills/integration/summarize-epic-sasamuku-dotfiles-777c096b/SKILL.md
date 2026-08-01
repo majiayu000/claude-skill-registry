@@ -1,4 +1,9 @@
 ---
+name: summarize-epic
+description: Execute /summarize-epic <epic-url> slash command.
+---
+
+---
 name: summarizing-epic-issue
 description: Summarizes GitHub Epic issue with sub-issues and PR status. Use when: user wants epic summary, project overview, or implementation status.
 ---

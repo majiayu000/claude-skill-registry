@@ -1,5 +1,10 @@
 ---
 name: security-scan
+description: Orchestrate comprehensive security scanning using self-hosted tools.
+---
+
+---
+name: security-scan
 description: >
   Orchestrates SAST, dependency audit, and secrets detection using self-hosted tools
   (Semgrep, Bandit, pip-audit, Trivy, gitleaks). Integrates with task-monitor and memory.

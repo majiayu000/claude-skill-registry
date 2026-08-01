@@ -1,5 +1,11 @@
 ---
 name: architect
+description: Read outputlanguage from .ai/context/workflow-config.md. Write ALL deliverables
+  in that language. If the file is absent or the field is unset, default to en-US.
+---
+
+---
+name: architect
 description: Software Architect role skill. Use when you need to design architecture, evaluate technical solutions, analyse architectural impact, perform code review, or translate product requirements into a logical architecture design. Keywords: architecture design, technical solutions, module partitioning, risk analysis, code review, logical architecture, non-functional analysis.
 ---
 

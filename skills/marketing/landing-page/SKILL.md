@@ -1,3 +1,8 @@
+---
+name: landing-page
+description: '> Generate Marketing Landing Page: Hero, features, pricing, testimonials.'
+---
+
 # Landing Page Skill
 
 > **Generate Marketing Landing Page**: Hero, features, pricing, testimonials.
@@ -53,7 +58,7 @@ export function Hero() {
     <section className="relative py-20 lg:py-32 overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-100 -z-10" />
-      
+
       <div className="container mx-auto px-4 text-center">
         <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 rounded-full px-4 py-1.5 text-sm font-medium mb-6">
           ✨ New: AI-powered features now available
@@ -65,7 +70,7 @@ export function Hero() {
         </h1>
 
         <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
-          The all-in-one platform for building, deploying, and scaling your 
+          The all-in-one platform for building, deploying, and scaling your
           applications. Start free, scale as you grow.
         </p>
 

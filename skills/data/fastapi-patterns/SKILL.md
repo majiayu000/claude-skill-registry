@@ -1,5 +1,12 @@
 ---
 name: fastapi-patterns
+description: FastAPI leverages Python's type hints and async capabilities to provide
+  a robust framework for building APIs. Its core strength lies in its Dependency Injection
+  system, which allows for clean, reusable, and hierarchical code structure.
+---
+
+---
+name: fastapi-patterns
 description: Advanced FastAPI patterns including hierarchical dependency injection, background task management, and type-safe dependency annotation. Triggers: fastapi, dependency-injection, background-tasks, annotated-dependency, permission-chain.
 ---
 
@@ -14,11 +21,11 @@ FastAPI leverages Python's type hints and async capabilities to provide a robust
 - **Complex Security**: When you need multi-level permission checks (e.g., User -> Active User -> Admin).
 
 ## Decision Tree
-1. Do you need the same logic in 3+ endpoints? 
+1. Do you need the same logic in 3+ endpoints?
    - YES: Create a reusable Dependency.
-2. Does an operation take more than 50ms and doesn't return data to the user? 
+2. Does an operation take more than 50ms and doesn't return data to the user?
    - YES: Use `BackgroundTasks`.
-3. Do you want full IDE autocompletion for injected values? 
+3. Do you want full IDE autocompletion for injected values?
    - YES: Use `Annotated[Type, Depends(func)]` syntax.
 
 ## Workflows

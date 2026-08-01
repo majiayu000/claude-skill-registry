@@ -1,3 +1,11 @@
+---
+name: labs
+description: 'Alexa is Amazon''s cloud-based voice service. Most people are familiar
+  with the service through using an Amazon Echo or Echo dot but the service can also
+  be integrated in to custom internet-connected devices like this talking robotic
+  fish:'
+---
+
 # Creating an Amazon Alexa Skill
 
 ### Background

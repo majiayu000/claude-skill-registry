@@ -1,3 +1,9 @@
+---
+name: error-boundaries-react
+description: Implementing error boundaries for graceful error handling and improved
+  user experience in React applications.
+---
+
 # Error Boundaries in React
 
 ---
@@ -141,10 +147,10 @@ export class ErrorBoundary extends Component<Props, State> {
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
     // Log the error to an error reporting service
     console.error('Error caught by boundary:', error, errorInfo)
-    
+
     // Call custom error handler
     this.props.onError?.(error, errorInfo)
-    
+
     // Store error info for display
     this.setState({ errorInfo })
   }
@@ -158,7 +164,7 @@ export class ErrorBoundary extends Component<Props, State> {
       if (this.props.fallback) {
         return this.props.fallback
       }
-      
+
       // Default fallback
       return (
         <div className="error-boundary">
@@ -189,32 +195,32 @@ export class ErrorReportingService {
       if (errorInfo) {
         scope.setExtra('componentStack', errorInfo.componentStack)
       }
-      
+
       // Add custom context
       if (context) {
         Object.entries(context).forEach(([key, value]) => {
           scope.setExtra(key, value)
         })
       }
-      
+
       scope.setTag('errorBoundary', 'true')
       Sentry.captureException(error)
     })
-    
+
     // Also log to console in development
     if (process.env.NODE_ENV === 'development') {
       console.error('Error reported:', error, errorInfo, context)
     }
   }
-  
+
   static setUser(user: { id: string; email?: string; username?: string }) {
     Sentry.setUser(user)
   }
-  
+
   static setTag(key: string, value: string) {
     Sentry.setTag(key, value)
   }
-  
+
   static clearUser() {
     Sentry.setUser(null)
   }
@@ -255,11 +261,11 @@ export function DetailedFallback({ error, errorInfo, onReset, eventId }: Detaile
     <div className="error-boundary detailed">
       <div className="error-icon">⚠️</div>
       <h2>Oops! Something went wrong</h2>
-      
+
       <div className="error-details">
         <h3>Error Message</h3>
         <p>{error?.message || 'Unknown error'}</p>
-        
+
         {errorInfo && (
           <details>
             <summary>Technical Details</summary>
@@ -267,7 +273,7 @@ export function DetailedFallback({ error, errorInfo, onReset, eventId }: Detaile
           </details>
         )}
       </div>
-      
+
       <div className="error-actions">
         {onReset && (
           <button onClick={onReset} className="btn-primary">
@@ -281,13 +287,13 @@ export function DetailedFallback({ error, errorInfo, onReset, eventId }: Detaile
           Reload Page
         </button>
       </div>
-      
+
       {eventId && (
         <p className="error-event-id">
           Error ID: <code>{eventId}</code>
         </p>
       )}
-      
+
       <p className="error-contact">
         Need help? <a href="/support">Contact Support</a>
       </p>
@@ -318,7 +324,7 @@ function App() {
     >
       <div className="app-layout">
         <Header />
-        
+
         <main>
           {/* Feature-specific boundaries */}
           <ErrorBoundary
@@ -337,7 +343,7 @@ function App() {
           >
             <Dashboard />
           </ErrorBoundary>
-          
+
           <ErrorBoundary
             fallback={
               <DetailedFallback
@@ -355,7 +361,7 @@ function App() {
             <Projects />
           </ErrorBoundary>
         </main>
-        
+
         <Footer />
       </div>
     </ErrorBoundary>
@@ -389,7 +395,7 @@ Sentry.init({
   dsn: process.env.NEXT_PUBLIC_SENTRY_DSN,
   environment: process.env.NODE_ENV,
   release: process.env.NEXT_PUBLIC_APP_VERSION,
-  
+
   integrations: [
     new BrowserTracing(),
     new Sentry.Replay({
@@ -397,11 +403,11 @@ Sentry.init({
       blockAllMedia: true,
     }),
   ],
-  
+
   tracesSampleRate: 0.1,
   replaysSessionSampleRate: 0.1,
   replaysOnErrorSampleRate: 1.0,
-  
+
   beforeSend(event) {
     // Filter out sensitive data
     if (event.request?.cookies) {
@@ -471,10 +477,10 @@ export class SecureErrorReportingService {
       .replace(/password=["'][^"']*["']/gi, 'password="***"')
       .replace(/token=["'][^"']*["']/gi, 'token="***"')
       .replace(/api[_-]?key=["'][^"']*["']/gi, 'api_key="***"')
-    
+
     return new Error(sanitizedMessage)
   }
-  
+
   static report(error: Error, errorInfo?: ErrorInfo) {
     const sanitizedError = this.sanitizeError(error)
     // Send to error tracking service
@@ -582,12 +588,12 @@ Error Boundaries ต้องสามารถอธิบายได้ว่
 ```jsx
 class ErrorBoundary extends React.Component {
   state = { hasError: false, error: null };
-  
+
   static getDerivedStateFromError(error) {
     // Update state so next render shows fallback UI
     return { hasError: true, error };
   }
-  
+
   render() {
     if (this.state.hasError) {
       return <FallbackUI error={this.state.error} />;
@@ -602,19 +608,19 @@ class ErrorBoundary extends React.Component {
 ```jsx
 class ErrorBoundary extends React.Component {
   state = { hasError: false, error: null, errorInfo: null };
-  
+
   static getDerivedStateFromError(error) {
     return { hasError: true, error };
   }
-  
+
   componentDidCatch(error, errorInfo) {
     // Log error to an error reporting service
     logErrorToService(error, errorInfo);
-    
+
     // Store error info for display
     this.setState({ errorInfo });
   }
-  
+
   render() {
     if (this.state.hasError) {
       return <FallbackUI error={this.state.error} info={this.state.errorInfo} />;
@@ -643,26 +649,26 @@ class ErrorBoundary extends React.Component {
     super(props);
     this.state = { hasError: false, error: null, errorInfo: null };
   }
-  
+
   static getDerivedStateFromError(error) {
     // Update state to render fallback UI
     return { hasError: true };
   }
-  
+
   componentDidCatch(error, errorInfo) {
     // Log error details
     console.error('Error caught by boundary:', error, errorInfo);
-    
+
     // Send to error tracking service
     this.logError(error, errorInfo);
-    
+
     // Store error info
     this.setState({
       error,
       errorInfo,
     });
   }
-  
+
   logError(error, errorInfo) {
     // Example: Send to Sentry
     if (typeof Sentry !== 'undefined') {
@@ -672,7 +678,7 @@ class ErrorBoundary extends React.Component {
       });
     }
   }
-  
+
   render() {
     if (this.state.hasError) {
       return this.props.fallback({
@@ -681,10 +687,10 @@ class ErrorBoundary extends React.Component {
         resetError: this.resetError.bind(this),
       });
     }
-    
+
     return this.props.children;
   }
-  
+
   resetError() {
     this.setState({ hasError: false, error: null, errorInfo: null });
   }
@@ -717,7 +723,7 @@ class MyComponent extends React.Component {
       console.error(error);
     }
   }
-  
+
   async componentDidMount() {
     // Async errors are NOT caught
     try {
@@ -726,13 +732,13 @@ class MyComponent extends React.Component {
       // Must handle manually
       console.error(error);
     }
-    
+
     // setTimeout errors are NOT caught
     setTimeout(() => {
       throw new Error('Timeout error');  // Won't be caught
     }, 1000);
   }
-  
+
   render() {
     return <button onClick={this.handleClick}>Click me</button>;
   }
@@ -745,7 +751,7 @@ class MyComponent extends React.Component {
 // For async errors, wrap in try-catch
 class MyComponent extends React.Component {
   state = { data: null, error: null };
-  
+
   async componentDidMount() {
     try {
       const data = await fetchData();
@@ -756,7 +762,7 @@ class MyComponent extends React.Component {
       logError(error);
     }
   }
-  
+
   render() {
     if (this.state.error) {
       return <ErrorUI error={this.state.error} />;
@@ -780,11 +786,11 @@ function App() {
       <ErrorBoundary fallback={<ProfileError />}>
         <ProfileSection />
       </ErrorBoundary>
-      
+
       <ErrorBoundary fallback={<FeedError />}>
         <FeedSection />
       </ErrorBoundary>
-      
+
       <ErrorBoundary fallback={<SettingsError />}>
         <SettingsSection />
       </ErrorBoundary>
@@ -820,18 +826,18 @@ function App() {
     <ErrorBoundary fallback={<GlobalError />}>
       <div className="app-layout">
         <Header />
-        
+
         <main>
           {/* Feature-specific boundaries */}
           <ErrorBoundary fallback={<DashboardError />}>
             <Dashboard />
           </ErrorBoundary>
-          
+
           <ErrorBoundary fallback={<ProjectsError />}>
             <Projects />
           </ErrorBoundary>
         </main>
-        
+
         <Footer />
       </div>
     </ErrorBoundary>
@@ -864,11 +870,11 @@ function DetailedFallback({ error, errorInfo, resetError }) {
     <div className="error-boundary detailed">
       <div className="error-icon">⚠️</div>
       <h2>Oops! Something went wrong</h2>
-      
+
       <div className="error-details">
         <h3>Error Message</h3>
         <p>{error?.message || 'Unknown error'}</p>
-        
+
         {errorInfo && (
           <details>
             <summary>Technical Details</summary>
@@ -876,7 +882,7 @@ function DetailedFallback({ error, errorInfo, resetError }) {
           </details>
         )}
       </div>
-      
+
       <div className="error-actions">
         <button onClick={resetError} className="btn-primary">
           Try Again
@@ -888,7 +894,7 @@ function DetailedFallback({ error, errorInfo, resetError }) {
           Reload Page
         </button>
       </div>
-      
+
       <p className="error-contact">
         Need help? <a href="/support">Contact Support</a>
       </p>
@@ -902,7 +908,7 @@ function DetailedFallback({ error, errorInfo, resetError }) {
 ```jsx
 function ThemedFallback({ error, resetError }) {
   const theme = useTheme();
-  
+
   return (
     <div className={`error-boundary ${theme}`}>
       <div className="error-container">
@@ -913,10 +919,10 @@ function ThemedFallback({ error, resetError }) {
             <LightErrorIllustration />
           )}
         </div>
-        
+
         <h2>Something went wrong</h2>
         <p>{error?.message}</p>
-        
+
         <button onClick={resetError} className="btn">
           Try Again
         </button>
@@ -935,22 +941,22 @@ import * as Sentry from '@sentry/react';
 
 class SentryErrorBoundary extends React.Component {
   state = { eventId: null };
-  
+
   static getDerivedStateFromError(error) {
     return { hasError: true };
   }
-  
+
   componentDidCatch(error, errorInfo) {
     // Send error to Sentry
     Sentry.withScope((scope) => {
       scope.setExtra('componentStack', errorInfo.componentStack);
       scope.setTag('errorBoundary', 'true');
-      
+
       const eventId = Sentry.captureException(error);
       this.setState({ eventId });
     });
   }
-  
+
   render() {
     if (this.state.hasError) {
       return (
@@ -960,7 +966,7 @@ class SentryErrorBoundary extends React.Component {
         />
       );
     }
-    
+
     return this.props.children;
   }
 }
@@ -990,7 +996,7 @@ class LogRocketErrorBoundary extends React.Component {
       },
     });
   }
-  
+
   render() {
     if (this.state.hasError) {
       return <FallbackUI />;
@@ -1021,7 +1027,7 @@ class ErrorReportingService {
       userAgent: navigator.userAgent,
       timestamp: new Date().toISOString(),
     };
-    
+
     try {
       await fetch('/api/errors', {
         method: 'POST',
@@ -1038,7 +1044,7 @@ class ReportingErrorBoundary extends React.Component {
   componentDidCatch(error, errorInfo) {
     ErrorReportingService.report(error, errorInfo);
   }
-  
+
   render() {
     if (this.state.hasError) {
       return <FallbackUI />;
@@ -1056,12 +1062,12 @@ class ReportingErrorBoundary extends React.Component {
 function RetryableComponent() {
   const [error, setError] = useState(null);
   const [retryCount, setRetryCount] = useState(0);
-  
+
   const handleRetry = () => {
     setError(null);
     setRetryCount(prev => prev + 1);
   };
-  
+
   return (
     <ErrorBoundary
       fallback={
@@ -1088,19 +1094,19 @@ function ExponentialRetryComponent() {
   const [error, setError] = useState(null);
   const [retryCount, setRetryCount] = useState(0);
   const [isRetrying, setIsRetrying] = useState(false);
-  
+
   const handleRetry = async () => {
     setIsRetrying(true);
     setError(null);
-    
+
     // Exponential backoff
     const delay = Math.min(1000 * Math.pow(2, retryCount), 30000);
     await new Promise(resolve => setTimeout(resolve, delay));
-    
+
     setRetryCount(prev => prev + 1);
     setIsRetrying(false);
   };
-  
+
   return (
     <ErrorBoundary
       fallback={
@@ -1131,7 +1137,7 @@ function SmartRetryComponent() {
   const [error, setError] = useState(null);
   const [retryCount, setRetryCount] = useState(0);
   const maxRetries = 3;
-  
+
   const shouldRetry = error => {
     // Only retry on specific errors
     const retryableErrors = [
@@ -1141,19 +1147,19 @@ function SmartRetryComponent() {
     ];
     return retryableErrors.some(type => error?.name?.includes(type));
   };
-  
+
   const handleRetry = () => {
     setError(null);
     setRetryCount(prev => prev + 1);
   };
-  
+
   return (
     <ErrorBoundary
       fallback={
         <div className="error-fallback">
           <h2>Error occurred</h2>
           <p>{error?.message}</p>
-          
+
           {shouldRetry(error) && retryCount < maxRetries ? (
             <button onClick={handleRetry}>
               Retry ({retryCount}/{maxRetries})
@@ -1184,10 +1190,10 @@ function UserProfile() {
     queryFn: fetchUserProfile,
     retry: 3,
   });
-  
+
   if (isLoading) return <Loading />;
   if (error) return <ErrorUI error={error} />;
-  
+
   return <Profile data={data} />;
 }
 
@@ -1210,10 +1216,10 @@ import useSWR from 'swr';
 
 function UserProfile() {
   const { data, error, isLoading } = useSWR('/api/user/profile', fetcher);
-  
+
   if (isLoading) return <Loading />;
   if (error) return <ErrorUI error={error} />;
-  
+
   return <Profile data={data} />;
 }
 
@@ -1231,7 +1237,7 @@ function App() {
 function handleError(error) {
   // Log error
   console.error('SWR Error:', error);
-  
+
   // Show notification
   toast.error('Failed to load data');
 }
@@ -1245,14 +1251,14 @@ function DataComponent() {
     queryKey: ['data'],
     queryFn: fetchData,
   });
-  
+
   if (isLoading) return <Loading />;
-  
+
   if (error) {
     // Let error boundary handle it
     throw error;
   }
-  
+
   return <DataView data={data} />;
 }
 
@@ -1280,15 +1286,15 @@ import { Suspense } from 'react';
 
 function ResourceComponent() {
   const resource = useResource(resourcePromise);
-  
+
   if (resource.status === 'pending') {
     throw resource.promise;  // Suspense catches this
   }
-  
+
   if (resource.status === 'rejected') {
     throw resource.reason;  // Error Boundary catches this
   }
-  
+
   return <DataView data={resource.result} />;
 }
 
@@ -1317,7 +1323,7 @@ function App() {
               <Dashboard />
             </Suspense>
           </ErrorBoundary>
-          
+
           <ErrorBoundary fallback={<ContentError />}>
             <Suspense fallback={<SectionLoading />}>
               <Feed />
@@ -1381,10 +1387,10 @@ class ErrorPage extends React.Component {
     const statusCode = res ? res.statusCode : err ? err.statusCode : 404;
     return { statusCode };
   }
-  
+
   render() {
     const { statusCode } = this.props;
-    
+
     return (
       <div className="error-page">
         <h1>{statusCode}</h1>
@@ -1405,15 +1411,15 @@ export default ErrorPage;
 
 class ComponentErrorBoundary extends React.Component {
   state = { hasError: false };
-  
+
   static getDerivedStateFromError(error) {
     return { hasError: true };
   }
-  
+
   componentDidCatch(error, errorInfo) {
     console.error('Error in component:', error, errorInfo);
   }
-  
+
   render() {
     if (this.state.hasError) {
       return <ErrorFallback />;
@@ -1527,28 +1533,28 @@ describe('ErrorBoundary', () => {
     const ThrowError = () => {
       throw new Error('Test error');
     };
-    
+
     render(
       <ErrorBoundary fallback={<FallbackUI />}>
         <ThrowError />
       </ErrorBoundary>
     );
-    
+
     expect(screen.getByText('Error occurred')).toBeInTheDocument();
   });
-  
+
   it('calls onError callback', () => {
     const onError = jest.fn();
     const ThrowError = () => {
       throw new Error('Test error');
     };
-    
+
     render(
       <ErrorBoundary fallback={<FallbackUI />} onError={onError}>
         <ThrowError />
       </ErrorBoundary>
     );
-    
+
     expect(onError).toHaveBeenCalled();
     expect(onError.mock.calls[0][0]).toBeInstanceOf(Error);
   });
@@ -1565,25 +1571,25 @@ describe('ErrorBoundary Integration', () => {
     const ThrowComponent = () => {
       throw new Error('Test error');
     };
-    
+
     render(
       <ErrorBoundary fallback={<FallbackUI />}>
         <ThrowComponent />
       </ErrorBoundary>
     );
-    
+
     expect(screen.getByText(/something went wrong/i)).toBeInTheDocument();
   });
-  
+
   it('renders children when no error', () => {
     const SafeComponent = () => <div>Safe content</div>;
-    
+
     render(
       <ErrorBoundary fallback={<FallbackUI />}>
         <SafeComponent />
       </ErrorBoundary>
     );
-    
+
     expect(screen.getByText('Safe content')).toBeInTheDocument();
   });
 });
@@ -1600,22 +1606,22 @@ function App() {
     <ErrorBoundary fallback={<GlobalFallback />}>
       <div className="app">
         <Header />
-        
+
         <main>
           {/* Feature boundaries */}
           <ErrorBoundary fallback={<DashboardFallback />}>
             <Dashboard />
           </ErrorBoundary>
-          
+
           <ErrorBoundary fallback={<ProjectsFallback />}>
             <Projects />
           </ErrorBoundary>
-          
+
           <ErrorBoundary fallback={<SettingsFallback />}>
             <Settings />
           </ErrorBoundary>
         </main>
-        
+
         <Footer />
       </div>
     </ErrorBoundary>
@@ -1633,7 +1639,7 @@ function App() {
     <ErrorBoundary fallback={<DashboardFallback />}>
       <Dashboard />
     </ErrorBoundary>
-    
+
     <ErrorBoundary fallback={<ProjectsFallback />}>
       <Projects />
     </ErrorBoundary>
@@ -1648,20 +1654,20 @@ function App() {
 ```jsx
 class RecoverableErrorBoundary extends React.Component {
   state = { hasError: false, error: null };
-  
+
   static getDerivedStateFromError(error) {
     return { hasError: true, error };
   }
-  
+
   componentDidCatch(error, errorInfo) {
     // Log error
     logError(error, errorInfo);
   }
-  
+
   resetError = () => {
     this.setState({ hasError: false, error: null });
   };
-  
+
   render() {
     if (this.state.hasError) {
       return (
@@ -1681,13 +1687,13 @@ class RecoverableErrorBoundary extends React.Component {
 ```jsx
 function ErrorFallback({ error, onReset }) {
   const navigate = useNavigate();
-  
+
   const handleReset = () => {
     // Reset to home or previous route
     navigate('/');
     onReset();
   };
-  
+
   return (
     <div className="error-fallback">
       <h2>Something went wrong</h2>
@@ -1704,12 +1710,12 @@ function ErrorFallback({ error, onReset }) {
 function RefreshableErrorBoundary({ children, fallback }) {
   const [error, setError] = useState(null);
   const [retryKey, setRetryKey] = useState(0);
-  
+
   const handleRefresh = () => {
     setError(null);
     setRetryKey(prev => prev + 1);
   };
-  
+
   return (
     <ErrorBoundary
       fallback={
@@ -1747,7 +1753,7 @@ function ContextualFallback({ error, component }) {
         return 'Something went wrong. Please try again.';
     }
   };
-  
+
   return (
     <div className="error-fallback">
       <h2>Oops!</h2>
@@ -1772,7 +1778,7 @@ function ActionFallback({ error, onRetry, onGoHome, onContact }) {
       <div className="error-icon">⚠️</div>
       <h2>Something went wrong</h2>
       <p>We're sorry for inconvenience.</p>
-      
+
       <div className="error-actions">
         <button onClick={onRetry} className="btn-primary">
           Try Again
@@ -1864,20 +1870,20 @@ class ErrorRateMonitor {
     this.startTime = Date.now();
     this.threshold = 10;  // 10 errors per minute
   }
-  
+
   recordError(error) {
     const now = Date.now();
     this.errors.push({ error, timestamp: now });
-    
+
     // Clean old errors (older than 1 minute)
     this.errors = this.errors.filter(e => now - e.timestamp < 60000);
-    
+
     // Check threshold
     if (this.errors.length >= this.threshold) {
       this.alertHighErrorRate();
     }
   }
-  
+
   alertHighErrorRate() {
     console.error('High error rate detected!');
     // Send alert to monitoring service
@@ -1895,7 +1901,7 @@ class MonitoredErrorBoundary extends React.Component {
     monitor.recordError(error);
     logError(error, errorInfo);
   }
-  
+
   render() {
     if (this.state.hasError) {
       return <FallbackUI />;

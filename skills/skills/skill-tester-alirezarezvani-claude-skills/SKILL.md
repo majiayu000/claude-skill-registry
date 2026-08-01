@@ -1,3 +1,12 @@
+---
+name: skill-tester
+description: The Skill Tester is a comprehensive meta-skill designed to validate,
+  test, and score the quality of skills within the claude-skills ecosystem. This powerful
+  quality assurance tool ensures that all skills meet the rigorous standards required
+  for BASIC, STANDARD, and POWERFUL tier classifications through automated validation,
+  testing, and scoring mechanisms.
+---
+
 # Skill Tester
 
 ---
@@ -18,7 +27,7 @@ The Skill Tester is a comprehensive meta-skill designed to validate, test, and s
 
 As the gatekeeping system for skill quality, this meta-skill provides three core capabilities:
 1. **Structure Validation** - Ensures skills conform to required directory structures, file formats, and documentation standards
-2. **Script Testing** - Validates Python scripts for syntax, imports, functionality, and output format compliance  
+2. **Script Testing** - Validates Python scripts for syntax, imports, functionality, and output format compliance
 3. **Quality Scoring** - Provides comprehensive quality assessment across multiple dimensions with letter grades and improvement recommendations
 
 This skill is essential for maintaining ecosystem consistency, enabling automated CI/CD integration, and supporting both manual and automated quality assurance workflows. It serves as the foundation for pre-commit hooks, pull request validation, and continuous integration processes that maintain the high-quality standards of the claude-skills repository.
@@ -52,7 +61,7 @@ Automatically classifies skills based on complexity and functionality:
 - Simple input/output handling
 - Essential documentation coverage
 
-#### STANDARD Tier Requirements  
+#### STANDARD Tier Requirements
 - Minimum 200 lines in SKILL.md
 - 1-2 Python scripts (300-500 LOC each)
 - Advanced argparse with subcommands
@@ -75,7 +84,7 @@ Automatically classifies skills based on complexity and functionality:
 The skill-tester follows a modular architecture where each component serves a specific validation purpose:
 
 - **skill_validator.py**: Core structural and documentation validation engine
-- **script_tester.py**: Runtime testing and execution validation framework  
+- **script_tester.py**: Runtime testing and execution validation framework
 - **quality_scorer.py**: Multi-dimensional quality assessment and scoring system
 
 ### Standards Enforcement
@@ -97,7 +106,7 @@ Designed for seamless integration into existing development workflows:
 ```python
 # Primary validation workflow
 validate_skill_structure() -> ValidationReport
-check_skill_md_compliance() -> DocumentationReport  
+check_skill_md_compliance() -> DocumentationReport
 validate_python_scripts() -> ScriptReport
 generate_compliance_score() -> float
 ```
@@ -141,7 +150,7 @@ calculate_overall_grade() -> str # A-F grade
 Scoring dimensions include:
 - **Documentation**: Completeness, clarity, examples, reference quality
 - **Code Quality**: Complexity, maintainability, error handling, output consistency
-- **Completeness**: Required files, sample data, expected outputs, test coverage  
+- **Completeness**: Required files, sample data, expected outputs, test coverage
 - **Usability**: Help text quality, example clarity, installation simplicity
 
 ## Usage Scenarios
@@ -191,7 +200,7 @@ Overall Score: 85/100 (B)
 
 Structure Validation: ✓ PASS
 ├─ SKILL.md: ✓ EXISTS (247 lines)
-├─ README.md: ✓ EXISTS  
+├─ README.md: ✓ EXISTS
 ├─ scripts/: ✓ EXISTS (2 files)
 └─ references/: ⚠ MISSING (recommended)
 
@@ -242,7 +251,7 @@ Recommendations:
 - **Performance**: Efficient validation algorithms with reasonable execution time
 - **Maintainability**: Clear code structure, comprehensive docstrings, type hints where appropriate
 
-### Testing Standards  
+### Testing Standards
 - **Self-Testing**: The skill-tester validates itself (meta-validation)
 - **Sample Data Coverage**: Comprehensive test cases covering edge cases and error conditions
 - **Expected Output Verification**: All sample runs produce verifiable, reproducible outputs
@@ -347,7 +356,7 @@ python engineering/skill-tester/scripts/trend_analyzer.py reports/ \
 - **Import Errors**: Ensure only standard library imports are used
 - **Documentation Issues**: Verify SKILL.md frontmatter and section completeness
 
-#### Script Testing Problems  
+#### Script Testing Problems
 - **Timeout Errors**: Increase timeout limit or optimize script performance
 - **Execution Failures**: Check script syntax and import statement validity
 - **Output Format Issues**: Ensure proper JSON formatting and dual output support

@@ -1,6 +1,11 @@
+---
+name: 20-build-domain
+description: '- framework-ts/tools/builder/build.js 기반 빌드 전반'
+---
+
 # 20-build-domain
 
-Status: ACTIVE  
+Status: ACTIVE
 AppliesTo: v10
 
 ---

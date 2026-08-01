@@ -1,5 +1,12 @@
 ---
 name: feature-investigation
+description: '> [IMPORTANT] Use TaskCreate to break ALL work into small tasks BEFORE
+  starting — including tasks for each file read. This prevents context loss from long
+  files. For simple tasks, AI MUST ask user whether to skip.'
+---
+
+---
+name: feature-investigation
 version: 1.1.1
 description: "[Investigation] Use when the user asks to investigate, explore, understand, explain, or analyze how an existing feature or logic works. Triggers on keywords like "how does", "explain", "what is the logic", "investigate", "understand", "where is", "trace", "walk through", "show me how"."
 allowed-tools: Read, Grep, Glob, Task, WebFetch, WebSearch, TaskCreate

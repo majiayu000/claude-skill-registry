@@ -1,5 +1,10 @@
 ---
 name: roadmap-theme
+description: 'This skill supports three modes: Create, Update, and Find.'
+---
+
+---
+name: roadmap-theme
 description: Create or update a roadmap theme with initiatives
 argument-hint: [theme name] or [update path/to/theme.md]
 ---

@@ -1,5 +1,10 @@
 ---
 name: memory-updater
+description: 維護和更新專案的 Memory Bank 記憶系統。
+---
+
+---
+name: memory-updater
 description: Update and maintain Memory Bank files (activeContext, progress, decisionLog). Triggers: MB, memory, 記憶, 進度, 更新記憶, update memory, 記錄進度, 更新上下文.
 ---
 

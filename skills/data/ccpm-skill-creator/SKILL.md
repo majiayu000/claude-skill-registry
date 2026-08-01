@@ -1,5 +1,12 @@
 ---
 name: ccpm-skill-creator
+description: Creates custom CCPM skills from request to deployment with proper templates,
+  safety guardrails, and integration patterns. Auto-activates when user mentions "create
+  skill", "custom workflow", "team spe
+---
+
+---
+name: ccpm-skill-creator
 description: Creates custom CCPM skills from request to deployment with proper templates, safety guardrails, and integration patterns. Auto-activates when user mentions "create skill", "custom workflow", "team specific", "extend CCPM", "codify team practice", or "reusable pattern". Guides through purpose definition (what skill does), activation triggers (when it runs), CCPM integration points, and safety rules. Provides three skill templates: Team Workflow (codify practices), Safety Enforcement (add checks), and Integration Skills (custom tools). Creates directory structure, frontmatter metadata, multi-phase instructions, and supporting docs. Tests skill activation before deployment and suggests improvements.
 ---
 

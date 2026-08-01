@@ -1,5 +1,12 @@
 ---
 name: unity-scene-management
+description: 'Supports Unity scene and GameObject creation, management, and analysis.
+  Efficiently performs hierarchy operations, component configuration, and scene analysis.
+  Use when: scene creation, scene loading,'
+---
+
+---
+name: unity-scene-management
 description: Supports Unity scene and GameObject creation, management, and analysis. Efficiently performs hierarchy operations, component configuration, and scene analysis. Use when: scene creation, scene loading, GameObject creation, component addition, hierarchy retrieval, scene analysis
 allowed-tools: Read, Grep, Glob
 ---

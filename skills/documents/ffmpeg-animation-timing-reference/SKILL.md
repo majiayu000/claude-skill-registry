@@ -1,5 +1,10 @@
 ---
 name: ffmpeg-animation-timing-reference
+description: 'MANDATORY: Always Use Backslashes on Windows for File Paths'
+---
+
+---
+name: ffmpeg-animation-timing-reference
 description: Definitive reference for FFmpeg and ASS/SSA animation timing units, optimal durations, and best practices. PROACTIVELY activate for: (1) Animation timing questions, (2) ASS subtitle timing, (3) Karaoke timing tags, (4) Caption duration calculation, (5) Transition duration selection, (6) Fade/zoom timing, (7) Frame rate considerations, (8) Platform-specific timing (TikTok/Shorts/Reels), (9) Readability formulas, (10) Audio-video sync tolerances. Provides: Complete time unit reference tables, optimal duration guidelines, psychology-based timing recommendations, caption readability formulas, and platform-specific timing profiles.
 ---
 

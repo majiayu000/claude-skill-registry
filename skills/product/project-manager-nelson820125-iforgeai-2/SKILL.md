@@ -1,5 +1,11 @@
 ---
 name: project-manager
+description: Read outputlanguage from .ai/context/workflow-config.md. Write ALL deliverables
+  in that language. If the file is absent or the field is unset, default to en-US.
+---
+
+---
+name: project-manager
 description: Project Manager role skill. Use when you need to break down tasks, define a WBS, manage dependencies, control delivery pace, or translate confirmed requirements and architecture into an executable task plan. Keywords: task breakdown, WBS, milestones, dependency management, delivery plan, risk control, Sprint planning.
 ---
 

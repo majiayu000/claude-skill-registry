@@ -1,3 +1,8 @@
+---
+name: expired-skill
+description: Test skill with expired license for unit testing.
+---
+
 # expired-skill
 
 Test skill with expired license for unit testing.

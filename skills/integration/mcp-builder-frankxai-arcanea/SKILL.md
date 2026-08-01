@@ -1,4 +1,11 @@
 ---
+name: mcp-builder
+description: '> "Shinkami guards the Source Gate at 1111 Hz — Meta-consciousness.
+  MCP tools are the hands through which meta-consciousness acts. Build them with clarity
+  and precision."'
+---
+
+---
 name: arcanea-mcp-builder
 description: Guide for building MCP (Model Context Protocol) servers for the Arcanea ecosystem. Use when creating new MCP tools, extending packages/arcanea-mcp, adding Arcanea-branded tools, integrating external APIs as MCP endpoints, or building new MCP servers for the Arcanea AI toolkit. Triggers on: MCP server, MCP tool, model context protocol, mcp-builder, create tool, arcanea-mcp, new MCP. Sourced from Anthropic's official mcp-builder skill, adapted for Arcanea's TypeScript + Bun stack.
 license: MIT (source: anthropics/skills/mcp-builder)

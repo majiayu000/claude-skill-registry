@@ -1,3 +1,8 @@
+---
+name: platform-channels
+description: '| Atributo | Valor |'
+---
+
 # 📱 Skill: Platform Channels & Native Integration
 
 ## 📋 Metadata
@@ -155,9 +160,9 @@ class BatteryChannel {
   // Get battery info (multiple values)
   Future<Map<String, dynamic>> getBatteryInfo() async {
     try {
-      final Map<dynamic, dynamic> result = 
+      final Map<dynamic, dynamic> result =
           await platform.invokeMethod('getBatteryInfo');
-      
+
       return {
         'level': result['level'] as int,
         'isCharging': result['isCharging'] as bool,
@@ -207,7 +212,7 @@ class MainActivity: FlutterActivity() {
 
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
         super.configureFlutterEngine(flutterEngine)
-        
+
         MethodChannel(
             flutterEngine.dartExecutor.binaryMessenger,
             BATTERY_CHANNEL
@@ -225,23 +230,23 @@ class MainActivity: FlutterActivity() {
                         )
                     }
                 }
-                
+
                 "isCharging" -> {
                     val charging = isCharging()
                     result.success(charging)
                 }
-                
+
                 "getBatteryInfo" -> {
                     val info = getBatteryInfo()
                     result.success(info)
                 }
-                
+
                 "chargingStatus" -> {
                     val threshold = call.argument<Int>("threshold") ?: 20
                     val status = getChargingStatus(threshold)
                     result.success(status)
                 }
-                
+
                 else -> {
                     result.notImplemented()
                 }
@@ -258,7 +263,7 @@ class MainActivity: FlutterActivity() {
         val batteryStatus: Intent? = IntentFilter(Intent.ACTION_BATTERY_CHANGED).let { filter ->
             registerReceiver(null, filter)
         }
-        
+
         val status: Int = batteryStatus?.getIntExtra(BatteryManager.EXTRA_STATUS, -1) ?: -1
         return status == BatteryManager.BATTERY_STATUS_CHARGING ||
                status == BatteryManager.BATTERY_STATUS_FULL
@@ -307,31 +312,31 @@ import Flutter
 @UIApplicationMain
 @objc class AppDelegate: FlutterAppDelegate {
     private let BATTERY_CHANNEL = "com.example.myapp/battery"
-    
+
     override func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
         let controller = window?.rootViewController as! FlutterViewController
-        
+
         let batteryChannel = FlutterMethodChannel(
             name: BATTERY_CHANNEL,
             binaryMessenger: controller.binaryMessenger
         )
-        
+
         batteryChannel.setMethodCallHandler { [weak self] (call, result) in
             guard let self = self else { return }
-            
+
             switch call.method {
             case "getBatteryLevel":
                 self.receiveBatteryLevel(result: result)
-                
+
             case "isCharging":
                 result(self.isCharging())
-                
+
             case "getBatteryInfo":
                 result(self.getBatteryInfo())
-                
+
             case "chargingStatus":
                 if let args = call.arguments as? [String: Any],
                    let threshold = args["threshold"] as? Int {
@@ -339,20 +344,20 @@ import Flutter
                 } else {
                     result(self.getChargingStatus(threshold: 20))
                 }
-                
+
             default:
                 result(FlutterMethodNotImplemented)
             }
         }
-        
+
         GeneratedPluginRegistrant.register(with: self)
         return super.application(application, didFinishLaunchingWithOptions: launchOptions)
     }
-    
+
     private func receiveBatteryLevel(result: FlutterResult) {
         let device = UIDevice.current
         device.isBatteryMonitoringEnabled = true
-        
+
         guard device.batteryState != .unknown else {
             result(FlutterError(
                 code: "UNAVAILABLE",
@@ -361,25 +366,25 @@ import Flutter
             ))
             return
         }
-        
+
         let batteryLevel = Int(device.batteryLevel * 100)
         result(batteryLevel)
     }
-    
+
     private func isCharging() -> Bool {
         let device = UIDevice.current
         device.isBatteryMonitoringEnabled = true
-        
+
         return device.batteryState == .charging || device.batteryState == .full
     }
-    
+
     private func getBatteryInfo() -> [String: Any] {
         let device = UIDevice.current
         device.isBatteryMonitoringEnabled = true
-        
+
         let level = Int(device.batteryLevel * 100)
         let charging = isCharging()
-        
+
         return [
             "level": level,
             "isCharging": charging,
@@ -387,14 +392,14 @@ import Flutter
             "temperature": 0.0        // iOS doesn't expose this
         ]
     }
-    
+
     private func getChargingStatus(threshold: Int) -> String {
         let device = UIDevice.current
         device.isBatteryMonitoringEnabled = true
-        
+
         let level = Int(device.batteryLevel * 100)
         let charging = isCharging()
-        
+
         switch (charging, level) {
         case (true, 100):
             return "Fully Charged"
@@ -431,7 +436,7 @@ class SensorChannel {
         .handleError((error) {
           print('Error receiving accelerometer data: $error');
         });
-    
+
     return _accelerometerStream!;
   }
 
@@ -516,7 +521,7 @@ class SensorChannel(private val context: Context) : EventChannel.StreamHandler {
 
     override fun onListen(arguments: Any?, events: EventChannel.EventSink?) {
         eventSink = events
-        
+
         sensorManager = context.getSystemService(Context.SENSOR_SERVICE) as SensorManager
         accelerometer = sensorManager?.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)
 
@@ -574,10 +579,10 @@ import CoreMotion
 class SensorChannel: NSObject, FlutterStreamHandler {
     private let motionManager = CMMotionManager()
     private var eventSink: FlutterEventSink?
-    
+
     func onListen(withArguments arguments: Any?, eventSink events: @escaping FlutterEventSink) -> FlutterError? {
         self.eventSink = events
-        
+
         guard motionManager.isAccelerometerAvailable else {
             events(FlutterError(
                 code: "SENSOR_UNAVAILABLE",
@@ -586,24 +591,24 @@ class SensorChannel: NSObject, FlutterStreamHandler {
             ))
             return nil
         }
-        
+
         motionManager.accelerometerUpdateInterval = 0.1
         motionManager.startAccelerometerUpdates(to: .main) { [weak self] (data, error) in
             guard let data = data, let eventSink = self?.eventSink else { return }
-            
+
             let sensorData: [String: Any] = [
                 "x": data.acceleration.x,
                 "y": data.acceleration.y,
                 "z": data.acceleration.z,
                 "timestamp": Int(Date().timeIntervalSince1970 * 1000)
             ]
-            
+
             eventSink(sensorData)
         }
-        
+
         return nil
     }
-    
+
     func onCancel(withArguments arguments: Any?) -> FlutterError? {
         motionManager.stopAccelerometerUpdates()
         eventSink = nil
@@ -654,7 +659,7 @@ class NativeFFI {
     final AddFunc nativeAdd = _dylib
         .lookup<ffi.NativeFunction<NativeAddFunc>>('native_add')
         .asFunction();
-    
+
     return nativeAdd(a, b);
   }
 
@@ -663,14 +668,14 @@ class NativeFFI {
     final StringFunc nativeProcess = _dylib
         .lookup<ffi.NativeFunction<NativeStringFunc>>('process_string')
         .asFunction();
-    
+
     final inputPointer = input.toNativeUtf8();
     final resultPointer = nativeProcess(inputPointer);
     final result = resultPointer.toDartString();
-    
+
     // Liberar memoria
     calloc.free(inputPointer);
-    
+
     return result;
   }
 
@@ -679,7 +684,7 @@ class NativeFFI {
     final ComputeFunc nativeCompute = _dylib
         .lookup<ffi.NativeFunction<NativeComputeFunc>>('compute')
         .asFunction();
-    
+
     final result = nativeCompute(value);
     return ComputeResult(
       result: result.result,
@@ -692,7 +697,7 @@ class NativeFFI {
 class ComputeResult extends ffi.Struct {
   @ffi.Double()
   external double result;
-  
+
   @ffi.Int64()
   external int executionTime;
 }
@@ -720,13 +725,13 @@ __attribute__((visibility("default"))) __attribute__((used))
 const char* process_string(const char* input) {
     size_t len = strlen(input);
     char* result = (char*)malloc(len + 1);
-    
+
     // Convertir a mayúsculas
     for (size_t i = 0; i < len; i++) {
         result[i] = toupper(input[i]);
     }
     result[len] = '\0';
-    
+
     return result;
 }
 
@@ -741,10 +746,10 @@ __attribute__((visibility("default"))) __attribute__((used))
 ComputeResult compute(double value) {
     ComputeResult res;
     int64_t start = get_current_time_ms();
-    
+
     // Operación costosa
     res.result = expensive_computation(value);
-    
+
     res.execution_time = get_current_time_ms() - start;
     return res;
 }
@@ -790,7 +795,7 @@ class NativeSDKService {
   // Get user profile
   Future<Map<String, dynamic>?> getUserProfile() async {
     try {
-      final Map<dynamic, dynamic> result = 
+      final Map<dynamic, dynamic> result =
           await platform.invokeMethod('getUserProfile');
       return result.cast<String, dynamic>();
     } on PlatformException catch (e) {
@@ -801,12 +806,12 @@ class NativeSDKService {
 
   // Upload file with progress
   Stream<double> uploadFile(String filePath) async* {
-    final EventChannel progressChannel = 
+    final EventChannel progressChannel =
         EventChannel('com.example.myapp/upload_progress');
-    
+
     // Start upload
     await platform.invokeMethod('uploadFile', {'filePath': filePath});
-    
+
     // Listen to progress
     await for (final progress in progressChannel.receiveBroadcastStream()) {
       yield progress as double;
@@ -828,7 +833,7 @@ import io.flutter.plugin.common.EventChannel
 
 class NativeSDKChannel(private val context: Context) {
     private var sdk: SDK? = null
-    
+
     fun handleMethodCall(call: MethodCall, result: MethodChannel.Result) {
         when (call.method) {
             "initializeSDK" -> {
@@ -840,11 +845,11 @@ class NativeSDKChannel(private val context: Context) {
                     result.error("INVALID_ARGS", "API key is required", null)
                 }
             }
-            
+
             "trackEvent" -> {
                 val eventName = call.argument<String>("eventName")
                 val properties = call.argument<Map<String, Any>>("properties")
-                
+
                 if (eventName != null) {
                     trackEvent(eventName, properties ?: emptyMap())
                     result.success(null)
@@ -852,12 +857,12 @@ class NativeSDKChannel(private val context: Context) {
                     result.error("INVALID_ARGS", "Event name is required", null)
                 }
             }
-            
+
             "getUserProfile" -> {
                 val profile = getUserProfile()
                 result.success(profile)
             }
-            
+
             "uploadFile" -> {
                 val filePath = call.argument<String>("filePath")
                 if (filePath != null) {
@@ -867,11 +872,11 @@ class NativeSDKChannel(private val context: Context) {
                     result.error("INVALID_ARGS", "File path is required", null)
                 }
             }
-            
+
             else -> result.notImplemented()
         }
     }
-    
+
     private fun initializeSDK(apiKey: String): Boolean {
         return try {
             sdk = SDK.getInstance(context)
@@ -882,15 +887,15 @@ class NativeSDKChannel(private val context: Context) {
             false
         }
     }
-    
+
     private fun trackEvent(eventName: String, properties: Map<String, Any>) {
         sdk?.trackEvent(eventName, properties)
     }
-    
+
     private fun getUserProfile(): Map<String, Any>? {
         return sdk?.getUserProfile()?.toMap()
     }
-    
+
     private fun uploadFileWithProgress(filePath: String) {
         // Implementar upload con callbacks de progreso
         sdk?.uploadFile(filePath) { progress ->
@@ -957,7 +962,7 @@ import android.os.IBinder
 import androidx.core.app.NotificationCompat
 
 class BackgroundService : Service() {
-    
+
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         // Create notification
         val notification = NotificationCompat.Builder(this, CHANNEL_ID)
@@ -965,17 +970,17 @@ class BackgroundService : Service() {
             .setContentText("Running...")
             .setSmallIcon(R.drawable.ic_notification)
             .build()
-        
+
         startForeground(NOTIFICATION_ID, notification)
-        
+
         // Start background work
         performBackgroundWork()
-        
+
         return START_STICKY
     }
-    
+
     override fun onBind(intent: Intent?): IBinder? = null
-    
+
     private fun performBackgroundWork() {
         Thread {
             // Long-running operation
@@ -985,7 +990,7 @@ class BackgroundService : Service() {
             }
         }.start()
     }
-    
+
     companion object {
         private const val CHANNEL_ID = "background_channel"
         private const val NOTIFICATION_ID = 1
@@ -1036,7 +1041,7 @@ enum BatteryError {
   unavailable,
   permissionDenied,
   unknown;
-  
+
   static BatteryError fromCode(String code) {
     switch (code) {
       case 'UNAVAILABLE':
@@ -1056,13 +1061,13 @@ enum BatteryError {
 ```dart
 class SensorService {
   StreamSubscription? _subscription;
-  
+
   void startListening() {
     _subscription = sensorChannel.accelerometerStream.listen((data) {
       // Handle data
     });
   }
-  
+
   void dispose() {
     _subscription?.cancel();
     _subscription = null;
@@ -1151,7 +1156,7 @@ void main() {
 ### Error: EventChannel No Recibe Datos
 
 ```kotlin
-// Android: Asegúrate de llamar a eventSink?.success() 
+// Android: Asegúrate de llamar a eventSink?.success()
 // en el hilo principal
 runOnUiThread {
     eventSink?.success(data)
@@ -1167,7 +1172,7 @@ runOnUiThread {
 
 ---
 
-**Versión:** 1.0.0  
-**Última actualización:** Diciembre 2025  
+**Versión:** 1.0.0
+**Última actualización:** Diciembre 2025
 **Total líneas:** 1,200+
 

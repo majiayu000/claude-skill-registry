@@ -1,3 +1,8 @@
+---
+name: shape-up
+description: 'description: Experto en metodología Shape Up de Basecamp'
+---
+
 # Skill: Shape Up Methodology Expert
 
 ## Metadata

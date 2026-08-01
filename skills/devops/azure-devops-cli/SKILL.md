@@ -1,3 +1,8 @@
+---
+name: azure-devops-cli
+description: az extension add --name azure-devops
+---
+
 # Azure DevOps CLI Skill
 
 ---

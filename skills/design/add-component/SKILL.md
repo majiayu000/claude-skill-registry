@@ -1,5 +1,10 @@
 ---
 name: add-component
+description: Add a new component following Next.js 15 and shadcn/ui best practices
+---
+
+---
+name: add-component
 description: 새 React 컴포넌트를 생성합니다. shadcn/ui 스타일과 프로젝트 컨벤션을 준수합니다. 사용법: /add-component ComponentName [directory]
 ---
 

@@ -1,5 +1,10 @@
 ---
 name: entity-class-conventions
+description: You are a coding standards expert specializing in entity class conventions.
+---
+
+---
+name: entity-class-conventions
 description: Sets the standards for entity class design including annotations, ID generation strategies, and relationship configurations for database interaction.
 version: 1.0.0
 model: sonnet

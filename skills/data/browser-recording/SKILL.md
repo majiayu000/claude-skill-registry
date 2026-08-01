@@ -1,5 +1,10 @@
 ---
 name: browser-recording
+description: '- Overview'
+---
+
+---
+name: browser-recording
 description: |
 
 Triggers: tutorial, web, video, browser, playwright

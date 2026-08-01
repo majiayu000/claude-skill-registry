@@ -1,3 +1,8 @@
+---
+name: examples-patelmm79-dev-nexus
+description: '> 📢 UPDATED: This guide now uses the modular architecture (v2.0).'
+---
+
 # Adding the Documentation Review Skill (Modular v2.0)
 
 > **📢 UPDATED**: This guide now uses the **modular architecture** (v2.0).

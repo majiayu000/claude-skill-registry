@@ -1,8 +1,13 @@
 ---
 name: migrate-to-skills
+description: Convert legacy agent resources to the unified Agent Skills format.
+---
+
+---
+name: migrate-to-skills
 description: |
   Convert legacy subagents, slash commands, and rules to the unified Agent Skills format.
-  Use when migrating agent resources, consolidating legacy directories, or standardizing 
+  Use when migrating agent resources, consolidating legacy directories, or standardizing
   across Claude Code, Cursor, Copilot, Codex, and Open Code.
 disable-model-invocation: true
 argument-hint: <scope: all|subagents|commands|rules|path>
@@ -25,7 +30,7 @@ Search for legacy resources. Run these searches immediately:
 # Subagents
 find . -path "*/.claude/agents/*.md" -o -path "*/.cursor/agents/*.md" -o -path "*/.codex/agents/*.md" 2>/dev/null
 
-# Commands  
+# Commands
 find . -path "*/.claude/commands/*.md" -o -path "*/.cursor/commands/*.md" -o -path "*/.codex/commands/*.md" 2>/dev/null
 
 # Rules

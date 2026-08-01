@@ -1,3 +1,8 @@
+---
+name: js-tutorial
+description: typeof操作符返回一个字符串，表示未经计算的操作数的类型；该运算符数据类型（返回字符串，对应列表如图）
+---
+
 ### 一、数据类型检测
 ##### 1.1
 
@@ -7,7 +12,7 @@ typeof操作符返回一个字符串，表示未经计算的操作数的类型�
 
 ###### 1.2 instanceof
 ```
-var str = "This is a simple string"; 
+var str = "This is a simple string";
 var num = 1111;
 var boolean = true;
 var und = undefined;

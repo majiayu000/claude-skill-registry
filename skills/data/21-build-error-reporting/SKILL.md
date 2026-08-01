@@ -1,6 +1,11 @@
+---
+name: 21-build-error-reporting
+description: '- framework-ts/tools/builder (및 CLI 엔트리)'
+---
+
 # 21-build-error-reporting
 
-Status: ACTIVE  
+Status: ACTIVE
 AppliesTo: v10
 
 ---

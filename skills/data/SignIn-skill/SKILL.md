@@ -1,4 +1,9 @@
 ---
+name: signin-skill
+description: Same visual system as signup (brand consistency)
+---
+
+---
 
 name: todo-signin-ui
 version: 2.0.0

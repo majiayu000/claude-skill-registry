@@ -1,3 +1,8 @@
+---
+name: push-notifications
+description: '| ID | flutter-push-notifications |'
+---
+
 # 🔔 Skill: Push Notifications
 
 ## 📋 Metadata

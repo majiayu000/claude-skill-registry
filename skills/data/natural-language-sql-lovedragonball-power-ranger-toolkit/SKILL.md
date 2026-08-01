@@ -1,3 +1,8 @@
+---
+name: natural-language-sql
+description: แปลง natural language เป็น SQL queries และอธิบาย SQL ด้วยภาษาธรรมดา
+---
+
 # 🗄️ Natural Language SQL Skill
 
 ---
@@ -38,7 +43,7 @@ SELECT COUNT(*) FROM orders;
 
 "ยอดขายรวมต่อเดือน"
 ↓
-SELECT 
+SELECT
   DATE_TRUNC('month', created_at) AS month,
   SUM(total) AS revenue
 FROM orders
@@ -59,7 +64,7 @@ JOIN customers c ON o.customer_id = c.id;
 ```
 "Top 10 ลูกค้าที่ซื้อมากที่สุดในปี 2024"
 ↓
-SELECT 
+SELECT
   c.name,
   SUM(o.total) AS total_spent
 FROM customers c

@@ -1,3 +1,8 @@
+---
+name: magnifiedskillssequencediagrams
+description: participant ConsumerController as Consumer's Controller
+---
+
 # Inbound to EchoSkillBot
 
 ```mermaid
@@ -57,7 +62,7 @@
                         Adapter ->> TurnContext: Add BotIdentity (ClaimsIdentity) and BotCallbackHandler to TurnState
                         activate Adapter
                         activate TurnContext
-                            TurnContext -->> Adapter: 
+                            TurnContext -->> Adapter:
                         deactivate TurnContext
                         deactivate Adapter
 
@@ -81,7 +86,7 @@
 
                                 alt if cached credentials
                                     Adapter -->> Adapter: return cached AppCredentials
-                                    
+
                                     else no cached credentials
                                         Adapter ->> Adapter: BuildCredentialsAsync()
 
@@ -100,7 +105,7 @@
                         Adapter ->> TurnContext: Add ConnectorClient to TurnState
                         activate Adapter
                         activate TurnContext
-                            TurnContext -->> Adapter: 
+                            TurnContext -->> Adapter:
                         deactivate TurnContext
                         deactivate Adapter
 
@@ -154,15 +159,15 @@
                                             Adapter ->> Adapter: SendActivities()
                                             activate Adapter
 
-                                            
+
                                             alt has ReplyToId
-                                                Adapter ->> Connector: ReplyToActivityAsync() 
+                                                Adapter ->> Connector: ReplyToActivityAsync()
                                                 activate Adapter
                                                 activate Connector
                                             else no ReplyToId
                                                 Adapter ->> Connector: SendToConversationAsync()
                                             end
-                                                
+
                                                 Connector ->> Connector: ReplyToActivityWithHttpMessagesAsync()
                                                 activate Connector
                                                     Note over EchoBotController, Adapter: Construct HTTP transport object to make POST request to Skill Consumer
@@ -175,7 +180,7 @@
                                                     activate Connector
                                                     activate AppCredentials
                                                         Note over AppCredentials, TurnContext: Verify that the request URL is to a trusted host
-                                                        
+
                                                         AppCredentials ->> AppCredentials: GetTokenAsync()
                                                         activate AppCredentials
                                                             AppCredentials ->> AdalAuthenticator: GetTokenAsync()
@@ -189,7 +194,7 @@
                                                         deactivate AppCredentials
 
                                                         Note over AppCredentials, AdalAuthenticator: Add Token to Authorization Header
-                                                        
+
                                                         AppCredentials -->> Connector: HTTP Request now has Token in Auth Header
                                                     deactivate Connector
                                                     deactivate AppCredentials

@@ -1,5 +1,12 @@
 ---
 name: spacy-nlp
+description: 'Industrial-strength NLP with spaCy 3.x for text processing and custom
+  classifier training. Use when: installing spaCy, selecting models (en_core_web_sm/md/lg/trf),
+  tokenization, POS tagging, named ent'
+---
+
+---
+name: spacy-nlp
 description: Industrial-strength NLP with spaCy 3.x for text processing and custom classifier training. Use when: installing spaCy, selecting models (en_core_web_sm/md/lg/trf), tokenization, POS tagging, named entity recognition, dependency parsing, training TextCategorizer models, troubleshooting errors (E050/E941 model errors, E927 version mismatch, memory issues), batch processing with nlp.pipe, or deploying models to production. Includes data preparation scripts, config templates, and FastAPI serving examples.
 ---
 

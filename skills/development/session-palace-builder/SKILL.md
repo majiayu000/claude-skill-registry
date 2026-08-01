@@ -1,5 +1,12 @@
 ---
 name: session-palace-builder
+description: 'Construct temporary, session-specific memory palaces for complex projectsand
+  conversations.Triggers: session context, project memory, conversation state, temporary
+  storage,session palace, context pres'
+---
+
+---
+name: session-palace-builder
 description: |
 
 Triggers: conversation-state, session, temporary-storage, project-memory, palace

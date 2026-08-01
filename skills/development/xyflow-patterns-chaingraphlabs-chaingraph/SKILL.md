@@ -1,5 +1,12 @@
 ---
 name: xyflow-patterns
+description: XYFlow integration patterns for ChainGraph visual flow editor. Use when
+  working on node rendering, edge rendering, drag-and-drop, selection handling, anchors,
+  handles, or any XYFlow-related UI code. C
+---
+
+---
+name: xyflow-patterns
 description: XYFlow integration patterns for ChainGraph visual flow editor. Use when working on node rendering, edge rendering, drag-and-drop, selection handling, anchors, handles, or any XYFlow-related UI code. Covers custom nodes/edges, performance optimization, handle positioning. Triggers: xyflow, reactflow, node rendering, edge rendering, handle, anchor, drag drop, selection, viewport, canvas, flow editor UI.
 ---
 

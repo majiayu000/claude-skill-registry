@@ -1,3 +1,8 @@
+---
+name: mobile-testing
+description: '| ID | flutter-mobile-testing |'
+---
+
 # 📱 Skill: Mobile Testing y Debugging con Flutter MCP
 
 ## 📋 Metadata

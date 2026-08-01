@@ -1,5 +1,10 @@
 ---
 name: pm-schedule
+description: WBSに基づいてプロジェクトスケジュールを作成し、進捗を管理します。
+---
+
+---
+name: pm-schedule
 description: スケジュール管理エージェント。ガントチャート、マイルストーン、タイムラインを作成・管理。キーワード: スケジュール, schedule, ガントチャート, Gantt, マイルストーン, milestone, タイムライン.
 ---
 

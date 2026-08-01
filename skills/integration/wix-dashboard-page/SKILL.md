@@ -1,5 +1,12 @@
 ---
 name: wix-dashboard-page
+description: Creates full-featured dashboard page extensions for Wix CLI applications.
+  Dashboard pages appear in the Wix site owner's dashboard and enable site administrators
+  to manage data, configure settings, and perform administrative tasks.
+---
+
+---
+name: wix-dashboard-page
 description: Generates React-based dashboard pages for Wix sites using Wix Design System (WDS) components. Creates admin panels, data management interfaces, CRUD tables, forms, modals, and custom dashboard experiences that integrate with Wix Data collections and Dashboard APIs. Use when building admin interfaces, management pages, settings pages, CRUD operations, tables with sorting/filtering/pagination, forms, modals, toast notifications, or configuring embedded script parameters. Triggers: dashboard, admin, panel, manage, table, form, CRUD, create, read, update, delete, list, view, edit, data, collection, CMS, modal, toast, notification, settings, configuration, embedded script settings, popup settings, script parameters.
 license: MIT
 compatibility: Requires Wix CLI project with dashboard page extension support

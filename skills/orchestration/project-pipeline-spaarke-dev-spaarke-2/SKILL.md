@@ -1,3 +1,8 @@
+---
+name: project-pipeline
+description: 'CRITICAL: This orchestrator skill REQUIRES extended context settings:'
+---
+
 # project-pipeline
 
 ---
@@ -342,13 +347,13 @@ CREATE directory:
 FOR each phase in PLAN.md:
   FOR each deliverable/objective:
     DECOMPOSE into discrete tasks (2-4 hour chunks)
-    
+
     APPLY numbering:
       - Phase 1 → 001, 002, 003...
       - Phase 2 → 010, 011, 012...
       - Phase 3 → 020, 021, 022...
       - (10-gap for insertions)
-    
+
     GENERATE .poml file:
       - Valid POML/XML format
       - <metadata> with tags, phase, estimate
@@ -710,11 +715,11 @@ Agent: ✅ PLAN.md generated
 User: "stop"
 
 Agent: ✅ Project initialized up to PLAN.md
-        
+
         Files created:
         - projects/new-api-feature/PLAN.md
         - projects/new-api-feature/README.md
-        
+
         When ready to continue:
         - Run: /task-create new-api-feature
         - Or: /project-pipeline new-api-feature (restart full pipeline)

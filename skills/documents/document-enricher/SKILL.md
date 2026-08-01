@@ -1,3 +1,8 @@
+---
+name: document-enricher
+description: 'Owner: SDLC Agêntico Core Team'
+---
+
 # document-enricher
 
 **Version**: 1.9.0

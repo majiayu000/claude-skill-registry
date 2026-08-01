@@ -1,5 +1,12 @@
 ---
 name: claude-workflow
+description: 'Load for any CWF planning task including: explaining the workflow, answering
+  planning questions, creating plans, amending plans, and implementing features. Contains
+  conventions, phase structure, task'
+---
+
+---
+name: claude-workflow
 description: Load for any CWF planning task including: explaining the workflow, answering planning questions, creating plans, amending plans, and implementing features. Contains conventions, phase structure, task formats, validation rules, and templates.
 ---
 

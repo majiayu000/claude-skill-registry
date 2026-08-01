@@ -1,6 +1,11 @@
+---
+name: 34-ndjson-storage
+description: 이 문서는 NDJSON 저장 포맷의 정본이다.
+---
+
 # 34-ndjson-storage
 
-Status: ACTIVE  
+Status: ACTIVE
 AppliesTo: v10
 
 ## SSOT

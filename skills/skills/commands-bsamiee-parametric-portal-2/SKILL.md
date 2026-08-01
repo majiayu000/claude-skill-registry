@@ -1,4 +1,9 @@
 ---
+name: commands
+description: '@.claude/skills/skill-builder/SKILL.md'
+---
+
+---
 description: Create new skill via skill-builder workflow (project)
 argument-hint: [type: simple|standard|complex] [depth: base|extended|full] [context?]
 ---

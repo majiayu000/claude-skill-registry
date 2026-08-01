@@ -1,4 +1,11 @@
 ---
+name: love-filesystem
+description: '{{SKILLDESCRIPTION}} Use this skill when working with file operations,
+  directory management, file reading/writing, or any filesystem-related operations
+  in LÖVE games.'
+---
+
+---
 name: {{SKILL_NAME}}
 description: {{SKILL_DESCRIPTION}} Use this skill when working with file operations, directory management, file reading/writing, or any filesystem-related operations in LÖVE games.
 license: MIT

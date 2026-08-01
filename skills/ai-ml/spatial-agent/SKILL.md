@@ -1,3 +1,10 @@
+---
+name: spatial-agent
+description: SpatialAgent focuses on the biological interpretation of spatial transcriptomics
+  data, specifically aiming to propose mechanistic hypotheses about tissue organization
+  and cellular interactions.
+---
+
 <!--
 # COPYRIGHT NOTICE
 # This file is part of the "Universal Biomedical Skills" project.

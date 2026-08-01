@@ -1,5 +1,10 @@
 ---
 name: api-endpoint
+description: Route (backend/src/api/routes/)     → DI setup + routing
+---
+
+---
+name: api-endpoint
 description: Create or modify API endpoints in IdeaForge backend. Triggers: new route, controller, service, repository, CRUD operation, Zod validation, API debugging. Pattern: Routes → Controller → Service → Repository.
 ---
 

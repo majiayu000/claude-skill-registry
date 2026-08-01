@@ -1,3 +1,9 @@
+---
+name: create-qa-task
+description: 'description: Use to create QA task documents. Generates test specifications
+  and validation requirements for QA team.'
+---
+
 ﻿---
 name: create-qa-task
 description: Use to create QA task documents. Generates test specifications and validation requirements for QA team.
@@ -30,11 +36,11 @@ inputs:
 test_specification:
   ticket_id: "ISSUE-{number}"
   priority: "P0|P1|P2|P3"
-  
+
   test_objective: |
     Ensure that {specific functionality} works correctly
     when {user action} under {conditions}.
-    
+
   test_scope:
     in_scope:
       - {Feature/component to test}
@@ -43,20 +49,20 @@ test_specification:
     out_of_scope:
       - {What NOT to test}
       - {Unrelated features}
-  
+
   test_scenarios:
     - scenario_1:
         name: "Happy path - {description}"
         given: "{Initial state}"
         when: "{User action}"
         then: "{Expected result}"
-        
+
     - scenario_2:
         name: "Error case - {description}"
         given: "{Initial state with issue}"
         when: "{Action that triggers issue}"
         then: "{Issue should not occur}"
-        
+
     - scenario_3:
         name: "Edge case - {description}"
         given: "{Boundary condition}"
@@ -69,23 +75,23 @@ test_specification:
 ```yaml
 test_requirements:
   test_type: "E2E Integration"
-  
+
   environment:
     - Test database with sample data
     - Authentication enabled
     - External services mocked/containerized
-    
+
   test_data:
     - User accounts with various roles
     - Sample transactions/records
     - Edge case data sets
-    
+
   assertions_needed:
     - Response status codes
     - Data integrity checks
     - UI state validations
     - Performance thresholds
-    
+
   coverage_goals:
     - All reported issue scenarios
     - Related functionality
@@ -150,16 +156,16 @@ qa_task_metadata:
   assigned_to: "QA Agent"
   created_by: "Support Agent"
   created_date: "{current_date}"
-  
+
   dependencies:
     - "Dev task for fix implementation"
     - "Environment setup if needed"
-    
+
   deliverables:
     - "Failing E2E integration test"
     - "Test documentation"
     - "Coverage report"
-    
+
   success_metrics:
     - "Test catches the reported issue"
     - "Test maintainable and clear"

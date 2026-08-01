@@ -1,5 +1,10 @@
 ---
 name: nextjs-routing-advanced
+description: '| Route Type | Folder Pattern | URL Example |'
+---
+
+---
+name: nextjs-routing-advanced
 description: Complete Next.js advanced routing system. PROACTIVELY activate for: (1) Dynamic routes with [slug], (2) Catch-all routes [...slug], (3) Route groups for organization, (4) Parallel routes with @slot, (5) Intercepting routes for modals, (6) Private folders with _prefix, (7) Route Handlers (API), (8) Search params handling, (9) Programmatic navigation. Provides: Dynamic routing patterns, parallel route slots, modal interception, API handlers. Ensures flexible routing with proper URL structure.
 ---
 

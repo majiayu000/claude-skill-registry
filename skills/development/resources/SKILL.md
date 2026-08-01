@@ -1,3 +1,10 @@
+---
+name: resources
+description: Few days ago we had a question in our Facebook group - "What are the
+  top coding and collaboration skills a junior developer should have to get hired?".
+  Here is my answer in brief.
+---
+
 # What are the top coding and collaboration skills a junior developer should have to get hired?
 
 Few days ago we had a question in our Facebook group - "What are the top coding and collaboration skills a junior developer should have to get hired?". Here is my answer in brief.

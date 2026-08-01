@@ -1,5 +1,10 @@
 ---
 name: fix-solve
+description: ::GENE{fix-solve|conf:confirmed|scope:global}
+---
+
+---
+name: fix-solve
 description: Step 3 of debugging: apply minimal fix. One-liner ideal. Verify nothing else broke.
 version: 5.0.0
 ---

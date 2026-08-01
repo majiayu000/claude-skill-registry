@@ -1,3 +1,9 @@
+---
+name: api-client-generator
+description: สร้าง API client ที่ type-safe อัตโนมัติ จาก OpenAPI/Swagger specs หรือจาก
+  API endpoints ที่มีอยู่
+---
+
 # 🔌 API Client Generator Skill
 
 ---
@@ -32,7 +38,7 @@ npx swagger-typescript-api -p ./swagger.json -o ./api -n api.ts
 
 ```typescript
 // Analyze endpoint and generate types
-// GET /api/users → 
+// GET /api/users →
 interface User {
   id: number;
   name: string;
@@ -79,7 +85,7 @@ class ApiClient {
     config?: RequestConfig
   ): Promise<T> {
     const url = new URL(endpoint, this.baseUrl);
-    
+
     if (config?.params) {
       Object.entries(config.params).forEach(([key, value]) => {
         url.searchParams.set(key, value);
@@ -136,7 +142,7 @@ export function useUser(id: string) {
 
 export function useCreateUser() {
   const queryClient = useQueryClient();
-  
+
   return useMutation({
     mutationFn: api.users.create,
     onSuccess: () => {

@@ -1,5 +1,11 @@
 ---
 name: testing-jest
+description: 'Apply when writing unit tests with Jest: assertions, mocking, async
+  tests, and test organization.'
+---
+
+---
+name: testing-jest
 description: Apply when writing unit tests with Jest: assertions, mocking, async tests, and test organization.
 version: 1.0.0
 tokens: ~650

@@ -1,3 +1,9 @@
+---
+name: commands-kateusz-gameengine
+description: You are a Claude Skill quality auditor. Evaluate the user-specified skill
+  against official best practices from the Claude Agent SDK documentation.
+---
+
 # Rate Claude Skill
 
 You are a Claude Skill quality auditor. Evaluate the user-specified skill against official best practices from the Claude Agent SDK documentation.

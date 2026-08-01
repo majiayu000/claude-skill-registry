@@ -33,8 +33,6 @@ import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path, PurePosixPath
 
-import yaml
-
 # Add parent to path for imports
 SCRIPT_DIR = Path(__file__).resolve().parent
 ROOT_DIR = SCRIPT_DIR.parent
@@ -42,6 +40,7 @@ sys.path.insert(0, str(ROOT_DIR))
 sys.path.insert(0, str(SCRIPT_DIR))
 
 from security_blocklist import blocked_metadata_source
+from skill_frontmatter import normalize_skill_frontmatter
 from utils import (
     build_skill_key,
     normalize_category,
@@ -294,31 +293,12 @@ def requires_complete_bundled_archive(skill_content: str) -> bool:
 
 
 def normalize_skill_frontmatter_description(content: str, skill: dict) -> str:
-    """Replace overlong upstream descriptions with the curated source description."""
-    source_description = str(skill.get("description") or "").strip()
-    if not source_description or len(source_description) > 500:
-        return content
-    if not content.startswith("---"):
-        return content
-
-    parts = content.split("---", 2)
-    if len(parts) < 3:
-        return content
-
-    try:
-        frontmatter = yaml.safe_load(parts[1])
-    except yaml.YAMLError:
-        return content
-    if not isinstance(frontmatter, dict):
-        return content
-
-    upstream_description = frontmatter.get("description")
-    if not isinstance(upstream_description, str) or len(upstream_description) <= 500:
-        return content
-
-    frontmatter["description"] = source_description
-    rendered = yaml.safe_dump(frontmatter, sort_keys=False, allow_unicode=True).strip()
-    return f"---\n{rendered}\n---{parts[2]}"
+    """Keep valid upstream data and repair invalid acquisition frontmatter."""
+    return normalize_skill_frontmatter(
+        content,
+        skill,
+        fallback_name=str(skill.get("dir_name") or ""),
+    )
 
 
 def build_manifest_key(repo: str, path: str, name: str, category: str) -> str:

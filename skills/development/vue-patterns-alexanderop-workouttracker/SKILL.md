@@ -1,5 +1,11 @@
 ---
 name: vue-patterns
+description: 'Bulletproof architecture: Self-contained domain modules. Each feature
+  owns UI components, composables, and business logic.'
+---
+
+---
+name: vue-patterns
 description: Vue 3 patterns and best practices for this workout tracker: feature module architecture, createGlobalState() singleton state (not Pinia), defineModel two-way binding, and component gotchas. Use when creating/refactoring components, features, composables, managing shared state, or debugging reactivity issues. Triggers include "add component", "create feature", "refactor", "composable", "v-model", "defineModel", "global state", "createGlobalState", "singleton", "reactive", "two-way binding", "feature structure", "reka-ui", "shadcn-vue".
 ---
 

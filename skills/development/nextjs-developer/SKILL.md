@@ -1,5 +1,12 @@
 ---
 name: nextjs-developer
+description: Use when building Next.js 14+ applications with App Router, server components,
+  or server actions. Invoke for full-stack features, performance optimization, SEO
+  implementation, production deployment. K
+---
+
+---
+name: nextjs-developer
 description: Use when building Next.js 14+ applications with App Router, server components, or server actions. Invoke for full-stack features, performance optimization, SEO implementation, production deployment. Keywords: Next.js, App Router, Server Components, Server Actions, Vercel, SSR, SSG.
 triggers:
   - Next.js

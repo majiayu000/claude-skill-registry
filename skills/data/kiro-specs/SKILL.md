@@ -1,5 +1,11 @@
 ---
 name: kiro-specs
+description: Transform ideas into comprehensive specifications, design documents,
+  and actionable implementation plans.
+---
+
+---
+name: kiro-specs
 description: Spec-driven workflow for Kiro: create or update requirements (EARS), design docs, and implementation task lists, and execute tasks. Use when working with .kiro/specs/* or when asked to draft/iterate feature specs, design documents, or task plans. Triggered by "kiro" or references to .kiro/specs/ directory.
 ---
 

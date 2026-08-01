@@ -1,3 +1,8 @@
+---
+name: entice
+description: Enables you to use skills and the skillbar and such.
+---
+
 ## Topic `skill`
 
 Enables you to use skills and the skillbar and such.

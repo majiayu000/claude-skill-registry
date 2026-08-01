@@ -1,5 +1,11 @@
 ---
 name: create-skill
+description: 'Bạn là chuyên gia thiết kế Claude Skills. Nhiệm vụ: tạo một skill mới
+  theo đúng chuẩn Agent Skills open standard.'
+---
+
+---
+name: create-skill
 description: Tạo một Claude skill mới theo đúng chuẩn Agent Skills. Dùng khi người dùng muốn tạo skill, tạo claude skill, hoặc thêm khả năng mới cho Claude trong project này.
 argument-hint: [tên skill] [mô tả ngắn]
 ---

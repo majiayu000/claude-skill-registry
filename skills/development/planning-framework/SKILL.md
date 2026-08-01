@@ -1,5 +1,12 @@
 ---
 name: planning-framework
+description: 'Apply structured thinking before coding. Use when: starting new features,
+  making architectural decisions, refactoring large components, or evaluating implementation
+  approaches. Includes Musk''s 5-step'
+---
+
+---
+name: planning-framework
 description: Apply structured thinking before coding. Use when: starting new features, making architectural decisions, refactoring large components, or evaluating implementation approaches. Includes Musk's 5-step algorithm and ICE scoring framework.
 ---
 

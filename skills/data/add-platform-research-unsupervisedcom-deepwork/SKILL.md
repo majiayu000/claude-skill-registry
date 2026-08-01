@@ -1,4 +1,10 @@
 ---
+name: add-platform-research
+description: Captures CLI configuration and hooks system documentation for the new
+  platform. Use when starting platform integration.
+---
+
+---
 name: add_platform.research
 description: "Captures CLI configuration and hooks system documentation for the new platform. Use when starting platform integration."user-invocable: false---
 

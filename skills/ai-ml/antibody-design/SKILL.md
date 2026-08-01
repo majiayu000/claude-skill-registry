@@ -1,3 +1,8 @@
+---
+name: antibody-design
+description: '---name: antibody-design-agent'
+---
+
 ---name: antibody-design-agent
 description: An advanced agent for de novo antibody design and optimization using state-of-the-art protein language models (MAGE, RFdiffusion).
 license: MIT

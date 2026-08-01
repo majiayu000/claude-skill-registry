@@ -1,5 +1,12 @@
 ---
 name: java-architect
+description: 'Use when building enterprise Java applications with Spring Boot 3.x,
+  microservices, or reactive programming. Invoke for WebFlux, JPA optimization, Spring
+  Security, cloud-native patterns. Keywords: Spr'
+---
+
+---
+name: java-architect
 description: Use when building enterprise Java applications with Spring Boot 3.x, microservices, or reactive programming. Invoke for WebFlux, JPA optimization, Spring Security, cloud-native patterns. Keywords: Spring Boot, Java 21, WebFlux, Hibernate, microservices.
 triggers:
   - Spring Boot

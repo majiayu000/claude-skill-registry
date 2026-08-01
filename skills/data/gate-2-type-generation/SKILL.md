@@ -1,5 +1,10 @@
 ---
 name: gate-2-type-generation
+description: npm run clean && npm run generate
+---
+
+---
+name: gate-2-type-generation
 description: Gate 2 validation: TypeScript type generation from OpenAPI spec
 ---
 

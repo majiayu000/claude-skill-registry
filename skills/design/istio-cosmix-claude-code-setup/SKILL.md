@@ -1,5 +1,12 @@
 ---
 name: istio
+description: Service mesh implementation with Istio for traffic management, security,
+  and observability. Use when implementing mTLS, traffic routing, circuit breakers,
+  or service-to-service communication. Triggers
+---
+
+---
+name: istio
 description: Service mesh implementation with Istio for traffic management, security, and observability. Use when implementing mTLS, traffic routing, circuit breakers, or service-to-service communication. Triggers: istio, service mesh, virtualservice, destinationrule, gateway, mtls, sidecar, envoy, traffic management.
 allowed-tools: Read, Grep, Glob, Edit, Write, Bash
 ---

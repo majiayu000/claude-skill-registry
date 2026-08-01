@@ -1,7 +1,12 @@
+---
+name: 72-network-ws-client
+description: 'Type: Policy / Requirements'
+---
+
 # 72-network-ws-client
 
-Status: ACTIVE  
-AppliesTo: v10  
+Status: ACTIVE
+AppliesTo: v10
 Type: Policy / Requirements
 
 ---
@@ -66,7 +71,7 @@ framework-cs/module/Devian/src/Net/
 
 ## API Signatures (Reference)
 
-> **Note:** 아래는 이해를 돕기 위한 참고 예시이며, 최종 시그니처/공개 API는 코드가 정답이다.  
+> **Note:** 아래는 이해를 돕기 위한 참고 예시이며, 최종 시그니처/공개 API는 코드가 정답이다.
 > 코드 변경 시 이 문서를 'SSOT'로 맞추지 않는다. 필요하면 문서를 참고 수준으로 갱신한다.
 
 ### NetFrameV1

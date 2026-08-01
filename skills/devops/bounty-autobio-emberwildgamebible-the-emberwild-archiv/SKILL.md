@@ -1,3 +1,9 @@
+---
+name: bounty-autobio
+description: Create bounty board entries with personal history, associates, and gameplay
+  hooks.
+---
+
 name: bounty-autobio
 description: Create bounty board entries with personal history, associates, and gameplay hooks.
 metadata:

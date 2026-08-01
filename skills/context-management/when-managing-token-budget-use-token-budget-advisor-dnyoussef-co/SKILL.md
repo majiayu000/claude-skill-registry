@@ -1,3 +1,8 @@
+---
+name: when-managing-token-budget-use-token-budget-advisor
+description: /============================================================================/
+---
+
 /*============================================================================*/
 /* WHEN-MANAGING-TOKEN-BUDGET-USE-TOKEN-BUDGET-ADVISOR SKILL :: VERILINGUA x VERIX EDITION                      */
 /*============================================================================*/

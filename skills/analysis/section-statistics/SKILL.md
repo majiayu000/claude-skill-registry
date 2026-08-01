@@ -1,5 +1,10 @@
 ---
 name: section-statistics
+description: 生成统计分析方法类教程 (.rmd/.qmd)，确保理论背景、模型假设、完整分析流程与结果解释并重。
+---
+
+---
+name: section-statistics
 description: Generate comprehensive R statistical method tutorials (regression, survival analysis, causal inference, Bayesian stats) with theory + practice workflow. Use when: (1) User requests statistical method tutorials, (2) File names match 10xx-*.rmd pattern, (3) Keywords: PSM, Cox, Meta-analysis, RCS, multilevel models, SEM, PCA, LCA.
 ---
 ## 核心任务
@@ -70,7 +75,7 @@ description: Generate comprehensive R statistical method tutorials (regression, 
 
 **第一步：生成图片文件**
 
-1. **封面图 (MANDATORY)**: 
+1. **封面图 (MANDATORY)**:
    - 路径：`doc/images/[number]-[topic]-cover.svg`
    - 风格：学术、专业、与方法相关
 
@@ -202,8 +207,8 @@ install.packages(c("survival", "MatchIt", "lme4", "brms", "mediation"))
 
 ```r
 knitr::opts_chunk$set(
-  echo = TRUE, 
-  message = FALSE, 
+  echo = TRUE,
+  message = FALSE,
   warning = FALSE,
   fig.align = 'center'  # 所有图片居中
 )
@@ -222,12 +227,12 @@ knitr::opts_chunk$set(
 **所有 gt 表格必须设置合适的字体大小，避免表格过小难以阅读**：
 
 ```r
-tibble(...) |> 
-  gt() |> 
+tibble(...) |>
+  gt() |>
   tab_options(
     table.font.size = px(14),      # 表格字体 14px
     data_row.padding = px(8)       # 行间距 8px
-  ) |> 
+  ) |>
   tab_style(
     style = cell_fill(color = "#E8F4F8"),
     locations = cells_column_labels()
@@ -235,8 +240,8 @@ tibble(...) |>
 ```
 
 **推荐字体大小**：
-- 常规表格：`px(14)` 
-- 大型对比表：`px(13)` 
+- 常规表格：`px(14)`
+- 大型对比表：`px(13)`
 - 简洁表格：`px(15)`
 
 **必须添加的 tab_options 参数**：

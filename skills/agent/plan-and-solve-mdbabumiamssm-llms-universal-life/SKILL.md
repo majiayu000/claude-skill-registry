@@ -1,3 +1,8 @@
+---
+name: plan-and-solve
+description: '---name: plan-and-solve-agent'
+---
+
 ---name: plan-and-solve-agent
 description: Breaks down complex queries into a step-by-step plan before execution, improving performance on multi-hop reasoning tasks.
 license: MIT

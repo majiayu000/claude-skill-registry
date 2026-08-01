@@ -1,3 +1,8 @@
+---
+name: randomskill-md
+description: Skill from Zyyans/MythicMobs-wiki
+---
+
 Mechanic: RandomSkill
 =====================
 
@@ -12,7 +17,7 @@ Attributes
 |-----------|---------|---------------------------------------------------------|---------|
 | skills    |         | The list of skills to execute, must be separated by a , |         |
 
-  
+
 
 Examples
 --------

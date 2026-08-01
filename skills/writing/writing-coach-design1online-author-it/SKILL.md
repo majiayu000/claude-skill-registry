@@ -1,3 +1,8 @@
+---
+name: writing-coach
+description: '---                                                         name: create-book'
+---
+
 ---                                                         name: create-book
 description: Writing coach
 autocomplete-hint: First paragraph of your book or first chapter of your book

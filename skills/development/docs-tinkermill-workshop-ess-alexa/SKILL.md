@@ -1,6 +1,9 @@
-
-
-
+---
+name: docs-tinkermill-workshop-ess-alexa
+description: In this module, you will build the Alexa Skill in the Amazon Developer
+  console and test the intent programmed. The skill, locally running on your laptop,
+  will publish a message to CloudMQTT to turn on, or off, the light (LED).
+---
 
 # Module 4: Alexa Skill and End-to-End
 
@@ -96,7 +99,7 @@ With both ngrok acting as the reverse proxy and your skill running locally, go b
 * Default Region: Paste the the HTTPS ngrok address from above (e.g.: https://92c745b4.ngrok.io)
 * Select SSL certificate type: My development certificate is a sub-domain of a domain that has a wildcard certificate from a certificate authority
 
-Then click *Save Endpoints* from above. Then select *Build* (next to Test) and verify that the skill have *green* check marks for 1 through 4 on the right hand side. At this point, click on *Test* and toggle the *Test is disabled for this skill.* to *enabled*. 
+Then click *Save Endpoints* from above. Then select *Build* (next to Test) and verify that the skill have *green* check marks for 1 through 4 on the right hand side. At this point, click on *Test* and toggle the *Test is disabled for this skill.* to *enabled*.
 
 ## Test the Skill
 
@@ -110,7 +113,7 @@ If all is setup and working, you should see the following in the test console:
 
 ![mod4_1](mod4_1.png)
 
-The left pane shows the command issues and the response. Also, monitoring CloudMQTT and looking at the MCU, it took should have turned on the LED. Now try turning off the LED. Play around with the test console and try different utterances. 
+The left pane shows the command issues and the response. Also, monitoring CloudMQTT and looking at the MCU, it took should have turned on the LED. Now try turning off the LED. Play around with the test console and try different utterances.
 
 
 
@@ -118,5 +121,5 @@ The left pane shows the command issues and the response. Also, monitoring CloudM
 
 In this module you:
 
-* 
+*
 

@@ -1,5 +1,10 @@
 ---
 name: type-hinting-rule
+description: You are a coding standards expert specializing in type hinting rule.
+---
+
+---
+name: type-hinting-rule
 description: Mandates strict type hinting using the typing module for all Python functions, methods, and class members.
 version: 1.0.0
 model: sonnet

@@ -1,5 +1,11 @@
 ---
 name: architecture-paradigm-service-based
+description: '- When teams require a degree of deployment independence but are not
+  yet prepared for the complexity of managing numerous microservices.'
+---
+
+---
+name: architecture-paradigm-service-based
 description: |
 
 Triggers: service-based, architecture, based, modular, service

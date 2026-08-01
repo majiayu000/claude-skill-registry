@@ -1,5 +1,10 @@
 ---
 name: architecture-paradigm-space-based
+description: '- When traffic or state volume overwhelms a single database node.'
+---
+
+---
+name: architecture-paradigm-space-based
 description: |
 
 Triggers: data-grid, space, architecture, based, in-memory

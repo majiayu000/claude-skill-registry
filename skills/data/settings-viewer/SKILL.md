@@ -1,3 +1,9 @@
+---
+name: settings-viewer
+description: プロジェクトの Claude Code 設定を表示するスキル。「設定を見せて」「現在の設定」「settings 確認」「設定情報」「Claude
+  の設定を表示」「設定を確認」「settings を見たい」などで起動。
+---
+
 # Settings Viewer
 
 プロジェクトの Claude Code 設定を表示するスキル。「設定を見せて」「現在の設定」「settings 確認」「設定情報」「Claude の設定を表示」「設定を確認」「settings を見たい」などで起動。

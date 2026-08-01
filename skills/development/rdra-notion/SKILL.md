@@ -1,3 +1,9 @@
+---
+name: rdra-notion
+description: 'RDRA operations (draft creation / consistency check / reporting) on
+  Notion via MCP. PoC-0: only loading check.'
+---
+
 # RDRA Notion Skill
 
 ## Purpose
@@ -53,15 +59,15 @@ This Skill does NOT:
 
 The Skill recognizes the following concepts as RDRA elements:
 
-- Context  
-- Actor  
-- Business Use Case / Activity  
-- System Use Case  
-- Screen  
-- Information Model  
-- Value Model  
-- State  
-- Condition  
+- Context
+- Actor
+- Business Use Case / Activity
+- System Use Case
+- Screen
+- Information Model
+- Value Model
+- State
+- Condition
 
 These are treated as **conceptual roles**, not strict schemas.
 
@@ -102,11 +108,11 @@ define and refine RDRA structures safely and transparently.
 
 Supported interaction patterns include:
 
-- Guided definition of Business Use Cases and System Use Cases  
-- Interactive elicitation of Information Models and Value Models  
-- Step-by-step clarification of States and Conditions  
-- Assisted generation of requirement drafts from confirmed RDRA structures  
-- Consistency checking across Context / BUC / SUC / Screen / Model layers  
+- Guided definition of Business Use Cases and System Use Cases
+- Interactive elicitation of Information Models and Value Models
+- Step-by-step clarification of States and Conditions
+- Assisted generation of requirement drafts from confirmed RDRA structures
+- Consistency checking across Context / BUC / SUC / Screen / Model layers
 
 ### Protocol Principles
 
@@ -127,7 +133,7 @@ These protocols are expected to evolve, while always preserving the above princi
 This section describes **recommended modeling practices** when using this Skill
 together with the Notion RDRA Sheet template.
 
-These are not strict rules.  
+These are not strict rules.
 They exist to improve clarity, consistency, and long-term usability of RDRA models.
 
 Projects may adopt, adapt, or ignore these guidelines as appropriate.
@@ -141,10 +147,10 @@ Business Use Cases and Activities may be modeled using a hierarchical structure.
 Recommended practice:
 
 - Use parent items to represent **Business Use Cases (BUC)**
-  - Represents the business purpose or intent  
+  - Represents the business purpose or intent
   - Example: "Information Dissemination"
 - Use child items (sub-items) to represent **Activities**
-  - Represents concrete actions within the business flow  
+  - Represents concrete actions within the business flow
   - Example:
     - Information Dissemination (BUC)
       - Create notification (Activity)
@@ -175,9 +181,9 @@ Recommended practices:
 
 - Use parent/child Value Models when an attribute is conceptually composed of sub-elements.
   - Example:
-    - Name  
-      - Family Name  
-      - Given Name  
+    - Name
+      - Family Name
+      - Given Name
       - Middle Name (optional)
 
 - Use this structure especially for:
@@ -190,10 +196,10 @@ Recommended practices:
 
 Rationale:
 
-- Improves semantic clarity  
-- Avoids overloading rich_text with complex structures  
-- Makes models easier to reuse across contexts  
-- Supports future extension without breaking structure  
+- Improves semantic clarity
+- Avoids overloading rich_text with complex structures
+- Makes models easier to reuse across contexts
+- Supports future extension without breaking structure
 
 Important:
 
@@ -229,22 +235,22 @@ this Skill assumes the field represents a **human-readable English label**, not 
 
 Therefore:
 
-- English Name SHOULD preserve natural spacing  
-  - ✅ `Notification Read Status`  
+- English Name SHOULD preserve natural spacing
+  - ✅ `Notification Read Status`
   - ❌ `NotificationReadStatus`
 
 - The Skill must NOT automatically normalize English Name into:
-  - camelCase  
-  - PascalCase  
-  - snake_case  
+  - camelCase
+  - PascalCase
+  - snake_case
 
 If users explicitly want a code-style identifier, they should introduce a separate property
 (e.g. `Code Name`, `Identifier`, or similar) rather than overloading English Name.
 
 Rationale:
 
-- Preserves the role of English Name as a terminology definition  
-- Avoids confusion between conceptual modeling and implementation artifacts  
+- Preserves the role of English Name as a terminology definition
+- Avoids confusion between conceptual modeling and implementation artifacts
 - Improves readability for humans and long-term maintainability of the model
 
 ---
@@ -263,12 +269,12 @@ The following are intentionally out of scope for this Skill:
 
 ## Notes
 
-This Skill is designed to be used together with the  
+This Skill is designed to be used together with the
 **Notion RDRA Sheet Template**.
 
-- The template defines structure.  
-- The Skill supports thinking and documentation.  
+- The template defines structure.
+- The Skill supports thinking and documentation.
 - The user defines meaning.
 
-RDRA modeling remains a human design activity.  
+RDRA modeling remains a human design activity.
 This Skill exists to make that activity more structured, explicit, and sustainable.

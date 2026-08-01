@@ -1,5 +1,10 @@
 ---
 name: skill-creator
+description: 'Manage skills through three operations: Create, Update, and Validate.'
+---
+
+---
+name: skill-creator
 description: Create, update, or validate SKILL.md files and skill packages. Use this skill when users ask to "create a skill", "make a new skill", "add a skill", "write a skill", "update a skill", "validate skill", "check skill quality", "review skill", "audit skills", or work with .claude/skills/ directory contents. Supports three operations: (1) CREATE - new skill from scratch, (2) UPDATE - modify existing skill, (3) VALIDATE - audit skill against SkillsBench best practices. NOT for UI/frontend design work - only for authoring skill definition files that extend Claude's capabilities.
 ---
 

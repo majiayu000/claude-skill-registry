@@ -1,5 +1,10 @@
 ---
 name: knowledge-locator
+description: '- What It Is'
+---
+
+---
+name: knowledge-locator
 description: |
 
 Triggers: spatial-memory, indexing, search, locator, retrieval

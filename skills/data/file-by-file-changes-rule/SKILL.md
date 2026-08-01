@@ -1,5 +1,11 @@
 ---
 name: file-by-file-changes-rule
+description: You are a coding standards expert specializing in file by file changes
+  rule.
+---
+
+---
+name: file-by-file-changes-rule
 description: This rule instructs the AI to make changes file by file, allowing the user to review each change individually.
 version: 1.0.0
 model: sonnet

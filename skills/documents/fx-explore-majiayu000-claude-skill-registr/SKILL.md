@@ -1,5 +1,12 @@
 ---
 name: fx-explore
+description: 'Discover available effects, actions, and placeholders in a Sandestin
+  project. Use when asking what effects exist, searching for functionality, or needing
+  example invocations. Keywords: effects, action'
+---
+
+---
+name: fx-explore
 description: Discover available effects, actions, and placeholders in a Sandestin project. Use when asking what effects exist, searching for functionality, or needing example invocations. Keywords: effects, actions, dispatch, describe, grep, sample.
 ---
 

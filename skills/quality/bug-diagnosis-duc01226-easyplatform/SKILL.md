@@ -1,5 +1,13 @@
 ---
 name: bug-diagnosis
+description: '> Skill Variant: Use this skill for quick bug triage and interactive
+  debugging with user feedback. For systematic autonomous debugging workflows with
+  4-phase protocol and verification gates, use debug skill instead. For feature investigation
+  without fixes, use investigate.'
+---
+
+---
+name: bug-diagnosis
 version: 2.0.1
 description: "[Fix & Debug] Quick triage skill for initial bug assessment and user-reported issues. Use for bug reports, error reports, quick diagnosis, initial triage, "what's causing", "why is this failing". For systematic multi-file debugging with verification protocols, use `debug` skill instead."
 infer: true

@@ -1,3 +1,9 @@
+---
+name: technique-skill
+description: Use this template for cross-cutting techniques that apply to multiple
+  tools (harness writing, coverage analysis, sanitizers, dictionaries, etc.).
+---
+
 # Technique Skill Template
 
 Use this template for cross-cutting techniques that apply to multiple tools (harness writing, coverage analysis, sanitizers, dictionaries, etc.).

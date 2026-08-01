@@ -1,4 +1,9 @@
 ---
+name: skill-cookiecutterproject-slug
+description: '{{cookiecutter.project_description}}'
+---
+
+---
 name: skill-{{cookiecutter.project_slug}}
 description: {{cookiecutter.project_description}}
 ---

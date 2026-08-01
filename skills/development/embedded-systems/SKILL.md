@@ -1,5 +1,12 @@
 ---
 name: embedded-systems
+description: Use when developing firmware for microcontrollers, implementing RTOS
+  applications, or optimizing power consumption. Invoke for STM32, ESP32, FreeRTOS,
+  bare-metal, power optimization, real-time systems
+---
+
+---
+name: embedded-systems
 description: Use when developing firmware for microcontrollers, implementing RTOS applications, or optimizing power consumption. Invoke for STM32, ESP32, FreeRTOS, bare-metal, power optimization, real-time systems. Keywords: embedded, firmware, microcontroller, RTOS, bare-metal, interrupt, DMA.
 triggers:
   - embedded systems

@@ -1,3 +1,9 @@
+---
+name: project-setup
+description: Use this skill when creating a new project. It establishes a consistent
+  structure across all projects.
+---
+
 # Project Setup Skill
 
 Use this skill when creating a new project. It establishes a consistent structure across all projects.

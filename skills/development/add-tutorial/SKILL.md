@@ -1,3 +1,8 @@
+---
+name: add-tutorial
+description: チュートリアルGIFを追加し、Tutorial機能に新しいチュートリアル項目を登録するスキル
+---
+
 # Add Tutorial
 
 チュートリアルGIFを追加し、Tutorial機能に新しいチュートリアル項目を登録するスキル

@@ -1,5 +1,10 @@
 ---
 name: nextjs-authentication
+description: '| Auth.js Export | Purpose | Usage |'
+---
+
+---
+name: nextjs-authentication
 description: Complete Next.js authentication system. PROACTIVELY activate for: (1) NextAuth.js (Auth.js) setup, (2) OAuth providers (GitHub, Google), (3) Credentials provider, (4) Session management (JWT/database), (5) Protected routes with middleware, (6) Role-based access control (RBAC), (7) Login/registration forms, (8) Authorization patterns, (9) Type augmentation for sessions. Provides: Auth.js configuration, middleware protection, session hooks, RBAC patterns, login forms. Ensures secure authentication with proper session handling.
 ---
 

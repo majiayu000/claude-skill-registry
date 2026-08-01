@@ -1,5 +1,10 @@
 ---
 name: fal-audio
+description: '| STT Model | Endpoint | Speed | Accuracy |'
+---
+
+---
+name: fal-audio
 description: Complete fal.ai audio system. PROACTIVELY activate for: (1) Whisper speech-to-text, (2) Transcription with timestamps, (3) Translation to English, (4) F5-TTS voice cloning, (5) ElevenLabs premium TTS, (6) Kokoro multi-language TTS, (7) XTTS open-source cloning, (8) Subtitle generation (SRT), (9) Audio file formats. Provides: STT/TTS endpoints, language codes, voice cloning setup, timestamp formatting. Ensures accurate transcription and natural speech synthesis.
 ---
 

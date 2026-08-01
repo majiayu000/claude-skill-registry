@@ -1,3 +1,8 @@
+---
+name: python-pandas-best-practices
+description: '---name: pandas-best-practices'
+---
+
 ---name: pandas-best-practices
 description: Standards for efficient, readable, and performant data manipulation using Python's Pandas library.
 license: MIT

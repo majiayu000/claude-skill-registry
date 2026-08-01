@@ -1,4 +1,10 @@
 ---
+name: persistence-type-fixer-archived-20260115
+description: This skill provides comprehensive resolution of generic type system issues
+  in the persistence and backup layers of the Pomo-Flow application.
+---
+
+---
 name: persistence-type-fixer
 description: SYSTEMATICALLY fix TypeScript generic type system issues in persistence and backup layers. Resolves unknown type assignments, generic constraint failures, and type inference problems that are blocking the application from compiling. CRITICAL: Addresses the root cause of 40% of remaining TypeScript errors in persistence layer.
 ---

@@ -1,3 +1,8 @@
+---
+name: 32-example-webgl-server
+description: '| Unity project | framework-cs/apps/UnityExample/ |'
+---
+
 # 32-example-webgl-server — Unity WebGL 서버 가이드
 
 Status: ACTIVE

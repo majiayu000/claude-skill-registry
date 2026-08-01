@@ -1,5 +1,12 @@
 ---
 name: shared
+description: Provides common patterns, templates, and infrastructure modules used
+  across all spec-kit commands and skills. This skill exists to reduce duplication
+  and maintain consistency in specification-driven development workflows.
+---
+
+---
+name: shared
 description: |
 
 Triggers: patterns, templates, specification, shared

@@ -1,4 +1,10 @@
 ---
+name: auth-patterns-vuralserhat86-antigravity-agentic
+description: Build secure, scalable authentication and authorization systems using
+  industry-standard patterns and modern best practices.
+---
+
+---
 name: auth_patterns
 router_kit: SecurityKit
 description: Master authentication and authorization patterns including JWT, OAuth2, session management, and RBAC to build secure, scalable access control systems. Use when implementing auth systems, securing APIs, or debugging security issues.

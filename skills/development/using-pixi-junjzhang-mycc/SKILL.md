@@ -1,6 +1,13 @@
 ---
 name: using-pixi
-description: Guidance for developing under a projects managed by pixi. Always use when workspace managed by pixi (have pixi.toml or pixi.lock in root directory.) Covers all you should know while developing under a pixi-based project: pixi environment commands (install, run, shell, add, task), multi-environment management (-e flag, features), task configuration in pixi.toml, dependencies (conda vs PyPI), lock files, and development workflows. Helps with environment setup, package management, running tasks, debugging pixi.toml errors, and production deployment patterns. 
+description: Guidance for developing under a projects managed by pixi. Always use
+  when workspace managed by pixi (have pixi.toml or pixi.lock in root directory.)
+  Covers all you should know while developing under a
+---
+
+---
+name: using-pixi
+description: Guidance for developing under a projects managed by pixi. Always use when workspace managed by pixi (have pixi.toml or pixi.lock in root directory.) Covers all you should know while developing under a pixi-based project: pixi environment commands (install, run, shell, add, task), multi-environment management (-e flag, features), task configuration in pixi.toml, dependencies (conda vs PyPI), lock files, and development workflows. Helps with environment setup, package management, running tasks, debugging pixi.toml errors, and production deployment patterns.
 ---
 
 # Pixi Helper

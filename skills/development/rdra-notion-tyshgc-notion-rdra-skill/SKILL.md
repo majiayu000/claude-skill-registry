@@ -1,5 +1,11 @@
 ---
 name: rdra-notion
+description: 'RDRA operations (draft creation / consistency check / reporting) on
+  Notion via MCP. PoC-0: only loading check.'
+---
+
+---
+name: rdra-notion
 description: RDRA operations (draft creation / consistency check / reporting) on Notion via MCP. PoC-0: only loading check.
 ---
 

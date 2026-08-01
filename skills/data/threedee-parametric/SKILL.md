@@ -1,5 +1,12 @@
 ---
 name: threedee-parametric
+description: 'Create and modify 3D parametric models in the threedee design environment.
+  Use when: (1) creating new 3D objects, geometries, or meshes, (2) modifying parameters
+  like dimensions, colors, materials, (3'
+---
+
+---
+name: threedee-parametric
 description: Create and modify 3D parametric models in the threedee design environment. Use when: (1) creating new 3D objects, geometries, or meshes, (2) modifying parameters like dimensions, colors, materials, (3) adding primitives (boxes, spheres, cylinders, torus knots), (4) setting up lighting or camera, (5) exporting models to STL/OBJ/glTF, (6) working with Three.js code in this project. Triggers on requests involving 3D modeling, CAD-like operations, parametric design, or mesh creation.
 ---
 
@@ -46,19 +53,19 @@ export const parameters = {
 
 export function createMesh(userParams = {}) {
   const params = { ...parameters, ...userParams };
-  
+
   const geometry = new THREE.BoxGeometry(
-    params.width, 
-    params.height, 
+    params.width,
+    params.height,
     params.thickness
   );
   const material = new THREE.MeshStandardMaterial({ color: params.color });
   const mesh = new THREE.Mesh(geometry, material);
-  
+
   mesh.castShadow = true;
   mesh.receiveShadow = true;
   mesh.position.y = params.height / 2; // Sit on ground plane
-  
+
   return mesh;
 }
 ```

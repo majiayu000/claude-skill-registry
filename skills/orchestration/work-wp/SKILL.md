@@ -1,3 +1,9 @@
+---
+name: work-wp
+description: 'description: Execute a Work Package (WP) from an ideaâ€™s latest/workpackages.md
+  (auto-picks next Queued, or runs a specific WP id)'
+---
+
 ﻿---
 name: Execute WP
 description: Execute a Work Package (WP) from an ideaâ€™s latest/work_packages.md (auto-picks next Queued, or runs a specific WP id)

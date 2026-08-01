@@ -1,3 +1,8 @@
+---
+name: git-worktree
+description: 複数ブランチを同時に作業するための Git worktree 管理。
+---
+
 # git-worktree - Git Worktree 操作
 
 複数ブランチを同時に作業するための Git worktree 管理。

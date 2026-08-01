@@ -1,5 +1,12 @@
 ---
 name: spec
+description: 'Dispatcher — routes to the appropriate phase skill. This command is
+  a thin router. Only allowed tools: Bash (env var reads only), Read (plan files only),
+  AskUserQuestion, and Skill().'
+---
+
+---
+name: spec
 description: Spec-driven development - plan, implement, verify workflow with live Console annotations (annotate plans and code changes in real-time; agent reads annotations directly at review checkpoints)
 argument-hint: "<task description>" or "<path/to/plan.md>"
 user-invocable: true

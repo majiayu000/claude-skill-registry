@@ -1,5 +1,11 @@
 ---
 name: semantic-search
+description: Use the local ChromaDB index for intent-based discovery. Prefer semantic
+  search for concepts and rg for exact symbols.
+---
+
+---
+name: semantic-search
 description: Semantic search the CasareRPA codebase using the local ChromaDB index and MCP server. Use when: locating code by intent, finding classes/functions without exact names, exploring patterns across layers.
 ---
 

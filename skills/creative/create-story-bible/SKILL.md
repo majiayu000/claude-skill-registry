@@ -1,3 +1,8 @@
+---
+name: create-story-bible
+description: '---                                                         name: create-book'
+---
+
 ---                                                         name: create-book
 description: Creates a new story bible for a book project with the standard structure
 autocomplete-hint: [book-title] [premise]
@@ -92,7 +97,7 @@ After your analysis, structure your response as follows:
 ```
 Based on our discussion, I'm making these assumptions:
 1. [Specific assumption about character stakes/conflict]
-2. [Specific assumption about world building system]  
+2. [Specific assumption about world building system]
 3. [Specific assumption about plot structure as it relates to theme]
 
 Please confirm or correct these assumptions.
@@ -195,11 +200,11 @@ Gender: [characters gender or species] ([pronouns])
 
 Age: [date of birth and/or number of years old]
 
-Physical Description: 
+Physical Description:
 
-- Hair: [hair length] [hair color] [hair style], 
+- Hair: [hair length] [hair color] [hair style],
 - Eyes: [eye color]
-- Height: [height] 
+- Height: [height]
 - Weight: [weight]
 - Body type: [body type or shape ie. muscular, lean]
 - Markings and tattoos: [markings and/or tattoos]
@@ -806,7 +811,7 @@ The next document will be saved to `marketing/ad-copy.md` in the appropriate [bo
 [Examples of short and hooky ad copy for each of the following social media platforms: youtube, instagram, facebook, threads, bluesky, tiktok or amazon. Sample format provided below]
 
 ## Passion with Fashion (Facebook)
-From zero to hero, Letty Brown will snip her bra and sew Dean Forrester into the pattern of her latest lingerie fashion line. 
+From zero to hero, Letty Brown will snip her bra and sew Dean Forrester into the pattern of her latest lingerie fashion line.
 
 ## Bra to the Wall (Amazon)
 Letty Brown will snip her bra and sew Dean Forrester's heart into the pattern of her latest lingerie fashion line.

@@ -1,5 +1,11 @@
 ---
 name: validation-checklist
+description: 'Skill de validação pré-entrega para projetos de desenvolvimento (backend/frontend:
+  tests, lint, tsc, docs, QA).'
+---
+
+---
+name: validation-checklist
 description: Skill de validação pré-entrega para projetos de desenvolvimento (backend/frontend: tests, lint, tsc, docs, QA).
 ---
 

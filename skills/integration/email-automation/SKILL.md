@@ -1,3 +1,8 @@
+---
+name: email-automation
+description: '优点: 功能完整，支持标签、搜索、草稿'
+---
+
 # Email Automation Skill
 
 邮箱自动化：读取、搜索、草拟、发送邮件。

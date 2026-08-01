@@ -1,5 +1,11 @@
 ---
 name: android-release-notes-structure
+description: Creates directory structure for Play Store release notes with multi-locale
+  support.
+---
+
+---
+name: android-release-notes-structure
 description: Create Play Store release notes directory structure with locale templates (Fastlane metadata)
 category: android
 version: 3.0.0

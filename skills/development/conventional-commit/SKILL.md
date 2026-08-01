@@ -1,5 +1,11 @@
 ---
 name: conventional-commit
+description: This skill helps create git commits following the Conventional Commits
+  specification v1.0.0.
+---
+
+---
+name: conventional-commit
 description: Creates git commits following the Conventional Commits specification (v1.0.0). Use this when the user asks to create a commit, make a commit, or when creating commits as part of a workflow. Follows the format type(scope)!: description with proper commit types and breaking change indicators.
 allowed-tools: Bash, Read, Grep, Glob
 ---

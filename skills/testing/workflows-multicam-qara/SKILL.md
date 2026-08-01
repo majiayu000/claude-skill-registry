@@ -1,3 +1,9 @@
+---
+name: workflows-multicam-qara
+description: 'Purpose: Audit existing skill for compliance with canonical PAI architectural
+  standards'
+---
+
 # Validate Skill Workflow
 
 **Purpose:** Audit existing skill for compliance with canonical PAI architectural standards

@@ -1,3 +1,9 @@
+---
+name: simple-commands
+description: Run one command at a time. Look at the full output. Then decide what
+  to do next.
+---
+
 # Simple Commands
 
 ## The Rule

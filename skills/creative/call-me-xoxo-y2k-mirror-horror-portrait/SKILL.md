@@ -1,5 +1,16 @@
 ---
 name: call-me-xoxo-y2k-mirror-horror-portrait
+description: 'This prompt instructs an image model to generate a vertical, ultra-photorealistic
+  Y2K-era bedroom mirror selfie with a cinematic, slightly eerie mood: the subject
+  (matching the provided reference identity) poses chest-up holding a pink early-2000s
+  digital camera, styled with specified hair, satin outfit, and chunky gold jewelry
+  under warm, diffused vanity lighting and point-and-shoot flash. The mirror is hazy
+  with lens flares and has “CALL ME XOXO” written in pink lipstick, while a blurred
+  but r'
+---
+
+---
+name: call-me-xoxo-y2k-mirror-horror-portrait
 description: This prompt instructs an image model to generate a vertical, ultra-photorealistic Y2K-era bedroom mirror selfie with a cinematic, slightly eerie mood: the subject (matching the provided reference identity) poses chest-up holding a pink early-2000s digital camera, styled with specified hair, satin outfit, and chunky gold jewelry under warm, diffused vanity lighting and point-and-shoot flash. The mirror is hazy with lens flares and has “CALL ME XOXO” written in pink lipstick, while a blurred but recognizable masked figure appears faintly in the background reflection near the doorway, creating a glamorous yet suspenseful narrative without added logos or heavy effects.
 skillVersionId: 019a2f17-d7ac-7b90-a14a-af0a578666a6
 ---

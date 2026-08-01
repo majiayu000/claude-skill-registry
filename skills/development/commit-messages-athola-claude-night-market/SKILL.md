@@ -1,5 +1,10 @@
 ---
 name: commit-messages
+description: Use this skill to write a commit message for staged changes.
+---
+
+---
+name: commit-messages
 description: |
 
 Triggers: messages, conventional-commits, git, changelog, commit

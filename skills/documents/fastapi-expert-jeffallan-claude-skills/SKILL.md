@@ -1,5 +1,12 @@
 ---
 name: fastapi-expert
+description: 'Use when building high-performance async Python APIs with FastAPI and
+  Pydantic V2. Invoke for async SQLAlchemy, JWT authentication, WebSockets, OpenAPI
+  documentation. Keywords: FastAPI, Pydantic, asyn'
+---
+
+---
+name: fastapi-expert
 description: Use when building high-performance async Python APIs with FastAPI and Pydantic V2. Invoke for async SQLAlchemy, JWT authentication, WebSockets, OpenAPI documentation. Keywords: FastAPI, Pydantic, async, SQLAlchemy, JWT, OpenAPI.
 triggers:
   - FastAPI

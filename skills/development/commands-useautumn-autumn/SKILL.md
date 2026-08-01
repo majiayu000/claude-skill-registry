@@ -1,4 +1,9 @@
 ---
+name: commands-useautumn-autumn
+description: Create a new Agent Skill for this codebase
+---
+
+---
 description: Create a new Agent Skill for this codebase
 argument-hint: [skill-name] [description]
 ---

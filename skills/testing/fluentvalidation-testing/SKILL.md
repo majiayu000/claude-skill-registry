@@ -1,3 +1,8 @@
+---
+name: fluentvalidation-testing
+description: 此技能專注於使用 FluentValidation.TestHelper 測試資料驗證邏輯，涵蓋基本驗證、複雜業務規則、非同步驗證和測試最佳實踐。
+---
+
 # FluentValidation Testing Skill
 
 ---
@@ -171,7 +176,7 @@ public class UserValidator : AbstractValidator<UserRegistrationRequest>
 
     private bool BeComplexPassword(string password)
     {
-        return !string.IsNullOrEmpty(password) && 
+        return !string.IsNullOrEmpty(password) &&
                Regex.IsMatch(password, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$");
     }
 }

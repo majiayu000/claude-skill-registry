@@ -1,5 +1,11 @@
 ---
 name: create-table-classifier
+description: Train vision models to predict optimal Camelot extraction strategies
+  for PDF tables.
+---
+
+---
+name: create-table-classifier
 description: >
   Train vision classifiers for Camelot table extraction strategy prediction.
   Uses MobileNetV2 with GRPO training and Camelot execution feedback.

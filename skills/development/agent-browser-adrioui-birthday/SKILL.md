@@ -1,3 +1,8 @@
+---
+name: agent-browser-adrioui-birthday
+description: A skill for discovery and implementation with browser-based verification.
+---
+
 # Agent Browser Skill
 
 A skill for discovery and implementation with browser-based verification.

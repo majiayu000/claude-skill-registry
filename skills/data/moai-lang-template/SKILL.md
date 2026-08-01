@@ -1,5 +1,10 @@
 ---
 name: moai-lang-template
+description: Modern {{LANGUAGENAME}} Development with 2025 Best Practices
+---
+
+---
+name: moai-lang-template
 version: 4.0.0
 updated: '2025-11-19'
 status: stable
@@ -339,9 +344,9 @@ allowed-tools:
 
 ---
 
-**Created by**: MoAI Language Skill Factory  
-**Last Updated**: 2025-11-06  
-**Version**: 2.0.0  
-**{{LANGUAGE_NAME}} Target**: {{LATEST_VERSION}} with modern {{PRIMARY_PARADIGMS}} features  
+**Created by**: MoAI Language Skill Factory
+**Last Updated**: 2025-11-06
+**Version**: 2.0.0
+**{{LANGUAGE_NAME}} Target**: {{LATEST_VERSION}} with modern {{PRIMARY_PARADIGMS}} features
 
 This skill provides comprehensive {{LANGUAGE_NAME}} development guidance with 2025 best practices, covering everything from basic project setup to advanced {{PRIMARY_DOMAIN}} integration and production deployment patterns.

@@ -1,5 +1,11 @@
 ---
 name: architecture-paradigm-layered
+description: '- When teams need clear architectural boundaries and a familiar structure
+  for moderate-sized systems.'
+---
+
+---
+name: architecture-paradigm-layered
 description: |
 
 Triggers: monolith, separation-of-concerns, n-tier, architecture, layered

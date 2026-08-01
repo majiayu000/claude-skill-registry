@@ -1,10 +1,15 @@
 ---
 name: analyzing-feature-implementations
+description: Archived skill guidance for analyzing-feature-implementations.
+---
+
+---
+name: analyzing-feature-implementations
 description: Analyzes an existing software feature implementation.
 ```
 
 # Analyzing Feature Implementations
-This skill produces a structured, LLM-oriented implementation report for cross-project comparison, tradeoff analysis, and improvement recommendations. 
+This skill produces a structured, LLM-oriented implementation report for cross-project comparison, tradeoff analysis, and improvement recommendations.
 
 Use when documenting current feature internals, comparing similar features across repositories, or preparing inputs for LLM-based design review.
 

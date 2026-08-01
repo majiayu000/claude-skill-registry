@@ -1,5 +1,12 @@
 ---
 name: frontend-design-react
+description: Create distinctive, production-grade React frontends with TypeScript
+  and exceptional design quality. This skill integrates the 5-dimension design framework
+  with React-specific patterns, Framer Motion animations, and accessibility best practices.
+---
+
+---
+name: frontend-design-react
 description: Create distinctive, production-grade React/TypeScript frontends with exceptional design quality
 version: 1.0.0
 framework: react-typescript

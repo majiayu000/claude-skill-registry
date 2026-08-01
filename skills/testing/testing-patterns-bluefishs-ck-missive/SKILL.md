@@ -1,3 +1,8 @@
+---
+name: testing-patterns
+description: '> 技能名稱: testing-patterns'
+---
+
 # 測試模式技能
 
 > **技能名稱**: testing-patterns

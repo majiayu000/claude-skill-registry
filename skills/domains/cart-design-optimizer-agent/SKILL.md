@@ -1,3 +1,8 @@
+---
+name: cart-design-optimizer-agent
+description: '---name: cart-design-optimizer-agent'
+---
+
 ---name: cart-design-optimizer-agent
 description: AI-guided CAR-T cell design for solid tumors using antigen prioritization, safety-by-design architectures, and exhaustion-resistant engineering.
 license: MIT

@@ -1,5 +1,16 @@
 ---
 name: maintain-dev-docs
+description: This skill helps maintain comprehensive, evolving development documentation
+  for software projects. It establishes a consistent pattern for capturing ideas,
+  specifications, tasks, and implementation details in a /docs/ folder that grows
+  with your project. Ensures consistent WIP documentation evolution across brainstorm,
+  specification, tasks, and feature implementation. Assists humans and AI agents track
+  progress being made, tasks prioritization, objectives, instructions, and decisions
+  during an i
+---
+
+---
+name: maintain-dev-docs
 description: Maintain project /docs/: specs, tasks, features, readme. Use for: project setup, feature additions, instruction improvements, or syncing documentation with code.
 ---
 # Development Documentation Maintainer

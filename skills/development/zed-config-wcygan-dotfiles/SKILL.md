@@ -1,5 +1,11 @@
 ---
 name: zed-config
+description: Manages Zed editor configuration through settings.json and keymap.json
+  files.
+---
+
+---
+name: zed-config
 description: Configure Zed editor settings, keybindings, language servers, themes, and AI agents. Use when modifying Zed configuration, adding keybindings, setting up language servers, or configuring external agents like Claude Code. Keywords: zed, editor, settings, keybindings, keymap, LSP, language server, theme, agent, configure
 allowed-tools: Read, Edit, Bash(cat:*), Bash(jq:*)
 ---

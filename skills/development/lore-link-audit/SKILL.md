@@ -1,3 +1,9 @@
+---
+name: lore-link-audit
+description: Audit touched files for missing links, missing origin fields, and add
+  Lore Debt entries.
+---
+
 name: lore-link-audit
 description: Audit touched files for missing links, missing origin fields, and add Lore Debt entries.
 metadata:

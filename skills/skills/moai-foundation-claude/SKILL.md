@@ -1,5 +1,12 @@
 ---
 name: moai-foundation-claude
+description: Canonical Claude Code skill authoring kit covering agent Skills, sub-agent
+  templates, custom slash commands, orchestration patterns, hooks, memory, settings,
+  and IAM permission rules aligned with offi
+---
+
+---
+name: moai-foundation-claude
 aliases: [moai-foundation-claude]
 category: foundation
 description: Canonical Claude Code skill authoring kit covering agent Skills, sub-agent templates, custom slash commands, orchestration patterns, hooks, memory, settings, and IAM permission rules aligned with official documentation.

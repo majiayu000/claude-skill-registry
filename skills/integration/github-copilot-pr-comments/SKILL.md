@@ -1,5 +1,11 @@
 ---
 name: github-copilot-pr-comments
+description: Extract GitHub Copilot review comments from a PR and produce a markdown
+  report using gh CLI.
+---
+
+---
+name: github-copilot-pr-comments
 description: Fetch GitHub Copilot code review comments from a pull request and generate a structured markdown report with all suggestions, inline comments, and review summaries using the `gh` CLI. Use when the user wants to: (1) see what Copilot said about a PR, (2) extract Copilot suggestions from a pull request, (3) generate a report of Copilot review feedback, (4) collect AI code review comments into a document. Triggers on mentions of "Copilot comments", "Copilot review", "Copilot suggestions", "PR review by Copilot", or any request to get/extract/summarize GitHub Copilot feedback on a pull request.
 ---
 

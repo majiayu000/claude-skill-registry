@@ -1,5 +1,11 @@
 ---
 name: imis-api
+description: 'Do NOT rely on web searches for iMIS API information. Instead, use the
+  reference implementation:'
+---
+
+---
+name: imis-api
 description: iMIS API integration patterns and workflows. Use when implementing iMIS API features, adding new endpoints, creating schemas, or debugging API issues. Triggers on: iMIS, ImisApiService, iMIS API, API endpoint, iMIS schema.
 user-invocable: false
 allowed-tools: Read, Grep, Glob, Bash

@@ -1,3 +1,8 @@
+---
+name: deploy-workflow
+description: Multi-step workflow for deploying ccswarm releases.
+---
+
 # Deploy Workflow
 
 Multi-step workflow for deploying ccswarm releases.

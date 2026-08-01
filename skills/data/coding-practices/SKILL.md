@@ -1,5 +1,11 @@
 ---
 name: coding-practices
+description: 'Code quality practices: error handling, validation, logging, and DRY.
+  Use when writing or reviewing code.'
+---
+
+---
+name: coding-practices
 description: Code quality practices: error handling, validation, logging, and DRY. Use when writing or reviewing code.
 ---
 

@@ -1,3 +1,9 @@
+---
+name: skills-gitdipen-dip3n
+description: This page outlines my technical and soft skills, reflecting my expertise
+  in cybersecurity and my continuous learning journey.
+---
+
 # My Skills & Expertise
 
 This page outlines my technical and soft skills, reflecting my expertise in cybersecurity and my continuous learning journey.

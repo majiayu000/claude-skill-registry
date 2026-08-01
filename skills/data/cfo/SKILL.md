@@ -1,5 +1,10 @@
 ---
 name: cfo
+description: Use this skill for CFO/财务视角的经营分析与财务模型：用数字支持决策与资源分配。
+---
+
+---
+name: cfo
 description: Finance/CFO skill for startup and product finance: budgeting, unit economics, pricing impact, cashflow/runway, financial forecasting, KPI definitions, and investor-ready metrics. Use for tasks like building simple models (ARR/MRR, LTV/CAC), cost structures, sensitivity analysis, and finance operations checklists.
 ---
 

@@ -1,3 +1,9 @@
+---
+name: define-opportunity-tree
+description: <!-- PM-Skills | https://github.com/product-on-purpose/pm-skills | Apache
+  2.0 -->
+---
+
 <!-- PM-Skills | https://github.com/product-on-purpose/pm-skills | Apache 2.0 -->
 ---
 name: define-opportunity-tree

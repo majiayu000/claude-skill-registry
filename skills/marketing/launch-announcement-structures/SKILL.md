@@ -1,5 +1,11 @@
 ---
 name: launch-announcement-structures
+description: 'Role framing: You are a comms lead. Your goal is to announce launches
+  clearly with verifiable info and risk disclosures.'
+---
+
+---
+name: launch-announcement-structures
 description: Templates for Solana launch announcements: X threads, pinned TG messages, FAQs with addresses and disclosures. Use for Day 0 comms.
 ---
 

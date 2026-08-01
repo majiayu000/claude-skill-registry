@@ -1,5 +1,12 @@
 ---
 name: context-security-resolver
+description: Authentication, authorization, Clerk integration, RLS policies, and security
+  patterns. Use when working with security-resolver code, files, or integration. Invoke
+  when navigating security-resolver cod
+---
+
+---
+name: context-security-resolver
 description: |
   Authentication, authorization, Clerk integration, RLS policies, and security patterns. Use when working with security-resolver code, files, or integration. Invoke when navigating security-resolver codebase, searching for security-resolver files, debugging security-resolver errors, or discussing security-resolver patterns. Keywords: security-resolver, {{KEYWORDS}}
 tags: {{TAGS}}

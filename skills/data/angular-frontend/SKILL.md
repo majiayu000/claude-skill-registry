@@ -1,5 +1,12 @@
 ---
 name: angular-frontend
+description: Build and implement Angular 18 standalone components, TypeScript services
+  with Signals and RxJS, routing with guards, and Tailwind CSS styling for Photo Map
+  MVP. Use when creating, developing, or impl
+---
+
+---
+name: angular-frontend
 description: Build and implement Angular 18 standalone components, TypeScript services with Signals and RxJS, routing with guards, and Tailwind CSS styling for Photo Map MVP. Use when creating, developing, or implementing TypeScript components, services, guards, forms, HTTP calls, map integration (Leaflet.js), or responsive UI layouts with Tailwind utilities. File types: .ts, .html, .css, .scss
 allowed-tools: Read, Write, Edit, Grep, Glob, Bash
 ---

@@ -1,5 +1,11 @@
 ---
 name: paul-graham
+description: Write clear, direct prose that sounds like a smart person thinking in
+  public. Optimize for insight per sentence.
+---
+
+---
+name: paul-graham
 description: Write and edit high-signal prose in a Paul Graham inspired style for essays,
 technical posts, READMEs, and markdown docs. Use when: (1) drafting from notes,
 (2) rewriting weak or bloated prose, (3) tightening argument flow and clarity,

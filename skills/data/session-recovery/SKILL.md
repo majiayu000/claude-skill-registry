@@ -1,3 +1,9 @@
+---
+name: session-recovery
+description: Seamlessly recover from session interruptions, crashes, or context switches
+  without losing progress.
+---
+
 # 🔄 Session Recovery Skill
 
 ---

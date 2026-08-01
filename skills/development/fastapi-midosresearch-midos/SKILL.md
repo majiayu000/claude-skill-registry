@@ -1,4 +1,9 @@
 ---
+name: fastapi
+description: Archived skill guidance for fastapi.
+---
+
+---
 name: "fastapi-modern-patterns"
 version: "1.0.0"
 stack: "fastapi"

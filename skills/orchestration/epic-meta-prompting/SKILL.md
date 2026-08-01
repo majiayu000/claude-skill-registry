@@ -1,3 +1,9 @@
+---
+name: epic-meta-prompting
+description: Generate research and planning prompts for epic workflows using isolated
+  sub-agents.
+---
+
 # Epic Meta-Prompting Skill
 
 Generate research and planning prompts for epic workflows using isolated sub-agents.

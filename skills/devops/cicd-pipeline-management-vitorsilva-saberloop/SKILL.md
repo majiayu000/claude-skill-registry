@@ -1,5 +1,10 @@
 ---
 name: cicd-pipeline-management
+description: 'Last Updated: 2026-01-15'
+---
+
+---
+name: cicd-pipeline-management
 description: Manage GitHub Actions workflows and deployment pipelines with multiple environments
 version: 1.0.0
 author: Saberloop Project
@@ -10,7 +15,7 @@ usage: |
   - Managing environment-specific settings and secrets
   - Debugging workflow failures and optimization
   - Setting up artifact management and staging deployments
-  
+
   Examples:
   "Create new workflow using the cicd-pipeline-management skill"
   "Update deployment configuration using the cicd-pipeline-management skill"
@@ -70,11 +75,11 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    
+
     strategy:
       matrix:
         node-version: [20]
-    
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
@@ -129,7 +134,7 @@ jobs:
   mutation-testing:
     runs-on: ubuntu-latest
     needs: test
-    
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
@@ -171,7 +176,7 @@ on:
 jobs:
   deploy-staging:
     runs-on: ubuntu-latest
-    
+
     environment:
       name: staging
       url: https://staging.saberloop.com
@@ -266,7 +271,7 @@ on:
 jobs:
   deploy-production:
     runs-on: ubuntu-latest
-    
+
     environment:
       name: production
       url: https://saberloop.com
@@ -518,14 +523,14 @@ on:
 - name: Quality Gate Checks
   run: |
     echo "🔍 Running quality gate checks..."
-    
+
     # Check test coverage
     COVERAGE=$(npm run test:coverage 2>/dev/null | grep -o '[0-9]\+%' | tail -1)
     if [[ $(echo "$COVERAGE" | sed 's/%//') -lt 90 ]]; then
       echo "❌ Coverage below 90%: $COVERAGE"
       exit 1
     fi
-    
+
     # Check bundle size
     BUNDLE_SIZE=$(du -sh dist/ | cut -f1)
     MAX_SIZE=5242880  # 5MB
@@ -533,14 +538,14 @@ on:
       echo "❌ Bundle size too large: $BUNDLE_SIZE bytes"
       exit 1
     fi
-    
+
     # Check for security vulnerabilities
     npm audit --audit-level=moderate
     if [ $? -ne 0 ]; then
       echo "❌ Security vulnerabilities found"
       exit 1
     fi
-    
+
     echo "✅ All quality gates passed"
 ```
 
@@ -551,7 +556,7 @@ on:
   run: |
     # Lighthouse CI
     npm install -g @lhci/cli@0.12.x
-    
+
     lhci autorun
     lhci upload \
       --target=temporary-public-storage \
@@ -562,7 +567,7 @@ on:
   run: |
     # Extract performance metrics
     PERFORMANCE=$(curl -s "https://api.saberloop.com/performance/${{ github.sha }}")
-    
+
     echo "::set-output name=performance_score::${PERFORMANCE.score}"
     echo "::set-output name=lighthouse_score::${PERFORMANCE.lighthouse}"
 ```
@@ -576,7 +581,7 @@ on:
     # Tag current commit for rollback
     git tag rollback-${{ github.sha }} HEAD
     git push origin rollback-${{ github.sha }}
-    
+
     # Create rollback artifact
     echo "Rollback point: rollback-${{ github.sha }}" >> rollback.txt
     echo "Commit: ${{ github.sha }}" >> rollback.txt
@@ -645,6 +650,6 @@ This skill integrates with:
 
 ---
 
-**Version:** 1.0.0  
-**Last Updated:** 2026-01-15  
+**Version:** 1.0.0
+**Last Updated:** 2026-01-15
 **Compatible with:** Saberloop v2.0.0+

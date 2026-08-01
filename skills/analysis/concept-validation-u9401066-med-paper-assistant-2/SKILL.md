@@ -1,3 +1,8 @@
+---
+name: concept-validation
+description: '> 概念驗證技能 - 確保研究概念具有新穎性和結構完整性'
+---
+
 # Skill: Concept Validation
 
 > 概念驗證技能 - 確保研究概念具有新穎性和結構完整性
@@ -34,7 +39,7 @@
 
 驗證會執行 **3 輪**獨立評分，取平均：
 - 第 1 輪：結構評估
-- 第 2 輪：新穎性評估  
+- 第 2 輪：新穎性評估
 - 第 3 輪：可行性評估
 
 **目的**：避免單次評分的偏差。
@@ -316,7 +321,7 @@ mcp_mdpaper_validate_wikilinks(
 
 ### Q: Novelty score 一直過不了怎麼辦？
 
-A: 
+A:
 1. 檢查 NOVELTY STATEMENT 是否有具體數據
 2. 確認有引用文獻支持「現有方法的限制」
 3. 用 CGU 工具（`deep_think`, `spark_collision`）發想更強的論點
@@ -331,7 +336,7 @@ A: 單次 LLM 評分可能有偏差。三輪取平均可以：
 
 ### Q: validate_for_section vs validate_concept？
 
-A: 
+A:
 - `validate_for_section`：只檢查特定章節需要的部分，較快
 - `validate_concept`：完整檢查所有項目，較慢但全面
 

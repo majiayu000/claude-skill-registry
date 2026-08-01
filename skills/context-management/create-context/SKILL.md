@@ -1,5 +1,11 @@
 ---
 name: create-context
+description: Generate comprehensive CONTEXT.md files for agent handoff. Ensures another
+  agent
+---
+
+---
+name: create-context
 description: >
   Generate comprehensive CONTEXT.md for agent handoff. Captures current state,
   decisions, lessons learned, and next steps so another agent can continue

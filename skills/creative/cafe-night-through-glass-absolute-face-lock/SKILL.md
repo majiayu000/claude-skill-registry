@@ -1,5 +1,16 @@
 ---
 name: cafe-night-through-glass-absolute-face-lock
+description: 'This prompt instructs an image-generation workflow to produce a single
+  high‑resolution, cinematic night portrait of the subject seated by a cafe window,
+  rendered with a CineStill 800T tungsten-film look, shallow depth of field, warm
+  interior practicals, cool exterior hints, and subtle in-glass reflections that create
+  a dreamy, poetic mood. Its core outcome is strict identity preservation: the uploaded
+  face must remain exactly the same and the subject’s gender must not change, with
+  defined valida'
+---
+
+---
+name: cafe-night-through-glass-absolute-face-lock
 description: This prompt instructs an image-generation workflow to produce a single high‑resolution, cinematic night portrait of the subject seated by a cafe window, rendered with a CineStill 800T tungsten-film look, shallow depth of field, warm interior practicals, cool exterior hints, and subtle in-glass reflections that create a dreamy, poetic mood. Its core outcome is strict identity preservation: the uploaded face must remain exactly the same and the subject’s gender must not change, with defined validation and stop conditions that require a clearer reference if the face cannot be reliably matched or gender confidence is low.
 skillVersionId: 019960cd-739b-7905-b859-4009477c9e51
 ---

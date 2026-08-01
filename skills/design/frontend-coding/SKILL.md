@@ -1,5 +1,12 @@
 ---
 name: frontend-coding
+description: '前端编码规范与最佳实践。Use when writing React components, pages, or need guidance
+  on TypeScript style, Tailwind CSS, or shadcn/ui usage. Triggers on: creating components,
+  styling with Tailwind, using shadcn/ui,'
+---
+
+---
+name: frontend-coding
 description: 前端编码规范与最佳实践。Use when writing React components, pages, or need guidance on TypeScript style, Tailwind CSS, or shadcn/ui usage. Triggers on: creating components, styling with Tailwind, using shadcn/ui, TypeScript code style questions, responsive design, dark mode implementation.
 ---
 

@@ -1,4 +1,9 @@
 ---
+name: skill-template-v2
+description: '> 核心コンセプト: "{{CORECONCEPT}}"'
+---
+
+---
 name: { { SKILL_ID } }
 description: |
   {{SKILL_DESCRIPTION}}

@@ -1,5 +1,12 @@
 ---
 name: rust-crate-creator
+description: Create new Rust crates in this Cargo workspace following established
+  patterns for dependency management, testing, documentation, and project structure.
+  Use when adding new workspace members, creating
+---
+
+---
+name: rust-crate-creator
 description: Create new Rust crates in this Cargo workspace following established patterns for dependency management, testing, documentation, and project structure. Use when adding new workspace members, creating modules, or structuring code. Keywords: cargo, crate, workspace, module, new crate, add crate, dependency, Rust project
 ---
 

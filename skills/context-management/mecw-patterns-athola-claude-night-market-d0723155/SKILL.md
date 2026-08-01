@@ -1,5 +1,10 @@
 ---
 name: mecw-patterns
+description: '- Overview'
+---
+
+---
+name: mecw-patterns
 description: |
 
 Triggers: context-management, patterns, token-optimization, thresholds, mecw

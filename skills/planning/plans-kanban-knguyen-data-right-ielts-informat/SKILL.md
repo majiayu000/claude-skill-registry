@@ -1,3 +1,8 @@
+---
+name: plans-kanban
+description: Plans dashboard server with progress tracking and timeline visualization.
+---
+
 # plans-kanban
 
 Plans dashboard server with progress tracking and timeline visualization.

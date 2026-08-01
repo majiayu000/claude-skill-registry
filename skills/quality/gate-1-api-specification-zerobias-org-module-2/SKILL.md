@@ -1,5 +1,10 @@
 ---
 name: gate-1-api-specification
+description: 'STOP AND CHECK:'
+---
+
+---
+name: gate-1-api-specification
 description: Gate 1 validation: API specification quality checks
 ---
 

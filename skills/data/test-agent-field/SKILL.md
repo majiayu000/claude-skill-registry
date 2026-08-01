@@ -1,5 +1,11 @@
 ---
 name: test-agent-field
+description: 'Goal: Test if agent: neo4j-report grants this skill the agent''s permissionMode
+  and tools.'
+---
+
+---
+name: test-agent-field
 description: Test if agent: field references existing agent for permissionMode
 agent: neo4j-report
 context: fork

@@ -1,3 +1,8 @@
+---
+name: skills-qdhenry-claude-command-suite
+description: Validate and package a Claude Code Skill into a distributable zip file
+---
+
 # Package Skill for Distribution
 
 Validate and package a Claude Code Skill into a distributable zip file

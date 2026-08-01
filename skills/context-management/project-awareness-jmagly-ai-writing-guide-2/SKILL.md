@@ -1,3 +1,9 @@
+---
+name: project-awareness
+description: Comprehensive project context detection and state awareness. Use when
+  relevant to the task.
+---
+
 # project-awareness
 
 Comprehensive project context detection and state awareness.

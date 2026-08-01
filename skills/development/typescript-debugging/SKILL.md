@@ -1,5 +1,11 @@
 ---
 name: typescript-debugging
+description: TypeScript errors can cascade and become confusing. This skill covers
+  the most common patterns in StepLeague.
+---
+
+---
+name: typescript-debugging
 description: Debugging TypeScript build errors in Next.js and Supabase projects. Use when encountering tsc --noEmit failures, type mismatches, 'never' type errors, or Supabase generic issues. Keywords: TypeScript, tsc, build error, type error, never, any, CookieOptions, Database generic.
 compatibility: Antigravity, Claude Code, Cursor
 metadata:

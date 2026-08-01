@@ -1,3 +1,8 @@
+---
+name: i18n
+description: '| ID | flutter-i18n |'
+---
+
 # 🌍 Skill: Internacionalización (i18n)
 
 ## 📋 Metadata

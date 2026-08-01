@@ -1,3 +1,9 @@
+---
+name: build-and-test
+description: Build, test, and serve the documentation site using Zensical (recommended)
+  or MkDocs.
+---
+
 # Skill: Build and Test Documentation
 
 Build, test, and serve the documentation site using Zensical (recommended) or MkDocs.

@@ -1,5 +1,12 @@
 ---
 name: effector-patterns
+description: Effector state management patterns and CRITICAL anti-patterns for ChainGraph
+  frontend. Use when writing Effector stores, events, effects, samples, or any reactive
+  state code. Contains anti-patterns to
+---
+
+---
+name: effector-patterns
 description: Effector state management patterns and CRITICAL anti-patterns for ChainGraph frontend. Use when writing Effector stores, events, effects, samples, or any reactive state code. Contains anti-patterns to AVOID like $store.getState(). Covers domains, patronum utilities, global reset. Triggers: effector, store, createStore, createEvent, createEffect, sample, combine, attach, domain, $, useUnit, getState, anti-pattern, patronum.
 ---
 

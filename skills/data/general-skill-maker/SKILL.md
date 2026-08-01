@@ -1,5 +1,11 @@
 ---
 name: general-skill-maker
+description: Create effective agent skills through guided briefing process that explores
+  requirements, patterns, and best practices.
+---
+
+---
+name: general-skill-maker
 description: Create effective agent skills through guided briefing process. Use when user wants to: (1) create a new skill, (2) make a skill, (3) build a skill, (4) set up a skill, (5) initialize a skill, (6) design a skill, (7) update or modify existing skill, (8) plan skill architecture, or (9) learn about skill structure. Trigger on phrases like "create skill", "new skill", "make skill", "skill for X", "build skill", "design skill", or "help me create skill".
 ---
 

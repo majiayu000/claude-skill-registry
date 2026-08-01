@@ -1,3 +1,8 @@
+---
+name: bdd-scenario-design
+description: '> Compiler: skill-compiler/1.0.0'
+---
+
 # BDD Scenario Design Skill
 
 > Version: 1.0.0
@@ -108,21 +113,21 @@ Produce the final .feature file.
 ```gherkin
 Feature: <Feature Name>
   <Optional multi-line description>
-  
+
   Background:
     Given <common setup step>
-    
+
   Scenario: <Behavior description>
     Given <pre-condition>
     When <action>
     Then <expected outcome>
     And <additional outcome>
-    
+
   Scenario Outline: <Parameterized behavior>
     Given <condition with <param:type>>
     When <action with <param:type>>
     Then <outcome with <param:type>>
-    
+
     Examples:
       | param |
       | value1 |

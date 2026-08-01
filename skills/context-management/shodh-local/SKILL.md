@@ -1,5 +1,10 @@
 ---
 name: shodh-local
+description: Local-first brain for OpenClaw. Offline, learns with use.
+---
+
+---
+name: shodh-local
 summary: Local-first cognitive memory for AI agents with semantic recall, GTD todos, and knowledge graph.
 description: Local Shodh-Memory v0.1.74 (offline cognitive memory for AI agents). Use for persistent remembering, semantic recall, GTD todos/projects, knowledge graph. Triggers: \"remember/save/merke X\", \"recall/Erinnere/search memories about Y\", \"todos/add/complete\", \"projects\", \"proactive context\", \"what learned about Z\". Server localhost:3030 (amber-seaslug), key in TOOLS.md. Hebbian learning, 3-tier (working/session/LTM), TUI dashboard.
 ---

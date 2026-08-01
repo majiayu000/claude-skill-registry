@@ -1,3 +1,10 @@
+---
+name: jira-rate-request
+description: Automate the JIRA Service Desk rate request submission process for FirstMile
+  custom pricing requests. This skill handles the entire workflow from form filling
+  to HubSpot logging.
+---
+
 # JIRA Rate Request Skill
 
 ---

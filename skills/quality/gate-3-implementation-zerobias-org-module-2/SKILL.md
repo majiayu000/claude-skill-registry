@@ -1,5 +1,10 @@
 ---
 name: gate-3-implementation
+description: 'STOP AND CHECK:'
+---
+
+---
+name: gate-3-implementation
 description: Gate 3 validation: Implementation quality and type safety
 ---
 

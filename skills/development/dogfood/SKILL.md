@@ -1,5 +1,11 @@
 ---
 name: dogfood
+description: When building tools, you MUST use the tools you build. When tools fail,
+  you MUST fix them - never work around them.
+---
+
+---
+name: dogfood
 description: Enforces dogfooding for tool projects and prevents manual workarounds.
 Use when building CLIs, libraries, or automation that you should use yourself.
 Triggers on: feature completion, session end, tool failures.

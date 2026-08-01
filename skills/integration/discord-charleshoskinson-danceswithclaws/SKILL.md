@@ -1,5 +1,12 @@
 ---
 name: discord
+description: Use discord to manage messages, reactions, threads, polls, and moderation.
+  You can disable groups via discord.actions. (defaults to enabled, except roles/moderation).
+  The tool uses the bot token configured for OpenClaw.
+---
+
+---
+name: discord
 description: Use when you need to control Discord from OpenClaw via the discord tool: send messages, react, post or upload stickers, upload emojis, run polls, manage threads/pins/search, create/edit/delete channels and categories, fetch permissions or member/role/channel info, set bot presence/activity, or handle moderation actions in Discord DMs or channels.
 metadata: {"openclaw":{"emoji":"🎮","requires":{"config":["channels.discord"]}}}
 ---

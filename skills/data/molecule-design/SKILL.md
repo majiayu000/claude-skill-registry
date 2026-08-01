@@ -1,3 +1,8 @@
+---
+name: molecule-design
+description: '---name: molecule-evolution-agent'
+---
+
 ---name: molecule-evolution-agent
 description: Evolve Molecules
 keywords:
@@ -36,7 +41,7 @@ The **Molecule Evolution Agent** acts as an autonomous medicinal chemist. It tak
 ## Workflow
 
 1.  **Input**: Target Protein Name (e.g., "GPRC5D").
-2.  **Process**: 
+2.  **Process**:
     *   Start with a seed molecule.
     *   Loop for *N* generations.
     *   Ask LLM for a modification.

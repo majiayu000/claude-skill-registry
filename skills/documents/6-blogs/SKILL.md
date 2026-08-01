@@ -1,3 +1,8 @@
+---
+name: 6-blogs
+description: 当我想要使用chrome的打印功能生成一份关于md的pdf版本的时候发现有的代码块没有自动换行，生成的PDF没有自动换行，导致部分信息无法阅读
+---
+
 # chrome pre 自动换行
 
 ## 问题引出

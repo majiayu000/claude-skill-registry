@@ -1,5 +1,10 @@
 ---
 name: no-runtime-code
+description: 'Guardrails to keep the pipeline pure: specs + SEA + generators only.'
+---
+
+---
+name: no-runtime-code
 description: Guardrails to keep the pipeline pure: specs + SEA™ + generators only.
 ---
 

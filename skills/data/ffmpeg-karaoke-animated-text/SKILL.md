@@ -1,5 +1,10 @@
 ---
 name: ffmpeg-karaoke-animated-text
+description: 'MANDATORY: Always Use Backslashes on Windows for File Paths'
+---
+
+---
+name: ffmpeg-karaoke-animated-text
 description: Complete karaoke subtitle system and advanced animated text effects. PROACTIVELY activate for: (1) Karaoke-style highlighted lyrics, (2) ASS/SSA advanced subtitle styling, (3) Scrolling credits (horizontal/vertical), (4) Typewriter text animation, (5) Bouncing/moving text, (6) Text fade in/out effects, (7) Word-by-word text reveal, (8) Kinetic typography, (9) Lower thirds animation, (10) Countdown timers and dynamic text. Provides: ASS karaoke timing format, drawtext with time expressions, scrolling text patterns, text animation formulas, kinetic typography techniques, subtitle styling reference, multi-line animated text.
 ---
 

@@ -1,5 +1,11 @@
 ---
 name: optimization
+description: '> Yazılım sistemlerini ve kullanıcı akışlarını en yüksek performans
+  ve verimliliğe ulaştırma metodolojisi.'
+---
+
+---
+name: optimization
 router_kit: FullStackKit
 description: Sistem ve akış optimizasyonu rehberi. 2025 AI-driven optimizasyon, darboğaz tespiti ve kullanıcı akış iyileştirmeleri.
 metadata:

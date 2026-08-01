@@ -1,3 +1,8 @@
+---
+name: i18n-toolkit
+description: 'description: 国际化工具包，翻译检查、合并、新增、验证，基于扁平化i18n结构'
+---
+
 ﻿---
 name: i18n-toolkit
 description: 国际化工具包，翻译检查、合并、新增、验证，基于扁平化i18n结构

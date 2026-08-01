@@ -1,5 +1,10 @@
 ---
 name: senses
+description: Monitor the background services that extend the organism's sensory capabilities.
+---
+
+---
+name: senses
 description: Monitor satellite services and sense events. Check service status, view logs, trigger manual runs, or diagnose issues. Trigger words: senses, satellites, services, watchers, bluesky, github, location.
 context: fork
 allowed-tools:

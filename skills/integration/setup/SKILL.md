@@ -1,3 +1,9 @@
+---
+name: setup
+description: Copy this to .claude/skills/setup-granola/SKILL.md to enable automatic
+  installation.
+---
+
 # Setup Granola Integration Skill
 
 Copy this to `.claude/skills/setup-granola/SKILL.md` to enable automatic installation.

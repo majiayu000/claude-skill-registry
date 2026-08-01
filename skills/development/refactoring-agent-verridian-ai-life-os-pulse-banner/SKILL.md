@@ -1,3 +1,8 @@
+---
+name: refactoring-agent
+description: 'Model: Claude Sonnet 4.5'
+---
+
 # Refactoring Agent
 
 **Model**: Claude Sonnet 4.5

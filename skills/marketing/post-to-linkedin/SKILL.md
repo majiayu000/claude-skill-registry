@@ -1,3 +1,11 @@
+---
+name: post-to-linkedin
+description: Automatically generate professional LinkedIn posts for business development
+  and lead generation. This skill creates engaging content about your work, achievements,
+  and expertise while maintaining brand consistency and requiring human approval before
+  publishing.
+---
+
 # post-to-linkedin Skill
 
 ---

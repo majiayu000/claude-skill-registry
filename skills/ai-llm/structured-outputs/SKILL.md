@@ -1,5 +1,12 @@
 ---
 name: structured-outputs
+description: Structured Outputs ensure that an LLM's response always conforms to a
+  predefined JSON schema. This moves beyond simple prompt engineering to guaranteed
+  syntactic and structural correctness, essential for programmatic integration.
+---
+
+---
+name: structured-outputs
 description: Techniques for ensuring LLM responses adhere to strict JSON schemas, utilizing Pydantic models, JSON mode, and schema-based refusals. Triggers: structured-output, pydantic, json-schema, json-mode, llm-response-parsing.
 ---
 
@@ -14,12 +21,12 @@ Structured Outputs ensure that an LLM's response always conforms to a predefined
 - **Data Extraction**: Converting unstructured text into standardized JSON objects.
 
 ## Decision Tree
-1. Do you need 100% guarantee of schema adherence? 
+1. Do you need 100% guarantee of schema adherence?
    - YES: Use Structured Output mode (e.g., OpenAI's `strict: true` or Gemini's `response_mime_type`).
    - NO: JSON Mode may suffice.
-2. Is the structure complex or nested? 
+2. Is the structure complex or nested?
    - YES: Use Pydantic models and `model_rebuild` if recursive.
-3. Do you need to handle safety refusals programmatically? 
+3. Do you need to handle safety refusals programmatically?
    - YES: Check for the `refusal` field in the response.
 
 ## Workflows

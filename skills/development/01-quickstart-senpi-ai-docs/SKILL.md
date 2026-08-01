@@ -1,3 +1,8 @@
+---
+name: 01-quickstart-senpi-ai-docs
+description: import Tabs from "@theme/Tabs";
+---
+
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 import DeveloperSupport from "../../../partial/_developer_support.mdx";

@@ -1,3 +1,9 @@
+---
+name: epic-sprints
+description: Generate sprint breakdown with dependency graph and execution layers
+  for epic workflows.
+---
+
 # Epic Sprints Skill
 
 Generate sprint breakdown with dependency graph and execution layers for epic workflows.

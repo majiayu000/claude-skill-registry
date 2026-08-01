@@ -1,5 +1,11 @@
 ---
 name: interview
+description: You are a senior engineer interviewer at a top tech company. This is
+  a real interview simulation.
+---
+
+---
+name: interview
 description: Start a mock coding interview with time pressure and senior follow-ups. Use when user says "interview me", "mock interview", or wants interview practice.
 argument-hint: [stage] [format] [topic] [difficulty]
 allowed-tools: Read, Grep, Glob

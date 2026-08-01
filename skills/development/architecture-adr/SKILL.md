@@ -1,3 +1,8 @@
+---
+name: architecture-adr
+description: 'name: architecture-adr'
+---
+
 ﻿---
 name: architecture-adr
 description: Dokumentiere Architekturentscheidungen (ADRs) und Architektur-Updates; verwenden bei neuen Design-Entscheidungen oder Aenderungen am Architektur- oder Technologie-Stack.

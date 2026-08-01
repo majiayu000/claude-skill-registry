@@ -1,5 +1,12 @@
 ---
 name: optimistic-updates
+description: Optimistic UI patterns for ChainGraph frontend. Use when working on real-time
+  collaboration, port value updates, node position syncing, debouncing, echo detection,
+  or any client-server state synchroni
+---
+
+---
+name: optimistic-updates
 description: Optimistic UI patterns for ChainGraph frontend. Use when working on real-time collaboration, port value updates, node position syncing, debouncing, echo detection, or any client-server state synchronization. Covers 3-step echo detection, pending mutations, position interpolation. Triggers: optimistic, echo detection, pending mutation, debounce, throttle, position interpolation, staleness, real-time, collaboration.
 ---
 

@@ -1,3 +1,8 @@
+---
+name: session-boundary
+description: Detect and handle session boundaries for multi-context autopilot workflows.
+---
+
 # Session Boundary Skill
 
 Detect and handle session boundaries for multi-context autopilot workflows.

@@ -1,4 +1,9 @@
 ---
+name: scheduling
+description: Background job processing and scheduled task patterns.
+---
+
+---
 name: NestJS Scheduling
 description: Distributed cron jobs and locking patterns.
 metadata:

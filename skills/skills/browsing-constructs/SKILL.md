@@ -1,3 +1,9 @@
+---
+name: browsing-constructs
+description: Provide a multi-select UI for browsing and installing packs from the
+  Loa Constructs Registry. Enables composable skill installation per-repo.
+---
+
 # Browsing Constructs Skill
 
 ## Purpose

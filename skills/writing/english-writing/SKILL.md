@@ -1,5 +1,12 @@
 ---
 name: english-writing
+description: This skill enforces clear, consistent, and professional English in all
+  generated content, code comments, documentation, and prompts. It ensures that all
+  outputs meet the project's language and style standards.
+---
+
+---
+name: english-writing
 description: English writing rules for all generated content and code. Trigger: When generating, editing, or reviewing any content, code, documentation, or prompts.
 ---
 

@@ -1,3 +1,8 @@
+---
+name: clean-architecture
+description: '| ID | flutter-clean-architecture |'
+---
+
 # 🏛️ Skill: Clean Architecture
 
 ## 📋 Metadata

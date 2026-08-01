@@ -1,4 +1,12 @@
 ---
+name: capacitor-ionic
+description: Comprehensive expertise in Capacitor 6+ and Ionic Framework for building
+  cross-platform mobile applications from web technologies. Covers architecture, native
+  API access, custom plugin development, deployment, and when to choose Capacitor
+  over React Native or Flutter.
+---
+
+---
 description: Capacitor and Ionic expert for web-to-mobile development. Capacitor 6+ architecture, Ionic Framework with Angular/React/Vue, native API access, custom plugins, live reload, Appflow, PWA support. Use for Capacitor projects, Ionic apps, Cordova migration, or web-to-native decisions. Activates for: Capacitor, Ionic, Cordova, web-to-mobile, hybrid app, Appflow, Ionic Framework, Capacitor plugin, native bridge, web-to-native.
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep
 model: opus

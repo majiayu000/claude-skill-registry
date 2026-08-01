@@ -1,3 +1,8 @@
+---
+name: generating
+description: '!INCLUDE "./game-data/skill-create-scriptable-object.md"'
+---
+
 # How to create Attack Skill
 
 !INCLUDE "./game-data/_skill-create-scriptable-object.md"

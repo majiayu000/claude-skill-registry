@@ -1,3 +1,8 @@
+---
+name: worknotes
+description: '>添加epel源，参考 http://fedoraproject.org/wiki/EPEL 选取对应版本的‘epel-release’，添加源后即可查询到，以EL6为例：'
+---
+
 ## linux_skill
 
 ### 前言
@@ -15,16 +20,16 @@
 	mkdir -p /mnt/centos
 	mount -o loop CentOS-6.5-x86_64-bin-DVD1.iso /mnt/centos/
 
-	
+
 	cat /etc/yum.repos.d/CentOS-Media.repo
 
 	# To use this repo, put in your DVD and use it with the other repos too:
 	#  yum --enablerepo=c6-media [command]
-	#  
+	#
 	# or for ONLY the media repo, do this:
 	#
 	#  yum --disablerepo=\* --enablerepo=c6-media [command]
-	 
+
 	[c6-media]
 	name=CentOS-$releasever - Media
 	baseurl=file:///media/CentOS/
@@ -39,18 +44,18 @@
 	[root@core /]# yum list
 
 	Loaded plugins: fastestmirror
-	
+
 	Determining fastest mirrors
-	
+
 	Error: Cannot retrieve metalink for repository: epel. Please verify its path and try again
-		
+
 	--->解决方法
 	yum upgrade ca-certificates --disablerepo=epel
 
 >yum 系列问题
 
 	1. yum  install salt-minion
-	
+
 	....
 	file /usr/lib64/python2.6/zipfile.pyo from install of python-libs-2.6.6-64.el6.x86_64 conflicts with file from package python-2.6.6-36.el6.x86_64
 
@@ -58,7 +63,7 @@
 
 	--->缩小范围
 	2. yum install python-libs  问题一样
-	
+
 	最后得出应先升级python
 
 	yum update python
@@ -68,12 +73,12 @@
 >yum 使用
 
 	#反查相关内容由哪个安装包提供
-	yum whatprovides *xx*	
+	yum whatprovides *xx*
 
 >rpm解压
 
 	rpm2cpio xxx.rpm | cpio -div
-	
+
 >yum 下载
 
 	yum install yum-utils
@@ -99,13 +104,13 @@
 >转发3389，访问远程桌面
 
 	iptables -t nat -A PREROUTING -d [跳转机外网IP] -p tcp --dport 3389 -j DNAT --to-destination [winIP]:3389
-	
+
 	iptables -t nat -A POSTROUTING -d [winIP] -p tcp --dport 3389 -j SNAT --to-source [跳转机内网IP]
-	
+
 >远程端口检测
 
 	1.nmap -p [port] ip
-	
+
 	#无须输入即可批量得到返回值
 	2.echo -e '\n' | telnet [port] ip
 
@@ -125,30 +130,30 @@ grep的语法支持正则表达式,下面是一些有用的参数：
 	-n, --line-number: 显示行号
 	-R, -r, --recursive: 递归搜索子目录
 	-v, --invert-match: 输出没有匹配的行
-	
+
 	#排除空行和注释行
 	egrep -v "#|^$"  filename
 
 
 >awk
-	
+
 	#使用环境变量
 	a=q.w.e
 	b=2
 
 	#这种写法其实际是双括号变为单括号的常量,传递给了awk.
-	echo $a | awk -F . '{print "'$b'"}'  
+	echo $a | awk -F . '{print "'$b'"}'
 
 	echo $a | awk -F . '{print $2}'
-	echo $a | awk -F . "{print $"${b}" }"  
+	echo $a | awk -F . "{print $"${b}" }"
 	echo $a | awk  -v r="$b" -F. '{print $r}'
 
 	#从file文件中找出长度大于80的行
 	awk 'length>80' file
-	 
+
 	#按连接数查看客户端IP
 	netstat -ntu | awk '{print $5}' | cut -d: -f1 | sort | uniq -c | sort -nr
-	 
+
 	#打印99乘法表
 	seq 9 | sed 'H;g' | awk -v RS='' '{for(i=1;i<=NF;i++)printf("%dx%d=%d%s", i, NR, i*NR, i==NR?"\n":"\t")}'
 
@@ -157,7 +162,7 @@ grep的语法支持正则表达式,下面是一些有用的参数：
 	a="ATest"
 	echo ${a,}
 	echo ${a,,}
-	## 前面输出aTest，后面输出的是atest。	
+	## 前面输出aTest，后面输出的是atest。
 
 >字符匹配
 
@@ -176,7 +181,7 @@ grep的语法支持正则表达式,下面是一些有用的参数：
 
 	#删除所有的空格
 	sed s/[[:space:]]//g
-	
+
 >删除指定换行符
 
 
@@ -188,12 +193,12 @@ grep的语法支持正则表达式,下面是一些有用的参数：
 	b
 	c
 	d
-	
+
 	＃可以看出，单行选取是\n作为分隔符的，因此无法取到\n字符进行处理。需要N；将此行和下一行放入模式空间执行处理。
 	[root@ns1 ~]# echo -e "a\nb\nc\nd" | sed 'N;s/\n/,/;'
 	a,b
 	c,d
-	
+
 	# 可以看出，N；执行将下一行放入模式空间合并处理后，被放入模式空间的行，属于已经处理过的，不会进入下一次操作。因此需要打标签，跳回放入合并操作前，才能被执行。
 	[root@ns1 ~]# echo -e "a\nb\nc\nd" | sed ':a;N;s/\n/,/;b a'
 	a,b,c,d
@@ -212,12 +217,12 @@ grep的语法支持正则表达式,下面是一些有用的参数：
 	#iconv转码编码
 	iconv -t utf-8 -f gb2312 -c my_database.sql > new.sql
 	iconv -t utf-8 -f gb2312 -c my_database.sql | tee my_database.sql
-	
+
 	#iconv参数解析：
 		-f  原编码
 		-t  目标编码
 		-c 忽略无法转换的字符
-	
+
 
 
 #### 加密类
@@ -229,7 +234,7 @@ grep的语法支持正则表达式,下面是一些有用的参数：
 	openssl rand -base64 10
 
 >加密
-	
+
 	mkpasswd mytest -s tt  （指定加密使用文）
 
 >对称加密
@@ -263,15 +268,15 @@ grep的语法支持正则表达式,下面是一些有用的参数：
 	yum install inxi
 
 	#显示详细信息（-b简略信息)
-	inxi -F  
-	
+	inxi -F
+
 >挂载ntfs
 
 	#安装文件系统包
 	wget http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.2-2.el6.rf.x86_64.rpm
 	rpm -ivh rpmforge-release-0.5.2-1.el6.rf.i686.rpm
 	yum install ntfs-3g
-	
+
 	#找出挂载点
 	fdisk -l
 
@@ -287,7 +292,7 @@ grep的语法支持正则表达式,下面是一些有用的参数：
 
 	sync 将刷新文件系统缓冲区（buffer），命令通过“;”分隔，顺序执行，shell在执行序列中的下一个命令之前会等待命令的终止。
 	正如内核文档中提到的，写入到drop_cache将清空缓存而不会杀死任何应用程序/服务，echo命令做写入文件的工作。
-	如果你必须清除磁盘高速缓存，第一个命令在企业和生产环境中是最安全，"...echo 1> ..."只会清除页面缓存。 
+	如果你必须清除磁盘高速缓存，第一个命令在企业和生产环境中是最安全，"...echo 1> ..."只会清除页面缓存。
 	在生产环境中不建议使用上面的第三个选项"...echo 3 > ..." ，除非你明确自己在做什么，因为它会清除缓存页，目录项和inodes。
 
 >清除交换分区
@@ -296,25 +301,25 @@ grep的语法支持正则表达式,下面是一些有用的参数：
 
 >综合使用
 
-	#!/bin/sh 
+	#!/bin/sh
 	echo 3 > /proc/sys/vm/drop_caches && swapoff -a && swapon -a && printf '\n%s\n' 'Ram-cache and Swap Cleared'
 
 	chmod +x clear_cache_swap.sh
-	
+
 	crontab -e
 	0 3 * * * /path/to/clear_cache_swap.sh
 
 	warning:当所有的用户都从磁盘读取数据时，这将导致服务器崩溃并损坏数据库。
 
 >修改时区
-	
+
 	#查看时区
-	cat /etc/sysconfig/clock 
+	cat /etc/sysconfig/clock
 		ZONE="Asia/Shanghai"
-	
+
 	#替换时区
 	cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
-	
+
 	#时区写入bios
 	clock -w
 
@@ -326,15 +331,15 @@ grep的语法支持正则表达式,下面是一些有用的参数：
 	ntpdate -u 210.72.145.44        --中国国家授时中心
 
 >自动化定时任务
-	
+
 	＃继承以前的，追加一个新的
 	(crontab -l 2>/dev/null ;echo "* * * 2 * hostname")  | crontab -
 	or
-	/var/spool/cron/admin   (只适合root操作) 
-	
+	/var/spool/cron/admin   (只适合root操作)
+
 
 #### 获取时间
-	
+
 	＃查看明天日期
 	date -d next-day +%Y%m%d
 	date -d tomorrow +%Y%m%d
@@ -342,19 +347,19 @@ grep的语法支持正则表达式,下面是一些有用的参数：
 	＃查看昨天日期
 	date -d last-day +%Y%m%d
 	date -d yesterday +%Y%m%d
-	
+
 	＃查看上个月日期
 	date -d next-month +%Y%m
-	
+
 	＃查看明年日期
 	date -d next-year +%Y
-	
+
 	＃获取昨天或多天前的日期
 	date +%Y%m%d -d '2 days ago'
-	
+
 	#获取2周后日期
 	date -d '2 weeks'
-	
+
 	＃高级功能展示
 	date -d '50 days'   	(50天后的日期）
 	date -d '-100 days' 	(100天以前的日期）
@@ -374,11 +379,11 @@ grep的语法支持正则表达式,下面是一些有用的参数：
 
 >获取命令当前进程号(pid)
 
-	tail -f access.log & echo $! 
+	tail -f access.log & echo $!
 
 >获取脚本执行时当前进程号
 
-	#!/bin/sh	
+	#!/bin/sh
 	echo $$
 	#echo $$ > /tmp/xxx.pid
 	sleep 100
@@ -390,13 +395,13 @@ grep的语法支持正则表达式,下面是一些有用的参数：
 >zookeeper客户端
 
 	#连接查看注册信息
-	bin/zkCli.sh -server host port     
+	bin/zkCli.sh -server host port
 
 
 ### rsync
 
 >有没有/问题
-	
+
 	rsync -av /web/work   test:/web/work    ---结果是 test:/web/work/work/*
 
 	rsync -av /web/wrok/  test:/web/work    ---结果是 test:/web/work/*
@@ -429,18 +434,18 @@ grep的语法支持正则表达式,下面是一些有用的参数：
 
 >列出含有序号的INPUT规则，通过num删除
 
-	iptables -L INPUT --line-numbers 
+	iptables -L INPUT --line-numbers
 
 	#举例：删除指定的第4行规则
 	iptables -D INPUT 4
-	
-	
+
+
 ### 权限类
 
 >粘滞位
 
-	普通文件的sticky位会被linux内核忽略，  
-	目录的sticky位表示这个目录里的文件只能被owner和root删除,验证如下： 
+	普通文件的sticky位会被linux内核忽略，
+	目录的sticky位表示这个目录里的文件只能被owner和root删除,验证如下：
 
 	[dev@nagios tmp]$ id web
 	uid=6001(web) gid=6002(web) groups=6002(web)
@@ -453,11 +458,11 @@ grep的语法支持正则表达式,下面是一些有用的参数：
 
 	[dev@nagios tmp]$ rm -fr test/a
 	rm: cannot remove `test/a': Operation not permitted
-	[dev@nagios tmp]$ rm -fr test2/b 
-	[dev@nagios tmp]$ 
+	[dev@nagios tmp]$ rm -fr test2/b
+	[dev@nagios tmp]$
 
 
 
 
-	
+
 

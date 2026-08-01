@@ -1,5 +1,10 @@
 ---
 name: viral-video-long-form
+description: 'MANDATORY: Always Use Backslashes on Windows for File Paths'
+---
+
+---
+name: viral-video-long-form
 description: Complete YouTube long-form video optimization for maximum watch time, SEO, and viral potential. PROACTIVELY activate for: (1) YouTube video strategy, (2) Long-form content planning, (3) Watch time optimization, (4) YouTube SEO, (5) Thumbnail design strategy, (6) Audience retention techniques, (7) YouTube monetization, (8) Connected TV optimization, (9) YouTube algorithm understanding. Provides: Video length optimization, thumbnail best practices, SEO strategies, retention techniques, monetization guidelines, and analytics interpretation.
 references:
   - references/youtube-seo-2026.md

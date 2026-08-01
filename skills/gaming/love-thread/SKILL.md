@@ -1,4 +1,11 @@
 ---
+name: love-thread
+description: '{{SKILLDESCRIPTION}} Use this skill when working with multi-threading,
+  parallel processing, background tasks, or any thread-related operations in LÖVE
+  games.'
+---
+
+---
 name: {{SKILL_NAME}}
 description: {{SKILL_DESCRIPTION}} Use this skill when working with multi-threading, parallel processing, background tasks, or any thread-related operations in LÖVE games.
 license: MIT

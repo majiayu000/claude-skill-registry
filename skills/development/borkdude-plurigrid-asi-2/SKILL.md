@@ -1,3 +1,8 @@
+---
+name: borkdude
+description: Babashka and ClojureScript runtime selection guidance by @borkdude
+---
+
 <!-- Propagated to cursor | Trit: -1 | Source: .ruler/skills/borkdude -->
 
 # Borkdude Skill: ClojureScript Runtime Selection
@@ -33,7 +38,7 @@ Start
   │
   ├── Browser target?
   │     ├── Minimal bundle? ──────► Squint
-  │     ├── Full ClojureScript? ──► Cherry  
+  │     ├── Full ClojureScript? ──► Cherry
   │     └── Script tag? ──────────► Scittle
   │
   ├── Node scripting? ────────────► nbb
@@ -105,7 +110,7 @@ Extend Babashka with pods:
 
 ;; Use SCI for embedded color evaluation
 (def color-ctx
-  (sci/init {:namespaces 
+  (sci/init {:namespaces
              {'gay {'color-at (fn [idx] (gay/color-at idx))}}}))
 ```
 

@@ -1,5 +1,10 @@
 ---
 name: fal-serverless-guide
+description: '| Machine Type | GPU | VRAM | Use Case |'
+---
+
+---
+name: fal-serverless-guide
 description: Complete fal.ai serverless deployment system. PROACTIVELY activate for: (1) Creating fal.App class, (2) GPU machine selection (T4/A10G/A100/H100), (3) setup() for model loading, (4) @fal.endpoint decorators, (5) Persistent volumes for weights, (6) Secrets management, (7) Scaling configuration (min/max concurrency), (8) Multi-GPU deployment, (9) fal deploy commands, (10) Local development with fal run. Provides: App structure, Dockerfile patterns, deployment commands, scaling config. Ensures production-ready serverless ML deployment.
 ---
 

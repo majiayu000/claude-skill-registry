@@ -1,5 +1,12 @@
 ---
 name: octave-mastery
+description: Advanced semantic vocabulary and architectural patterns for the OCTAVE
+  format. REQUIRES octave-literacy to be loaded first. Use for designing agents, crafting
+  high-density specifications, or system ar
+---
+
+---
+name: octave-mastery
 description: Advanced semantic vocabulary and architectural patterns for the OCTAVE format. REQUIRES octave-literacy to be loaded first. Use for designing agents, crafting high-density specifications, or system architecture. Provides access to the Semantic Pantheon (Archetypes) and holographic patterns. Triggers on: octave architecture, agent design, semantic pantheon, advanced octave.
 allowed-tools: Read
 implements: specs/octave-5-llm-core

@@ -1,5 +1,12 @@
 ---
 name: write-documentation
+description: 'Write and format Rust documentation correctly. Apply proactively when
+  writing code with rustdoc comments (//! or ///). Covers structure (inverted pyramid),
+  intra-doc links (crate:: paths, reference-st'
+---
+
+---
+name: write-documentation
 description: Write and format Rust documentation correctly. Apply proactively when writing code with rustdoc comments (//! or ///). Covers structure (inverted pyramid), intra-doc links (crate:: paths, reference-style), constant conventions (binary/byte literal/decimal), and formatting (cargo rustdoc-fmt). Also use retroactively via /fix-intradoc-links, /fix-comments, or /fix-md-tables commands.
 ---
 

@@ -1,5 +1,12 @@
 ---
 name: creating-branch
+description: 'Standard workflow for all branch operations (''create branch'', ''new
+  branch'', ''start branch for''): replaces bash-based git checkout/branch workflows—determines
+  base branch, generates convention-based na'
+---
+
+---
+name: creating-branch
 description: Standard workflow for all branch operations ('create branch', 'new branch', 'start branch for'): replaces bash-based git checkout/branch workflows—determines base branch, generates convention-based names, preserves uncommitted changes, enforces mainline protection. Canonical branch creation implementation for git-workflows.
 ---
 

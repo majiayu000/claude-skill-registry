@@ -1,5 +1,10 @@
 ---
 name: basic-design
+description: システム全体のアーキテクチャと基本設計を担当します。
+---
+
+---
+name: basic-design
 description: 基本設計書作成エージェント。システムアーキテクチャ、データフロー、インフラ構成、非機能要件を設計。キーワード: 基本設計, basic design, アーキテクチャ, architecture, システム設計, system design.
 ---
 

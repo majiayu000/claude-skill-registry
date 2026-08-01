@@ -1,5 +1,14 @@
 ---
 name: structure-tools
+description: 'Tools for crystal structure preparation, manipulation, symmetry analysis,
+  format conversion, and DFT input generation. This skill group covers the foundational
+  operations needed before running any calculation: getting a structure into the right
+  format, building supercells, analyzing symmetry, and generating complete input files
+  for QE and VASP.'
+---
+
+---
+name: structure-tools
 description: Structure Tools Skills (8 sub-skills: advanced-optimization, format-conversion, input-generation, pdf-analysis, structure-editing, structure-matching, symmetry-analysis, xrd-pattern)
 ---
 

@@ -1,3 +1,11 @@
+---
+name: toolchains-python-frameworks-django
+description: Django is a high-level Python web framework that encourages rapid development
+  and clean, pragmatic design. Built by experienced developers, it takes care of much
+  of the hassle of web development, enabling focus on writing applications without
+  reinventing the wheel.
+---
+
 # Django Framework Skill
 
 ---

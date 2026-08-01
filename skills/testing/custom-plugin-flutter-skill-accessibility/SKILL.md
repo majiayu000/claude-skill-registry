@@ -1,3 +1,10 @@
+---
+name: custom-plugin-flutter-skill-accessibility
+description: Production-grade Flutter accessibility mastery - Semantics API, screen
+  readers (VoiceOver/TalkBack), WCAG 2.1 AA/AAA compliance, inclusive design patterns,
+  automated a11y testing with comprehensive co
+---
+
 # Flutter State Management Mastery
 ## The Complete Roadmap for Building Scalable, Performant Applications
 
@@ -78,18 +85,18 @@ class _CounterWidgetState extends State<CounterWidget> {
 
 #### Advantages
 
-✓ Zero learning curve for beginners  
-✓ No external dependencies  
-✓ Perfect for isolated components  
-✓ Excellent for teaching Flutter fundamentals  
+✓ Zero learning curve for beginners
+✓ No external dependencies
+✓ Perfect for isolated components
+✓ Excellent for teaching Flutter fundamentals
 
 #### Disadvantages
 
-✗ Limited to single widget scope  
-✗ Poor for sharing state across screens  
-✗ Difficult to test business logic  
-✗ Causes unnecessary rebuilds in large trees  
-✗ Not suitable for complex applications  
+✗ Limited to single widget scope
+✗ Poor for sharing state across screens
+✗ Difficult to test business logic
+✗ Causes unnecessary rebuilds in large trees
+✗ Not suitable for complex applications
 
 #### Best For
 
@@ -242,18 +249,18 @@ class UserScreen extends StatelessWidget {
 
 #### Advantages
 
-✓ Excellent documentation and learning resources  
-✓ Proven in hundreds of production applications  
-✓ Works with simple state (ChangeNotifier) and complex (Stream, Future)  
-✓ Great for team projects with clear patterns  
-✓ Easy to scale from simple to complex apps  
+✓ Excellent documentation and learning resources
+✓ Proven in hundreds of production applications
+✓ Works with simple state (ChangeNotifier) and complex (Stream, Future)
+✓ Great for team projects with clear patterns
+✓ Easy to scale from simple to complex apps
 
 #### Disadvantages
 
-✗ Requires BuildContext in some scenarios  
-✗ Not compile-safe (runtime discovery)  
-✗ Can become complex with many interdependent providers  
-✗ Learning curve for dependency injection concepts  
+✗ Requires BuildContext in some scenarios
+✗ Not compile-safe (runtime discovery)
+✗ Can become complex with many interdependent providers
+✗ Learning curve for dependency injection concepts
 
 #### Best For
 
@@ -324,7 +331,7 @@ class CounterWidget extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final count = ref.watch(counterProvider);
-    
+
     return Column(
       children: [
         Text('Count: $count'),
@@ -420,19 +427,19 @@ class UserController extends ConsumerWidget {
 
 #### Advantages
 
-✓ Compile-time safety (catch bugs before runtime)  
-✓ No BuildContext needed (eliminates whole categories of bugs)  
-✓ Native async/Future handling  
-✓ Family modifiers for dynamic providers  
-✓ Superior performance for complex apps  
-✓ Future of Flutter state management  
+✓ Compile-time safety (catch bugs before runtime)
+✓ No BuildContext needed (eliminates whole categories of bugs)
+✓ Native async/Future handling
+✓ Family modifiers for dynamic providers
+✓ Superior performance for complex apps
+✓ Future of Flutter state management
 
 #### Disadvantages
 
-✗ Steeper learning curve than Provider  
-✗ Smaller ecosystem (but growing rapidly)  
-✗ Breaking changes in major versions  
-✗ Requires hooks_riverpod for some features  
+✗ Steeper learning curve than Provider
+✗ Smaller ecosystem (but growing rapidly)
+✗ Breaking changes in major versions
+✗ Requires hooks_riverpod for some features
 
 #### Best For
 
@@ -616,20 +623,20 @@ class UserProfile extends StatelessWidget {
 
 #### Advantages
 
-✓ All-in-one solution (no need for multiple packages)  
-✓ Minimal boilerplate code  
-✓ Fast development iteration  
-✓ Excellent for rapid prototyping  
-✓ Strong community in startup/mobile circles  
-✓ Built-in navigation and utilities  
+✓ All-in-one solution (no need for multiple packages)
+✓ Minimal boilerplate code
+✓ Fast development iteration
+✓ Excellent for rapid prototyping
+✓ Strong community in startup/mobile circles
+✓ Built-in navigation and utilities
 
 #### Disadvantages
 
-✗ Large package size compared to alternatives  
-✗ Less testable without careful architecture  
-✗ Not composable (everything in one package)  
-✗ Can lead to tight coupling if not careful  
-✗ Less suitable for enterprise applications  
+✗ Large package size compared to alternatives
+✗ Less testable without careful architecture
+✗ Not composable (everything in one package)
+✗ Can lead to tight coupling if not careful
+✗ Less suitable for enterprise applications
 
 #### Best For
 
@@ -851,7 +858,7 @@ class CounterBloc extends Bloc<CounterEvent, CounterState> {
     if (state is CounterUpdated) {
       final currentCount = (state as CounterUpdated).count;
       final newCount = currentCount + 1;
-      
+
       try {
         await saveCountUseCase(newCount);
         emit(CounterUpdated(newCount));
@@ -873,20 +880,20 @@ class CounterBloc extends Bloc<CounterEvent, CounterState> {
 
 #### Advantages
 
-✓ Most testable pattern (business logic isolated)  
-✓ Excellent for large teams  
-✓ Clear separation of concerns  
-✓ Proven in enterprise applications  
-✓ No BuildContext needed  
-✓ Industry standard (companies know how to work with it)  
+✓ Most testable pattern (business logic isolated)
+✓ Excellent for large teams
+✓ Clear separation of concerns
+✓ Proven in enterprise applications
+✓ No BuildContext needed
+✓ Industry standard (companies know how to work with it)
 
 #### Disadvantages
 
-✗ Steepest learning curve  
-✗ Most boilerplate code (Events, States, Bloc)  
-✗ Largest package footprint  
-✗ Verbose for simple features  
-✗ Overhead for small applications  
+✗ Steepest learning curve
+✗ Most boilerplate code (Events, States, Bloc)
+✗ Largest package footprint
+✗ Verbose for simple features
+✗ Overhead for small applications
 
 #### Best For
 
@@ -1011,7 +1018,7 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final themeProvider = ThemeProvider.of(context);
-    
+
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         backgroundColor: themeProvider?.theme.primaryColor,
@@ -1037,18 +1044,18 @@ void setupServiceLocator() {
   // Singletons (one instance for app lifetime)
   getIt.registerSingleton<AppConfig>(AppConfig());
   getIt.registerSingleton<AnalyticsService>(AnalyticsService());
-  
+
   // Lazy Singletons (instantiated on first access)
   getIt.registerLazySingleton<AuthService>(() => AuthServiceImpl());
   getIt.registerLazySingleton<UserRepository>(
     () => UserRepositoryImpl(apiClient: getIt()),
   );
-  
+
   // Factories (new instance every time)
   getIt.registerFactory<UserBloc>(
     () => UserBloc(repository: getIt<UserRepository>()),
   );
-  
+
   // Factories with parameters
   getIt.registerFactoryParam<DetailBloc, String, void>(
     (id, _) => DetailBloc(id: id, repository: getIt()),
@@ -1065,7 +1072,7 @@ class UserScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final userBloc = getIt<UserBloc>();
-    
+
     return BlocProvider.value(
       value: userBloc,
       child: const UserView(),
@@ -1159,11 +1166,11 @@ class CachedUser extends HiveObject {
 // Initialize in main
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  
+
   await Hive.initFlutter();
   Hive.registerAdapter(CachedUserAdapter());
   await Hive.openBox<CachedUser>('users');
-  
+
   runApp(const MyApp());
 }
 
@@ -1185,7 +1192,7 @@ class UserBloc extends Bloc<UserEvent, UserState> {
       // Try cache first
       final box = Hive.box<CachedUser>('users');
       final cached = box.get(event.userId);
-      
+
       if (cached != null && DateTime.now().difference(cached.cachedAt).inMinutes < 60) {
         // Cache is fresh
         emit(UserLoaded(
@@ -1196,14 +1203,14 @@ class UserBloc extends Bloc<UserEvent, UserState> {
 
       // Fetch from remote
       final user = await repository.getUser(event.userId);
-      
+
       // Save to cache
       await box.put(event.userId, CachedUser()
         ..id = user.id
         ..name = user.name
         ..email = user.email
         ..cachedAt = DateTime.now());
-      
+
       emit(UserLoaded(user));
     } catch (e) {
       emit(UserError(e.toString()));
@@ -1341,7 +1348,7 @@ final cachedUserProvider = FutureProvider.autoDispose<User>((ref) async {
   final repository = ref.watch(userRepositoryProvider);
 
   final cached = cache.get<User>('user_data');
-  
+
   if (cached != null && !cached.isExpired) {
     return cached.value;
   }
@@ -1457,9 +1464,9 @@ void main() {
           .thenAnswer((_) async => testUser);
 
       userBloc.add(const FetchUserEvent('1'));
-      
+
       await Future.delayed(const Duration(milliseconds: 100));
-      
+
       verify(mockRepository.getUser('1')).called(1);
     });
   });
@@ -1612,9 +1619,9 @@ void main() {
 void main() {
   // Log key milestones
   Timeline.instantSync('app_launch');
-  
+
   runApp(const MyApp());
-  
+
   // Track frame building time
   addPostFrameCallback((_) {
     Timeline.instantSync('first_frame_complete');
@@ -1659,7 +1666,7 @@ class UserProfile extends ConsumerWidget {
     final user = ref.watch(userProvider);
     final posts = ref.watch(userPostsProvider);
     final following = ref.watch(followingProvider);
-    
+
     return Column(
       children: [
         Text(user.name),
@@ -1757,7 +1764,7 @@ final cacheManagerProvider = Provider((ref) => CacheManager<User>());
 final cachedUserProvider = FutureProvider.family<User, String>(
   (ref, userId) async {
     final cache = ref.watch(cacheManagerProvider);
-    
+
     // Check cache
     final cached = cache.get(userId);
     if (cached != null) return cached;
@@ -1766,7 +1773,7 @@ final cachedUserProvider = FutureProvider.family<User, String>(
     final repository = ref.watch(repositoryProvider);
     final user = await repository.getUser(userId);
     cache.set(userId, user);
-    
+
     return user;
   },
 );
@@ -1998,7 +2005,7 @@ class ServiceLocator {
   static Future<void> init() async {
     // Core
     _setupCore();
-    
+
     // Features
     _setupAuth();
     _setupPosts();
@@ -2237,7 +2244,7 @@ class UserBloc extends Bloc<UserEvent, UserState> {
     Emitter<UserState> emit,
   ) async {
     emit(UserLoading());
-    
+
     analytics.logEvent('user_fetch_started', params: {'user_id': event.userId});
 
     try {
@@ -2308,8 +2315,8 @@ Single widget state?
 
 ---
 
-**Document Version**: 2.0  
-**Last Updated**: November 2024  
-**Target Audience**: Flutter developers (Beginner to Advanced)  
+**Document Version**: 2.0
+**Last Updated**: November 2024
+**Target Audience**: Flutter developers (Beginner to Advanced)
 **Difficulty**: Comprehensive (All Levels)
 

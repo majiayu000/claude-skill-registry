@@ -1,3 +1,9 @@
+---
+name: minside
+description: Expert context for BIM Verdi's Min Side member portal. Use when working
+  on /min-side/ routes, user authentication, access control, or member features.
+---
+
 # Min Side Expert Context
 
 > Use this skill when working on `/min-side/` routes, user authentication, access control, or member portal features in BIM Verdi.

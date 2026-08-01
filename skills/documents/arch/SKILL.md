@@ -1,3 +1,8 @@
+---
+name: arch
+description: ActiveSkill < Skill
+---
+
 ActiveSkill < [Skill](https://github.com/SubwayRocketTeam/game/blob/master/doc/arch/Skill.md)
 ====
 
@@ -8,7 +13,7 @@ ActiveSkill이 가지는 프로퍼티
 * 스킬의 사용 기간 : Player의 경직 시간
 * 이동 속도 비율 : 스킬 사용 기간동안 speed에 곱해질 값
 * 쿨타임
-* MP 코스트 
+* MP 코스트
 
 ActiveSkill이 할 수 있는 액션
 ----

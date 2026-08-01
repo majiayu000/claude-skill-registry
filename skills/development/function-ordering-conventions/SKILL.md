@@ -1,5 +1,10 @@
 ---
 name: function-ordering-conventions
+description: You are a coding standards expert specializing in function ordering conventions.
+---
+
+---
+name: function-ordering-conventions
 description: Defines the function ordering conventions, where functions that compose other functions appear earlier in the file, regardless of the file type.
 version: 1.0.0
 model: sonnet

@@ -1,3 +1,8 @@
+---
+name: reference-management
+description: '> 參考文獻管理技能 - 從搜尋、儲存到格式化的完整文獻管理'
+---
+
 # Skill: Reference Management
 
 > 參考文獻管理技能 - 從搜尋、儲存到格式化的完整文獻管理
@@ -282,7 +287,7 @@ mcp_mdpaper_format_references(
 
 **好的 agent_notes 範例**：
 ```
-"Key systematic review on remimazolam safety. Covers: cardiovascular stability, 
+"Key systematic review on remimazolam safety. Covers: cardiovascular stability,
 respiratory effects, reversal with flumazenil. Limitation: only ICU patients."
 ```
 
@@ -317,7 +322,7 @@ A: 確保書目資料正確。Agent 可能誤改標題、作者名（幻覺）�
 
 ### Q: save_reference_mcp 失敗怎麼辦？
 
-A: 
+A:
 1. 檢查 pubmed-search MCP 是否運行
 2. 檢查網路連線
 3. 改用 `save_reference()` 作為 fallback

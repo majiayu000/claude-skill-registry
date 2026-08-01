@@ -1,5 +1,10 @@
 ---
 name: test-generator
+description: 為指定的程式碼自動生成完整測試套件，包含靜態分析、單元測試、整合測試及覆蓋率報告。
+---
+
+---
+name: test-generator
 description: Generate comprehensive test suites including static analysis (vulture dead code), unit tests, integration tests, E2E tests, and coverage reports. Triggers: TG, test, 測試, 寫測試, coverage, 覆蓋率, pytest, unittest, 驗證, check, 檢查, quality, 品質, dead code, 死碼, vulture, static analysis, 靜態分析, lint, type check.
 version: 2.1.0
 category: quality
@@ -300,7 +305,7 @@ class TestUserRepository:
         """儲存並取回使用者"""
         user = User(name="Test", email="test@test.com")
         saved_user = await repository.save(user)
-        
+
         retrieved = await repository.get_by_id(saved_user.id)
         assert retrieved is not None
         assert retrieved.name == "Test"
@@ -309,7 +314,7 @@ class TestUserRepository:
         """透過 email 查詢"""
         user = User(name="Test", email="unique@test.com")
         await repository.save(user)
-        
+
         found = await repository.find_by_email("unique@test.com")
         assert found is not None
         assert found.email == "unique@test.com"
@@ -474,7 +479,7 @@ class TestUserJourney:
         await page.fill("input[name='email']", "test@example.com")
         await page.fill("input[name='password']", "SecureP@ss123")
         await page.click("button[type='submit']")
-        
+
         await expect(page.locator(".user-menu")).to_be_visible()
 
         # 登出
@@ -484,11 +489,11 @@ class TestUserJourney:
     async def test_create_item_flow(self, page: Page, base_url: str, authenticated_page):
         """測試建立項目流程 (需登入)"""
         await authenticated_page.goto(f"{base_url}/items/new")
-        
+
         await authenticated_page.fill("input[name='title']", "Test Item")
         await authenticated_page.fill("textarea[name='description']", "Description")
         await authenticated_page.click("button[type='submit']")
-        
+
         await expect(authenticated_page.locator(".success-toast")).to_be_visible()
 ```
 
@@ -629,23 +634,23 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v4
-      
+
       - name: Install dependencies
         run: uv sync --all-extras
-      
+
       - name: Static Analysis
         run: |
           uv run ruff check src/
           uv run mypy src/
           uv run bandit -r src/
           uv run vulture src/ --min-confidence 80
-      
+
       - name: Unit Tests
         run: uv run pytest tests/unit -v --cov=src --cov-report=xml
-      
+
       - name: Integration Tests
         run: uv run pytest tests/integration -v
-      
+
       - name: Upload Coverage
         uses: codecov/codecov-action@v4
 ```
@@ -668,18 +673,18 @@ dev = [
     "httpx>=0.24.0",            # Async HTTP client for API tests
     "factory-boy>=3.3.0",       # Test data factories
     "faker>=19.0.0",            # Fake data generation
-    
+
     # E2E Testing
     "playwright>=1.40.0",       # Browser automation
     "pytest-playwright>=0.4.0", # Playwright pytest plugin
     "locust>=2.20.0",           # Load testing (optional)
-    
+
     # Static Analysis
     "mypy>=1.5.0",
     "ruff>=0.0.290",
     "bandit[toml]>=1.7.5",
     "vulture>=2.10",            # Dead code detection
-    
+
     # Type stubs
     "types-requests",
     "types-python-dateutil",

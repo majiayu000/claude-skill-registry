@@ -1,3 +1,8 @@
+---
+name: chaos-engineering
+description: '| ID | sre-chaos-engineering |'
+---
+
 # 💥 Skill: Chaos Engineering
 
 ## 📋 Metadata

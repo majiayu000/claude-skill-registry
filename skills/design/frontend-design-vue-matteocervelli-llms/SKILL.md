@@ -1,5 +1,11 @@
 ---
 name: frontend-design-vue
+description: Create distinctive, production-grade Vue 3/TypeScript frontends with
+  exceptional design quality
+---
+
+---
+name: frontend-design-vue
 description: Create distinctive, production-grade Vue 3/TypeScript frontends with exceptional design quality
 version: 1.0.0
 framework: vue3-typescript

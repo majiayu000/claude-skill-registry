@@ -1,5 +1,11 @@
 ---
 name: x9-validate
+description: You validate JSON payloads against the X9.150 OpenAPI schema (spec/openapi.yaml).
+  You auto-detect the schema type and report constraint violations with explanations.
+---
+
+---
+name: x9-validate
 description: Validate JSON payloads against the X9.150 OpenAPI schema
 user-invocable: true
 tools:

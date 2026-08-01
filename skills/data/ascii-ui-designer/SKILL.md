@@ -1,5 +1,12 @@
 ---
 name: ascii-ui-designer
+description: 'Create high-quality ASCII art UI/UX previews for web development with
+  a two-phase approach. Phase 1: Design & Preview - visualize interfaces, explore
+  layouts, refine ideas in ASCII format without code'
+---
+
+---
+name: ascii-ui-designer
 description: Create high-quality ASCII art UI/UX previews for web development with a two-phase approach. Phase 1: Design & Preview - visualize interfaces, explore layouts, refine ideas in ASCII format without code. Phase 2: Implementation - when ready, get HTML/CSS/React code and design tokens. Use for exploring ideas, getting stakeholder feedback, and iterating on design before development.
 ---
 
@@ -67,7 +74,7 @@ Use these box-drawing characters for professional appearance:
 
 ```
 ┌─┬─┐  Top border with columns
-├─┼─┤  Row dividers  
+├─┼─┤  Row dividers
 └─┴─┘  Bottom border
 
 │      Vertical lines

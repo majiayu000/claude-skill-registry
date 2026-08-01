@@ -1,5 +1,13 @@
 ---
 name: agentic-patterns
+description: Use simple, composable patterns to decide when to keep a deterministic
+  workflow versus letting an LLM drive its own control flow with tools, retrieval,
+  and memory. Prefer minimal patterns and add agentic loops only when they unlock
+  necessary flexibility.
+---
+
+---
+name: agentic-patterns
 description: Design and operate multi-agent orchestration patterns (ReAct loops, evaluator-optimizer, orchestrator-workers, tool routing) for LLM systems. Use when building or debugging agent workflows, tool-use loops, or multi-step task delegation; triggers: agentic, multi-agent, orchestration, ReAct, evaluator-optimizer, tool-use, handoff.
 ---
 

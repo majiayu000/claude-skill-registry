@@ -1,3 +1,9 @@
+---
+name: other
+description: 表示搜索结果局限于某个具体网站或者网站频道，如 “edu.sina.com.cn”、“www.seoanyi.com”，或者是某个域名，如
+  “com.cn”、“com”等等。
+---
+
 # 谷歌语法
 
 

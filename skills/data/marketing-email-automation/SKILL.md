@@ -1,5 +1,11 @@
 ---
 name: marketing-email-automation
+description: Built as a no-fluff execution skill for designing and operating revenue-safe,
+  deliverability-safe email automation across B2B and B2C.
+---
+
+---
+name: marketing-email-automation
 description: Email marketing automation for HubSpot/Klaviyo/Mailchimp (and similar ESPs): design trigger-based lifecycle workflows (welcome, onboarding, nurture, win-back, cart abandonment), define segmentation + suppression/frequency policies, troubleshoot deliverability (SPF/DKIM/DMARC, one-click unsubscribe, list hygiene), and measure incrementality/ROI (holdouts, RPE, retention economics).
 ---
 

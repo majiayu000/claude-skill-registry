@@ -1,3 +1,10 @@
+---
+name: dataverse-create-schema
+description: 'Tier 1 Component Skill - Creates or updates Dataverse schema components
+  programmatically using the Dataverse Web API and PowerShell. This skill provides
+  patterns for:'
+---
+
 # dataverse-create-schema
 
 ---

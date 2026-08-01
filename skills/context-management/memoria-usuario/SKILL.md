@@ -1,5 +1,11 @@
 ---
 name: memoria-usuario
+description: Esta skill gerencia a memória persistente por usuário, permitindo que
+  Claude lembre informações entre sessões diferentes.
+---
+
+---
+name: memoria-usuario
 description: Gerencia memoria persistente do usuario. Use para salvar/recuperar preferencias, fatos aprendidos e contexto entre sessoes. Exemplos: 'lembre que prefiro respostas diretas', 'o que voce sabe sobre mim?', 'esqueca minhas preferencias'.
 ---
 

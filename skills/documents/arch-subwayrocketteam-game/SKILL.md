@@ -1,3 +1,8 @@
+---
+name: arch-subwayrocketteam-game
+description: PassiveSkill < Skill
+---
+
 PassiveSkill < [Skill](https://github.com/SubwayRocketTeam/game/blob/master/doc/arch/Skill.md)
 ====
 

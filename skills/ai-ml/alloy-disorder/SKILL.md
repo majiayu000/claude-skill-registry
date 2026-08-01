@@ -1,5 +1,12 @@
 ---
 name: alloy-disorder
+description: 'Skills for modeling chemical disorder in alloys: generating representative
+  structures, fitting energy models, and predicting thermodynamic properties (phase
+  diagrams, order-disorder transitions).'
+---
+
+---
+name: alloy-disorder
 description: Alloy Disorder Modeling (2 sub-skills: cluster-expansion, sqs-generation)
 ---
 

@@ -1,3 +1,10 @@
+---
+name: docs-danisla-iot-bed
+description: The Custom Skill is used instead of the Home Skill because the Home skill
+  assumes you have a OAuth service managing the IoT devices where the Custom Skill
+  can just invoke a Lambda function with a custom intent mapping.
+---
+
 # Configure Alexa Custom Skill for IoT Bed
 
 The Custom Skill is used instead of the Home Skill because the Home skill assumes you have a OAuth service managing the IoT devices where the Custom Skill can just invoke a Lambda function with a custom intent mapping.

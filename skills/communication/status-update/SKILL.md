@@ -1,5 +1,11 @@
 ---
 name: status-update
+description: When the user says "@status update" or "status update", execute this
+  command.
+---
+
+---
+name: status-update
 description: Podsumowanie stanu projektu: wersja, faza, zmiany, następne kroki. Triggers: status projektu, stan, podsumowanie
 ---
 

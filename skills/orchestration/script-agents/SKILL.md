@@ -1,5 +1,11 @@
 ---
 name: script-agents
+description: Design and maintain small, high-signal scripts where deterministic local
+  orchestration feeds a configurable coding-agent harness for one-shot analysis.
+---
+
+---
+name: script-agents
 description: Build and maintain minimal, role-aware prompt-dispatch scripts for coding agents. Use when: (1) creating one-shot report/review scripts, (2) wiring deterministic context artifacts into an LLM dispatch step, (3) standardizing configurable harness dispatch contracts (`AGENT_DISPATCH_DIR` + `AGENT_DISPATCH_CMD`) without scope bloat.
 category: meta
 user-invocable: true

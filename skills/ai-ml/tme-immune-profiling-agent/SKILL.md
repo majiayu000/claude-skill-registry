@@ -1,3 +1,8 @@
+---
+name: tme-immune-profiling-agent
+description: '---name: tme-immune-profiling-agent'
+---
+
 ---name: tme-immune-profiling-agent
 description: Comprehensive AI-powered tumor microenvironment immune profiling integrating bulk deconvolution, single-cell analysis, and spatial transcriptomics for immunotherapy biomarker discovery.
 license: MIT

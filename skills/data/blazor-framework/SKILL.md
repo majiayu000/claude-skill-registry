@@ -1,3 +1,8 @@
+---
+name: blazor-framework
+description: 'Version: 1.0.0'
+---
+
 # Blazor Framework - Quick Reference (SKILL.md)
 
 **Version**: 1.0.0

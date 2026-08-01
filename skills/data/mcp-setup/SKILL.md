@@ -1,5 +1,11 @@
 ---
 name: mcp-setup
+description: 'This skill handles Model Context Protocol (MCP) server configuration,
+  troubleshooting, and integration for StepCountLeague v3. Use this when:'
+---
+
+---
+name: mcp-setup
 description: MCP server configuration and management. Use when setting up MCP servers, troubleshooting MCP issues, or adding new integrations. Keywords: MCP, model context protocol, supabase, posthog, playwright, gtm, analytics, mcp.json, environment variables, oauth
 compatibility: Claude Code
 metadata:

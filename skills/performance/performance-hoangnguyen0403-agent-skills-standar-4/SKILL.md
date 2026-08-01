@@ -1,4 +1,10 @@
 ---
+name: performance
+description: '- OnPush: Always use ChangeDetectionStrategy.OnPush. Components should
+  only update when Inputs change or Signals fire.'
+---
+
+---
 name: Performance
 description: Optimization techniques including OnPush, @defer, and Image Optimization.
 metadata:

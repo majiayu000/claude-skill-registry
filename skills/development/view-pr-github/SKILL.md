@@ -1,6 +1,11 @@
 ---
 name: view-pr-github
 description: View GitHub PR status/details (prefer GitHub chat tools; gh is fallback).
+---
+
+---
+name: view-pr-github
+description: View GitHub PR status/details (prefer GitHub chat tools; gh is fallback).
 compatibility: Preferred: GitHub chat tools configured for the repo. Fallback: GitHub CLI (gh) authenticated, plus network access.
 ---
 

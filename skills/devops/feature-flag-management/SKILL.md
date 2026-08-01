@@ -1,5 +1,10 @@
 ---
 name: feature-flag-management
+description: 'Last Updated: 2026-01-15'
+---
+
+---
+name: feature-flag-management
 description: Automate the complete lifecycle of feature flags in Saberloop, following Epic 10 hygiene standards
 version: 1.0.0
 author: Saberloop Project
@@ -9,7 +14,7 @@ usage: |
   - Updating flag phases (DISABLED → SETTINGS_ONLY → ENABLED)
   - Removing deprecated flags following hygiene standards
   - Adding flag documentation
-  
+
   Examples:
   "Create a new FEATURE_NAME flag using the feature-flag-management skill"
   "Remove the OLD_FEATURE flag using the feature-flag-management skill"
@@ -60,7 +65,7 @@ Remove a flag when ALL of these are true:
 ```javascript
 export const FEATURE_FLAGS = {
   // Existing flags...
-  
+
   NEW_FEATURE: {
     phase: 'DISABLED',  // Start with DISABLED for new features
     description: 'Brief description of what the feature does'
@@ -104,22 +109,22 @@ describe('NEW_FEATURE Flag', () => {
   it('should return false when DISABLED', () => {
     expect(isFeatureEnabled('NEW_FEATURE')).toBe(false);
   });
-  
+
   it('should return true when ENABLED', () => {
     // Mock flag as ENABLED
     vi.stubGlobal('localStorage', {
       getItem: () => 'ENABLED'
     });
-    
+
     expect(isFeatureEnabled('NEW_FEATURE')).toBe(true);
   });
-  
+
   it('should respect SETTINGS_ONLY phase', () => {
     // Mock flag as SETTINGS_ONLY
     vi.stubGlobal('localStorage', {
       getItem: () => 'SETTINGS_ONLY'
     });
-    
+
     expect(isFeatureEnabled('NEW_FEATURE', 'settings')).toBe(true);
     expect(isFeatureEnabled('NEW_FEATURE', 'home')).toBe(false);
   });
@@ -336,8 +341,8 @@ if (isFeatureEnabled('NEW_FEATURE')) {
 
 ```javascript
 // Use feature flag as guard during development
-const enhancedFlow = isFeatureEnabled('NEW_FEATURE') 
-  ? newEnhancedImplementation() 
+const enhancedFlow = isFeatureEnabled('NEW_FEATURE')
+  ? newEnhancedImplementation()
   : existingImplementation();
 
 // After flag removal, the enhanced implementation becomes default
@@ -355,15 +360,15 @@ describe('FEATURE_NAME Flag', () => {
   it('should return false when DISABLED', () => {
     // Test default behavior
   });
-  
+
   it('should return true when ENABLED', () => {
     // Test enabled behavior
   });
-  
+
   it('should respect SETTINGS_ONLY phase', () => {
     // Test settings-only behavior
   });
-  
+
   it('should handle test overrides', () => {
     // Test localStorage override capability
   });
@@ -384,11 +389,11 @@ Add Playwright tests for critical flags:
 ```javascript
 test('feature flag settings toggle', async ({ page }) => {
   await page.goto('/settings');
-  
+
   // Test settings-only flag visibility
   const toggle = page.locator('[data-testid="new-feature-toggle"]');
   await expect(toggle).toBeVisible();
-  
+
   // Test toggle functionality
   await toggle.click();
   // Verify behavior changes
@@ -448,6 +453,6 @@ This skill integrates with:
 
 ---
 
-**Version:** 1.0.0  
-**Last Updated:** 2026-01-15  
+**Version:** 1.0.0
+**Last Updated:** 2026-01-15
 **Compatible with:** Saberloop v2.0.0+

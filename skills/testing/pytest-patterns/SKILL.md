@@ -1,5 +1,12 @@
 ---
 name: pytest-patterns
+description: 'Advanced Python testing strategies with Pytest, covering fixtures, matrix
+  testing with parametrization, and async test architecture. Triggers: pytest, fixtures,
+  parametrize, pytest-asyncio, matrix-tes'
+---
+
+---
+name: pytest-patterns
 description: Advanced Python testing strategies with Pytest, covering fixtures, matrix testing with parametrization, and async test architecture. Triggers: pytest, fixtures, parametrize, pytest-asyncio, matrix-testing, yield-fixture.
 ---
 
@@ -14,11 +21,11 @@ Pytest is a powerful testing framework that emphasizes modularity via fixtures a
 - **Async Codebases**: Testing coroutines directly without manual event loop management.
 
 ## Decision Tree
-1. Is the setup expensive (e.g., creating a DB)? 
+1. Is the setup expensive (e.g., creating a DB)?
    - YES: Use a fixture with `scope='session'` or `scope='module'`.
-2. Do you need to cleanup after a test? 
+2. Do you need to cleanup after a test?
    - YES: Use a `yield` fixture.
-3. Do you have 3+ similar test cases for one function? 
+3. Do you have 3+ similar test cases for one function?
    - YES: Use `@pytest.mark.parametrize`.
 
 ## Workflows

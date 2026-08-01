@@ -1,5 +1,10 @@
 ---
 name: ai-sdk-core
+description: Production-ready backend AI with Vercel AI SDK v5.
+---
+
+---
+name: ai-sdk-core
 description: Vercel AI SDK v5 for backend AI (text generation, structured output, tools, agents). Multi-provider. Use for server-side AI or encountering AI_APICallError, AI_NoObjectGeneratedError, streaming failures.
 
   Keywords: ai sdk core, vercel ai sdk, generateText, streamText, generateObject, streamObject,

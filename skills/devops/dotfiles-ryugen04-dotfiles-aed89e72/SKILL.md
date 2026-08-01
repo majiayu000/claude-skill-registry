@@ -1,5 +1,12 @@
 ---
 name: dotfiles
+description: 'Use when managing dotfiles repository. Triggers: (1) checking dotfiles
+  structure or package list, (2) adding or removing packages, (3) setting up dotfiles
+  on new machine, (4) syncing changes from othe'
+---
+
+---
+name: dotfiles
 description: Use when managing dotfiles repository. Triggers: (1) checking dotfiles structure or package list, (2) adding or removing packages, (3) setting up dotfiles on new machine, (4) syncing changes from other machines, (5) stow command usage questions.
 ---
 

@@ -1,5 +1,10 @@
 ---
 name: viral-video-hook-templates
+description: 'MANDATORY: Always Use Backslashes on Windows for File Paths'
+---
+
+---
+name: viral-video-hook-templates
 description: 10 proven viral video hook templates with FFmpeg implementations for maximum first-3-second retention. PROACTIVELY activate for: (1) Video hook creation, (2) Opening sequence optimization, (3) Attention-grabbing techniques, (4) Pattern interrupt effects, (5) Curiosity gap implementation, (6) Text overlay hooks, (7) Visual hook effects, (8) Audio hook strategies, (9) Retention optimization, (10) Scroll-stopping content. Provides: Research-backed hook formulas, FFmpeg filter implementations, psychological triggers, platform-specific hooks, A/B testing workflows, and real-world examples with measurable impact.
 ---
 

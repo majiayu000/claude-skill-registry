@@ -1,5 +1,12 @@
 ---
 name: github-actions-troubleshooter
+description: Diagnose and fix GitHub Actions workflow failures, CI/CD pipeline issues,
+  YAML syntax errors, and workflow configuration problems. Use when debugging failed
+  CI runs, fixing workflow errors, or optimiz
+---
+
+---
+name: github-actions-troubleshooter
 description: Diagnose and fix GitHub Actions workflow failures, CI/CD pipeline issues, YAML syntax errors, and workflow configuration problems. Use when debugging failed CI runs, fixing workflow errors, or optimizing GitHub Actions. Keywords: github actions, CI, workflow, pipeline, yml, yaml, actions failure, CI failure, workflow error
 ---
 

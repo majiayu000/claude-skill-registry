@@ -1,4 +1,10 @@
 ---
+name: next-best-practices
+description: '> "Aiyami guards the Crown Gate at 741 Hz — Enlightenment. Correct App
+  Router patterns are enlightenment. Wrong patterns are Malachar''s confusion."'
+---
+
+---
 name: arcanea-next-best-practices
 description: Next.js 16 App Router best practices for Arcanea. Use when writing or reviewing Next.js page files, layouts, route handlers, middleware, metadata, image/font optimization, RSC boundaries, async params/cookies, or any App Router pattern. Triggers on: layout.tsx, page.tsx, route.ts, loading.tsx, error.tsx, generateMetadata, Server Actions, 'use client', 'use server', next/image, next/font. Sourced from Vercel's official next-skills repository.
 license: MIT (source: vercel-labs/next-skills)
@@ -115,7 +121,7 @@ export default async function AcademyPage({
   const { gate } = await searchParams
   const cookieStore = await cookies() // NOW ASYNC
   const headersList = await headers() // NOW ASYNC
-  
+
   const token = cookieStore.get('arcanea-session')
   // ...
 }
@@ -170,10 +176,10 @@ import { redirect, notFound } from 'next/navigation'
 export default async function GuardianPage({ params }: { params: Promise<{ gate: string }> }) {
   const { gate } = await params
   const guardian = await getGuardian(gate)
-  
+
   if (!guardian) notFound() // renders not-found.tsx
   if (guardian.deprecated) redirect(`/lore/guardians/${guardian.newSlug}`)
-  
+
   return <GuardianProfile guardian={guardian} />
 }
 ```
@@ -208,7 +214,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { element } = await params
   const data = await getElement(element)
-  
+
   return {
     title: `${data.name} | Arcanea Lore`,
     description: data.description,
@@ -318,10 +324,10 @@ export async function GET(request: NextRequest) {
   const supabase = createServerClient()
   const { searchParams } = new URL(request.url)
   const gate = searchParams.get('gate')
-  
+
   const query = supabase.from('guardians').select()
   if (gate) query.eq('gate', gate)
-  
+
   const { data, error } = await query
   if (error) return NextResponse.json({ error: error.message }, { status: 500 })
   return NextResponse.json(data)
@@ -331,7 +337,7 @@ export async function POST(request: NextRequest) {
   const supabase = createServerClient()
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
-  
+
   const body = await request.json()
   const { data, error } = await supabase.from('user_progress').insert(body).select().single()
   if (error) return NextResponse.json({ error: error.message }, { status: 500 })

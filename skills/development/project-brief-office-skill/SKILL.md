@@ -1,3 +1,8 @@
+---
+name: project-brief-office-skill
+description: 'Created: 2026-01-12'
+---
+
 # Project Brief: `office` Skill
 
 **Created**: 2026-01-12

@@ -1,5 +1,12 @@
 ---
 name: ai-optimization
+description: 'Optimize input context for AI consumption using context engineering
+  principles. Use when: (1) User wants to optimize content for AI/Claude explicitly,
+  (2) User invokes with --foryou flag.'
+---
+
+---
+name: ai-optimization
 description: Optimize input context for AI consumption using context engineering principles. Use when: (1) User wants to optimize content for AI/Claude explicitly, (2) User invokes with --foryou flag.
 allowed-tools: Read, Write, TodoWrite
 ---

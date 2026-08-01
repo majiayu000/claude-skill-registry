@@ -1,5 +1,12 @@
 ---
 name: things3-productivity
+description: Provides Things3 task management workflows, organization patterns, and
+  productivity methodologies. Includes personal taxonomy integration, priority systems,
+  and automation patterns for effective task
+---
+
+---
+name: things3-productivity
 description: Provides Things3 task management workflows, organization patterns, and productivity methodologies. Includes personal taxonomy integration, priority systems, and automation patterns for effective task management. MANDATORY: Claude must read this skill file before using any Things3 MCP tools (read_tasks, create_task, edit_task, migrate_inbox_to_notion).
 ---
 

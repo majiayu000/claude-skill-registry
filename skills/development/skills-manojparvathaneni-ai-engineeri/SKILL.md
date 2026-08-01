@@ -1,3 +1,8 @@
+---
+name: skills-manojparvathaneni-ai-engineeri
+description: '├── pyproject.toml    # Dependencies managed by uv'
+---
+
 # Project Development Skill
 
 ## Structure

@@ -1,5 +1,10 @@
 ---
 name: morning
+description: Orient myself to the day - where am I, what's scheduled, what's pending.
+---
+
+---
+name: morning
 description: Morning briefing with calendar, context, and pending items. Use when starting the day, checking what's on deck, wanting an overview, or running a lightweight wake cycle interactively. Trigger words: morning, briefing, what's up, overview, today, schedule.
 ---
 

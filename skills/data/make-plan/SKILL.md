@@ -1,5 +1,10 @@
 ---
 name: make-plan
+description: Create a comprehensive implementation plan and enter plan mode for execution.
+---
+
+---
+name: make-plan
 description: Use when solution space exploration is complete and you're ready to create
   an implementation plan. Enforces "simple over easy" - the fundamentally right solution,
   not the path of least resistance. Triggers after /discover-solution-space, when

@@ -1,5 +1,12 @@
 ---
 name: project-kickstarter
+description: Proactively detects product/project descriptions and guides users through
+  SpecWeave increment planning. Activates when user provides product name, features,
+  tech stack, timeline, or problem descriptio
+---
+
+---
+name: project-kickstarter
 description: Proactively detects product/project descriptions and guides users through SpecWeave increment planning. Activates when user provides product name, features, tech stack, timeline, or problem description. Keywords: project, product, SaaS, app, MVP, build, new project, features, tech stack, core functionality, monetization, timeline, I want to build, let's build, quick build, core features.
 ---
 

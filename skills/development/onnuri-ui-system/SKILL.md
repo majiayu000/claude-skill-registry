@@ -1,3 +1,8 @@
+---
+name: onnuri-ui-system
+description: This skill enforces a consistent, mobile-first UI.
+---
+
 # Skill: onnuri-ui-system
 
 This skill enforces a consistent, mobile-first UI.

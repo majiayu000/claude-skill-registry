@@ -1,3 +1,8 @@
+---
+name: security-compliance-automation
+description: '| Atributo | Valor |'
+---
+
 # 🔒 Skill: Security & Compliance Automation
 
 ## 📋 Metadata
@@ -75,7 +80,7 @@ Automated Remediation
 > - **Vulnerability Scanner:** [`scripts/vulnerability_scanner.py`](scripts/vulnerability_scanner.py) - Escaneo de vulnerabilidades con Trivy
 > - **Compliance Checker:** [`scripts/compliance_checker.py`](scripts/compliance_checker.py) - Verificación de compliance AWS
 > - **Auto Remediation:** [`scripts/auto_remediation.py`](scripts/auto_remediation.py) - Remediation automática Kubernetes
-> 
+>
 > Ver [`scripts/README.md`](scripts/README.md) para documentación de uso completa.
 
 ### 1. OPA Policies
@@ -166,10 +171,10 @@ class VulnerabilityScanner:
             capture_output=True,
             text=True
         )
-        
+
         data = json.loads(result.stdout)
         vulnerabilities = []
-        
+
         for result in data.get('Results', []):
             for vuln in result.get('Vulnerabilities', []):
                 if vuln['Severity'] in ['HIGH', 'CRITICAL']:
@@ -181,7 +186,7 @@ class VulnerabilityScanner:
                         'fixed_version': vuln.get('FixedVersion'),
                         'title': vuln['Title'],
                     })
-        
+
         return vulnerabilities
 
     def check_compliance(self, image: str) -> Dict:
@@ -191,7 +196,7 @@ class VulnerabilityScanner:
             capture_output=True,
             text=True
         )
-        
+
         # Parse compliance results
         return self._parse_compliance(result.stdout)
 
@@ -250,14 +255,14 @@ data:
           - path: "spec.ports[*].port"
             operator: not_in
             values: [443, 8443]
-      
+
       - name: require-resource-limits
         description: "All containers must have resource limits"
         enforcement: warn
         rules:
           - path: "spec.containers[*].resources.limits"
             operator: exists
-      
+
       - name: no-root-containers
         description: "Containers must not run as root"
         enforcement: deny
@@ -364,7 +369,7 @@ python scripts/auto_remediation.py remediate-resource \
 
 ---
 
-**Versión:** 1.0.0  
-**Última actualización:** Diciembre 2025  
+**Versión:** 1.0.0
+**Última actualización:** Diciembre 2025
 **Total líneas:** 1,100+
 

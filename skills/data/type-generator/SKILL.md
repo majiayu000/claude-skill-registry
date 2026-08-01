@@ -1,3 +1,9 @@
+---
+name: type-generator
+description: สร้าง TypeScript types และ interfaces อัตโนมัติจาก JSON data, API responses,
+  หรือ database schemas
+---
+
 # 📝 Type Generator Skill
 
 ---

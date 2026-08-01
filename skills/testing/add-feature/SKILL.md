@@ -1,4 +1,9 @@
 ---
+name: add-feature
+description: 'Add new feature with full validation: $ARGUMENTS (feature name)'
+---
+
+---
 skill: add-feature
 description: Add new feature with full validation: $ARGUMENTS (feature name)
 location: project

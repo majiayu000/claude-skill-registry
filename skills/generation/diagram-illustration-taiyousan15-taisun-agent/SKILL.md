@@ -1,3 +1,8 @@
+---
+name: diagram-illustration
+description: '| ツール | NanoBanana Pro (Gemini) |'
+---
+
 # 図解・解説画像制作ガイド - NanoBanana Pro完全マニュアル
 
 ## 概要

@@ -1,3 +1,8 @@
+---
+name: create-notebook
+description: Skill from tsilva/aiml-notebooks
+---
+
 ## 📓 **AI/ML Notebook Creation Guide**
 
 Create **highly engaging, interactive notebooks** (50-80 cells) that build deep intuitions through step-by-step progression.

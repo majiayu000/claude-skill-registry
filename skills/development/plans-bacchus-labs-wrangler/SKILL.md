@@ -1,3 +1,9 @@
+---
+name: plans-bacchus-labs-wrangler
+description: '> For Claude: REQUIRED SUB-SKILL: Use /wrangler:implement to execute
+  this plan task-by-task.'
+---
+
 # Unified Implement Skill - Implementation Plan
 
 > **For Claude:** REQUIRED SUB-SKILL: Use /wrangler:implement to execute this plan task-by-task.

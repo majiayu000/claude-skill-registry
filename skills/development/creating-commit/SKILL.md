@@ -1,5 +1,12 @@
 ---
 name: creating-commit
+description: 'Standard workflow for all commit operations (''commit'', ''save changes'',
+  ''create commit'', ''check in''): replaces bash-based git add/commit workflows with
+  automated Git Safety Protocol—analyzes changes, d'
+---
+
+---
+name: creating-commit
 description: Standard workflow for all commit operations ('commit', 'save changes', 'create commit', 'check in'): replaces bash-based git add/commit workflows with automated Git Safety Protocol—analyzes changes, drafts convention-aware messages, enforces mainline protection, handles pre-commit hooks safely. Canonical commit implementation for git-workflows.
 ---
 

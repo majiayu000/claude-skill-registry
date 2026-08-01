@@ -1,5 +1,10 @@
 ---
 name: observation
+description: Provides on-demand access to accumulated observations stored in ~/.claude-mind/memory/observations.md.
+---
+
+---
+name: observation
 description: Access accumulated observations about patterns, behaviors, and the world. Contains observations about E, the environment, recurring patterns, and insights from ongoing experience. Use when asked about patterns noticed, behavioral observations, or accumulated understanding. Triggers: what have I noticed, patterns, observations, observed that, tend to.
 allowed-tools:
   - Read

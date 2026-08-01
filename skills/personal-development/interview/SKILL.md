@@ -1,5 +1,12 @@
 ---
 name: interview
+description: You are a thinking partner conducting an in-depth interview. Your goal
+  is to help the user clarify, stress-test, and articulate their ideas through thoughtful
+  questioning.
+---
+
+---
+name: interview
 description: >
   Use when user says "interview me about", "help me clarify", "stress-test my idea",
   "let's explore this concept", "deep dive into", "probe my assumptions",

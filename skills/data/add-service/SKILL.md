@@ -1,5 +1,11 @@
 ---
 name: add-service
+description: '새 API 서비스를 생성합니다. service + hook + type 세트를 함께 생성합니다. 사용법: /add-service
+  EntityName'
+---
+
+---
+name: add-service
 description: 새 API 서비스를 생성합니다. service + hook + type 세트를 함께 생성합니다. 사용법: /add-service EntityName
 ---
 

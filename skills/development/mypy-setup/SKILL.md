@@ -1,5 +1,10 @@
 ---
 name: mypy-setup
+description: 'Category: Python Development'
+---
+
+---
+name: mypy-setup
 description: Set up Mypy type checking configuration for a Python project
 argument-hint: [--strict] [--django] [--format=<ini|toml>] [--install]
 ---

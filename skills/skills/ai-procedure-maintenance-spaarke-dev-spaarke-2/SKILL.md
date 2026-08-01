@@ -1,3 +1,10 @@
+---
+name: ai-procedure-maintenance
+description: Ensure the AI coding procedure ecosystem stays current and consistent
+  when new elements are introduced. This skill provides a checklist-driven approach
+  to propagating updates across all affected files
+---
+
 # ai-procedure-maintenance
 
 ---

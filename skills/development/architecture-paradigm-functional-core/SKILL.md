@@ -1,5 +1,11 @@
 ---
 name: architecture-paradigm-functional-core
+description: '- When business logic is entangled with I/O operations (e.g., database
+  calls, HTTP requests), making tests brittle and slow.'
+---
+
+---
+name: architecture-paradigm-functional-core
 description: |
 
 Triggers: functional-core, imperative-shell, side-effects, functional, architecture

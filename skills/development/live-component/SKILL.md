@@ -1,5 +1,12 @@
 ---
 name: live-component
+description: TwigComponents that re-render dynamically via AJAX. Build reactive UIs
+  in PHP + Twig with zero JavaScript. Every user interaction triggers a server round-trip
+  that re-renders the component and morphs the DOM.
+---
+
+---
+name: live-component
 description: Symfony UX LiveComponent for reactive server-rendered UI -- components that re-render via AJAX on user interaction, zero JavaScript required. Use when building live search, real-time filtering, dynamic forms, inline validation, dependent selects, auto-save, polling, deferred/lazy rendering, or any UI that updates itself based on user input. Code triggers: AsLiveComponent, #[AsLiveComponent], LiveProp, #[LiveProp], LiveAction, #[LiveAction], data-model, data-loading, data-live-action-url, ComponentWithFormTrait, LiveListener, emit, defer, lazy, polling. Also trigger when the user asks "how to build a search that filters as I type", "how to validate a form in real-time", "how to make a reactive component in PHP", "how to build dependent selects", "how to defer component rendering", "how to communicate between components via emit", "how to bind a form to a LiveComponent". Do NOT trigger for static reusable UI without reactivity (use twig-component), for pure client-side JS behavior (use stimulus), or for page-level navigation (use turbo).
 license: MIT
 metadata:

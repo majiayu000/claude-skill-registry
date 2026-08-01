@@ -1,5 +1,12 @@
 ---
 name: unity-migration
+description: 'Migrate a browser-based JavaScript/Canvas game to Unity (C#). Use for
+  Shelter 2250 (or similar) when you need: (1) Unity project setup decisions (2D/URP/input/UI),
+  (2) mapping existing JS classes/syst'
+---
+
+---
+name: unity-migration
 description: Migrate a browser-based JavaScript/Canvas game to Unity (C#). Use for Shelter 2250 (or similar) when you need: (1) Unity project setup decisions (2D/URP/input/UI), (2) mapping existing JS classes/systems to Unity architecture, (3) porting core simulation loops (time/resources/rooms/dwellers/save), and (4) planning incremental milestones with parity checks.
 ---
 

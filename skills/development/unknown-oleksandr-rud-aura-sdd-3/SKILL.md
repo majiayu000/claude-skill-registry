@@ -1,3 +1,9 @@
+---
+name: unknown
+description: 'actor: qa | mandate: Prepare test environment and fixtures | bounds:
+  No test execution yet'
+---
+
 # QA Ready Skill
 
 qa-ready

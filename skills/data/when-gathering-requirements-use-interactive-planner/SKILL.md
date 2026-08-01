@@ -1,3 +1,8 @@
+---
+name: when-gathering-requirements-use-interactive-planner
+description: 'skillname: when-gathering-requirements-use-interactive-planner'
+---
+
 # Interactive Requirements Planning SOP
 
 ```yaml

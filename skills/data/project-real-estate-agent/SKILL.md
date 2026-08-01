@@ -1,5 +1,10 @@
 ---
 name: project-real-estate-agent
+description: '- Evaluating London property investments (Zone 1-3 focus)'
+---
+
+---
+name: project-real-estate-agent
 description: Use for London residential property due diligence and investment second opinions (Zone 1-3 focus): mortgage comparison, conveyancing guidance, market/regeneration research, and developer/agent diligence. Invoke when evaluating flats, BTL yields, leasehold risk, or sanity-checking a deal. Not legal/financial advice. (project)
 ---
 

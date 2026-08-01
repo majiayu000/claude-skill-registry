@@ -1,3 +1,9 @@
+---
+name: toolchains-typescript-api-trpc
+description: tRPC enables end-to-end type safety between TypeScript clients and servers
+  without code generation. Define your API once, get automatic type inference everywhere.
+---
+
 # tRPC - End-to-End Type Safety
 
 ---

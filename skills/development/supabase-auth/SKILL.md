@@ -1,5 +1,11 @@
 ---
 name: supabase-auth
+description: 'Apply when implementing authentication: sign up, sign in, OAuth providers,
+  session management, and protected routes.'
+---
+
+---
+name: supabase-auth
 description: Apply when implementing authentication: sign up, sign in, OAuth providers, session management, and protected routes.
 version: 1.1.0
 tokens: ~750

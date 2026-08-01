@@ -1,5 +1,10 @@
 ---
 name: init-melos
+description: dart pub global activate melos
+---
+
+---
+name: init-melos
 description: Install and initialize Melos CLI for monorepo management. Use when user needs melos, wants to run melos bootstrap, or gets "melos: command not found". Triggers on "install melos", "init melos", "melos not found", "setup melos".
 ---
 

@@ -1,5 +1,12 @@
 ---
 name: defects-reactions
+description: 'This skill group covers calculations involving crystallographic defects
+  and chemical reaction pathways in solid-state materials. Two main approaches are
+  available:'
+---
+
+---
+name: defects-reactions
 description: Defects and Reactions (13 sub-skills: activation-relaxation-technique, adsorption-energy, configuration-coordinate, defect-thermodynamics, interstitial-defect, migration-barrier, neb-transition-state, point-defect, reaction-pathway,
 ---
 

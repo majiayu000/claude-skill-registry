@@ -1,3 +1,9 @@
+---
+name: performance-digest
+description: Generate executive-ready performance summaries with insights and recommendations.
+  Use when relevant to the task.
+---
+
 # performance-digest
 
 Generate executive-ready performance summaries with insights and recommendations.

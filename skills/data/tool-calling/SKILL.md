@@ -1,5 +1,12 @@
 ---
 name: tool-calling
+description: Define tools as structured interfaces the model can call, then implement
+  a loop that executes those calls and returns results. Treat tool calls as suggestions
+  that must be validated before execution.
+---
+
+---
+name: tool-calling
 description: Define and run tool-calling patterns for LLMs (schema design, call loops, validation, parallel calls). Use when building function/tool calling workflows or debugging tool selection and arguments; triggers: tool-calling, function-calling, tool schema, tool declaration, parallel function calling.
 ---
 

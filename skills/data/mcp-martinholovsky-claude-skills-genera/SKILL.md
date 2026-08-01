@@ -1,3 +1,8 @@
+---
+name: mcp-martinholovsky-claude-skills-genera
+description: 'name: mcp-protocol-expert'
+---
+
 # Model Context Protocol (MCP) Skill
 
 ```yaml

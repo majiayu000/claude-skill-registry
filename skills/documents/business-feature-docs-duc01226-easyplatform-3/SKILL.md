@@ -1,5 +1,11 @@
 ---
 name: business-feature-docs
+description: Generate comprehensive business feature documentation following the GOLD
+  STANDARD template.
+---
+
+---
+name: business-feature-docs
 description: "[Docs] Generate enterprise module documentation with 26-section structure and folder hierarchy. Use for module docs, enterprise features, detailed specs in docs/business-features/{Module}/. Includes README, INDEX, API-REFERENCE, detailed-features/. Triggers on "module docs", "enterprise feature docs", "business module", "26-section docs", "detailed feature specs". For single-file quick docs, use feature-docs instead."
 allowed-tools: Read, Write, Edit, Bash, Grep, Glob, Task, TodoWrite
 ---

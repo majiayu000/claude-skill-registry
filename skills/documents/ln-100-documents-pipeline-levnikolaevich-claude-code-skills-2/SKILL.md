@@ -1,5 +1,13 @@
 ---
 name: ln-100-documents-pipeline
+description: This skill orchestrates the creation of a complete documentation system
+  by invoking L2 coordinator + 4 L2 workers. The coordinator (ln-110) delegates to
+  5 L3 workers for project docs; other L2 workers handle reference/tasks/test/presentation
+  domains. Each component validates its own output.
+---
+
+---
+name: ln-100-documents-pipeline
 description: Top orchestrator for complete doc system. Delegates to ln-110 coordinator (project docs via 5 L3 workers) + ln-120-150 workers. Phase 4: global cleanup. Idempotent.
 ---
 

@@ -1,3 +1,8 @@
+---
+name: about
+description: 'Preferred: JavaScript and TypeScript, Pug, CSS (SCSS), HTML'
+---
+
 # Skills
 
 ## Programming & Markup Languages

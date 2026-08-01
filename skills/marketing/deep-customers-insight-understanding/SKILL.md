@@ -1,5 +1,16 @@
 ---
 name: deep-customers-insight-understanding
+description: 'Prompt này yêu cầu AI đóng vai trò chuyên gia chiến lược marketing và
+  nghiên cứu hành vi khách hàng để phân tích insight của tệp khách hàng mục tiêu cho
+  một sản phẩm/dịch vụ cụ thể theo hai khung: tháp nhu cầu Maslow và 6 khía cạnh cuộc
+  sống, từ đó xác định ưu tiên nhu cầu/yếu tố, làm rõ động lực tâm lý và pain point,
+  diễn giải hành vi–niềm tin–rào cản–kỳ vọng, rồi đề xuất các góc độ nội dung cùng
+  định dạng nội dung và kênh triển khai (Facebook, TikTok, Email, SEO website, PR),
+  trình bày kết quả'
+---
+
+---
+name: deep-customers-insight-understanding
 description: Prompt này yêu cầu AI đóng vai trò chuyên gia chiến lược marketing và nghiên cứu hành vi khách hàng để phân tích insight của tệp khách hàng mục tiêu cho một sản phẩm/dịch vụ cụ thể theo hai khung: tháp nhu cầu Maslow và 6 khía cạnh cuộc sống, từ đó xác định ưu tiên nhu cầu/yếu tố, làm rõ động lực tâm lý và pain point, diễn giải hành vi–niềm tin–rào cản–kỳ vọng, rồi đề xuất các góc độ nội dung cùng định dạng nội dung và kênh triển khai (Facebook, TikTok, Email, SEO website, PR), trình bày kết quả dưới dạng bảng theo ngôn ngữ được chỉ định.
 skillVersionId: 0198c184-789c-7191-82bf-6fd057192cbe
 ---

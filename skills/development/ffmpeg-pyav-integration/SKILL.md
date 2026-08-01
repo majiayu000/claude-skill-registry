@@ -1,5 +1,10 @@
 ---
 name: ffmpeg-pyav-integration
+description: Complete reference for PyAV - Pythonic bindings for FFmpeg's libraries.
+---
+
+---
+name: ffmpeg-pyav-integration
 description: Complete PyAV (Python FFmpeg bindings) integration guide. PROACTIVELY activate for: (1) PyAV installation on Ubuntu/Windows/macOS, (2) Building PyAV against custom FFmpeg, (3) FFmpeg 7.0/8.0+ compatibility, (4) av.open() video/audio decoding, (5) VideoFrame/AudioFrame NumPy conversion, (6) Filter graph processing, (7) Video encoding with H.264/H.265/AV1, (8) Seeking and keyframe extraction, (9) RTSP/network streaming with PyAV, (10) Memory management and thread safety, (11) Error handling with FFmpegError, (12) Subtitle extraction, (13) Container manipulation and remuxing, (14) Performance optimization and threading. Provides: Complete PyAV API patterns, installation guides for all Ubuntu versions, FFmpeg 8.0+ compatibility matrix, type-safe examples, memory management best practices, filter graph examples, encoding/decoding patterns.
 ---
 

@@ -1,4 +1,10 @@
 ---
+name: shared
+description: This skill provides reusable modules and patterns shared across all pensive
+  review skills.
+---
+
+---
 name: pensive:shared
 description: |
 

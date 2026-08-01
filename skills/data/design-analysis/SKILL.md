@@ -1,11 +1,16 @@
 ---
+name: design-analysis
+description: '> Note: This skill has been adapted from claude-skillz'
+---
+
+---
 name: lightweight-design-analysis
 description: This skill analyzes code for design quality improvements across 8 dimensions: Naming, Object Calisthenics, Coupling & Cohesion, Immutability, Domain Integrity, Type System, Simplicity, and Performance. Ensures rigorous, evidence-based analysis by: (1) Understanding code flow first via implementation-analysis protocol, (2) Systematically evaluating each dimension with specific criteria, (3) Providing actionable findings with file:line references. Triggers when users request: code analysis, design review, refactoring opportunities, code quality assessment, architecture evaluation.
 ---
 
 # GitHub Copilot Skill: design-analysis
 
-> **Note:** This skill has been adapted from [claude-skillz](https://github.com/NTCoding/claude-skillz) 
+> **Note:** This skill has been adapted from [claude-skillz](https://github.com/NTCoding/claude-skillz)
 > for use with GitHub Copilot Agent Skills.
 
 ---

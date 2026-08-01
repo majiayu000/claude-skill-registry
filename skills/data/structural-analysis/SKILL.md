@@ -1,3 +1,8 @@
+---
+name: structural-analysis
+description: 'name: structural-analysis'
+---
+
 # Structural Analysis Skill
 
 ```yaml

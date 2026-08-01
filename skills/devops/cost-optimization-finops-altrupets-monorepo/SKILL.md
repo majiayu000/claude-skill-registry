@@ -1,3 +1,8 @@
+---
+name: cost-optimization-finops
+description: '| ID | sre-cost-optimization-finops |'
+---
+
 # 💰 Skill: Cost Optimization & FinOps
 
 ## 📋 Metadata

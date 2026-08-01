@@ -1,3 +1,8 @@
+---
+name: ci-cd
+description: 'Reference this skill when:'
+---
+
 # CI/CD Skill — GitHub Actions & Deployment Pipelines
 
 ## When to Use

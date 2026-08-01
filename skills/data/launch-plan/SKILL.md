@@ -1,5 +1,10 @@
 ---
 name: launch-plan
+description: 'This skill supports three modes: Create, Update, and Find.'
+---
+
+---
+name: launch-plan
 description: Create or update a product launch plan
 argument-hint: [product or feature name] or [update path/to/launch-plan.md]
 ---

@@ -1,3 +1,8 @@
+---
+name: cancelskill-md
+description: Skill from iceBear67/mythicmobswiki
+---
+
 ## Description
 Cancels the execution of the [Metaskill][] when triggered
 

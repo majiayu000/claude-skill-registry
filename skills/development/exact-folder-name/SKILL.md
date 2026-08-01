@@ -1,4 +1,11 @@
 ---
+name: exact-folder-name
+description: 'Use when: you need to be sure a new skill will work as intended, confused
+  about skill creation, unsure about naming conventions, need help with activation
+  descriptions, want to avoid common mistakes'
+---
+
+---
 name: _skillwriting
 description: Use when: you need to be sure a new skill will work as intended, confused about skill creation, unsure about naming conventions, need help with activation descriptions, want to avoid common mistakes
 ---

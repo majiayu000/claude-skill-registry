@@ -1,3 +1,9 @@
+---
+name: vibe-orchestrator
+description: Take a simple description and orchestrate multiple skills/agents to build
+  a complete, production-ready application.
+---
+
 # ✨ Vibe Orchestrator Skill
 
 ---

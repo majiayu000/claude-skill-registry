@@ -1,5 +1,10 @@
 ---
 name: code-reviewer
+description: 對程式碼進行全面審查，檢查品質、安全性、效能和最佳實踐。
+---
+
+---
+name: code-reviewer
 description: Comprehensive code review checking quality, security, and best practices. Triggers: CR, review, 審查, 檢查, check, 看一下, PR, code review, 品質, inspect, 檢視, 看看, 幫看, lint, quality check, 品質檢查, pull request, merge request, MR, diff, 程式碼審查.
 version: 2.2.0
 category: quality

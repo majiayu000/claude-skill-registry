@@ -1,5 +1,12 @@
 ---
-name: smart-writing-workflow  
+name: smart-writing-workflow
+description: 'This skill should be used when the user wants to start a complete article
+  writing project and needs guidance through the full iterative workflow. Triggers:
+  "开始写作流程", "开始创作", "help me write article", "'
+---
+
+---
+name: smart-writing-workflow
 description: This skill should be used when the user wants to start a complete article writing project and needs guidance through the full iterative workflow. Triggers: "开始写作流程", "开始创作", "help me write article", "guide writing process"
 version: 1.0.0
 ---
@@ -442,7 +449,7 @@ graph LR
 ### In Progress 🔄
 - [ ] Phase 3: Drafting (90 min) - 50% complete
   - [x] Introduction
-  - [x] Background  
+  - [x] Background
   - [x] Section 1
   - [ ] Section 2 ← **Currently here**
   - [ ] Section 3

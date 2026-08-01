@@ -1,5 +1,11 @@
 ---
 name: ingest-yt-history
+description: 'Goal: Let Horus persona easily find music based on human''s listening
+  history.'
+---
+
+---
+name: ingest-yt-history
 description: >
   Ingest YouTube and YouTube Music watch history from Google Takeout exports.
   Builds music taste profile for Horus persona with /memory integration.

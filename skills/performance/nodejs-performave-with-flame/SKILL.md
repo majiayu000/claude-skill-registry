@@ -1,3 +1,8 @@
+---
+name: nodejs-performave-with-flame
+description: 'When provided with a .md performance profile (Summary, Detailed, or
+  Adaptive formats), the agent must:'
+---
 
 ---
 

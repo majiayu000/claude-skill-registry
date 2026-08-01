@@ -1,5 +1,12 @@
 ---
 name: michael-d1-swimming
+description: 'Michael Shapira''s D1 swimming pathway tracking for Life OS. Manages
+  swim times, nutrition protocol (kosher keto), recruiting outreach, and rival comparison.
+  Events: 50/100/200 Free, 100 Fly, 100 Back.'
+---
+
+---
+name: michael-d1-swimming
 description: Michael Shapira's D1 swimming pathway tracking for Life OS. Manages swim times, nutrition protocol (kosher keto), recruiting outreach, and rival comparison. Events: 50/100/200 Free, 100 Fly, 100 Back. SwimCloud ID: 3250085. Use when tracking swim performance, analyzing times, managing nutrition, planning recruiting, or comparing against rivals (Soto PI:47, Gordon PI:90, Domboru PI:102).
 ---
 
@@ -95,7 +102,7 @@ def log_swim_time(event: str, time: float, meet: str, is_pb: bool):
 
 ### Improvement Metrics
 ```sql
-SELECT 
+SELECT
   event,
   MIN(time_seconds) as best,
   MAX(time_seconds) as worst,

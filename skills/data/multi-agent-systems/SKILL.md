@@ -1,3 +1,8 @@
+---
+name: multi-agent-systems
+description: '---name: swarm-orchestrator'
+---
+
 ---name: swarm-orchestrator
 description: Run Agent Swarms
 keywords:

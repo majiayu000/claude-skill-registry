@@ -1,14 +1,19 @@
+---
+name: contact-center-skills
+description: POST {{baseUrl}}/contactcenter/skills
+---
+
 # Create a skill
 
 POST {{baseUrl}}/contact_center/skills
 
 
 <p>
-Create a 
+Create a
 <a href="https://support.zoom.us/hc/en-us/articles/4423986613261">
 skill
 </a>
- for skill-based routing. Skills are agent traits that ensure they are the right person to handle a customer interaction. 
+ for skill-based routing. Skills are agent traits that ensure they are the right person to handle a customer interaction.
 </p>
 
 
@@ -18,7 +23,7 @@ skill
 <strong>
 Scopes:
 </strong>
- 
+
 <code>
 contact_center_skill:write:admin
 </code>
@@ -36,7 +41,7 @@ Rate Limit Label
 </a>
 :
 </strong>
- 
+
 <code>
 Light
 </code>

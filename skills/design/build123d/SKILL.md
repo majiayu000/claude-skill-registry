@@ -1,5 +1,12 @@
 ---
 name: build123d
+description: 'CAD modeling with build123d Python library. Use when creating 3D models,
+  exporting to GLB/STEP/STL, or doing boolean operations (union, difference, intersection).
+  Triggers on: CAD, 3D modeling, sphere'
+---
+
+---
+name: build123d
 description: CAD modeling with build123d Python library. Use when creating 3D models, exporting to GLB/STEP/STL, or doing boolean operations (union, difference, intersection). Triggers on: CAD, 3D modeling, sphere, box, cylinder, mesh export, GLB, STEP, STL, solid modeling, parametric design, threads, fasteners, bolts, nuts, screws, gears, pipes, flanges, bearings, bd_warehouse, spur gear, helical gear, bevel gear, planetary gear, ring gear, cycloid gear, rack and pinion, gggears, herringbone, gear mesh, gear train.
 ---
 

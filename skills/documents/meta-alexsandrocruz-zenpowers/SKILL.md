@@ -1,3 +1,8 @@
+---
+name: meta
+description: Scaffold a new skill following best practices.
+---
+
 # create-new-skill
 
 ## Purpose

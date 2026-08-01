@@ -1,5 +1,12 @@
 ---
 name: hardened-outline-driven-development-for-rust
+description: 'HODD-RUST: Validation-first Rust development. Strictly validation-first
+  before-and-after(-and-while) planning and execution. Merges Type-driven + Spec-first
+  + Proof-driven + Design-by-contracts. Use f'
+---
+
+---
+name: hardened-outline-driven-development-for-rust
 description: HODD-RUST: Validation-first Rust development. Strictly validation-first before-and-after(-and-while) planning and execution. Merges Type-driven + Spec-first + Proof-driven + Design-by-contracts. Use for Rust projects requiring formal verification, safety proofs, comprehensive validation, or when working with unsafe code, concurrency, or FFI boundaries. This skill provides both reference documentation AND execution capabilities for the full PLAN -> CREATE -> VERIFY -> REMEDIATE workflow.
 ---
 

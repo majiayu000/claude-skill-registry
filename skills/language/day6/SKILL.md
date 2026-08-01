@@ -1,3 +1,8 @@
+---
+name: day6
+description: 根据英汉两种语言不同的思维方式、语言习惯和表达方式,在翻译时增添一些词、短句或句子,以便更准确地表达出原文所包含的意义。这种方式多半用在汉译英里。
+---
+
 # 常用英汉互译技巧
 
 * 增译法
@@ -37,7 +42,7 @@ ex:
 
 你在北京访问期间就住在这家饭店里。(省译物主代词)
 
-2. I hope you will enjoy your stay here. 
+2. I hope you will enjoy your stay here.
 
 希望您在这儿过得愉快。(省译主语)
 
@@ -49,7 +54,7 @@ The Chinese government has always attached great importance to environmental pro
 
 集成电路的发展是电子器件可以做得越来越小。(省译形式主语 it)
 
-* 转换法 
+* 转换法
 
 在翻译过程中，为了使译文符合目标语的表述方式、方法和习 惯,对原句中的词类、句型和语态等进行转换: 
 
@@ -60,7 +65,7 @@ The Chinese government has always attached great importance to environmental pro
 
 ex:
 
-1. Too much exposure to TV programs will do great harm to the eyesight of children. 
+1. Too much exposure to TV programs will do great harm to the eyesight of children.
 
 孩子们看电视过多会大大地损坏视力。(名词转动词)
 
@@ -84,7 +89,7 @@ ex:
 
 China is a large country with four-fifths of the population engaged in agriculture, but only one tenth of the land is farmland, the rest being mountains, forests and places for urban and other uses.(合译法) 
 
-3. Packet switching is a method of slicing digital messages into parcels called "packets," sending the packets along different communication paths as they become available, and then reassembling the packets once they arrive at their destination. 
+3. Packet switching is a method of slicing digital messages into parcels called "packets," sending the packets along different communication paths as they become available, and then reassembling the packets once they arrive at their destination.
 
 分组交换是传输数据的一种方法，它先将数据信息分割成许多称为“分组”的数据信息包；当路径可用时，经过不同的通信路径发送；当到达目的地后，再将它们组装起来。(将长定语从句拆成几个并列的分句)
 
@@ -96,7 +101,7 @@ China is a large country with four-fifths of the population engaged in agricultu
 
 You can obtain this information on the Internet.(正译) 
 
-This information is accessible/available on the Internet.(反译) 
+This information is accessible/available on the Internet.(反译)
 
 2. 他突然想到了一个新主意。 
 
@@ -112,7 +117,7 @@ A new idea suddenly occurred to/struck him.(反译)
 
 ex:
 
-1. At this moment, through the wonder of telecommunications, more people are seeing and hearing what we say than on any other occasions in the whole history of the world. 
+1. At this moment, through the wonder of telecommunications, more people are seeing and hearing what we say than on any other occasions in the whole history of the world.
 
 此时此刻，通过现代通信手段的奇迹，看到和听到我们讲话的人比整个世界历史上任何其他这样的场合都要多。(部分倒置)
 
@@ -130,7 +135,7 @@ ex:
 
 IP 多信道广播是使数据向网络中许多位置高效传送的一组技术。
 
-2. What brings us together is that we have common interests which transcend those differences. 
+2. What brings us together is that we have common interests which transcend those differences.
 
 使我们走到一起的，是我们有超越这些分歧的共同利益。
 
@@ -148,9 +153,9 @@ If the announcement of the recovery of Hong Kong would bring about, as Madam put
 
 在进行英译汉时，为了使译文流畅和更符合汉语叙事论理的习惯，在捋清英语长句的结构、弄懂英语原意的基础上，彻底摆脱原文语序和句子形式，对句子进行重新组合。 
 
-ex: 
+ex:
 
-Decision must be made very rapidly; physical endurance is tested as much as perception, because an enormous amount of time must be spent making certain that the key figures act on the basis of the same information and purpose. 
+Decision must be made very rapidly; physical endurance is tested as much as perception, because an enormous amount of time must be spent making certain that the key figures act on the basis of the same information and purpose.
 
 必须把大量时间花在确保关键人物均根据同一情报和目的行事，而这一切对身体的耐力和思维能力都是一大考验。因此，一旦考虑成熟，决策者就应迅速做出决策。
 
@@ -158,7 +163,7 @@ Decision must be made very rapidly; physical endurance is tested as much as perc
 
 是指单用某种翻译技巧无法译出时，着眼篇章，以逻辑分析为基础，同时使用转换法、倒置法、增译法、省译法、拆句法等多种翻译技巧的方法。 
 
-ex: 
+ex:
 
 Behind this formal definition are three extremely important concepts that are the basis for understanding the Internet: packet switching, the TCP/IP communications protocol, and client/server computing.
 

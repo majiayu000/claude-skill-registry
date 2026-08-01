@@ -1,5 +1,11 @@
 ---
 name: pytest-config
+description: Standardized pytest configuration and patterns for consistent testing
+  infrastructure across Claude Night Market plugins.
+---
+
+---
+name: pytest-config
 description: |
 
 Triggers: fixtures, config, configuration, pytest, testing

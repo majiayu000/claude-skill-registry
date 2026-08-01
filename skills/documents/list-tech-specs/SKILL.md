@@ -1,5 +1,10 @@
 ---
 name: list-tech-specs
+description: 'Category: Technical Architecture'
+---
+
+---
+name: list-tech-specs
 description: List all Technical Specifications with status and metadata
 argument-hint: [--status <status>] [--all]
 ---

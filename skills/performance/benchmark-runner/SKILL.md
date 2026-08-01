@@ -1,3 +1,8 @@
+---
+name: benchmark-runner
+description: Multi-step workflow for running performance benchmarks on ccswarm.
+---
+
 # Benchmark Runner Workflow
 
 Multi-step workflow for running performance benchmarks on ccswarm.

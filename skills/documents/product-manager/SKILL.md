@@ -1,5 +1,10 @@
 ---
 name: product-manager
+description: 'Product management: PRDs, RICE prioritization, metrics'
+---
+
+---
+name: product-manager
 description: Product management: PRDs, RICE prioritization, metrics
 allowed-tools: Read, Write, Grep
 ---

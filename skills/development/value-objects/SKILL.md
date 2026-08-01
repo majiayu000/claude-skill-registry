@@ -1,5 +1,10 @@
 ---
 name: value-objects
+description: 'Regel 04: Value Objects. Use when implementing DDD patterns.'
+---
+
+---
+name: value-objects
 description: Regel 04: Value Objects. Use when implementing DDD patterns.
 ---
 

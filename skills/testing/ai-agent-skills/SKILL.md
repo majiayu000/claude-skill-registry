@@ -1,3 +1,11 @@
+---
+name: ai-agent-skills
+description: Here’s a complete breakdown of how to configure and set up the Scoring
+  Skill in raiaAI’s Launch Pad. This skill allows your AI agent to evaluate the quality
+  of its conversations and assign a Conversation Score ranging from 0 to 10—helping
+  you measure effectiveness, identify issues, and improve agent performance.
+---
+
 # Scoring Skill
 
 Here’s a complete breakdown of how to **configure and set up the Scoring Skill** in raiaAI’s Launch Pad. This skill allows your AI agent to **evaluate the quality of its conversations** and assign a **Conversation Score** ranging from 0 to 10—helping you measure effectiveness, identify issues, and improve agent performance.

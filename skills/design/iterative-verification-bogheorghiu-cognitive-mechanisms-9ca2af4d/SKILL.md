@@ -1,5 +1,12 @@
 ---
 name: iterative-verification
+description: '"Is this ACTUALLY verified, or did I just say it is?" - Ralph-wiggum
+  methodology applied to factual accuracy. Use when (1) claims require evidence not
+  assumption, (2) verification must be demonstrable'
+---
+
+---
+name: iterative-verification
 description: "Is this ACTUALLY verified, or did I just say it is?" - Ralph-wiggum methodology applied to factual accuracy. Use when (1) claims require evidence not assumption, (2) verification must be demonstrable, (3) single-pass investigation insufficient, (4) factual accuracy is critical. Provides the loop logic: iterate until verification thresholds met. Does NOT trigger for: opinions, preferences, how-to instructions, or when user explicitly wants quick answer.
 ---
 

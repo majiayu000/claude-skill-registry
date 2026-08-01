@@ -1,3 +1,8 @@
+---
+name: slimjobadskill
+description: Name | Type | Description | Notes
+---
+
 # # SlimJobAdSkill
 
 ## Properties

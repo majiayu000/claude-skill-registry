@@ -1,5 +1,13 @@
 ---
 name: lgps-scheme-amendment-analyzer
+description: Analyze Local Government Pension Scheme amendments to identify regulatory
+  implications, compare against existing scheme rules, assess member impact, and flag
+  required trustee actions. Uses PSPS Neo4j database and CMS Handbook for comprehensive
+  analysis.
+---
+
+---
+name: lgps-scheme-amendment-analyzer
 description: Analyze LGPS scheme amendments, identify regulatory changes, compare against current rules, flag trustee notification requirements, extract member impact. Use when reviewing scheme amendments, regulatory changes, LGPS updates, trustee decisions. Keywords: LGPS, amendment, scheme rules, regulatory change, trustee, member benefits, scheme change.
 allowed-tools: Read, Bash(grep:*), mcp__neo4j-psps__*, mcp__neo4j-cms-handbook__*, mcp__archon__rag_search_knowledge_base, mcp__archon__rag_read_full_page
 model: claude-opus-4-5-20251101

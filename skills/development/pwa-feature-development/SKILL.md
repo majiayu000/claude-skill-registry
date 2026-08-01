@@ -1,5 +1,10 @@
 ---
 name: pwa-feature-development
+description: 'Last Updated: 2026-01-15'
+---
+
+---
+name: pwa-feature-development
 description: Create progressive web app features following established patterns
 version: 1.0.0
 author: Saberloop Project
@@ -10,7 +15,7 @@ usage: |
   - Creating P2P features and WebRTC connections
   - Setting up offline capabilities and data sync
   - Implementing quiz sharing/import functionality
-  
+
   Examples:
   "Create new results view using the pwa-feature-development skill"
   "Implement P2P quiz sharing using the pwa-feature-development skill"
@@ -149,15 +154,15 @@ export default class NewFeatureView extends BaseView {
             </h1>
           </div>
         </header>
-        
+
         <main class="max-w-4xl mx-auto px-4 py-8">
           <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
             <p class="text-text-light dark:text-text-dark">
               ${t('newFeature.description')}
             </p>
-            
+
             <div class="mt-6">
-              <button 
+              <button
                 onclick="window.newFeatureView.handleAction()"
                 class="px-6 py-3 bg-primary text-white rounded-xl font-medium hover:bg-primary/90"
               >
@@ -190,15 +195,15 @@ export default class NewFeatureView extends BaseView {
     try {
       this.isLoading = true;
       this.render();
-      
+
       logger.info('New feature action started');
-      
+
       // Perform the main action
       await this.performAction();
-      
+
       // Navigate to next view
       this.navigateTo('#/results');
-      
+
     } catch (error) {
       logger.error('New feature action failed', { error: error.message });
       this.error = error.message;
@@ -213,13 +218,13 @@ export default class NewFeatureView extends BaseView {
   async performAction() {
     // Implement the feature logic here
     this.featureData = await this.processFeatureData();
-    
+
     // Save to state if needed
     state.set('newFeatureData', this.featureData);
-    
+
     // Save to database if needed
     // await saveFeatureData(this.featureData);
-    
+
     return this.featureData;
   }
 
@@ -241,12 +246,12 @@ export default class NewFeatureView extends BaseView {
   destroy() {
     // Remove event listeners and cleanup
     super.destroy();
-    
+
     // Clear any intervals/timeouts
     if (this.pollingInterval) {
       clearInterval(this.pollingInterval);
     }
-    
+
     logger.info('NewFeatureView destroyed');
   }
 }
@@ -340,16 +345,16 @@ async function doBackgroundSync() {
   try {
     // Get pending data from IndexedDB
     const pendingData = await getPendingSyncData();
-    
+
     if (pendingData.length > 0) {
       // Sync with server
       for (const data of pendingData) {
         await syncDataToServer(data);
       }
-      
+
       // Clear pending data
       await clearPendingSyncData();
-      
+
       // Notify user
       self.registration.showNotification('Data synced successfully');
     }
@@ -383,7 +388,7 @@ export class P2PService {
   async createRoom(roomId) {
     this.roomId = roomId;
     this.isHost = true;
-    
+
     try {
       // Create peer connection
       this.localConnection = new RTCPeerConnection({
@@ -454,10 +459,10 @@ export class P2PService {
     };
 
     this.localConnection.onconnectionstatechange = (event) => {
-      logger.info('P2P connection state changed', { 
-        state: event.target.connectionState 
+      logger.info('P2P connection state changed', {
+        state: event.target.connectionState
       });
-      
+
       if (this.onConnectionCallback) {
         this.onConnectionCallback(event.target.connectionState);
       }
@@ -475,7 +480,7 @@ export class P2PService {
     this.dataChannel.onmessage = (event) => {
       const message = JSON.parse(event.data);
       logger.debug('P2P message received', { message });
-      
+
       if (this.onMessageCallback) {
         this.onMessageCallback(message);
       }
@@ -496,7 +501,7 @@ export class P2PService {
         data,
         timestamp: Date.now()
       });
-      
+
       this.dataChannel.send(message);
       logger.debug('P2P message sent', { type, data });
     } else {
@@ -540,13 +545,13 @@ export class P2PService {
     if (this.dataChannel) {
       this.dataChannel.close();
     }
-    
+
     if (this.localConnection) {
       this.localConnection.close();
     }
-    
+
     this.remoteConnections.clear();
-    
+
     logger.info('P2P service destroyed');
   }
 }
@@ -572,13 +577,13 @@ export class QuizShareService {
   async hostSharedQuiz(quizData) {
     try {
       this.quizData = quizData;
-      
+
       // Generate room ID
       const roomId = this.generateRoomId();
-      
+
       // Create P2P room
       await this.p2pService.createRoom(roomId);
-      
+
       // Setup message handlers
       this.p2pService.onMessage((message) => {
         this.handleParticipantMessage(message);
@@ -587,7 +592,7 @@ export class QuizShareService {
       // Notify when participants join
       this.p2pService.onConnection((state) => {
         logger.info('Participant connection state', { state });
-        
+
         if (state === 'connected') {
           this.handleParticipantJoin();
         }
@@ -595,11 +600,11 @@ export class QuizShareService {
 
       // Share room code with participants
       const shareUrl = this.generateShareUrl(roomId);
-      
-      logger.info('Quiz sharing session started', { 
-        roomId, 
+
+      logger.info('Quiz sharing session started', {
+        roomId,
         shareUrl,
-        quizTitle: quizData.title 
+        quizTitle: quizData.title
       });
 
       return {
@@ -621,7 +626,7 @@ export class QuizShareService {
     try {
       // Join P2P room
       await this.p2pService.joinRoom(roomCode);
-      
+
       // Setup message handlers
       this.p2pService.onMessage((message) => {
         this.handleHostMessage(message);
@@ -648,11 +653,11 @@ export class QuizShareService {
       case 'quiz-request':
         this.handleQuizRequest(message.data);
         break;
-        
+
       case 'quiz-answer':
         this.handleQuizAnswer(message.data);
         break;
-        
+
       case 'quiz-complete':
         this.handleQuizComplete(message.data);
         break;
@@ -667,11 +672,11 @@ export class QuizShareService {
       case 'quiz-start':
         this.handleQuizStart(message.data);
         break;
-        
+
       case 'quiz-question':
         this.handleQuizQuestion(message.data);
         break;
-        
+
       case 'quiz-results':
         this.handleQuizResults(message.data);
         break;
@@ -704,7 +709,7 @@ export class QuizShareService {
   generateQRCode(url) {
     // Use qrcode library
     import QRCode from 'qrcode';
-    
+
     return QRCode.toDataURL(url, {
       width: 200,
       margin: 2,
@@ -730,7 +735,7 @@ export class NetworkManager {
   constructor() {
     this.isOnline = navigator.onLine;
     this.listeners = [];
-    
+
     // Setup network listeners
     window.addEventListener('online', this.handleOnline.bind(this));
     window.addEventListener('offline', this.handleOffline.bind(this));
@@ -740,10 +745,10 @@ export class NetworkManager {
     this.isOnline = true;
     state.set('networkStatus', 'online');
     logger.info('Network connection restored');
-    
+
     // Trigger background sync
     this.triggerBackgroundSync();
-    
+
     // Notify listeners
     this.listeners.forEach(callback => callback('online'));
   }
@@ -752,7 +757,7 @@ export class NetworkManager {
     this.isOnline = false;
     state.set('networkStatus', 'offline');
     logger.warn('Network connection lost');
-    
+
     // Notify listeners
     this.listeners.forEach(callback => callback('offline'));
   }
@@ -811,21 +816,21 @@ export class OfflineSync {
     for (const action of unsynced) {
       try {
         await this.processAction(action);
-        
+
         // Mark as synced
         action.synced = true;
         await this.db.put('syncQueue', action);
-        
-        logger.info('Action synced successfully', { 
-          type: action.type, 
-          actionId: action.id 
+
+        logger.info('Action synced successfully', {
+          type: action.type,
+          actionId: action.id
         });
-        
+
       } catch (error) {
-        logger.error('Failed to sync action', { 
-          type: action.type, 
-          actionId: action.id, 
-          error 
+        logger.error('Failed to sync action', {
+          type: action.type,
+          actionId: action.id,
+          error
         });
       }
     }
@@ -838,13 +843,13 @@ export class OfflineSync {
     switch (action.type) {
       case 'quiz-result':
         return await this.syncQuizResult(action.data);
-        
+
       case 'quiz-progress':
         return await this.syncQuizProgress(action.data);
-        
+
       case 'user-preferences':
         return await this.syncUserPreferences(action.data);
-        
+
       default:
         throw new Error(`Unknown sync action type: ${action.type}`);
     }
@@ -919,10 +924,10 @@ describe('Service Worker', () => {
 
   it('should handle background sync', async () => {
     const syncEvent = { tag: 'background-sync', waitUntil: vi.fn() };
-    
+
     // Trigger sync event
     global.self.addEventListener.mock.calls[0][1](syncEvent);
-    
+
     expect(syncEvent.waitUntil).toHaveBeenCalled();
   });
 });
@@ -954,7 +959,7 @@ describe('P2P Service', () => {
 
   it('should create room with correct configuration', async () => {
     await p2pService.createRoom('TEST123');
-    
+
     expect(global.RTCPeerConnection).toHaveBeenCalledWith({
       iceServers: expect.arrayContaining([
         expect.objectContaining({ urls: 'stun:stun.l.google.com:19302' })
@@ -967,10 +972,10 @@ describe('P2P Service', () => {
       readyState: 'open',
       send: vi.fn()
     };
-    
+
     p2pService.dataChannel = mockDataChannel;
     p2pService.sendMessage('test-type', { data: 'test' });
-    
+
     expect(mockDataChannel.send).toHaveBeenCalledWith(
       expect.stringContaining('"type":"test-type"')
     );
@@ -1011,6 +1016,6 @@ This skill integrates with:
 
 ---
 
-**Version:** 1.0.0  
-**Last Updated:** 2026-01-15  
+**Version:** 1.0.0
+**Last Updated:** 2026-01-15
 **Compatible with:** Saberloop v2.0.0+

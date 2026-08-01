@@ -1,5 +1,11 @@
 ---
 name: play-by-play-generator
+description: 'Create realistic play-by-play commentary. Multiple announcer styles:
+  traditional, hyped, analytical, homer. Color commentary included.'
+---
+
+---
+name: play-by-play-generator
 description: Create realistic play-by-play commentary. Multiple announcer styles: traditional, hyped, analytical, homer. Color commentary included.
 ---
 

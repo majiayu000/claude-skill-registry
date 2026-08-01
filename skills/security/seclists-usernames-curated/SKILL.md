@@ -1,4 +1,10 @@
 ---
+name: seclists-usernames-curated
+description: 'Top username lists for enumeration: common usernames, default credentials,
+  names. Curated essentials for authorized testing.'
+---
+
+---
 name: SecLists Usernames (Curated)
 description: Top username lists for enumeration: common usernames, default credentials, names. Curated essentials for authorized testing.
 ---
@@ -45,7 +51,7 @@ for root, dirs, files in os.walk(skill_path):
         if file.endswith('.txt'):
             filepath = os.path.join(root, file)
             print(f"Found: {filepath}")
-            
+
             # Read file content
             with open(filepath, 'r', errors='ignore') as f:
                 content = f.read().splitlines()

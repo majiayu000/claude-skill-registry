@@ -1,5 +1,11 @@
 ---
 name: analyze-arxiv-paper
+description: Perform deep analysis of a research paper to determine its newsworthiness
+  and generate a practitioner-focused summary.
+---
+
+---
+name: analyze-arxiv-paper
 version: "1.0.0"
 description: >
   Deep analysis of an arXiv research paper for inclusion in news digest research

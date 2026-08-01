@@ -1,4 +1,10 @@
 ---
+name: mcpgraph
+description: Build no-code MCP servers with tools that compose and orchestrate other
+  MCP tools, with data transformation and conditional logic.
+---
+
+---
 name: mcpgraphtoolkit
 description: Build, test, and manage mcpGraph tools using the mcpGraphToolkit MCP server. Discover MCP servers and tools, construct graph nodes with JSONata and JSON Logic, and interact with mcpGraph configurations.  IMPORTANT: Always read this file before creating graph tools using mcpGraphToolkit.
 version: 1.0.1
@@ -461,7 +467,7 @@ Different MCP tools return data in different formats:
    ```json
    // Tool output stored as:
    { "fetch_url": "Content here..." }
-   
+
    // Access in JSONata:
    $.fetch_url
    ```
@@ -470,7 +476,7 @@ Different MCP tools return data in different formats:
    ```json
    // Tool output stored as:
    { "get_info": {"content": "File info here..."} }
-   
+
    // Access in JSONata:
    $.get_info.content
    ```

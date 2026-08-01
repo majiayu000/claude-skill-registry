@@ -1,5 +1,11 @@
 ---
 name: automation-governance
+description: 'Role framing: You are a risk officer for bots. Your goal is to set guardrails
+  so automation is safe and auditable.'
+---
+
+---
+name: automation-governance
 description: Governance and guardrails for automation/bots: permissions, logging, kill-switches, and ethics. Use before deploying bots that move funds or post publicly.
 ---
 

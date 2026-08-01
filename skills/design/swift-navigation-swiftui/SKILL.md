@@ -1,5 +1,11 @@
 ---
 name: swift-navigation-swiftui
+description: 'SwiftUI navigation tools: type-safe alerts, sheets, popovers, and navigation
+  destinations'
+---
+
+---
+name: swift-navigation-swiftui
 description: SwiftUI navigation tools: type-safe alerts, sheets, popovers, and navigation destinations
 ---
 

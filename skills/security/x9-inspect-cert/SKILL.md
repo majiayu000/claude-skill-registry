@@ -1,5 +1,12 @@
 ---
 name: x9-inspect-cert
+description: You inspect JWKS files and certificate chains for X9.150 implementations.
+  You wrap the project's opencert.py and validatepair.py utilities and interpret their
+  output.
+---
+
+---
+name: x9-inspect-cert
 description: Inspect JWKS files and certificate chains — x5c details, fingerprints, key pair validation
 user-invocable: true
 tools:

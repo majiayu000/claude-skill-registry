@@ -1,3 +1,9 @@
+---
+name: auto-review-agent
+description: Manages and monitors the autonomous agent system for code implementation
+  tasks. Provides progress checking, issue diagnosis, and automatic fixing capabilities.
+---
+
 # Claude Skill: Agent System Manager
 
 ## Skill Description

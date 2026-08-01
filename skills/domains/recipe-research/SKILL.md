@@ -1,5 +1,11 @@
 ---
 name: recipe-research
+description: Research recipes from multiple sources, convert to metric, verify cooking
+  science, calculate nutrition.
+---
+
+---
+name: recipe-research
 description: Multi-source recipe research with metric conversion and verification
 argument-hint: [dish-name] [--servings N] [--dietary vegan|gf|df|keto] [--classic]
 allowed-tools: WebSearch, Task, Read, Write, Glob

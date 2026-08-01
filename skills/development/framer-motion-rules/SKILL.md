@@ -1,5 +1,10 @@
 ---
 name: framer-motion-rules
+description: You are a coding standards expert specializing in framer motion rules.
+---
+
+---
+name: framer-motion-rules
 description: Defines framer motion is being used for animations
 version: 1.0.0
 model: sonnet

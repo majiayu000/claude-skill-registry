@@ -1,4 +1,10 @@
 ---
+name: n8n-development-skill
+description: 'CRITICAL: All N8N workflows that use Helper LLM MUST include required
+  parameters. Status webhook URL MUST read from environment variables (never hardcoded).'
+---
+
+---
 name: N8N Development
 description: Create and manage N8N workflows in Orchestrator AI. Use Helper LLM pattern for all LLM calls, configure webhook status tracking, handle API responses. CRITICAL: All workflows using Helper LLM must include required parameters (taskId, conversationId, userId, statusWebhook, stepName, sequence, totalSteps). Status webhook URL must read from environment variables.
 allowed-tools: Read, Write, Edit, Bash, Grep, Glob
@@ -20,7 +26,7 @@ Use this skill when:
 
 ## The Helper LLM Pattern
 
-**Workflow ID**: `9jxl03jCcqg17oOy`  
+**Workflow ID**: `9jxl03jCcqg17oOy`
 **Name**: "Helper: LLM Task"
 
 This is Orchestrator AI's standard building block for all LLM calls in N8N workflows. It provides:

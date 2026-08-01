@@ -1,4 +1,10 @@
 ---
+name: love-audio
+description: '{{SKILLDESCRIPTION}} Use this skill when working with sound effects,
+  music playback, audio recording, or any audio-related operations in LÖVE games.'
+---
+
+---
 name: {{SKILL_NAME}}
 description: {{SKILL_DESCRIPTION}} Use this skill when working with sound effects, music playback, audio recording, or any audio-related operations in LÖVE games.
 license: MIT

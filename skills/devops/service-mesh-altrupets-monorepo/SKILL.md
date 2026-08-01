@@ -1,3 +1,8 @@
+---
+name: service-mesh
+description: '| ID | sre-service-mesh |'
+---
+
 # 🌐 Skill: Service Mesh
 
 ## 📋 Metadata

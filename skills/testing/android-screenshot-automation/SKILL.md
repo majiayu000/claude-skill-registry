@@ -1,5 +1,11 @@
 ---
 name: android-screenshot-automation
+description: Setup automated screenshot capture using Fastlane Screengrab, integrating
+  with existing e2e test infrastructure.
+---
+
+---
+name: android-screenshot-automation
 description: Setup automated screenshot capture for Play Store using Fastlane Screengrab
 category: android
 version: 1.0.0

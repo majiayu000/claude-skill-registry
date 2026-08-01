@@ -1,3 +1,8 @@
+---
+name: journey-mapping
+description: '> Last Updated: 2026-01-26'
+---
+
 # Journey Mapping Skill
 
 > Version: 1.0.0
@@ -198,7 +203,7 @@ Feature: [Journey phase or capability]
 
   Scenario: [What behavior this tests]
     Given [precondition - the starting state]
-    When [user action - what triggers the behavior]  
+    When [user action - what triggers the behavior]
     Then [outcome - what should happen]
 ```
 
@@ -258,10 +263,10 @@ Feature: [Descriptive name of the capability]
 
   Background: (optional, for shared setup)
     Given [shared precondition]
-  
+
   Scenario: [What behavior this tests]
     Given [precondition - the starting state]
-    When [user action - what triggers the behavior]  
+    When [user action - what triggers the behavior]
     Then [outcome - what should happen]
 ```
 

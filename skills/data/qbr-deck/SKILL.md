@@ -1,5 +1,10 @@
 ---
 name: qbr-deck
+description: 'This skill supports three modes: Create, Update, and Find.'
+---
+
+---
+name: qbr-deck
 description: Create or update a Quarterly Business Review presentation
 argument-hint: [quarter, e.g., Q1 2025] or [update path/to/qbr.md]
 ---

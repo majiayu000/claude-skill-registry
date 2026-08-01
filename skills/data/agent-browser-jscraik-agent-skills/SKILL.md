@@ -1,3 +1,10 @@
+---
+name: agent-browser-jscraik-agent-skills
+description: Use this skill to extract page state and automate web interactions with
+  the agent-browser CLI (navigate, snapshot, click, fill, screenshot). Use this when
+  you need deterministic browser automation or
+---
+
 # Agent Skills Index
 
 Canonical skills live in categorized folders below. Each tool loads skills via the flat symlink directory at `~/dev/agent-skills/skills`.

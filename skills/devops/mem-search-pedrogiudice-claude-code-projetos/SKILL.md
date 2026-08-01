@@ -1,5 +1,12 @@
 ---
 name: mem-search
+description: 'Search through past session context and observations. Use when asking
+  about past work, previous implementations, how something was done before, or recalling
+  decisions. Keywords: remember, recall, last'
+---
+
+---
+name: mem-search
 description: Search through past session context and observations. Use when asking about past work, previous implementations, how something was done before, or recalling decisions. Keywords: remember, recall, last time, before, history, what did we, how did we
 ---
 

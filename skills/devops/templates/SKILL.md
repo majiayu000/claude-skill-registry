@@ -1,3 +1,9 @@
+---
+name: templates
+description: 'description: Dynamic access to {servername} MCP server ({toolcount}
+  tools)'
+---
+
 name: {server_name}
 description: Dynamic access to {server_name} MCP server ({tool_count} tools)
 version: 1.0.0

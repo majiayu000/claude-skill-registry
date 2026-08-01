@@ -1,5 +1,10 @@
 ---
 name: version-updates
+description: Use this skill when preparing a release or bumping the project version.
+---
+
+---
+name: version-updates
 description: |
 
 Triggers: changelog, bump, release, version, semver

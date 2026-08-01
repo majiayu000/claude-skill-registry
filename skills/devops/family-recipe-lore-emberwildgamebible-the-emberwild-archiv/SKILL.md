@@ -1,3 +1,8 @@
+---
+name: family-recipe-lore
+description: Create family recipes that embed regional lore, items, and social ties.
+---
+
 name: family-recipe-lore
 description: Create family recipes that embed regional lore, items, and social ties.
 metadata:

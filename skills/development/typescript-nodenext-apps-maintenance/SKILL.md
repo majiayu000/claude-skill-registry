@@ -1,3 +1,12 @@
+---
+name: typescript-nodenext-apps-maintenance
+description: 'description: "Audit and repair TypeScript relative import specifiers
+  for NodeNext/Node16 projects by enforcing runtime-valid emitted extensions (.js,
+  .mjs, .cjs). Use when module or moduleResolution is nodenext|node16, when Node ESM/CJS
+  runs fail with extension-related import errors, or when standardizing import specifiers
+  across src and test files."'
+---
+
 ﻿---
 name: nodenext-apps
 description: "Audit and repair TypeScript relative import specifiers for NodeNext/Node16 projects by enforcing runtime-valid emitted extensions (`.js`, `.mjs`, `.cjs`). Use when `module` or `moduleResolution` is `nodenext|node16`, when Node ESM/CJS runs fail with extension-related import errors, or when standardizing import specifiers across `src` and test files."

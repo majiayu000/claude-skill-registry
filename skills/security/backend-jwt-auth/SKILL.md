@@ -1,3 +1,9 @@
+---
+name: backend-jwt-auth
+description: 'Purpose: Guidance for implementing JWT authentication middleware, token
+  verification, and user isolation using Better Auth shared secret.'
+---
+
 # Backend JWT Authentication Skill
 
 **Purpose**: Guidance for implementing JWT authentication middleware, token verification, and user isolation using Better Auth shared secret.
@@ -32,15 +38,15 @@ def verify_jwt_token(
 ) -> Dict[str, str]:
     """
     Verify JWT token and extract user information.
-    
+
     Returns:
         dict: {"user_id": str, "email": str}
-    
+
     Raises:
         HTTPException: 401 if token is invalid or missing
     """
     token = credentials.credentials
-    
+
     try:
         # Decode and verify JWT token
         payload = jwt.decode(
@@ -48,22 +54,22 @@ def verify_jwt_token(
             BETTER_AUTH_SECRET,
             algorithms=["HS256"]  # HMAC SHA-256
         )
-        
+
         # Extract user information
         user_id: str = payload.get("sub") or payload.get("user_id")
         email: str = payload.get("email")
-        
+
         if not user_id:
             raise HTTPException(
                 status_code=status.HTTP_401_UNAUTHORIZED,
                 detail="Invalid token: missing user_id"
             )
-        
+
         return {
             "user_id": user_id,
             "email": email or ""
         }
-    
+
     except JWTError:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
@@ -104,7 +110,7 @@ async def get_tasks(
             status_code=status.HTTP_403_FORBIDDEN,
             detail="User ID mismatch: You can only access your own data"
         )
-    
+
     # Proceed with request
     tasks = task_service.get_tasks(db, user_id)
     return {"success": True, "data": tasks}
@@ -131,17 +137,17 @@ JWT_EXPIRATION_DAYS = 7  # 7-day expiration as per constitution
 def generate_jwt_token(user_id: str, email: str) -> str:
     """
     Generate JWT token for authenticated user.
-    
+
     Args:
         user_id: User's unique identifier (UUID)
         email: User's email address
-    
+
     Returns:
         str: JWT token string
     """
     # Calculate expiration time
     expiration = datetime.utcnow() + timedelta(days=JWT_EXPIRATION_DAYS)
-    
+
     # Create payload
     payload = {
         "sub": user_id,  # Standard JWT subject claim
@@ -150,14 +156,14 @@ def generate_jwt_token(user_id: str, email: str) -> str:
         "exp": expiration,  # Expiration timestamp
         "iat": datetime.utcnow()  # Issued at timestamp
     }
-    
+
     # Encode token
     token = jwt.encode(
         payload,
         BETTER_AUTH_SECRET,
         algorithm="HS256"
     )
-    
+
     return token
 ```
 
@@ -182,10 +188,10 @@ pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 def hash_password(password: str) -> str:
     """
     Hash password using bcrypt.
-    
+
     Args:
         password: Plain text password
-    
+
     Returns:
         str: Hashed password
     """
@@ -194,11 +200,11 @@ def hash_password(password: str) -> str:
 def verify_password(plain_password: str, hashed_password: str) -> bool:
     """
     Verify password against hash.
-    
+
     Args:
         plain_password: Plain text password
         hashed_password: Hashed password from database
-    
+
     Returns:
         bool: True if password matches
     """
@@ -243,10 +249,10 @@ async def signup(
             password=user_data.password,
             name=user_data.name
         )
-        
+
         # Generate JWT token
         token = generate_jwt_token(user.id, user.email)
-        
+
         return {
             "success": True,
             "data": {
@@ -258,7 +264,7 @@ async def signup(
                 }
             }
         }
-    
+
     except ValueError as e:
         # Email already exists or validation error
         raise HTTPException(
@@ -285,16 +291,16 @@ async def signin(
         email=credentials.email,
         password=credentials.password
     )
-    
+
     if not user:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Invalid email or password"
         )
-    
+
     # Generate JWT token
     token = generate_jwt_token(user.id, user.email)
-    
+
     return {
         "success": True,
         "data": {
@@ -344,7 +350,7 @@ async def get_tasks(
     # Verify user_id
     if current_user["user_id"] != user_id:
         raise HTTPException(status_code=403, detail="User ID mismatch")
-    
+
     # Use user_id from JWT (not from path) for security
     tasks = task_service.get_tasks(db, current_user["user_id"])
     return {"success": True, "data": tasks}
@@ -367,7 +373,7 @@ def verify_jwt_token(
     credentials: HTTPAuthorizationCredentials = Depends(security)
 ) -> Dict[str, str]:
     token = credentials.credentials
-    
+
     try:
         payload = jwt.decode(
             token,

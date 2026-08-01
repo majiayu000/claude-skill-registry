@@ -1,3 +1,8 @@
+---
+name: feature-first
+description: '| ID | flutter-feature-first |'
+---
+
 # 🎨 Skill: Feature-First Architecture
 
 ## 📋 Metadata

@@ -1,5 +1,10 @@
 ---
 name: codex
+description: Bridge to the OpenAI Codex CLI for high-reasoning tasks using gpt-5.3-codex.
+---
+
+---
+name: codex
 description: >
   High-reasoning agentic bridge via OpenAI Codex CLI.
   Supports gpt-5.3-codex with optional reasoning effort.

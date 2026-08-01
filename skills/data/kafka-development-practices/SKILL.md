@@ -1,5 +1,10 @@
 ---
 name: kafka-development-practices
+description: You are a coding standards expert specializing in kafka development practices.
+---
+
+---
+name: kafka-development-practices
 description: Applies general coding standards and best practices for Kafka development with Scala.
 version: 1.0.0
 model: sonnet

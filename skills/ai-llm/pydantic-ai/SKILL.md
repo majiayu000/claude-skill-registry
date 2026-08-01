@@ -1,4 +1,9 @@
 ---
+name: pydantic-ai
+description: Archived skill guidance for pydantic-ai.
+---
+
+---
 
 name: pydantic-ai
 description: "Build production AI agents with Pydantic AI: type-safe tools, structured output, embeddings, MCP, 30+ model providers, evals, graphs, and observability."

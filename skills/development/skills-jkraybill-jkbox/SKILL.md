@@ -1,3 +1,8 @@
+---
+name: skills-jkraybill-jkbox
+description: 'Version: 2.0.0 (jkbox adaptive edition)'
+---
+
 # Skill: AI-Driven Collaboration Health Check
 
 **Status:** active

@@ -1,5 +1,12 @@
 ---
 name: service-layer
+description: 'Service 层架构与前后端联调规范。Use when creating API services, writing Service
+  classes, or handling backend integration. Triggers on: creating services, API calls,
+  BaseService pattern, rewrites configuration, er'
+---
+
+---
+name: service-layer
 description: Service 层架构与前后端联调规范。Use when creating API services, writing Service classes, or handling backend integration. Triggers on: creating services, API calls, BaseService pattern, rewrites configuration, error handling.
 ---
 

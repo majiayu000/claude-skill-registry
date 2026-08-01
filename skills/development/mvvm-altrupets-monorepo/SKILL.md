@@ -1,3 +1,8 @@
+---
+name: mvvm
+description: '| ID | flutter-mvvm-pattern |'
+---
+
 # 🎨 Skill: MVVM Pattern
 
 ## 📋 Metadata

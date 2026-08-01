@@ -1,3 +1,8 @@
+---
+name: reference
+description: toloka.client.skill.Skill | Source code
+---
+
 # Skill
 `toloka.client.skill.Skill` | [Source code](https://github.com/Toloka/toloka-kit/blob/v1.2.1/src/client/skill.py#L11)
 

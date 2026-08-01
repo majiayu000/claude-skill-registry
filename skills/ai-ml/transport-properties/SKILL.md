@@ -1,5 +1,14 @@
 ---
 name: transport-properties
+description: This skill group covers first-principles calculation of electronic transport
+  properties using the Boltzmann transport equation (BTE) within the constant relaxation
+  time approximation (CRTA). The workflow uses Quantum ESPRESSO for the underlying
+  DFT calculation and BoltzTraP2 for solving the BTE. VASP-based workflows are also
+  documented for sites with VASP access.
+---
+
+---
+name: transport-properties
 description: Transport Properties (2 sub-skills: boltzmann-transport, kpoints-transport)
 ---
 

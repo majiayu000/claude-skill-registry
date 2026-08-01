@@ -1,3 +1,8 @@
+---
+name: hrd-analysis-agent
+description: '---name: hrd-analysis-agent'
+---
+
 ---name: hrd-analysis-agent
 description: AI-powered homologous recombination deficiency (HRD) analysis for PARP inhibitor response prediction using genomic scarring signatures and BRCA pathway assessment.
 license: MIT

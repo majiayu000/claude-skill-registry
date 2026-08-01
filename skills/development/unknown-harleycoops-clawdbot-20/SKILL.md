@@ -1,4 +1,10 @@
 ---
+name: unknown
+description: 'Goal: reorder a previous Foodora order safely (preview first; confirm
+  only on explicit user “yes/confirm/place the order”).'
+---
+
+---
 name: food-order
 description: Reorder Foodora orders + track ETA/status with ordercli. Never confirm without explicit user approval. Triggers: order food, reorder, track ETA.
 homepage: https://ordercli.sh

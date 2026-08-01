@@ -1,5 +1,10 @@
 ---
 name: form-components
+description: ALWAYS use form components from @/components/ui/form-fields.
+---
+
+---
+name: form-components
 description: StepLeague reusable form components with accessibility features. Use when creating any form, input field, select dropdown, checkbox, or file upload in the application. Keywords: form, input, select, checkbox, textarea, file upload, accessibility, FormInput, FormSelect.
 compatibility: Antigravity, Claude Code, Cursor
 metadata:
@@ -226,7 +231,7 @@ function MyForm() {
         error={errors.email}
         required
       />
-      
+
       <FormSelect
         fieldName="role"
         label="Role"
@@ -238,14 +243,14 @@ function MyForm() {
         <option value="member">Member</option>
         <option value="admin">Admin</option>
       </FormSelect>
-      
+
       <FormCheckbox
         fieldName="newsletter"
         label="Subscribe to newsletter"
         checked={formData.newsletter}
         onChange={(e) => setFormData(prev => ({ ...prev, newsletter: e.target.checked }))}
       />
-      
+
       <button type="submit">Submit</button>
     </form>
   );

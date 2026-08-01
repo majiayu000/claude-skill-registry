@@ -1,5 +1,10 @@
 ---
 name: session-palace-builder
+description: '- What It Is'
+---
+
+---
+name: session-palace-builder
 description: |
 
 Triggers: conversation-state, session, temporary-storage, project-memory, palace

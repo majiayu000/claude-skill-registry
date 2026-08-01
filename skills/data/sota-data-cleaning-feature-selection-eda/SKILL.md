@@ -1,5 +1,12 @@
 ---
 name: sota-data-cleaning-feature-selection-eda
+description: 'Master SOTA data prep for Kaggle comps: automated EDA (Sweetviz), cleaning
+  (Pyjanitor), and feature selection (Polars + XGBoost) for medium datasets (100MB–5GB)
+  in Colab.'
+---
+
+---
+name: sota-data-cleaning-feature-selection-eda
 description: Master SOTA data prep for Kaggle comps: automated EDA (Sweetviz), cleaning (Pyjanitor), and feature selection (Polars + XGBoost) for medium datasets (100MB–5GB) in Colab.
 ---
 
@@ -203,8 +210,8 @@ es.add_relationship(ft.Relationship(es['customers']['customer_id'], es['transact
 
 # Auto-synthesize features (aggregations, transforms, etc.)
 feature_matrix, feature_names = ft.dfs(
-    entityset=es, 
-    target_dataframe_name='customers', 
+    entityset=es,
+    target_dataframe_name='customers',
     max_depth=2,  # Control feature complexity
     trans_primitives=['sum', 'mean', 'max'],  # Aggregations over transactions
 )

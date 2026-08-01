@@ -1,3 +1,8 @@
+---
+name: adding-new-sport
+description: '2: name: adding-new-sport'
+---
+
 ### /mnt/data2/nhlstats/.github/skills/adding-new-sport/SKILL.md
 ```markdown
 1: ---

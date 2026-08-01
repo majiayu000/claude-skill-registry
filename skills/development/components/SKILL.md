@@ -1,3 +1,8 @@
+---
+name: components
+description: 🏠 Home › 🔧 Implementation › 📦 Components › 📚 Skill
+---
+
 <div align="center">
 
 [🏠 Home](../../README.md) › [🔧 Implementation](../README.md) › [📦 Components](./) › **📚 Skill**

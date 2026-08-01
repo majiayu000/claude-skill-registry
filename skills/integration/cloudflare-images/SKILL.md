@@ -1,5 +1,10 @@
 ---
 name: cloudflare-images
+description: 'Status: Production Ready ✅ | Version: 3.0.0 | Last Verified: 2025-12-27'
+---
+
+---
+name: cloudflare-images
 description: This skill should be used when the user asks to "upload images to Cloudflare", "implement direct creator upload", "configure image transformations", "optimize WebP/AVIF", "create image variants", "generate signed URLs", "add image watermarks", "integrate with Next.js/Remix", "configure webhooks", "debug CORS errors", "troubleshoot error 5408/9401-9413", or "build responsive images with Cloudflare Images API".
 
   Keywords: cloudflare images, image upload cloudflare, imagedelivery.net, cloudflare image transformations, /cdn-cgi/image/, direct creator upload, image variants, cf.image workers, signed urls images, flexible variants, webp avif conversion, responsive images cloudflare, error 5408, error 9401, error 9403, CORS direct upload, multipart/form-data, image optimization cloudflare, image watermarks, webhooks images, nextjs cloudflare images, remix cloudflare images, custom domains images, content credentials, c2pa

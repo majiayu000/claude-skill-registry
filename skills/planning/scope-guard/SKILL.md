@@ -1,5 +1,10 @@
 ---
 name: scope-guard
+description: '- Philosophy'
+---
+
+---
+name: scope-guard
 description: |
 
 Triggers: prioritization, anti-overengineering, yagni, scope, guard

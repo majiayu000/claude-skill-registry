@@ -1,5 +1,10 @@
 ---
 name: team-prioritize
+description: Order backlog items using data-driven prioritization frameworks.
+---
+
+---
+name: team-prioritize
 description: "[Team] Order backlog items using RICE, MoSCoW, or Value-Effort frameworks. Use when prioritizing backlog, ranking features, or ordering work items. Triggers on keywords like "prioritize", "RICE score", "MoSCoW", "rank backlog", "order by value"."
 argument-hint: "[rice|moscow|value-effort] [scope:all|sprint|feature-{name}]"
 infer: true

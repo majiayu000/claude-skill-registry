@@ -1,3 +1,8 @@
+---
+name: aws
+description: '| ID | cicd-aws |'
+---
+
 # ☁️ Skill: AWS Backend Deployment
 
 ## 📋 Metadata

@@ -1,5 +1,10 @@
 ---
 name: agentdb-vector-search-optimization
+description: 'AgentDB Vector Search Optimization operates on 3 fundamental principles:'
+---
+
+---
+name: agentdb-vector-search-optimization
 description: AgentDB Vector Search Optimization operates on 3 fundamental principles:
 allowed-tools: Read, Write, Edit, Task, TodoWrite, Glob, Grep
 ---

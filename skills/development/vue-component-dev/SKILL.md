@@ -1,5 +1,12 @@
 ---
 name: vue-component-dev
+description: Develop Vue 3 components (.vue files) with Pinia state management and
+  ECharts charts. Use when creating/modifying .vue components, configuring stores,
+  integrating charts, debugging reactivity, handlin
+---
+
+---
+name: vue-component-dev
 description: Develop Vue 3 components (.vue files) with Pinia state management and ECharts charts. Use when creating/modifying .vue components, configuring stores, integrating charts, debugging reactivity, handling Props/Emits, or optimizing performance. Keywords: Vue 3, Composition API, script setup, Pinia, ECharts, KpiCard, FilterPanel, Dashboard, computed, watch, responsive layout, eye-care colors.
 allowed-tools: Read, Write, Edit, Grep, Glob
 ---

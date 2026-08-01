@@ -1,5 +1,12 @@
 ---
 name: investment-analyst
+description: 'Professional investment analysis skill for stock market analysis. Provides
+  7 core capabilities: (1) Daily market overview, (2) Stock fundamental analysis,
+  (3) Technical chart analysis, (4) Strategy si'
+---
+
+---
+name: investment-analyst
 description: Professional investment analysis skill for stock market analysis. Provides 7 core capabilities: (1) Daily market overview, (2) Stock fundamental analysis, (3) Technical chart analysis, (4) Strategy simulation, (5) Risk management, (6) Stock screening, (7) News impact analysis. Use when users need comprehensive stock analysis, investment research, portfolio management, or market analysis tasks.
 ---
 

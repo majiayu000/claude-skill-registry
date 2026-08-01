@@ -1,5 +1,10 @@
 ---
 name: business-plan
+description: 'This skill supports three modes: Create, Update, and Find.'
+---
+
+---
+name: business-plan
 description: Create or update a business plan
 argument-hint: [product or business area] or [update path/to/business-plan.md]
 ---

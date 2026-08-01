@@ -1,5 +1,12 @@
 ---
 name: langchain-agents
+description: 'Building LLM agents with LangChain and LangGraph, covering tool-calling
+  model initialization, state management, and observability with LangSmith. Triggers:
+  langchain, langgraph, langsmith, agent-execu'
+---
+
+---
+name: langchain-agents
 description: Building LLM agents with LangChain and LangGraph, covering tool-calling model initialization, state management, and observability with LangSmith. Triggers: langchain, langgraph, langsmith, agent-executor, chat-model-tools.
 ---
 
@@ -14,11 +21,11 @@ LangChain provides a standard interface for building LLM agents that can use too
 - **Observability**: Using LangSmith to debug exactly where an agentic chain failed.
 
 ## Decision Tree
-1. Is it a simple tool-calling loop? 
+1. Is it a simple tool-calling loop?
    - YES: Use the `create_agent` abstraction.
-2. Does it require cycles, complex state transitions, or human approval? 
+2. Does it require cycles, complex state transitions, or human approval?
    - YES: Build using LangGraph.
-3. Do you need to track exactly how much an agent run cost or where it halluncinated? 
+3. Do you need to track exactly how much an agent run cost or where it halluncinated?
    - YES: Enable LangSmith tracing.
 
 ## Workflows

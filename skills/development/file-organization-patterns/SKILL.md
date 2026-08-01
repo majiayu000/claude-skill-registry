@@ -1,4 +1,9 @@
 ---
+name: file-organization-patterns
+description: '> Template for project-specific file organization skill'
+---
+
+---
 name: [PROJECT]-file-organization
 description: [PROJECT] file and directory structure conventions and enforcement
 globs: ["**/*"]

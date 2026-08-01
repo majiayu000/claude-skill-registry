@@ -1,5 +1,10 @@
 ---
 name: command-implement-feature
+description: Run the /implement-feature workflow defined in .claude/commands/implement-feature.md.
+---
+
+---
+name: command-implement-feature
 description: Use the /implement-feature slash command to run the feature delivery workflow. Use when: implementing new features end-to-end.
 ---
 

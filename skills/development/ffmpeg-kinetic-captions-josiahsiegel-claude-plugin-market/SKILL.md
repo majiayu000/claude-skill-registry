@@ -1,5 +1,10 @@
 ---
 name: ffmpeg-kinetic-captions
+description: 'MANDATORY: Always Use Backslashes on Windows for File Paths'
+---
+
+---
+name: ffmpeg-kinetic-captions
 description: Expert kinetic typography and animated caption system for viral video. PROACTIVELY activate for: (1) Kinetic captions with word-grow highlighting, (2) Karaoke-style progressive fill with scale animation, (3) Word bounce/pop effects (CapCut-style), (4) Spring physics text animation, (5) Shake/tremor emphasis effects, (6) Typewriter character reveal, (7) Multi-color karaoke transitions, (8) Elastic overshoot animations, (9) Word-by-word caption reveal, (10) TikTok/Shorts/Reels viral caption styles, (11) Kinetic typography for music videos, (12) Impact text slam effects, (13) Breathing/pulse text animation, (14) Color sweep highlighting, (15) Animated lower thirds. Provides: Complete ASS animation tag reference, word-grow karaoke formulas, spring physics parameters, platform-specific timing profiles, Python generation scripts, production-ready templates, and viral caption best practices for 2025-2026.
 ---
 

@@ -1,5 +1,12 @@
 ---
 name: serialization-review
+description: 'Review JSON serialization for scenes, prefabs, and components. Use when:
+  (1) implementing serializable components, (2) debugging save/load failures, (3)
+  adding asset types, (4) reviewing serialization'
+---
+
+---
+name: serialization-review
 description: Review JSON serialization for scenes, prefabs, and components. Use when: (1) implementing serializable components, (2) debugging save/load failures, (3) adding asset types, (4) reviewing serialization code, (5) investigating data corruption, (6) implementing JsonConverters.
 ---
 

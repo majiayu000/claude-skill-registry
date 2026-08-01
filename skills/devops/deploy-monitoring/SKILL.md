@@ -1,4 +1,9 @@
 ---
+name: deploy-monitoring
+description: '> Monitoring, alerting ve rollback stratejileri.'
+---
+
+---
 name: deploy_monitoring
 router_kit: DevOpsKit
 description: Health checks, metrics, alerting ve rollback stratejileri.

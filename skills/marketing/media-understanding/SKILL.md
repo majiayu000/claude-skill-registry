@@ -1,5 +1,12 @@
 ---
 name: media-understanding
+description: 'Understand audio and video content. Use when user asks to transcribe,
+  analyze, summarize, or extract information from audio/video files or YouTube URLs.
+  Routes automatically: audio files use local fas'
+---
+
+---
+name: media-understanding
 description: Understand audio and video content. Use when user asks to transcribe, analyze, summarize, or extract information from audio/video files or YouTube URLs. Routes automatically: audio files use local faster-whisper (free, fast), video files use Gemini API (visual+audio understanding).
 ---
 

@@ -1,3 +1,8 @@
+---
+name: infrastructure-shredbx-demo-3d-model
+description: 'Domain: infrastructure'
+---
+
 # User Story: US-001E - SDLC Orchestrator Skill (Coordinator Brain)
 
 **Status:** READY

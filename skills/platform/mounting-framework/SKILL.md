@@ -1,3 +1,9 @@
+---
+name: mounting-framework
+description: You are installing the Loa framework onto a repository. This is the first
+  step before the Loa can ride through the codebase.
+---
+
 # Mounting the Loa Framework
 
 You are installing the Loa framework onto a repository. This is the first step before the Loa can ride through the codebase.

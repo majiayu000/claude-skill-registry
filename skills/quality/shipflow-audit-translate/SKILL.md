@@ -1,5 +1,10 @@
 ---
 name: shipflow-audit-translate
+description: '- Current directory: !pwd'
+---
+
+---
+name: shipflow-audit-translate
 description: Translation audit — single page (with argument) or full project i18n consistency check (no argument). Verifies completeness, quality, and consistency of all translations.
 disable-model-invocation: true
 argument-hint: [file-path | "global"] (omit for full project)

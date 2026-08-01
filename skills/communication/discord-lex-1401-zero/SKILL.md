@@ -1,5 +1,12 @@
 ---
 name: discord
+description: Use discord to manage messages, reactions, threads, polls, and moderation.
+  You can disable groups via discord.actions. (defaults to enabled, except roles/moderation).
+  The tool uses the bot token configured for Zero.
+---
+
+---
+name: discord
 description: Use quando precisar controlar o Discord a partir do Zero via ferramenta discord: enviar mensagens, reagir, postar ou fazer upload de stickers, emojis, enquetes, gerenciar threads/pins/buscas, criar/editar/excluir canais e categorias, buscar informações de permissões ou membros/cargos/canais, ou lidar com ações de moderação.
 ---
 

@@ -1,5 +1,10 @@
 ---
 name: test
+description: Run tests using uv run test.py with optional arguments.
+---
+
+---
+name: test
 description: Run test suite and report results. Use when running unit tests, integration tests, or verifying code changes pass all tests.
 argument-hint: [test-name] [--cpp] [--clean] [--qemu platform]
 context: fork

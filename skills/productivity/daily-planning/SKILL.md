@@ -1,5 +1,12 @@
 ---
 name: daily-planning
+description: This skill guides you through a planning ritual that helps set intentions,
+  prioritize outcomes, and prepare for a target day. By default it plans for today,
+  but accepts a target date argument to plan ahead (e.g., planning Friday for Monday).
+---
+
+---
+name: daily-planning
 description: Plan a day's priorities, meetings, and intentions. Accepts an optional target date (default: today). Use with date arguments like "tomorrow", "Monday", "2026-02-12", or "next Tuesday". Reads current Today.md as context for prior work.
 argument-hint: "[target-date: today|tomorrow|monday|YYYY-MM-DD]"
 metadata:

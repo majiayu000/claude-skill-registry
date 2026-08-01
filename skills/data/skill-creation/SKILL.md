@@ -1,5 +1,10 @@
 ---
 name: skill-creation
+description: '> Meta-skill: This skill explains how to create other skills.'
+---
+
+---
+name: skill-creation
 description: How to create new agent skills for this project. Use when proposing a new skill, documenting repeated patterns, or formalizing domain knowledge. Keywords: skill, SKILL.md, agent, create skill, new skill, meta.
 compatibility: Antigravity, Claude Code, Cursor
 metadata:

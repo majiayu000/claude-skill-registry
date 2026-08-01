@@ -1,5 +1,12 @@
 ---
 name: deployment-automation-enforcer
+description: 'Use when designing deployment pipelines, CI/CD, terraform, or infrastructure
+  automation. Enforces rollback checkpoint then TodoWrite with 19+ items. Triggers:
+  "deploy", "CI/CD", "kubernetes", "terrafo'
+---
+
+---
+name: deployment-automation-enforcer
 description: Use when designing deployment pipelines, CI/CD, terraform, or infrastructure automation. Enforces rollback checkpoint then TodoWrite with 19+ items. Triggers: "deploy", "CI/CD", "kubernetes", "terraform". If thinking "rollback later" - use this first.
 ---
 

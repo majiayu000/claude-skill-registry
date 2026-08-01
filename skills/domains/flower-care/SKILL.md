@@ -1,3 +1,9 @@
+---
+name: flower-care
+description: 'description: Analyze flower images for identification, health diagnosis,
+  and care recommendations (output in Polish)'
+---
+
 # flower-care
 
 name: flower-care

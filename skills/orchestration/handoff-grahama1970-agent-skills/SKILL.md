@@ -1,5 +1,13 @@
 ---
 name: handoff
+description: This skill is designed to bridge context between agents during a transition.
+  It uses the philosophy of the /assess skill to generate a structured local/HANDOFF.md
+  that helps a new agent understand the project's current state, what is working,
+  what is broken, and what to do next.
+---
+
+---
+name: handoff
 description: >
   Handoff skill to assess project state and provide context for a new agent.
   Uses /assess logic to identify doc-code gaps, broken features, and next steps.

@@ -1,5 +1,10 @@
 ---
 name: market-analysis
+description: 'This skill supports three modes: Create, Update, and Find.'
+---
+
+---
+name: market-analysis
 description: Create or update a market analysis
 argument-hint: [market or segment name] or [update path/to/market-analysis.md]
 ---

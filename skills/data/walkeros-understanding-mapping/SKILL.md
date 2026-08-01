@@ -1,5 +1,10 @@
 ---
 name: walkeros-understanding-mapping
+description: 'Mapping transforms data at multiple points in the walkerOS flow:'
+---
+
+---
+name: walkeros-understanding-mapping
 description: Use when transforming walkerOS events in the flow (source→collector or collector→destination), configuring data/map/loop/set/condition/policy, or using $code: syntax in JSON configs.
 ---
 

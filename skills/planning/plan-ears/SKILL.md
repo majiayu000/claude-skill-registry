@@ -1,5 +1,10 @@
 ---
 name: plan-ears
+description: 1. 인자로 받은 기능 설명을 분석합니다
+---
+
+---
+name: plan-ears
 description: EARS 기반 구현 스펙을 생성하여 pending에 저장
 user-invocable: true
 argument: 기능 설명 (예: "로그인 기능")

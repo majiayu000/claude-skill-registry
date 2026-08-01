@@ -1,5 +1,12 @@
 ---
 name: threat-model
+description: This skill provides structured methodologies for identifying, analyzing,
+  and mitigating security threats in system designs. Use it when designing new systems,
+  reviewing existing architectures, or assessing security posture.
+---
+
+---
+name: threat-model
 description: Threat modeling methodologies (STRIDE, DREAD, PASTA, attack trees) for secure architecture design. Use when planning new systems, reviewing architecture security, identifying threats, or assessing risk. Triggers: threat modeling, threat model, STRIDE, DREAD, attack tree, attack surface, trust boundary, data flow diagram, DFD, threat analysis, risk assessment, adversary, threat actor, threat vector, mitigation, security architecture, attack scenario, vulnerability assessment, security posture, defense in depth.
 allowed-tools: Read, Grep, Glob, Bash, WebFetch
 ---

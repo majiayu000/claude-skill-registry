@@ -1,3 +1,8 @@
+---
+name: precedent-transactions
+description: 'name: precedent-transactions'
+---
+
 # Precedent Transaction Analysis
 
 name: precedent-transactions

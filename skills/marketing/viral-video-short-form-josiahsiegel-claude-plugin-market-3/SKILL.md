@@ -1,5 +1,10 @@
 ---
 name: viral-video-short-form
+description: 'MANDATORY: Always Use Backslashes on Windows for File Paths'
+---
+
+---
+name: viral-video-short-form
 description: Complete short-form video optimization for TikTok, Instagram Reels, YouTube Shorts, and Facebook Reels. PROACTIVELY activate for: (1) TikTok content strategy, (2) Instagram Reels optimization, (3) YouTube Shorts creation, (4) Facebook Reels strategy, (5) Short-form hook creation, (6) Vertical video best practices, (7) Trending audio selection, (8) Loop optimization, (9) Quick engagement tactics. Provides: Platform-specific length recommendations, algorithm insights, hook formulas, trending strategies, caption techniques, hashtag optimization, and posting schedules.
 references:
   - references/tiktok-algorithm-2026.md

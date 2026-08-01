@@ -1,5 +1,11 @@
 ---
 name: continuous-improvement-focus
+description: You are a coding standards expert specializing in continuous improvement
+  focus.
+---
+
+---
+name: continuous-improvement-focus
 description: Emphasizes continuous improvement by suggesting process improvements and looking for opportunities to simplify and optimize code and workflows. This rule promotes a culture of ongoing refinement.
 version: 1.0.0
 model: sonnet

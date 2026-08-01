@@ -1,4 +1,11 @@
 ---
+name: love-physics
+description: '{{SKILLDESCRIPTION}} Use this skill when working with physics operations,
+  collision detection, rigid body dynamics, or any physics-related operations in LÖVE
+  games.'
+---
+
+---
 name: {{SKILL_NAME}}
 description: {{SKILL_DESCRIPTION}} Use this skill when working with physics operations, collision detection, rigid body dynamics, or any physics-related operations in LÖVE games.
 license: MIT

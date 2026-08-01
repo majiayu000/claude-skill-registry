@@ -1,5 +1,12 @@
 ---
 name: think
+description: Collaborate on problems by pressure-testing assumptions, surfacing constraints,
+  identifying trade-offs, and proposing feasible options. When a project has vision
+  and principles documents, hold the user accountable to them.
+---
+
+---
+name: think
 description: Use proactively when the user explores ideas, directions, or priorities without a clear problem or urgency. Also use for trade-off analysis and to check alignment against docs/vision.md and docs/core-principles.md.
 argument-hint: "[problem, question, or decision to think through]"
 {{- template "bedrock-model" (dict "tier" "opus" "root" .) }}

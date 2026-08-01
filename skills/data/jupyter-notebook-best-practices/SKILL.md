@@ -1,5 +1,11 @@
 ---
 name: jupyter-notebook-best-practices
+description: You are a coding standards expert specializing in jupyter notebook best
+  practices.
+---
+
+---
+name: jupyter-notebook-best-practices
 description: Guidelines for structuring and documenting Jupyter notebooks for reproducibility and clarity.
 version: 1.0.0
 model: sonnet

@@ -1,5 +1,12 @@
 ---
 name: component-styling
+description: 'Component style templates and BEM naming for vehicle insurance platform.
+  Use when styling Vue components, implementing BEM classes, creating responsive layouts,
+  or writing scoped CSS. Keywords: BEM na'
+---
+
+---
+name: component-styling
 description: Component style templates and BEM naming for vehicle insurance platform. Use when styling Vue components, implementing BEM classes, creating responsive layouts, or writing scoped CSS. Keywords: BEM naming, component styles, KpiCard, FilterPanel, scoped CSS, responsive design, card styles, button styles, form controls.
 allowed-tools: Read, Edit, Grep, Glob
 ---

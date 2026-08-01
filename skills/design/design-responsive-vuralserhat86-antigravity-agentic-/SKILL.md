@@ -1,4 +1,9 @@
 ---
+name: design-responsive
+description: '> Responsive tasarım ve modern CSS özellikleri.'
+---
+
+---
 name: design_responsive
 router_kit: FullStackKit
 description: Breakpoints, fluid typography, container queries ve modern CSS features.

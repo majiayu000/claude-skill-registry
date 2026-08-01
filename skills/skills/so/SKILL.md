@@ -1,5 +1,10 @@
 ---
 name: so
+description: Analyze existing skills against best practices and apply targeted improvements.
+---
+
+---
+name: so
 description: Analyze and improve existing skills against best practices. This skill should be used when asked to optimize, review, audit, or improve a skill's structure, triggers, clarity, or token efficiency. Evaluates 7 dimensions with scoring and optionally researches domain-specific patterns via EXA MCP.
 argument-hint: [skill-name] | list
 allowed-tools: Read, Write, Edit, Glob, Grep, AskUserQuestion, Task, mcp__exa__get_code_context_exa, mcp__exa__web_search_exa

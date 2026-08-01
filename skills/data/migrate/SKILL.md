@@ -1,5 +1,10 @@
 ---
 name: migrate
+description: Uzytkownik chce zmigrowac konwersacje Claude Code z innego komputera.
+---
+
+---
+name: migrate
 description: Migracja sesji Claude Code z innego urządzenia (Windows/Android). Triggers: migrate, przenieś sesje, importuj
 ---
 

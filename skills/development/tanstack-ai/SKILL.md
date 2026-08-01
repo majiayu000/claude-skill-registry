@@ -1,5 +1,10 @@
 ---
 name: tanstack-ai
+description: 'Status: Production Ready ✅'
+---
+
+---
+name: tanstack-ai
 description: TanStack AI (alpha) provider-agnostic type-safe chat with streaming for OpenAI, Anthropic, Gemini, Ollama. Use for chat APIs, React/Solid frontends with useChat/ChatClient, isomorphic tools, tool approval flows, agent loops, multimodal inputs, or troubleshooting streaming and tool definitions.
 
   Keywords: TanStack AI, @tanstack/ai, @tanstack/ai-react, @tanstack/ai-client, @tanstack/ai-solid, @tanstack/ai-openai, @tanstack/ai-anthropic, @tanstack/ai-gemini, @tanstack/ai-ollama, toolDefinition, client tools, server tools, tool approval, agent loop, streaming, SSE, connection adapters, multimodal, type-safe models, TanStack Start, Next.js API, toStreamResponse, fetchServerSentEvents, chat, useChat, ChatClient, needsApproval
@@ -8,9 +13,9 @@ license: MIT
 
 # TanStack AI (Provider-Agnostic LLM SDK)
 
-**Status**: Production Ready ✅  
-**Last Updated**: 2025-12-09  
-**Dependencies**: Node.js 18+, TypeScript 5+; React 18+ for `@tanstack/ai-react`; Solid 1.8+ for `@tanstack/ai-solid`  
+**Status**: Production Ready ✅
+**Last Updated**: 2025-12-09
+**Dependencies**: Node.js 18+, TypeScript 5+; React 18+ for `@tanstack/ai-react`; Solid 1.8+ for `@tanstack/ai-solid`
 **Latest Versions**: @tanstack/ai@latest (alpha), @tanstack/ai-react@latest, @tanstack/ai-client@latest, adapters: @tanstack/ai-openai@latest @tanstack/ai-anthropic@latest @tanstack/ai-gemini@latest @tanstack/ai-ollama@latest
 
 ---
@@ -142,19 +147,19 @@ export const showToast = getWeatherDef.client(({ city }) => {
 
 ### Always Do
 
-✅ Stream responses; avoid waiting for full completions. citeturn0search1  
-✅ Pass **definitions** to the server and **implementations** to the correct runtime. citeturn0search7  
-✅ Use Zod schemas for tool inputs/outputs to keep type safety across providers. citeturn0search1  
-✅ Cap agent loops with `maxIterations` to prevent runaway tool calls. citeturn1search4  
-✅ Require `needsApproval` for destructive or billing-sensitive tools. citeturn0search1  
+✅ Stream responses; avoid waiting for full completions. citeturn0search1
+✅ Pass **definitions** to the server and **implementations** to the correct runtime. citeturn0search7
+✅ Use Zod schemas for tool inputs/outputs to keep type safety across providers. citeturn0search1
+✅ Cap agent loops with `maxIterations` to prevent runaway tool calls. citeturn1search4
+✅ Require `needsApproval` for destructive or billing-sensitive tools. citeturn0search1
 
 ### Never Do
 
-❌ Mix provider adapters in a single request—instantiate one adapter per call.  
-❌ Throw raw errors from tools; return structured error payloads.  
-❌ Send client tool **implementations** to the server (definitions only).  
-❌ Hardcode model capabilities; rely on adapter typings for per-model options. citeturn0search1  
-❌ Skip API key checks; fail fast with helpful messages on the server. citeturn0search1  
+❌ Mix provider adapters in a single request—instantiate one adapter per call.
+❌ Throw raw errors from tools; return structured error payloads.
+❌ Send client tool **implementations** to the server (definitions only).
+❌ Hardcode model capabilities; rely on adapter typings for per-model options. citeturn0search1
+❌ Skip API key checks; fail fast with helpful messages on the server. citeturn0search1
 
 ---
 
@@ -163,15 +168,15 @@ export const showToast = getWeatherDef.client(({ city }) => {
 This skill prevents **3** documented issues:
 
 ### Issue #1: “tool not found” / silent tool failures
-**Why it happens**: Definitions aren’t passed to `chat()`; only implementations exist locally.  
+**Why it happens**: Definitions aren’t passed to `chat()`; only implementations exist locally.
 **Prevention**: Export definitions separately and include them in the server `tools` array; keep names stable. citeturn0search7
 
 ### Issue #2: Streaming stalls in the UI
-**Why it happens**: Mismatch between server response type and client adapter (HTTP chunked vs SSE).  
+**Why it happens**: Mismatch between server response type and client adapter (HTTP chunked vs SSE).
 **Prevention**: Use `toStreamResponse` on the server + `fetchServerSentEvents` (or matching adapter) on the client. citeturn0search1turn0search0
 
 ### Issue #3: Model option validation errors
-**Why it happens**: Provider-specific options (e.g., vision params) sent to unsupported models.  
+**Why it happens**: Provider-specific options (e.g., vision params) sent to unsupported models.
 **Prevention**: Use adapter-provided types; rely on per-model option typing to surface invalid fields at compile time. citeturn1search3
 
 ---
@@ -250,7 +255,7 @@ chat({ tools: [fetchUser, highlightUser] })
 
 ### Assets (assets/)
 
-- `assets/api-chat-route.ts` — copy/paste API route template with streaming + tools.  
+- `assets/api-chat-route.ts` — copy/paste API route template with streaming + tools.
 - `assets/tool-definitions.ts` — ready-to-use toolDefinition examples with approval + zod schemas.
 
 ---
@@ -294,25 +299,25 @@ Load reference files for specific implementation scenarios:
 ## Dependencies
 
 **Required**:
-- @tanstack/ai@latest — core chat + tool engine  
-- @tanstack/ai-react@latest — React bindings (skip for headless usage)  
-- @tanstack/ai-client@latest — headless chat client + adapters  
-- Adapter: one of @tanstack/ai-openai@latest | @tanstack/ai-anthropic@latest | @tanstack/ai-gemini@latest | @tanstack/ai-ollama@latest  
+- @tanstack/ai@latest — core chat + tool engine
+- @tanstack/ai-react@latest — React bindings (skip for headless usage)
+- @tanstack/ai-client@latest — headless chat client + adapters
+- Adapter: one of @tanstack/ai-openai@latest | @tanstack/ai-anthropic@latest | @tanstack/ai-gemini@latest | @tanstack/ai-ollama@latest
 - zod@latest — schema validation for tools
 
 **Optional**:
-- @tanstack/ai-solid@latest — Solid bindings  
-- @tanstack/react-query@latest — cache data fetched inside tools  
+- @tanstack/ai-solid@latest — Solid bindings
+- @tanstack/react-query@latest — cache data fetched inside tools
 - @tanstack/start@latest — co-locate AI tools with server functions
 
 ---
 
 ## Official Documentation
 
-- **TanStack AI Overview**: https://tanstack.com/ai/latest/docs/getting-started/overview  
-- **Quick Start**: https://tanstack.com/ai/latest/docs/getting-started/quick-start  
-- **Tool Architecture & Approval**: https://tanstack.com/ai/latest/docs/guides/tool-architecture  
-- **Client Tools**: https://tanstack.com/ai/latest/docs/guides/client-tools  
+- **TanStack AI Overview**: https://tanstack.com/ai/latest/docs/getting-started/overview
+- **Quick Start**: https://tanstack.com/ai/latest/docs/getting-started/quick-start
+- **Tool Architecture & Approval**: https://tanstack.com/ai/latest/docs/guides/tool-architecture
+- **Client Tools**: https://tanstack.com/ai/latest/docs/guides/client-tools
 - **API Reference**: https://tanstack.com/ai/latest/docs/api/ai
 
 ---
@@ -364,8 +369,8 @@ Use this checklist to verify your setup:
 
 **Questions? Issues?**
 
-1. Load `references/tanstack-ai-cheatsheet.md` for deeper examples  
-2. Re-run quick start steps with a single provider adapter  
+1. Load `references/tanstack-ai-cheatsheet.md` for deeper examples
+2. Re-run quick start steps with a single provider adapter
 3. Review official docs above for API surface updates
 
 ---

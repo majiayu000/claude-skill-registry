@@ -1,5 +1,11 @@
 ---
 name: dba-designer
+description: Read outputlanguage from .ai/context/workflow-config.md. Write ALL deliverables
+  in that language. If the file is absent or the field is unset, default to en-US.
+---
+
+---
+name: dba-designer
 description: Database Architect / DBA role skill. Use when you need to design database schemas, performance strategies, security design, or data model reviews. Keywords: database design, schema design, table structure, index design, performance optimisation, data security, data integrity, ER diagram, database standards.
 ---
 

@@ -1,4 +1,14 @@
 ---
+name: adolfoaranaes12-bmad-enhanced-claude-skills-risk-profile
+description: The risk-profile skill assesses implementation risks before or during
+  development using the Probability × Impact (P×I) scoring methodology. This skill
+  identifies potential issues early, enables risk-based test prioritization, and informs
+  quality gate decisions. By systematically evaluating risks across 6 categories (Technical,
+  Security, Performance, Data, Business, Operational), the skill produces a risk matrix
+  with mitigation strategies and test priorities.
+---
+
+---
 name: risk-profile
 description: Assess implementation risks using Probability × Impact (P×I) scoring methodology across 6 categories (Technical, Security, Performance, Data, Business, Operational). Scores risks (P×I: 1-9), develops mitigations for high-risk items (score ≥6), and prioritizes test scenarios (P0/P1/P2). Use before implementation or during quality review to identify and mitigate potential issues.
 version: 2.0

@@ -1,5 +1,12 @@
 ---
 name: text-to-slidev
+description: Convert technical notes, documentation, and text into Slidev presentations
+  using @alexop/slidev-theme-brand. Use when asked to create slides, presentations,
+  convert notes to slides, turn documentation
+---
+
+---
+name: text-to-slidev
 description: Convert technical notes, documentation, and text into Slidev presentations using @alexop/slidev-theme-brand. Use when asked to create slides, presentations, convert notes to slides, turn documentation into a talk, or generate a slidev deck. Triggers: "create presentation", "make slides", "convert to slidev", "slides from", "turn into a talk", "presentation from".
 ---
 

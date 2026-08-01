@@ -1,3 +1,8 @@
+---
+name: ubrowser
+description: Browser automation optimized for speed and cost efficiency
+---
+
 # μBrowser
 
 Control a headless browser with 98% token reduction compared to Playwright MCP and Dev Browser. Uses batch execution, minimal responses, and efficient HTML formatting.

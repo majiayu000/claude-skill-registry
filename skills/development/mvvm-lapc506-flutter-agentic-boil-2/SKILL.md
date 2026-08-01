@@ -1,3 +1,8 @@
+---
+name: mvvm
+description: '| Atributo | Valor |'
+---
+
 # 🎨 Skill: MVVM Pattern
 
 ## 📋 Metadata
@@ -134,7 +139,7 @@ class User with _$User {
     String? avatar,
     DateTime? createdAt,
   }) = _User;
-  
+
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
 }
 ```
@@ -171,7 +176,7 @@ class UserListScreen extends StatelessWidget {
               child: CircularProgressIndicator(),
             );
           }
-          
+
           // Estado de error
           if (viewModel.error != null) {
             return Center(
@@ -187,7 +192,7 @@ class UserListScreen extends StatelessWidget {
               ),
             );
           }
-          
+
           // Estado exitoso
           return ListView.builder(
             itemCount: viewModel.users.length,
@@ -216,11 +221,11 @@ class UserListScreen extends StatelessWidget {
       ),
     );
   }
-  
+
   void _navigateToDetail(BuildContext context, User user) {
     // Navegación al detalle
   }
-  
+
   void _navigateToCreate(BuildContext context) {
     // Navegación a creación
   }
@@ -243,27 +248,27 @@ import 'package:flutter/foundation.dart';
 
 class UserViewModel extends ChangeNotifier {
   final UserService _userService;
-  
+
   UserViewModel(this._userService);
-  
+
   // Estado
   List<User> _users = [];
   List<User> get users => List.unmodifiable(_users);
-  
+
   bool _isLoading = false;
   bool get isLoading => _isLoading;
-  
+
   String? _error;
   String? get error => _error;
-  
+
   User? _selectedUser;
   User? get selectedUser => _selectedUser;
-  
+
   // Acciones
   Future<void> fetchUsers() async {
     _setLoading(true);
     _clearError();
-    
+
     try {
       _users = await _userService.getUsers();
       notifyListeners();
@@ -273,11 +278,11 @@ class UserViewModel extends ChangeNotifier {
       _setLoading(false);
     }
   }
-  
+
   Future<void> createUser(User user) async {
     _setLoading(true);
     _clearError();
-    
+
     try {
       final createdUser = await _userService.createUser(user);
       _users.add(createdUser);
@@ -288,11 +293,11 @@ class UserViewModel extends ChangeNotifier {
       _setLoading(false);
     }
   }
-  
+
   Future<void> updateUser(User user) async {
     _setLoading(true);
     _clearError();
-    
+
     try {
       final updatedUser = await _userService.updateUser(user);
       final index = _users.indexWhere((u) => u.id == user.id);
@@ -306,11 +311,11 @@ class UserViewModel extends ChangeNotifier {
       _setLoading(false);
     }
   }
-  
+
   Future<void> deleteUser(String userId) async {
     _setLoading(true);
     _clearError();
-    
+
     try {
       await _userService.deleteUser(userId);
       _users.removeWhere((u) => u.id == userId);
@@ -321,32 +326,32 @@ class UserViewModel extends ChangeNotifier {
       _setLoading(false);
     }
   }
-  
+
   void selectUser(User user) {
     _selectedUser = user;
     notifyListeners();
   }
-  
+
   void clearSelection() {
     _selectedUser = null;
     notifyListeners();
   }
-  
+
   // Helpers privados
   void _setLoading(bool value) {
     _isLoading = value;
     notifyListeners();
   }
-  
+
   void _setError(String message) {
     _error = message;
     notifyListeners();
   }
-  
+
   void _clearError() {
     _error = null;
   }
-  
+
   @override
   void dispose() {
     // Limpiar recursos si es necesario
@@ -372,18 +377,18 @@ import 'dart:convert';
 class UserService {
   final http.Client _client;
   final String _baseUrl;
-  
+
   UserService({
     required http.Client client,
     required String baseUrl,
   })  : _client = client,
         _baseUrl = baseUrl;
-  
+
   Future<List<User>> getUsers() async {
     final response = await _client.get(
       Uri.parse('$_baseUrl/users'),
     );
-    
+
     if (response.statusCode == 200) {
       final List<dynamic> data = json.decode(response.body);
       return data.map((json) => User.fromJson(json)).toList();
@@ -391,40 +396,40 @@ class UserService {
       throw Exception('Failed to load users');
     }
   }
-  
+
   Future<User> createUser(User user) async {
     final response = await _client.post(
       Uri.parse('$_baseUrl/users'),
       headers: {'Content-Type': 'application/json'},
       body: json.encode(user.toJson()),
     );
-    
+
     if (response.statusCode == 201) {
       return User.fromJson(json.decode(response.body));
     } else {
       throw Exception('Failed to create user');
     }
   }
-  
+
   Future<User> updateUser(User user) async {
     final response = await _client.put(
       Uri.parse('$_baseUrl/users/${user.id}'),
       headers: {'Content-Type': 'application/json'},
       body: json.encode(user.toJson()),
     );
-    
+
     if (response.statusCode == 200) {
       return User.fromJson(json.decode(response.body));
     } else {
       throw Exception('Failed to update user');
     }
   }
-  
+
   Future<void> deleteUser(String userId) async {
     final response = await _client.delete(
       Uri.parse('$_baseUrl/users/$userId'),
     );
-    
+
     if (response.statusCode != 204) {
       throw Exception('Failed to delete user');
     }
@@ -445,35 +450,35 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  
+
   # State Management
   provider: ^6.1.1
-  
+
   # Immutability & Serialization
   freezed_annotation: ^2.4.1
   json_annotation: ^4.8.1
-  
+
   # Utilities
   equatable: ^2.0.5
-  
+
   # HTTP
   http: ^1.1.0
-  
+
   # Local Storage
   shared_preferences: ^2.2.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  
+
   # Code Generation
   build_runner: ^2.4.6
   freezed: ^2.4.5
   json_serializable: ^6.7.1
-  
+
   # Testing
   mockito: ^5.4.4
-  
+
   # Linting
   flutter_lints: ^3.0.1
 ```
@@ -524,23 +529,23 @@ import 'package:mockito/annotations.dart';
 void main() {
   late UserViewModel viewModel;
   late MockUserService mockService;
-  
+
   setUp(() {
     mockService = MockUserService();
     viewModel = UserViewModel(mockService);
   });
-  
+
   tearDown(() {
     viewModel.dispose();
   });
-  
+
   group('UserViewModel', () {
     test('initial state should be empty', () {
       expect(viewModel.users, isEmpty);
       expect(viewModel.isLoading, false);
       expect(viewModel.error, null);
     });
-    
+
     test('fetchUsers should update users list when successful', () async {
       // Arrange
       final users = [
@@ -548,39 +553,39 @@ void main() {
         User(id: '2', name: 'Jane', email: 'jane@test.com'),
       ];
       when(mockService.getUsers()).thenAnswer((_) async => users);
-      
+
       // Act
       await viewModel.fetchUsers();
-      
+
       // Assert
       expect(viewModel.users, users);
       expect(viewModel.isLoading, false);
       expect(viewModel.error, null);
       verify(mockService.getUsers()).called(1);
     });
-    
+
     test('fetchUsers should set error when service fails', () async {
       // Arrange
       when(mockService.getUsers()).thenThrow(Exception('Network error'));
-      
+
       // Act
       await viewModel.fetchUsers();
-      
+
       // Assert
       expect(viewModel.users, isEmpty);
       expect(viewModel.isLoading, false);
       expect(viewModel.error, isNotNull);
       expect(viewModel.error, contains('Network error'));
     });
-    
+
     test('createUser should add user to list', () async {
       // Arrange
       final newUser = User(id: '1', name: 'John', email: 'john@test.com');
       when(mockService.createUser(any)).thenAnswer((_) async => newUser);
-      
+
       // Act
       await viewModel.createUser(newUser);
-      
+
       // Assert
       expect(viewModel.users, contains(newUser));
       expect(viewModel.isLoading, false);
@@ -600,11 +605,11 @@ import 'package:mockito/mockito.dart';
 
 void main() {
   late MockUserViewModel mockViewModel;
-  
+
   setUp(() {
     mockViewModel = MockUserViewModel();
   });
-  
+
   Widget createWidgetUnderTest() {
     return MaterialApp(
       home: ChangeNotifierProvider<UserViewModel>.value(
@@ -613,20 +618,20 @@ void main() {
       ),
     );
   }
-  
+
   testWidgets('should show loading indicator when loading', (tester) async {
     // Arrange
     when(mockViewModel.isLoading).thenReturn(true);
     when(mockViewModel.users).thenReturn([]);
     when(mockViewModel.error).thenReturn(null);
-    
+
     // Act
     await tester.pumpWidget(createWidgetUnderTest());
-    
+
     // Assert
     expect(find.byType(CircularProgressIndicator), findsOneWidget);
   });
-  
+
   testWidgets('should show user list when loaded', (tester) async {
     // Arrange
     final users = [
@@ -636,24 +641,24 @@ void main() {
     when(mockViewModel.isLoading).thenReturn(false);
     when(mockViewModel.users).thenReturn(users);
     when(mockViewModel.error).thenReturn(null);
-    
+
     // Act
     await tester.pumpWidget(createWidgetUnderTest());
-    
+
     // Assert
     expect(find.text('John'), findsOneWidget);
     expect(find.text('Jane'), findsOneWidget);
   });
-  
+
   testWidgets('should show error message when error occurs', (tester) async {
     // Arrange
     when(mockViewModel.isLoading).thenReturn(false);
     when(mockViewModel.users).thenReturn([]);
     when(mockViewModel.error).thenReturn('Network error');
-    
+
     // Act
     await tester.pumpWidget(createWidgetUnderTest());
-    
+
     // Assert
     expect(find.text('Network error'), findsOneWidget);
     expect(find.text('Reintentar'), findsOneWidget);
@@ -710,7 +715,7 @@ Usa `Selector` en lugar de `Consumer` cuando solo necesites parte del estado.
 Selector<UserViewModel, bool>(
   selector: (context, viewModel) => viewModel.isLoading,
   builder: (context, isLoading, child) {
-    return isLoading 
+    return isLoading
         ? CircularProgressIndicator()
         : child!;
   },
@@ -737,6 +742,6 @@ Si tu proyecto crece, considera migrar a Clean Architecture para mayor escalabil
 
 ---
 
-**Última actualización:** Diciembre 2025  
+**Última actualización:** Diciembre 2025
 **Versión:** 1.0.0
 

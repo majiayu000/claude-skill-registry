@@ -1,3 +1,8 @@
+---
+name: load-testing-performance
+description: '| Atributo | Valor |'
+---
+
 # ⚡ Skill: Load Testing & Performance
 
 ## 📋 Metadata
@@ -81,7 +86,7 @@ Load Testing
 > - **Node.js Profiling:** [`scripts/nodejs/`](scripts/nodejs/) - Herramientas de profiling (JavaScript)
 > - **Rust Benchmarks:** [`scripts/rust/`](scripts/rust/) - Benchmarks con Criterion (Rust)
 > - **Python Capacity Planning:** [`scripts/python/`](scripts/python/) - Calculadora de capacidad (Python)
-> 
+>
 > Ver [`scripts/README.md`](scripts/README.md) para documentación de uso completa.
 
 ### 1. k6 Load Testing
@@ -315,14 +320,14 @@ impl Drop for PerformanceProfiler {
 // Uso
 pub async fn process_user_request(user_id: &str) -> Result<(), Error> {
     let _profiler = PerformanceProfiler::new();
-    
+
     // Tu código aquí
     let user = fetch_user(user_id).await?;
     _profiler.log_elapsed("fetch_user");
-    
+
     let result = process_data(&user).await?;
     _profiler.log_elapsed("process_data");
-    
+
     Ok(())
 }
 ```
@@ -345,7 +350,7 @@ static ALLOC: dhat::Alloc = dhat::Alloc;
 #[cfg(feature = "dhat-heap")]
 {
     let _profiler = dhat::Profiler::new_heap();
-    
+
     // Tu código aquí
     run_application().await;
 }
@@ -635,7 +640,7 @@ export default function () {
 
 ---
 
-**Versión:** 1.0.0  
-**Última actualización:** Diciembre 2025  
+**Versión:** 1.0.0
+**Última actualización:** Diciembre 2025
 **Total líneas:** 1,100+
 

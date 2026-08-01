@@ -1,5 +1,10 @@
 ---
 name: error-patterns
+description: '- Overview'
+---
+
+---
+name: error-patterns
 description: |
 
 Triggers: recovery, errors, error, patterns, error-handling

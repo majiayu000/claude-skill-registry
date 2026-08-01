@@ -1,5 +1,13 @@
 ---
 name: unsloth-dpo
+description: Direct Preference Optimization (DPO) in Unsloth provides a way to align
+  models with human preferences using paired data (chosen/rejected). Unsloth optimizes
+  this process by allowing refmodel=None, significantly reducing memory requirements
+  while maintaining high performance.
+---
+
+---
+name: unsloth-dpo
 description: Direct Preference Optimization (DPO) for aligning models with preference data without separate reward models. Triggers: dpo, preference optimization, rlhf, ref_model=none, patchdpotrainer, dpotrainer.
 ---
 

@@ -1,5 +1,13 @@
 ---
 name: unsloth-grpo
+description: Unsloth-grpo enables training of reasoning models using Group Relative
+  Policy Optimization (GRPO). This technique replaces traditional PPO Reward and Value
+  models with group statistics, achieving 8x memory savings and allowing long-context
+  RL training on limited VRAM.
+---
+
+---
+name: unsloth-grpo
 description: Implementation of Group Relative Policy Optimization (GRPO) for training reasoning models, optimized for 8x memory savings (triggers: GRPO, reasoning, DeepSeek-R1, reinforcement learning, RLVR, GRPOTrainer, thinking tokens).
 ---
 

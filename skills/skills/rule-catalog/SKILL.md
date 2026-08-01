@@ -1,5 +1,10 @@
 ---
 name: rule-catalog
+description: '- Quick Install'
+---
+
+---
+name: rule-catalog
 description: |
 
 Triggers: templates, rules, install, catalog, hookify

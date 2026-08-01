@@ -1,3 +1,8 @@
+---
+name: skills
+description: Use this skill when the user asks "/think" or when you face a complex
+  architectural challenge.
+---
 
 ---
 name: starlight-core

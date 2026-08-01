@@ -1,5 +1,10 @@
 ---
 name: decision-record
+description: 'This skill supports three modes: Create, Update, and Find.'
+---
+
+---
+name: decision-record
 description: Create or update a structured decision record
 argument-hint: [decision topic] or [update DR-2026-001]
 ---

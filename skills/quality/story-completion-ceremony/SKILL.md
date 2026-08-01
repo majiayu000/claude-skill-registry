@@ -1,3 +1,9 @@
+---
+name: story-completion-ceremony
+description: Before marking any story as complete, follow this validation ceremony
+  to ensure the work is truly done and meets quality standards.
+---
+
 ````skill
 ---
 name: story-completion-ceremony

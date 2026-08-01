@@ -1,5 +1,11 @@
 ---
 name: github-initiative-pulse
+description: Turns tracker data and GitHub board metadata into initiative-level summaries.
+  Provides markdown helpers and CSV exports for pasting into issues, PRs, or Discussions.
+---
+
+---
+name: github-initiative-pulse
 description: |
 
 Triggers: github, dashboards, reporting, pulse, initiative

@@ -1,5 +1,11 @@
 ---
 name: git-workspace-review
+description: Use this skill before any workflow that depends on understanding current
+  changes (commit messages, PR prep, release notes, etc.).
+---
+
+---
+name: git-workspace-review
 description: |
 
 Triggers: staged, preflight, git, review, status

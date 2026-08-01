@@ -1,5 +1,11 @@
 ---
 name: pr-prep
+description: Use this skill to stage changes and generate a PR summary. Run Skill(sanctum:git-workspace-review)
+  first to capture the repository state and diffs.
+---
+
+---
+name: pr-prep
 description: |
 
 Triggers: pr, quality-gates, prep, git, testing

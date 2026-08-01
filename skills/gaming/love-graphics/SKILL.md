@@ -1,5 +1,16 @@
 ---
 name: love-graphics
+description: 'The primary responsibility for the love.graphics module is the drawing
+  of lines, shapes, text, Images and other Drawable objects onto the screen. Its secondary
+  responsibilities include loading external files (including Images and Fonts) into
+  memory, creating specialized objects (such as ParticleSystems or Canvases) and managing
+  screen geometry. LÖVE''s coordinate system is rooted in the upper-left corner of
+  the screen, which is at location (0, 0). The x axis is horizontal: larger values
+  are furth'
+---
+
+---
+name: love-graphics
 description: The primary responsibility for the love.graphics module is the drawing of lines, shapes, text, Images and other Drawable objects onto the screen. Its secondary responsibilities include loading external files (including Images and Fonts) into memory, creating specialized objects (such as ParticleSystems or Canvases) and managing screen geometry. LÖVE's coordinate system is rooted in the upper-left corner of the screen, which is at location (0, 0). The x axis is horizontal: larger values are further to the right. The y axis is vertical: larger values are further towards the bottom. In many cases, you draw images or shapes in terms of their upper-left corner. Many of the functions are used to manipulate the graphics coordinate system, which is essentially the way coordinates are mapped to the display. You can change the position, scale, and even rotation in this way. Use this skill when working with drawing operations, sprites, animations, shaders, or any visual rendering in LÖVE games.
 license: MIT
 metadata:
@@ -21,7 +32,7 @@ The primary responsibility for the love.graphics module is the drawing of lines,
 - `love.graphics.applyTransform(transform: Transform)`: Applies the given Transform object to the current coordinate transformation. This effectively multiplies the existing coordinate transformation's matrix with the Transform object's internal matrix to produce the new coordinate transformation.
 - `love.graphics.arc` - Draws a filled or unfilled arc at position (x, y). The arc is drawn from angle1 to angle2 in radians. The segments parameter determines how many segments are used to draw the arc. The more segments, the smoother the edge.
   - `love.graphics.arc(drawmode: DrawMode, x: number, y: number, radius: number, angle1: number, angle2: number, segments: number)`: Draws an arc using the 'pie' ArcType.
-  - `love.graphics.arc(drawmode: DrawMode, arctype: ArcType, x: number, y: number, radius: number, angle1: number, angle2: number, segments: number)`: 
+  - `love.graphics.arc(drawmode: DrawMode, arctype: ArcType, x: number, y: number, radius: number, angle1: number, angle2: number, segments: number)`:
 - `love.graphics.captureScreenshot` - Creates a screenshot once the current frame is done (after love.draw has finished). Since this function enqueues a screenshot capture rather than executing it immediately, it can be called from an input callback or love.update and it will still capture all of what's drawn to the screen in that frame.
   - `love.graphics.captureScreenshot(filename: string)`: Capture a screenshot and save it to a file at the end of the current frame.
   - `love.graphics.captureScreenshot(callback: function)`: Capture a screenshot and call a callback with the generated ImageData at the end of the current frame.
@@ -82,7 +93,7 @@ The primary responsibility for the love.graphics module is the drawing of lines,
 - `love.graphics.getScissor() -> x: number, y: number, width: number, height: number`: Gets the current scissor box.
 - `love.graphics.getShader() -> shader: Shader`: Gets the current Shader. Returns nil if none is set.
 - `love.graphics.getStackDepth() -> depth: number`: Gets the current depth of the transform / state stack (the number of pushes without corresponding pops).
-- `love.graphics.getStats` - Gets performance-related rendering statistics. 
+- `love.graphics.getStats` - Gets performance-related rendering statistics.
   - `love.graphics.getStats() -> stats: table`: No description
   - `love.graphics.getStats(stats: table) -> stats: table`: This variant accepts an existing table to fill in, instead of creating a new one.
 - `love.graphics.getStencilTest() -> comparemode: CompareMode, comparevalue: number`: Gets the current stencil test configuration. When stencil testing is enabled, the geometry of everything that is drawn afterward will be clipped / stencilled out based on a comparison between the arguments of this function and the stencil value of each pixel that the geometry touches. The stencil values of pixels are affected via love.graphics.stencil. Each Canvas has its own per-pixel stencil values.
@@ -166,7 +177,7 @@ The primary responsibility for the love.graphics module is the drawing of lines,
   - `love.graphics.print(text: string, transform: Transform)`: No description
   - `love.graphics.print(coloredtext: table, transform: Transform)`: The color set by love.graphics.setColor will be combined (multiplied) with the colors of the text.
   - `love.graphics.print(text: string, font: Font, transform: Transform)`: No description
-  - `love.graphics.print(coloredtext: table, font: Font, transform: Transform)`: 
+  - `love.graphics.print(coloredtext: table, font: Font, transform: Transform)`:
 - `love.graphics.printf` - Draws formatted text, with word wrap and alignment. See additional notes in love.graphics.print. The word wrap limit is applied before any scaling, rotation, and other coordinate transformations. Therefore the amount of text per line stays constant given the same wrap limit, even if the scale arguments change. In version 0.9.2 and earlier, wrapping was implemented by breaking up words by spaces and putting them back together to make sure things fit nicely within the limit provided. However, due to the way this is done, extra spaces between words would end up missing when printed on the screen, and some lines could overflow past the provided wrap limit. In version 0.10.0 and newer this is no longer the case. In versions prior to 11.0, color and byte component values were within the range of 0 to 255 instead of 0 to 1.
   - `love.graphics.printf(text: string, x: number, y: number, limit: number, align: AlignMode, r: number, sx: number, sy: number, ox: number, oy: number, kx: number, ky: number)`: No description
   - `love.graphics.printf(text: string, font: Font, x: number, y: number, limit: number, align: AlignMode, r: number, sx: number, sy: number, ox: number, oy: number, kx: number, ky: number)`: No description
@@ -175,7 +186,7 @@ The primary responsibility for the love.graphics module is the drawing of lines,
   - `love.graphics.printf(coloredtext: table, x: number, y: number, limit: number, align: AlignMode, angle: number, sx: number, sy: number, ox: number, oy: number, kx: number, ky: number)`: The color set by love.graphics.setColor will be combined (multiplied) with the colors of the text.
   - `love.graphics.printf(coloredtext: table, font: Font, x: number, y: number, limit: number, align: AlignMode, angle: number, sx: number, sy: number, ox: number, oy: number, kx: number, ky: number)`: The color set by love.graphics.setColor will be combined (multiplied) with the colors of the text.
   - `love.graphics.printf(coloredtext: table, transform: Transform, limit: number, align: AlignMode)`: The color set by love.graphics.setColor will be combined (multiplied) with the colors of the text.
-  - `love.graphics.printf(coloredtext: table, font: Font, transform: Transform, limit: number, align: AlignMode)`: 
+  - `love.graphics.printf(coloredtext: table, font: Font, transform: Transform, limit: number, align: AlignMode)`:
 - `love.graphics.push` - Copies and pushes the current coordinate transformation to the transformation stack. This function is always used to prepare for a corresponding pop operation later. It stores the current coordinate transformation state into the transformation stack and keeps it active. Later changes to the transformation can be undone by using the pop operation, which returns the coordinate transform to the state it was in before calling push.
   - `love.graphics.push()`: Pushes the current transformation to the transformation stack.
   - `love.graphics.push(stack: StackType)`: Pushes a specific type of state to the stack.
@@ -222,7 +233,7 @@ The primary responsibility for the love.graphics module is the drawing of lines,
   - `love.graphics.setNewFont(rasterizer: Rasterizer) -> font: Font`: No description
 - `love.graphics.setPointSize(size: number)`: Sets the point size.
 - `love.graphics.setScissor` - Sets or disables scissor. The scissor limits the drawing area to a specified rectangle. This affects all graphics calls, including love.graphics.clear.  The dimensions of the scissor is unaffected by graphical transformations (translate, scale, ...).
-  - `love.graphics.setScissor(x: number, y: number, width: number, height: number)`: Limits the drawing area to a specified rectangle. 
+  - `love.graphics.setScissor(x: number, y: number, width: number, height: number)`: Limits the drawing area to a specified rectangle.
   - `love.graphics.setScissor()`: Disables scissor.
 - `love.graphics.setShader` - Sets or resets a Shader as the current pixel effect or vertex shaders. All drawing operations until the next ''love.graphics.setShader'' will be drawn using the Shader object specified.
   - `love.graphics.setShader(shader: Shader)`: Sets the current shader to a specified Shader. All drawing operations until the next ''love.graphics.setShader'' will be drawn using the Shader object specified.
@@ -545,7 +556,7 @@ The primary responsibility for the love.graphics module is the drawing of lines,
   - `random`: Particles are inserted at random positions in the ParticleSystem's list of particles.
 
 - `SpriteBatchUsage`: Usage hints for SpriteBatches and Meshes to optimize data storage and access.
-  - `dynamic`: The object's data will change occasionally during its lifetime. 
+  - `dynamic`: The object's data will change occasionally during its lifetime.
   - `static`: The object will not be modified after initial sprites or vertices are added.
   - `stream`: The object data will always change between draws.
 

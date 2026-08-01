@@ -1,4 +1,9 @@
 ---
+name: backend-api
+description: '> REST API tasarımı ve güvenlik best practices.'
+---
+
+---
 name: backend_api
 router_kit: FullStackKit
 description: REST uygulama, validation, security headers, auth patterns. ⚠️ Kod yazarken kullan. API tasarımı/GraphQL için → api-design.
@@ -73,7 +78,7 @@ app.use(rateLimit({
 function authMiddleware(req, res, next) {
   const token = req.headers.authorization?.replace('Bearer ', '');
   if (!token) return res.status(401).json({ error: 'Token required' });
-  
+
   const decoded = jwt.verify(token, env.JWT_SECRET);
   req.user = decoded;
   next();

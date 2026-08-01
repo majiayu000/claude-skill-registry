@@ -1,5 +1,12 @@
 ---
 name: commit-messages
+description: Use this skill to draft a commit message for staged changes. Execute
+  Skill(sanctum:git-workspace-review) first to capture the repository path, status,
+  and diffs. If no changes are staged, stage the relevant files before continuing.
+---
+
+---
+name: commit-messages
 description: |
 
 Triggers: messages, conventional-commits, git, changelog, commit

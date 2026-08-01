@@ -1,5 +1,13 @@
 ---
 name: unsloth-vision
+description: Unsloth-vision provides optimized support for fine-tuning multimodal
+  models like Llama 3.2 Vision and Qwen2.5 VL. It allows granular control over which
+  layers (vision, language, or both) are updated and includes specialized data collators
+  to handle image padding.
+---
+
+---
+name: unsloth-vision
 description: Fine-tuning multimodal vision-language models (Llama 3.2 Vision, Qwen2.5 VL) using optimized vision layers (triggers: vision models, multimodal, Llama 3.2 Vision, Qwen2.5 VL, UnslothVisionDataCollator, finetune_vision_layers).
 ---
 

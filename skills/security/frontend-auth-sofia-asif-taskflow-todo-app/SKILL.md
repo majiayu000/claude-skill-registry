@@ -1,3 +1,9 @@
+---
+name: frontend-auth
+description: 'Purpose: Guidance for implementing authentication flows using Better
+  Auth and JWT token management.'
+---
+
 # Frontend Authentication Skill
 
 **Purpose**: Guidance for implementing authentication flows using Better Auth and JWT token management.

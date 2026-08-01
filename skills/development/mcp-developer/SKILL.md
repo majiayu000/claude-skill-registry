@@ -1,5 +1,12 @@
 ---
 name: mcp-developer
+description: Use when building MCP servers or clients that connect AI systems with
+  external tools and data sources. Invoke for MCP protocol compliance, TypeScript/Python
+  SDKs, resource providers, tool functions. K
+---
+
+---
+name: mcp-developer
 description: Use when building MCP servers or clients that connect AI systems with external tools and data sources. Invoke for MCP protocol compliance, TypeScript/Python SDKs, resource providers, tool functions. Keywords: MCP, Model Context Protocol, Claude integration, JSON-RPC.
 triggers:
   - MCP

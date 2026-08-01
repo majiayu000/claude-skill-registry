@@ -1,5 +1,12 @@
 ---
 name: east-node-io
+description: I/O platform functions for the East language on Node.js. Use when writing
+  East programs that need SQL databases (SQLite, PostgreSQL, MySQL), NoSQL databases
+  (Redis, MongoDB), S3 storage, file transfer
+---
+
+---
+name: east-node-io
 description: I/O platform functions for the East language on Node.js. Use when writing East programs that need SQL databases (SQLite, PostgreSQL, MySQL), NoSQL databases (Redis, MongoDB), S3 storage, file transfers (FTP, SFTP), file format parsing (XLSX, XML), or compression (Gzip, Zip, Tar). Triggers for: (1) Writing East programs with @elaraai/east-node-io, (2) Database operations with SQL.SQLite, SQL.Postgres, SQL.MySQL, NoSQL.Redis, NoSQL.MongoDB, (3) Cloud storage with Storage.S3, (4) File transfers with Transfer.FTP, Transfer.SFTP, (5) Format parsing with Format.XLSX, Format.XML, (6) Compression with Compression.Gzip, Compression.Zip, Compression.Tar.
 ---
 

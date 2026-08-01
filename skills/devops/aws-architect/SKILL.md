@@ -1,4 +1,11 @@
 ---
+name: aws-architect
+description: This skill provides comprehensive AWS architecture design expertise for
+  startup companies, emphasizing serverless technologies, scalability, cost optimization,
+  and modern cloud-native patterns.
+---
+
+---
 name: aws_architect
 router_kit: DevOpsKit
 description: Expert AWS solution architecture for startups focusing on serverless, scalable, and cost-effective cloud infrastructure with modern DevOps practices and infrastructure-as-code

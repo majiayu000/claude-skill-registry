@@ -1,5 +1,11 @@
 ---
 name: supabase-realtime
+description: 'Apply when implementing real-time features: live updates, presence,
+  broadcast messages, or database change subscriptions.'
+---
+
+---
+name: supabase-realtime
 description: Apply when implementing real-time features: live updates, presence, broadcast messages, or database change subscriptions.
 ---
 

@@ -1,3 +1,8 @@
+---
+name: page-creator
+description: 'description: 页面创建完整流程，从路由配置到组件使用、服务集成、功能实现的端到端指南'
+---
+
 ﻿---
 name: page-creator
 description: 页面创建完整流程，从路由配置到组件使用、服务集成、功能实现的端到端指南
@@ -76,7 +81,7 @@ import { getEpsService } from '@btc/shared-core'
 export const usePageAService = () => {
   // 获取 EPS 服务节点
   const epsNode = getEpsService('eps.test.pageA')
-  
+
   return {
     // CRUD 方法会自动从 EPS 生成
     query: epsNode?.query,
@@ -104,7 +109,7 @@ export const usePrint = (tableRef: Ref) => {
       <h1>{{title}}</h1>
       <p class="print-date">打印日期: {{date}}</p>
     </div>
-    
+
     <table class="print-table">
       <thead>
         <tr>
@@ -126,55 +131,55 @@ export const usePrint = (tableRef: Ref) => {
       </tbody>
     </table>
   </div>
-  
+
   <style>
   @media print {
     @page { size: A4; margin: 15mm; }
     body { margin: 0; }
   }
-  
+
   .print-template {
     padding: 20px;
     font-family: 'Microsoft YaHei', sans-serif;
   }
-  
+
   .print-header {
     text-align: center;
     margin-bottom: 30px;
     border-bottom: 2px solid #333;
     padding-bottom: 15px;
   }
-  
+
   .print-table {
     width: 100%;
     border-collapse: collapse;
   }
-  
+
   .print-table th,
   .print-table td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
   }
-  
+
   .print-table th {
     background-color: #f5f5f5;
     font-weight: bold;
   }
   </style>
   \\\
-  
+
   const handlePrint = () => {
     // 获取表格数据
     const tableData = tableRef.value?.getTableData() || []
-    
+
     // 渲染模板
     const printContent = renderTemplate(printTemplate, {
       title: '页面A打印',
       date: new Date().toLocaleDateString('zh-CN'),
       rows: tableData
     })
-    
+
     // 打开打印窗口
     const printWindow = window.open('', '_blank')
     if (printWindow) {
@@ -183,7 +188,7 @@ export const usePrint = (tableRef: Ref) => {
       printWindow.print()
     }
   }
-  
+
   return {
     handlePrint
   }
@@ -194,7 +199,7 @@ const renderTemplate = (template: string, data: any): string => {
   let result = template
   result = result.replace(/{{title}}/g, data.title)
   result = result.replace(/{{date}}/g, data.date)
-  
+
   // 处理循环
   const eachRegex = /{{#each rows}}([\\s\\S]*?){{\/each}}/g
   result = result.replace(eachRegex, (match, itemTemplate) => {
@@ -206,7 +211,7 @@ const renderTemplate = (template: string, data: any): string => {
         .replace(/{{qty}}/g, row.qty)
     }).join('')
   })
-  
+
   return result
 }
 \\\
@@ -230,7 +235,7 @@ export default {
       }
     }
   ],
-  
+
   i18n: {
     'zh-CN': {
       'test.pageA.title': '页面A',
@@ -364,7 +369,7 @@ const service = {
   save: epsNode?.save,        // 新增
   update: epsNode?.update,    // 更新
   delete: epsNode?.delete,    // 删除
-  
+
   // 自定义方法
   export: epsNode?.export,
   import: epsNode?.import,
@@ -390,7 +395,7 @@ await service.save({ code: 'A001', name: '测试' })
 ### 需求分析
 
 - 应用：admin-app
-- 模块：test  
+- 模块：test
 - 页面：page-a
 - 路由：/test/page-a
 - 服务：eps.test.pageA
@@ -434,7 +439,7 @@ apps/admin-app/src/modules/test/views/page-a/
         </el-button>
       </template>
     </BtcMasterTableGroup>
-    
+
     <!-- 打印内容（隐藏） -->
     <div ref="printContentRef" class="print-content">
       <PageAPrintTemplate :data="printData" />
@@ -460,7 +465,7 @@ const { leftService, rightService } = usePageAService()
 // 打印
 const printData = ref({})
 const { handlePrint, handleExport } = usePageAPrint(
-  masterTableRef, 
+  masterTableRef,
   printContentRef,
   printData
 )
@@ -487,7 +492,7 @@ const handleLeftSelect = (selected: any) => {
   .page-a > :not(.print-content) {
     display: none !important;
   }
-  
+
   .print-content {
     display: block !important;
   }
@@ -510,7 +515,7 @@ export const usePageAService = () => {
     update: leftEps?.update,
     delete: leftEps?.delete,
   }
-  
+
   // 右侧明细服务
   const rightEps = getEpsService('eps.test.pageA.detail')
   const rightService = {
@@ -519,7 +524,7 @@ export const usePageAService = () => {
     update: rightEps?.update,
     delete: rightEps?.delete,
   }
-  
+
   return {
     leftService,
     rightService
@@ -547,13 +552,13 @@ export const usePageAPrint = (
       date: new Date().toLocaleDateString('zh-CN'),
       data: tableRef.value?.getTableData() || []
     }
-    
+
     // 等待 Vue 更新 DOM
     setTimeout(() => {
       window.print()
     }, 100)
   }
-  
+
   // 导出 Excel
   const handleExport = () => {
     const tableData = tableRef.value?.getTableData() || []
@@ -563,7 +568,7 @@ export const usePageAPrint = (
       filename: '页面A数据'
     })
   }
-  
+
   return {
     handlePrint,
     handleExport
@@ -588,7 +593,7 @@ export const usePageAPrint = (
         <span>日期: {{ data.date }}</span>
       </div>
     </div>
-    
+
     <!-- 基本信息 -->
     <div class="print-section">
       <h2>基本信息</h2>
@@ -603,7 +608,7 @@ export const usePageAPrint = (
         </div>
       </div>
     </div>
-    
+
     <!-- 明细表格 -->
     <div class="print-section">
       <h2>明细数据</h2>
@@ -632,7 +637,7 @@ export const usePageAPrint = (
         </tbody>
       </table>
     </div>
-    
+
     <!-- 页脚签名区 -->
     <div class="print-footer">
       <div class="signature-area">
@@ -720,7 +725,7 @@ defineProps<Props>()
 
 .info-item {
   display: flex;
-  
+
   label {
     font-weight: bold;
     margin-right: 5px;
@@ -732,19 +737,19 @@ defineProps<Props>()
   width: 100%;
   border-collapse: collapse;
   margin-top: 10px;
-  
+
   th, td {
     border: 1px solid #000;
     padding: 6px 8px;
     text-align: left;
   }
-  
+
   th {
     background-color: #f5f5f5;
     font-weight: bold;
     text-align: center;
   }
-  
+
   td {
     font-size: 10pt;
   }
@@ -764,12 +769,12 @@ defineProps<Props>()
 .signature-item {
   display: flex;
   align-items: center;
-  
+
   label {
     font-weight: bold;
     margin-right: 10px;
   }
-  
+
   .signature-line {
     display: inline-block;
     border-bottom: 1px solid #000;
@@ -783,7 +788,7 @@ defineProps<Props>()
     size: A4;
     margin: 15mm;
   }
-  
+
   .print-template {
     padding: 0;
   }
@@ -806,7 +811,7 @@ export default {
       }
     }
   ],
-  
+
   i18n: {
     'zh-CN': {
       'test.pageA.title': '页面A',
@@ -882,7 +887,7 @@ export default {
 
 \\\ash
 应用: admin-app
-模块: test  
+模块: test
 页面名: product-list
 路由: /test/product-list
 服务: eps.test.product
@@ -932,7 +937,7 @@ const handleExport = () => {
 }
 \\\
 
-### 导入 Excel  
+### 导入 Excel
 \\\	ypescript
 import * as XLSX from 'xlsx'
 

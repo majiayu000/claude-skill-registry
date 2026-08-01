@@ -1,3 +1,8 @@
+---
+name: git-pusher
+description: 執行 Git commit、push，並確保 CI 流程正確觸發。
+---
+
 ```markdown
 ---
 name: git-pusher

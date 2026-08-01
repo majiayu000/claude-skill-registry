@@ -1,5 +1,12 @@
 ---
 name: unsloth-tts
+description: Unsloth-tts brings the library's performance optimizations to speech
+  synthesis models. Specifically optimized for the Llama-based Orpheus-TTS architecture,
+  it enables high-quality voice cloning with 50% less memory than standard implementations.
+---
+
+---
+name: unsloth-tts
 description: Fine-tuning Text-to-Speech (TTS) models with Unsloth for voice cloning and synthetic speech (triggers: TTS, text-to-speech, voice cloning, Orpheus-TTS, audio fine-tuning, speech synthesis).
 ---
 

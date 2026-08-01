@@ -1,4 +1,9 @@
 ---
+name: push
+description: Execute /push slash command.
+---
+
+---
 name: pushing-commits
 description: Pushes commits to remote repository. Use when: user wants to push, upload commits, or send changes to remote.
 ---

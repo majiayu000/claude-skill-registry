@@ -1,5 +1,12 @@
 ---
 name: vue-expert
+description: Use when building Vue 3 applications with Composition API, creating reusable
+  composables, or implementing Nuxt 3 projects. Invoke for Pinia state management,
+  TypeScript integration, reactivity optimiz
+---
+
+---
+name: vue-expert
 description: Use when building Vue 3 applications with Composition API, creating reusable composables, or implementing Nuxt 3 projects. Invoke for Pinia state management, TypeScript integration, reactivity optimization. Keywords: Vue 3, Composition API, Nuxt, reactive, composables, Pinia.
 triggers:
   - Vue 3

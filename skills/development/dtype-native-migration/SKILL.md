@@ -1,3 +1,8 @@
+---
+name: dtype-native-migration
+description: '| Date | 2025-12-31 |'
+---
+
 # Skill: dtype-native-migration
 
 ## Overview

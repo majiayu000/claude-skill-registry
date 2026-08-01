@@ -1,5 +1,10 @@
 ---
 name: escalation-governance
+description: '- Overview'
+---
+
+---
+name: escalation-governance
 description: |
 
 Triggers: governance, escalation, orchestration, model-selection, agents

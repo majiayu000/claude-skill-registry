@@ -1,3 +1,8 @@
+---
+name: knowledge-sharing
+description: '|---------|---------|'
+---
+
 # Knowledge Sharing
 
 ## Why Knowledge Sharing Matters
@@ -259,7 +264,7 @@ Use PostgreSQL as our primary database.
 function calculateTotal(items) {
     // Driver types
     return items.reduce((sum, item) => sum + item.price, 0);
-    
+
     // Navigator reviews
     // "Should we handle empty array?"
 }
@@ -297,7 +302,7 @@ function calculateTotal(items) {
 function calculateTotal(items) {
     // Driver types
     // Navigators review and guide
-    
+
     return items.reduce((sum, item) => sum + item.price, 0);
 }
 ```

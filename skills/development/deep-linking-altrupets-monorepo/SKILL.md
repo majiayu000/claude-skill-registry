@@ -1,3 +1,8 @@
+---
+name: deep-linking
+description: '| ID | flutter-deep-linking |'
+---
+
 # 🔗 Skill: Deep Linking & Universal Links
 
 ## 📋 Metadata

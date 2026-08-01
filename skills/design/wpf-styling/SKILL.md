@@ -1,5 +1,12 @@
 ---
 name: wpf-styling
+description: 'Define and evolve WPF XAML styling for the widget host app: control
+  styles, templates, visual states, typography, and theme variants. Use when working
+  in `App.xaml`, theme dictionaries, `Styles/*.xaml'
+---
+
+---
+name: wpf-styling
 description: Define and evolve WPF XAML styling for the widget host app: control styles, templates, visual states, typography, and theme variants. Use when working in `App.xaml`, theme dictionaries, `Styles/*.xaml`, or control templates to achieve the Fluent-inspired design system with Light/Dark themes.
 ---
 

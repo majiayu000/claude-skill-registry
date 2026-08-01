@@ -1,5 +1,12 @@
 ---
 name: midjourney-prompting
+description: Craft effective Midjourney V7 prompts for any style — photography, illustration,
+  anime, or artistic. Provides frameworks (7-Element, F.O.C.A.L.), parameter reference
+  (--ar, --stylize, --sref, --cref),
+---
+
+---
+name: midjourney-prompting
 description: Craft effective Midjourney V7 prompts for any style — photography, illustration, anime, or artistic. Provides frameworks (7-Element, F.O.C.A.L.), parameter reference (--ar, --stylize, --sref, --cref), lighting/camera terminology, and V7-specific optimization. Auto-activates when writing Midjourney prompts, discussing MJ parameters, or creating AI image prompts. Triggers: Midjourney, MJ prompt, --ar, --stylize, --sref, style reference, character reference, image generation prompt.
 ---
 

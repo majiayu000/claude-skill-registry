@@ -1,3 +1,8 @@
+---
+name: bdd-scenario-evolution
+description: '> Compiler: skill-compiler/1.0.0'
+---
+
 # BDD Scenario Evolution Skill
 
 > Version: 1.0.0

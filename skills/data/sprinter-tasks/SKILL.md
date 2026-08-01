@@ -1,3 +1,9 @@
+---
+name: sprinter-tasks
+description: Manage tasks in the Sprinter kanban board using MCP tools. This skill
+  enables AI agents to create, claim, and complete tasks programmatically.
+---
+
 # Sprinter Task Management Skill
 
 ## Description

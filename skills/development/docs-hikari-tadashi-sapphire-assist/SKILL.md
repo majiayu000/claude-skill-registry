@@ -1,6 +1,11 @@
+---
+name: docs-hikari-tadashi-sapphire-assist
+description: 'Location: packages/skills/CalendarSkill/'
+---
+
 # CalendarSkill Module
 
-**Location**: `packages/skills/CalendarSkill/`  
+**Location**: `packages/skills/CalendarSkill/`
 **Package Category**: **Skills** - User-facing functionality
 
 ## Overview

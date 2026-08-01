@@ -1,5 +1,10 @@
 ---
 name: pm-pipeline
+description: Read ops/derivation-manifest.md for vocabulary.
+---
+
+---
+name: pm-pipeline
 description: Show the state of the processing queue — what is in inbox, what is mid-pipeline (documented but not linked), what is complete. Manage queue entries: advance, stall, remove. The pipeline control center. Triggers on "/pm-pipeline", "show queue", "pipeline status", "what's in progress", "queue status".
 user-invocable: true
 allowed-tools: Read, Write, Edit, Grep, Glob, Bash

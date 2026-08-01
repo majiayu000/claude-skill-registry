@@ -1,5 +1,12 @@
 ---
 name: numpy-sorting
+description: NumPy sorting provides efficient tools for ordering data. Beyond basic
+  sorting, it includes partitioning for top-k selection and vectorized binary search
+  for finding insertion points in sorted data.
+---
+
+---
+name: numpy-sorting
 description: Sorting and searching algorithms including O(n) partitioning, binary search, and hierarchical multi-key sorting. Triggers: sort, argsort, partition, searchsorted, lexsort, nan sort order.
 ---
 

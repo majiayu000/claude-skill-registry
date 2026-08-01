@@ -1,4 +1,11 @@
 ---
+name: skills-synqing-spectrasynq-trinity
+description: 21 production-ready scripts for iOS app testing, building, and automation.
+  Provides semantic UI navigation, build automation, accessibility testing, and simulator
+  lifecycle management. Optimized for A
+---
+
+---
 description: 21 production-ready scripts for iOS app testing, building, and automation. Provides semantic UI navigation, build automation, accessibility testing, and simulator lifecycle management. Optimized for AI agents with minimal token output.
 globs: **/*.test.ts,**/*.test.js,**/*_test.py
 alwaysApply: false

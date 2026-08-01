@@ -1,4 +1,9 @@
 ---
+name: prisma-specialist
+description: '> Modern ve tip güvenli veritabanı erişimi ve şema yönetimi.'
+---
+
+---
 name: prisma_specialist
 router_kit: FullStackKit
 description: Prisma ORM, schema design, migrations ve type-safe database access.

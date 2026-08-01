@@ -1,3 +1,8 @@
+---
+name: when-optimizing-prompts-use-prompt-architect
+description: /============================================================================/
+---
+
 /*============================================================================*/
 /* WHEN-OPTIMIZING-PROMPTS-USE-PROMPT-ARCHITECT SKILL :: VERILINGUA x VERIX EDITION                      */
 /*============================================================================*/

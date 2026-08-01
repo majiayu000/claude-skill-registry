@@ -1,5 +1,10 @@
 ---
 name: updatekfg
+description: The most comprehensive Claude Code skills registry - 50,000+ skills indexed
+---
+
+---
+name: updatekfg
 description: Synchronizacja KFG między urządzeniami (Windows/Android). Triggers: sync KFG, updatekfg, zaktualizuj
 ---
 

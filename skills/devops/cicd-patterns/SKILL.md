@@ -1,3 +1,8 @@
+---
+name: cicd-patterns
+description: Continuous Integration and Deployment patterns for modern applications.
+---
+
 # CI/CD Patterns
 
 Continuous Integration and Deployment patterns for modern applications.

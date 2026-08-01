@@ -1,3 +1,8 @@
+---
+name: spawn-readiness
+description: '> Compiler: skill-compiler/1.0.0'
+---
+
 # Spawn Readiness Skill
 
 > Version: 1.0.0

@@ -1,4 +1,10 @@
 ---
+name: 4-atacseq-qc
+description: This skill performs complete ATAC-seq data quality control from BAM and
+  peak files.
+---
+
+---
 name: ATACseq-QC
 description:Performs ATAC-specific biological validation. It calculates metrics unique to chromatin accessibility assays, such as TSS enrichment scores and fragment size distributions (nucleosome banding patterns). Use this skill when you have filtered BAM file and have called peak for the file. Do NOT use this skill for ChIP-seq data or general alignment statistics.
 ---
@@ -11,9 +17,9 @@ This skill performs complete ATAC-seq data quality control from BAM and peak fil
 
 Main steps include:
 - Refer to the **Inputs & Outputs** section to check inputs and build the output architecture. All the output file should located in `${proj_dir}` in Step 0.
-- **Always prompt user** for genome assembly used. Never decide by yourself. 
+- **Always prompt user** for genome assembly used. Never decide by yourself.
 - Generate TSS files according to genome assembly.
-- Compute TSS enrichment, fragment distribution and FRiP. 
+- Compute TSS enrichment, fragment distribution and FRiP.
 
 ---
 

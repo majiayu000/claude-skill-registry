@@ -1,5 +1,10 @@
 ---
 name: viral-video-hooks-retention
+description: 'MANDATORY: Always Use Backslashes on Windows for File Paths'
+---
+
+---
+name: viral-video-hooks-retention
 description: Master hook creation and audience retention for viral video success. PROACTIVELY activate for: (1) Video hook optimization, (2) Opening second strategies, (3) Audience retention improvement, (4) Attention capture techniques, (5) Psychological triggers, (6) Pattern interrupts, (7) Watch time optimization, (8) Drop-off prevention, (9) Engagement psychology. Provides: Hook formulas, psychological trigger frameworks, retention benchmarks, pattern interrupt techniques, and actionable retention improvement strategies.
 references:
   - references/hook-psychology.md

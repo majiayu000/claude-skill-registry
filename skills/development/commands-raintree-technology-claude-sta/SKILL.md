@@ -1,3 +1,9 @@
+---
+name: commands-raintree-technology-claude-sta
+description: Install a Claude Code skill from a GitHub repository URL with guided
+  setup and validation.
+---
+
 # Install Skill
 
 Install a Claude Code skill from a GitHub repository URL with guided setup and validation.

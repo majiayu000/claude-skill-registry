@@ -1,5 +1,12 @@
 ---
 name: error-troubleshooter
+description: 'Automatically troubleshoot unexpected results OR command/script errors
+  without user request. Triggers when: (1) unexpected behavior - command succeeded
+  but expected effect didn''t happen, missing expec'
+---
+
+---
+name: error-troubleshooter
 description: Automatically troubleshoot unexpected results OR command/script errors without user request. Triggers when: (1) unexpected behavior - command succeeded but expected effect didn't happen, missing expected errors, wrong output, silent failures; (2) explicit failures - stderr, exceptions, non-zero exit, SDK/API errors. Applies systematic diagnosis using error templates, hypothesis testing, and web research for any Stack Overflow-worthy issue.
 ---
 

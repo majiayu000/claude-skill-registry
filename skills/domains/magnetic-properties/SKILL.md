@@ -1,5 +1,11 @@
 ---
 name: magnetic-properties
+description: This skill group covers first-principles calculations of magnetic properties
+  using
+---
+
+---
+name: magnetic-properties
 description: Magnetic Properties (3 sub-skills: magnetic-anisotropy, magnetic-ordering, spin-polarized)
 ---
 

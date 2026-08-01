@@ -1,5 +1,12 @@
 ---
 name: domain-modeller
+description: Model-first design skill. Maps entities, relationships, and boundaries
+  before code. Prioritises understanding the domain over jumping to implementation.
+  Outputs conceptual models as Mermaid diagrams or Cypher-compatible graph structures.
+---
+
+---
+name: domain-modeller
 description: Model-first design: map entities, relationships, and boundaries before writing code.
 user-invocable: false
 effort: high

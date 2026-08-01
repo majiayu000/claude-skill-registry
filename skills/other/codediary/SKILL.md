@@ -1,3 +1,8 @@
+---
+name: codediary
+description: 1. imageloader 的话自己怎么设计这个功能
+---
+
 1. imageloader 的话自己怎么设计这个功能
 2. 算法 链表翻转 异或取数组中的不同数
 3. 大 json 的传输
@@ -778,7 +783,7 @@ public interface C{
 152. 视频播放
   * 监听 VideoView 的 prepared. handler 延时 3000 毫秒后给 DecorView 修改 SystemUiVisibility
   * VideoView 继承 SurfaceView, 内含 MediaPlayer 和 Vector 包含的
-    * 缺点: 进入后台再出来, 不会恢复播放状态, 需自己在 onSaveInstanceState 保存,  
+    * 缺点: 进入后台再出来, 不会恢复播放状态, 需自己在 onSaveInstanceState 保存,
 153. 图片展示
   * ViewPager + Fragment.
   * 图片下载需申请权限, 下载使用 DownloadManager, 获取 SystemService 的 DOWNLOAD_SERVICE, DownloadManager.Request 设置保存路径
@@ -894,7 +899,7 @@ drawPath 画线时须设置为Stroke.
        * 此方法返回的图片只能是小图片（sumsang测试为高宽160px的图片）
        * 故只保存图片Uri，调用时将Uri转换为Bitmap，此方法还可解决miui系统不能return data的问题
        */
-      //intent.putExtra("return-data", true);      
+      //intent.putExtra("return-data", true);
 
       //裁剪后的图片Uri路径，uritempFile为Uri类变量
       uritempFile = Uri.parse("file://" + "/" + Environment.getExternalStorageDirectory().getPath() + "/" + "small.jpg");
@@ -938,7 +943,7 @@ Service Intent must be explicit 5.0 开始 service 的intent 需要显示调用
 180. Service 弹 Toast, 需要切换到主线程(Toast需要加进Looper)
 181. Looper.loop(); 是个死循环, 其后的代码无法运行
 182. 2018-11-12T07:41:25Z 格林尼治时间线
-183. 数据库的设计: 所有字段都是不可分解的原子值, 每一列都和主键相关,  
+183. 数据库的设计: 所有字段都是不可分解的原子值, 每一列都和主键相关,
 184. 热点下gradle 速度慢, 梯子
 185. Animation 在 RecyclerView 下会被打断, 替换为 ValueAnimator
 186. 边缘阴影

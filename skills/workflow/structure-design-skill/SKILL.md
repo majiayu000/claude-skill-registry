@@ -1,3 +1,8 @@
+---
+name: structure-design-skill
+description: '输入: 计划（plan）包含系统需求、功能模块等'
+---
+
 # structure-design-skill
 
 **用途**: 设计系统的目录结构
@@ -79,12 +84,12 @@ structure:
       purpose: string           # 用途说明
       required: boolean         # 是否必需
       examples: array           # 示例文件
-  
+
   files:                        # 必需的文件
     - path: string
       purpose: string
       template: string          # 模板内容（可选）
-  
+
   data_structure:               # 数据结构说明
     - category: string
       location: string
@@ -116,7 +121,7 @@ def design_structure(plan):
         "directories": [],
         "files": []
     }
-    
+
     # 标准目录（必需）
     structure["directories"].extend([
         {"path": ".claude/agents/", "required": True},
@@ -125,7 +130,7 @@ def design_structure(plan):
         {"path": "data/", "required": True},
         {"path": "outputs/", "required": True}
     ])
-    
+
     # 领域特定目录
     if plan.domain == "health":
         structure["directories"].extend([
@@ -134,16 +139,16 @@ def design_structure(plan):
             {"path": "data/checkups/", "purpose": "体检报告"},
             {"path": "outputs/reports/", "purpose": "健康报告"}
         ])
-    
+
     elif plan.domain == "finance":
         structure["directories"].extend([
             {"path": "data/accounts/", "purpose": "账户信息"},
             {"path": "data/transactions/", "purpose": "交易记录"},
             {"path": "outputs/analysis/", "purpose": "财务分析"}
         ])
-    
+
     # ... 更多领域
-    
+
     return structure
 ```
 
@@ -155,24 +160,24 @@ files:
     purpose: 系统使用说明
     template: |
       # {system_name}
-      
+
       ## 概述
-      
+
       ## 快速开始
-      
+
       ## 功能说明
-  
+
   - path: DESIGN.md
     purpose: 设计文档
     template: |
       # {system_name} 设计文档
-      
+
       ## 系统目标
-      
+
       ## 架构设计
-      
+
       ## 数据流
-  
+
   - path: data/.gitkeep
     purpose: 保留空目录
 ```
@@ -189,7 +194,7 @@ data_structure:
         "age": "number",
         "health_history": []
       }
-  
+
   - category: 健康指标
     location: data/indicators/{date}.json
     format: |
@@ -212,14 +217,14 @@ plan:
   system_name: health-system
   domain: health
   focus: disease_prevention
-  
+
   agents:
     - name: health-advisor
       responsibilities:
         - 分析体检报告
         - 评估健康风险
         - 提供建议
-  
+
   skills:
     - name: checkup-analysis-skill
       purpose: 分析体检报告
@@ -228,7 +233,7 @@ plan:
     - name: risk-assessment-skill
       purpose: 评估风险
     # ... 更多
-  
+
   workflows:
     - name: daily-check
       trigger: "21:00"
@@ -236,7 +241,7 @@ plan:
       trigger: "Sunday 20:00"
     - name: checkup-analysis
       trigger: "file_upload"
-  
+
   data_requirements:
     - type: profile
       structure: JSON
@@ -244,7 +249,7 @@ plan:
       structure: daily JSON files
     - type: checkups
       structure: PDF + parsed JSON
-  
+
   outputs:
     - type: reports
       format: Markdown
@@ -257,7 +262,7 @@ plan:
 ```yaml
 structure:
   root: health-system
-  
+
   directories:
     # 标准目录
     - path: .claude/agents/
@@ -265,7 +270,7 @@ structure:
       required: true
       examples:
         - health-advisor.md
-    
+
     - path: .claude/skills/
       purpose: Skill 定义
       required: true
@@ -273,7 +278,7 @@ structure:
         - checkup-analysis/
         - health-indicators/
         - risk-assessment/
-    
+
     - path: .sop-engine/workflows/
       purpose: Workflow 定义
       required: true
@@ -281,74 +286,74 @@ structure:
         - daily-check.yaml
         - weekly-report.yaml
         - checkup-analysis.yaml
-    
+
     - path: .sop-engine/running/
       purpose: 运行中的 Workflow 实例
       required: true
-    
+
     - path: agents/health-advisor/
       purpose: health-advisor 的工作空间
       required: true
-    
+
     - path: agents/health-advisor/knowledge/
       purpose: 积累的健康知识
       required: true
-    
+
     - path: agents/health-advisor/handoff/
       purpose: 任务交接记录
       required: true
-    
+
     # 领域特定目录
     - path: data/profile/
       purpose: 用户健康档案
       required: true
       examples:
         - profile.json
-    
+
     - path: data/indicators/
       purpose: 每日健康指标
       required: true
       examples:
         - 2026-01-19.json
         - 2026-01-20.json
-    
+
     - path: data/checkups/
       purpose: 体检报告（原始 + 解析后）
       required: true
       examples:
         - raw/2025-annual-checkup.pdf
         - parsed/2025-annual-checkup.json
-    
+
     - path: outputs/reports/
       purpose: 生成的健康报告
       required: true
       examples:
         - daily/2026-01-19-daily.md
         - weekly/2026-W03-weekly.md
-  
+
   files:
     - path: README.md
       purpose: 系统使用说明
       template: |
         # health-system
-        
+
         健康管理系统 - 预防疾病、追踪指标、评估风险
-        
+
         ## 快速开始
-        
+
         1. 填写个人档案: `data/profile/profile.json`
         2. 记录今日数据: `data/indicators/{今天日期}.json`
         3. 触发每日检查: "执行每日健康检查"
-        
+
         ## 核心功能
-        
+
         - 每日健康检查（21:00 自动触发）
         - 每周健康报告（周日 20:00 自动触发）
         - 体检报告分析（上传文件后触发）
-    
+
     - path: DESIGN.md
       purpose: 设计文档
-    
+
     - path: data/profile/profile.json
       purpose: 个人健康档案（示例）
       template: |
@@ -363,7 +368,7 @@ structure:
           "allergies": [],
           "medications": []
         }
-    
+
     - path: data/indicators/2026-01-19.json
       purpose: 健康指标示例
       template: |
@@ -377,7 +382,7 @@ structure:
           "water_intake_ml": 2000,
           "notes": "感觉良好"
         }
-  
+
   data_structure:
     - category: 个人档案
       location: data/profile/profile.json
@@ -391,7 +396,7 @@ structure:
           "allergies": ["string"],
           "medications": ["string"]
         }
-    
+
     - category: 每日指标
       location: data/indicators/{YYYY-MM-DD}.json
       format: |
@@ -405,7 +410,7 @@ structure:
           "water_intake_ml": "number",
           "notes": "string"
         }
-    
+
     - category: 体检报告
       location: data/checkups/parsed/{name}.json
       format: |

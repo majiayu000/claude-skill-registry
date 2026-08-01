@@ -1,3 +1,8 @@
+---
+name: chip-clonal-hematopoiesis-agent
+description: '---name: chip-clonal-hematopoiesis-agent'
+---
+
 ---name: chip-clonal-hematopoiesis-agent
 description: AI-powered clonal hematopoiesis of indeterminate potential (CHIP) detection, risk stratification, and cardiovascular/malignancy risk prediction using genomic and clinical data.
 license: MIT

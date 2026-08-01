@@ -1,5 +1,10 @@
 ---
 name: viral-video-platform-specs
+description: 'MANDATORY: Always Use Backslashes on Windows for File Paths'
+---
+
+---
+name: viral-video-platform-specs
 description: Complete platform upload specifications for viral video creation across TikTok, YouTube Shorts, Instagram Reels, Facebook Reels, Snapchat Spotlight, and Twitter/X. PROACTIVELY activate for: (1) Platform-specific video encoding, (2) Upload requirements lookup, (3) Multi-platform export, (4) File size optimization, (5) Aspect ratio conversion, (6) Duration limits, (7) Audio requirements, (8) Caption/subtitle specs, (9) Thumbnail requirements, (10) Quality vs compatibility trade-offs. Provides: Comprehensive spec tables, FFmpeg presets per platform, optimal encoding settings, file size calculators, batch export workflows, and 2025-2026 platform-specific algorithm insights.
 ---
 

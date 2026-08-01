@@ -1,3 +1,9 @@
+---
+name: commands-shashanktomar-dotfiles
+description: You are an expert at creating high-quality Claude Code Skills following
+  Anthropic's best practices and guidelines.
+---
+
 # Claude Code Skill Generator
 
 <role>

@@ -1,3 +1,8 @@
+---
+name: doc-flow
+description: 五重文件管理系統 - 專案文件運作的核心控制中心
+---
+
 # Doc-Flow SKILL
 
 五重文件管理系統 - 專案文件運作的核心控制中心

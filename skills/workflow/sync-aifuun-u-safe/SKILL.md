@@ -1,5 +1,11 @@
 ---
 name: sync
+description: Safe synchronization of your branch with main, including conflict resolution
+  and safety checks. Works on both feature branches and main branch.
+---
+
+---
+name: sync
 description: |
   Sync branch with main - fetch, merge, resolve conflicts, test, push. Works on both feature branches and main branch.
   TRIGGER when: user wants to sync with main ("sync with main", "merge main into my branch", "update from main", "pull latest changes", "sync").

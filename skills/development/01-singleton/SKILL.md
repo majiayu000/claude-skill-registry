@@ -1,14 +1,19 @@
+---
+name: 01-singleton
+description: '- SceneSingleton\<T\> - Scene-Placed / Persistent (자동 생성 없음)'
+---
+
 # 01-singleton
 
-Status: ACTIVE  
-AppliesTo: v10  
+Status: ACTIVE
+AppliesTo: v10
 Type: Policy
 
 ---
 
 ## 1. 목적
 
-Unity용 Singleton **정책**을 정의한다.  
+Unity용 Singleton **정책**을 정의한다.
 이 스킬은 **싱글톤 계열 정책 묶음**이며, 정확히 5개의 타입을 제공한다.
 
 ---
@@ -93,8 +98,8 @@ Awake()에서 기존 인스턴스(_instance)가 있고 자기 자신이 아니�
 
 ### 4.6 멀티스레드 경계
 
-> Log 같은 시스템에서 "어떤 스레드에서든 호출"을 원하면,  
-> 그것은 **singleton 템플릿이 아니라 sink/pump 설계**로 해결한다.  
+> Log 같은 시스템에서 "어떤 스레드에서든 호출"을 원하면,
+> 그것은 **singleton 템플릿이 아니라 sink/pump 설계**로 해결한다.
 > 예: `Log.Info()`는 큐에 메시지를 넣고, 메인 스레드의 pump가 처리.
 
 ---
@@ -103,7 +108,7 @@ Awake()에서 기존 인스턴스(_instance)가 있고 자기 자신이 아니�
 
 ### 5.1 목적
 
-자동 생성 없이 **씬 배치 또는 명시적 등록**으로만 인스턴스를 관리한다.  
+자동 생성 없이 **씬 배치 또는 명시적 등록**으로만 인스턴스를 관리한다.
 Instance가 없으면 예외를 발생시켜 개발자가 누락을 즉시 인지하도록 한다.
 
 ### 5.2 필수 규약 (정본)
@@ -185,7 +190,7 @@ namespace Devian
 
 ### 6.1 목적
 
-사용자는 `T.Instance` 접근 시 인스턴스가 없으면 **자동 생성**된다.  
+사용자는 `T.Instance` 접근 시 인스턴스가 없으면 **자동 생성**된다.
 단, Unity 제약으로 인해 **자동 생성은 메인 스레드에서만** 허용한다.
 
 ### 6.2 Instance 동작 순서 (정본)
@@ -279,7 +284,7 @@ namespace Devian
 
 ### 7.1 목적
 
-**Resources.Load**로 프리팹을 로드해 생성하는 singleton을 제공한다.  
+**Resources.Load**로 프리팹을 로드해 생성하는 singleton을 제공한다.
 **이 타입에서만 Resources 사용을 허용한다.** (MonoSingleton/AutoSingleton은 금지)
 
 ### 7.2 필수 규약 (정본)
@@ -391,7 +396,7 @@ namespace Devian
     {
         /// <summary>싱글톤 인스턴스 (최초 접근 시 생성)</summary>
         public static T Instance { get; }
-        
+
         protected SimpleSingleton() { }
     }
 }

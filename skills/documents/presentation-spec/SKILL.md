@@ -1,3 +1,8 @@
+---
+name: presentation-spec
+description: Create detailed slide-by-slide specification for a class presentation.
+---
+
 # Presentation Spec
 
 Create detailed slide-by-slide specification for a class presentation.

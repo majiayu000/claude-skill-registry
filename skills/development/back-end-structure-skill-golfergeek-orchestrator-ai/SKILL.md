@@ -1,4 +1,10 @@
 ---
+name: back-end-structure-skill
+description: 'CRITICAL: NestJS backend follows strict patterns: kebab-case file names,
+  module/service/controller separation, A2A protocol compliance, transport types usage.'
+---
+
+---
 name: Back-End Structure
 description: Build NestJS backend following Orchestrator AI patterns. Module/Service/Controller structure, A2A protocol compliance, transport types, error handling. CRITICAL: Files follow kebab-case naming. Controllers handle HTTP, Services contain business logic, Modules organize dependencies.
 allowed-tools: Read, Write, Edit, Bash, Grep, Glob

@@ -1,3 +1,9 @@
+---
+name: hook-and-headline-writing
+description: '<!-- ARCHIVED 2026-01-23 - Split into: newsletter-subject-lines, article-titles,
+  segment-titles -->'
+---
+
 <!-- ARCHIVED 2026-01-23 - Split into: newsletter-subject-lines, article-titles, segment-titles -->
 <!-- Original frontmatter disabled to prevent invocation:
 name: hook-and-headline-writing

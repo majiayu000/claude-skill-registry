@@ -1,3 +1,8 @@
+---
+name: docs
+description: '| Name | Type | Description | Notes |'
+---
+
 # ConnectWise::Skill
 
 ## Properties

@@ -1,5 +1,10 @@
 ---
 name: plan-todo
+description: Convert TODO.md items into a structured TDD implementation plan in PLANS.md.
+---
+
+---
+name: plan-todo
 description: Convert TODO.md items into TDD implementation plans in PLANS.md. Use when starting work on backlog items, planning features, or organizing implementation tasks. Supports codebase exploration and MCP integration.
 argument-hint: [item-selector] e.g., "bug #2", "all improvements", "the file naming issue"
 allowed-tools: Read, Edit, Write, Glob, Grep, Task, mcp__gdrive__gdrive_search, mcp__gdrive__gdrive_read_file, mcp__gdrive__gdrive_list_folder, mcp__gdrive__gdrive_get_pdf, mcp__gdrive__gsheets_read, mcp__Railway__check-railway-status, mcp__Railway__get-logs, mcp__Railway__list-deployments, mcp__Railway__list-services, mcp__Railway__list-variables, mcp__gemini__gemini_analyze_pdf

@@ -1,3 +1,8 @@
+---
+name: youtube-thumbnail
+description: '| ツール | NanoBanana Pro (Gemini) + Canva |'
+---
+
 # YouTubeサムネイル作成ガイド - NanoBanana Pro完全マニュアル
 
 ## 概要

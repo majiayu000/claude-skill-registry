@@ -1,5 +1,11 @@
 ---
 name: twig-component
+description: Reusable UI components with PHP classes + Twig templates. Think React/Vue
+  components, but server-rendered with zero JavaScript.
+---
+
+---
+name: twig-component
 description: Symfony UX TwigComponent for reusable UI building blocks -- server-rendered components with PHP classes and Twig templates. Use when creating buttons, cards, alerts, badges, navbars, or any reusable UI element with props, blocks/slots, computed properties, or anonymous (template-only) components. Code triggers: AsTwigComponent, #[AsTwigComponent], ExposeInTemplate, PreMount, PostMount, <twig:Alert />, <twig:Button>, component(), computed properties, anonymous component, HTML syntax. Also trigger when the user asks "how to create a reusable component", "how to make a component library", "how to pass props to a component", "how to use slots/blocks in a component", "how to build a design system in Symfony", "what is the HTML syntax for components", "how to create a component without a PHP class". Do NOT trigger for components that re-render dynamically on user input (use live-component), for JS behavior (use stimulus), or for page navigation (use turbo).
 license: MIT
 metadata:

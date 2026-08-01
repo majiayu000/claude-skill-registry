@@ -1,5 +1,10 @@
 ---
 name: team-quality-gate
+description: Verify artifacts meet quality criteria at development stages.
+---
+
+---
+name: team-quality-gate
 description: "[Team] Run quality gate checklists for development stages. Covers 4 stage gates (Idea>PBI, PBI>Dev, Dev>QA, QA>Release), compliance verification (architecture, security, accessibility, performance), audit trails, and quality metrics. Triggers on "quality gate", "qa gate", "pre-release", "checklist", "gate check", "compliance", "quality metrics", "QC review"."
 argument-hint: "<pre-dev|pre-qa|pre-release> <artifact-path|PR#number>"
 infer: true

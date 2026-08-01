@@ -1,5 +1,10 @@
 ---
 name: cqrs
+description: This skill provides guidelines and best practices.
+---
+
+---
+name: cqrs
 description: Règle 07 : CQRS - Command Query Responsibility Segregation. Use when implementing DDD patterns.
 ---
 

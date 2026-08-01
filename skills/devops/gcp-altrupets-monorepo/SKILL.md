@@ -1,3 +1,8 @@
+---
+name: gcp
+description: '| ID | cicd-gcp |'
+---
+
 # ☁️ Skill: Google Cloud Platform Backend
 
 ## 📋 Metadata

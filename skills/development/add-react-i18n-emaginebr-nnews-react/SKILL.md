@@ -1,5 +1,12 @@
 ---
 name: add-react-i18n
+description: This skill adds internationalization (i18n) to a React NPM library package
+  using react-i18next with an isolated i18n instance pattern that avoids conflicts
+  with the consuming application's own i18n setup.
+---
+
+---
+name: add-react-i18n
 description: Add react-i18next internationalization to a React NPM library package. Creates isolated i18n instance, translation files, modifies provider and components. Use when the user wants to add multi-language support to a React component library.
 disable-model-invocation: true
 allowed-tools: Bash, Read, Write, Edit, Glob, Grep

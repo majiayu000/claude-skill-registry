@@ -1,5 +1,14 @@
 ---
 name: economic-calendar-fetcher
+description: Retrieve upcoming economic events and data releases from the Financial
+  Modeling Prep (FMP) Economic Calendar API. This skill fetches scheduled economic
+  indicators including central bank monetary policy decisions, employment reports,
+  inflation data (CPI/PPI), GDP releases, retail sales, manufacturing data, and other
+  market-moving events that impact financial markets.
+---
+
+---
+name: economic-calendar-fetcher
 description: Fetch upcoming economic events and data releases using FMP API. Retrieve scheduled central bank decisions, employment reports, inflation data, GDP releases, and other market-moving economic indicators for specified date ranges (default: next 7 days). Output chronological markdown reports with impact assessment.
 ---
 

@@ -1,3 +1,8 @@
+---
+name: desiredskill
+description: Name | Type | Description | Notes
+---
+
 # DesiredSkill
 
 
@@ -5,10 +10,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**user_id** | **int** |  | [optional] 
-**username** | **str** |  | [optional] 
-**skills** | [**List[Skill]**](Skill.md) |  | 
-**data** | **object** |  | [readonly] 
+**user_id** | **int** |  | [optional]
+**username** | **str** |  | [optional]
+**skills** | [**List[Skill]**](Skill.md) |  |
+**data** | **object** |  | [readonly]
 
 ## Example
 

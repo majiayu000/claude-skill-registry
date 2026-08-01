@@ -1,3 +1,8 @@
+---
+name: promote
+description: Batch promote open source projects to tech weeklies and communities.
+---
+
 # OSS Promoter Skill
 
 Batch promote open source projects to tech weeklies and communities.

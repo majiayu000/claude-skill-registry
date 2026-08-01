@@ -1,5 +1,10 @@
 ---
 name: share-log
+description: Creates a private Gist containing the current Claude Code conversation.
+---
+
+---
+name: share-log
 description: Use when sharing the current conversation as a Gist. Creates a private Gist with the session log.
 argument-hint: "[description for filename]"
 {{- template "bedrock-model" (dict "tier" "haiku" "root" .) }}

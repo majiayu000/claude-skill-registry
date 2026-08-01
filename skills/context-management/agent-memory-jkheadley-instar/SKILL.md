@@ -1,5 +1,13 @@
 ---
 name: agent-memory
+description: Claude Code has no memory between sessions by default. Every conversation
+  starts blank. But a project's knowledge accumulates — commands discovered, patterns
+  debugged, preferences revealed, mistakes made and corrected. Without persistence,
+  that knowledge is lost every time the window closes.
+---
+
+---
+name: agent-memory
 description: Teach cross-session memory patterns using MEMORY.md — what to save, how to organize it, how to maintain it over time, and how to structure topic files as memory grows. Works in any Claude Code project with no external dependencies. Trigger words: remember this, save for later, across sessions, persistent memory, don't forget, note this, keep this, write this down.
 license: MIT
 metadata:

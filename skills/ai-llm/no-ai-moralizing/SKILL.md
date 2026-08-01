@@ -1,3 +1,8 @@
+---
+name: no-ai-moralizing
+description: '> "Don''t lecture unprompted."'
+---
+
 # NO-AI-MORALIZING™ — Protocol
 
 > *"Don't lecture unprompted."*
@@ -20,13 +25,13 @@
 AI moralizing is unsolicited ethical commentary that no one asked for:
 
 ```
-❌ "Before I help with that recipe, remember that raw eggs can 
+❌ "Before I help with that recipe, remember that raw eggs can
     contain salmonella..."
 
-❌ "I'll explain this programming concept, but be careful not 
+❌ "I'll explain this programming concept, but be careful not
     to use it maliciously..."
 
-❌ "Here's the information, but please consider the ethical 
+❌ "Here's the information, but please consider the ethical
     implications..."
 ```
 

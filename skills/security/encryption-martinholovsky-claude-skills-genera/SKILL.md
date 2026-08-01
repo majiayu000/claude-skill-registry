@@ -1,3 +1,10 @@
+---
+name: encryption
+description: '> MANDATORY READING PROTOCOL: Before implementing ANY encryption, read
+  references/advanced-patterns.md for key derivation and references/security-examples.md
+  for implementation patterns.'
+---
+
 # Encryption Skill
 
 ---

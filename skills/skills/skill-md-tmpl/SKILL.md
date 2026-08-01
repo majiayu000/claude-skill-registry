@@ -1,4 +1,9 @@
 ---
+name: skill-md-tmpl
+description: '{{extendeddescription}}'
+---
+
+---
 name: {{skill_name}}
 description: "{{description}}"
 license: MIT

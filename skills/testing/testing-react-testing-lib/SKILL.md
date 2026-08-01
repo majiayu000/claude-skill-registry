@@ -1,5 +1,11 @@
 ---
 name: testing-react-testing-lib
+description: 'Apply when testing React components: rendering, user interactions, and
+  accessibility-focused testing.'
+---
+
+---
+name: testing-react-testing-lib
 description: Apply when testing React components: rendering, user interactions, and accessibility-focused testing.
 version: 1.0.0
 tokens: ~650

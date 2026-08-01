@@ -1,3 +1,8 @@
+---
+name: regulatory-drafter
+description: '---name: regulatory-drafter'
+---
+
 ---name: regulatory-drafter
 description: Drafts regulatory documents (FDA, EMA) with audit trails and specific "Thinking Block" reasoning. Use for high-stakes compliance writing.
 

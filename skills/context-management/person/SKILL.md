@@ -1,5 +1,10 @@
 ---
 name: person
+description: View an existing person's profile or create a new one when meeting someone.
+---
+
+---
+name: person
 description: View or create a person profile. Use when meeting someone new, wanting to see notes about someone, or needing to access a person's accumulated context. Trigger words: person, who is, profile, about (followed by name), new person.
 ---
 

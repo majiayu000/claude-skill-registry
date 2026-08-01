@@ -1,3 +1,9 @@
+---
+name: review-workflow
+description: Use when reviewing pull requests. Covers PR examination, code quality
+  checks, adding feedback, and pass/fail decisions.
+---
+
 Here is the complete, rewritten prompt optimized for autonomous agents. It handles the edge case where CI is not configured by treating local test results as the primary source of truth in that scenario.
 
 ---

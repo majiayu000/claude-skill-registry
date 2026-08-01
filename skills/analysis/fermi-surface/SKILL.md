@@ -1,5 +1,14 @@
 ---
 name: fermi-surface
+description: This skill group covers the calculation and visualization of Fermi surfaces
+  -- the constant-energy surface in reciprocal space that separates occupied from
+  unoccupied electronic states at zero temperature. The Fermi surface determines the
+  electronic transport, thermodynamic, and superconducting properties of metals. These
+  skills correspond to VASPKIT menu 26 (tasks 261-267).
+---
+
+---
+name: fermi-surface
 description: Fermi Surface Calculations (3 sub-skills: 2d-fermi-surface, 3d-fermi-surface, projected-fermi-surface)
 ---
 

@@ -1,3 +1,8 @@
+---
+name: art-prompt
+description: My Personal AI System
+---
+
 # Art Prompt
 
 ## Description

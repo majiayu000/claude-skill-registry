@@ -1,5 +1,10 @@
 ---
 name: architecture-philosophy
+description: '> THE MOST IMPORTANT SKILL: This skill defines HOW we build everything.'
+---
+
+---
+name: architecture-philosophy
 description: Core architectural principles for StepLeague - modular design, system thinking, future-proofing, and maintenance reduction. Use when designing new features, refactoring code, considering implementation approaches, or making any architectural decisions. Keywords: architecture, design, modular, refactoring, reusable, shadcn, maintenance, future-proof, system.
 compatibility: Antigravity, Claude Code, Cursor
 metadata:
@@ -286,5 +291,5 @@ When implementing any feature, follow this checklist:
 ## Summary
 
 > **Build systems, not solutions.**
-> 
+>
 > Every feature you implement should make the next feature easier to build.

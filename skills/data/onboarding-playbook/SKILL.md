@@ -1,5 +1,10 @@
 ---
 name: onboarding-playbook
+description: 'This skill supports three modes: Create, Update, and Find.'
+---
+
+---
+name: onboarding-playbook
 description: Create or update a customer onboarding playbook
 argument-hint: [product or customer segment] or [update path/to/playbook.md]
 ---

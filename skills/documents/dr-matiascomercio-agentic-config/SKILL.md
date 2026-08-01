@@ -1,5 +1,12 @@
 ---
 name: dr
+description: 'Alias skill that invokes /dry-run with all arguments passed through.
+  Provides shorthand for dry-run mode. Triggers on keywords: dr, dry run shorthand,
+  alias'
+---
+
+---
+name: dr
 description: Alias skill that invokes /dry-run with all arguments passed through. Provides shorthand for dry-run mode. Triggers on keywords: dr, dry run shorthand, alias
 project-agnostic: true
 allowed-tools: []

@@ -1,3 +1,9 @@
+---
+name: jwt-middleware
+description: 'Purpose: Generate JWT verification middleware for FastAPI that validates
+  Better Auth tokens.'
+---
+
 # Skill: JWT Middleware for FastAPI
 
 **Purpose**: Generate JWT verification middleware for FastAPI that validates Better Auth tokens.

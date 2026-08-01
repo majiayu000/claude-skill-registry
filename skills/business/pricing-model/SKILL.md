@@ -1,5 +1,10 @@
 ---
 name: pricing-model
+description: 'This skill supports three modes: Create, Update, and Find.'
+---
+
+---
+name: pricing-model
 description: Create or update a pricing model
 argument-hint: [product name] or [update path/to/pricing-model.md]
 ---

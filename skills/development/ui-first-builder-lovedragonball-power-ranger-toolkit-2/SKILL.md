@@ -1,3 +1,9 @@
+---
+name: ui-first-builder
+description: Develop applications by creating the UI first with mock data, then gradually
+  adding real functionality.
+---
+
 # 🎨 UI-First Builder Skill
 
 ---
@@ -105,7 +111,7 @@ function UserList({ users }) {
 ```jsx
 function UserCard({ user, onSelect }) {
   return (
-    <div 
+    <div
       className="user-card"
       onClick={() => onSelect(user)}
     >
@@ -132,7 +138,7 @@ function UserList() {
   }, []);
 
   if (loading) return <LoadingSpinner />;
-  
+
   return (
     <div className="user-list">
       {users.map(user => (
@@ -152,7 +158,7 @@ function UserList() {
   if (loading) return <Skeleton count={5} />;
   if (error) return <ErrorMessage error={error} />;
   if (users.length === 0) return <EmptyState />;
-  
+
   return (
     <motion.div className="user-list" layout>
       {users.map(user => (

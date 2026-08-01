@@ -1,3 +1,10 @@
+---
+name: examples
+description: 'This example shows a skill that runs in an isolated context using context:
+  fork. This is the recommended pattern for auditors, validators, and any worker that
+  needs unbiased judgment.'
+---
+
 # Example: Worker Skill (context: fork)
 
 This example shows a skill that runs in an isolated context using `context: fork`. This is the recommended pattern for auditors, validators, and any worker that needs unbiased judgment.

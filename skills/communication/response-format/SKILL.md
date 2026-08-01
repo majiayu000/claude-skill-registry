@@ -1,3 +1,9 @@
+---
+name: response-format
+description: Ensure all AI responses are well-formatted, easy to understand, and actionable
+  for the user.
+---
+
 # 📝 Response Format Skill
 
 ---

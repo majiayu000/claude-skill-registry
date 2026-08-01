@@ -1,5 +1,10 @@
 ---
 name: speckit-orchestrator
+description: '- Overview'
+---
+
+---
+name: speckit-orchestrator
 description: |
 
 Triggers: specification, speckit, planning, orchestrator, orchestration

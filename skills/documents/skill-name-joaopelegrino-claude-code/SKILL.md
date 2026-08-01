@@ -1,4 +1,9 @@
 ---
+name: skill-name
+description: '{{SKILL_DESCRIPTION}}'
+---
+
+---
 name: {{SKILL_NAME}}
 scope: {{SKILL_SCOPE}}
 target: {{SKILL_TARGET}}

@@ -1,5 +1,13 @@
 ---
 name: unsloth-quantization
+description: Unsloth utilizes advanced quantization techniques to reduce the memory
+  footprint of LLM fine-tuning. This includes "Dynamic 4-bit" loading (protecting
+  sensitive layers), FP8 training for modern GPUs, and the use of 8-bit optimizers
+  to save gigabytes of VRAM.
+---
+
+---
+name: unsloth-quantization
 description: Utilizing Dynamic 4-bit quantization, FP8 training, and 8-bit optimizers to minimize VRAM usage without sacrificing accuracy. Triggers: quantization, dynamic 4-bit, fp8, bitsandbytes, adamw_8bit, qat.
 ---
 

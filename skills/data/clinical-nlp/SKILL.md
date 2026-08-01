@@ -1,3 +1,8 @@
+---
+name: clinical-nlp
+description: '---name: clinical-nlp-extractor'
+---
+
 ---name: clinical-nlp-extractor
 description: Extracts medical entities (Diseases, Medications, Procedures) from unstructured clinical text using regex and simple rules (or LLM wrappers).
 keywords:

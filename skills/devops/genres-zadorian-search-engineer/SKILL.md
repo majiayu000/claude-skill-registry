@@ -1,3 +1,8 @@
+---
+name: genres
+description: '> Style/formatting: Follow ~/.claude/skills/word-doc-generator/SKILL.md'
+---
+
 # POLICY ASSESSMENT REPORT - Genre Template
 
 > **Style/formatting:** Follow `~/.claude/skills/word-doc-generator/SKILL.md`
@@ -16,19 +21,19 @@ Assessment of regulatory and policy environment for business decisions. Analyzes
 1. **Executive Summary** → `sections/universal/EXECUTIVE_SUMMARY.skill.md`
 
 
-2. **Regulatory Landscape** 
+2. **Regulatory Landscape**
 
 
-3. **Key Stakeholders** 
+3. **Key Stakeholders**
 
 
-4. **Policy Trends** 
+4. **Policy Trends**
 
 
-5. **Compliance Requirements** 
+5. **Compliance Requirements**
 
 
-6. **Risk Assessment** 
+6. **Risk Assessment**
 
 
 

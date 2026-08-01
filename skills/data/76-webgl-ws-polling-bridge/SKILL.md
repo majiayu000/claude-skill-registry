@@ -1,3 +1,8 @@
+---
+name: 76-webgl-ws-polling-bridge
+description: 'Type: Policy / Contract'
+---
+
 # 76-webgl-ws-polling-bridge
 
 Status: ACTIVE

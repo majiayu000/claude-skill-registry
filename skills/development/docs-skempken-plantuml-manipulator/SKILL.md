@@ -1,3 +1,9 @@
+---
+name: docs-skempken-plantuml-manipulator
+description: This tool includes a Claude Code skill that enables Claude to automatically
+  use the tool for batch PlantUML operations.
+---
+
 # Claude Code Skill Integration
 
 This tool includes a Claude Code skill that enables Claude to automatically use the tool for batch PlantUML operations.

@@ -1,3 +1,8 @@
+---
+name: tcell-exhaustion-analysis-agent
+description: '---name: tcell-exhaustion-analysis-agent'
+---
+
 ---name: tcell-exhaustion-analysis-agent
 description: AI-powered analysis of T-cell exhaustion states, epigenetic scarring, stem-like T-cell populations, and checkpoint blockade response prediction in cancer immunotherapy.
 license: MIT

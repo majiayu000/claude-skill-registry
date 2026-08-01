@@ -1,3 +1,8 @@
+---
+name: promote
+description: Personal Claude Code plugin marketplace
+---
+
 # OSS Promoter Skill
 
 Batch promote open source projects to tech weeklies and communities.

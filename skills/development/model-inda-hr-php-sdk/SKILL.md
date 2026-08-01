@@ -1,3 +1,8 @@
+---
+name: model-inda-hr-php-sdk
+description: Name | Type | Description | Notes
+---
+
 # # JobAdSkill
 
 ## Properties

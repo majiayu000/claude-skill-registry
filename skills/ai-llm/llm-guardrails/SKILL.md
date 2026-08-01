@@ -1,3 +1,8 @@
+---
+name: llm-guardrails
+description: Comprehensive guide for LLM safety and guardrails implementation.
+---
+
 # LLM Guardrails
 
 ## Overview

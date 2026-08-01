@@ -1,5 +1,11 @@
 ---
 name: update-planning-docs
+description: When the user says "@update planning docs" or "update planning docs",
+  execute this command.
+---
+
+---
+name: update-planning-docs
 description: Aktualizacja dokumentacji: CHANGELOG, DEVLOG, ADR. Triggers: update docs, changelog, devlog
 ---
 

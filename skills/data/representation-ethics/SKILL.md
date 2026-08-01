@@ -1,3 +1,9 @@
+---
+name: representation-ethics
+description: The question isn't whether we CAN simulate people. It's how we do it
+  with dignity.
+---
+
 # Representation Ethics
 
 > *"The question isn't whether we CAN simulate people. It's how we do it with dignity."*
@@ -146,7 +152,7 @@ Open Access          Restricted Access
 • Aggregated data    • Individual responses
 • Fixed tasks        • Custom queries
 • Subpopulation      • API access
-  queries            
+  queries
                      Requires:
 Usage agreement      • Research proposal
 only                 • Privacy assurances
@@ -266,7 +272,7 @@ The Sims encoded tolerance, diversity, equality — values that became *invisibl
 
 For millions of LGBTQ+ players, The Sims was their first safe space to explore identity:
 - No judgment from the game
-- Player-defined relationships  
+- Player-defined relationships
 - Private exploration
 - Reversible choices
 

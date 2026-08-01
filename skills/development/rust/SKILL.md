@@ -1,5 +1,12 @@
 ---
 name: rust
+description: 'Rust language expertise for writing safe, performant, production-quality
+  Rust code. Use for Rust development, ownership patterns, error handling, async/await,
+  and cargo management. Triggers: rust, car'
+---
+
+---
+name: rust
 description: Rust language expertise for writing safe, performant, production-quality Rust code. Use for Rust development, ownership patterns, error handling, async/await, and cargo management. Triggers: rust, cargo, rustc, ownership, borrowing, lifetime, Result, Option, traits, crates.
 ---
 

@@ -1,4 +1,11 @@
 ---
+name: love-data
+description: '{{SKILLDESCRIPTION}} Use this skill when working with data operations,
+  encoding/decoding, compression, data transformation, or any data-related operations
+  in LÖVE games.'
+---
+
+---
 name: {{SKILL_NAME}}
 description: {{SKILL_DESCRIPTION}} Use this skill when working with data operations, encoding/decoding, compression, data transformation, or any data-related operations in LÖVE games.
 license: MIT

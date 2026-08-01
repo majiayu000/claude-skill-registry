@@ -1,3 +1,9 @@
+---
+name: ai-economist-skill
+description: A unified tool for central bank policy analysis and real-time GDP nowcasting
+  for the US and Canada.
+---
+
 # AI Economist Skill
 
 A unified tool for central bank policy analysis and real-time GDP nowcasting for the US and Canada.

@@ -1,3 +1,8 @@
+---
+name: commands-nathanvale-vtm-cli
+description: 'Command: /evolve:add-skill {command} [trigger-phrases]'
+---
+
 # Evolve: Add Skill - Enable Auto-Discovery
 
 **Command:** `/evolve:add-skill {command} [trigger-phrases]`

@@ -1,3 +1,9 @@
+---
+name: railway-deploy-demolinator-talal-s-tda
+description: Automated Railway deployment and configuration management. Handles environment
+  variables, service deployment, health checks, and rollback procedures.
+---
+
 # Railway Deploy Skill
 
 ## Description

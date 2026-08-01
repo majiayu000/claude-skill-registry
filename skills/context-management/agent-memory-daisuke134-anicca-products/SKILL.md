@@ -1,3 +1,8 @@
+---
+name: agent-memory
+description: 会話をまたいで知識を保存する永続的なメモリ空間。
+---
+
 # Agent Memory
 
 会話をまたいで知識を保存する永続的なメモリ空間。

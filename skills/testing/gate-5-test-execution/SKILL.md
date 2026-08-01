@@ -1,5 +1,10 @@
 ---
 name: gate-5-test-execution
+description: npm test 2>&1 | grep -i "fail"
+---
+
+---
+name: gate-5-test-execution
 description: Gate 5 validation: Test execution and 100% pass rate requirement
 ---
 

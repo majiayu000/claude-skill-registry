@@ -1,3 +1,8 @@
+---
+name: calibrate-sizing
+description: 'name: calibrate-sizing'
+---
+
 ﻿---
 name: calibrate-sizing
 description: Use to improve story sizing accuracy by analyzing historical estimation data. Identifies patterns, updates size definitions, and refines PROBE proxy selections.

@@ -1,3 +1,8 @@
+---
+name: docs-audit
+description: '> Triggers (ANY of these should invoke this skill):'
+---
+
 # Documentation Audit Skill
 
 > **Triggers** (ANY of these should invoke this skill):

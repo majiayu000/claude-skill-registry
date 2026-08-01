@@ -1,3 +1,9 @@
+---
+name: unknown
+description: 'actor: tech-lead | mandate: Verify code quality and architecture compliance
+  | bounds: No functional changes'
+---
+
 # Code Review Skill
 
 code-review

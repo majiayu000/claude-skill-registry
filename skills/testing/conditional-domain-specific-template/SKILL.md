@@ -1,5 +1,11 @@
 ---
 name: conditional-domain-specific-template
+description: '[REPLACE] Apply domain-specific logic based on detected context. Use
+  when [REPLACE with specific triggers].'
+---
+
+---
+name: conditional-domain-specific-template
 description: [REPLACE] Apply domain-specific logic based on detected context. Use when [REPLACE with specific triggers].
 allowed-tools: Read, TodoWrite
 ---

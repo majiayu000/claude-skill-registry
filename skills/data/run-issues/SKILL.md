@@ -1,5 +1,11 @@
 ---
 name: run-issues
+description: Autonomous workflow for processing multiple GitHub issues in parallel
+  with priority-based scheduling and verification.
+---
+
+---
+name: run-issues
 description: Autonomous issue management - fetches open GitHub issues, analyzes priorities, detects dependencies, spawns parallel subagents, and verifies results. Triggers: /run-issues, autonomous issues, batch issues, parallel issue processing.
 allowed-tools: Read, Grep, Glob, Bash, Task
 ---

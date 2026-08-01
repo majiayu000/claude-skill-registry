@@ -1,5 +1,10 @@
 ---
 name: section-visualization
+description: 生成数据可视化类教程 (.rmd/.qmd)，涵盖图表原理、绘图代码、样式美化、结果解读。
+---
+
+---
+name: section-visualization
 description: Generate comprehensive R data visualization tutorials (ggplot2, chart types, styling, publication-ready plots) with theory + practice workflow. Use when: (1) User requests visualization tutorials, (2) File names match 20xx-*.rmd pattern, (3) Keywords: boxplot, scatterplot, heatmap, forestplot, sankey, ggplot2 styling, color palettes.
 ---
 ## 核心任务
@@ -37,7 +42,7 @@ description: Generate comprehensive R data visualization tutorials (ggplot2, cha
 
 **第一步：生成图片文件**
 
-1. **封面图 (MANDATORY)**: 
+1. **封面图 (MANDATORY)**:
    - 路径：`doc/images/[number]-[topic]-cover.svg`
    - 风格：视觉吸引、展示图表类型
 

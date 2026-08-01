@@ -1,5 +1,12 @@
 ---
 name: file-system
+description: Safe filesystem operations for agents, including path normalization vs
+  resolution, temp file handling, atomic replacement, and spooled buffers. Use when
+  reading/writing user-supplied paths, staging ou
+---
+
+---
+name: file-system
 description: Safe filesystem operations for agents, including path normalization vs resolution, temp file handling, atomic replacement, and spooled buffers. Use when reading/writing user-supplied paths, staging outputs, or managing temporary files; triggers: filesystem, os.path, tempfile, path normalization, realpath, atomic write.
 ---
 

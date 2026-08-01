@@ -1,5 +1,11 @@
 ---
 name: frontend-design-react
+description: Create distinctive, production-grade React/TypeScript frontends with
+  exceptional design quality
+---
+
+---
+name: frontend-design-react
 description: Create distinctive, production-grade React/TypeScript frontends with exceptional design quality
 version: 1.0.0
 framework: react-typescript

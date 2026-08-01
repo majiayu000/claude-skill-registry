@@ -1,3 +1,9 @@
+---
+name: feature-documenter-apettey-battlescope
+description: Document new features and their implementations in the BattleScope documentation
+  system.
+---
+
 # Feature Documenter
 
 Document new features and their implementations in the BattleScope documentation system.

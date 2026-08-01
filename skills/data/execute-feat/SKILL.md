@@ -1,3 +1,8 @@
+---
+name: execute-feat
+description: 'name: Execute Feature'
+---
+
 ﻿---
 name: Execute Feature
 description: Execute one feature (FEAT-XXX) at a time using docs/forge/ideas/<IDEA_ID>/latest/tasks.md as the source of truth. Creates a short workspace checklist and tracks progress so reruns continue automatically.

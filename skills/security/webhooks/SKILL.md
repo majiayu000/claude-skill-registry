@@ -1,5 +1,12 @@
 ---
 name: webhooks
+description: 'Webhook implementation and consumption patterns. Use when implementing
+  webhook endpoints, sending webhooks, handling retries, or ensuring reliable delivery.
+  Keywords: webhooks, callbacks, HMAC, signat'
+---
+
+---
+name: webhooks
 description: Webhook implementation and consumption patterns. Use when implementing webhook endpoints, sending webhooks, handling retries, or ensuring reliable delivery. Keywords: webhooks, callbacks, HMAC, signature verification, retry, exponential backoff, idempotency, event delivery, webhook security.
 ---
 

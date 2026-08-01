@@ -1,3 +1,8 @@
+---
+name: create-next-story
+description: 'name: create-next-story'
+---
+
 ﻿---
 name: create-next-story
 description: Use to identify and prepare the next logical story based on project progress. Creates comprehensive story files with full technical context.

@@ -1,3 +1,8 @@
+---
+name: when-deploying-cloud-swarm-use-flow-nexus-swarm
+description: 'skillname: when-deploying-cloud-swarm-use-flow-nexus-swarm'
+---
+
 # Flow Nexus Cloud Swarm Deployment SOP
 
 ```yaml

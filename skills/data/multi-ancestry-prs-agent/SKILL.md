@@ -1,3 +1,8 @@
+---
+name: multi-ancestry-prs-agent
+description: '---name: multi-ancestry-prs-agent'
+---
+
 ---name: multi-ancestry-prs-agent
 description: AI-powered multi-ancestry polygenic risk score calculation and optimization for equitable disease risk prediction across diverse global populations.
 license: MIT

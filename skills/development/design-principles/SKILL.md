@@ -1,5 +1,11 @@
 ---
 name: design-principles
+description: 'Code design patterns: pure functions, immutability, composition, and
+  async. Use when designing code or functions.'
+---
+
+---
+name: design-principles
 description: Code design patterns: pure functions, immutability, composition, and async. Use when designing code or functions.
 ---
 

@@ -1,3 +1,11 @@
+---
+name: beyond-mcp-v2
+description: 'Description: "Access Kalshi prediction market data including market
+  prices, orderbooks, trades, events, and series information. Use when the user asks
+  about prediction markets, Kalshi markets, betting odds, market prices, or needs
+  to search or analyze prediction market data."'
+---
+
 # Skill Approach Analysis
 
 ## 1. Skill Description Comparison

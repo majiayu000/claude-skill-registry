@@ -1,5 +1,11 @@
 ---
 name: vue-component
+description: Create a new Vue 3 component for $ARGUMENTS following this project's
+  established patterns.
+---
+
+---
+name: vue-component
 description: Create a new Vue 3 component following this project's patterns. Use when creating POS components, backoffice components, or modals.
 argument-hint: [ComponentName] [type: pos|backoffice|modal]
 disable-model-invocation: true

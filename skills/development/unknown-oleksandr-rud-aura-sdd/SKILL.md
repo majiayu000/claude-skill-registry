@@ -1,3 +1,9 @@
+---
+name: unknown
+description: 'actor: {{actor}} | mandate: Conduct systematic investigation and analysis
+  | bounds: Research and analysis only'
+---
+
 # Research Skill
 
 research

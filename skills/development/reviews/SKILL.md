@@ -1,3 +1,8 @@
+---
+name: reviews
+description: '> Reviewed: 2026-01-22'
+---
+
 # Review: SKILL.md
 
 > Reviewed: 2026-01-22

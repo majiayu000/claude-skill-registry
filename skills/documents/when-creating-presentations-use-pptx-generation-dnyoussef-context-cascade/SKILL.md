@@ -1,3 +1,8 @@
+---
+name: when-creating-presentations-use-pptx-generation
+description: /============================================================================/
+---
+
 /*============================================================================*/
 /* WHEN-CREATING-PRESENTATIONS-USE-PPTX-GENERATION SKILL :: VERILINGUA x VERIX EDITION                      */
 /*============================================================================*/

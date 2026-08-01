@@ -1,5 +1,11 @@
 ---
 name: sfx-catalog
+description: Professional sound effects cataloging and management system for Horus's
+  filmmaking pipeline.
+---
+
+---
+name: sfx-catalog
 description: >
   Sound effects management for Horus's filmmaking pipeline. Catalogs audio files
   with acoustic analysis, provides semantic search via memory integration, tracks

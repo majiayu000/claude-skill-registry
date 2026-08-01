@@ -1,5 +1,11 @@
 ---
 name: install-tool
+description: Parse the arguments for tool names and optional versions. If no version
+  is specified, default to @latest.
+---
+
+---
+name: install-tool
 description: "Use when a tool, CLI, or package is needed but not installed, or when the user asks to install/add a tool. Prefers mise for all installations."
 argument-hint: "[tool[@version] | package-name...]"
 {{- template "bedrock-model" (dict "tier" "haiku" "root" .) }}

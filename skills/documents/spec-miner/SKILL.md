@@ -1,5 +1,12 @@
 ---
 name: spec-miner
+description: Use when understanding legacy or undocumented systems, creating documentation
+  for existing code, or extracting specifications from implementations. Invoke for
+  legacy analysis, code archaeology, undocu
+---
+
+---
+name: spec-miner
 description: Use when understanding legacy or undocumented systems, creating documentation for existing code, or extracting specifications from implementations. Invoke for legacy analysis, code archaeology, undocumented features. Keywords: reverse engineering, code analysis, legacy, documentation, specification.
 triggers:
   - reverse engineer

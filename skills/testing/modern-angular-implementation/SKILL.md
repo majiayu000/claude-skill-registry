@@ -1,5 +1,12 @@
 ---
 name: modern-angular-implementation
+description: 'Implement Angular 18+ features: Signals, standalone components, @defer
+  blocks, SSR, zoneless change detection, new control flow syntax, and Material 3
+  integration.'
+---
+
+---
+name: modern-angular-implementation
 description: Implement Angular 18+ features: Signals, standalone components, @defer blocks, SSR, zoneless change detection, new control flow syntax, and Material 3 integration.
 sasmp_version: "1.3.0"
 bonded_agent: 08-modern-angular

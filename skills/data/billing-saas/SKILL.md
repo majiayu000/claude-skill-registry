@@ -1,3 +1,8 @@
+---
+name: billing-saas
+description: 'description: Experto en monetización SaaS y sistemas de billing'
+---
+
 # Skill: Billing & SaaS Expert
 
 ## Metadata

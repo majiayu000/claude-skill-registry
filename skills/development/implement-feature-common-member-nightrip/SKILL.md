@@ -1,5 +1,10 @@
 ---
 name: implement-feature
+description: 'Feature: $ARGUMENTS'
+---
+
+---
+name: implement-feature
 description: Implement a feature using SDD (Spec Driven Development). Guides you through: explore → write failing specs → implement → verify.
 disable-model-invocation: true
 argument-hint: "[feature description or issue number]"

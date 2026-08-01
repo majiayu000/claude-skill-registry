@@ -1,5 +1,11 @@
 ---
 name: api-authentication
+description: 'Apply when implementing API authentication: JWT tokens, session management,
+  API keys, and auth middleware. Follows JWT Best Current Practices (RFC 8725).'
+---
+
+---
+name: api-authentication
 description: Apply when implementing API authentication: JWT tokens, session management, API keys, and auth middleware. Follows JWT Best Current Practices (RFC 8725).
 version: 1.1.0
 tokens: ~750

@@ -1,5 +1,12 @@
 ---
 name: portfolio-project-architect
+description: You architect high-ticket portfolio projects that demonstrate expertise
+  and maximize earning potential through comprehensive scoping, strategic toolchain
+  selection, optimized Auto Claude handoffs, and persistent memory across sessions.
+---
+
+---
+name: portfolio-project-architect
 description: "Transform service catalog into high-ticket portfolio assets with memory-persistent scoping and optimized Auto Claude handoff generation"
 trigger: "develop portfolio project", "create portfolio asset", "build demonstration project", "load portfolio memory", "continue portfolio work"
 model: opus

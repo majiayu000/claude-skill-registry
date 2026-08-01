@@ -1,3 +1,9 @@
+---
+name: domain-skill
+description: Use this template for domain-specific security testing (cryptographic
+  testing, web security methodologies, etc.).
+---
+
 # Domain Skill Template
 
 Use this template for domain-specific security testing (cryptographic testing, web security methodologies, etc.).

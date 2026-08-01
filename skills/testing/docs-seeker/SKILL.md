@@ -1,5 +1,12 @@
 ---
 name: docs-seeker
+description: Discovers and researches authoritative documentation with version-specific,
+  context-aware search. Auto-activates when user asks "find documentation", "API docs",
+  "how to use", "integration guide", "be
+---
+
+---
+name: docs-seeker
 description: Discovers and researches authoritative documentation with version-specific, context-aware search. Auto-activates when user asks "find documentation", "API docs", "how to use", "integration guide", "best practices", "design pattern", or when running /ccpm:plan or /ccpm:plan. Fetches latest docs from official sources via Context7 MCP. Uses progressive discovery (overview → API reference → integration → best practices). Prioritizes: Official docs → Framework guides → API references → Community resources. Provides version-specific recommendations and code examples from documentation. Flags important caveats and performance considerations. Surfaces migration guides when upgrading frameworks.
 ---
 

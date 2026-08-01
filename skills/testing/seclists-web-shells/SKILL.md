@@ -1,4 +1,10 @@
 ---
+name: seclists-web-shells
+description: 'Web shell samples for detection and analysis: PHP, ASP, ASPX, JSP, Python,
+  Perl shells. Use for security research and detection system testing.'
+---
+
+---
 name: SecLists Web-Shells
 description: Web shell samples for detection and analysis: PHP, ASP, ASPX, JSP, Python, Perl shells. Use for security research and detection system testing.
 ---
@@ -48,7 +54,7 @@ for root, dirs, files in os.walk(skill_path):
         if file.endswith('.txt'):
             filepath = os.path.join(root, file)
             print(f"Found: {filepath}")
-            
+
             # Read file content
             with open(filepath, 'r', errors='ignore') as f:
                 content = f.read().splitlines()

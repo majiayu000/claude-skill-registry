@@ -1,5 +1,14 @@
 ---
 name: catalysis-electrochem
+description: This skill group covers computational catalysis and electrochemistry
+  workflows corresponding to VASPKIT menu 05 (tasks 501-509). It provides tools for
+  computing thermodynamic corrections to DFT energies, analyzing reaction pathways
+  (NEB), extracting d-band descriptors for catalytic activity, and applying transition
+  state theory for reaction kinetics.
+---
+
+---
+name: catalysis-electrochem
 description: Catalysis and Electrochemistry Toolkit (6 sub-skills: band-center, imaginary-freq-correction, implicit-solvation, neb-analysis, reaction-kinetics, thermal-corrections)
 ---
 

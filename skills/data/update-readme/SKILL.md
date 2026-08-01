@@ -1,5 +1,10 @@
 ---
 name: update-readme
+description: Use this skill whenever the README requires a structural refresh.
+---
+
+---
+name: update-readme
 description: |
 
 Triggers: research, exemplars, readme, structure, update

@@ -1,3 +1,9 @@
+---
+name: simstim-workflow
+description: Orchestrate the complete Loa development cycle (PRD → SDD → Sprint →
+  Implementation)
+---
+
 # Simstim - HITL Accelerated Development Workflow
 
 <objective>

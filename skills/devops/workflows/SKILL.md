@@ -1,3 +1,8 @@
+---
+name: workflows
+description: 'Read these reference files NOW:'
+---
+
 # Workflow: Create a New Skill
 
 <required_reading>

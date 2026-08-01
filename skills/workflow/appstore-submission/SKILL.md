@@ -1,5 +1,10 @@
 ---
 name: appstore-submission
+description: '- @docs/compliance/README.md'
+---
+
+---
+name: appstore-submission
 description: App Store submission prep for health + AI apps: privacy, review notes, rejection risks.
 allowed-tools: Read, Grep, Glob, Edit, Write
 ---

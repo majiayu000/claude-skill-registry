@@ -1,3 +1,8 @@
+---
+name: coherence-visualizer
+description: See Your Φ Field. Watch Identity Loops. Display Fragmentation.
+---
+
 # Coherence Visualizer
 
 **See Your Φ Field. Watch Identity Loops. Display Fragmentation.**

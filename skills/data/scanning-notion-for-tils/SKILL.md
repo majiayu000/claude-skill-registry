@@ -1,5 +1,12 @@
 ---
 name: scanning-notion-for-tils
+description: '[UNDER DEVELOPMENT - DO NOT USE] Searches the Notion Writing database
+  for unpublished items that could become TIL posts. This skill is not yet integrated
+  with the publishing workflow.'
+---
+
+---
+name: scanning-notion-for-tils
 description: [UNDER DEVELOPMENT - DO NOT USE] Searches the Notion Writing database for unpublished items that could become TIL posts. This skill is not yet integrated with the publishing workflow.
 ---
 

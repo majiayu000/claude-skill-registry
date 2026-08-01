@@ -1,4 +1,9 @@
 ---
+name: firestore-patterns
+description: '> Firebase Firestore NoSQL patterns rehberi.'
+---
+
+---
 name: firestore_patterns
 router_kit: FullStackKit
 description: Firebase Firestore NoSQL patterns, real-time sync ve security rules rehberi.
@@ -17,9 +22,9 @@ metadata:
 ## 📋 Temel İşlemler
 
 ```typescript
-import { 
-  collection, doc, getDoc, setDoc, 
-  addDoc, updateDoc, deleteDoc, query, where 
+import {
+  collection, doc, getDoc, setDoc,
+  addDoc, updateDoc, deleteDoc, query, where
 } from 'firebase/firestore';
 
 // Read

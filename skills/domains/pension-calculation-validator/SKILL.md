@@ -1,5 +1,13 @@
 ---
 name: pension-calculation-validator
+description: Validate LGPS (Local Government Pension Scheme) benefit calculations
+  against LGPS Regulations 2013 to ensure accuracy, check early retirement reduction
+  factors, verify Rule of 85 protections, and flag anomalies. Critical for ensuring
+  correct member benefits.
+---
+
+---
+name: pension-calculation-validator
 description: Validate LGPS benefit calculations against regulations, check early retirement factors, verify rule of 85, flag calculation anomalies. Use when validating pension calculations, benefit statements, retirement quotes, transfer values. Keywords: calculation, benefit, LGPS, retirement, validate, rule of 85, early retirement, pension formula, accrual.
 allowed-tools: Read, Bash, mcp__neo4j-psps__*, mcp__archon__rag_search_knowledge_base
 model: claude-opus-4-5-20251101

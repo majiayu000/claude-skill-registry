@@ -1,3 +1,8 @@
+---
+name: skills
+description: 'Activation: /close-phase or /checkpoint'
+---
+
 # Close Phase Skill
 
 **Activation**: `/close-phase` or `/checkpoint`

@@ -1,3 +1,8 @@
+---
+name: create-story-tasks
+description: 'name: create-story-tasks'
+---
+
 ﻿---
 name: create-story-tasks
 description: Use to decompose user stories into individual development tasks. Creates task documents that can be assigned, estimated, and tracked.
@@ -33,13 +38,13 @@ analysis:
     - Map each AC to required implementation work
     - Identify technical components affected
     - Determine task dependencies
-    
+
   technical_assessment:
     - Frontend components needed
     - Backend services/APIs needed
     - Database changes required
     - Testing requirements
-    
+
   task_granularity:
     - Each task should be 2-8 hours of work
     - Tasks should be independently testable
@@ -52,7 +57,7 @@ analysis:
 task_structure:
   naming_convention: "{{story_id}}-T{{task_num}}"
   # Example: US-001-T1, US-001-T2, etc.
-  
+
   task_categories:
     - Database/Schema changes
     - Backend API implementation
@@ -60,7 +65,7 @@ task_structure:
     - Testing implementation
     - Documentation updates
     - Integration/deployment tasks
-    
+
   task_template_per_task:
     task_id: "{{story_id}}-T{{number}}"
     task_title: "{{brief_description}}"
@@ -99,7 +104,7 @@ This task contributes to the following story acceptance criteria:
 
 ### Technical Details
 - **Component/Module:** {{component_name}}
-- **Files to Modify:** 
+- **Files to Modify:**
   - {{file_path_1}}
   - {{file_path_2}}
 - **New Files to Create:**
@@ -191,22 +196,22 @@ recommended_task_order:
     - Database schema changes
     - Data models/entities
     - Migration scripts
-    
+
   phase_2_backend:
     - API endpoints
     - Business logic
     - Service layer
-    
+
   phase_3_frontend:
     - UI components
     - State management
     - Integration with APIs
-    
+
   phase_4_testing:
     - E2E tests
     - Integration tests
     - Performance tests
-    
+
   phase_5_finalization:
     - Documentation
     - Deployment configuration
@@ -247,14 +252,14 @@ validation_checklist:
     - [ ] All technical components addressed
     - [ ] Testing tasks included
     - [ ] Documentation tasks present
-    
+
   task_quality:
     - [ ] Each task has clear, actionable description
     - [ ] Dependencies identified and documented
     - [ ] Estimates provided using PROBE method
     - [ ] Testing requirements specified
     - [ ] PRISM principles applied
-    
+
   sizing:
     - [ ] No task exceeds 8 hours estimate
     - [ ] Tasks are independently deliverable

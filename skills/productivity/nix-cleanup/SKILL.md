@@ -1,5 +1,11 @@
 ---
 name: nix-cleanup
+description: 'Run janitorial cleanup for this flake: flake check, statix/deadnix linting,
+  and safe hygiene fixes.'
+---
+
+---
+name: nix-cleanup
 description: Run janitorial cleanup for this flake: flake check, statix/deadnix linting, and safe hygiene fixes.
 ---
 

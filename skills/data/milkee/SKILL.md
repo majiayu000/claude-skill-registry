@@ -1,7 +1,14 @@
+---
+name: milkee
+description: 'Complete MILKEE accounting integration for Swiss businesses. Manage
+  projects, customers, time tracking, tasks, and products. Use when: (1) tracking
+  billable time with start/stop timers, (2) creating/m'
+---
+
 # MILKEE Skill - Complete Installation
-**Created**: 2026-01-17 06:30  
-**Status**: ✅ Production Ready  
-**Version**: 1.0  
+**Created**: 2026-01-17 06:30
+**Status**: ✅ Production Ready
+**Version**: 1.0
 
 ---
 

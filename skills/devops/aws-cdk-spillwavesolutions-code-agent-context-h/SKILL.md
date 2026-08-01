@@ -1,3 +1,8 @@
+---
+name: aws-cdk
+description: This skill provides guidance for AWS CDK development.
+---
+
 # AWS CDK Skill
 
 This skill provides guidance for AWS CDK development.

@@ -1,5 +1,12 @@
 ---
 name: uloop-get-provider-details
+description: 'Get Unity Search provider details via uloop CLI. Use when you need to:
+  (1) Discover available search providers, (2) Understand search capabilities and
+  filters, (3) Configure searches with specific pro'
+---
+
+---
+name: uloop-get-provider-details
 description: Get Unity Search provider details via uloop CLI. Use when you need to: (1) Discover available search providers, (2) Understand search capabilities and filters, (3) Configure searches with specific provider options.
 ---
 

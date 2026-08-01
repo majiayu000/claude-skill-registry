@@ -1,3 +1,8 @@
+---
+name: plans-randlee-synaptic-canvas
+description: 'Last Updated: 2025-01-22'
+---
+
 # Claude Skill Creation Skill – Plan
 Status: Proposed
 Owner: TBD

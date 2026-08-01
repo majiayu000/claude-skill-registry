@@ -1,5 +1,11 @@
 ---
 name: tauri-svelte-typescript-general
+description: You are a coding standards expert specializing in tauri svelte typescript
+  general.
+---
+
+---
+name: tauri-svelte-typescript-general
 description: General rules for developing desktop applications using Tauri with Svelte and TypeScript for the frontend.
 version: 1.0.0
 model: sonnet

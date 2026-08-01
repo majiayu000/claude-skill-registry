@@ -1,5 +1,12 @@
 ---
 name: supabase-cms
+description: Supabase CMS integration patterns, schema design, RLS policies, and content
+  management for Astro websites. Use when building CMS systems, setting up Supabase
+  backends, creating content schemas, implem
+---
+
+---
+name: supabase-cms
 description: Supabase CMS integration patterns, schema design, RLS policies, and content management for Astro websites. Use when building CMS systems, setting up Supabase backends, creating content schemas, implementing RLS security, or when user mentions Supabase CMS, headless CMS, content management, database schemas, or Row Level Security.
 allowed-tools: - Read
   - Write

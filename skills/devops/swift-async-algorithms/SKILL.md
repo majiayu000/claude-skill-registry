@@ -1,5 +1,11 @@
 ---
 name: swift-async-algorithms
+description: 'Algorithms for working with AsyncSequence: combining, throttling, debouncing,
+  chunking, and more'
+---
+
+---
+name: swift-async-algorithms
 description: Algorithms for working with AsyncSequence: combining, throttling, debouncing, chunking, and more
 ---
 

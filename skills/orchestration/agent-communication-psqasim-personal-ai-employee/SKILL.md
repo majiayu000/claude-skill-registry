@@ -1,5 +1,10 @@
 ---
 name: agent-communication
+description: Expert guidance for designing robust multi-agent communication systems.
+---
+
+---
+name: agent-communication
 description: Expert guidance on multi-agent communication patterns. Use when designing or implementing: (1) Message protocols (AgentMessage, AgentResponse), (2) Request-response patterns between agents, (3) Action-based routing logic, (4) Correlation IDs for distributed tracing, (5) Error handling across agent boundaries, (6) Async message passing with queues. Invoke when building orchestrators, agent systems, or inter-service communication.
 ---
 

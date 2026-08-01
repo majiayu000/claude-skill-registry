@@ -1,3 +1,8 @@
+---
+name: checkpoint-workflow
+description: Reference for agents working with the workflow checkpoint system.
+---
+
 # Checkpoint Workflow Skill
 
 Reference for agents working with the workflow checkpoint system.

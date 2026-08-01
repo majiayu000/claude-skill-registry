@@ -1,5 +1,10 @@
 ---
 name: doc-consolidation
+description: '- When to Use'
+---
+
+---
+name: doc-consolidation
 description: |
 
 Triggers: consolidation, knowledge-management, git-hygiene, cleanup, docs

@@ -1,5 +1,11 @@
 ---
 name: planning
+description: E2E music creation app for crafting song styles, lyrics, artist personas,
+  etc for music creation
+---
+
+---
+name: planning
 description: Generate and optimize PRDs, Implementation Plans, and Progress Tracking documents optimized as AI artifacts for development agents. Use when creating new feature plans, breaking down long planning docs (>800 lines), or setting up progress tracking. Supports: 1) Create PRD from feature request, 2) Create Implementation Plan from PRD with phase breakdown and subagent assignments, 3) Optimize existing plans by breaking into phase-specific files, 4) Create progress tracking with task assignments. Example: "Create a PRD for user authentication feature" or "Break down the sidebar-polish implementation plan into phase files" or "Create progress tracking for data-layer-fixes PRD".
 ---
 

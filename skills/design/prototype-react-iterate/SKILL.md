@@ -1,8 +1,13 @@
 ---
 name: prototype-react-iterate
+description: A closed-loop system for evolving UI designs using AI personas as users.
+---
+
+---
+name: prototype-react-iterate
 description: >
   Generate and iterate on React/Tailwind/ShadCN prototypes with Persona-driven feedback loops.
-  Creates multiple variants, serves them, uses VLM to simulate user feedback based on 
+  Creates multiple variants, serves them, uses VLM to simulate user feedback based on
   Persona traits (Federated Taxonomy), and iterates on the code.
 allowed-tools: [Bash, Read, Write, Connect, Browser]
 triggers:

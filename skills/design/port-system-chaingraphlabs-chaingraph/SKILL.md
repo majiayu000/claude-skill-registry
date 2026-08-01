@@ -1,5 +1,12 @@
 ---
 name: port-system
+description: Deep dive into ChainGraph port system - 9 port types, plugins, factory,
+  transfer rules, and frontend rendering. Use when creating custom ports, working
+  on port validation, implementing port UI compone
+---
+
+---
+name: port-system
 description: Deep dive into ChainGraph port system - 9 port types, plugins, factory, transfer rules, and frontend rendering. Use when creating custom ports, working on port validation, implementing port UI components, or debugging port compatibility. Triggers: port, PortString, PortNumber, PortArray, PortObject, PortStream, port type, port plugin, port factory, transfer rules, port validation, port compatibility.
 ---
 

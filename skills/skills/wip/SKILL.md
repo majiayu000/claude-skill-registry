@@ -1,5 +1,11 @@
 ---
 name: wip
+description: Work-in-progress prompt workflow. Log, improve, and propose prompt patterns
+  from the skills library with safe mutation guardrails.
+---
+
+---
+name: wip
 description: Work-in-progress prompt workflow with reusable prompt library and safe mutation guardrails.
   Use when: (1) logging new patterns to the scratchpad, (2) improving existing prompts,
   (3) proposing changes to existing skills with approval gates.

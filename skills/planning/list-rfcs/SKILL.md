@@ -1,5 +1,10 @@
 ---
 name: list-rfcs
+description: 'Category: Technical Architecture'
+---
+
+---
+name: list-rfcs
 description: List all RFCs with status, progress, and metadata
 argument-hint: [--status <status>] [--all]
 ---

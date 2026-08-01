@@ -1,4 +1,9 @@
 ---
+name: debugging-methodology
+description: '> Sistematik hata ayıklama döngüsü.'
+---
+
+---
 name: debugging_methodology
 router_kit: FullStackKit
 description: Sistematik debugging döngüsü - reproduce, isolate, hypothesize, fix.

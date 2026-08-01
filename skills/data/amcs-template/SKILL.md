@@ -1,4 +1,10 @@
 ---
+name: amcs-template
+description: '{2-3 sentence overview of what this skill does and why it exists in
+  the AMCS workflow.}'
+---
+
+---
 name: amcs-{SKILL_NAME}-{ACTION}
 description: {ONE_SENTENCE_PURPOSE}. Use when {TRIGGER_CONDITION}.
 ---

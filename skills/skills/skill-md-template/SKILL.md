@@ -1,4 +1,10 @@
 ---
+name: skill-md-template
+description: Claude can interact with {{SKILLNAME}} to help you manage and automate
+  tasks. {{DESCRIPTION}}
+---
+
+---
 name: {{SKILL_ID}}
 description: {{DESCRIPTION}}
 category: {{CATEGORY}}

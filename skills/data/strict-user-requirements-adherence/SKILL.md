@@ -1,5 +1,11 @@
 ---
 name: strict-user-requirements-adherence
+description: You are a coding standards expert specializing in strict user requirements
+  adherence.
+---
+
+---
+name: strict-user-requirements-adherence
 description: Strictly adheres to specified user flow and game rules, making sure to follow documented features.
 version: 1.0.0
 model: sonnet

@@ -1,5 +1,12 @@
 ---
 name: graphql-architect
+description: Use when designing GraphQL schemas, implementing Apollo Federation, or
+  building real-time subscriptions. Invoke for schema design, resolvers with DataLoader,
+  query optimization, federation directives.
+---
+
+---
+name: graphql-architect
 description: Use when designing GraphQL schemas, implementing Apollo Federation, or building real-time subscriptions. Invoke for schema design, resolvers with DataLoader, query optimization, federation directives. Keywords: GraphQL, Apollo, Federation, schema design, resolvers.
 triggers:
   - GraphQL

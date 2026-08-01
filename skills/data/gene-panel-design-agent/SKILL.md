@@ -1,3 +1,8 @@
+---
+name: gene-panel-design-agent
+description: '---name: gene-panel-design-agent'
+---
+
 ---name: gene-panel-design-agent
 description: AI-powered design of targeted gene panels for clinical and research applications including cancer diagnostics, pharmacogenomics, and rare disease testing.
 license: MIT

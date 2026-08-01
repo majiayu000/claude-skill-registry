@@ -1,3 +1,8 @@
+---
+name: interactive-page-creator
+description: 'name: interactive-page-creator'
+---
+
 ﻿---
 name: interactive-page-creator
 description: 交互式页面创建向导，通过连续对话收集需求，自动创建完整页面
@@ -136,28 +141,28 @@ AI 会询问以下信息（如果用户未提供）:
 用户: \"在 admin-app 的 test 模块创建页面A\"
 
 AI: \"好的，让我帮你创建。请提供以下信息：\"
-  
+
   1. 路由路径？（推荐：/test/page-a）
      [AI 使用 route-analyzer 列出现有路由]
-  
+
   2. 后端 EPS 服务？（如 eps.test.pageA）
      [AI 使用 eps-analyzer 验证服务]
-  
+
   3. 页面类型？
      a) 简单列表（BtcCrud）
      b) 主从结构（BtcMasterTableGroup）
      c) 复杂筛选（BtcFilterTableGroup）
      [AI 使用 component-catalog 展示组件]
-  
+
   4. 需要什么功能？
      □ 打印
      □ 导入 Excel
      □ 导出 Excel
      □ 导出 PDF
-  
+
   5. 页面图标？
      [AI 使用 icon-manager 推荐图标]
-  
+
   6. 页面中文名/英文名？
      [AI 使用 i18n-manager 生成 key]
 
@@ -169,15 +174,15 @@ AI: \"收到！开始创建...\"
   [使用 pdf-toolkit 添加打印]
   [使用 route-analyzer 更新路由]
   [使用 i18n-manager 添加翻译]
-  
+
 AI: \"✅ 页面创建完成！文件已创建在：
   - apps/admin-app/src/modules/test/views/page-a/index.vue
   - apps/admin-app/src/modules/test/views/page-a/composables/usePageAService.ts
   - apps/admin-app/src/modules/test/views/page-a/composables/usePageAPrint.ts
-  
+
   路由已配置：/test/page-a
   国际化已添加：test.pageA.title
-  
+
   下一步：
   1. 启动开发服务器验证
   2. 如果需要打印模板，可以上传 PDF 参考\"

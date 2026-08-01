@@ -1,3 +1,8 @@
+---
+name: deep-visual-proteomics-agent
+description: '---name: deep-visual-proteomics-agent'
+---
+
 ---name: deep-visual-proteomics-agent
 description: AI-driven integration of cellular imaging, laser microdissection, and ultra-sensitive mass spectrometry for spatially-resolved single-cell proteomics.
 license: MIT

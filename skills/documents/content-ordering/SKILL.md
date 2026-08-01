@@ -1,3 +1,9 @@
+---
+name: content-ordering
+description: Content is organized into collections in src/content/. The single source
+  of truth for collection order is COLLECTIONNAMES in src/utils/collections-config.ts.
+---
+
 # Content Collections & Ordering
 
 ## Overview

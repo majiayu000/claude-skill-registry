@@ -1,5 +1,11 @@
 ---
 name: advance
+description: 'Complete bead lifecycle: discover → verify → claim → work → close. Direct
+  execution.'
+---
+
+---
+name: advance
 description: Claim and work on beads safely with proper coordination. Use when starting work, finishing work, or finding the next task. Covers the full bead lifecycle: discover → verify → claim → work → close.
 ---
 

@@ -1,5 +1,10 @@
 ---
 name: shipflow-init
+description: '- Current directory: !pwd'
+---
+
+---
+name: shipflow-init
 description: Bootstrap a new project for ShipFlow tracking — detect stack, generate CLAUDE.md, create TASKS.md, register in PROJECTS.md
 disable-model-invocation: true
 argument-hint: [project-path] (omit to init current directory)

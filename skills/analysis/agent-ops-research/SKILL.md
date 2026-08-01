@@ -1,3 +1,10 @@
+---
+name: agent-ops-research
+description: Conduct structured research on topics, technologies, libraries, patterns,
+  or any subject requiring investigation. Produces documented findings with optional
+  issue creation for actionable items.
+---
+
 ````skill
 ---
 name: agent-ops-research

@@ -1,3 +1,9 @@
+---
+name: magic-links
+description: This project uses a build-time magic link system (adapted from surfdeeper)
+  for semantic document linking.
+---
+
 # Magic Links System
 
 This project uses a build-time magic link system (adapted from surfdeeper) for semantic document linking.

@@ -1,5 +1,11 @@
 ---
 name: implementation-process
+description: Load plan, review critically, execute tasks in batches, report for review
+  between batches.
+---
+
+---
+name: implementation-process
 description: Implement a feature using the written implementation plan. Use when you have a fully-formed written implementation plan to execute in a separate session with review checkpoints. TRIGGER when: the user asks to work on, implement, or continue a task from a docs/wip feature (e.g., "work on task 1", "let's do the next task", "implement the first task for X feature", "continue with the auth system tasks").
 ---
 

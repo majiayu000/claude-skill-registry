@@ -1,3 +1,8 @@
+---
+name: grace-skill
+description: Test skill in license grace period for unit testing.
+---
+
 # grace-skill
 
 Test skill in license grace period for unit testing.

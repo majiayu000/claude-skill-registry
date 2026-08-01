@@ -1,3 +1,10 @@
+---
+name: task-validator
+description: 'description: Validate tasks.md for an idea against conceptsummary.md
+  and featuresbacklog.md (writes report to ideas/<IDEAID>/runs and updates ideas/<IDEAID>/latest;
+  optional patch if allowed)'
+---
+
 ﻿---
 name: Validate tasks
 description: Validate tasks.md for an idea against concept_summary.md and features_backlog.md (writes report to ideas/<IDEA_ID>/runs and updates ideas/<IDEA_ID>/latest; optional patch if allowed)

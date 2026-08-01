@@ -1,5 +1,12 @@
 ---
 name: twilight-zone-writer
+description: Génère une nouvelle complète style Twilight Zone (8000-15000 mots) EN
+  FRANÇAIS inspirée par un sujet scientifique/technologique. Utilise ce Skill pour
+  créer une fiction autonome avec twist inattendu,
+---
+
+---
+name: twilight-zone-writer
 description: Génère une nouvelle complète style Twilight Zone (8000-15000 mots) EN FRANÇAIS inspirée par un sujet scientifique/technologique. Utilise ce Skill pour créer une fiction autonome avec twist inattendu, exploration philosophique de la condition humaine, et conclusion réflexive dans l'esprit authentique de Rod Serling. Référence obligatoire: twilight_zone_episodes.json.
 ---
 

@@ -1,3 +1,8 @@
+---
+name: extracting-iocs-from-samples
+description: <!-- Copyright (c) 2026 defconxt. All rights reserved. -->
+---
+
 <!-- Copyright (c) 2026 defconxt. All rights reserved. -->
 <!-- Licensed under AGPL-3.0 — see LICENSE file for details. -->
 ---

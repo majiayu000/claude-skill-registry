@@ -1,3 +1,8 @@
+---
+name: openclaw-config
+description: 本文档定义了 OpenClaw 配置的标准规范，确保所有配置修改都正确、安全、可追溯。
+---
+
 # OpenClaw 配置全局规范
 
 ## 概述
@@ -426,20 +431,20 @@ openclaw models auth status
 ```markdown
 ### 配置变更 - YYYY-MM-DD HH:MM
 
-**修改内容**: 
+**修改内容**:
 - 修改了 xxx
 
-**修改原因**: 
+**修改原因**:
 - 因为 xxx
 
-**影响范围**: 
+**影响范围**:
 - 影响 xxx 功能
 
-**验证结果**: 
+**验证结果**:
 - [ ] doctor 通过
 - [ ] 功能测试通过
 
-**回滚方法**: 
+**回滚方法**:
 - 恢复备份：`cp ~/.openclaw/openclaw.json.bak ~/.openclaw/openclaw.json`
 ```
 

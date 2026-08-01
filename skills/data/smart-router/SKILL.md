@@ -1,5 +1,11 @@
 ---
 name: smart-router
+description: Multi-tier LLM routing achieving 90% FREE tier processing through intelligent
+  task classification.
+---
+
+---
+name: smart-router
 description: Multi-tier LLM routing for cost optimization in the BidDeed.AI ecosystem. Routes tasks to appropriate model tier based on complexity, achieving 90% FREE tier processing. Use when making API calls, selecting models, implementing chat interfaces, or optimizing AI costs. Tiers: FREE (gemini-2.5-flash 1M context), ULTRA_CHEAP (deepseek-v3.2), CHEAP, STANDARD, PREMIUM (claude-sonnet-4), ULTRA (claude-opus-4.5).
 ---
 
@@ -23,32 +29,32 @@ Multi-tier LLM routing achieving 90% FREE tier processing through intelligent ta
 ```python
 def route_task(task: dict) -> str:
     """Route task to appropriate model tier."""
-    
+
     complexity = task.get('complexity', 'medium')
     requires_reasoning = task.get('reasoning', False)
     token_count = task.get('estimated_tokens', 0)
     critical = task.get('critical', False)
-    
+
     # ULTRA tier - reserved for critical decisions
     if critical or task.get('type') == 'architecture':
         return 'ULTRA'
-    
+
     # FREE tier - default for most tasks
     if complexity == 'low' and not requires_reasoning:
         return 'FREE'
-    
+
     # ULTRA_CHEAP - simple but needs better than free
     if complexity == 'low' and requires_reasoning:
         return 'ULTRA_CHEAP'
-    
+
     # CHEAP - long context needed
     if token_count > 100_000:
         return 'CHEAP'
-    
+
     # STANDARD - moderate reasoning
     if complexity == 'medium':
         return 'STANDARD'
-    
+
     # PREMIUM - complex analysis
     return 'PREMIUM'
 ```

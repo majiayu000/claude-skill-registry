@@ -1,4 +1,9 @@
 ---
+name: windows-mitigations
+description: '- Planning exploit mitigation bypass strategies'
+---
+
+---
 name: windows-mitigations-bypass
 description: Windows exploit mitigation bypass — ASLR, DEP/NX, CFG/XFG, CET/Shadow Stack, SEHOP, ACG, WDAC, ASR, PPL, AMSI, ETW blinding
 metadata:

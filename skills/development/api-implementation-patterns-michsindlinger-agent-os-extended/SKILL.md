@@ -1,4 +1,9 @@
 ---
+name: api-implementation-patterns
+description: '> Template for project-specific API implementation skill'
+---
+
+---
 name: [PROJECT]-api-patterns
 description: [PROJECT] REST API implementation patterns and conventions
 globs: ["**/*.{java,ts,js,py,rb,go}"]

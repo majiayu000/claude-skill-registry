@@ -1,5 +1,10 @@
 ---
 name: shared-patterns
+description: Reusable patterns and templates for skill and hook development.
+---
+
+---
+name: shared-patterns
 description: |
 
 Triggers: templates, validation, reusable, shared, patterns

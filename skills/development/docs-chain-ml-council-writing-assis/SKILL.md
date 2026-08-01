@@ -1,6 +1,12 @@
+---
+name: docs-chain-ml-council-writing-assis
+description: Let's continue by implementing a Skill for writing or revising article
+  sections.
+---
+
 # Skill Implementation: Article Section Writer
 
-Let's continue by implementing a Skill for writing or revising article sections. 
+Let's continue by implementing a Skill for writing or revising article sections.
 
 
 ```python
@@ -23,7 +29,7 @@ self.main_prompt_template = Template("""
     First consider the CONVERSATION HISTORY, ARTICLE OUTLINE, ARTICLE, and INSTRUCTIONS.
     Then revise the article according to the context and INSTRUCTIONS provided below.
     All headings, sections, and subsections must consist of at least three detailed paragraphs each.
-    The entire REVISED ARTICLE should be written using markdown formatting. 
+    The entire REVISED ARTICLE should be written using markdown formatting.
 
     ## CONVERSATION HISTORY
     $conversation_history
@@ -148,7 +154,7 @@ class SectionWriterSkill(SkillBase):
         First consider the CONVERSATION HISTORY, ARTICLE OUTLINE, ARTICLE, and INSTRUCTIONS.
         Then revise the article according to the context and INSTRUCTIONS provided below.
         All headings, sections, and subsections must consist of at least three detailed paragraphs each.
-        The entire REVISED ARTICLE should be written using markdown formatting. 
+        The entire REVISED ARTICLE should be written using markdown formatting.
 
         ## CONVERSATION HISTORY
         $conversation_history
@@ -176,16 +182,16 @@ class SectionWriterSkill(SkillBase):
 
         # Get the article
         article = context.last_message.data['article']
-        
+
         # Get the outline
         outline = context.last_message.data['outline']
 
         # Get the iteration
         iteration = context.last_message.data['iteration']
-       
+
         # Get the instructions
         instructions = context.last_message.message
-        
+
         main_prompt = self.main_prompt_template.substitute(
             conversation_history=conversation_history,
             outline=outline,

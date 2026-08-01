@@ -1,3 +1,10 @@
+---
+name: guide-yamadashy-repomix
+description: Repomix fournit un skill Repomix Explorer prêt à l'emploi qui permet
+  aux assistants de codage IA d'analyser et d'explorer des bases de code en utilisant
+  Repomix CLI.
+---
+
 # Repomix Explorer Skill (Agent Skills)
 
 Repomix fournit un skill **Repomix Explorer** prêt à l'emploi qui permet aux assistants de codage IA d'analyser et d'explorer des bases de code en utilisant Repomix CLI.

@@ -1,5 +1,11 @@
 ---
 name: architecture-guidelines
+description: 'System architecture: modules, project structure, ADRs, and testing.
+  Use when designing or reviewing systems.'
+---
+
+---
+name: architecture-guidelines
 description: System architecture: modules, project structure, ADRs, and testing. Use when designing or reviewing systems.
 ---
 

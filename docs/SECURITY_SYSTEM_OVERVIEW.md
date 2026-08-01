@@ -99,6 +99,8 @@ claude-skill-registry-core/
 │   └── skill.schema.json           # JSON Schema 定义
 ├── scripts/
 │   ├── security_scanner.py         # 安全扫描器
+│   ├── remediate_archive_security.py # 归档修复与隔离工具
+│   ├── skill_frontmatter.py        # 统一 frontmatter 规范化
 │   └── test_discovery.py           # 测试脚本
 ├── .github/workflows/
 │   ├── sync-data.yml               # 数据同步

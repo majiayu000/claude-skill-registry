@@ -1,3 +1,8 @@
+---
+name: company
+description: '> Style/formatting: Follow ~/.claude/skills/word-doc-generator/SKILL.md'
+---
+
 # EMPLOYEE & LABOR MATTERS SECTION (Company DD)
 
 > **Style/formatting:** Follow `~/.claude/skills/word-doc-generator/SKILL.md`

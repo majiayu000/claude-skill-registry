@@ -1,4 +1,9 @@
 ---
+name: claude-skills-few-shot-learning-patterns-skill-md
+description: Few-Shot Learning は、少数の例示を通じて AI に
+---
+
+---
 name: .claude/skills/few-shot-learning-patterns/SKILL.md
 description: |
     Few-Shot Learning（少数例示学習）のパターンとベストプラクティスを提供するスキル。

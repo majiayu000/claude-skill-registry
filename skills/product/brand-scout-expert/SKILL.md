@@ -1,3 +1,9 @@
+---
+name: brand-scout-expert
+description: Self-improving lead research expert for autonomous eCommerce brand intelligence
+  gathering.
+---
+
 # Brand Scout Expert
 
 Self-improving lead research expert for autonomous eCommerce brand intelligence gathering.

@@ -1,4 +1,11 @@
 ---
+name: api-agent-development-skill
+description: 'CRITICAL: API agents wrap external HTTP services. They use request/response
+  transforms to adapt between Orchestrator AI''s format and the external service''s
+  format. Status webhook URLs MUST read from environment variables.'
+---
+
+---
 name: API Agent Development
 description: Create API agents that wrap external HTTP services (n8n, LangGraph, CrewAI, OpenAI endpoints). Configure request/response transforms, webhook status tracking, A2A protocol compliance. CRITICAL: Request transforms use template variables ({{userMessage}}, {{conversationId}}, etc.). Response transforms use field extraction. Status webhook URL must read from environment variables.
 allowed-tools: Read, Write, Edit, Bash, Grep, Glob

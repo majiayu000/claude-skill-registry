@@ -1,5 +1,14 @@
 ---
 name: band-advanced
+description: 'This skill group covers advanced electronic band structure techniques
+  beyond the standard k-path band calculation. These methods address specific challenges
+  in electronic structure theory: visualizing the full Brillouin zone dispersion for
+  2D materials, obtaining accurate band gaps with hybrid functionals, and recovering
+  effective primitive-cell band structures from supercell calculations.'
+---
+
+---
+name: band-advanced
 description: Advanced Band Structure Methods (3 sub-skills: 3d-band-structure, band-unfolding, hybrid-dft-bands)
 ---
 

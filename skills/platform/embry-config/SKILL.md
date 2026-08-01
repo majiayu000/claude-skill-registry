@@ -1,5 +1,10 @@
 ---
 name: embry-config
+description: Read and explain the Embry OS configuration from embry.yaml.
+---
+
+---
+name: embry-config
 description: Read and explain Embry OS configuration from embry.yaml
 triggers:
   - "embry config"

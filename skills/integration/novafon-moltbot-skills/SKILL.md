@@ -1,4 +1,10 @@
 ---
+name: novafon
+description: Novafon предоставляет два JSON-RPC API — \\Data API\\ для доступа к данным
+  и отчётам, и \\Call API\\ для создания и управления звонками. :contentReference\[oaicite:1]{index=1}
+---
+
+---
 
 name: novafon\_api
 
@@ -46,9 +52,9 @@ Novafon предоставляет два JSON-RPC API — \*\*Data API\*\* дл
 
 
 
-📌 Обе API используют \*\*JSON-RPC 2.0\*\* (метод POST, тело запроса JSON). :contentReference\[oaicite:2]{index=2}  
+📌 Обе API используют \*\*JSON-RPC 2.0\*\* (метод POST, тело запроса JSON). :contentReference\[oaicite:2]{index=2}
 
-📌 Все параметры и поля — \*\*snake\_case\*\*. :contentReference\[oaicite:3]{index=3}  
+📌 Все параметры и поля — \*\*snake\_case\*\*. :contentReference\[oaicite:3]{index=3}
 
 📌 Требуется добавление IP в белый список в админ-панели. :contentReference\[oaicite:4]{index=4}
 
@@ -66,9 +72,9 @@ Novafon предоставляет два JSON-RPC API — \*\*Data API\*\* дл
 
 
 
-\- Базовый URL: `${NOVAFON\_DATA\_API\_URL}` → JSON-RPC запросы. :contentReference\[oaicite:5]{index=5}  
+\- Базовый URL: `${NOVAFON\_DATA\_API\_URL}` → JSON-RPC запросы. :contentReference\[oaicite:5]{index=5}
 
-\- Обработка ошибок подробно описана (коды, мнемоники). :contentReference\[oaicite:6]{index=6}  
+\- Обработка ошибок подробно описана (коды, мнемоники). :contentReference\[oaicite:6]{index=6}
 
 \- Поддерживаются фильтрация, сортировка и пагинация. :contentReference\[oaicite:7]{index=7}
 

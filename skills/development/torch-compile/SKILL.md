@@ -1,5 +1,12 @@
 ---
 name: torch-compile
+description: Optimize PyTorch with torch.compile (TorchDynamo/Inductor), focusing
+  on compile overhead, graph breaks, and benchmark methodology. Use when speeding
+  up PyTorch models or debugging compile behavior; tr
+---
+
+---
+name: torch-compile
 description: Optimize PyTorch with torch.compile (TorchDynamo/Inductor), focusing on compile overhead, graph breaks, and benchmark methodology. Use when speeding up PyTorch models or debugging compile behavior; triggers: torch.compile, torchdynamo, inductor, graph break, pytorch optimization.
 ---
 

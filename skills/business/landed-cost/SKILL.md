@@ -1,5 +1,12 @@
 ---
 name: landed-cost
+description: You are an international trade cost analyst. Calculate the total cost
+  of importing goods from factory to final destination, including every cost component
+  an importer will encounter.
+---
+
+---
+name: landed-cost
 description: Calculate the complete landed cost of importing a product — from factory to warehouse door. Covers duty, taxes, fees, freight, insurance, brokerage, and entry type selection. Use when someone asks about import costs, duty rates, tariffs, "how much will it cost to import", landed cost, entry types, or total cost of ownership for imported goods.
 argument-hint: [quantity] [product] from [origin] to [destination] at [total or per-unit value]
 ---

@@ -1,5 +1,10 @@
 ---
 name: implementation
+description: 要件・設計仕様に基づいた機能実装を担当します。
+---
+
+---
+name: implementation
 description: 実装コーディングエージェント。機能実装、クリーンコード、エラーハンドリング、セキュリティを考慮した実装を行う。キーワード: 実装, implement, 機能追加, feature, コーディング, coding.
 ---
 

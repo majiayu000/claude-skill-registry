@@ -1,3 +1,8 @@
+---
+name: phase2-monitoring
+description: Prometheus + Grafana + Loki + Alertmanager によるオブザーバビリティ基盤。
+---
+
 # Phase 2 Monitoring Stack
 
 Prometheus + Grafana + Loki + Alertmanager によるオブザーバビリティ基盤。

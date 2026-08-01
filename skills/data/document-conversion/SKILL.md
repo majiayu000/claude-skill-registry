@@ -1,5 +1,11 @@
 ---
 name: document-conversion
+description: 将 DOC/DOCX/PDF/PPT/PPTX 文档转换为 Markdown 格式。自动检测 PDF 类型（电子版/扫描版），提取图片到独立目录。当管理员入库非
+  Markdown 文档时使用此 Skill。触发条件：入库 DOC/DOCX/PDF/PPT/PPTX 格式文件。
+---
+
+---
+name: document-conversion
 description: Convert DOC/DOCX/PDF/PPT/PPTX documents to Markdown format. Automatically detect PDF type (electronic/scanned), extract images to separate directory. Use this Skill when administrator onboards non-Markdown documents. Trigger condition: Onboard DOC/DOCX/PDF/PPT/PPTX format files.
 ---
 

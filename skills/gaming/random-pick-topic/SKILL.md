@@ -1,4 +1,9 @@
 ---
+name: random-pick-topic
+description: topics/ディレクトリに問題のtopicディレクトリがあります。
+---
+
+---
 name: random pick topic
 description: うみがめのスープを出題して欲しいと言われた時に、ランダムにトピックを選んで出題す
 るスキル

@@ -1,5 +1,10 @@
 ---
 name: team-figma-extract
+description: Extract design specifications from Figma files using MCP integration.
+---
+
+---
+name: team-figma-extract
 description: "[Team] Extract design specifications and tokens from Figma files via MCP. Use when pulling design from Figma, extracting colors/typography, or converting Figma to spec. Triggers on keywords like "figma extract", "figma url", "figma tokens", "pull figma", "figma design"."
 argument-hint: "<figma-url> [--output markdown|json] [--depth 1-10] [--timeout 30]"
 infer: true

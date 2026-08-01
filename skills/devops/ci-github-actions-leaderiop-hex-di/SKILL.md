@@ -1,5 +1,11 @@
 ---
 name: ci-github-actions
+description: Your approach to handling ci github actions. Use this skill when working
+  on files where ci github actions comes into play.
+---
+
+---
+name: ci-github-actions
 description: Apply when setting up CI/CD pipelines: automated testing, linting, building, and deployment with GitHub Actions.
 version: 1.1.0
 tokens: ~700

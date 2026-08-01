@@ -1,5 +1,11 @@
 ---
 name: api-handler
+description: Use withApiHandler for all API routes. It eliminates boilerplate and
+  ensures consistent auth, validation, and error handling.
+---
+
+---
+name: api-handler
 description: StepLeague API route pattern using withApiHandler wrapper. Use when creating or modifying any API route in the /api directory. Keywords: API, route, endpoint, handler, auth, POST, GET, PUT, DELETE, validation.
 compatibility: Antigravity, Claude Code, Cursor
 metadata:
@@ -35,7 +41,7 @@ export const POST = withApiHandler({
     .insert({ ...body, user_id: user.id })
     .select()
     .single();
-  
+
   return { success: true, data };
 });
 ```
@@ -167,7 +173,7 @@ export const POST = withApiHandler({
   auth: 'required',
 }, async ({ adminClient }) => {
   const { data, error } = await adminClient.from("table").insert({});
-  
+
   if (error) {
     // Use AppError for typed errors
     throw new AppError({
@@ -176,7 +182,7 @@ export const POST = withApiHandler({
       context: { table: 'table' },
     });
   }
-  
+
   return { success: true };
 });
 ```
@@ -207,7 +213,7 @@ export const GET = withApiHandler({
     .from("memberships")
     .select("*, users(*)")
     .eq("league_id", params.id);
-  
+
   return { members: data };
 });
 
@@ -225,7 +231,7 @@ export const POST = withApiHandler({
     })
     .select()
     .single();
-  
+
   if (error) {
     throw new AppError({
       code: ErrorCode.DB_INSERT_FAILED,
@@ -233,7 +239,7 @@ export const POST = withApiHandler({
       context: { error: error.message },
     });
   }
-  
+
   return { success: true, member: data };
 });
 ```

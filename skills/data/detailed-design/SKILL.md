@@ -1,5 +1,10 @@
 ---
 name: detailed-design
+description: '│   ├── 00-overview.md           # 詳細設計概要'
+---
+
+---
+name: detailed-design
 description: 詳細設計書作成エージェント。クラス設計、シーケンス図、DB設計、API設計の詳細を定義。キーワード: 詳細設計, detailed design, クラス図, class diagram, シーケンス図, sequence diagram, DB設計.
 ---
 

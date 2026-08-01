@@ -1,4 +1,10 @@
 ---
+name: claude-skills-event-driven-file-watching-skill-md
+description: このスキルは、Node.js におけるイベント駆動型ファイル監視の設計と実装に関する専門知識を提供します。Ryan Dahl が提唱する非同期
+  I/O モデルに基づき、効率的で信頼性の高い監視システムを構築するための原則とパターンを定義します。
+---
+
+---
 name: .claude/skills/event-driven-file-watching/SKILL.md
 description: |
     Ryan Dahlのイベント駆動・非同期I/O思想に基づくファイルシステム監視の専門知識。

@@ -1,9 +1,0 @@
-{
-  "name": "grey-haven-deployment-cloudflare",
-  "repo": "greyhaven-ai/claude-code-config",
-  "category": "data",
-  "description": "Deploy TanStack Start applications to Cloudflare Workers/Pages with GitHub Actions, Doppler, Wrangler, database migrations, and rollback procedures. Use when deploying Grey Haven applications.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:13.618493Z",
-  "dir_name": "grey-haven-deployment-cloudflare"
-}

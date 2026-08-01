@@ -1,3 +1,8 @@
+---
+name: parallel-integration
+description: 'name: parallel-integration'
+---
+
 # Skill: Parallel Development & Integration Expert
 
 ## Metadata

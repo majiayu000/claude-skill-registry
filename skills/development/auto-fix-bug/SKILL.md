@@ -1,5 +1,11 @@
 ---
 name: auto-fix-bug
+description: 'Role: Fix a reported bug end-to-end and deliver a new branch, commit(s),
+  and an open GitHub Pull Request.'
+---
+
+---
+name: auto-fix-bug
 description: Fix a reported bug end-to-end: reproduce it, add a regression test, implement the minimal fix, create a new git branch, commit using Conventional Commits, push, and open a GitHub PR (prefer gh CLI). Use when the user asks to fix a bug and wants a PR created.
 ---
 

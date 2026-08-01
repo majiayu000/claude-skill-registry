@@ -1,5 +1,10 @@
 ---
 name: code-refactor
+description: 主動偵測並執行程式碼重構，維持 DDD 架構和程式碼品質。
+---
+
+---
+name: code-refactor
 description: Proactively detect and execute code refactoring to maintain DDD architecture and code quality. Triggers: RF, refactor, 重構, 拆分, split, 模組化, modularize, 太長, cleanup, 整理, clean, 優化, optimize, extract, 提取, simplify, 簡化, 複雜度, complexity, 重組, reorganize, 改善, improve.
 version: 2.1.0
 category: quality
@@ -83,13 +88,13 @@ def process_order(order):
     if order.total < 0:
         raise ValueError("Invalid total")
     # ... 更多驗證
-    
+
     # 計算價格 (15 行)
     subtotal = sum(item.price * item.qty for item in order.items)
     tax = subtotal * 0.05
     total = subtotal + tax
     # ... 更多計算
-    
+
     # 儲存訂單 (10 行)
     # ...
 
@@ -125,7 +130,7 @@ class User:
         self.address_line2 = ...
         self.city = ...
         self.postal_code = ...
-    
+
     def validate_email(self): ...
     def format_address(self): ...
     def calculate_shipping(self): ...
@@ -138,7 +143,7 @@ class Address:
     line2: str | None
     city: str
     postal_code: str
-    
+
     def format(self) -> str:
         return f"{self.line1}\n{self.city} {self.postal_code}"
 

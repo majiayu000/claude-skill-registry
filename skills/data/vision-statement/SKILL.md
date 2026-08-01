@@ -1,5 +1,10 @@
 ---
 name: vision-statement
+description: 'This skill supports three modes: Create, Update, and Find.'
+---
+
+---
+name: vision-statement
 description: Create or update a product vision statement
 argument-hint: [product name] or [update path/to/vision.md]
 ---

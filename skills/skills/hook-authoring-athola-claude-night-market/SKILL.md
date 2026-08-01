@@ -1,5 +1,10 @@
 ---
 name: hook-authoring
+description: '- Overview'
+---
+
+---
+name: hook-authoring
 description: |
 
 Triggers: validation, sdk, automation, hook, authoring

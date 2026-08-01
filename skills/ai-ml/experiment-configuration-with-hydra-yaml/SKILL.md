@@ -1,5 +1,11 @@
 ---
 name: experiment-configuration-with-hydra-yaml
+description: You are a coding standards expert specializing in experiment configuration
+  with hydra yaml.
+---
+
+---
+name: experiment-configuration-with-hydra-yaml
 description: Recommends using Hydra or YAML for experiment configuration to ensure clarity and reproducibility.
 version: 1.0.0
 model: sonnet

@@ -1,3 +1,9 @@
+---
+name: after
+description: '"Create a new component to display a user''s activity history with their
+  recent reviews, photos, and favorites"'
+---
+
 # AFTER: React Component Patterns Skill Test
 
 ## Test Prompt (Same as BEFORE)

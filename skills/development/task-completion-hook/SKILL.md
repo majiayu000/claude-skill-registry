@@ -1,3 +1,9 @@
+---
+name: task-completion-hook
+description: Triggered when a task completes, runs phase-appropriate tests (not all
+  8), moves passing tests to regression folders, and updates task status.
+---
+
 # Task Completion Hook Skill V3 - Pragmatic Testing
 
 ## Purpose

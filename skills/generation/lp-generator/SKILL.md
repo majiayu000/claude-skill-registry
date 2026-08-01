@@ -1,3 +1,8 @@
+---
+name: lp-generator
+description: 通常LP、漫画LP、その他のLPタイプを統合した万能LP生成スキル。
+---
+
 # LP Generator (統合ランディングページ生成)
 
 ## Description

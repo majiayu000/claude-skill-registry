@@ -1,5 +1,11 @@
 ---
 name: export-oscal
+description: Export NIST OSCAL (Open Security Controls Assessment Language) JSON from
+  compliance
+---
+
+---
+name: export-oscal
 description: NIST OSCAL JSON export of compliance evidence from ArangoDB graph
 triggers:
   - "export oscal"

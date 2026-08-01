@@ -1,5 +1,10 @@
 ---
 name: pr-prep
+description: Use this skill to stage work and produce a PR summary/description.
+---
+
+---
+name: pr-prep
 description: |
 
 Triggers: pr, quality-gates, prep, git, testing

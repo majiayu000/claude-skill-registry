@@ -1,3 +1,9 @@
+---
+name: ai-memory
+description: 'Purpose: Manage persistent memory files (STATUS.md, ROADMAP.md, DECISIONS.md,
+  JOURNAL.md) for AI-assisted development across sessions.'
+---
+
 # AI Memory System Skill
 
 **Purpose:** Manage persistent memory files (STATUS.md, ROADMAP.md, DECISIONS.md, JOURNAL.md) for AI-assisted development across sessions.

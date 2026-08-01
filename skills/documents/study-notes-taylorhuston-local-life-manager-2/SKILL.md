@@ -1,5 +1,10 @@
 ---
 name: study-notes
+description: 'Create comprehensive study notes on: $1'
+---
+
+---
+name: study-notes
 description: Create comprehensive study notes on a topic. Use when user wants detailed notes, a study guide, or documentation on a subject. Triggers on "study notes", "create notes", "document [topic]", "write up [topic]".
 model: claude-opus-4-5-20251101
 argument-hint: [topic] [destination path]

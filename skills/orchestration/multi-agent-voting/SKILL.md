@@ -1,3 +1,9 @@
+---
+name: multi-agent-voting
+description: Execute multi-agent voting for critical decisions using MAKER-style first-to-ahead-by-k
+  error correction.
+---
+
 # Multi-Agent Voting Skill
 
 Execute multi-agent voting for critical decisions using MAKER-style first-to-ahead-by-k error correction.

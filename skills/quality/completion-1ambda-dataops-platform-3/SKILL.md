@@ -1,3 +1,8 @@
+---
+name: completion
+description: 구현 완료 선언 전 검증하는 통합 프로세스.
+---
+
 # Completion Skill
 
 구현 완료 선언 전 검증하는 통합 프로세스.

@@ -1,5 +1,10 @@
 ---
 name: pattern
+description: 'User request: $ARGUMENTS'
+---
+
+---
+name: pattern
 description: Learn, drill, or identify algorithm patterns. Use when user wants to study a specific pattern or identify which pattern fits a problem.
 argument-hint: [pattern-name] [explain|drill|identify]
 allowed-tools: Read, Grep, Glob

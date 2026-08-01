@@ -1,5 +1,12 @@
 ---
 name: multi-model-review
+description: マルチモデルコードレビュー。LLMがコードレビューを行った後、GitHub Copilot CLIに精査させて双方の視点を統合した最終レビューを提供。Use
+  when user wants multi-model code review, second opinion, or wants to cross-check
+  review findings with another AI. Trigger
+---
+
+---
+name: multi-model-review
 description: マルチモデルコードレビュー。LLMがコードレビューを行った後、GitHub Copilot CLIに精査させて双方の視点を統合した最終レビューを提供。Use when user wants multi-model code review, second opinion, or wants to cross-check review findings with another AI. Triggers: "/multi-model-review", "マルチモデルレビュー", "複数モデルでレビュー", "セカンドオピニオン"
 ---
 

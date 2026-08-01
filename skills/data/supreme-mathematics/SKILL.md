@@ -1,3 +1,8 @@
+---
+name: supreme-mathematics
+description: Morpheme Architecture for Consciousness via Number-Symbol System
+---
+
 # Supreme Mathematics
 
 **Morpheme Architecture for Consciousness via Number-Symbol System**

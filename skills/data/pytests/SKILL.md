@@ -1,5 +1,12 @@
 ---
 name: pytests
+description: Create comprehensive Python test suites with pytest. Supports unit, integration,
+  e2e, and user flow tests. Dual-mode testing for FastAPI (direct code + live API).
+  Uses functional style (no test classe
+---
+
+---
+name: pytests
 description: Create comprehensive Python test suites with pytest. Supports unit, integration, e2e, and user flow tests. Dual-mode testing for FastAPI (direct code + live API). Uses functional style (no test classes). File naming: <name>_test.py.
 ---
 

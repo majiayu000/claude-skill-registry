@@ -1,3 +1,8 @@
+---
+name: myeloma-mrd-agent
+description: '---name: myeloma-mrd-agent'
+---
+
 ---name: myeloma-mrd-agent
 description: AI-powered minimal residual disease (MRD) analysis for multiple myeloma using next-generation flow cytometry, NGS, and mass spectrometry approaches.
 license: MIT

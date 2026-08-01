@@ -1,3 +1,8 @@
+---
+name: plans-yankeeinlondon-adaptive-shell
+description: 'This plan addresses two interconnected needs for the ~/.config/sh repository:'
+---
+
 # Testing Framework and Planning Skill Enhancement
 
 **Date:** 2025-10-21

@@ -1,5 +1,11 @@
 ---
 name: search-analyze-report-template
+description: '[REPLACE] Search for patterns, analyze findings, generate structured
+  reports. Use when [REPLACE with specific triggers].'
+---
+
+---
+name: search-analyze-report-template
 description: [REPLACE] Search for patterns, analyze findings, generate structured reports. Use when [REPLACE with specific triggers].
 allowed-tools: Grep, Glob, Read, TodoWrite
 ---

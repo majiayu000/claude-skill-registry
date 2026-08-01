@@ -1,5 +1,10 @@
 ---
 name: fixture-tricky
+description: Generate adversarial PDF content designed to expose extractor bugs. Continuously
+---
+
+---
+name: fixture-tricky
 description: >
   Generate adversarial PDF content that breaks extractors. Creates false-positive
   tables, malformed tables, cursed text, and layout traps. Extensible registry

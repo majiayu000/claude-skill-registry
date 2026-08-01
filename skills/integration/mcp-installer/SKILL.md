@@ -1,3 +1,9 @@
+---
+name: mcp-installer
+description: MCP サーバーをインストールするスキル。「MCP インストール」「MCP を追加」「MCP サーバー追加」「mcp add」「MCP を入れて」「MCP
+  サーバーをインストール」「新しい MCP」などで起動。
+---
+
 # MCP Installer
 
 MCP サーバーをインストールするスキル。「MCP インストール」「MCP を追加」「MCP サーバー追加」「mcp add」「MCP を入れて」「MCP サーバーをインストール」「新しい MCP」などで起動。

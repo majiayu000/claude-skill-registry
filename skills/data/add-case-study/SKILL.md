@@ -1,3 +1,8 @@
+---
+name: add-case-study
+description: When user wants to add a new case study to the portfolio.
+---
+
 # Add Case Study Skill
 
 ## When to Use

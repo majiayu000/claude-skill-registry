@@ -1,3 +1,11 @@
+---
+name: dataverse-schema-design
+description: This skill provides guidance on designing Dataverse table schemas and
+  data models. Use when users ask about "Dataverse table design", "Dataverse schema",
+  "Dataverse relationships", "Dataverse columns", "data modeling Dataverse", "Dataverse
+  best practices", or need help designing their data structure.
+---
+
 # dataverse-schema-design
 
 This skill provides guidance on designing Dataverse table schemas and data models. Use when users ask about "Dataverse table design", "Dataverse schema", "Dataverse relationships", "Dataverse columns", "data modeling Dataverse", "Dataverse best practices", or need help designing their data structure.

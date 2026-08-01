@@ -1,3 +1,8 @@
+---
+name: when-using-flow-nexus-platform-use-flow-nexus-platform
+description: 'skillname: when-using-flow-nexus-platform-use-flow-nexus-platform'
+---
+
 # Flow Nexus Platform Management SOP
 
 ```yaml

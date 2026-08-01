@@ -1,3 +1,8 @@
+---
+name: container-security
+description: '| ID | sre-container-security |'
+---
+
 # 🛡️ Skill: Container Security
 
 ## 📋 Metadata

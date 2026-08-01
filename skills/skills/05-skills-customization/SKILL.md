@@ -1,3 +1,8 @@
+---
+name: 05-skills-customization
+description: Step-by-Step Guide to Building a Custom Skill from Scratch
+---
+
 # Creating Your First Skill
 
 **Step-by-Step Guide to Building a Custom Skill from Scratch**

@@ -1,3 +1,9 @@
+---
+name: deal-hygiene
+description: Automated HubSpot deal hygiene maintenance to keep the pipeline clean
+  and accurate.
+---
+
 # Deal Hygiene Skill
 
 ---

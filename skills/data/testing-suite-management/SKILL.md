@@ -1,5 +1,10 @@
 ---
 name: testing-suite-management
+description: 'Last Updated: 2026-01-15'
+---
+
+---
+name: testing-suite-management
 description: Manage comprehensive testing strategy across unit, E2E, and mutation testing
 version: 1.0.0
 author: Saberloop Project
@@ -10,7 +15,7 @@ usage: |
   - Running specific test suites with proper configs
   - Generating coverage reports and ensuring thresholds
   - Setting up CI/CD test pipelines
-  
+
   Examples:
   "Create tests for new utility using the testing-suite-management skill"
   "Update test configuration using the testing-suite-management skill"
@@ -100,21 +105,21 @@ test.describe('Quiz Flow', () => {
   test('should complete quiz flow successfully', async ({ page }) => {
     // Navigate to quiz creation
     await page.click('[data-testid="start-quiz"]');
-    
+
     // Fill topic
     await page.fill('[data-testid="topic-input"]', 'Science');
     await page.click('[data-testid="generate-quiz"]');
-    
+
     // Wait for questions
     await expect(page.locator('[data-testid="question"]').first()).toBeVisible();
-    
+
     // Answer questions
     const questions = await page.locator('[data-testid="question"]').all();
     for (const question of questions) {
       const firstAnswer = question.locator('[data-testid="answer"]').first();
       await firstAnswer.click();
     }
-    
+
     // Submit and check results
     await page.click('[data-testid="submit-quiz"]');
     await expect(page.locator('[data-testid="results"]')).toBeVisible();
@@ -317,7 +322,7 @@ describe('ClassName', () => {
     it('should handle network failures', async () => {
       // Mock failure
       mockNetworkFailure();
-      
+
       await expect(instance.methodName()).rejects.toThrow('Network error');
     });
   });
@@ -343,12 +348,12 @@ describe('Module Integration: Service + API', () => {
 
   it('should successfully call API and save to database', async () => {
     const service = new TestService();
-    
+
     const result = await service.createQuiz('Test Topic');
-    
+
     expect(result).toBeDefined();
     expect(result.topic).toBe('Test Topic');
-    
+
     // Verify database state
     const saved = await getQuizFromDatabase(result.id);
     expect(saved.topic).toBe('Test Topic');
@@ -365,7 +370,7 @@ describe('Module Integration: Service + API', () => {
 export class QuizPage {
   constructor(page) {
     this.page = page;
-    
+
     // Define locators
     this.topicInput = page.locator('[data-testid="topic-input"]');
     this.generateButton = page.locator('[data-testid="generate-quiz"]');
@@ -416,7 +421,7 @@ test.describe('Quiz Completion E2E', () => {
     await quizPage.createQuiz('History');
     await quizPage.answerAllQuestions();
     await quizPage.submitQuiz();
-    
+
     // Verify results page
     await expect(page.locator('[data-testid="results"]')).toBeVisible();
     await expect(page.locator('[data-testid="score-display"]')).toContainText('Your score');
@@ -636,6 +641,6 @@ This skill integrates with:
 
 ---
 
-**Version:** 1.0.0  
-**Last Updated:** 2026-01-15  
+**Version:** 1.0.0
+**Last Updated:** 2026-01-15
 **Compatible with:** Saberloop v2.0.0+

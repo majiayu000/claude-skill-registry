@@ -1,4 +1,9 @@
 ---
+name: clerk-auth
+description: '> Clerk modern authentication rehberi.'
+---
+
+---
 name: clerk_auth
 router_kit: SecurityKit
 description: Clerk modern authentication, WebAuthn, passkeys ve social auth entegrasyonu rehberi.
@@ -55,12 +60,12 @@ export default function Layout({ children }) {
 ## 👤 Components
 
 ```typescript
-import { 
-  SignInButton, 
-  SignUpButton, 
+import {
+  SignInButton,
+  SignUpButton,
   UserButton,
   SignedIn,
-  SignedOut 
+  SignedOut
 } from '@clerk/nextjs';
 
 function Header() {
@@ -87,11 +92,11 @@ import { auth, currentUser } from '@clerk/nextjs/server';
 
 export async function GET() {
   const { userId } = await auth();
-  
+
   if (!userId) {
     return new Response('Unauthorized', { status: 401 });
   }
-  
+
   const user = await currentUser();
   return Response.json({ user });
 }

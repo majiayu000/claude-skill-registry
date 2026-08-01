@@ -1,5 +1,11 @@
 ---
 name: minimax-mcp
+description: Official MiniMax Model Context Protocol (MCP) server for coding-plan
+  users, providing AI-powered search and vision analysis capabilities.
+---
+
+---
+name: minimax-mcp
 description: MiniMax MCP server for web search and image understanding. Use when needing: (1) Web search via MiniMax API, (2) Analyze/describe images, (3) Extract content from URLs. Requires MINIMAX_API_KEY (China: api.minimaxi.com, Global: api.minimax.io).
 metadata:
   {

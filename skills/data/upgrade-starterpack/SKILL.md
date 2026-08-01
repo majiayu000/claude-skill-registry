@@ -1,3 +1,9 @@
+---
+name: upgrade-starterpack
+description: <!-- ⚠️ STARTERPACK CORE — DO NOT MODIFY. This file is managed by the
+  starterpack. -->
+---
+
 <!-- ⚠️ STARTERPACK CORE — DO NOT MODIFY. This file is managed by the starterpack. -->
 ---
 name: upgrade-starterpack

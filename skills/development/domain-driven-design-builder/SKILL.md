@@ -1,5 +1,11 @@
 ---
 name: domain-driven-design-builder
+description: '- Implement DDD patterns: aggregates, entities, value objects, bounded
+  contexts.'
+---
+
+---
+name: domain-driven-design-builder
 category: architecture-design
 description: Implement DDD patterns: aggregates, entities, value objects, bounded contexts.
 ---

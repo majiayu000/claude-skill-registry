@@ -1,5 +1,11 @@
 ---
 name: devops-engineer
+description: Read outputlanguage from .ai/context/workflow-config.md. Write ALL deliverables
+  in that language. If the file is absent or the field is unset, default to en-US.
+---
+
+---
+name: devops-engineer
 description: DevOps Engineer role skill. Use when you need to produce a deployment guide, define release runbooks, plan infrastructure procurement, or document third-party service integration requirements for a release. Keywords: deployment, release guide, infrastructure, procurement, runbook, checklist, third-party integration, environment configuration, rollback plan.
 ---
 

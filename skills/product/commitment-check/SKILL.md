@@ -1,5 +1,10 @@
 ---
 name: commitment-check
+description: 'This skill supports three modes: Create, Update, and Find.'
+---
+
+---
+name: commitment-check
 description: Create or update a commitment validation before crossing the "point of no return"
 argument-hint: [commitment or initiative name] or [update path/to/check.md]
 ---

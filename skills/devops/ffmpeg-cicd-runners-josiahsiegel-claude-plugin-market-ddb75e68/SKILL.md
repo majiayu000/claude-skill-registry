@@ -1,5 +1,10 @@
 ---
 name: ffmpeg-cicd-runners
+description: 'MANDATORY: Always Use Backslashes on Windows for File Paths'
+---
+
+---
+name: ffmpeg-cicd-runners
 description: Complete CI/CD video processing system. PROACTIVELY activate for: (1) GitHub Actions FFmpeg setup, (2) GitLab CI video pipelines, (3) Jenkins declarative pipelines, (4) FFmpeg caching strategies, (5) Windows runner workarounds, (6) GPU-enabled self-hosted runners, (7) Matrix builds for multi-format, (8) Artifact upload/download, (9) Video validation workflows, (10) BtbN/FFmpeg-Builds integration. Provides: YAML workflow examples, Docker container patterns, caching configuration, platform-specific solutions, debugging guides. Ensures: Fast, reliable video processing in CI/CD pipelines.
 ---
 

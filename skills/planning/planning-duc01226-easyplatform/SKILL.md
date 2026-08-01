@@ -1,5 +1,12 @@
 ---
 name: planning
+description: '> [IMPORTANT] Use TaskCreate to break ALL work into small tasks BEFORE
+  starting — including tasks for each file read. This prevents context loss from long
+  files. For simple tasks, AI may ask user whether to skip.'
+---
+
+---
+name: planning
 version: 2.0.0
 description: "[Planning] Use when you need to research, analyze, investigate, plan, design, or architect technical solutions. Includes comprehensive research phase with Gemini CLI, WebSearch, and 5-research limit. Triggers on keywords like "research", "analyze", "investigate options", "explore solutions", "compare approaches", "evaluate alternatives", "plan", "design", "architect"."
 allowed-tools: NONE

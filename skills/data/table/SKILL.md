@@ -1,3 +1,8 @@
+---
+name: table
+description: '|linkskillslot|spskillid|baseskillid|skillcategory|'
+---
+
 |link_skill_slot|sp_skill_id|base_skill_id|skill_category|
 | --- | --- | --- | --- |
 |1061002|1061101|1061001|2|

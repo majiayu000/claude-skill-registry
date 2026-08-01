@@ -1,5 +1,12 @@
 ---
 name: fvtt-performance-safe-updates
+description: This skill should be used when adding features that update actors or
+  items, implementing hook handlers, modifying update logic, or replacing embedded
+  documents. Covers ownership guards, no-op checks,
+---
+
+---
+name: fvtt-performance-safe-updates
 description: This skill should be used when adding features that update actors or items, implementing hook handlers, modifying update logic, or replacing embedded documents. Covers ownership guards, no-op checks, batched updates, queueUpdate wrapper, atomic document operations, render suppression with { render: false }, idempotency guards, and choosing between optimistic vs locking UI patterns.
 ---
 

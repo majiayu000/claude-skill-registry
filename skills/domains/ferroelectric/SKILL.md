@@ -1,5 +1,15 @@
 ---
 name: ferroelectric
+description: 'This skill group covers first-principles calculations of ferroelectric
+  properties using Quantum ESPRESSO. The workflow follows the modern theory of polarization:
+  relax both the centrosymmetric (nonpolar) reference and the ferroelectric (polar)
+  phase, interpolate between them, and compute the Berry phase polarization along
+  the switching path to obtain the spontaneous polarization. Born effective charges
+  provide a complementary local probe of polar instability.'
+---
+
+---
+name: ferroelectric
 description: Ferroelectric Properties (5 sub-skills: born-effective-charge, dielectric-tensor, ferroelectric-switching, piezoelectric, polarization)
 ---
 

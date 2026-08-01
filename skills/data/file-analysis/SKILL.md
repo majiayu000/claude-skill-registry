@@ -1,5 +1,11 @@
 ---
 name: file-analysis
+description: '- Before architecture reviews to understand module boundaries and file
+  organization.'
+---
+
+---
+name: file-analysis
 description: |
 
 Triggers: codebase, file, analysis, structure, exploration

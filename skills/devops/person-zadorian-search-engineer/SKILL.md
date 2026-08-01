@@ -1,3 +1,8 @@
+---
+name: person
+description: '> Style/formatting: Follow ~/.claude/skills/word-doc-generator/SKILL.md'
+---
+
 # PROPERTY & ASSETS SECTION (Person DD)
 
 > **Style/formatting:** Follow `~/.claude/skills/word-doc-generator/SKILL.md`

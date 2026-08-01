@@ -1,5 +1,11 @@
 ---
 name: rename
+description: ⚡ ULTRA-FAST skill - executes in seconds using pure Bash (no file reading
+  to context).
+---
+
+---
+name: rename
 description: Zmiana nazwy bieżącej konwersacji Claude Code. Triggers: rename, zmień nazwę, nowy tytuł
 ---
 

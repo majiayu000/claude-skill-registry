@@ -1,4 +1,10 @@
 ---
+name: core
+description: Provide visibility into the "Black Box" of agent execution by tracking
+  cost (tokens) and efficiency (time/loops).
+---
+
+---
 name: agent-analytics
 description: Tracks key performance indicators (KPIs) for AI Agents: Token Usage, Task Duration, Loop Cycles, and Success Rate.
 triggers: [analytics, metrics, tokens used, cost tracking, performance report, agent stats]

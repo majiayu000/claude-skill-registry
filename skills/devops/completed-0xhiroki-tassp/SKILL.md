@@ -1,7 +1,12 @@
+---
+name: completed
+description: 'Status: Completed'
+---
+
 # Task: Doc Writer Skill
 
-**Status:** Completed  
-**Updated:** 2025-11-23  
+**Status:** Completed
+**Updated:** 2025-11-23
 **Scope:** `.factory/skills/doc-writer`
 
 ## Objective

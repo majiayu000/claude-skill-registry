@@ -1,5 +1,10 @@
 ---
 name: update-instructions
+description: Smart merge for CLAUDE.md and AGENTS.md instruction files.
+---
+
+---
+name: update-instructions
 description: Update CLAUDE.md and AGENTS.md instruction files with smart merge. Preserves user customizations while updating SpecWeave sections. Use after plugin refresh, version upgrade, or when instruction files need sync. Activates for: update instructions, refresh claude.md, merge agents.md, sync instruction files, upgrade specweave config.
 ---
 

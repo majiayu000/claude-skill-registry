@@ -1,3 +1,9 @@
+---
+name: consume-youtube
+description: Search and annotate ingested YouTube transcripts. Works with content
+  already processed by /ingest-youtube.
+---
+
 ````markdown
 ---
 name: consume-youtube

@@ -1,4 +1,9 @@
 ---
+name: router-skill
+description: <essentialprinciples>
+---
+
+---
 name: {{SKILL_NAME}}
 description: {{What it does}} Use when {{trigger conditions}}.
 ---

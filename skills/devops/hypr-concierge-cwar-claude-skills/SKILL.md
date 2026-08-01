@@ -1,5 +1,12 @@
 ---
 name: hypr-concierge
+description: Personal theme concierge for Hyprland desktop environments. Use when
+  user wants to (1) change desktop theme/colors, (2) apply preset themes (Catppuccin/Dracula/Nord/Gruvbox/Rose
+  Pine/Kanagawa/Tokyo Ni
+---
+
+---
+name: hypr-concierge
 description: Personal theme concierge for Hyprland desktop environments. Use when user wants to (1) change desktop theme/colors, (2) apply preset themes (Catppuccin/Dracula/Nord/Gruvbox/Rose Pine/Kanagawa/Tokyo Night), (3) create custom themes from mood/aesthetic descriptions, (4) create themes inspired by movies/art/feelings, (5) get theme recommendations based on mood, (6) learn what themes look/feel like, (7) save/restore/switch themes, (8) manage which apps get themed, or (9) find/change wallpapers. Triggers: "change theme", "apply catppuccin", "I want something cozy", "create a Hackers theme", "describe the themes", "what feels like...", "save my theme", "find wallpapers", "change wallpaper", "theme concierge".
 ---
 

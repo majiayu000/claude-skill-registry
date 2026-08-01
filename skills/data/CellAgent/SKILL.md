@@ -1,3 +1,9 @@
+---
+name: cellagent
+description: 'description: LLM-driven multi-agent framework for automated single-cell
+  analysis.'
+---
+
 ---name: cell_agent
 description: LLM-driven multi-agent framework for automated single-cell analysis.
 keywords:

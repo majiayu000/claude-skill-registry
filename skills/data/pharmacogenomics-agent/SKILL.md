@@ -1,3 +1,8 @@
+---
+name: pharmacogenomics-agent
+description: '---name: pharmacogenomics-agent'
+---
+
 ---name: pharmacogenomics-agent
 description: AI-powered pharmacogenomic analysis for drug response prediction, adverse event risk assessment, and precision dosing using multi-omics data and deep learning models.
 license: MIT

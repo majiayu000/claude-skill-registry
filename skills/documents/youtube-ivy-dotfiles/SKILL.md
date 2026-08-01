@@ -1,5 +1,12 @@
 ---
 name: youtube
+description: This workflow fetches a YouTube video transcript and transforms it into
+  a structured, skimmable reference document. Uses a forked context since the transcript
+  processing doesn't need to inform follow-up conversation.
+---
+
+---
+name: youtube
 description: Fetch and structure the transcript from this YouTube video.
 argument-hint: [url | video-id]
 context: fork

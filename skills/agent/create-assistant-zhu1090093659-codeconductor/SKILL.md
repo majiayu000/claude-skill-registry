@@ -1,5 +1,10 @@
 ---
 name: create-assistant
+description: Guide users through creating custom assistants via interactive dialogue.
+---
+
+---
+name: create-assistant
 description: Interactive assistant creator for CodeConductor. Use when users want to create a new custom assistant, design an AI persona, or configure a specialized helper. Triggers on: "create an assistant", "make a new helper", "design an AI that...", "I need an assistant for...", "帮我创建一个助手", "新建助手".
 ---
 

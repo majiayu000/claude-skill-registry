@@ -1,3 +1,10 @@
+---
+name: enhancing-prompts
+description: Analyze prompt quality, classify task type, and enhance with optimized
+  templates while preserving original intent. Provides transparent feedback showing
+  what was enhanced and why.
+---
+
 # Enhancing Prompts
 
 <objective>

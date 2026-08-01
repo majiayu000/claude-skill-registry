@@ -1,5 +1,12 @@
 ---
 name: status
+description: '> [IMPORTANT] Use TaskCreate to break ALL work into small tasks BEFORE
+  starting — including tasks for each file read. This prevents context loss from long
+  files. For simple tasks, AI MUST ask user whether to skip.'
+---
+
+---
+name: status
 version: 1.0.0
 description: "[Project Management] Generate status reports for sprints or projects. Use when creating status reports, checking progress, or summarizing sprint metrics. Triggers on keywords like "status report", "sprint status", "progress", "how are we doing", "what's done", "project status"."
 allowed-tools: Read, Write, Grep, Glob, Bash, TaskCreate

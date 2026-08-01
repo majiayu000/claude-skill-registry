@@ -1,5 +1,11 @@
 ---
 name: prototype
+description: Creer un prototype complet pret a deployer sur GitHub Pages a partir
+  du nom de projet fourni dans $ARGUMENTS.
+---
+
+---
+name: prototype
 description: Creer un prototype React + Tailwind heberge sur GitHub Pages. Utiliser quand on veut demarrer un nouveau prototype pour un client.
 argument-hint: [nom-du-projet] [description-optionnelle]
 ---

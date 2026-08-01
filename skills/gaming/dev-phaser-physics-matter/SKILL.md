@@ -1,5 +1,10 @@
 ---
 name: dev-phaser-physics-matter
+description: '> "Realistic physics simulation for puzzles and complex interactions."'
+---
+
+---
+name: dev-phaser-physics-matter
 description: Matter.js physics: realistic bodies, constraints, and simulation
 ---
 

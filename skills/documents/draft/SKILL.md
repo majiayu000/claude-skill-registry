@@ -1,3 +1,8 @@
+---
+name: draft
+description: shift+home|end 从光标处选择至行首行尾
+---
+
 # IDE 使用技巧
 
 工欲善其事必先利其器

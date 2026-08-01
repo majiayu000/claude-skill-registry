@@ -1,5 +1,10 @@
 ---
 name: changelog-updater
+description: 更新 CHANGELOG.md。觸發：changelog、變更、版本、發布、改了什麼。
+---
+
+---
+name: changelog-updater
 description: Maintain and update CHANGELOG.md following Keep a Changelog format. Use when: updating changelog, version documentation, release notes, semver versioning, categorizing changes (Added/Changed/Fixed/Security).
 ---
 

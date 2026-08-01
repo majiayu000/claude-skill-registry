@@ -1,5 +1,12 @@
 ---
 name: rr-solidity
+description: Comprehensive Solidity smart contract development skill using Foundry
+  framework. Use for writing, testing, deploying, and auditing Solidity contracts
+  with security-first practices. Also triggers when
+---
+
+---
+name: rr-solidity
 description: Comprehensive Solidity smart contract development skill using Foundry framework. Use for writing, testing, deploying, and auditing Solidity contracts with security-first practices. Also triggers when working with .sol files, Foundry project files (foundry.toml), test files (.t.sol), or smart contract deployment scripts. Example triggers: "Write smart contract", "Create Solidity test", "Deploy contract", "Audit smart contract", "Fix security vulnerability", "Write Foundry test", "Set up Foundry project"
 ---
 

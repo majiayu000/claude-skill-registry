@@ -1,3 +1,8 @@
+---
+name: nsubstitute-mocking
+description: 此技能專注於使用 NSubstitute 建立和管理測試替身，涵蓋 Test Double 五大類型、依賴隔離策略、行為設定與驗證的最佳實踐。
+---
+
 # NSubstitute Mocking Skill
 
 ---
@@ -62,10 +67,10 @@ public void ProcessOrder_不使用Logger_應成功處理訂單()
 {
     // Dummy：只是為了滿足參數要求
     var dummyLogger = Substitute.For<ILogger>();
-    
+
     var service = new OrderService();
     var result = service.ProcessOrder(order, dummyLogger);
-    
+
     result.Success.Should().BeTrue();
     // 不關心 logger 是否被調用
 }
@@ -82,12 +87,12 @@ public void GetUser_有效的使用者ID_應回傳使用者資料()
     // Arrange - Stub：預設回傳值
     var stubRepository = Substitute.For<IUserRepository>();
     stubRepository.GetById(123).Returns(new User { Id = 123, Name = "John" });
-    
+
     var service = new UserService(stubRepository);
-    
+
     // Act
     var actual = service.GetUser(123);
-    
+
     // Assert
     actual.Name.Should().Be("John");
     // 不關心 GetById 被呼叫了幾次
@@ -102,7 +107,7 @@ public void GetUser_有效的使用者ID_應回傳使用者資料()
 public class FakeUserRepository : IUserRepository
 {
     private readonly Dictionary<int, User> _users = new();
-    
+
     public User GetById(int id) => _users.TryGetValue(id, out var user) ? user : null;
     public void Save(User user) => _users[user.Id] = user;
     public void Delete(int id) => _users.Remove(id);
@@ -114,10 +119,10 @@ public void CreateUser_建立使用者_應儲存並可查詢()
     // Fake：有真實邏輯的簡化實作
     var fakeRepository = new FakeUserRepository();
     var service = new UserService(fakeRepository);
-    
+
     service.CreateUser(new User { Id = 1, Name = "John" });
     var actual = service.GetUser(1);
-    
+
     actual.Name.Should().Be("John");
 }
 ```
@@ -134,10 +139,10 @@ public void CreateUser_建立使用者_應記錄建立資訊()
     var spyLogger = Substitute.For<ILogger<UserService>>();
     var repository = Substitute.For<IUserRepository>();
     var service = new UserService(repository, spyLogger);
-    
+
     // Act
     service.CreateUser(new User { Name = "John" });
-    
+
     // Assert - Spy：驗證呼叫記錄
     spyLogger.Received(1).LogInformation("User created: {Name}", "John");
 }
@@ -155,10 +160,10 @@ public void RegisterUser_註冊使用者_應發送歡迎郵件()
     var mockEmailService = Substitute.For<IEmailService>();
     var repository = Substitute.For<IUserRepository>();
     var service = new UserService(repository, mockEmailService);
-    
+
     // Act
     service.RegisterUser("john@example.com", "John");
-    
+
     // Assert - Mock：驗證特定的互動行為
     mockEmailService.Received(1).SendWelcomeEmail("john@example.com", "John");
 }
@@ -278,7 +283,7 @@ public class FileBackupService
     private readonly IDateTimeProvider _dateTimeProvider;
     private readonly IBackupRepository _backupRepository;
     private readonly ILogger<FileBackupService> _logger;
-    
+
     public FileBackupService(
         IFileSystem fileSystem,
         IDateTimeProvider dateTimeProvider,
@@ -290,7 +295,7 @@ public class FileBackupService
         _backupRepository = backupRepository;
         _logger = logger;
     }
-    
+
     public async Task<BackupResult> BackupFileAsync(string sourcePath, string destinationPath)
     {
         if (!_fileSystem.FileExists(sourcePath))
@@ -298,22 +303,22 @@ public class FileBackupService
             _logger.LogWarning("Source file not found: {Path}", sourcePath);
             return new BackupResult { Success = false, Message = "Source file not found" };
         }
-        
+
         var fileInfo = _fileSystem.GetFileInfo(sourcePath);
         if (fileInfo.Length > 100 * 1024 * 1024)
         {
             return new BackupResult { Success = false, Message = "File too large" };
         }
-        
+
         var timestamp = _dateTimeProvider.Now.ToString("yyyyMMdd_HHmmss");
         var backupFileName = $"{Path.GetFileNameWithoutExtension(sourcePath)}_{timestamp}{Path.GetExtension(sourcePath)}";
         var fullBackupPath = Path.Combine(destinationPath, backupFileName);
-        
+
         _fileSystem.CopyFile(sourcePath, fullBackupPath);
         await _backupRepository.SaveBackupHistory(sourcePath, fullBackupPath, _dateTimeProvider.Now);
-        
+
         _logger.LogInformation("Backup completed: {Path}", fullBackupPath);
-        
+
         return new BackupResult { Success = true, BackupPath = fullBackupPath };
     }
 }
@@ -329,17 +334,17 @@ public class FileBackupServiceTests
     private readonly IBackupRepository _backupRepository;
     private readonly ILogger<FileBackupService> _logger;
     private readonly FileBackupService _sut; // System Under Test
-    
+
     public FileBackupServiceTests()
     {
         _fileSystem = Substitute.For<IFileSystem>();
         _dateTimeProvider = Substitute.For<IDateTimeProvider>();
         _backupRepository = Substitute.For<IBackupRepository>();
         _logger = Substitute.For<ILogger<FileBackupService>>();
-        
+
         _sut = new FileBackupService(_fileSystem, _dateTimeProvider, _backupRepository, _logger);
     }
-    
+
     [Fact]
     public async Task BackupFileAsync_檔案存在且大小合理_應成功備份()
     {
@@ -347,18 +352,18 @@ public class FileBackupServiceTests
         var sourcePath = @"C:\source\test.txt";
         var destinationPath = @"C:\backup";
         var testTime = new DateTime(2024, 1, 1, 12, 0, 0);
-        
+
         _fileSystem.FileExists(sourcePath).Returns(true);
         _fileSystem.GetFileInfo(sourcePath).Returns(new FileInfo { Length = 1024 });
         _dateTimeProvider.Now.Returns(testTime);
-        
+
         // Act
         var result = await _sut.BackupFileAsync(sourcePath, destinationPath);
-        
+
         // Assert
         result.Success.Should().BeTrue();
         result.BackupPath.Should().Be(@"C:\backup\test_20240101_120000.txt");
-        
+
         _fileSystem.Received(1).CopyFile(sourcePath, result.BackupPath);
         await _backupRepository.Received(1).SaveBackupHistory(
             sourcePath, result.BackupPath, testTime);
@@ -377,12 +382,12 @@ public void CalculateDiscount_高級會員_應回傳20折扣()
     // Stub：只關心回傳值，用於設定測試情境
     var stubCustomerService = Substitute.For<ICustomerService>();
     stubCustomerService.GetCustomerType(123).Returns(CustomerType.Premium);
-    
+
     var service = new PricingService(stubCustomerService);
-    
+
     // Act
     var discount = service.CalculateDiscount(123, 1000);
-    
+
     // Assert - 只驗證結果狀態
     discount.Should().Be(200); // 20% of 1000
 }
@@ -398,16 +403,16 @@ public void ProcessPayment_成功付款_應記錄交易資訊()
     var mockLogger = Substitute.For<ILogger<PaymentService>>();
     var stubPaymentGateway = Substitute.For<IPaymentGateway>();
     stubPaymentGateway.ProcessPayment(Arg.Any<decimal>()).Returns(PaymentResult.Success);
-    
+
     var service = new PaymentService(stubPaymentGateway, mockLogger);
-    
+
     // Act
     service.ProcessPayment(100);
-    
+
     // Assert - 驗證互動行為
     mockLogger.Received(1).LogInformation(
-        "Payment processed: {Amount} - Result: {Result}", 
-        100, 
+        "Payment processed: {Amount} - Result: {Result}",
+        100,
         PaymentResult.Success);
 }
 ```
@@ -422,12 +427,12 @@ public async Task GetUserAsync_使用者存在_應回傳使用者資料()
     var repository = Substitute.For<IUserRepository>();
     repository.GetByIdAsync(123).Returns(Task.FromResult(
         new User { Id = 123, Name = "John" }));
-    
+
     var service = new UserService(repository);
-    
+
     // Act
     var result = await service.GetUserAsync(123);
-    
+
     // Assert
     result.Name.Should().Be("John");
     await repository.Received(1).GetByIdAsync(123);
@@ -440,9 +445,9 @@ public async Task SaveUserAsync_資料庫錯誤_應拋出例外()
     var repository = Substitute.For<IUserRepository>();
     repository.SaveAsync(Arg.Any<User>())
               .Throws(new InvalidOperationException("Database error"));
-    
+
     var service = new UserService(repository);
-    
+
     // Act & Assert
     await service.SaveUserAsync(new User { Name = "John" })
                 .Should().ThrowAsync<InvalidOperationException>()
@@ -461,13 +466,13 @@ public async Task BackupFileAsync_檔案不存在_應記錄警告()
     // Arrange
     var sourcePath = @"C:\nonexistent\test.txt";
     _fileSystem.FileExists(sourcePath).Returns(false);
-    
+
     // Act
     var result = await _sut.BackupFileAsync(sourcePath, @"C:\backup");
-    
+
     // Assert
     result.Success.Should().BeFalse();
-    
+
     // 驗證 ILogger.Log 方法被正確呼叫
     _logger.Received(1).Log(
         LogLevel.Warning,
@@ -489,7 +494,7 @@ public class OrderServiceTestsBase
     protected readonly IEmailService EmailService;
     protected readonly ILogger<OrderService> Logger;
     protected readonly OrderService Sut;
-    
+
     protected OrderServiceTestsBase()
     {
         Repository = Substitute.For<IOrderRepository>();
@@ -497,13 +502,13 @@ public class OrderServiceTestsBase
         Logger = Substitute.For<ILogger<OrderService>>();
         Sut = new OrderService(Repository, EmailService, Logger);
     }
-    
+
     protected void SetupValidOrder(int orderId = 1)
     {
         Repository.GetById(orderId).Returns(
             new Order { Id = orderId, Status = OrderStatus.Pending });
     }
-    
+
     protected void SetupEmailServiceSuccess()
     {
         EmailService.SendConfirmation(Arg.Any<string>()).Returns(true);
@@ -518,10 +523,10 @@ public class OrderServiceTests : OrderServiceTestsBase
         // Arrange
         SetupValidOrder();
         SetupEmailServiceSuccess();
-        
+
         // Act
         var result = Sut.ProcessOrder(1);
-        
+
         // Assert
         result.Success.Should().BeTrue();
     }
@@ -538,9 +543,9 @@ public void CreateOrder_建立訂單_應儲存正確的訂單資料()
 {
     var repository = Substitute.For<IOrderRepository>();
     var service = new OrderService(repository);
-    
+
     service.CreateOrder("Product A", 5, 100);
-    
+
     // 驗證物件屬性
     repository.Received(1).Save(Arg.Is<Order>(o =>
         o.ProductName == "Product A" &&
@@ -557,12 +562,12 @@ public void RegisterUser_註冊使用者_應產生正確的雜湊密碼()
 {
     var repository = Substitute.For<IUserRepository>();
     var service = new UserService(repository);
-    
+
     User capturedUser = null;
     repository.Save(Arg.Do<User>(u => capturedUser = u));
-    
+
     service.RegisterUser("john@example.com", "password123");
-    
+
     capturedUser.Should().NotBeNull();
     capturedUser.Email.Should().Be("john@example.com");
     capturedUser.PasswordHash.Should().NotBe("password123"); // 應該被雜湊

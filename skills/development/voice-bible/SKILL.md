@@ -1,3 +1,8 @@
+---
+name: voice-bible
+description: Define voice rules and catchphrases for NPCs/factions; enforce consistency.
+---
+
 name: voice-bible
 description: Define voice rules and catchphrases for NPCs/factions; enforce consistency.
 metadata:

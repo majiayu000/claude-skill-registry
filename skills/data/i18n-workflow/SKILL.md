@@ -1,5 +1,11 @@
 ---
 name: i18n-workflow
+description: 'Automate the internationalization process: extracting strings, generating
+  keys, and updating locale files.'
+---
+
+---
+name: i18n-workflow
 description: Automate the internationalization process: extracting strings, generating keys, and updating locale files.
 ---
 

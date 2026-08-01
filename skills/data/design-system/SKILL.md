@@ -1,5 +1,10 @@
 ---
 name: design-system
+description: NEVER use hardcoded Tailwind colors. ALWAYS use semantic CSS variables.
+---
+
+---
+name: design-system
 description: StepLeague design system, theme configuration, CSS variables, badge styling, and UI patterns. Use when working with colors, themes, styling, badges, buttons, cards, or any visual UI changes. Keywords: CSS, theme, colors, dark mode, light mode, variables, styling, UI, design.
 compatibility: Antigravity, Claude Code, Cursor
 metadata:

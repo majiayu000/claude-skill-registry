@@ -1,4 +1,10 @@
 ---
+name: love-window
+description: '{{SKILLDESCRIPTION}} Use this skill when working with window operations,
+  display settings, fullscreen modes, or any window-related operations in LÖVE games.'
+---
+
+---
 name: {{SKILL_NAME}}
 description: {{SKILL_DESCRIPTION}} Use this skill when working with window operations, display settings, fullscreen modes, or any window-related operations in LÖVE games.
 license: MIT

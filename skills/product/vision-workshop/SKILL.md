@@ -1,3 +1,8 @@
+---
+name: vision-workshop
+description: '> Last Updated: 2026-01-26'
+---
+
 # Vision Workshop Skill
 
 > Version: 1.0.0

@@ -1,5 +1,11 @@
 ---
 name: pre-configured-apis-rules
+description: You are a coding standards expert specializing in pre configured apis
+  rules.
+---
+
+---
+name: pre-configured-apis-rules
 description: Rules for using pre-configured APIs in the project, using them only if they are required by the project.
 version: 1.0.0
 model: sonnet

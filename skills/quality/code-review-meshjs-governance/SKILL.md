@@ -1,5 +1,11 @@
 ---
 name: code-review
+description: Systematic security and quality review of uncommitted changes. Groups
+  findings by severity.
+---
+
+---
+name: code-review
 updated: 2026-02-20
 description: Security and quality review of uncommitted changes. Checks for vulnerabilities, code smells, and best practice violations. Use before committing.
 argument-hint: [--staged|--all] (default: --all uncommitted)

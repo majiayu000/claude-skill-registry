@@ -1,3 +1,8 @@
+---
+name: lab-results
+description: This skill implements the Lab Results workflow using Anthropic's Claude.
+---
+
 <!--
 # COPYRIGHT NOTICE
 # This file is part of the "Universal Biomedical Skills" project.

@@ -1,3 +1,9 @@
+---
+name: templates
+description: Use this template for language-specific fuzzers (libFuzzer, AFL++, cargo-fuzz,
+  etc.).
+---
+
 # Fuzzer Skill Template
 
 Use this template for language-specific fuzzers (libFuzzer, AFL++, cargo-fuzz, etc.).

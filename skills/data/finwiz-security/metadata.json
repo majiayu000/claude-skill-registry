@@ -1,9 +1,0 @@
-{
-  "name": "finwiz-security",
-  "repo": "fjacquet/finwiz",
-  "category": "data",
-  "description": "Security and type safety standards for FinWiz including API key management, input validation, and mypy strict mode. Use when handling sensitive data, API keys, or implementing type safety.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:40.477529Z",
-  "dir_name": "finwiz-security"
-}

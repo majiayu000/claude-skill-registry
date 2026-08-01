@@ -1,4 +1,9 @@
 ---
+name: project-name
+description: '{{description}}'
+---
+
+---
 name: {{project_name}}
 description: {{description}}
 ---

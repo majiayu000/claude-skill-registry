@@ -1,5 +1,12 @@
 ---
 name: numpy-statistics
+description: NumPy provides a suite of statistical functions for summarizing data.
+  Key capabilities include calculating central tendencies, dispersion, and relationships
+  between variables, with specific handling for missing values (NaNs).
+---
+
+---
+name: numpy-statistics
 description: Standard and NaN-robust statistical functions for data analysis, histograms, and correlation matrices. Triggers: statistics, mean, nanmean, histogram, corrcoef, percentile, std.
 ---
 

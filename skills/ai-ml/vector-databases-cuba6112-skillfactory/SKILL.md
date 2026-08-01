@@ -1,5 +1,12 @@
 ---
 name: vector-databases
+description: Model data as vectors with payload metadata, then run similarity search
+  with optional filters or multi-stage retrieval. Keep index maintenance in the loop
+  so performance does not degrade as the collection changes.
+---
+
+---
+name: vector-databases
 description: Design vector database ingestion and retrieval pipelines (points + payloads, filtered similarity search, multi-stage hybrid retrieval, index maintenance). Use when building RAG/vector search flows or debugging retrieval quality; triggers: vector database, RAG, embeddings, hybrid search, filtered search, Qdrant, Weaviate, Chroma.
 ---
 

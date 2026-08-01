@@ -1,5 +1,11 @@
 ---
 name: pz
+description: A command-line tool for Paperzilla, an AI-powered scientific paper discovery
+  platform.
+---
+
+---
+name: pz
 description: The Paperzilla CLI (pz) for searching, filtering, and browsing high-signal academic papers. Use when the user wants to check their research feeds, list projects, or find new papers. Note: Requires a Paperzilla account.
 metadata:
   {

@@ -1,5 +1,13 @@
 ---
 name: unsloth-qlora
+description: Unsloth-qlora enables the fine-tuning of large-scale models (up to 70B
+  parameters) on consumer-grade hardware. It utilizes dynamic 4-bit quantization which
+  selectively preserves critical weights to maintain higher accuracy than standard
+  quantization methods.
+---
+
+---
+name: unsloth-qlora
 description: Advanced 4-bit quantization techniques using Unsloth and BitsAndBytes for extreme VRAM efficiency (triggers: QLoRA, 4-bit, load_in_4bit, bnb-4bit, VRAM optimization, dynamic quantization).
 ---
 

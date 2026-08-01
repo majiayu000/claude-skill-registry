@@ -1,5 +1,11 @@
 ---
 name: pubmed-mcp-tools-reference
+description: 'Complete reference for all 35+ PubMed Search MCP tools. Triggers: 工具列表,
+  all tools, 完整功能, tool reference, 有哪些工具'
+---
+
+---
+name: pubmed-mcp-tools-reference
 description: Complete reference for all 35+ PubMed Search MCP tools. Triggers: 工具列表, all tools, 完整功能, tool reference, 有哪些工具
 ---
 

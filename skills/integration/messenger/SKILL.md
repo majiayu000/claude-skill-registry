@@ -1,5 +1,11 @@
 ---
 name: messenger
+description: 'Provide a practical baseline for integrating Facebook Messenger: app
+  setup, webhooks, messaging flows, and safe operations.'
+---
+
+---
+name: messenger
 description: Guidance for Facebook Messenger Platform integrations: app setup, webhooks, messaging, and operational safety.
 ---
 

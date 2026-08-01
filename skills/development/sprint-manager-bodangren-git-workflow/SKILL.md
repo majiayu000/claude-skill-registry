@@ -1,5 +1,12 @@
 ---
 name: sprint-manager
+description: 'This skill orchestrates autonomous sprint execution by coordinating
+  subagents to implement GitHub issues serially. It manages the full lifecycle: generating
+  implementation plans via Gemini CLI, delega'
+---
+
+---
+name: sprint-manager
 description: This skill orchestrates autonomous sprint execution by coordinating subagents to implement GitHub issues serially. It manages the full lifecycle: generating implementation plans via Gemini CLI, delegating implementation to subagents, reviewing PRs with Codex MCP, merging approved code, and running post-merge integration. Use this skill when asked to "run a sprint", "execute sprint issues", "implement issues autonomously", or "manage sprint workflow".
 ---
 

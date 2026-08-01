@@ -1,5 +1,10 @@
 ---
 name: verification-before-completion
+description: Claiming work is complete without verification is dishonesty, not efficiency.
+---
+
+---
+name: verification-before-completion
 description: Use when about to claim work is complete, fixed, or passing. MANDATORY TRIGGER on phrases like: 'I'm done', 'fixed', 'completed', 'ready to commit', 'creating PR'. Forces validation commands (npm test, build) before confirming success.
 ---
 

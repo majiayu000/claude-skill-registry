@@ -1,3 +1,8 @@
+---
+name: strangler-pattern
+description: 'name: strangler-pattern'
+---
+
 ﻿---
 name: strangler-pattern
 version: 1.0.0
@@ -92,7 +97,7 @@ public class WorkflowController : ApiBaseController
 ### Clean Endpoint Pattern
 ```csharp
 // Actions.API - No strangler terminology
-app.MapPost("/api/Workflow/startExecution", 
+app.MapPost("/api/Workflow/startExecution",
     async (StartWorkflowExecutionRequest request, IMediator mediator) =>
     {
         var result = await mediator.Send(request);

@@ -1,5 +1,11 @@
 ---
 name: brownfield-onboarder
+description: 'Purpose: Intelligently merge existing CLAUDE.md backups into SpecWeave''s
+  structure without bloating the main CLAUDE.md file.'
+---
+
+---
+name: brownfield-onboarder
 description: Intelligently onboards brownfield projects by merging existing CLAUDE.md backups into SpecWeave structure. Extracts project-specific knowledge, domain context, team conventions, and technical details from backup CLAUDE.md files, then distributes content to appropriate SpecWeave folders without bloating CLAUDE.md. Activates for: merge docs, merge claude, onboard brownfield, import existing docs, claude backup, specweave merge-docs.
 ---
 

@@ -1,5 +1,10 @@
 ---
 name: renode-development
+description: '- Editing .resc scripts or swapping firmware.'
+---
+
+---
+name: renode-development
 description: Day-to-day Renode development workflow for TMNL: .resc edits, firmware swaps, UART verification, and troubleshooting.
 model_invoked: true
 triggers:

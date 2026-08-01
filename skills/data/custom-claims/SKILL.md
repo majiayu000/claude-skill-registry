@@ -1,5 +1,11 @@
 ---
 name: custom-claims
+description: '- documentation/docs/content03concepts/04-tokens-claims/concept-03-custom-claims.md
+  - カスタムクレーム概念'
+---
+
+---
+name: custom-claims
 description: カスタムクレーム（Custom Claims）機能の開発・修正を行う際に使用。claims: scopeマッピング、verified_claims: マッピング実装時に役立つ。
 ---
 

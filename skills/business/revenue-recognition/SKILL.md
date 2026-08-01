@@ -1,3 +1,8 @@
+---
+name: revenue-recognition
+description: 'name: revenue-recognition'
+---
+
 # Revenue Recognition
 
 name: revenue-recognition

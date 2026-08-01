@@ -1,3 +1,8 @@
+---
+name: jurisdictions
+description: '> Auto-generated from IO Matrix'
+---
+
 # Gn JURISDICTION TEMPLATE
 
 > **Auto-generated from IO Matrix**

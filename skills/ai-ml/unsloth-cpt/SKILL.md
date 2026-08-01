@@ -1,5 +1,13 @@
 ---
 name: unsloth-cpt
+description: Unsloth-cpt provides specific optimizations for Continued Pretraining
+  (CPT) and domain adaptation. It addresses the critical need for training embedding
+  layers and language modeling heads while stabilizing the training process using
+  Rank Stabilized LoRA (rsLoRA) and differentiated learning rates.
+---
+
+---
+name: unsloth-cpt
 description: Strategies for continued pretraining and domain adaptation in Unsloth (triggers: continued pretraining, CPT, domain adaptation, lm_head, embed_tokens, rsLoRA, embedding_learning_rate).
 ---
 

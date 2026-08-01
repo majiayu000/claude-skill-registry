@@ -1,3 +1,8 @@
+---
+name: probability-statistics
+description: '---name: bayesian-optimizer'
+---
+
 ---name: bayesian-optimizer
 description: Bayesian Optimize
 license: MIT

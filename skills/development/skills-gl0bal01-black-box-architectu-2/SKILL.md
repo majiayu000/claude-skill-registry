@@ -1,3 +1,8 @@
+---
+name: skills
+description: 'DEPRECATED: Legacy prompt. Use agents + AGENTSCONTRACT.md instead.'
+---
+
 **DEPRECATED**: Legacy prompt. Use agents + AGENTS_CONTRACT.md instead.
 
 ---

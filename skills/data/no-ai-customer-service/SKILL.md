@@ -1,3 +1,8 @@
+---
+name: no-ai-customer-service
+description: '> "Share and Enjoy!"'
+---
+
 # NO-AI-CUSTOMER-SERVICE™ — Protocol
 
 > *"Share and Enjoy!"*

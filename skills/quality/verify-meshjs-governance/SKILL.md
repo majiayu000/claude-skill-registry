@@ -1,5 +1,11 @@
 ---
 name: verify
+description: Comprehensive verification before PRs. Runs all quality gates and produces
+  a structured pass/fail report.
+---
+
+---
+name: verify
 updated: 2026-02-20
 description: Pre-PR verification loop. Runs build, type check, lint, security audit, and debug statement scan. Use before creating PRs or merging.
 argument-hint: [quick|full|pre-pr] (default: full)

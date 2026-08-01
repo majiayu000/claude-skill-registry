@@ -1,5 +1,10 @@
 ---
 name: duck-time-travel
+description: 'Created: 2025-12-21'
+---
+
+---
+name: duck-time-travel
 description: SKILL: Duck Time Travel
 source: local
 license: UNLICENSED
@@ -109,7 +114,7 @@ CREATE TABLE github_events (
 -- Time-travel view
 CREATE VIEW events_at_time AS
 SELECT * FROM github_events
-WHERE valid_from <= current_timestamp 
+WHERE valid_from <= current_timestamp
   AND valid_to > current_timestamp;
 
 -- Query state at specific time

@@ -1,3 +1,8 @@
+---
+name: docs-danielcamposramos-knowledge3d
+description: LLM Skill (Integrated, RAG‑First)
+---
+
 LLM Skill (Integrated, RAG‑First)
 
 Goal

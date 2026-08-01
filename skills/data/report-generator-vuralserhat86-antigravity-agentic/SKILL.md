@@ -1,4 +1,9 @@
 ---
+name: report-generator-vuralserhat86-antigravity-agentic
+description: '> Executive rapor ve dokümantasyon rehberi.'
+---
+
+---
 name: report_generator
 router_kit: FullStackKit
 description: Executive rapor, stakeholder presentation ve comprehensive documentation oluşturma rehberi.

@@ -1,4 +1,9 @@
 ---
+name: quality-validator
+description: '> Kalite standardı ve deliverable validation rehberi.'
+---
+
+---
 name: quality_validator
 router_kit: FullStackKit
 description: Ship öncesi son kontrol, deliverable validation, compliance. ⚠️ Son kalite kontrolü için kullan. Kod inceleme için → code-review.

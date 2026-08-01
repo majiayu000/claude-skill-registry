@@ -1,5 +1,12 @@
 ---
 name: metabolicinput
+description: Pass-through process that prepares Seurat object for metabolic landscape
+  analysis. Routes the processed Seurat object to downstream metabolic analysis processes
+  (MetabolicExprImputation, MetabolicPath
+---
+
+---
+name: metabolicinput
 description: Pass-through process that prepares Seurat object for metabolic landscape analysis. Routes the processed Seurat object to downstream metabolic analysis processes (MetabolicExprImputation, MetabolicPathwayActivity, MetabolicFeatures, MetabolicPathwayHeterogeneity). **Note**: This process requires no direct configuration.
 ---
 

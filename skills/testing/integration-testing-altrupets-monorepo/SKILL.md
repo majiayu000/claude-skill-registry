@@ -1,3 +1,8 @@
+---
+name: integration-testing
+description: '| ID | flutter-testing-strategy |'
+---
+
 # 🧪 Skill: Testing Strategy
 
 ## 📋 Metadata

@@ -1,5 +1,10 @@
 ---
 name: component-testing
+description: Archived skill guidance for component-testing.
+---
+
+---
+name: component-testing
 description: Use this skill to create or modify tests for a component.
 ----
 
@@ -11,7 +16,7 @@ Use this skill to create or modify component tests for the application.
 
 - Create a separate story for each state of the component.
 - Add tests to verify event handling logic included in the component.
-- Stories must be added next to the component. 
+- Stories must be added next to the component.
 - If the component file is `button.tsx` then the stories file is `button.stories.tsx`
 
 ## Template for a component story

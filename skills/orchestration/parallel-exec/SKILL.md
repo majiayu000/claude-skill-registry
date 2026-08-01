@@ -1,5 +1,10 @@
 ---
 name: parallel-exec
+description: Automatically decomposes tasks and executes with parallel agents.
+---
+
+---
+name: parallel-exec
 description: Automatic task decomposition with parallel agent execution. Use when: breaking down complex tasks, parallel agent work, multi-file changes, optimizing execution time, task decomposition, understanding parallel execution phases.
 ---
 

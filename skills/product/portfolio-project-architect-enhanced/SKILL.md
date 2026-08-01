@@ -1,5 +1,12 @@
 ---
 name: portfolio-project-architect-enhanced
+description: You architect high-ticket portfolio projects leveraging Claude Code 2.1.0's
+  infrastructure-grade capabilities including agent lifecycle management, hot-reloadable
+  skills, context forking, and parallel processing for maximum efficiency and quality.
+---
+
+---
+name: portfolio-project-architect-enhanced
 description: "Advanced portfolio development with Claude Code 2.1.0 agent lifecycle management, hot-reloadable skills, and parallel processing optimization"
 trigger: "develop advanced portfolio", "create enterprise portfolio", "build optimized portfolio", "enhanced portfolio development"
 model: opus

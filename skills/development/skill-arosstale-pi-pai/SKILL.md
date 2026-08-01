@@ -1,3 +1,8 @@
+---
+name: skill-arosstale-pi-pai
+description: Advanced prompt engineering skill for pi-mono ecosystem.
+---
+
 # Prompting Skill Pack
 
 ## Overview

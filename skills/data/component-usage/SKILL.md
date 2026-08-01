@@ -1,5 +1,10 @@
 ---
 name: component-usage
+description: 동구라미 앱의 재사용 가능한 UI 컴포넌트 라이브러리입니다.
+---
+
+---
+name: component-usage
 description: 동구라미 앱 컴포넌트 라이브러리 사용 가이드. UI 컴포넌트 구현, 스타일 커스터마이징, 위젯 활용법 안내. Keywords: component, widget, ui, style, button, dialog, text field, chip, app bar, drawer
 ---
 

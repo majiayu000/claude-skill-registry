@@ -1,5 +1,10 @@
 ---
 name: lp-do-assessment-04-candidate-names
+description: 'Load: ../shared/assessment/assessment-base-contract.md'
+---
+
+---
+name: lp-do-assessment-04-candidate-names
 description: Full naming pipeline orchestrator (ASSESSMENT-04). Runs four parts in sequence: (1) produce <YYYY-MM-DD>-naming-generation-spec.md from ASSESSMENT docs, (2) agent generates 250 scored candidates, (3) RDAP batch check all .com domains, (4) filter to available names and produce ranked shortlist. Delivers a final operator-ready shortlist of domain-verified, scored brand name candidates.
 ---
 

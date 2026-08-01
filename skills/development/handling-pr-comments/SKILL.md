@@ -1,3 +1,10 @@
+---
+name: handling-pr-comments
+description: Use when addressing PR review feedback, after receiving review comments
+  from CodeRabbit, Cursor, or human reviewers - ensures systematic responses to each
+  comment thread with proper attribution and thread resolution.
+---
+
 # handling-pr-comments
 
 Use when addressing PR review feedback, after receiving review comments from CodeRabbit, Cursor, or human reviewers - ensures systematic responses to each comment thread with proper attribution and thread resolution.

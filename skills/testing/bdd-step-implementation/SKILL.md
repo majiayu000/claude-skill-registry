@@ -1,3 +1,8 @@
+---
+name: bdd-step-implementation
+description: '> Compiler: skill-compiler/1.0.0'
+---
+
 # BDD Step Implementation Skill
 
 > Version: 1.0.0
@@ -143,7 +148,7 @@ fn admin_exists(world: &mut TestWorld, #[with(admin_user)] user: User) {
 ### Scenario Binding
 
 ```rust
-#[scenario(path = "tests/features/example.feature", 
+#[scenario(path = "tests/features/example.feature",
            name = "Scenario Name")]
 #[test]
 fn example_scenario(world: TestWorld) {
@@ -163,11 +168,11 @@ struct TestWorld {
     // Setup state
     api_client: ApiClient,
     current_user: Option<User>,
-    
+
     // Action results
     response: Option<Response>,
     error: Option<Error>,
-    
+
     // Captured data for verification
     created_id: Option<String>,
 }
@@ -336,7 +341,7 @@ fn user_created(world: &TestWorld) {
 #[then("the creation should fail with error <error:string>")]
 fn creation_fails(world: &TestWorld, error: String) {
     let err = world.result.as_ref().expect_err("Expected failure");
-    assert!(err.to_string().contains(&error), 
+    assert!(err.to_string().contains(&error),
             "Expected error '{}' but got: {}", error, err);
 }
 

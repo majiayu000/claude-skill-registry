@@ -1,5 +1,10 @@
 ---
 name: team-status
+description: Generate project/sprint status reports with metrics.
+---
+
+---
+name: team-status
 description: "[Team] Generate status reports for sprints or projects. Use when creating status reports, checking progress, or summarizing sprint metrics. Triggers on keywords like "status report", "sprint status", "progress", "how are we doing"."
 argument-hint: sprint | project | feature-{name}
 allowed-tools: Read, Write, Grep, Glob, Bash, TodoWrite

@@ -1,3 +1,8 @@
+---
+name: mhxx-switch-cis
+description: Archived skill guidance for mhxx-switch-cis.
+---
+
 * [x] (なし)
 * [x] (無)
 * [x] 毒

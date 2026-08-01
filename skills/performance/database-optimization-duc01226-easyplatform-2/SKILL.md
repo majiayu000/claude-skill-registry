@@ -1,5 +1,12 @@
 ---
 name: database-optimization
+description: Use when optimizing database queries, indexes, N+1 problems, slow queries,
+  or analyzing query performance. Triggers on keywords like "slow query", "N+1", "index",
+  "query optimization", "database perfo
+---
+
+---
+name: database-optimization
 description: "[DevOps & Infra] Use when optimizing database queries, indexes, N+1 problems, slow queries, or analyzing query performance. Triggers on keywords like "slow query", "N+1", "index", "query optimization", "database performance", "eager loading"."
 allowed-tools: Read, Write, Edit, Bash, Grep, Glob, Task, TodoWrite
 infer: true

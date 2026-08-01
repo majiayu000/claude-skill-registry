@@ -1,4 +1,9 @@
 ---
+name: buslah
+description: Natural language bus lookup for Singapore.
+---
+
+---
 name: arrivelah
 description: Get Singapore bus arrivals from a source location to a destination. Trigger: "bus from <source> to <destination>"
 homepage: https://github.com/abhay/arrivelah
@@ -87,7 +92,7 @@ If no direct bus found, say so and suggest nearest MRT or alternative.
 
 ## Load Code Reference
 - `SEA` = Seats Available 🟢
-- `SDA` = Standing Available 🟡  
+- `SDA` = Standing Available 🟡
 - `LSD` = Limited Standing 🔴
 
 ## Bus Type Reference

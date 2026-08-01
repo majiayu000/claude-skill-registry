@@ -1,3 +1,8 @@
+---
+name: concepts
+description: '{% include announce %}'
+---
+
 # Получить свойства навыка
 
 {% include [announce](../_includes/announce.md) %}

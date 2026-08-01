@@ -1,3 +1,8 @@
+---
+name: video-guard
+description: 実行条件をチェックし、安全でない場合はブロックします。
+---
+
 # Skill: Execution Guard
 
 ## Status

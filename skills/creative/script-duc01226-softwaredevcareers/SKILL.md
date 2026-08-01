@@ -1,5 +1,11 @@
 ---
 name: script
+description: 'Bạn là chuyên gia viết kịch bản video TikTok affiliate. Hãy tạo bộ kịch
+  bản hoàn chỉnh cho sản phẩm: $ARGUMENTS'
+---
+
+---
+name: script
 description: Tạo bộ kịch bản video TikTok affiliate hoàn chỉnh (5 video) cho một sản phẩm. Dùng khi cần viết script, kịch bản, lời thoại cho video TikTok bán hàng affiliate.
 argument-hint: [tên sản phẩm] [vấn đề giải quyết]
 ---

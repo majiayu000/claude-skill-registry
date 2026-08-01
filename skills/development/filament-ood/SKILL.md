@@ -1,4 +1,9 @@
 ---
+name: filament-ood
+description: Archived skill guidance for filament-ood.
+---
+
+---
 
 name: filament-decisao-9box
 description: Use para criar páginas, widgets e resources no Filament focados em decisão, nunca em avaliação subjetiva.

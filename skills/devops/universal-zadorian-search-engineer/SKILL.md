@@ -1,3 +1,8 @@
+---
+name: universal
+description: '> Style/formatting: Follow ~/.claude/skills/word-doc-generator/SKILL.md'
+---
+
 # PEP STATUS SECTION
 
 > **Style/formatting:** Follow `~/.claude/skills/word-doc-generator/SKILL.md`

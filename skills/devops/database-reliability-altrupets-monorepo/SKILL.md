@@ -1,3 +1,8 @@
+---
+name: database-reliability
+description: '| ID | sre-database-reliability |'
+---
+
 # 🗄️ Skill: Database Reliability
 
 ## 📋 Metadata

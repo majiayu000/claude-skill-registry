@@ -1,3 +1,8 @@
+---
+name: security-orchestration-agent
+description: 'Type: Blue Team - Defensive Security Agent'
+---
+
 # Security Orchestration Agent
 
 **Type:** Blue Team - Defensive Security Agent

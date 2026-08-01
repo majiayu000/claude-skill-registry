@@ -1,3 +1,8 @@
+---
+name: skill-compiler
+description: '> Compiler: manual (bootstrap)'
+---
+
 # Skill Compiler Skill
 
 > Version: 1.0.0

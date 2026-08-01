@@ -1,3 +1,8 @@
+---
+name: hitl-approval
+description: Multi-step workflow for human approval integration in ccswarm agent operations.
+---
+
 # HITL (Human-in-the-Loop) Approval Workflow
 
 Multi-step workflow for human approval integration in ccswarm agent operations.

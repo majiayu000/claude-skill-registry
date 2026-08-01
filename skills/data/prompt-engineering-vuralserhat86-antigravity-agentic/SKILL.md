@@ -1,4 +1,10 @@
 ---
+name: prompt-engineering-vuralserhat86-antigravity-agentic
+description: Design and optimize prompts for large language models (LLMs) to achieve
+  reliable, high-quality outputs across diverse tasks.
+---
+
+---
 name: prompt_engineering
 router_kit: AIKit
 description: Engineer effective LLM prompts using zero-shot, few-shot, chain-of-thought, and structured output techniques. Use when building LLM applications requiring reliable outputs, implementing RAG systems, creating AI agents, or optimizing prompt quality and cost. Covers OpenAI, Anthropic, and open-source models with multi-language examples (Python/TypeScript).

@@ -1,4 +1,11 @@
 ---
+name: crewai-development
+description: 'Create CrewAI workflows as NestJS applications under apps/crewai/. FUTURE:
+  Same pattern as LangGraph - NestJS app, same webhook pattern as n8n, receive same
+  parameters, wrap as API agents. CRITICAL: S'
+---
+
+---
 name: CrewAI Development
 description: Create CrewAI workflows as NestJS applications under apps/crewai/. FUTURE: Same pattern as LangGraph - NestJS app, same webhook pattern as n8n, receive same parameters, wrap as API agents. CRITICAL: Status webhook URL must read from environment variables.
 allowed-tools: Read, Write, Edit, Bash, Grep, Glob

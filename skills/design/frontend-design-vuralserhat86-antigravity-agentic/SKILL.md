@@ -1,4 +1,9 @@
 ---
+name: frontend-design
+description: '> Distinctive, production-grade UI. "AI slop" estetikten kaçın.'
+---
+
+---
 name: frontend_design
 router_kit: FullStackKit
 description: Premium/yaratıcı UI tasarım. ⚠️ Distinctive, memorable interface için kullan. Temel UI için → design-patterns.

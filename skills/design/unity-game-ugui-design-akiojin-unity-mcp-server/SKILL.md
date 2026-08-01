@@ -1,5 +1,12 @@
 ---
 name: unity-game-ugui-design
+description: 'Game UI design using Unity''s uGUI (Canvas/RectTransform/Anchors). Includes
+  game UI elements like HUD, health bars, inventory, skill bars, mobile responsive
+  design, and Safe Area support. Use when: gam'
+---
+
+---
+name: unity-game-ugui-design
 description: Game UI design using Unity's uGUI (Canvas/RectTransform/Anchors). Includes game UI elements like HUD, health bars, inventory, skill bars, mobile responsive design, and Safe Area support. Use when: game UI design, HUD creation, Canvas setup, mobile UI, Anchors configuration
 allowed-tools:
   - mcp__unity-mcp-server__find_ui_elements

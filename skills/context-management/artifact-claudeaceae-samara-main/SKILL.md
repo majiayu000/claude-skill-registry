@@ -1,5 +1,11 @@
 ---
 name: artifact
+description: Add images, documents, or other non-text files to a person's artifacts
+  folder.
+---
+
+---
+name: artifact
 description: Add non-text files to a person's artifacts folder. Use when saving images, documents, or other files related to someone. Trigger words: artifact, save image, add photo, attach file, store document.
 ---
 

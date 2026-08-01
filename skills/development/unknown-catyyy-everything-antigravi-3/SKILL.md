@@ -1,3 +1,9 @@
+---
+name: unknown
+description: A formal evaluation framework for Claude Code sessions, implementing
+  eval-driven development (EDD) principles.
+---
+
 # Eval Harness Skill
 
 A formal evaluation framework for Claude Code sessions, implementing eval-driven development (EDD) principles.

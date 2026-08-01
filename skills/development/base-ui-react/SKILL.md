@@ -1,5 +1,10 @@
 ---
 name: base-ui-react
+description: 'Status: Beta (v1.0.0-beta.4) ⚠️ | Last Verified: 2025-11-18'
+---
+
+---
+name: base-ui-react
 description: MUI Base UI unstyled React components with Floating UI. Use for accessible components, Radix UI migration, render props API, or encountering positioning, popup, v1.0 beta issues.
 
   Keywords: base-ui, @base-ui-components/react, mui base ui, unstyled components, accessible components,

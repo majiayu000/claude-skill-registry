@@ -1,3 +1,11 @@
+---
+name: github-repo-governance
+description: Repository governance covers policies, standards, and controls for managing
+  GitHub repositories effectively. This skill includes repository settings, access
+  controls, branch protection, security policies, and best practices for maintaining
+  healthy and secure repositories.
+---
+
 # GitHub Repository Governance
 
 ## Overview

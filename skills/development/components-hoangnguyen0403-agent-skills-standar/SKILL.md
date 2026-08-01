@@ -1,4 +1,10 @@
 ---
+name: components
+description: '- Standalone: standalone: true. Import dependencies directly in imports
+  array.'
+---
+
+---
 name: Components
 description: Standards for Standalone Components, Signals inputs, and Control Flow.
 metadata:

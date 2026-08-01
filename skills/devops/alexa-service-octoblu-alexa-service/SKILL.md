@@ -1,3 +1,8 @@
+---
+name: alexa-service
+description: '"intent": "ListTriggers"'
+---
+
 ## Intent Schema
 
 ```json

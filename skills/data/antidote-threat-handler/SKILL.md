@@ -1,3 +1,9 @@
+---
+name: antidote-threat-handler
+description: Detect and respond to ideological drift, sycophantic patterns, and alignment
+  threats using the Antidote Protocol.
+---
+
 # Antidote Threat Handler
 
 ## Skill Metadata

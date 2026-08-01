@@ -1,5 +1,11 @@
 ---
 name: globalexceptionhandler-class
+description: You are a coding standards expert specializing in globalexceptionhandler
+  class.
+---
+
+---
+name: globalexceptionhandler-class
 description: Structure of GlobalExceptionHandler class.
 version: 1.0.0
 model: sonnet

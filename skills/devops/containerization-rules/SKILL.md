@@ -1,5 +1,10 @@
 ---
 name: containerization-rules
+description: You are a coding standards expert specializing in containerization rules.
+---
+
+---
+name: containerization-rules
 description: Rules for creating and maintaining Dockerfiles.
 version: 1.0.0
 model: sonnet

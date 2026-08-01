@@ -1,5 +1,12 @@
 ---
 name: numpy-indexing
+description: Indexing in NumPy ranges from basic slicing (zero-copy) to advanced "fancy"
+  indexing (always creates a copy). Understanding the distinction is vital for memory
+  management and avoiding unintended side
+---
+
+---
+name: numpy-indexing
 description: Advanced indexing techniques including slicing, fancy indexing, and boolean masks, along with memory implications of views vs. copies. Triggers: indexing, slicing, fancy indexing, boolean mask, np.where, np.ix_.
 ---
 

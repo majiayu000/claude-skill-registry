@@ -1,5 +1,12 @@
 ---
 name: acuantia-dataform
+description: 'Use when working on Acuantia''s BigQuery Dataform pipeline (acuantia-gcp-dataform
+  project) - adds Acuantia-specific patterns on top of dataform-engineering-fundamentals:
+  ODS two-arg ref() syntax, looke'
+---
+
+---
+name: acuantia-dataform
 description: Use when working on Acuantia's BigQuery Dataform pipeline (acuantia-gcp-dataform project) - adds Acuantia-specific patterns on top of dataform-engineering-fundamentals: ODS two-arg ref() syntax, looker_ filename prefix, Looker integration (looker_prod/looker_dev), acuantia dataset conventions, coordination with callrail_data_export/dialpad_data_integration/looker projects
 ---
 

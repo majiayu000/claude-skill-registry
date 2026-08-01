@@ -1,3 +1,9 @@
+---
+name: task-builder
+description: 'description: Expand features into implementable tasks for an idea (writes
+  to ideas/<IDEAID>/runs and updates ideas/<IDEAID>/latest)'
+---
+
 ﻿---
 name: Build tasks
 description: Expand features into implementable tasks for an idea (writes to ideas/<IDEA_ID>/runs and updates ideas/<IDEA_ID>/latest)
@@ -155,7 +161,7 @@ Include the content via file references:
 
 - Existing solution map (required):
   @docs/forge/ideas/<IDEA_ID>/latest/existing_solution_map.md
-  
+
 
 ---
 
@@ -343,7 +349,7 @@ Markdown rendering (required):
 
 #### TASK-001: <Task Title>
 
-**Release Target:** <...> **Priority:** <...> **Estimate:** <...>  
+**Release Target:** <...> **Priority:** <...> **Estimate:** <...>
 **Description:** <...>
 
 **Acceptance Criteria:**

@@ -1,3 +1,9 @@
+---
+name: design-mastery
+description: Master advanced design patterns to create stunning, premium-quality user
+  interfaces that wow users at first glance.
+---
+
 # 🎨 Design Mastery Skill
 
 ---
@@ -73,7 +79,7 @@ Master advanced design patterns to create stunning, premium-quality user interfa
 ```css
 .neu-button {
   background: #e0e5ec;
-  box-shadow: 
+  box-shadow:
     5px 5px 10px #a3b1c6,
     -5px -5px 10px #ffffff;
   border-radius: 12px;
@@ -84,8 +90,8 @@ Master advanced design patterns to create stunning, premium-quality user interfa
 ```css
 .gradient-bg {
   background: linear-gradient(
-    135deg, 
-    #667eea 0%, 
+    135deg,
+    #667eea 0%,
     #764ba2 100%
   );
 }

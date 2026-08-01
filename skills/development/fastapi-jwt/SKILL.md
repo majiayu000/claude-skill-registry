@@ -1,3 +1,9 @@
+---
+name: fastapi-jwt
+description: This skill provides implementation details for secure JWT verification
+  middleware in FastAPI, specifically integrated with Better Auth secrets.
+---
+
 # FastAPI JWT Middleware Skill
 
 ## Purpose

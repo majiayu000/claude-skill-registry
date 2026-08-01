@@ -1,3 +1,8 @@
+---
+name: ddg-search
+description: Search the web using DuckDuckGo's HTML interface. No API key required.
+---
+
 # DuckDuckGo Search
 
 Search the web using DuckDuckGo's HTML interface. No API key required.

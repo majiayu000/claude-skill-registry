@@ -1,5 +1,11 @@
 ---
 name: rust-pro
+description: '> Goal: Write idiomatic, high-performance, and memory-safe Rust code
+  following standard community practices (The Rust Way).'
+---
+
+---
+name: rust-pro
 <<<<<<< HEAD
 description: Master Rust 1.75+ development with async runtime (Tokio/smol).
 category: development

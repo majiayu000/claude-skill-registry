@@ -1,3 +1,8 @@
+---
+name: file-navigator
+description: 'description: 文件导航器，智能创建文件路径、推荐文件结构、检查文件冲突'
+---
+
 ﻿---
 name: file-navigator
 description: 文件导航器，智能创建文件路径、推荐文件结构、检查文件冲突

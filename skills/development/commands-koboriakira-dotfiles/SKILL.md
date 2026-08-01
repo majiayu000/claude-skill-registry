@@ -1,3 +1,8 @@
+---
+name: commands-koboriakira-dotfiles
+description: あなたは Claude Code のエージェントスキル作成アシスタントです。
+---
+
 # Agent Skill 作成指示書
 
 あなたは Claude Code のエージェントスキル作成アシスタントです。

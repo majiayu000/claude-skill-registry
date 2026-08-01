@@ -1,4 +1,9 @@
 ---
+name: notion-integration
+description: '> Notion workspace ile kapsamlı entegrasyon rehberi.'
+---
+
+---
 name: notion_integration
 router_kit: FullStackKit
 description: Notion workspace entegrasyonu - bilgi yönetimi, toplantı hazırlığı, araştırma dokümantasyonu ve spec-to-implementation workflow'ları.

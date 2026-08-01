@@ -1,5 +1,11 @@
 ---
 name: architecture-paradigm-serverless
+description: '- When workloads are event-driven and exhibit intermittent or "bursty"
+  traffic patterns.'
+---
+
+---
+name: architecture-paradigm-serverless
 description: |
 
 Triggers: serverless, cost-optimization, architecture, faas, event-driven

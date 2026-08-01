@@ -1,5 +1,10 @@
 ---
 name: moai-domain-uiux
+description: '- React 19 (Server Components, Concurrent Rendering)'
+---
+
+---
+name: moai-domain-uiux
 aliases: [moai-foundation-uiux]
 category: domain
 description: Domain UI/UX Expert - Enterprise design systems, component architecture, accessibility, icons, and theming integration

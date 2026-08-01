@@ -1,3 +1,9 @@
+---
+name: lbo-modeling
+description: 'description: LBO model construction — sources & uses, debt schedules,
+  returns'
+---
+
 # LBO Modeling
 
 name: lbo-modeling

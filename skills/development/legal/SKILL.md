@@ -1,3 +1,8 @@
+---
+name: legal
+description: 'Skill Name: blockchain-lawyer:review'
+---
+
 # BLOCKCHAIN LAWYER SKILL SPECIFICATION
 
 **Skill Name**: `blockchain-lawyer:review`

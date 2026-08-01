@@ -1,5 +1,11 @@
 ---
 name: dev-coding-debug
+description: 'Systematic debugging workflow enforcing ''The Iron Law'': No fixes without
+  root cause investigation first.'
+---
+
+---
+name: dev-coding-debug
 description: 체계적인 디버깅(Systematic Debugging) 절차를 통해 버그의 원인을 찾고 해결합니다. (Source: obra/superpowers)
 ---
 

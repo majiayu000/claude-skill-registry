@@ -1,3 +1,8 @@
+---
+name: ats-criteria-extraction
+description: 'name: ats-criteria-extraction'
+---
+
 ﻿---
 name: ats-criteria-extraction
 description: Pflege die Extraktion von ATS-Kriterien aus CVs; verwenden bei Anpassungen an Kontakt-, Erfahrung- oder Bildungsextraktion.

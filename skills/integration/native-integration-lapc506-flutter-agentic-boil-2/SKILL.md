@@ -1,3 +1,8 @@
+---
+name: native-integration
+description: '| Atributo | Valor |'
+---
+
 # 🔧 Skill: Native Integration (Swift/Kotlin)
 
 ## 📋 Metadata
@@ -259,7 +264,7 @@ import Photos
 class CameraManager: NSObject {
     private var currentViewController: UIViewController?
     private var completion: ((Bool, [String: Any]?) -> Void)?
-    
+
     func openCamera(
         quality: String,
         allowEditing: Bool,
@@ -267,7 +272,7 @@ class CameraManager: NSObject {
         completion: @escaping (Bool, [String: Any]?) -> Void
     ) {
         self.completion = completion
-        
+
         // Check camera permission
         AVCaptureDevice.requestAccess(for: .video) { granted in
             DispatchQueue.main.async {
@@ -283,7 +288,7 @@ class CameraManager: NSObject {
             }
         }
     }
-    
+
     private func presentCamera(
         quality: String,
         allowEditing: Bool,
@@ -293,19 +298,19 @@ class CameraManager: NSObject {
             completion?(false, ["error": "No view controller available"])
             return
         }
-        
+
         let picker = UIImagePickerController()
         picker.delegate = self
         picker.sourceType = .camera
         picker.allowsEditing = allowEditing
-        
+
         // Set camera device
         if preferredDevice == "front" {
             picker.cameraDevice = .front
         } else {
             picker.cameraDevice = .rear
         }
-        
+
         // Set quality
         switch quality {
         case "high":
@@ -316,11 +321,11 @@ class CameraManager: NSObject {
         default:
             break
         }
-        
+
         currentViewController = viewController
         viewController.present(picker, animated: true)
     }
-    
+
     func pickMultiplePhotos(
         maxImages: Int,
         quality: String,
@@ -330,37 +335,37 @@ class CameraManager: NSObject {
             var config = PHPickerConfiguration()
             config.selectionLimit = maxImages
             config.filter = .images
-            
+
             let picker = PHPickerViewController(configuration: config)
             picker.delegate = self
-            
+
             guard let viewController = UIApplication.shared.keyWindow?.rootViewController else {
                 completion(false, nil)
                 return
             }
-            
+
             viewController.present(picker, animated: true)
         } else {
             // Fallback for older iOS versions
             completion(false, ["Requires iOS 14+"])
         }
     }
-    
+
     private func saveImage(_ image: UIImage) -> [String: Any]? {
         guard let data = image.jpegData(compressionQuality: 0.8) else {
             return nil
         }
-        
+
         let filename = UUID().uuidString + ".jpg"
         let documentsPath = FileManager.default.urls(
             for: .documentDirectory,
             in: .userDomainMask
         )[0]
         let imagePath = documentsPath.appendingPathComponent(filename)
-        
+
         do {
             try data.write(to: imagePath)
-            
+
             return [
                 "success": true,
                 "imagePath": imagePath.path,
@@ -384,7 +389,7 @@ extension CameraManager: UIImagePickerControllerDelegate, UINavigationController
         didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]
     ) {
         picker.dismiss(animated: true)
-        
+
         if let image = info[.editedImage] as? UIImage ?? info[.originalImage] as? UIImage {
             let result = saveImage(image)
             completion?(true, result)
@@ -392,7 +397,7 @@ extension CameraManager: UIImagePickerControllerDelegate, UINavigationController
             completion?(false, ["error": "No image selected"])
         }
     }
-    
+
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true)
         completion?(false, ["error": "User cancelled"])
@@ -403,15 +408,15 @@ extension CameraManager: UIImagePickerControllerDelegate, UINavigationController
 extension CameraManager: PHPickerViewControllerDelegate {
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
         picker.dismiss(animated: true)
-        
+
         var imagePaths: [String] = []
         let group = DispatchGroup()
-        
+
         for result in results {
             group.enter()
             result.itemProvider.loadObject(ofClass: UIImage.self) { [weak self] object, error in
                 defer { group.leave() }
-                
+
                 if let image = object as? UIImage,
                    let result = self?.saveImage(image),
                    let path = result["imagePath"] as? String {
@@ -419,7 +424,7 @@ extension CameraManager: PHPickerViewControllerDelegate {
                 }
             }
         }
-        
+
         group.notify(queue: .main) {
             self.completion?(true, ["paths": imagePaths])
         }
@@ -475,19 +480,19 @@ class CameraManager(private val activity: Activity) {
 
     private fun launchCamera(quality: String, allowEditing: Boolean) {
         val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-        
+
         // Create file for photo
         val photoFile = createImageFile()
         currentPhotoPath = photoFile.absolutePath
-        
+
         val photoURI = FileProvider.getUriForFile(
             activity,
             "${activity.packageName}.fileprovider",
             photoFile
         )
-        
+
         intent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI)
-        
+
         // Set quality
         when (quality) {
             "high", "max" -> {
@@ -500,17 +505,17 @@ class CameraManager(private val activity: Activity) {
                 intent.putExtra(MediaStore.EXTRA_SIZE_LIMIT, 1024 * 1024) // 1MB
             }
         }
-        
+
         activity.startActivityForResult(intent, REQUEST_CAMERA)
     }
 
     fun pickMultiplePhotos(maxImages: Int, quality: String, result: MethodChannel.Result) {
         this.result = result
-        
+
         val intent = Intent(Intent.ACTION_PICK)
         intent.type = "image/*"
         intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true)
-        
+
         activity.startActivityForResult(
             Intent.createChooser(intent, "Select Pictures"),
             REQUEST_PICK_MULTIPLE
@@ -527,7 +532,7 @@ class CameraManager(private val activity: Activity) {
                 }
                 return true
             }
-            
+
             REQUEST_PICK_MULTIPLE -> {
                 if (resultCode == Activity.RESULT_OK) {
                     handlePickMultipleResult(data)
@@ -548,7 +553,7 @@ class CameraManager(private val activity: Activity) {
                     activity.contentResolver,
                     Uri.fromFile(file)
                 )
-                
+
                 val resultMap = mapOf(
                     "success" to true,
                     "imagePath" to path,
@@ -559,7 +564,7 @@ class CameraManager(private val activity: Activity) {
                         "size" to file.length()
                     )
                 )
-                
+
                 result?.success(resultMap)
             } else {
                 result?.error("FILE_NOT_FOUND", "Photo file not found", null)
@@ -569,7 +574,7 @@ class CameraManager(private val activity: Activity) {
 
     private fun handlePickMultipleResult(data: Intent?) {
         val imagePaths = mutableListOf<String>()
-        
+
         data?.clipData?.let { clipData ->
             for (i in 0 until clipData.itemCount) {
                 val uri = clipData.getItemAt(i).uri
@@ -580,7 +585,7 @@ class CameraManager(private val activity: Activity) {
             val path = saveImageFromUri(uri)
             path?.let { imagePaths.add(it) }
         }
-        
+
         result?.success(imagePaths)
     }
 
@@ -588,11 +593,11 @@ class CameraManager(private val activity: Activity) {
         try {
             val bitmap = MediaStore.Images.Media.getBitmap(activity.contentResolver, uri)
             val file = createImageFile()
-            
+
             FileOutputStream(file).use { out ->
                 bitmap.compress(Bitmap.CompressFormat.JPEG, 90, out)
             }
-            
+
             return file.absolutePath
         } catch (e: Exception) {
             e.printStackTrace()
@@ -627,7 +632,7 @@ class CameraManager(private val activity: Activity) {
         grantResults: IntArray
     ): Boolean {
         if (requestCode == REQUEST_PERMISSION) {
-            if (grantResults.isNotEmpty() && 
+            if (grantResults.isNotEmpty() &&
                 grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 launchCamera("medium", false)
             } else {
@@ -703,7 +708,7 @@ class NativeMapView extends StatelessWidget {
 
   void _onPlatformViewCreated(int id) {
     final channel = MethodChannel('com.example.myapp/native_map_$id');
-    
+
     channel.setMethodCallHandler((call) async {
       if (call.method == 'onLocationChanged') {
         final lat = call.arguments['latitude'] as double;
@@ -787,7 +792,7 @@ class _NativeVideoPlayerState extends State<NativeVideoPlayer> {
 
   void _onPlatformViewCreated(int id) {
     _channel = MethodChannel('com.example.myapp/video_player_$id');
-    
+
     _channel.setMethodCallHandler((call) async {
       switch (call.method) {
         case 'onPlaybackStateChanged':
@@ -895,7 +900,7 @@ class NativeMapView: NSObject, FlutterPlatformView, MKMapViewDelegate {
     private func setupMethodChannel() {
         _channel.setMethodCallHandler { [weak self] (call, result) in
             guard let self = self else { return }
-            
+
             switch call.method {
             case "setLocation":
                 if let args = call.arguments as? [String: Any],
@@ -971,7 +976,7 @@ class FileSystemNative {
         'listDirectory',
         {'path': path},
       );
-      
+
       return result.map((item) {
         final map = item as Map<dynamic, dynamic>;
         return FileInfo(
@@ -1108,7 +1113,7 @@ override fun onConfigurationChanged(newConfig: Configuration) {
 
 ---
 
-**Versión:** 1.0.0  
-**Última actualización:** Diciembre 2025  
+**Versión:** 1.0.0
+**Última actualización:** Diciembre 2025
 **Total líneas:** 1,100+
 

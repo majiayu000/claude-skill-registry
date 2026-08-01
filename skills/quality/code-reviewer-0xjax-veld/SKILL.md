@@ -1,5 +1,11 @@
 ---
 name: code-reviewer
+description: Provides automated code review capabilities with focus on security, performance,
+  and coding standards.
+---
+
+---
+name: code-reviewer
 description: Code review: security, performance, best practices
 allowed-tools: Read, Grep, Glob, Bash
 ---

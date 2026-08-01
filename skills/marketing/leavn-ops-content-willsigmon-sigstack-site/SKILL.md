@@ -1,4 +1,10 @@
 ---
+name: leavn-ops-content
+description: Use this skill when creating devotional content, social media posts,
+  or video scripts for Leavn marketing.
+---
+
+---
 name: Leavn Ops: Content Marketing Skill
 description: Use this skill when creating devotional content, social media posts, or video scripts for Leavn marketing.
 allowed-tools: Read, Grep, Bash

@@ -1,5 +1,10 @@
 ---
 name: ffmpeg-cloudflare-containers
+description: '| Component | Configuration |'
+---
+
+---
+name: ffmpeg-cloudflare-containers
 description: Complete Cloudflare Container FFmpeg system. PROACTIVELY activate for: (1) Cloudflare Containers setup, (2) Native FFmpeg at edge, (3) GPU-accelerated containers, (4) Durable Objects integration, (5) R2 storage for video files, (6) Container autoscaling, (7) Streaming large files, (8) Workers + Containers architecture, (9) Live streaming relay at edge, (10) Container vs Workers comparison. Provides: Dockerfile examples, Worker code, container configuration, GPU setup, R2 integration, production patterns. Ensures: Native FFmpeg performance at Cloudflare edge with full GPU support.
 ---
 

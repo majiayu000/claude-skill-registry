@@ -1,3 +1,8 @@
+---
+name: bdd-red-green-refactor
+description: '> Compiler: skill-compiler/1.0.0'
+---
+
 # BDD Red-Green-Refactor Skill
 
 > Version: 1.0.0

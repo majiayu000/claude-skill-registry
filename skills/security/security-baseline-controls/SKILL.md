@@ -1,4 +1,11 @@
 ---
+name: security-baseline-controls
+description: 'มาตรฐาน security ขั้นต่ำที่ทุก service ต้องมี: authentication, authorization,
+  input validation, secrets handling, และ security headers ที่ทำให้ระบบปลอดภัยตั้งแต่
+  day one'
+---
+
+---
 name: Security Baseline Controls
 description: Minimum security controls every service must implement: authentication/authorization, input validation, secrets management, security headers, dependency security, audit logging, and operational guardrails
 ---

@@ -1,5 +1,11 @@
 ---
 name: css
+description: This skill provides guidance for writing modern CSS with focus on maintainability,
+  performance, and accessibility using current CSS features and best practices.
+---
+
+---
+name: css
 description: Modern, maintainable, and accessible CSS using latest features and best practices. Grid, Flexbox, custom properties, container queries, cascade layers. Trigger: When writing CSS styles, implementing layouts with Grid/Flexbox, or using modern CSS features.
 skills:
   - conventions

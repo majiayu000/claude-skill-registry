@@ -1,5 +1,12 @@
 ---
 name: hippocampus
+description: 'Search hippocampus knowledge base for documentation, conventions, patterns,
+  and how-to guides (discovery: requirements-clarity). Evaluate at requirements-clarity
+  when user asks "how do I...", "find my'
+---
+
+---
+name: hippocampus
 description: Search hippocampus knowledge base for documentation, conventions, patterns, and how-to guides (discovery: requirements-clarity). Evaluate at requirements-clarity when user asks "how do I...", "find my...", "what's my convention for...", "continue working on...", or wants to create/edit persistent documentation. All markdown files must go to hippocampus - none created elsewhere.
 ---
 

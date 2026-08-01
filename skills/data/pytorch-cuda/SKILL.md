@@ -1,5 +1,11 @@
 ---
 name: pytorch-cuda
+description: Configure and verify CUDA 13 readiness (toolkit, driver, and PyTorch
+  wheel support), then run PyTorch CUDA with reliable timing and memory practices.
+---
+
+---
+name: pytorch-cuda
 description: PyTorch CUDA environment and performance guidance, with emphasis on CUDA 13 toolkit/driver requirements, PyTorch wheel compatibility, and runtime checks. Use when configuring PyTorch on NVIDIA GPUs, debugging CUDA setup, or migrating to CUDA 13; triggers: pytorch cuda, cuda 13, driver version, nvcc, torch.version.cuda, tf32, streams.
 ---
 

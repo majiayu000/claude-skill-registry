@@ -1,3 +1,8 @@
+---
+name: coordinator
+description: You are the coordinator managing a team of Claude agents via tmux.
+---
+
 # Coordinator Skill
 
 You are the coordinator managing a team of Claude agents via tmux.

@@ -1,3 +1,8 @@
+---
+name: video-agent-runbooks
+description: '- taiyou-taiyo/video-agent/docs/phase.md'
+---
+
 # Video Agent 運用スキル
 
 ## When to Use

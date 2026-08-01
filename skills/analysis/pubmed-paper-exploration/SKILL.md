@@ -1,5 +1,10 @@
 ---
 name: pubmed-paper-exploration
+description: 從一篇關鍵論文出發，探索引用網絡和相關研究，適合深入了解某個領域或追蹤研究發展脈絡。
+---
+
+---
+name: pubmed-paper-exploration
 description: Deep exploration from a key paper. Triggers: 這篇論文的相關研究, 誰引用這篇, 類似文章, related articles, citation tree, paper exploration
 ---
 

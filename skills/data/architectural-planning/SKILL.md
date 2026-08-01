@@ -1,5 +1,12 @@
 ---
 name: architectural-planning
+description: Create detailed technical plans and implementation roadmaps by analyzing
+  project architecture and designing solutions that integrate seamlessly with existing
+  patterns. Use when designing features, pla
+---
+
+---
+name: architectural-planning
 description: Create detailed technical plans and implementation roadmaps by analyzing project architecture and designing solutions that integrate seamlessly with existing patterns. Use when designing features, planning integrations, making architectural decisions. Triggers: 'plan', 'design', 'architecture', 'approach', 'how should I', 'best way', 'integrate', '계획', '설계', '아키텍처', '접근법', '어떻게 해야', '가장 좋은 방법', '통합', '마이그레이션', working with multi-module features, system boundaries, complex migrations.
 allowed-tools:
   - Read

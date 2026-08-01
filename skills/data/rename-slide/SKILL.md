@@ -1,3 +1,8 @@
+---
+name: rename-slide
+description: Rename a slide's identifier, title, and/or file.
+---
+
 # Rename Slide Skill
 
 Rename a slide's identifier, title, and/or file.

@@ -1,5 +1,13 @@
 ---
 name: numpy-ufuncs
+description: Universal functions (ufuncs) are the engine behind NumPy's vectorization.
+  They perform element-wise operations on ndarrays, supporting broadcasting, type
+  casting, and efficient internal loops. They also provide methods for cumulative
+  operations (accumulate) and reductions (reduce).
+---
+
+---
+name: numpy-ufuncs
 description: Universal functions (ufuncs) for vectorization, including reductions, in-place operations, and custom Python-function wrapping. Triggers: ufunc, vectorize, reduce, accumulate, frompyfunc, in-place.
 ---
 

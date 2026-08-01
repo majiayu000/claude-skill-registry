@@ -1,5 +1,11 @@
 ---
 name: hum
+description: Convert any song into a persona's humming voice. Downloads audio, stems
+  vocals,
+---
+
+---
+name: hum
 description: >
   Persona humming pipeline. Downloads songs, separates vocals, converts to
   persona voice via RVC, and caches for playback during idle conversation.

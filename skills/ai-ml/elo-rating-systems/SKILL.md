@@ -1,3 +1,8 @@
+---
+name: elo-rating-systems
+description: '2: name: elo-rating-systems'
+---
+
 ### /mnt/data2/nhlstats/.github/skills/elo-rating-systems/SKILL.md
 ```markdown
 1: ---

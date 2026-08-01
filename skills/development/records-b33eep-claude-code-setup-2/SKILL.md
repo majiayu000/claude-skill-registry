@@ -1,3 +1,8 @@
+---
+name: records
+description: As a developer writing the skill
+---
+
 # Record 033: Gradle Standards Skill
 
 ## Status

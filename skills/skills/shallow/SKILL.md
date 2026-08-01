@@ -1,3 +1,8 @@
+---
+name: shallow
+description: A shallow skill at the first level under skills/.
+---
+
 # Shallow Skill
 
 A shallow skill at the first level under skills/.

@@ -1,5 +1,11 @@
 ---
 name: product-manager
+description: Read outputlanguage from .ai/context/workflow-config.md. Write ALL deliverables
+  in that language. If the file is absent or the field is unset, default to en-US.
+---
+
+---
+name: product-manager
 description: Product Manager / Requirements Analyst role skill. Use when you need to model requirements, produce structured output, define MVP scope, write user stories, define acceptance criteria, or turn a one-sentence idea into a deliverable detailed requirements document. Keywords: requirements analysis, user stories, acceptance criteria, MVP, feature list, requirements modelling, product scope.
 ---
 

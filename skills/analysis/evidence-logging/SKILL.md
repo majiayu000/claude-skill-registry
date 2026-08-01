@@ -1,5 +1,10 @@
 ---
 name: evidence-logging
+description: '- When to Use'
+---
+
+---
+name: evidence-logging
 description: |
 
 Triggers: evidence, logging, citations, audit-trail, reproducible

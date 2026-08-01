@@ -1,3 +1,8 @@
+---
+name: drug-interaction
+description: '---name: drug-interaction-checker'
+---
+
 ---name: drug-interaction-checker
 description: Checks for potential drug-drug interactions (DDIs) between a list of medications.
 license: MIT

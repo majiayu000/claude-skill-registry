@@ -1,5 +1,12 @@
 ---
 name: structured-analysis
+description: 'Apply structured analytical frameworks to any artifact (prompts, systems,
+  documents, code). 12 frameworks in 3 tiers: Core (4 universal), Auto-Invoke (specialized),
+  On-Demand (advanced). Includes adve'
+---
+
+---
+name: structured-analysis
 description: Apply structured analytical frameworks to any artifact (prompts, systems, documents, code). 12 frameworks in 3 tiers: Core (4 universal), Auto-Invoke (specialized), On-Demand (advanced). Includes adversarial-review for finding blind spots and post-plan validation workflow.
 ---
 

@@ -1,5 +1,11 @@
 ---
 name: runi-design
+description: This skill guides creation of UI components and pages that follow runi's
+  design system.
+---
+
+---
+name: runi-design
 description: Build UI components and pages following the runi design system. Use this skill when creating React components for runi—the HTTP client that catches spec drift, verifies AI-generated code, and reveals cross-API relationships. Design language reflects runi's German Shepherd nature: vigilant, protective, with ambient intelligence through subtle signal dots that demand investigation.
 ---
 

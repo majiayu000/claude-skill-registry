@@ -1,5 +1,12 @@
 ---
 name: stop
+description: 'Anti-premature-coding protocol. MANDATORY pre-coding checkpoint: execute
+  BEFORE writing ANY code (new features, bug fixes, refactoring, optimization, tests).
+  Use when user requests: "implement/add/fix'
+---
+
+---
+name: stop
 description: Anti-premature-coding protocol. MANDATORY pre-coding checkpoint: execute BEFORE writing ANY code (new features, bug fixes, refactoring, optimization, tests). Use when user requests: "implement/add/fix/refactor/optimize/create feature". Prevents "coding without reading" blindspot that causes most bugs, duplicated work, and broken architectures. Forces systematic investigation via Stop→Trace→Orient→Plan before touching keyboard.
 ---
 

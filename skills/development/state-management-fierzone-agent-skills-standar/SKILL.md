@@ -1,4 +1,10 @@
 ---
+name: state-management
+description: '- Publishers: Use @Published for state in ViewModels. Use PassthroughSubject
+  for one-time events (Transitions/Alerts).'
+---
+
+---
 name: iOS State Management
 description: Standards for Combine, Observation, and Reactive Programming.
 metadata:

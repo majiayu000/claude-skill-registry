@@ -1,3 +1,8 @@
+---
+name: copywriting
+description: When writing or editing content for this guide, follow these guidelines.
+---
+
 # Copywriting Skill
 
 When writing or editing content for this guide, follow these guidelines.

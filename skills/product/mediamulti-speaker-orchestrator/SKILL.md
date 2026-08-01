@@ -1,4 +1,11 @@
 ---
+name: mediamulti-speaker-orchestrator
+description: 'Orchestrate multi-voice TTS production: assign speakers, chunk dialogue,
+  dispatch to voices, sync timing, and mix into a final track. Use after dialogue-dramatizer
+  produces script turns.'
+---
+
+---
 name: media/multi-speaker-orchestrator
 description: Orchestrate multi-voice TTS production: assign speakers, chunk dialogue, dispatch to voices, sync timing, and mix into a final track. Use after dialogue-dramatizer produces script turns.
 ---

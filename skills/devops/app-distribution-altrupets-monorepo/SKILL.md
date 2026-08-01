@@ -1,3 +1,8 @@
+---
+name: app-distribution
+description: '| ID | flutter-app-distribution |'
+---
+
 # 📦 Skill: App Distribution & Deployment
 
 ## 📋 Metadata

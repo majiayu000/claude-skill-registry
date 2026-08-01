@@ -1,4 +1,9 @@
 ---
+name: phase-workflow-runne
+description: This skill executes a deterministic, repeatable phase workflow.
+---
+
+---
 name: phase-workflow-runner
 description: Runs a complete phase workflow: audit existing work, fill gaps, run tests, verify acceptance criteria, and report readiness for next phase. Use when user asks to run or complete a project phase.
 ---

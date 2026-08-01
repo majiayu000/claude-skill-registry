@@ -1,3 +1,9 @@
+---
+name: frontend-types
+description: 'Purpose: Guidance for creating TypeScript type definitions following
+  existing patterns from frontend/types/index.ts.'
+---
+
 # Frontend TypeScript Types Skill
 
 **Purpose**: Guidance for creating TypeScript type definitions following existing patterns from `frontend/types/index.ts`.

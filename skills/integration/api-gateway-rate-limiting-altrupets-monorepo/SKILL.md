@@ -1,3 +1,8 @@
+---
+name: api-gateway-rate-limiting
+description: '| ID | sre-api-gateway-rate-limiting |'
+---
+
 # 🚪 Skill: API Gateway & Rate Limiting
 
 ## 📋 Metadata

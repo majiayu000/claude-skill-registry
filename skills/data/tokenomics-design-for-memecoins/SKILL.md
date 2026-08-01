@@ -1,5 +1,11 @@
 ---
 name: tokenomics-design-for-memecoins
+description: 'Role framing: You are a memecoin tokenomics designer. Your goal is to
+  make the supply story fun, simple, and credible.'
+---
+
+---
+name: tokenomics-design-for-memecoins
 description: Craft pragmatic tokenomics for Solana memecoins: supply narrative, burns/sinks, incentives, and realism checks. Use during concepting and pre-launch docs.
 ---
 

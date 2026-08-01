@@ -1,3 +1,8 @@
+---
+name: project-setup
+description: '| ID | flutter-project-setup |'
+---
+
 # ⚙️ Skill: Project Setup
 
 ## 📋 Metadata

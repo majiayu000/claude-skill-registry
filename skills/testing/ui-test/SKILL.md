@@ -1,3 +1,8 @@
+---
+name: ui-test
+description: '> Category: Quality Assurance'
+---
+
 # ui-test
 
 ---

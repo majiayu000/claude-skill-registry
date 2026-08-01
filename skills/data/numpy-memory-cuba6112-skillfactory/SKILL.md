@@ -1,5 +1,13 @@
 ---
 name: numpy-memory
+description: NumPy memory management revolves around the concept of "strides." Strides
+  define the number of bytes to skip in a flat 1D buffer to move to the next element
+  in an N-dimensional space. Understanding this allows for zero-copy operations like
+  transposition and complex sliding windows.
+---
+
+---
+name: numpy-memory
 description: Deep dive into memory layout, including strides, C vs Fortran order, and zero-copy view generation via stride tricks. Triggers: strides, C-order, Fortran-order, memory locality, stride_tricks.
 ---
 

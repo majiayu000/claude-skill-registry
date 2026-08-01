@@ -1,5 +1,12 @@
 ---
 name: instar-scheduler
+description: Instar's job scheduler lets you define tasks that run automatically on
+  a cron schedule. Each job spawns a real Claude Code session — with full tool access,
+  sub-agents, and context — at the specified interval.
+---
+
+---
+name: instar-scheduler
 description: Schedule recurring agent tasks using cron expressions. Use when the user asks to run something on a schedule, check something periodically, automate a recurring task, set up a cron job, or wants work to happen while they're away. Trigger words: schedule, recurring, cron, every hour, every day, run daily, periodic, automated.
 license: MIT
 metadata:

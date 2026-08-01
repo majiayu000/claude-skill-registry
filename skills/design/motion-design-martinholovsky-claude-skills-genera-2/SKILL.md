@@ -1,3 +1,8 @@
+---
+name: motion-design
+description: 'name: motion-design-expert'
+---
+
 # Motion Design Skill
 
 ```yaml

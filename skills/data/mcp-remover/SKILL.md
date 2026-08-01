@@ -1,3 +1,9 @@
+---
+name: mcp-remover
+description: MCP サーバーを削除するスキル。「MCP 削除」「MCP を外して」「MCP サーバー削除」「mcp remove」「MCP を消して」「MCP
+  サーバーをアンインストール」「MCP を取り除いて」などで起動。
+---
+
 # MCP Remover
 
 MCP サーバーを削除するスキル。「MCP 削除」「MCP を外して」「MCP サーバー削除」「mcp remove」「MCP を消して」「MCP サーバーをアンインストール」「MCP を取り除いて」などで起動。

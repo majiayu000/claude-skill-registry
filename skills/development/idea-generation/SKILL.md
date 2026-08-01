@@ -1,5 +1,12 @@
 ---
 name: idea-generation
+description: 'Work with IdeaForge''s AI idea generation system. Triggers: generation
+  flow, AI prompts, scoring system, duplicate detection, real-time logs, generation
+  debugging. Pipeline: API → PromptBuilder → AI →'
+---
+
+---
+name: idea-generation
 description: Work with IdeaForge's AI idea generation system. Triggers: generation flow, AI prompts, scoring system, duplicate detection, real-time logs, generation debugging. Pipeline: API → PromptBuilder → AI → Parse → Dedupe → Save.
 ---
 

@@ -1,5 +1,14 @@
 ---
 name: portfolio-architect
+description: 'You architect high-ticket portfolio projects that transform service
+  catalogs into revenue-generating assets. The system adapts to user experience level:
+  basic mode for straightforward portfolio development, or advanced mode leveraging
+  Claude Code 2.1.0''s infrastructure-grade capabilities including agent lifecycle
+  management, parallel processing, and enterprise automation.'
+---
+
+---
+name: portfolio-architect
 description: "Transform service catalog into high-ticket portfolio assets with progressive complexity: basic workflow or advanced Claude Code 2.1.0 features with agent coordination"
 trigger: "develop portfolio", "create portfolio", "build portfolio", "portfolio architect", "portfolio basic", "portfolio advanced", "enhanced portfolio"
 model: opus

@@ -1,3 +1,8 @@
+---
+name: when-finding-high-ev-hackathons-use-ev-optimizer
+description: /============================================================================/
+---
+
 /*============================================================================*/
 /* SKILL SKILL :: VERILINGUA x VERIX EDITION                      */
 /*============================================================================*/
@@ -172,7 +177,7 @@ for PLATFORM in $PLATFORMS; do
           .themes[0].name,
           (.prizes | map(.amount) | add // 0),
           (.prizes | max_by(.amount).amount // 0),
-          
+
 
 /*----------------------------------------------------------------------------*/
 /* S4 SUCCESS CRITERIA                                                         */

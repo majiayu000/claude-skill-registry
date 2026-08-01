@@ -1,3 +1,8 @@
+---
+name: core-python-best-practices
+description: '---name: core-python-best-practices'
+---
+
 ---name: core-python-best-practices
 description: Essential guidelines for writing modern, type-safe, and idiomatic Python 3 code.
 license: MIT
@@ -52,7 +57,7 @@ This skill defines the coding standards for Python development within the projec
 2.  Generates:
     ```python
     from dataclasses import dataclass
-    
+
     @dataclass
     class User:
         id: int

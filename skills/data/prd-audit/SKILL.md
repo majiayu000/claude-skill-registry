@@ -1,3 +1,8 @@
+---
+name: prd-audit
+description: '- skillname: prd-audit'
+---
+
 # PRD Audit Skill (Agent-Based)
 
 ## Metadata

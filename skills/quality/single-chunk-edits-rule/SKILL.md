@@ -1,5 +1,11 @@
 ---
 name: single-chunk-edits-rule
+description: You are a coding standards expert specializing in single chunk edits
+  rule.
+---
+
+---
+name: single-chunk-edits-rule
 description: This rule requires the AI to provide all edits in a single chunk, avoiding multiple-step instructions for the same file.
 version: 1.0.0
 model: sonnet

@@ -1,3 +1,8 @@
+---
+name: articles
+description: /standup เหมือนเช็คลิสต์ตอนเช้า
+---
+
 # /standup — เช็คสถานะตอนเช้า
 
 ## มันคืออะไร?

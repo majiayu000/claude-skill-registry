@@ -1,5 +1,11 @@
 ---
 name: contracts-package
+description: 'This skill documents the complete structure for MetaSaver contracts
+  packages. Contracts packages provide:'
+---
+
+---
+name: contracts-package
 description: Use when creating, auditing, or validating MetaSaver contracts packages. Includes Zod validation schemas, TypeScript types, barrel exports, and database type re-exports. File types: .ts, package.json, tsconfig.json.
 allowed-tools: Read, Write, Edit, Bash, Glob
 ---

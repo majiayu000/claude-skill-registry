@@ -1,5 +1,10 @@
 ---
 name: openai-api
+description: 'Package: openai@6.9.1 | Last Updated: 2025-11-21'
+---
+
+---
+name: openai-api
 description: Complete guide for OpenAI APIs: Chat Completions (GPT-5.2, GPT-4o), Embeddings, Images (GPT-Image-1.5), Audio (Whisper + TTS + Transcribe), Moderation. Includes Node.js SDK and fetch approaches.
 license: MIT
 ---

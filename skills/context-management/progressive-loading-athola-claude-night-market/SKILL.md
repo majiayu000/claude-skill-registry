@@ -1,5 +1,10 @@
 ---
 name: progressive-loading
+description: '- Overview'
+---
+
+---
+name: progressive-loading
 description: |
 
 Triggers: context-management, modularity, progressive-disclosure, loading, token-optimization

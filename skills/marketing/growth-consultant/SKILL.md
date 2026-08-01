@@ -1,5 +1,10 @@
 ---
 name: growth-consultant
+description: '> 专注「轻运营、重转化」型应用的增长操盘手 —— 2个月见效，6个月翻倍，1年3倍+'
+---
+
+---
+name: growth-consultant
 description: 九日增长陪跑服务顾问SKILL。专注「轻运营、重转化」型应用的增长操盘。Use for tasks like growth strategy consulting, conversion optimization, monetization review, indie hacker coaching, and app revenue scaling. Keywords: 增长顾问, 陪跑服务, 转化率优化, 独立开发者咨询, 收入增长, growth consultant, conversion rate, monetization
 ---
 

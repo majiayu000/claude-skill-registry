@@ -1,3 +1,9 @@
+---
+name: k8s-pod-crash-handler
+description: 'Purpose: Diagnose and resolve Kubernetes pod crashes and deployment
+  issues for Phase IV/V.'
+---
+
 # Skill: Kubernetes Pod Crash Handler
 
 **Purpose**: Diagnose and resolve Kubernetes pod crashes and deployment issues for Phase IV/V.

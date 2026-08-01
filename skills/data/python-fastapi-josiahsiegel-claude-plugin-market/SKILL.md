@@ -1,5 +1,10 @@
 ---
 name: python-fastapi
+description: '| Layer | File | Purpose |'
+---
+
+---
+name: python-fastapi
 description: Complete FastAPI production system. PROACTIVELY activate for: (1) Project structure (scalable layout), (2) Pydantic schemas (input/output separation), (3) Dependency injection, (4) Async database with SQLAlchemy, (5) JWT authentication, (6) Error handling patterns, (7) Docker deployment, (8) Gunicorn + Uvicorn production, (9) Rate limiting, (10) Testing with httpx. Provides: Project templates, schema patterns, auth setup, Docker config. Ensures production-ready FastAPI applications.
 ---
 

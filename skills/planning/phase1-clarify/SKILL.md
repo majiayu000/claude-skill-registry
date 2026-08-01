@@ -1,5 +1,10 @@
 ---
 name: phase1-clarify
+description: Do not discuss technology, solutions, or tools until this phase is complete.
+---
+
+---
+name: phase1-clarify
 description: The Mileva Method (CRISP) — Phase 1: Clarify. Problem definition, eliciting, painkiller test, buy vs build, Go/No-Go. Use at the start of any AI implementation project. Triggers on "clarify", "phase 1", "start discovery", "define the problem", "what problem are we solving", or at the beginning of a new client engagement.
 ---
 

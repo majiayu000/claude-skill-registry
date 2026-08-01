@@ -1,5 +1,11 @@
 ---
 name: user-testing-audit
+description: Run a structured, repeatable audit for a live website and produce actionable
+  artifacts.
+---
+
+---
+name: user-testing-audit
 description: Run a repeatable two-layer site audit: full sitemap JS-off coverage for complete issue inventory, then focused JS-on flow checks for hydration/booking UX. Emit dated markdown+JSON artifacts with prioritized findings and acceptance criteria.
 ---
 

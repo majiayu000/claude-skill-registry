@@ -1,3 +1,8 @@
+---
+name: artifacts-builder
+description: 'To build powerful frontend claude.ai artifacts, follow these steps:'
+---
+
 <<<<<<< HEAD
 ---
 name: artifacts-builder

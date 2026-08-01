@@ -1,4 +1,9 @@
 ---
+name: agents-md
+description: '> Agent instruction ve conventions dosyaları oluşturma rehberi.'
+---
+
+---
 name: agents_md
 router_kit: AIKit
 description: AGENTS.md dosyaları oluşturma, monorepo yapılandırma ve agent instruction yönetimi rehberi.

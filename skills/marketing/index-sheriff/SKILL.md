@@ -1,3 +1,8 @@
+---
+name: index-sheriff
+description: Updates 00_MASTER_INDEX navigation files to reflect new/changed content.
+---
+
 name: index-sheriff
 description: Updates 00_MASTER_INDEX navigation files to reflect new/changed content.
 metadata:

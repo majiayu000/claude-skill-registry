@@ -1,5 +1,13 @@
 ---
 name: ethics-reviewer
+description: 'Passive ethical review skill. Activates when user-facing features touch
+  the four ethical concerns: manipulation, accessibility, privacy, and sustainability.
+  Checks designs and implementations against principled constraints without requiring
+  explicit invocation.'
+---
+
+---
+name: ethics-reviewer
 description: Passive ethical review: manipulation, accessibility, privacy, sustainability in user-facing features.
 user-invocable: false
 effort: low

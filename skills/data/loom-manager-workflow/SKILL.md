@@ -1,5 +1,10 @@
 ---
 name: loom-manager-workflow
+description: <!-- BEGIN:compound:skill-managed -->
+---
+
+---
+name: loom-manager-workflow
 description: Manage Loom team tickets as a team manager with limited permissions (no git merge/push, no loom team commands). Handle ticket lifecycle: create, update, add notes, track dependencies, identify blockages.
 license: MIT
 compatibility: opencode,claude

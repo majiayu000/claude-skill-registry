@@ -1,5 +1,10 @@
 ---
 name: readme-i18n
+description: 維護 README 的多語言版本，確保中文與英文內容對照同步。
+---
+
+---
+name: readme-i18n
 description: Maintain multilingual README versions (English primary, Chinese translation). Triggers: i18n, 翻譯, translate, 多語言, sync readme, 中英文, bilingual.
 ---
 

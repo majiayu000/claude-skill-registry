@@ -1,5 +1,12 @@
 ---
 name: project-maps
+description: 'Use for project architecture, codebase structure, dependencies, components,
+  tech stack. Explicit triggers: @map, map-ask, explore map, -map. Pre-computed maps
+  faster than Glob for structural queries.'
+---
+
+---
+name: project-maps
 description: Use for project architecture, codebase structure, dependencies, components, tech stack. Explicit triggers: @map, map-ask, explore map, -map. Pre-computed maps faster than Glob for structural queries.
 allowed-tools: [Bash, Read]
 ---

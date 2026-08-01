@@ -1,5 +1,12 @@
 ---
 name: custom-agents
+description: This document describes the GitHub custom agent file format used by GitHub
+  Copilot to provide repository-specific or task-specific instructions to AI coding
+  agents.
+---
+
+---
+name: custom-agents
 description: GitHub Custom Agent File Format
 Brief description of agent's purpose
 >                      # Multi-line description of agent's purpose

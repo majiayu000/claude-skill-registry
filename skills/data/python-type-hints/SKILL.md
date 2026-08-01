@@ -1,5 +1,10 @@
 ---
 name: python-type-hints
+description: '| Type | Syntax (3.9+) | Example |'
+---
+
+---
+name: python-type-hints
 description: Complete Python type hints system. PROACTIVELY activate for: (1) Built-in generics (list[str], dict[str, int]), (2) Union types (str | None), (3) Type parameter syntax 3.12+, (4) Protocol for structural typing, (5) TypedDict for dict schemas, (6) Literal and Final types, (7) TypeGuard and TypeIs, (8) ParamSpec for decorators, (9) Mypy/Pyright configuration. Provides: Type syntax, Protocol patterns, TypedDict, mypy config. Ensures static type safety with gradual typing strategy.
 ---
 

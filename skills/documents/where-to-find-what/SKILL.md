@@ -1,4 +1,10 @@
 ---
+name: where-to-find-what
+description: Reference guide ที่บอกว่า "หา X อยู่ไหน" สำหรับ common patterns ใน codebase
+  เช่น หา API endpoints, database models, tests, configs ช่วยให้ AI และคนค้นหาได้เร็ว
+---
+
+---
 name: Where to Find What
 description: A quick lookup guide for navigating a repository: where to find endpoints, business logic, models, tests, configs, docs, scripts, plus search patterns and commands
 ---

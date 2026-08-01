@@ -1,3 +1,8 @@
+---
+name: scenario-planning
+description: 'name: scenario-planning'
+---
+
 # Scenario Planning
 
 name: scenario-planning

@@ -1,5 +1,12 @@
 ---
 name: sdlc-studio
+description: Manage project specifications and test artifacts. Supports the full pipeline
+  from PRD creation through Epic decomposition, User Story generation, and streamlined
+  test automation.
+---
+
+---
+name: sdlc-studio
 description: /sdlc-studio [type] [action] - SDLC pipeline: requirements, specifications, code, testing. Run /sdlc-studio help for commands and /sdlc-studio status for next steps.
 allowed-tools: Read, Glob, Grep, Write, Edit, Task, AskUserQuestion
 ---

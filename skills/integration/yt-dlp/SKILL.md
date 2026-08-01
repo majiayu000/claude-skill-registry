@@ -1,5 +1,11 @@
 ---
 name: yt-dlp
+description: yt-dlp is a powerful command-line tool that downloads videos/audio from
+  thousands of websites.
+---
+
+---
+name: yt-dlp
 description: Video and audio downloader supporting thousands of websites including YouTube, Bilibili, Vimeo, and more. Use when Claude needs to download videos or audio from URLs for: (1) Downloading single videos, (2) Extracting audio from videos, (3) Downloading playlists, (4) Downloading subtitles, (5) Format selection and quality control. Automatically handles format merging, subtitle embedding, and metadata preservation.
 ---
 

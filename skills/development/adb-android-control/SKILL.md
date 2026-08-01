@@ -1,5 +1,12 @@
 ---
 name: adb-android-control
+description: 'Comprehensive Android device control via ADB (Android Debug Bridge).
+  Use when user asks about: Android device management, app installation/uninstallation,
+  APK operations, package management, file tran'
+---
+
+---
+name: adb-android-control
 description: Comprehensive Android device control via ADB (Android Debug Bridge). Use when user asks about: Android device management, app installation/uninstallation, APK operations, package management, file transfer (push/pull), screenshots, screen recording, input simulation (tap/swipe/text/keyevents), shell commands, logcat viewing, device info (battery/memory/storage), automation scripts, wireless ADB connection, scrcpy mirroring. Keywords: adb, android, phone, tablet, device, apk, install app, uninstall app, screenshot, screen record, tap, swipe, type text, keyevent, logcat, push file, pull file, shell, package, activity, intent, broadcast, dumpsys, getprop, settings, input, sendevent, monkey, am start, pm list, device info, battery status, wireless adb, connect device.
 ---
 

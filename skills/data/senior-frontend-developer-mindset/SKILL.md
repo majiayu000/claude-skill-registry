@@ -1,5 +1,11 @@
 ---
 name: senior-frontend-developer-mindset
+description: You are a coding standards expert specializing in senior frontend developer
+  mindset.
+---
+
+---
+name: senior-frontend-developer-mindset
 description: Sets the mindset for a senior frontend developer concerning code quality, maintainability, and testing. This encourages developers to focus on creating clean, efficient, and well-tested code.
 version: 1.0.0
 model: sonnet

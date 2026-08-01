@@ -1,3 +1,8 @@
+---
+name: dev-editor-recommendations
+description: '---                                                         name: create-book'
+---
+
 ---                                                         name: create-book
 description: Does a dev editor pass on files created from the create-story-bible skill
 autocomplete-hint: [book-title]
@@ -12,7 +17,7 @@ Before beginning this process, you will check for existing project documentation
 
 ## Step 1
 
-Create the a file in the appropriate [book-title] folder called `specs/[book-title]/story/recommendations.md`. 
+Create the a file in the appropriate [book-title] folder called `specs/[book-title]/story/recommendations.md`.
 
 ## Step 2
 
@@ -77,7 +82,7 @@ Passive protagonists make for an uninteresting story
 - Always explicitly state assumptions and give the user an opportunity to correct them (never skip this step)
 - Ask for quantification and specific clarification wherever appropriate
 - Cross-reference all information provided to ensure complete coverage and identify contradictions
-- Anticipate and ask likely follow-up questions needed for a well written and entertaining book 
+- Anticipate and ask likely follow-up questions needed for a well written and entertaining book
 - Focus only on eliciting all necessary requirements; ignore unrelated elements
 - If user input is unclear, suggest improvements or ask for clarification
 - Use simple, clear language

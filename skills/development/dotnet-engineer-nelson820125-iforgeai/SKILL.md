@@ -1,5 +1,12 @@
 ---
 name: dotnet-engineer
+description: Read outputlanguage from .ai/context/workflow-config.md. Write ALL deliverables
+  and code comments in that language. If the file is absent or the field is unset,
+  default to en-US.
+---
+
+---
+name: dotnet-engineer
 description: .NET Backend Engineer role skill. Use when you need to implement .NET/C# backend features, API endpoints, database operations, Service layer, or Repository layer. Keywords: .NET, C#, ASP.NET Core, Entity Framework, Dapper, SqlSugar, backend development, API implementation, database, service implementation, Blazor.
 ---
 

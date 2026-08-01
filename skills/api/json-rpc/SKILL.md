@@ -1,3 +1,8 @@
+---
+name: json-rpc
+description: 'name: json-rpc-expert'
+---
+
 # JSON-RPC Protocol Skill
 
 ```yaml

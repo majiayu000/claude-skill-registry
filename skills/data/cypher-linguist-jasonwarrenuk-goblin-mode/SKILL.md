@@ -1,5 +1,12 @@
 ---
 name: cypher-linguist
+description: Comprehensive guide to Neo4j graph database and Cypher query language.
+  Covers fundamental concepts, common patterns, performance optimization, schema design,
+  and integration with PostgreSQL/Supabase.
+---
+
+---
+name: cypher-linguist
 description: Neo4j and Cypher: graph schema design, query patterns, performance optimisation, PostgreSQL integration.
 user-invocable: false
 effort: medium

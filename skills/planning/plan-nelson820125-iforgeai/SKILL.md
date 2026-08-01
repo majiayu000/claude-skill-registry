@@ -1,5 +1,11 @@
 ---
 name: plan
+description: Read outputlanguage from .ai/context/workflow-config.md. Write ALL deliverables
+  in that language. If the file is absent or the field is unset, default to en-US.
+---
+
+---
+name: plan
 description: Technical Plan role skill (P5b). Use when you need to produce a concrete, file-level implementation plan that bridges design artefacts and executable code. Keywords: implementation plan, task sequencing, file map, integration points, dependency order, WBS, code-level planning.
 ---
 

@@ -1,3 +1,8 @@
+---
+name: jurisdictions-zadorian-search-engineer
+description: '> Style/formatting: Follow ~/.claude/skills/word-doc-generator/SKILL.md'
+---
+
 # SOUTH KOREA JURISDICTION TEMPLATE
 
 > **Style/formatting:** Follow `~/.claude/skills/word-doc-generator/SKILL.md`

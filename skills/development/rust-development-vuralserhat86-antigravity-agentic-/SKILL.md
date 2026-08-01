@@ -1,4 +1,9 @@
 ---
+name: rust-development
+description: '> Rust systems programming rehberi.'
+---
+
+---
 name: rust_development
 router_kit: FullStackKit
 description: Rust systems programming, memory safety, Axum/Tokio ve WebAssembly rehberi.
@@ -79,7 +84,7 @@ async fn get_user() -> Json<User> {
 async fn main() {
     let app = Router::new()
         .route("/user", get(get_user));
-    
+
     axum::serve(listener, app).await.unwrap();
 }
 ```

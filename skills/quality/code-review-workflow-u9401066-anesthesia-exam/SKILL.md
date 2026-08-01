@@ -1,5 +1,10 @@
 ---
 name: code-review-workflow
+description: 完整的 PR/MR 審查流程，整合自動化檢查和多維度審查。
+---
+
+---
+name: code-review-workflow
 description: Complete code review workflow for PR/MR with multiple reviewers and automated checks. Triggers: PRW, 審查流程, review workflow, PR review, MR review, pull request, merge request, 程式碼審查流程, full review, 完整審查.
 version: 1.0.0
 category: workflow

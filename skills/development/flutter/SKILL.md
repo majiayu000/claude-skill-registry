@@ -1,3 +1,8 @@
+---
+name: flutter
+description: Skill from tidemann/st44-home
+---
+
 # Flutter Skill - Mobile App Development
 
 ## Description

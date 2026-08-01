@@ -1,3 +1,8 @@
+---
+name: prd-validator
+description: '- skillname: prd-validator'
+---
+
 # PRD Validator Skill
 
 ## Metadata

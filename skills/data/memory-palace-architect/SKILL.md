@@ -1,5 +1,12 @@
 ---
 name: memory-palace-architect
+description: 'Design and construct virtual memory palaces for spatial knowledge organizationusing
+  mnemonic techniques.Triggers: memory palace, spatial organization, mnemonic, knowledge
+  architecture,domain mapping,'
+---
+
+---
+name: memory-palace-architect
 description: |
 
 Triggers: memory, spatial, architecture, organization, mnemonic

@@ -1,5 +1,12 @@
 ---
 name: i18n-curator
+description: 'Curate CRM Orbit UI i18n strings and mappings. Use when adding or editing
+  user-facing copy, auditing en.json, or keeping i18n/events.ts and i18n/enums.ts
+  in sync with new keys. Scope: CRMOrbit/i18n/en'
+---
+
+---
+name: i18n-curator
 description: Curate CRM Orbit UI i18n strings and mappings. Use when adding or editing user-facing copy, auditing en.json, or keeping i18n/events.ts and i18n/enums.ts in sync with new keys. Scope: CRMOrbit/i18n/en.json and mapping files.
 ---
 

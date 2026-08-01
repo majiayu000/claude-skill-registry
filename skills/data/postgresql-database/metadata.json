@@ -1,9 +1,0 @@
-{
-  "name": "postgresql-database",
-  "repo": "rghamilton3/dotfiles",
-  "category": "data",
-  "description": "Expert PostgreSQL database development skill covering schema design, normalization, Alembic migrations, SQLAlchemy ORM patterns, query optimization, index strategies, JSONB for flexible data, and full",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:54.113624Z",
-  "dir_name": "postgresql-database"
-}

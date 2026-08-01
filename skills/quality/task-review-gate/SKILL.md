@@ -1,3 +1,8 @@
+---
+name: task-review-gate
+description: '- skillname: task-review-gate'
+---
+
 # Task Review Gate Skill
 
 ## Metadata
@@ -52,7 +57,7 @@ Review Options:
   7) View coupling analysis
   8) APPROVE and continue
   9) REJECT and regenerate
-  
+
 Select option (1-9): _
 ```
 
@@ -66,11 +71,11 @@ def show_task_details(task_id):
     Task #{task_id}: {task['title']}
     ═══════════════════════════════════
     Description: {task['description']}
-    
+
     Dependencies: {task['dependencies']}
     Acceptance Criteria:
     {format_criteria(task['criteria'])}
-    
+
     Estimated Effort: {task['effort']}
     Critical Path: {task['critical']}
     """)
@@ -86,7 +91,7 @@ def modify_task(task_id):
     print("3) Dependencies")
     print("4) Acceptance criteria")
     print("5) Priority")
-    
+
     # Interactive modification with validation
     # Natural language input accepted
     # Claude helps refine the changes
@@ -108,19 +113,19 @@ Claude processes and applies refinements intelligently.
 ```python
 def validate_before_approval():
     issues = []
-    
+
     # Check for circular dependencies
     if has_circular_dependencies(tasks):
         issues.append("Circular dependency detected")
-    
+
     # Check for missing critical components
     if not has_required_components(tasks, prd):
         issues.append("Missing critical PRD requirements")
-    
+
     # Check task count reasonability
     if len(tasks) > 50:
         issues.append("Warning: High task count may impact timeline")
-    
+
     return issues
 ```
 
@@ -185,13 +190,13 @@ def validate_before_approval():
 User: "The authentication task should be split into two - one for JWT setup and another for OAuth2 integration"
 
 Claude: I'll split Task 7 into two subtasks:
-  
+
   Task 7a: Implement JWT Authentication
   - Setup JWT token generation
   - Configure refresh tokens
   - Add token validation middleware
-  
-  Task 7b: Implement OAuth2 Integration  
+
+  Task 7b: Implement OAuth2 Integration
   - Configure OAuth2 providers
   - Setup callback handlers
   - Add social login flows
@@ -235,7 +240,7 @@ Before allowing progression:
 
 Once approved:
 ```
-TASKS_APPROVED signal → 
+TASKS_APPROVED signal →
   Coupling Analysis (automatic) →
     Task Decomposition (automatic) →
       Full automation begins

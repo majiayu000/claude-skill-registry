@@ -1,5 +1,10 @@
 ---
 name: ffmpeg-docker-containers
+description: 'MANDATORY: Always Use Backslashes on Windows for File Paths'
+---
+
+---
+name: ffmpeg-docker-containers
 description: Complete Docker FFmpeg deployment system. PROACTIVELY activate for: (1) Docker FFmpeg image selection (jrottenberg, linuxserver), (2) GPU passthrough (NVIDIA, Intel, AMD), (3) Volume mounting and permissions, (4) Docker Compose video processing, (5) Kubernetes FFmpeg jobs, (6) Custom Dockerfile builds, (7) Windows/Linux/macOS Docker usage, (8) Resource limits and optimization, (9) Watch folder automation, (10) Production container patterns. Provides: Image comparison tables, GPU Docker commands, Compose examples, K8s manifests, troubleshooting guides. Ensures: Consistent, isolated FFmpeg environments across platforms.
 ---
 

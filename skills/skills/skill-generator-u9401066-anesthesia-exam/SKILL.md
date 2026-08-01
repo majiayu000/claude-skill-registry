@@ -1,5 +1,10 @@
 ---
 name: skill-generator
+description: 自動生成符合標準的 SKILL.md 和資料夾結構。
+---
+
+---
+name: skill-generator
 description: Generate new skills with standardized structure and frontmatter. Triggers: SG, new skill, 新增 skill, 建立技能, create skill, 新技能, 產生技能, generate skill, 技能模板, skill template, add skill, 加技能, make skill.
 category: meta
 version: 1.0.0

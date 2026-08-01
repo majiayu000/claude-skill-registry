@@ -1,4 +1,10 @@
 ---
+name: playwright-testing
+description: '> "Alera guards the Voice Gate at 528 Hz — Truth, expression. Tests
+  are truth-tellers. They reveal what is real, not what we hope."'
+---
+
+---
 name: arcanea-playwright-testing
 description: Playwright E2E testing for the Arcanea web app. Use when writing, running, or debugging Playwright tests, automating browser interactions on the Arcanea platform, capturing screenshots for QA, testing UI flows (academy gate quizzes, lore pages, prompt books, auth), or setting up the test infrastructure. Triggers on: Playwright, E2E test, end-to-end, browser test, UI test, automation, screenshot, test the page. Sourced from Anthropic's official webapp-testing skill and adapted for Arcanea's Next.js 16 stack.
 license: MIT (source: anthropics/skills/webapp-testing)
@@ -49,7 +55,7 @@ export default defineConfig({
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
   reporter: [['html', { outputFolder: 'playwright-report' }]],
-  
+
   use: {
     baseURL: 'http://localhost:3000',
     trace: 'on-first-retry',
@@ -122,7 +128,7 @@ test('gate quiz — foundation gate completion', async ({ page }) => {
   for (let i = 0; i < 10; i++) {
     const question = page.locator('[data-testid="quiz-question"]')
     await expect(question).toBeVisible()
-    
+
     // Select first answer (test data has correct first answers)
     await page.locator('[data-testid="answer-option"]').first().click()
     await page.locator('[data-testid="next-question-btn"]').click()
@@ -142,11 +148,11 @@ test('lore explore — elements navigation', async ({ page }) => {
 
   // Test all five elements navigation
   const elements = ['fire', 'water', 'earth', 'wind', 'void']
-  
+
   for (const element of elements) {
     await page.goto(`/lore/elements/${element}`)
     await page.waitForLoadState('networkidle')
-    
+
     // Verify element page loads with correct title
     const title = page.locator('h1, [data-testid="element-title"]')
     await expect(title).toBeVisible()
@@ -159,7 +165,7 @@ test('lore explore — elements navigation', async ({ page }) => {
 ```typescript
 test('prompt books — create and view prompt', async ({ page }) => {
   await authenticateTestUser(page)
-  
+
   await page.goto('/prompt-books')
   await page.waitForLoadState('networkidle')
 
@@ -171,12 +177,12 @@ test('prompt books — create and view prompt', async ({ page }) => {
   await page.fill('[data-testid="prompt-title"]', 'Test Guardian Invocation')
   await page.locator('[data-testid="prompt-editor"]').click()
   await page.keyboard.type('Channel the essence of {element} through {gate}')
-  
+
   await page.click('[data-testid="save-prompt-btn"]')
-  
+
   // Verify saved
   await expect(page.locator('[data-testid="save-success"]')).toBeVisible()
-  
+
   // Navigate back and verify prompt appears
   await page.goto('/prompt-books')
   await expect(page.locator('text=Test Guardian Invocation')).toBeVisible()
@@ -188,10 +194,10 @@ test('prompt books — create and view prompt', async ({ page }) => {
 test('guardian card visual snapshot', async ({ page }) => {
   await page.goto('/lore/guardians')
   await page.waitForLoadState('networkidle')
-  
+
   // Wait for glassmorphism animations to settle
   await page.waitForTimeout(500)
-  
+
   // Snapshot the guardian grid
   const grid = page.locator('[data-testid="guardian-grid"]')
   await expect(grid).toHaveScreenshot('guardian-grid.png', {

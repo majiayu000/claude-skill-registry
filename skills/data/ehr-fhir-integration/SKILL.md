@@ -1,3 +1,8 @@
+---
+name: ehr-fhir-integration
+description: '---name: ehr-fhir-integration'
+---
+
 ---name: ehr-fhir-integration
 description: Provides comprehensive tools for working with Electronic Health Records (EHR) using the HL7 FHIR standard.
 license: MIT

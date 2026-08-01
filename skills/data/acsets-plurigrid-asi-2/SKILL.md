@@ -1,3 +1,10 @@
+---
+name: acsets
+description: 'ACSets (Attributed C-Sets): Algebraic databases as in-memory data structures.
+  Category-theoretic formalism for relational databases generalizing graphs and data
+  frames.'
+---
+
 # SKILL: ACSets Relational Thinking
 
 **Version**: 2.0.0
@@ -52,15 +59,15 @@ end
 ```julia
 @present SchKitchen(FreeSchema) begin
   Entity::Ob
-  
+
   Food::Ob
   food_in_on::Hom(Food, Entity)
   food_is_entity::Hom(Food, Entity)
-  
+
   Kitchenware::Ob
   ware_in_on::Hom(Kitchenware, Entity)
   ware_is_entity::Hom(Kitchenware, Entity)
-  
+
   BreadLoaf::Ob
   bread_loaf_is_food::Hom(BreadLoaf, Food)
   Knife::Ob
@@ -145,19 +152,19 @@ end
 function step!(loop::SelfRefinementLoop, rule::Rule)
   # Find matches
   matches = get_matches(rule, loop.state)
-  
+
   # Evaluate each match
   evaluations = [evaluate_match(m, loop.patterns) for m in matches]
-  
+
   # Mine new patterns from successful evaluations
   new_patterns = mine_patterns(evaluations)
   append!(loop.patterns, new_patterns)
-  
+
   # Apply best match
   best = argmax(e -> e.score, evaluations)
   loop.state = rewrite_match(rule, matches[best.index])
   loop.generation += 1
-  
+
   loop
 end
 ```

@@ -1,4 +1,9 @@
 ---
+name: 7-replicates-incorporation
+description: 'This skill provides two modes for replicates incorporation:'
+---
+
+---
 name: replicates-incorporation
 description: This skill manages experimental reproducibility, pooling, and consensus strategies. This skill operates in two distinct modes based on the input state. (1) Pre-Peak Calling (BAM Mode): It merges all BAMs, generate the merge BAM file to prepare for track generation and (if provided with >3 biological replicates) splits them into 2 balanced "pseudo-replicates" to prepare for peak calling. (2) Post-Peak Calling (Peak Mode): If provided with peak files (only support two replicates, derived from either 2 true replicates or 2 pseudo-replicates), it performs IDR (Irreproducible Discovery Rate) analysis, filters non-reproducible peaks, and generates a final "conservative" or "optimal" consensus peak set. Trigger this skill when you need to handle more than two replicates (creating pseudo-reps) OR when you need to merge peak lists.
 ---

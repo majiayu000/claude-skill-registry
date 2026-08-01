@@ -1,4 +1,9 @@
 ---
+name: pls-seo-audit
+description: Comprehensive SEO analysis for content and websites.
+---
+
+---
 name: seo-audit
 description: Scan content and websites for SEO gaps, identify opportunities to outrank competitors. Use when: (1) Analyzing page SEO, (2) Checking meta tags and structured data, (3) Reviewing content for keyword optimization, (4) Auditing technical SEO factors.
 ---
@@ -138,13 +143,13 @@ def analyze_headings(html):
         'h2': soup.find_all('h2'),
         'h3': soup.find_all('h3'),
     }
-    
+
     issues = []
     if len(headings['h1']) == 0:
         issues.append("Missing H1 tag")
     elif len(headings['h1']) > 1:
         issues.append("Multiple H1 tags (should be one)")
-    
+
     return {
         "counts": {k: len(v) for k, v in headings.items()},
         "issues": issues
@@ -164,25 +169,25 @@ import requests
 def audit_meta_tags(url):
     response = requests.get(url)
     soup = BeautifulSoup(response.text, 'html.parser')
-    
+
     title = soup.find('title')
     description = soup.find('meta', attrs={'name': 'description'})
     keywords = soup.find('meta', attrs={'name': 'keywords'})
-    
+
     issues = []
-    
+
     if not title or len(title.text) < 30:
         issues.append("Title too short or missing")
     elif len(title.text) > 60:
         issues.append("Title too long (>60 chars)")
-    
+
     if not description:
         issues.append("Meta description missing")
     elif len(description.get('content', '')) < 120:
         issues.append("Meta description too short")
     elif len(description.get('content', '')) > 160:
         issues.append("Meta description too long")
-    
+
     return {
         "title": title.text if title else None,
         "description": description.get('content') if description else None,
@@ -259,7 +264,7 @@ def compare_seo(target_url, competitor_url):
             "images": len(soup.find_all('img')),
             "images_no_alt": len([i for i in soup.find_all('img') if not i.get('alt')])
         }
-    
+
     return {
         "target": get_metrics(target_url),
         "competitor": get_metrics(competitor_url)

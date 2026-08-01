@@ -1,4 +1,11 @@
 ---
+name: docker-optimization
+description: Comprehensive guide to optimizing Docker images for size, build speed,
+  and security. Covers multi-stage builds, layer caching strategies, security hardening,
+  and production deployment patterns.
+---
+
+---
 name: docker_optimization
 router_kit: ManagementKit
 description: Docker image optimization patterns including multi-stage builds, layer caching, security hardening, and size reduction techniques. Use when building Docker images, optimizing container size, improving build performance, or implementing Docker security best practices. Reduces image sizes by 70-90% and build times by 50-80%.

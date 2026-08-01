@@ -1,5 +1,10 @@
 ---
 name: prettier
+description: Automatic code formatting with Prettier for consistent code style.
+---
+
+---
+name: prettier
 description: Code formatting with Prettier for consistent style across the codebase. Auto-formatting, configuration, editor integration. Trigger: When configuring Prettier formatting, setting up auto-format, or ensuring consistent code style.
 skills:
   - conventions

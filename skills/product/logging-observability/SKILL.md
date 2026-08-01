@@ -1,5 +1,12 @@
 ---
 name: logging-observability
+description: 'Comprehensive logging and observability patterns for production systems.
+  Use when implementing structured logging, distributed tracing, metrics collection,
+  or alerting. Triggers: logging, logs, observ'
+---
+
+---
+name: logging-observability
 description: Comprehensive logging and observability patterns for production systems. Use when implementing structured logging, distributed tracing, metrics collection, or alerting. Triggers: logging, logs, observability, tracing, metrics, OpenTelemetry, correlation ID, spans, alerts, monitoring, JSON logs.
 ---
 

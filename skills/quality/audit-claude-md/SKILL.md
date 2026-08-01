@@ -1,3 +1,10 @@
+---
+name: audit-claude-md
+description: Audit and refactor CLAUDE.md files to eliminate bloat, enforce context
+  engineering best practices, and create folder-level CLAUDE.md files for complex
+  domain-specific instructions.
+---
+
 # audit-claude-md Skill
 
 Audit and refactor CLAUDE.md files to eliminate bloat, enforce context engineering best practices, and create folder-level CLAUDE.md files for complex domain-specific instructions.

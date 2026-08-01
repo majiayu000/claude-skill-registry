@@ -1,5 +1,12 @@
 ---
 name: dependency-scan
+description: 'Scans project dependencies for known vulnerabilities, outdated packages,
+  and license compliance issues. Trigger keywords: dependency, vulnerability, CVE,
+  npm audit, outdated, license, supply chain, SB'
+---
+
+---
+name: dependency-scan
 description: Scans project dependencies for known vulnerabilities, outdated packages, and license compliance issues. Trigger keywords: dependency, vulnerability, CVE, npm audit, outdated, license, supply chain, SBOM.
 allowed-tools: Read, Grep, Glob, Bash
 ---

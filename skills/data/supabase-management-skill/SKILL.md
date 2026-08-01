@@ -1,4 +1,11 @@
 ---
+name: supabase-management-skill
+description: 'CRITICAL ENFORCEMENT: This skill prevents direct Supabase CLI operations.
+  ALL database operations MUST go through the storage-based sync system using storage/scripts/.sh
+  scripts.'
+---
+
+---
 name: Supabase Management
 description: Manage Supabase database using Orchestrator AI's storage-based sync system. Use when working with Supabase, database snapshots, migrations, agent exports, N8N workflow exports, backups, or storage scripts. CRITICAL: Prevents direct Supabase operations - all operations MUST use storage/scripts/*.sh
 allowed-tools: SlashCommand, Bash, Read, Write, Edit, Glob, Grep

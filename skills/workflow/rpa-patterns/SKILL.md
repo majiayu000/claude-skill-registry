@@ -1,5 +1,10 @@
 ---
 name: rpa-patterns
+description: Resilience and retry patterns for reliable RPA automation.
+---
+
+---
+name: rpa-patterns
 description: Common RPA automation patterns (retry, polling, circuit breaker) for resilient automation. Use when: implementing RPA workflows, error handling, resilient automation, retry with backoff, polling for conditions, circuit breaker patterns.
 ---
 

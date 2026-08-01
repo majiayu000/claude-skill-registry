@@ -1,5 +1,11 @@
 ---
 name: jwc-biome-ultracite-fixing
+description: 'Biome/Ultracite 린트 경고(예: useSortedClasses)와 포맷 문제를 의미 변경 없이(safe fix)
+  해결하고, 패키지 단위로 빠르게 재검증합니다.'
+---
+
+---
+name: jwc-biome-ultracite-fixing
 description: Biome/Ultracite 린트 경고(예: useSortedClasses)와 포맷 문제를 의미 변경 없이(safe fix) 해결하고, 패키지 단위로 빠르게 재검증합니다.
 ---
 

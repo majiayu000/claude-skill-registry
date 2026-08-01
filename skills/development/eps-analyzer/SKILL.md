@@ -1,3 +1,8 @@
+---
+name: eps-analyzer
+description: 'description: EPS服务分析器，分析EPS服务树、推荐服务路径、生成服务代码'
+---
+
 ﻿---
 name: eps-analyzer
 description: EPS服务分析器，分析EPS服务树、推荐服务路径、生成服务代码
@@ -64,7 +69,7 @@ description: EPS服务分析器，分析EPS服务树、推荐服务路径、生�
 
   export const use{Page}Service = () => {
     const epsNode = getEpsService('eps.test.pageA')
-    
+
     return {
       query: epsNode?.query,
       save: epsNode?.save,

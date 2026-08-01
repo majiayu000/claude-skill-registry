@@ -1,5 +1,10 @@
 ---
 name: create-lut
+description: Programmatically generate or bake cinematic 3D LUTs (.cube).
+---
+
+---
+name: create-lut
 description: >
   Generate or bake cinematic 3D LUTs (.cube) from reference/source pairs or presets.
 triggers:

@@ -1,5 +1,12 @@
 ---
 name: document-pptx
+description: This skill enables creation and editing of PowerPoint presentations programmatically.
+  Claude should apply these patterns when users need to generate pitch decks, reports,
+  training materials, or automate presentation workflows.
+---
+
+---
+name: document-pptx
 description: Create, edit, and analyze PowerPoint (.pptx) presentations: generate decks (pitch/QBR/training), apply templates/masters, add charts/images/tables, manage speaker notes, and extract slide content. Use when users mention PowerPoint/PPTX, slides, pitch deck, QBR/board deck, or presentation automation. Supports python-pptx, PptxGenJS, and PPTX-Automizer.
 ---
 

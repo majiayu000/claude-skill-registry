@@ -1,5 +1,11 @@
 ---
 name: architecture-paradigm-client-server
+description: '- For traditional applications that have centralized services, such
+  as web or mobile clients communicating with backend APIs.'
+---
+
+---
+name: architecture-paradigm-client-server
 description: |
 
 Triggers: server, client-server, architecture, peer-to-peer, distributed-systems

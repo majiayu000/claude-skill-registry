@@ -1,3 +1,8 @@
+---
+name: when-profiling-performance-use-performance-profiler
+description: /============================================================================/
+---
+
 /*============================================================================*/
 /* WHEN-PROFILING-PERFORMANCE-USE-PERFORMANCE-PROFILER SKILL :: VERILINGUA x VERIX EDITION                      */
 /*============================================================================*/

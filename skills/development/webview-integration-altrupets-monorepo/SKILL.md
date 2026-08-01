@@ -1,3 +1,8 @@
+---
+name: webview-integration
+description: '| ID | flutter-webview |'
+---
+
 # 🌐 Skill: WebView Integration
 
 ## 📋 Metadata

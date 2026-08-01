@@ -1,5 +1,11 @@
 ---
 name: git-analyzer
+description: Analyzes git repositories to provide insights about code changes, commit
+  patterns, and repository status.
+---
+
+---
+name: git-analyzer
 description: Git repository analysis: status, history, changes
 allowed-tools: Bash(git:log,status,diff)
 ---

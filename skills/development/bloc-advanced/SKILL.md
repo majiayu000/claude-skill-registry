@@ -1,3 +1,8 @@
+---
+name: bloc-advanced
+description: '| ID | flutter-bloc-advanced |'
+---
+
 # 🎨 Skill: State Management con BLoC Avanzado
 
 ## 📋 Metadata
@@ -150,24 +155,24 @@ lib/
 dependencies:
   flutter:
     sdk: flutter
-  
+
   # BLoC core
   flutter_bloc: ^8.1.3
   bloc: ^8.1.2
-  
+
   # BLoC extras
   hydrated_bloc: ^9.1.2  # Persistencia automática
   replay_bloc: ^0.2.3    # Replay/undo functionality
-  
+
   # Utilities
   equatable: ^2.0.5      # Para comparación de estados
   freezed_annotation: ^2.4.1  # Immutability
   json_annotation: ^4.8.1
-  
+
   # Dependency Injection
   get_it: ^7.6.4
   injectable: ^2.3.2
-  
+
   # Storage para Hydrated BLoC
   path_provider: ^2.1.1
 
@@ -177,7 +182,7 @@ dev_dependencies:
   freezed: ^2.4.5
   json_serializable: ^6.7.1
   injectable_generator: ^2.4.1
-  
+
   # Testing
   bloc_test: ^9.1.4
   mocktail: ^1.0.1
@@ -201,18 +206,18 @@ import 'features/auth/presentation/screens/login_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  
+
   // Configurar storage para Hydrated BLoC
   HydratedBloc.storage = await HydratedStorage.build(
     storageDirectory: await getApplicationDocumentsDirectory(),
   );
-  
+
   // Configurar BLoC observer para logging
   Bloc.observer = AppBlocObserver();
-  
+
   // Configurar dependency injection
   configureDependencies();
-  
+
   runApp(const MyApp());
 }
 
@@ -376,20 +381,20 @@ part 'products_event.freezed.dart';
 @freezed
 class ProductsEvent with _$ProductsEvent {
   const factory ProductsEvent.started() = ProductsStarted;
-  
+
   const factory ProductsEvent.loadProducts({
     String? category,
     @Default(1) int page,
   }) = ProductsLoadRequested;
-  
+
   const factory ProductsEvent.refreshProducts() = ProductsRefreshRequested;
-  
+
   const factory ProductsEvent.searchProducts(String query) = ProductsSearchRequested;
-  
+
   const factory ProductsEvent.loadMoreProducts() = ProductsLoadMoreRequested;
-  
+
   const factory ProductsEvent.filterByCategory(String category) = ProductsFilterByCategoryRequested;
-  
+
   const factory ProductsEvent.clearFilters() = ProductsClearFiltersRequested;
 }
 ```
@@ -406,9 +411,9 @@ part 'products_state.freezed.dart';
 @freezed
 class ProductsState with _$ProductsState {
   const factory ProductsState.initial() = ProductsInitial;
-  
+
   const factory ProductsState.loading() = ProductsLoading;
-  
+
   const factory ProductsState.loaded({
     required List<Product> products,
     @Default(false) bool hasReachedMax,
@@ -416,14 +421,14 @@ class ProductsState with _$ProductsState {
     String? category,
     String? searchQuery,
   }) = ProductsLoaded;
-  
+
   const factory ProductsState.loadingMore({
     required List<Product> products,
     @Default(1) int currentPage,
     String? category,
     String? searchQuery,
   }) = ProductsLoadingMore;
-  
+
   const factory ProductsState.error(String message) = ProductsError;
 }
 ```
@@ -488,18 +493,18 @@ class ProductsBloc extends Bloc<ProductsEvent, ProductsState> {
     Emitter<ProductsState> emit,
   ) async {
     final currentState = state;
-    
+
     // Mantener filtros si existen
     String? category;
     String? searchQuery;
-    
+
     currentState.mapOrNull(
       loaded: (state) {
         category = state.category;
         searchQuery = state.searchQuery;
       },
     );
-    
+
     await _loadProducts(
       emit: emit,
       category: category,
@@ -525,20 +530,20 @@ class ProductsBloc extends Bloc<ProductsEvent, ProductsState> {
     Emitter<ProductsState> emit,
   ) async {
     final currentState = state;
-    
+
     await currentState.mapOrNull(
       loaded: (state) async {
         if (state.hasReachedMax) return;
-        
+
         final nextPage = state.currentPage + 1;
-        
+
         emit(ProductsState.loadingMore(
           products: state.products,
           currentPage: state.currentPage,
           category: state.category,
           searchQuery: state.searchQuery,
         ));
-        
+
         await _loadProducts(
           emit: emit,
           category: state.category,
@@ -679,15 +684,15 @@ part of 'product_detail_cubit.dart';
 @freezed
 class ProductDetailState with _$ProductDetailState {
   const factory ProductDetailState.initial() = ProductDetailInitial;
-  
+
   const factory ProductDetailState.loading() = ProductDetailLoading;
-  
+
   const factory ProductDetailState.loaded(
     Product product, {
     @Default(1) int quantity,
     @Default(false) bool isFavorite,
   }) = ProductDetailLoaded;
-  
+
   const factory ProductDetailState.error(String message) = ProductDetailError;
 }
 ```
@@ -811,7 +816,7 @@ class CartBloc extends ReplayBloc<CartEvent, CartState> {
       )),
       loaded: (state) {
         final items = Map<String, CartItem>.from(state.items);
-        
+
         if (items.containsKey(event.product.id)) {
           final existingItem = items[event.product.id]!;
           items[event.product.id] = existingItem.copyWith(
@@ -823,7 +828,7 @@ class CartBloc extends ReplayBloc<CartEvent, CartState> {
             quantity: 1,
           );
         }
-        
+
         emit(state.copyWith(items: items));
       },
     );
@@ -834,7 +839,7 @@ class CartBloc extends ReplayBloc<CartEvent, CartState> {
       loaded: (state) {
         final items = Map<String, CartItem>.from(state.items);
         items.remove(event.productId);
-        
+
         if (items.isEmpty) {
           emit(const CartState.empty());
         } else {
@@ -849,14 +854,14 @@ class CartBloc extends ReplayBloc<CartEvent, CartState> {
       loaded: (state) {
         final items = Map<String, CartItem>.from(state.items);
         final item = items[event.productId];
-        
+
         if (item != null) {
           if (event.quantity <= 0) {
             items.remove(event.productId);
           } else {
             items[event.productId] = item.copyWith(quantity: event.quantity);
           }
-          
+
           if (items.isEmpty) {
             emit(const CartState.empty());
           } else {
@@ -1006,7 +1011,7 @@ class LoginScreen extends StatelessWidget {
 ```dart
 class ProductDetailScreen extends StatelessWidget {
   final String productId;
-  
+
   const ProductDetailScreen({required this.productId});
 
   @override
@@ -1273,7 +1278,7 @@ on<ProductsLoadRequested>(
 // BLoC solo coordina
 class ProductsBloc extends Bloc<ProductsEvent, ProductsState> {
   final GetProductsUseCase getProductsUseCase;  // Use case hace el trabajo
-  
+
   Future<void> _onLoadRequested(...) async {
     final result = await getProductsUseCase();  // Delega al use case
     // ... maneja resultado
@@ -1286,7 +1291,7 @@ class ProductsBloc extends Bloc<ProductsEvent, ProductsState> {
 // BLoC con lógica de negocio acoplada
 class ProductsBloc extends Bloc<ProductsEvent, ProductsState> {
   final Dio dio;
-  
+
   Future<void> _onLoadRequested(...) async {
     final response = await dio.get('/products');  // ❌ Lógica de API aquí
     final products = (response.data as List).map(...).toList();  // ❌ Parsing aquí
@@ -1354,6 +1359,6 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
 
 ---
 
-**Versión:** 1.0.0  
+**Versión:** 1.0.0
 **Última actualización:** Diciembre 2025
 

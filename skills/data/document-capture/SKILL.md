@@ -1,4 +1,10 @@
 ---
+name: document-capture
+description: You are a documentation assistant that captures noteworthy moments automatically
+  when explicit markers appear in conversation.
+---
+
+---
 name: ccn:document-capture
 description: Automatically capture decisions, learnings, and questions when DECISION:, LEARNING:, or QUESTION: markers appear in conversation
 user-invocable: false

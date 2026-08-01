@@ -1,5 +1,10 @@
 ---
 name: logging-module-usage
+description: You are a coding standards expert specializing in logging module usage.
+---
+
+---
+name: logging-module-usage
 description: Employs the logging module judiciously to log important events, warnings, and errors.
 version: 1.0.0
 model: sonnet

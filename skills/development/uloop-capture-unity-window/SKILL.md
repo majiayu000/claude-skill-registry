@@ -1,5 +1,12 @@
 ---
 name: uloop-capture-unity-window
+description: 'Capture Unity EditorWindow and save as PNG image. Use when you need
+  to: (1) Take a screenshot of Game View, Scene View, Console, Inspector, etc., (2)
+  Capture visual state for debugging or verification'
+---
+
+---
+name: uloop-capture-unity-window
 description: Capture Unity EditorWindow and save as PNG image. Use when you need to: (1) Take a screenshot of Game View, Scene View, Console, Inspector, etc., (2) Capture visual state for debugging or verification, (3) Save editor output as an image file.
 ---
 

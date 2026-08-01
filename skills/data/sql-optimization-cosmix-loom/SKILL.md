@@ -1,5 +1,14 @@
 ---
 name: sql-optimization
+description: This skill focuses on analyzing and optimizing SQL queries for improved
+  performance. It covers query analysis, index optimization, execution plan interpretation,
+  query rewriting strategies, PostgreSQL-specific optimizations, and common anti-patterns.
+  Use this skill for slow queries, N+1 problems, join optimization, index design,
+  and database performance tuning.
+---
+
+---
+name: sql-optimization
 description: Analyzes and optimizes SQL queries for better performance, including index design, query rewriting, execution plan analysis, and database tuning. Covers PostgreSQL-specific optimizations, N+1 prevention, CTE/window function optimization, join strategies, and common anti-patterns. Trigger keywords: SQL, query optimization, EXPLAIN, EXPLAIN ANALYZE, index, slow query, execution plan, query plan, join optimization, subquery, CTE, common table expression, window function, partition, N+1, query cache, database performance, sequential scan, index scan, bitmap scan, nested loop, hash join, merge join, PostgreSQL, query tuning, table scan, cardinality, statistics, vacuum, analyze.
 allowed-tools: Read, Grep, Glob, Bash
 ---

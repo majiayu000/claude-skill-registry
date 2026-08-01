@@ -1,3 +1,9 @@
+---
+name: inheritance-debugging
+description: Debug constructor inheritance issues where subclass properties are accessed
+  before initialization.
+---
+
 # Skill: inheritance-debugging
 
 ## Scope
@@ -35,7 +41,7 @@ Look for this constructor structure:
 class Child extends Parent {
     constructor(spec) {
         super(spec);  // ← Parent calls render() here
-        
+
         this._my_property = spec.value || 'default';  // ← Too late!
     }
 }
@@ -80,9 +86,9 @@ In the subclass constructor, re-render after setting properties:
 ```javascript
 constructor(spec) {
     super(spec);  // Renders with defaults
-    
+
     this._my_property = spec.value || 'default';
-    
+
     // Re-render now that properties are set
     if (!spec.abstract && !spec.el && this._svg) {
         this.render_chart();

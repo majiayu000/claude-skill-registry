@@ -265,6 +265,24 @@ description: Invalid YAML: unquoted colon
     assert not any(issue.get("type") == "no_frontmatter" for issue in issues)
 
 
+def test_scanner_does_not_treat_markdown_dash_runs_as_frontmatter_delimiters(tmp_path):
+    module = load_module()
+    skill_dir = tmp_path / "demo"
+    skill_dir.mkdir(parents=True)
+    (skill_dir / "SKILL.md").write_text(
+        "---\nname: demo\ndescription: Unterminated metadata\n"
+        "# Demo\n\n| Topic | Reference |\n| --------- | ---------------- |\n",
+        encoding="utf-8",
+    )
+
+    scanner = module.SecurityScanner()
+    is_safe, issues = scanner.scan_file(skill_dir / "SKILL.md")
+
+    assert is_safe is False
+    assert any(issue.get("type") == "no_frontmatter" for issue in issues)
+    assert not any(issue.get("type") == "yaml_parse_error" for issue in issues)
+
+
 def test_single_file_scan_exits_nonzero_for_unsafe_skill(tmp_path):
     skill_dir = tmp_path / "demo"
     skill_dir.mkdir(parents=True)

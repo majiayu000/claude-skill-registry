@@ -1,5 +1,11 @@
 ---
 name: token-usage
+description: When user says "@token-usage", "token usage", "context window", or "token
+  cost".
+---
+
+---
+name: token-usage
 description: Sprawdzenie zużycia tokenów/kontekstu w sesji. Triggers: token usage, ile tokenów, ile zostało
 ---
 

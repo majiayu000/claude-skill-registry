@@ -1,5 +1,10 @@
 ---
 name: git-pr
+description: 'TOBRANCH: $1 (defaults to main)'
+---
+
+---
+name: git-pr
 description: "[Git & Release] Create a pull request"
 argument-hint: [branch] [from-branch]
 infer: true

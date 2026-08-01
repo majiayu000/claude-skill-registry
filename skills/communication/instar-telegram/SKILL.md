@@ -1,5 +1,13 @@
 ---
 name: instar-telegram
+description: Instar provides native Telegram integration that turns your Telegram
+  group into a living dashboard. Each scheduled job gets its own forum topic. You
+  can message your agent from your phone and get replies anywhere. The agent can reach
+  out proactively when it needs your attention.
+---
+
+---
+name: instar-telegram
 description: Send and receive messages via Telegram for two-way agent communication. Use when the agent needs to notify the user, alert them about something, relay a response, or when Telegram messaging is the requested channel. Trigger words: send message, Telegram, notify, alert user, message me, ping me, let me know, reach out.
 license: MIT
 metadata:

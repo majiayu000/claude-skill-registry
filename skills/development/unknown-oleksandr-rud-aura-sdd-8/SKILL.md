@@ -1,3 +1,9 @@
+---
+name: unknown
+description: 'actor: tech-lead | mandate: Build feature with automated tests | bounds:
+  No architecture changes'
+---
+
 # Code Implementation Skill
 
 code-implement

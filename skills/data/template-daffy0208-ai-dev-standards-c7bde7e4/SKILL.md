@@ -1,4 +1,10 @@
 ---
+name: template
+description: One-paragraph explanation of what this skill accomplishes and why it
+  exists.
+---
+
+---
 name: Skill Name
 description: Clear description of what this skill does and when Claude should use it. Be specific about triggers - include the functionality AND when to activate. Example: "Extract text from PDFs and fill forms. Use when working with PDF files, document processing, or form automation."
 version: 1.0.0

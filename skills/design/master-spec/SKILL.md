@@ -1,3 +1,8 @@
+---
+name: master-spec
+description: Establish the design system documentation for all course presentations.
+---
+
 # Master Spec
 
 Establish the design system documentation for all course presentations.

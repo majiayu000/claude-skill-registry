@@ -1,5 +1,10 @@
 ---
 name: git-precommit
+description: 協調多個 Skills 完成 Git 提交前的所有準備工作。
+---
+
+---
+name: git-precommit
 description: Orchestrate pre-commit workflow including Memory Bank sync, README/CHANGELOG/ROADMAP updates, and MCP tool count sync. Triggers: GIT, gc, push, commit, 提交, 準備 commit, 要提交了, git commit, pre-commit, 推送.
 ---
 

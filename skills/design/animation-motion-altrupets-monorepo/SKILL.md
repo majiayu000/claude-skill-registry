@@ -1,3 +1,8 @@
+---
+name: animation-motion
+description: '| ID | flutter-animation-motion |'
+---
+
 # ✨ Skill: Animation & Motion Design
 
 ## 📋 Metadata

@@ -1,4 +1,10 @@
 ---
+name: delontheme-integration
+description: Implement ng-alain theming system with layout configuration, responsive
+  design, menu management, and settings drawer for ng-lin project
+---
+
+---
 name: @delon/theme Integration
 description: Implement ng-alain theming system with layout configuration, responsive design, menu management, and settings drawer for ng-lin project
 license: MIT
@@ -41,14 +47,14 @@ import { SettingDrawerComponent } from '@delon/theme/setting-drawer';
           <span>GigHub</span>
         </div>
       </layout-default-header-item>
-      
+
       <layout-default-header-item direction="right">
         <app-user-menu />
       </layout-default-header-item>
-      
+
       <router-outlet></router-outlet>
     </layout-default>
-    
+
     <setting-drawer />
   `
 })
@@ -67,7 +73,7 @@ import { MenuService, Menu } from '@delon/theme';
 })
 export class AppComponent implements OnInit {
   private menuService = inject(MenuService);
-  
+
   ngOnInit(): void {
     this.menuService.add([
       {
@@ -172,10 +178,10 @@ import { Platform } from '@angular/cdk/platform';
 })
 export class ResponsiveLayoutComponent {
   private platform = inject(Platform);
-  
+
   layoutOptions = computed(() => {
     const isMobile = this.platform.IOS || this.platform.ANDROID;
-    
+
     return {
       logoExpanded: `assets/logo-full.png`,
       logoCollapsed: `assets/logo-icon.png`,
@@ -202,7 +208,7 @@ import { SettingDrawerComponent } from '@delon/theme/setting-drawer';
     <layout-default>
       <router-outlet />
     </layout-default>
-    
+
     <!-- Settings drawer with theme customization -->
     <setting-drawer
       [data]="{
@@ -241,13 +247,13 @@ import { PermissionService } from '@core/services/permission.service';
 export class MenuManagerComponent implements OnInit {
   private menuService = inject(MenuService);
   private permissionService = inject(PermissionService);
-  
+
   ngOnInit(): void {
     // Build menu based on user permissions
     const menu = this.buildMenu();
     this.menuService.add(menu);
   }
-  
+
   private buildMenu(): Menu[] {
     const menu: Menu[] = [
       {
@@ -256,7 +262,7 @@ export class MenuManagerComponent implements OnInit {
         icon: { type: 'icon', value: 'dashboard' }
       }
     ];
-    
+
     // Add Blueprint management if user has permission
     if (this.permissionService.canManageBlueprints()) {
       menu.push({
@@ -276,7 +282,7 @@ export class MenuManagerComponent implements OnInit {
         ]
       });
     }
-    
+
     // Add admin menu if user is admin
     if (this.permissionService.isAdmin()) {
       menu.push({
@@ -298,7 +304,7 @@ export class MenuManagerComponent implements OnInit {
         ]
       });
     }
-    
+
     return menu;
   }
 }
@@ -329,7 +335,7 @@ export class MenuManagerComponent implements OnInit {
   .alain-default__aside {
     background: linear-gradient(180deg, #001529 0%, #002140 100%);
   }
-  
+
   .alain-default__header {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   }
@@ -350,7 +356,7 @@ import { BlueprintService } from '@core/services/blueprint.service';
   template: `
     <layout-default>
       <layout-default-header-item direction="left">
-        <nz-select 
+        <nz-select
           [(ngModel)]="selectedBlueprintId"
           (ngModelChange)="onBlueprintChange($event)"
           style="width: 200px">
@@ -359,7 +365,7 @@ import { BlueprintService } from '@core/services/blueprint.service';
           }
         </nz-select>
       </layout-default-header-item>
-      
+
       <router-outlet />
     </layout-default>
   `
@@ -367,28 +373,28 @@ import { BlueprintService } from '@core/services/blueprint.service';
 export class BlueprintLayoutComponent implements OnInit {
   private blueprintService = inject(BlueprintService);
   private menuService = inject(MenuService);
-  
+
   blueprints = signal<Blueprint[]>([]);
   selectedBlueprintId = signal<string>('');
-  
+
   ngOnInit(): void {
     this.loadBlueprints();
   }
-  
+
   async loadBlueprints(): Promise<void> {
     const blueprints = await this.blueprintService.getUserBlueprints();
     this.blueprints.set(blueprints);
-    
+
     if (blueprints.length > 0) {
       this.selectedBlueprintId.set(blueprints[0].id);
       this.updateMenuForBlueprint(blueprints[0].id);
     }
   }
-  
+
   onBlueprintChange(blueprintId: string): void {
     this.updateMenuForBlueprint(blueprintId);
   }
-  
+
   private updateMenuForBlueprint(blueprintId: string): void {
     this.menuService.add([
       {
@@ -446,6 +452,6 @@ When using @delon/theme:
 
 ---
 
-**Version**: 1.0.0  
-**Compatible with**: @delon/theme 20.1.x, ng-alain 20.1.x  
+**Version**: 1.0.0
+**Compatible with**: @delon/theme 20.1.x, ng-alain 20.1.x
 **Last Updated**: 2025-12-25

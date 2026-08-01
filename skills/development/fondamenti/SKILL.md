@@ -1,3 +1,8 @@
+---
+name: fondamenti
+description: 1. Non conosce la differenza tra Array e LinkedList
+---
+
 # Computer Science Skills
 
 ## Legenda skills

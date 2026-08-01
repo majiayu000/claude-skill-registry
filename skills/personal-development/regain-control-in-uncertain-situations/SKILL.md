@@ -1,5 +1,16 @@
 ---
 name: regain-control-in-uncertain-situations
+description: 'This prompt asks the AI to help the user move from feeling stuck and
+  frustrated toward a calmer, more intentional response by taking in their current
+  emotion, what’s been happening, and the part they can’t control. The AI’s task is
+  to provide three supportive outputs in a compassionate tone: a gentle reframe that
+  validates the feelings while shifting perspective, one small actionable step the
+  user can take today to regain a sense of agency or clarity, and a brief reminder
+  they can repeat through'
+---
+
+---
+name: regain-control-in-uncertain-situations
 description: This prompt asks the AI to help the user move from feeling stuck and frustrated toward a calmer, more intentional response by taking in their current emotion, what’s been happening, and the part they can’t control. The AI’s task is to provide three supportive outputs in a compassionate tone: a gentle reframe that validates the feelings while shifting perspective, one small actionable step the user can take today to regain a sense of agency or clarity, and a brief reminder they can repeat throughout the day to stay emotionally grounded.
 skillVersionId: 01977822-0d16-7220-a135-ea32b0638e48
 ---

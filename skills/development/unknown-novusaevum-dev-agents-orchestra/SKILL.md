@@ -1,3 +1,11 @@
+---
+name: unknown
+description: Intelligent orchestration of 8 API services (OpenAI, Anthropic, Cohere,
+  xAI, Google, Mistral, Voyage, WeatherStack) with automatic fallback chains, cost
+  optimization, and graceful degradation. Activates for API integration, multi-service
+  management, and failover scenarios.
+---
+
 # API Orchestration Skill
 
 ## Description

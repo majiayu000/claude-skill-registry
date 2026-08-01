@@ -1,5 +1,11 @@
 ---
 name: lottie
+description: Add lightweight, scalable Lottie animations to the Mediar website using
+  LottieFiles.
+---
+
+---
+name: lottie
 description: Add and manage Lottie animations in the website using LottieFiles. Auto-activates when user asks about animations, lottie, motion graphics, or animated icons. Trigger words: "lottie", "animation", "animated icon", "motion graphic", "add animation", "lottiefiles"
 allowed-tools: Bash, Read, Write, Edit
 ---

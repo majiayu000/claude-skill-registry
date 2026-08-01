@@ -1,5 +1,10 @@
 ---
 name: design-review
+description: 'Status: Production Ready ✅'
+---
+
+---
+name: design-review
 description: 7-phase frontend design review with accessibility (WCAG 2.1 AA), responsive testing, visual polish. Use for PR reviews, UI audits, or encountering contrast issues, broken layouts, accessibility violations, inconsistent spacing, missing focus states.
 
   Keywords: design review, UI audit, frontend review, accessibility audit, WCAG compliance,

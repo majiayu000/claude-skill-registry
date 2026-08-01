@@ -1,3 +1,8 @@
+---
+name: 20251026-create-write-subagent-skill
+description: 'Status: GREEN phase complete, needs REFACTOR + Deployment'
+---
+
 # Writing Agent Files Skill - Implementation Plan
 
 **Status**: GREEN phase complete, needs REFACTOR + Deployment

@@ -1,4 +1,10 @@
 ---
+name: advanced-math-tradingoptimization-advanced
+description: 'Advanced optimization for trading: OCO, multi-objective, DRO, MIP, Bayesian
+  opt, plus convex/Markowitz/BL references.'
+---
+
+---
 name: advanced-math-trading/optimization-advanced
 description: Advanced optimization for trading: OCO, multi-objective, DRO, MIP, Bayesian opt, plus convex/Markowitz/BL references.
 ---

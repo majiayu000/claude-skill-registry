@@ -1,5 +1,11 @@
 ---
 name: claude-md-gen
+description: Generate project-specific CLAUDE.md files through codebase analysis,
+  targeted questions, and pattern selection.
+---
+
+---
+name: claude-md-gen
 description: Generate project-specific CLAUDE.md with domain instructions, workflows, templates. Analyzes codebase, asks clarifying questions, produces tailored instructions.
 argument-hint: [project-path] [--type cli-tool|web-app|python-cli|research|api-service|library|mixed]
 allowed-tools: Read, Grep, Glob, Bash, AskUserQuestion, Write

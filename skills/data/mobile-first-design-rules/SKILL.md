@@ -1,5 +1,11 @@
 ---
 name: mobile-first-design-rules
+description: You are a coding standards expert specializing in mobile first design
+  rules.
+---
+
+---
+name: mobile-first-design-rules
 description: Focuses on rules and best practices for mobile-first design and responsive typography using tailwind.
 version: 1.0.0
 model: sonnet

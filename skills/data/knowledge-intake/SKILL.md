@@ -1,5 +1,10 @@
 ---
 name: knowledge-intake
+description: '- What It Is'
+---
+
+---
+name: knowledge-intake
 description: |
 
 Triggers: knowledge-management, curation, evaluation, external-resources, knowledge

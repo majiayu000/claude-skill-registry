@@ -1,3 +1,8 @@
+---
+name: dashboard-components
+description: '> React component patterns for cl-n8n-mcp dashboard.'
+---
+
 # Dashboard Components Skill
 
 > React component patterns for cl-n8n-mcp dashboard.

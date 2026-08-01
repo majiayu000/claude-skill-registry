@@ -1,3 +1,8 @@
+---
+name: docs-apachecn-realpython-zh
+description: '> 原文：<https://realpython.com/alexa-python-skill/>'
+---
+
 # Alexa Python 开发:构建和部署一项 Alexa 技能
 
 > 原文：<https://realpython.com/alexa-python-skill/>

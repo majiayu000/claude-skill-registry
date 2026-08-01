@@ -1,3 +1,8 @@
+---
+name: rna-velocity-agent
+description: '---name: rna-velocity-agent'
+---
+
 ---name: rna-velocity-agent
 description: AI-powered RNA velocity analysis for predicting cellular state transitions, differentiation trajectories, and dynamic gene regulation from single-cell RNA sequencing data.
 license: MIT

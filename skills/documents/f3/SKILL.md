@@ -1,3 +1,8 @@
+---
+name: f3
+description: Return to F3
+---
+
 # F3::GameActionUseSkill
 
 [Return to `F3`](/docs/F3.md)

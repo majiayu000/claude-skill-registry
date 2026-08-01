@@ -1,5 +1,11 @@
 ---
 name: swift-navigation-appkit
+description: 'AppKit navigation tools: bindings, animations, and macOS navigation
+  patterns'
+---
+
+---
+name: swift-navigation-appkit
 description: AppKit navigation tools: bindings, animations, and macOS navigation patterns
 ---
 

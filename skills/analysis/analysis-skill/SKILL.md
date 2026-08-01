@@ -1,4 +1,9 @@
 ---
+name: analysis-skill
+description: Comprehensive analysis of [domain area].
+---
+
+---
 name: [analysis-type]-analyzer
 description: Analyze [what to analyze] and provide [output type]. Use when reviewing [area], checking [metrics], or when user asks to "analyze [keyword]".
 allowed-tools: Read, Grep, Glob, Bash

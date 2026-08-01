@@ -1,3 +1,10 @@
+---
+name: os-keychain
+description: '> MANDATORY READING PROTOCOL: Before implementing credential storage,
+  read references/advanced-patterns.md for cross-platform patterns and references/security-examples.md
+  for platform-specific impleme'
+---
+
 # OS Keychain Skill
 
 ---

@@ -1,3 +1,9 @@
+---
+name: legal-aurigraph-dlt-corp-aurigraph-d
+description: 'Expertise Domain: Incident Response, Data Breach Notification, Cybersecurity
+  Compliance, Blockchain Security, Incident Forensics'
+---
+
 # Cybersecurity & Data Protection Lawyer Skill - Claude Code
 
 **Expertise Domain**: Incident Response, Data Breach Notification, Cybersecurity Compliance, Blockchain Security, Incident Forensics

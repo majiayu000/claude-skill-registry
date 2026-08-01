@@ -1,3 +1,8 @@
+---
+name: fetch-jira-issue
+description: 'name: fetch-jira-issue'
+---
+
 ﻿---
 name: fetch-jira-issue
 description: Use when user mentions a Jira issue key (e.g., PLAT-123) or needs context from Jira. Retrieves and formats issue details for PRISM agent workflows.

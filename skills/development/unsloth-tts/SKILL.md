@@ -1,5 +1,12 @@
 ---
 name: unsloth-tts
+description: 'Fine-tuning Text-to-Speech (TTS) models with Unsloth for voice cloning
+  and synthetic speech (triggers: TTS, text-to-speech, voice cloning, Orpheus-TTS,
+  audio fine-tuning, speech synthesis).'
+---
+
+---
+name: unsloth-tts
 description: Fine-tuning Text-to-Speech (TTS) models with Unsloth for voice cloning and synthetic speech (triggers: TTS, text-to-speech, voice cloning, Orpheus-TTS, audio fine-tuning, speech synthesis).
 ---
 

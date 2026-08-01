@@ -1,5 +1,10 @@
 ---
 name: shipflow-audit-copy
+description: '- Current directory: !pwd'
+---
+
+---
+name: shipflow-audit-copy
 description: Professional copywriting review — single page (with argument) or full project audit (no argument)
 disable-model-invocation: true
 argument-hint: [file-path | "global"] (omit for full project)

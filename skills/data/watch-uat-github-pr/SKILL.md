@@ -1,5 +1,11 @@
 ---
 name: watch-uat-github-pr
+description: Watch a GitHub UAT PR for maintainer feedback or approval by polling
+  comments until approved/passed.
+---
+
+---
+name: watch-uat-github-pr
 description: Watch a GitHub UAT PR for maintainer feedback or approval by polling comments until approved/passed.
 compatibility: Preferred: GitHub chat tools configured for the repo. Fallback: repo wrapper scripts (requires GitHub CLI (gh) authenticated), plus network access.
 ---

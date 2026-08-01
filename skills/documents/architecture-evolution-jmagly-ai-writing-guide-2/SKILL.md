@@ -1,3 +1,9 @@
+---
+name: architecture-evolution
+description: Manage architecture changes with impact analysis, ADR generation, and
+  migration planning. Use when relevant to the task.
+---
+
 # architecture-evolution
 
 Manage architecture changes with impact analysis, ADR generation, and migration planning.

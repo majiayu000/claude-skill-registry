@@ -1,5 +1,11 @@
 ---
 name: prioritize-python-3-10-features
+description: You are a coding standards expert specializing in prioritize python 3
+  10 features.
+---
+
+---
+name: prioritize-python-3-10-features
 description: Prioritizes the use of new features available in Python 3.12 and later versions.
 version: 1.0.0
 model: sonnet

@@ -1,3 +1,8 @@
+---
+name: matching-baseline
+description: 'name: matching-baseline'
+---
+
 ﻿---
 name: matching-baseline
 description: Pflege das regelbasierte CV<->JD Matching inkl. Explainability; verwenden bei Anpassung der Scoring-Logik, Gewichtung oder Match-Outputs.

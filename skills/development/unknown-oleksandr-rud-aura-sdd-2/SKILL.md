@@ -1,3 +1,9 @@
+---
+name: unknown
+description: 'actor: product-ops | mandate: Update stakeholders and close story |
+  bounds: No technical changes, communication only'
+---
+
 # PM Sync Skill
 
 pm-sync

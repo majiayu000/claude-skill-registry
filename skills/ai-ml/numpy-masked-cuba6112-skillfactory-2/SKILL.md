@@ -1,5 +1,12 @@
 ---
 name: numpy-masked
+description: The numpy.ma module provides masked arrays, which couple a data array
+  with a boolean mask. Masked elements are ignored in operations like mean(), sum(),
+  and log(), making them ideal for datasets where
+---
+
+---
+name: numpy-masked
 description: Masked arrays for robust handling of missing or invalid data, ensuring they are excluded from statistical and mathematical computations. Triggers: masked array, numpy.ma, missing data, invalid values, hard mask.
 ---
 

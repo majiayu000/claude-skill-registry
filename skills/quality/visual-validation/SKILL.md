@@ -1,3 +1,9 @@
+---
+name: visual-validation
+description: 'Use when: Assessing visual polish, validating game appearance, or claiming
+  visual work is complete'
+---
+
 # Visual Validation Skill
 
 **Use when:** Assessing visual polish, validating game appearance, or claiming visual work is complete

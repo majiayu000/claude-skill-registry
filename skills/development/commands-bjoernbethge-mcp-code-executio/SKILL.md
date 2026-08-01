@@ -1,3 +1,8 @@
+---
+name: commands-bjoernbethge-mcp-code-executio
+description: Create a new reusable skill pattern for future tasks.
+---
+
 # /create-skill
 
 Create a new reusable skill pattern for future tasks.

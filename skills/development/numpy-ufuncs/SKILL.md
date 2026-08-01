@@ -1,5 +1,12 @@
 ---
 name: numpy-ufuncs
+description: 'Universal functions (ufuncs) for vectorization, including reductions,
+  in-place operations, and custom Python-function wrapping. Triggers: ufunc, vectorize,
+  reduce, accumulate, frompyfunc, in-place.'
+---
+
+---
+name: numpy-ufuncs
 description: Universal functions (ufuncs) for vectorization, including reductions, in-place operations, and custom Python-function wrapping. Triggers: ufunc, vectorize, reduce, accumulate, frompyfunc, in-place.
 ---
 

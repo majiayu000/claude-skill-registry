@@ -1,5 +1,10 @@
 ---
 name: nextjs-app-router
+description: '| Convention | File | Purpose |'
+---
+
+---
+name: nextjs-app-router
 description: Complete Next.js App Router fundamentals system (Next.js 15.5/16). PROACTIVELY activate for: (1) App directory structure and conventions, (2) Layouts and templates, (3) Loading and error boundaries, (4) Route groups and organization, (5) Parallel routes setup, (6) Metadata and SEO, (7) Server vs Client Components, (8) Navigation and View Transitions, (9) Async params pattern (Next.js 16 breaking change). Provides: File conventions, layout nesting, streaming UI, error handling, metadata templates, View Transitions API. Ensures correct App Router architecture with proper component boundaries.
 ---
 

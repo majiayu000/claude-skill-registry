@@ -1,3 +1,9 @@
+---
+name: rumor-weaver
+description: Generate rumor artifacts that cross-link items/quests/regions and seed
+  rabbit holes.
+---
+
 name: rumor-weaver
 description: Generate rumor artifacts that cross-link items/quests/regions and seed rabbit holes.
 metadata:

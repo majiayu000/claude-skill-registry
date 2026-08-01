@@ -1,5 +1,10 @@
 ---
 name: phase5-prove
+description: '> Did the needle move?'
+---
+
+---
+name: phase5-prove
 description: The Mileva Method (CRISP) — Phase 5: Prove. Success validation against Phase R baseline metrics. Use after deployment. Triggers on "prove", "phase 5", "validate", "did it work", "success criteria", "measure results", or after go-live.
 ---
 

@@ -1,3 +1,10 @@
+---
+name: test-lead-flow
+description: Test the complete lead submission flow using browser automation. Fills
+  out the form with test data, submits, and captures PING/POST network requests to
+  verify the lead flow works correctly.
+---
+
 # Test Lead Flow Skill
 
 Test the complete lead submission flow using browser automation. Fills out the form with test data, submits, and captures PING/POST network requests to verify the lead flow works correctly.

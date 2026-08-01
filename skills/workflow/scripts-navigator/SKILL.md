@@ -1,3 +1,8 @@
+---
+name: scripts-navigator
+description: 'name: scripts-navigator'
+---
+
 ﻿---
 name: scripts-navigator
 description: Scripts 架构导航器（v1.0.10重构后），脚本分类、位置、常用脚本速查

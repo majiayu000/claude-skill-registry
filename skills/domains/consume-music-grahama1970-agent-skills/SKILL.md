@@ -1,5 +1,11 @@
 ---
 name: consume-music
+description: Search and annotate ingested music using Horus Music Taxonomy (HMT).
+  Works with content already processed by /ingest-yt-history.
+---
+
+---
+name: consume-music
 description: >
   Search and annotate music from ingested YouTube history.
   Uses Horus Music Taxonomy (HMT) for bridge-based memory integration.

@@ -1,3 +1,10 @@
+---
+name: docs-fetchai-agents-aea
+description: The AEA gym skill demonstrates how a custom Reinforcement Learning agent,
+  that uses OpenAI's <a href="https://www.gymlibrary.dev/" target="blank">gym</a>
+  library, may be embedded into an AEA skill and connection.
+---
+
 # Gym Skill
 
 The AEA gym skill demonstrates how a custom Reinforcement Learning agent, that uses OpenAI's <a href="https://www.gymlibrary.dev/" target="_blank">gym</a> library, may be embedded into an AEA skill and connection.
@@ -54,7 +61,7 @@ aea install
     ``` bash
     aea add skill fetchai/gym:0.21.6
     ```
-    
+
     ### Set gym connection as default
 
     ``` bash
@@ -62,7 +69,7 @@ aea install
     ```
 
     ### Install the skill dependencies
-    
+
     To install the `gym` package, a dependency of the gym skill, from PyPI run
 
     ``` bash

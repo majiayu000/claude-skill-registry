@@ -1,3 +1,8 @@
+---
+name: claude-docs
+description: 'path: /v1/skills/{skillid}'
+---
+
 # Source: https://docs.claude.com/en/api/skills/get-skill.md
 
 # Get Skill

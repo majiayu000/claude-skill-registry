@@ -1,3 +1,9 @@
+---
+name: workflow-detection
+description: Provides centralized workflow type detection for all phase and deployment
+  commands.
+---
+
 # Workflow Detection Skill
 
 Provides centralized workflow type detection for all phase and deployment commands.

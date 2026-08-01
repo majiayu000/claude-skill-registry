@@ -1,5 +1,10 @@
 ---
 name: fal-image-to-image
+description: '| Task | Endpoint | Key Parameter |'
+---
+
+---
+name: fal-image-to-image
 description: Complete fal.ai image-to-image system. PROACTIVELY activate for: (1) FLUX image-to-image transformation, (2) ControlNet (canny, depth, pose), (3) Inpainting with masks, (4) Upscaling (ESRGAN, Clarity), (5) Background removal (BiRefNet, RemBG), (6) Face restoration (GFPGAN, CodeFormer), (7) IP-Adapter style transfer, (8) Strength parameter tuning. Provides: Transformation endpoints, mask formats, ControlNet types, upscaling options. Ensures proper image editing and enhancement workflows.
 ---
 

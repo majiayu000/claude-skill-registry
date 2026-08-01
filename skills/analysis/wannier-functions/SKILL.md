@@ -1,5 +1,14 @@
 ---
 name: wannier-functions
+description: This skill group covers the construction of maximally localized Wannier
+  functions (MLWFs) from DFT Bloch states. Wannier functions provide a real-space,
+  localized representation of electronic structure that enables tight-binding model
+  construction, Wannier-interpolated band structures, topological invariant calculations,
+  and electron-phonon coupling.
+---
+
+---
+name: wannier-functions
 description: Wannier Functions (1 sub-skills: wannier90-workflow)
 ---
 

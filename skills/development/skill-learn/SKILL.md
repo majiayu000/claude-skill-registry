@@ -1,5 +1,12 @@
 ---
 name: skill-learn
+description: Direct execution skill for scanning files, presenting findings interactively,
+  and creating user-selected tasks. Replaces the previous delegation-based approach
+  with synchronous execution and AskUserQuestion prompts.
+---
+
+---
+name: skill-learn
 description: Scan codebase for FIX:/NOTE:/TODO: tags and create structured tasks with interactive selection. Invoke for /learn command.
 allowed-tools: Bash, Grep, Read, Write, Edit, AskUserQuestion
 ---

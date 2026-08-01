@@ -1,5 +1,12 @@
 ---
 name: hotwire-turbo-stimulus
+description: This skill should be used when the user asks about Hotwire, Turbo Drive,
+  Turbo Frames, Turbo Streams, Stimulus controllers, frontend interactivity, server-rendered
+  HTML updates, websocket updates, pro
+---
+
+---
+name: hotwire-turbo-stimulus
 description: This skill should be used when the user asks about Hotwire, Turbo Drive, Turbo Frames, Turbo Streams, Stimulus controllers, frontend interactivity, server-rendered HTML updates, websocket updates, progressive enhancement, data attributes, importing JavaScript modules, or building interactive UIs without React/Vue. Also use when discussing the "HTML over the wire" approach or NO BUILD philosophy. Examples:
 
 <example>

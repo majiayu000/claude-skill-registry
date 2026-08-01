@@ -1,5 +1,11 @@
 ---
 name: deploy-production
+description: Production deployment with mandatory approval gates, verification, and
+  rollback plan. Every step that mutates production requires explicit user APPROVE.
+---
+
+---
+name: deploy-production
 description: Deploy to production workflow — final checks, approval gate, deploy, verify, rollback plan. Uses the `deploy-to-production` skill. Requires explicit APPROVE before any production mutation.
 disable-model-invocation: true
 argument-hint: [service-name] [version]

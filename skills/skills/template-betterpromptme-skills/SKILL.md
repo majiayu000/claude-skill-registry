@@ -1,4 +1,12 @@
 ---
+name: template
+description: '> Requires the betterprompt CLI to run. For installation and general
+  CLI usage, refer to the betterprompt skill in your skill list or if not yet available
+  in skill list, install via npx skills add https://github.com/BetterPromptme/betterprompt/skills
+  --skill betterprompt'
+---
+
+---
 name: {{{name}}}
 description: {{{description}}}
 skillVersionId: {{{skillVersionId}}}

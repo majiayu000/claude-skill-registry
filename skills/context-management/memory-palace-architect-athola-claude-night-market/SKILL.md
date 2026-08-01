@@ -1,5 +1,10 @@
 ---
 name: memory-palace-architect
+description: '- What It Is'
+---
+
+---
+name: memory-palace-architect
 description: |
 
 Triggers: memory, spatial, architecture, organization, mnemonic

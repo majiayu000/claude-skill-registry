@@ -1,3 +1,8 @@
+---
+name: azure
+description: '| ID | cicd-azure |'
+---
+
 # ☁️ Skill: Microsoft Azure Backend
 
 ## 📋 Metadata

@@ -1,5 +1,11 @@
 ---
 name: eptr2-price-analysis
+description: This skill helps you query and analyze electricity market prices from
+  Turkey's EPIAS Transparency Platform using the eptr2 Python library.
+---
+
+---
+name: eptr2-price-analysis
 description: Query and analyze Turkish electricity market prices including MCP (PTF/Piyasa Takas Fiyatı), SMP (SMF/Sistem Marjinal Fiyatı), WAP (Ağırlıklı Ortalama Fiyat), and imbalance prices. Use when asking about electricity prices, market clearing prices, day-ahead prices, system marginal prices, weighted average prices, or price comparisons in Turkey's energy market. Triggers on: PTF, SMF, GÖP fiyat, GİP fiyat, elektrik fiyatı.
 allowed-tools: Read, Bash(python:*)
 ---

@@ -1,5 +1,12 @@
 ---
 name: openwebf-app-webf-go
+description: 'Run and debug a WebF app specifically in WebF Go (desktop/iOS/Android):
+  load dev URLs, connect via devtools://, collect WEBF_NATIVE_LOG logs, clear WebF
+  Go cache, and handle WebF Go limitations. Use w'
+---
+
+---
+name: openwebf-app-webf-go
 description: Run and debug a WebF app specifically in WebF Go (desktop/iOS/Android): load dev URLs, connect via devtools://, collect WEBF_NATIVE_LOG logs, clear WebF Go cache, and handle WebF Go limitations. Use when the user explicitly mentions WebF Go, devtools://, WEBF_NATIVE_LOG, the WebF Go debug button, or WebF Go settings (Clear Cache).
 allowed-tools: Read, Grep, Glob, Bash, Edit, Write, mcp__openwebf__docs_search, mcp__openwebf__docs_get_section, mcp__openwebf__docs_related, mcp__openwebf__docs_get_page
 ---

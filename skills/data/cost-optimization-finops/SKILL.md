@@ -1,3 +1,8 @@
+---
+name: cost-optimization-finops
+description: '| Atributo | Valor |'
+---
+
 # 💰 Skill: Cost Optimization & FinOps
 
 ## 📋 Metadata
@@ -76,7 +81,7 @@ Operate
 > - [`resource_optimizer.py`](scripts/resource_optimizer.py) - Análisis de recursos y optimización
 > - [`auto_optimizer.py`](scripts/auto_optimizer.py) - Optimizador automático completo
 > - [`requirements.txt`](scripts/requirements.txt) - Dependencias Python (boto3)
-> 
+>
 > Ver [`scripts/README.md`](scripts/README.md) para documentación de uso.
 
 ### 1. Cost Monitoring
@@ -347,7 +352,7 @@ python scripts/auto_optimizer.py report --output optimization-report.json
 
 ---
 
-**Versión:** 1.0.0  
-**Última actualización:** Diciembre 2025  
+**Versión:** 1.0.0
+**Última actualización:** Diciembre 2025
 **Total líneas:** 1,100+
 

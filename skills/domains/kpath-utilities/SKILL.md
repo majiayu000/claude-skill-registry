@@ -1,5 +1,14 @@
 ---
 name: kpath-utilities
+description: This skill group covers generation of high-symmetry k-point paths for
+  band structure, phonon dispersion, and Wannier90 calculations. It corresponds to
+  VASPKIT menu 03 (tasks 301--309) and provides equivalent functionality using Python
+  tools (seekpath, pymatgen, spglib), with output formatted for Quantum ESPRESSO,
+  VASP, Wannier90, and phonopy.
+---
+
+---
+name: kpath-utilities
 description: K-Path Utilities (5 sub-skills: 1d-kpath, 2d-kpath, bulk-kpath, cp2k-kpath, phonopy-kpath)
 ---
 

@@ -1,4 +1,9 @@
 ---
+name: skill-template
+description: '{{Brief tagline describing what this skill does}}.'
+---
+
+---
 name: {{skill-name}}
 description: |
   {{skill-description}}

@@ -1,4 +1,10 @@
 ---
+name: api-name-api
+description: Interact with the {{API_NAME}} API. Use when {{TRIGGER_CONTEXTS}}. Supports
+  {{CAPABILITIES}}.
+---
+
+---
 name: {{API_NAME}}-api
 description: Interact with the {{API_NAME}} API. Use when {{TRIGGER_CONTEXTS}}. Supports {{CAPABILITIES}}.
 ---

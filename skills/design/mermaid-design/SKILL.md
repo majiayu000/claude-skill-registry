@@ -1,3 +1,9 @@
+---
+name: mermaid-design
+description: 'description: Generate and standardize Mermaid diagrams with deterministic
+  token-based theming from the repository root mermaid.tokens.json.'
+---
+
 ﻿---
 name: mermaid-design
 description: Generate and standardize Mermaid diagrams with deterministic token-based theming from the repository root `mermaid.tokens.json`.

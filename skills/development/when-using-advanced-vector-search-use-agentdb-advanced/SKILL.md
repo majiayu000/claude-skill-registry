@@ -1,3 +1,8 @@
+---
+name: when-using-advanced-vector-search-use-agentdb-advanced
+description: /============================================================================/
+---
+
 /*============================================================================*/
 /* ADVANCED AGENTDB VECTOR SEARCH IMPLEMENTATION SKILL :: VERILINGUA x VERIX EDITION                      */
 /*============================================================================*/

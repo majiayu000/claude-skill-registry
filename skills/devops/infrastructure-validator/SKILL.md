@@ -1,3 +1,8 @@
+---
+name: infrastructure-validator
+description: '- skillname: infrastructure-validator'
+---
+
 # Infrastructure Validator Skill
 
 ## Metadata
@@ -59,7 +64,7 @@ class InfrastructureValidator:
             "network": self.check_connectivity()
         }
         return all(checks.values())
-    
+
     def check_containers(self):
         """Verify Docker containers are healthy"""
         result = subprocess.run(
@@ -67,12 +72,12 @@ class InfrastructureValidator:
             capture_output=True
         )
         return "healthy" in result.stdout.decode()
-    
+
     def check_databases(self):
         """Test database connections"""
         # Generic DB connection test
         return self.test_connections()
-    
+
     def check_apis(self):
         """Test API endpoints"""
         endpoints = self.discover_endpoints()
@@ -140,12 +145,12 @@ ELAPSED=0
 while [ $ELAPSED -lt $TIMEOUT ]; do
     # Check if all containers are healthy
     UNHEALTHY=$(docker-compose ps | grep -c "unhealthy\|starting")
-    
+
     if [ "$UNHEALTHY" -eq 0 ]; then
         echo "✅ All services healthy!"
         exit 0
     fi
-    
+
     echo "Waiting... ($ELAPSED/$TIMEOUT seconds)"
     sleep 10
     ELAPSED=$((ELAPSED + 10))

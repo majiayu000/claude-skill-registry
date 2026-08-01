@@ -1,3 +1,9 @@
+---
+name: wecom
+description: 'description: "Send messages to WeCom (企业微信) via webhooks using MCP protocol.
+  Works with Claude Code, Claude Desktop, and other MCP clients."'
+---
+
 ---`
 name: wecom
 description: "Send messages to WeCom (企业微信) via webhooks using MCP protocol. Works with Claude Code, Claude Desktop, and other MCP clients."
@@ -69,7 +75,7 @@ Send a markdown message (WeCom flavor).
 ```bash
 await send_wecom_markdown({
   content: `# Daily Report
-  
+
 **Completed:**
 - Task A
 - Task B

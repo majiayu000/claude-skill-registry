@@ -1,5 +1,12 @@
 ---
 name: numpy-random
+description: NumPy's random module shifted from the legacy RandomState to the modern
+  Generator API. This new approach provides better statistical properties, faster
+  algorithms, and a robust system for parallel random number generation using SeedSequence.
+---
+
+---
+name: numpy-random
 description: Modern random number generation using the Generator API, focusing on statistical properties, parallel streams, and reproducibility. Triggers: random, rng, default_rng, SeedSequence, probability distributions, shuffle.
 ---
 

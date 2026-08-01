@@ -1,5 +1,10 @@
 ---
 name: principal-workflow
+description: Preflight 已由 awkit kickoff 完成，Session 已初始化。
+---
+
+---
+name: principal-workflow
 description: Run the AWK principal workflow (awkit kickoff, principal loop, dispatch worker, check results, review/merge PR). Triggers: awkit kickoff, start-work, NEXT_ACTION, review pr, dispatch worker, autonomous workflow, generate tasks, create task.
 allowed-tools: Read, Grep, Glob, Bash
 ---

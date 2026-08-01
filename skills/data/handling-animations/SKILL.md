@@ -1,5 +1,12 @@
 ---
 name: handling-animations
+description: 'Define animations with @keyframes within @theme directive, use animate-{name}
+  utilities, and implement entry animations with starting: variant. Use when creating
+  custom animations or entry effects.'
+---
+
+---
+name: handling-animations
 description: Define animations with @keyframes within @theme directive, use animate-{name} utilities, and implement entry animations with starting: variant. Use when creating custom animations or entry effects.
 allowed-tools: Read, Write, Edit, Grep, Glob
 ---

@@ -1,4 +1,10 @@
 ---
+name: midnight-debugging
+description: Expert knowledge for identifying and resolving common Midnight development
+  toolchain issues.
+---
+
+---
 name: midnight-tooling:midnight-debugging
 description: Use when encountering Midnight errors like "compact: command not found", "ERR_UNSUPPORTED_DIR_IMPORT", version mismatches, proof server failures, "@midnight-ntwrk" package errors, or compilation failures.
 ---

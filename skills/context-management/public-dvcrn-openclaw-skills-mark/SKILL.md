@@ -1,3 +1,8 @@
+---
+name: public
+description: Memory Infrastructure for Autonomous Agents
+---
+
 # OpenClawdy
 
 **Memory Infrastructure for Autonomous Agents**

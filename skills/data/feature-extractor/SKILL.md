@@ -1,3 +1,8 @@
+---
+name: feature-extractor
+description: 'name: Extract features'
+---
+
 ﻿---
 name: Extract features
 description: Expand epics into features for an idea (writes to ideas/<IDEA_ID>/runs and updates ideas/<IDEA_ID>/latest)
@@ -331,8 +336,8 @@ Markdown rendering (required):
 
 ### FEAT-001: <Feature Title>
 
-**Outcome:** <...>  
-**Release Target:** <...> **Priority:** <...>  
+**Outcome:** <...>
+**Release Target:** <...> **Priority:** <...>
 **Description:** <...>
 
 **Acceptance Criteria:**

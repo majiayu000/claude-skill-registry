@@ -1,4 +1,10 @@
 ---
+name: agent-sandboxes
+description: This skill provides access to E2B sandboxes through a streamlined CLI
+  for safe code execution and file operations in isolated environments.
+---
+
+---
 name: Agent Sandboxes
 description: Operate E2B agent sandboxes using the CLI. Use when user needs to run code in isolation, test packages, execute commands safely, or work with binary files in a sandbox environment. Keywords: sandbox, e2b, isolated environment, run code, test code, safe execution.
 ---

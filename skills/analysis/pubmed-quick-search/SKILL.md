@@ -1,5 +1,10 @@
 ---
 name: pubmed-quick-search
+description: 在 PubMed 上快速搜尋特定主題的文獻，適合快速瀏覽或初步探索。
+---
+
+---
+name: pubmed-quick-search
 description: Quick literature search on PubMed. Triggers: 搜尋, 找論文, search papers, find articles, PubMed, 文獻搜尋, 快速搜尋
 ---
 

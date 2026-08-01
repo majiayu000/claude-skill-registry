@@ -1,3 +1,8 @@
+---
+name: when-analyzing-user-intent-use-intent-analyzer
+description: /============================================================================/
+---
+
 /*============================================================================*/
 /* WHEN-ANALYZING-USER-INTENT-USE-INTENT-ANALYZER SKILL :: VERILINGUA x VERIX EDITION                      */
 /*============================================================================*/

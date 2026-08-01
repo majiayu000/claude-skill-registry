@@ -1,3 +1,9 @@
+---
+name: unknown
+description: 'actor: architect|product-ops|tech-lead|qa | mandate: Capture current
+  status and manage log organization | bounds: No content deletion, only organization'
+---
+
 # Context Snapshot Skill
 
 context.snapshot

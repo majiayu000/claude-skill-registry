@@ -1,3 +1,9 @@
+---
+name: pattern-template-majiayu000-claude-skill-regist
+description: A template for creating new Fabric patterns with structured sections
+  for identity, goals, steps, and output instructions.
+---
+
 # Official Pattern Template
 
 ## Description

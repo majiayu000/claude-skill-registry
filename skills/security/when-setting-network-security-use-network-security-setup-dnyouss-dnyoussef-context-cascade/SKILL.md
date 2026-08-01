@@ -1,3 +1,8 @@
+---
+name: when-setting-network-security-use-network-security-setup
+description: /============================================================================/
+---
+
 /*============================================================================*/
 /* WHEN-SETTING-NETWORK-SECURITY-USE-NETWORK-SECURITY-SETUP SKILL :: VERILINGUA x VERIX EDITION                      */
 /*============================================================================*/

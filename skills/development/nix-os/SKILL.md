@@ -1,4 +1,10 @@
 ---
+name: nix-os
+description: Comprehensive Nix management following Determinate Systems best practices
+  and this repository's patterns.
+---
+
+---
 name: nix-manager
 description: Manage Nix packages, flakes, and configurations using Determinate Nix installer patterns. Use when installing/updating packages, creating flakes, troubleshooting Nix issues, or optimizing Nix workflows. Keywords: nix, flake, package, nixpkgs, nix profile, flake.nix, flake.lock, determinate, nix-installer
 ---

@@ -1,4 +1,9 @@
 ---
+name: docs-code
+description: '> Code documentation ve changelog best practices.'
+---
+
+---
 name: docs_code
 router_kit: ManagementKit
 description: Code comments, JSDoc/TSDoc ve changelog best practices.
@@ -19,11 +24,11 @@ metadata:
 ```typescript
 /**
  * Calculates total price including tax.
- * 
+ *
  * @param amount - Base amount before tax
  * @param taxRate - Tax rate as decimal (0.18 = 18%)
  * @returns Total amount including tax
- * 
+ *
  * @example
  * const total = calculateTotal(100, 0.18); // 118
  */

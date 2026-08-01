@@ -1,5 +1,11 @@
 ---
 name: git-workspace
+description: Work with git worktrees to enable concurrent development across multiple
+  branches without context switching or stashing conflicts.
+---
+
+---
+name: git-workspace
 description: "Work with git worktrees and workspaces for concurrent development. Use when: (1) Creating new workspaces with \`git worktree add\`, (2) Listing existing worktrees with \`git worktree list\`, (3) Removing worktrees with \`git worktree remove\`, (4) Pruning stale worktree metadata with \`git worktree prune\`, (5) Managing multiple checked-out branches simultaneously, (6) Migrating uncommitted work between workspaces, or (7) Any git workspace/worktree operation. Requires Git 2.5+ for worktree support."
 ---
 

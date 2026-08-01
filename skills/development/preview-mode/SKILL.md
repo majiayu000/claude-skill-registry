@@ -1,3 +1,9 @@
+---
+name: preview-mode
+description: Enable safe preview of changes before committing or deploying, reducing
+  risk of breaking production.
+---
+
 # 👁️ Preview Mode Skill
 
 ---

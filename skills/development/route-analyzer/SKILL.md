@@ -1,3 +1,8 @@
+---
+name: route-analyzer
+description: 'description: 路由分析器，分析应用路由结构、获取路由列表、智能推荐路由配置'
+---
+
 ﻿---
 name: route-analyzer
 description: 路由分析器，分析应用路由结构、获取路由列表、智能推荐路由配置
@@ -25,7 +30,7 @@ description: 路由分析器，分析应用路由结构、获取路由列表、�
 格式:
   path: '/{module}/{page-name}'
   name: '{module}-{page-name}'
-  
+
 示例:
   path: '/test/page-a'
   name: 'test-page-a'

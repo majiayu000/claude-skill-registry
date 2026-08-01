@@ -1,5 +1,12 @@
 ---
 name: resume-optimizer
+description: Optimize engineering resumes using proven STAR/XYZ methodologies, ATS
+  best practices, and hiring manager insights. Use when reviewing resumes, improving
+  bullet points, tailoring to job descriptions, o
+---
+
+---
+name: resume-optimizer
 description: Optimize engineering resumes using proven STAR/XYZ methodologies, ATS best practices, and hiring manager insights. Use when reviewing resumes, improving bullet points, tailoring to job descriptions, or enhancing professional presentation. Keywords: resume, CV, bullet points, STAR, XYZ, ATS, job description, optimize, tailor, action verbs, quantify, achievements
 ---
 

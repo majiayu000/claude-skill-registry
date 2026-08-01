@@ -1,5 +1,11 @@
 ---
 name: structure-check
+description: 'Purpose: Validate files are in correct locations per MetaSaver domain
+  patterns.'
+---
+
+---
+name: structure-check
 description: Use when validating project structure during Standards Audit phase. Detects package type from package.json metasaver.projectType, loads structure rules from domain skills (react-app-structure, prisma-database, contracts-package), scans created/modified files, and reports violations with fix suggestions. File types: .tsx, .ts, directory layouts.
 ---
 

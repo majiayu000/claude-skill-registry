@@ -1,5 +1,12 @@
 ---
 name: diagramming
+description: Create clear, maintainable technical diagrams using Mermaid syntax. This
+  skill covers architecture diagrams, sequence diagrams, entity-relationship diagrams,
+  flowcharts, and state diagrams for documen
+---
+
+---
+name: diagramming
 description: Create technical diagrams using Mermaid syntax for architecture, sequences, ERDs, flowcharts, and state machines. Use for visualizing system design, data flows, and processes. Triggers: diagram, diagrams, mermaid, plantuml, draw.io, excalidraw, flowchart, sequence diagram, class diagram, architecture diagram, ERD, entity relationship, entity-relationship, C4, C4 model, system context, container diagram, component diagram, state diagram, state machine, visualize, draw, chart, flow, data flow, API flow, system design, architecture visualization, UML.
 ---
 

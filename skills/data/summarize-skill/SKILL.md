@@ -1,3 +1,8 @@
+---
+name: summarize-skill
+description: '用途: 总结执行结果，生成友好的摘要'
+---
+
 # summarize-skill
 
 **用途**: 总结执行结果，生成友好的摘要
@@ -42,10 +47,10 @@ output:
       workflows: number
       data_files: number
       docs: number
-    
+
     created_at: string
     duration_seconds: number
-  
+
   display_text: string      # 友好展示（用 emoji）
   next_steps: array         # 下一步建议
   links: array              # 重要文件的链接
@@ -66,7 +71,7 @@ def categorize_files(files):
         "data_files": 0,
         "docs": 0
     }
-    
+
     for file in files:
         if "/agents/" in file:
             breakdown["agents"] += 1
@@ -78,7 +83,7 @@ def categorize_files(files):
             breakdown["data_files"] += 1
         elif file.endswith(".md"):
             breakdown["docs"] += 1
-    
+
     return breakdown
 ```
 
@@ -94,7 +99,7 @@ def format_summary(system_name, breakdown, next_steps):
     text += f"🚀 下一步:\n"
     for i, step in enumerate(next_steps, 1):
         text += f"  {i}. {step}\n"
-    
+
     return text
 ```
 
@@ -109,7 +114,7 @@ created_files:
   - "health-system/.claude/skills/checkup-analysis/SKILL.md"
   - "health-system/.claude/workflows/daily-check.yaml"
   # ... 更多文件
-  
+
 system_name: health-system
 
 structure:
@@ -134,12 +139,12 @@ summary:
 
 display_text: |
   ✅ health-system 创建完成！
-  
+
   📁 系统结构:
     - 1 个 Agent（健康顾问）
     - 8 个 Skills（体检分析、指标追踪等）
     - 3 个 Workflows（每日检查、每周报告、体检分析）
-  
+
   🚀 下一步:
     1. 填写 data/profile/profile.json（你的基本信息）
     2. 试用: "执行每日健康检查"

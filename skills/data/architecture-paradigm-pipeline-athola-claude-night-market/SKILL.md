@@ -1,5 +1,11 @@
 ---
 name: architecture-paradigm-pipeline
+description: '- When data must flow through a fixed sequence of discrete transformations,
+  such as in ETL jobs, streaming analytics, or CI/CD pipelines.'
+---
+
+---
+name: architecture-paradigm-pipeline
 description: |
 
 Triggers: pipeline, streaming, data-processing, architecture, pipes-filters

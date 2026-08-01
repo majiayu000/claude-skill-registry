@@ -1,3 +1,10 @@
+---
+name: github-pr-lifecycle
+description: 'Manage GitHub pull requests via GitHub MCP: open PRs, update descriptions,
+  request reviews, check CI status, resolve conflicts, and merge using the repo''s
+  preferred strategy.'
+---
+
 # GitHub Pull Request Lifecycle
 
 ## Overview

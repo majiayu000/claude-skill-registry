@@ -1,3 +1,8 @@
+---
+name: codebase-exploration
+description: '> Compiler: skill-compiler/1.0.0'
+---
+
 # Codebase Exploration Skill
 
 > Version: 1.0.0

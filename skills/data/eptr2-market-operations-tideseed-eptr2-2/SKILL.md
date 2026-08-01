@@ -1,5 +1,12 @@
 ---
 name: eptr2-market-operations
+description: This skill helps you query electricity market trading data from Turkey's
+  EPIAS Transparency Platform, covering the Day-Ahead Market (GÖP), Intraday Market
+  (GİP), Bilateral Contracts (İA), and Balancin
+---
+
+---
+name: eptr2-market-operations
 description: Query Turkish electricity market operations data including Day-Ahead Market (GÖP) orders and clearing, Intraday Market (GİP) transactions and order books, bilateral contracts (İA), and Balancing Power Market (DGP) instructions. Use when asking about market volumes, trading activity, order books, block bids, flexible offers, or bilateral agreements in Turkey. Triggers on: GÖP, GİP, DGP, gün öncesi piyasası, gün içi piyasası, ikili anlaşmalar, market orders, block bids, YAL, YAT.
 allowed-tools: Read, Bash(python:*)
 ---

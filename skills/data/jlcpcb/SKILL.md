@@ -1,5 +1,12 @@
 ---
 name: jlcpcb
+description: 'Search the JLCPCB electronic components database (~7 million parts)
+  for hardware/electronics projects. Use when the user needs to: (1) Find electronic
+  components (resistors, capacitors, ICs, connector'
+---
+
+---
+name: jlcpcb
 description: Search the JLCPCB electronic components database (~7 million parts) for hardware/electronics projects. Use when the user needs to: (1) Find electronic components (resistors, capacitors, ICs, connectors, etc.), (2) Look up specific part numbers or manufacturers, (3) Find alternatives or equivalents for components, (4) Check component availability and stock at JLCPCB, (5) Get component specifications (package type, description, etc.), or (6) Search for parts for PCB assembly projects.
 ---
 

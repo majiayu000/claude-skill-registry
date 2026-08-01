@@ -1,3 +1,8 @@
+---
+name: omnihuman1-video
+description: '| ツール | OmniHuman1 / OmniHuman 1.5 |'
+---
+
 # OmniHuman1 AIアバター動画制作ガイド
 
 ## 概要

@@ -1,3 +1,8 @@
+---
+name: security
+description: '| ID | flutter-security |'
+---
+
 # 🔒 Skill: Security Best Practices
 
 ## 📋 Metadata

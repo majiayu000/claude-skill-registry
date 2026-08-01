@@ -1,5 +1,11 @@
 ---
 name: technique-proposal
+description: Generate a PR-ready technique proposal when an attack step doesn't map
+  to existing SITF techniques.
+---
+
+---
+name: technique-proposal
 description: Generate a PR-ready technique proposal when an attack step doesn't map to existing SITF techniques. Use after /attack-flow identifies technique gaps.
 argument-hint: "<description>" [component]
 tools: Read, Grep, Glob

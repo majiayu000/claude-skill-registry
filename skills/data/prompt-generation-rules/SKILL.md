@@ -1,5 +1,10 @@
 ---
 name: prompt-generation-rules
+description: You are a coding standards expert specializing in prompt generation rules.
+---
+
+---
+name: prompt-generation-rules
 description: General rules to generate prompt.
 version: 1.0.0
 model: sonnet

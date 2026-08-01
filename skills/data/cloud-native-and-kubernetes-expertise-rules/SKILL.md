@@ -1,5 +1,11 @@
 ---
 name: cloud-native-and-kubernetes-expertise-rules
+description: You are a coding standards expert specializing in cloud native and kubernetes
+  expertise rules.
+---
+
+---
+name: cloud-native-and-kubernetes-expertise-rules
 description: Ensures the documentation demonstrates a high level of expertise in cloud-native technologies and Kubernetes.
 version: 1.0.0
 model: sonnet

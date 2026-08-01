@@ -1,3 +1,8 @@
+---
+name: skill
+description: Archived skill guidance for skill.
+---
+
 # Complete Example - Individual Skill
 
 ```yaml

@@ -1,3 +1,8 @@
+---
+name: video-generation
+description: 使用 xingjiabiapi 的视频生成 API 创建 AI 视频。
+---
+
 # Video Generation Skill
 
 使用 xingjiabiapi 的视频生成 API 创建 AI 视频。
@@ -84,7 +89,7 @@ import subprocess
 import json
 
 result = subprocess.run([
-    "python3", 
+    "python3",
     "/home/aa/clawd/skills/video-generation/video_api.py",
     "generate",
     "Your prompt here",

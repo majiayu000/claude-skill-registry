@@ -1,3 +1,8 @@
+---
+name: spawning
+description: Agent process spawning with provider configuration and execution
+---
+
 # CFN Docker Agent Spawning Skill
 
 **Purpose:** Spawn agents in isolated Docker containers with skill-based MCP selection, resource management, and authentication.

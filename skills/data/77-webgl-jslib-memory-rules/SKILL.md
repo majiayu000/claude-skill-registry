@@ -1,3 +1,8 @@
+---
+name: 77-webgl-jslib-memory-rules
+description: 'Type: Policy / Hard Rules'
+---
+
 # 77-webgl-jslib-memory-rules
 
 Status: ACTIVE

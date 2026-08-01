@@ -1,3 +1,8 @@
+---
+name: coherence-audit
+description: '> Compiler: skill-compiler/1.0.0'
+---
+
 # Coherence Audit Skill
 
 > Version: 1.0.0

@@ -1,5 +1,11 @@
 ---
 name: create-icon
+description: Centralized utility for creating high-quality Stream Deck icons with
+  consistent aesthetics.
+---
+
+---
+name: create-icon
 description: >
   Create icons for Stream Deck or other uses.
   Fetches from web, resizes to 72x72, creates white/active states.

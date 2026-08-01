@@ -1,3 +1,8 @@
+---
+name: web-performance
+description: Next.js 15 App Router向けのCore Web Vitals最適化スキル。
+---
+
 # Web Performance Optimization Skill
 
 Next.js 15 App Router向けのCore Web Vitals最適化スキル。

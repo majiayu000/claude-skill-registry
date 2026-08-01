@@ -1,5 +1,10 @@
 ---
 name: diagnose-generation-failure
+description: When SDK generation fails, determine the root cause and fix strategy.
+---
+
+---
+name: diagnose-generation-failure
 description: Use when SDK generation failed, seeing "Step Failed: Workflow", or `speakeasy run` errors
 ---
 

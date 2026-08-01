@@ -1,3 +1,8 @@
+---
+name: mcp-protocol
+description: '> JSON-RPC 2.0 protocol reference for MCP.'
+---
+
 # MCP Protocol Skill
 
 > JSON-RPC 2.0 protocol reference for MCP.

@@ -1,5 +1,12 @@
 ---
 name: spec-checker
+description: Perform specification-to-code compliance analysis. Determine whether
+  a codebase implements exactly what the documentation states, across logic, invariants,
+  flows, assumptions, math, and security guarantees.
+---
+
+---
+name: spec-checker
 description: Performs specification-to-code compliance analysis.
 Use when: (1) verifying implementations match their formal specifications,
 (2) auditing smart contracts against whitepapers, (3) checking that code

@@ -1,5 +1,12 @@
 ---
 name: unsloth-qlora
+description: 'Advanced 4-bit quantization techniques using Unsloth and BitsAndBytes
+  for extreme VRAM efficiency (triggers: QLoRA, 4-bit, load_in_4bit, bnb-4bit, VRAM
+  optimization, dynamic quantization).'
+---
+
+---
+name: unsloth-qlora
 description: Advanced 4-bit quantization techniques using Unsloth and BitsAndBytes for extreme VRAM efficiency (triggers: QLoRA, 4-bit, load_in_4bit, bnb-4bit, VRAM optimization, dynamic quantization).
 ---
 

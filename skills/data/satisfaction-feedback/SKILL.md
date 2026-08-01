@@ -1,5 +1,10 @@
 ---
 name: satisfaction-feedback
+description: 处理用户满意度反馈。用户回复"满意"/"不满意"时，更新 FAQ 使用计数或记录 BADCASE。触发词：满意/不满意/解决了/���解决/谢谢。
+---
+
+---
+name: satisfaction-feedback
 description: Handle user satisfaction feedback. When users respond with "satisfied"/"unsatisfied", update FAQ usage count or record BADCASE. Trigger words: satisfied/unsatisfied/resolved/not resolved/thanks/满意/不满意/解决了/没解决/谢谢.
 ---
 

@@ -1,5 +1,12 @@
 ---
 name: translation-manager
+description: 'Translation Manager for this repo: Supabase-backed translations, admin
+  UI under /admin/translation-manager with Home live preview and click-to-select translation,
+  Edge Functions (translations-get/admi'
+---
+
+---
+name: translation-manager
 description: Translation Manager for this repo: Supabase-backed translations, admin UI under /admin/translation-manager with Home live preview and click-to-select translation, Edge Functions (translations-get/admin/suggest), build-time translation pipeline, and security hardening. Use when planning or editing translation manager UI, Supabase schema/migrations, translation scripts (seed/pull), Edge Functions, translation auth, or troubleshooting translation data/AI suggestions.
 ---
 

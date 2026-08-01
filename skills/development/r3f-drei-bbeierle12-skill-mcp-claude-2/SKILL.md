@@ -1,5 +1,11 @@
 ---
 name: r3f-drei
+description: Drei ("three" in German) provides production-ready abstractions for common
+  R3F patterns—controls, loaders, helpers, and effects.
+---
+
+---
+name: r3f-drei
 description: @react-three/drei helper library—OrbitControls, Text, Environment, useTexture, useGLTF, Html, Billboard, and 50+ abstractions that simplify common R3F patterns. Use when implementing camera controls, loading assets, rendering text, or needing common 3D utilities.
 ---
 
@@ -14,7 +20,7 @@ import { OrbitControls, Environment, Text, useGLTF } from '@react-three/drei';
 
 function Scene() {
   const { scene } = useGLTF('/model.glb');
-  
+
   return (
     <>
       <OrbitControls />
@@ -41,25 +47,25 @@ import { OrbitControls } from '@react-three/drei';
   maxPolarAngle={Math.PI}     // Vertical max (π = bottom)
   minAzimuthAngle={-Infinity} // Horizontal min
   maxAzimuthAngle={Infinity}  // Horizontal max
-  
+
   // Zoom
   enableZoom={true}
   zoomSpeed={1}
   minDistance={1}             // Min zoom distance
   maxDistance={100}           // Max zoom distance
-  
+
   // Pan
   enablePan={true}
   panSpeed={1}
   screenSpacePanning={true}
-  
+
   // Damping
   enableDamping={true}
   dampingFactor={0.05}
-  
+
   // Target
   target={[0, 0, 0]}
-  
+
   // Events
   onChange={(e) => console.log('changed')}
   onStart={(e) => console.log('interaction start')}
@@ -100,7 +106,7 @@ import { useGLTF } from '@react-three/drei';
 
 function Model() {
   const { scene, nodes, materials, animations } = useGLTF('/model.glb');
-  
+
   return <primitive object={scene} />;
 }
 
@@ -119,21 +125,21 @@ import { useTexture } from '@react-three/drei';
 function TexturedMesh() {
   // Single texture
   const colorMap = useTexture('/texture.jpg');
-  
+
   // Multiple textures
   const [color, normal, roughness] = useTexture([
     '/color.jpg',
-    '/normal.jpg', 
+    '/normal.jpg',
     '/roughness.jpg'
   ]);
-  
+
   // Object syntax
   const textures = useTexture({
     map: '/color.jpg',
     normalMap: '/normal.jpg',
     roughnessMap: '/roughness.jpg'
   });
-  
+
   return (
     <mesh>
       <boxGeometry />
@@ -153,7 +159,7 @@ function EnvMappedMesh() {
     ['px.jpg', 'nx.jpg', 'py.jpg', 'ny.jpg', 'pz.jpg', 'nz.jpg'],
     { path: '/cubemaps/sky/' }
   );
-  
+
   return (
     <mesh>
       <sphereGeometry />
@@ -289,7 +295,7 @@ import { Html } from '@react-three/drei';
 <mesh position={[0, 1, 0]}>
   <boxGeometry />
   <meshStandardMaterial />
-  
+
   <Html
     position={[0, 1, 0]}
     center                    // Center on position
@@ -330,11 +336,11 @@ import { Bounds, useBounds } from '@react-three/drei';
 
 function FitContent() {
   const bounds = useBounds();
-  
+
   useEffect(() => {
     bounds.refresh().fit();
   }, []);
-  
+
   return <Model />;
 }
 
@@ -383,7 +389,7 @@ import { Clone, useGLTF } from '@react-three/drei';
 
 function ClonedModels() {
   const { scene } = useGLTF('/model.glb');
-  
+
   return (
     <>
       <Clone object={scene} position={[-2, 0, 0]} />
@@ -399,9 +405,9 @@ function ClonedModels() {
 ### Premade Shapes
 
 ```tsx
-import { 
-  Box, Sphere, Plane, Cylinder, Cone, Torus, 
-  TorusKnot, Ring, Circle, Icosahedron 
+import {
+  Box, Sphere, Plane, Cylinder, Cone, Torus,
+  TorusKnot, Ring, Circle, Icosahedron
 } from '@react-three/drei';
 
 <Box args={[1, 1, 1]} position={[0, 0, 0]}>
@@ -556,7 +562,7 @@ import { Instances, Instance } from '@react-three/drei';
 <Instances limit={1000}>
   <boxGeometry />
   <meshStandardMaterial />
-  
+
   {positions.map((pos, i) => (
     <Instance key={i} position={pos} color="red" />
   ))}

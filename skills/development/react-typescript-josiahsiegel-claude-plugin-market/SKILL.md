@@ -1,5 +1,10 @@
 ---
 name: react-typescript
+description: '| Type | Usage | Example |'
+---
+
+---
+name: react-typescript
 description: Complete React TypeScript system. PROACTIVELY activate for: (1) Component props typing, (2) Event handler types, (3) Hooks with TypeScript, (4) Generic components, (5) forwardRef typing, (6) Context with type safety, (7) Utility types (Partial, Pick, Omit), (8) Discriminated unions for state. Provides: Props interfaces, event types, generic patterns, type-safe context, polymorphic components. Ensures type-safe React with proper TypeScript patterns.
 ---
 

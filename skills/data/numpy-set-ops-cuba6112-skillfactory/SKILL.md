@@ -1,5 +1,12 @@
 ---
 name: numpy-set-ops
+description: NumPy provides vectorized set operations for 1D arrays and multidimensional
+  subarrays. These tools allow for deduplication, membership testing, and finding
+  differences/intersections between datasets.
+---
+
+---
+name: numpy-set-ops
 description: Set-theoretic operations for finding unique elements, membership testing, and array intersections. Triggers: unique, isin, intersect1d, setdiff1d, union1d.
 ---
 

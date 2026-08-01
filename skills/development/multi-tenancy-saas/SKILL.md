@@ -1,4 +1,11 @@
 ---
+name: multi-tenancy-saas
+description: Multi-tenancy lets one product serve many customers safely. The hard
+  parts are enforcing isolation everywhere (API, DB, cache, jobs), preventing noisy-neighbor
+  issues, and keeping operations (migrations, billing, support) tenant-aware.
+---
+
+---
 name: Multi-Tenancy & SaaS Architecture
 description: Patterns for building B2B SaaS multi-tenancy: tenant identification, data isolation (RLS/schema/db), quotas, billing/metering, onboarding, and tenant-safe operations
 ---

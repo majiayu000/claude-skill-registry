@@ -1,5 +1,12 @@
 ---
 name: eval-frameworks
+description: Traditional software metrics (accuracy, F1) fail to capture the quality
+  of LLM outputs. Evaluation frameworks like Ragas and DeepEval use "LLM-as-a-judge"
+  to quantify subjective qualities like faithfulness, relevance, and professionalism.
+---
+
+---
+name: eval-frameworks
 description: Evaluation framework patterns for RAG and LLMs, including faithfulness metrics, synthetic dataset generation, and LLM-as-a-judge patterns. Triggers: ragas, deepeval, llm-eval, faithfulness, hallucination-check, synthetic-data.
 ---
 
@@ -14,11 +21,11 @@ Traditional software metrics (accuracy, F1) fail to capture the quality of LLM o
 - **Synthetic Benchmarking**: Creating evaluation sets when manual gold-standard data is unavailable.
 
 ## Decision Tree
-1. Do you want to check for hallucinations? 
+1. Do you want to check for hallucinations?
    - YES: Run a Faithfulness metric.
-2. Is the retrieved context actually useful for the question? 
+2. Is the retrieved context actually useful for the question?
    - YES: Run a Retrieval Relevance metric.
-3. Do you need to scale evaluation without manual labeling? 
+3. Do you need to scale evaluation without manual labeling?
    - YES: Use Synthetic Data Generation.
 
 ## Workflows

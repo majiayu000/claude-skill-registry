@@ -1,5 +1,10 @@
 ---
 name: python-opencv
+description: '| Function | Purpose | Gotcha |'
+---
+
+---
+name: python-opencv
 description: Complete OpenCV computer vision system for Python. PROACTIVELY activate for: (1) Image loading with cv2.imread (BGR format gotcha), (2) Video capture with cv2.VideoCapture, (3) Color space conversion (BGR to RGB, HSV, grayscale), (4) Image filtering (GaussianBlur, medianBlur, bilateralFilter), (5) Edge detection (Canny), (6) Contour detection with cv2.findContours, (7) Image resizing with interpolation methods, (8) Template matching, (9) Feature detection (SIFT, ORB, AKAZE), (10) Drawing functions (rectangle, circle, text), (11) Video writing with cv2.VideoWriter, (12) Morphological operations, (13) Deep learning with cv2.dnn module, (14) GPU acceleration with cv2.cuda, (15) Coordinate system (x,y vs row,col) gotchas. Provides: Image processing patterns, video capture/writing, memory management, performance optimization, Jupyter notebook workarounds. Ensures correct BGR handling and memory-safe OpenCV usage.
 ---
 

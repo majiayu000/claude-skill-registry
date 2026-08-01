@@ -1,5 +1,12 @@
 ---
 name: web-ui-link
+description: 'Generate URLs for the LimaCharlie web application interface. Quickly
+  open the web UI for any feature: dashboard, sensors, detections, D&R rules, FP rules,
+  secrets, outputs, lookups, payloads, YARA rul'
+---
+
+---
+name: web-ui-link
 description: Generate URLs for the LimaCharlie web application interface. Quickly open the web UI for any feature: dashboard, sensors, detections, D&R rules, FP rules, secrets, outputs, lookups, payloads, YARA rules, artifacts, investigations, extensions, adapters, installation keys, billing, users, playbooks, AI agents, and more. For sensor-specific pages: timeline, console, processes, network, file-system, live-feed. For groups: members, organizations, permissions. Use for "open dashboard", "link to detections", "web UI for sensor", "open D&R rules page", "browser link", "app link", "open in web", "show me URL for", "go to".
 allowed-tools:
   - Task

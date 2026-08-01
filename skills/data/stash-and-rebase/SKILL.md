@@ -1,4 +1,9 @@
 ---
+name: stash-and-rebase
+description: Execute /stash-and-rebase slash command.
+---
+
+---
 name: stashing-and-rebasing
 description: Stashes changes, rebases onto main, and reapplies stash. Use when: user wants to update branch while preserving uncommitted work.
 ---

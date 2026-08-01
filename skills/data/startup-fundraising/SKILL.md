@@ -1,5 +1,11 @@
 ---
 name: startup-fundraising
+description: Systematic framework for raising capital from pre-seed through growth
+  stages.
+---
+
+---
+name: startup-fundraising
 description: Use when raising startup capital (pre-seed through Series C+): decide raise vs bootstrap, size a round, build a deck + data room, run investor targeting/outreach, negotiate SAFEs/term sheets, manage diligence, and set investor reporting cadence post-close.
 ---
 

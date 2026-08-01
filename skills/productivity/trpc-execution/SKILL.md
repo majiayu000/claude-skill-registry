@@ -1,5 +1,12 @@
 ---
 name: trpc-execution
+description: ChainGraph execution tRPC layer for flow execution management. Use when
+  working on packages/chaingraph-executor or apps/chaingraph-execution-api. Covers
+  execution lifecycle (create/start/pause/resume/
+---
+
+---
+name: trpc-execution
 description: ChainGraph execution tRPC layer for flow execution management. Use when working on packages/chaingraph-executor or apps/chaingraph-execution-api. Covers execution lifecycle (create/start/pause/resume/stop), event streaming, DBOS workflow integration, signal pattern, API vs Worker modes. Triggers: execution procedure, subscribeToExecutionEvents, ExecutionService, chaingraph-executor, execution-api, execution workflow, DBOS signal, taskQueue, eventBus.
 ---
 

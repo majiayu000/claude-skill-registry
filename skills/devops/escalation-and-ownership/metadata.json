@@ -1,0 +1,18 @@
+{
+  "name": "escalation-and-ownership",
+  "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
+  "path": "41-incident-management/escalation-and-ownership/SKILL.md",
+  "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills",
+  "downloaded_at": "2026-01-17T03:41:51.765290Z",
+  "dir_name": "escalation-and-ownership",
+  "category": "devops",
+  "github_path": "41-incident-management/escalation-and-ownership",
+  "github_branch": "main",
+  "author": "AmnadTaowsoam",
+  "source_url": "https://github.com/AmnadTaowsoam/cerebratechai-claude-skills/blob/main/41-incident-management/escalation-and-ownership/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 CerebratechAI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

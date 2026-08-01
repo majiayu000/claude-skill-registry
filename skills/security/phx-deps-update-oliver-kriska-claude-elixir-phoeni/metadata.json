@@ -1,0 +1,37 @@
+{
+  "name": "phx-deps-update",
+  "repo": "oliver-kriska/claude-elixir-phoenix",
+  "path": "targets/pi/skills/phx-deps-update/SKILL.md",
+  "github_branch": "main",
+  "category": "security",
+  "source": "github.com/oliver-kriska/claude-elixir-phoenix",
+  "dir_name": "phx-deps-update-oliver-kriska-claude-elixir-phoeni",
+  "downloaded_at": "2026-07-23T03:11:42.204991Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "security",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for security: security, audit",
+    "score": 2,
+    "runner_up": "ai-llm",
+    "runner_up_score": 1,
+    "signals": [
+      "security",
+      "audit"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "oliver-kriska",
+  "source_url": "https://github.com/oliver-kriska/claude-elixir-phoenix/blob/main/targets/pi/skills/phx-deps-update/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/oliver-kriska/claude-elixir-phoenix/blob/main/targets/pi/skills/phx-deps-update/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Bump outdated Hex deps \u2014 inventory, snapshot changelogs, update, fix breaks, split reviewable PRs (patches bundled, majors solo). Use to upgrade/bump Elixir dependencies or when versions fall behind. NOT for deps.get failures (/skill:phx-investigate)."
+}

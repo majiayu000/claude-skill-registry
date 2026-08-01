@@ -18,14 +18,14 @@ from pathlib import Path
 from typing import Dict, Iterable, Tuple
 
 from utils import (
-    normalize_category,
-    build_skill_key,
-    normalize_repo,
-    normalize_name,
-    get_repo_suffix,
-    short_hash,
     build_legal_metadata,
+    build_skill_key,
+    get_repo_suffix,
     load_metadata,
+    normalize_category,
+    normalize_name,
+    normalize_repo,
+    short_hash,
 )
 
 

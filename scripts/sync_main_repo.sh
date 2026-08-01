@@ -195,6 +195,10 @@ if [[ "$rebuild" -eq 1 ]]; then
 
   run_step "Check category artifacts" python "$main_dir/scripts/check_category_artifacts.py" \
     --categories-dir "$main_dir/docs/categories"
+
+  run_step "Validate static artifact API v1" python "$main_dir/scripts/check_artifact_api.py" \
+    --root "$main_dir" \
+    --docs-dir "$main_dir/docs"
 fi
 
 run_step "Generate third-party notices (advisory full-archive metadata scan)" python "$main_dir/scripts/check_metadata_compliance.py" \

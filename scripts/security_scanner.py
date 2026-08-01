@@ -30,7 +30,7 @@ from utils import is_declared_bundled_skill_file
 # Load schema
 SCHEMA_PATH = Path(__file__).parent.parent / "schema" / "skill.schema.json"
 SECURITY_SCANNER_NAME = "claude-skill-registry-security-scanner"
-SECURITY_SCANNER_VERSION = "1.1.1"
+SECURITY_SCANNER_VERSION = "1.1.2"
 
 
 def utc_now_isoformat() -> str:
@@ -98,10 +98,11 @@ def load_skill_metadata(skill_dir: Path) -> dict:
 class SecurityScanner:
     """Security scanner for SKILL.md files"""
 
-    def __init__(self, schema_path: str = None):
+    def __init__(self, schema_path: str = None, require_metadata: bool = False):
         self.schema_path = schema_path or SCHEMA_PATH
         self.schema = self._load_schema()
         self.security_blocklist = load_security_blocklist()
+        self.require_metadata = require_metadata
         self.issues = []
 
     def _load_schema(self) -> dict:
@@ -148,7 +149,7 @@ class SecurityScanner:
         frontmatter = self._extract_frontmatter(content)
         if frontmatter:
             self._validate_schema(frontmatter)
-        else:
+        elif not any(issue.get("type") == "yaml_parse_error" for issue in self.issues):
             self.issues.append(
                 {
                     "severity": "error",
@@ -195,8 +196,17 @@ class SecurityScanner:
         warning_count = sum(1 for issue in issues if issue.get("severity") == "warning")
         status = "passed" if is_safe else "failed"
         reason = "no_errors" if is_safe else "scanner_errors"
-        if any(issue.get("type") == "blocked_source" for issue in issues):
-            reason = "blocked_source"
+        for issue_type in (
+            "blocked_source",
+            "metadata_missing",
+            "metadata_read_error",
+            "undecodable_executable",
+            "bundled_text_decode_error",
+            "bundled_file_read_error",
+        ):
+            if any(issue.get("type") == issue_type for issue in issues):
+                reason = issue_type
+                break
 
         source_repo = str(metadata.get("repo") or "")
         source_path = str(metadata.get("path") or metadata.get("github_path") or "")
@@ -214,12 +224,14 @@ class SecurityScanner:
             "ruleset_sha256": ruleset_sha256,
             "error_count": error_count,
             "warning_count": warning_count,
+            "require_metadata": self.require_metadata,
         }
 
         return {
             "id": canonical_json_sha256(decision_payload),
             "status": status,
             "reason": reason,
+            "policy": {"require_metadata": self.require_metadata},
             "scanner": {
                 "name": SECURITY_SCANNER_NAME,
                 "version": SECURITY_SCANNER_VERSION,
@@ -332,15 +344,36 @@ class SecurityScanner:
 
             if not self._check_bundled_file_size(bundled_file):
                 continue
-            if (
+
+            is_known_text = (
                 bundled_file.suffix.lower() in BUNDLED_SCAN_EXTENSIONS
                 or bundled_file.name in BUNDLED_SCAN_ROOT_FILES
-            ):
-                self._scan_bundled_text_file(bundled_file)
+            )
+            is_bin_file = bool(rel_path.parts) and rel_path.parts[0].lower() == "bin"
+            is_executable = bool(bundled_file.stat().st_mode & 0o111)
+            has_shebang = False
+            if not (is_known_text or is_bin_file or is_executable):
+                try:
+                    with bundled_file.open("rb") as handle:
+                        has_shebang = handle.read(2) == b"#!"
+                except OSError as exc:
+                    self._record_bundled_read_error(bundled_file, exc)
+                    continue
+
+            executable_like = is_bin_file or is_executable or has_shebang
+            if is_known_text or executable_like:
+                self._scan_bundled_text_file(
+                    bundled_file,
+                    executable_like=executable_like,
+                )
 
     def _check_bundled_file_size(self, bundled_file: Path) -> bool:
         """Return False and record an issue when an archived support file is too large."""
-        size = bundled_file.stat().st_size
+        try:
+            size = bundled_file.stat().st_size
+        except OSError as exc:
+            self._record_bundled_read_error(bundled_file, exc)
+            return False
         if size > 10_000_000:  # 10MB
             self.issues.append(
                 {
@@ -353,23 +386,54 @@ class SecurityScanner:
             return False
         return True
 
-    def _scan_bundled_text_file(self, bundled_file: Path):
-        """Scan an archived support file when it is text-like executable input."""
-        if not self._check_bundled_file_size(bundled_file):
-            return
+    def _record_bundled_read_error(self, bundled_file: Path, exc: OSError):
+        """Record explicit quarantine evidence for an unreadable support file."""
+        self.issues.append(
+            {
+                "severity": "error",
+                "type": "bundled_file_read_error",
+                "action": "quarantine",
+                "file": str(bundled_file),
+                "message": f"Cannot inspect bundled support file: {exc}",
+            }
+        )
 
+    def _scan_bundled_text_file(self, bundled_file: Path, executable_like: bool = False):
+        """Scan an archived support file when it is text-like executable input."""
         try:
             content = bundled_file.read_text(encoding="utf-8")
             self._scan_dangerous_patterns(content, bundled_file)
             self._detect_credentials(content, bundled_file)
             self._detect_obfuscation_exec(content, bundled_file)
-        except (OSError, UnicodeDecodeError):
-            pass
+        except UnicodeDecodeError as exc:
+            issue_type = (
+                "undecodable_executable" if executable_like else "bundled_text_decode_error"
+            )
+            self.issues.append(
+                {
+                    "severity": "error",
+                    "type": issue_type,
+                    "action": "quarantine",
+                    "file": str(bundled_file),
+                    "message": f"Bundled support file is not valid UTF-8 text: {exc}",
+                }
+            )
+        except OSError as exc:
+            self._record_bundled_read_error(bundled_file, exc)
 
     def _scan_blocked_source(self, skill_path: Path):
         """Fail archived skills sourced from a repo on the security blocklist."""
         metadata_path = skill_path.parent / "metadata.json"
         if not metadata_path.exists():
+            if self.require_metadata:
+                self.issues.append(
+                    {
+                        "severity": "error",
+                        "type": "metadata_missing",
+                        "file": str(metadata_path),
+                        "message": "Required archive metadata.json is missing",
+                    }
+                )
             return
 
         try:
@@ -381,6 +445,17 @@ class SecurityScanner:
                     "type": "metadata_read_error",
                     "file": str(metadata_path),
                     "message": f"Cannot read metadata for blocklist scan: {exc}",
+                }
+            )
+            return
+
+        if not isinstance(metadata, dict):
+            self.issues.append(
+                {
+                    "severity": "error",
+                    "type": "metadata_read_error",
+                    "file": str(metadata_path),
+                    "message": "Archive metadata must be a JSON object",
                 }
             )
             return
@@ -535,9 +610,10 @@ def scan_directory(
     scanned_at: str = "",
     progress_interval: int = 0,
     progress_stream: TextIO | None = None,
+    require_metadata: bool = False,
 ) -> Dict:
     """Scan all skills in a directory"""
-    scanner = SecurityScanner()
+    scanner = SecurityScanner(require_metadata=require_metadata)
     skills_root = skills_dir.resolve()
     scan_timestamp = scanned_at or utc_now_isoformat()
     ruleset_sha256 = security_ruleset_hash()
@@ -548,6 +624,7 @@ def scan_directory(
             "ruleset_sha256": ruleset_sha256,
         },
         "generated_at": scan_timestamp,
+        "scan_policy": {"require_metadata": require_metadata},
         "total": 0,
         "passed": 0,
         "failed": 0,
@@ -555,11 +632,14 @@ def scan_directory(
     }
 
     if selected_files is None:
-        scan_targets = (
-            skill_file
-            for skill_file in skills_dir.rglob("SKILL.md")
-            if not is_declared_bundled_skill_file(skill_file, skills_root)
-        )
+        def directory_scan_targets():
+            for skill_file in skills_dir.rglob("SKILL.md"):
+                resolved_skill_file = skill_file.resolve()
+                if is_declared_bundled_skill_file(resolved_skill_file, skills_root):
+                    continue
+                yield resolved_skill_file
+
+        scan_targets = directory_scan_targets()
     else:
         scan_targets = selected_files
 
@@ -631,6 +711,11 @@ def main():
     )
     parser.add_argument("--quiet", action="store_true", help="Only print summary")
     parser.add_argument(
+        "--require-metadata",
+        action="store_true",
+        help="Require readable metadata.json for every skill (archive publication mode)",
+    )
+    parser.add_argument(
         "--progress-interval",
         type=int,
         default=0,
@@ -647,7 +732,7 @@ def main():
 
     if path.is_file():
         # Scan single file
-        scanner = SecurityScanner()
+        scanner = SecurityScanner(require_metadata=args.require_metadata)
         is_safe, issues = scanner.scan_file(path)
         scan_timestamp = utc_now_isoformat()
         security_decision = scanner.build_security_decision(
@@ -665,6 +750,7 @@ def main():
                     {
                         "scanner": security_decision["scanner"],
                         "generated_at": scan_timestamp,
+                        "scan_policy": {"require_metadata": args.require_metadata},
                         "safe": is_safe,
                         "security_decision": security_decision,
                         "issues": issues,
@@ -691,6 +777,7 @@ def main():
             quiet=args.quiet,
             selected_files=selected_files,
             progress_interval=args.progress_interval,
+            require_metadata=args.require_metadata,
         )
 
         print(f"\n{'='*60}")

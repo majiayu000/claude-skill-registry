@@ -1,0 +1,37 @@
+{
+  "name": "tlive",
+  "repo": "y49/tlive",
+  "path": "plugins/claude/plugins/tlive/skills/tlive/SKILL.md",
+  "github_branch": "main",
+  "category": "bash",
+  "source": "github.com/y49/tlive",
+  "dir_name": "tlive-y49-tlive",
+  "downloaded_at": "2026-07-24T03:13:51.039330Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "bash",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for bash: bash, cli",
+    "score": 2,
+    "runner_up": "ai-llm",
+    "runner_up_score": 1,
+    "signals": [
+      "bash",
+      "cli"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "y49",
+  "source_url": "https://github.com/y49/tlive/blob/main/plugins/claude/plugins/tlive/skills/tlive/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/y49/tlive/blob/main/plugins/claude/plugins/tlive/skills/tlive/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "tlive \u2014 remote approvals (Telegram/Feishu/web), live web terminal, and session monitoring for Claude Code / Codex. Use for configuring or diagnosing tlive, connecting IM platforms, printing session links, or explaining approval behavior. Triggers \"tlive\", \"IM bridge\", \"phone approvals\", \"remote terminal\", \"Telegram/Feishu notifications\"."
+}

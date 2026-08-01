@@ -1,0 +1,37 @@
+{
+  "name": "director-mode",
+  "repo": "claude-world/director-mode-lite",
+  "path": "skills/director-mode/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/claude-world/director-mode-lite",
+  "dir_name": "director-mode",
+  "downloaded_at": "2026-07-27T03:11:12.253700Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=2, development=2",
+    "score": 2,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "script",
+      "cli"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "claude-world",
+  "source_url": "https://github.com/claude-world/director-mode-lite/blob/main/skills/director-mode/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/claude-world/director-mode-lite/blob/main/skills/director-mode/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Direct substantial repository work across Claude Code, Codex CLI, or Grok Build with a concise brief, parallel agents, evidence-based completion, and optional cross-CLI continuation. Use for project onboarding, multi-step implementation, agent coordination, verification planning, low-interruption setup, or deciding how another CLI should take over. Do not use it as a permission gate or mandatory workflow."
+}

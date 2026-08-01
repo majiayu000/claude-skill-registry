@@ -1,0 +1,37 @@
+{
+  "name": "credit-memo",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/credit-memo/SKILL.md",
+  "github_branch": "main",
+  "category": "quality",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "credit-memo",
+  "downloaded_at": "2026-07-15T02:52:58.644664Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "quality",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for quality: quality, review",
+    "score": 2,
+    "runner_up": "business",
+    "runner_up_score": 1,
+    "signals": [
+      "quality",
+      "review"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/credit-memo/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/credit-memo/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Write a credit memo for a lending decision: borrower story, facility structure, repayment sources, financial-ratio spread with covenant headroom, risk factors with mitigants, risk-rating rationale, and a recommendation. Use when asked to write a credit memo, credit application, credit paper, loan write-up, or prepare a deal for credit committee. Produces a complete credit memo ready for committee review."
+}

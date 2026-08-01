@@ -1,0 +1,37 @@
+{
+  "name": "store-listing-assets",
+  "repo": "evanca/flutter-ai-rules",
+  "path": "skills/store-listing-assets/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/evanca/flutter-ai-rules",
+  "dir_name": "store-listing-assets",
+  "downloaded_at": "2026-07-30T02:42:41.566225Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: product=2, productivity=2",
+    "score": 2,
+    "runner_up": "productivity",
+    "runner_up_score": 2,
+    "signals": [
+      "product",
+      "feature"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "evanca",
+  "source_url": "https://github.com/evanca/flutter-ai-rules/blob/main/skills/store-listing-assets/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/evanca/flutter-ai-rules/blob/main/skills/store-listing-assets/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when writing store copy to character limits (name, subtitle, descriptions, keywords) or preparing listing images (icon, feature graphic, screenshots, preview video)."
+}

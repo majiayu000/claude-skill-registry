@@ -1,0 +1,37 @@
+{
+  "name": "uncertainty-and-units",
+  "repo": "K-Dense-AI/scientific-agent-skills",
+  "path": "skills/uncertainty-and-units/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/K-Dense-AI/scientific-agent-skills",
+  "dir_name": "uncertainty-and-units",
+  "downloaded_at": "2026-07-27T03:02:48.466639Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: development=2, security=2",
+    "score": 2,
+    "runner_up": "security",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "K-Dense-AI",
+  "source_url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/main/skills/uncertainty-and-units/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/K-Dense-AI/scientific-agent-skills/blob/main/skills/uncertainty-and-units/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Track physical units and propagate measurement uncertainty in scientific calculations using pint and uncertainties. Use for unit conversion and dimensional checking, GUM uncertainty budgets, Type A and Type B evaluation, coverage factors and expanded uncertainty, Monte Carlo propagation, significant-figure and plus-minus reporting, error propagation through curve fits, CODATA constants, auditing Python code for stripped units or broken uncertainty propagation, and order-of-magnitude plausibility checks using dimensionless groups (Reynolds, Peclet, Damkohler, Knudsen, Biot, Womersley), characteristic scales such as diffusion time or Debye length, and observed magnitude ranges. Trigger on \"is this number physically reasonable\", \"sanity check these units\", \"what regime is this flow in\", or a result that looks off by orders of magnitude."
+}

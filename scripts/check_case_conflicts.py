@@ -9,10 +9,10 @@ Usage:
     python scripts/check_case_conflicts.py [--fix]
 """
 
-import sys
-from pathlib import Path
-from collections import defaultdict
 import argparse
+import sys
+from collections import defaultdict
+from pathlib import Path
 
 
 def find_case_conflicts(skills_dir: Path) -> dict:

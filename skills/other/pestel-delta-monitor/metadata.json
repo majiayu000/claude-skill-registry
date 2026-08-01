@@ -1,0 +1,37 @@
+{
+  "name": "pestel-delta-monitor",
+  "repo": "deanpeters/Product-Manager-Skills",
+  "path": "skills/pestel-delta-monitor/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/deanpeters/Product-Manager-Skills",
+  "dir_name": "pestel-delta-monitor",
+  "downloaded_at": "2026-07-18T02:46:02.796311Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: business=2, planning=2",
+    "score": 2,
+    "runner_up": "planning",
+    "runner_up_score": 2,
+    "signals": [
+      "business",
+      "strategy"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "deanpeters",
+  "source_url": "https://github.com/deanpeters/Product-Manager-Skills/blob/main/skills/pestel-delta-monitor/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/deanpeters/Product-Manager-Skills/blob/main/skills/pestel-delta-monitor/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Quarterly re-scan of a prior PESTEL analysis. Use when checking which macro factors moved, which assumptions broke, and what's new \u2014 turning PESTEL from a workshop artifact into a radar."
+}

@@ -1,0 +1,36 @@
+{
+  "name": "recap",
+  "repo": "noluyorAbi/claude-code-recap",
+  "path": "skills/recap/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/noluyorAbi/claude-code-recap",
+  "dir_name": "recap",
+  "downloaded_at": "2026-07-17T03:04:31.333626Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category ai-llm scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "ai-ml",
+    "runner_up_score": 1,
+    "signals": [
+      "prompt"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "noluyorAbi",
+  "source_url": "https://github.com/noluyorAbi/claude-code-recap/blob/main/skills/recap/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/noluyorAbi/claude-code-recap/blob/main/skills/recap/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Show recent Claude Code sessions across all projects, so the user can re-enter work after a reboot or context switch. Lists per session the absolute project path, a short summary, last activity, turn count, git branch, model, and a ready-to-paste resume command, and can re-open all of them at once in new terminal tabs. Use when the user asks \"what was I working on\", \"which projects did I touch recently\", \"where did I leave off\", \"list my recent sessions\", \"how do I get back into that session\", \"open all my sessions again\", or invokes /recap. Reads only local files; the default run is instant and offline."
+}

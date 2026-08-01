@@ -1,0 +1,40 @@
+{
+  "name": "content-writer",
+  "repo": "ViryaZheng/recomby-geo",
+  "path": "plugins/recomby-geo/skills/content-writer/SKILL.md",
+  "github_branch": "main",
+  "category": "writing",
+  "source": "github.com/ViryaZheng/recomby-geo",
+  "dir_name": "content-writer-viryazheng-recomby-geo",
+  "downloaded_at": "2026-07-16T02:46:57.214178Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "writing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for writing: writing, writer, copy, blog, article",
+    "score": 5,
+    "runner_up": "marketing",
+    "runner_up_score": 3,
+    "signals": [
+      "writing",
+      "writer",
+      "copy",
+      "blog",
+      "article"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "ViryaZheng",
+  "source_url": "https://github.com/ViryaZheng/recomby-geo/blob/main/plugins/recomby-geo/skills/content-writer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ViryaZheng/recomby-geo/blob/main/plugins/recomby-geo/skills/content-writer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Write SEO-optimized blog posts, landing pages, and long-form page copy following Google's E-E-A-T and Helpful Content guidelines. Handles new content creation from a keyword, topic, or brief, and full-page rewrites. Use when asked to \"write a blog post\", \"create a landing page\", \"write content about X\", \"content for keyword X\", \"draft an article\", \"blog post about\", \"landing page for\", \"service page\", \"product page copy\", \"rewrite this page\", \"how-to guide\", or \"listicle\". NOT for analyzing/auditing existing content (seo-geo-optimizer, content-quality-auditor), title tags or meta descriptions (meta-tags-optimizer), or keyword expansion (keyword-research) \u2014 those skills own their triggers."
+}

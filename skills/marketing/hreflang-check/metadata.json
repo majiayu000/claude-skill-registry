@@ -1,0 +1,39 @@
+{
+  "name": "hreflang-check",
+  "repo": "indranilbanerjee/digital-marketing-pro",
+  "path": "skills/hreflang-check/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/indranilbanerjee/digital-marketing-pro",
+  "dir_name": "hreflang-check",
+  "downloaded_at": "2026-07-22T03:02:07.757253Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for marketing: marketing, seo, content, brand",
+    "score": 4,
+    "runner_up": "ai-llm",
+    "runner_up_score": 1,
+    "signals": [
+      "marketing",
+      "seo",
+      "content",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "indranilbanerjee",
+  "source_url": "https://github.com/indranilbanerjee/digital-marketing-pro/blob/main/skills/hreflang-check/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/indranilbanerjee/digital-marketing-pro/blob/main/skills/hreflang-check/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Audit hreflang tags. Use when: checking missing tags, incorrect language codes, or x-default configuration."
+}

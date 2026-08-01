@@ -1,0 +1,38 @@
+{
+  "name": "entity-audit",
+  "repo": "indranilbanerjee/digital-marketing-pro",
+  "path": "skills/entity-audit/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/indranilbanerjee/digital-marketing-pro",
+  "dir_name": "entity-audit",
+  "downloaded_at": "2026-07-28T02:53:49.360280Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for marketing: marketing, social, brand",
+    "score": 3,
+    "runner_up": "ai-llm",
+    "runner_up_score": 2,
+    "signals": [
+      "marketing",
+      "social",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "indranilbanerjee",
+  "source_url": "https://github.com/indranilbanerjee/digital-marketing-pro/blob/main/skills/entity-audit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/indranilbanerjee/digital-marketing-pro/blob/main/skills/entity-audit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Audit brand entity consistency. Use when: checking Wikidata, Knowledge Panel, or directory discrepancies."
+}

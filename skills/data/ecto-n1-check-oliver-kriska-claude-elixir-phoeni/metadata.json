@@ -1,0 +1,37 @@
+{
+  "name": "ecto-n1-check",
+  "repo": "oliver-kriska/claude-elixir-phoenix",
+  "path": "targets/codex/skills/ecto-n1-check/SKILL.md",
+  "github_branch": "main",
+  "category": "data",
+  "source": "github.com/oliver-kriska/claude-elixir-phoenix",
+  "dir_name": "ecto-n1-check-oliver-kriska-claude-elixir-phoeni",
+  "downloaded_at": "2026-07-22T03:08:22.168662Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "data",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for data: data, database",
+    "score": 2,
+    "runner_up": "analysis",
+    "runner_up_score": 1,
+    "signals": [
+      "data",
+      "database"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "oliver-kriska",
+  "source_url": "https://github.com/oliver-kriska/claude-elixir-phoenix/blob/main/targets/codex/skills/ecto-n1-check/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/oliver-kriska/claude-elixir-phoenix/blob/main/targets/codex/skills/ecto-n1-check/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Detect N+1 query anti-patterns specifically \u2014 Repo calls inside Enum/for loops, missing preloads on associations. Use when N+1 is explicitly suspected, NOT for unrelated Ecto questions or wider database performance."
+}

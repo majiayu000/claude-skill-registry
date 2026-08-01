@@ -1,0 +1,38 @@
+{
+  "name": "campaign-plan",
+  "repo": "indranilbanerjee/digital-marketing-pro",
+  "path": "skills/campaign-plan/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/indranilbanerjee/digital-marketing-pro",
+  "dir_name": "campaign-plan",
+  "downloaded_at": "2026-07-22T03:02:04.570409Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: marketing=3, orchestration=3",
+    "score": 3,
+    "runner_up": "orchestration",
+    "runner_up_score": 3,
+    "signals": [
+      "marketing",
+      "campaign",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "indranilbanerjee",
+  "source_url": "https://github.com/indranilbanerjee/digital-marketing-pro/blob/main/skills/campaign-plan/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/indranilbanerjee/digital-marketing-pro/blob/main/skills/campaign-plan/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Build multi-channel campaign plans. Use when: objectives, audience targeting, channel mix, budget, timeline, KPIs."
+}

@@ -1,0 +1,40 @@
+{
+  "name": "laravel-security-audit",
+  "repo": "sickn33/agentic-awesome-skills",
+  "path": "skills/laravel-security-audit/SKILL.md",
+  "github_branch": "main",
+  "category": "security",
+  "source": "github.com/sickn33/agentic-awesome-skills",
+  "dir_name": "laravel-security-audit-sickn33-agentic-awesome-skil",
+  "downloaded_at": "2026-07-27T03:25:39.365953Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "security",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for security: security, auth, vulnerability, audit, owasp",
+    "score": 5,
+    "runner_up": "data",
+    "runner_up_score": 3,
+    "signals": [
+      "security",
+      "auth",
+      "vulnerability",
+      "audit",
+      "owasp"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/laravel-security-audit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/laravel-security-audit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Security auditor for Laravel applications. Analyzes code for vulnerabilities, misconfigurations, and insecure practices using OWASP standards and Laravel security best practices."
+}

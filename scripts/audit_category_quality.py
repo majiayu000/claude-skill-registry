@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 from collections import Counter
@@ -16,6 +17,7 @@ from category_taxonomy import (
     category_aliases,
     category_keywords,
     category_slug,
+    get_taxonomy,
     resolve_category,
 )
 from utils import extract_frontmatter, load_metadata, skill_semantic_fields
@@ -99,6 +101,144 @@ def best_suggestion(
 
 def compact_examples(items: list[dict[str, Any]], limit: int) -> list[dict[str, Any]]:
     return items[: max(limit, 0)]
+
+
+def file_sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def canonical_digest(value: Any) -> str:
+    payload = json.dumps(
+        value,
+        ensure_ascii=False,
+        sort_keys=True,
+        separators=(",", ":"),
+    ).encode("utf-8")
+    return hashlib.sha256(payload).hexdigest()
+
+
+def _sample_identity(seed: str, category: str, rel: Path) -> str:
+    return hashlib.sha256(f"{seed}|{category}|{rel.as_posix()}".encode()).hexdigest()
+
+
+def build_stratified_sample(
+    skills_dir: Path,
+    *,
+    content_chars: int = 2048,
+    taxonomy: Any | None = None,
+) -> dict[str, Any]:
+    taxonomy = taxonomy or get_taxonomy()
+    policy = taxonomy.audit_sampling
+    eligible = set(policy.categories)
+    candidates: dict[str, list[dict[str, Any]]] = {
+        category: [] for category in policy.categories
+    }
+    errors: list[str] = []
+
+    for skill_dir, rel in iter_skill_dirs(skills_dir):
+        metadata = load_metadata(skill_dir)
+        declared = (
+            metadata.get("category")
+            if isinstance(metadata.get("category"), str)
+            else rel.parts[0] if rel.parts else taxonomy.default_category
+        )
+        current_category = resolve_category(declared, allow_unknown=True)
+        if current_category not in eligible:
+            continue
+        candidates[current_category].append(
+            {
+                "skill_dir": skill_dir,
+                "rel": rel,
+                "sample_key": _sample_identity(
+                    policy.seed,
+                    current_category,
+                    rel,
+                ),
+            }
+        )
+
+    strata: list[dict[str, Any]] = []
+    digest_inputs: list[dict[str, str]] = []
+    for category in policy.categories:
+        population = sorted(
+            candidates[category],
+            key=lambda item: (item["sample_key"], item["rel"].as_posix()),
+        )
+        if len(population) < policy.per_category:
+            errors.append(
+                f"{category}: population {len(population)} is below quota "
+                f"{policy.per_category}"
+            )
+
+        samples: list[dict[str, Any]] = []
+        for candidate in population[: policy.per_category]:
+            skill_dir = candidate["skill_dir"]
+            rel = candidate["rel"]
+            skill_path = skill_dir / "SKILL.md"
+            metadata_path = skill_dir / "metadata.json"
+            if not metadata_path.is_file():
+                errors.append(f"{rel.as_posix()}: metadata.json is missing")
+                continue
+
+            content = read_text_prefix(skill_path, max_chars=max(content_chars, 8192))
+            metadata = load_metadata(skill_dir)
+            frontmatter = extract_frontmatter(content)
+            semantics = skill_semantic_fields(
+                skill_dir,
+                metadata=metadata,
+                frontmatter=frontmatter,
+                rel=rel,
+                content=content,
+                content_chars=content_chars,
+            )
+            excerpt = " ".join(content[:content_chars].split())
+            samples.append(
+                {
+                    "path": rel.as_posix(),
+                    "name": semantics["name"],
+                    "current_category": category,
+                    "description": semantics["description"],
+                    "content_excerpt": excerpt,
+                    "semantic_sources": semantics["sources"],
+                    "source_sha256": file_sha256(skill_path),
+                    "metadata_sha256": file_sha256(metadata_path),
+                    "sample_key": candidate["sample_key"],
+                }
+            )
+
+        stratum_digest = canonical_digest(samples)
+        digest_inputs.append({"category": category, "digest": stratum_digest})
+        strata.append(
+            {
+                "category": category,
+                "population_count": len(population),
+                "sample_count": len(samples),
+                "quota": policy.per_category,
+                "digest": stratum_digest,
+                "samples": samples,
+            }
+        )
+
+    overall_digest = canonical_digest(digest_inputs)
+    return {
+        "schema_version": policy.schema_version,
+        "status": "failed" if errors else "complete",
+        "skills_dir": str(skills_dir),
+        "policy": {
+            "seed": policy.seed,
+            "per_category": policy.per_category,
+            "categories": list(policy.categories),
+            "content_chars": content_chars,
+        },
+        "sample_count": sum(stratum["sample_count"] for stratum in strata),
+        "digest": overall_digest,
+        "strata": strata,
+        "errors": errors,
+    }
 
 
 def build_report(
@@ -267,28 +407,39 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--small-category-threshold", type=int, default=10)
     parser.add_argument("--limit-candidates", type=int, default=100)
     parser.add_argument("--limit-examples", type=int, default=20)
+    parser.add_argument(
+        "--stratified-sample",
+        action="store_true",
+        help="Emit the deterministic per-category review sample instead of the heuristic report.",
+    )
     return parser.parse_args(argv)
 
 
 def main(argv: list[str] | None = None) -> int:
     args = parse_args(argv)
-    report = build_report(
-        args.skills_dir,
-        include_frontmatter=args.include_frontmatter,
-        content_chars=args.content_chars,
-        min_score=args.min_score,
-        min_delta=args.min_delta,
-        small_category_threshold=args.small_category_threshold,
-        limit_candidates=args.limit_candidates,
-        limit_examples=args.limit_examples,
-    )
+    if args.stratified_sample:
+        report = build_stratified_sample(
+            args.skills_dir,
+            content_chars=args.content_chars or 2048,
+        )
+    else:
+        report = build_report(
+            args.skills_dir,
+            include_frontmatter=args.include_frontmatter,
+            content_chars=args.content_chars,
+            min_score=args.min_score,
+            min_delta=args.min_delta,
+            small_category_threshold=args.small_category_threshold,
+            limit_candidates=args.limit_candidates,
+            limit_examples=args.limit_examples,
+        )
     payload = json.dumps(report, indent=2, ensure_ascii=False)
     if args.output:
         args.output.parent.mkdir(parents=True, exist_ok=True)
         args.output.write_text(payload + "\n", encoding="utf-8")
     else:
         print(payload)
-    return 0
+    return 1 if report.get("status") == "failed" else 0
 
 
 if __name__ == "__main__":

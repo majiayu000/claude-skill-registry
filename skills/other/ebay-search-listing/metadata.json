@@ -1,0 +1,37 @@
+{
+  "name": "ebay-search-listing",
+  "repo": "browser-act/skills",
+  "path": "solutions/ecommerce/ebay-search-listing/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/browser-act/skills",
+  "dir_name": "ebay-search-listing",
+  "downloaded_at": "2026-07-21T02:57:38.554250Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=2, security=2",
+    "score": 2,
+    "runner_up": "security",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "browser-act",
+  "source_url": "https://github.com/browser-act/skills/blob/main/solutions/ecommerce/ebay-search-listing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/browser-act/skills/blob/main/solutions/ecommerce/ebay-search-listing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Extracts product listings from any eBay search or category page URL, returning per-item cards (itemNumber, url, title, subtitle, caption, price, priceWithCurrency, currency, wasPrice, bids, shipping, seller, sellerFeedbackCount, sellerPositiveRating, reviewsCount, starRating, image) plus pagination state (currentPage, nextPageUrl, hasNextPage, totalResultsApprox). Works across all eBay regional TLDs. Use when user mentions eBay, ebay.com, eBay scraper, eBay search results, eBay category page, eBay SRP, eBay product list, eBay item cards, scrape eBay listings, extract eBay items, eBay bulk products, eBay keyword search, eBay category scraper, eBay pagination, eBay startUrls, eBay items scraper, eBay marketplace scraping. Also applies to price comparison across marketplaces, competitive listing monitoring, category catalog audits, brand keyword tracking on eBay, and paginated bulk extraction of eBay item cards from a search or category URL."
+}

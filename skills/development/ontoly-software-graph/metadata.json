@@ -1,0 +1,40 @@
+{
+  "name": "ontoly-software-graph",
+  "repo": "mxyhi/ok-skills",
+  "path": "ontoly-software-graph/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/mxyhi/ok-skills",
+  "dir_name": "ontoly-software-graph",
+  "downloaded_at": "2026-07-14T02:55:04.551658Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for development: code, framework, build, software, refactor",
+    "score": 5,
+    "runner_up": "analysis",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "framework",
+      "build",
+      "software",
+      "refactor"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mxyhi",
+  "source_url": "https://github.com/mxyhi/ok-skills/blob/main/ontoly-software-graph/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mxyhi/ok-skills/blob/main/ontoly-software-graph/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use Ontoly's deterministic Software Graph and MCP capabilities for repository architecture, request tracing, dependency analysis, configuration lookup, and impact analysis before falling back to source search."
+}

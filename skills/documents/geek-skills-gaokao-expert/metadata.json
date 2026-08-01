@@ -1,0 +1,39 @@
+{
+  "name": "gaokao-expert",
+  "repo": "staruhub/ClaudeSkills",
+  "path": "lab/Geek-skills-gaokao-expert/SKILL.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/staruhub/ClaudeSkills",
+  "dir_name": "geek-skills-gaokao-expert",
+  "downloaded_at": "2026-07-21T03:12:23.007214Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "documents",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for documents: pdf, word, docx, markdown",
+    "score": 4,
+    "runner_up": "analysis",
+    "runner_up_score": 1,
+    "signals": [
+      "pdf",
+      "word",
+      "docx",
+      "markdown"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "staruhub",
+  "source_url": "https://github.com/staruhub/ClaudeSkills/blob/main/lab/Geek-skills-gaokao-expert/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/staruhub/ClaudeSkills/blob/main/lab/Geek-skills-gaokao-expert/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u8d44\u6df1\u9ad8\u8003\u547d\u9898\u4e13\u5bb6\u52a9\u624b,\u63d0\u4f9b\u4e13\u4e1a\u7684\u547d\u9898\u6307\u5bfc\u548c\u8bc4\u5ba1\u670d\u52a1\u3002\u9002\u7528\u4e8e\u521b\u4f5c\u9ad8\u8003\u8bd5\u9898\u3001\u8bc4\u5ba1\u8bd5\u9898\u8d28\u91cf\u3001\u5206\u6790\u8bd5\u5377\u7ed3\u6784\u3001\u4e86\u89e3\u547d\u9898\u8d8b\u52bf\u7b49\u573a\u666f\u3002\u7ed3\u5408\u6587\u6863\u5de5\u5177\u63d0\u53d6\u89e3\u538b\u6587\u4ef6,\u4f7f\u7528\u7f51\u7edc\u641c\u7d22\u4e86\u89e3\u5f53\u5e74\u6700\u65b0\u547d\u9898\u8d8b\u52bf,\u4f7f\u7528\u5206\u6790\u5de5\u5177\u8bc4\u4f30\u9898\u76ee\u8d28\u91cf\u548c\u8bd5\u5377\u7ed3\u6784\u3002\u6db5\u76d6\"\u4e00\u6838\u56db\u5c42\u56db\u7ffc\"\u8bc4\u4ef7\u4f53\u7cfb\u3001\u9898\u578b\u89c4\u8303\u3001\u8bc4\u5206\u6807\u51c6\u3001\u547d\u9898\u6d41\u7a0b\u7b49\u591a\u4e2a\u7ef4\u5ea6\u3002\u4e0d\u7528\u4e8e:\u5927\u5b66/\u8003\u7814/\u4e2d\u8003\u547d\u9898(\u4f53\u7cfb\u4e0d\u540c,\u4ec5\u53ef\u501f\u9274)\u3001\u65e5\u5e38\u4f5c\u4e1a\u9898\u7f16\u5199\u3001\u76f4\u63a5\u66ff\u8003\u751f\u89e3\u9898\u3002"
+}

@@ -54,13 +54,16 @@ adds or changes the generated artifact.
 Large historical full-payload files are now small pointer files. A pointer
 object must include:
 
+- `schema_version: 1`
+- `total_count` as the canonical non-negative record count
 - `deprecated_full_payload: true`
 - `message`
-- `manifest` when the replacement manifest is published next to the pointer
+- `manifest`
 - `compat_since`
+- `compat_until`
 - `replacement`
 
-Pointer files must not contain a full `skills` or `records` payload. Consumers
+Pointer files must not contain a full `skills`, `records`, or `s` payload. Consumers
 must follow `manifest` or `replacement` instead of assuming the compatibility
 file contains all records.
 
@@ -73,10 +76,21 @@ Current pointer entry points:
 - `categories/<category>.json`
 - `registry.json`
 
+Compatibility count aliases are limited to the following V1 window. Every alias
+must equal `total_count`; unlisted aliases are invalid.
+
+| Pointer | Canonical count | Allowed alias | Window |
+| --- | --- | --- | --- |
+| `search-index.json` | `total_count` | `t` | `static-artifact-api-v1` through `static-artifact-api-v2` |
+| quality/security/ranking pointers | `total_count` | `count` | `static-artifact-api-v1` through `static-artifact-api-v2` |
+| `categories/<category>.json` | `total_count` | `count` | `static-artifact-api-v1` through `static-artifact-api-v2` |
+| `registry.json` | `total_count` | `registry_skill_count_dedup` | `static-artifact-api-v1` through `static-artifact-api-v2` |
+
 ## Manifests
 
-Manifest objects must include a `schema_version`, an `updated_at` or
-`generated_at` timestamp, a record count, and shard or part references.
+Manifest objects must include `schema_version: 1`, an `updated_at` or
+`generated_at` timestamp, canonical `total_count`, an exact shard/part count,
+and shard or part references. Entry counts must sum to `total_count`.
 
 Search, quality, security, and ranking manifests use shard entries with:
 
@@ -96,6 +110,12 @@ Category manifests use part entries with:
 - `gzip_bytes`
 - `sha256`
 
+Category manifests also publish
+`part_strategy: bounded-sequential-stars-desc`. Parts are ordered by stars
+descending, then name and install path, so consumers may fetch only the first
+part for a bounded top-skills leaderboard. Consumers must fail closed if this
+strategy or the first-part identity/count metadata is absent or invalid.
+
 Registry manifests use shard entries with:
 
 - `id`
@@ -105,6 +125,14 @@ Registry manifests use shard entries with:
 - `bytes`
 - `gzip_bytes`
 - `sha256`
+
+The registry manifest contains exactly the canonical 256 lowercase hexadecimal
+ids `00` through `ff`, once each. An id maps only to
+`registry-shards/<id>.json` and `registry-shards/<id>.json.gz`; the payload
+`shard` must equal that id. Every registry skill belongs to the first two
+hexadecimal characters of `sha256("<skill-install-key>|<branch>")`, where the
+install key is `repo/path`, then `repo`, then `local/path`, then
+`local/category/name`; an absent or empty branch is `main`.
 
 Consumers should validate `sha256` when they need reproducible syncs. Consumers
 should prefer `gzip_path` when bandwidth matters and plain `path` when a simpler
@@ -119,9 +147,28 @@ Shard payloads must include:
 - `count`
 - a bounded payload array
 
-Search shard payload arrays are `skills`. Signal shard payload arrays are
+Search shard payload arrays are `s`. Lite search document payload arrays are
+`skills`. Signal shard payload arrays are
 `records`. Category part payload arrays are `skills`. Registry shard payload
 arrays are `skills`.
+
+Each shard/part `count` must equal its payload array length and manifest entry
+count. Manifest entry `bytes`, `gzip_bytes`, and `sha256` describe the referenced
+plain/gzip files exactly; gzip JSON must be structurally identical to plain JSON.
+
+## Same-set Count Groups
+
+Counts are compared only inside explicitly identical sets:
+
+- Registry dedup set: `registry.json`, `registry-manifest.json`,
+  `registry_summary.json`, and `stats.json.registry_skill_count_dedup`.
+- Search/category scan set: search pointer/manifest, category index/manifests,
+  and `stats.json.indexed_skill_count_scan_shape`.
+- Stable-id dedup set: lite search, quality/security/ranking pointers/manifests,
+  and `stats.json.lite_index_count`.
+
+Featured subsets, plugin counts, and raw archive counts are not compared to
+these groups.
 
 Security signal records expose `security_status` plus `security_decision` when
 scanner evidence was available. The decision object contains the scanner name,
@@ -144,11 +191,12 @@ change must either:
 Compatibility pointer fields:
 
 - `compat_since`: first date or version when the pointer behavior was present
-- `compat_until`: optional planned end of compatibility
+- `compat_until`: planned end of this V1 compatibility window
 - `replacement`: path or path pattern consumers should use
 
-If `compat_until` is absent, consumers may assume no removal date has been
-announced yet.
+`compat_until` is required for every V1 compatibility pointer. Consumers must
+treat a pointer without it as invalid rather than guessing an unannounced
+removal date.
 
 ## Consumer Guidance
 
@@ -162,5 +210,52 @@ category manifest and parts. Do not fetch every category part on startup.
 For trust and ranking overlays, load the pointer, then the corresponding
 manifest and shards. Treat missing signal records as unknown, not clean.
 
-For full registry sync, use the merged artifact `registry-manifest.json` and
-`registry-shards/*.json`. Use `registry.json` only as a compatibility pointer.
+For full registry sync, consumers should prefer manifests and bounded shards to
+giant single-payload JSON files. Load the merged artifact
+`registry-manifest.json` and every shard it lists; `registry.json` is
+compatibility-only. Missing manifests or shards, invalid JSON, and malformed
+payload shapes are errors and must not be silently ignored.
+
+Minimal standard-library Python example:
+
+```python
+import json
+from urllib.parse import urljoin
+from urllib.request import urlopen
+
+manifest_url = (
+    "https://raw.githubusercontent.com/majiayu000/"
+    "claude-skill-registry/main/registry-manifest.json"
+)
+
+
+def load_json(url):
+    with urlopen(url) as response:
+        return json.load(response)
+
+
+manifest = load_json(manifest_url)
+if not isinstance(manifest, dict):
+    raise ValueError("registry manifest must be a JSON object")
+shards = manifest.get("shards")
+if not isinstance(shards, list) or not shards:
+    raise ValueError("registry manifest must contain a non-empty 'shards' list")
+
+skills = []
+for shard in shards:
+    if not isinstance(shard, dict):
+        raise ValueError("registry shard entries must be JSON objects")
+    path = shard.get("path")
+    if not isinstance(path, str) or not path:
+        raise ValueError("registry shard entries must contain a non-empty 'path'")
+    shard_url = urljoin(manifest_url, path)
+    payload = load_json(shard_url)
+    if not isinstance(payload, dict) or not isinstance(payload.get("skills"), list):
+        raise ValueError(f"{shard_url} must contain a 'skills' list")
+    skills.extend(payload["skills"])
+
+print(f"loaded {len(skills)} skills")
+```
+
+The example intentionally lets HTTP and JSON decoding errors propagate so a
+partial registry sync cannot look successful.

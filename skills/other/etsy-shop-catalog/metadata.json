@@ -1,0 +1,37 @@
+{
+  "name": "etsy-shop-catalog",
+  "repo": "browser-act/skills",
+  "path": "solutions/ecommerce/etsy-shop-catalog/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/browser-act/skills",
+  "dir_name": "etsy-shop-catalog",
+  "downloaded_at": "2026-07-21T02:57:37.832261Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=2, workflow=2",
+    "score": 2,
+    "runner_up": "workflow",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "browser-act",
+  "source_url": "https://github.com/browser-act/skills/blob/main/solutions/ecommerce/etsy-shop-catalog/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/browser-act/skills/blob/main/solutions/ecommerce/etsy-shop-catalog/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Etsy shop catalog scraper: given an Etsy shop URL (e.g. https://www.etsy.com/shop/{shop-name}) and optional page number, returns paginated product listings from that shop's own storefront with listingId, shopId, title, url, image, salePrice, originalPrice, currency, rating, reviewCount, shopName, isAd, freeShipping, badge. Use when user mentions Etsy shop, Etsy seller, Etsy store, etsy.com/shop, scrape Etsy shop, extract all products from Etsy shop, Etsy shop catalog, Etsy seller catalog, list all Etsy shop items, Etsy storefront scraper, Etsy vendor products, Etsy competitor shop, Etsy shop monitoring, get inventory of an Etsy shop, dump Etsy shop products, Etsy seller product export, seller product benchmarking, Etsy shop bulk export. Also applies to competitor shop tracking, supplier catalog collection, price monitoring for a specific shop, new-item detection on a shop, and any paginated bulk collection driven by a single Etsy shop URL."
+}

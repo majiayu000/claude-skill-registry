@@ -1,0 +1,38 @@
+{
+  "name": "desktop-ui-electron",
+  "repo": "agents-inc/skills",
+  "path": "src/skills/desktop-ui-electron/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/agents-inc/skills",
+  "dir_name": "desktop-ui-electron",
+  "downloaded_at": "2026-07-20T03:20:04.513820Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: design=3, development=3",
+    "score": 3,
+    "runner_up": "development",
+    "runner_up_score": 3,
+    "signals": [
+      "design",
+      "ui",
+      "css"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "agents-inc",
+  "source_url": "https://github.com/agents-inc/skills/blob/main/src/skills/desktop-ui-electron/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/agents-inc/skills/blob/main/src/skills/desktop-ui-electron/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Frameless windows, custom title bars, tray, menus, dock badges, vibrancy, kiosk mode, window state persistence"
+}

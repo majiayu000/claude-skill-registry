@@ -1,0 +1,38 @@
+{
+  "name": "writing-guidelines",
+  "repo": "rohitg00/pro-workflow",
+  "path": "skills/writing-guidelines/SKILL.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/rohitg00/pro-workflow",
+  "dir_name": "writing-guidelines-rohitg00-pro-workflow",
+  "downloaded_at": "2026-07-19T03:11:56.467879Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "documents",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for documents: docs, word, documentation",
+    "score": 3,
+    "runner_up": "ai-ml",
+    "runner_up_score": 2,
+    "signals": [
+      "docs",
+      "word",
+      "documentation"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "rohitg00",
+  "source_url": "https://github.com/rohitg00/pro-workflow/blob/main/skills/writing-guidelines/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/rohitg00/pro-workflow/blob/main/skills/writing-guidelines/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Apply clear-writing standards to any prose the agent produces - READMEs, docs, UI copy, error messages, commit and PR text, release notes. Use when writing or editing documentation, interface copy, or any text a human will read. Says \"write the README\", \"improve this copy\", \"draft the docs\", \"word this error\"."
+}

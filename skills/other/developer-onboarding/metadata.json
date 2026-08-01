@@ -1,0 +1,38 @@
+{
+  "name": "developer-onboarding",
+  "repo": "sickn33/agentic-awesome-skills",
+  "path": "skills/developer-onboarding/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/sickn33/agentic-awesome-skills",
+  "dir_name": "developer-onboarding",
+  "downloaded_at": "2026-07-18T02:59:30.452653Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: development=3, documents=3",
+    "score": 3,
+    "runner_up": "documents",
+    "runner_up_score": 3,
+    "signals": [
+      "code",
+      "programming",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/developer-onboarding/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/developer-onboarding/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Get developers to \"Hello World\" fast with optimized quickstarts, tutorials, and sample apps. Trigger phrases: developer onboarding, time to first value, quickstart guide, hello world tutorial, developer activation, onboarding checklist, sample apps, getting started experience, reduce..."
+}

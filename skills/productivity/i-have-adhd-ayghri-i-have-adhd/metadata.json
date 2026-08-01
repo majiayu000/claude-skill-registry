@@ -1,0 +1,38 @@
+{
+  "name": "i-have-adhd",
+  "repo": "ayghri/i-have-adhd",
+  "path": ".cursor/skills/i-have-adhd/SKILL.md",
+  "github_branch": "main",
+  "category": "productivity",
+  "source": "github.com/ayghri/i-have-adhd",
+  "dir_name": "i-have-adhd-ayghri-i-have-adhd",
+  "downloaded_at": "2026-07-23T02:58:20.367373Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "productivity",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for productivity: productivity, task, memory",
+    "score": 3,
+    "runner_up": "ai-ml",
+    "runner_up_score": 1,
+    "signals": [
+      "productivity",
+      "task",
+      "memory"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "ayghri",
+  "source_url": "https://github.com/ayghri/i-have-adhd/blob/main/.cursor/skills/i-have-adhd/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ayghri/i-have-adhd/blob/main/.cursor/skills/i-have-adhd/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Shape output for a reader with ADHD: lead with the next action, number multi-step work, restate state across turns, suppress tangents, give specific time estimates, make wins visible. Invoke with /i-have-adhd; stays on until \"stop adhd mode\"."
+}

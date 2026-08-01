@@ -1,0 +1,38 @@
+{
+  "name": "genomic-intelligence",
+  "repo": "K-Dense-AI/scientific-agent-skills",
+  "path": "skills/genomic-intelligence/SKILL.md",
+  "github_branch": "main",
+  "category": "api",
+  "source": "github.com/K-Dense-AI/scientific-agent-skills",
+  "dir_name": "genomic-intelligence",
+  "downloaded_at": "2026-07-27T03:02:48.996422Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "api",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for api: api, sdk, openapi",
+    "score": 3,
+    "runner_up": "ai-llm",
+    "runner_up_score": 2,
+    "signals": [
+      "api",
+      "sdk",
+      "openapi"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "K-Dense-AI",
+  "source_url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/main/skills/genomic-intelligence/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/K-Dense-AI/scientific-agent-skills/blob/main/skills/genomic-intelligence/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Predict regulatory features, gene structure, and expression directly from DNA sequence using Genomic Intelligence's hosted transformer DNA language models \u2014 no local GPU or model weights. Six tasks over a REST API and a hosted MCP server (keyless public demo): promoter regions, splice donor/acceptor sites, enhancer activity, chromatin state, sequence-to-expression (log TPM), and de-novo gene annotation, plus a composite find-genes-then-predict-expression workflow. Use when the user has a gene symbol, a genomic region, or a DNA/FASTA sequence and wants any of these predictions, mentions Genomic Intelligence, genomicintelligence.ai, api.genomicintelligence.ai, or mcp.genomicintelligence.ai."
+}

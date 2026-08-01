@@ -1,0 +1,36 @@
+{
+  "name": "linkedin-comment-drafter",
+  "repo": "sergebulaev/linkedin-skills",
+  "path": ".codex-marketplace/linkedin-skills/skills/linkedin-comment-drafter/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/sergebulaev/linkedin-skills",
+  "dir_name": "linkedin-comment-drafter-sergebulaev-linkedin-skills",
+  "downloaded_at": "2026-07-19T03:12:59.264719Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category ai-llm scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "ai-ml",
+    "runner_up_score": 1,
+    "signals": [
+      "ai"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "sergebulaev",
+  "source_url": "https://github.com/sergebulaev/linkedin-skills/blob/main/.codex-marketplace/linkedin-skills/skills/linkedin-comment-drafter/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sergebulaev/linkedin-skills/blob/main/.codex-marketplace/linkedin-skills/skills/linkedin-comment-drafter/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Draft a LinkedIn comment on someone else's post from its URL, or reshare (repost) it to your feed with optional commentary. Use when the user pastes a post URL and asks to comment, engage, be first commenter, or repost with their thoughts. Produces 1-3 variants in the user's voice, picks a reaction, and publishes via Publora on approval. Not for replying to existing comments (use linkedin-reply-handler)."
+}

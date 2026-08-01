@@ -1,0 +1,37 @@
+{
+  "name": "wechat-article-writer",
+  "repo": "staruhub/ClaudeSkills",
+  "path": "skills/Geek-skills-wechat-article-writer/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/staruhub/ClaudeSkills",
+  "dir_name": "geek-skills-wechat-article-writer",
+  "downloaded_at": "2026-07-21T03:12:26.467014Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=2, writing=2",
+    "score": 2,
+    "runner_up": "writing",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "staruhub",
+  "source_url": "https://github.com/staruhub/ClaudeSkills/blob/main/skills/Geek-skills-wechat-article-writer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/staruhub/ClaudeSkills/blob/main/skills/Geek-skills-wechat-article-writer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u4e13\u4e1a\u7684\u5fae\u4fe1\u516c\u4f17\u53f7\u6587\u7ae0\u521b\u4f5c\u52a9\u624b\u3002\u5f53\u7528\u6237\u63d0\u4f9b\u7f51\u7ad9\u94fe\u63a5\u3001\u6587\u672c\u7d20\u6750\u6216\u56fe\u50cf\uff0c\u9700\u8981\u521b\u4f5c\u5fae\u4fe1\u516c\u4f17\u53f7\u6587\u7ae0\u65f6\u4f7f\u7528\u3002\u652f\u6301\u591a\u79cd\u5199\u4f5c\u98ce\u683c\u2014\u2014\u4f01\u4e1a\u5b98\u53f7\u6587\u6848\u3001\u4e2a\u4eba\u6280\u672f\u535a\u5ba2\u3001\u793e\u533a\u6d3b\u52a8\u56de\u987e\u3001\u4ea7\u54c1\u8bc4\u6d4b\u7b49\u3002\u64c5\u957fAI/\u6280\u672f\u8bdd\u9898\u7684\u6df1\u5ea6\u5185\u5bb9\u521b\u4f5c\uff0c\u4e5f\u80fd\u4ea7\u51fa\u89c4\u8303\u7684\u4f01\u4e1a\u5ba3\u4f20\u6587\u6848\u3002\u901a\u8fc7\u641c\u7d22\u5de5\u5177\u4e30\u5bcc\u5185\u5bb9\uff0c\u4f18\u5316\u6807\u9898\u548c\u7ed3\u6784\u3002\u5f53\u7528\u6237\u63d0\u5230\"\u516c\u4f17\u53f7\"\u3001\"\u5fae\u4fe1\u6587\u7ae0\"\u3001\"\u5199\u4e00\u7bc7\u63a8\u6587\"\u3001\"\u5e2e\u6211\u5199\u7bc7\u6587\u7ae0\u53d1\u516c\u4f17\u53f7\"\u7b49\u573a\u666f\u65f6\u89e6\u53d1\u3002\u5373\u4f7f\u7528\u6237\u6ca1\u6709\u660e\u786e\u8bf4\"\u516c\u4f17\u53f7\"\uff0c\u4f46\u5728\u8981\u6c42\u521b\u4f5c\u4e2d\u6587\u957f\u6587\uff08\u6280\u672f\u535a\u5ba2\u3001\u4ea7\u54c1\u4ecb\u7ecd\u3001\u6d3b\u52a8\u56de\u987e\u7b49\uff09\u65f6\u4e5f\u5e94\u8003\u8651\u89e6\u53d1\u3002\u4e0d\u7528\u4e8e\uff1a\u5e26\u5f15\u7528\u7684\u7814\u7a76\u62a5\u544a\uff08\u7528deep-research\uff09\u3001\u628a\u5185\u5bb9\u505a\u6210\u56fe\u6216PPT\uff08\u7528deck-studio\uff09\u3001\u82f1\u6587\u6587\u7ae0\u3001\u53ea\u6da6\u8272\u4e00\u5c0f\u6bb5\u6587\u5b57\u3002"
+}

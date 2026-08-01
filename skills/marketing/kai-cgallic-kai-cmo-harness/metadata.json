@@ -1,0 +1,38 @@
+{
+  "name": "kai",
+  "repo": "cgallic/kai-cmo-harness",
+  "path": "harness/skills-v2/kai/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/cgallic/kai-cmo-harness",
+  "dir_name": "kai-cgallic-kai-cmo-harness",
+  "downloaded_at": "2026-07-29T02:53:04.572458Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for marketing: marketing, content, brand",
+    "score": 3,
+    "runner_up": "ai-ml",
+    "runner_up_score": 2,
+    "signals": [
+      "marketing",
+      "content",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "cgallic",
+  "source_url": "https://github.com/cgallic/kai-cmo-harness/blob/main/harness/skills-v2/kai/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cgallic/kai-cmo-harness/blob/main/harness/skills-v2/kai/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Kai Marketing OS router - shows all 49 marketing skills organized by workflow, business stage, and frequency. Use when \"kai help\", \"what marketing skills are available\", \"how do I use the harness\", \"marketing help\", or any general marketing question where the right skill isn't obvious."
+}

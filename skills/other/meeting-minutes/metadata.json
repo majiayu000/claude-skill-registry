@@ -1,0 +1,37 @@
+{
+  "name": "meeting-minutes",
+  "repo": "AlpacaLabsLLC/skills-for-architects",
+  "path": "skills/meeting-minutes/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/AlpacaLabsLLC/skills-for-architects",
+  "dir_name": "meeting-minutes",
+  "downloaded_at": "2026-07-27T02:59:31.446705Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: documents=2, security=2",
+    "score": 2,
+    "runner_up": "security",
+    "runner_up_score": 2,
+    "signals": [
+      "word",
+      "markdown"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "AlpacaLabsLLC",
+  "source_url": "https://github.com/AlpacaLabsLLC/skills-for-architects/blob/main/skills/meeting-minutes/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AlpacaLabsLLC/skills-for-architects/blob/main/skills/meeting-minutes/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Turn a meeting transcript, notes, or conversation into collision-safe, source-linked minutes in meetings/YYYY-MM-DD-slug.md. Use for project meeting records, attendance, discussion, stated information, decisions, action candidates, and open questions. Saving minutes never changes PROJECT.md, decisions/, or TASKS.md; promote only user-selected items afterward."
+}

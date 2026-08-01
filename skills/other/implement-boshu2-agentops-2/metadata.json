@@ -1,0 +1,38 @@
+{
+  "name": "implement",
+  "repo": "boshu2/agentops",
+  "path": "packs/agentops-executor/agents/implementer-claude/skills/implement/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/boshu2/agentops",
+  "dir_name": "implement-boshu2-agentops-2",
+  "downloaded_at": "2026-07-22T02:56:31.521810Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: security=3, testing=3",
+    "score": 3,
+    "runner_up": "testing",
+    "runner_up_score": 3,
+    "signals": [
+      "security",
+      "auth",
+      "audit"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "boshu2",
+  "source_url": "https://github.com/boshu2/agentops/blob/main/packs/agentops-executor/agents/implementer-claude/skills/implement/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/boshu2/agentops/blob/main/packs/agentops-executor/agents/implementer-claude/skills/implement/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Execute one bounded RED to GREEN experiment from bead or caller intent; return derived subject identity and check facts. Triggers: \"implement\", \"build this plan\", \"run the experiment\"."
+}

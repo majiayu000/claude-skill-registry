@@ -1,0 +1,38 @@
+{
+  "name": "content-report",
+  "repo": "cgallic/kai-cmo-harness",
+  "path": "legacy/content-report/SKILL.md",
+  "github_branch": "main",
+  "category": "bash",
+  "source": "github.com/cgallic/kai-cmo-harness",
+  "dir_name": "content-report-cgallic-kai-cmo-harness",
+  "downloaded_at": "2026-07-23T02:59:25.573137Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "bash",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for bash: bash, script, cli",
+    "score": 3,
+    "runner_up": "data",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "script",
+      "cli"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "cgallic",
+  "source_url": "https://github.com/cgallic/kai-cmo-harness/blob/main/legacy/content-report/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cgallic/kai-cmo-harness/blob/main/legacy/content-report/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Pull performance data for published content across every surface \u2014 LinkedIn, Dev.to, Google Search Console, GA4, and AI citation tracking (Perplexity, Anthropic, OpenAI). Grades each piece as winner, average, or underperformer and surfaces whether an AI search engine has cited it."
+}

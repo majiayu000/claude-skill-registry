@@ -1,0 +1,38 @@
+{
+  "name": "content-write",
+  "repo": "cgallic/kai-cmo-harness",
+  "path": "legacy/content-write/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/cgallic/kai-cmo-harness",
+  "dir_name": "content-write",
+  "downloaded_at": "2026-07-23T02:59:25.277970Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: marketing=3, writing=3",
+    "score": 3,
+    "runner_up": "writing",
+    "runner_up_score": 3,
+    "signals": [
+      "marketing",
+      "seo",
+      "content"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "cgallic",
+  "source_url": "https://github.com/cgallic/kai-cmo-harness/blob/main/legacy/content-write/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cgallic/kai-cmo-harness/blob/main/legacy/content-write/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Write content using the most recent brief. Loads framework rules, persona hooks, learned patterns, and skill contract. Auto-runs quality gate on completion."
+}

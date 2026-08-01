@@ -1,0 +1,38 @@
+{
+  "name": "codebase-cleanup-tech-debt",
+  "repo": "sickn33/agentic-awesome-skills",
+  "path": "skills/codebase-cleanup-tech-debt/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/sickn33/agentic-awesome-skills",
+  "dir_name": "codebase-cleanup-tech-debt",
+  "downloaded_at": "2026-07-18T02:59:28.006130Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: development=3, devops=3",
+    "score": 3,
+    "runner_up": "devops",
+    "runner_up_score": 3,
+    "signals": [
+      "code",
+      "framework",
+      "software"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/codebase-cleanup-tech-debt/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/codebase-cleanup-tech-debt/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "You are a technical debt expert specializing in identifying, quantifying, and prioritizing technical debt in software projects. Analyze the codebase to uncover debt, assess its impact, and create acti"
+}

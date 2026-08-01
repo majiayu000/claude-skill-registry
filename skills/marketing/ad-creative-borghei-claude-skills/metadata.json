@@ -1,0 +1,38 @@
+{
+  "name": "ad-creative",
+  "repo": "borghei/Claude-Skills",
+  "path": "marketing/ad-creative/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/borghei/Claude-Skills",
+  "dir_name": "ad-creative-borghei-claude-skills",
+  "downloaded_at": "2026-07-30T02:39:41.256201Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for marketing: marketing, content, social",
+    "score": 3,
+    "runner_up": "creative",
+    "runner_up_score": 2,
+    "signals": [
+      "marketing",
+      "content",
+      "social"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "borghei",
+  "source_url": "https://github.com/borghei/Claude-Skills/blob/main/marketing/ad-creative/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/borghei/Claude-Skills/blob/main/marketing/ad-creative/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Design ad creative across Google, Meta, LinkedIn, Twitter/X, and TikTok with platform format specs, headline formulas, and A/B testing. Use when writing ad copy, generating headline variations, creating ad sets, or validating creative."
+}

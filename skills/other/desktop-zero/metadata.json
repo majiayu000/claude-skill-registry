@@ -1,0 +1,36 @@
+{
+  "name": "desktop-zero",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/desktop-zero/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "desktop-zero",
+  "downloaded_at": "2026-07-20T03:33:23.043782Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category communication scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "design",
+    "runner_up_score": 1,
+    "signals": [
+      "email"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/desktop-zero/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/desktop-zero/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Clear the desktop that's become a hundred-icon guilt mosaic \u2014 the fast triage that empties it today, the honest read of what the desktop was being used for (it's a to-do list wearing icons), and the replacement systems that keep it clear. Use when asked clean up my desktop, my desktop has 200 files on it, why does my desktop keep filling up, or set up a clean-desktop habit. Produces the today-pass, the function-replacement mapping, and the two-minute weekly habit."
+}

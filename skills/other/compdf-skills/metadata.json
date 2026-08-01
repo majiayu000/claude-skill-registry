@@ -1,0 +1,37 @@
+{
+  "name": "compdf-api",
+  "repo": "ComPDFKit/compdf-skills",
+  "path": "compdf-skills/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/ComPDFKit/compdf-skills",
+  "dir_name": "compdf-skills",
+  "downloaded_at": "2026-07-31T02:55:07.932960Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: api=2, business=2",
+    "score": 2,
+    "runner_up": "business",
+    "runner_up_score": 2,
+    "signals": [
+      "api",
+      "endpoint"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "ComPDFKit",
+  "source_url": "https://github.com/ComPDFKit/compdf-skills/blob/main/compdf-skills/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ComPDFKit/compdf-skills/blob/main/compdf-skills/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Integrate with the ComPDF Server API to convert PDF, Office, HTML, CSV, RTF, TXT, and image files; edit PDF pages; merge, split, extract, insert, rotate, compress, compare, encrypt, decrypt, and watermark PDFs; parse document structure; and extract fields or tables with ComPDF AI. Use whenever a user asks to process, convert, OCR, edit, protect, analyze, parse, or extract data from documents through ComPDF, or needs an exact ComPDF API endpoint, request field, request mode, response field, or implementation/debugging guidance."
+}

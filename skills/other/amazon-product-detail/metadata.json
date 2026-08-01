@@ -1,0 +1,38 @@
+{
+  "name": "amazon-product-detail",
+  "repo": "browser-act/skills",
+  "path": "solutions/ecommerce/amazon-product-detail/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/browser-act/skills",
+  "dir_name": "amazon-product-detail",
+  "downloaded_at": "2026-07-21T02:57:39.901520Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=3, marketing=3",
+    "score": 3,
+    "runner_up": "marketing",
+    "runner_up_score": 3,
+    "signals": [
+      "bash",
+      "shell",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "browser-act",
+  "source_url": "https://github.com/browser-act/skills/blob/main/solutions/ecommerce/amazon-product-detail/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/browser-act/skills/blob/main/solutions/ecommerce/amazon-product-detail/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Amazon product detail page scraper: extract full product data from any open Amazon product detail URL (any /dp/{asin} or /gp/product/{asin} page across all Amazon regional TLDs) \u2014 returns asin, url, title, brand, price, listPrice, stars, reviewsCount, starsBreakdown (5/4/3/2/1 star percentages), answeredQuestions, inStock, inStockText, delivery, fastestDelivery, returnPolicy, breadCrumbs, features (bullet points), description, bookDescription, thumbnailImage, highResolutionImages, galleryThumbnails, productOverview (Brand/Model/etc.), attributes (tech spec table), attributesMapped (flat key-value), bestsellerRanks (rank + category + url), variantAttributes (currently selected color/size/style), variantAsins, seller (name + id + url), isAmazonChoice, amazonChoiceText, monthlyPurchaseVolume, hasAPlusContent, hasBrandStory, aiReviewsSummary, reviewsLink, productPageReviews (sample), videosCount, locationText, loadedCountryCode. Works on amazon.com, amazon.co.uk, amazon.de, amazon.co.jp, amazon.fr, amazon.it, amazon.es, amazon.ca, amazon.com.au, amazon.in, amazon.com.mx, amazon.com.br, amazon.nl, amazon.se, amazon.sg, amazon.ae, amazon.sa, amazon.pl, amazon.tr, amazon.eg. Use when user mentions Amazon product page, Amazon /dp/, Amazon dp URL, Amazon ASIN scraper, Amazon product detail, Amazon PDP, Amazon product data, Amazon product info, Amazon product fields, Amazon product attributes, Amazon full field extraction, Amazon per-ASIN enrichment, Amazon rating breakdown, Amazon stars breakdown, Amazon bestseller rank, Amazon BSR, Amazon variants, Amazon variant ASINs, Amazon color size options, Amazon feature bullets, Amazon A+ content, Amazon brand story, Amazon AI review summary, Amazon bought in past month, Amazon monthly sales volume, Amazon Amazon's Choice badge, Amazon seller info, scrape Amazon product, enrich Amazon ASIN, Amazon ASIN details, Amazon product review data. Also applies to bulk ASIN enrichment from a list of URLs, competitive product research, brand catalog audits, price and stock monitoring per ASIN, and building a normalized product dataset from a list of Amazon URLs."
+}

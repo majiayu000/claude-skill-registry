@@ -1,0 +1,38 @@
+{
+  "name": "journey-mapper",
+  "repo": "joeyvansommeren/journey-mapper",
+  "path": "skills/journey-mapper/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/joeyvansommeren/journey-mapper",
+  "dir_name": "journey-mapper",
+  "downloaded_at": "2026-07-23T03:06:29.931136Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: design=3, product=3",
+    "score": 3,
+    "runner_up": "product",
+    "runner_up_score": 3,
+    "signals": [
+      "design",
+      "ui",
+      "component"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "joeyvansommeren",
+  "source_url": "https://github.com/joeyvansommeren/journey-mapper/blob/main/skills/journey-mapper/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/joeyvansommeren/journey-mapper/blob/main/skills/journey-mapper/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Scans a codebase and generates a self-contained HTML service-design journey map \u2014 NN/g combined customer journey + service blueprint format. Use when the user wants to map user journeys, create journey maps, build service blueprints, or understand user flows from code. Prompts for codebase path if not supplied. Works with any tech stack."
+}

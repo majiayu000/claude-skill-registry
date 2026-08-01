@@ -1,0 +1,37 @@
+{
+  "name": "pubmed-database",
+  "repo": "sickn33/agentic-awesome-skills",
+  "path": "skills/pubmed-database/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/sickn33/agentic-awesome-skills",
+  "dir_name": "pubmed-database",
+  "downloaded_at": "2026-07-27T03:25:39.755975Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: data=2, workflow=2",
+    "score": 2,
+    "runner_up": "workflow",
+    "runner_up_score": 2,
+    "signals": [
+      "data",
+      "database"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/pubmed-database/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/pubmed-database/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Direct REST API access to PubMed. Advanced Boolean/MeSH queries, E-utilities API, batch processing, citation management. For Python workflows, prefer biopython (Bio.Entrez). Use this for direct HTTP/REST work or custom API implementations."
+}

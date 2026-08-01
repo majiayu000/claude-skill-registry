@@ -1,0 +1,37 @@
+{
+  "name": "video-cut",
+  "repo": "worldwonderer/video-recap-skills",
+  "path": "skills/video-cut/SKILL.md",
+  "github_branch": "main",
+  "category": "bash",
+  "source": "github.com/worldwonderer/video-recap-skills",
+  "dir_name": "video-cut",
+  "downloaded_at": "2026-07-14T03:02:23.971315Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "bash",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for bash: bash, script",
+    "score": 2,
+    "runner_up": "development",
+    "runner_up_score": 1,
+    "signals": [
+      "bash",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "worldwonderer",
+  "source_url": "https://github.com/worldwonderer/video-recap-skills/blob/main/skills/video-cut/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/worldwonderer/video-recap-skills/blob/main/skills/video-cut/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Cut a long video down to selected source ranges (montage / clip assembly). Part of the video-recap bundle: in the orchestrated (two-pass) flow, consumes clip_plan.json + the source video, produces edited_source.mp4; the agent then writes narration.json against the output timeline. When invoked standalone WITHOUT --no-narration-map, also remaps an existing narration.json \u2192 narration_mapped.json (legacy single-pass path). \u89e6\u53d1\u8bcd: \u89c6\u9891\u526a\u8f91, \u526a\u8f91\u5f0f\u89e3\u8bf4, video cut, clip plan, \u62fc\u526a."
+}

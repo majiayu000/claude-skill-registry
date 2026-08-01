@@ -1,0 +1,38 @@
+{
+  "name": "linkedin-profile-post-scraper",
+  "repo": "gooseworks-ai/goose-skills",
+  "path": "skills/social/capabilities/linkedin-profile-post-scraper/SKILL.md",
+  "github_branch": "main",
+  "category": "bash",
+  "source": "github.com/gooseworks-ai/goose-skills",
+  "dir_name": "linkedin-profile-post-scraper",
+  "downloaded_at": "2026-07-15T02:47:39.861669Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "bash",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for bash: bash, script, cli",
+    "score": 3,
+    "runner_up": "marketing",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "script",
+      "cli"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "gooseworks-ai",
+  "source_url": "https://github.com/gooseworks-ai/goose-skills/blob/main/skills/social/capabilities/linkedin-profile-post-scraper/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gooseworks-ai/goose-skills/blob/main/skills/social/capabilities/linkedin-profile-post-scraper/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Scrape recent posts from LinkedIn profiles using Apify. Use when you need to monitor what specific people are posting on LinkedIn, track founder/exec activity, or gather LinkedIn content for competitive intelligence."
+}

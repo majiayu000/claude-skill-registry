@@ -13,19 +13,32 @@ function showFeatured() {
 
 // Show leaderboard
 async function showLeaderboard(categoryFilter = '') {
+    const requestToken = ++state.leaderboardRequestToken;
     elements.leaderboardSection.classList.remove('hidden');
     elements.leaderboardList.innerHTML = '';
+    elements.leaderboardStatus.textContent = categoryFilter
+        ? 'Loading the first stars-ranked category part…'
+        : 'Ranking the already-loaded featured catalog…';
 
     let skills;
     try {
         skills = categoryFilter
-            ? await loadCategorySkills(categoryFilter)
-            : await loadFullSearchSkills();
+            ? await loadCategoryLeaderboardSkills(categoryFilter)
+            : state.featured.map(normalizeSkillRecord);
+        if (requestToken !== state.leaderboardRequestToken) return;
+        elements.leaderboardStatus.textContent = categoryFilter
+            ? 'Top skills from the first stars-ranked category part'
+            : 'Top skills from the featured catalog — no full-index download';
     } catch (error) {
-        console.warn('Failed to load full leaderboard data; using startup index:', error);
-        skills = categoryFilter
-            ? state.index.s.filter(s => s.c === categoryFilter)
-            : state.index.s;
+        if (requestToken !== state.leaderboardRequestToken) return;
+        if (categoryFilter) {
+            elements.leaderboardStatus.textContent =
+                `Leaderboard load failed: ${error.message}. Select the category again to retry.`;
+            return;
+        }
+        elements.leaderboardStatus.textContent =
+            `Leaderboard load failed: ${error.message}. Showing highlighted results; change category to retry.`;
+        skills = state.index.s;
     }
 
     // Sort by stars descending
@@ -45,7 +58,7 @@ async function showLeaderboard(categoryFilter = '') {
 function createLeaderboardCard(skill, rank) {
     const name = skill.n;
     const description = skill.d;
-    const category = CATEGORY_NAMES[skill.c] || skill.c;
+    const category = categoryDisplayName(skill.c);
     const stars = skill.r;
     const install = skill.i;
     const isFavorite = state.favorites.includes(install);
@@ -140,7 +153,7 @@ function renderCategoryChart() {
         .map(category => [
             category.code,
             Number(category.count || 0),
-            category.name || CATEGORY_NAMES[category.code] || category.code
+            categoryReportingLabel(category.code)
         ])
         .filter(([, count]) => count > 0)
         .sort((a, b) => b[1] - a[1]);
@@ -241,7 +254,7 @@ function createPluginCard(plugin) {
     const commands = plugin.commands || [];
     const hooks = plugin.hooks || [];
     const tags = plugin.tags || [];
-    const category = CATEGORY_NAMES[CATEGORY_CODES_REVERSE[plugin.category]] || plugin.category || 'Other';
+    const category = categoryDisplayName(plugin.category);
 
     const skillsHtml = skills.slice(0, 6).map(s =>
         `<span class="plugin-skill-tag">${escapeHtml(s)}</span>`
@@ -375,7 +388,7 @@ function showRandomSkill() {
 function createSkillCard(skill, isFeatured = false, showFavoriteBtn = true) {
     const name = isFeatured ? skill.name : skill.n;
     const description = isFeatured ? skill.description : skill.d;
-    const category = isFeatured ? skill.category : CATEGORY_NAMES[skill.c] || skill.c;
+    const category = categoryDisplayName(isFeatured ? skill.category : skill.c);
     const categoryCode = isFeatured ? skill.category : skill.c;
     const tags = isFeatured ? (skill.tags || []) : (skill.g || []);
     const stars = isFeatured ? skill.stars : skill.r;
@@ -489,7 +502,7 @@ async function showSkillDetail(card) {
         <p style="margin-bottom: 1rem; color: var(--text-secondary);">${escapeHtml(skill.d)}</p>
 
         <div style="margin-bottom: 1rem;">
-            <strong>Category:</strong> ${CATEGORY_NAMES[skill.c] || skill.c}<br>
+            <strong>Category:</strong> ${escapeHtml(categoryDisplayName(skill.c))}<br>
             <strong>Stars:</strong> ${skill.r > 0 ? '⭐ ' + skill.r.toLocaleString() : 'N/A'}
         </div>
 

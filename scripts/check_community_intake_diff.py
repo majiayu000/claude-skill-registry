@@ -36,6 +36,24 @@ def _git_show(ref: str, path: Path) -> str:
     return result.stdout
 
 
+def _git_merge_base(base_ref: str, head_ref: str) -> str:
+    """Resolve the fork point so entries merged into base after the branch was cut
+    are not misread as deletions made by the pull request."""
+    result = subprocess.run(
+        ["git", "merge-base", base_ref, head_ref],
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    if result.returncode != 0:
+        stderr = result.stderr.strip() or "unknown git merge-base failure"
+        raise RuntimeError(f"failed to resolve merge base of {base_ref} and {head_ref}: {stderr}")
+    merge_base = result.stdout.strip()
+    if not merge_base:
+        raise RuntimeError(f"empty merge base for {base_ref} and {head_ref}")
+    return merge_base
+
+
 def _load_payload(label: str, text: str) -> tuple[dict[str, Any] | None, list[str]]:
     try:
         payload = json.loads(text)
@@ -229,7 +247,8 @@ def validate_community_intake_text(base_text: str, head_text: str) -> list[str]:
 
 def validate_community_intake_diff(config: CommunityIntakeInput) -> list[str]:
     try:
-        base_text = _git_show(config.base_ref, config.path)
+        merge_base = _git_merge_base(config.base_ref, config.head_ref)
+        base_text = _git_show(merge_base, config.path)
         head_text = _git_show(config.head_ref, config.path)
     except RuntimeError as exc:
         return [str(exc)]

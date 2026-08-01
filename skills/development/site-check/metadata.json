@@ -1,0 +1,38 @@
+{
+  "name": "site-check",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/site-check/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "site-check",
+  "downloaded_at": "2026-07-19T03:08:43.321707Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: dev, code, framework",
+    "score": 3,
+    "runner_up": "documents",
+    "runner_up_score": 1,
+    "signals": [
+      "dev",
+      "code",
+      "framework"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/site-check/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/site-check/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Answer 'is this site down or is it just me' properly \u2014 curl status/timing diagnostics, DNS cross-check, and TLS certificate reads, assembled into a where-it's-broken diagnosis. Use when asked is this website down, why can't I reach this site, check if my site is up, or is the SSL certificate expired. Produces the layered diagnosis (DNS \u2192 TLS \u2192 HTTP \u2192 content), response timing, cert expiry, and the rerunnable commands."
+}

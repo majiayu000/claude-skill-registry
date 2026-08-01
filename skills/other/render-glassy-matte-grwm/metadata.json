@@ -1,0 +1,36 @@
+{
+  "name": "render-glassy-matte-grwm",
+  "repo": "gooseworks-ai/goose-skills",
+  "path": "skills/ads/capabilities/render-glassy-matte-grwm/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/gooseworks-ai/goose-skills",
+  "dir_name": "render-glassy-matte-grwm",
+  "downloaded_at": "2026-07-28T02:52:39.222137Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category bash scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "data",
+    "runner_up_score": 1,
+    "signals": [
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "gooseworks-ai",
+  "source_url": "https://github.com/gooseworks-ai/goose-skills/blob/main/skills/ads/capabilities/render-glassy-matte-grwm/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gooseworks-ai/goose-skills/blob/main/skills/ads/capabilities/render-glassy-matte-grwm/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Assemble a multi-scene GRWM beauty-demo ad from a config \u2014 a locked-identity creator applies ~5 products step by step while a SEPARATE ElevenLabs voiceover narrates and every scene cut is snapped to the VO's product-name word-starts (Whisper word-level timestamps), then ~5 Playwright product overlay cards (real PDP-verified taglines) are composited onto the master each on its product-NAME word-start, the SEPARATE VO is mixed on top of a ducked music bed at loudnorm I=-14, clean-white 3-words/cue captions are burned, and the video closes on a flat-lay end card. This is the FREE deterministic assembly stage (re-cut to the VO word-starts, hard-concat, Playwright card render + card composite, VO plus music mix, caption burn, flat-lay end card); the VO, scene clips, product cutouts, and music come from create-music-elevenlabs / create-image-gpt-image-fal / create-video-fal. Use for the glassy-matte-grwm format."
+}

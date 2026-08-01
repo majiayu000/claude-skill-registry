@@ -1,0 +1,38 @@
+{
+  "name": "trace-to-skill-inducer",
+  "repo": "Tibsfox/gsd-skill-creator",
+  "path": "project-claude/skills/trace-to-skill-inducer/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Tibsfox/gsd-skill-creator",
+  "dir_name": "trace-to-skill-inducer",
+  "downloaded_at": "2026-07-20T03:18:51.607685Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: productivity=3, security=3",
+    "score": 3,
+    "runner_up": "security",
+    "runner_up_score": 3,
+    "signals": [
+      "workflow",
+      "planning",
+      "memory"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "Tibsfox",
+  "source_url": "https://github.com/Tibsfox/gsd-skill-creator/blob/main/project-claude/skills/trace-to-skill-inducer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Tibsfox/gsd-skill-creator/blob/main/project-claude/skills/trace-to-skill-inducer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when you have captured session evidence \u2014 session-retro / session- observatory-live traces in .planning/patterns/, tool logs, correction records \u2014 and want to induce a reusable skill from it. Segments the traces into candidate skill units (an LLM judgment, not a deterministic parse) and decomposes each candidate into a four-part structured spec: workflow structure, execution semantics, and runtime attachments (verification, safety, rollback, state). It emits a spec object, NOT a finished SKILL.md, and hands that spec to skill-forge. It sits between skill-integration (upstream frequency detector) and skill-forge (downstream author). Backed by Agent-Trace-to-Skill Induction (arxiv 2606.06893v1). Triggers on inducing a skill from captured traces, turning a repeated pattern into a skill spec, and preparing evidence for skill-forge."
+}

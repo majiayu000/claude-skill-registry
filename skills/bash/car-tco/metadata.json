@@ -1,0 +1,37 @@
+{
+  "name": "car-tco",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/car-tco/SKILL.md",
+  "github_branch": "main",
+  "category": "bash",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "car-tco",
+  "downloaded_at": "2026-07-18T02:54:17.310491Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "bash",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for bash: bash, script",
+    "score": 2,
+    "runner_up": "ai-ml",
+    "runner_up_score": 1,
+    "signals": [
+      "bash",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/car-tco/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/car-tco/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Compare the total cost of car ownership across buy-new, buy-used, lease, and keep-your-current-car \u2014 depreciation, insurance, maintenance ramp, and fuel over a real horizon, not just the monthly payment. Use when asked should I lease or buy a car, is it cheaper to keep my old car, what does this car really cost per month, or new vs used total cost. Produces the ranked scenario totals, per-month true cost, the assumption ledger, and the not-modeled list."
+}

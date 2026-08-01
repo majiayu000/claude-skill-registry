@@ -37,6 +37,12 @@
                 >
                 <kbd class="search-hint">Enter</kbd>
             </div>
+            <div class="search-scope-row" aria-live="polite">
+                <span id="search-scope">Loading highlighted search coverage…</span>
+                <button id="search-all-btn" class="search-all-btn" type="button" disabled>
+                    Search all
+                </button>
+            </div>
 
             <!-- Filters -->
             <div class="filters">
@@ -151,6 +157,7 @@
                         <option value="">All Categories</option>
                     </select>
                 </div>
+                <p id="leaderboard-status" class="leaderboard-status" aria-live="polite"></p>
                 <div id="leaderboard-list" class="leaderboard-grid"></div>
             </div>
 
@@ -261,6 +268,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="js/supabase-client.js"></script>
     <script src="js/app-render.js"></script>
+    <script src="js/artifact-api.js"></script>
     <script src="js/app.js"></script>
 </body>
 </html>

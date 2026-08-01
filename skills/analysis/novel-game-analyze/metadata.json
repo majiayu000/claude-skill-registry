@@ -1,0 +1,37 @@
+{
+  "name": "novel-game-analyze",
+  "repo": "worldwonderer/novel-to-game",
+  "path": "skills/novel-game-analyze/SKILL.md",
+  "github_branch": "main",
+  "category": "analysis",
+  "source": "github.com/worldwonderer/novel-to-game",
+  "dir_name": "novel-game-analyze",
+  "downloaded_at": "2026-07-29T03:09:51.073979Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "analysis",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for analysis: analysis, analyze",
+    "score": 2,
+    "runner_up": "design",
+    "runner_up_score": 1,
+    "signals": [
+      "analysis",
+      "analyze"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "worldwonderer",
+  "source_url": "https://github.com/worldwonderer/novel-to-game/blob/main/skills/novel-game-analyze/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/worldwonderer/novel-to-game/blob/main/skills/novel-game-analyze/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u6e38\u620f\u5316\u62c6\u4e66\u3002\u628a\u539f\u59cb\u5c0f\u8bf4\u3001\u62c6\u6587\u5e93\u6216\u5199\u4f5c\u5de5\u7a0b\u538b\u7f29\u6210\u6709\u5fc5\u8981\u539f\u6587\u8bc1\u636e\u7684 SOURCE_BIBLE\uff0c\u63d0\u53d6\u4e16\u754c\u89c4\u5219\u3001\u73a9\u5bb6\u52a8\u8bcd\u3001\u7a7a\u95f4\u3001\u89d2\u8272\u610f\u5fd7\u3001\u7cfb\u7edf\u548c\u89c6\u89c9\u951a\u70b9\uff0c\u4e0d\u63d0\u524d\u53d1\u660e\u6e38\u620f\u7c7b\u578b\u3002\u7528\u4e8e\u6e38\u620f\u5316\u62c6\u4e66\u3001\u5206\u6790\u5c0f\u8bf4\u7684\u6e38\u620f\u6539\u7f16\u57fa\u7840\u7b49\u9700\u6c42\u3002"
+}

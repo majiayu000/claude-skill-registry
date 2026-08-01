@@ -1,0 +1,37 @@
+{
+  "name": "walmart-keyword-search",
+  "repo": "browser-act/skills",
+  "path": "solutions/ecommerce/walmart-keyword-search/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/browser-act/skills",
+  "dir_name": "walmart-keyword-search",
+  "downloaded_at": "2026-07-21T02:57:40.231989Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=2, marketing=2",
+    "score": 2,
+    "runner_up": "marketing",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "browser-act",
+  "source_url": "https://github.com/browser-act/skills/blob/main/solutions/ecommerce/walmart-keyword-search/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/browser-act/skills/blob/main/solutions/ecommerce/walmart-keyword-search/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Walmart keyword search scraper: input a search keyword and page number, navigate to walmart.com search results, extract paginated product listings with itemId, url, title, brand, image, price, wasPrice, rating, reviewCount, availability, seller info, fulfillmentBadge, classType, and shortDescription. Use when user mentions walmart search, walmart keyword search, search walmart products, scrape walmart search results, walmart search scraper, walmart product search, search items on walmart, walmart search by keyword, walmart product listing, get walmart search data, extract walmart products, walmart search results scraper, walmart shop search, walmart catalog search, walmart product list by keyword, walmart browse by keyword. Also applies to price comparison research on walmart, finding walmart product URLs in bulk, monitoring walmart search rankings, collecting walmart product data by category keyword."
+}

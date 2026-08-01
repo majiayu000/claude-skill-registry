@@ -1,0 +1,37 @@
+{
+  "name": "code-tour",
+  "repo": "borghei/Claude-Skills",
+  "path": "engineering/code-tour/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/borghei/Claude-Skills",
+  "dir_name": "code-tour",
+  "downloaded_at": "2026-07-30T02:39:42.303854Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=2, design=2",
+    "score": 2,
+    "runner_up": "design",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "borghei",
+  "source_url": "https://github.com/borghei/Claude-Skills/blob/main/engineering/code-tour/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/borghei/Claude-Skills/blob/main/engineering/code-tour/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Build ordered, annotated tours of an unfamiliar codebase and keep the anchors from rotting. Use when onboarding an engineer, handing off a service, or explaining a subsystem before a review."
+}

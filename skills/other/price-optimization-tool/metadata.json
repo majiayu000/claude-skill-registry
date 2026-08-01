@@ -1,0 +1,37 @@
+{
+  "name": "price-optimization-tool",
+  "repo": "nexscope-ai/eCommerce-Skills",
+  "path": "price-optimization-tool/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/nexscope-ai/eCommerce-Skills",
+  "dir_name": "price-optimization-tool",
+  "downloaded_at": "2026-07-24T03:06:40.428686Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: ai-ml=2, design=2",
+    "score": 2,
+    "runner_up": "design",
+    "runner_up_score": 2,
+    "signals": [
+      "ai",
+      "model"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "nexscope-ai",
+  "source_url": "https://github.com/nexscope-ai/eCommerce-Skills/blob/main/price-optimization-tool/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nexscope-ai/eCommerce-Skills/blob/main/price-optimization-tool/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Evaluate ecommerce price candidates using unit economics, historical observations, elasticity analysis, scenario modeling, and controlled experiments. Use when a seller asks what price to test, how price changes could affect contribution or revenue, how to estimate elasticity, how to optimize a bundle or tier, or how to design a price experiment across Amazon, Shopify, TikTok Shop, Walmart, eBay, or other channels. Do not claim a proven optimal price without sufficient clean data, and do not change live prices without explicit authorization."
+}

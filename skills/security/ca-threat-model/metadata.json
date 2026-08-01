@@ -1,0 +1,37 @@
+{
+  "name": "ca-threat-model",
+  "repo": "arbiterForge/codeArbiter",
+  "path": "plugins/ca-codex/skills/ca-threat-model/SKILL.md",
+  "github_branch": "main",
+  "category": "security",
+  "source": "github.com/arbiterForge/codeArbiter",
+  "dir_name": "ca-threat-model",
+  "downloaded_at": "2026-07-25T02:52:09.494649Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "security",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for security: security, auth",
+    "score": 2,
+    "runner_up": "ai-ml",
+    "runner_up_score": 1,
+    "signals": [
+      "security",
+      "auth"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "arbiterForge",
+  "source_url": "https://github.com/arbiterForge/codeArbiter/blob/main/plugins/ca-codex/skills/ca-threat-model/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/arbiterForge/codeArbiter/blob/main/plugins/ca-codex/skills/ca-threat-model/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Opt-in lightweight STRIDE pass for a sensitive feature before implementation. Not a routine gate \u2014 invoke it when a change warrants security thought."
+}

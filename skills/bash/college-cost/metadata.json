@@ -1,0 +1,37 @@
+{
+  "name": "college-cost",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/college-cost/SKILL.md",
+  "github_branch": "main",
+  "category": "bash",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "college-cost",
+  "downloaded_at": "2026-07-19T03:08:44.969113Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "bash",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for bash: bash, script",
+    "score": 2,
+    "runner_up": "ai-ml",
+    "runner_up_score": 1,
+    "signals": [
+      "bash",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/college-cost/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/college-cost/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Compute what a degree will actually cost \u2014 sticker minus real aid, inflated per year, split into cash and loans, with the loan's decade-long monthly tail made visible before enrollment instead of after. Use when asked what will college really cost, compare these two offers' real prices, how much loan payment after graduation, or is this school affordable. Produces the all-in number from the script, the offer-letter decode (grants vs loans untangled), the monthly-tail reality check, and the two-school comparison."
+}

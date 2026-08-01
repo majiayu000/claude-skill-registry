@@ -1,0 +1,38 @@
+{
+  "name": "tos-decoder",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/tos-decoder/SKILL.md",
+  "github_branch": "main",
+  "category": "ai-ml",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "tos-decoder",
+  "downloaded_at": "2026-07-15T02:52:59.028342Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "ai-ml",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for ai-ml: ai, model, training",
+    "score": 3,
+    "runner_up": "ai-llm",
+    "runner_up_score": 1,
+    "signals": [
+      "ai",
+      "model",
+      "training"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/tos-decoder/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/tos-decoder/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Decode a terms of service or privacy policy into what you're actually agreeing to, ranked by real-world impact. Use when someone asks 'what am I agreeing to', 'decode this privacy policy', 'is this ToS bad', or 'should I click accept'. Produces a ranked findings table with a 'should I care?' verdict per finding, covering data resale, arbitration and class-action waivers, unilateral changes, content licenses, and what deletion really means."
+}

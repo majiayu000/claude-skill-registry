@@ -1,0 +1,38 @@
+{
+  "name": "i-have-adhd",
+  "repo": "ayghri/i-have-adhd",
+  "path": "skills/i-have-adhd/SKILL.md",
+  "github_branch": "main",
+  "category": "productivity",
+  "source": "github.com/ayghri/i-have-adhd",
+  "dir_name": "i-have-adhd",
+  "downloaded_at": "2026-07-20T03:22:03.532685Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "productivity",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for productivity: task, planning, memory",
+    "score": 3,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "task",
+      "planning",
+      "memory"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "ayghri",
+  "source_url": "https://github.com/ayghri/i-have-adhd/blob/main/skills/i-have-adhd/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ayghri/i-have-adhd/blob/main/skills/i-have-adhd/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Shape output for a reader with ADHD. Use this skill whenever responding to ANY user message including coding tasks, debugging, explanations, planning, and casual conversation. Output should lead with concrete next actions, number multi-step work, externalize state across turns, suppress tangents, give specific time estimates, and make wins visible. Trigger even on casual messages and even when the user did not explicitly ask for brevity."
+}

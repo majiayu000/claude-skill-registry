@@ -1,0 +1,37 @@
+{
+  "name": "ansoff-matrix",
+  "repo": "deanpeters/Product-Manager-Skills",
+  "path": "skills/ansoff-matrix/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/deanpeters/Product-Manager-Skills",
+  "dir_name": "ansoff-matrix",
+  "downloaded_at": "2026-07-18T02:46:02.197198Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: development=2, planning=2",
+    "score": 2,
+    "runner_up": "planning",
+    "runner_up_score": 2,
+    "signals": [
+      "framework",
+      "software"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "deanpeters",
+  "source_url": "https://github.com/deanpeters/Product-Manager-Skills/blob/main/skills/ansoff-matrix/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/deanpeters/Product-Manager-Skills/blob/main/skills/ansoff-matrix/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Map evidence-backed growth options across the Ansoff Matrix with risk-rated sequencing. Use when the question is where the next tranche of growth comes from, and at what risk."
+}

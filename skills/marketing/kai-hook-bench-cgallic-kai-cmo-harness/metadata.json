@@ -1,0 +1,39 @@
+{
+  "name": "kai-hook-bench",
+  "repo": "cgallic/kai-cmo-harness",
+  "path": "harness/skills-v2/kai-hook-bench/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/cgallic/kai-cmo-harness",
+  "dir_name": "kai-hook-bench-cgallic-kai-cmo-harness",
+  "downloaded_at": "2026-07-29T02:53:10.112762Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for marketing: marketing, social, campaign, brand",
+    "score": 4,
+    "runner_up": "bash",
+    "runner_up_score": 2,
+    "signals": [
+      "marketing",
+      "social",
+      "campaign",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "cgallic",
+  "source_url": "https://github.com/cgallic/kai-cmo-harness/blob/main/harness/skills-v2/kai-hook-bench/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cgallic/kai-cmo-harness/blob/main/harness/skills-v2/kai-hook-bench/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Generate, rank, and gate a reusable hook bank \u2014 sourced pains \u00d7 named hook formula families, scored on clarity/specificity/curiosity/proof-backing, gated at the 10/16 ad threshold, delivered in 3 lengths with per-hook provenance and downstream routing. Use when \"hook bank\", \"generate hooks\", \"hook generator\", \"write hooks for\", \"ad hooks\", \"scroll stoppers\", \"opening lines\", \"hook ideas\", \"first 3 seconds\", \"hook matrix\", \"I need 50 hooks\", or any request to batch-produce attention-openers for ads, social, or video."
+}

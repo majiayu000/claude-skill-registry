@@ -1,0 +1,40 @@
+{
+  "name": "contract-driven",
+  "repo": "OutlineDriven/odin-claude-plugin",
+  "path": "skills/contract-first/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/OutlineDriven/odin-claude-plugin",
+  "dir_name": "contract-first",
+  "downloaded_at": "2026-07-17T02:47:01.869541Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for development: code, programming, build, compile, debug",
+    "score": 5,
+    "runner_up": "ai-llm",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "programming",
+      "build",
+      "compile",
+      "debug"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "OutlineDriven",
+  "source_url": "https://github.com/OutlineDriven/odin-claude-plugin/blob/main/skills/contract-first/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OutlineDriven/odin-claude-plugin/blob/main/skills/contract-first/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Design-by-Contract (DbC). Use when crossing public API boundaries, guarding complex state invariants, or hardening untrusted inputs and integration seams."
+}

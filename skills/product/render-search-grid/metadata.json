@@ -1,0 +1,37 @@
+{
+  "name": "render-search-grid",
+  "repo": "gooseworks-ai/goose-skills",
+  "path": "skills/ads/capabilities/render-search-grid/SKILL.md",
+  "github_branch": "main",
+  "category": "product",
+  "source": "github.com/gooseworks-ai/goose-skills",
+  "dir_name": "render-search-grid",
+  "downloaded_at": "2026-07-20T03:28:03.744629Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "product",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for product: product, feature",
+    "score": 2,
+    "runner_up": "ai-llm",
+    "runner_up_score": 1,
+    "signals": [
+      "product",
+      "feature"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "gooseworks-ai",
+  "source_url": "https://github.com/gooseworks-ai/goose-skills/blob/main/skills/ads/capabilities/render-search-grid/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gooseworks-ai/goose-skills/blob/main/skills/ads/capabilities/render-search-grid/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Render a 'search-grid' (Pinterest search-moodboard) video from a config \u2014 a real-DOM page with four continuous beats (masonry search grid + typing hook with counter-drift columns \u2192 3 cards slide in from the right and stack \u2192 the top card box-grows to fullscreen then swipe-left \u00d72 through captioned feature shots \u2192 warm end card), frame-stepped via Chromium and encoded with FFmpeg \u2014 deterministic assembly, FREE (real brand photos + logo; the optional music bed comes from create-music-elevenlabs), so type/logo/photos stay pixel-crisp. Use for the search-grid format."
+}

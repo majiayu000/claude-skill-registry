@@ -1,0 +1,39 @@
+{
+  "name": "hardware-prd",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/hardware-prd/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "hardware-prd",
+  "downloaded_at": "2026-07-15T02:52:59.889164Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for development: code, framework, build, software",
+    "score": 4,
+    "runner_up": "design",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "framework",
+      "build",
+      "software"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/hardware-prd/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/hardware-prd/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Write a PRD for a physical hardware product \u2014 target cost (BOM and landed), industrial design constraints, regulatory certifications, reliability targets, serviceability, packaging, and forecast assumptions. Use when asked to write a hardware PRD, spec a new device, define requirements for a physical product, or kick off an NPI program. Produces a complete hardware PRD with a cost stack, cert matrix, reliability spec, and EVT/DVT/PVT milestone targets."
+}

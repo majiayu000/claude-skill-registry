@@ -1,0 +1,38 @@
+{
+  "name": "render-vo-anchored-motion-listicle",
+  "repo": "gooseworks-ai/goose-skills",
+  "path": "skills/ads/capabilities/render-vo-anchored-motion-listicle/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/gooseworks-ai/goose-skills",
+  "dir_name": "render-vo-anchored-motion-listicle",
+  "downloaded_at": "2026-07-20T03:28:05.311769Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "design",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for design: design, css, animation",
+    "score": 3,
+    "runner_up": "api",
+    "runner_up_score": 1,
+    "signals": [
+      "design",
+      "css",
+      "animation"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "gooseworks-ai",
+  "source_url": "https://github.com/gooseworks-ai/goose-skills/blob/main/skills/ads/capabilities/render-vo-anchored-motion-listicle/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gooseworks-ai/goose-skills/blob/main/skills/ads/capabilities/render-vo-anchored-motion-listicle/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Assemble an expert/educator motion-graphic LISTICLE video ad from a config \u2014 a spoken authoritative voiceover carries a numbered listicle while N web-animated hyperframe beats (HTML plus the Web Animations API, one branded design system of alternating tiles, big hero numerals, and glass-pill callouts) are rendered frame-by-frame via Playwright and anchored to the VO's word-level timestamps, periodic color-graded B-roll windows give visual breath, and captions burn ONLY inside those B-roll windows (2-word chunks, ASS Format header carrying a Name field so none drop) with the VO mixed under a low music bed. This is the FREE deterministic assembly stage (Playwright beat render plus ffmpeg concat plus window-masked caption burn plus VO-and-music mix plus final composite) \u2014 the VO, the music bed, and the stock B-roll come from create-vo-elevenlabs, create-music-elevenlabs, and media-proxy. Use for the vo-anchored-motion-listicle format."
+}

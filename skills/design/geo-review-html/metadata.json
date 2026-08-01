@@ -1,0 +1,38 @@
+{
+  "name": "geo-review-html",
+  "repo": "ViryaZheng/recomby-geo",
+  "path": "plugins/recomby-geo/skills/geo-review-html/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/ViryaZheng/recomby-geo",
+  "dir_name": "geo-review-html",
+  "downloaded_at": "2026-07-16T02:46:59.539692Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "design",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for design: design, css, frontend",
+    "score": 3,
+    "runner_up": "bash",
+    "runner_up_score": 2,
+    "signals": [
+      "design",
+      "css",
+      "frontend"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "ViryaZheng",
+  "source_url": "https://github.com/ViryaZheng/recomby-geo/blob/main/plugins/recomby-geo/skills/geo-review-html/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ViryaZheng/recomby-geo/blob/main/plugins/recomby-geo/skills/geo-review-html/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Render an interactive, self-contained HTML companion for a GEO content brief (04-content-brief) or a publish-ready draft (05-production), so a NON-technical client reviewer (founder, organizer staff, the domain expert filling slots) can fill REQUIRED-FILL slots, leave section-level comments, and approve/return work in the browser instead of editing Markdown. Use when a brief or draft needs to go to a client/expert for review, or when building the briefs/index.html entry page for a client folder. The reviewer's input comes back as a JSON file that 04-content-brief Step 9 ingests. Visual quality is delegated to the frontend-design skill."
+}

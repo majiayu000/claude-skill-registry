@@ -1,0 +1,37 @@
+{
+  "name": "game-concept",
+  "repo": "worldwonderer/novel-to-game",
+  "path": "skills/game-concept/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/worldwonderer/novel-to-game",
+  "dir_name": "game-concept",
+  "downloaded_at": "2026-07-29T03:09:50.516792Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "design",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for design: design, ui",
+    "score": 2,
+    "runner_up": "gaming",
+    "runner_up_score": 1,
+    "signals": [
+      "design",
+      "ui"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "worldwonderer",
+  "source_url": "https://github.com/worldwonderer/novel-to-game/blob/main/skills/game-concept/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/worldwonderer/novel-to-game/blob/main/skills/game-concept/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u5c0f\u8bf4\u6e38\u620f\u6982\u5ff5\u8bbe\u8ba1\u3002\u6839\u636e SOURCE_BIBLE \u4e0e PRODUCT_BRIEF \u5728\u672a\u9501\u5b9a\u7ef4\u5ea6\u4e0a\u751f\u6210\u4e09\u4e2a\u771f\u6b63\u4e0d\u540c\u7684\u65b9\u6848\uff0c\u7528\u786c\u5426\u51b3\u548c\u5173\u952e\u53d6\u820d\u9009\u62e9\u6700\u503c\u5f97\u505a\u7684\u53ef\u73a9\u539f\u578b\u3002\u7528\u4e8e\u5224\u65ad\u5c0f\u8bf4\u9002\u5408\u505a\u6210\u4ec0\u4e48\u6e38\u620f\u3001\u6bd4\u8f83\u6e38\u620f\u65b9\u6848\u7b49\u9700\u6c42\u3002"
+}

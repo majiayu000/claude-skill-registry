@@ -1,0 +1,38 @@
+{
+  "name": "add-sample-data",
+  "repo": "microsoft/power-platform-skills",
+  "path": "plugins/mobile-apps/skills/add-sample-data/SKILL.md",
+  "github_branch": "main",
+  "category": "bash",
+  "source": "github.com/microsoft/power-platform-skills",
+  "dir_name": "add-sample-data",
+  "downloaded_at": "2026-07-30T02:49:50.902139Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "bash",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for bash: bash, script, cli",
+    "score": 3,
+    "runner_up": "context-management",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "script",
+      "cli"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "microsoft",
+  "source_url": "https://github.com/microsoft/power-platform-skills/blob/main/plugins/mobile-apps/skills/add-sample-data/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/microsoft/power-platform-skills/blob/main/plugins/mobile-apps/skills/add-sample-data/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user wants to seed Dataverse tables with realistic sample records so a freshly-scaffolded code app shows real-looking data on first launch. Generates contextually appropriate rows from each table's schema and inserts them in dependency order. Mirrors microsoft/power-platform-skills/power-pages/add-sample-data, adapted for mobile apps."
+}

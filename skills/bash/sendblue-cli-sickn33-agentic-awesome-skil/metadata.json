@@ -1,0 +1,40 @@
+{
+  "name": "sendblue-cli",
+  "repo": "sickn33/agentic-awesome-skills",
+  "path": "skills/sendblue/sendblue-cli/SKILL.md",
+  "github_branch": "main",
+  "category": "bash",
+  "source": "github.com/sickn33/agentic-awesome-skills",
+  "dir_name": "sendblue-cli-sickn33-agentic-awesome-skil",
+  "downloaded_at": "2026-07-22T03:11:30.191556Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "bash",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for bash: bash, shell, script, cli",
+    "score": 4,
+    "runner_up": "communication",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "shell",
+      "script",
+      "cli"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter",
+      "tags": "frontmatter:list"
+    }
+  },
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/sendblue/sendblue-cli/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/sendblue/sendblue-cli/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Send iMessage and SMS from the shell via the @sendblue/cli npm package \u2014 outbound sends, contact management, and account setup with no API client or webhook server required."
+}

@@ -1,0 +1,38 @@
+{
+  "name": "ros2-control",
+  "repo": "Leehyunbin0131/claude-ros2-skills",
+  "path": "skills/ros2-control/SKILL.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/Leehyunbin0131/claude-ros2-skills",
+  "dir_name": "ros2-control",
+  "downloaded_at": "2026-07-29T02:45:04.751566Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "documents",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for documents: doc, docs, documentation",
+    "score": 3,
+    "runner_up": "ai-ml",
+    "runner_up_score": 1,
+    "signals": [
+      "doc",
+      "docs",
+      "documentation"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "Leehyunbin0131",
+  "source_url": "https://github.com/Leehyunbin0131/claude-ros2-skills/blob/main/skills/ros2-control/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Leehyunbin0131/claude-ros2-skills/blob/main/skills/ros2-control/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "ros2_control: controller manager, hardware interfaces, URDF ros2_control tags, controller spawners."
+}

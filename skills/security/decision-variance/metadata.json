@@ -1,0 +1,38 @@
+{
+  "name": "decision-variance",
+  "repo": "arbiterForge/codeArbiter",
+  "path": "plugins/ca/skills/decision-variance/SKILL.md",
+  "github_branch": "main",
+  "category": "security",
+  "source": "github.com/arbiterForge/codeArbiter",
+  "dir_name": "decision-variance",
+  "downloaded_at": "2026-07-25T02:52:05.441387Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "security",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for security: security, auth, crypto",
+    "score": 3,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "security",
+      "auth",
+      "crypto"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "arbiterForge",
+  "source_url": "https://github.com/arbiterForge/codeArbiter/blob/main/plugins/ca/skills/decision-variance/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/arbiterForge/codeArbiter/blob/main/plugins/ca/skills/decision-variance/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Reconcile the project's architectural artifacts against the scaffold and prior decisions, then present each variance as a SMARTS analysis for the user to decide. Routed to when the user asks to arbitrate, reconcile, or consolidate architectural context, requests a variance report, mentions ADR conflicts, or asks which downstream artifacts the current state supports. Never decides alone \u2014 every arbitration is user-attributed and logged."
+}

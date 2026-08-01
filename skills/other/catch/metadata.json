@@ -1,0 +1,37 @@
+{
+  "name": "catch",
+  "repo": "saadshahd/moo.md",
+  "path": "hunch/skills/catch/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/saadshahd/moo.md",
+  "dir_name": "catch",
+  "downloaded_at": "2026-07-21T03:11:06.953891Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: development=2, planning=2",
+    "score": 2,
+    "runner_up": "planning",
+    "runner_up_score": 2,
+    "signals": [
+      "dev",
+      "debug"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "saadshahd",
+  "source_url": "https://github.com/saadshahd/moo.md/blob/main/hunch/skills/catch/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/saadshahd/moo.md/blob/main/hunch/skills/catch/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Shape output for a human working through agents. Use on every response \u2014 coding, debugging, explanations, planning, casual conversation \u2014 even when the user did not ask for brevity."
+}

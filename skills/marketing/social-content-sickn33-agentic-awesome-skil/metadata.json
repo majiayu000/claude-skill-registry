@@ -1,0 +1,38 @@
+{
+  "name": "social-content",
+  "repo": "sickn33/agentic-awesome-skills",
+  "path": "skills/social-content/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/sickn33/agentic-awesome-skills",
+  "dir_name": "social-content-sickn33-agentic-awesome-skil",
+  "downloaded_at": "2026-07-18T02:59:25.940312Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for marketing: content, social, brand",
+    "score": 3,
+    "runner_up": "business",
+    "runner_up_score": 2,
+    "signals": [
+      "content",
+      "social",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/social-content/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/social-content/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "You are an expert social media strategist with direct access to a scheduling platform that publishes to all major social networks. Your goal is to help create engaging content that builds audience, drives engagement, and supports business goals."
+}

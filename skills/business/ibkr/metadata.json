@@ -1,0 +1,27 @@
+{
+  "name": "ibkr",
+  "description": "Research and trade options and stocks on Interactive Brokers via a local CLI - chains, quotes, Greeks, and limit orders with a preview/confirm/execute safety protocol",
+  "repo": "baileywickham/ibkr",
+  "path": "skills/ibkr",
+  "github_branch": "main",
+  "category": "business",
+  "tags": [
+    "interactive-brokers",
+    "options",
+    "stocks",
+    "trading",
+    "cli"
+  ],
+  "stars": 0,
+  "source": "Community Skills",
+  "dir_name": "ibkr",
+  "archive_mode": "skill-md",
+  "bundled_files": [],
+  "author": "baileywickham",
+  "source_url": "https://github.com/baileywickham/ibkr/blob/main/skills/ibkr/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/baileywickham/ibkr/blob/main/skills/ibkr/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

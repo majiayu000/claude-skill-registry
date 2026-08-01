@@ -1,0 +1,16 @@
+{
+  "name": "war-room",
+  "repo": "athola/claude-night-market",
+  "path": "plugins/attune/skills/war-room/SKILL.md",
+  "source": "github.com/athola/claude-night-market",
+  "downloaded_at": "2026-02-02T02:21:39.932024Z",
+  "dir_name": "war-room",
+  "category": "devops",
+  "author": "athola",
+  "source_url": "https://github.com/athola/claude-night-market/blob/main/plugins/attune/skills/war-room/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 athola",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

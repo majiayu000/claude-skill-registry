@@ -1,0 +1,38 @@
+{
+  "name": "avoid-ai-writing",
+  "repo": "sickn33/agentic-awesome-skills",
+  "path": "skills/avoid-ai-writing/SKILL.md",
+  "github_branch": "main",
+  "category": "writing",
+  "source": "github.com/sickn33/agentic-awesome-skills",
+  "dir_name": "avoid-ai-writing-sickn33-agentic-awesome-skil",
+  "downloaded_at": "2026-07-27T03:25:40.341204Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "writing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for writing: writing, copy, blog",
+    "score": 3,
+    "runner_up": "ai-llm",
+    "runner_up_score": 2,
+    "signals": [
+      "writing",
+      "copy",
+      "blog"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/avoid-ai-writing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/avoid-ai-writing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Audit and rewrite content to remove 21 categories of AI writing patterns with a 43-entry replacement table"
+}

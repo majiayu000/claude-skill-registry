@@ -1,0 +1,40 @@
+{
+  "name": "kai-repurpose",
+  "repo": "cgallic/kai-cmo-harness",
+  "path": "harness/skills-v2/kai-repurpose/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/cgallic/kai-cmo-harness",
+  "dir_name": "kai-repurpose-cgallic-kai-cmo-harness",
+  "downloaded_at": "2026-07-29T02:53:09.197567Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for marketing: marketing, seo, content, social, campaign",
+    "score": 5,
+    "runner_up": "context-management",
+    "runner_up_score": 2,
+    "signals": [
+      "marketing",
+      "seo",
+      "content",
+      "social",
+      "campaign"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "cgallic",
+  "source_url": "https://github.com/cgallic/kai-cmo-harness/blob/main/harness/skills-v2/kai-repurpose/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cgallic/kai-cmo-harness/blob/main/harness/skills-v2/kai-repurpose/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Take one pillar content piece and produce 15-25 derivative assets across platforms \u2014 social posts, email, LinkedIn article, video scripts, newsletter section, infographic brief, and more. The ultimate content multiplier. Use when \"repurpose this\", \"turn this into\", \"make social posts from this blog\", \"content repurposing\", \"1 to many\", \"atomize this content\", \"extract posts from\", or any request to derive multiple pieces from one source."
+}

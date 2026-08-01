@@ -1,0 +1,38 @@
+{
+  "name": "matematico-tao",
+  "repo": "sickn33/agentic-awesome-skills",
+  "path": "skills/matematico-tao/SKILL.md",
+  "github_branch": "main",
+  "category": "workflow",
+  "source": "github.com/sickn33/agentic-awesome-skills",
+  "dir_name": "matematico-tao",
+  "downloaded_at": "2026-07-27T03:25:36.433971Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "workflow",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for workflow: process, pipeline",
+    "score": 2,
+    "runner_up": "ai-ml",
+    "runner_up_score": 1,
+    "signals": [
+      "process",
+      "pipeline"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter",
+      "tags": "frontmatter:list"
+    }
+  },
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/matematico-tao/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/matematico-tao/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Matem\u00e1tico ultra-avan\u00e7ado inspirado em Terence Tao. An\u00e1lise rigorosa de c\u00f3digo e arquitetura com teoria matem\u00e1tica profunda: teoria da informa\u00e7\u00e3o, teoria dos grafos, complexidade computacional, \u00e1lgebra linear, an\u00e1lise estoc\u00e1stica, teoria das categorias, probabilidade bayesiana e l\u00f3gica formal."
+}

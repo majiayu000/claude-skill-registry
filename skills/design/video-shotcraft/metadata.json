@@ -1,0 +1,38 @@
+{
+  "name": "video-shotcraft",
+  "repo": "Vincentwei1021/video-shotcraft",
+  "path": "SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/Vincentwei1021/video-shotcraft",
+  "dir_name": "video-shotcraft",
+  "downloaded_at": "2026-07-22T02:51:17.609904Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "design",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for design: design, ui, css",
+    "score": 3,
+    "runner_up": "data",
+    "runner_up_score": 1,
+    "signals": [
+      "design",
+      "ui",
+      "css"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "Vincentwei1021",
+  "source_url": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Vincentwei1021/video-shotcraft/blob/main/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u7528\u955c\u5934\u914d\u65b9\u5361 + \u5df2\u9a8c\u6536\u6a21\u677f + \u4ee3\u7801/\u97f3\u9891\u8d44\u4ea7\u5236\u4f5c\u7535\u5f71\u611f\u4ea7\u54c1\u89c6\u9891\uff08Remotion + \u771f\u5b9e\u9875\u9762\u622a\u56fe + 2.5D \u8fd0\u955c + \u8282\u594f\u5361\u70b9 + \u58f0\u97f3\u8bbe\u8ba1\uff09\u3002\u5f53\u7528\u6237\u8981\u6c42\"\u7528 video-shotcraft \u505a\u89c6\u9891/\u5ba3\u4f20\u7247\"\u3001\u70b9\u540d Ink Press \u6a21\u677f\u6216\u8981\u6c42\u590d\u523b\u6a21\u677f\u7247\u6548\u679c\uff0c\u6216\u8981\u7528\u955c\u5934\u5361\u505a\u5355\u4e2a\u52a8\u6548\u955c\u5934\u65f6\u4f7f\u7528\u3002"
+}

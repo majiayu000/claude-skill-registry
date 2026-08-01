@@ -1,0 +1,36 @@
+{
+  "name": "game-build",
+  "repo": "worldwonderer/novel-to-game",
+  "path": "skills/game-build/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/worldwonderer/novel-to-game",
+  "dir_name": "game-build",
+  "downloaded_at": "2026-07-29T03:09:50.312789Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category ai-llm scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "ai-ml",
+    "runner_up_score": 1,
+    "signals": [
+      "ai"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "worldwonderer",
+  "source_url": "https://github.com/worldwonderer/novel-to-game/blob/main/skills/game-build/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/worldwonderer/novel-to-game/blob/main/skills/game-build/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u6e38\u620f\u6784\u5efa\u6267\u884c\u3002\u628a\u6279\u51c6\u540e\u7684 GAME_DESIGN \u4e0e ART_DIRECTION \u538b\u7f29\u6210\u6700\u5c0f BUILD_BRIEF\uff0c\u4ea4\u7ed9\u5f53\u524d\u7f16\u7801\u667a\u80fd\u4f53\u3001Kimi K3\u3001Claude Fable 5 \u6216\u5176\u4ed6\u5f3a\u6a21\u578b\u5b9e\u73b0\u53ef\u5b8c\u6574\u6e38\u73a9\u7684\u7f51\u9875\u6e38\u620f\u539f\u578b\uff0c\u5e76\u901a\u8fc7\u771f\u5b9e\u8fd0\u884c\u548c\u622a\u56fe\u8fed\u4ee3\u3002\u7528\u4e8e\u628a\u6279\u51c6\u7684\u6e38\u620f\u65b9\u6848\u5b9e\u73b0\u6210\u53ef\u8fd0\u884c\u6e38\u620f\u3002"
+}

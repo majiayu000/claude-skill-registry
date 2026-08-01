@@ -14,13 +14,12 @@ sys.path.insert(0, str(ROOT_DIR))
 sys.path.insert(0, str(SCRIPT_DIR))
 
 from discover_by_topic import GitHubTopicDiscovery
+from sync_download import download_skills as download_skills
+from sync_pipeline_support import _source_count, logger
 from utils import build_skill_key, iter_source_skills
 
 from crawler.skillsmp_sync import SkillsMPSync
 
-
-from sync_download import download_skills
-from sync_pipeline_support import _source_count, logger
 
 def sync_skillsmp(output_path: str, max_skills: int = 50000, keep_on_empty: bool = True) -> int:
     """Sync skills from SkillsMP."""

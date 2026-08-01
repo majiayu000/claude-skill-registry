@@ -1,0 +1,37 @@
+{
+  "name": "firebase-remote-config",
+  "repo": "evanca/flutter-ai-rules",
+  "path": "skills/firebase-remote-config/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/evanca/flutter-ai-rules",
+  "dir_name": "firebase-remote-config",
+  "downloaded_at": "2026-07-30T02:42:42.173846Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: api=2, data=2",
+    "score": 2,
+    "runner_up": "data",
+    "runner_up_score": 2,
+    "signals": [
+      "api",
+      "sdk"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "evanca",
+  "source_url": "https://github.com/evanca/flutter-ai-rules/blob/main/skills/firebase-remote-config/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/evanca/flutter-ai-rules/blob/main/skills/firebase-remote-config/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when implementing feature flags, running A/B tests, setting parameter defaults, fetching/activating config, or enabling real-time config updates."
+}

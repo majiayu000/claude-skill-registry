@@ -1,0 +1,38 @@
+{
+  "name": "amazon-search-listing",
+  "repo": "browser-act/skills",
+  "path": "solutions/ecommerce/amazon-search-listing/SKILL.md",
+  "github_branch": "main",
+  "category": "bash",
+  "source": "github.com/browser-act/skills",
+  "dir_name": "amazon-search-listing",
+  "downloaded_at": "2026-07-21T02:57:39.602442Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "bash",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for bash: bash, shell, script",
+    "score": 3,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "shell",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "browser-act",
+  "source_url": "https://github.com/browser-act/skills/blob/main/solutions/ecommerce/amazon-search-listing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/browser-act/skills/blob/main/solutions/ecommerce/amazon-search-listing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Amazon search and category listing scraper: extract product listings from any Amazon search results page, keyword search URL, or category browse page and return per-item cards (asin, title, url, image, price, listPrice, stars, reviewCount, badges, isAmazonChoice, isBestSeller, isSponsored, delivery, boughtInPast, positionIndex) plus pagination state (currentPage, hasNextPage, nextPageUrl, totalResultsApprox). Works across all Amazon regional TLDs (amazon.com, amazon.co.uk, amazon.de, amazon.co.jp, amazon.in, amazon.fr, amazon.ca, amazon.com.au, amazon.it, amazon.es, amazon.com.mx, amazon.com.br, amazon.nl, amazon.se, amazon.sg, amazon.ae, amazon.sa, amazon.pl, amazon.tr, amazon.eg). Use when user mentions Amazon, amazon.com, Amazon SERP, Amazon search results, Amazon keyword search, Amazon category page, Amazon subcategory URL, scrape Amazon listings, extract Amazon search, Amazon product cards, Amazon browse page, Amazon /s URL, Amazon /s?k= URL, Amazon /b/ category URL, Amazon /gp/browse category, Amazon bbn category filter, Amazon rh filter, Amazon search pagination, Amazon 7 pages limit, Amazon subcategory scraper, Amazon keyword scraper, Amazon SERP scraper, Amazon by URL, Amazon by category, Amazon by keyword. Also applies to price monitoring across a keyword or category, competitive listing tracking on Amazon, brand keyword ranking on Amazon, category catalog audits, best-of category discovery from a search, paginated bulk extraction of Amazon search hits, and building ASIN lists from a search."
+}

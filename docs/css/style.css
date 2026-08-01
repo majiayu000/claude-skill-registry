@@ -420,6 +420,36 @@ body::after {
     box-shadow: 0 0 15px rgba(0, 255, 242, 0.4);
 }
 
+.search-scope-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 0.75rem;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.search-all-btn {
+    border: 1px solid var(--neon-cyan);
+    border-radius: var(--radius-md);
+    padding: 0.45rem 0.8rem;
+    color: var(--neon-cyan);
+    background: transparent;
+    cursor: pointer;
+}
+
+.search-all-btn:hover:not(:disabled),
+.search-all-btn:focus-visible {
+    background: rgba(0, 255, 242, 0.12);
+    box-shadow: 0 0 12px rgba(0, 255, 242, 0.2);
+}
+
+.search-all-btn:disabled {
+    cursor: default;
+    opacity: 0.65;
+}
+
 /* ═══════════════════════════════════════════════════════════
    FILTERS - Pill-style selectors
    ═══════════════════════════════════════════════════════════ */
@@ -1487,6 +1517,13 @@ body::after {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+}
+
+.leaderboard-status {
+    min-height: 1.3rem;
+    margin: -0.5rem 0 1rem;
+    color: var(--text-muted);
+    font-size: 0.85rem;
 }
 
 .leaderboard-card {

@@ -4,11 +4,12 @@ Sync skills from SkillsMP.com API which has already crawled 32,000+ skills
 """
 
 import json
-import time
 import logging
-import requests
-from typing import Optional
+import time
 from datetime import datetime
+from typing import Optional
+
+import requests
 
 from .config import CATEGORY_KEYWORDS
 

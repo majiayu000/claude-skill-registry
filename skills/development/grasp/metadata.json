@@ -1,0 +1,37 @@
+{
+  "name": "grasp",
+  "repo": "saadshahd/moo.md",
+  "path": "hunch/skills/grasp/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/saadshahd/moo.md",
+  "dir_name": "grasp",
+  "downloaded_at": "2026-07-21T03:11:06.768301Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: code, build",
+    "score": 2,
+    "runner_up": "creative",
+    "runner_up_score": 1,
+    "signals": [
+      "code",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "saadshahd",
+  "source_url": "https://github.com/saadshahd/moo.md/blob/main/hunch/skills/grasp/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/saadshahd/moo.md/blob/main/hunch/skills/grasp/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user asks to explain or understand a code change, diff, branch, or PR \u2014 or to catch up on a change an agent built before reviewing or shipping it. Triggers on \"what changed here\", \"walk me through what you built\", \"help me understand this before merging\"."
+}

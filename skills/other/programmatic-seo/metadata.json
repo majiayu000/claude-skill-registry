@@ -1,0 +1,37 @@
+{
+  "name": "programmatic-seo",
+  "repo": "nowork-studio/NotFair",
+  "path": "seo/programmatic-seo/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/nowork-studio/NotFair",
+  "dir_name": "programmatic-seo",
+  "downloaded_at": "2026-07-22T03:07:58.851606Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: marketing=2, planning=2",
+    "score": 2,
+    "runner_up": "planning",
+    "runner_up_score": 2,
+    "signals": [
+      "seo",
+      "content"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "nowork-studio",
+  "source_url": "https://github.com/nowork-studio/NotFair/blob/main/seo/programmatic-seo/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nowork-studio/NotFair/blob/main/seo/programmatic-seo/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Programmatic SEO planning and audit \u2014 building or evaluating large sets of template-generated pages that target long-tail query patterns at scale (e.g. \"[service] in [city]\", \"[product] vs [product]\", \"[tool] for [use-case]\"). Covers data-source and template design, the thin/duplicate-content and doorway- page risks that get programmatic pages deindexed, uniqueness and value thresholds per page, internal linking and hub structure, indexation management (which pages to publish vs. noindex), and scaling without a quality manual action. Use this skill whenever the user wants to generate many pages from a template/dataset, do programmatic SEO, build location/comparison/use-case pages at scale, or asks why their generated pages aren't indexing. Trigger on: \"programmatic SEO\", \"pSEO\", \"generate pages at scale\", \"templated pages\", \"location pages at scale\", \"comparison pages\", \"[city] pages\", \"my generated pages aren't indexed\", \"doorway pages\", \"scale content\". For one-off content use /content-writer; for keyword discovery use /keyword-research."
+}

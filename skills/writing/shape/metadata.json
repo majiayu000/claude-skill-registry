@@ -1,0 +1,37 @@
+{
+  "name": "shape",
+  "repo": "OutlineDriven/odin-claude-plugin",
+  "path": "skills/shape/SKILL.md",
+  "github_branch": "main",
+  "category": "writing",
+  "source": "github.com/OutlineDriven/odin-claude-plugin",
+  "dir_name": "shape",
+  "downloaded_at": "2026-07-27T03:04:52.660358Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "writing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for writing: writing, article",
+    "score": 2,
+    "runner_up": "creative",
+    "runner_up_score": 1,
+    "signals": [
+      "writing",
+      "article"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "OutlineDriven",
+  "source_url": "https://github.com/OutlineDriven/odin-claude-plugin/blob/main/skills/shape/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OutlineDriven/odin-claude-plugin/blob/main/skills/shape/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Shape work in the Basecamp Shape Up sense \u2014 appetite, breadboard, rabbit holes, no-gos. Use when the user says \"shape this work\", \"what is the appetite\", \"pitch this\", \"gut check the shape\", \"fix this pitch\", or \"does the result match the bet\". Shapes bets on work, not prose \u2014 turning fragments into an article is writing-shape."
+}

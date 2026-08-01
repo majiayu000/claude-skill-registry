@@ -48,6 +48,17 @@ Each category declares:
 Only `active` categories are publishable. `other` is an active fallback bucket,
 but it should shrink through reviewed migrations.
 
+`parent` is reporting-only metadata. The current taxonomy has exactly 12 roots
+and at most one child layer. A parent must be an active root; self-parenting and
+third-level relationships are invalid. Parent relationships do not move archive
+entries, inherit counts, or change leaf-category filtering.
+
+The top-level `audit_sampling` policy declares the fixed seed, per-category
+quota, and ordered review strata. The current high-priority strata are the four
+large categories without keyword rules (`integration`, `domains`, `skills`,
+`context-management`) plus `data` and `development` as neighboring control
+groups.
+
 Legacy names live in the top-level `legacy_migrations` map, outside the
 publishable category set. Entries may define a deterministic `target` or mark
 the old slug as `review_required`. Default resolution does not use legacy
@@ -243,6 +254,13 @@ Source intake gate:
 
 Category artifact gate:
 
+- `scripts/build_search_index.py` emits `docs/category-taxonomy.json` from the
+  canonical taxonomy. Pages validates its exact shape, unique slug/code pairs,
+  default pair, count, and two-level parent relationships before normalizing
+  search records.
+- Pages uses the sidecar for all 42 display names and slug/code normalization.
+  Unknown non-empty values remain visible for diagnosis; only empty values use
+  the canonical default category.
 - `scripts/check_category_artifacts.py` verifies every
   `docs/categories/<category>.json` file is a small pointer.
 - It fails if a pointer contains `skills`, lacks `deprecated_full_payload`,
@@ -263,6 +281,21 @@ Release acceptance report:
 - The readiness report is informational. It does not implement an `other`
   count publish gate, and it must not be wired into publish as a blocker without
   a separate maintainer decision.
+
+Category accuracy evidence gate:
+
+- `scripts/audit_category_quality.py --stratified-sample` selects the smallest
+  deterministic path hashes independently within every configured stratum. It
+  fails instead of shrinking a quota when a category population is too small.
+- Each selected row records a bounded semantic excerpt, semantic field sources,
+  path, current category, sample key, and SHA-256 hashes for `SKILL.md` and
+  `metadata.json`. Per-stratum and overall digests make the artifact
+  order-independent and tamper-evident.
+- `scripts/check_category_sample_review.py` requires one human review per sample
+  path with matching digest and source hashes. Missing, duplicate, stale, extra,
+  malformed, or non-canonical evidence fails closed.
+- Accuracy is enforced both overall and per category. The check is audit-only:
+  it never changes taxonomy, metadata, or archive paths.
 
 ## Operating Flow
 
@@ -292,3 +325,8 @@ Release acceptance report:
   boundaries and blocked-label guidance for common noncanonical proposals.
 - Migration planning still produces audited review queues for unknown and legacy
   inputs.
+- The Pages taxonomy sidecar contains all 42 active categories, exactly 12
+  reporting roots, and no relationship deeper than one child layer.
+- Category quality sampling covers every configured stratum at its full quota;
+  current source hashes and complete per-category review accuracy must pass
+  before the evidence is accepted.

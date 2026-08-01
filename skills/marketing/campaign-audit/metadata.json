@@ -1,0 +1,41 @@
+{
+  "name": "campaign-audit",
+  "repo": "indranilbanerjee/digital-marketing-pro",
+  "path": "skills/campaign-audit/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/indranilbanerjee/digital-marketing-pro",
+  "dir_name": "campaign-audit",
+  "downloaded_at": "2026-07-28T02:53:52.119482Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for marketing: marketing, seo, content, social, campaign, brand",
+    "score": 6,
+    "runner_up": "productivity",
+    "runner_up_score": 3,
+    "signals": [
+      "marketing",
+      "seo",
+      "content",
+      "social",
+      "campaign",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "indranilbanerjee",
+  "source_url": "https://github.com/indranilbanerjee/digital-marketing-pro/blob/main/skills/campaign-audit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/indranilbanerjee/digital-marketing-pro/blob/main/skills/campaign-audit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Audit a brand's existing live campaigns across every active channel \u2014 paid, organic, email, social, content, SEO. Produce a current-state inventory, quick-wins backlog, and red-flags list. Use during agency onboarding or before any /campaign-plan refresh."
+}

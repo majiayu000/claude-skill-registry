@@ -1,0 +1,37 @@
+{
+  "name": "qwen-image-edit",
+  "repo": "artokun/comfyui-mcp",
+  "path": "plugin/skills/qwen-image-edit/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/artokun/comfyui-mcp",
+  "dir_name": "qwen-image-edit",
+  "downloaded_at": "2026-07-19T02:57:23.589159Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: ai-llm=2, workflow=2",
+    "score": 2,
+    "runner_up": "workflow",
+    "runner_up_score": 2,
+    "signals": [
+      "language-model",
+      "prompt"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "artokun",
+  "source_url": "https://github.com/artokun/comfyui-mcp/blob/main/plugin/skills/qwen-image-edit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/artokun/comfyui-mcp/blob/main/plugin/skills/qwen-image-edit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Build Qwen Image Edit workflows \u2014 model loading, conditioning, LoRAs, prompt patterns, and XY plot testing"
+}

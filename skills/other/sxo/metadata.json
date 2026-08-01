@@ -1,0 +1,37 @@
+{
+  "name": "sxo",
+  "repo": "nowork-studio/NotFair",
+  "path": "seo/sxo/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/nowork-studio/NotFair",
+  "dir_name": "sxo",
+  "downloaded_at": "2026-07-22T03:07:56.598575Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: marketing=2, performance=2",
+    "score": 2,
+    "runner_up": "performance",
+    "runner_up_score": 2,
+    "signals": [
+      "seo",
+      "content"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "nowork-studio",
+  "source_url": "https://github.com/nowork-studio/NotFair/blob/main/seo/sxo/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nowork-studio/NotFair/blob/main/seo/sxo/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Search Experience Optimization (SXO) \u2014 the bridge between SEO and UX/CRO. Audits the full journey from the SERP click to the on-page goal: SERP click-through factors (title/meta/rich results that win the click), then post-click experience signals that keep users and drive conversions \u2014 above-the-fold relevance and intent match, page speed / Core Web Vitals as experience, readability and scannability, clear CTAs, mobile usability, and the things that cause pogo- sticking back to Google. Use this skill when the user has decent rankings but poor CTR or poor on-page conversion, wants to improve dwell time / engagement, reduce bounce/pogo-sticking, or align a page's experience with search intent. Trigger on: \"SXO\", \"search experience optimization\", \"good rankings but low CTR\", \"high bounce rate from search\", \"pogo-sticking\", \"improve dwell time\", \"SEO and conversion\", \"ranking but not converting\", \"engagement signals\", \"make this page convert search traffic\". For pure landing-page conversion in ads use /google-ads-landing; for content quality use /seo-page."
+}

@@ -1,0 +1,37 @@
+{
+  "name": "product-manager",
+  "repo": "staruhub/ClaudeSkills",
+  "path": "skills/Geek-skills-product-manager/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/staruhub/ClaudeSkills",
+  "dir_name": "geek-skills-product-manager",
+  "downloaded_at": "2026-07-21T03:12:24.291584Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: ai-llm=2, product=2",
+    "score": 2,
+    "runner_up": "product",
+    "runner_up_score": 2,
+    "signals": [
+      "ai",
+      "prompt"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "staruhub",
+  "source_url": "https://github.com/staruhub/ClaudeSkills/blob/main/skills/Geek-skills-product-manager/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/staruhub/ClaudeSkills/blob/main/skills/Geek-skills-product-manager/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u8d44\u6df1\u4ea7\u54c1\u7ecf\u7406\u52a9\u624b,\u63d0\u4f9bPRD\u6587\u6863\u521b\u4f5c\u4e0e\u8bc4\u5ba1\u3001\u4ea7\u54c1\u7b56\u7565\u54a8\u8be2\u3001\u7559\u5b58\u589e\u957f\u5206\u6790\u3001\u7ade\u54c1\u7814\u7a76\u3001\u529f\u80fd\u4f18\u5148\u7ea7\u6392\u5e8f\u7b49\u5168\u65b9\u4f4d\u4ea7\u54c1\u7ba1\u7406\u652f\u6301\u3002\u9002\u7528\u4e8e\u521b\u4f5c\u6216\u8bc4\u5ba1PRD/MRD/BRD/\u7528\u6237\u6545\u4e8b\u7b49\u4ea7\u54c1\u6587\u6863\uff1b\u8bca\u65ad\u4ea7\u54c1\u95ee\u9898\uff08\u7559\u5b58\u4f4e\u3001\u8f6c\u5316\u5dee\u3001\u589e\u957f\u74f6\u9888\uff09\u5e76\u7ed9\u51fa\u53ef\u6267\u884c\u7b56\u7565\uff1b\u8fdb\u884c\u7ade\u54c1\u5206\u6790\u548c\u5e02\u573a\u7814\u7a76\uff1b\u8bbe\u8ba1\u529f\u80fd\u65b9\u6848\u548c\u7528\u6237\u4f53\u9a8c\u4f18\u5316\u3002\u5f53\u7528\u6237\u63d0\u5230\"PRD\"\u3001\"\u9700\u6c42\u6587\u6863\"\u3001\"\u4ea7\u54c1\u89c4\u5212\"\u3001\"\u7528\u6237\u7559\u5b58\"\u3001\"\u529f\u80fd\u8bbe\u8ba1\"\u3001\"\u7ade\u54c1\u5206\u6790\"\u3001\"\u4ea7\u54c1\u6307\u6807\"\u3001\"\u589e\u957f\u7b56\u7565\"\u3001\"\u529f\u80fd\u4f18\u5148\u7ea7\"\u7b49\u8bdd\u9898\u65f6\u4f7f\u7528\u3002\u5373\u4f7f\u7528\u6237\u6ca1\u8bf4\"\u4ea7\u54c1\"\uff0c\u8ba8\u8bbaApp\u529f\u80fd\u8bbe\u8ba1\u3001\u7528\u6237\u589e\u957f\u3001\u5546\u4e1a\u6a21\u5f0f\u65f6\u4e5f\u5e94\u89e6\u53d1\u3002\u4e0d\u7528\u4e8e\uff1a\u5199\u4ee3\u7801\u5b9e\u73b0\u529f\u80fd\uff08\u5f00\u53d1\u4efb\u52a1\uff09\u3001\u7cfb\u7edf\u67b6\u6784\u8bbe\u8ba1\uff08\u7528solution-architect\uff09\u3001\u9700\u8981\u591a\u6e90\u5f15\u7528\u7684\u6df1\u5ea6\u5e02\u573a\u8c03\u7814\uff08\u7528deep-research\uff09\u3001\u7eaf\u8425\u9500\u6587\u6848\u64b0\u5199\u3002"
+}

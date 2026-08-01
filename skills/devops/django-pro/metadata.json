@@ -1,0 +1,40 @@
+{
+  "name": "django-pro",
+  "repo": "sickn33/agentic-awesome-skills",
+  "path": "skills/django-pro/SKILL.md",
+  "github_branch": "main",
+  "category": "devops",
+  "source": "github.com/sickn33/agentic-awesome-skills",
+  "dir_name": "django-pro",
+  "downloaded_at": "2026-07-14T03:00:21.682711Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "devops",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for devops: devops, ci, cd, docker, deploy",
+    "score": 5,
+    "runner_up": "data",
+    "runner_up_score": 4,
+    "signals": [
+      "devops",
+      "ci",
+      "cd",
+      "docker",
+      "deploy"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/django-pro/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/django-pro/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Master Django 5.x with async views, DRF, Celery, and Django Channels. Build scalable web applications with proper architecture, testing, and deployment."
+}

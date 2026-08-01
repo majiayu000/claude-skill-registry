@@ -8,6 +8,17 @@ governance:
     high: "score >= 4 and delta >= 3, or a deterministic legacy migration target"
     medium: "score >= 3 with a clear target but not enough evidence to apply"
     low: "weak signal or conflicting category sources"
+audit_sampling:
+  schema_version: 1
+  seed: canonical-category-quality-v1
+  per_category: 50
+  categories:
+    - integration
+    - domains
+    - skills
+    - context-management
+    - data
+    - development
 legacy_migrations:
   - slug: machine-learning
     target: ai-ml
@@ -138,15 +149,24 @@ legacy_migrations:
   - slug: utility
     review_required: true
     reason: "Broad utility bucket; reclassify as Productivity, Workflow, or another concrete capability."
+  - slug: travel
+    target: domains
+    reason: "Demoted micro-category (48 skills); folded into its parent Domains."
+  - slug: war-room
+    target: devops
+    reason: "Demoted micro-category (27 skills); folded into its parent DevOps."
 categories:
   - slug: agent
     code: agent
+    parent: ai-ml
     display_name: Agent
     inclusion_rule: "Single-agent behavior, role design, agent instructions, or agent runtime helpers."
     exclusion_rule: "Multi-agent scheduling belongs in `orchestration`; general LLM prompting belongs in `ai-llm`."
     examples: ["agent role templates", "agent memory helpers"]
+    keywords: [agent, agentic, sub-agent, autonomous-agent, agent-role]
   - slug: ai-llm
     code: ai-llm
+    parent: ai-ml
     display_name: AI / LLM
     inclusion_rule: "LLM prompting, model use, assistants, chat workflows, and language-model evaluation."
     exclusion_rule: "Model training or ML pipelines belong in `ai-ml`; agent orchestration belongs in `orchestration`."
@@ -161,6 +181,7 @@ categories:
     keywords: [ai, ml, machine-learning, model, training]
   - slug: analysis
     code: analysis
+    parent: data
     display_name: Analysis
     inclusion_rule: "Analysis, synthesis, inspection, reporting, and evidence extraction workflows."
     exclusion_rule: "Data pipelines belong in `data`; product analytics tied to PRDs can use `product`."
@@ -168,6 +189,7 @@ categories:
     keywords: [analysis, analyze, insights]
   - slug: api
     code: api
+    parent: development
     display_name: API
     inclusion_rule: "API design, SDK usage, endpoint work, schema contracts, and OpenAPI-like tasks."
     exclusion_rule: "Cross-product connector workflows belong in `integration`."
@@ -175,6 +197,7 @@ categories:
     keywords: [api, sdk, endpoint, openapi]
   - slug: bash
     code: bash
+    parent: development
     display_name: Bash
     inclusion_rule: "Shell scripting, command-line automation, POSIX tooling, and terminal workflows."
     exclusion_rule: "Application build/debug tasks belong in `development`; deployment automation belongs in `devops`."
@@ -189,12 +212,14 @@ categories:
     keywords: [business, operations, strategy]
   - slug: c-level
     code: c-level
+    parent: business
     display_name: C-Level
     inclusion_rule: "Executive communication, board-level summaries, leadership decisions, and strategic briefs."
     exclusion_rule: "General business process work belongs in `business`."
     examples: ["CEO memo", "board update"]
   - slug: communication
     code: communication
+    parent: creative
     display_name: Communication
     inclusion_rule: "Human communication workflows including email, messaging, announcements, and conversation drafting."
     exclusion_rule: "Marketing campaigns belong in `marketing`; writing craft belongs in `writing`."
@@ -202,10 +227,12 @@ categories:
     keywords: [communication, messaging, email, chat]
   - slug: context-management
     code: context-management
+    parent: ai-ml
     display_name: Context Management
     inclusion_rule: "Context packing, memory, retrieval context, prompt context, and agent state handling."
     exclusion_rule: "General productivity memory tools belong in `productivity`."
     examples: ["context compaction", "memory search"]
+    keywords: [context, retrieval, compaction, context-window, memory]
   - slug: creative
     code: creative
     display_name: Creative
@@ -247,6 +274,7 @@ categories:
     keywords: [devops, ci, cd, docker, kubernetes, deploy, infra, infrastructure]
   - slug: documents
     code: doc
+    parent: data
     display_name: Documents
     inclusion_rule: "Document creation, conversion, summarization, office formats, markdown, and PDFs."
     exclusion_rule: "General writing craft belongs in `writing`; document data extraction can use `data` when data pipeline work dominates."
@@ -261,49 +289,63 @@ categories:
     examples: ["legal workflow", "recruiting workflow"]
   - slug: examples
     code: examples
+    parent: development
     display_name: Examples
     inclusion_rule: "Example packs, demos, sample projects, and reusable reference implementations."
     exclusion_rule: "Production development workflows belong in `development`; documentation belongs in `documents`."
     examples: ["sample app", "demo skill"]
   - slug: forensics
     code: forensics
+    parent: security
     display_name: Forensics
     inclusion_rule: "Investigation, evidence preservation, incident reconstruction, and forensic analysis."
     exclusion_rule: "Preventive security hardening belongs in `security`."
     examples: ["artifact triage", "incident evidence"]
+    keywords: [forensic, forensics, incident, evidence, triage]
   - slug: gaming
     code: gaming
+    parent: domains
     display_name: Gaming
     inclusion_rule: "Game design, gameplay systems, game assets, and game-related automation."
     exclusion_rule: "General UI or creative work should use `design` or `creative`."
     examples: ["game mechanics", "game prompts"]
+    keywords: [game, gaming, gameplay, unity, godot]
   - slug: generation
     code: generation
+    parent: creative
     display_name: Generation
     inclusion_rule: "Generating artifacts, media, structured outputs, or reusable content assets."
     exclusion_rule: "Writing-focused prose belongs in `writing`; UI design artifacts belong in `design`."
     examples: ["image prompt", "report artifact", "media generation"]
+    keywords: [generation, generator, scaffold, codegen, boilerplate]
   - slug: integration
     code: integration
+    parent: development
     display_name: Integration
     inclusion_rule: "Cross-system connectors, service integrations, API composition, and platform bridges."
     exclusion_rule: "Single API usage belongs in `api`; deployment operations belong in `devops`."
     examples: ["GitHub connector", "Wix extension", "webhook"]
+    keywords: [integration, connector, webhook, oauth, zapier]
     description: "Cross-system connectors, service integrations, API composition, and platform bridges."
   - slug: language
     code: language
+    parent: creative
     display_name: Language
     inclusion_rule: "Translation, localization, grammar, linguistics, and language learning workflows."
     exclusion_rule: "Long-form authoring belongs in `writing`; LLM mechanics belong in `ai-llm`."
     examples: ["translation", "grammar checking"]
+    keywords: [translation, localization, i18n, grammar, linguistics]
   - slug: local-ai-infrastructure
     code: local-ai-infrastructure
+    parent: devops
     display_name: Local AI Infrastructure
     inclusion_rule: "Local model runtimes, GPU setup, inference servers, and AI workstation infrastructure."
     exclusion_rule: "Cloud deployment belongs in `devops`; ML modeling belongs in `ai-ml`."
     examples: ["local LLM runtime", "GPU inference"]
+    keywords: [ollama, llama-cpp, local-llm, gguf, vllm]
   - slug: marketing
     code: mkt
+    parent: business
     display_name: Marketing
     inclusion_rule: "Campaigns, SEO, social content, brand positioning, and growth workflows."
     exclusion_rule: "Product planning belongs in `product`; general business strategy belongs in `business`."
@@ -311,6 +353,7 @@ categories:
     keywords: [marketing, seo, content, social, campaign, brand]
   - slug: orchestration
     code: orchestration
+    parent: ai-ml
     display_name: Orchestration
     inclusion_rule: "Multi-step or multi-agent coordination, scheduling, routing, and workflow control."
     exclusion_rule: "Simple productivity automations belong in `workflow` or `productivity`."
@@ -325,6 +368,7 @@ categories:
     description: "Fallback bucket for unclassified skills; should shrink through reviewed migrations."
   - slug: performance
     code: performance
+    parent: development
     display_name: Performance
     inclusion_rule: "Speed, latency, benchmarking, profiling, and optimization workflows."
     exclusion_rule: "General code cleanup belongs in `development`."
@@ -332,12 +376,15 @@ categories:
     keywords: [performance, optimize, latency, speed, benchmark]
   - slug: personal-development
     code: personal-development
+    parent: domains
     display_name: Personal Development
     inclusion_rule: "Learning, coaching, habit change, self-review, and personal growth workflows."
     exclusion_rule: "Team productivity tools belong in `productivity`."
     examples: ["learning plan", "coaching prompts"]
+    keywords: [coaching, habit, journaling, self-improvement, mindfulness]
   - slug: planning
     code: planning
+    parent: productivity
     display_name: Planning
     inclusion_rule: "Planning, roadmaps, schedules, project sequencing, and task breakdown workflows."
     exclusion_rule: "Product requirements belong in `product`; executive strategy belongs in `business`."
@@ -345,10 +392,12 @@ categories:
     keywords: [planning, plan, roadmap]
   - slug: platform
     code: platform
+    parent: devops
     display_name: Platform
     inclusion_rule: "Platform-specific operations, device/platform automation, and platform administration."
     exclusion_rule: "Cross-system connectors belong in `integration`; deployment belongs in `devops`."
     examples: ["device automation", "platform admin"]
+    keywords: [platform, device, adb, android, ios]
   - slug: product
     code: prd
     display_name: Product
@@ -367,6 +416,7 @@ categories:
     keywords: [productivity, automation, workflow, task, planning, memory]
   - slug: quality
     code: quality
+    parent: development
     display_name: Quality
     inclusion_rule: "Linting, review, validation, QA process, and quality gates."
     exclusion_rule: "Test implementation belongs in `testing`; security review belongs in `security`."
@@ -382,38 +432,30 @@ categories:
     keywords: [security, auth, crypto, vulnerability, audit, owasp, pentest, fuzzing]
   - slug: skills
     code: skills
+    parent: development
     display_name: Skills
     inclusion_rule: "Skill authoring, registry maintenance, skill packaging, and skill ecosystem workflows."
     exclusion_rule: "General coding belongs in `development`; docs belong in `documents`."
     examples: ["SKILL.md authoring", "skill registry tooling"]
   - slug: system
     code: system
+    parent: devops
     display_name: System
     inclusion_rule: "Operating-system, local machine, environment, process, and hardware workflows."
     exclusion_rule: "Infrastructure deployment belongs in `devops`; security hardening belongs in `security`."
     examples: ["system diagnosis", "process inspection"]
   - slug: testing
     code: tst
+    parent: development
     display_name: Testing
     inclusion_rule: "Testing, QA, TDD, unit/integration/e2e testing, browser automation, and test tooling."
     exclusion_rule: "Static quality review belongs in `quality`; security testing belongs in `security`."
     examples: ["pytest", "Playwright", "test harness"]
     description: "Testing, QA, TDD, unit/integration/e2e testing, browser automation, and test tooling."
     keywords: [test, qa, tdd, jest, pytest, unittest, integration, e2e, playwright, cypress]
-  - slug: travel
-    code: travel
-    display_name: Travel
-    inclusion_rule: "Trip planning, itineraries, logistics, bookings, and destination research."
-    exclusion_rule: "General planning without travel belongs in `planning`."
-    examples: ["itinerary", "flight plan"]
-  - slug: war-room
-    code: war-room
-    display_name: War Room
-    inclusion_rule: "Incident response rooms, crisis coordination, launch rooms, and high-urgency operations."
-    exclusion_rule: "Normal project planning belongs in `planning`; security incidents can use `security` if security dominates."
-    examples: ["incident room", "launch room"]
   - slug: workflow
     code: workflow
+    parent: productivity
     display_name: Workflow
     inclusion_rule: "Repeatable process automation, operating procedures, workflow design, and non-CI pipelines."
     exclusion_rule: "CI/CD belongs in `devops`; personal task aids belong in `productivity`."
@@ -421,6 +463,7 @@ categories:
     keywords: [workflow, process, automation, pipeline]
   - slug: writing
     code: writing
+    parent: creative
     display_name: Writing
     inclusion_rule: "Writing, editing, copy, blogs, articles, prose polish, and narrative composition."
     exclusion_rule: "Marketing distribution belongs in `marketing`; document format conversion belongs in `documents`."

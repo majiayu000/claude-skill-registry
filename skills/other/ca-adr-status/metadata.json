@@ -1,0 +1,36 @@
+{
+  "name": "ca-adr-status",
+  "repo": "arbiterForge/codeArbiter",
+  "path": "plugins/ca-pi/skills/ca-adr-status/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/arbiterForge/codeArbiter",
+  "dir_name": "ca-adr-status",
+  "downloaded_at": "2026-07-25T02:52:04.209848Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category development scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "security",
+    "runner_up_score": 1,
+    "signals": [
+      "code"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "arbiterForge",
+  "source_url": "https://github.com/arbiterForge/codeArbiter/blob/main/plugins/ca-pi/skills/ca-adr-status/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/arbiterForge/codeArbiter/blob/main/plugins/ca-pi/skills/ca-adr-status/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Report the health of Architecture Decision Records \u2014 aged, unchallenged, supersession candidates, unresolved CONFIRM-NN. Read-only."
+}

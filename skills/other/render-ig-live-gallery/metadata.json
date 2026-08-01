@@ -1,0 +1,37 @@
+{
+  "name": "render-ig-live-gallery",
+  "repo": "gooseworks-ai/goose-skills",
+  "path": "skills/ads/capabilities/render-ig-live-gallery/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/gooseworks-ai/goose-skills",
+  "dir_name": "render-ig-live-gallery",
+  "downloaded_at": "2026-07-18T02:48:11.914992Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: ai-llm=2, ai-ml=2",
+    "score": 2,
+    "runner_up": "ai-ml",
+    "runner_up_score": 2,
+    "signals": [
+      "ai",
+      "prompt"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "gooseworks-ai",
+  "source_url": "https://github.com/gooseworks-ai/goose-skills/blob/main/skills/ads/capabilities/render-ig-live-gallery/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gooseworks-ai/goose-skills/blob/main/skills/ads/capabilities/render-ig-live-gallery/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Render an 'Instagram-Live social-proof gallery' video from a config \u2014 ~5 real brand product stills each framed as an Instagram-LIVE card (IG gradient-ring avatar, username, verified check, red LIVE badge, viewer count, close X, a short claim-free live-comment feed, an empty 'Add a comment\u2026' bar, and reaction hearts floating up the right edge), with a brand-approved benefit sentence building one phrase per slide and a clean logo endcard, rendered deterministically with PIL frames plus FFmpeg \u2014 FREE (the music bed comes from create-music-elevenlabs), products and wordmark stay crisp. Use for the ig-live-gallery format."
+}

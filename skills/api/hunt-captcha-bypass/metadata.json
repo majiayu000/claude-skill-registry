@@ -1,0 +1,37 @@
+{
+  "name": "hunt-captcha-bypass",
+  "repo": "elementalsouls/Claude-BugHunter",
+  "path": "skills/hunt-captcha-bypass/SKILL.md",
+  "github_branch": "main",
+  "category": "api",
+  "source": "github.com/elementalsouls/Claude-BugHunter",
+  "dir_name": "hunt-captcha-bypass",
+  "downloaded_at": "2026-07-23T03:02:26.512094Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "api",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for api: api, endpoint",
+    "score": 2,
+    "runner_up": "communication",
+    "runner_up_score": 1,
+    "signals": [
+      "api",
+      "endpoint"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "elementalsouls",
+  "source_url": "https://github.com/elementalsouls/Claude-BugHunter/blob/main/skills/hunt-captcha-bypass/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/elementalsouls/Claude-BugHunter/blob/main/skills/hunt-captcha-bypass/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Hunt CAPTCHA Bypass \u2014 6 distinct patterns: (1) CAPTCHA field simply omitted from the request (server-side validation absent), (2) CAPTCHA token replayed from a solved challenge (no single-use enforcement), (3) CAPTCHA response accepted on a different endpoint than it was solved on (no binding to action/session), (4) static or predictable CAPTCHA values accepted (e.g. '0', 'null', empty string), (5) audio/accessibility CAPTCHA trivially solvable programmatically, (6) CAPTCHA only enforced after N failures (first N requests bypass it). Detection: intercept a successful form submission, remove the CAPTCHA field entirely, replay \u2014 if it still succeeds, server-side validation is absent. Medium severity standalone; High when it removes the only rate-limit gate protecting a login, registration, or payment endpoint."
+}

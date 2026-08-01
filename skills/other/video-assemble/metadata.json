@@ -1,0 +1,37 @@
+{
+  "name": "video-assemble",
+  "repo": "worldwonderer/video-recap-skills",
+  "path": "skills/video-assemble/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/worldwonderer/video-recap-skills",
+  "dir_name": "video-assemble",
+  "downloaded_at": "2026-07-14T03:02:24.413006Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=2, development=2",
+    "score": 2,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "worldwonderer",
+  "source_url": "https://github.com/worldwonderer/video-recap-skills/blob/main/skills/video-assemble/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/worldwonderer/video-recap-skills/blob/main/skills/video-assemble/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Assemble a final recap video: mux narration audio over the source video, duck the original audio under the narration, render subtitles (SRT/ASS, optionally burned in), and loudness- normalize. Use as the last stage of the video-recap bundle. Consumes the source video + tts_meta.json (+ narration placement); produces recap_<name>.mp4 + subtitles.srt/.ass. \u89e6\u53d1\u8bcd: \u89c6\u9891\u5408\u6210, \u6df7\u97f3, \u5b57\u5e55, \u538b\u5b57\u5e55, assemble video, mux, ducking, subtitles, \u6210\u7247."
+}

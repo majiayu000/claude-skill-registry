@@ -1,0 +1,35 @@
+{
+  "name": "rote-compile",
+  "description": "Compile a proven skill (SKILL.md plus references) into a typed deterministic pipeline: reviewable Python or TypeScript with per-step tests for the fixed logic, typed LLM-judge signatures for the steps that still need judgment",
+  "repo": "trevhud/rote",
+  "path": "skills/rote-compile",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [
+    "compiler",
+    "pipeline",
+    "determinism",
+    "temporal",
+    "dbos",
+    "cloudflare-workflows"
+  ],
+  "stars": 3,
+  "source": "Community Skills",
+  "dir_name": "rote-compile",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "references/crystallization-heuristics.md",
+    "references/eval-estimates.md",
+    "references/implementation.md",
+    "references/ir-schema.md",
+    "references/llm-judge-extraction.md",
+    "references/node-kinds.md"
+  ],
+  "author": "trevhud",
+  "source_url": "https://github.com/trevhud/rote/blob/main/skills/rote-compile/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/trevhud/rote/blob/main/skills/rote-compile/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

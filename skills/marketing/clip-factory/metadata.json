@@ -1,0 +1,37 @@
+{
+  "name": "clip-factory",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/clip-factory/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "clip-factory",
+  "downloaded_at": "2026-07-27T03:20:29.791600Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for marketing: content, brand",
+    "score": 2,
+    "runner_up": "context-management",
+    "runner_up_score": 1,
+    "signals": [
+      "content",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/clip-factory/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/clip-factory/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Turn one long video, podcast, or stream transcript into 8-12 short-form clips \u2014 each with a hook line, cut timestamps, captions, and a platform note for TikTok/Reels/Shorts \u2014 plus an honesty gate that kills clips that misrepresent the source. Use when someone says 'clip this podcast', 'make shorts from my video', 'what's clippable here', or runs a clipping side hustle. Produces a ranked clip sheet ready for an editor or a clipping app."
+}

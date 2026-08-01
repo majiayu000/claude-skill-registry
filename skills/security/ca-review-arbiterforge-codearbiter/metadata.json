@@ -1,0 +1,39 @@
+{
+  "name": "ca-review",
+  "repo": "arbiterForge/codeArbiter",
+  "path": "plugins/ca-codex/skills/ca-review/SKILL.md",
+  "github_branch": "main",
+  "category": "security",
+  "source": "github.com/arbiterForge/codeArbiter",
+  "dir_name": "ca-review-arbiterforge-codearbiter",
+  "downloaded_at": "2026-07-27T03:09:03.723540Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "security",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for security: security, auth, crypto, audit",
+    "score": 4,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "security",
+      "auth",
+      "crypto",
+      "audit"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "arbiterForge",
+  "source_url": "https://github.com/arbiterForge/codeArbiter/blob/main/plugins/ca-codex/skills/ca-review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/arbiterForge/codeArbiter/blob/main/plugins/ca-codex/skills/ca-review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Review a diff with the reviewer fleet, funneled to one triaged verdict. Targets the current working diff, a path, or an inbound GitHub PR."
+}

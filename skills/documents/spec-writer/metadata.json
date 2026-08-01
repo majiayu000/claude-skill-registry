@@ -1,0 +1,38 @@
+{
+  "name": "spec-writer",
+  "repo": "AlpacaLabsLLC/skills-for-architects",
+  "path": "skills/spec-writer/SKILL.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/AlpacaLabsLLC/skills-for-architects",
+  "dir_name": "spec-writer",
+  "downloaded_at": "2026-07-21T02:46:06.060237Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "documents",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for documents: pdf, excel, markdown",
+    "score": 3,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "pdf",
+      "excel",
+      "markdown"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "AlpacaLabsLLC",
+  "source_url": "https://github.com/AlpacaLabsLLC/skills-for-architects/blob/main/skills/spec-writer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AlpacaLabsLLC/skills-for-architects/blob/main/skills/spec-writer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "CSI outline specification writer \u2014 takes a materials or products list and generates structured specs with MasterFormat divisions, performance criteria, and acceptable manufacturers. Use when the user asks to \"write a spec\", produce outline specifications, or format a materials list into CSI sections."
+}

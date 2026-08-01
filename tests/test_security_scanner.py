@@ -91,6 +91,80 @@ description: Demo skill used to verify security scan progress.
     assert "Security scan progress: 2 scanned" in progress.getvalue()
 
 
+def test_archive_scan_requires_metadata_without_breaking_standalone_scan(tmp_path):
+    module = load_module()
+    skill_dir = tmp_path / "skills" / "development" / "demo"
+    skill_dir.mkdir(parents=True)
+    skill_file = skill_dir / "SKILL.md"
+    skill_file.write_text(
+        """---
+name: demo
+description: Demo skill used to verify required archive metadata.
+---
+
+# Demo
+""",
+        encoding="utf-8",
+    )
+
+    standalone_scanner = module.SecurityScanner()
+    standalone_safe, standalone_issues = standalone_scanner.scan_file(skill_file)
+    archive_report = module.scan_directory(
+        tmp_path / "skills",
+        quiet=True,
+        require_metadata=True,
+        scanned_at="2026-07-11T00:00:00Z",
+    )
+
+    assert standalone_safe is True
+    assert not any(issue.get("type") == "metadata_missing" for issue in standalone_issues)
+    assert archive_report["scan_policy"] == {"require_metadata": True}
+    assert archive_report["failed"] == 1
+    result = archive_report["skills"][0]
+    assert result["safe"] is False
+    assert any(issue.get("type") == "metadata_missing" for issue in result["issues"])
+    assert result["security_decision"]["status"] == "failed"
+    assert result["security_decision"]["reason"] == "metadata_missing"
+
+
+def test_directory_cli_require_metadata_exits_nonzero_with_failed_evidence(tmp_path):
+    skills_dir = tmp_path / "skills"
+    skill_dir = skills_dir / "development" / "demo"
+    skill_dir.mkdir(parents=True)
+    (skill_dir / "SKILL.md").write_text(
+        """---
+name: demo
+description: Demo skill used to verify archive CLI metadata enforcement.
+---
+
+# Demo
+""",
+        encoding="utf-8",
+    )
+    report_path = tmp_path / "security-report.json"
+    script_path = Path(__file__).resolve().parents[1] / "scripts" / "security_scanner.py"
+
+    result = subprocess.run(
+        [
+            sys.executable,
+            str(script_path),
+            str(skills_dir),
+            "--require-metadata",
+            "--quiet",
+            "--output",
+            str(report_path),
+        ],
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+
+    report = json.loads(report_path.read_text(encoding="utf-8"))
+    assert result.returncode == 1
+    assert report["failed"] == 1
+    assert report["skills"][0]["security_decision"]["reason"] == "metadata_missing"
+
+
 def test_scanner_checks_reference_implementations(tmp_path):
     module = load_module()
     skill_dir = tmp_path / "demo"
@@ -166,6 +240,29 @@ def test_scanner_rejects_missing_frontmatter(tmp_path):
 
     assert is_safe is False
     assert any(issue.get("type") == "no_frontmatter" for issue in issues)
+
+
+def test_scanner_does_not_duplicate_yaml_parse_error_as_missing_frontmatter(tmp_path):
+    module = load_module()
+    skill_dir = tmp_path / "demo"
+    skill_dir.mkdir(parents=True)
+    (skill_dir / "SKILL.md").write_text(
+        """---
+name: demo
+description: Invalid YAML: unquoted colon
+---
+
+# Demo
+""",
+        encoding="utf-8",
+    )
+
+    scanner = module.SecurityScanner()
+    is_safe, issues = scanner.scan_file(skill_dir / "SKILL.md")
+
+    assert is_safe is False
+    assert any(issue.get("type") == "yaml_parse_error" for issue in issues)
+    assert not any(issue.get("type") == "no_frontmatter" for issue in issues)
 
 
 def test_single_file_scan_exits_nonzero_for_unsafe_skill(tmp_path):
@@ -459,6 +556,46 @@ description: Demo skill used to verify bundled SKILL.md target filtering.
     assert report["skills"][0]["path"] == "design/deterministic-design/SKILL.md"
 
 
+def test_relative_archive_root_skips_declared_bundled_skill_markdown(
+    tmp_path, monkeypatch
+):
+    module = load_module()
+    skills_dir = tmp_path / "skills"
+    skill_dir = skills_dir / "design" / "deterministic-design"
+    bundled_dir = skill_dir / "design-spatial"
+    bundled_dir.mkdir(parents=True)
+    (skill_dir / "SKILL.md").write_text(
+        """---
+name: deterministic-design
+description: Demo skill used to verify relative workflow archive scanning.
+---
+
+# Deterministic Design
+""",
+        encoding="utf-8",
+    )
+    (skill_dir / "metadata.json").write_text(
+        json.dumps({"bundled_files": ["design-spatial/SKILL.md"]}),
+        encoding="utf-8",
+    )
+    (bundled_dir / "SKILL.md").write_text(
+        "---\ndescription: Broken support frontmatter: not an archive skill\n---\n",
+        encoding="utf-8",
+    )
+    monkeypatch.chdir(tmp_path)
+
+    report = module.scan_directory(
+        Path("skills"),
+        quiet=True,
+        require_metadata=True,
+    )
+
+    assert report["total"] == 1
+    assert report["passed"] == 1
+    assert report["failed"] == 0
+    assert report["skills"][0]["path"] == "design/deterministic-design/SKILL.md"
+
+
 def test_scanner_checks_all_archived_support_dirs(tmp_path):
     module = load_module()
     skill_dir = tmp_path / "demo"
@@ -513,6 +650,79 @@ description: Demo skill used to verify bundled support dir scanning.
     assert any("templates/postinstall.js" in file for file in issue_files)
     assert any("assets/payload.svg" in file for file in issue_files)
     assert any("bin/helper.sh" in file for file in issue_files)
+
+
+def test_scanner_checks_extensionless_shebang_and_executable_support_files(tmp_path):
+    module = load_module()
+    skill_dir = tmp_path / "demo"
+    bin_dir = skill_dir / "bin"
+    scripts_dir = skill_dir / "scripts"
+    assets_dir = skill_dir / "assets"
+    bin_dir.mkdir(parents=True)
+    scripts_dir.mkdir()
+    assets_dir.mkdir()
+    (skill_dir / "SKILL.md").write_text(
+        """---
+name: demo
+description: Demo skill used to verify executable support file scanning.
+---
+
+# Demo
+""",
+        encoding="utf-8",
+    )
+    (bin_dir / "runner").write_text(
+        "python -c \"eval('unsafe')\"\n",
+        encoding="utf-8",
+    )
+    (scripts_dir / "launcher").write_text(
+        "#!/usr/bin/env python3\neval('unsafe')\n",
+        encoding="utf-8",
+    )
+    executable = assets_dir / "payload.dat"
+    executable.write_text("eval('unsafe')\n", encoding="utf-8")
+    executable.chmod(0o755)
+
+    scanner = module.SecurityScanner()
+    is_safe, issues = scanner.scan_file(skill_dir / "SKILL.md")
+
+    assert is_safe is False
+    issue_files = {issue.get("file", "") for issue in issues}
+    assert any("bin/runner" in file for file in issue_files)
+    assert any("scripts/launcher" in file for file in issue_files)
+    assert any("assets/payload.dat" in file for file in issue_files)
+
+
+def test_scanner_quarantines_undecodable_allowed_jq_binary(tmp_path):
+    """The downloader's jq filename allowlist is not a scanner trust boundary."""
+    module = load_module()
+    skill_dir = tmp_path / "demo"
+    bin_dir = skill_dir / "bin"
+    bin_dir.mkdir(parents=True)
+    (skill_dir / "SKILL.md").write_text(
+        """---
+name: demo
+description: Demo skill used to verify fail-closed binary evidence.
+---
+
+# Demo
+""",
+        encoding="utf-8",
+    )
+    bundled_binary = bin_dir / "jq-linux-amd64"
+    bundled_binary.write_bytes(b"\x7fELF\x02\x01\x01\xff\xfe\x00")
+    bundled_binary.chmod(0o755)
+
+    scanner = module.SecurityScanner()
+    is_safe, issues = scanner.scan_file(skill_dir / "SKILL.md")
+
+    assert is_safe is False
+    assert any(
+        issue.get("type") == "undecodable_executable"
+        and issue.get("action") == "quarantine"
+        and "bin/jq-linux-amd64" in issue.get("file", "")
+        for issue in issues
+    )
 
 
 def test_scanner_rejects_obfuscation_execution_error(tmp_path):

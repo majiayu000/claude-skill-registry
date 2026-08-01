@@ -1,0 +1,39 @@
+{
+  "name": "content-strategy",
+  "repo": "borghei/Claude-Skills",
+  "path": "marketing/content-strategy/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/borghei/Claude-Skills",
+  "dir_name": "content-strategy-borghei-claude-skills",
+  "downloaded_at": "2026-07-30T02:39:48.791903Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for marketing: marketing, seo, content, brand",
+    "score": 4,
+    "runner_up": "planning",
+    "runner_up_score": 3,
+    "signals": [
+      "marketing",
+      "seo",
+      "content",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "borghei",
+  "source_url": "https://github.com/borghei/Claude-Skills/blob/main/marketing/content-strategy/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/borghei/Claude-Skills/blob/main/marketing/content-strategy/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Plan content strategy: content pillars, audience research, topic clustering, funnel mapping, and content audits. Use when deciding what content to create, building a content calendar, planning topic clusters, or finding content gaps."
+}

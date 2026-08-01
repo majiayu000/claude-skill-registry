@@ -1,0 +1,37 @@
+{
+  "name": "writing-shape",
+  "repo": "OutlineDriven/odin-claude-plugin",
+  "path": "skills/writing-shape/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/OutlineDriven/odin-claude-plugin",
+  "dir_name": "writing-shape",
+  "downloaded_at": "2026-07-19T02:52:22.375025Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: creative=2, writing=2",
+    "score": 2,
+    "runner_up": "writing",
+    "runner_up_score": 2,
+    "signals": [
+      "ideation",
+      "writing"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "OutlineDriven",
+  "source_url": "https://github.com/OutlineDriven/odin-claude-plugin/blob/main/skills/writing-shape/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OutlineDriven/odin-claude-plugin/blob/main/skills/writing-shape/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user wants to turn a pile of fragments into a polished article, shape raw material paragraph by paragraph, or says \"write this up\", \"turn this into a post\", or \"structure these fragments\"."
+}

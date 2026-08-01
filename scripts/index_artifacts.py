@@ -10,7 +10,13 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Callable
 
-from rebuild_registry import artifact_reference, file_sha256, safe_write_gzip_json, safe_write_json
+from rebuild_registry import (
+    artifact_reference,
+    build_compatibility_pointer,
+    file_sha256,
+    safe_write_gzip_json,
+    safe_write_json,
+)
 
 DEFAULT_PART_TARGET_BYTES = 8 * 1024 * 1024
 
@@ -150,13 +156,14 @@ def write_search_artifacts(
     }
     safe_write_json(output_dir / "search-index-manifest.json", manifest)
 
-    pointer = {
-        "v": version,
-        "t": len(search_records),
-        "deprecated_full_payload": True,
-        "manifest": "search-index-manifest.json",
-        "message": "Full search payload moved to search-shards/*.json",
-    }
+    pointer = build_compatibility_pointer(
+        total_count=len(search_records),
+        manifest="search-index-manifest.json",
+        replacement="search-shards/part-*.json",
+        message="Full search payload moved to search-shards/*.json",
+        aliases={"t": len(search_records)},
+        extra={"v": version},
+    )
     index_path = output_dir / "search-index.json"
     index_gz_path = output_dir / "search-index.json.gz"
     safe_write_json(index_path, pointer)
@@ -223,14 +230,14 @@ def write_signal_artifacts(
     }
     safe_write_json(output_dir / manifest_name, manifest)
 
-    pointer = {
-        "schema_version": 1,
-        "updated_at": updated_at,
-        "count": len(records),
-        "deprecated_full_payload": True,
-        "manifest": manifest_name,
-        "message": f"Full {artifact_name} payload moved to {shard_dir_name}/*.json",
-    }
+    pointer = build_compatibility_pointer(
+        total_count=len(records),
+        manifest=manifest_name,
+        replacement=f"{shard_dir_name}/part-*.json",
+        message=f"Full {artifact_name} payload moved to {shard_dir_name}/*.json",
+        aliases={"count": len(records)},
+        extra={"updated_at": updated_at},
+    )
     index_path = output_dir / f"{artifact_name}.json"
     index_gz_path = output_dir / f"{artifact_name}.json.gz"
     safe_write_json(index_path, pointer)
@@ -306,8 +313,10 @@ def write_category_artifacts(
             "category": category,
             "code": code,
             "updated_at": updated_at,
+            "total_count": len(sorted_skills),
             "count": len(sorted_skills),
             "part_count": part_count,
+            "part_strategy": "bounded-sequential-stars-desc",
             "largest_part_bytes": max((entry["bytes"] for entry in part_entries), default=0),
             "largest_part_gzip_bytes": max(
                 (entry["gzip_bytes"] for entry in part_entries),
@@ -318,15 +327,15 @@ def write_category_artifacts(
         safe_write_json(manifest_path, manifest)
 
         pointer_path = categories_dir / f"{slug}.json"
-        pointer = {
-            "category": category,
-            "code": code,
-            "count": len(sorted_skills),
-            "updated_at": updated_at,
-            "deprecated_full_payload": True,
-            "manifest": artifact_reference(manifest_path, categories_dir.parent),
-            "message": "Category payload moved to category manifest parts",
-        }
+        manifest_ref = artifact_reference(manifest_path, categories_dir.parent)
+        pointer = build_compatibility_pointer(
+            total_count=len(sorted_skills),
+            manifest=manifest_ref,
+            replacement=f"categories/{slug}/part-*.json",
+            message="Category payload moved to category manifest parts",
+            aliases={"count": len(sorted_skills)},
+            extra={"category": category, "code": code, "updated_at": updated_at},
+        )
         safe_write_json(pointer_path, pointer)
 
         category_entries.append(
@@ -346,7 +355,10 @@ def write_category_artifacts(
     safe_write_json(
         categories_dir / "index.json",
         {
+            "schema_version": 1,
             "updated_at": updated_at,
+            "total_count": sum(entry["count"] for entry in category_entries),
+            "category_count": len(category_entries),
             "categories": category_entries,
         },
     )

@@ -1,0 +1,36 @@
+{
+  "name": "loan-decoder",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/loan-decoder/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "loan-decoder",
+  "downloaded_at": "2026-07-15T02:52:59.750792Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category creative scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "development",
+    "runner_up_score": 1,
+    "signals": [
+      "writing"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/loan-decoder/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/loan-decoder/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Decode a personal, auto, or mortgage loan offer into what it really costs and where the traps are. Use when someone asks 'is this loan a good deal', 'decode my loan offer', 'what am I signing', or 'what will this mortgage actually cost me'. Produces a total-cost-of-loan number, APR vs advertised-rate reconciliation, ranked red flags (prepayment penalties, junk fees, rate-reset exposure), and the three questions that most change the deal."
+}

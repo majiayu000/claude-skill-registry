@@ -1,0 +1,37 @@
+{
+  "name": "codex-advisor",
+  "repo": "fcakyon/claude-codex-settings",
+  "path": "plugins/codex-advisor/skills/codex-advisor/SKILL.md",
+  "github_branch": "main",
+  "category": "bash",
+  "source": "github.com/fcakyon/claude-codex-settings",
+  "dir_name": "codex-advisor",
+  "downloaded_at": "2026-07-25T02:56:03.413724Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "bash",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for bash: script, cli",
+    "score": 2,
+    "runner_up": "agent",
+    "runner_up_score": 1,
+    "signals": [
+      "script",
+      "cli"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "fcakyon",
+  "source_url": "https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/codex-advisor/skills/codex-advisor/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/codex-advisor/skills/codex-advisor/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "This skill should be used when the user asks for a \"GPT second opinion\", wants a \"cross-model review\", needs to \"check a plan before committing\", wants another view after repeated failures, or explicitly invokes \"codex-advisor\"."
+}

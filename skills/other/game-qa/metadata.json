@@ -1,0 +1,36 @@
+{
+  "name": "game-qa",
+  "repo": "worldwonderer/novel-to-game",
+  "path": "skills/game-qa/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/worldwonderer/novel-to-game",
+  "dir_name": "game-qa",
+  "downloaded_at": "2026-07-29T03:09:50.131042Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category design scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "development",
+    "runner_up_score": 1,
+    "signals": [
+      "design"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "worldwonderer",
+  "source_url": "https://github.com/worldwonderer/novel-to-game/blob/main/skills/game-qa/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/worldwonderer/novel-to-game/blob/main/skills/game-qa/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u7f51\u9875\u6e38\u620f\u8bc1\u636e\u5316\u8d28\u91cf\u9a8c\u8bc1\u3002\u542f\u52a8\u751f\u6210\u6e38\u620f\uff0c\u68c0\u67e5\u6784\u5efa\u3001\u63a7\u5236\u53f0\u3001\u771f\u5b9e\u753b\u9762\u3001\u8f93\u5165\u4e0e\u72b6\u6001\u53d8\u5316\u3001\u6838\u5fc3\u5faa\u73af\u3001\u8bbe\u8ba1\u8981\u6c42\u7684\u7ed3\u679c\u3001\u91cd\u5f00\u3001\u76ee\u6807\u89c6\u53e3\u3001\u754c\u9762\u8bed\u8a00\u3001\u9996\u6b21\u4e0a\u624b\u4e0e\u6838\u5fc3\u5e7b\u60f3\u662f\u5426\u88ab\u6f14\u51fa\u6765\uff0c\u4e0d\u628a\u4e3b\u89c2\u8da3\u5473\u5305\u88c5\u6210\u786e\u5b9a\u6027\u7ed3\u8bba\u3002\u7528\u4e8e\u6d4b\u8bd5\u751f\u6210\u6e38\u620f\u3001\u68c0\u67e5\u6e38\u620f\u80fd\u5426\u5b8c\u6574\u6e38\u73a9\u7b49\u9700\u6c42\u3002"
+}

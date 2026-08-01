@@ -1,0 +1,38 @@
+{
+  "name": "project-dossier",
+  "repo": "AlpacaLabsLLC/skills-for-architects",
+  "path": "skills/project-dossier/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/AlpacaLabsLLC/skills-for-architects",
+  "dir_name": "project-dossier-alpacalabsllc-skills-for-architect",
+  "downloaded_at": "2026-07-21T02:46:10.602165Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: code, programming, build",
+    "score": 3,
+    "runner_up": "productivity",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "programming",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "AlpacaLabsLLC",
+  "source_url": "https://github.com/AlpacaLabsLLC/skills-for-architects/blob/main/skills/project-dossier/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AlpacaLabsLLC/skills-for-architects/blob/main/skills/project-dossier/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Create or update the project dossier \u2014 a PROJECT.md file in the working directory holding persistent project facts (identity, site, zoning, program, code edition) plus an index of decisions. Use when starting a project, when the user says \"set up the project\" or \"remember this for the project\", or when an analysis skill needs somewhere to record findings. Facts only \u2014 to record a decision with its rationale, use /decision."
+}

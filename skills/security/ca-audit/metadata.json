@@ -1,0 +1,38 @@
+{
+  "name": "ca-audit",
+  "repo": "arbiterForge/codeArbiter",
+  "path": "plugins/ca-pi/skills/ca-audit/SKILL.md",
+  "github_branch": "main",
+  "category": "security",
+  "source": "github.com/arbiterForge/codeArbiter",
+  "dir_name": "ca-audit",
+  "downloaded_at": "2026-07-25T02:51:54.185465Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "security",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for security: security, auth, audit",
+    "score": 3,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "security",
+      "auth",
+      "audit"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "arbiterForge",
+  "source_url": "https://github.com/arbiterForge/codeArbiter/blob/main/plugins/ca-pi/skills/ca-audit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/arbiterForge/codeArbiter/blob/main/plugins/ca-pi/skills/ca-audit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Assemble the governance record for a range \u2014 commits, overrides, ADRs, sprint auto-decisions, open questions, checkpoint findings \u2014 into one dated audit packet. Read-only."
+}

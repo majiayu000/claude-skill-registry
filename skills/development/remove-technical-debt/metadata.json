@@ -1,0 +1,40 @@
+{
+  "name": "remove-technical-debt",
+  "repo": "wondelai/skills",
+  "path": "remove-technical-debt/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/wondelai/skills",
+  "dir_name": "remove-technical-debt",
+  "downloaded_at": "2026-07-17T03:10:49.442446Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for development: code, framework, build, software, refactor",
+    "score": 5,
+    "runner_up": "design",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "framework",
+      "build",
+      "software",
+      "refactor"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "wondelai",
+  "source_url": "https://github.com/wondelai/skills/blob/main/remove-technical-debt/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/wondelai/skills/blob/main/remove-technical-debt/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Guided journey from a large aged codebase everyone fears to touch to one that is safe to change, legible, bounded, and resilient - paid down in place without a rewrite. Orchestrates eight skills phase by phase - working-with-legacy-code, refactoring-patterns, clean-code, software-design-philosophy, clean-architecture, pragmatic-programmer, release-it, domain-driven-design - asking the user questions at every decision point and recording results in the project docs/ folder (TESTING.md, TECH-DEBT.md, REMOVE-TECHNICAL-DEBT-PLAN.md) so the journey resumes across sessions. Use when the user wants to tame a legacy codebase, pay down technical debt safely, avoid a big-bang rewrite, or says 'we are afraid to touch this code'. For a fresh prototype or vibe-coded app going to production, use improve-code-quality; for greenfield structure, use design-code-architecture; for a product-and-UX pass rather than code-only, use improve-app. For one framework in isolation, invoke that skill directly."
+}

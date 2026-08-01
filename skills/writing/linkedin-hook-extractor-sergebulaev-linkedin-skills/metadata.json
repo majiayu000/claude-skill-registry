@@ -1,0 +1,37 @@
+{
+  "name": "linkedin-hook-extractor",
+  "repo": "sergebulaev/linkedin-skills",
+  "path": ".codex-marketplace/linkedin-skills/skills/linkedin-hook-extractor/SKILL.md",
+  "github_branch": "main",
+  "category": "writing",
+  "source": "github.com/sergebulaev/linkedin-skills",
+  "dir_name": "linkedin-hook-extractor-sergebulaev-linkedin-skills",
+  "downloaded_at": "2026-07-19T03:13:00.986212Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "writing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for writing: writer, copy",
+    "score": 2,
+    "runner_up": "ai-llm",
+    "runner_up_score": 1,
+    "signals": [
+      "writer",
+      "copy"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "sergebulaev",
+  "source_url": "https://github.com/sergebulaev/linkedin-skills/blob/main/.codex-marketplace/linkedin-skills/skills/linkedin-hook-extractor/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sergebulaev/linkedin-skills/blob/main/.codex-marketplace/linkedin-skills/skills/linkedin-hook-extractor/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Reverse-engineer the hook formula from a viral LinkedIn post URL. Returns which of the 16 canonical 2026 formulas it uses (anaphora, R.I.P., year-pivot, time-anchor, curiosity-gap, contrarian, comment-gate, emotional cold-open, named-gratitude, and 7 more), why it worked, and a blank template. Use to learn from a competitor's post, not to write your own (use linkedin-post-writer)."
+}

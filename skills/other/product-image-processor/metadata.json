@@ -1,0 +1,37 @@
+{
+  "name": "product-image-processor",
+  "repo": "AlpacaLabsLLC/skills-for-architects",
+  "path": "skills/product-image-processor/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/AlpacaLabsLLC/skills-for-architects",
+  "dir_name": "product-image-processor",
+  "downloaded_at": "2026-07-21T02:45:56.097282Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: ai-ml=2, bash=2",
+    "score": 2,
+    "runner_up": "bash",
+    "runner_up_score": 2,
+    "signals": [
+      "ai",
+      "model"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "AlpacaLabsLLC",
+  "source_url": "https://github.com/AlpacaLabsLLC/skills-for-architects/blob/main/skills/product-image-processor/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AlpacaLabsLLC/skills-for-architects/blob/main/skills/product-image-processor/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Download, resize, and remove backgrounds from product images at scale. Use when the user asks to \"process product images\", batch-download images from the schedule, strip backgrounds, or standardize product photos."
+}

@@ -1,0 +1,38 @@
+{
+  "name": "mongodb-atlas-stream-processing",
+  "repo": "fcakyon/claude-codex-settings",
+  "path": "plugins/mongodb-skills/skills/mongodb-atlas-stream-processing/SKILL.md",
+  "github_branch": "main",
+  "category": "workflow",
+  "source": "github.com/fcakyon/claude-codex-settings",
+  "dir_name": "mongodb-atlas-stream-processing",
+  "downloaded_at": "2026-07-21T02:59:51.572297Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "workflow",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for workflow: workflow, process, pipeline",
+    "score": 3,
+    "runner_up": "data",
+    "runner_up_score": 2,
+    "signals": [
+      "workflow",
+      "process",
+      "pipeline"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "fcakyon",
+  "source_url": "https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/mongodb-skills/skills/mongodb-atlas-stream-processing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/mongodb-skills/skills/mongodb-atlas-stream-processing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Manages MongoDB Atlas Stream Processing (ASP) workflows. Handles workspace provisioning, data source/sink connections, processor lifecycle operations, debugging diagnostics, and tier sizing. Supports Kafka, Atlas clusters, S3, HTTPS, and Lambda integrations for streaming data workloads and event processing. NOT for general MongoDB queries or Atlas cluster management. Requires MongoDB MCP Server with Atlas API credentials."
+}

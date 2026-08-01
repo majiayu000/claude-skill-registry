@@ -4,6 +4,7 @@ import importlib
 import json
 import sys
 from pathlib import Path
+from types import SimpleNamespace
 
 
 def _load_module():
@@ -130,3 +131,103 @@ def test_audit_uses_frontmatter_description_when_metadata_description_missing(tm
     }
 
     assert candidates["other/frontmatter-devops/SKILL.md"]["suggested_category"] == "devops"
+
+
+def test_stratified_sample_is_deterministic_and_records_fresh_evidence(
+    tmp_path,
+    monkeypatch,
+):
+    audit = _load_module()
+    skills_dir = tmp_path / "skills"
+    for category in ("integration", "data"):
+        for index in range(3):
+            _write_skill(
+                skills_dir,
+                category,
+                f"{category}-{index}",
+                {
+                    "name": f"{category}-{index}",
+                    "category": category,
+                    "description": f"{category} semantic description {index}",
+                },
+                (
+                    "---\n"
+                    f"name: {category}-{index}\n"
+                    f"description: {category} frontmatter description {index}\n"
+                    "---\n\n"
+                    + ("bounded body " * 100)
+                ),
+            )
+
+    policy = SimpleNamespace(
+        schema_version=1,
+        seed="test-seed",
+        per_category=2,
+        categories=("integration", "data"),
+    )
+    monkeypatch.setattr(
+        audit,
+        "get_taxonomy",
+        lambda: SimpleNamespace(audit_sampling=policy, default_category="other"),
+    )
+
+    first = audit.build_stratified_sample(skills_dir, content_chars=32)
+    original_iter = audit.iter_skill_dirs
+    monkeypatch.setattr(
+        audit,
+        "iter_skill_dirs",
+        lambda root: iter(reversed(list(original_iter(root)))),
+    )
+    second = audit.build_stratified_sample(skills_dir, content_chars=32)
+
+    assert first["status"] == "complete"
+    assert first["sample_count"] == 4
+    assert first["digest"] == second["digest"]
+    assert [
+        item["path"]
+        for stratum in first["strata"]
+        for item in stratum["samples"]
+    ] == [
+        item["path"]
+        for stratum in second["strata"]
+        for item in stratum["samples"]
+    ]
+    for stratum in first["strata"]:
+        assert stratum["sample_count"] == stratum["quota"] == 2
+        for item in stratum["samples"]:
+            assert len(item["source_sha256"]) == 64
+            assert len(item["metadata_sha256"]) == 64
+            assert len(item["sample_key"]) == 64
+            assert len(item["content_excerpt"]) <= 32
+            assert item["semantic_sources"]["description"] == "frontmatter"
+
+
+def test_stratified_sample_fails_when_population_is_below_quota(
+    tmp_path,
+    monkeypatch,
+):
+    audit = _load_module()
+    skills_dir = tmp_path / "skills"
+    _write_skill(
+        skills_dir,
+        "integration",
+        "only-one",
+        {"name": "only-one", "category": "integration"},
+        "---\nname: only-one\n---\n",
+    )
+    policy = SimpleNamespace(
+        schema_version=1,
+        seed="test-seed",
+        per_category=2,
+        categories=("integration",),
+    )
+    monkeypatch.setattr(
+        audit,
+        "get_taxonomy",
+        lambda: SimpleNamespace(audit_sampling=policy, default_category="other"),
+    )
+
+    report = audit.build_stratified_sample(skills_dir)
+    assert report["status"] == "failed"
+    assert report["strata"][0]["population_count"] == 1
+    assert "below quota" in report["errors"][0]

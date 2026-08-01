@@ -1,6 +1,5 @@
 from pathlib import Path
 
-
 ROOT = Path(__file__).resolve().parents[1]
 STALE_DISPLAY_COUNT = "67" + ",000"
 STALE_PLAIN_COUNT = "67" + "000"

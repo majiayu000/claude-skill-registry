@@ -1,0 +1,37 @@
+{
+  "name": "walmart-product-reviews",
+  "repo": "browser-act/skills",
+  "path": "solutions/ecommerce/walmart-product-reviews/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/browser-act/skills",
+  "dir_name": "walmart-product-reviews",
+  "downloaded_at": "2026-07-21T02:57:40.386706Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=2, workflow=2",
+    "score": 2,
+    "runner_up": "workflow",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "browser-act",
+  "source_url": "https://github.com/browser-act/skills/blob/main/solutions/ecommerce/walmart-product-reviews/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/browser-act/skills/blob/main/solutions/ecommerce/walmart-product-reviews/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Walmart product reviews scraper: given a walmart.com product item ID, navigate to the reviews page and extract paginated customer reviews including reviewId, rating, title, review text, author nickname, submission date, verified purchase status, helpful votes, variant selected (color/size), badges, fulfilled by, seller name, and photo count. Use when user mentions walmart reviews, walmart product reviews, walmart customer reviews, scrape walmart reviews, extract walmart reviews, walmart review scraper, walmart ratings and reviews, walmart review data, walmart review text, walmart review pagination, get reviews from walmart, walmart review collector, walmart verified purchase reviews, walmart review analysis, walmart sentiment analysis, walmart review export, walmart buyer feedback. Also applies to bulk collection of walmart product reviews across multiple items, sentiment analysis on walmart reviews for market research, competitor product review benchmarking on walmart, and monitoring new walmart reviews over time."
+}

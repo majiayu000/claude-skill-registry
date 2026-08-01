@@ -1,0 +1,37 @@
+{
+  "name": "threejs-performance",
+  "repo": "staruhub/ClaudeSkills",
+  "path": "skills/Geek-skills-threejs-performance/SKILL.md",
+  "github_branch": "main",
+  "category": "performance",
+  "source": "github.com/staruhub/ClaudeSkills",
+  "dir_name": "geek-skills-threejs-performance",
+  "downloaded_at": "2026-07-21T03:12:26.039902Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "performance",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for performance: performance, optimize",
+    "score": 2,
+    "runner_up": "ai-ml",
+    "runner_up_score": 1,
+    "signals": [
+      "performance",
+      "optimize"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "staruhub",
+  "source_url": "https://github.com/staruhub/ClaudeSkills/blob/main/skills/Geek-skills-threejs-performance/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/staruhub/ClaudeSkills/blob/main/skills/Geek-skills-threejs-performance/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Three.js \u6027\u80fd\u4f18\u5316\u6307\u5357\u3002\u5f53 Three.js/React Three Fiber \u9879\u76ee\u51fa\u73b0\u6389\u5e27\u3001\u5185\u5b58\u589e\u957f\u3001\u52a0\u8f7d\u7f13\u6162\u3001\u7ed8\u5236\u8c03\u7528\u8fc7\u591a\uff0c\u6216\u9700\u8981\u8fc1\u79fb WebGPU\u3001\u5b9e\u73b0\u5927\u89c4\u6a21\u7c92\u5b50/\u5b9e\u4f8b\u5316\u6e32\u67d3\u3001\u914d\u7f6e\u8d44\u6e90\u538b\u7f29\u7ba1\u7ebf\u65f6\u4f7f\u7528\u3002\u89e6\u53d1\u5173\u952e\u8bcd\uff1a\"Three.js \u4f18\u5316\"\u3001\"WebGPU\"\u3001\"draw calls\"\u3001\"\u5185\u5b58\u6cc4\u6f0f\"\u3001\"TSL\"\u3001\"InstancedMesh\"\u3001\"R3F \u4f18\u5316\"\u7b49\u3002\u4e0d\u7528\u4e8e\uff1a\u901a\u7528 React \u6027\u80fd\u95ee\u9898\uff08\u7528 vercel-react-best-practices\uff09\u3001WebGL/Three.js \u5165\u95e8\u6559\u5b66\u30013D \u7f8e\u672f\u8d44\u4ea7\u7684\u5236\u4f5c\u672c\u8eab\u3002"
+}

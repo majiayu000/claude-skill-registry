@@ -9,6 +9,17 @@
   "stars": 52,
   "source": "GitHub Code Search Results",
   "dir_name": "unknown-dicklesworthstone-slb",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "LICENSE",
+    "README.md",
+    "references/COMMANDS.md",
+    "references/CONFIG.md",
+    "references/PATTERNS.md",
+    "references/SECURITY.md",
+    "scripts/install.sh",
+    "scripts/test_toon_e2e.sh"
+  ],
   "author": "Dicklesworthstone",
   "source_url": "https://github.com/Dicklesworthstone/slb/blob/main/SKILL.md",
   "license": "NOASSERTION",

@@ -40,6 +40,33 @@ Registry 通过 GitHub Code Search 和预设仓库列表自动发现 SKILL.md �
 1. 将仓库 URL 加入 `REPOS_TO_CLONE`
 2. 下一次爬取周期自动收录
 
+### 在本地验证提交的 Skill
+
+提交 Issue 或 PR 前，请确认源仓库公开且无需登录即可访问，并确认
+`SKILL.md` 以 YAML frontmatter 开头，其中 `name` 和 `description` 均为非空值：
+
+```yaml
+---
+name: your-skill-name
+description: 清楚说明这个 Skill 的用途。
+---
+```
+
+Skill 及其随附文件不得包含密钥、令牌或私有端点。在已安装本仓库依赖的
+core checkout 中运行：
+
+```bash
+# PR 修改 sources/community.json 时，验证来源条目
+python scripts/validate_sources.py community.json
+
+# 扫描本地检出的 Skill 目录及其随附文件
+python scripts/security_scanner.py /path/to/skill-directory
+```
+
+以上是普通社区提交所需的检查。`python scripts/rebuild_registry.py --help` 和
+`python scripts/build_search_index.py --help` 仅用于了解维护者的全量归档构建接口；
+普通提交不需要在本地重建 registry 或搜索索引。
+
 ## Plugin 收录流程
 
 Plugin 是 Claude Code 的打包扩展，包含多个 skills、commands、hooks 等。

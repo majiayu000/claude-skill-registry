@@ -1,0 +1,43 @@
+{
+  "name": "frontend-developer",
+  "repo": "sickn33/agentic-awesome-skills",
+  "path": "skills/frontend-developer/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/sickn33/agentic-awesome-skills",
+  "dir_name": "frontend-developer-sickn33-agentic-awesome-skil",
+  "downloaded_at": "2026-07-14T03:00:12.283710Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "design",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for design: design, ui, ux, css, frontend, component, tailwind, animation",
+    "score": 8,
+    "runner_up": "testing",
+    "runner_up_score": 5,
+    "signals": [
+      "design",
+      "ui",
+      "ux",
+      "css",
+      "frontend",
+      "component",
+      "tailwind",
+      "animation"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/frontend-developer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/frontend-developer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Build React components, implement responsive layouts, and handle client-side state management. Masters React 19, Next.js 15, and modern frontend architecture."
+}

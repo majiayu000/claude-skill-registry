@@ -1,0 +1,38 @@
+{
+  "name": "recon-scope-triage",
+  "repo": "elementalsouls/Claude-BugHunter",
+  "path": "skills/recon-scope-triage/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/elementalsouls/Claude-BugHunter",
+  "dir_name": "recon-scope-triage",
+  "downloaded_at": "2026-07-23T03:02:24.238801Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: dev, code, framework",
+    "score": 3,
+    "runner_up": "marketing",
+    "runner_up_score": 2,
+    "signals": [
+      "dev",
+      "code",
+      "framework"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "elementalsouls",
+  "source_url": "https://github.com/elementalsouls/Claude-BugHunter/blob/main/skills/recon-scope-triage/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/elementalsouls/Claude-BugHunter/blob/main/skills/recon-scope-triage/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Triage ASM/recon output for ownership before testing \u2014 separate the target's real assets from namespace-collision noise. Automated recon keyword-matches on the brand name, so for any target whose name is a common/dictionary word, the output is dominated by assets belonging to UNRELATED same-named companies (repos, cloud buckets, mobile apps, breach corpora, typosquats). Built from an authorized engagement where an ASM report's \"Criticals\" were overwhelmingly false positives and the combo/repos/mobile/bucket lists were polluted with unrelated same-named orgs. Use at the START of any engagement, immediately on receiving any ASM/recon/OSINT dataset, BEFORE testing anything."
+}

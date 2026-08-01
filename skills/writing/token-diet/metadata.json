@@ -1,0 +1,37 @@
+{
+  "name": "token-diet",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/token-diet/SKILL.md",
+  "github_branch": "main",
+  "category": "writing",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "token-diet",
+  "downloaded_at": "2026-07-20T03:33:21.592300Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "writing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for writing: writing, article",
+    "score": 2,
+    "runner_up": "ai-llm",
+    "runner_up_score": 1,
+    "signals": [
+      "writing",
+      "article"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/token-diet/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/token-diet/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Cut LLM output tokens 40\u201370% by stripping grammatical scaffolding while preserving every fact \u2014 telegraphic output modes, when they pay (pipelines, long sessions) and when they don't (single shots, human-facing prose), with the mode lines to switch on demand. Use when asked make the model respond tersely, cut output token costs, caveman mode, or compress agent-to-agent messages. Produces the diet-mode instruction block ready to paste, the three compression levels with examples, the economics of when each pays, and the never-diet list."
+}

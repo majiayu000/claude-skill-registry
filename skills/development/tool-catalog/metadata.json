@@ -1,0 +1,38 @@
+{
+  "name": "tool-catalog",
+  "repo": "AlpacaLabsLLC/skills-for-architects",
+  "path": "skills/tool-catalog/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/AlpacaLabsLLC/skills-for-architects",
+  "dir_name": "tool-catalog",
+  "downloaded_at": "2026-07-27T02:59:28.861562Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: code, programming, build",
+    "score": 3,
+    "runner_up": "marketing",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "programming",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "AlpacaLabsLLC",
+  "source_url": "https://github.com/AlpacaLabsLLC/skills-for-architects/blob/main/skills/tool-catalog/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AlpacaLabsLLC/skills-for-architects/blob/main/skills/tool-catalog/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Show all available Architecture Studio skills, agents, and their namespaced commands. Use when the user runs /as:tool-catalog, asks \"what can you do\" or \"what skills are available\", or wants a directory of plugin commands. Do not use for Claude Code's native /skills command."
+}

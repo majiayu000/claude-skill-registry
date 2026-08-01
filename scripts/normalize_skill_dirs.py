@@ -20,14 +20,14 @@ from pathlib import Path
 from typing import Dict, List
 
 from utils import (
-    normalize_name,
-    normalize_category,
+    build_legal_metadata,
     build_skill_key,
     get_repo_suffix,
-    short_hash,
-    normalize_repo,
-    build_legal_metadata,
     load_metadata,
+    normalize_category,
+    normalize_name,
+    normalize_repo,
+    short_hash,
 )
 
 OFFICIAL_REPOS = {"anthropics/skills", "anthropics/claude-code"}
@@ -160,7 +160,7 @@ def apply_plan(plan: Dict[str, List[dict]], dry_run: bool = True) -> None:
 
     # First pass: move to temp names to avoid collisions
     temp_moves = []
-    for category, items in plan.items():
+    for _category, items in plan.items():
         for e in items:
             if e["dir_name"] == e["desired_name"]:
                 continue

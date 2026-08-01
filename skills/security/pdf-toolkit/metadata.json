@@ -1,0 +1,38 @@
+{
+  "name": "pdf-toolkit",
+  "repo": "borghei/Claude-Skills",
+  "path": "documents/pdf-toolkit/SKILL.md",
+  "github_branch": "main",
+  "category": "security",
+  "source": "github.com/borghei/Claude-Skills",
+  "dir_name": "pdf-toolkit",
+  "downloaded_at": "2026-07-30T02:39:41.592583Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "security",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for security: security, auth, audit",
+    "score": 3,
+    "runner_up": "bash",
+    "runner_up_score": 2,
+    "signals": [
+      "security",
+      "auth",
+      "audit"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "borghei",
+  "source_url": "https://github.com/borghei/Claude-Skills/blob/main/documents/pdf-toolkit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/borghei/Claude-Skills/blob/main/documents/pdf-toolkit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Audit PDF files for metadata leakage, page count, encryption, JavaScript, embedded files, and version. Use before sending a PDF externally, when redacting sensitive metadata, or running a PDF security review."
+}

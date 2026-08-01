@@ -1,0 +1,38 @@
+{
+  "name": "image-seo",
+  "repo": "nowork-studio/NotFair",
+  "path": "seo/image-seo/SKILL.md",
+  "github_branch": "main",
+  "category": "performance",
+  "source": "github.com/nowork-studio/NotFair",
+  "dir_name": "image-seo",
+  "downloaded_at": "2026-07-22T03:07:56.920551Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "performance",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for performance: performance, optimize, speed",
+    "score": 3,
+    "runner_up": "marketing",
+    "runner_up_score": 2,
+    "signals": [
+      "performance",
+      "optimize",
+      "speed"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "nowork-studio",
+  "source_url": "https://github.com/nowork-studio/NotFair/blob/main/seo/image-seo/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nowork-studio/NotFair/blob/main/seo/image-seo/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Image SEO audit \u2014 make a site's images discoverable in Google Images and stop them from dragging down Core Web Vitals. Audits alt text quality and coverage, descriptive file names, modern formats (WebP/AVIF), dimensions and compression, responsive srcset, lazy-loading, explicit width/height (CLS), image sitemaps, and ImageObject structured data. Use this skill whenever the user asks about image SEO, alt text, Google Images ranking, image optimization for search, image file size hurting page speed, WebP/AVIF, or image structured data. Trigger on: \"image SEO\", \"alt text\", \"rank in Google Images\", \"optimize my images for search\", \"image alt tags\", \"WebP\", \"image compression SEO\", \"image sitemap\", \"ImageObject schema\", or any image-discoverability / image-performance question. For overall page speed use /seo-analysis; for generating new images use the brand image skills."
+}

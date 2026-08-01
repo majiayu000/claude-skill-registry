@@ -1,0 +1,37 @@
+{
+  "name": "color-palette-generator",
+  "repo": "AlpacaLabsLLC/skills-for-architects",
+  "path": "skills/color-palette-generator/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/AlpacaLabsLLC/skills-for-architects",
+  "dir_name": "color-palette-generator",
+  "downloaded_at": "2026-07-21T02:45:56.656757Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: creative=2, development=2",
+    "score": 2,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "creative",
+      "story"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "AlpacaLabsLLC",
+  "source_url": "https://github.com/AlpacaLabsLLC/skills-for-architects/blob/main/skills/color-palette-generator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AlpacaLabsLLC/skills-for-architects/blob/main/skills/color-palette-generator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Create harmonious color palettes from descriptions, moods, or images \u2014 outputs a self-contained HTML file with swatches, hex/RGB/HSL codes, contrast ratios, and example pairings. Use when the user asks for a color palette, color scheme, or brand colors (\"generate a palette for...\", \"colors that match this image\")."
+}

@@ -1,0 +1,37 @@
+{
+  "name": "walmart-category-listing",
+  "repo": "browser-act/skills",
+  "path": "solutions/ecommerce/walmart-category-listing/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/browser-act/skills",
+  "dir_name": "walmart-category-listing",
+  "downloaded_at": "2026-07-21T02:57:40.564683Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=2, marketing=2",
+    "score": 2,
+    "runner_up": "marketing",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "browser-act",
+  "source_url": "https://github.com/browser-act/skills/blob/main/solutions/ecommerce/walmart-category-listing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/browser-act/skills/blob/main/solutions/ecommerce/walmart-category-listing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Walmart category page scraper: input a walmart.com browse or category URL with optional page number, extract paginated product listings with itemId, url, title, brand, image, price, wasPrice, rating, reviewCount, availability, seller info, fulfillmentBadge, and classType. Use when user mentions walmart category, walmart browse page, walmart category listing, scrape walmart category, walmart department scrape, walmart category URL, browse walmart categories, walmart category products, walmart category page scraper, walmart browse scraper, extract walmart category items, walmart filtered category, walmart subcategory products, walmart browse items, walmart department listing, walmart catalog browse, walmart aisle scraper. Also applies to collecting products from a specific walmart category URL with filters applied (e.g. filtered category URLs copied from the browser), scraping all items from a walmart browse section, category-scoped price monitoring on walmart, and parent category crawling where subcategory URLs are enumerated first."
+}

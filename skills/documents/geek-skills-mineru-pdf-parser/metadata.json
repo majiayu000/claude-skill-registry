@@ -1,0 +1,38 @@
+{
+  "name": "mineru-pdf-parser",
+  "repo": "staruhub/ClaudeSkills",
+  "path": "skills/Geek-skills-mineru-pdf-parser/SKILL.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/staruhub/ClaudeSkills",
+  "dir_name": "geek-skills-mineru-pdf-parser",
+  "downloaded_at": "2026-07-21T03:12:23.761956Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "documents",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for documents: pdf, word, markdown",
+    "score": 3,
+    "runner_up": "bash",
+    "runner_up_score": 2,
+    "signals": [
+      "pdf",
+      "word",
+      "markdown"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "staruhub",
+  "source_url": "https://github.com/staruhub/ClaudeSkills/blob/main/skills/Geek-skills-mineru-pdf-parser/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/staruhub/ClaudeSkills/blob/main/skills/Geek-skills-mineru-pdf-parser/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u7528 MinerU \u5c06\u590d\u6742PDF\u6587\u6863\u8f6c\u6362\u4e3aLLM\u53cb\u597d\u7684Markdown/JSON\u683c\u5f0f\u3002\u9002\u7528\u4e8e\uff1a(1) PDF\u8f6cMarkdown/JSON\uff0c(2) \u63d0\u53d6PDF\u4e2d\u7684\u6587\u672c\u3001\u8868\u683c\u3001\u516c\u5f0f\u3001\u56fe\u50cf\uff0c(3) \u89e3\u6790\u5b66\u672f\u8bba\u6587\u3001\u6280\u672f\u6587\u6863\u3001\u5546\u4e1a\u62a5\u544a\uff0c(4) \u4e3aRAG\u5e94\u7528\u51c6\u5907\u6587\u6863\u6570\u636e\uff0c(5) \u6279\u91cf\u5904\u7406PDF\u3002\u89e6\u53d1\u5173\u952e\u8bcd\uff1a\"PDF\u89e3\u6790\"\u3001\"PDF\u8f6cMarkdown\"\u3001\"\u63d0\u53d6PDF\u8868\u683c/\u516c\u5f0f\"\u3001\"MinerU\"\u3001\"parse PDF\"\u7b49\u3002\u4e0d\u7528\u4e8e\uff1aPDF\u7684\u9605\u8bfb/\u586b\u8868/\u7b7e\u540d/\u62c6\u5206\u5408\u5e76\uff08\u7528\u5bbf\u4e3bpdf\u5de5\u5177\uff09\u3001Word/PPT\u7b49\u975ePDF\u683c\u5f0f\u89e3\u6790\u3001\u53ea\u9700\u8bfb\u51e0\u9875\u5185\u5bb9\u7684\u573a\u666f\uff08\u76f4\u63a5\u8bfb\u5373\u53ef\uff0c\u4e0d\u5fc5\u8f6c\u6362\uff09\u3002"
+}

@@ -1,0 +1,39 @@
+{
+  "name": "tdd-guide",
+  "repo": "borghei/Claude-Skills",
+  "path": "engineering/tdd-guide/SKILL.md",
+  "github_branch": "main",
+  "category": "testing",
+  "source": "github.com/borghei/Claude-Skills",
+  "dir_name": "tdd-guide-borghei-claude-skills",
+  "downloaded_at": "2026-07-30T02:39:41.679185Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "testing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for testing: test, tdd, jest, pytest",
+    "score": 4,
+    "runner_up": "generation",
+    "runner_up_score": 3,
+    "signals": [
+      "test",
+      "tdd",
+      "jest",
+      "pytest"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "borghei",
+  "source_url": "https://github.com/borghei/Claude-Skills/blob/main/engineering/tdd-guide/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/borghei/Claude-Skills/blob/main/engineering/tdd-guide/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Guide red-green-refactor TDD with test generation, coverage-gap analysis, and multi- framework support. Use when writing tests first, analyzing coverage, generating test stubs, or converting tests between Jest, Pytest, JUnit, and Vitest."
+}

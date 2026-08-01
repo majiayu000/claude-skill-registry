@@ -1,0 +1,37 @@
+{
+  "name": "token-cost",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/token-cost/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "token-cost",
+  "downloaded_at": "2026-07-20T03:33:21.373944Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=2, marketing=2",
+    "score": 2,
+    "runner_up": "marketing",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/token-cost/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/token-cost/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Measure before optimizing \u2014 estimate token counts locally with stated heuristics, price them at your model's rates, and quantify before/after savings, because token optimization without measurement is vibes. Use when asked how many tokens is this, what does this context cost per call, is this optimization worth it, or compare these two versions' cost. Produces the estimate with both heuristics shown, the cost math at your prices across your call volume, and the before/after comparison that decides whether an optimization earned its complexity."
+}

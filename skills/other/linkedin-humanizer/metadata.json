@@ -1,0 +1,37 @@
+{
+  "name": "linkedin-humanizer",
+  "repo": "sergebulaev/linkedin-skills",
+  "path": "skills/linkedin-humanizer/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/sergebulaev/linkedin-skills",
+  "dir_name": "linkedin-humanizer",
+  "downloaded_at": "2026-07-19T03:12:55.386177Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: ai-ml=2, writing=2",
+    "score": 2,
+    "runner_up": "writing",
+    "runner_up_score": 2,
+    "signals": [
+      "ai",
+      "model"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "sergebulaev",
+  "source_url": "https://github.com/sergebulaev/linkedin-skills/blob/main/skills/linkedin-humanizer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sergebulaev/linkedin-skills/blob/main/skills/linkedin-humanizer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Scrub AI tells from any text draft OR audit a finished post against the 2026 algorithm heuristic checklist. Tier-based rewriter (forensic / strict / aesthetic / all) plus `--mode audit` for detection-only pass-fail review covering length, hook, CTA, format penalties, AI vocab. Sub-tools: emoji-pattern detector, multi-detector spread tester (GPTZero, Originality.ai, ZeroGPT, Sapling, Copyleaks), rule explainer. Triggers on \"humanize\", \"de-AI\", \"review this draft\", \"audit before posting\", \"is this ready\"."
+}

@@ -1,0 +1,37 @@
+{
+  "name": "airbnb-search-listing",
+  "repo": "browser-act/skills",
+  "path": "solutions/ecommerce/airbnb-search-listing/SKILL.md",
+  "github_branch": "main",
+  "category": "bash",
+  "source": "github.com/browser-act/skills",
+  "dir_name": "airbnb-search-listing",
+  "downloaded_at": "2026-07-21T02:57:39.225183Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "bash",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for bash: bash, script",
+    "score": 2,
+    "runner_up": "data",
+    "runner_up_score": 1,
+    "signals": [
+      "bash",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "browser-act",
+  "source_url": "https://github.com/browser-act/skills/blob/main/solutions/ecommerce/airbnb-search-listing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/browser-act/skills/blob/main/solutions/ecommerce/airbnb-search-listing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Extracts Airbnb accommodation search results from a destination query via SSR-embedded data, returning listing ID, URL, name, coordinates, rating, price, photos, and badge info for each result, plus pagination cursors for multi-page retrieval. Use when user mentions Airbnb search results, Airbnb listings, vacation rental search, short-term rental listings, scrape Airbnb, get Airbnb data, find rentals on Airbnb, Airbnb destination search, Airbnb property list, Airbnb stays search, Airbnb accommodation results, pull Airbnb listings, collect Airbnb search data, Airbnb scraper, Airbnb search page extraction, Airbnb search by destination."
+}

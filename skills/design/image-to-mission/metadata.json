@@ -1,0 +1,38 @@
+{
+  "name": "image-to-mission",
+  "repo": "Tibsfox/gsd-skill-creator",
+  "path": "project-claude/skills/image-to-mission/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/Tibsfox/gsd-skill-creator",
+  "dir_name": "image-to-mission",
+  "downloaded_at": "2026-07-14T02:40:32.962504Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "design",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for design: design, css, component",
+    "score": 3,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "design",
+      "css",
+      "component"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "Tibsfox",
+  "source_url": "https://github.com/Tibsfox/gsd-skill-creator/blob/main/project-claude/skills/image-to-mission/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Tibsfox/gsd-skill-creator/blob/main/project-claude/skills/image-to-mission/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Extract creative intent from images into executable build specs. Activates on images + build intent, \"image to mission\", \"i2m\", or capturing visual energy in code/design."
+}

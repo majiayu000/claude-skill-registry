@@ -1,0 +1,37 @@
+{
+  "name": "review-swarm",
+  "repo": "sickn33/agentic-awesome-skills",
+  "path": "skills/review-swarm/SKILL.md",
+  "github_branch": "main",
+  "category": "security",
+  "source": "github.com/sickn33/agentic-awesome-skills",
+  "dir_name": "review-swarm",
+  "downloaded_at": "2026-07-22T03:11:20.679668Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "security",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for security: security, auth",
+    "score": 2,
+    "runner_up": "data",
+    "runner_up_score": 1,
+    "signals": [
+      "security",
+      "auth"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/review-swarm/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/review-swarm/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Parallel read-only multi-agent review of a current git diff or explicit file scope to find behavioral regressions, security or privacy risks, performance or reliability issues, and contract or test coverage gaps. Use when the user asks for a review swarm, parallel review, diff review,..."
+}

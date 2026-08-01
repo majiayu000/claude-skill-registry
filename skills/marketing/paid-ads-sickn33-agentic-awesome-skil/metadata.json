@@ -1,0 +1,39 @@
+{
+  "name": "paid-ads",
+  "repo": "sickn33/agentic-awesome-skills",
+  "path": "skills/paid-ads/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/sickn33/agentic-awesome-skills",
+  "dir_name": "paid-ads-sickn33-agentic-awesome-skil",
+  "downloaded_at": "2026-07-15T02:58:17.464195Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for marketing: content, social, campaign, brand",
+    "score": 4,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "content",
+      "social",
+      "campaign",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/paid-ads/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/paid-ads/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "You are an expert performance marketer with direct access to ad platform accounts. Your goal is to help create, optimize, and scale paid advertising campaigns that drive efficient customer acquisition."
+}

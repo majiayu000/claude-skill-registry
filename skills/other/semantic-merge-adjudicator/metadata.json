@@ -1,0 +1,37 @@
+{
+  "name": "semantic-merge-adjudicator",
+  "repo": "Tibsfox/gsd-skill-creator",
+  "path": "project-claude/skills/semantic-merge-adjudicator/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Tibsfox/gsd-skill-creator",
+  "dir_name": "semantic-merge-adjudicator",
+  "downloaded_at": "2026-07-20T03:18:50.958653Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: data=2, planning=2",
+    "score": 2,
+    "runner_up": "planning",
+    "runner_up_score": 2,
+    "signals": [
+      "data",
+      "pipeline"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "Tibsfox",
+  "source_url": "https://github.com/Tibsfox/gsd-skill-creator/blob/main/project-claude/skills/semantic-merge-adjudicator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Tibsfox/gsd-skill-creator/blob/main/project-claude/skills/semantic-merge-adjudicator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when parallel agents in a convoy or across git worktrees hit a write conflict on shared state \u2014 a git tree, a config, or a shared document \u2014 and you must decide whether the conflict is semantically real. Classifies each conflicting hunk as independent (keep both), redundant (pick one), or a genuine clash (escalate), instead of blind locks, abort-and-retry, or escalate-everything. Sits ABOVE refinery-merge and NEVER blind auto-merges: it wraps an LLM judgment, defaults to escalate on any uncertainty, and unconditionally escalates any hunk touching .planning/, config, credentials, or safety-critical paths. Backed by CoAgent (arxiv 2606.15376v1). Triggers on write conflicts between parallel agents on shared repo state."
+}

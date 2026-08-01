@@ -1,0 +1,37 @@
+{
+  "name": "workplan",
+  "repo": "AlpacaLabsLLC/skills-for-architects",
+  "path": "skills/workplan/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/AlpacaLabsLLC/skills-for-architects",
+  "dir_name": "workplan",
+  "downloaded_at": "2026-07-27T02:59:30.949857Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: development=2, documents=2",
+    "score": 2,
+    "runner_up": "documents",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "AlpacaLabsLLC",
+  "source_url": "https://github.com/AlpacaLabsLLC/skills-for-architects/blob/main/skills/workplan/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AlpacaLabsLLC/skills-for-architects/blob/main/skills/workplan/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Create a durable, execution-ready work plan for repository changes, operations, research, or AEC project delivery. Use when the user asks to plan, scope, sequence, coordinate, or break down multi-step work before acting. Do not use for floor plans, site plans, space planning, zoning calculations, building-code analysis, or architectural design."
+}

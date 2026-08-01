@@ -1,0 +1,37 @@
+{
+  "name": "render-creator-pip-listicle",
+  "repo": "gooseworks-ai/goose-skills",
+  "path": "skills/ads/capabilities/render-creator-pip-listicle/SKILL.md",
+  "github_branch": "main",
+  "category": "ai-ml",
+  "source": "github.com/gooseworks-ai/goose-skills",
+  "dir_name": "render-creator-pip-listicle",
+  "downloaded_at": "2026-07-20T03:28:04.303112Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "ai-ml",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for ai-ml: ai, model",
+    "score": 2,
+    "runner_up": "ai-llm",
+    "runner_up_score": 1,
+    "signals": [
+      "ai",
+      "model"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "gooseworks-ai",
+  "source_url": "https://github.com/gooseworks-ai/goose-skills/blob/main/skills/ads/capabilities/render-creator-pip-listicle/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gooseworks-ai/goose-skills/blob/main/skills/ads/capabilities/render-creator-pip-listicle/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Assemble a creator picture-in-picture product-listicle ad from a config \u2014 the creator stays FULL-FRAME the whole beat (voice plus lips generated together per beat, no separate VO, no cut to a full-frame product shot), and on each product beat three persistent overlays ride on top for the WHOLE beat \u2014 a title pill top-center, the DEMO in a rounded PiP window top-right (the brand's real UGC clip MUTED, or for a no-UGC brand the product's own autocropped UI still / screen-recording sized to fill the window), and a bottom product card (rounded thumbnail plus 'N \u00b7 CATEGORY' small-caps plus product NAME in a serif face). Hook plus CTA beats are the creator full-frame with the title pill only. Assembly builds ONE full-1080x1920 transparent overlay PNG per beat, overlays it on the creator clip (cover-scaled to 1080x1920) for the whole beat keeping the native audio, concats all beats, then burns captions LAST as timed PIL PNG overlays (this ffmpeg has no libass) timed deterministically from the known per-beat script. This is the FREE deterministic assembly stage (overlay-PNG build plus cover-scale composite plus concat plus PIL-PNG caption burn); the creator anchor and the N native talking clips come from create-image-fal (Seedream v5 Pro) and create-video-fal (Seedance 2.0). Use for the creator-pip-listicle format."
+}

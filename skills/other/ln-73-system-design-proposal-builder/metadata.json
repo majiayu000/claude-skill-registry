@@ -1,0 +1,37 @@
+{
+  "name": "ln-73-system-design-proposal-builder",
+  "repo": "levnikolaevich/claude-code-skills",
+  "path": "plugins/architecture-suite/skills/ln-73-system-design-proposal-builder/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/levnikolaevich/claude-code-skills",
+  "dir_name": "ln-73-system-design-proposal-builder",
+  "downloaded_at": "2026-07-30T02:47:50.531957Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: business=2, design=2",
+    "score": 2,
+    "runner_up": "design",
+    "runner_up_score": 2,
+    "signals": [
+      "business",
+      "operations"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "levnikolaevich",
+  "source_url": "https://github.com/levnikolaevich/claude-code-skills/blob/master/plugins/architecture-suite/skills/ln-73-system-design-proposal-builder/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/levnikolaevich/claude-code-skills/blob/master/plugins/architecture-suite/skills/ln-73-system-design-proposal-builder/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Creates a decision-complete target system design from requirements and constraints. Use before implementation planning; not for requirements baselines, reviews, audits, or code changes."
+}

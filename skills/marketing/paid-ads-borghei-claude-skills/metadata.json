@@ -1,0 +1,40 @@
+{
+  "name": "paid-ads",
+  "repo": "borghei/Claude-Skills",
+  "path": "marketing/paid-ads/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/borghei/Claude-Skills",
+  "dir_name": "paid-ads-borghei-claude-skills",
+  "downloaded_at": "2026-07-30T02:39:38.546619Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for marketing: marketing, content, social, campaign, brand",
+    "score": 5,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "marketing",
+      "content",
+      "social",
+      "campaign",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "borghei",
+  "source_url": "https://github.com/borghei/Claude-Skills/blob/main/marketing/paid-ads/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/borghei/Claude-Skills/blob/main/marketing/paid-ads/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Plan, execute, and optimize paid ad campaigns across Google, Meta, LinkedIn, Twitter/X, and TikTok, covering targeting, budget, bid strategies, and retargeting. Use when running PPC campaigns, setting up ad accounts, or optimizing ROAS/CPA."
+}

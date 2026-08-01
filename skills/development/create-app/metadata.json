@@ -1,0 +1,39 @@
+{
+  "name": "create-app",
+  "repo": "wondelai/skills",
+  "path": "create-app/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/wondelai/skills",
+  "dir_name": "create-app",
+  "downloaded_at": "2026-07-17T03:10:49.140808Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for development: code, framework, build, software",
+    "score": 4,
+    "runner_up": "business",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "framework",
+      "build",
+      "software"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "wondelai",
+  "source_url": "https://github.com/wondelai/skills/blob/main/create-app/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/wondelai/skills/blob/main/create-app/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Guided journey from a raw app idea to a validated, cleanly architected first version that ships on a sustainable cadence. Orchestrates ten skills phase by phase - lean-startup, design-sprint, clean-architecture, domain-driven-design, clean-code, pragmatic-programmer, system-design, ios-hig-design, 37signals-way, software-design-philosophy - asking the user questions at every decision point and recording results in the project docs/ folder (PRODUCT.md, ARCHITECTURE.md, EXPERIMENTS.md, CREATE-APP-PLAN.md) so the journey resumes across sessions. Use when the user wants to build a new app, validate an idea before writing code, architect an MVP that will not need a rewrite, or says 'help me build my app the right way'. App already exists: use improve-app or grow-app. Business idea not yet validated: run create-business first. Marketing site only: use create-website. Architecture-only question: design-code-architecture. For one framework in isolation, invoke that skill directly."
+}

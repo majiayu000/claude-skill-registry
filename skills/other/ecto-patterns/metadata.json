@@ -1,0 +1,37 @@
+{
+  "name": "ecto-patterns",
+  "repo": "oliver-kriska/claude-elixir-phoenix",
+  "path": "targets/codex/skills/ecto-patterns/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/oliver-kriska/claude-elixir-phoenix",
+  "dir_name": "ecto-patterns",
+  "downloaded_at": "2026-07-22T03:08:23.510609Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: data=2, development=2",
+    "score": 2,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "data",
+      "sql"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "oliver-kriska",
+  "source_url": "https://github.com/oliver-kriska/claude-elixir-phoenix/blob/main/targets/codex/skills/ecto-patterns/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/oliver-kriska/claude-elixir-phoenix/blob/main/targets/codex/skills/ecto-patterns/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Ecto patterns \u2014 schemas, changesets, queries, migrations, Multi, associations, preloads, upserts. Use when editing Repo calls, Ecto.Query, or schema fields. Skip for Ash."
+}

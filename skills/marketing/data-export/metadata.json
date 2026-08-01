@@ -1,0 +1,39 @@
+{
+  "name": "data-export",
+  "repo": "indranilbanerjee/digital-marketing-pro",
+  "path": "skills/data-export/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/indranilbanerjee/digital-marketing-pro",
+  "dir_name": "data-export",
+  "downloaded_at": "2026-07-22T03:02:00.467443Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for marketing: marketing, content, campaign, brand",
+    "score": 4,
+    "runner_up": "data",
+    "runner_up_score": 3,
+    "signals": [
+      "marketing",
+      "content",
+      "campaign",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "indranilbanerjee",
+  "source_url": "https://github.com/indranilbanerjee/digital-marketing-pro/blob/main/skills/data-export/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/indranilbanerjee/digital-marketing-pro/blob/main/skills/data-export/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Export marketing data. Use when: sending data to BigQuery, Google Sheets, or Supabase for analysis or reporting."
+}

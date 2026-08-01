@@ -1,0 +1,37 @@
+{
+  "name": "cascade-dedup",
+  "repo": "OutlineDriven/odin-claude-plugin",
+  "path": "skills/cascade-dedup/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/OutlineDriven/odin-claude-plugin",
+  "dir_name": "cascade-dedup",
+  "downloaded_at": "2026-07-27T03:04:53.348548Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: code, build",
+    "score": 2,
+    "runner_up": "agent",
+    "runner_up_score": 1,
+    "signals": [
+      "code",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "OutlineDriven",
+  "source_url": "https://github.com/OutlineDriven/odin-claude-plugin/blob/main/skills/cascade-dedup/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OutlineDriven/odin-claude-plugin/blob/main/skills/cascade-dedup/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Strip duplicate and conflicting directives across the system-prompt cascade family: the canonical baseline, the six output-style embeds, and the two external harness embeds."
+}

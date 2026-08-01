@@ -1,0 +1,37 @@
+{
+  "name": "threads-keyword-search",
+  "repo": "browser-act/skills",
+  "path": "solutions/social-listening/threads-keyword-search/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/browser-act/skills",
+  "dir_name": "threads-keyword-search",
+  "downloaded_at": "2026-07-21T02:57:41.532242Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=2, marketing=2",
+    "score": 2,
+    "runner_up": "marketing",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "browser-act",
+  "source_url": "https://github.com/browser-act/skills/blob/main/solutions/social-listening/threads-keyword-search/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/browser-act/skills/blob/main/solutions/social-listening/threads-keyword-search/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Searches Threads posts by keyword or hashtag and returns matching posts with engagement metrics, extracted from SSR-embedded JSON. Use when user asks to search Threads posts, find Threads content by topic, scrape Threads search results, collect Threads posts about a keyword, monitor Threads hashtag activity, pull Threads posts mentioning a term, gather Threads content by hashtag, search for posts on Threads, extract Threads search feed, get trending posts on Threads, find Threads discussions about a subject, or fetch recent or top Threads posts by keyword."
+}

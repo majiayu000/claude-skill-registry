@@ -1,0 +1,37 @@
+{
+  "name": "domain-modeling",
+  "repo": "rohitg00/pro-workflow",
+  "path": "skills/domain-modeling/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/rohitg00/pro-workflow",
+  "dir_name": "domain-modeling",
+  "downloaded_at": "2026-07-19T03:11:57.221708Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: development=2, documents=2",
+    "score": 2,
+    "runner_up": "documents",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "rohitg00",
+  "source_url": "https://github.com/rohitg00/pro-workflow/blob/main/skills/domain-modeling/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/rohitg00/pro-workflow/blob/main/skills/domain-modeling/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Build the project's shared language and bounded contexts before writing code, so names stay consistent and the agent stops paraphrasing domain concepts. Produces a CONTEXT.md glossary and decision records. Use at the start of a project or feature, or when the codebase and the people describing it speak different languages."
+}

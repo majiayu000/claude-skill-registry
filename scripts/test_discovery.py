@@ -3,8 +3,10 @@
 Test the discovery mechanism with a small sample
 """
 
-import requests
 import os
+
+import requests
+
 
 def test_topic_search():
     """Test searching repos by topic"""

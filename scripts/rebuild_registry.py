@@ -13,6 +13,7 @@ from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 
+from plugin_index import load_plugins_from_source
 from utils import (
     extract_description,
     is_declared_bundled_skill_file,
@@ -22,6 +23,9 @@ from utils import (
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(message)s")
 logger = logging.getLogger(__name__)
+
+ARTIFACT_API_COMPAT_SINCE = "static-artifact-api-v1"
+ARTIFACT_API_COMPAT_UNTIL = "static-artifact-api-v2"
 
 
 def utc_now_isoformat() -> str:
@@ -36,7 +40,7 @@ def safe_write_registry(registry_path: Path, registry: dict) -> bool:
         with open(temp_path, "w", encoding="utf-8") as f:
             json.dump(registry, f, ensure_ascii=False, separators=(",", ":"))
 
-        temp_path.rename(registry_path)
+        temp_path.replace(registry_path)
         return True
     except Exception:
         logger.exception("Failed to write registry")
@@ -124,6 +128,38 @@ def artifact_reference(path: Path, base_dir: Path) -> str:
         return resolved_path.as_posix()
 
 
+def build_compatibility_pointer(
+    *,
+    total_count: int,
+    manifest: str,
+    replacement: str,
+    message: str,
+    aliases: dict[str, int] | None = None,
+    extra: dict | None = None,
+) -> dict:
+    """Build the shared static-artifact-api-v1 compatibility pointer."""
+    if not isinstance(total_count, int) or isinstance(total_count, bool) or total_count < 0:
+        raise ValueError("total_count must be a non-negative integer")
+    if not all(isinstance(value, str) and value for value in (manifest, replacement, message)):
+        raise ValueError("manifest, replacement, and message must be non-empty strings")
+    pointer = {
+        "schema_version": 1,
+        "total_count": total_count,
+        "deprecated_full_payload": True,
+        "message": message,
+        "manifest": manifest,
+        "replacement": replacement,
+        "compat_since": ARTIFACT_API_COMPAT_SINCE,
+        "compat_until": ARTIFACT_API_COMPAT_UNTIL,
+    }
+    for key, value in (aliases or {}).items():
+        if value != total_count:
+            raise ValueError(f"compatibility alias {key} must equal total_count")
+        pointer[key] = value
+    pointer.update(extra or {})
+    return pointer
+
+
 def write_registry_shards(
     skills: list[dict],
     shards_dir: Path,
@@ -201,26 +237,22 @@ def build_compatibility_registry(
     plugin_count: int,
     archive_skill_md_count_raw: int,
     archive_metadata_count_raw: int,
-    manifest_path: str | None = None,
+    manifest_path: str = "registry-manifest.json",
 ) -> dict:
-    message = "Full registry payload moved to registry-shards/*.json"
-    if not manifest_path:
-        message = "Full registry payload is published in the merged claude-skill-registry artifact"
-
-    registry = {
-        "version": "2.2.0",
-        "updated_at": generated_at,
-        "total_count": total_count,
-        "plugin_count": plugin_count,
-        "archive_skill_md_count_raw": archive_skill_md_count_raw,
-        "archive_metadata_count_raw": archive_metadata_count_raw,
-        "registry_skill_count_dedup": total_count,
-        "deprecated_full_payload": True,
-        "message": message,
-    }
-    if manifest_path:
-        registry["manifest"] = manifest_path
-    return registry
+    return build_compatibility_pointer(
+        total_count=total_count,
+        manifest=manifest_path,
+        replacement="registry-shards/*.json",
+        message="Full registry payload moved to registry-shards/*.json",
+        aliases={"registry_skill_count_dedup": total_count},
+        extra={
+            "version": "2.2.0",
+            "updated_at": generated_at,
+            "plugin_count": plugin_count,
+            "archive_skill_md_count_raw": archive_skill_md_count_raw,
+            "archive_metadata_count_raw": archive_metadata_count_raw,
+        },
+    )
 
 
 def scan_skills(skills_dir: Path) -> list:
@@ -355,17 +387,9 @@ def build_category_indexes(skills: list, output_dir: Path):
 
 
 def load_plugins(sources_dir: Path) -> list:
-    """Load plugins from sources/plugins.json."""
-    plugins_path = sources_dir / "plugins.json"
-    if not plugins_path.exists():
-        return []
-    try:
-        with open(plugins_path, encoding="utf-8") as f:
-            data = json.load(f)
-        return data.get("plugins", [])
-    except Exception as e:
-        logger.warning(f"Failed to load plugins: {e}")
-        return []
+    """Load plugins from the optional strict source index."""
+    result = load_plugins_from_source(sources_dir)
+    return result.plugins if result.present else []
 
 
 if __name__ == "__main__":
@@ -491,7 +515,7 @@ if __name__ == "__main__":
             plugin_count=len(plugins),
             archive_skill_md_count_raw=archive_skill_md_count_raw,
             archive_metadata_count_raw=archive_metadata_count_raw,
-            manifest_path=manifest_ref if args.compat_manifest_pointer else None,
+            manifest_path=manifest_ref,
         )
 
         safe_write_registry(registry_path, registry)

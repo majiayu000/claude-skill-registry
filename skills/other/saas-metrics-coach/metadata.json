@@ -1,0 +1,37 @@
+{
+  "name": "saas-metrics-coach",
+  "repo": "borghei/Claude-Skills",
+  "path": "finance/saas-metrics-coach/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/borghei/Claude-Skills",
+  "dir_name": "saas-metrics-coach",
+  "downloaded_at": "2026-07-30T02:39:48.904310Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: analysis=2, bash=2",
+    "score": 2,
+    "runner_up": "bash",
+    "runner_up_score": 2,
+    "signals": [
+      "analysis",
+      "analyze"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "borghei",
+  "source_url": "https://github.com/borghei/Claude-Skills/blob/main/finance/saas-metrics-coach/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/borghei/Claude-Skills/blob/main/finance/saas-metrics-coach/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "This skill should be used when the user asks to \"calculate MRR\", \"analyze churn\", \"compute SaaS metrics\", \"do cohort retention analysis\", \"calculate LTV or CAC\", \"evaluate unit economics\", or \"track subscription revenue growth\"."
+}

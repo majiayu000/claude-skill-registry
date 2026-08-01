@@ -24,9 +24,10 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-from category_taxonomy import get_category_code, resolve_category
+from category_taxonomy import get_category_code, get_taxonomy, resolve_category
 from index_artifacts import write_category_artifacts, write_search_artifacts, write_signal_artifacts
-from plugin_index import build_plugins_index, load_plugins_from_registry, load_plugins_from_source
+from plugin_index import build_plugins_index, load_plugins_with_fallback
+from rebuild_registry import safe_write_json
 from search_sources import (
     count_named_files,
     load_from_registry,
@@ -269,14 +270,8 @@ def build_search_index(
     )
 
     # Build minimal search index
-    search_index = {"v": datetime.now(timezone.utc).strftime("%Y-%m-%d"), "t": len(skills), "s": []}
-
-    # Category indexes
-    categories: Dict[str, List[Dict]] = {}
-
-    # Featured skills
-    featured_skills = []
-    lite_skills_by_key: Dict[str, Dict[str, Any]] = {}
+    search_index = {"v": datetime.now(timezone.utc).strftime("%Y-%m-%d"), "t": 0, "s": []}
+    records_by_key: Dict[str, Dict[str, Dict[str, Any]]] = {}
     quality_records_by_id: Dict[str, Dict[str, Any]] = {}
     security_records_by_id: Dict[str, Dict[str, Any]] = {}
     ranking_records_by_id: Dict[str, Dict[str, Any]] = {}
@@ -321,8 +316,6 @@ def build_search_index(
             "i": install,
             "b": branch,  # branch for GitHub URL
         }
-        search_index["s"].append(mini_record)
-
         # Full record
         full_record = {
             "name": name,
@@ -344,15 +337,6 @@ def build_search_index(
             "trust_score": trust_score,
             "compatible_agents": compatible_agents,
         }
-
-        # Add to category
-        if category not in categories:
-            categories[category] = []
-        categories[category].append(full_record)
-
-        # Track for featured
-        if stars > 0:
-            featured_skills.append(full_record)
 
         lite_record = {
             "id": skill_id,
@@ -376,17 +360,38 @@ def build_search_index(
             "_description_length": len(description),
         }
         dedupe_key = f"{install}|{branch}"
-        existing = lite_skills_by_key.get(dedupe_key)
-        if not existing or (
+        existing_records = records_by_key.get(dedupe_key)
+        existing = existing_records["lite"] if existing_records else None
+        candidate_rank = (
             stars,
             quality_score,
             len(description),
-        ) > (
+            json.dumps(
+                full_record,
+                ensure_ascii=True,
+                sort_keys=True,
+                separators=(",", ":"),
+            ),
+        )
+        existing_rank = (
             int(existing.get("stars", 0) or 0),
             int(existing.get("quality_score", 0) or 0),
             int(existing.get("_description_length", 0) or 0),
+            json.dumps(
+                existing_records["full"],
+                ensure_ascii=True,
+                sort_keys=True,
+                separators=(",", ":"),
+            ),
+        ) if existing_records else None
+        if not existing or (
+            existing_rank is not None and candidate_rank > existing_rank
         ):
-            lite_skills_by_key[dedupe_key] = lite_record
+            records_by_key[dedupe_key] = {
+                "mini": mini_record,
+                "full": full_record,
+                "lite": lite_record,
+            }
             quality_records_by_id[skill_id] = {
                 "id": skill_id,
                 "install": install,
@@ -418,12 +423,26 @@ def build_search_index(
                 ),
             }
 
+    # Every published search/category view must use the same stable-key winners
+    # as the lite index; otherwise the strict full-index reader rejects the
+    # generator's own duplicate records.
+    categories: Dict[str, List[Dict]] = {}
+    featured_skills = []
+    for records in records_by_key.values():
+        full_record = records["full"]
+        category = full_record["category"]
+        categories.setdefault(category, []).append(full_record)
+        if full_record["stars"] > 0:
+            featured_skills.append(full_record)
+        search_index["s"].append(records["mini"])
+    search_index["t"] = len(search_index["s"])
+
     # Sort by stars
     search_index["s"].sort(key=lambda x: x.get("r", 0), reverse=True)
     featured_skills.sort(key=lambda x: x.get("stars", 0), reverse=True)
     featured_skills = featured_skills[:100]
     all_lite_skills = sorted(
-        lite_skills_by_key.values(),
+        (records["lite"] for records in records_by_key.values()),
         key=lambda x: (
             x.get("quality_score", 0),
             x.get("trust_score", 0),
@@ -446,6 +465,10 @@ def build_search_index(
     output_dir.mkdir(parents=True, exist_ok=True)
     categories_dir = output_dir / "categories"
     categories_dir.mkdir(exist_ok=True)
+    safe_write_json(
+        output_dir / "category-taxonomy.json",
+        get_taxonomy().public_contract(updated_at=utc_now_isoformat()),
+    )
 
     search_artifacts = write_search_artifacts(
         search_index["s"],
@@ -463,6 +486,7 @@ def build_search_index(
 
     # Write SkillHub Plus lite and scoring indexes.
     lite_index = {
+        "schema_version": 1,
         "version": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
         "updated_at": utc_now_isoformat(),
         "total_count": len(all_lite_skills),
@@ -547,6 +571,7 @@ def build_search_index(
 
     # Write featured
     featured_data = {
+        "schema_version": 1,
         "updated_at": utc_now_isoformat(),
         "count": len(featured_skills),
         "skills": featured_skills,
@@ -586,8 +611,12 @@ def build_search_index(
         except Exception:
             pass
 
-    indexed_skill_count_scan_shape = len(skills)
+    # The scan-shaped public set is the stable-key winner set published by the
+    # search and category artifacts. Keep the pre-dedup scan size in the
+    # explicit raw archive counters and search-index-lite.json.raw_count.
+    indexed_skill_count_scan_shape = len(search_index["s"])
     stats = {
+        "schema_version": 1,
         "updated_at": utc_now_isoformat(),
         "archive_skill_md_count_raw": archive_skill_md_count_raw,
         "archive_metadata_count_raw": archive_metadata_count_raw,
@@ -732,7 +761,7 @@ def main():
         archive_metadata_count_raw = count_named_files(skills_dir, "metadata.json")
         registry_skill_count_dedup = load_registry_count(registry_path)
         if registry_skill_count_dedup is None:
-            registry_skill_count_dedup = len(skills)
+            raise ValueError(f"registry total_count is required: {registry_path}")
     elif registry_path.exists():
         logger.info(f"Loading from registry: {registry_path}")
         skills = load_from_registry(registry_path)
@@ -748,9 +777,7 @@ def main():
 
     # Load plugins
     sources_dir = Path(__file__).parent.parent / "sources"
-    plugins = load_plugins_from_source(sources_dir)
-    if not plugins:
-        plugins = load_plugins_from_registry(registry_path)
+    plugins = load_plugins_with_fallback(sources_dir, registry_path)
     if plugins:
         logger.info(f"Loaded {len(plugins)} plugins")
 

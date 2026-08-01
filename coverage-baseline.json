@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "recorded_commit": "51b5acb069b41fceed343b4b04d42b2f0811f09f",
+  "python_version": "3.11.15",
+  "coverage_version": "7.15.0",
+  "global_line_percent": 66.17610685134801,
+  "module_line_minimums": {
+    "scripts/discover_plugins.py": 80.0,
+    "scripts/plugin_index.py": 80.0
+  },
+  "critical_functions": {
+    "scripts/discover_plugins.py": [
+      "_run_command",
+      "_load_json",
+      "npm_search",
+      "npm_view",
+      "inspect_repo_structure",
+      "get_install_command",
+      "load_existing_plugins",
+      "_load_registry_repos",
+      "discover_from_registry",
+      "derive_status",
+      "run_discovery",
+      "write_discovery_report",
+      "main"
+    ],
+    "scripts/plugin_index.py": [
+      "_validate_plugins",
+      "_load_optional_plugins",
+      "build_plugins_index"
+    ]
+  }
+}

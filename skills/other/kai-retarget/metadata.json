@@ -1,0 +1,38 @@
+{
+  "name": "kai-retarget",
+  "repo": "cgallic/kai-cmo-harness",
+  "path": "harness/skills-v2/kai-retarget/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/cgallic/kai-cmo-harness",
+  "dir_name": "kai-retarget",
+  "downloaded_at": "2026-07-29T02:53:08.768047Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: development=3, marketing=3",
+    "score": 3,
+    "runner_up": "marketing",
+    "runner_up_score": 3,
+    "signals": [
+      "code",
+      "framework",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "cgallic",
+  "source_url": "https://github.com/cgallic/kai-cmo-harness/blob/main/harness/skills-v2/kai-retarget/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cgallic/kai-cmo-harness/blob/main/harness/skills-v2/kai-retarget/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Design retargeting and remarketing campaign architecture across platforms \u2014 audience segmentation, creative strategy, frequency caps, and platform-specific setup with ad policy compliance. Use when \"retargeting\", \"remarketing\", \"retarget\", \"re-engage visitors\", \"abandoned cart\", \"pixel setup\", or any request to bring back visitors who didn't convert."
+}

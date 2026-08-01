@@ -9,7 +9,7 @@ import json
 from collections import Counter, defaultdict
 from dataclasses import dataclass
 from datetime import datetime, timezone
-from pathlib import Path
+from pathlib import Path, PurePosixPath, PureWindowsPath
 from typing import Any
 
 from category_taxonomy import get_taxonomy
@@ -85,6 +85,34 @@ def parse_confidence(value: object) -> float | None:
     if isinstance(value, bool) or not isinstance(value, int | float):
         return None
     return float(value)
+
+
+def parse_standard_relative_path(value: object, *, parts: int) -> PurePosixPath | None:
+    if not isinstance(value, str) or "\\" in value:
+        return None
+    path = PurePosixPath(value)
+    if (
+        path.is_absolute()
+        or PureWindowsPath(value).drive
+        or len(path.parts) != parts
+        or any(part in {".", ".."} for part in path.parts)
+    ):
+        return None
+    return path
+
+
+def path_within_skills_dir(skills_dir: Path, relative_path: PurePosixPath) -> Path | None:
+    path = skills_dir.joinpath(*relative_path.parts)
+    component = skills_dir
+    for part in relative_path.parts:
+        component = component / part
+        if component.is_symlink():
+            return None
+    try:
+        path.resolve().relative_to(skills_dir.resolve())
+    except (OSError, RuntimeError, ValueError):
+        return None
+    return path
 
 
 def file_sha256(path: Path) -> str:
@@ -231,16 +259,21 @@ def build_apply_plan(
             reject_reasons[reason] += 1
             continue
 
-        source_skill_rel = Path(row.path)
-        if len(source_skill_rel.parts) != 3:
+        source_skill_rel = parse_standard_relative_path(row.path, parts=3)
+        if source_skill_rel is None or source_skill_rel.name != "SKILL.md":
             reject_reasons["source path is not standard <category>/<skill>/SKILL.md"] += 1
             continue
         source_dir_rel = source_skill_rel.parent
-        source_dir = skills_dir / source_dir_rel
+        source_dir_state_rel = Path(*source_dir_rel.parts)
+        source_dir = path_within_skills_dir(skills_dir, source_dir_rel)
+        source_skill = path_within_skills_dir(skills_dir, source_skill_rel)
+        if source_dir is None or source_skill is None:
+            reject_reasons["source path escapes skills directory"] += 1
+            continue
         if not source_dir.exists():
             reject_reasons["source directory missing"] += 1
             continue
-        if not (skills_dir / source_skill_rel).is_file():
+        if not source_skill.is_file():
             reject_reasons["source SKILL.md missing"] += 1
             continue
         if reason := source_hash_mismatch(row, source_dir):
@@ -255,7 +288,7 @@ def build_apply_plan(
         key = metadata_key(source_dir, category=target_category, name=normalize_name(name))
         operation, target_dir_rel, operation_reason = select_unique_target(
             state=state,
-            source_dir_rel=source_dir_rel,
+            source_dir_rel=source_dir_state_rel,
             target_category=target_category,
             base_name=base_name,
             key=key,
@@ -266,14 +299,14 @@ def build_apply_plan(
             continue
         move = {
             "operation": operation,
-            "source_path": str(source_dir_rel),
-            "source_skill": str(source_skill_rel),
+            "source_path": source_dir_rel.as_posix(),
+            "source_skill": source_skill_rel.as_posix(),
             "source_category": source_category,
             "current_category": row.current_category,
             "target_category": target_category,
             "target_status": taxonomy.category_status(target_category),
-            "target_path": str(target_dir_rel),
-            "target_skill": str(target_dir_rel / "SKILL.md"),
+            "target_path": target_dir_rel.as_posix(),
+            "target_skill": (target_dir_rel / "SKILL.md").as_posix(),
             "name": name,
             "confidence": row.confidence,
             "key": key,
@@ -330,8 +363,14 @@ def apply_plan(skills_dir: Path, plan: dict[str, Any]) -> None:
     if blocked:
         raise ValueError(f"plan contains {len(blocked)} blocked move(s)")
     for move in plan["moves"]:
-        source = skills_dir / move["source_path"]
-        target = skills_dir / move["target_path"]
+        source_rel = parse_standard_relative_path(move.get("source_path"), parts=2)
+        target_rel = parse_standard_relative_path(move.get("target_path"), parts=2)
+        if source_rel is None or target_rel is None:
+            raise ValueError("plan contains an invalid source or target path")
+        source = path_within_skills_dir(skills_dir, source_rel)
+        target = path_within_skills_dir(skills_dir, target_rel)
+        if source is None or target is None:
+            raise ValueError("plan path escapes skills directory")
         if not source.exists():
             raise FileNotFoundError(f"planned source does not exist: {source}")
         if target.exists():

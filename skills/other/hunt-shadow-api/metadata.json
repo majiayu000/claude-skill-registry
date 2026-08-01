@@ -1,0 +1,38 @@
+{
+  "name": "hunt-shadow-api",
+  "repo": "elementalsouls/Claude-BugHunter",
+  "path": "skills/hunt-shadow-api/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/elementalsouls/Claude-BugHunter",
+  "dir_name": "hunt-shadow-api",
+  "downloaded_at": "2026-07-23T03:02:27.141130Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: api=3, security=3",
+    "score": 3,
+    "runner_up": "security",
+    "runner_up_score": 3,
+    "signals": [
+      "api",
+      "endpoint",
+      "openapi"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "elementalsouls",
+  "source_url": "https://github.com/elementalsouls/Claude-BugHunter/blob/main/skills/hunt-shadow-api/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/elementalsouls/Claude-BugHunter/blob/main/skills/hunt-shadow-api/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Hunt shadow / zombie / undocumented API surface (OWASP API9 Improper Inventory Management) \u2014 enumerate the full API version history (v1/v2/beta/legacy paths, header- and subdomain-based versioning), pull and diff every reachable OpenAPI/Swagger spec (including ones only findable via the Wayback Machine), and behaviorally diff old vs. current versions for auth/rate-limit/validation regressions rather than just response-shape differences. Distinct from hunt-api-misconfig, which owns exploitation once you have a spec or endpoint (mass assignment, JWT, OData, Swagger-chain attacks); distinct from hunt-subdomain, which owns host-level discovery. This skill owns the version-inventory and behavioral-diff workflow itself. Use when the target has versioned API paths, multiple specs, a changelog referencing deprecated endpoints, or a mobile app whose hardcoded backend calls look older than the current web app's."
+}

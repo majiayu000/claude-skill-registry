@@ -1,0 +1,40 @@
+{
+  "name": "team-assign",
+  "repo": "indranilbanerjee/digital-marketing-pro",
+  "path": "skills/team-assign/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/indranilbanerjee/digital-marketing-pro",
+  "dir_name": "team-assign",
+  "downloaded_at": "2026-07-22T03:02:21.677641Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for marketing: marketing, seo, content, social, brand",
+    "score": 5,
+    "runner_up": "productivity",
+    "runner_up_score": 2,
+    "signals": [
+      "marketing",
+      "seo",
+      "content",
+      "social",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "indranilbanerjee",
+  "source_url": "https://github.com/indranilbanerjee/digital-marketing-pro/blob/main/skills/team-assign/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/indranilbanerjee/digital-marketing-pro/blob/main/skills/team-assign/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Assign tasks to team members. Use when: distributing work by role, expertise, and capacity, or managing workloads."
+}

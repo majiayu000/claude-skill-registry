@@ -4,8 +4,10 @@ Extracts metadata and content from SKILL.md files
 """
 
 import re
-import yaml
 from typing import Optional
+
+import yaml
+
 from .config import CATEGORY_KEYWORDS
 
 

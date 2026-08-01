@@ -1,0 +1,38 @@
+{
+  "name": "skill-coverage-gate",
+  "repo": "Tibsfox/gsd-skill-creator",
+  "path": "project-claude/skills/skill-coverage-gate/SKILL.md",
+  "github_branch": "main",
+  "category": "productivity",
+  "source": "github.com/Tibsfox/gsd-skill-creator",
+  "dir_name": "skill-coverage-gate",
+  "downloaded_at": "2026-07-20T03:18:48.078270Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "productivity",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for productivity: task, planning, memory",
+    "score": 3,
+    "runner_up": "planning",
+    "runner_up_score": 2,
+    "signals": [
+      "task",
+      "planning",
+      "memory"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "Tibsfox",
+  "source_url": "https://github.com/Tibsfox/gsd-skill-creator/blob/main/project-claude/skills/skill-coverage-gate/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Tibsfox/gsd-skill-creator/blob/main/project-claude/skills/skill-coverage-gate/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when reviewing, shipping, or regression-testing a SKILL.md and you hold one or more captured trajectories where that skill was actually loaded. Translates the skill's instructions into behavior constraints, then reports which were EXERCISED (coverage) versus untested, and flags any that were in-scope but VIOLATED (compliance) \u2014 a cheap single-trajectory test-adequacy gate. It surfaces untested instructions rather than auto-blocking, and escalates fail-closed only when a violation touches shared repo state, never-surface memory, or self-modification. Complements skill-counterfactual-audit (which measures EFFECT) and skill-causal-curation (which measures contribution); this one asks ADEQUACY. Backed by the agent-skill-coverage metric (arxiv 2606.20659v2). Triggers on skill review, ship gating, and regression-testing a skill against its trajectories."
+}

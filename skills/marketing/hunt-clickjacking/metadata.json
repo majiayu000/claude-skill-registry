@@ -1,0 +1,38 @@
+{
+  "name": "hunt-clickjacking",
+  "repo": "elementalsouls/Claude-BugHunter",
+  "path": "skills/hunt-clickjacking/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/elementalsouls/Claude-BugHunter",
+  "dir_name": "hunt-clickjacking",
+  "downloaded_at": "2026-07-23T03:02:24.024542Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for marketing: marketing, content, social",
+    "score": 3,
+    "runner_up": "security",
+    "runner_up_score": 2,
+    "signals": [
+      "marketing",
+      "content",
+      "social"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "elementalsouls",
+  "source_url": "https://github.com/elementalsouls/Claude-BugHunter/blob/main/skills/hunt-clickjacking/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/elementalsouls/Claude-BugHunter/blob/main/skills/hunt-clickjacking/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Hunt Clickjacking \u2014 missing X-Frame-Options / CSP frame-ancestors lets an attacker embed the target page in an invisible iframe and trick victims into clicking buttons they cannot see (UI redressing). Targets: login flows, money transfers, account settings, OAuth confirmation pages. Confirm by fetching the page, then PROVE it frames in a real browser and a sensitive state-changing action survives the cross-site context (SameSite cookies / framebusting JS can defeat it) \u2014 header-absence alone is not a finding."
+}

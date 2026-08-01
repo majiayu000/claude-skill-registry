@@ -1,0 +1,37 @@
+{
+  "name": "video-voiceover",
+  "repo": "worldwonderer/video-recap-skills",
+  "path": "skills/video-voiceover/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/worldwonderer/video-recap-skills",
+  "dir_name": "video-voiceover",
+  "downloaded_at": "2026-07-14T03:02:24.582480Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=2, quality=2",
+    "score": 2,
+    "runner_up": "quality",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "worldwonderer",
+  "source_url": "https://github.com/worldwonderer/video-recap-skills/blob/main/skills/video-voiceover/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/worldwonderer/video-recap-skills/blob/main/skills/video-voiceover/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Synthesize Chinese narration audio (TTS voiceover) from a timestamped narration.json. Use to turn a written narration script into per-segment speech audio, with MiMo TTS (mimo-v2.5-tts), dynamic speed fitting, and loudness handling. Part of the video-recap bundle: consumes narration.json (output-timeline time), produces tts_segments + tts_meta.json. In the legacy direct-cut path, narration_mapped.json may be passed explicitly instead. \u89e6\u53d1\u8bcd: \u914d\u97f3, \u8bed\u97f3\u5408\u6210, TTS, \u89e3\u8bf4\u914d\u97f3, voiceover, text to speech, \u65c1\u767d\u914d\u97f3."
+}

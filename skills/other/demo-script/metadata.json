@@ -1,0 +1,37 @@
+{
+  "name": "demo-script",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/demo-script/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "demo-script",
+  "downloaded_at": "2026-07-20T03:33:22.368655Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: development=2, product=2",
+    "score": 2,
+    "runner_up": "product",
+    "runner_up_score": 2,
+    "signals": [
+      "framework",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/demo-script/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/demo-script/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Script a product demo that lands \u2014 the audience's-workflow storyline (their day, not your feature list), the golden path rehearsed with fallbacks, the wow moment placed early, and the demo-death contingencies (the backup video, the reset state, the narration bridge). Use when asked script our product demo, demo this to a customer/exec, our demos meander through features, or the demo broke live last time. Produces the demo storyline, the click-path script with fallbacks, the wow placement, and the contingency kit."
+}

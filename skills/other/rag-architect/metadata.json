@@ -1,0 +1,38 @@
+{
+  "name": "rag-architect",
+  "repo": "borghei/Claude-Skills",
+  "path": "engineering/rag-architect/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/borghei/Claude-Skills",
+  "dir_name": "rag-architect",
+  "downloaded_at": "2026-07-30T02:39:47.131369Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: ai-ml=3, context-management=3",
+    "score": 3,
+    "runner_up": "context-management",
+    "runner_up_score": 3,
+    "signals": [
+      "ai",
+      "ml",
+      "model"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "borghei",
+  "source_url": "https://github.com/borghei/Claude-Skills/blob/main/engineering/rag-architect/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/borghei/Claude-Skills/blob/main/engineering/rag-architect/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Design RAG pipelines: chunking, retrieval evaluation, and architecture. Use when building a RAG system, selecting a chunking strategy, choosing a vector database, optimizing retrieval quality, or evaluating with RAGAS metrics."
+}

@@ -1,0 +1,38 @@
+{
+  "name": "architecture-feature-first",
+  "repo": "evanca/flutter-ai-rules",
+  "path": "skills/architecture-feature-first/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/evanca/flutter-ai-rules",
+  "dir_name": "architecture-feature-first",
+  "downloaded_at": "2026-07-30T02:42:42.760518Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "design",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for design: design, ui, component",
+    "score": 3,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "design",
+      "ui",
+      "component"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "evanca",
+  "source_url": "https://github.com/evanca/flutter-ai-rules/blob/main/skills/architecture-feature-first/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/evanca/flutter-ai-rules/blob/main/skills/architecture-feature-first/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when creating a feature, designing folder structure, adding repositories/services/view models, wiring dependency injection, or deciding which layer owns logic."
+}

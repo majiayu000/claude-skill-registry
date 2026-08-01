@@ -1,0 +1,37 @@
+{
+  "name": "genomic-coordinates",
+  "repo": "K-Dense-AI/scientific-agent-skills",
+  "path": "skills/genomic-coordinates/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/K-Dense-AI/scientific-agent-skills",
+  "dir_name": "genomic-coordinates",
+  "downloaded_at": "2026-07-27T03:02:48.593582Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=2, development=2",
+    "score": 2,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "K-Dense-AI",
+  "source_url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/main/skills/genomic-coordinates/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/K-Dense-AI/scientific-agent-skills/blob/main/skills/genomic-coordinates/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Convert genomic intervals between coordinate conventions, normalise and compare variant representations, and detect assembly or contig-naming mismatches before they corrupt an analysis. Use whenever coordinates cross a format, tool, or assembly boundary - converting between BED, GFF/GTF, VCF, SAM/BAM, WIG, PSL, genePred, Picard interval_list, or region strings; reconciling 0-based half-open with 1-based inclusive; left-aligning or trimming indels; checking whether two variant records describe the same change; mapping genomic to transcript, CDS, or protein positions; auditing a BED/GTF/VCF for convention violations; or diagnosing GRCh37 vs hg19 vs GRCh38 vs T2T, chr-prefix, and liftover problems. Triggers include \"off by one\", \"0-based\", \"1-based\", \"half-open\", \"coordinate system\", \"left-align\", \"normalize variant\", \"bcftools norm\", \"chr prefix\", \"wrong genome build\", \"liftover\", \"REF mismatch\", and \"HGVS\"."
+}

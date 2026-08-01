@@ -24,17 +24,10 @@ Environment:
 
 import argparse
 import asyncio
-import hashlib
-import json
-import logging
 import os
-import shutil
-import subprocess
 import sys
 import time
-from datetime import datetime, timedelta, timezone
-from pathlib import Path, PurePosixPath
-from urllib.parse import quote
+from pathlib import Path
 
 # Add parent to path for imports
 SCRIPT_DIR = Path(__file__).resolve().parent
@@ -42,19 +35,10 @@ ROOT_DIR = SCRIPT_DIR.parent
 sys.path.insert(0, str(ROOT_DIR))
 sys.path.insert(0, str(SCRIPT_DIR))
 
+# Compatibility re-exports for callers that still import helpers from this
+# legacy entry point after the sync pipeline was split into focused modules.
 from discover_by_topic import GitHubTopicDiscovery
 from security_blocklist import blocked_metadata_source, load_security_blocklist
-from utils import (
-    build_legal_metadata,
-    build_skill_key,
-    ensure_unique_dir,
-    iter_source_skills,
-    normalize_name,
-)
-
-from crawler.skillsmp_sync import SkillsMPSync
-
-
 from sync_pipeline import (
     build_unified_registry,
     download_skills,
@@ -84,6 +68,53 @@ from sync_pipeline_support import (
     utc_now,
     validate_existing_archive_sources,
 )
+from utils import (
+    build_legal_metadata,
+    build_skill_key,
+    ensure_unique_dir,
+    iter_source_skills,
+    normalize_name,
+)
+
+from crawler.skillsmp_sync import SkillsMPSync
+
+__all__ = [
+    "GitHubTopicDiscovery",
+    "MAX_BUNDLED_FILE_BYTES",
+    "SkillsMPSync",
+    "blocked_metadata_source",
+    "build_branch_probe_order",
+    "build_legal_metadata",
+    "build_relative_probe_order",
+    "build_skill_key",
+    "build_unified_registry",
+    "bundled_relative_path",
+    "download_skills",
+    "ensure_unique_dir",
+    "filter_pending_skills",
+    "is_negative_cache_active",
+    "is_safe_bundled_file",
+    "iter_source_skills",
+    "load_acquisition_manifest",
+    "load_security_blocklist",
+    "logger",
+    "main",
+    "normalize_name",
+    "not_found_cooldown_hours",
+    "prune_negative_cache",
+    "remove_ci_untracked_archive_files",
+    "save_acquisition_manifest",
+    "select_shard_skills",
+    "should_fail_on_empty_download",
+    "should_recurse_bundled_dir",
+    "skill_key",
+    "skill_source_dir",
+    "sync_github_discovery",
+    "sync_skillsmp",
+    "to_utc_iso",
+    "utc_now",
+    "validate_existing_archive_sources",
+]
 
 def main():
     parser = argparse.ArgumentParser(description="Sync and download Claude skills")

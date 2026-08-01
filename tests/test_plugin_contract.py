@@ -142,6 +142,7 @@ def test_build_plugins_index_and_stats_use_plugin_keys(tmp_path):
     assert stats_data["top_repositories"] == [{"repo": "owner/repo", "count": 1}]
     assert stats_data["largest_generated_file_bytes"] > 0
     assert search_pointer["deprecated_full_payload"] is True
+    assert search_pointer["schema_version"] == 1
     assert search_pointer["manifest"] == "search-index-manifest.json"
     assert "s" not in search_pointer
     assert search_manifest["shard_count"] == 1
@@ -151,6 +152,7 @@ def test_build_plugins_index_and_stats_use_plugin_keys(tmp_path):
     assert category_pointer["manifest"] == "categories/development/manifest.json"
     assert "skills" not in category_pointer
     assert category_manifest["part_count"] == 1
+    assert category_manifest["part_strategy"] == "bounded-sequential-stars-desc"
     assert sum(part["count"] for part in category_manifest["parts"]) == 1
     assert lite_data["dedupe_key"] == "install|branch"
     assert lite_data["total_count"] == 1
@@ -475,6 +477,20 @@ def test_safe_write_registry_writes_compact_json(tmp_path):
     assert content == '{"skills":[{"name":"demo","repo":"owner/repo"}]}'
 
 
+def test_safe_write_registry_replaces_existing_file(tmp_path, monkeypatch):
+    registry_path = tmp_path / "registry.json"
+    registry_path.write_text('{"skills":["stale"]}', encoding="utf-8")
+
+    def fail_rename(self, target):
+        raise FileExistsError("Windows refuses to overwrite a target with rename")
+
+    monkeypatch.setattr(Path, "rename", fail_rename)
+
+    assert rebuild_registry.safe_write_registry(registry_path, {"skills": []})
+    assert registry_path.read_text(encoding="utf-8") == '{"skills":[]}'
+    assert not registry_path.with_suffix(".json.tmp").exists()
+
+
 def test_safe_write_registry_raises_on_write_failure(tmp_path):
     registry_path = tmp_path / "missing" / "registry.json"
 
@@ -573,7 +589,7 @@ def test_write_registry_shards_references_paths_from_manifest_location(tmp_path)
     assert all(entry["gzip_path"].startswith("registry-shards/") for entry in entries)
 
 
-def test_build_compatibility_registry_can_omit_manifest_pointer():
+def test_build_compatibility_registry_defaults_to_v1_manifest_pointer():
     registry = rebuild_registry.build_compatibility_registry(
         generated_at="2026-05-14T00:00:00Z",
         total_count=2,
@@ -584,9 +600,13 @@ def test_build_compatibility_registry_can_omit_manifest_pointer():
 
     assert registry["total_count"] == 2
     assert registry["registry_skill_count_dedup"] == 2
-    assert "manifest" not in registry
+    assert registry["schema_version"] == 1
+    assert registry["manifest"] == "registry-manifest.json"
+    assert registry["replacement"] == "registry-shards/*.json"
+    assert registry["compat_since"] == "static-artifact-api-v1"
+    assert registry["compat_until"] == "static-artifact-api-v2"
     assert registry["deprecated_full_payload"] is True
-    assert "merged claude-skill-registry artifact" in registry["message"]
+    assert "registry-shards" in registry["message"]
     assert "skills" not in registry
 
 

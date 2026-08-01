@@ -44,12 +44,22 @@ class LegacyCategoryMigration:
 
 
 @dataclass(frozen=True)
+class AuditSamplingPolicy:
+    schema_version: int
+    seed: str
+    per_category: int
+    categories: tuple[str, ...]
+
+
+@dataclass(frozen=True)
 class CategoryTaxonomy:
     schema_version: int
     default_category: str
     categories: dict[str, CategoryDefinition]
+    codes: dict[str, str]
     aliases: dict[str, str]
     legacy_migrations: dict[str, LegacyCategoryMigration]
+    audit_sampling: AuditSamplingPolicy
 
     def resolve(
         self,
@@ -73,6 +83,16 @@ class CategoryTaxonomy:
         slug = self.resolve(raw_category, allow_unknown=True, allow_alias=True)
         definition = self.categories.get(slug)
         return definition.code if definition else slug
+
+    def slug_for_code(self, raw_code: str | None, *, allow_unknown: bool = False) -> str:
+        code = category_slug(raw_code or "")
+        if not code:
+            return self.default_category
+        if code in self.codes:
+            return self.codes[code]
+        if allow_unknown:
+            return code
+        raise UnknownCategoryError(f"Unknown category code: {raw_code!r}")
 
     def is_known(self, raw_category: str | None) -> bool:
         slug = category_slug(raw_category or "")
@@ -121,6 +141,25 @@ class CategoryTaxonomy:
             return definition.migrate_to or None
         migration = self.legacy_migrations.get(slug)
         return migration.target if migration else None
+
+    def public_contract(self, *, updated_at: str) -> dict[str, Any]:
+        return {
+            "schema_version": 1,
+            "taxonomy_schema_version": self.schema_version,
+            "updated_at": updated_at,
+            "default_category": self.default_category,
+            "default_code": self.code_for(self.default_category),
+            "category_count": len(self.categories),
+            "categories": [
+                {
+                    "slug": definition.slug,
+                    "code": definition.code,
+                    "display_name": definition.display_name,
+                    "parent": definition.parent,
+                }
+                for definition in self.categories.values()
+            ],
+        }
 
 
 def category_slug(raw_category: str | None) -> str:
@@ -239,9 +278,16 @@ def load_taxonomy(path: Path = DEFAULT_TAXONOMY_PATH) -> CategoryTaxonomy:
                     f"taxonomy category {slug!r} has unknown parent "
                     f"{definition.parent!r}"
                 )
-            if parent_definition.status == "deprecated":
+            if parent_definition.status != "active":
                 raise ValueError(
-                    f"taxonomy category {slug!r} has deprecated parent "
+                    f"taxonomy category {slug!r} has non-active parent "
+                    f"{definition.parent!r}"
+                )
+            if definition.parent == slug:
+                raise ValueError(f"taxonomy category {slug!r} must not parent itself")
+            if parent_definition.parent:
+                raise ValueError(
+                    f"taxonomy category {slug!r} exceeds two reporting levels via "
                     f"{definition.parent!r}"
                 )
         if definition.migrate_to:
@@ -300,12 +346,47 @@ def load_taxonomy(path: Path = DEFAULT_TAXONOMY_PATH) -> CategoryTaxonomy:
             reason=reason,
         )
 
+    sampling_raw = payload.get("audit_sampling")
+    if not isinstance(sampling_raw, dict):
+        raise ValueError("taxonomy audit_sampling must contain an object")
+    sampling_schema_version = sampling_raw.get("schema_version")
+    if sampling_schema_version != 1:
+        raise ValueError("taxonomy audit_sampling schema_version must be 1")
+    sampling_seed = str(sampling_raw.get("seed") or "").strip()
+    if not sampling_seed:
+        raise ValueError("taxonomy audit_sampling seed must be non-empty")
+    sampling_quota = sampling_raw.get("per_category")
+    if (
+        isinstance(sampling_quota, bool)
+        or not isinstance(sampling_quota, int)
+        or sampling_quota <= 0
+    ):
+        raise ValueError("taxonomy audit_sampling per_category must be a positive integer")
+    sampling_categories = _as_string_list(sampling_raw.get("categories"))
+    if not sampling_categories or len(set(sampling_categories)) != len(sampling_categories):
+        raise ValueError("taxonomy audit_sampling categories must be unique and non-empty")
+    for sampling_category in sampling_categories:
+        definition = categories.get(sampling_category)
+        if definition is None or definition.status != "active":
+            raise ValueError(
+                "taxonomy audit_sampling category must be active: "
+                f"{sampling_category!r}"
+            )
+    audit_sampling = AuditSamplingPolicy(
+        schema_version=sampling_schema_version,
+        seed=sampling_seed,
+        per_category=sampling_quota,
+        categories=sampling_categories,
+    )
+
     return CategoryTaxonomy(
         schema_version=int(payload.get("schema_version", 1)),
         default_category=default_category,
         categories=categories,
+        codes=codes,
         aliases=aliases,
         legacy_migrations=legacy_migrations,
+        audit_sampling=audit_sampling,
     )
 
 
@@ -349,6 +430,12 @@ def resolve_category(
 
 def get_category_code(raw_category: str | None, *, allow_alias: bool = False) -> str:
     return get_taxonomy().code_for(raw_category, allow_alias=allow_alias)
+
+
+def get_category_slug_from_code(
+    raw_code: str | None, *, allow_unknown: bool = False
+) -> str:
+    return get_taxonomy().slug_for_code(raw_code, allow_unknown=allow_unknown)
 
 
 def category_keywords() -> dict[str, list[str]]:

@@ -1,0 +1,38 @@
+{
+  "name": "eval",
+  "repo": "Kanevry/session-orchestrator",
+  "path": "skills/eval/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Kanevry/session-orchestrator",
+  "dir_name": "eval",
+  "downloaded_at": "2026-07-18T02:36:40.757690Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=2, security=2",
+    "score": 2,
+    "runner_up": "security",
+    "runner_up_score": 2,
+    "signals": [
+      "script",
+      "cli"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter",
+      "tags": "frontmatter:list"
+    }
+  },
+  "author": "Kanevry",
+  "source_url": "https://github.com/Kanevry/session-orchestrator/blob/main/skills/eval/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Kanevry/session-orchestrator/blob/main/skills/eval/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use this skill to run an honest session-process evaluation (Standard v1, aiat-llm-eval/1.0) \u2014 score the last completed orchestrator session against the pre-registered rubric-v1 dimensions, run /eval, evaluate this session, produce an eval report, or re-verify a stored eval run for reproducibility. Deterministic-first with an optional advisory LLM judge; never produces a global score."
+}

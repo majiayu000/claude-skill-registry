@@ -1,0 +1,39 @@
+{
+  "name": "pdf-official",
+  "repo": "sickn33/agentic-awesome-skills",
+  "path": "skills/pdf-official/SKILL.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/sickn33/agentic-awesome-skills",
+  "dir_name": "pdf-official-sickn33-agentic-awesome-skil",
+  "downloaded_at": "2026-07-14T03:00:11.869567Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "documents",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for documents: doc, pdf, excel, xlsx",
+    "score": 4,
+    "runner_up": "business",
+    "runner_up_score": 1,
+    "signals": [
+      "doc",
+      "pdf",
+      "excel",
+      "xlsx"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/pdf-official/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/pdf-official/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "This guide covers essential PDF processing operations using Python libraries and command-line tools. For advanced features, JavaScript libraries, and detailed examples, see reference.md. If you need to fill out a PDF form, read forms.md and follow its instructions."
+}

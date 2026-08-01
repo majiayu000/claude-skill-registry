@@ -1,0 +1,38 @@
+{
+  "name": "commit-gate",
+  "repo": "arbiterForge/codeArbiter",
+  "path": "core/surface/skills/commit-gate/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/arbiterForge/codeArbiter",
+  "dir_name": "commit-gate-arbiterforge-codearbiter-2",
+  "downloaded_at": "2026-07-28T02:46:33.804777Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: data=3, development=3",
+    "score": 3,
+    "runner_up": "development",
+    "runner_up_score": 3,
+    "signals": [
+      "data",
+      "database",
+      "pipeline"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "arbiterForge",
+  "source_url": "https://github.com/arbiterForge/codeArbiter/blob/main/core/surface/skills/commit-gate/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/arbiterForge/codeArbiter/blob/main/core/surface/skills/commit-gate/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "The only path to a commit. Routed to when the user invokes /commit or otherwise instructs codeArbiter to persist staged changes. Nine gated phases \u2014 permission, branch, classification, verification (test/lint/secrets), behavioral proof, diff review, selective stage, message, commit. Nothing reaches version control without clearing every gate; \"it looks good\" is not authorization."
+}

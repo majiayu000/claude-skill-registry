@@ -1,0 +1,38 @@
+{
+  "name": "session-relay",
+  "repo": "claude-world/director-mode-lite",
+  "path": "skills/session-relay/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/claude-world/director-mode-lite",
+  "dir_name": "session-relay",
+  "downloaded_at": "2026-07-27T03:11:12.391008Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=3, development=3",
+    "score": 3,
+    "runner_up": "development",
+    "runner_up_score": 3,
+    "signals": [
+      "bash",
+      "script",
+      "cli"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "claude-world",
+  "source_url": "https://github.com/claude-world/director-mode-lite/blob/main/skills/session-relay/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/claude-world/director-mode-lite/blob/main/skills/session-relay/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Continue real repository work between Claude Code, Codex CLI, and Grok Build with a privacy-bounded, drift-aware handoff packet. Use for cross-vendor takeover, context-limit checkpoints, multi-hop Claude\u2192Codex\u2192Grok relays, or receiving an existing Director packet. Use native resume commands for same-CLI history; never treat another vendor's session ID as portable."
+}

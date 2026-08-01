@@ -1,0 +1,37 @@
+{
+  "name": "revision-editing",
+  "repo": "Tibsfox/gsd-skill-creator",
+  "path": "examples/skills/writing/revision-editing/SKILL.md",
+  "github_branch": "main",
+  "category": "writing",
+  "source": "github.com/Tibsfox/gsd-skill-creator",
+  "dir_name": "revision-editing",
+  "downloaded_at": "2026-07-20T03:18:51.141277Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "writing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for writing: writing, writer",
+    "score": 2,
+    "runner_up": "ai-ml",
+    "runner_up_score": 1,
+    "signals": [
+      "writing",
+      "writer"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "Tibsfox",
+  "source_url": "https://github.com/Tibsfox/gsd-skill-creator/blob/main/examples/skills/writing/revision-editing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Tibsfox/gsd-skill-creator/blob/main/examples/skills/writing/revision-editing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Revision and editing strategies for all writing forms. Covers the revision hierarchy (structural revision, paragraph-level revision, sentence-level editing, proofreading), structural revision techniques (reverse outline, cut test, resequencing, scope audit), paragraph and sentence editing (coherence check, topic sentence audit, sentence combining, deadwood removal, passive voice audit), the workshop model (Calkins Writers Workshop, peer feedback protocols, conferencing, response letters), self-editing techniques (read-aloud test, print-and-mark, time gap, checklist protocols), and common error patterns with diagnostic fixes. Use when revising drafts, editing for clarity, running workshops, or teaching the revision process."
+}

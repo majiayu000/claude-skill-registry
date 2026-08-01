@@ -1,0 +1,37 @@
+{
+  "name": "linkedin-profile-optimizer",
+  "repo": "sergebulaev/linkedin-skills",
+  "path": ".codex-marketplace/linkedin-skills/skills/linkedin-profile-optimizer/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/sergebulaev/linkedin-skills",
+  "dir_name": "linkedin-profile-optimizer-sergebulaev-linkedin-skills",
+  "downloaded_at": "2026-07-19T03:13:00.419211Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: performance=2, product=2",
+    "score": 2,
+    "runner_up": "product",
+    "runner_up_score": 2,
+    "signals": [
+      "optimize",
+      "benchmark"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "sergebulaev",
+  "source_url": "https://github.com/sergebulaev/linkedin-skills/blob/main/.codex-marketplace/linkedin-skills/skills/linkedin-profile-optimizer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sergebulaev/linkedin-skills/blob/main/.codex-marketplace/linkedin-skills/skills/linkedin-profile-optimizer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Audit and rewrite a LinkedIn profile end-to-end for 2026: headline, About 7-step, Featured, banner, photo, Experience metrics, Skills, custom URL, recommendations. Triggers on \"review my profile\", \"rewrite my headline\", \"fix my About\", \"optimize banner\", \"profile audit\", \"LinkedIn bio\". Converts resume-style profiles to ones that convert 3-5x better."
+}

@@ -1,0 +1,38 @@
+{
+  "name": "compound-docs",
+  "repo": "oliver-kriska/claude-elixir-phoenix",
+  "path": "targets/codex/skills/compound-docs/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/oliver-kriska/claude-elixir-phoenix",
+  "dir_name": "compound-docs",
+  "downloaded_at": "2026-07-22T03:08:21.847730Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: development=3, documents=3",
+    "score": 3,
+    "runner_up": "documents",
+    "runner_up_score": 3,
+    "signals": [
+      "code",
+      "build",
+      "debug"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "oliver-kriska",
+  "source_url": "https://github.com/oliver-kriska/claude-elixir-phoenix/blob/main/targets/codex/skills/compound-docs/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/oliver-kriska/claude-elixir-phoenix/blob/main/targets/codex/skills/compound-docs/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Searchable Elixir/Phoenix/Ecto solution documentation system with YAML frontmatter. Builds institutional knowledge from solved problems. Use when consulting past solutions before investigating new issues."
+}

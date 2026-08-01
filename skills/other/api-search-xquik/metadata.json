@@ -1,0 +1,38 @@
+{
+  "name": "api-search-xquik",
+  "repo": "agents-inc/skills",
+  "path": "src/skills/api-search-xquik/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/agents-inc/skills",
+  "dir_name": "api-search-xquik",
+  "downloaded_at": "2026-07-20T03:20:02.373046Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: api=3, productivity=3",
+    "score": 3,
+    "runner_up": "productivity",
+    "runner_up_score": 3,
+    "signals": [
+      "api",
+      "endpoint",
+      "openapi"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "agents-inc",
+  "source_url": "https://github.com/agents-inc/skills/blob/main/src/skills/api-search-xquik/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/agents-inc/skills/blob/main/src/skills/api-search-xquik/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Xquik REST API patterns for X post search, user and timeline reads, cursor pagination, media downloads, monitors, signed webhooks, and approval-gated X actions"
+}

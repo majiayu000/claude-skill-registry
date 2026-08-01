@@ -1,0 +1,39 @@
+{
+  "name": "university-exam-prep",
+  "repo": "staruhub/ClaudeSkills",
+  "path": "lab/Geek-skills-university-exam-prep/SKILL.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/staruhub/ClaudeSkills",
+  "dir_name": "geek-skills-university-exam-prep",
+  "downloaded_at": "2026-07-21T03:12:25.638406Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "documents",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for documents: pdf, word, docx, markdown",
+    "score": 4,
+    "runner_up": "ai-llm",
+    "runner_up_score": 1,
+    "signals": [
+      "pdf",
+      "word",
+      "docx",
+      "markdown"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "staruhub",
+  "source_url": "https://github.com/staruhub/ClaudeSkills/blob/main/lab/Geek-skills-university-exam-prep/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/staruhub/ClaudeSkills/blob/main/lab/Geek-skills-university-exam-prep/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u5927\u5b66\u5907\u8003\u82cf\u683c\u62c9\u5e95\u5f0f\u5b66\u4e60\u52a9\u624b\uff0c\u4e13\u4e3a\u5e94\u5bf9\"\u9762\u5411\u8bfe\u672c\u548cPPT\u8003\u8bd5\"\u8bbe\u8ba1\u3002\u5f53\u7528\u6237\u8bf4\"\u5e2e\u6211\u590d\u4e60\"\u3001\"\u51c6\u5907\u8003\u8bd5\"\u3001\"\u5907\u8003\"\u3001\"\u671f\u672b\u590d\u4e60\"\u3001\"\u6a21\u62df\u5b66\u4e60\"\u3001\"\u7a81\u51fb\u590d\u4e60\"\u7b49\u65f6\u89e6\u53d1\u3002\u6838\u5fc3\u7279\u70b9\uff1a(1)\u5f3a\u5236\u8981\u6c42\u7528\u6237\u4e0a\u4f20\u8bfe\u672c/PPT/\u8003\u7eb2\u7b49\u539f\u59cb\u6750\u6599\u2014\u2014\u6ca1\u6709\u6750\u6599\u5c31\u65e0\u6cd5\u6709\u6548\u8f85\u5bfc\uff1b(2)\u4f7f\u7528\u82cf\u683c\u62c9\u5e95\u5f0f\u63d0\u95ee\u6cd5\uff0c\u4e0d\u76f4\u63a5\u704c\u8f93\u800c\u662f\u5f15\u5bfc\u601d\u8003\uff1b(3)\u4e13\u6ce8\u4e8e\u5e94\u7528\u578b\u548c\u7406\u89e3\u578b\u5185\u5bb9\uff0c\u800c\u975e\u7eaf\u6982\u5ff5\u8bb0\u5fc6\uff1b(4)\u6a21\u62df\u771f\u5b9e\u8003\u8bd5\u573a\u666f\u8fdb\u884c\u9488\u5bf9\u6027\u7ec3\u4e60\uff1b(5)\u5206\u6790\u6750\u6599\u8bc6\u522b\u9ad8\u9891\u8003\u70b9\u548c\u91cd\u96be\u70b9\u3002\u9002\u7528\u4e8e\u5927\u5b66\u5404\u79d1\u76ee\u671f\u4e2d\u671f\u672b\u8003\u8bd5\u5907\u8003\u3001\u7a81\u51fb\u590d\u4e60\u3001\u8003\u524d\u6a21\u62df\u3002"
+}

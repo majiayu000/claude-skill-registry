@@ -1,0 +1,33 @@
+{
+  "name": "unknown",
+  "description": "",
+  "repo": "sergebulaev/linkedin-skills",
+  "path": "SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "discovered",
+  "dir_name": "unknown-sergebulaev-linkedin-skills",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "LICENSE",
+    "README.md",
+    "assets/icon.svg",
+    "references/algorithm-heuristics.md",
+    "references/engagement-metrics-taxonomy.md",
+    "references/hook-formulas.md",
+    "references/industry-benchmarks.md",
+    "references/voice-rules.md",
+    "requirements.txt",
+    "scripts/post_comment.py",
+    "scripts/sync_codex_marketplace.py"
+  ],
+  "author": "sergebulaev",
+  "source_url": "https://github.com/sergebulaev/linkedin-skills/blob/main/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sergebulaev/linkedin-skills/blob/main/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,40 @@
+{
+  "name": "desktop-security-tauri",
+  "repo": "agents-inc/skills",
+  "path": "src/skills/desktop-security-tauri/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/agents-inc/skills",
+  "dir_name": "desktop-security-tauri",
+  "downloaded_at": "2026-07-28T02:45:28.104404Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for development: code, programming, framework, compile, debug",
+    "score": 5,
+    "runner_up": "ai-ml",
+    "runner_up_score": 1,
+    "signals": [
+      "code",
+      "programming",
+      "framework",
+      "compile",
+      "debug"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "agents-inc",
+  "source_url": "https://github.com/agents-inc/skills/blob/main/src/skills/desktop-security-tauri/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/agents-inc/skills/blob/main/src/skills/desktop-security-tauri/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Tauri 2.x deny-by-default security model, capabilities, permissions, scopes, ACL"
+}

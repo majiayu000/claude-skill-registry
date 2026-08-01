@@ -1,0 +1,37 @@
+{
+  "name": "gauntlet",
+  "repo": "oprogramadorreal/optimus-claude",
+  "path": "skills/gauntlet/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/oprogramadorreal/optimus-claude",
+  "dir_name": "gauntlet",
+  "downloaded_at": "2026-07-30T02:51:58.806679Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: agent=2, context-management=2",
+    "score": 2,
+    "runner_up": "context-management",
+    "runner_up_score": 2,
+    "signals": [
+      "agent",
+      "sub-agent"
+    ],
+    "semantic_sources": {
+      "name": "metadata",
+      "description": "frontmatter"
+    }
+  },
+  "author": "oprogramadorreal",
+  "source_url": "https://github.com/oprogramadorreal/optimus-claude/blob/master/skills/gauntlet/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/oprogramadorreal/optimus-claude/blob/master/skills/gauntlet/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Runs a Gauntlet Loop: turns an ambitious goal and optional quality references into a minimal builder/critic prompt judged against a concrete comparison bar, confirms with the user, then executes it as the lead agent until the output beats the bar or the user stops the run. Use for long-horizon goals judged against an inspectable reference. Long-running; spawns many subagents and edits project files."
+}

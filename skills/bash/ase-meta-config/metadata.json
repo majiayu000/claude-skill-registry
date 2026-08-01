@@ -1,0 +1,37 @@
+{
+  "name": "ase-meta-config",
+  "repo": "rse/ase",
+  "path": "plugin/skills/ase-meta-config/SKILL.md",
+  "github_branch": "master",
+  "category": "bash",
+  "source": "github.com/rse/ase",
+  "dir_name": "ase-meta-config",
+  "downloaded_at": "2026-07-27T03:24:31.851633Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "bash",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for bash: bash, cli",
+    "score": 2,
+    "runner_up": "agent",
+    "runner_up_score": 1,
+    "signals": [
+      "bash",
+      "cli"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "rse",
+  "source_url": "https://github.com/rse/ase/blob/master/plugin/skills/ase-meta-config/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/rse/ase/blob/master/plugin/skills/ase-meta-config/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "List, get, set, or delete the layered ASE configuration values across the user/project/task/session scope chain. Use when the user wants to \"configure\" ASE, or to inspect or change a configuration key like `agent.persona`, `agent.guidance`, `agent.task`, or `project.boxing`."
+}

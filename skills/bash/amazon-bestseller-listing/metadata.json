@@ -1,0 +1,38 @@
+{
+  "name": "amazon-bestseller-listing",
+  "repo": "browser-act/skills",
+  "path": "solutions/ecommerce/amazon-bestseller-listing/SKILL.md",
+  "github_branch": "main",
+  "category": "bash",
+  "source": "github.com/browser-act/skills",
+  "dir_name": "amazon-bestseller-listing",
+  "downloaded_at": "2026-07-21T02:57:40.719969Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "bash",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for bash: bash, shell, script",
+    "score": 3,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "shell",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "browser-act",
+  "source_url": "https://github.com/browser-act/skills/blob/main/solutions/ecommerce/amazon-bestseller-listing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/browser-act/skills/blob/main/solutions/ecommerce/amazon-bestseller-listing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Amazon Best Sellers listing scraper: extract product cards from any Amazon Best Sellers (zgbs) or /gp/bestsellers/ category page \u2014 returns rank (position on chart), asin, title, url, image, imageAlt, price, stars, reviewCount, ratingRaw per item, plus category metadata (categoryName, categoryFullName, categoryUrl) and pagination state (currentPage, hasNextPage, nextPageUrl). Works across all Amazon regional TLDs (amazon.com, amazon.co.uk, amazon.de, amazon.co.jp, amazon.fr, amazon.it, amazon.es, amazon.ca, amazon.com.au, amazon.in, etc.). Use when user mentions Amazon Best Sellers, Amazon bestsellers, Amazon top 100, Amazon zgbs, Amazon /zgbs/, Amazon /gp/bestsellers/, Amazon Best Sellers Rank, Amazon BSR, Amazon top ranked products, Amazon top-selling products, Amazon chart, Amazon category ranking, Amazon best sellers by category, Amazon best sellers electronics, Amazon best sellers kitchen, Amazon best sellers toys, scrape Amazon bestsellers, extract Amazon top 100, Amazon rank scraper, Amazon best seller list, Amazon leaderboard, Amazon trending products, discover trending Amazon products, Amazon niche discovery, Amazon top ranked ASINs. Also applies to competitive intelligence via ranking snapshots, spotting up-and-coming products, sourcing bestseller ASINs for further enrichment, tracking rank changes over time, and building bestseller-per-category datasets."
+}

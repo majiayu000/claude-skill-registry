@@ -1,0 +1,37 @@
+{
+  "name": "seedream-imagegen",
+  "repo": "staruhub/ClaudeSkills",
+  "path": "lab/Geek-skills-seedream-imagegen/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/staruhub/ClaudeSkills",
+  "dir_name": "geek-skills-seedream-imagegen",
+  "downloaded_at": "2026-07-21T03:12:24.678345Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: ai-llm=2, bash=2",
+    "score": 2,
+    "runner_up": "bash",
+    "runner_up_score": 2,
+    "signals": [
+      "ai",
+      "prompt"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "staruhub",
+  "source_url": "https://github.com/staruhub/ClaudeSkills/blob/main/lab/Geek-skills-seedream-imagegen/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/staruhub/ClaudeSkills/blob/main/lab/Geek-skills-seedream-imagegen/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u7528 ByteDance Seedream 4.0 API\uff08\u7ecf Segmind\uff09\u751f\u6210 AI \u56fe\u50cf\u3002\u5f53\u7528\u6237\u8981\u4ece\u6587\u5b57\u63cf\u8ff0\u751f\u6210\u8425\u9500\u7d20\u6750\u3001\u6d77\u62a5\u3001\u4ea7\u54c1\u56fe\u3001\u6982\u5ff5\u56fe\u3001\u793e\u4ea4\u5a92\u4f53\u914d\u56fe\u7b49\u9ad8\u8d28\u91cf\u56fe\u50cf\uff0c\u4e14\u73af\u5883\u914d\u6709 SEGMIND_API_KEY \u65f6\u4f7f\u7528\u3002\u652f\u6301 2K/4K\u3001\u591a\u6bd4\u4f8b\u3001\u5355\u6b21\u6700\u591a 15 \u5f20\u6279\u91cf\u3001\u6700\u591a 3 \u5f20\u53c2\u8003\u56fe\u63a7\u98ce\u683c\u3002\u4e0d\u7528\u4e8e\uff1a\u4fee\u6539/\u7f16\u8f91\u5df2\u6709\u56fe\u7247\uff08\u7528\u56fe\u50cf\u7f16\u8f91\u7c7b skill\uff09\u3001\u89c6\u9891\u751f\u6210\u3001\u65e0 API \u73af\u5883\u4e0b\u7684\u5feb\u901f\u914d\u56fe\u9700\u6c42\u3002"
+}

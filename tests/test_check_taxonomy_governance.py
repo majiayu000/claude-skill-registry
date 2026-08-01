@@ -41,6 +41,11 @@ def test_governance_reports_old_schema_error(tmp_path):
         """
 schema_version: 1
 default_category: other
+audit_sampling:
+  schema_version: 1
+  seed: test
+  per_category: 1
+  categories: [other]
 categories:
   - slug: other
     code: oth
@@ -80,6 +85,11 @@ def test_governance_requires_active_category_rules(tmp_path):
         """
 schema_version: 2
 default_category: other
+audit_sampling:
+  schema_version: 1
+  seed: test
+  per_category: 1
+  categories: [other]
 categories:
   - slug: other
     code: oth
@@ -115,6 +125,11 @@ def test_governance_strict_canonical_rejects_transitional_definitions(tmp_path):
         """
 schema_version: 2
 default_category: other
+audit_sampling:
+  schema_version: 1
+  seed: test
+  per_category: 1
+  categories: [other]
 categories:
   - slug: other
     code: oth

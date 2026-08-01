@@ -1,0 +1,37 @@
+{
+  "name": "longbridge-content",
+  "repo": "sickn33/agentic-awesome-skills",
+  "path": "skills/longbridge-content/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/sickn33/agentic-awesome-skills",
+  "dir_name": "longbridge-content-sickn33-agentic-awesome-skil",
+  "downloaded_at": "2026-07-16T03:06:39.169301Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: development=2, security=2",
+    "score": 2,
+    "runner_up": "security",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "framework"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/longbridge-content/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/longbridge-content/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Latest news articles, regulatory filings, community discussion topics for listed stocks, and SEC EDGAR filing analysis (10-K/10-Q/8-K/proxy/Form 4) via Longbridge. Triggers: \"\u65b0\u95fb\", \"\u516c\u544a\", \"\u8d44\u8baf\", \"\u8bdd\u9898\", \"\u793e\u533a\u8ba8\u8bba\", \"SEC\", \"10-K\", \"10-Q\", \"8-K\", \"Form 4\", \"\u65b0\u805e\", \"\u516c\u544a\", \"\u8cc7\u8a0a\", \"\u8a71\u984c\", \"\u793e\u5340\u8a0e\u8ad6\", \"news\",..."
+}

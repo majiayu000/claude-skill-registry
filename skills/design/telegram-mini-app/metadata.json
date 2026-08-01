@@ -1,0 +1,39 @@
+{
+  "name": "telegram-mini-app",
+  "repo": "sickn33/agentic-awesome-skills",
+  "path": "skills/telegram-mini-app/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/sickn33/agentic-awesome-skills",
+  "dir_name": "telegram-mini-app",
+  "downloaded_at": "2026-07-14T03:00:18.160681Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "design",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for design: design, ui, ux, component",
+    "score": 4,
+    "runner_up": "bash",
+    "runner_up_score": 2,
+    "signals": [
+      "design",
+      "ui",
+      "ux",
+      "component"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/telegram-mini-app/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/telegram-mini-app/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Expert in building Telegram Mini Apps (TWA) - web apps that run inside Telegram with native-like experience. Covers the TON ecosystem, Telegram Web App API, payments, user authentication, and building viral mini apps that monetize."
+}

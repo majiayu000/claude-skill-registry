@@ -1,0 +1,37 @@
+{
+  "name": "hunt-forgot-password",
+  "repo": "elementalsouls/Claude-BugHunter",
+  "path": "skills/hunt-forgot-password/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/elementalsouls/Claude-BugHunter",
+  "dir_name": "hunt-forgot-password",
+  "downloaded_at": "2026-07-23T03:02:26.805502Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: api=2, security=2",
+    "score": 2,
+    "runner_up": "security",
+    "runner_up_score": 2,
+    "signals": [
+      "api",
+      "endpoint"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "elementalsouls",
+  "source_url": "https://github.com/elementalsouls/Claude-BugHunter/blob/main/skills/hunt-forgot-password/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/elementalsouls/Claude-BugHunter/blob/main/skills/hunt-forgot-password/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Hunt Forgot Password / Account Recovery Authentication Flaws \u2014 5 distinct patterns: (1) username enumeration via different responses for valid vs invalid email, (2) reset token exposed directly in the API response body, (3) reset token not invalidated after use (replay), (4) password reset link works from a different IP/browser (no binding), (5) no rate limit on the reset request endpoint. These are the standalone recovery-flow broken-auth primitives \u2014 distinct from reset-email host-header poisoning (hunt-host-header) and the full ATO chain (hunt-ato owns password-reset as an ATO path; prove the primitive here, chain it there). Detection: trace the full forgot-password flow from request to token to use; check response diffs between valid/invalid emails; test token replay after consumption. Medium to High (enumeration=Medium, token-reuse=High, account-takeover=Critical when chained to known-email)."
+}

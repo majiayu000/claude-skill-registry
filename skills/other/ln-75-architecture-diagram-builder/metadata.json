@@ -1,0 +1,38 @@
+{
+  "name": "ln-75-architecture-diagram-builder",
+  "repo": "levnikolaevich/claude-code-skills",
+  "path": "plugins/architecture-suite/skills/ln-75-architecture-diagram-builder/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/levnikolaevich/claude-code-skills",
+  "dir_name": "ln-75-architecture-diagram-builder",
+  "downloaded_at": "2026-07-30T02:47:49.945638Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: design=3, documents=3",
+    "score": 3,
+    "runner_up": "documents",
+    "runner_up_score": 3,
+    "signals": [
+      "design",
+      "ui",
+      "component"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "levnikolaevich",
+  "source_url": "https://github.com/levnikolaevich/claude-code-skills/blob/master/plugins/architecture-suite/skills/ln-75-architecture-diagram-builder/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/levnikolaevich/claude-code-skills/blob/master/plugins/architecture-suite/skills/ln-75-architecture-diagram-builder/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Creates evidence-backed current or target architecture diagrams. Use when relationships need visualization; not for UI design, architecture audit, or invented structure."
+}

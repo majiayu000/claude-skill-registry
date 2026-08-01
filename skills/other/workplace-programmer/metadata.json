@@ -1,0 +1,37 @@
+{
+  "name": "workplace-programmer",
+  "repo": "AlpacaLabsLLC/skills-for-architects",
+  "path": "skills/workplace-programmer/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/AlpacaLabsLLC/skills-for-architects",
+  "dir_name": "workplace-programmer",
+  "downloaded_at": "2026-07-21T02:46:01.123725Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: ai-ml=2, development=2",
+    "score": 2,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "ai",
+      "model"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "AlpacaLabsLLC",
+  "source_url": "https://github.com/AlpacaLabsLLC/skills-for-architects/blob/main/skills/workplace-programmer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AlpacaLabsLLC/skills-for-architects/blob/main/skills/workplace-programmer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "AI workplace strategy consultant that builds office space programs through conversation \u2014 area splits, room schedules, seat counts, and reports. Use when the user asks to \"program an office\", size a workplace, or build a room schedule or space program for office space."
+}

@@ -1,0 +1,37 @@
+{
+  "name": "023-assumption-analysis",
+  "repo": "jabrena/plinth",
+  "path": "skills/023-assumption-analysis/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/jabrena/plinth",
+  "dir_name": "023-assumption-analysis",
+  "downloaded_at": "2026-08-02T03:09:20.371233Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: planning=2, productivity=2",
+    "score": 2,
+    "runner_up": "productivity",
+    "runner_up_score": 2,
+    "signals": [
+      "planning",
+      "plan"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "jabrena",
+  "source_url": "https://github.com/jabrena/plinth/blob/main/skills/023-assumption-analysis/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jabrena/plinth/blob/main/skills/023-assumption-analysis/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when a framed and root-caused problem needs its assumptions made explicit before design or planning begins \u2014 explicit Assumptions, Unknowns, and a Validation plan. This should trigger when an issue's Assumption Analysis point of view needs evaluation, or when a maintainer directly asks to surface hidden assumptions and unknowns before committing to an approach. Part of Plinth Toolkit"
+}

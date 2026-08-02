@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-08-01T03:22:25.722629Z",
+  "updated_at": "2026-08-02T03:22:51.661261Z",
   "total_count": 1602,
   "entries": {
     "Xquik-dev/x-twitter-scraper": {
@@ -151,7 +151,7 @@
       "repo": "Haibarakiku/abaqus-ml-skills",
       "branch": "main",
       "relative_path": "skills/abaqus-surrogate-fea-validation/SKILL.md",
-      "updated_at": "2026-05-04T02:21:02.448729Z"
+      "updated_at": "2026-08-02T03:22:16.874935Z"
     },
     "0xRy4n/hubspot-developer-skill": {
       "repo": "0xRy4n/hubspot-developer-skill",
@@ -9181,7 +9181,7 @@
       "repo": "Xquik-dev/x-twitter-scraper",
       "branch": "master",
       "relative_path": "skills/x-twitter-scraper/SKILL.md",
-      "updated_at": "2026-08-01T03:22:13.139887Z"
+      "updated_at": "2026-08-02T03:22:36.225281Z"
     },
     "Digidai/product-manager-skills:name:product-manager-skills": {
       "repo": "Digidai/product-manager-skills",
@@ -9205,13 +9205,13 @@
       "repo": "yusufkaraaslan/Skill_Seekers",
       "branch": "main",
       "relative_path": "skills/skill-seekers/SKILL.md",
-      "updated_at": "2026-08-01T03:22:05.777164Z"
+      "updated_at": "2026-08-02T03:22:16.081573Z"
     },
     "lackeyjb/playwright-skill:name:playwright-skill": {
       "repo": "lackeyjb/playwright-skill",
       "branch": "main",
       "relative_path": "skills/playwright-skill/SKILL.md",
-      "updated_at": "2026-08-01T03:22:05.879393Z"
+      "updated_at": "2026-08-02T03:22:16.371629Z"
     },
     "ToniPerea/humanizar-texto-es:name:humanizar-texto-es": {
       "repo": "ToniPerea/humanizar-texto-es",
@@ -9253,7 +9253,7 @@
       "repo": "alonw0/web-asset-generator",
       "branch": "main",
       "relative_path": "skills/web-asset-generator/SKILL.md",
-      "updated_at": "2026-08-01T03:22:06.713288Z"
+      "updated_at": "2026-08-02T03:22:18.242766Z"
     },
     "varfolomejev/query-victorialogs:name:query-victorialogs": {
       "repo": "varfolomejev/query-victorialogs",
@@ -9265,7 +9265,7 @@
       "repo": "Enreign/pagerunner-skill",
       "branch": "main",
       "relative_path": "skills/pagerunner-skill/SKILL.md",
-      "updated_at": "2026-08-01T03:22:06.992178Z"
+      "updated_at": "2026-08-02T03:22:18.499770Z"
     },
     "miningstore/confluence-to-agent-knowledge-base:name:confluence-to-agent-knowledge-base": {
       "repo": "miningstore/confluence-to-agent-knowledge-base",
@@ -9571,19 +9571,19 @@
       "repo": "RS42-AI/scout-ai-lite",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-08-01T03:22:05.977267Z"
+      "updated_at": "2026-08-02T03:22:16.604001Z"
     },
     "Dicklesworthstone/slb:name:unknown": {
       "repo": "Dicklesworthstone/slb",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-08-01T03:22:06.617482Z"
+      "updated_at": "2026-08-02T03:22:18.182085Z"
     },
     "diskd-ai/gemini-api:name:unknown": {
       "repo": "diskd-ai/gemini-api",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-08-01T03:22:06.879306Z"
+      "updated_at": "2026-08-02T03:22:18.806618Z"
     },
     "baileywickham/ibkr:skills/ibkr": {
       "repo": "baileywickham/ibkr",

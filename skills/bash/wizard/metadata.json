@@ -1,0 +1,38 @@
+{
+  "name": "wizard",
+  "repo": "OutlineDriven/odin-claude-plugin",
+  "path": "skills/wizard/SKILL.md",
+  "github_branch": "main",
+  "category": "bash",
+  "source": "github.com/OutlineDriven/odin-claude-plugin",
+  "dir_name": "wizard",
+  "downloaded_at": "2026-08-02T02:56:47.876554Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "bash",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for bash: bash, shell, script",
+    "score": 3,
+    "runner_up": "devops",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "shell",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "OutlineDriven",
+  "source_url": "https://github.com/OutlineDriven/odin-claude-plugin/blob/main/skills/wizard/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OutlineDriven/odin-claude-plugin/blob/main/skills/wizard/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Generate an interactive bash wizard that walks a human through a manual procedure: third-party setup, a one-off migration, or an A to B state transition. It opens URLs, captures values, confirms each step, and writes .env entries and GitHub Actions secrets. Author it, never run it."
+}

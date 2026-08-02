@@ -1,0 +1,38 @@
+{
+  "name": "to-tickets",
+  "repo": "OutlineDriven/odin-claude-plugin",
+  "path": "skills/to-tickets/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/OutlineDriven/odin-claude-plugin",
+  "dir_name": "to-tickets",
+  "downloaded_at": "2026-08-02T02:56:48.369579Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: code, build, refactor",
+    "score": 3,
+    "runner_up": "context-management",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "build",
+      "refactor"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "OutlineDriven",
+  "source_url": "https://github.com/OutlineDriven/odin-claude-plugin/blob/main/skills/to-tickets/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OutlineDriven/odin-claude-plugin/blob/main/skills/to-tickets/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Break a plan, spec, or conversation into tracer-bullet tickets, each declaring the tickets that block it, published as GitHub issues or local files. Use when a settled plan needs decomposing into implementation tickets, including wide refactors that need expand-contract sequencing."
+}

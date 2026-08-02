@@ -1,0 +1,37 @@
+{
+  "name": "ase-task-dissect",
+  "repo": "rse/ase",
+  "path": "plugin/skills/ase-task-dissect/SKILL.md",
+  "github_branch": "master",
+  "category": "development",
+  "source": "github.com/rse/ase",
+  "dir_name": "ase-task-dissect",
+  "downloaded_at": "2026-08-02T03:16:37.831556Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: code, refactor",
+    "score": 2,
+    "runner_up": "ai-ml",
+    "runner_up_score": 1,
+    "signals": [
+      "code",
+      "refactor"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "rse",
+  "source_url": "https://github.com/rse/ase/blob/master/plugin/skills/ase-task-dissect/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/rse/ase/blob/master/plugin/skills/ase-task-dissect/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Dissect the current or given task plan, treated as an epic, domain-wise and logically into cohesive parts and materialize each part as its own separate task plan. Use when the user calls to \"dissect\", \"split\", \"break up\", or \"decompose\" a large \"task\" or \"plan\"."
+}

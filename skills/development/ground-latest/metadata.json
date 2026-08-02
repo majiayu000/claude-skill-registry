@@ -1,0 +1,39 @@
+{
+  "name": "ground-latest",
+  "repo": "OutlineDriven/odin-claude-plugin",
+  "path": "skills/ground-latest/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/OutlineDriven/odin-claude-plugin",
+  "dir_name": "ground-latest",
+  "downloaded_at": "2026-08-02T02:56:49.673703Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for development: code, framework, build, refactor",
+    "score": 4,
+    "runner_up": "ai-ml",
+    "runner_up_score": 1,
+    "signals": [
+      "code",
+      "framework",
+      "build",
+      "refactor"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "OutlineDriven",
+  "source_url": "https://github.com/OutlineDriven/odin-claude-plugin/blob/main/skills/ground-latest/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OutlineDriven/odin-claude-plugin/blob/main/skills/ground-latest/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Ground every version, stack, and best-practice choice in what is current today, read from the release channel rather than from recall. Use when starting a new codebase or service, scaffolding a project, migrating or refactoring an existing one, picking a language edition, runtime, framework, or dependency, or when the user asks for the latest, current, LTS, or modern way."
+}

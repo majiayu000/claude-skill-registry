@@ -2,7 +2,6 @@
 name: gemini-api
 description: Gemini API skill for Claude Code
 ---
-
 # Gemini API
 
 Generate text from text, images, video, and audio using Google's Gemini API.

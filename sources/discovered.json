@@ -1,7 +1,7 @@
 {
-  "discovered_at": "2026-08-01T03:21:34.798993Z",
+  "discovered_at": "2026-08-02T03:21:49.361491Z",
   "total_repos": 300,
-  "total_skills": 5,
+  "total_skills": 20,
   "scanned_repos": 300,
   "limits": {
     "max_repos": 300,
@@ -314,24 +314,84 @@
   ],
   "skills": [
     {
+      "repo": "JuneYaooo/gpt-image2-ppt-skills",
+      "path": "skills/web-ppt-template-distiller/SKILL.md"
+    },
+    {
       "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "skills/wayfinder/SKILL.md"
+      "path": "skills/wizard/SKILL.md"
     },
     {
-      "repo": "bitjaru/styleseed",
-      "path": "engine/.claude/skills/ss-resolve/SKILL.md"
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "skills/do-it-now/SKILL.md"
     },
     {
-      "repo": "motherduckdb/agent-skills",
-      "path": "skills/motherduck-design-dive/SKILL.md"
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "skills/to-tickets/SKILL.md"
     },
     {
-      "repo": "motherduckdb/agent-skills",
-      "path": "plugins/motherduck-skills/skills/motherduck-design-dive/SKILL.md"
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "skills/ground-latest/SKILL.md"
     },
     {
-      "repo": "motherduckdb/agent-skills",
-      "path": "plugins/motherduck-skills-claude/skills/motherduck-design-dive/SKILL.md"
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "skills/lighter-checks/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "skills/codebase-design/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "skills/prototype-logic/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "skills/domain-modeling/SKILL.md"
+    },
+    {
+      "repo": "agents-inc/skills",
+      "path": "src/skills/api-baas-planetscale/SKILL.md"
+    },
+    {
+      "repo": "jabrena/plinth",
+      "path": "skills/058-design-bdd/SKILL.md"
+    },
+    {
+      "repo": "jabrena/plinth",
+      "path": "skills/059-design-atdd/SKILL.md"
+    },
+    {
+      "repo": "jabrena/plinth",
+      "path": "skills/024-context-mapping/SKILL.md"
+    },
+    {
+      "repo": "jabrena/plinth",
+      "path": "skills/021-problem-framing/SKILL.md"
+    },
+    {
+      "repo": "jabrena/plinth",
+      "path": "skills/023-assumption-analysis/SKILL.md"
+    },
+    {
+      "repo": "jabrena/plinth",
+      "path": "skills/022-root-cause-analysis/SKILL.md"
+    },
+    {
+      "repo": "jabrena/plinth",
+      "path": "skills/025-quality-attribute-discovery/SKILL.md"
+    },
+    {
+      "repo": "rse/ase",
+      "path": "plugin/skills/ase-code-dissect/SKILL.md"
+    },
+    {
+      "repo": "rse/ase",
+      "path": "plugin/skills/ase-task-dissect/SKILL.md"
+    },
+    {
+      "repo": "rse/ase",
+      "path": "plugin/skills/ase-meta-workflow/SKILL.md"
     }
   ]
 }

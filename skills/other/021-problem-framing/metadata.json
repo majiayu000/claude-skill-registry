@@ -1,0 +1,37 @@
+{
+  "name": "021-problem-framing",
+  "repo": "jabrena/plinth",
+  "path": "skills/021-problem-framing/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/jabrena/plinth",
+  "dir_name": "021-problem-framing",
+  "downloaded_at": "2026-08-02T03:09:20.051475Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: planning=2, productivity=2",
+    "score": 2,
+    "runner_up": "productivity",
+    "runner_up_score": 2,
+    "signals": [
+      "planning",
+      "plan"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "jabrena",
+  "source_url": "https://github.com/jabrena/plinth/blob/main/skills/021-problem-framing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jabrena/plinth/blob/main/skills/021-problem-framing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when a problem or issue needs explicit framing before deeper analysis begins \u2014 establishing the Problem statement, Current state, Desired state, Stakeholders, and Success criteria. This should trigger when an issue's Problem Framing point of view needs evaluation, or when a maintainer directly asks to frame a problem before root-cause analysis, design, or planning begins. Part of Plinth Toolkit"
+}

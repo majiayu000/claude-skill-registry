@@ -94,6 +94,12 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Capture previous publish provenance
+        run: |
+          set -euo pipefail
+          test -s provenance/merge-source.json
+          cp provenance/merge-source.json "$RUNNER_TEMP/previous-merge-source.json"
+
       - name: Checkout pinned core
         uses: actions/checkout@v6
         with:
@@ -101,7 +107,8 @@ jobs:
           ref: ${{ steps.refs.outputs.core_sha }}
           token: ${{ secrets.MAIN_REPO_TOKEN != '' && secrets.MAIN_REPO_TOKEN || github.token }}
           path: _sources/core
-          fetch-depth: 1
+          filter: tree:0
+          fetch-depth: 0
 
       - name: Checkout pinned data
         uses: actions/checkout@v6
@@ -110,7 +117,8 @@ jobs:
           ref: ${{ steps.refs.outputs.data_sha }}
           token: ${{ secrets.DATA_REPO_TOKEN != '' && secrets.DATA_REPO_TOKEN || github.token }}
           path: _sources/data
-          fetch-depth: 1
+          filter: tree:0
+          fetch-depth: 0
 
       - name: Move source repos to temp dirs
         id: srcpaths
@@ -123,6 +131,24 @@ jobs:
           rm -rf _sources
           echo "core_dir=$CORE_DIR" >> "$GITHUB_OUTPUT"
           echo "data_dir=$DATA_DIR" >> "$GITHUB_OUTPUT"
+
+      - name: Build validated publish commit message
+        env:
+          CORE_REPO: ${{ steps.refs.outputs.core_repo }}
+          CORE_SHA: ${{ steps.refs.outputs.core_sha }}
+          DATA_REPO: ${{ steps.refs.outputs.data_repo }}
+          DATA_SHA: ${{ steps.refs.outputs.data_sha }}
+        run: |
+          set -euo pipefail
+          python3 "${{ steps.srcpaths.outputs.core_dir }}/scripts/build_publish_commit_message.py" \
+            --previous-provenance "$RUNNER_TEMP/previous-merge-source.json" \
+            --core-repo "$CORE_REPO" \
+            --core-dir "${{ steps.srcpaths.outputs.core_dir }}" \
+            --core-sha "$CORE_SHA" \
+            --data-repo "$DATA_REPO" \
+            --data-dir "${{ steps.srcpaths.outputs.data_dir }}" \
+            --data-sha "$DATA_SHA" \
+            --output "$RUNNER_TEMP/publish-commit-message.txt"
 
       - name: Rebuild main from pinned refs
         run: |
@@ -425,7 +451,8 @@ jobs:
             exit 0
           fi
 
-          git commit -m "chore: publish merged artifact core@${CORE_SHA:0:12} data@${DATA_SHA:0:12}"
+          test -s "$RUNNER_TEMP/publish-commit-message.txt"
+          git commit --file "$RUNNER_TEMP/publish-commit-message.txt"
           for attempt in 1 2 3; do
             if git push; then
               echo "Push succeeded on attempt $attempt"

@@ -1,0 +1,23 @@
+{
+  "name": "unknown",
+  "description": null,
+  "repo": "fredsun/CodeDiary",
+  "path": "Skill.md",
+  "github_branch": "master",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "GitHub Code Search Results",
+  "dir_name": "unknown-fredsun-codediary",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "markdownimg-base64.py"
+  ],
+  "author": "fredsun",
+  "source_url": "https://github.com/fredsun/CodeDiary/blob/master/Skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/fredsun/CodeDiary/blob/master/Skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

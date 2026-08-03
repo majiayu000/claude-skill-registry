@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-02T14:09:49.363730Z",
-  "archive_skill_md_count_raw": 202364,
-  "archive_metadata_count_raw": 202362,
-  "indexed_skill_count_scan_shape": 161306,
-  "registry_skill_count_dedup": 160874,
+  "updated_at": "2026-08-03T04:13:28.481390Z",
+  "archive_skill_md_count_raw": 202372,
+  "archive_metadata_count_raw": 202370,
+  "indexed_skill_count_scan_shape": 161308,
+  "registry_skill_count_dedup": 160875,
   "total_plugins": 4,
   "categories": 40,
   "category_counts": [
@@ -36,7 +36,7 @@
     {
       "name": "bash",
       "code": "bash",
-      "count": 528
+      "count": 529
     },
     {
       "name": "business",
@@ -76,7 +76,7 @@
     {
       "name": "development",
       "code": "dev",
-      "count": 36959
+      "count": 36960
     },
     {
       "name": "devops",
@@ -255,36 +255,36 @@
   ],
   "featured_count": 100,
   "index_size_bytes": 324,
-  "index_size_gzip_bytes": 244,
+  "index_size_gzip_bytes": 245,
   "search_shard_count": 5,
-  "search_largest_shard_bytes": 8388635,
-  "search_largest_shard_gzip_bytes": 2491455,
+  "search_largest_shard_bytes": 8388673,
+  "search_largest_shard_gzip_bytes": 2491469,
   "category_shard_count": 45,
   "category_largest_part_bytes": 8388617,
   "category_largest_part_gzip_bytes": 1806012,
-  "lite_index_count": 161306,
+  "lite_index_count": 161308,
   "lite_index_included_count": 5000,
   "lite_index_size_bytes": 3502335,
   "lite_index_gzip_size_bytes": 681029,
   "quality_index_size_bytes": 364,
-  "quality_index_gzip_size_bytes": 271,
+  "quality_index_gzip_size_bytes": 270,
   "quality_shard_count": 6,
   "quality_largest_shard_bytes": 8388618,
-  "quality_largest_shard_gzip_bytes": 1763087,
+  "quality_largest_shard_gzip_bytes": 1763129,
   "security_index_size_bytes": 368,
   "security_index_gzip_size_bytes": 272,
   "security_shard_count": 19,
-  "security_largest_shard_bytes": 8388641,
-  "security_largest_shard_gzip_bytes": 1590573,
+  "security_largest_shard_bytes": 8388658,
+  "security_largest_shard_gzip_bytes": 1590385,
   "ranking_index_size_bytes": 364,
   "ranking_index_gzip_size_bytes": 271,
   "ranking_shard_count": 5,
   "ranking_largest_shard_bytes": 8388700,
-  "ranking_largest_shard_gzip_bytes": 2183501,
+  "ranking_largest_shard_gzip_bytes": 2183500,
   "largest_generated_file_bytes": 8388700,
   "security_scan": {
-    "total": 202362,
-    "passed": 202362,
+    "total": 202370,
+    "passed": 202370,
     "failed": 0
   }
 }

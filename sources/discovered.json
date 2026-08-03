@@ -1,7 +1,7 @@
 {
-  "discovered_at": "2026-08-02T03:21:49.361491Z",
+  "discovered_at": "2026-08-03T03:25:17.231673Z",
   "total_repos": 300,
-  "total_skills": 20,
+  "total_skills": 1,
   "scanned_repos": 300,
   "limits": {
     "max_repos": 300,
@@ -13,6 +13,7 @@
   "repos": [
     "0xGhostCAT/claude-ai-cyber-security-skills",
     "0xwilliamortiz/agents-council",
+    "0xwilliamortiz/humanizer-cli",
     "0xwilliamortiz/ponytail-improved",
     "2389-research/claude-plugins",
     "23blocks-OS/ai-maestro",
@@ -138,7 +139,6 @@
     "claude-world/director-mode-lite",
     "code-yeongyu/oh-my-openagent",
     "codeaashu/claude-code",
-    "coffeefuelbump/csv-data-summarizer-claude-skill",
     "composio-community/awesome-claude-plugins",
     "conorluddy/ios-simulator-skill",
     "cybrixcc/cybrix-skills",
@@ -314,84 +314,8 @@
   ],
   "skills": [
     {
-      "repo": "JuneYaooo/gpt-image2-ppt-skills",
-      "path": "skills/web-ppt-template-distiller/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "skills/wizard/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "skills/do-it-now/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "skills/to-tickets/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "skills/ground-latest/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "skills/lighter-checks/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "skills/codebase-design/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "skills/prototype-logic/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "skills/domain-modeling/SKILL.md"
-    },
-    {
-      "repo": "agents-inc/skills",
-      "path": "src/skills/api-baas-planetscale/SKILL.md"
-    },
-    {
-      "repo": "jabrena/plinth",
-      "path": "skills/058-design-bdd/SKILL.md"
-    },
-    {
-      "repo": "jabrena/plinth",
-      "path": "skills/059-design-atdd/SKILL.md"
-    },
-    {
-      "repo": "jabrena/plinth",
-      "path": "skills/024-context-mapping/SKILL.md"
-    },
-    {
-      "repo": "jabrena/plinth",
-      "path": "skills/021-problem-framing/SKILL.md"
-    },
-    {
-      "repo": "jabrena/plinth",
-      "path": "skills/023-assumption-analysis/SKILL.md"
-    },
-    {
-      "repo": "jabrena/plinth",
-      "path": "skills/022-root-cause-analysis/SKILL.md"
-    },
-    {
-      "repo": "jabrena/plinth",
-      "path": "skills/025-quality-attribute-discovery/SKILL.md"
-    },
-    {
-      "repo": "rse/ase",
-      "path": "plugin/skills/ase-code-dissect/SKILL.md"
-    },
-    {
-      "repo": "rse/ase",
-      "path": "plugin/skills/ase-task-dissect/SKILL.md"
-    },
-    {
-      "repo": "rse/ase",
-      "path": "plugin/skills/ase-meta-workflow/SKILL.md"
+      "repo": "majiayu000/spellbook",
+      "path": "skills/sol-luna-router/SKILL.md"
     }
   ]
 }

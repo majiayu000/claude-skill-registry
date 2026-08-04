@@ -1,0 +1,37 @@
+{
+  "name": "hedgehog-authored-loop",
+  "repo": "skyf0xx/hedgehog",
+  "path": "src/skills/hedgehog-authored-loop/SKILL.md",
+  "github_branch": "master",
+  "category": "development",
+  "source": "github.com/skyf0xx/hedgehog",
+  "dir_name": "hedgehog-authored-loop",
+  "downloaded_at": "2026-08-04T03:01:45.891746Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: build, compile",
+    "score": 2,
+    "runner_up": "agent",
+    "runner_up_score": 1,
+    "signals": [
+      "build",
+      "compile"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "skyf0xx",
+  "source_url": "https://github.com/skyf0xx/hedgehog/blob/master/src/skills/hedgehog-authored-loop/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/skyf0xx/hedgehog/blob/master/src/skills/hedgehog-authored-loop/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use for every unit of work on an authored core (`.hedgehog/core.yaml` present) once bootstrap has closed \u2014 building one layer per `hedgehog next` packet, gated by `hedgehog verify` and committed one layer at a time. Triggers on \"next step\", \"what's next\", \"build this\", or the start of any work session on a bootstrapped authored-core project. Also covers the Correction Protocol and the Stop Condition for this core."
+}

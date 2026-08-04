@@ -1,0 +1,37 @@
+{
+  "name": "landing-copy-mechanism",
+  "repo": "skyf0xx/hedgehog",
+  "path": "src/skills/landing-copy-mechanism/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/skyf0xx/hedgehog",
+  "dir_name": "landing-copy-mechanism",
+  "downloaded_at": "2026-08-04T03:01:46.362934Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: product=2, writing=2",
+    "score": 2,
+    "runner_up": "writing",
+    "runner_up_score": 2,
+    "signals": [
+      "product",
+      "feature"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "skyf0xx",
+  "source_url": "https://github.com/skyf0xx/hedgehog/blob/master/src/skills/landing-copy-mechanism/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/skyf0xx/hedgehog/blob/master/src/skills/landing-copy-mechanism/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use whenever `landing-copywriter` drafts a mechanism/how-it-works section \u2014 the section that resolves the problem section's tension by explaining how the product changes the situation. Trigger when the section's role in `landing-sequencer`'s list is to earn the headline's claim through explanation, distinct from proof (evidence the claim is true) or pricing (tiers and plans)."
+}

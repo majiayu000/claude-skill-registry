@@ -1,0 +1,38 @@
+{
+  "name": "slide-deck",
+  "repo": "coreyhaines31/makerskills",
+  "path": "skills/slide-deck/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/coreyhaines31/makerskills",
+  "dir_name": "slide-deck",
+  "downloaded_at": "2026-08-04T02:47:20.377797Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for marketing: marketing, content, brand",
+    "score": 3,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "marketing",
+      "content",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "coreyhaines31",
+  "source_url": "https://github.com/coreyhaines31/makerskills/blob/main/skills/slide-deck/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/coreyhaines31/makerskills/blob/main/skills/slide-deck/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "When you want to draft, update, convert, or export a slide deck for a React/Next.js slide system (${SLIDE_DECK_REPO:-$HOME/code/your-slide-deck-site}/src/app/slides/). Writes TypeScript Slide[] arrays using your primitives (Eyebrow, Heading, Accent, Body, BulletList, Divider, TwoCol, GradientText), 12 cycling brand gradients, optional sections for \"where am I\" context, and speaker notes. Inspired by zarazhangrui/frontend-slides \u2014 \"show, don't tell\" applied to narrative (presents 3 angles, you pick) plus density modes (speaker-led vs reading-first). Four modes \u2014 new (draft from brief), update (modify existing, with overflow guards), ppt (convert legacy PPTX \u2192 React deck), export (Playwright snapshot existing React deck to standalone HTML, PDF, or Vercel URL \u2014 keeps brand). Triggers on \"/slide-deck,\" \"/slides new,\" \"/slides export,\" \"/slides update,\" \"/slides ppt,\" \"draft a deck,\" \"deck for [topic],\" \"talk on [topic],\" \"keynote on [topic],\" \"internal deck for [audience],\" \"convert this pptx,\" \"export this deck.\""
+}

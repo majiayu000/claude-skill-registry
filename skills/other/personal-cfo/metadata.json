@@ -1,0 +1,36 @@
+{
+  "name": "personal-cfo",
+  "repo": "coreyhaines31/makerskills",
+  "path": "skills/personal-cfo/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/coreyhaines31/makerskills",
+  "dir_name": "personal-cfo",
+  "downloaded_at": "2026-08-04T02:47:21.116149Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category ai-ml scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "analysis",
+    "runner_up_score": 1,
+    "signals": [
+      "model"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "coreyhaines31",
+  "source_url": "https://github.com/coreyhaines31/makerskills/blob/main/skills/personal-cfo/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/coreyhaines31/makerskills/blob/main/skills/personal-cfo/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "When you want to model personal financial scenarios \u2014 house purchase + rental income (ADU, bedroom rentals, house-hacking), renovation budgets, monthly cash flow forecasts, big-purchase decisions, savings/investment what-ifs. For personal life: a household (you + partner), household budgets, real-estate decisions. v0.1 ships with the house scenario template (purchase + rental scenarios) as the first use case. Architected so other personal-finance scenarios (refi, car, education, retirement, side income) slot in as additional templates. Outputs scenario comparison tables in markdown. Saves every scenario to ~/Documents/personal-cfo/ with an index at ~/.config/makerskills/personal-cfo/archive/ for revisit + comparison. Composes with decide (formalize the call after modeling), deep-research (rental comps, mortgage rates, market data), business-brainstorm (when the scenario is a small business / side hustle), second-brain (capture the analysis to outputs/). Triggers on \"/personal-cfo,\" \"model this scenario,\" \"house math,\" \"rental forecast,\" \"monthly cash flow,\" \"what if I rent out the ADU,\" \"compare these housing scenarios,\" \"should we buy this house,\" \"house-hack math,\" \"renovation budget.\""
+}

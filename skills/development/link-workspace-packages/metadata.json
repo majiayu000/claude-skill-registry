@@ -1,0 +1,37 @@
+{
+  "name": "link-workspace-packages",
+  "repo": "skyf0xx/hedgehog",
+  "path": "src/skills/link-workspace-packages/SKILL.md",
+  "github_branch": "master",
+  "category": "development",
+  "source": "github.com/skyf0xx/hedgehog",
+  "dir_name": "link-workspace-packages",
+  "downloaded_at": "2026-08-04T03:01:47.147276Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: code, debug",
+    "score": 2,
+    "runner_up": "bash",
+    "runner_up_score": 1,
+    "signals": [
+      "code",
+      "debug"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "skyf0xx",
+  "source_url": "https://github.com/skyf0xx/hedgehog/blob/master/src/skills/link-workspace-packages/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/skyf0xx/hedgehog/blob/master/src/skills/link-workspace-packages/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Link workspace packages in the Hedgehog pnpm monorepo. USE WHEN: (1) you just created or generated new packages and need to wire up their dependencies, (2) code imports from a sibling package and needs it added as a dependency, (3) you get resolution errors for workspace packages (@org/*) like \"cannot find module\", \"failed to resolve import\", \"TS2307\", or \"cannot resolve\". DO NOT patch around with tsconfig paths or manual package.json edits - use pnpm's workspace commands to fix actual linking."
+}

@@ -1,0 +1,37 @@
+{
+  "name": "second-brain",
+  "repo": "coreyhaines31/makerskills",
+  "path": "skills/second-brain/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/coreyhaines31/makerskills",
+  "dir_name": "second-brain",
+  "downloaded_at": "2026-08-04T02:47:21.273487Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: ai-llm=2, ai-ml=2",
+    "score": 2,
+    "runner_up": "ai-ml",
+    "runner_up_score": 2,
+    "signals": [
+      "ai",
+      "llm"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "coreyhaines31",
+  "source_url": "https://github.com/coreyhaines31/makerskills/blob/main/skills/second-brain/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/coreyhaines31/makerskills/blob/main/skills/second-brain/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "When you want to capture into, compile, query, lint, or connect your personal Second Brain. Wraps the Karpathy LLM Wiki schema (Obsidian or any markdown vault) \u2014 raw/ (unprocessed sources), wiki/ (AI-compiled interlinked topic pages), outputs/ (generated artifacts). Tool-agnostic in design but defaults to a vault at ${SECOND_BRAIN_VAULT:-$HOME/Documents/SecondBrain}/. Six modes \u2014 capture (drop something into raw/), compile (process unprocessed raw files into wiki pages, update INDEX.md), query (answer a question from the wiki, save to outputs/), lint (orphans / contradictions / stale / unprocessed raw / topic gaps), connect (suggest new wikilinks between pages), search (quick lookup). Triggers on \"/second-brain,\" \"/sb,\" \"capture this,\" \"save this to my brain,\" \"compile the wiki,\" \"process raw notes,\" \"query my wiki,\" \"ask my brain,\" \"lint the wiki,\" \"find connections,\" \"search my notes.\" Complements deep-research (external corpus) \u2014 this is the internal corpus."
+}

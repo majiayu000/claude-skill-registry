@@ -1,0 +1,37 @@
+{
+  "name": "pip-writer",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/pip-writer/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "pip-writer",
+  "downloaded_at": "2026-08-04T02:56:26.495278Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: development=2, quality=2",
+    "score": 2,
+    "runner_up": "quality",
+    "runner_up_score": 2,
+    "signals": [
+      "framework",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/pip-writer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/pip-writer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Write a Performance Improvement Plan a manager can defend and an employee can actually act on \u2014 specific concerns, measurable goals, real support, and an honest timeline. Use when asked to write a PIP, put someone on a performance plan, document underperformance, or build a formal improvement plan. Produces the concern statement, the measurable goals with success criteria, the support plan, the check-in cadence, and the consequences \u2014 HR/legal-ready. Complements pip-responder (the employee's side)."
+}

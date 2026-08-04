@@ -1,0 +1,38 @@
+{
+  "name": "hedgehog-planning-intake",
+  "repo": "skyf0xx/hedgehog",
+  "path": "src/skills/hedgehog-planning-intake/SKILL.md",
+  "github_branch": "master",
+  "category": "product",
+  "source": "github.com/skyf0xx/hedgehog",
+  "dir_name": "hedgehog-planning-intake",
+  "downloaded_at": "2026-08-04T03:01:47.569107Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "product",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for product: product, prd, feature",
+    "score": 3,
+    "runner_up": "design",
+    "runner_up_score": 2,
+    "signals": [
+      "product",
+      "prd",
+      "feature"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "skyf0xx",
+  "source_url": "https://github.com/skyf0xx/hedgehog/blob/master/src/skills/hedgehog-planning-intake/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/skyf0xx/hedgehog/blob/master/src/skills/hedgehog-planning-intake/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use once per project, at the start, on any core \u2014 Phase 0 (running the vendored BMAD-METHOD planning shelf) is shared by every core; Phase 1 (mining `04-prd.md` into intent records plus the Add-ons decision) is full-stack-app's own procedure, run again on a scoped pass when new domain scope enters play. Invoked by the `planner` agent after Phase 0 core selection; don't run standalone. landing-page runs this skill's Phase 0, then mines the same archive through `hedgehog-landing-loop`'s own planning-intake section, that core's counterpart to this skill's Phase 1. An authored core runs this skill's Phase 0, then `hedgehog-core-design`, then this skill's Phase 1 mining against the designed layer sequence."
+}

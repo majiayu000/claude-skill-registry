@@ -1,0 +1,38 @@
+{
+  "name": "hedgehog-loop",
+  "repo": "skyf0xx/hedgehog",
+  "path": "src/skills/hedgehog-loop/SKILL.md",
+  "github_branch": "master",
+  "category": "development",
+  "source": "github.com/skyf0xx/hedgehog",
+  "dir_name": "hedgehog-loop",
+  "downloaded_at": "2026-08-04T03:01:39.049509Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: code, build, compile",
+    "score": 3,
+    "runner_up": "api",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "build",
+      "compile"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "skyf0xx",
+  "source_url": "https://github.com/skyf0xx/hedgehog/blob/master/src/skills/hedgehog-loop/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/skyf0xx/hedgehog/blob/master/src/skills/hedgehog-loop/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use for every unit of work once a Hedgehog project is bootstrapped \u2014 building one layer (schema, contract, repository, service, controller, hook, screen) per module, gated by `hedgehog verify` and committed one layer at a time. Triggers on \"next step\", \"build this module\", \"what's next\", or the start of any work session on a bootstrapped project. Also covers the Correction Protocol for fixing a wrong upstream step."
+}

@@ -1,0 +1,37 @@
+{
+  "name": "hedgehog-landing-loop",
+  "repo": "skyf0xx/hedgehog",
+  "path": "src/skills/hedgehog-landing-loop/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/skyf0xx/hedgehog",
+  "dir_name": "hedgehog-landing-loop",
+  "downloaded_at": "2026-08-04T03:01:45.544363Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: development=2, planning=2",
+    "score": 2,
+    "runner_up": "planning",
+    "runner_up_score": 2,
+    "signals": [
+      "build",
+      "compile"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "skyf0xx",
+  "source_url": "https://github.com/skyf0xx/hedgehog/blob/master/src/skills/hedgehog-landing-loop/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/skyf0xx/hedgehog/blob/master/src/skills/hedgehog-landing-loop/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use for every unit of work on the landing-page core, from planning intake through the final build phase \u2014 the Chain Method's brief \u2192 feeling \u2192 tokens/element \u2192 sequence \u2192 artifact pipeline, gated by `hedgehog verify` and committed one phase at a time. Triggers on \"next step\", \"next phase\", \"what's next\", or the start of any work session on a bootstrapped landing-page project. Also covers this core's own planning intake and Correction Protocol."
+}

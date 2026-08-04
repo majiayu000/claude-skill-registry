@@ -1,0 +1,37 @@
+{
+  "name": "paste",
+  "repo": "coreyhaines31/makerskills",
+  "path": "skills/paste/SKILL.md",
+  "github_branch": "main",
+  "category": "communication",
+  "source": "github.com/coreyhaines31/makerskills",
+  "dir_name": "paste",
+  "downloaded_at": "2026-08-04T02:47:18.721367Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "communication",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for communication: email, chat",
+    "score": 2,
+    "runner_up": "ai-llm",
+    "runner_up_score": 1,
+    "signals": [
+      "email",
+      "chat"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "coreyhaines31",
+  "source_url": "https://github.com/coreyhaines31/makerskills/blob/main/skills/paste/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/coreyhaines31/makerskills/blob/main/skills/paste/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "When you want to clean and reformat content (usually from your terminal) for pasting into Slack, Notion, Twitter/X, LinkedIn, email, GitHub, or plain text. Strips ANSI codes, box-drawing chars, terminal prompt artifacts, and applies destination-specific formatting. Default input is the clipboard (read via `pbpaste`); default output is both the clipboard (`pbcopy`) and a chat preview. Triggers on \"/paste\", \"/paste [destination]\", \"clean this for X,\" \"format for slack/notion/twitter/linkedin/email/github,\" \"render as markdown,\" \"paste-ready,\" \"strip formatting,\" \"make this copy-pastable.\" Default destination is plain. Also scans for secrets (API keys, tokens, .env values) and warns before copying anything sensitive."
+}

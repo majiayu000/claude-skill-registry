@@ -1,7 +1,7 @@
 {
-  "discovered_at": "2026-08-03T03:25:17.231673Z",
+  "discovered_at": "2026-08-04T03:04:50.514339Z",
   "total_repos": 300,
-  "total_skills": 1,
+  "total_skills": 75,
   "scanned_repos": 300,
   "limits": {
     "max_repos": 300,
@@ -81,7 +81,6 @@
     "Shelpuk-AI-Technology-Consulting/agent-skill-tdd",
     "SnailSploit/Claude-Red",
     "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance",
-    "TheStack-ai/pulser",
     "TheStack-ai/swing-skills",
     "Tibsfox/gsd-skill-creator",
     "ToluVictor/canvas-apps-tools",
@@ -128,7 +127,6 @@
     "bitjaru/styleseed",
     "bitwize-music-studio/claude-ai-music-skills",
     "bjwanneng/veriflow-cc",
-    "borghei/Claude-Skills",
     "bovinphang/frontend-craft",
     "browser-act/skills",
     "cgallic/kai-cmo-harness",
@@ -141,6 +139,7 @@
     "codeaashu/claude-code",
     "composio-community/awesome-claude-plugins",
     "conorluddy/ios-simulator-skill",
+    "coreyhaines31/makerskills",
     "cybrixcc/cybrix-skills",
     "damionrashford/RivalSearchMCP",
     "davepoon/buildwithclaude",
@@ -273,6 +272,7 @@
     "shanraisshan/claude-code-hooks",
     "sheeki03/Few-Word",
     "sickn33/agentic-awesome-skills",
+    "skyf0xx/hedgehog",
     "slimeglitch/gryffin-calorai-ventus",
     "specstoryai/getspecstory",
     "spencermarx/orc",
@@ -314,8 +314,304 @@
   ],
   "skills": [
     {
-      "repo": "majiayu000/spellbook",
-      "path": "skills/sol-luna-router/SKILL.md"
+      "repo": "ComPDFKit/compdf-skills",
+      "path": "skills/compdf-ocr/SKILL.md"
+    },
+    {
+      "repo": "ComPDFKit/compdf-skills",
+      "path": "skills/pdf-converter/SKILL.md"
+    },
+    {
+      "repo": "ComPDFKit/compdf-skills",
+      "path": "skills/compdf-toolkit/SKILL.md"
+    },
+    {
+      "repo": "ComPDFKit/compdf-skills",
+      "path": "skills/compdf-word-to-pdf/SKILL.md"
+    },
+    {
+      "repo": "ComPDFKit/compdf-skills",
+      "path": "skills/compdf-pdf-to-json/SKILL.md"
+    },
+    {
+      "repo": "ComPDFKit/compdf-skills",
+      "path": "skills/compdf-page-editor/SKILL.md"
+    },
+    {
+      "repo": "ComPDFKit/compdf-skills",
+      "path": "skills/compdf-pdf-to-html/SKILL.md"
+    },
+    {
+      "repo": "ComPDFKit/compdf-skills",
+      "path": "skills/compdf-pdf-to-word/SKILL.md"
+    },
+    {
+      "repo": "ComPDFKit/compdf-skills",
+      "path": "skills/compdf-compress-pdf/SKILL.md"
+    },
+    {
+      "repo": "ComPDFKit/compdf-skills",
+      "path": "skills/compdf-pdf-to-markdown/SKILL.md"
+    },
+    {
+      "repo": "ComPDFKit/compdf-skills",
+      "path": "skills/compdf-documents-to-pdf/SKILL.md"
+    },
+    {
+      "repo": "ComPDFKit/compdf-skills",
+      "path": "skills/compdf-encryt-pdf-decrypt-pdf/SKILL.md"
+    },
+    {
+      "repo": "ComPDFKit/compdf-skills",
+      "path": "skills/compdf-convert-images-to-documents/SKILL.md"
+    },
+    {
+      "repo": "ComPDFKit/compdf-skills",
+      "path": "skills/compdf-add-watermark-remover-watermark/SKILL.md"
+    },
+    {
+      "repo": "coreyhaines31/makerskills",
+      "path": "skills/pm/SKILL.md"
+    },
+    {
+      "repo": "coreyhaines31/makerskills",
+      "path": "skills/paste/SKILL.md"
+    },
+    {
+      "repo": "coreyhaines31/makerskills",
+      "path": "skills/decide/SKILL.md"
+    },
+    {
+      "repo": "coreyhaines31/makerskills",
+      "path": "skills/domain/SKILL.md"
+    },
+    {
+      "repo": "coreyhaines31/makerskills",
+      "path": "skills/unstuck/SKILL.md"
+    },
+    {
+      "repo": "coreyhaines31/makerskills",
+      "path": "skills/loopify/SKILL.md"
+    },
+    {
+      "repo": "coreyhaines31/makerskills",
+      "path": "skills/toolify/SKILL.md"
+    },
+    {
+      "repo": "coreyhaines31/makerskills",
+      "path": "skills/skillify/SKILL.md"
+    },
+    {
+      "repo": "coreyhaines31/makerskills",
+      "path": "skills/jab-hook/SKILL.md"
+    },
+    {
+      "repo": "coreyhaines31/makerskills",
+      "path": "skills/read-book/SKILL.md"
+    },
+    {
+      "repo": "coreyhaines31/makerskills",
+      "path": "skills/slide-deck/SKILL.md"
+    },
+    {
+      "repo": "coreyhaines31/makerskills",
+      "path": "skills/company-cfo/SKILL.md"
+    },
+    {
+      "repo": "coreyhaines31/makerskills",
+      "path": "skills/watch-video/SKILL.md"
+    },
+    {
+      "repo": "coreyhaines31/makerskills",
+      "path": "skills/social-fetch/SKILL.md"
+    },
+    {
+      "repo": "coreyhaines31/makerskills",
+      "path": "skills/personal-cfo/SKILL.md"
+    },
+    {
+      "repo": "coreyhaines31/makerskills",
+      "path": "skills/second-brain/SKILL.md"
+    },
+    {
+      "repo": "coreyhaines31/makerskills",
+      "path": "skills/company-brain/SKILL.md"
+    },
+    {
+      "repo": "coreyhaines31/makerskills",
+      "path": "skills/deep-research/SKILL.md"
+    },
+    {
+      "repo": "coreyhaines31/makerskills",
+      "path": "skills/business-brainstorm/SKILL.md"
+    },
+    {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "path": "skills/pip-writer/SKILL.md"
+    },
+    {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "path": "skills/dpa-review/SKILL.md"
+    },
+    {
+      "repo": "skyf0xx/hedgehog",
+      "path": "skills/GSAP/gsap-core/SKILL.md"
+    },
+    {
+      "repo": "skyf0xx/hedgehog",
+      "path": "skills/GSAP/gsap-utils/SKILL.md"
+    },
+    {
+      "repo": "skyf0xx/hedgehog",
+      "path": "skills/GSAP/gsap-react/SKILL.md"
+    },
+    {
+      "repo": "skyf0xx/hedgehog",
+      "path": "src/skills/nx-generate/SKILL.md"
+    },
+    {
+      "repo": "skyf0xx/hedgehog",
+      "path": "src/skills/nx-workspace/SKILL.md"
+    },
+    {
+      "repo": "skyf0xx/hedgehog",
+      "path": "src/skills/nx-run-tasks/SKILL.md"
+    },
+    {
+      "repo": "skyf0xx/hedgehog",
+      "path": "skills/GSAP/gsap-plugins/SKILL.md"
+    },
+    {
+      "repo": "skyf0xx/hedgehog",
+      "path": "src/skills/hedgehog-loop/SKILL.md"
+    },
+    {
+      "repo": "skyf0xx/hedgehog",
+      "path": "skills/GSAP/gsap-timeline/SKILL.md"
+    },
+    {
+      "repo": "skyf0xx/hedgehog",
+      "path": "src/skills/landing-shapes/SKILL.md"
+    },
+    {
+      "repo": "skyf0xx/hedgehog",
+      "path": "src/skills/landing-copy-cta/SKILL.md"
+    },
+    {
+      "repo": "skyf0xx/hedgehog",
+      "path": "skills/GSAP/gsap-frameworks/SKILL.md"
+    },
+    {
+      "repo": "skyf0xx/hedgehog",
+      "path": "src/skills/landing-copy-hero/SKILL.md"
+    },
+    {
+      "repo": "skyf0xx/hedgehog",
+      "path": "skills/GSAP/gsap-performance/SKILL.md"
+    },
+    {
+      "repo": "skyf0xx/hedgehog",
+      "path": ".claude/skills/bmad-revendor/SKILL.md"
+    },
+    {
+      "repo": "skyf0xx/hedgehog",
+      "path": "src/skills/landing-copy-proof/SKILL.md"
+    },
+    {
+      "repo": "skyf0xx/hedgehog",
+      "path": "src/skills/hedgehog-bootstrap/SKILL.md"
+    },
+    {
+      "repo": "skyf0xx/hedgehog",
+      "path": "skills/GSAP/gsap-scrolltrigger/SKILL.md"
+    },
+    {
+      "repo": "skyf0xx/hedgehog",
+      "path": "src/skills/conventional-commits/SKILL.md"
+    },
+    {
+      "repo": "skyf0xx/hedgehog",
+      "path": "src/skills/hedgehog-core-design/SKILL.md"
+    },
+    {
+      "repo": "skyf0xx/hedgehog",
+      "path": "src/skills/landing-copy-problem/SKILL.md"
+    },
+    {
+      "repo": "skyf0xx/hedgehog",
+      "path": "src/skills/landing-copy-headline/SKILL.md"
+    },
+    {
+      "repo": "skyf0xx/hedgehog",
+      "path": "src/skills/hedgehog-landing-loop/SKILL.md"
+    },
+    {
+      "repo": "skyf0xx/hedgehog",
+      "path": "src/skills/hedgehog-authored-loop/SKILL.md"
+    },
+    {
+      "repo": "skyf0xx/hedgehog",
+      "path": "src/skills/landing-copy-mechanism/SKILL.md"
+    },
+    {
+      "repo": "skyf0xx/hedgehog",
+      "path": "src/skills/landing-copy-objection/SKILL.md"
+    },
+    {
+      "repo": "skyf0xx/hedgehog",
+      "path": "src/skills/link-workspace-packages/SKILL.md"
+    },
+    {
+      "repo": "skyf0xx/hedgehog",
+      "path": "src/skills/hedgehog-planning-intake/SKILL.md"
+    },
+    {
+      "repo": "skyf0xx/hedgehog",
+      "path": "skills/BMAD/core-skills/bmad-deep-recon/SKILL.md"
+    },
+    {
+      "repo": "skyf0xx/hedgehog",
+      "path": "skills/BMAD/core-skills/bmad-brainstorming/SKILL.md"
+    },
+    {
+      "repo": "skyf0xx/hedgehog",
+      "path": "src/skills/hedgehog-bootstrap-authored-core/SKILL.md"
+    },
+    {
+      "repo": "skyf0xx/hedgehog",
+      "path": "skills/BMAD/bmm-skills/1-analysis/bmad-prfaq/SKILL.md"
+    },
+    {
+      "repo": "skyf0xx/hedgehog",
+      "path": "skills/BMAD/bmm-skills/2-plan-workflows/bmad-ux/SKILL.md"
+    },
+    {
+      "repo": "skyf0xx/hedgehog",
+      "path": "src/skills/hedgehog-bootstrap-landing-page-core/SKILL.md"
+    },
+    {
+      "repo": "skyf0xx/hedgehog",
+      "path": "skills/BMAD/bmm-skills/2-plan-workflows/bmad-prd/SKILL.md"
+    },
+    {
+      "repo": "skyf0xx/hedgehog",
+      "path": "skills/BMAD/core-skills/bmad-advanced-elicitation/SKILL.md"
+    },
+    {
+      "repo": "skyf0xx/hedgehog",
+      "path": "src/skills/hedgehog-bootstrap-full-stack-app-core/SKILL.md"
+    },
+    {
+      "repo": "skyf0xx/hedgehog",
+      "path": "skills/BMAD/bmm-skills/1-analysis/bmad-product-brief/SKILL.md"
+    },
+    {
+      "repo": "thedotmack/claude-mem",
+      "path": "plugin/skills/mode-creator/SKILL.md"
+    },
+    {
+      "repo": "wanshuiyin/Auto-claude-code-research-in-sleep",
+      "path": "skills/proof-orchestrator/SKILL.md"
     }
   ]
 }

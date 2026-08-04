@@ -1,0 +1,38 @@
+{
+  "name": "hedgehog-bootstrap-landing-page-core",
+  "repo": "skyf0xx/hedgehog",
+  "path": "src/skills/hedgehog-bootstrap-landing-page-core/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/skyf0xx/hedgehog",
+  "dir_name": "hedgehog-bootstrap-landing-page-core",
+  "downloaded_at": "2026-08-04T03:01:49.911952Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=3, design=3",
+    "score": 3,
+    "runner_up": "design",
+    "runner_up_score": 3,
+    "signals": [
+      "bash",
+      "shell",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "skyf0xx",
+  "source_url": "https://github.com/skyf0xx/hedgehog/blob/master/src/skills/hedgehog-bootstrap-landing-page-core/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/skyf0xx/hedgehog/blob/master/src/skills/hedgehog-bootstrap-landing-page-core/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use once, at the start of a new Hedgehog project on the landing-page core, to land the pre-verified Astro + Tailwind v4 workspace and verify it's green. Runs as the only move of the `bootstrap` agent on this core \u2014 there are no add-on steps, unlike full-stack-app. Invoked automatically by `planner` after Confirm & Lock."
+}

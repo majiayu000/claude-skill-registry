@@ -1,0 +1,37 @@
+{
+  "name": "compdf-toolkit",
+  "repo": "ComPDFKit/compdf-skills",
+  "path": "skills/compdf-toolkit/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/ComPDFKit/compdf-skills",
+  "dir_name": "compdf-toolkit",
+  "downloaded_at": "2026-08-04T02:36:46.992751Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: api=2, marketing=2",
+    "score": 2,
+    "runner_up": "marketing",
+    "runner_up_score": 2,
+    "signals": [
+      "api",
+      "endpoint"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "ComPDFKit",
+  "source_url": "https://github.com/ComPDFKit/compdf-skills/blob/main/skills/compdf-toolkit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ComPDFKit/compdf-skills/blob/main/skills/compdf-toolkit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "All-in-one ComPDF workflow for document conversion, OCR, data extraction, PDF editing, protection, compression, and watermarking. Use for any ComPDF Server API request that processes PDF, Office, HTML, CSV, RTF, TXT, or image files."
+}

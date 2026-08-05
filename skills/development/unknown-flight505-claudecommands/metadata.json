@@ -1,0 +1,21 @@
+{
+  "name": "unknown",
+  "description": null,
+  "repo": "flight505/ClaudeCommands",
+  "path": "tools/newskill.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "GitHub Code Search Results",
+  "dir_name": "unknown-flight505-claudecommands",
+  "archive_mode": "skill-md",
+  "bundled_files": [],
+  "author": "flight505",
+  "source_url": "https://github.com/flight505/ClaudeCommands/blob/main/tools/newskill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/flight505/ClaudeCommands/blob/main/tools/newskill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

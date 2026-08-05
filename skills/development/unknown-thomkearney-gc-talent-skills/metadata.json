@@ -1,0 +1,21 @@
+{
+  "name": "unknown",
+  "description": "Supporting DTL2025 ",
+  "repo": "ThomKearney/gc-talent-skills",
+  "path": "Skills/testskill.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 1,
+  "source": "GitHub Code Search Results",
+  "dir_name": "unknown-thomkearney-gc-talent-skills",
+  "archive_mode": "skill-md",
+  "bundled_files": [],
+  "author": "ThomKearney",
+  "source_url": "https://github.com/ThomKearney/gc-talent-skills/blob/main/Skills/testskill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ThomKearney/gc-talent-skills/blob/main/Skills/testskill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,37 @@
+{
+  "name": "trip-planner",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/trip-planner/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "trip-planner",
+  "downloaded_at": "2026-08-05T02:56:12.913247Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: framework, build",
+    "score": 2,
+    "runner_up": "planning",
+    "runner_up_score": 1,
+    "signals": [
+      "framework",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/trip-planner/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/trip-planner/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Turn a destination, some dates, and your vibe into a realistic day-by-day trip itinerary \u2014 paced for real humans, with a packing list and a rough budget. Use when asked to plan a trip, build a travel itinerary, what should I do in [place], or help me plan my holiday. Produces a day-by-day plan grouped by area (so you're not criss-crossing the city), must-book-ahead flags, a packing list tuned to the trip, a rough budget range, and honest notes on pace and gaps to fill with local info."
+}

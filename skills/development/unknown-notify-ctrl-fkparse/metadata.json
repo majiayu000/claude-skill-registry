@@ -1,0 +1,21 @@
+{
+  "name": "unknown",
+  "description": "为太阳神三国杀和FreeKill生成Lua代码的小工具",
+  "repo": "Notify-ctrl/fkparse",
+  "path": "doc/02-skill.md",
+  "github_branch": "master",
+  "category": "development",
+  "tags": [],
+  "stars": 6,
+  "source": "GitHub Code Search Results",
+  "dir_name": "unknown-notify-ctrl-fkparse",
+  "archive_mode": "skill-md",
+  "bundled_files": [],
+  "author": "Notify-ctrl",
+  "source_url": "https://github.com/Notify-ctrl/fkparse/blob/master/doc/02-skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Notify-ctrl/fkparse/blob/master/doc/02-skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

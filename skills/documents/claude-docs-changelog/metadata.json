@@ -1,0 +1,38 @@
+{
+  "name": "claude-docs-changelog",
+  "repo": "costiash/claude-code-docs",
+  "path": "plugin/skills/claude-docs-changelog/SKILL.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/costiash/claude-code-docs",
+  "dir_name": "claude-docs-changelog",
+  "downloaded_at": "2026-08-05T02:47:06.788563Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "documents",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for documents: doc, docs, documentation",
+    "score": 3,
+    "runner_up": "bash",
+    "runner_up_score": 2,
+    "signals": [
+      "doc",
+      "docs",
+      "documentation"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "costiash",
+  "source_url": "https://github.com/costiash/claude-code-docs/blob/main/plugin/skills/claude-docs-changelog/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/costiash/claude-code-docs/blob/main/plugin/skills/claude-docs-changelog/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Generate a self-contained HTML changelog report showing recent documentation changes with interactive course generation buttons. Use this skill when the user asks for a docs changelog, documentation report, what changed recently, recent doc updates as a report, or runs `/docs --report`. Discovers changes via git history, categorizes them, summarizes what's new, and produces a stunning Obsidian & Amber themed HTML report where each entry has a \"Create Course\" button that copies the course command to clipboard."
+}

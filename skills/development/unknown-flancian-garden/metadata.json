@@ -1,0 +1,23 @@
+{
+  "name": "unknown",
+  "description": "Flancian's digital garden",
+  "repo": "flancian/garden",
+  "path": "william macaskill.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 26,
+  "source": "GitHub Code Search Results",
+  "dir_name": "unknown-flancian-garden",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "LICENSE"
+  ],
+  "author": "flancian",
+  "source_url": "https://github.com/flancian/garden/blob/main/william macaskill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/flancian/garden/blob/main/william macaskill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,28 @@
+{
+  "name": "unknown",
+  "description": "Context Cascade - Nested Plugin Architecture for Claude Code Official Claude Code Plugin | Version 3.1.0 | Last updated: 2026-01-09 (see docs/COMPONENT-COUNTS.json for source counts)  Context-saving nested architecture: Playbooks -> Skills -> Agents -> Commands. Load only what you need, saving 90%+ context space.  ",
+  "repo": "DNYoussef/context-cascade",
+  "path": "skills/platforms/agentdb-advanced/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 14,
+  "source": "GitHub Code Search Results",
+  "dir_name": "unknown-dnyoussef-context-cascade",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "examples/example-1-quic-sync.md",
+    "examples/example-2-multi-database.md",
+    "examples/example-3-sharding.md",
+    "references/distributed-patterns.md",
+    "references/performance-optimization.md",
+    "references/quic-protocol.md"
+  ],
+  "author": "DNYoussef",
+  "source_url": "https://github.com/DNYoussef/context-cascade/blob/main/skills/platforms/agentdb-advanced/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/DNYoussef/context-cascade/blob/main/skills/platforms/agentdb-advanced/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

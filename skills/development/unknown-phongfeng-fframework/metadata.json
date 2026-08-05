@@ -1,0 +1,21 @@
+{
+  "name": "unknown",
+  "description": "Unity 引擎 HybridCLR + YooAsset的热更新，基于GameFramework框架开发的塔防游戏；Game Jam",
+  "repo": "PhongFeng/FFramework",
+  "path": "Tools/ReadMe/Skill.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 77,
+  "source": "GitHub Code Search Results",
+  "dir_name": "unknown-phongfeng-fframework",
+  "archive_mode": "skill-md",
+  "bundled_files": [],
+  "author": "PhongFeng",
+  "source_url": "https://github.com/PhongFeng/FFramework/blob/main/Tools/ReadMe/Skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/PhongFeng/FFramework/blob/main/Tools/ReadMe/Skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updated_at": "2026-08-04T03:06:03.297909Z",
-  "total_count": 1604,
+  "updated_at": "2026-08-05T03:05:42.391488Z",
+  "total_count": 1617,
   "entries": {
     "Xquik-dev/x-twitter-scraper": {
       "repo": "Xquik-dev/x-twitter-scraper",
@@ -9181,7 +9181,7 @@
       "repo": "Xquik-dev/x-twitter-scraper",
       "branch": "master",
       "relative_path": "skills/x-twitter-scraper/SKILL.md",
-      "updated_at": "2026-08-04T03:05:45.249457Z"
+      "updated_at": "2026-08-05T03:05:17.006098Z"
     },
     "Digidai/product-manager-skills:name:product-manager-skills": {
       "repo": "Digidai/product-manager-skills",
@@ -9205,13 +9205,13 @@
       "repo": "yusufkaraaslan/Skill_Seekers",
       "branch": "main",
       "relative_path": "skills/skill-seekers/SKILL.md",
-      "updated_at": "2026-08-04T03:05:30.288983Z"
+      "updated_at": "2026-08-05T03:05:32.757296Z"
     },
     "lackeyjb/playwright-skill:name:playwright-skill": {
       "repo": "lackeyjb/playwright-skill",
       "branch": "main",
       "relative_path": "skills/playwright-skill/SKILL.md",
-      "updated_at": "2026-08-04T03:05:30.625959Z"
+      "updated_at": "2026-08-05T03:05:31.914794Z"
     },
     "ToniPerea/humanizar-texto-es:name:humanizar-texto-es": {
       "repo": "ToniPerea/humanizar-texto-es",
@@ -9253,7 +9253,7 @@
       "repo": "alonw0/web-asset-generator",
       "branch": "main",
       "relative_path": "skills/web-asset-generator/SKILL.md",
-      "updated_at": "2026-08-04T03:05:32.432184Z"
+      "updated_at": "2026-08-05T03:05:35.474331Z"
     },
     "varfolomejev/query-victorialogs:name:query-victorialogs": {
       "repo": "varfolomejev/query-victorialogs",
@@ -9265,7 +9265,7 @@
       "repo": "Enreign/pagerunner-skill",
       "branch": "main",
       "relative_path": "skills/pagerunner-skill/SKILL.md",
-      "updated_at": "2026-08-04T03:05:32.735942Z"
+      "updated_at": "2026-08-05T03:05:34.618874Z"
     },
     "miningstore/confluence-to-agent-knowledge-base:name:confluence-to-agent-knowledge-base": {
       "repo": "miningstore/confluence-to-agent-knowledge-base",
@@ -9571,19 +9571,19 @@
       "repo": "RS42-AI/scout-ai-lite",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-08-04T03:05:30.840393Z"
+      "updated_at": "2026-08-05T03:05:30.588704Z"
     },
     "Dicklesworthstone/slb:name:unknown": {
       "repo": "Dicklesworthstone/slb",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-08-04T03:05:32.203032Z"
+      "updated_at": "2026-08-05T03:04:55.195156Z"
     },
     "diskd-ai/gemini-api:name:unknown": {
       "repo": "diskd-ai/gemini-api",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-08-04T03:05:32.650708Z"
+      "updated_at": "2026-08-05T03:05:00.106863Z"
     },
     "baileywickham/ibkr:skills/ibkr": {
       "repo": "baileywickham/ibkr",
@@ -9619,13 +9619,91 @@
       "repo": "tostechbr/sdk-apps-openai",
       "branch": "main",
       "relative_path": "skill.md",
-      "updated_at": "2026-08-04T03:05:30.829045Z"
+      "updated_at": "2026-08-05T03:05:28.852543Z"
     },
     "fredsun/CodeDiary:name:unknown": {
       "repo": "fredsun/CodeDiary",
       "branch": "master",
       "relative_path": "Skill.md",
-      "updated_at": "2026-08-04T03:05:30.771337Z"
+      "updated_at": "2026-08-05T03:05:30.108061Z"
+    },
+    "hashintel/hash:.codex/skills/zod/SKILL.md": {
+      "repo": "hashintel/hash",
+      "branch": "main",
+      "relative_path": ".codex/skills/zod/SKILL.md",
+      "updated_at": "2026-08-05T03:04:53.142268Z"
+    },
+    "hashintel/hash:.codex/skills/panda-css/SKILL.md": {
+      "repo": "hashintel/hash",
+      "branch": "main",
+      "relative_path": ".codex/skills/panda-css/SKILL.md",
+      "updated_at": "2026-08-05T03:04:53.145701Z"
+    },
+    "PhongFeng/FFramework:Tools/ReadMe/Skill.md": {
+      "repo": "PhongFeng/FFramework",
+      "branch": "main",
+      "relative_path": "Tools/ReadMe/Skill.md",
+      "updated_at": "2026-08-05T03:04:53.172752Z"
+    },
+    "hashintel/hash:.codex/skills/mastra/SKILL.md": {
+      "repo": "hashintel/hash",
+      "branch": "main",
+      "relative_path": ".codex/skills/mastra/SKILL.md",
+      "updated_at": "2026-08-05T03:04:53.175529Z"
+    },
+    "pwstrick/daily:interview/skill.md": {
+      "repo": "pwstrick/daily",
+      "branch": "master",
+      "relative_path": "interview/skill.md",
+      "updated_at": "2026-08-05T03:04:54.295464Z"
+    },
+    "ThomKearney/gc-talent-skills:Skills/testskill.md": {
+      "repo": "ThomKearney/gc-talent-skills",
+      "branch": "main",
+      "relative_path": "Skills/testskill.md",
+      "updated_at": "2026-08-05T03:04:57.273926Z"
+    },
+    "flancian/garden:william macaskill.md": {
+      "repo": "flancian/garden",
+      "branch": "main",
+      "relative_path": "william macaskill.md",
+      "updated_at": "2026-08-05T03:04:57.375289Z"
+    },
+    "Notify-ctrl/fkparse:doc/02-skill.md": {
+      "repo": "Notify-ctrl/fkparse",
+      "branch": "master",
+      "relative_path": "doc/02-skill.md",
+      "updated_at": "2026-08-05T03:04:58.419499Z"
+    },
+    "DNYoussef/context-cascade:skills/platforms/agentdb-advanced/SKILL.md": {
+      "repo": "DNYoussef/context-cascade",
+      "branch": "main",
+      "relative_path": "skills/platforms/agentdb-advanced/SKILL.md",
+      "updated_at": "2026-08-05T03:04:58.614783Z"
+    },
+    "OddBallYT/ms_Obsidian.Projects:200 D&D/Avarus/202 Spectral Song/00 Content/02 Encyclopedia/Rules/Skill.md": {
+      "repo": "OddBallYT/ms_Obsidian.Projects",
+      "branch": "master",
+      "relative_path": "200 D&D/Avarus/202 Spectral Song/00 Content/02 Encyclopedia/Rules/Skill.md",
+      "updated_at": "2026-08-05T03:04:59.041058Z"
+    },
+    "EmberwildGameBible/The_Emberwild_Archive-:.codex/skills/family-recipe-lore/SKILL.md": {
+      "repo": "EmberwildGameBible/The_Emberwild_Archive-",
+      "branch": "main",
+      "relative_path": ".codex/skills/family-recipe-lore/SKILL.md",
+      "updated_at": "2026-08-05T03:05:27.761001Z"
+    },
+    "EmberwildGameBible/The_Emberwild_Archive-:.codex/skills/item-provenance/SKILL.md": {
+      "repo": "EmberwildGameBible/The_Emberwild_Archive-",
+      "branch": "main",
+      "relative_path": ".codex/skills/item-provenance/SKILL.md",
+      "updated_at": "2026-08-05T03:05:27.763048Z"
+    },
+    "flight505/ClaudeCommands:tools/newskill.md": {
+      "repo": "flight505/ClaudeCommands",
+      "branch": "main",
+      "relative_path": "tools/newskill.md",
+      "updated_at": "2026-08-05T03:05:28.330369Z"
     }
   }
 }

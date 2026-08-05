@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-04T03:55:20.908790Z",
-  "archive_skill_md_count_raw": 202452,
-  "archive_metadata_count_raw": 202450,
-  "indexed_skill_count_scan_shape": 161383,
-  "registry_skill_count_dedup": 160950,
+  "updated_at": "2026-08-05T03:54:05.318655Z",
+  "archive_skill_md_count_raw": 202490,
+  "archive_metadata_count_raw": 202488,
+  "indexed_skill_count_scan_shape": 161416,
+  "registry_skill_count_dedup": 160983,
   "total_plugins": 4,
   "categories": 40,
   "category_counts": [
@@ -21,7 +21,7 @@
     {
       "name": "ai-ml",
       "code": "ai-ml",
-      "count": 1648
+      "count": 1649
     },
     {
       "name": "analysis",
@@ -31,12 +31,12 @@
     {
       "name": "api",
       "code": "api",
-      "count": 834
+      "count": 835
     },
     {
       "name": "bash",
       "code": "bash",
-      "count": 530
+      "count": 531
     },
     {
       "name": "business",
@@ -71,12 +71,12 @@
     {
       "name": "design",
       "code": "des",
-      "count": 10399
+      "count": 10400
     },
     {
       "name": "development",
       "code": "dev",
-      "count": 36967
+      "count": 36983
     },
     {
       "name": "devops",
@@ -86,7 +86,7 @@
     {
       "name": "documents",
       "code": "doc",
-      "count": 6218
+      "count": 6221
     },
     {
       "name": "domains",
@@ -141,7 +141,7 @@
     {
       "name": "other",
       "code": "oth",
-      "count": 2700
+      "count": 2708
     },
     {
       "name": "performance",
@@ -171,7 +171,7 @@
     {
       "name": "productivity",
       "code": "pro",
-      "count": 2315
+      "count": 2317
     },
     {
       "name": "quality",
@@ -209,7 +209,7 @@
       "count": 1155
     }
   ],
-  "unique_repo_count": 9827,
+  "unique_repo_count": 9835,
   "official_skill_count": 0,
   "top_repositories": [
     {
@@ -255,36 +255,36 @@
   ],
   "featured_count": 100,
   "index_size_bytes": 324,
-  "index_size_gzip_bytes": 245,
+  "index_size_gzip_bytes": 244,
   "search_shard_count": 5,
-  "search_largest_shard_bytes": 8388637,
-  "search_largest_shard_gzip_bytes": 2491495,
+  "search_largest_shard_bytes": 8388688,
+  "search_largest_shard_gzip_bytes": 2491402,
   "category_shard_count": 45,
-  "category_largest_part_bytes": 8388617,
-  "category_largest_part_gzip_bytes": 1806012,
-  "lite_index_count": 161383,
+  "category_largest_part_bytes": 8388707,
+  "category_largest_part_gzip_bytes": 1806013,
+  "lite_index_count": 161416,
   "lite_index_included_count": 5000,
   "lite_index_size_bytes": 3502335,
   "lite_index_gzip_size_bytes": 681029,
   "quality_index_size_bytes": 364,
   "quality_index_gzip_size_bytes": 270,
   "quality_shard_count": 6,
-  "quality_largest_shard_bytes": 8388683,
-  "quality_largest_shard_gzip_bytes": 1763107,
+  "quality_largest_shard_bytes": 8388629,
+  "quality_largest_shard_gzip_bytes": 1763121,
   "security_index_size_bytes": 368,
-  "security_index_gzip_size_bytes": 271,
+  "security_index_gzip_size_bytes": 272,
   "security_shard_count": 19,
-  "security_largest_shard_bytes": 8388715,
-  "security_largest_shard_gzip_bytes": 1590363,
+  "security_largest_shard_bytes": 8388713,
+  "security_largest_shard_gzip_bytes": 1590463,
   "ranking_index_size_bytes": 364,
-  "ranking_index_gzip_size_bytes": 270,
+  "ranking_index_gzip_size_bytes": 271,
   "ranking_shard_count": 5,
-  "ranking_largest_shard_bytes": 8388678,
-  "ranking_largest_shard_gzip_bytes": 2183604,
-  "largest_generated_file_bytes": 8388715,
+  "ranking_largest_shard_bytes": 8388701,
+  "ranking_largest_shard_gzip_bytes": 2183739,
+  "largest_generated_file_bytes": 8388713,
   "security_scan": {
-    "total": 202450,
-    "passed": 202450,
+    "total": 202488,
+    "passed": 202488,
     "failed": 0
   }
 }

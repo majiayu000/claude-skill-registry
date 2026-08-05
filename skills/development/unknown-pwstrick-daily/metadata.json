@@ -1,0 +1,21 @@
+{
+  "name": "unknown",
+  "description": "一份搜集的前端面试题目清单、面试相关以及各类学习的资料（不局限于前端）",
+  "repo": "pwstrick/daily",
+  "path": "interview/skill.md",
+  "github_branch": "master",
+  "category": "development",
+  "tags": [],
+  "stars": 2513,
+  "source": "GitHub Code Search Results",
+  "dir_name": "unknown-pwstrick-daily",
+  "archive_mode": "skill-md",
+  "bundled_files": [],
+  "author": "pwstrick",
+  "source_url": "https://github.com/pwstrick/daily/blob/master/interview/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pwstrick/daily/blob/master/interview/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

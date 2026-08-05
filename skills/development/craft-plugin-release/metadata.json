@@ -1,0 +1,38 @@
+{
+  "name": "craft-plugin-release",
+  "repo": "michtio/craftcms-claude-skills",
+  "path": "skills/craft-plugin-release/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/michtio/craftcms-claude-skills",
+  "dir_name": "craft-plugin-release",
+  "downloaded_at": "2026-08-05T02:56:05.589868Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: dev, code, debug",
+    "score": 3,
+    "runner_up": "quality",
+    "runner_up_score": 2,
+    "signals": [
+      "dev",
+      "code",
+      "debug"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "michtio",
+  "source_url": "https://github.com/michtio/craftcms-claude-skills/blob/main/skills/craft-plugin-release/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/michtio/craftcms-claude-skills/blob/main/skills/craft-plugin-release/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Releasing Craft CMS plugins \u2014 tagging, Packagist propagation, GitHub releases, branch promotion. ALWAYS load when cutting, preparing, verifying, or debugging a plugin release: bumping a version, dating a changelog, creating or moving a git tag, editing a GitHub release, or checking what Packagist serves. Covers the composer.json version key (bump-or-omit trade-off, same-commit rule, verifying the tag's own blob), Packagist verification via repo.packagist.org/p2, the 'Skipped tag ... does not match version' silent failure, the tag recreation risk model (unserved tags safe to recreate, served tags never), GitHub release objects drifting from tags, gh api PATCH wiping tag_name to untagged-<hash>, releases/latest 404 when all releases are prereleases, drafts minting their tag from target_commitish at publish time, two-way origin branch comparison before promotion, and Composer path repositories for multi-plugin local dev (canonical semantics, no exclude on wildcards, extra.branch-alias, duplicate package names). Triggers on: cut/prepare a release, tag a version, bump the version, Packagist not serving the new version, 'Skipped tag', repo.packagist.org, packagist webhook, gh release create/edit, untagged- release, prerelease latest 404, target_commitish, draft release, promote develop to main, commits behind/ahead, path repository, branch-alias, dev-develop, symlinked plugin dependency. NOT for writing changelog entries, CI workflow YAML (craftcms skill quality.md), or plugin store listings."
+}

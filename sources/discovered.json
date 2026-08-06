@@ -1,7 +1,7 @@
 {
-  "discovered_at": "2026-08-05T03:04:34.142805Z",
+  "discovered_at": "2026-08-06T03:07:16.734421Z",
   "total_repos": 300,
-  "total_skills": 20,
+  "total_skills": 3,
   "scanned_repos": 300,
   "limits": {
     "max_repos": 300,
@@ -39,6 +39,7 @@
     "DheerG/swarms",
     "EAIconsulting/cowork-skills-library",
     "Egonex-AI/Understand-Anything",
+    "FRACerqueira/PromptPlus",
     "ForteScarlet/codex-kkp",
     "Frappucc1no/recall-loom",
     "Gabberflast/academic-pptx-skill",
@@ -101,6 +102,7 @@
     "addyosmani/web-quality-skills",
     "adityaarsharma/youtube-marketing-skills",
     "aeonfun/soul.md",
+    "agiwhitelist/auteur",
     "ahacker-1/cre-agent-skills",
     "alec-c4/claude-rails-dev",
     "alirezarezvani/claude-code-skill-factory",
@@ -109,10 +111,10 @@
     "amElnagdy/delegate-skills",
     "ammawla/encode-toolkit",
     "anbeime/skill",
+    "ancoleman/ai-design-components",
     "anombyte93/prd-taskmaster",
     "antonbabenko/terraform-skill",
     "aofp/yume",
-    "appleboy/skills",
     "arbiterForge/codeArbiter",
     "arvindrk/extract-design-system",
     "avelikiy/great_cto",
@@ -206,7 +208,6 @@
     "lee-fuhr/claude-session-index",
     "levi-qiao/longgraph-skill",
     "levnikolaevich/claude-code-skills",
-    "lionkiii/claude-seo-skills",
     "ljagiello/ctf-skills",
     "longbridge/skills",
     "lool-ventures/founder-skills",
@@ -249,7 +250,6 @@
     "parcadei/Continuous-Claude-v3",
     "pedrohcgs/claude-code-my-workflow",
     "plugin87/ux-ui-agent-skills",
-    "posit-dev/skills",
     "proyecto26/sherlock-ai-plugin",
     "proyecto26/slides-ai-plugin",
     "radekamirko/C.R.I.S.P",
@@ -314,84 +314,16 @@
   ],
   "skills": [
     {
-      "repo": "aaddrick/attention-control",
-      "path": "skills/attention-control/SKILL.md"
+      "repo": "majiayu000/spellbook",
+      "path": "skills/claude-code-reverse/SKILL.md"
     },
     {
-      "repo": "aaddrick/attention-control",
-      "path": ".cursor/skills/attention-control/SKILL.md"
-    },
-    {
-      "repo": "amElnagdy/delegate-skills",
-      "path": "skills/delegate-setup/SKILL.md"
-    },
-    {
-      "repo": "costiash/claude-code-docs",
-      "path": "plugin/skills/docs/SKILL.md"
-    },
-    {
-      "repo": "costiash/claude-code-docs",
-      "path": "plugin/skills/claude-docs/SKILL.md"
-    },
-    {
-      "repo": "costiash/claude-code-docs",
-      "path": "plugin/skills/claude-docs-course/SKILL.md"
-    },
-    {
-      "repo": "costiash/claude-code-docs",
-      "path": "plugin/skills/claude-docs-validate/SKILL.md"
-    },
-    {
-      "repo": "costiash/claude-code-docs",
-      "path": "plugin/skills/claude-docs-changelog/SKILL.md"
-    },
-    {
-      "repo": "fcakyon/claude-codex-settings",
-      "path": "plugins/ultralytics-dev/skills/yolo-training/SKILL.md"
-    },
-    {
-      "repo": "fcakyon/claude-codex-settings",
-      "path": "plugins/ultralytics-dev/skills/ultralytics-platform/SKILL.md"
-    },
-    {
-      "repo": "michtio/craftcms-claude-skills",
-      "path": "skills/craft-plugin-release/SKILL.md"
-    },
-    {
-      "repo": "microsoft/power-platform-skills",
-      "path": "plugins/model-apps/skills/app-builder/SKILL.md"
+      "repo": "majiayu000/spellbook",
+      "path": "skills/npm-supply-chain-check/SKILL.md"
     },
     {
       "repo": "mohitagw15856/pm-claude-skills",
-      "path": "skills/tone-fixer/SKILL.md"
-    },
-    {
-      "repo": "mohitagw15856/pm-claude-skills",
-      "path": "skills/gift-finder/SKILL.md"
-    },
-    {
-      "repo": "mohitagw15856/pm-claude-skills",
-      "path": "skills/plan-my-day/SKILL.md"
-    },
-    {
-      "repo": "mohitagw15856/pm-claude-skills",
-      "path": "skills/trip-planner/SKILL.md"
-    },
-    {
-      "repo": "respira-press/agent-skills-wordpress",
-      "path": "skills/respira-site-audit/SKILL.md"
-    },
-    {
-      "repo": "respira-press/agent-skills-wordpress",
-      "path": "skills/respira-woocommerce/SKILL.md"
-    },
-    {
-      "repo": "respira-press/agent-skills-wordpress",
-      "path": "skills/respira-builder-edits/SKILL.md"
-    },
-    {
-      "repo": "saadshahd/moo.md",
-      "path": "hunch/skills/soloflow/SKILL.md"
+      "path": "skills/wine-pairing/SKILL.md"
     }
   ]
 }

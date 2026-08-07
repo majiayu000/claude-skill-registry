@@ -1,0 +1,38 @@
+{
+  "name": "meeting-copilot",
+  "repo": "serejaris/personal-corp-os",
+  "path": "skills/meeting-copilot/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/serejaris/personal-corp-os",
+  "dir_name": "meeting-copilot-serejaris-personal-corp-os",
+  "downloaded_at": "2026-08-07T03:08:56.029211Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "design",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for design: design, css, component",
+    "score": 3,
+    "runner_up": "agent",
+    "runner_up_score": 1,
+    "signals": [
+      "design",
+      "css",
+      "component"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "serejaris",
+  "source_url": "https://github.com/serejaris/personal-corp-os/blob/main/skills/meeting-copilot/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/serejaris/personal-corp-os/blob/main/skills/meeting-copilot/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when preparing for, running, or closing a live meeting with an AI assistant dashboard. Triggers on \"meeting copilot\", \"live copilot\", \"prepare for a call\", \"update copilot\", \"close the session\", or requests to turn transcript chunks into meeting questions, topic maps, decisions, and follow-ups."
+}

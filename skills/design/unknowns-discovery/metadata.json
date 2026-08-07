@@ -1,0 +1,38 @@
+{
+  "name": "unknowns-discovery",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/unknowns-discovery/skills/unknowns-discovery/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "unknowns-discovery",
+  "downloaded_at": "2026-08-07T03:08:48.237169Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "design",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for design: design, ui, ux",
+    "score": 3,
+    "runner_up": "context-management",
+    "runner_up_score": 2,
+    "signals": [
+      "design",
+      "ui",
+      "ux"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "secondsky",
+  "source_url": "https://github.com/secondsky/claude-skills/blob/main/plugins/unknowns-discovery/skills/unknowns-discovery/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/secondsky/claude-skills/blob/main/plugins/unknowns-discovery/skills/unknowns-discovery/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Discover and reduce task unknowns \u2014 blindspots, missing context, and unknown unknowns \u2014 before committing to a plan, implementation, review, or merge."
+}

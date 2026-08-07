@@ -1,0 +1,37 @@
+{
+  "name": "ponytail-audit",
+  "repo": "0xwilliamortiz/ponytail-improved",
+  "path": "skills/ponytail-audit/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/0xwilliamortiz/ponytail-improved",
+  "dir_name": "ponytail-audit",
+  "downloaded_at": "2026-08-07T02:43:11.679311Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: product=2, security=2",
+    "score": 2,
+    "runner_up": "security",
+    "runner_up_score": 2,
+    "signals": [
+      "product",
+      "feature"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "0xwilliamortiz",
+  "source_url": "https://github.com/0xwilliamortiz/ponytail-improved/blob/main/skills/ponytail-audit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/0xwilliamortiz/ponytail-improved/blob/main/skills/ponytail-audit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Whole-repo audit for over-engineering. Like ponytail-review, but scans the entire codebase instead of a diff: a ranked list of what to delete, simplify, or replace with stdlib/native equivalents. Use when the user says \"audit this codebase\", \"audit for over-engineering\", \"what can I delete from this repo\", \"find bloat\", \"ponytail-audit\", or \"/ponytail-audit\". One-shot report, does not apply fixes."
+}

@@ -1,0 +1,37 @@
+{
+  "name": "bmad-deep-recon",
+  "repo": "skyf0xx/hedgehog",
+  "path": "vendor-skills/BMAD/core-skills/bmad-deep-recon/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/skyf0xx/hedgehog",
+  "dir_name": "bmad-deep-recon-skyf0xx-hedgehog",
+  "downloaded_at": "2026-08-07T03:09:52.129312Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: context-management=2, productivity=2",
+    "score": 2,
+    "runner_up": "productivity",
+    "runner_up_score": 2,
+    "signals": [
+      "context",
+      "memory"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "skyf0xx",
+  "source_url": "https://github.com/skyf0xx/hedgehog/blob/master/vendor-skills/BMAD/core-skills/bmad-deep-recon/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/skyf0xx/hedgehog/blob/master/vendor-skills/BMAD/core-skills/bmad-deep-recon/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Decision-grade research, three ways: draft a deep-research prompt for the user to run in their own tool (ChatGPT, Gemini, Grok, Perplexity, \u2026), process a finished research report \u2014 file it, distill a succinct cited summary with metadata that downstream skills consume without reprocessing \u2014 or run the research here through web fan-out. Shipped type packs: market, domain, technical, competitive, user-voice, academic-lit \u2014 plus a select shape for choose-between decisions and custom types via overrides. Use when the user says \"deep recon\", \"research this\", \"draft a research prompt\", \"process this research report\", \"market research\", \"domain research\", \"technical research\", \"competitor research\", \"literature review\", or \"help me choose between\"."
+}

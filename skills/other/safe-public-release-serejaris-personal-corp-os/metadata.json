@@ -1,0 +1,38 @@
+{
+  "name": "safe-public-release",
+  "repo": "serejaris/personal-corp-os",
+  "path": "skills/safe-public-release/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/serejaris/personal-corp-os",
+  "dir_name": "safe-public-release-serejaris-personal-corp-os",
+  "downloaded_at": "2026-08-07T03:08:57.566183Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: devops=3, security=3",
+    "score": 3,
+    "runner_up": "security",
+    "runner_up_score": 3,
+    "signals": [
+      "ci",
+      "infra",
+      "infrastructure"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "serejaris",
+  "source_url": "https://github.com/serejaris/personal-corp-os/blob/main/skills/safe-public-release/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/serejaris/personal-corp-os/blob/main/skills/safe-public-release/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when publishing, open-sourcing, exporting, sanitizing, or moving code, agent skills, prompts, templates, fixtures, datasets, workshop assets, or other artifacts from a private repository, vendor/runtime environment, or mixed working directory into a public repository or registry. Builds a provenance inventory, license/security review, explicit allowlist, clean staging package, approval dry run, and fresh public clone/install smoke. Triggers on \"open source this\", \"publish these skills\", \"make this repo public\", \"export and sanitize\", \"\u043f\u043e\u0434\u0433\u043e\u0442\u043e\u0432\u044c \u043f\u0443\u0431\u043b\u0438\u0447\u043d\u044b\u0439 \u0440\u0435\u043b\u0438\u0437\", \"\u0432\u044b\u043b\u043e\u0436\u0438 \u0441\u043a\u0438\u043b\u043b\u044b\", \"\u043e\u043f\u0435\u043d\u0441\u043e\u0440\u0441\u043d\u0438\", \"\u0441\u0430\u043d\u0438\u0442\u0438\u0437\u0438\u0440\u0443\u0439 \u0438 \u043e\u043f\u0443\u0431\u043b\u0438\u043a\u0443\u0439\". NOT for ordinary upstream bugfix PRs, vulnerability disclosure, or creating a corp-* department."
+}

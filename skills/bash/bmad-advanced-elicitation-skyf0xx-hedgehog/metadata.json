@@ -1,0 +1,37 @@
+{
+  "name": "bmad-advanced-elicitation",
+  "repo": "skyf0xx/hedgehog",
+  "path": "vendor-skills/BMAD/core-skills/bmad-advanced-elicitation/SKILL.md",
+  "github_branch": "master",
+  "category": "bash",
+  "source": "github.com/skyf0xx/hedgehog",
+  "dir_name": "bmad-advanced-elicitation-skyf0xx-hedgehog",
+  "downloaded_at": "2026-08-07T03:09:54.543004Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "bash",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for bash: bash, script",
+    "score": 2,
+    "runner_up": "ai-llm",
+    "runner_up_score": 1,
+    "signals": [
+      "bash",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "skyf0xx",
+  "source_url": "https://github.com/skyf0xx/hedgehog/blob/master/vendor-skills/BMAD/core-skills/bmad-advanced-elicitation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/skyf0xx/hedgehog/blob/master/vendor-skills/BMAD/core-skills/bmad-advanced-elicitation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Push the LLM to reconsider, refine, and improve its recent output. Use when user asks for deeper critique or mentions a known deeper critique method, e.g. socratic, first principles, pre-mortem, red team."
+}

@@ -1,0 +1,38 @@
+{
+  "name": "fable-ruki-agenty",
+  "repo": "serejaris/personal-corp-os",
+  "path": "skills/fable-ruki-agenty/SKILL.md",
+  "github_branch": "main",
+  "category": "bash",
+  "source": "github.com/serejaris/personal-corp-os",
+  "dir_name": "fable-ruki-agenty",
+  "downloaded_at": "2026-08-07T03:08:57.074631Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "bash",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for bash: bash, script, cli",
+    "score": 3,
+    "runner_up": "agent",
+    "runner_up_score": 1,
+    "signals": [
+      "bash",
+      "script",
+      "cli"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "serejaris",
+  "source_url": "https://github.com/serejaris/personal-corp-os/blob/main/skills/fable-ruki-agenty/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/serejaris/personal-corp-os/blob/main/skills/fable-ruki-agenty/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u0424\u0435\u0439\u0431\u043b \u0440\u0443\u043a\u0438-\u0430\u0433\u0435\u043d\u0442\u044b \u2014 \u0440\u0443\u0447\u043d\u043e\u0439 \u0440\u0435\u0436\u0438\u043c \u043e\u0440\u043a\u0435\u0441\u0442\u0440\u0430\u0446\u0438\u0438, \u0433\u0434\u0435 Fable \u043d\u0435 \u043f\u0438\u0448\u0435\u0442 \u043a\u043e\u0434, \u0430 \u043f\u0438\u0448\u0435\u0442 \u0441\u043f\u0435\u043a\u0438 \u0432 \u0442\u0435\u043b\u0430 GH issues \u0438 \u0440\u0430\u0437\u0434\u0430\u0451\u0442 \u0433\u043e\u0442\u043e\u0432\u044b\u0435 \u0437\u0430\u0434\u0430\u0447\u0438 \u0440\u0443\u043a\u0430\u043c: \u043a\u043e\u0434\u0438\u043d\u0433, \u043a\u043e\u0434-\u0440\u0435\u0432\u044c\u044e, gh-\u043e\u043f\u0435\u0440\u0430\u0446\u0438\u0438, CLI-\u043c\u0435\u0445\u0430\u043d\u0438\u043a\u0430, DoD-\u0432\u0435\u0440\u0438\u0444\u0438\u043a\u0430\u0446\u0438\u044f \u0438 \u0443\u043a\u043b\u0430\u0434\u043a\u0430 \u0444\u0430\u0439\u043b\u043e\u0432 \u2014 Codex; \u0440\u0430\u0437\u0432\u0435\u0434\u043a\u0430, \u0447\u0442\u0435\u043d\u0438\u0435 \u0438 \u0441\u043a\u0430\u0443\u0442\u044b \u2014 Grok-\u0432\u043e\u0440\u043a\u0435\u0440\u044b \u0447\u0435\u0440\u0435\u0437 Orca. \u0412\u044b\u0437\u044b\u0432\u0430\u0435\u0442\u0441\u044f \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0435\u043c \u044f\u0432\u043d\u043e, \u043d\u0435 \u043c\u043e\u0434\u0435\u043b\u044c\u044e."
+}

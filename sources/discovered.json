@@ -1,7 +1,7 @@
 {
-  "discovered_at": "2026-08-06T03:07:16.734421Z",
+  "discovered_at": "2026-08-07T03:13:03.852797Z",
   "total_repos": 300,
-  "total_skills": 3,
+  "total_skills": 93,
   "scanned_repos": 300,
   "limits": {
     "max_repos": 300,
@@ -37,7 +37,6 @@
     "Darthflute/social-calendar-skill",
     "DeliciousBuding/xiaohongshu-skill",
     "DheerG/swarms",
-    "EAIconsulting/cowork-skills-library",
     "Egonex-AI/Understand-Anything",
     "FRACerqueira/PromptPlus",
     "ForteScarlet/codex-kkp",
@@ -46,6 +45,7 @@
     "Hainrixz/skill-vault",
     "IJONIS/geo-lint",
     "J-nowcow/awesome-korean-agent-skills",
+    "JasonColapietro/suede-creator-skills",
     "JayantDevkar/claude-code-karma",
     "Jeffallan/claude-skills",
     "JimLiu/baoyu-skills",
@@ -129,6 +129,7 @@
     "bitjaru/styleseed",
     "bitwize-music-studio/claude-ai-music-skills",
     "bjwanneng/veriflow-cc",
+    "borghei/Claude-Skills",
     "bovinphang/frontend-craft",
     "browser-act/skills",
     "cgallic/kai-cmo-harness",
@@ -165,7 +166,6 @@
     "gabelul/stitch-kit",
     "gbessoni/seobuild-onpage",
     "gcpdev/llm-council-skill",
-    "geekjourneyx/claude-design-card",
     "geekjourneyx/md2wechat-skill",
     "geoffreycrofte/luxembourg-accessibility-skillset",
     "getaero-io/gtm-eng-skills",
@@ -213,7 +213,6 @@
     "lool-ventures/founder-skills",
     "maigentic/stratarts",
     "majiayu000/spellbook",
-    "malob/nix-config",
     "marketingjuliancongdanh79-pixel/skill-generator",
     "massimodeluisa/recursive-decomposition-skill",
     "matteotitta/claude-code-marketing-quickstart",
@@ -250,6 +249,7 @@
     "parcadei/Continuous-Claude-v3",
     "pedrohcgs/claude-code-my-workflow",
     "plugin87/ux-ui-agent-skills",
+    "posit-dev/skills",
     "proyecto26/sherlock-ai-plugin",
     "proyecto26/slides-ai-plugin",
     "radekamirko/C.R.I.S.P",
@@ -265,7 +265,7 @@
     "scdenney/open-science-skills",
     "secondsky/claude-skills",
     "sequenzia/agent-alchemy",
-    "serejaris/personal-corp-skills",
+    "serejaris/personal-corp-os",
     "sergebulaev/linkedin-skills",
     "shahshrey/awesome-claude-code-mastery",
     "shajith003/awesome-claude-skills",
@@ -314,16 +314,376 @@
   ],
   "skills": [
     {
-      "repo": "majiayu000/spellbook",
-      "path": "skills/claude-code-reverse/SKILL.md"
+      "repo": "0xwilliamortiz/humanizer-cli",
+      "path": "SKILL.md"
     },
     {
-      "repo": "majiayu000/spellbook",
-      "path": "skills/npm-supply-chain-check/SKILL.md"
+      "repo": "0xwilliamortiz/ponytail-improved",
+      "path": "skills/ponytail/SKILL.md"
+    },
+    {
+      "repo": "0xwilliamortiz/ponytail-improved",
+      "path": "skills/ponytail-help/SKILL.md"
+    },
+    {
+      "repo": "0xwilliamortiz/ponytail-improved",
+      "path": "skills/ponytail-gain/SKILL.md"
+    },
+    {
+      "repo": "0xwilliamortiz/ponytail-improved",
+      "path": "skills/ponytail-debt/SKILL.md"
+    },
+    {
+      "repo": "0xwilliamortiz/ponytail-improved",
+      "path": "skills/ponytail-audit/SKILL.md"
+    },
+    {
+      "repo": "0xwilliamortiz/ponytail-improved",
+      "path": "skills/ponytail-review/SKILL.md"
+    },
+    {
+      "repo": "0xwilliamortiz/ponytail-improved",
+      "path": ".openclaw/skills/ponytail/SKILL.md"
+    },
+    {
+      "repo": "0xwilliamortiz/ponytail-improved",
+      "path": ".openclaw/skills/ponytail-debt/SKILL.md"
+    },
+    {
+      "repo": "0xwilliamortiz/ponytail-improved",
+      "path": ".openclaw/skills/ponytail-help/SKILL.md"
+    },
+    {
+      "repo": "0xwilliamortiz/ponytail-improved",
+      "path": ".openclaw/skills/ponytail-gain/SKILL.md"
+    },
+    {
+      "repo": "0xwilliamortiz/ponytail-improved",
+      "path": ".openclaw/skills/ponytail-audit/SKILL.md"
+    },
+    {
+      "repo": "0xwilliamortiz/ponytail-improved",
+      "path": ".openclaw/skills/ponytail-review/SKILL.md"
+    },
+    {
+      "repo": "Cassette-Editor/oh-my-cassette",
+      "path": "skills/cassette-model/SKILL.md"
+    },
+    {
+      "repo": "Cassette-Editor/oh-my-cassette",
+      "path": ".agents/skills/cassette-model/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "skills/drill/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "skills/capstone/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "skills/wait-what/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "skills/map-corpus/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "skills/book-to-skill/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "skills/explain-concept/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "skills/diagram-contract/SKILL.md"
+    },
+    {
+      "repo": "bitjaru/styleseed",
+      "path": "engine/.claude/skills/ss-studio/SKILL.md"
+    },
+    {
+      "repo": "fcakyon/claude-codex-settings",
+      "path": "plugins/ultralytics-branding/skills/ultralytics-branding/SKILL.md"
+    },
+    {
+      "repo": "hoangsonww/Claude-Code-Agent-Monitor",
+      "path": "plugins/ccam-runner/skills/run-agent/SKILL.md"
+    },
+    {
+      "repo": "hoangsonww/Claude-Code-Agent-Monitor",
+      "path": "plugins/ccam-runner/skills/run-history/SKILL.md"
+    },
+    {
+      "repo": "hoangsonww/Claude-Code-Agent-Monitor",
+      "path": "plugins/ccam-platform/skills/mcp-server/SKILL.md"
+    },
+    {
+      "repo": "hoangsonww/Claude-Code-Agent-Monitor",
+      "path": "plugins/ccam-reports/skills/cost-report/SKILL.md"
+    },
+    {
+      "repo": "hoangsonww/Claude-Code-Agent-Monitor",
+      "path": "plugins/ccam-platform/skills/hook-setup/SKILL.md"
+    },
+    {
+      "repo": "hoangsonww/Claude-Code-Agent-Monitor",
+      "path": "plugins/ccam-reports/skills/workflow-report/SKILL.md"
+    },
+    {
+      "repo": "hoangsonww/Claude-Code-Agent-Monitor",
+      "path": "plugins/ccam-reports/skills/executive-report/SKILL.md"
+    },
+    {
+      "repo": "hoangsonww/Claude-Code-Agent-Monitor",
+      "path": "plugins/ccam-platform/skills/config-explorer/SKILL.md"
+    },
+    {
+      "repo": "hoangsonww/Claude-Code-Agent-Monitor",
+      "path": "plugins/ccam-reports/skills/reliability-report/SKILL.md"
+    },
+    {
+      "repo": "hoangsonww/Claude-Code-Agent-Monitor",
+      "path": "plugins/ccam-platform/skills/history-portability/SKILL.md"
+    },
+    {
+      "repo": "hoangsonww/Claude-Code-Agent-Monitor",
+      "path": "plugins/ccam-integrations/skills/alert-management/SKILL.md"
+    },
+    {
+      "repo": "hoangsonww/Claude-Code-Agent-Monitor",
+      "path": "plugins/ccam-integrations/skills/remote-collection/SKILL.md"
+    },
+    {
+      "repo": "hoangsonww/Claude-Code-Agent-Monitor",
+      "path": "plugins/ccam-integrations/skills/webhook-management/SKILL.md"
+    },
+    {
+      "repo": "levnikolaevich/claude-code-skills",
+      "path": "plugins/optimization-suite/skills/ln-35-surgical-change-implementer/SKILL.md"
     },
     {
       "repo": "mohitagw15856/pm-claude-skills",
-      "path": "skills/wine-pairing/SKILL.md"
+      "path": "skills/five-minds/SKILL.md"
+    },
+    {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "path": "skills/idea-storm/SKILL.md"
+    },
+    {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "path": "skills/momentum-map/SKILL.md"
+    },
+    {
+      "repo": "scdenney/open-science-skills",
+      "path": "codex/spawn/SKILL.md"
+    },
+    {
+      "repo": "scdenney/open-science-skills",
+      "path": "plugin/skills/spawn/SKILL.md"
+    },
+    {
+      "repo": "scdenney/open-science-skills",
+      "path": "codex/research-wayfinder/SKILL.md"
+    },
+    {
+      "repo": "scdenney/open-science-skills",
+      "path": "plugin/skills/research-wayfinder/SKILL.md"
+    },
+    {
+      "repo": "secondsky/claude-skills",
+      "path": "plugins/tech-debt/skills/tech-debt/SKILL.md"
+    },
+    {
+      "repo": "secondsky/claude-skills",
+      "path": "plugins/unknowns-discovery/skills/unknowns-discovery/SKILL.md"
+    },
+    {
+      "repo": "serejaris/personal-corp-os",
+      "path": "skills/idea/SKILL.md"
+    },
+    {
+      "repo": "serejaris/personal-corp-os",
+      "path": "skills/pm-prd/SKILL.md"
+    },
+    {
+      "repo": "serejaris/personal-corp-os",
+      "path": "skills/to-prd/SKILL.md"
+    },
+    {
+      "repo": "serejaris/personal-corp-os",
+      "path": "skills/manager/SKILL.md"
+    },
+    {
+      "repo": "serejaris/personal-corp-os",
+      "path": "skills/grill-me/SKILL.md"
+    },
+    {
+      "repo": "serejaris/personal-corp-os",
+      "path": "skills/to-issues/SKILL.md"
+    },
+    {
+      "repo": "serejaris/personal-corp-os",
+      "path": "skills/gh-issues/SKILL.md"
+    },
+    {
+      "repo": "serejaris/personal-corp-os",
+      "path": "skills/pm-metrics/SKILL.md"
+    },
+    {
+      "repo": "serejaris/personal-corp-os",
+      "path": "skills/tg-bot-ops/SKILL.md"
+    },
+    {
+      "repo": "serejaris/personal-corp-os",
+      "path": "skills/html-draft/SKILL.md"
+    },
+    {
+      "repo": "serejaris/personal-corp-os",
+      "path": "skills/pm-roadmap/SKILL.md"
+    },
+    {
+      "repo": "serejaris/personal-corp-os",
+      "path": "skills/ceo-council/SKILL.md"
+    },
+    {
+      "repo": "serejaris/personal-corp-os",
+      "path": "skills/corp-doctor/SKILL.md"
+    },
+    {
+      "repo": "serejaris/personal-corp-os",
+      "path": "skills/pm-feedback/SKILL.md"
+    },
+    {
+      "repo": "serejaris/personal-corp-os",
+      "path": "skills/cc-analytics/SKILL.md"
+    },
+    {
+      "repo": "serejaris/personal-corp-os",
+      "path": "skills/weekly-retro/SKILL.md"
+    },
+    {
+      "repo": "serejaris/personal-corp-os",
+      "path": "skills/art-director/SKILL.md"
+    },
+    {
+      "repo": "serejaris/personal-corp-os",
+      "path": "skills/pm-brainstorm/SKILL.md"
+    },
+    {
+      "repo": "serejaris/personal-corp-os",
+      "path": "skills/pm-prioritize/SKILL.md"
+    },
+    {
+      "repo": "serejaris/personal-corp-os",
+      "path": "skills/pm-competitive/SKILL.md"
+    },
+    {
+      "repo": "serejaris/personal-corp-os",
+      "path": "skills/design-minimal/SKILL.md"
+    },
+    {
+      "repo": "serejaris/personal-corp-os",
+      "path": "skills/meeting-copilot/SKILL.md"
+    },
+    {
+      "repo": "serejaris/personal-corp-os",
+      "path": "skills/pm-user-stories/SKILL.md"
+    },
+    {
+      "repo": "serejaris/personal-corp-os",
+      "path": "skills/weekly-planning/SKILL.md"
+    },
+    {
+      "repo": "serejaris/personal-corp-os",
+      "path": "skills/readme-generator/SKILL.md"
+    },
+    {
+      "repo": "serejaris/personal-corp-os",
+      "path": "skills/claude-md-writer/SKILL.md"
+    },
+    {
+      "repo": "serejaris/personal-corp-os",
+      "path": "skills/fable-ruki-agenty/SKILL.md"
+    },
+    {
+      "repo": "serejaris/personal-corp-os",
+      "path": "skills/product-data-audit/SKILL.md"
+    },
+    {
+      "repo": "serejaris/personal-corp-os",
+      "path": "skills/safe-public-release/SKILL.md"
+    },
+    {
+      "repo": "serejaris/personal-corp-os",
+      "path": "archive/skills/paperclip-api/SKILL.md"
+    },
+    {
+      "repo": "serejaris/personal-corp-os",
+      "path": "skills/parallel-design-variants/SKILL.md"
+    },
+    {
+      "repo": "skyf0xx/hedgehog",
+      "path": "vendor-skills/GSAP/gsap-core/SKILL.md"
+    },
+    {
+      "repo": "skyf0xx/hedgehog",
+      "path": "vendor-skills/GSAP/gsap-utils/SKILL.md"
+    },
+    {
+      "repo": "skyf0xx/hedgehog",
+      "path": "vendor-skills/GSAP/gsap-react/SKILL.md"
+    },
+    {
+      "repo": "skyf0xx/hedgehog",
+      "path": "vendor-skills/GSAP/gsap-plugins/SKILL.md"
+    },
+    {
+      "repo": "skyf0xx/hedgehog",
+      "path": "vendor-skills/GSAP/gsap-timeline/SKILL.md"
+    },
+    {
+      "repo": "skyf0xx/hedgehog",
+      "path": "vendor-skills/GSAP/gsap-frameworks/SKILL.md"
+    },
+    {
+      "repo": "skyf0xx/hedgehog",
+      "path": "vendor-skills/GSAP/gsap-performance/SKILL.md"
+    },
+    {
+      "repo": "skyf0xx/hedgehog",
+      "path": "vendor-skills/GSAP/gsap-scrolltrigger/SKILL.md"
+    },
+    {
+      "repo": "skyf0xx/hedgehog",
+      "path": "vendor-skills/BMAD/core-skills/bmad-deep-recon/SKILL.md"
+    },
+    {
+      "repo": "skyf0xx/hedgehog",
+      "path": "vendor-skills/BMAD/core-skills/bmad-brainstorming/SKILL.md"
+    },
+    {
+      "repo": "skyf0xx/hedgehog",
+      "path": "vendor-skills/BMAD/bmm-skills/1-analysis/bmad-prfaq/SKILL.md"
+    },
+    {
+      "repo": "skyf0xx/hedgehog",
+      "path": "vendor-skills/BMAD/bmm-skills/2-plan-workflows/bmad-ux/SKILL.md"
+    },
+    {
+      "repo": "skyf0xx/hedgehog",
+      "path": "vendor-skills/BMAD/bmm-skills/2-plan-workflows/bmad-prd/SKILL.md"
+    },
+    {
+      "repo": "skyf0xx/hedgehog",
+      "path": "vendor-skills/BMAD/core-skills/bmad-advanced-elicitation/SKILL.md"
+    },
+    {
+      "repo": "skyf0xx/hedgehog",
+      "path": "vendor-skills/BMAD/bmm-skills/1-analysis/bmad-product-brief/SKILL.md"
     }
   ]
 }

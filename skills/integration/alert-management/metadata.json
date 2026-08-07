@@ -1,0 +1,37 @@
+{
+  "name": "alert-management",
+  "repo": "hoangsonww/Claude-Code-Agent-Monitor",
+  "path": "plugins/ccam-integrations/skills/alert-management/SKILL.md",
+  "github_branch": "master",
+  "category": "integration",
+  "source": "github.com/hoangsonww/Claude-Code-Agent-Monitor",
+  "dir_name": "alert-management",
+  "downloaded_at": "2026-08-07T02:59:44.131367Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "integration",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for integration: integration, webhook",
+    "score": 2,
+    "runner_up": "bash",
+    "runner_up_score": 1,
+    "signals": [
+      "integration",
+      "webhook"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "hoangsonww",
+  "source_url": "https://github.com/hoangsonww/Claude-Code-Agent-Monitor/blob/master/plugins/ccam-integrations/skills/alert-management/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/hoangsonww/Claude-Code-Agent-Monitor/blob/master/plugins/ccam-integrations/skills/alert-management/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Inspect fired CCAM alerts and manage alert rules for token thresholds, event patterns, inactivity, and status duration. Use when acknowledging alerts, creating or editing a rule, checking cooldowns, or connecting alert rules to webhook targets."
+}

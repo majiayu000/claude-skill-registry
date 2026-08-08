@@ -1,0 +1,37 @@
+{
+  "name": "offensive-z-wave",
+  "repo": "0xwilliamortiz/claude-red",
+  "path": "Skills/wireless/offensive-z-wave/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/0xwilliamortiz/claude-red",
+  "dir_name": "offensive-z-wave",
+  "downloaded_at": "2026-08-08T01:42:32.364074Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: analysis=2, productivity=2",
+    "score": 2,
+    "runner_up": "productivity",
+    "runner_up_score": 2,
+    "signals": [
+      "analysis",
+      "analyze"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "0xwilliamortiz",
+  "source_url": "https://github.com/0xwilliamortiz/claude-red/blob/main/Skills/wireless/offensive-z-wave/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/0xwilliamortiz/claude-red/blob/main/Skills/wireless/offensive-z-wave/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Z-Wave attack methodology \u2014 sniffing with Z-Force / EZ-Wave / RTL-SDR + ZniffMobile, S0 (legacy) network-key derivation flaw and key reuse, S2 (modern) ECDH commissioning analysis, replay/injection on unauthenticated nodes, default-key brute-force on test deployments, and home-automation hub pivots. Use when targeting Z-Wave smart home devices (door locks, sensors, garage controllers) \u2014 common in mid-2010s smart home deployments still in production."
+}

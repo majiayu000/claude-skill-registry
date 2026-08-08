@@ -1,0 +1,37 @@
+{
+  "name": "necessary-work",
+  "repo": "OutlineDriven/odin-claude-plugin",
+  "path": "skills/necessary-work/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/OutlineDriven/odin-claude-plugin",
+  "dir_name": "necessary-work",
+  "downloaded_at": "2026-08-08T01:48:25.237922Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: planning=2, productivity=2",
+    "score": 2,
+    "runner_up": "productivity",
+    "runner_up_score": 2,
+    "signals": [
+      "planning",
+      "plan"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "OutlineDriven",
+  "source_url": "https://github.com/OutlineDriven/odin-claude-plugin/blob/main/skills/necessary-work/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OutlineDriven/odin-claude-plugin/blob/main/skills/necessary-work/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Gate every candidate action against one test: would deleting it leave the requested outcome unmet or unproven? Use when work is about to grow past the ask with an extra check, artifact, abstraction, retry, threshold, or follow-up, when deciding whether the task is already done, or when the user says minimum, only what is needed, or stop when it works. Applies to coding, research, planning, debugging, review, and writing alike."
+}

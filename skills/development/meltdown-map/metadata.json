@@ -1,0 +1,37 @@
+{
+  "name": "meltdown-map",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/meltdown-map/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "meltdown-map",
+  "downloaded_at": "2026-08-08T02:03:55.472683Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: framework, build",
+    "score": 2,
+    "runner_up": "documents",
+    "runner_up_score": 1,
+    "signals": [
+      "framework",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/meltdown-map/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/meltdown-map/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Build your personal early-warning system for meltdowns or shutdowns \u2014 your specific rising signs, the triggers that stack, what actually helps at each stage, and a plain plan you can hand to the people around you. Use when someone says 'my meltdowns come out of nowhere', 'help me not shut down', 'I need a plan for when I'm overwhelmed', or supports someone who melts down or shuts down. Produces a staged warning map, a per-stage response plan, and a shareable one-pager. A self-management tool \u2014 not a clinical or crisis service."
+}

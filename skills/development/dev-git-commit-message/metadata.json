@@ -1,0 +1,40 @@
+{
+  "name": "dev-git-commit-message",
+  "repo": "vasilyu1983/AI-Agents-public",
+  "path": "frameworks/shared-skills/skills/dev-git-commit-message/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/vasilyu1983/AI-Agents-public",
+  "dir_name": "dev-git-commit-message",
+  "downloaded_at": "2026-08-08T02:10:13.472651Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for development: dev, code, framework, build, refactor",
+    "score": 5,
+    "runner_up": "analysis",
+    "runner_up_score": 2,
+    "signals": [
+      "dev",
+      "code",
+      "framework",
+      "build",
+      "refactor"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "vasilyu1983",
+  "source_url": "https://github.com/vasilyu1983/AI-Agents-public/blob/main/frameworks/shared-skills/skills/dev-git-commit-message/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vasilyu1983/AI-Agents-public/blob/main/frameworks/shared-skills/skills/dev-git-commit-message/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Generates conventional commit messages from git diffs. Use when you need well-formatted commit messages following Conventional Commits."
+}

@@ -1,0 +1,38 @@
+{
+  "name": "offensive-bluetooth-classic",
+  "repo": "0xwilliamortiz/claude-red",
+  "path": "Skills/wireless/offensive-bluetooth-classic/SKILL.md",
+  "github_branch": "main",
+  "category": "platform",
+  "source": "github.com/0xwilliamortiz/claude-red",
+  "dir_name": "offensive-bluetooth-classic",
+  "downloaded_at": "2026-08-08T01:42:37.608438Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "platform",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for platform: device, android, ios",
+    "score": 3,
+    "runner_up": "bash",
+    "runner_up_score": 2,
+    "signals": [
+      "device",
+      "android",
+      "ios"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "0xwilliamortiz",
+  "source_url": "https://github.com/0xwilliamortiz/claude-red/blob/main/Skills/wireless/offensive-bluetooth-classic/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/0xwilliamortiz/claude-red/blob/main/Skills/wireless/offensive-bluetooth-classic/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Bluetooth Classic (BR/EDR) attack methodology \u2014 device discovery, service enumeration via SDP, LMP/L2CAP layer attacks, legacy PIN cracking (BlueBorne / KNOB), Bluetooth file-transfer abuse (BlueSnarfing legacy), unauthenticated profile abuse (HSP, HFP, OPP), and modern relevance against older industrial / automotive / accessory targets. Use when in-scope devices use Bluetooth Classic (Bluetooth \u2264 4.0 BR/EDR) \u2014 common in legacy car kits, industrial sensors, older medical devices, and audio accessories."
+}

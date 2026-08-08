@@ -1,0 +1,40 @@
+{
+  "name": "suede-copy",
+  "repo": "JasonColapietro/suede-creator-skills",
+  "path": "skills/suede-copy/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/JasonColapietro/suede-creator-skills",
+  "dir_name": "suede-copy",
+  "downloaded_at": "2026-08-08T01:45:19.969225Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for marketing: marketing, seo, social, campaign, brand",
+    "score": 5,
+    "runner_up": "product",
+    "runner_up_score": 3,
+    "signals": [
+      "marketing",
+      "seo",
+      "social",
+      "campaign",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "JasonColapietro",
+  "source_url": "https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-copy/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-copy/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Write conversion copy that earns the click: landing sections, email, microcopy, buttons, headlines, CTAs, variants, and anti-slop edits."
+}

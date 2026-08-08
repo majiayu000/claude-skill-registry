@@ -1,0 +1,41 @@
+{
+  "name": "software-csharp-backend",
+  "repo": "vasilyu1983/AI-Agents-public",
+  "path": "frameworks/shared-skills/skills/software-csharp-backend/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/vasilyu1983/AI-Agents-public",
+  "dir_name": "software-csharp-backend",
+  "downloaded_at": "2026-08-08T02:10:13.818755Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for development: dev, code, framework, build, software, refactor",
+    "score": 6,
+    "runner_up": "devops",
+    "runner_up_score": 4,
+    "signals": [
+      "dev",
+      "code",
+      "framework",
+      "build",
+      "software",
+      "refactor"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "vasilyu1983",
+  "source_url": "https://github.com/vasilyu1983/AI-Agents-public/blob/main/frameworks/shared-skills/skills/software-csharp-backend/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vasilyu1983/AI-Agents-public/blob/main/frameworks/shared-skills/skills/software-csharp-backend/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Apply practical C# and .NET backend engineering standards for service implementation, refactoring, and backend-focused code reviews. Use when building or reviewing backend services for language best practices, project and layer boundaries, data-access patterns, resilience controls, observability, security baselines, and common backend anti-pattern detection. For deep NUnit fixture design use $qa-testing-nunit, for NUKE pipeline target work use $ops-nuke-cicd, and for deterministic logging rewrites use $dev-structured-logs."
+}

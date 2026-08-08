@@ -1,0 +1,38 @@
+{
+  "name": "agents-skills",
+  "repo": "vasilyu1983/AI-Agents-public",
+  "path": "frameworks/shared-skills/skills/agents-skills/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/vasilyu1983/AI-Agents-public",
+  "dir_name": "agents-skills",
+  "downloaded_at": "2026-08-08T02:10:11.366183Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=3, development=3",
+    "score": 3,
+    "runner_up": "development",
+    "runner_up_score": 3,
+    "signals": [
+      "bash",
+      "script",
+      "cli"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "vasilyu1983",
+  "source_url": "https://github.com/vasilyu1983/AI-Agents-public/blob/main/frameworks/shared-skills/skills/agents-skills/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vasilyu1983/AI-Agents-public/blob/main/frameworks/shared-skills/skills/agents-skills/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Reference for creating AI agent skills with SKILL.md structure. Use when building or improving modular skill files for Claude Code or Codex."
+}

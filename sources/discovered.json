@@ -1,7 +1,7 @@
 {
-  "discovered_at": "2026-08-08T02:13:06.250425Z",
+  "discovered_at": "2026-08-09T02:17:53.010023Z",
   "total_repos": 300,
-  "total_skills": 135,
+  "total_skills": 10,
   "scanned_repos": 300,
   "limits": {
     "max_repos": 300,
@@ -130,7 +130,6 @@
     "bitjaru/styleseed",
     "bitwize-music-studio/claude-ai-music-skills",
     "bjwanneng/veriflow-cc",
-    "borghei/Claude-Skills",
     "browser-act/skills",
     "cgallic/kai-cmo-harness",
     "chengzhongwei/Prompt-sensei",
@@ -249,6 +248,7 @@
     "parcadei/Continuous-Claude-v3",
     "pedrohcgs/claude-code-my-workflow",
     "plugin87/ux-ui-agent-skills",
+    "posit-dev/skills",
     "proyecto26/sherlock-ai-plugin",
     "proyecto26/slides-ai-plugin",
     "radekamirko/C.R.I.S.P",
@@ -314,544 +314,44 @@
   ],
   "skills": [
     {
-      "repo": "0xwilliamortiz/claude-red",
-      "path": "Skills/iot/offensive-iot/SKILL.md"
-    },
-    {
-      "repo": "0xwilliamortiz/claude-red",
-      "path": "Skills/auth/offensive-jwt/SKILL.md"
-    },
-    {
-      "repo": "0xwilliamortiz/claude-red",
-      "path": "Skills/cloud/offensive-cloud/SKILL.md"
-    },
-    {
-      "repo": "0xwilliamortiz/claude-red",
-      "path": "Skills/recon/offensive-osint/SKILL.md"
-    },
-    {
-      "repo": "0xwilliamortiz/claude-red",
-      "path": "Skills/wireless/offensive-wps/SKILL.md"
-    },
-    {
-      "repo": "0xwilliamortiz/claude-red",
-      "path": "Skills/wireless/offensive-wifi/SKILL.md"
-    },
-    {
-      "repo": "0xwilliamortiz/claude-red",
-      "path": "Skills/mobile/offensive-mobile/SKILL.md"
-    },
-    {
-      "repo": "0xwilliamortiz/claude-red",
-      "path": "Skills/fuzzing/offensive-fuzzing/SKILL.md"
-    },
-    {
-      "repo": "0xwilliamortiz/claude-red",
-      "path": "Skills/wireless/offensive-z-wave/SKILL.md"
-    },
-    {
-      "repo": "0xwilliamortiz/claude-red",
-      "path": "Skills/wireless/offensive-wpa3-sae/SKILL.md"
-    },
-    {
-      "repo": "0xwilliamortiz/claude-red",
-      "path": "Skills/utility/offensive-reporting/SKILL.md"
-    },
-    {
-      "repo": "0xwilliamortiz/claude-red",
-      "path": "Skills/wireless/offensive-wpa2-psk/SKILL.md"
-    },
-    {
-      "repo": "0xwilliamortiz/claude-red",
-      "path": "Skills/wireless/offensive-evil-twin/SKILL.md"
-    },
-    {
-      "repo": "0xwilliamortiz/claude-red",
-      "path": "Skills/web/offensive-business-logic/SKILL.md"
-    },
-    {
-      "repo": "0xwilliamortiz/claude-red",
-      "path": "Skills/exploit-dev/offensive-toctou/SKILL.md"
-    },
-    {
-      "repo": "0xwilliamortiz/claude-red",
-      "path": "Skills/wireless/offensive-wifi-recon/SKILL.md"
-    },
-    {
-      "repo": "0xwilliamortiz/claude-red",
-      "path": "Skills/wireless/offensive-bluetooth-ble/SKILL.md"
-    },
-    {
-      "repo": "0xwilliamortiz/claude-red",
-      "path": "Skills/wireless/offensive-wpa-enterprise/SKILL.md"
-    },
-    {
-      "repo": "0xwilliamortiz/claude-red",
-      "path": "Skills/wireless/offensive-lorawan-sub-ghz/SKILL.md"
-    },
-    {
-      "repo": "0xwilliamortiz/claude-red",
-      "path": "Skills/infrastructure/offensive-shellcode/SKILL.md"
-    },
-    {
-      "repo": "0xwilliamortiz/claude-red",
-      "path": "Skills/wireless/offensive-deauth-disassoc/SKILL.md"
-    },
-    {
-      "repo": "0xwilliamortiz/claude-red",
-      "path": "Skills/wireless/offensive-krack-fragattacks/SKILL.md"
-    },
-    {
-      "repo": "0xwilliamortiz/claude-red",
-      "path": "Skills/wireless/offensive-bluetooth-classic/SKILL.md"
-    },
-    {
-      "repo": "0xwilliamortiz/claude-red",
-      "path": "Skills/wireless/offensive-zigbee-thread-matter/SKILL.md"
-    },
-    {
-      "repo": "0xwilliamortiz/claude-red",
-      "path": "Skills/active-directory/offensive-active-directory/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-aso/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-ads/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-sms/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-copy/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-code/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-ship/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-video/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-image/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-offers/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-revops/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-signup/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-mcp-qa/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-social/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-design/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-emails/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-deslop/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-pricing/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-ci-gate/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-ai-eval/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-paywalls/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/site-to-ios-app/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-full-send/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-analytics/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-ship-copy/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-referrals/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-seo-audit/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-ab-testing/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-onboarding/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-cold-email/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-free-tools/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-agent-teams/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-ad-creative/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-competitors/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-prospecting/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-code-review/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-codex-fleet/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-code-grader/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-rights-audit/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-lead-magnets/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-co-marketing/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/johnny-suede-write/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-site-alchemy/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/johnny-suede-design/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-clip-to-guide/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/android-app-factory/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-sync-packaging/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-release-linter/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-marketing-plan/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-rights-passport/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-marketing-ideas/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/subscription-recovery/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-workflow-skills/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-marketing-loops/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-churn-prevention/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-public-relations/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-instagram-growth/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-content-strategy/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-sales-enablement/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-programmatic-seo/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-launch-packaging/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-customer-research/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-visibility-grader/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-product-marketing/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-campaign-in-a-box/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-marketing-council/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/amazon-returns-recovery/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-community-marketing/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-marketing-psychology/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-competitor-profiling/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-recommend-next-action/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-directory-submissions/SKILL.md"
-    },
-    {
-      "repo": "Jeffallan/claude-skills",
-      "path": "skills/django-storages-s3/SKILL.md"
-    },
-    {
       "repo": "K-Dense-AI/scientific-agent-skills",
-      "path": "skills/deepspot-m/SKILL.md"
+      "path": "skills/ncats-arax/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "skills/necessary-work/SKILL.md"
+      "repo": "arbiterForge/codeArbiter",
+      "path": "plugins/ca/skills/debug/SKILL.md"
     },
     {
-      "repo": "cgallic/kai-cmo-harness",
-      "path": "harness/skills/kai-reddit-listen/SKILL.md"
+      "repo": "arbiterForge/codeArbiter",
+      "path": "core/surface/skills/debug/SKILL.md"
     },
     {
-      "repo": "mohitagw15856/pm-claude-skills",
-      "path": "skills/grief-admin/SKILL.md"
+      "repo": "arbiterForge/codeArbiter",
+      "path": "plugins/ca-pi/routines/debug/SKILL.md"
     },
     {
-      "repo": "mohitagw15856/pm-claude-skills",
-      "path": "skills/meltdown-map/SKILL.md"
+      "repo": "arbiterForge/codeArbiter",
+      "path": "plugins/ca-codex/routines/debug/SKILL.md"
     },
     {
-      "repo": "nowork-studio/NotFair",
-      "path": "meta-ads/creative/SKILL.md"
+      "repo": "fcakyon/claude-codex-settings",
+      "path": "plugins/humanize/skills/humanize/SKILL.md"
     },
     {
-      "repo": "nowork-studio/NotFair",
-      "path": "google-ads/assets/SKILL.md"
+      "repo": "hoangsonww/Claude-Code-Agent-Monitor",
+      "path": ".agents/skills/version-release/SKILL.md"
     },
     {
-      "repo": "nowork-studio/NotFair",
-      "path": "paid-ads/paid-ads/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/NotFair",
-      "path": "paid-ads/paid-ads-guide/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/NotFair",
-      "path": "paid-ads/paid-ads-setup/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/NotFair",
-      "path": "paid-ads/paid-ads-launch/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/NotFair",
-      "path": "paid-ads/paid-ads-review/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/NotFair",
-      "path": "paid-ads/paid-ads-tiktok/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/NotFair",
-      "path": "paid-ads/paid-ads-amazon/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/NotFair",
-      "path": "paid-ads/paid-ads-chatgpt/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/NotFair",
-      "path": "paid-ads/paid-ads-creative/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/NotFair",
-      "path": "paid-ads/paid-ads-optimize/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/NotFair",
-      "path": "paid-ads/paid-ads-linkedin/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/NotFair",
-      "path": "paid-ads/paid-ads-integrations/SKILL.md"
+      "repo": "hoangsonww/Claude-Code-Agent-Monitor",
+      "path": ".claude/skills/version-release/SKILL.md"
     },
     {
       "repo": "skyf0xx/hedgehog",
-      "path": "src/skills/no-history-in-output/SKILL.md"
+      "path": ".claude/skills/inbound-triage/SKILL.md"
     },
     {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/agents-hooks/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/agents-skills/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/ops-nuke-cicd/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/dev-git-workflow/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/qa-testing-nunit/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/agents-subagents/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/software-payments/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/product-management/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/product-help-center/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/dev-structured-logs/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/agents-project-memory/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/dev-ai-coding-metrics/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/dev-context-code-graph/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/dev-git-commit-message/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/dev-context-multi-repo/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/software-csharp-backend/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/dev-context-engineering/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/agents-swarm-orchestration/SKILL.md"
+      "repo": "skyf0xx/hedgehog",
+      "path": "src/skills/hedgehog-contributing/SKILL.md"
     }
   ]
 }

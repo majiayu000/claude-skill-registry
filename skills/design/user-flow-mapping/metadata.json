@@ -1,0 +1,38 @@
+{
+  "name": "user-flow-mapping",
+  "repo": "seb1n/awesome-ai-agent-skills",
+  "path": "design-and-ui-ux/user-flow-mapping/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/seb1n/awesome-ai-agent-skills",
+  "dir_name": "user-flow-mapping",
+  "downloaded_at": "2026-08-10T02:16:56.757313Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "design",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for design: design, ui, ux",
+    "score": 3,
+    "runner_up": "data",
+    "runner_up_score": 2,
+    "signals": [
+      "design",
+      "ui",
+      "ux"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "seb1n",
+  "source_url": "https://github.com/seb1n/awesome-ai-agent-skills/blob/main/design-and-ui-ux/user-flow-mapping/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/seb1n/awesome-ai-agent-skills/blob/main/design-and-ui-ux/user-flow-mapping/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Visualize and map user flows with Mermaid diagrams, decision points, error states, and conversion metrics to optimize user journeys. Use when the user requests user flow mapping or provides relevant inputs for this workflow."
+}

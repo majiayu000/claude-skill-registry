@@ -1,0 +1,38 @@
+{
+  "name": "proposal-generation",
+  "repo": "seb1n/awesome-ai-agent-skills",
+  "path": "sales/proposal-generation/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/seb1n/awesome-ai-agent-skills",
+  "dir_name": "proposal-generation",
+  "downloaded_at": "2026-08-10T02:16:46.114258Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: devops=3, documents=3",
+    "score": 3,
+    "runner_up": "documents",
+    "runner_up_score": 3,
+    "signals": [
+      "deploy",
+      "infra",
+      "infrastructure"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "seb1n",
+  "source_url": "https://github.com/seb1n/awesome-ai-agent-skills/blob/main/sales/proposal-generation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/seb1n/awesome-ai-agent-skills/blob/main/sales/proposal-generation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Create tailored sales proposals and RFP responses that address prospect needs, articulate solution value, and include pricing, timelines, and social proof. Use when the user requests proposal generation or provides relevant inputs for this workflow."
+}

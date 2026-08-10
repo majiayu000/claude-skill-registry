@@ -1,0 +1,37 @@
+{
+  "name": "contract-review",
+  "repo": "seb1n/awesome-ai-agent-skills",
+  "path": "legal-and-compliance/contract-review/SKILL.md",
+  "github_branch": "main",
+  "category": "analysis",
+  "source": "github.com/seb1n/awesome-ai-agent-skills",
+  "dir_name": "contract-review-seb1n-awesome-ai-agent-ski",
+  "downloaded_at": "2026-08-10T02:16:59.923312Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "analysis",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for analysis: analysis, analyze",
+    "score": 2,
+    "runner_up": "ai-llm",
+    "runner_up_score": 1,
+    "signals": [
+      "analysis",
+      "analyze"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "seb1n",
+  "source_url": "https://github.com/seb1n/awesome-ai-agent-skills/blob/main/legal-and-compliance/contract-review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/seb1n/awesome-ai-agent-skills/blob/main/legal-and-compliance/contract-review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Analyze contracts for risks, obligations, key clauses, and generate structured risk reports with severity ratings. Use when the user requests contract review or provides relevant inputs for this workflow."
+}

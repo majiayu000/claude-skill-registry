@@ -1,0 +1,38 @@
+{
+  "name": "blog-post-writing",
+  "repo": "seb1n/awesome-ai-agent-skills",
+  "path": "writing-and-content/blog-post-writing/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/seb1n/awesome-ai-agent-skills",
+  "dir_name": "blog-post-writing",
+  "downloaded_at": "2026-08-10T02:17:02.894940Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: marketing=3, workflow=3",
+    "score": 3,
+    "runner_up": "workflow",
+    "runner_up_score": 3,
+    "signals": [
+      "seo",
+      "content",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "seb1n",
+  "source_url": "https://github.com/seb1n/awesome-ai-agent-skills/blob/main/writing-and-content/blog-post-writing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/seb1n/awesome-ai-agent-skills/blob/main/writing-and-content/blog-post-writing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Write high-quality, SEO-optimized blog posts in multiple formats including how-to guides, listicles, opinion pieces, and case studies, with structured outlines, hooks, and calls-to-action. Use when the user requests blog post writing or provides relevant inputs for this workflow."
+}

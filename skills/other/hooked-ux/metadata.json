@@ -1,0 +1,37 @@
+{
+  "name": "hooked-ux",
+  "repo": "wondelai/skills",
+  "path": "plugins/ux-design/skills/hooked-ux/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/wondelai/skills",
+  "dir_name": "hooked-ux",
+  "downloaded_at": "2026-08-10T02:20:05.474967Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: design=2, development=2",
+    "score": 2,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "design",
+      "ux"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "wondelai",
+  "source_url": "https://github.com/wondelai/skills/blob/main/plugins/ux-design/skills/hooked-ux/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/wondelai/skills/blob/main/plugins/ux-design/skills/hooked-ux/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Design habit-forming product loops using the Hook Model (Trigger, Action, Variable Reward, Investment). Use when the user mentions \"users arent coming back\", \"habit formation\", \"engagement loops\", \"habit zone\", or \"the manipulation matrix\". Also trigger when designing notification or re-engagement strategies, building streaks or progress systems, or analyzing why users stop after signup. Covers ethics evaluation and onboarding for habits. For friction reduction and B=MAP, see improve-retention. For viral sharing, see contagious."
+}

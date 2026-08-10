@@ -1,0 +1,37 @@
+{
+  "name": "webhook-setup",
+  "repo": "seb1n/awesome-ai-agent-skills",
+  "path": "api-and-integration/webhook-setup/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/seb1n/awesome-ai-agent-skills",
+  "dir_name": "webhook-setup",
+  "downloaded_at": "2026-08-10T02:16:55.638431Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: api=2, data=2",
+    "score": 2,
+    "runner_up": "data",
+    "runner_up_score": 2,
+    "signals": [
+      "api",
+      "endpoint"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "seb1n",
+  "source_url": "https://github.com/seb1n/awesome-ai-agent-skills/blob/main/api-and-integration/webhook-setup/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/seb1n/awesome-ai-agent-skills/blob/main/api-and-integration/webhook-setup/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Set up webhook receivers with signature verification, idempotent event processing, retry handling, and dead letter queues for reliable event-driven integrations. Use when the user requests webhook setup or provides relevant inputs for this workflow."
+}

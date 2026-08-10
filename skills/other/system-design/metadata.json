@@ -1,0 +1,38 @@
+{
+  "name": "system-design",
+  "repo": "wondelai/skills",
+  "path": "plugins/wondelai-skills/skills/system-design/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/wondelai/skills",
+  "dir_name": "system-design",
+  "downloaded_at": "2026-08-10T02:20:11.521790Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: development=3, devops=3",
+    "score": 3,
+    "runner_up": "devops",
+    "runner_up_score": 3,
+    "signals": [
+      "code",
+      "framework",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "wondelai",
+  "source_url": "https://github.com/wondelai/skills/blob/main/plugins/wondelai-skills/skills/system-design/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/wondelai/skills/blob/main/plugins/wondelai-skills/skills/system-design/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Design scalable distributed systems using structured approaches for load balancing, caching, database scaling, and message queues. Use when the user mentions \"system design\", \"scale this\", \"high availability\", \"rate limiter\", \"design a URL shortener\", \"design Twitter\", \"design Uber\", \"design a news feed\", \"system design interview\", \"capacity planning\", or \"distributed architecture\". Also trigger when estimating infrastructure requirements, choosing between microservices and monoliths, or designing for millions of concurrent users. Covers common system designs (TinyURL, feeds, chat) and back-of-the-envelope estimation. For data fundamentals, see ddia-systems. For resilience, see release-it."
+}

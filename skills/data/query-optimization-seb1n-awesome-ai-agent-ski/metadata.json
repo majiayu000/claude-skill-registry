@@ -1,0 +1,38 @@
+{
+  "name": "query-optimization",
+  "repo": "seb1n/awesome-ai-agent-skills",
+  "path": "database/query-optimization/SKILL.md",
+  "github_branch": "main",
+  "category": "data",
+  "source": "github.com/seb1n/awesome-ai-agent-skills",
+  "dir_name": "query-optimization-seb1n-awesome-ai-agent-ski",
+  "downloaded_at": "2026-08-10T02:16:46.308688Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "data",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for data: data, sql, database",
+    "score": 3,
+    "runner_up": "performance",
+    "runner_up_score": 2,
+    "signals": [
+      "data",
+      "sql",
+      "database"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "seb1n",
+  "source_url": "https://github.com/seb1n/awesome-ai-agent-skills/blob/main/database/query-optimization/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/seb1n/awesome-ai-agent-skills/blob/main/database/query-optimization/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Diagnose and optimize existing slow SQL queries using execution plans, indexing strategies, query rewriting, and ORM tuning. Use when the user provides a query, performance symptom, or EXPLAIN plan; use sql-query-generation when creating a new query from requirements."
+}

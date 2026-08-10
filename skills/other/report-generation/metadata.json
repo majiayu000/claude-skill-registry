@@ -1,0 +1,38 @@
+{
+  "name": "report-generation",
+  "repo": "seb1n/awesome-ai-agent-skills",
+  "path": "communication/report-generation/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/seb1n/awesome-ai-agent-skills",
+  "dir_name": "report-generation",
+  "downloaded_at": "2026-08-10T02:16:51.749079Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: data=3, quality=3",
+    "score": 3,
+    "runner_up": "quality",
+    "runner_up_score": 3,
+    "signals": [
+      "data",
+      "analytics",
+      "visualization"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "seb1n",
+  "source_url": "https://github.com/seb1n/awesome-ai-agent-skills/blob/main/communication/report-generation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/seb1n/awesome-ai-agent-skills/blob/main/communication/report-generation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Generate professional reports \u2014 sprint retrospectives, financial summaries, analytics dashboards, and incident postmortems \u2014 from structured data with templates, charts, and multi-format output. Use when the user requests report generation or provides relevant inputs for this workflow."
+}

@@ -1,0 +1,38 @@
+{
+  "name": "design-sprint",
+  "repo": "wondelai/skills",
+  "path": "plugins/wondelai-skills/skills/design-sprint/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/wondelai/skills",
+  "dir_name": "design-sprint",
+  "downloaded_at": "2026-08-10T02:20:11.377781Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: code, framework, build",
+    "score": 3,
+    "runner_up": "creative",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "framework",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "wondelai",
+  "source_url": "https://github.com/wondelai/skills/blob/main/plugins/wondelai-skills/skills/design-sprint/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/wondelai/skills/blob/main/plugins/wondelai-skills/skills/design-sprint/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Run a structured 5-day process to prototype, test, and validate product ideas with real users. Use when the user mentions \"design sprint\", \"validate before we build\", \"rapid prototype\", \"test with users\", or \"should we build this\". Also trigger when a team is stuck in endless debate over a high-stakes product decision, or wants to de-risk a costly idea before investing in development. Covers mapping, sketching, deciding, prototyping, and testing across Monday-Friday. For ongoing experimentation and MVPs, see lean-startup. For customer job analysis, see jobs-to-be-done. For non-leading user interviews, see mom-test."
+}

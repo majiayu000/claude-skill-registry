@@ -1,0 +1,39 @@
+{
+  "name": "web-typography",
+  "repo": "wondelai/skills",
+  "path": "plugins/ux-design/skills/web-typography/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/wondelai/skills",
+  "dir_name": "web-typography-wondelai-skills",
+  "downloaded_at": "2026-08-10T02:20:06.822523Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "design",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for design: design, ui, ux, css",
+    "score": 4,
+    "runner_up": "documents",
+    "runner_up_score": 3,
+    "signals": [
+      "design",
+      "ui",
+      "ux",
+      "css"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "wondelai",
+  "source_url": "https://github.com/wondelai/skills/blob/main/plugins/ux-design/skills/web-typography/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/wondelai/skills/blob/main/plugins/ux-design/skills/web-typography/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Select, pair, and implement typefaces for web projects. Use when the user mentions \"font pairing\", \"which typeface\", \"line height\", \"responsive typography\", \"web font loading\", \"type hierarchy\", \"variable fonts\", \"FOUT/FOIT\", \"typographic scale\", or \"the text is hard to read\". Also trigger when choosing between system fonts and web fonts, optimizing font-loading performance, or designing readable long-form content. Covers readability evaluation, CSS implementation, and performance optimization. For overall UI design systems, see refactoring-ui. For dramatic typographic experiences, see top-design."
+}

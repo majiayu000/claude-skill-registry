@@ -1,0 +1,37 @@
+{
+  "name": "onboarding-playbook-creation",
+  "repo": "seb1n/awesome-ai-agent-skills",
+  "path": "customer-success/onboarding-playbook-creation/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/seb1n/awesome-ai-agent-skills",
+  "dir_name": "onboarding-playbook-creation",
+  "downloaded_at": "2026-08-10T02:17:09.995580Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: communication=2, data=2",
+    "score": 2,
+    "runner_up": "data",
+    "runner_up_score": 2,
+    "signals": [
+      "communication",
+      "email"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "seb1n",
+  "source_url": "https://github.com/seb1n/awesome-ai-agent-skills/blob/main/customer-success/onboarding-playbook-creation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/seb1n/awesome-ai-agent-skills/blob/main/customer-success/onboarding-playbook-creation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Design structured customer onboarding workflows with phased checklists, email templates, success milestones, and ownership assignments. Use when the user requests onboarding playbook creation or provides relevant inputs for this workflow."
+}

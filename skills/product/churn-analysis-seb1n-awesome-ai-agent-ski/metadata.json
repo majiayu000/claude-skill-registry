@@ -1,0 +1,39 @@
+{
+  "name": "churn-analysis",
+  "repo": "seb1n/awesome-ai-agent-skills",
+  "path": "customer-success/churn-analysis/SKILL.md",
+  "github_branch": "main",
+  "category": "product",
+  "source": "github.com/seb1n/awesome-ai-agent-skills",
+  "dir_name": "churn-analysis-seb1n-awesome-ai-agent-ski",
+  "downloaded_at": "2026-08-10T02:16:52.841881Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "product",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for product: product, roadmap, feature, metrics",
+    "score": 4,
+    "runner_up": "analysis",
+    "runner_up_score": 2,
+    "signals": [
+      "product",
+      "roadmap",
+      "feature",
+      "metrics"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "seb1n",
+  "source_url": "https://github.com/seb1n/awesome-ai-agent-skills/blob/main/customer-success/churn-analysis/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/seb1n/awesome-ai-agent-skills/blob/main/customer-success/churn-analysis/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Identify at-risk customer accounts by analyzing usage patterns, engagement signals, and support history to generate churn risk scores and intervention recommendations. Use when the user requests churn analysis or provides relevant inputs for this workflow."
+}

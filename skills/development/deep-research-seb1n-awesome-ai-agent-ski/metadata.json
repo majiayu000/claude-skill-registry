@@ -1,0 +1,38 @@
+{
+  "name": "deep-research",
+  "repo": "seb1n/awesome-ai-agent-skills",
+  "path": "research-and-knowledge/deep-research/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/seb1n/awesome-ai-agent-skills",
+  "dir_name": "deep-research-seb1n-awesome-ai-agent-ski",
+  "downloaded_at": "2026-08-10T02:16:59.658230Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: code, compile, debug",
+    "score": 3,
+    "runner_up": "context-management",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "compile",
+      "debug"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "seb1n",
+  "source_url": "https://github.com/seb1n/awesome-ai-agent-skills/blob/main/research-and-knowledge/deep-research/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/seb1n/awesome-ai-agent-skills/blob/main/research-and-knowledge/deep-research/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Conduct in-depth, multi-step research on a given topic by decomposing queries, finding diverse sources, cross-referencing findings, and synthesizing a comprehensive report. Use when the user requests deep research or provides relevant inputs for this workflow."
+}

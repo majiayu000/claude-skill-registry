@@ -1,0 +1,39 @@
+{
+  "name": "code-review",
+  "repo": "seb1n/awesome-ai-agent-skills",
+  "path": "code-and-development/code-review/SKILL.md",
+  "github_branch": "main",
+  "category": "security",
+  "source": "github.com/seb1n/awesome-ai-agent-skills",
+  "dir_name": "code-review-seb1n-awesome-ai-agent-ski",
+  "downloaded_at": "2026-08-10T02:16:55.157751Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "security",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for security: security, auth, crypto, vulnerability",
+    "score": 4,
+    "runner_up": "data",
+    "runner_up_score": 3,
+    "signals": [
+      "security",
+      "auth",
+      "crypto",
+      "vulnerability"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "seb1n",
+  "source_url": "https://github.com/seb1n/awesome-ai-agent-skills/blob/main/code-and-development/code-review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/seb1n/awesome-ai-agent-skills/blob/main/code-and-development/code-review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Perform thorough code reviews on files or pull requests, checking for bugs, security vulnerabilities, performance issues, and style violations. Use when the user requests code review or provides relevant inputs for this workflow."
+}

@@ -1,0 +1,38 @@
+{
+  "name": "improve-website",
+  "repo": "wondelai/skills",
+  "path": "plugins/metaskills/skills/improve-website/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/wondelai/skills",
+  "dir_name": "improve-website-wondelai-skills",
+  "downloaded_at": "2026-08-10T02:20:08.395295Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: design=3, product=3",
+    "score": 3,
+    "runner_up": "product",
+    "runner_up_score": 3,
+    "signals": [
+      "design",
+      "ui",
+      "ux"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "wondelai",
+  "source_url": "https://github.com/wondelai/skills/blob/main/plugins/metaskills/skills/improve-website/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/wondelai/skills/blob/main/plugins/metaskills/skills/improve-website/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Guided journey from a live website that underperforms to a prioritized, evidence-backed backlog of conversion, usability, message, and speed fixes - each shipped as a testable experiment. Orchestrates eight skills phase by phase - cro-methodology, ux-heuristics, refactoring-ui, web-typography, storybrand-messaging, high-perf-browser, made-to-stick, design-everyday-things - asking the user questions at every decision point and recording results in the project docs/ folder (WEBSITE.md, DESIGN.md, EXPERIMENTS.md, IMPROVE-WEBSITE-PLAN.md) so the journey resumes across sessions. Use when the user wants to fix a landing page that isn't converting, diagnose why visitors leave, audit for clarity and usability, or says 'the homepage feels off but a redesign didn't help'. Do not use with no site yet - use create-website; if it converts but needs more traffic or leads, grow-website; if the friction is in a product app, not the marketing site, improve-app. For one framework in isolation, invoke that skill directly."
+}

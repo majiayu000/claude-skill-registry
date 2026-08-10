@@ -1,0 +1,38 @@
+{
+  "name": "knowledge-graph-creation",
+  "repo": "seb1n/awesome-ai-agent-skills",
+  "path": "research-and-knowledge/knowledge-graph-creation/SKILL.md",
+  "github_branch": "main",
+  "category": "data",
+  "source": "github.com/seb1n/awesome-ai-agent-skills",
+  "dir_name": "knowledge-graph-creation",
+  "downloaded_at": "2026-08-10T02:17:10.696107Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "data",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for data: data, analytics, visualization",
+    "score": 3,
+    "runner_up": "devops",
+    "runner_up_score": 2,
+    "signals": [
+      "data",
+      "analytics",
+      "visualization"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "seb1n",
+  "source_url": "https://github.com/seb1n/awesome-ai-agent-skills/blob/main/research-and-knowledge/knowledge-graph-creation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/seb1n/awesome-ai-agent-skills/blob/main/research-and-knowledge/knowledge-graph-creation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Build structured knowledge graphs from unstructured text by extracting entities, mapping relationships, generating graph triples, and visualizing the result. Use when the user requests knowledge graph creation or provides relevant inputs for this workflow."
+}

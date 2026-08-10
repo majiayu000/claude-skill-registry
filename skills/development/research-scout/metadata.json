@@ -1,0 +1,39 @@
+{
+  "name": "research-scout",
+  "repo": "vasilyu1983/AI-Agents-public",
+  "path": "frameworks/shared-skills/skills/research-scout/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/vasilyu1983/AI-Agents-public",
+  "dir_name": "research-scout",
+  "downloaded_at": "2026-08-10T02:19:44.724534Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: dev, code, framework, debug",
+    "score": 4,
+    "runner_up": "quality",
+    "runner_up_score": 3,
+    "signals": [
+      "dev",
+      "code",
+      "framework",
+      "debug"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "vasilyu1983",
+  "source_url": "https://github.com/vasilyu1983/AI-Agents-public/blob/main/frameworks/shared-skills/skills/research-scout/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vasilyu1983/AI-Agents-public/blob/main/frameworks/shared-skills/skills/research-scout/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Mines academic papers, research blogs, and curator newsletters for stealable methods and frameworks. Use when scanning research for applicable techniques across AI/ML/SWE."
+}

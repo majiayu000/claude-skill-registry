@@ -1,0 +1,38 @@
+{
+  "name": "privacy-policy-drafting",
+  "repo": "seb1n/awesome-ai-agent-skills",
+  "path": "legal-and-compliance/privacy-policy-drafting/SKILL.md",
+  "github_branch": "main",
+  "category": "security",
+  "source": "github.com/seb1n/awesome-ai-agent-skills",
+  "dir_name": "privacy-policy-drafting",
+  "downloaded_at": "2026-08-10T02:17:09.106382Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "security",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for security: security, auth, audit",
+    "score": 3,
+    "runner_up": "data",
+    "runner_up_score": 2,
+    "signals": [
+      "security",
+      "auth",
+      "audit"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "seb1n",
+  "source_url": "https://github.com/seb1n/awesome-ai-agent-skills/blob/main/legal-and-compliance/privacy-policy-drafting/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/seb1n/awesome-ai-agent-skills/blob/main/legal-and-compliance/privacy-policy-drafting/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Draft privacy-policy language and a review checklist tailored to a business model, data practices, and relevant jurisdictions. Use when the user requests a privacy policy or needs to map disclosures for GDPR, CCPA, or similar frameworks; do not use it to guarantee legal compliance."
+}

@@ -1,7 +1,7 @@
 {
-  "discovered_at": "2026-08-10T02:21:48.449123Z",
+  "discovered_at": "2026-08-11T02:17:38.048396Z",
   "total_repos": 300,
-  "total_skills": 179,
+  "total_skills": 28,
   "scanned_repos": 300,
   "limits": {
     "max_repos": 300,
@@ -12,10 +12,6 @@
   },
   "repos": [
     "0xGhostCAT/claude-ai-cyber-security-skills",
-    "0xwilliamortiz/agents-council",
-    "0xwilliamortiz/claude-red",
-    "0xwilliamortiz/humanizer-cli",
-    "0xwilliamortiz/ponytail-improved",
     "2389-research/claude-plugins",
     "23blocks-OS/ai-maestro",
     "24kchengYe/human-skill-tree",
@@ -72,6 +68,7 @@
     "NevaMind-AI/memU",
     "NulightJens/rocket-fuel-skill",
     "OpenRaiser/NanoResearch",
+    "Optim-Agent/optim-plans",
     "Orchestra-Research/AI-Research-SKILLs",
     "OthmanAdi/planning-with-files",
     "Othmane-Khadri/gtm-engineer-playbook",
@@ -191,6 +188,7 @@
     "itsmostafa/aws-agent-skills",
     "iziqing/-disk-cleaner",
     "jabrena/plinth",
+    "jaredrhod/ai-memory-vault",
     "jeecgboot/skills",
     "jezweb/claude-skills",
     "jiweiyeah/Skills-Manager",
@@ -249,6 +247,7 @@
     "parcadei/Continuous-Claude-v3",
     "pedrohcgs/claude-code-my-workflow",
     "plugin87/ux-ui-agent-skills",
+    "posit-dev/skills",
     "proyecto26/sherlock-ai-plugin",
     "proyecto26/slides-ai-plugin",
     "radekamirko/C.R.I.S.P",
@@ -289,6 +288,7 @@
     "tripleyak/SkillForge",
     "tuan3w/obsidian-vault-agent",
     "tzachbon/smart-ralph",
+    "ursazoo/lanhu-to-code",
     "vasilyu1983/AI-Agents-public",
     "vibeeval/vibecosystem",
     "vitaecontext/vitaecontext",
@@ -314,720 +314,116 @@
   ],
   "skills": [
     {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "sales/lead-scoring/SKILL.md"
+      "repo": "Optim-Agent/optim-plans",
+      "path": "skills/create-a-plan/SKILL.md"
     },
     {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "security/security-audit/SKILL.md"
+      "repo": "Optim-Agent/optim-plans",
+      "path": "skills/create-a-big-plan/SKILL.md"
     },
     {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "database/database-backup/SKILL.md"
+      "repo": "Optim-Agent/optim-plans",
+      "path": "skills/create-a-small-plan/SKILL.md"
     },
     {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "security/threat-modeling/SKILL.md"
+      "repo": "Optim-Agent/optim-plans",
+      "path": "skills/diagnose-before-plan/SKILL.md"
     },
     {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "database/database-seeding/SKILL.md"
+      "repo": "Optim-Agent/optim-plans",
+      "path": "skills/reference-before-plan/SKILL.md"
     },
     {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "sales/crm-data-enrichment/SKILL.md"
+      "repo": "XiaoMaColtAI/math-modeling-skill",
+      "path": "tools/figure/SKILL.md"
     },
     {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "sales/proposal-generation/SKILL.md"
+      "repo": "a5c-ai/babysitter",
+      "path": "library/specializations/shared/skills/kip-librarian/SKILL.md"
     },
     {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "database/query-optimization/SKILL.md"
+      "repo": "deanpeters/Product-Manager-Skills",
+      "path": "skills/eol-process/SKILL.md"
     },
     {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "database/database-migration/SKILL.md"
+      "repo": "deanpeters/Product-Manager-Skills",
+      "path": "skills/eol-checklist/SKILL.md"
     },
     {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "sales/sales-email-sequences/SKILL.md"
+      "repo": "deanpeters/Product-Manager-Skills",
+      "path": "skills/eol-readiness-advisor/SKILL.md"
     },
     {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "security/dependency-scanning/SKILL.md"
+      "repo": "deanpeters/Product-Manager-Skills",
+      "path": "skills/lifecycle-play-advisor/SKILL.md"
     },
     {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "design-and-ui-ux/logo-design/SKILL.md"
+      "repo": "deanpeters/Product-Manager-Skills",
+      "path": "skills/product-lifecycle-plays/SKILL.md"
     },
     {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "code-and-development/testing/SKILL.md"
+      "repo": "deanpeters/Product-Manager-Skills",
+      "path": "skills/eol-internal-enablement/SKILL.md"
     },
     {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "design-and-ui-ux/wireframing/SKILL.md"
+      "repo": "deanpeters/Product-Manager-Skills",
+      "path": "skills/eol-stakeholder-sequence/SKILL.md"
     },
     {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "communication/email-drafting/SKILL.md"
+      "repo": "respira-press/agent-skills-wordpress",
+      "path": "skills/figma-to-divi/SKILL.md"
     },
     {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "ai-ml-operations/data-labeling/SKILL.md"
+      "repo": "respira-press/agent-skills-wordpress",
+      "path": "skills/figma-to-bricks/SKILL.md"
     },
     {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "api-and-integration/api-design/SKILL.md"
+      "repo": "respira-press/agent-skills-wordpress",
+      "path": "skills/figma-to-gutenberg/SKILL.md"
     },
     {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "code-and-development/debugging/SKILL.md"
+      "repo": "scdenney/open-science-skills",
+      "path": "codex/qualtrics-ops/SKILL.md"
     },
     {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "customer-success/ticket-triage/SKILL.md"
+      "repo": "scdenney/open-science-skills",
+      "path": "codex/survey-data-audit/SKILL.md"
     },
     {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "communication/report-generation/SKILL.md"
+      "repo": "scdenney/open-science-skills",
+      "path": "codex/survey-flow-audit/SKILL.md"
     },
     {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "database/database-schema-design/SKILL.md"
+      "repo": "scdenney/open-science-skills",
+      "path": "plugin/skills/qualtrics-ops/SKILL.md"
     },
     {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "writing-and-content/translation/SKILL.md"
+      "repo": "scdenney/open-science-skills",
+      "path": "plugin/skills/survey-flow-audit/SKILL.md"
     },
     {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "customer-success/churn-analysis/SKILL.md"
+      "repo": "scdenney/open-science-skills",
+      "path": "plugin/skills/survey-data-audit/SKILL.md"
     },
     {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "writing-and-content/copywriting/SKILL.md"
+      "repo": "skyf0xx/hedgehog",
+      "path": "vendor-skills/BMAD/bmm-skills/plan/bmad-ux/SKILL.md"
     },
     {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "agent-security/agent-red-teaming/SKILL.md"
+      "repo": "skyf0xx/hedgehog",
+      "path": "vendor-skills/BMAD/bmm-skills/plan/bmad-prd/SKILL.md"
     },
     {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "design-and-ui-ux/frontend-design/SKILL.md"
+      "repo": "skyf0xx/hedgehog",
+      "path": "vendor-skills/BMAD/bmm-skills/plan/bmad-prfaq/SKILL.md"
     },
     {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "data-and-analytics/data-analysis/SKILL.md"
+      "repo": "skyf0xx/hedgehog",
+      "path": "vendor-skills/BMAD/core-skills/bmad-forge-idea/SKILL.md"
     },
     {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "data-and-analytics/data-cleaning/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "code-and-development/code-review/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "writing-and-content/proofreading/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "code-and-development/refactoring/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "api-and-integration/webhook-setup/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "ai-ml-operations/model-deployment/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "documents-and-files/pdf-processing/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "marketing-and-seo/seo-optimization/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "design-and-ui-ux/user-flow-mapping/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "agent-engineering/agent-evaluation/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "marketing-and-seo/content-strategy/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "marketing-and-seo/keyword-research/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "context-engineering/context-ranking/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "api-and-integration/api-integration/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "agent-engineering/human-in-the-loop/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "communication/presentation-creation/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "communication/meeting-transcription/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "api-and-integration/oauth-2-0-setup/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "research-and-knowledge/summarization/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "research-and-knowledge/fact-checking/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "agent-engineering/tool-schema-design/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "research-and-knowledge/deep-research/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "legal-and-compliance/contract-review/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "code-and-development/version-control/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "marketing-and-seo/analytics-reporting/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "agent-engineering/agent-observability/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "ai-ml-operations/ml-pipeline-creation/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "context-engineering/context-retrieval/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "agent-engineering/mcp-server-building/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "legal-and-compliance/license-analysis/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "sales/competitive-battlecard-creation/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "data-and-analytics/data-visualization/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "productivity-and-workflow/note-taking/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "writing-and-content/technical-writing/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "context-engineering/context-injection/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "writing-and-content/blog-post-writing/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "design-and-ui-ux/accessibility-testing/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "finance-and-accounting/budget-planning/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "marketing-and-seo/social-media-posting/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "api-and-integration/graphql-api-design/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "agent-security/skill-supply-chain-audit/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "context-engineering/context-compression/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "agent-security/prompt-injection-defense/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "data-and-analytics/sql-query-generation/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "code-and-development/code-documentation/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "legal-and-compliance/eu-ai-act-readiness/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "research-and-knowledge/literature-review/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "context-engineering/context-optimization/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "documents-and-files/spreadsheet-analysis/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "finance-and-accounting/financial-modeling/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "productivity-and-workflow/task-automation/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "communication/chatbot-conversation-design/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "finance-and-accounting/invoice-processing/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "devops-and-infrastructure/cloud-monitoring/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "agent-engineering/multi-agent-orchestration/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "customer-success/customer-feedback-analysis/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "productivity-and-workflow/meeting-scheduler/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "productivity-and-workflow/file-organization/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "data-and-analytics/exploratory-data-analysis/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "legal-and-compliance/privacy-policy-drafting/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "security/static-application-security-testing/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "productivity-and-workflow/project-management/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "finance-and-accounting/expense-categorization/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "security/dynamic-application-security-testing/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "customer-success/onboarding-playbook-creation/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "customer-success/knowledge-base-article-writing/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "research-and-knowledge/knowledge-graph-creation/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "devops-and-infrastructure/kubernetes-deployment/SKILL.md"
-    },
-    {
-      "repo": "seb1n/awesome-ai-agent-skills",
-      "path": "legal-and-compliance/terms-of-service-generation/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/ai-evals/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/research-git/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/gamedev-godot/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/ai-voice-bots/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/agents-memory/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/research-scout/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/gamedev-roblox/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/data-streaming/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/ai-pretraining/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/ai-scaling-laws/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/ai-vector-brain/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/software-search/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/ai-deep-research/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/ai-coding-agents/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/ai-post-training/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/software-desktop/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/software-realtime/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/software-devtools/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/qa-persona-testing/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/ai-local-model-ops/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/qa-security-testing/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/software-ios-native/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/software-ios-design/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/software-performance/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/docs-notes-retrieval/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/research-arxiv-scout/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/ops-cost-optimization/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/ops-incident-response/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/software-paas-hosting/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/ai-coding-agents-tools/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/software-accessibility/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/qa-testing-performance/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/software-ios-ai-engine/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/ai-coding-agents-tasks/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/foundations-team-theory/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/ai-distributed-training/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/ai-architecture-advisor/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/software-android-native/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/software-baas-platforms/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/software-ai-integration/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/software-android-design/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/foundations-game-theory/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/software-database-design/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/qa-testing-accessibility/SKILL.md"
-    },
-    {
-      "repo": "wondelai/skills",
-      "path": "plugins/ux-design/skills/lean-ux/SKILL.md"
-    },
-    {
-      "repo": "wondelai/skills",
-      "path": "plugins/metaskills/skills/grow-app/SKILL.md"
-    },
-    {
-      "repo": "wondelai/skills",
-      "path": "plugins/ux-design/skills/hooked-ux/SKILL.md"
-    },
-    {
-      "repo": "wondelai/skills",
-      "path": "plugins/ux-design/skills/top-design/SKILL.md"
-    },
-    {
-      "repo": "wondelai/skills",
-      "path": "plugins/metaskills/skills/create-app/SKILL.md"
-    },
-    {
-      "repo": "wondelai/skills",
-      "path": "plugins/metaskills/skills/improve-app/SKILL.md"
-    },
-    {
-      "repo": "wondelai/skills",
-      "path": "plugins/metaskills/skills/grow-website/SKILL.md"
-    },
-    {
-      "repo": "wondelai/skills",
-      "path": "plugins/wondelai-skills/skills/lean-ux/SKILL.md"
-    },
-    {
-      "repo": "wondelai/skills",
-      "path": "plugins/ux-design/skills/ux-heuristics/SKILL.md"
-    },
-    {
-      "repo": "wondelai/skills",
-      "path": "plugins/wondelai-skills/skills/grow-app/SKILL.md"
-    },
-    {
-      "repo": "wondelai/skills",
-      "path": "plugins/ux-design/skills/web-typography/SKILL.md"
-    },
-    {
-      "repo": "wondelai/skills",
-      "path": "plugins/ux-design/skills/ios-hig-design/SKILL.md"
-    },
-    {
-      "repo": "wondelai/skills",
-      "path": "plugins/ux-design/skills/refactoring-ui/SKILL.md"
-    },
-    {
-      "repo": "wondelai/skills",
-      "path": "plugins/metaskills/skills/grow-business/SKILL.md"
-    },
-    {
-      "repo": "wondelai/skills",
-      "path": "plugins/marketing-cro/skills/contagious/SKILL.md"
-    },
-    {
-      "repo": "wondelai/skills",
-      "path": "plugins/metaskills/skills/create-website/SKILL.md"
-    },
-    {
-      "repo": "wondelai/skills",
-      "path": "plugins/wondelai-skills/skills/hooked-ux/SKILL.md"
-    },
-    {
-      "repo": "wondelai/skills",
-      "path": "plugins/metaskills/skills/create-business/SKILL.md"
-    },
-    {
-      "repo": "wondelai/skills",
-      "path": "plugins/wondelai-skills/skills/contagious/SKILL.md"
-    },
-    {
-      "repo": "wondelai/skills",
-      "path": "plugins/metaskills/skills/improve-website/SKILL.md"
-    },
-    {
-      "repo": "wondelai/skills",
-      "path": "plugins/wondelai-skills/skills/top-design/SKILL.md"
-    },
-    {
-      "repo": "wondelai/skills",
-      "path": "plugins/wondelai-skills/skills/clean-code/SKILL.md"
-    },
-    {
-      "repo": "wondelai/skills",
-      "path": "plugins/wondelai-skills/skills/release-it/SKILL.md"
-    },
-    {
-      "repo": "wondelai/skills",
-      "path": "plugins/wondelai-skills/skills/create-app/SKILL.md"
-    },
-    {
-      "repo": "wondelai/skills",
-      "path": "plugins/metaskills/skills/improve-business/SKILL.md"
-    },
-    {
-      "repo": "wondelai/skills",
-      "path": "plugins/wondelai-skills/skills/negotiation/SKILL.md"
-    },
-    {
-      "repo": "wondelai/skills",
-      "path": "plugins/ux-design/skills/improve-retention/SKILL.md"
-    },
-    {
-      "repo": "wondelai/skills",
-      "path": "plugins/ux-design/skills/microinteractions/SKILL.md"
-    },
-    {
-      "repo": "wondelai/skills",
-      "path": "plugins/wondelai-skills/skills/improve-app/SKILL.md"
-    },
-    {
-      "repo": "wondelai/skills",
-      "path": "plugins/strategy-growth/skills/traction-eos/SKILL.md"
-    },
-    {
-      "repo": "wondelai/skills",
-      "path": "plugins/product-strategy/skills/negotiation/SKILL.md"
-    },
-    {
-      "repo": "wondelai/skills",
-      "path": "plugins/wondelai-skills/skills/lean-startup/SKILL.md"
-    },
-    {
-      "repo": "wondelai/skills",
-      "path": "plugins/wondelai-skills/skills/grow-website/SKILL.md"
-    },
-    {
-      "repo": "wondelai/skills",
-      "path": "plugins/wondelai-skills/skills/traction-eos/SKILL.md"
-    },
-    {
-      "repo": "wondelai/skills",
-      "path": "plugins/wondelai-skills/skills/ddia-systems/SKILL.md"
-    },
-    {
-      "repo": "wondelai/skills",
-      "path": "plugins/wondelai-skills/skills/made-to-stick/SKILL.md"
-    },
-    {
-      "repo": "wondelai/skills",
-      "path": "plugins/code-craftsmanship/skills/clean-code/SKILL.md"
-    },
-    {
-      "repo": "wondelai/skills",
-      "path": "plugins/wondelai-skills/skills/design-sprint/SKILL.md"
-    },
-    {
-      "repo": "wondelai/skills",
-      "path": "plugins/wondelai-skills/skills/system-design/SKILL.md"
+      "repo": "skyf0xx/hedgehog",
+      "path": "vendor-skills/BMAD/bmm-skills/plan/bmad-product-brief/SKILL.md"
     }
   ]
 }

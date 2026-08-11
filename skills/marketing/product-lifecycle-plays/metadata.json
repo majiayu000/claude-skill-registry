@@ -1,0 +1,38 @@
+{
+  "name": "product-lifecycle-plays",
+  "repo": "deanpeters/Product-Manager-Skills",
+  "path": "skills/product-lifecycle-plays/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/deanpeters/Product-Manager-Skills",
+  "dir_name": "product-lifecycle-plays",
+  "downloaded_at": "2026-08-11T02:01:00.872903Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for marketing: marketing, campaign, brand",
+    "score": 3,
+    "runner_up": "design",
+    "runner_up_score": 2,
+    "signals": [
+      "marketing",
+      "campaign",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "deanpeters",
+  "source_url": "https://github.com/deanpeters/Product-Manager-Skills/blob/main/skills/product-lifecycle-plays/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/deanpeters/Product-Manager-Skills/blob/main/skills/product-lifecycle-plays/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Map a product's lifecycle stage and choose between extension, replacement, and retirement plays. Use when a product is maturing or declining and the next move isn't obvious."
+}

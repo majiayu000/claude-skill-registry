@@ -1,0 +1,39 @@
+{
+  "name": "figma-to-bricks",
+  "repo": "respira-press/agent-skills-wordpress",
+  "path": "skills/figma-to-bricks/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/respira-press/agent-skills-wordpress",
+  "dir_name": "figma-to-bricks",
+  "downloaded_at": "2026-08-11T02:12:19.634762Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "design",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for design: design, css, component, figma",
+    "score": 4,
+    "runner_up": "marketing",
+    "runner_up_score": 2,
+    "signals": [
+      "design",
+      "css",
+      "component",
+      "figma"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "respira-press",
+  "source_url": "https://github.com/respira-press/agent-skills-wordpress/blob/main/skills/figma-to-bricks/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/respira-press/agent-skills-wordpress/blob/main/skills/figma-to-bricks/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user says 'figma to bricks', 'build this figma design in bricks', or hands over a Figma frame to rebuild on a Bricks Builder site. Maps the Figma node tree to native Bricks elements with BEM global classes, imports the frame's palette into the Bricks design system, and writes to a draft, so nothing live is touched."
+}

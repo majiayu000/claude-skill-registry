@@ -1,0 +1,38 @@
+{
+  "name": "kip-librarian",
+  "repo": "a5c-ai/babysitter",
+  "path": "library/specializations/shared/skills/kip-librarian/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/a5c-ai/babysitter",
+  "dir_name": "kip-librarian",
+  "downloaded_at": "2026-08-11T01:55:47.851715Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: productivity=3, workflow=3",
+    "score": 3,
+    "runner_up": "workflow",
+    "runner_up_score": 3,
+    "signals": [
+      "automation",
+      "workflow",
+      "task"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "a5c-ai",
+  "source_url": "https://github.com/a5c-ai/babysitter/blob/main/library/specializations/shared/skills/kip-librarian/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/a5c-ai/babysitter/blob/main/library/specializations/shared/skills/kip-librarian/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Canonical kip knowledge-store patterns for any process or agent: recall prior facts before work, assert decisions/gate outcomes/rejections as structured facts after work, resolve entities with explicit --model sonnet, and invoke the CLI Windows-safely via node packages/kip-sdk/dist/cli/kip.js when kip is not on PATH."
+}

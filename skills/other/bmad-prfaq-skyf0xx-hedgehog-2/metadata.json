@@ -1,0 +1,37 @@
+{
+  "name": "bmad-prfaq",
+  "repo": "skyf0xx/hedgehog",
+  "path": "vendor-skills/BMAD/bmm-skills/plan/bmad-prfaq/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/skyf0xx/hedgehog",
+  "dir_name": "bmad-prfaq-skyf0xx-hedgehog-2",
+  "downloaded_at": "2026-08-11T02:14:22.988301Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: data=2, planning=2",
+    "score": 2,
+    "runner_up": "planning",
+    "runner_up_score": 2,
+    "signals": [
+      "data",
+      "pipeline"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "skyf0xx",
+  "source_url": "https://github.com/skyf0xx/hedgehog/blob/master/vendor-skills/BMAD/bmm-skills/plan/bmad-prfaq/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/skyf0xx/hedgehog/blob/master/vendor-skills/BMAD/bmm-skills/plan/bmad-prfaq/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Working Backwards PRFAQ challenge that stress-tests a product concept customer-first. Use when the user requests to 'create a PRFAQ', 'work backwards', or 'run the PRFAQ challenge'."
+}

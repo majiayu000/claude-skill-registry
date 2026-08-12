@@ -1,0 +1,36 @@
+{
+  "name": "memory",
+  "repo": "tance-mang/chinese-webnovel-skills",
+  "path": "skills/memory/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/tance-mang/chinese-webnovel-skills",
+  "dir_name": "memory",
+  "downloaded_at": "2026-08-12T02:26:26.733448Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category context-management scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "productivity",
+    "runner_up_score": 1,
+    "signals": [
+      "memory"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "tance-mang",
+  "source_url": "https://github.com/tance-mang/chinese-webnovel-skills/blob/main/skills/memory/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tance-mang/chinese-webnovel-skills/blob/main/skills/memory/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u4e2d\u6587\u7f51\u6587\u521b\u4f5c\u6863\u6848\u4e0e\u8bb0\u5fc6\u7cfb\u7edf\u3002\u5f53\u7528\u6237\u8981\u8bb0\u5f55/\u4fdd\u5b58\u5927\u7eb2\u4eba\u8bbe\u8bbe\u5b9a\u3001\u8de8\u4f1a\u8bdd\u7ee7\u7eed\u5199\u4e4b\u524d\u7684\u4e66\u3001\u95ee\"\u6211\u5199\u5230\u54ea\u4e86/\u8fd9\u4e2a\u4f0f\u7b14\u56de\u6536\u4e86\u5417\"\u3001\u7ed9\u4e66\u505a\u7248\u672c\u5feb\u7167(\u50cfgit)\u3001\u6216\u7ba1\u7406\u591a\u672c\u4e66\u7684\u521b\u4f5c\u8fdb\u5ea6\u65f6\u4f7f\u7528\u3002\u5728\u4e66\u7684\u6587\u4ef6\u5939\u91cc\u7ef4\u62a4\u6301\u4e45\u5316\u6863\u6848\uff0c\u6240\u6709\u5199\u4f5c\u6280\u80fd\u5171\u4eab\u8bfb\u5199\u3002"
+}

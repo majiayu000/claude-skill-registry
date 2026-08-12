@@ -1,0 +1,38 @@
+{
+  "name": "video-packaging",
+  "repo": "indranilbanerjee/digital-marketing-pro",
+  "path": "skills/video-packaging/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/indranilbanerjee/digital-marketing-pro",
+  "dir_name": "video-packaging",
+  "downloaded_at": "2026-08-12T02:16:59.193290Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for marketing: marketing, content, brand",
+    "score": 3,
+    "runner_up": "context-management",
+    "runner_up_score": 1,
+    "signals": [
+      "marketing",
+      "content",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "indranilbanerjee",
+  "source_url": "https://github.com/indranilbanerjee/digital-marketing-pro/blob/main/skills/video-packaging/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/indranilbanerjee/digital-marketing-pro/blob/main/skills/video-packaging/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Generate or critique video packaging \u2014 title + thumbnail-text pairs where each does a different job, tagged by discovery intent (search vs browse). Use when: a video needs its title and thumbnail decided, an existing video underperforms on click-through, a channel audit finds strong content nobody clicks, or packaging needs A/B variants. Triggers on \"/video-packaging\", \"title for this video\", \"thumbnail text\", \"why is no one clicking this video\", \"package this video\", \"critique this title\", \"YouTube title ideas\"."
+}

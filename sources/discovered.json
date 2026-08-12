@@ -1,7 +1,7 @@
 {
-  "discovered_at": "2026-08-11T02:17:38.048396Z",
+  "discovered_at": "2026-08-12T02:29:32.489626Z",
   "total_repos": 300,
-  "total_skills": 28,
+  "total_skills": 44,
   "scanned_repos": 300,
   "limits": {
     "max_repos": 300,
@@ -188,6 +188,7 @@
     "itsmostafa/aws-agent-skills",
     "iziqing/-disk-cleaner",
     "jabrena/plinth",
+    "jangviktor-web/nihaixia",
     "jaredrhod/ai-memory-vault",
     "jeecgboot/skills",
     "jezweb/claude-skills",
@@ -196,12 +197,12 @@
     "jomeswang/agnes-ai-skill",
     "jqueryscript/awesome-claude-code",
     "karanb192/awesome-claude-skills",
+    "karanb192/itr-wala",
     "kazukinagata/shinkoku",
     "keskinonur/claude-code-ios-dev-guide",
     "keysersoose/claude-agent-builder",
     "khendzel/skills-janitor",
     "kromahlusenii-ops/ham",
-    "lackeyjb/playwright-skill",
     "laolaoshiren/claude-code-skills-zh",
     "lee-fuhr/claude-session-index",
     "levi-qiao/longgraph-skill",
@@ -247,7 +248,6 @@
     "parcadei/Continuous-Claude-v3",
     "pedrohcgs/claude-code-my-workflow",
     "plugin87/ux-ui-agent-skills",
-    "posit-dev/skills",
     "proyecto26/sherlock-ai-plugin",
     "proyecto26/slides-ai-plugin",
     "radekamirko/C.R.I.S.P",
@@ -279,6 +279,7 @@
     "staruhub/ClaudeSkills",
     "syahiidkamil/Software-Engineer-AI-Agent-Atlas",
     "tamtom/play-console-cli",
+    "tance-mang/chinese-webnovel-skills",
     "tdimino/claude-code-minoan",
     "teng-lin/notebooklm-py",
     "thedotmack/claude-mem",
@@ -288,7 +289,6 @@
     "tripleyak/SkillForge",
     "tuan3w/obsidian-vault-agent",
     "tzachbon/smart-ralph",
-    "ursazoo/lanhu-to-code",
     "vasilyu1983/AI-Agents-public",
     "vibeeval/vibecosystem",
     "vitaecontext/vitaecontext",
@@ -305,125 +305,189 @@
     "wrsmith108/varlock-claude-skill",
     "xiaobei930/cc-best",
     "y49/tlive",
-    "yussufs/export-md",
     "yusufkaraaslan/Skill_Seekers",
     "zanwei/design-dna",
     "zebbern/claude-code-guide",
     "zebbern/skills",
+    "zenbu-labs/terminal-browser",
     "zscole/adversarial-spec"
   ],
   "skills": [
     {
-      "repo": "Optim-Agent/optim-plans",
-      "path": "skills/create-a-plan/SKILL.md"
+      "repo": "anbeime/skill",
+      "path": "skills/antinet-doc-parse/SKILL.md"
     },
     {
-      "repo": "Optim-Agent/optim-plans",
-      "path": "skills/create-a-big-plan/SKILL.md"
+      "repo": "anbeime/skill",
+      "path": "skills/antinet-provenance/SKILL.md"
     },
     {
-      "repo": "Optim-Agent/optim-plans",
-      "path": "skills/create-a-small-plan/SKILL.md"
+      "repo": "anbeime/skill",
+      "path": "skills/antinet-security-scan/SKILL.md"
     },
     {
-      "repo": "Optim-Agent/optim-plans",
-      "path": "skills/diagnose-before-plan/SKILL.md"
+      "repo": "anbeime/skill",
+      "path": "skills/antinet-four-color-cards/SKILL.md"
     },
     {
-      "repo": "Optim-Agent/optim-plans",
-      "path": "skills/reference-before-plan/SKILL.md"
+      "repo": "indranilbanerjee/digital-marketing-pro",
+      "path": "skills/story-mine/SKILL.md"
     },
     {
-      "repo": "XiaoMaColtAI/math-modeling-skill",
-      "path": "tools/figure/SKILL.md"
+      "repo": "indranilbanerjee/digital-marketing-pro",
+      "path": "skills/signal-mine/SKILL.md"
     },
     {
-      "repo": "a5c-ai/babysitter",
-      "path": "library/specializations/shared/skills/kip-librarian/SKILL.md"
+      "repo": "indranilbanerjee/digital-marketing-pro",
+      "path": "skills/goal-filter/SKILL.md"
     },
     {
-      "repo": "deanpeters/Product-Manager-Skills",
-      "path": "skills/eol-process/SKILL.md"
+      "repo": "indranilbanerjee/digital-marketing-pro",
+      "path": "skills/video-packaging/SKILL.md"
     },
     {
-      "repo": "deanpeters/Product-Manager-Skills",
-      "path": "skills/eol-checklist/SKILL.md"
+      "repo": "karanb192/itr-wala",
+      "path": "skills/itr-wala/SKILL.md"
     },
     {
-      "repo": "deanpeters/Product-Manager-Skills",
-      "path": "skills/eol-readiness-advisor/SKILL.md"
+      "repo": "nanocoai/nanoclaw",
+      "path": ".claude/skills/add-tavily-tool/SKILL.md"
     },
     {
-      "repo": "deanpeters/Product-Manager-Skills",
-      "path": "skills/lifecycle-play-advisor/SKILL.md"
+      "repo": "tance-mang/chinese-webnovel-skills",
+      "path": "skills/name/SKILL.md"
     },
     {
-      "repo": "deanpeters/Product-Manager-Skills",
-      "path": "skills/product-lifecycle-plays/SKILL.md"
+      "repo": "tance-mang/chinese-webnovel-skills",
+      "path": "skills/idea/SKILL.md"
     },
     {
-      "repo": "deanpeters/Product-Manager-Skills",
-      "path": "skills/eol-internal-enablement/SKILL.md"
+      "repo": "tance-mang/chinese-webnovel-skills",
+      "path": "skills/hook/SKILL.md"
     },
     {
-      "repo": "deanpeters/Product-Manager-Skills",
-      "path": "skills/eol-stakeholder-sequence/SKILL.md"
+      "repo": "tance-mang/chinese-webnovel-skills",
+      "path": "skills/title/SKILL.md"
     },
     {
-      "repo": "respira-press/agent-skills-wordpress",
-      "path": "skills/figma-to-divi/SKILL.md"
+      "repo": "tance-mang/chinese-webnovel-skills",
+      "path": "skills/slang/SKILL.md"
     },
     {
-      "repo": "respira-press/agent-skills-wordpress",
-      "path": "skills/figma-to-bricks/SKILL.md"
+      "repo": "tance-mang/chinese-webnovel-skills",
+      "path": "skills/coach/SKILL.md"
     },
     {
-      "repo": "respira-press/agent-skills-wordpress",
-      "path": "skills/figma-to-gutenberg/SKILL.md"
+      "repo": "tance-mang/chinese-webnovel-skills",
+      "path": "skills/world/SKILL.md"
     },
     {
-      "repo": "scdenney/open-science-skills",
-      "path": "codex/qualtrics-ops/SKILL.md"
+      "repo": "tance-mang/chinese-webnovel-skills",
+      "path": "skills/start/SKILL.md"
     },
     {
-      "repo": "scdenney/open-science-skills",
-      "path": "codex/survey-data-audit/SKILL.md"
+      "repo": "tance-mang/chinese-webnovel-skills",
+      "path": "skills/spark/SKILL.md"
     },
     {
-      "repo": "scdenney/open-science-skills",
-      "path": "codex/survey-flow-audit/SKILL.md"
+      "repo": "tance-mang/chinese-webnovel-skills",
+      "path": "skills/draft/SKILL.md"
     },
     {
-      "repo": "scdenney/open-science-skills",
-      "path": "plugin/skills/qualtrics-ops/SKILL.md"
+      "repo": "tance-mang/chinese-webnovel-skills",
+      "path": "skills/human/SKILL.md"
     },
     {
-      "repo": "scdenney/open-science-skills",
-      "path": "plugin/skills/survey-flow-audit/SKILL.md"
+      "repo": "tance-mang/chinese-webnovel-skills",
+      "path": "skills/expand/SKILL.md"
     },
     {
-      "repo": "scdenney/open-science-skills",
-      "path": "plugin/skills/survey-data-audit/SKILL.md"
+      "repo": "tance-mang/chinese-webnovel-skills",
+      "path": "skills/memory/SKILL.md"
     },
     {
-      "repo": "skyf0xx/hedgehog",
-      "path": "vendor-skills/BMAD/bmm-skills/plan/bmad-ux/SKILL.md"
+      "repo": "tance-mang/chinese-webnovel-skills",
+      "path": "skills/review/SKILL.md"
     },
     {
-      "repo": "skyf0xx/hedgehog",
-      "path": "vendor-skills/BMAD/bmm-skills/plan/bmad-prd/SKILL.md"
+      "repo": "tance-mang/chinese-webnovel-skills",
+      "path": "skills/script/SKILL.md"
     },
     {
-      "repo": "skyf0xx/hedgehog",
-      "path": "vendor-skills/BMAD/bmm-skills/plan/bmad-prfaq/SKILL.md"
+      "repo": "tance-mang/chinese-webnovel-skills",
+      "path": "skills/trends/SKILL.md"
     },
     {
-      "repo": "skyf0xx/hedgehog",
-      "path": "vendor-skills/BMAD/core-skills/bmad-forge-idea/SKILL.md"
+      "repo": "tance-mang/chinese-webnovel-skills",
+      "path": "skills/fanfic/SKILL.md"
     },
     {
-      "repo": "skyf0xx/hedgehog",
-      "path": "vendor-skills/BMAD/bmm-skills/plan/bmad-product-brief/SKILL.md"
+      "repo": "tance-mang/chinese-webnovel-skills",
+      "path": "skills/warmth/SKILL.md"
+    },
+    {
+      "repo": "tance-mang/chinese-webnovel-skills",
+      "path": "skills/deslop/SKILL.md"
+    },
+    {
+      "repo": "tance-mang/chinese-webnovel-skills",
+      "path": "skills/emotion/SKILL.md"
+    },
+    {
+      "repo": "tance-mang/chinese-webnovel-skills",
+      "path": "skills/outline/SKILL.md"
+    },
+    {
+      "repo": "tance-mang/chinese-webnovel-skills",
+      "path": "skills/english/SKILL.md"
+    },
+    {
+      "repo": "tance-mang/chinese-webnovel-skills",
+      "path": "skills/cowrite/SKILL.md"
+    },
+    {
+      "repo": "tance-mang/chinese-webnovel-skills",
+      "path": "skills/annotate/SKILL.md"
+    },
+    {
+      "repo": "tance-mang/chinese-webnovel-skills",
+      "path": "skills/aidetect/SKILL.md"
+    },
+    {
+      "repo": "tance-mang/chinese-webnovel-skills",
+      "path": "skills/dialogue/SKILL.md"
+    },
+    {
+      "repo": "tance-mang/chinese-webnovel-skills",
+      "path": "skills/character/SKILL.md"
+    },
+    {
+      "repo": "tance-mang/chinese-webnovel-skills",
+      "path": "skills/proofread/SKILL.md"
+    },
+    {
+      "repo": "tance-mang/chinese-webnovel-skills",
+      "path": "skills/goldfinger/SKILL.md"
+    },
+    {
+      "repo": "tance-mang/chinese-webnovel-skills",
+      "path": "skills/shuangdian/SKILL.md"
+    },
+    {
+      "repo": "tance-mang/chinese-webnovel-skills",
+      "path": "skills/continuity/SKILL.md"
+    },
+    {
+      "repo": "tance-mang/chinese-webnovel-skills",
+      "path": "skills/submission/SKILL.md"
+    },
+    {
+      "repo": "tance-mang/chinese-webnovel-skills",
+      "path": "skills/deconstruct/SKILL.md"
+    },
+    {
+      "repo": "zenbu-labs/terminal-browser",
+      "path": ".claude/skills/verify/SKILL.md"
     }
   ]
 }

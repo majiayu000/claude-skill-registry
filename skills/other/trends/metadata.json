@@ -1,0 +1,36 @@
+{
+  "name": "trends",
+  "repo": "tance-mang/chinese-webnovel-skills",
+  "path": "skills/trends/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/tance-mang/chinese-webnovel-skills",
+  "dir_name": "trends",
+  "downloaded_at": "2026-08-12T02:26:27.389207Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category development scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "platform",
+    "runner_up_score": 1,
+    "signals": [
+      "code"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "tance-mang",
+  "source_url": "https://github.com/tance-mang/chinese-webnovel-skills/blob/main/skills/trends/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tance-mang/chinese-webnovel-skills/blob/main/skills/trends/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u4e2d\u6587\u7f51\u6587\u5e73\u53f0\u8d8b\u52bf\u4e0e\u559c\u597d\u5b9e\u65f6\u8c03\u7814\u3002\u5f53\u7528\u6237\u60f3\u77e5\u9053\u5f53\u4e0b\u756a\u8304/\u664b\u6c5f/\u8d77\u70b9/UC/\u77e5\u4e4e\u76d0\u9009/Webnovel \u5e73\u53f0\u6d41\u884c\u4ec0\u4e48\u9898\u6750\u3001\u70ed\u95e8\u6807\u7b7e\u3001\u4e0a\u699c\u5957\u8def\u3001\u8bfb\u8005\u504f\u597d\uff0c\u6216\u8981\u505a\u9009\u9898\u524d\u7684\u5e02\u573a\u8c03\u7814\u3001\u8ffd\u98ce\u53e3\u65f6\u4f7f\u7528\u3002\u4f18\u5148\u7528\u8054\u7f51\u641c\u7d22\u62c9\u53d6\u6700\u65b0\u6570\u636e\uff0c\u7ed9\u53ef\u6267\u884c\u7684\u9009\u9898/\u6807\u7b7e\u5efa\u8bae\u3002"
+}

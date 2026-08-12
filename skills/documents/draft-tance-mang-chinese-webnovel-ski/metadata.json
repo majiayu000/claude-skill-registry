@@ -1,0 +1,38 @@
+{
+  "name": "draft",
+  "repo": "tance-mang/chinese-webnovel-skills",
+  "path": "skills/draft/SKILL.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/tance-mang/chinese-webnovel-skills",
+  "dir_name": "draft-tance-mang-chinese-webnovel-ski",
+  "downloaded_at": "2026-08-12T02:26:26.194299Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "documents",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for documents: word, docx, markdown",
+    "score": 3,
+    "runner_up": "ai-llm",
+    "runner_up_score": 1,
+    "signals": [
+      "word",
+      "docx",
+      "markdown"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "tance-mang",
+  "source_url": "https://github.com/tance-mang/chinese-webnovel-skills/blob/main/skills/draft/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tance-mang/chinese-webnovel-skills/blob/main/skills/draft/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u628a\u5c0f\u8bf4\u5199\u6210\"\u4f9b\u4fee\u6539\u7684 Word \u8349\u7a3f\"\u3002\u5f53\u7528\u6237\u8981\u628a\u7a3f\u5b50\u5bfc\u6210 Word/docx\u3001\u8981\u5206\u7ae0\u8282\u5e26\u76ee\u5f55\u3001\u7ae0\u6807\u9898\u5de6\u5bf9\u9f50\u3001\u8981\u6807\u51fa\u53ef\u4ee5\u6539\u7684\u5730\u65b9\u8ba9\u81ea\u5df1\u4fee\u6539\u3001\u6216\u8bf4\"\u5148\u5199\u4e2a\u5927\u6982\u6211\u6765\u7b5b\u9009\u4fee\u6539\"\u65f6\u4f7f\u7528\u3002\u4ea7\u51fa Word \u8349\u7a3f(\u76ee\u5f55+\u7b2cX\u7ae0\u5de6\u5bf9\u9f50+\u3010\u4fee\u6539\u3011\u7ea2\u8272\u9ad8\u4eae\u5efa\u8bae)\uff0c\u547d\u540d\u300a\u4e66\u540d\u300b\u4fee\u6539N\uff0c\u7edd\u4e0d\u8986\u76d6\u539f\u6587\u3002"
+}

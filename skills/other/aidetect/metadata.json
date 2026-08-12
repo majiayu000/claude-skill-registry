@@ -1,0 +1,36 @@
+{
+  "name": "aidetect",
+  "repo": "tance-mang/chinese-webnovel-skills",
+  "path": "skills/aidetect/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/tance-mang/chinese-webnovel-skills",
+  "dir_name": "aidetect",
+  "downloaded_at": "2026-08-12T02:26:28.768179Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category ai-llm scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "ai-ml",
+    "runner_up_score": 1,
+    "signals": [
+      "ai"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "tance-mang",
+  "source_url": "https://github.com/tance-mang/chinese-webnovel-skills/blob/main/skills/aidetect/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tance-mang/chinese-webnovel-skills/blob/main/skills/aidetect/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u4e2d\u6587\u7f51\u6587 AI \u5473\u91cf\u5316\u68c0\u6d4b\u4e0e\u8bc4\u5206\u3002\u5f53\u7528\u6237\u8981\u7ed9\u6b63\u6587\"\u6253\u4e2a AI \u5473\u5206/\u91cf\u5316\u770b\u770b\u6709\u591a\u50cf AI\"\u3001\u8981\u77e5\u9053\"\u95ee\u9898\u5177\u4f53\u5728\u7b2c\u51e0\u53e5\"\u3001\u8981\u67e5\u6bd4\u55bb\u5bc6\u5ea6/\u8fde\u7eed\u540c\u53e5\u5f0f/\u53e5\u957f\u6ce2\u52a8/\u6bb5\u843d\u5206\u5e03/\u9ad8\u9891\u60c5\u7eea\u8bcd\u91cd\u590d/\u6781\u7aef\u8bcd\u5806\u780c\uff0c\u6216\u8981\u5728\u6539\u7a3f\u524d\u5148\u5b9a\u4f4d AI \u5473\u91cd\u707e\u533a\u65f6\u4f7f\u7528\u3002\u4ea7\u51fa AI \u5473\u6307\u6570(0\u201310)+\u516b\u9879\u6307\u6807\u5b9e\u6d4b+\u6263\u5206\u5b9a\u4f4d\u6e05\u5355\u3002"
+}

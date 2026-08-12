@@ -1,0 +1,36 @@
+{
+  "name": "hook",
+  "repo": "tance-mang/chinese-webnovel-skills",
+  "path": "skills/hook/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/tance-mang/chinese-webnovel-skills",
+  "dir_name": "hook",
+  "downloaded_at": "2026-08-12T02:26:24.666286Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category quality scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "",
+    "runner_up_score": 0,
+    "signals": [
+      "review"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "tance-mang",
+  "source_url": "https://github.com/tance-mang/chinese-webnovel-skills/blob/main/skills/hook/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tance-mang/chinese-webnovel-skills/blob/main/skills/hook/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u4e2d\u6587\u7f51\u6587\u94a9\u5b50\u8bbe\u8ba1\u3002\u5f53\u7528\u6237\u8981\u5199\u5f00\u7bc7/\u5f00\u5934\u3001\u7b2c\u4e00\u53e5\u3001\u9ec4\u91d1\u4e09\u7ae0\u94a9\u5b50\u3001\u7ae0\u8282\u7ed3\u5c3e\u65ad\u7ae0\u3001\u4ed8\u8d39\u8282\u70b9\u60ac\u5ff5\u3001\u6216\u62b1\u6028\u5f00\u5934\u7559\u4e0d\u4f4f\u8bfb\u8005\u65f6\u4f7f\u7528\u3002\u4ea7\u51fa\u591a\u4e2a\u53ef\u9009\u94a9\u5b50\u65b9\u6848\u5e76\u8bf4\u660e\u94a9\u70b9\u539f\u7406\u3002"
+}

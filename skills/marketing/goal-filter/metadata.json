@@ -1,0 +1,39 @@
+{
+  "name": "goal-filter",
+  "repo": "indranilbanerjee/digital-marketing-pro",
+  "path": "skills/goal-filter/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/indranilbanerjee/digital-marketing-pro",
+  "dir_name": "goal-filter",
+  "downloaded_at": "2026-08-12T02:16:59.018929Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for marketing: marketing, content, campaign, brand",
+    "score": 4,
+    "runner_up": "quality",
+    "runner_up_score": 2,
+    "signals": [
+      "marketing",
+      "content",
+      "campaign",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "indranilbanerjee",
+  "source_url": "https://github.com/indranilbanerjee/digital-marketing-pro/blob/main/skills/goal-filter/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/indranilbanerjee/digital-marketing-pro/blob/main/skills/goal-filter/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Lock ONE primary marketing goal per brand, then judge any idea, draft, campaign, or plan against it \u2014 on-goal, partially, or off \u2014 with the fix that would make it pull harder. Use when: setting the quarter's focus, gut-checking whether work serves the objective, a shiny new idea appears mid-quarter, or reviewing a content plan before committing budget. Triggers on \"/goal-filter\", \"is this on goal\", \"goal check\", \"lock the goal\", \"keep me focused\", \"does this serve the objective\", \"what's our priority\"."
+}

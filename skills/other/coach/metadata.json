@@ -1,0 +1,36 @@
+{
+  "name": "coach",
+  "repo": "tance-mang/chinese-webnovel-skills",
+  "path": "skills/coach/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/tance-mang/chinese-webnovel-skills",
+  "dir_name": "coach",
+  "downloaded_at": "2026-08-12T02:26:25.207963Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category ai-llm scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "ai-ml",
+    "runner_up_score": 1,
+    "signals": [
+      "ai"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "tance-mang",
+  "source_url": "https://github.com/tance-mang/chinese-webnovel-skills/blob/main/skills/coach/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tance-mang/chinese-webnovel-skills/blob/main/skills/coach/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u4e2d\u6587\u7f51\u6587\u5199\u4f5c\u6559\u5b66\u4e0e\u966a\u7ec3\uff08\u65b0\u624b\u53cb\u597d\uff0c\u9009\u62e9\u6027\u5f00\u542f\uff09\u3002\u5f53\u7528\u6237\u60f3\u5b66\u600e\u4e48\u5199\u7f51\u6587\u3001\u95ee\u5199\u4f5c\u6280\u5de7\u3001\u8981\u62c6\u89e3\u67d0\u4e2a\u5957\u8def\u4e3a\u4ec0\u4e48\u6709\u6548\u3001\u8981\u5e26\u6559\u5b66\u70b9\u8bc4\u7684\u6539\u7a3f\u3001\u6216\u8bf4\"\u6559\u6211\u5199\"\"\u6211\u662f\u65b0\u624b\"\u65f6\u4f7f\u7528\u3002\u53ea\u5728\u7528\u6237\u4e3b\u52a8\u8c03\u7528\u65f6\u51fa\u73b0\uff0c\u4e0d\u4f1a\u81ea\u52a8\u63d2\u5165\u5176\u4ed6\u5199\u4f5c\u6280\u80fd\u3002"
+}

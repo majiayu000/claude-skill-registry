@@ -1,0 +1,36 @@
+{
+  "name": "dialogue",
+  "repo": "tance-mang/chinese-webnovel-skills",
+  "path": "skills/dialogue/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/tance-mang/chinese-webnovel-skills",
+  "dir_name": "dialogue",
+  "downloaded_at": "2026-08-12T02:26:29.005154Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category ai-llm scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "ai-ml",
+    "runner_up_score": 1,
+    "signals": [
+      "ai"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "tance-mang",
+  "source_url": "https://github.com/tance-mang/chinese-webnovel-skills/blob/main/skills/dialogue/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tance-mang/chinese-webnovel-skills/blob/main/skills/dialogue/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u4e2d\u6587\u7f51\u6587\u5bf9\u8bdd\u4e0e\u53f0\u8bcd\u3002\u5f53\u7528\u6237\u8981\u5199/\u6539\u5bf9\u8bdd\u3001\u8bbe\u8ba1\u91d1\u53e5\u540d\u573a\u9762\u53f0\u8bcd\u3001\u5199\u6253\u8138\u88c513\u53f0\u8bcd\u3001\u8650\u5fc3\u6216\u751c\u5ba0\u53f0\u8bcd\u3001\u62b1\u6028\"\u5bf9\u8bdd\u592a\u751f\u786c/\u592a\u4e66\u9762/\u50cfAI/\u6bcf\u4e2a\u89d2\u8272\u4e00\u4e2a\u8154\"\u3001\u6216\u8981\u8ba9\u4eba\u7269\u8bf4\u8bdd\u6709\u533a\u5206\u5ea6\u65f6\u4f7f\u7528\u3002\u4ea7\u51fa\u53e3\u8bed\u5316\u3001\u6709\u6f5c\u53f0\u8bcd\u3001\u7b26\u5408\u4eba\u8bbe\u58f0\u97f3\u7684\u53f0\u8bcd\u3002"
+}

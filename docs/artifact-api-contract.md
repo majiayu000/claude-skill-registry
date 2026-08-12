@@ -210,6 +210,12 @@ category manifest and parts. Do not fetch every category part on startup.
 For trust and ranking overlays, load the pointer, then the corresponding
 manifest and shards. Treat missing signal records as unknown, not clean.
 
+Asset facets are optional. Registry and lite/full search records use
+`asset_state` and `asset_liveness`; compact search records use `a` and `l`.
+Missing fields mean no validated asset evidence and must remain blank rather
+than being presented as a failed or verified bundle. Ranking records expose the
+non-negative `asset_ranking_penalty`; verified-live evidence has zero penalty.
+
 For full registry sync, consumers should prefer manifests and bounded shards to
 giant single-payload JSON files. Load the merged artifact
 `registry-manifest.json` and every shard it lists; `registry.json` is

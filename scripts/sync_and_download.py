@@ -52,6 +52,7 @@ from sync_pipeline_support import (
     build_branch_probe_order,
     build_relative_probe_order,
     bundled_relative_path,
+    configure_sync_logging,
     filter_pending_skills,
     is_negative_cache_active,
     is_safe_bundled_file,
@@ -116,11 +117,17 @@ __all__ = [
     "validate_existing_archive_sources",
 ]
 
+
 def main():
+    configure_sync_logging()
     parser = argparse.ArgumentParser(description="Sync and download Claude skills")
     parser.add_argument("--sync-only", action="store_true", help="Only sync index, don't download")
-    parser.add_argument("--download-only", action="store_true", help="Only download, use existing index")
-    parser.add_argument("--max-skills", type=int, default=50000, help="Max skills to sync from SkillsMP")
+    parser.add_argument(
+        "--download-only", action="store_true", help="Only download, use existing index"
+    )
+    parser.add_argument(
+        "--max-skills", type=int, default=50000, help="Max skills to sync from SkillsMP"
+    )
     parser.add_argument(
         "--enable-skillsmp",
         action="store_true",
@@ -354,7 +361,7 @@ def main():
 
     logger.info("=" * 60)
     logger.info("PIPELINE COMPLETE")
-    logger.info(f"Total time: {elapsed:.1f}s ({elapsed/60:.1f} min)")
+    logger.info(f"Total time: {elapsed:.1f}s ({elapsed / 60:.1f} min)")
     logger.info("=" * 60)
 
 

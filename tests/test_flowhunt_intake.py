@@ -87,6 +87,8 @@ def test_flowhunt_style_support_files_are_archived_with_directory_mode(
                         "repo": "heyneuron/flowhunt-skill",
                         "path": "skills/flowhunt",
                         "category": "productivity",
+                        "license": "MIT",
+                        "distribution": "compatible",
                     }
                 ]
             }
@@ -216,6 +218,8 @@ def test_display_dev_bundled_jq_files_are_archived_with_rendered_skill_path(
                         "repo": "display-dev/skill",
                         "path": "skills/display-dev",
                         "category": "productivity",
+                        "license": "MIT",
+                        "distribution": "compatible",
                     }
                 ]
             }

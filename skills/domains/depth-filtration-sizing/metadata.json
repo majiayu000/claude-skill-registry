@@ -1,0 +1,30 @@
+{
+  "name": "depth-filtration-sizing",
+  "description": "Size and stage depth filtration for wine and spirits using FILTROX AF/XS filter sheet grades, turbidity targets, flow limits, and sheet-count formulas.",
+  "repo": "Davitip/filtrox-bot",
+  "path": ".claude/skills/depth-filtration-sizing/SKILL.md",
+  "github_branch": "main",
+  "category": "domains",
+  "tags": [
+    "wine",
+    "spirits",
+    "filtration",
+    "process-engineering",
+    "filtrox",
+    "sizing"
+  ],
+  "stars": 0,
+  "source": "Community Skills",
+  "dir_name": "depth-filtration-sizing",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "references/filter-grades.md"
+  ],
+  "author": "Davitip",
+  "source_url": "https://github.com/Davitip/filtrox-bot/blob/main/.claude/skills/depth-filtration-sizing/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Davitip/filtrox-bot/blob/main/.claude/skills/depth-filtration-sizing/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

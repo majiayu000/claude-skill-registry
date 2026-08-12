@@ -9,11 +9,8 @@
   "stars": 0,
   "source": "GitHub Code Search Results",
   "dir_name": "unknown-rs42-ai-scout-ai-lite",
-  "archive_mode": "directory",
-  "bundled_files": [
-    "LICENSE",
-    "README.md"
-  ],
+  "archive_mode": "skill-md",
+  "bundled_files": [],
   "author": "RS42-AI",
   "source_url": "https://github.com/RS42-AI/scout-ai-lite/blob/main/SKILL.md",
   "license": "NOASSERTION",

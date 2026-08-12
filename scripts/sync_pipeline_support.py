@@ -30,6 +30,7 @@ import re
 import shutil
 import subprocess
 import sys
+from collections.abc import Iterable
 from datetime import datetime, timedelta, timezone
 from pathlib import Path, PurePosixPath
 
@@ -39,6 +40,14 @@ ROOT_DIR = SCRIPT_DIR.parent
 sys.path.insert(0, str(ROOT_DIR))
 sys.path.insert(0, str(SCRIPT_DIR))
 
+from asset_claims import (
+    BUNDLED_DIR_ALLOWLIST,
+    BUNDLED_ROOT_FILE_ALLOWLIST,
+)
+from asset_claims import (
+    requires_complete_bundled_archive as requires_complete_bundled_archive,
+)
+from portable_paths import is_safe_portable_relative_path as _is_safe_portable_relative_path
 from security_blocklist import blocked_metadata_source
 from skill_frontmatter import normalize_skill_frontmatter
 from utils import (
@@ -63,56 +72,29 @@ def skill_key(skill: dict) -> str:
     category = sanitize_category(skill.get("category") or "other")
     return f"{category}:{name}"
 
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.FileHandler('sync_and_download.log'),
-        logging.StreamHandler()
-    ]
-)
+
 logger = logging.getLogger(__name__)
 ACQUISITION_MANIFEST_VERSION = 1
 DEFAULT_MANIFEST_PATH = ROOT_DIR / "sources" / "acquisition_manifest.json"
 DEFAULT_LEARNING_PRIORS_PATH = ROOT_DIR / "sources" / "learning" / "discovery_priors.json"
 GITHUB_API_BASE = "https://api.github.com"
 
-BUNDLED_DIR_ALLOWLIST = {
-    "bin",
-    "connectors",
-    "references",
-    "reference",
-    "scripts",
-    "assets",
-    "knowledge",
-    "templates",
-    "examples",
-    "prompts",
-    "rules",
-    "src",
-}
+def configure_sync_logging(log_path: str = "sync_and_download.log") -> None:
+    """Configure CLI logging explicitly, never as a shared-module import side effect."""
+    if getattr(configure_sync_logging, "_configured", False):
+        return
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s - %(levelname)s - %(message)s",
+        handlers=[logging.FileHandler(log_path), logging.StreamHandler()],
+        force=True,
+    )
+    configure_sync_logging._configured = True
+
+
 DESIGN_BUNDLED_DIR_PATTERN = re.compile(r"^design-[a-z0-9-]+$")
 SAFE_BUNDLED_BIN_FILENAMES = re.compile(r"^jq(?:-[A-Za-z0-9_.-]+|\.LICENSE)$")
 BUNDLED_ROOT_CODE_FILE_PATTERN = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.-]*\.(?:py|swift)$")
-BUNDLED_ROOT_FILE_ALLOWLIST = {
-    "audit.md",
-    "package.json",
-    "package-lock.json",
-    "pnpm-lock.yaml",
-    "yarn.lock",
-    "requirements.txt",
-    "pyproject.toml",
-    "setup.md",
-    "uv.lock",
-    "README.md",
-    "LICENSE",
-    "LICENSE.md",
-}
-BUNDLED_REQUIRED_ROOT_FILE_HINTS = BUNDLED_ROOT_FILE_ALLOWLIST - {
-    "README.md",
-    "LICENSE",
-    "LICENSE.md",
-}
 BUNDLED_FILE_EXTENSIONS = {
     ".bash",
     ".css",
@@ -154,6 +136,8 @@ MAX_BUNDLED_FILE_BYTES = 1_000_000
 MAX_BUNDLED_BIN_FILE_BYTES = 3_000_000
 MAX_BUNDLED_TOTAL_BYTES = 8_000_000
 MAX_BUNDLED_FILES_PER_SKILL = 100
+GIT_COMMIT_SHA_PATTERN = re.compile(r"^[0-9a-fA-F]{40}$")
+INVALID_GIT_REF_CHARACTERS = frozenset("~^:?*[\\")
 
 
 class BundledListingError(Exception):
@@ -203,6 +187,72 @@ def skill_source_dir(relative_path: str) -> str:
     return "" if parent == "." else parent
 
 
+def normalize_download_repo(repo: str) -> str:
+    """Normalize source repo values used by the downloader."""
+    repo = (repo or "").strip()
+    if repo.startswith("https://github.com/"):
+        repo = repo[len("https://github.com/") :]
+    repo = repo.split("/tree/")[0]
+    repo = repo.split("/blob/")[0]
+    return repo.rstrip("/")
+
+
+def normalize_repo_path(path: str, repo: str) -> str:
+    """Normalize a source path or GitHub blob/tree URL to a repo-relative path."""
+    path = (path or "").strip().replace("\\", "/").strip("/")
+    if not path:
+        return ""
+
+    if path.startswith("https://github.com/") and repo:
+        prefix = f"https://github.com/{repo}/"
+        if path.startswith(prefix):
+            rest = path[len(prefix) :]
+            parts = rest.split("/", 2)
+            if len(parts) >= 3 and parts[0] in {"blob", "tree"}:
+                return parts[2].strip("/")
+
+    parts = path.split("/", 2)
+    if len(parts) >= 3 and parts[0] in {"blob", "tree"}:
+        return parts[2].strip("/")
+    return path
+
+
+def build_relative_candidates(path: str, name: str, normalized_name: str) -> list[str]:
+    """Build the ordered source path probes for ordinary acquisition."""
+    ordered = []
+    seen = set()
+
+    def add(candidate: str) -> None:
+        candidate = (candidate or "").strip().strip("/")
+        if not candidate or candidate in seen:
+            return
+        seen.add(candidate)
+        ordered.append(candidate)
+
+    if path:
+        if path.lower().endswith("skill.md"):
+            add(path)
+        else:
+            add(f"{path}/SKILL.md")
+            add(path)
+
+    name_variants = []
+    for raw_name in (name, normalized_name):
+        candidate = (raw_name or "").strip().strip("/")
+        if candidate and candidate not in name_variants:
+            name_variants.append(candidate)
+
+    for variant in name_variants:
+        add(f".claude/skills/{variant}/SKILL.md")
+        add(f".claude/{variant}/SKILL.md")
+        add(f"skills/{variant}/SKILL.md")
+        add(f"{variant}/SKILL.md")
+
+    add("SKILL.md")
+    add(".claude/SKILL.md")
+    return ordered
+
+
 def bundled_relative_path(source_dir: str, repo_path: str) -> str:
     """Return repo_path relative to source_dir using POSIX separators."""
     source_dir = (source_dir or "").strip().strip("/")
@@ -214,7 +264,45 @@ def bundled_relative_path(source_dir: str, repo_path: str) -> str:
         return ""
     if not repo_path.startswith(prefix):
         return ""
-    return repo_path[len(prefix):]
+    return repo_path[len(prefix) :]
+
+
+def is_valid_git_source_ref(ref: str) -> bool:
+    """Validate a Git branch-like ref while explicitly allowing commit SHAs."""
+    if GIT_COMMIT_SHA_PATTERN.fullmatch(ref):
+        return True
+    if not ref or len(ref) > 255 or ref.startswith(("/", "-")):
+        return False
+    if ref.endswith(("/", ".")) or "//" in ref or ".." in ref or "@{" in ref:
+        return False
+    if any(ord(character) < 33 or ord(character) == 127 for character in ref):
+        return False
+    if any(character in INVALID_GIT_REF_CHARACTERS for character in ref):
+        return False
+    return all(
+        component and not component.startswith(".") and not component.endswith(".lock")
+        for component in ref.split("/")
+    )
+
+
+def has_case_conflicting_paths(paths: Iterable[str]) -> bool:
+    """Detect case-only conflicts in complete paths or any directory prefix."""
+    seen: dict[str, str] = {}
+    for relative in paths:
+        parts = relative.split("/")
+        for length in range(1, len(parts) + 1):
+            prefix = "/".join(parts[:length])
+            folded = prefix.casefold()
+            previous = seen.get(folded)
+            if previous is not None and previous != prefix:
+                return True
+            seen[folded] = prefix
+    return False
+
+
+def is_safe_portable_relative_path(value: object) -> bool:
+    """Expose the side-effect-free portable path validator to pipeline callers."""
+    return _is_safe_portable_relative_path(value)
 
 
 def should_recurse_bundled_dir(relative_path: str) -> bool:
@@ -231,9 +319,15 @@ def should_recurse_bundled_dir(relative_path: str) -> bool:
     )
 
 
-def is_safe_bundled_file(relative_path: str, size: int) -> bool:
+def is_safe_bundled_file(
+    relative_path: str,
+    size: int,
+    *,
+    reject_nonportable: bool = False,
+) -> bool:
     """Return True when a bundled support file should be archived."""
-    normalized = relative_path.strip("/")
+    portable = is_safe_portable_relative_path(relative_path)
+    normalized = relative_path if isinstance(relative_path, str) else ""
     if not normalized or normalized == "SKILL.md":
         return False
     if size < 0:
@@ -249,47 +343,37 @@ def is_safe_bundled_file(relative_path: str, size: int) -> bool:
     if len(parts) == 1:
         if size > MAX_BUNDLED_FILE_BYTES:
             return False
-        return (
+        eligible = (
             filename in BUNDLED_ROOT_FILE_ALLOWLIST
             or BUNDLED_ROOT_CODE_FILE_PATTERN.fullmatch(filename) is not None
         )
-
-    if filename.lower() == "skill.md":
-        return DESIGN_BUNDLED_DIR_PATTERN.fullmatch(parts[0]) is not None
-
-    if parts[0] not in BUNDLED_DIR_ALLOWLIST and (
+    elif filename.lower() == "skill.md":
+        eligible = DESIGN_BUNDLED_DIR_PATTERN.fullmatch(parts[0]) is not None
+    elif parts[0] not in BUNDLED_DIR_ALLOWLIST and (
         DESIGN_BUNDLED_DIR_PATTERN.fullmatch(parts[0]) is None
     ):
         return False
-    if parts[0] == "bin":
-        return (
+    elif parts[0] == "bin":
+        eligible = (
             len(parts) == 2
             and size <= MAX_BUNDLED_BIN_FILE_BYTES
             and SAFE_BUNDLED_BIN_FILENAMES.fullmatch(filename) is not None
         )
-    if size > MAX_BUNDLED_FILE_BYTES:
+    elif size > MAX_BUNDLED_FILE_BYTES:
         return False
-    if filename in BUNDLED_ROOT_FILE_ALLOWLIST:
-        return True
-    return PurePosixPath(filename).suffix.lower() in BUNDLED_FILE_EXTENSIONS
+    else:
+        eligible = (
+            filename in BUNDLED_ROOT_FILE_ALLOWLIST
+            or PurePosixPath(filename).suffix.lower() in BUNDLED_FILE_EXTENSIONS
+        )
+    if eligible and not portable and reject_nonportable:
+        raise BundledListingError(relative_path, "non-portable bundled path")
+    return eligible and portable
 
 
 def is_submodule_contents_entry(entry: dict) -> bool:
     """Return True for GitHub Contents API submodules exposed as file entries."""
     return entry.get("type") == "submodule" or "submodule_git_url" in entry
-
-
-def requires_complete_bundled_archive(skill_content: str) -> bool:
-    """Return True when SKILL.md explicitly depends on bundled support files."""
-    normalized = (skill_content or "").lower().replace("\\", "/")
-    for dirname in BUNDLED_DIR_ALLOWLIST:
-        if re.search(rf"(?<![a-z0-9_.-]){re.escape(dirname)}/", normalized):
-            return True
-    if re.search(r"(?<![a-z0-9_.-])design-[a-z0-9-]+/", normalized):
-        return True
-    if re.search(r"(?<![a-z0-9_/.-])[a-z0-9][a-z0-9_.-]*\.(?:py|swift)(?![a-z0-9_.-])", normalized):
-        return True
-    return any(filename.lower() in normalized for filename in BUNDLED_REQUIRED_ROOT_FILE_HINTS)
 
 
 def normalize_skill_frontmatter_description(content: str, skill: dict) -> str:
@@ -520,8 +604,7 @@ def validate_existing_archive_sources(
     if metadata_errors:
         sample = "\n".join(metadata_errors[:20])
         raise RuntimeError(
-            "Cannot validate existing archive metadata for security blocklist:\n"
-            f"{sample}"
+            f"Cannot validate existing archive metadata for security blocklist:\n{sample}"
         )
 
     if blocked_archives:
@@ -536,8 +619,7 @@ def validate_existing_archive_sources(
                     resolved_archive_dir.relative_to(output_root)
                 except ValueError as exc:
                     raise RuntimeError(
-                        "Refusing to remove blocked archive outside output dir: "
-                        f"{archive_dir}"
+                        f"Refusing to remove blocked archive outside output dir: {archive_dir}"
                     ) from exc
                 if resolved_archive_dir in removed_dirs:
                     continue
@@ -552,10 +634,7 @@ def validate_existing_archive_sources(
             )
             return removed_archives
 
-        raise RuntimeError(
-            "Existing archive contains blocked source repos:\n"
-            f"{sample}"
-        )
+        raise RuntimeError(f"Existing archive contains blocked source repos:\n{sample}")
 
     return []
 
@@ -595,7 +674,9 @@ def remove_ci_untracked_archive_files(output_dir: Path) -> int:
         try:
             target.relative_to(output_root)
         except ValueError as exc:
-            raise RuntimeError(f"Refusing untracked archive path outside output dir: {target}") from exc
+            raise RuntimeError(
+                f"Refusing untracked archive path outside output dir: {target}"
+            ) from exc
         if target.is_dir():
             shutil.rmtree(target)
         elif target.exists() or target.is_symlink():
@@ -636,7 +717,9 @@ def build_branch_probe_order(
     return _ordered_unique(candidates)
 
 
-def build_relative_probe_order(relative_candidates: list[str], manifest_entry: dict | None) -> list[str]:
+def build_relative_probe_order(
+    relative_candidates: list[str], manifest_entry: dict | None
+) -> list[str]:
     """Build relative-path probe order with manifest hint first."""
     candidates = []
     if manifest_entry and manifest_entry.get("relative_path"):

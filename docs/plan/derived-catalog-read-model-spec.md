@@ -45,6 +45,13 @@ Minimum tables:
   - `security_status`
   - `install_status`
   - `trust_score`
+  - `asset_state`
+  - `asset_liveness`
+  - `bundled_file_count`
+  - `github_commit_sha`
+  - `assets_verified_at`
+  - `assets_liveness_checked_at`
+  - `assets_liveness_sha`
   - `source_content_sha256`
   - `registry_generated_at`
   - `updated_at`

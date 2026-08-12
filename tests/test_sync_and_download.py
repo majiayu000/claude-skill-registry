@@ -1,6 +1,8 @@
 import asyncio
+import hashlib
 import importlib.util
 import json
+import os
 import subprocess
 import sys
 import types
@@ -34,11 +36,13 @@ def load_support_module():
 
 
 class FakeResponse:
-    def __init__(self, status, *, text="", json_payload=None, body=b""):
+    def __init__(self, status, *, text="", json_payload=None, body=None, content_length=None):
         self.status = status
         self._text = text
         self._json_payload = json_payload
-        self._body = body
+        self._body = text.encode("utf-8") if body is None else body
+        self.content_length = len(self._body) if content_length is None else content_length
+        self.content = self
 
     async def __aenter__(self):
         return self
@@ -54,6 +58,10 @@ class FakeResponse:
 
     async def read(self):
         return self._body
+
+    async def iter_chunked(self, size):
+        for offset in range(0, len(self._body), size):
+            yield self._body[offset : offset + size]
 
 
 def install_fake_aiohttp(monkeypatch, routes):
@@ -79,8 +87,47 @@ def install_fake_aiohttp(monkeypatch, routes):
         TCPConnector=lambda *args, **kwargs: object(),
         ClientTimeout=lambda *args, **kwargs: object(),
         ClientSession=FakeClientSession,
+        ClientError=OSError,
     )
     monkeypatch.setitem(sys.modules, "aiohttp", fake_aiohttp)
+
+
+def git_blob_sha(content: bytes) -> str:
+    header = f"blob {len(content)}\0".encode("ascii")
+    return hashlib.sha1(header + content, usedforsecurity=False).hexdigest()
+
+
+def git_blob_entry(path: str, content: bytes) -> dict:
+    return {
+        "path": path,
+        "type": "blob",
+        "mode": "100644",
+        "size": len(content),
+        "sha": git_blob_sha(content),
+    }
+
+
+def exact_repo_routes(repo: str, branch: str, sha: str, tree: list[dict]) -> dict:
+    encoded_branch = branch.replace("/", "%2F")
+    if len(branch) == 40 and set(branch) <= set("0123456789abcdefABCDEF"):
+        ref_route = {
+            f"https://api.github.com/repos/{repo}/commits/{branch.lower()}": FakeResponse(
+                200, json_payload={"sha": sha}
+            )
+        }
+    else:
+        ref_route = {
+            f"https://api.github.com/repos/{repo}/branches/{encoded_branch}": FakeResponse(
+                200, json_payload={"name": branch, "commit": {"sha": sha}}
+            )
+        }
+    return {
+        f"https://api.github.com/repos/{repo}": FakeResponse(200, json_payload={"full_name": repo}),
+        **ref_route,
+        f"https://api.github.com/repos/{repo}/git/trees/{sha}?recursive=1": FakeResponse(
+            200, json_payload={"truncated": False, "tree": tree}
+        ),
+    }
 
 
 def test_should_fail_on_empty_download_only_when_all_attempts_fail():
@@ -92,6 +139,24 @@ def test_should_fail_on_empty_download_only_when_all_attempts_fail():
     assert (
         module.should_fail_on_empty_download({"downloaded": 0, "failed": 3, "skipped": 10}) is False
     )
+
+
+def test_search_source_import_does_not_create_cli_log(tmp_path):
+    scripts_dir = Path(__file__).resolve().parents[1] / "scripts"
+    result = subprocess.run(
+        [
+            sys.executable,
+            "-c",
+            f"import sys; sys.path.insert(0, {str(scripts_dir)!r}); import search_sources",
+        ],
+        cwd=tmp_path,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+
+    assert result.returncode == 0, result.stderr
+    assert not (tmp_path / "sync_and_download.log").exists()
 
 
 def test_build_unified_registry_inherits_top_level_repo(tmp_path):
@@ -346,6 +411,46 @@ def test_download_blocks_security_listed_source_path_alias(tmp_path, monkeypatch
     assert failure_report["failure_reasons"]["blocked_source"] == 1
 
 
+@pytest.mark.parametrize("exact_paths_only", [False, True])
+def test_download_rejects_drive_relative_source_path(tmp_path, monkeypatch, exact_paths_only):
+    module = load_module()
+    registry_path = tmp_path / "registry.json"
+    output_dir = tmp_path / "skills"
+    failure_report_path = tmp_path / "failure_report.json"
+    registry_path.write_text(
+        json.dumps(
+            {
+                "skills": [
+                    {
+                        "name": "demo",
+                        "repo": "acme/demo",
+                        "path": "C:scripts/SKILL.md",
+                        "category": "development",
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+    install_fake_aiohttp(monkeypatch, {})
+
+    stats = asyncio.run(
+        module.download_skills(
+            registry_path,
+            output_dir,
+            failure_report_path=failure_report_path,
+            cleanup_ci_untracked=False,
+            exact_paths_only=exact_paths_only,
+        )
+    )
+
+    assert stats["downloaded"] == 0
+    assert stats["failed"] == 1
+    assert not list(output_dir.rglob("SKILL.md"))
+    failure_report = json.loads(failure_report_path.read_text(encoding="utf-8"))
+    assert failure_report["failure_reasons"]["invalid_source_path"] == 1
+
+
 def test_download_removes_skill_that_fails_security_scan(tmp_path, monkeypatch):
     module = load_module()
     registry_path = tmp_path / "registry.json"
@@ -397,6 +502,801 @@ def test_download_removes_skill_that_fails_security_scan(tmp_path, monkeypatch):
     assert not list(output_dir.rglob("SKILL.md"))
     failure_report = json.loads(failure_report_path.read_text(encoding="utf-8"))
     assert failure_report["failure_reasons"]["security_scan_failed"] == 1
+
+
+@pytest.mark.parametrize("source_ref", ["release/v1", "a" * 40])
+def test_exact_download_pins_skill_and_bundled_files_to_commit_sha(
+    tmp_path, monkeypatch, source_ref
+):
+    module = load_module()
+    registry_path = tmp_path / "registry.json"
+    output_dir = tmp_path / "skills"
+    registry_path.write_text(
+        json.dumps(
+            {
+                "skills": [
+                    {
+                        "name": "demo",
+                        "repo": "acme/demo",
+                        "path": "skills/demo folder/skill.md",
+                        "category": "development",
+                        "github_branch": source_ref,
+                        "license": "MIT",
+                        "distribution": "compatible",
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+    sha = "a" * 40
+    skill_body = (
+        b"---\nname: demo\ndescription: A pinned demo skill.\n---\n# Demo\nRun scripts/setup.py.\n"
+    )
+    script_body = b"print('ok')\n"
+    install_fake_aiohttp(
+        monkeypatch,
+        {
+            **exact_repo_routes(
+                "acme/demo",
+                source_ref,
+                sha,
+                [
+                    git_blob_entry("skills/demo folder/skill.md", skill_body),
+                    {
+                        "path": "skills/demo folder/scripts/setup.py",
+                        "type": "blob",
+                        "mode": "100755",
+                        "size": len(script_body),
+                        "sha": git_blob_sha(script_body),
+                    },
+                ],
+            ),
+            f"https://raw.githubusercontent.com/acme/demo/{sha}/skills/demo%20folder/skill.md": (
+                FakeResponse(
+                    200,
+                    body=skill_body,
+                )
+            ),
+            f"https://raw.githubusercontent.com/acme/demo/{sha}/skills/demo%20folder/scripts/setup.py": (
+                FakeResponse(200, body=script_body)
+            ),
+        },
+    )
+
+    stats = asyncio.run(
+        module.download_skills(
+            registry_path,
+            output_dir,
+            manifest_path=None,
+            cleanup_ci_untracked=False,
+            exact_paths_only=True,
+            pin_commit_sha=True,
+        )
+    )
+
+    assert stats["downloaded"] == 1
+    skill_dir = next(output_dir.glob("development/*"))
+    setup_path = skill_dir / "scripts" / "setup.py"
+    assert setup_path.read_text() == "print('ok')\n"
+    if os.name != "nt":
+        assert setup_path.stat().st_mode & 0o111
+    metadata = json.loads((skill_dir / "metadata.json").read_text())
+    assert metadata["github_branch"] == source_ref
+    assert metadata["github_commit_sha"] == sha
+    assert metadata["assets_verified_at"].endswith("Z")
+    assert metadata["bundled_file_blobs"] == {"scripts/setup.py": git_blob_sha(script_body)}
+
+
+@pytest.mark.parametrize(
+    ("commit_response", "error"),
+    [
+        (FakeResponse(404), "status 404"),
+        (FakeResponse(200, json_payload={"sha": "b" * 40}), "different commit identity"),
+    ],
+)
+def test_commit_pinned_source_ref_fails_closed(monkeypatch, commit_response, error):
+    scripts_dir = Path(__file__).resolve().parents[1] / "scripts"
+    monkeypatch.syspath_prepend(str(scripts_dir))
+    from sync_download_support import resolve_exact_commit_sha
+
+    pinned_ref = "a" * 40
+    routes = {
+        "https://api.github.com/repos/acme/demo": FakeResponse(
+            200, json_payload={"full_name": "acme/demo"}
+        ),
+        f"https://api.github.com/repos/acme/demo/commits/{pinned_ref}": commit_response,
+    }
+
+    class FakeSession:
+        def get(self, url, timeout=None):
+            return routes[url]
+
+    with pytest.raises(RuntimeError, match=error):
+        asyncio.run(
+            resolve_exact_commit_sha(
+                FakeSession(),
+                "acme/demo",
+                pinned_ref,
+                timeout=object(),
+                security_blocklist={},
+                repo_cache={},
+                commit_cache={},
+            )
+        )
+
+
+def test_exact_download_fails_closed_when_commit_cannot_be_resolved(tmp_path, monkeypatch):
+    module = load_module()
+    registry_path = tmp_path / "registry.json"
+    output_dir = tmp_path / "skills"
+    registry_path.write_text(
+        json.dumps(
+            {
+                "skills": [
+                    {
+                        "name": "demo",
+                        "repo": "acme/demo",
+                        "path": "skills/demo/SKILL.md",
+                        "category": "development",
+                        "github_branch": "main",
+                        "license": "MIT",
+                        "distribution": "compatible",
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+    install_fake_aiohttp(monkeypatch, {})
+
+    stats = asyncio.run(
+        module.download_skills(
+            registry_path,
+            output_dir,
+            manifest_path=None,
+            cleanup_ci_untracked=False,
+            exact_paths_only=True,
+            pin_commit_sha=True,
+        )
+    )
+
+    assert stats["downloaded"] == 0
+    assert stats["failed"] == 1
+    assert not list(output_dir.rglob("SKILL.md"))
+
+
+def test_exact_download_rejects_redirected_repository_identity(tmp_path, monkeypatch):
+    module = load_module()
+    registry_path = tmp_path / "registry.json"
+    output_dir = tmp_path / "skills"
+    registry_path.write_text(
+        json.dumps(
+            {
+                "skills": [
+                    {
+                        "name": "demo",
+                        "repo": "acme/old-name",
+                        "path": "skills/demo/SKILL.md",
+                        "category": "development",
+                        "github_branch": "main",
+                        "license": "MIT",
+                        "distribution": "compatible",
+                    }
+                ]
+            }
+        )
+    )
+    install_fake_aiohttp(
+        monkeypatch,
+        {
+            "https://api.github.com/repos/acme/old-name": FakeResponse(
+                200, json_payload={"full_name": "acme/new-name"}
+            ),
+        },
+    )
+
+    stats = asyncio.run(
+        module.download_skills(
+            registry_path,
+            output_dir,
+            manifest_path=None,
+            cleanup_ci_untracked=False,
+            exact_paths_only=True,
+            pin_commit_sha=True,
+        )
+    )
+
+    assert stats["downloaded"] == 0
+    assert stats["failed"] == 1
+
+
+def test_exact_download_does_not_probe_name_fallbacks(tmp_path, monkeypatch):
+    module = load_module()
+    registry_path = tmp_path / "registry.json"
+    output_dir = tmp_path / "skills"
+    registry_path.write_text(
+        json.dumps(
+            {
+                "skills": [
+                    {
+                        "name": "demo",
+                        "repo": "acme/demo",
+                        "path": "missing/SKILL.md",
+                        "category": "development",
+                        "github_branch": "main",
+                        "license": "MIT",
+                        "distribution": "compatible",
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+    sha = "b" * 40
+    install_fake_aiohttp(
+        monkeypatch,
+        {
+            **exact_repo_routes("acme/demo", "main", sha, []),
+            f"https://raw.githubusercontent.com/acme/demo/{sha}/skills/demo/SKILL.md": (
+                FakeResponse(
+                    200,
+                    text="---\nname: demo\ndescription: fallback\n---\n# Demo\n",
+                )
+            ),
+        },
+    )
+
+    stats = asyncio.run(
+        module.download_skills(
+            registry_path,
+            output_dir,
+            manifest_path=None,
+            cleanup_ci_untracked=False,
+            exact_paths_only=True,
+            pin_commit_sha=True,
+        )
+    )
+
+    assert stats["downloaded"] == 0
+    assert not list(output_dir.rglob("SKILL.md"))
+
+
+def test_exact_download_fails_when_bundle_limits_truncate(tmp_path, monkeypatch):
+    module = load_module()
+    registry_path = tmp_path / "registry.json"
+    output_dir = tmp_path / "skills"
+    failure_report_path = tmp_path / "failure.json"
+    registry_path.write_text(
+        json.dumps(
+            {
+                "skills": [
+                    {
+                        "name": "demo",
+                        "repo": "acme/demo",
+                        "path": "skills/demo/SKILL.md",
+                        "category": "development",
+                        "github_branch": "main",
+                        "license": "MIT",
+                        "distribution": "compatible",
+                    }
+                ]
+            }
+        )
+    )
+    sha = "c" * 40
+    skill_body = (
+        b"---\nname: demo\ndescription: A large bundled demo.\n---\n"
+        b"# Demo\nRun scripts/tool_0.py.\n"
+    )
+    install_fake_aiohttp(
+        monkeypatch,
+        {
+            **exact_repo_routes(
+                "acme/demo",
+                "main",
+                sha,
+                [
+                    git_blob_entry("skills/demo/SKILL.md", skill_body),
+                    *[
+                        {
+                            "path": f"skills/demo/scripts/tool_{index}.py",
+                            "type": "blob",
+                            "mode": "100644",
+                            "size": 10,
+                            "sha": "e" * 40,
+                        }
+                        for index in range(101)
+                    ],
+                ],
+            ),
+            f"https://raw.githubusercontent.com/acme/demo/{sha}/skills/demo/SKILL.md": FakeResponse(
+                200,
+                body=skill_body,
+            ),
+        },
+    )
+
+    stats = asyncio.run(
+        module.download_skills(
+            registry_path,
+            output_dir,
+            manifest_path=None,
+            failure_report_path=failure_report_path,
+            cleanup_ci_untracked=False,
+            exact_paths_only=True,
+            pin_commit_sha=True,
+        )
+    )
+
+    assert stats["downloaded"] == 0
+    assert stats["failed"] == 1
+    report = json.loads(failure_report_path.read_text())
+    assert report["failure_reasons"]["bundled_limits_exceeded"] == 1
+    assert not list(output_dir.rglob("SKILL.md"))
+
+
+def test_exact_download_fails_when_an_eligible_asset_exceeds_per_file_limit(tmp_path, monkeypatch):
+    module = load_module()
+    support = load_support_module()
+    registry_path = tmp_path / "registry.json"
+    output_dir = tmp_path / "skills"
+    failure_report_path = tmp_path / "failure.json"
+    registry_path.write_text(
+        json.dumps(
+            {
+                "skills": [
+                    {
+                        "name": "demo",
+                        "repo": "acme/demo",
+                        "path": "skills/demo/SKILL.md",
+                        "category": "development",
+                        "github_branch": "main",
+                        "license": "MIT",
+                        "distribution": "compatible",
+                    }
+                ]
+            }
+        )
+    )
+    sha = "d" * 40
+    skill_body = (
+        b"---\nname: demo\ndescription: Oversized asset demo.\n---\n"
+        b"# Demo\nRun scripts/huge.py and read references/small.md.\n"
+    )
+    small_body = b"small\n"
+    install_fake_aiohttp(
+        monkeypatch,
+        {
+            **exact_repo_routes(
+                "acme/demo",
+                "main",
+                sha,
+                [
+                    git_blob_entry("skills/demo/SKILL.md", skill_body),
+                    {
+                        "path": "skills/demo/scripts/huge.py",
+                        "type": "blob",
+                        "mode": "100644",
+                        "size": support.MAX_BUNDLED_FILE_BYTES + 1,
+                        "sha": "e" * 40,
+                    },
+                    git_blob_entry("skills/demo/references/small.md", small_body),
+                ],
+            ),
+            f"https://raw.githubusercontent.com/acme/demo/{sha}/skills/demo/SKILL.md": (
+                FakeResponse(200, body=skill_body)
+            ),
+        },
+    )
+
+    stats = asyncio.run(
+        module.download_skills(
+            registry_path,
+            output_dir,
+            manifest_path=None,
+            failure_report_path=failure_report_path,
+            cleanup_ci_untracked=False,
+            exact_paths_only=True,
+            pin_commit_sha=True,
+        )
+    )
+
+    assert stats["downloaded"] == 0
+    assert stats["failed"] == 1
+    report = json.loads(failure_report_path.read_text())
+    assert report["failure_reasons"]["bundled_limits_exceeded"] == 1
+    assert not list(output_dir.rglob("SKILL.md"))
+
+
+def test_exact_download_requires_explicit_complete_git_tree(tmp_path, monkeypatch):
+    module = load_module()
+    registry_path = tmp_path / "registry.json"
+    output_dir = tmp_path / "skills"
+    failure_report_path = tmp_path / "failure.json"
+    registry_path.write_text(
+        json.dumps(
+            {
+                "skills": [
+                    {
+                        "name": "demo",
+                        "repo": "acme/demo",
+                        "path": "skills/demo/SKILL.md",
+                        "category": "development",
+                        "github_branch": "main",
+                    }
+                ]
+            }
+        )
+    )
+    sha = "9" * 40
+    skill_body = b"---\nname: demo\ndescription: Exact demo.\n---\n# Demo\n"
+    routes = exact_repo_routes(
+        "acme/demo",
+        "main",
+        sha,
+        [git_blob_entry("skills/demo/SKILL.md", skill_body)],
+    )
+    routes[f"https://api.github.com/repos/acme/demo/git/trees/{sha}?recursive=1"] = FakeResponse(
+        200, json_payload={"tree": [git_blob_entry("skills/demo/SKILL.md", skill_body)]}
+    )
+    install_fake_aiohttp(monkeypatch, routes)
+
+    stats = asyncio.run(
+        module.download_skills(
+            registry_path,
+            output_dir,
+            manifest_path=None,
+            failure_report_path=failure_report_path,
+            cleanup_ci_untracked=False,
+            exact_paths_only=True,
+            pin_commit_sha=True,
+        )
+    )
+
+    assert stats["downloaded"] == 0
+    report = json.loads(failure_report_path.read_text())
+    assert report["failure_reasons"]["bundled_listing_failed"] == 1
+    assert not list(output_dir.rglob("SKILL.md"))
+
+
+def test_exact_download_rejects_non_portable_file_in_support_scope(tmp_path, monkeypatch):
+    module = load_module()
+    registry_path = tmp_path / "registry.json"
+    output_dir = tmp_path / "skills"
+    failure_report_path = tmp_path / "failure.json"
+    registry_path.write_text(
+        json.dumps(
+            {
+                "skills": [
+                    {
+                        "name": "demo",
+                        "repo": "acme/demo",
+                        "path": "skills/demo/SKILL.md",
+                        "category": "development",
+                        "github_branch": "main",
+                    }
+                ]
+            }
+        )
+    )
+    sha = "7" * 40
+    skill_body = b"---\nname: demo\ndescription: Exact demo.\n---\nRun scripts/good.py.\n"
+    routes = exact_repo_routes(
+        "acme/demo",
+        "main",
+        sha,
+        [
+            git_blob_entry("skills/demo/SKILL.md", skill_body),
+            git_blob_entry("skills/demo/scripts/good.py", b"print('good')"),
+            git_blob_entry("skills/demo/scripts/bad:name.py", b"print('bad')"),
+        ],
+    )
+    install_fake_aiohttp(monkeypatch, routes)
+
+    stats = asyncio.run(
+        module.download_skills(
+            registry_path,
+            output_dir,
+            manifest_path=None,
+            failure_report_path=failure_report_path,
+            cleanup_ci_untracked=False,
+            exact_paths_only=True,
+            pin_commit_sha=True,
+        )
+    )
+
+    assert stats["downloaded"] == 0
+    report = json.loads(failure_report_path.read_text())
+    assert report["failure_reasons"]["bundled_listing_failed"] == 1
+    assert "non-portable bundled path" in report["failures"]["bundled_listing_failed"][0]
+    assert not list(output_dir.rglob("SKILL.md"))
+
+
+@pytest.mark.parametrize("source_size", [None, 1_000_001])
+def test_exact_download_rejects_invalid_skill_blob(tmp_path, monkeypatch, source_size):
+    module = load_module()
+    registry_path = tmp_path / "registry.json"
+    output_dir = tmp_path / "skills"
+    registry_path.write_text(
+        json.dumps(
+            {
+                "skills": [
+                    {
+                        "name": "demo",
+                        "repo": "acme/demo",
+                        "path": "skills/demo/SKILL.md",
+                        "category": "development",
+                        "github_branch": "main",
+                    }
+                ]
+            }
+        )
+    )
+    sha = "8" * 40
+    expected_body = b"---\nname: demo\ndescription: Expected demo.\n---\n# Demo\n"
+    source_entry = git_blob_entry("skills/demo/SKILL.md", expected_body)
+    if source_size is not None:
+        source_entry["size"] = source_size
+    routes = exact_repo_routes("acme/demo", "main", sha, [source_entry])
+    routes[f"https://raw.githubusercontent.com/acme/demo/{sha}/skills/demo/SKILL.md"] = (
+        FakeResponse(
+            200,
+            body=b"---\nname: demo\ndescription: Substituted demo.\n---\n# Demo\n",
+        )
+    )
+    install_fake_aiohttp(monkeypatch, routes)
+
+    stats = asyncio.run(
+        module.download_skills(
+            registry_path,
+            output_dir,
+            manifest_path=None,
+            cleanup_ci_untracked=False,
+            exact_paths_only=True,
+            pin_commit_sha=True,
+        )
+    )
+
+    assert stats["downloaded"] == 0
+    assert stats["failed"] == 1
+    assert not list(output_dir.rglob("SKILL.md"))
+
+
+@pytest.mark.parametrize(
+    ("asset_path", "asset_entry", "body"),
+    [
+        (
+            "scripts/run.py",
+            {"type": "blob", "mode": "120000", "size": 12, "sha": "f" * 40},
+            b"target.py",
+        ),
+        ("scripts/run.py", {"type": "commit", "mode": "160000", "size": 0, "sha": "f" * 40}, b""),
+        ("scripts", {"type": "blob", "mode": "120000", "size": 12, "sha": "f" * 40}, b"target.py"),
+        ("scripts", {"type": "commit", "mode": "160000", "size": 0, "sha": "f" * 40}, b""),
+    ],
+)
+def test_exact_download_rejects_non_regular_upstream_assets(
+    tmp_path, monkeypatch, asset_path, asset_entry, body
+):
+    module = load_module()
+    registry_path = tmp_path / "registry.json"
+    output_dir = tmp_path / "skills"
+    failure_report_path = tmp_path / "failure.json"
+    registry_path.write_text(
+        json.dumps(
+            {
+                "skills": [
+                    {
+                        "name": "demo",
+                        "repo": "acme/demo",
+                        "path": "skills/demo/SKILL.md",
+                        "category": "development",
+                        "github_branch": "main",
+                    }
+                ]
+            }
+        )
+    )
+    sha = "1" * 40
+    skill_body = b"---\nname: demo\ndescription: Exact demo.\n---\n# Demo\nRun scripts/run.py.\n"
+    routes = exact_repo_routes(
+        "acme/demo",
+        "main",
+        sha,
+        [
+            git_blob_entry("skills/demo/SKILL.md", skill_body),
+            {"path": f"skills/demo/{asset_path}", **asset_entry},
+        ],
+    )
+    routes[f"https://raw.githubusercontent.com/acme/demo/{sha}/skills/demo/SKILL.md"] = (
+        FakeResponse(
+            200,
+            body=skill_body,
+        )
+    )
+    routes[f"https://raw.githubusercontent.com/acme/demo/{sha}/skills/demo/{asset_path}"] = (
+        FakeResponse(200, body=body)
+    )
+    install_fake_aiohttp(monkeypatch, routes)
+
+    stats = asyncio.run(
+        module.download_skills(
+            registry_path,
+            output_dir,
+            manifest_path=None,
+            failure_report_path=failure_report_path,
+            cleanup_ci_untracked=False,
+            exact_paths_only=True,
+            pin_commit_sha=True,
+        )
+    )
+
+    assert stats["downloaded"] == 0
+    report = json.loads(failure_report_path.read_text())
+    assert report["failure_reasons"]["bundled_listing_failed"] == 1
+
+
+def test_exact_download_rejects_truncated_asset_response(tmp_path, monkeypatch):
+    module = load_module()
+    registry_path = tmp_path / "registry.json"
+    output_dir = tmp_path / "skills"
+    failure_report_path = tmp_path / "failure.json"
+    registry_path.write_text(
+        json.dumps(
+            {
+                "skills": [
+                    {
+                        "name": "demo",
+                        "repo": "acme/demo",
+                        "path": "skills/demo/SKILL.md",
+                        "category": "development",
+                        "github_branch": "main",
+                        "license": "MIT",
+                        "distribution": "compatible",
+                    }
+                ]
+            }
+        )
+    )
+    sha = "3" * 40
+    skill_body = b"---\nname: demo\ndescription: Exact demo.\n---\n# Demo\nRun scripts/run.py.\n"
+    expected_body = b"x" * 100
+    routes = exact_repo_routes(
+        "acme/demo",
+        "main",
+        sha,
+        [
+            git_blob_entry("skills/demo/SKILL.md", skill_body),
+            {
+                "path": "skills/demo/scripts/run.py",
+                "type": "blob",
+                "mode": "100644",
+                "size": len(expected_body),
+                "sha": git_blob_sha(expected_body),
+            },
+        ],
+    )
+    routes[f"https://raw.githubusercontent.com/acme/demo/{sha}/skills/demo/SKILL.md"] = (
+        FakeResponse(
+            200,
+            body=skill_body,
+        )
+    )
+    routes[f"https://raw.githubusercontent.com/acme/demo/{sha}/skills/demo/scripts/run.py"] = (
+        FakeResponse(200, body=b"x")
+    )
+    install_fake_aiohttp(monkeypatch, routes)
+
+    stats = asyncio.run(
+        module.download_skills(
+            registry_path,
+            output_dir,
+            manifest_path=None,
+            failure_report_path=failure_report_path,
+            cleanup_ci_untracked=False,
+            exact_paths_only=True,
+            pin_commit_sha=True,
+        )
+    )
+
+    assert stats["downloaded"] == 0
+    report = json.loads(failure_report_path.read_text())
+    assert report["failure_reasons"]["bundled_download_failed"] == 1
+
+
+def test_unexpected_skill_exception_is_recorded_in_failure_report(tmp_path, monkeypatch):
+    module = load_module()
+    registry_path = tmp_path / "registry.json"
+    output_dir = tmp_path / "skills"
+    failure_report_path = tmp_path / "failure.json"
+    registry_path.write_text(
+        json.dumps(
+            {
+                "skills": [
+                    {
+                        "name": "demo",
+                        "repo": "acme/demo",
+                        "path": "SKILL.md",
+                        "category": "development",
+                    }
+                ]
+            }
+        )
+    )
+    install_fake_aiohttp(monkeypatch, {})
+
+    def explode(_repo):
+        raise RuntimeError("unexpected normalize failure")
+
+    monkeypatch.setitem(module.download_skills.__globals__, "normalize_download_repo", explode)
+    stats = asyncio.run(
+        module.download_skills(
+            registry_path,
+            output_dir,
+            manifest_path=None,
+            failure_report_path=failure_report_path,
+            cleanup_ci_untracked=False,
+        )
+    )
+
+    assert stats["failed"] == 1
+    report = json.loads(failure_report_path.read_text())
+    assert report["failure_reasons"]["internal_error"] == 1
+    assert "unexpected normalize failure" in report["failures"]["internal_error"][0]
+
+
+def test_security_scanner_exception_is_internal_error_and_cleans_archive(tmp_path, monkeypatch):
+    module = load_module()
+    registry_path = tmp_path / "registry.json"
+    output_dir = tmp_path / "skills"
+    failure_report_path = tmp_path / "failure.json"
+    registry_path.write_text(
+        json.dumps(
+            {
+                "skills": [
+                    {
+                        "name": "demo",
+                        "repo": "acme/demo",
+                        "path": "SKILL.md",
+                        "category": "development",
+                    }
+                ]
+            }
+        )
+    )
+    install_fake_aiohttp(
+        monkeypatch,
+        {
+            "https://raw.githubusercontent.com/acme/demo/main/SKILL.md": FakeResponse(
+                200,
+                text="---\nname: demo\ndescription: Scanner failure demo.\n---\n# Demo\n",
+            ),
+        },
+    )
+    import security_scanner
+
+    monkeypatch.setattr(
+        security_scanner.SecurityScanner,
+        "scan_file",
+        lambda *_args: (_ for _ in ()).throw(RuntimeError("scanner crashed")),
+    )
+    stats = asyncio.run(
+        module.download_skills(
+            registry_path,
+            output_dir,
+            manifest_path=None,
+            failure_report_path=failure_report_path,
+            cleanup_ci_untracked=False,
+        )
+    )
+
+    assert stats["failed"] == 1
+    assert stats["bundled_files"] == 0
+    report = json.loads(failure_report_path.read_text())
+    assert report["failure_reasons"]["internal_error"] == 1
+    assert "scanner crashed" in report["failures"]["internal_error"][0]
+    assert not list(output_dir.rglob("SKILL.md"))
 
 
 def test_download_removes_existing_blocked_archive_before_existing_skip(tmp_path, monkeypatch):
@@ -465,7 +1365,9 @@ description: Stale file left by the core checkout.
     )
     assert subprocess_result.returncode == 0
 
-    stats = asyncio.run(module.download_skills(registry_path, output_dir))
+    stats = asyncio.run(
+        module.download_skills(registry_path, output_dir, manifest_path=None)
+    )
 
     assert stats["ci_untracked_files_removed"] == 2
     assert not stale_dir.exists()
@@ -698,6 +1600,22 @@ def test_bundled_file_allowlist_is_scoped_and_size_limited():
     support = load_support_module()
 
     assert module.bundled_relative_path("", "package.json") == "package.json"
+    assert support.is_safe_portable_relative_path("references/guide.md") is True
+    for invalid_path in (
+        "CON",
+        "references/aux.txt",
+        "references/name.",
+        "references/name ",
+        "references/a:b.md",
+        "references/a?b.md",
+        "references/a*b.md",
+        "references/a|b.md",
+        "references/a<b.md",
+        "references/a>b.md",
+        "references/COM¹.txt",
+        "references/lpt³.log",
+    ):
+        assert support.is_safe_portable_relative_path(invalid_path) is False
     assert (
         module.bundled_relative_path("skills/demo", "skills/demo/scripts/run.sh")
         == "scripts/run.sh"
@@ -714,6 +1632,7 @@ def test_bundled_file_allowlist_is_scoped_and_size_limited():
     assert module.should_recurse_bundled_dir("src") is True
     assert module.should_recurse_bundled_dir("design-spatial") is True
     assert module.should_recurse_bundled_dir("docs") is False
+    assert support.has_case_conflicting_paths(["references/Guide.md", "references/guide.md"])
     assert module.is_safe_bundled_file("references/helper.py", 1024) is True
     assert module.is_safe_bundled_file("reference/environment.md", 1024) is True
     assert module.is_safe_bundled_file("connectors/slack.md", 1024) is True
@@ -738,6 +1657,19 @@ def test_bundled_file_allowlist_is_scoped_and_size_limited():
     assert module.is_safe_bundled_file("examples/SKILL.md", 1024) is False
     assert module.is_safe_bundled_file("docs/helper.py", 1024) is False
     assert module.is_safe_bundled_file("references/.env", 10) is False
+    for non_portable in (
+        "references/a:b.md",
+        "references/CON.txt",
+        "/references/guide.md",
+        "references/guide.md/",
+    ):
+        assert module.is_safe_bundled_file(non_portable, 10) is False
+    assert (
+        support.is_safe_bundled_file("scripts/unrelated:name.bin", 10, reject_nonportable=True)
+        is False
+    )
+    with pytest.raises(support.BundledListingError, match="non-portable bundled path"):
+        support.is_safe_bundled_file("scripts/bad:name.py", 10, reject_nonportable=True)
     assert (
         module.is_safe_bundled_file(
             "references/huge.py",
@@ -789,6 +1721,8 @@ def test_bundles_root_helpers_src_and_design_subskills(tmp_path, monkeypatch):
                         "repo": "acme/media-design",
                         "path": "",
                         "category": "development",
+                        "license": "MIT",
+                        "distribution": "compatible",
                     }
                 ]
             }
@@ -868,7 +1802,7 @@ def test_bundles_root_helpers_src_and_design_subskills(tmp_path, monkeypatch):
                 )
             ),
             "https://download.example/webmedia.py": FakeResponse(200, text="print('media')\n"),
-            "https://download.example/sck-record.swift": FakeResponse(200, text="print(\"rec\")\n"),
+            "https://download.example/sck-record.swift": FakeResponse(200, text='print("rec")\n'),
             "https://download.example/polish.py": FakeResponse(200, text="print('polish')\n"),
             "https://download.example/design-spatial-skill": FakeResponse(
                 200,
@@ -877,7 +1811,9 @@ def test_bundles_root_helpers_src_and_design_subskills(tmp_path, monkeypatch):
                     "description: Demo nested design subskill.\n---\n# Design Spatial\n"
                 ),
             ),
-            "https://download.example/layout-audit.js": FakeResponse(200, text="console.log('ok')\n"),
+            "https://download.example/layout-audit.js": FakeResponse(
+                200, text="console.log('ok')\n"
+            ),
         },
     )
 
@@ -925,6 +1861,8 @@ def test_bundled_download_failure_does_not_publish_partial_archive(tmp_path, mon
                         "repo": "acme/demo",
                         "path": "skills/demo",
                         "category": "development",
+                        "license": "MIT",
+                        "distribution": "compatible",
                     }
                 ]
             }
@@ -1002,6 +1940,8 @@ def test_bundled_listing_failure_does_not_publish_skill_md_only(tmp_path, monkey
                         "repo": "acme/demo",
                         "path": "skills/demo",
                         "category": "development",
+                        "license": "MIT",
+                        "distribution": "compatible",
                     }
                 ]
             }
@@ -1041,6 +1981,146 @@ def test_bundled_listing_failure_does_not_publish_skill_md_only(tmp_path, monkey
     failure_report = json.loads(failure_report_path.read_text(encoding="utf-8"))
     assert failure_report["failure_reasons"]["bundled_listing_failed"] == 1
     assert "status 403" in failure_report["failures"]["bundled_listing_failed"][0]
+
+
+def test_non_portable_required_bundle_path_fails_instead_of_degrading(tmp_path, monkeypatch):
+    module = load_module()
+    registry_path = tmp_path / "registry.json"
+    output_dir = tmp_path / "skills"
+    failure_report_path = tmp_path / "failure_report.json"
+    registry_path.write_text(
+        json.dumps(
+            {
+                "skills": [
+                    {
+                        "name": "demo",
+                        "repo": "acme/demo",
+                        "path": "skills/demo",
+                        "category": "development",
+                        "license": "MIT",
+                        "distribution": "compatible",
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+    install_fake_aiohttp(
+        monkeypatch,
+        {
+            "https://raw.githubusercontent.com/acme/demo/main/skills/demo/SKILL.md": FakeResponse(
+                200,
+                text=(
+                    "---\nname: demo\ndescription: Demo with required assets.\n---\n"
+                    "# Demo\nRead references/a:b.md before use.\n"
+                ),
+            ),
+            "https://api.github.com/repos/acme/demo/contents/skills/demo?ref=main": FakeResponse(
+                200,
+                json_payload=[{"type": "dir", "path": "skills/demo/references", "size": 0}],
+            ),
+            "https://api.github.com/repos/acme/demo/contents/skills/demo/references?ref=main": (
+                FakeResponse(
+                    200,
+                    json_payload=[
+                        {
+                            "type": "file",
+                            "path": "skills/demo/references/a:b.md",
+                            "size": 10,
+                        }
+                    ],
+                )
+            ),
+        },
+    )
+
+    stats = asyncio.run(
+        module.download_skills(
+            registry_path,
+            output_dir,
+            failure_report_path=failure_report_path,
+        )
+    )
+
+    assert stats["downloaded"] == 0
+    assert stats["failed"] == 1
+    assert not list(output_dir.rglob("SKILL.md"))
+    failure_report = json.loads(failure_report_path.read_text())
+    assert failure_report["failure_reasons"]["bundled_listing_failed"] == 1
+    assert "non-portable bundled path" in failure_report["failures"]["bundled_listing_failed"][0]
+
+
+def test_case_conflicting_required_bundle_paths_fail_before_download(tmp_path, monkeypatch):
+    module = load_module()
+    registry_path = tmp_path / "registry.json"
+    output_dir = tmp_path / "skills"
+    failure_report_path = tmp_path / "failure_report.json"
+    registry_path.write_text(
+        json.dumps(
+            {
+                "skills": [
+                    {
+                        "name": "demo",
+                        "repo": "acme/demo",
+                        "path": "skills/demo",
+                        "category": "development",
+                        "license": "MIT",
+                        "distribution": "compatible",
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+    install_fake_aiohttp(
+        monkeypatch,
+        {
+            "https://raw.githubusercontent.com/acme/demo/main/skills/demo/SKILL.md": FakeResponse(
+                200,
+                text=(
+                    "---\nname: demo\ndescription: Demo with required assets.\n---\n"
+                    "# Demo\nRead references/Guide.md before use.\n"
+                ),
+            ),
+            "https://api.github.com/repos/acme/demo/contents/skills/demo?ref=main": FakeResponse(
+                200,
+                json_payload=[{"type": "dir", "path": "skills/demo/references", "size": 0}],
+            ),
+            "https://api.github.com/repos/acme/demo/contents/skills/demo/references?ref=main": (
+                FakeResponse(
+                    200,
+                    json_payload=[
+                        {
+                            "type": "file",
+                            "path": "skills/demo/references/Guide.md",
+                            "size": 10,
+                        },
+                        {
+                            "type": "file",
+                            "path": "skills/demo/references/guide.md",
+                            "size": 10,
+                        },
+                    ],
+                )
+            ),
+        },
+    )
+
+    stats = asyncio.run(
+        module.download_skills(
+            registry_path,
+            output_dir,
+            failure_report_path=failure_report_path,
+        )
+    )
+
+    assert stats["downloaded"] == 0
+    failure_report = json.loads(failure_report_path.read_text())
+    assert failure_report["failure_reasons"]["bundled_listing_failed"] == 1
+    assert (
+        "case-conflicting bundled paths" in failure_report["failures"]["bundled_listing_failed"][0]
+    )
+    assert not list(output_dir.rglob("SKILL.md"))
 
 
 def test_bundled_listing_failure_degrades_when_skill_has_no_support_refs(
@@ -1122,6 +2202,8 @@ def test_optional_bundled_download_failure_degrades_to_skill_md(
                         "repo": "acme/demo",
                         "path": "SKILL.md",
                         "category": "development",
+                        "license": "MIT",
+                        "distribution": "compatible",
                     }
                 ]
             }
@@ -1199,6 +2281,8 @@ def test_bundled_references_rules_and_knowledge_are_archived_with_directory_mode
                         "repo": "acme/demo",
                         "path": "SKILL.md",
                         "category": "development",
+                        "license": "MIT",
+                        "distribution": "compatible",
                     }
                 ]
             }
@@ -1284,9 +2368,7 @@ def test_bundled_references_rules_and_knowledge_are_archived_with_directory_mode
         "references/guide.md",
         "rules/rule.md",
     ]
-    assert (skill_dir / "knowledge" / "framework.md").read_text(
-        encoding="utf-8"
-    ) == "# Framework\n"
+    assert (skill_dir / "knowledge" / "framework.md").read_text(encoding="utf-8") == "# Framework\n"
     assert (skill_dir / "references" / "guide.md").read_text(encoding="utf-8") == "# Guide\n"
     assert (skill_dir / "rules" / "rule.md").read_text(encoding="utf-8") == "# Rule\n"
 
@@ -1318,8 +2400,7 @@ def test_bundled_collection_skips_github_submodule_entries(tmp_path, monkeypatch
             "https://raw.githubusercontent.com/acme/demo/main/SKILL.md": FakeResponse(
                 200,
                 text=(
-                    "---\nname: demo\n"
-                    "description: Demo skill with a submodule path.\n---\n# Demo\n"
+                    "---\nname: demo\ndescription: Demo skill with a submodule path.\n---\n# Demo\n"
                 ),
             ),
             "https://api.github.com/repos/acme/demo/contents?ref=main": FakeResponse(
@@ -1360,6 +2441,113 @@ def test_bundled_collection_skips_github_submodule_entries(tmp_path, monkeypatch
     assert metadata["archive_mode"] == "skill-md"
     assert metadata["bundled_files"] == []
     assert not (skill_dir / "scripts" / "tool.py").exists()
+
+
+def test_required_bundle_rejects_unapproved_redistribution_before_listing(tmp_path, monkeypatch):
+    module = load_module()
+    registry_path = tmp_path / "registry.json"
+    output_dir = tmp_path / "skills"
+    failure_report_path = tmp_path / "failure.json"
+    registry_path.write_text(
+        json.dumps(
+            {
+                "skills": [
+                    {
+                        "name": "demo",
+                        "repo": "acme/demo",
+                        "path": "SKILL.md",
+                        "category": "development",
+                        "license": "GPL-3.0",
+                        "distribution": "restricted",
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+    install_fake_aiohttp(
+        monkeypatch,
+        {
+            "https://raw.githubusercontent.com/acme/demo/main/SKILL.md": FakeResponse(
+                200,
+                text=(
+                    "---\nname: demo\ndescription: Restricted required bundle.\n---\n"
+                    "# Demo\nRun scripts/tool.py.\n"
+                ),
+            )
+        },
+    )
+
+    stats = asyncio.run(
+        module.download_skills(
+            registry_path,
+            output_dir,
+            failure_report_path=failure_report_path,
+            manifest_path=None,
+        )
+    )
+
+    assert stats["downloaded"] == 0
+    assert stats["failed"] == 1
+    report = json.loads(failure_report_path.read_text(encoding="utf-8"))
+    assert report["failure_reasons"]["asset_redistribution_not_approved"] == 1
+    assert not list(output_dir.rglob("SKILL.md"))
+
+
+def test_optional_unapproved_bundle_is_not_redistributed(tmp_path, monkeypatch):
+    module = load_module()
+    registry_path = tmp_path / "registry.json"
+    output_dir = tmp_path / "skills"
+    registry_path.write_text(
+        json.dumps(
+            {
+                "skills": [
+                    {
+                        "name": "demo",
+                        "repo": "acme/demo",
+                        "path": "SKILL.md",
+                        "category": "development",
+                        "license": "GPL-3.0",
+                        "distribution": "restricted",
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+    install_fake_aiohttp(
+        monkeypatch,
+        {
+            "https://raw.githubusercontent.com/acme/demo/main/SKILL.md": FakeResponse(
+                200,
+                text="---\nname: demo\ndescription: Restricted standalone skill.\n---\n# Demo\n",
+            ),
+            "https://api.github.com/repos/acme/demo/contents?ref=main": FakeResponse(
+                200,
+                json_payload=[
+                    {"type": "file", "path": "SKILL.md", "size": 80},
+                    {
+                        "type": "file",
+                        "path": "setup.py",
+                        "size": 8,
+                        "download_url": "https://download.example/setup.py",
+                    },
+                ],
+            ),
+            "https://download.example/setup.py": FakeResponse(200, body=b"print(1)"),
+        },
+    )
+
+    stats = asyncio.run(
+        module.download_skills(registry_path, output_dir, manifest_path=None)
+    )
+
+    assert stats["downloaded"] == 1
+    skill_dir = next(output_dir.glob("development/*"))
+    metadata = json.loads((skill_dir / "metadata.json").read_text(encoding="utf-8"))
+    assert metadata["archive_mode"] == "skill-md"
+    assert metadata["bundled_files"] == []
+    assert not (skill_dir / "setup.py").exists()
 
 
 def test_select_shard_skills_is_deterministic():

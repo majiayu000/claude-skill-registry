@@ -9,11 +9,8 @@
   "stars": 0,
   "source": "GitHub Code Search Results",
   "dir_name": "unknown-tostechbr-sdk-apps-openai",
-  "archive_mode": "directory",
-  "bundled_files": [
-    "LICENSE",
-    "README.md"
-  ],
+  "archive_mode": "skill-md",
+  "bundled_files": [],
   "author": "tostechbr",
   "source_url": "https://github.com/tostechbr/sdk-apps-openai/blob/main/skill.md",
   "license": "NOASSERTION",

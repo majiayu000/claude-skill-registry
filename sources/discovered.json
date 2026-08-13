@@ -1,7 +1,7 @@
 {
-  "discovered_at": "2026-08-12T02:29:32.489626Z",
+  "discovered_at": "2026-08-13T02:31:17.917968Z",
   "total_repos": 300,
-  "total_skills": 44,
+  "total_skills": 77,
   "scanned_repos": 300,
   "limits": {
     "max_repos": 300,
@@ -34,7 +34,6 @@
     "Darthflute/social-calendar-skill",
     "DeliciousBuding/xiaohongshu-skill",
     "DheerG/swarms",
-    "EAIconsulting/cowork-skills-library",
     "Egonex-AI/Understand-Anything",
     "FRACerqueira/PromptPlus",
     "ForteScarlet/codex-kkp",
@@ -49,6 +48,7 @@
     "JimLiu/baoyu-skills",
     "JuneYaooo/gpt-image2-ppt-skills",
     "JuneYaooo/nihaisha-nishi-tcm",
+    "JuneYaooo/self-media-compliance-review",
     "JuneYaooo/social-account-doctor",
     "JuneYaooo/xhs-writer-skill",
     "K-Dense-AI/scientific-agent-skills",
@@ -237,7 +237,7 @@
     "nidhinjs/prompt-master",
     "noluyorAbi/claude-code-recap",
     "nostrband/ServiceGraph",
-    "nowork-studio/NotFair",
+    "nowork-studio/notfair-plugin",
     "nuwa-skills/awesome-nuwa",
     "oliver-kriska/claude-elixir-phoenix",
     "ombulabs/claude-code_rails-upgrade-skill",
@@ -314,180 +314,312 @@
   ],
   "skills": [
     {
-      "repo": "anbeime/skill",
-      "path": "skills/antinet-doc-parse/SKILL.md"
+      "repo": "UiPath/coder_eval",
+      "path": "plugins/coder-eval/skills/init/SKILL.md"
     },
     {
-      "repo": "anbeime/skill",
-      "path": "skills/antinet-provenance/SKILL.md"
+      "repo": "UiPath/coder_eval",
+      "path": "plugins/coder-eval/skills/task/SKILL.md"
     },
     {
-      "repo": "anbeime/skill",
-      "path": "skills/antinet-security-scan/SKILL.md"
+      "repo": "UiPath/coder_eval",
+      "path": "plugins/coder-eval/skills/analyze/SKILL.md"
     },
     {
-      "repo": "anbeime/skill",
-      "path": "skills/antinet-four-color-cards/SKILL.md"
+      "repo": "UiPath/coder_eval",
+      "path": "plugins/coder-eval/skills/lint-tasks/SKILL.md"
     },
     {
-      "repo": "indranilbanerjee/digital-marketing-pro",
-      "path": "skills/story-mine/SKILL.md"
+      "repo": "UiPath/coder_eval",
+      "path": "plugins/coder-eval/skills/check-skill/SKILL.md"
     },
     {
-      "repo": "indranilbanerjee/digital-marketing-pro",
-      "path": "skills/signal-mine/SKILL.md"
+      "repo": "amElnagdy/delegate-skills",
+      "path": "skills/cline-delegate/SKILL.md"
     },
     {
-      "repo": "indranilbanerjee/digital-marketing-pro",
-      "path": "skills/goal-filter/SKILL.md"
+      "repo": "amElnagdy/delegate-skills",
+      "path": "skills/aider-delegate/SKILL.md"
     },
     {
-      "repo": "indranilbanerjee/digital-marketing-pro",
-      "path": "skills/video-packaging/SKILL.md"
+      "repo": "bitjaru/styleseed",
+      "path": "skills/ss-lint/SKILL.md"
     },
     {
-      "repo": "karanb192/itr-wala",
-      "path": "skills/itr-wala/SKILL.md"
+      "repo": "bitjaru/styleseed",
+      "path": "skills/ss-dial/SKILL.md"
     },
     {
-      "repo": "nanocoai/nanoclaw",
-      "path": ".claude/skills/add-tavily-tool/SKILL.md"
+      "repo": "bitjaru/styleseed",
+      "path": "skills/ss-copy/SKILL.md"
     },
     {
-      "repo": "tance-mang/chinese-webnovel-skills",
-      "path": "skills/name/SKILL.md"
+      "repo": "bitjaru/styleseed",
+      "path": "skills/ss-flow/SKILL.md"
     },
     {
-      "repo": "tance-mang/chinese-webnovel-skills",
-      "path": "skills/idea/SKILL.md"
+      "repo": "bitjaru/styleseed",
+      "path": "skills/ss-a11y/SKILL.md"
     },
     {
-      "repo": "tance-mang/chinese-webnovel-skills",
-      "path": "skills/hook/SKILL.md"
+      "repo": "bitjaru/styleseed",
+      "path": "skills/ss-page/SKILL.md"
     },
     {
-      "repo": "tance-mang/chinese-webnovel-skills",
-      "path": "skills/title/SKILL.md"
+      "repo": "bitjaru/styleseed",
+      "path": "skills/ss-setup/SKILL.md"
     },
     {
-      "repo": "tance-mang/chinese-webnovel-skills",
-      "path": "skills/slang/SKILL.md"
+      "repo": "bitjaru/styleseed",
+      "path": "skills/ss-build/SKILL.md"
     },
     {
-      "repo": "tance-mang/chinese-webnovel-skills",
-      "path": "skills/coach/SKILL.md"
+      "repo": "bitjaru/styleseed",
+      "path": "skills/ss-score/SKILL.md"
     },
     {
-      "repo": "tance-mang/chinese-webnovel-skills",
-      "path": "skills/world/SKILL.md"
+      "repo": "bitjaru/styleseed",
+      "path": "skills/ss-learn/SKILL.md"
     },
     {
-      "repo": "tance-mang/chinese-webnovel-skills",
-      "path": "skills/start/SKILL.md"
+      "repo": "bitjaru/styleseed",
+      "path": "skills/ss-audit/SKILL.md"
     },
     {
-      "repo": "tance-mang/chinese-webnovel-skills",
-      "path": "skills/spark/SKILL.md"
+      "repo": "bitjaru/styleseed",
+      "path": "skills/ss-review/SKILL.md"
     },
     {
-      "repo": "tance-mang/chinese-webnovel-skills",
-      "path": "skills/draft/SKILL.md"
+      "repo": "bitjaru/styleseed",
+      "path": "skills/ss-studio/SKILL.md"
     },
     {
-      "repo": "tance-mang/chinese-webnovel-skills",
-      "path": "skills/human/SKILL.md"
+      "repo": "bitjaru/styleseed",
+      "path": "skills/ss-motion/SKILL.md"
     },
     {
-      "repo": "tance-mang/chinese-webnovel-skills",
-      "path": "skills/expand/SKILL.md"
+      "repo": "bitjaru/styleseed",
+      "path": "skills/ss-tokens/SKILL.md"
     },
     {
-      "repo": "tance-mang/chinese-webnovel-skills",
-      "path": "skills/memory/SKILL.md"
+      "repo": "bitjaru/styleseed",
+      "path": "skills/ss-verify/SKILL.md"
     },
     {
-      "repo": "tance-mang/chinese-webnovel-skills",
-      "path": "skills/review/SKILL.md"
+      "repo": "bitjaru/styleseed",
+      "path": "skills/ss-update/SKILL.md"
     },
     {
-      "repo": "tance-mang/chinese-webnovel-skills",
-      "path": "skills/script/SKILL.md"
+      "repo": "bitjaru/styleseed",
+      "path": "skills/ss-resolve/SKILL.md"
     },
     {
-      "repo": "tance-mang/chinese-webnovel-skills",
-      "path": "skills/trends/SKILL.md"
+      "repo": "bitjaru/styleseed",
+      "path": "skills/ss-pattern/SKILL.md"
     },
     {
-      "repo": "tance-mang/chinese-webnovel-skills",
-      "path": "skills/fanfic/SKILL.md"
+      "repo": "bitjaru/styleseed",
+      "path": "skills/ss-restyle/SKILL.md"
     },
     {
-      "repo": "tance-mang/chinese-webnovel-skills",
-      "path": "skills/warmth/SKILL.md"
+      "repo": "bitjaru/styleseed",
+      "path": "skills/ss-feedback/SKILL.md"
     },
     {
-      "repo": "tance-mang/chinese-webnovel-skills",
-      "path": "skills/deslop/SKILL.md"
+      "repo": "bitjaru/styleseed",
+      "path": "skills/ss-reference/SKILL.md"
     },
     {
-      "repo": "tance-mang/chinese-webnovel-skills",
-      "path": "skills/emotion/SKILL.md"
+      "repo": "bitjaru/styleseed",
+      "path": "skills/ss-component/SKILL.md"
     },
     {
-      "repo": "tance-mang/chinese-webnovel-skills",
-      "path": "skills/outline/SKILL.md"
+      "repo": "bitjaru/styleseed",
+      "path": "engine/.claude/skills/ss-learn/SKILL.md"
     },
     {
-      "repo": "tance-mang/chinese-webnovel-skills",
-      "path": "skills/english/SKILL.md"
+      "repo": "coreyhaines31/makerskills",
+      "path": "skills/maker-council/SKILL.md"
     },
     {
-      "repo": "tance-mang/chinese-webnovel-skills",
-      "path": "skills/cowrite/SKILL.md"
+      "repo": "majiayu000/spellbook",
+      "path": "skills/review-agent-harness/SKILL.md"
     },
     {
-      "repo": "tance-mang/chinese-webnovel-skills",
-      "path": "skills/annotate/SKILL.md"
+      "repo": "nowork-studio/notfair-plugin",
+      "path": "gemini/SKILL.md"
     },
     {
-      "repo": "tance-mang/chinese-webnovel-skills",
-      "path": "skills/aidetect/SKILL.md"
+      "repo": "nowork-studio/notfair-plugin",
+      "path": "seo/sxo/SKILL.md"
     },
     {
-      "repo": "tance-mang/chinese-webnovel-skills",
-      "path": "skills/dialogue/SKILL.md"
+      "repo": "nowork-studio/notfair-plugin",
+      "path": "seo/seo-page/SKILL.md"
     },
     {
-      "repo": "tance-mang/chinese-webnovel-skills",
-      "path": "skills/character/SKILL.md"
+      "repo": "nowork-studio/notfair-plugin",
+      "path": "seo/image-seo/SKILL.md"
     },
     {
-      "repo": "tance-mang/chinese-webnovel-skills",
-      "path": "skills/proofread/SKILL.md"
+      "repo": "nowork-studio/notfair-plugin",
+      "path": "seo/seo-drift/SKILL.md"
     },
     {
-      "repo": "tance-mang/chinese-webnovel-skills",
-      "path": "skills/goldfinger/SKILL.md"
+      "repo": "nowork-studio/notfair-plugin",
+      "path": "seo/setup-cms/SKILL.md"
     },
     {
-      "repo": "tance-mang/chinese-webnovel-skills",
-      "path": "skills/shuangdian/SKILL.md"
+      "repo": "nowork-studio/notfair-plugin",
+      "path": "seo/local-seo/SKILL.md"
     },
     {
-      "repo": "tance-mang/chinese-webnovel-skills",
-      "path": "skills/continuity/SKILL.md"
+      "repo": "nowork-studio/notfair-plugin",
+      "path": "meta-ads/audit/SKILL.md"
     },
     {
-      "repo": "tance-mang/chinese-webnovel-skills",
-      "path": "skills/submission/SKILL.md"
+      "repo": "nowork-studio/notfair-plugin",
+      "path": "google-ads/copy/SKILL.md"
     },
     {
-      "repo": "tance-mang/chinese-webnovel-skills",
-      "path": "skills/deconstruct/SKILL.md"
+      "repo": "nowork-studio/notfair-plugin",
+      "path": "meta-ads/manage/SKILL.md"
     },
     {
-      "repo": "zenbu-labs/terminal-browser",
-      "path": ".claude/skills/verify/SKILL.md"
+      "repo": "nowork-studio/notfair-plugin",
+      "path": "google-ads/audit/SKILL.md"
+    },
+    {
+      "repo": "nowork-studio/notfair-plugin",
+      "path": "seo/seo-analysis/SKILL.md"
+    },
+    {
+      "repo": "nowork-studio/notfair-plugin",
+      "path": "seo/sitemap-audit/SKILL.md"
+    },
+    {
+      "repo": "nowork-studio/notfair-plugin",
+      "path": "meta-ads/creative/SKILL.md"
+    },
+    {
+      "repo": "nowork-studio/notfair-plugin",
+      "path": "google-ads/manage/SKILL.md"
+    },
+    {
+      "repo": "nowork-studio/notfair-plugin",
+      "path": "seo/ecommerce-seo/SKILL.md"
+    },
+    {
+      "repo": "nowork-studio/notfair-plugin",
+      "path": "google-ads/assets/SKILL.md"
+    },
+    {
+      "repo": "nowork-studio/notfair-plugin",
+      "path": "paid-ads/paid-ads/SKILL.md"
+    },
+    {
+      "repo": "nowork-studio/notfair-plugin",
+      "path": "seo/geo-optimizer/SKILL.md"
+    },
+    {
+      "repo": "nowork-studio/notfair-plugin",
+      "path": "seo/backlink-audit/SKILL.md"
+    },
+    {
+      "repo": "nowork-studio/notfair-plugin",
+      "path": "google-ads/landing/SKILL.md"
+    },
+    {
+      "repo": "nowork-studio/notfair-plugin",
+      "path": "seo/content-writer/SKILL.md"
+    },
+    {
+      "repo": "nowork-studio/notfair-plugin",
+      "path": "seo/content-planner/SKILL.md"
+    },
+    {
+      "repo": "nowork-studio/notfair-plugin",
+      "path": "seo/programmatic-seo/SKILL.md"
+    },
+    {
+      "repo": "nowork-studio/notfair-plugin",
+      "path": "seo/keyword-research/SKILL.md"
+    },
+    {
+      "repo": "nowork-studio/notfair-plugin",
+      "path": "seo/competitor-pages/SKILL.md"
+    },
+    {
+      "repo": "nowork-studio/notfair-plugin",
+      "path": "notfair-upgrade-skill/SKILL.md"
+    },
+    {
+      "repo": "nowork-studio/notfair-plugin",
+      "path": "paid-ads/paid-ads-guide/SKILL.md"
+    },
+    {
+      "repo": "nowork-studio/notfair-plugin",
+      "path": "paid-ads/paid-ads-setup/SKILL.md"
+    },
+    {
+      "repo": "nowork-studio/notfair-plugin",
+      "path": "seo/broken-link-checker/SKILL.md"
+    },
+    {
+      "repo": "nowork-studio/notfair-plugin",
+      "path": "seo/meta-tags-optimizer/SKILL.md"
+    },
+    {
+      "repo": "nowork-studio/notfair-plugin",
+      "path": "paid-ads/paid-ads-launch/SKILL.md"
+    },
+    {
+      "repo": "nowork-studio/notfair-plugin",
+      "path": "paid-ads/paid-ads-review/SKILL.md"
+    },
+    {
+      "repo": "nowork-studio/notfair-plugin",
+      "path": "paid-ads/paid-ads-tiktok/SKILL.md"
+    },
+    {
+      "repo": "nowork-studio/notfair-plugin",
+      "path": "paid-ads/paid-ads-amazon/SKILL.md"
+    },
+    {
+      "repo": "nowork-studio/notfair-plugin",
+      "path": "paid-ads/paid-ads-chatgpt/SKILL.md"
+    },
+    {
+      "repo": "nowork-studio/notfair-plugin",
+      "path": "seo/hreflang-international/SKILL.md"
+    },
+    {
+      "repo": "nowork-studio/notfair-plugin",
+      "path": "paid-ads/paid-ads-creative/SKILL.md"
+    },
+    {
+      "repo": "nowork-studio/notfair-plugin",
+      "path": "paid-ads/paid-ads-optimize/SKILL.md"
+    },
+    {
+      "repo": "nowork-studio/notfair-plugin",
+      "path": "paid-ads/paid-ads-linkedin/SKILL.md"
+    },
+    {
+      "repo": "nowork-studio/notfair-plugin",
+      "path": "seo/schema-markup-generator/SKILL.md"
+    },
+    {
+      "repo": "nowork-studio/notfair-plugin",
+      "path": "paid-ads/paid-ads-integrations/SKILL.md"
+    },
+    {
+      "repo": "scdenney/open-science-skills",
+      "path": "codex/doc-to-markdown/SKILL.md"
+    },
+    {
+      "repo": "scdenney/open-science-skills",
+      "path": "plugin/skills/doc-to-markdown/SKILL.md"
     }
   ]
 }

@@ -1,0 +1,39 @@
+{
+  "name": "meta-tags-optimizer",
+  "repo": "nowork-studio/notfair-plugin",
+  "path": "seo/meta-tags-optimizer/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/nowork-studio/notfair-plugin",
+  "dir_name": "meta-tags-optimizer-nowork-studio-notfair-plugin",
+  "downloaded_at": "2026-08-13T02:24:06.524601Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for marketing: seo, content, social, brand",
+    "score": 4,
+    "runner_up": "product",
+    "runner_up_score": 3,
+    "signals": [
+      "seo",
+      "content",
+      "social",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "nowork-studio",
+  "source_url": "https://github.com/nowork-studio/notfair-plugin/blob/main/seo/meta-tags-optimizer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nowork-studio/notfair-plugin/blob/main/seo/meta-tags-optimizer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Optimize title tags, meta descriptions, Open Graph, and Twitter cards for maximum click-through rate. Generates multiple A/B test variations with character counting and SERP preview. Use when asked to \"optimize title tag\", \"write meta description\", \"improve CTR\", \"Open Graph tags\", \"fix my meta tags\", \"social media preview\", \"my click rate is low\", \"title optimization\", or any meta tag task."
+}

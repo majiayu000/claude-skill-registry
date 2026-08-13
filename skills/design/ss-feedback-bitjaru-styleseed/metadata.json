@@ -1,0 +1,39 @@
+{
+  "name": "ss-feedback",
+  "repo": "bitjaru/styleseed",
+  "path": "skills/ss-feedback/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/bitjaru/styleseed",
+  "dir_name": "ss-feedback-bitjaru-styleseed",
+  "downloaded_at": "2026-08-13T02:12:39.335371Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "design",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for design: design, ui, ux, component",
+    "score": 4,
+    "runner_up": "data",
+    "runner_up_score": 2,
+    "signals": [
+      "design",
+      "ui",
+      "ux",
+      "component"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "bitjaru",
+  "source_url": "https://github.com/bitjaru/styleseed/blob/main/skills/ss-feedback/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bitjaru/styleseed/blob/main/skills/ss-feedback/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Add appropriate user feedback states (loading, success, error, empty) to a component or page"
+}

@@ -1,0 +1,38 @@
+{
+  "name": "ss-page",
+  "repo": "bitjaru/styleseed",
+  "path": "skills/ss-page/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/bitjaru/styleseed",
+  "dir_name": "ss-page-bitjaru-styleseed",
+  "downloaded_at": "2026-08-13T02:12:36.033864Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "design",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for design: design, ui, component",
+    "score": 3,
+    "runner_up": "bash",
+    "runner_up_score": 2,
+    "signals": [
+      "design",
+      "ui",
+      "component"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "bitjaru",
+  "source_url": "https://github.com/bitjaru/styleseed/blob/main/skills/ss-page/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bitjaru/styleseed/blob/main/skills/ss-page/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Scaffold a new product page or screen from the compiled StyleSeed output grammar, surface adapter, brand recipe, and project lock."
+}

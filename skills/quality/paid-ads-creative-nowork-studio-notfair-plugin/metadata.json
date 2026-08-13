@@ -1,0 +1,37 @@
+{
+  "name": "paid-ads-creative",
+  "repo": "nowork-studio/notfair-plugin",
+  "path": "paid-ads/paid-ads-creative/SKILL.md",
+  "github_branch": "main",
+  "category": "quality",
+  "source": "github.com/nowork-studio/notfair-plugin",
+  "dir_name": "paid-ads-creative-nowork-studio-notfair-plugin",
+  "downloaded_at": "2026-08-13T02:24:07.339850Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "quality",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for quality: review, validate",
+    "score": 2,
+    "runner_up": "context-management",
+    "runner_up_score": 1,
+    "signals": [
+      "review",
+      "validate"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "nowork-studio",
+  "source_url": "https://github.com/nowork-studio/notfair-plugin/blob/main/paid-ads/paid-ads-creative/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nowork-studio/notfair-plugin/blob/main/paid-ads/paid-ads-creative/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Create grounded paid-media creative concepts, copy angles, refresh hypotheses, and measurable test briefs across advertising platforms. Use for ad copy, creative briefs, UGC concepts, headlines, creative fatigue, asset ideas, or a creative refresh."
+}

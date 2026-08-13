@@ -1,0 +1,37 @@
+{
+  "name": "maker-council",
+  "repo": "coreyhaines31/makerskills",
+  "path": "skills/maker-council/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/coreyhaines31/makerskills",
+  "dir_name": "maker-council",
+  "downloaded_at": "2026-08-13T02:13:46.565242Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: context-management=2, development=2",
+    "score": 2,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "context",
+      "memory"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "coreyhaines31",
+  "source_url": "https://github.com/coreyhaines31/makerskills/blob/main/skills/maker-council/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/coreyhaines31/makerskills/blob/main/skills/maker-council/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "When you want multiple expert perspectives on a founder/operator question \u2014 a simulated personal board of advisors staffed by legendary founders, CEOs, and operators (Jason Fried, Elon Musk, Jeff Bezos, Jensen Huang, Bob Iger, Paul Graham, Naval Ravikant, Sara Blakely). Bring a real decision \u2014 \"should I raise prices?\", \"hire my first employee?\", \"raise or bootstrap?\", \"kill this project?\" \u2014 and the council weighs in through their documented frameworks, surfaces where they disagree, and synthesizes a recommendation. Also use when the user mentions 'maker council,' 'board of advisors,' 'what would Bezos do,' 'what would Jason Fried say,' 'channel Naval,' 'ask the council,' 'get multiple perspectives on this decision,' or asks how a famous founder would approach their problem. Optional live-research pass grounds takes in what each member has actually said (via deep-research / watch-video / last30days). Sibling of marketing-skills' marketing-council (marketing questions go there; company-building and operator questions come here). Archives sessions to ~/.config/makerskills/maker-council/archive/. For committing to one of the surfaced directions, hand off to decide."
+}

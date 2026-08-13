@@ -1,0 +1,37 @@
+{
+  "name": "sitemap-audit",
+  "repo": "nowork-studio/notfair-plugin",
+  "path": "seo/sitemap-audit/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/nowork-studio/notfair-plugin",
+  "dir_name": "sitemap-audit-nowork-studio-notfair-plugin",
+  "downloaded_at": "2026-08-13T02:24:04.406731Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: quality=2, security=2",
+    "score": 2,
+    "runner_up": "security",
+    "runner_up_score": 2,
+    "signals": [
+      "review",
+      "validate"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "nowork-studio",
+  "source_url": "https://github.com/nowork-studio/notfair-plugin/blob/main/seo/sitemap-audit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nowork-studio/notfair-plugin/blob/main/seo/sitemap-audit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "XML sitemap audit \u2014 find and fix the sitemap problems that quietly waste crawl budget and slow indexing. Discovers the sitemap (robots.txt, /sitemap.xml, sitemap index), validates structure and size limits, and cross-checks the URLs it lists against reality: non-200 / redirected / noindex / canonicalized-away URLs that shouldn't be in a sitemap, plus indexable pages that are missing from it. Reviews lastmod accuracy, sitemap-index organization, and robots.txt reference. Use this skill whenever the user asks about sitemaps, sitemap errors in Search Console, \"sitemap couldn't fetch / has errors\", crawl budget, pages not getting indexed, or whether their sitemap is clean. Trigger on: \"sitemap\", \"sitemap.xml\", \"XML sitemap\", \"sitemap errors\", \"sitemap audit\", \"couldn't fetch sitemap\", \"crawl budget\", \"pages not indexed sitemap\", \"sitemap index\", \"lastmod\", \"robots.txt sitemap\", or any sitemap/crawl-coverage question. For a full-site SEO audit use /seo-analysis; for broken links use /broken-link-checker."
+}

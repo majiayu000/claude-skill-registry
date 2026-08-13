@@ -1,0 +1,37 @@
+{
+  "name": "paid-ads-amazon",
+  "repo": "nowork-studio/notfair-plugin",
+  "path": "paid-ads/paid-ads-amazon/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/nowork-studio/notfair-plugin",
+  "dir_name": "paid-ads-amazon-nowork-studio-notfair-plugin",
+  "downloaded_at": "2026-08-13T02:24:06.970106Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: marketing=2, planning=2",
+    "score": 2,
+    "runner_up": "planning",
+    "runner_up_score": 2,
+    "signals": [
+      "campaign",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "nowork-studio",
+  "source_url": "https://github.com/nowork-studio/notfair-plugin/blob/main/paid-ads/paid-ads-amazon/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nowork-studio/notfair-plugin/blob/main/paid-ads/paid-ads-amazon/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Plan and review Amazon Ads with margin-aware ACoS, product, and search-term guardrails. Use for Amazon advertising, Sponsored Products, Sponsored Brands, Sponsored Display, ASIN targeting, Amazon ACoS, or Amazon Ads performance exports."
+}

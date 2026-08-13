@@ -1,0 +1,39 @@
+{
+  "name": "cline-delegate",
+  "repo": "amElnagdy/delegate-skills",
+  "path": "skills/cline-delegate/SKILL.md",
+  "github_branch": "master",
+  "category": "bash",
+  "source": "github.com/amElnagdy/delegate-skills",
+  "dir_name": "cline-delegate",
+  "downloaded_at": "2026-08-13T02:10:47.648227Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "bash",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for bash: bash, shell, script, cli",
+    "score": 4,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "shell",
+      "script",
+      "cli"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "amElnagdy",
+  "source_url": "https://github.com/amElnagdy/delegate-skills/blob/master/skills/cline-delegate/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/amElnagdy/delegate-skills/blob/master/skills/cline-delegate/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Delegate a coding task to the Cline coding agent CLI (`cline`) as a background implementer, then review its diff and land it yourself. Use this whenever the user wants to delegate implementation work to Cline - phrasings like \"have Cline implement X\", \"delegate this to cline\", \"run it through Cline\", or \"use cline to implement/fix/refactor\" - or wants to run a queue of coding tasks through Cline while staying the reviewer. DO NOT USE for tasks small enough to do inline, or when the user wants the code written directly without delegating."
+}

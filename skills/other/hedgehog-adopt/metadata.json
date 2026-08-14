@@ -1,0 +1,37 @@
+{
+  "name": "hedgehog-adopt",
+  "repo": "skyf0xx/hedgehog",
+  "path": "src/skills/hedgehog-adopt/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/skyf0xx/hedgehog",
+  "dir_name": "hedgehog-adopt",
+  "downloaded_at": "2026-08-14T02:26:25.334194Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: development=2, generation=2",
+    "score": 2,
+    "runner_up": "generation",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "skyf0xx",
+  "source_url": "https://github.com/skyf0xx/hedgehog/blob/master/src/skills/hedgehog-adopt/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/skyf0xx/hedgehog/blob/master/src/skills/hedgehog-adopt/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use once, at the start of bringing Hedgehog's discipline to an existing repo whose code Hedgehog didn't build \u2014 \"adopt this repo\", \"add Hedgehog here\", \"I want scope/verify enforcement on my changes to this existing codebase\". Invoked by the `planner` agent as Phase 0's fourth outcome, in place of any bootstrap skill. Reads the repo read-only, proposes a linear-chain `.hedgehog/core.yaml` whose `verify` commands are the repo's own, and writes only `.hedgehog/` \u2014 never touches working code. Also invoked again, briefly, whenever new change-work enters play on an already-adopted repo."
+}

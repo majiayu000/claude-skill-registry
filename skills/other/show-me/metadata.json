@@ -1,0 +1,37 @@
+{
+  "name": "show-me",
+  "repo": "OutlineDriven/odin-claude-plugin",
+  "path": "skills/show-me/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/OutlineDriven/odin-claude-plugin",
+  "dir_name": "show-me",
+  "downloaded_at": "2026-08-14T02:05:42.815044Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: design=2, development=2",
+    "score": 2,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "ui",
+      "component"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "OutlineDriven",
+  "source_url": "https://github.com/OutlineDriven/odin-claude-plugin/blob/main/skills/show-me/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OutlineDriven/odin-claude-plugin/blob/main/skills/show-me/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the answer is a picture rather than prose: the user says \"show me\" or \"diagram this\" about the current topic. Emits one ephemeral chat visual and nothing on disk: pseudocode, call tree, component tree, shallow file tree, diagram, diff, or whole code block. A diagram that must live in a document goes to diagram-contract; a sketch the user clicks goes to prototype-logic."
+}

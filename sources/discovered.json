@@ -1,7 +1,7 @@
 {
-  "discovered_at": "2026-08-13T02:31:17.917968Z",
+  "discovered_at": "2026-08-14T02:29:38.469062Z",
   "total_repos": 300,
-  "total_skills": 77,
+  "total_skills": 18,
   "scanned_repos": 300,
   "limits": {
     "max_repos": 300,
@@ -58,6 +58,7 @@
     "KarmaDevplacer/Mythos-Claude-Orchestrator",
     "KhazP/vibe-coding-prompt-template",
     "Klotzkette/claude-fuer-deutsches-recht",
+    "Leutenegger/book-to-skill",
     "LukasNiessen/terrashark",
     "MIKOTOKAWAII25/local-ai-code-assistant",
     "Mann1988/awesome-claude-skills",
@@ -87,7 +88,6 @@
     "UiPath/coder_eval",
     "VikashLoomba/copilot-mcp",
     "Vincentwei1021/video-shotcraft",
-    "ViryaZheng/recomby-geo",
     "Vitorlindo201/Themata-Claude-Scribe",
     "VoltAgent/awesome-agent-skills",
     "Weizhena/Deep-Research-skills",
@@ -128,7 +128,6 @@
     "bitjaru/styleseed",
     "bitwize-music-studio/claude-ai-music-skills",
     "bjwanneng/veriflow-cc",
-    "borghei/Claude-Skills",
     "browser-act/skills",
     "cgallic/kai-cmo-harness",
     "chengzhongwei/Prompt-sensei",
@@ -207,6 +206,7 @@
     "lee-fuhr/claude-session-index",
     "levi-qiao/longgraph-skill",
     "levnikolaevich/claude-code-skills",
+    "liustack/modlens",
     "ljagiello/ctf-skills",
     "longbridge/skills",
     "lool-ventures/founder-skills",
@@ -314,312 +314,76 @@
   ],
   "skills": [
     {
-      "repo": "UiPath/coder_eval",
-      "path": "plugins/coder-eval/skills/init/SKILL.md"
-    },
-    {
-      "repo": "UiPath/coder_eval",
-      "path": "plugins/coder-eval/skills/task/SKILL.md"
-    },
-    {
-      "repo": "UiPath/coder_eval",
-      "path": "plugins/coder-eval/skills/analyze/SKILL.md"
-    },
-    {
-      "repo": "UiPath/coder_eval",
-      "path": "plugins/coder-eval/skills/lint-tasks/SKILL.md"
-    },
-    {
-      "repo": "UiPath/coder_eval",
-      "path": "plugins/coder-eval/skills/check-skill/SKILL.md"
-    },
-    {
-      "repo": "amElnagdy/delegate-skills",
-      "path": "skills/cline-delegate/SKILL.md"
-    },
-    {
-      "repo": "amElnagdy/delegate-skills",
-      "path": "skills/aider-delegate/SKILL.md"
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "skills/show-me/SKILL.md"
     },
     {
       "repo": "bitjaru/styleseed",
-      "path": "skills/ss-lint/SKILL.md"
+      "path": "skills/styleseed/SKILL.md"
     },
     {
       "repo": "bitjaru/styleseed",
-      "path": "skills/ss-dial/SKILL.md"
+      "path": "engine/.claude/skills/styleseed/SKILL.md"
     },
     {
       "repo": "bitjaru/styleseed",
-      "path": "skills/ss-copy/SKILL.md"
+      "path": "extensions/learning/skills/ss-learn/SKILL.md"
     },
     {
-      "repo": "bitjaru/styleseed",
-      "path": "skills/ss-flow/SKILL.md"
-    },
-    {
-      "repo": "bitjaru/styleseed",
-      "path": "skills/ss-a11y/SKILL.md"
-    },
-    {
-      "repo": "bitjaru/styleseed",
-      "path": "skills/ss-page/SKILL.md"
-    },
-    {
-      "repo": "bitjaru/styleseed",
-      "path": "skills/ss-setup/SKILL.md"
-    },
-    {
-      "repo": "bitjaru/styleseed",
-      "path": "skills/ss-build/SKILL.md"
-    },
-    {
-      "repo": "bitjaru/styleseed",
-      "path": "skills/ss-score/SKILL.md"
-    },
-    {
-      "repo": "bitjaru/styleseed",
-      "path": "skills/ss-learn/SKILL.md"
-    },
-    {
-      "repo": "bitjaru/styleseed",
-      "path": "skills/ss-audit/SKILL.md"
-    },
-    {
-      "repo": "bitjaru/styleseed",
-      "path": "skills/ss-review/SKILL.md"
-    },
-    {
-      "repo": "bitjaru/styleseed",
-      "path": "skills/ss-studio/SKILL.md"
-    },
-    {
-      "repo": "bitjaru/styleseed",
-      "path": "skills/ss-motion/SKILL.md"
-    },
-    {
-      "repo": "bitjaru/styleseed",
-      "path": "skills/ss-tokens/SKILL.md"
-    },
-    {
-      "repo": "bitjaru/styleseed",
-      "path": "skills/ss-verify/SKILL.md"
-    },
-    {
-      "repo": "bitjaru/styleseed",
-      "path": "skills/ss-update/SKILL.md"
-    },
-    {
-      "repo": "bitjaru/styleseed",
-      "path": "skills/ss-resolve/SKILL.md"
-    },
-    {
-      "repo": "bitjaru/styleseed",
-      "path": "skills/ss-pattern/SKILL.md"
-    },
-    {
-      "repo": "bitjaru/styleseed",
-      "path": "skills/ss-restyle/SKILL.md"
-    },
-    {
-      "repo": "bitjaru/styleseed",
-      "path": "skills/ss-feedback/SKILL.md"
-    },
-    {
-      "repo": "bitjaru/styleseed",
-      "path": "skills/ss-reference/SKILL.md"
-    },
-    {
-      "repo": "bitjaru/styleseed",
-      "path": "skills/ss-component/SKILL.md"
-    },
-    {
-      "repo": "bitjaru/styleseed",
-      "path": "engine/.claude/skills/ss-learn/SKILL.md"
-    },
-    {
-      "repo": "coreyhaines31/makerskills",
-      "path": "skills/maker-council/SKILL.md"
-    },
-    {
-      "repo": "majiayu000/spellbook",
-      "path": "skills/review-agent-harness/SKILL.md"
+      "repo": "liustack/modlens",
+      "path": "skills/modlens/SKILL.md"
     },
     {
       "repo": "nowork-studio/notfair-plugin",
-      "path": "gemini/SKILL.md"
+      "path": "paid-ads/paid-ads-x/SKILL.md"
     },
     {
       "repo": "nowork-studio/notfair-plugin",
-      "path": "seo/sxo/SKILL.md"
+      "path": "analytics/search-console/SKILL.md"
     },
     {
       "repo": "nowork-studio/notfair-plugin",
-      "path": "seo/seo-page/SKILL.md"
+      "path": "analytics/google-analytics/SKILL.md"
     },
     {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "seo/image-seo/SKILL.md"
+      "repo": "respira-press/agent-skills-wordpress",
+      "path": "skills/art-direction/SKILL.md"
     },
     {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "seo/seo-drift/SKILL.md"
+      "repo": "sickn33/agentic-awesome-skills",
+      "path": "skills/modellix/SKILL.md"
     },
     {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "seo/setup-cms/SKILL.md"
+      "repo": "sickn33/agentic-awesome-skills",
+      "path": "skills/fp-react/SKILL.md"
     },
     {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "seo/local-seo/SKILL.md"
+      "repo": "sickn33/agentic-awesome-skills",
+      "path": "skills/dispatch/SKILL.md"
     },
     {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "meta-ads/audit/SKILL.md"
+      "repo": "sickn33/agentic-awesome-skills",
+      "path": "skills/ask-matt/SKILL.md"
     },
     {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "google-ads/copy/SKILL.md"
+      "repo": "sickn33/agentic-awesome-skills",
+      "path": "skills/anywrite/SKILL.md"
     },
     {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "meta-ads/manage/SKILL.md"
+      "repo": "sickn33/agentic-awesome-skills",
+      "path": "skills/create-pr/SKILL.md"
     },
     {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "google-ads/audit/SKILL.md"
+      "repo": "skyf0xx/hedgehog",
+      "path": "skills/hedgehog/SKILL.md"
     },
     {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "seo/seo-analysis/SKILL.md"
+      "repo": "skyf0xx/hedgehog",
+      "path": "src/skills/hedgehog-adopt/SKILL.md"
     },
     {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "seo/sitemap-audit/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "meta-ads/creative/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "google-ads/manage/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "seo/ecommerce-seo/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "google-ads/assets/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "paid-ads/paid-ads/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "seo/geo-optimizer/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "seo/backlink-audit/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "google-ads/landing/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "seo/content-writer/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "seo/content-planner/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "seo/programmatic-seo/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "seo/keyword-research/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "seo/competitor-pages/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "notfair-upgrade-skill/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "paid-ads/paid-ads-guide/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "paid-ads/paid-ads-setup/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "seo/broken-link-checker/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "seo/meta-tags-optimizer/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "paid-ads/paid-ads-launch/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "paid-ads/paid-ads-review/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "paid-ads/paid-ads-tiktok/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "paid-ads/paid-ads-amazon/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "paid-ads/paid-ads-chatgpt/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "seo/hreflang-international/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "paid-ads/paid-ads-creative/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "paid-ads/paid-ads-optimize/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "paid-ads/paid-ads-linkedin/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "seo/schema-markup-generator/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "paid-ads/paid-ads-integrations/SKILL.md"
-    },
-    {
-      "repo": "scdenney/open-science-skills",
-      "path": "codex/doc-to-markdown/SKILL.md"
-    },
-    {
-      "repo": "scdenney/open-science-skills",
-      "path": "plugin/skills/doc-to-markdown/SKILL.md"
+      "repo": "skyf0xx/hedgehog",
+      "path": "src/skills/hedgehog-adopt-elicit/SKILL.md"
     }
   ]
 }

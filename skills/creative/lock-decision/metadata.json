@@ -1,0 +1,38 @@
+{
+  "name": "lock-decision",
+  "repo": "drobins25/craft",
+  "path": "skills/lock-decision/SKILL.md",
+  "github_branch": "main",
+  "category": "creative",
+  "source": "github.com/drobins25/craft",
+  "dir_name": "lock-decision",
+  "downloaded_at": "2026-08-15T01:29:51.023931Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "creative",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for creative: creative, story, writing",
+    "score": 3,
+    "runner_up": "design",
+    "runner_up_score": 2,
+    "signals": [
+      "creative",
+      "story",
+      "writing"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "drobins25",
+  "source_url": "https://github.com/drobins25/craft/blob/main/skills/lock-decision/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/drobins25/craft/blob/main/skills/lock-decision/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "This skill should be used when the user says \"lock it\", \"go with that\", \"approved\", \"that's the standard\", or explicitly establishes a project-wide pattern like \"from now on all forms should use this approach\". Formalizes approved decisions into locked standards that the system enforces going forward. Not needed for story-scoped decisions \u2014 only for project-wide patterns."
+}

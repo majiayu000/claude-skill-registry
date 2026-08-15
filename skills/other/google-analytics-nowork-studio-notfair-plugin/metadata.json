@@ -1,0 +1,36 @@
+{
+  "name": "google-analytics",
+  "repo": "nowork-studio/notfair-plugin",
+  "path": "skills/google-analytics/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/nowork-studio/notfair-plugin",
+  "dir_name": "google-analytics-nowork-studio-notfair-plugin",
+  "downloaded_at": "2026-08-15T01:39:16.743856Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category analysis scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "data",
+    "runner_up_score": 1,
+    "signals": [
+      "analyze"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "nowork-studio",
+  "source_url": "https://github.com/nowork-studio/notfair-plugin/blob/main/skills/google-analytics/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nowork-studio/notfair-plugin/blob/main/skills/google-analytics/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Analyze connected Google Analytics 4 traffic, acquisition, engagement, landing pages, ecommerce, events, and conversions, and safely manage supported GA4 key events or custom dimensions through NotFair MCP. Use for GA4, Google Analytics, traffic or conversion drops, channel attribution, realtime activity, report requests, measurement configuration, or Analytics MCP setup."
+}

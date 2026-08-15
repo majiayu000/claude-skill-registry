@@ -1,0 +1,37 @@
+{
+  "name": "approve",
+  "repo": "drobins25/craft",
+  "path": "skills/approve/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/drobins25/craft",
+  "dir_name": "approve",
+  "downloaded_at": "2026-08-15T01:29:49.499196Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=2, productivity=2",
+    "score": 2,
+    "runner_up": "productivity",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "drobins25",
+  "source_url": "https://github.com/drobins25/craft/blob/main/skills/approve/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/drobins25/craft/blob/main/skills/approve/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Request write permission from the user before making file changes. MUST be invoked before any write attempt when the write gate is closed. Creates scoped approval via AskUserQuestion + TaskCreate, opens the write gate, and closes it when work is done. Triggers: write hook blocks an edit, agent is about to write files outside .craft/, agent needs to modify project source files. This skill requires user approval 100% of the time - never bypass AskUserQuestion."
+}

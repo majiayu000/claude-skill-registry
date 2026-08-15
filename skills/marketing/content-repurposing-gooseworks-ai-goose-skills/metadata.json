@@ -1,0 +1,39 @@
+{
+  "name": "content-repurposing",
+  "repo": "gooseworks-ai/goose-skills",
+  "path": "skills/content/composites/content-repurposing/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/gooseworks-ai/goose-skills",
+  "dir_name": "content-repurposing-gooseworks-ai-goose-skills",
+  "downloaded_at": "2026-08-15T01:31:54.150223Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for marketing: content, social, campaign, brand",
+    "score": 4,
+    "runner_up": "bash",
+    "runner_up_score": 2,
+    "signals": [
+      "content",
+      "social",
+      "campaign",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "gooseworks-ai",
+  "source_url": "https://github.com/gooseworks-ai/goose-skills/blob/main/skills/content/composites/content-repurposing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gooseworks-ai/goose-skills/blob/main/skills/content/composites/content-repurposing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Turn public social videos, transcripts, posts, creator research, or the user's own source material into platform-specific LinkedIn posts, X posts and threads, short-form scripts, newsletters, blog outlines, carousel briefs, and content calendars. Use when the user wants to reuse a strong idea without copying the source."
+}

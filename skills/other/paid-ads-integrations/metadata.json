@@ -1,0 +1,36 @@
+{
+  "name": "paid-ads-integrations",
+  "repo": "nowork-studio/notfair-plugin",
+  "path": "skills/paid-ads-integrations/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/nowork-studio/notfair-plugin",
+  "dir_name": "paid-ads-integrations",
+  "downloaded_at": "2026-08-15T01:39:19.369486Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category integration scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "platform",
+    "runner_up_score": 1,
+    "signals": [
+      "integration"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "nowork-studio",
+  "source_url": "https://github.com/nowork-studio/notfair-plugin/blob/main/skills/paid-ads-integrations/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nowork-studio/notfair-plugin/blob/main/skills/paid-ads-integrations/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Discover, connect, and verify NotFair paid-ad integrations and their actual capabilities. Use when asked to connect an ad account, configure an ads MCP, check available tools, troubleshoot access, or determine whether NotFair can read or change a platform."
+}

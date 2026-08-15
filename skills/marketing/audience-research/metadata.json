@@ -1,0 +1,39 @@
+{
+  "name": "audience-research",
+  "repo": "gooseworks-ai/goose-skills",
+  "path": "skills/social/composites/audience-research/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/gooseworks-ai/goose-skills",
+  "dir_name": "audience-research",
+  "downloaded_at": "2026-08-15T01:31:53.464268Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for marketing: content, social, campaign, brand",
+    "score": 4,
+    "runner_up": "api",
+    "runner_up_score": 1,
+    "signals": [
+      "content",
+      "social",
+      "campaign",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "gooseworks-ai",
+  "source_url": "https://github.com/gooseworks-ai/goose-skills/blob/main/skills/social/composites/audience-research/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gooseworks-ai/goose-skills/blob/main/skills/social/composites/audience-research/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Evaluate whether a creator, influencer, or brand account reaches the right audience using public profile, aggregate demographic, geography, language, content, comment, and commerce signals. Use for creator comparisons, sponsorship fit, market fit, and audience-quality research."
+}

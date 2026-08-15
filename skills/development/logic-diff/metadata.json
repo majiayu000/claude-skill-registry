@@ -1,0 +1,38 @@
+{
+  "name": "logic-diff",
+  "repo": "sickn33/agentic-awesome-skills",
+  "path": "skills/logic-diff/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/sickn33/agentic-awesome-skills",
+  "dir_name": "logic-diff",
+  "downloaded_at": "2026-08-15T01:43:09.821670Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: code, build, refactor",
+    "score": 3,
+    "runner_up": "context-management",
+    "runner_up_score": 1,
+    "signals": [
+      "code",
+      "build",
+      "refactor"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/logic-diff/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/logic-diff/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Compare two code versions for semantic equivalence via semi-formal tracing of both versions side-by-side. Trigger when the user shares a refactor, rewrite, migration, or A/B implementation and wants to confirm behavior is unchanged \u2014 \"did I break anything\", \"is this equivalent\", \"are..."
+}

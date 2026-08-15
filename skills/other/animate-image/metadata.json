@@ -1,0 +1,37 @@
+{
+  "name": "animate-image",
+  "repo": "gooseworks-ai/goose-skills",
+  "path": "skills/ads/composites/animate-image/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/gooseworks-ai/goose-skills",
+  "dir_name": "animate-image",
+  "downloaded_at": "2026-08-15T01:31:52.507151Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: generation=2, product=2",
+    "score": 2,
+    "runner_up": "product",
+    "runner_up_score": 2,
+    "signals": [
+      "generation",
+      "generator"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "gooseworks-ai",
+  "source_url": "https://github.com/gooseworks-ai/goose-skills/blob/main/skills/ads/composites/animate-image/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gooseworks-ai/goose-skills/blob/main/skills/ads/composites/animate-image/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Animate an existing product image or static ad into a short branded video using the GooseWorks Animate Images workflow, with source-image continuity and optional end-frame control."
+}

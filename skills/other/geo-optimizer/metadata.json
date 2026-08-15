@@ -1,0 +1,37 @@
+{
+  "name": "geo-optimizer",
+  "repo": "nowork-studio/notfair-plugin",
+  "path": "skills/geo-optimizer/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/nowork-studio/notfair-plugin",
+  "dir_name": "geo-optimizer",
+  "downloaded_at": "2026-08-15T01:39:12.908284Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: ai-llm=2, marketing=2",
+    "score": 2,
+    "runner_up": "marketing",
+    "runner_up_score": 2,
+    "signals": [
+      "ai",
+      "llm"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "nowork-studio",
+  "source_url": "https://github.com/nowork-studio/notfair-plugin/blob/main/skills/geo-optimizer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nowork-studio/notfair-plugin/blob/main/skills/geo-optimizer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Generative Engine Optimization (GEO) \u2014 make content rank in AI search answers from ChatGPT, Claude, Perplexity, Gemini, and Google AI Overviews. Audits existing content, rewrites for AI citation, and produces per-engine strategy. Use when asked to \"optimize for AI search\", \"rank in ChatGPT\", \"GEO audit\", \"improve AI citations\", \"rank in Perplexity\", \"AI Overview optimization\", \"AI Overview ranking\", \"LLM SEO\", \"answer engine optimization\", \"AEO\", \"get cited by AI\", \"GEO\", \"generative engine optimization\", \"show up in ChatGPT\", \"appear in AI answers\", \"be cited by Perplexity\", \"SGE optimization\", \"Search Generative Experience\", or \"make my content show up in AI answers\". Distinct from regular SEO \u2014 this targets generative engines, not traditional Google rankings."
+}

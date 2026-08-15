@@ -1,0 +1,37 @@
+{
+  "name": "plan-chunks",
+  "repo": "drobins25/craft",
+  "path": "skills/plan-chunks/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/drobins25/craft",
+  "dir_name": "plan-chunks",
+  "downloaded_at": "2026-08-15T01:29:50.253606Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: creative=2, development=2",
+    "score": 2,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "creative",
+      "story"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "drobins25",
+  "source_url": "https://github.com/drobins25/craft/blob/main/skills/plan-chunks/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/drobins25/craft/blob/main/skills/plan-chunks/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "This skill should be used when the user asks to \"plan chunks\", \"break this down\", \"plan the implementation\", or when a story has status planning and needs implementation details before building. Required before any story can be implemented. Transforms story sparks into detailed chunk-by-chunk implementation plans with full technical specifics, file lists, and risk analysis. Supports parallel planning of multiple stories via batch mode."
+}

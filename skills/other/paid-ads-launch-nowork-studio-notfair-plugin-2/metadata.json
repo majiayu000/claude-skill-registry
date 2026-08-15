@@ -1,0 +1,36 @@
+{
+  "name": "paid-ads-launch",
+  "repo": "nowork-studio/notfair-plugin",
+  "path": "skills/paid-ads-launch/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/nowork-studio/notfair-plugin",
+  "dir_name": "paid-ads-launch-nowork-studio-notfair-plugin-2",
+  "downloaded_at": "2026-08-15T01:39:15.574142Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category business scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "marketing",
+    "runner_up_score": 1,
+    "signals": [
+      "business"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "nowork-studio",
+  "source_url": "https://github.com/nowork-studio/notfair-plugin/blob/main/skills/paid-ads-launch/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nowork-studio/notfair-plugin/blob/main/skills/paid-ads-launch/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Plan and prepare a new paid-media campaign or cross-channel test before it can spend. Use when asked to create, launch, start, set up, or allocate budget to an advertising campaign on any supported platform."
+}

@@ -1,0 +1,38 @@
+{
+  "name": "gitlab-ops",
+  "repo": "Kanevry/session-orchestrator",
+  "path": "skills/gitlab-ops/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Kanevry/session-orchestrator",
+  "dir_name": "gitlab-ops",
+  "downloaded_at": "2026-08-16T01:25:23.333268Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=2, development=2",
+    "score": 2,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "cli"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter",
+      "tags": "frontmatter:list"
+    }
+  },
+  "author": "Kanevry",
+  "source_url": "https://github.com/Kanevry/session-orchestrator/blob/main/skills/gitlab-ops/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Kanevry/session-orchestrator/blob/main/skills/gitlab-ops/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use this skill when performing VCS operations on GitLab or GitHub repositories \u2014 creating, updating, or closing issues and MRs, applying label taxonomy, running `glab`/`gh` CLI commands, or resolving project IDs dynamically. Acts as the single source of truth for CLI command syntax and label conventions; consuming skills reference this rather than duplicating logic. Triggers: \"create a GitLab issue\", \"list open MRs\", \"apply priority label\", \"how do I resolve the project ID\", \"what's the carryover issue template\". <example>Context: session-end needs to file a carryover issue for an incomplete task. user: \"/close\" assistant: \"Creating carryover issue via glab with the Carryover Template from gitlab-ops \u2014 labels: carryover, priority::high.\"</example>"
+}

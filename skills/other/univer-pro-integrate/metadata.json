@@ -1,0 +1,37 @@
+{
+  "name": "univer-pro-integrate",
+  "repo": "dream-num/skills",
+  "path": "skills/univer-pro-integrate/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/dream-num/skills",
+  "dir_name": "univer-pro-integrate",
+  "downloaded_at": "2026-08-16T01:34:47.153119Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: design=2, product=2",
+    "score": 2,
+    "runner_up": "product",
+    "runner_up_score": 2,
+    "signals": [
+      "ui",
+      "css"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "dream-num",
+  "source_url": "https://github.com/dream-num/skills/blob/main/skills/univer-pro-integrate/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dream-num/skills/blob/main/skills/univer-pro-integrate/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Integrate current Univer Pro features into browser applications. Use for licensed Sheets, Docs, Slides, Bases, Boards, or PDFs; advanced Sheets presets; collaboration and edit history; Office import/export; printing; pivot tables; charts; sparklines; shapes; Pro workers; license ordering; or Pro Facade APIs."
+}

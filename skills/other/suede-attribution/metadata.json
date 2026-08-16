@@ -1,0 +1,38 @@
+{
+  "name": "suede-attribution",
+  "repo": "JasonColapietro/suede-creator-skills",
+  "path": "skills/suede-attribution/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/JasonColapietro/suede-creator-skills",
+  "dir_name": "suede-attribution",
+  "downloaded_at": "2026-08-16T01:24:16.594661Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: data=3, marketing=3",
+    "score": 3,
+    "runner_up": "marketing",
+    "runner_up_score": 3,
+    "signals": [
+      "data",
+      "analytics",
+      "pipeline"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "JasonColapietro",
+  "source_url": "https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-attribution/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-attribution/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Suede-owned marketing attribution discipline. Use when the user wants to figure out which marketing actually drives conversions and revenue, choose or interpret an attribution model, or reconcile conflicting numbers across tools. Also use when the user mentions 'attribution,' 'attribution model,' 'first-touch vs last-touch,' 'multi-touch,' 'which channel drives revenue,' 'what's my real CAC,' 'my dashboards disagree,' 'Google/Meta says X but GA says Y,' 'MMM,' 'incrementality,' 'geo lift,' 'holdout test,' 'how did you hear about us,' 'self-reported attribution,' 'dark social,' or wants to instrument attribution themselves \u2014 'stitch my bookings to their source,' 'SavvyCal/Calendly attribution,' 'close the identify gap,' 'track conversions on a third-party domain,' 'first-party attribution.' NOT FOR general analytics instrumentation and reporting (use suede-analytics) or revenue-ops pipeline work (use suede-revops)."
+}

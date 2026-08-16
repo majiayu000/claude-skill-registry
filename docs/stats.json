@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-15T02:38:00.554436Z",
-  "archive_skill_md_count_raw": 203211,
-  "archive_metadata_count_raw": 203209,
-  "indexed_skill_count_scan_shape": 162089,
-  "registry_skill_count_dedup": 161656,
+  "updated_at": "2026-08-16T02:43:50.711876Z",
+  "archive_skill_md_count_raw": 203234,
+  "archive_metadata_count_raw": 203232,
+  "indexed_skill_count_scan_shape": 162109,
+  "registry_skill_count_dedup": 161676,
   "total_plugins": 4,
   "categories": 40,
   "category_counts": [
@@ -36,7 +36,7 @@
     {
       "name": "bash",
       "code": "bash",
-      "count": 554
+      "count": 557
     },
     {
       "name": "business",
@@ -71,12 +71,12 @@
     {
       "name": "design",
       "code": "des",
-      "count": 10436
+      "count": 10438
     },
     {
       "name": "development",
       "code": "dev",
-      "count": 37050
+      "count": 37051
     },
     {
       "name": "devops",
@@ -86,7 +86,7 @@
     {
       "name": "documents",
       "code": "doc",
-      "count": 6234
+      "count": 6236
     },
     {
       "name": "domains",
@@ -131,7 +131,7 @@
     {
       "name": "marketing",
       "code": "mkt",
-      "count": 3480
+      "count": 3481
     },
     {
       "name": "orchestration",
@@ -141,7 +141,7 @@
     {
       "name": "other",
       "code": "oth",
-      "count": 3018
+      "count": 3027
     },
     {
       "name": "performance",
@@ -166,7 +166,7 @@
     {
       "name": "product",
       "code": "prd",
-      "count": 3067
+      "count": 3068
     },
     {
       "name": "productivity",
@@ -181,7 +181,7 @@
     {
       "name": "security",
       "code": "sec",
-      "count": 4656
+      "count": 4657
     },
     {
       "name": "skills",
@@ -209,7 +209,7 @@
       "count": 1163
     }
   ],
-  "unique_repo_count": 9851,
+  "unique_repo_count": 9853,
   "official_skill_count": 0,
   "top_repositories": [
     {
@@ -257,36 +257,36 @@
   "asset_state_counts": {},
   "asset_liveness_counts": {},
   "index_size_bytes": 324,
-  "index_size_gzip_bytes": 245,
+  "index_size_gzip_bytes": 244,
   "search_shard_count": 5,
-  "search_largest_shard_bytes": 8388686,
-  "search_largest_shard_gzip_bytes": 1425386,
+  "search_largest_shard_bytes": 8388676,
+  "search_largest_shard_gzip_bytes": 1425728,
   "category_shard_count": 45,
-  "category_largest_part_bytes": 8388659,
+  "category_largest_part_bytes": 8388688,
   "category_largest_part_gzip_bytes": 1806950,
-  "lite_index_count": 162089,
+  "lite_index_count": 162109,
   "lite_index_included_count": 5000,
   "lite_index_size_bytes": 3493599,
-  "lite_index_gzip_size_bytes": 672421,
+  "lite_index_gzip_size_bytes": 672424,
   "quality_index_size_bytes": 364,
   "quality_index_gzip_size_bytes": 270,
   "quality_shard_count": 6,
-  "quality_largest_shard_bytes": 8388711,
-  "quality_largest_shard_gzip_bytes": 1766493,
+  "quality_largest_shard_bytes": 8388712,
+  "quality_largest_shard_gzip_bytes": 1766444,
   "security_index_size_bytes": 368,
-  "security_index_gzip_size_bytes": 272,
+  "security_index_gzip_size_bytes": 271,
   "security_shard_count": 20,
-  "security_largest_shard_bytes": 8388720,
-  "security_largest_shard_gzip_bytes": 1587935,
+  "security_largest_shard_bytes": 8388545,
+  "security_largest_shard_gzip_bytes": 1587895,
   "ranking_index_size_bytes": 364,
-  "ranking_index_gzip_size_bytes": 272,
+  "ranking_index_gzip_size_bytes": 271,
   "ranking_shard_count": 5,
-  "ranking_largest_shard_bytes": 8388717,
-  "ranking_largest_shard_gzip_bytes": 2020927,
-  "largest_generated_file_bytes": 8388720,
+  "ranking_largest_shard_bytes": 8388671,
+  "ranking_largest_shard_gzip_bytes": 2020850,
+  "largest_generated_file_bytes": 8388712,
   "security_scan": {
-    "total": 203209,
-    "passed": 203209,
+    "total": 203232,
+    "passed": 203232,
     "failed": 0
   }
 }

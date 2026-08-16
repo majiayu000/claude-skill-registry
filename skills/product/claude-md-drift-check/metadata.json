@@ -1,0 +1,37 @@
+{
+  "name": "claude-md-drift-check",
+  "repo": "Kanevry/session-orchestrator",
+  "path": "skills/claude-md-drift-check/SKILL.md",
+  "github_branch": "main",
+  "category": "product",
+  "source": "github.com/Kanevry/session-orchestrator",
+  "dir_name": "claude-md-drift-check",
+  "downloaded_at": "2026-08-16T01:25:24.473260Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "product",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for product: backlog, metrics",
+    "score": 2,
+    "runner_up": "agent",
+    "runner_up_score": 1,
+    "signals": [
+      "backlog",
+      "metrics"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "Kanevry",
+  "source_url": "https://github.com/Kanevry/session-orchestrator/blob/main/skills/claude-md-drift-check/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Kanevry/session-orchestrator/blob/main/skills/claude-md-drift-check/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when detecting drift between CLAUDE.md (or AGENTS.md, the Codex CLI alias) / _meta narrative and live repository state. Ten checks: absolute-path resolution, 01-projects/ count claims, issue-reference freshness, session-file existence, command-count sync, session-config-parity (mandatory template keys = error, opt-in gaps = warning), vault-dir-parity (CLAUDE.md vs AGENTS.md), generated-rule-staleness (WARN-only), rule-scoping (paths:/globs: frontmatter defects, dangling rule citations, zero-match globs), and docs-parity (docs/components.md count-claims vs on-disk counts, template-vs-reference config-key parity, stale .claude/metrics/ paths). Full per-check spec in the body table. Invoked as an opt-in session-end phase; mirrors vault-sync's lean JSON+exit-code contract."
+}

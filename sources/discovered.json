@@ -1,7 +1,7 @@
 {
-  "discovered_at": "2026-08-15T01:46:23.692176Z",
+  "discovered_at": "2026-08-16T01:51:19.286978Z",
   "total_repos": 300,
-  "total_skills": 85,
+  "total_skills": 20,
   "scanned_repos": 300,
   "limits": {
     "max_repos": 300,
@@ -227,6 +227,7 @@
     "mliu98/awesome-human-distillation",
     "mohitagw15856/pm-claude-skills",
     "motherduckdb/agent-skills",
+    "motiful/product-shots",
     "mxyhi/ok-skills",
     "nWave-ai/nWave",
     "nanocoai/nanoclaw",
@@ -244,7 +245,6 @@
     "omergocmen/vibe-coder-kit",
     "onsails/skills",
     "oprogramadorreal/optimus-claude",
-    "oribarilan/97",
     "parcadei/Continuous-Claude-v3",
     "pedrohcgs/claude-code-my-workflow",
     "plugin87/ux-ui-agent-skills",
@@ -314,344 +314,84 @@
   ],
   "skills": [
     {
-      "repo": "drobins25/craft",
-      "path": "skills/adhoc/SKILL.md"
+      "repo": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-ai-seo/SKILL.md"
     },
     {
-      "repo": "drobins25/craft",
-      "path": "skills/approve/SKILL.md"
+      "repo": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-attribution/SKILL.md"
     },
     {
-      "repo": "drobins25/craft",
-      "path": "skills/browser/SKILL.md"
+      "repo": "Kanevry/session-orchestrator",
+      "path": "skills/debug/SKILL.md"
     },
     {
-      "repo": "drobins25/craft",
-      "path": "skills/design-vibe/SKILL.md"
+      "repo": "Kanevry/session-orchestrator",
+      "path": "skills/spinout/SKILL.md"
     },
     {
-      "repo": "drobins25/craft",
-      "path": "skills/plan-chunks/SKILL.md"
+      "repo": "Kanevry/session-orchestrator",
+      "path": "skills/vault-sync/SKILL.md"
     },
     {
-      "repo": "drobins25/craft",
-      "path": "skills/refine-chunk/SKILL.md"
+      "repo": "Kanevry/session-orchestrator",
+      "path": "skills/gitlab-ops/SKILL.md"
     },
     {
-      "repo": "drobins25/craft",
-      "path": "skills/lock-decision/SKILL.md"
+      "repo": "Kanevry/session-orchestrator",
+      "path": "skills/dispatcher/SKILL.md"
     },
     {
-      "repo": "drobins25/craft",
-      "path": "skills/content-spark/SKILL.md"
+      "repo": "Kanevry/session-orchestrator",
+      "path": "skills/tmux-layout/SKILL.md"
     },
     {
-      "repo": "drobins25/craft",
-      "path": "skills/creative-spark/SKILL.md"
+      "repo": "Kanevry/session-orchestrator",
+      "path": "skills/vault-mirror/SKILL.md"
     },
     {
-      "repo": "drobins25/craft",
-      "path": "skills/validate-chunk/SKILL.md"
+      "repo": "Kanevry/session-orchestrator",
+      "path": "skills/sunset-review/SKILL.md"
     },
     {
-      "repo": "drobins25/craft",
-      "path": "skills/test-fix/SKILL.md"
+      "repo": "Kanevry/session-orchestrator",
+      "path": "skills/frontmatter-guard/SKILL.md"
     },
     {
-      "repo": "gooseworks-ai/goose-skills",
-      "path": "skills/ads/composites/animate-image/SKILL.md"
+      "repo": "Kanevry/session-orchestrator",
+      "path": "skills/claude-md-drift-check/SKILL.md"
     },
     {
-      "repo": "gooseworks-ai/goose-skills",
-      "path": "skills/social/composites/comment-mining/SKILL.md"
-    },
-    {
-      "repo": "gooseworks-ai/goose-skills",
-      "path": "skills/social/composites/trend-discovery/SKILL.md"
-    },
-    {
-      "repo": "gooseworks-ai/goose-skills",
-      "path": "skills/ads/composites/product-photoshoot/SKILL.md"
-    },
-    {
-      "repo": "gooseworks-ai/goose-skills",
-      "path": "skills/social/composites/audience-research/SKILL.md"
-    },
-    {
-      "repo": "gooseworks-ai/goose-skills",
-      "path": "skills/social/composites/outlier-post-finder/SKILL.md"
-    },
-    {
-      "repo": "gooseworks-ai/goose-skills",
-      "path": "skills/social/capabilities/scrapecreators-api/SKILL.md"
-    },
-    {
-      "repo": "gooseworks-ai/goose-skills",
-      "path": "skills/content/composites/content-repurposing/SKILL.md"
-    },
-    {
-      "repo": "gooseworks-ai/goose-skills",
-      "path": "skills/social/composites/social-listening-brief/SKILL.md"
-    },
-    {
-      "repo": "iziqing/-disk-cleaner",
+      "repo": "Leutenegger/book-to-skill",
       "path": "SKILL.md"
     },
     {
-      "repo": "microsoft/power-platform-skills",
-      "path": "plugins/power-pages/skills/migrate-bootstrap/SKILL.md"
+      "repo": "dream-num/skills",
+      "path": "skills/univer-integrate/SKILL.md"
     },
     {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "skills/sxo/SKILL.md"
+      "repo": "dream-num/skills",
+      "path": "skills/univer-plugin-dev/SKILL.md"
     },
     {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "skills/gemini/SKILL.md"
+      "repo": "dream-num/skills",
+      "path": "skills/univer-node-backend/SKILL.md"
     },
     {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "skills/upgrade/SKILL.md"
+      "repo": "dream-num/skills",
+      "path": "skills/univer-pro-integrate/SKILL.md"
     },
     {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "skills/seo-page/SKILL.md"
+      "repo": "dream-num/skills",
+      "path": "skills/univer-customize-theme/SKILL.md"
     },
     {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "skills/paid-ads/SKILL.md"
+      "repo": "elementalsouls/Claude-BugHunter",
+      "path": "skills/hunt-fintech-graphql/SKILL.md"
     },
     {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "skills/meta-ads/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "skills/seo-drift/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "skills/setup-cms/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "skills/local-seo/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "skills/image-seo/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "skills/google-ads/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "skills/paid-ads-x/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "skills/seo-analysis/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "skills/ecommerce-seo/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "skills/sitemap-audit/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "skills/geo-optimizer/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "skills/content-writer/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "skills/search-console/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "skills/meta-ads-audit/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "skills/paid-ads-guide/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "skills/paid-ads-setup/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "skills/backlink-audit/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "skills/content-planner/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "skills/google-ads-copy/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "skills/paid-ads-amazon/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "skills/paid-ads-tiktok/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "skills/paid-ads-launch/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "skills/paid-ads-review/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "skills/google-ads-audit/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "skills/paid-ads-chatgpt/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "skills/competitor-pages/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "skills/google-analytics/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "skills/programmatic-seo/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "skills/keyword-research/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "skills/paid-ads-linkedin/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "skills/meta-ads-creative/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "skills/paid-ads-creative/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "skills/paid-ads-optimize/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "skills/google-ads-assets/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "skills/google-ads-landing/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "skills/meta-tags-optimizer/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "skills/broken-link-checker/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "skills/paid-ads-integrations/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "skills/hreflang-international/SKILL.md"
-    },
-    {
-      "repo": "nowork-studio/notfair-plugin",
-      "path": "skills/schema-markup-generator/SKILL.md"
-    },
-    {
-      "repo": "sickn33/agentic-awesome-skills",
-      "path": "skills/find-bugs/SKILL.md"
-    },
-    {
-      "repo": "sickn33/agentic-awesome-skills",
-      "path": "skills/ui-update/SKILL.md"
-    },
-    {
-      "repo": "sickn33/agentic-awesome-skills",
-      "path": "skills/seo-drift/SKILL.md"
-    },
-    {
-      "repo": "sickn33/agentic-awesome-skills",
-      "path": "skills/prototype/SKILL.md"
-    },
-    {
-      "repo": "sickn33/agentic-awesome-skills",
-      "path": "skills/julia-pro/SKILL.md"
-    },
-    {
-      "repo": "sickn33/agentic-awesome-skills",
-      "path": "skills/gh-attach/SKILL.md"
-    },
-    {
-      "repo": "sickn33/agentic-awesome-skills",
-      "path": "skills/bash-linux/SKILL.md"
-    },
-    {
-      "repo": "sickn33/agentic-awesome-skills",
-      "path": "skills/elixir-pro/SKILL.md"
-    },
-    {
-      "repo": "sickn33/agentic-awesome-skills",
-      "path": "skills/claude-api/SKILL.md"
-    },
-    {
-      "repo": "sickn33/agentic-awesome-skills",
-      "path": "skills/docs-guard/SKILL.md"
-    },
-    {
-      "repo": "sickn33/agentic-awesome-skills",
-      "path": "skills/csharp-pro/SKILL.md"
-    },
-    {
-      "repo": "sickn33/agentic-awesome-skills",
-      "path": "skills/logic-diff/SKILL.md"
-    },
-    {
-      "repo": "sickn33/agentic-awesome-skills",
-      "path": "skills/n8n-agents/SKILL.md"
-    },
-    {
-      "repo": "sickn33/agentic-awesome-skills",
-      "path": "skills/cold-email/SKILL.md"
-    },
-    {
-      "repo": "sickn33/agentic-awesome-skills",
-      "path": "skills/ab-testing/SKILL.md"
-    },
-    {
-      "repo": "sickn33/agentic-awesome-skills",
-      "path": "skills/python-pro/SKILL.md"
-    },
-    {
-      "repo": "sickn33/agentic-awesome-skills",
-      "path": "skills/anti-sleep/SKILL.md"
-    },
-    {
-      "repo": "sickn33/agentic-awesome-skills",
-      "path": "skills/seo-sitemap/SKILL.md"
+      "repo": "jangviktor-web/nihaixia",
+      "path": "SKILL.md"
     }
   ]
 }

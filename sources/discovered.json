@@ -1,7 +1,7 @@
 {
-  "discovered_at": "2026-08-16T01:51:19.286978Z",
+  "discovered_at": "2026-08-17T01:48:12.891517Z",
   "total_repos": 300,
-  "total_skills": 20,
+  "total_skills": 0,
   "scanned_repos": 300,
   "limits": {
     "max_repos": 300,
@@ -312,86 +312,5 @@
     "zenbu-labs/terminal-browser",
     "zscole/adversarial-spec"
   ],
-  "skills": [
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-ai-seo/SKILL.md"
-    },
-    {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-attribution/SKILL.md"
-    },
-    {
-      "repo": "Kanevry/session-orchestrator",
-      "path": "skills/debug/SKILL.md"
-    },
-    {
-      "repo": "Kanevry/session-orchestrator",
-      "path": "skills/spinout/SKILL.md"
-    },
-    {
-      "repo": "Kanevry/session-orchestrator",
-      "path": "skills/vault-sync/SKILL.md"
-    },
-    {
-      "repo": "Kanevry/session-orchestrator",
-      "path": "skills/gitlab-ops/SKILL.md"
-    },
-    {
-      "repo": "Kanevry/session-orchestrator",
-      "path": "skills/dispatcher/SKILL.md"
-    },
-    {
-      "repo": "Kanevry/session-orchestrator",
-      "path": "skills/tmux-layout/SKILL.md"
-    },
-    {
-      "repo": "Kanevry/session-orchestrator",
-      "path": "skills/vault-mirror/SKILL.md"
-    },
-    {
-      "repo": "Kanevry/session-orchestrator",
-      "path": "skills/sunset-review/SKILL.md"
-    },
-    {
-      "repo": "Kanevry/session-orchestrator",
-      "path": "skills/frontmatter-guard/SKILL.md"
-    },
-    {
-      "repo": "Kanevry/session-orchestrator",
-      "path": "skills/claude-md-drift-check/SKILL.md"
-    },
-    {
-      "repo": "Leutenegger/book-to-skill",
-      "path": "SKILL.md"
-    },
-    {
-      "repo": "dream-num/skills",
-      "path": "skills/univer-integrate/SKILL.md"
-    },
-    {
-      "repo": "dream-num/skills",
-      "path": "skills/univer-plugin-dev/SKILL.md"
-    },
-    {
-      "repo": "dream-num/skills",
-      "path": "skills/univer-node-backend/SKILL.md"
-    },
-    {
-      "repo": "dream-num/skills",
-      "path": "skills/univer-pro-integrate/SKILL.md"
-    },
-    {
-      "repo": "dream-num/skills",
-      "path": "skills/univer-customize-theme/SKILL.md"
-    },
-    {
-      "repo": "elementalsouls/Claude-BugHunter",
-      "path": "skills/hunt-fintech-graphql/SKILL.md"
-    },
-    {
-      "repo": "jangviktor-web/nihaixia",
-      "path": "SKILL.md"
-    }
-  ]
+  "skills": []
 }

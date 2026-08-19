@@ -1,0 +1,37 @@
+{
+  "name": "headless-browser",
+  "repo": "oxylabs/agent-skills",
+  "path": "skills/headless-browser/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/oxylabs/agent-skills",
+  "dir_name": "headless-browser",
+  "downloaded_at": "2026-08-19T01:40:47.854119Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: api=2, performance=2",
+    "score": 2,
+    "runner_up": "performance",
+    "runner_up_score": 2,
+    "signals": [
+      "api",
+      "endpoint"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "oxylabs",
+  "source_url": "https://github.com/oxylabs/agent-skills/blob/main/skills/headless-browser/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/oxylabs/agent-skills/blob/main/skills/headless-browser/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Connects to Oxylabs remote headless browsers via Chrome DevTools Protocol (CDP) using Playwright or Puppeteer. Provides anti-detection, CAPTCHA handling, residential proxies, and geo-targeting built in. Use when browser automation needs remote execution, stealth capabilities, rendered pages, screenshots, PDFs, or complex JavaScript interaction."
+}

@@ -1,0 +1,37 @@
+{
+  "name": "before-you-build",
+  "repo": "wshobson/agents",
+  "path": "plugins/before-you-build/skills/before-you-build/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/wshobson/agents",
+  "dir_name": "before-you-build",
+  "downloaded_at": "2026-08-19T01:46:56.703270Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: development=2, product=2",
+    "score": 2,
+    "runner_up": "product",
+    "runner_up_score": 2,
+    "signals": [
+      "build",
+      "refactor"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "wshobson",
+  "source_url": "https://github.com/wshobson/agents/blob/main/plugins/before-you-build/skills/before-you-build/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/wshobson/agents/blob/main/plugins/before-you-build/skills/before-you-build/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Pre-build product and feature risk review for founders, product managers, and AI-assisted builders. Use this skill when the user is about to build a landing page, MVP, SaaS product, internal tool, agent workflow, or major feature and needs to check demand, positioning, monetization, retention, trust, distribution, and adoption risk before implementation starts."
+}

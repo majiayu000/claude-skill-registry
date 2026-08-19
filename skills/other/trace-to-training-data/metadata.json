@@ -1,0 +1,37 @@
+{
+  "name": "trace-to-training-data",
+  "repo": "wshobson/agents",
+  "path": "plugins/llm-finetuning/skills/trace-to-training-data/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/wshobson/agents",
+  "dir_name": "trace-to-training-data",
+  "downloaded_at": "2026-08-19T01:46:58.421185Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: ai-llm=2, ai-ml=2",
+    "score": 2,
+    "runner_up": "ai-ml",
+    "runner_up_score": 2,
+    "signals": [
+      "llm",
+      "prompt"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "wshobson",
+  "source_url": "https://github.com/wshobson/agents/blob/main/plugins/llm-finetuning/skills/trace-to-training-data/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/wshobson/agents/blob/main/plugins/llm-finetuning/skills/trace-to-training-data/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Convert evaluation traces and production logs into SFT examples and preference pairs. Use when graded traces or failure examples exist and need to become training data, when applying rejection sampling to model outputs, or when building DPO pairs from passing and failing runs."
+}

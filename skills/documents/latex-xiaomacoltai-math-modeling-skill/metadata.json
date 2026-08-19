@@ -1,0 +1,38 @@
+{
+  "name": "LaTeX\u5de5\u5177",
+  "repo": "XiaoMaColtAI/math-modeling-skill",
+  "path": "dsh-plugin/math-modeling-agent/skills/math-modeling/tools/latex/SKILL.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/XiaoMaColtAI/math-modeling-skill",
+  "dir_name": "latex-xiaomacoltai-math-modeling-skill",
+  "downloaded_at": "2026-08-19T01:25:12.298621Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "documents",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for documents: pdf, word, docx",
+    "score": 3,
+    "runner_up": "bash",
+    "runner_up_score": 2,
+    "signals": [
+      "pdf",
+      "word",
+      "docx"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "XiaoMaColtAI",
+  "source_url": "https://github.com/XiaoMaColtAI/math-modeling-skill/blob/main/dsh-plugin/math-modeling-agent/skills/math-modeling/tools/latex/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/XiaoMaColtAI/math-modeling-skill/blob/main/dsh-plugin/math-modeling-agent/skills/math-modeling/tools/latex/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u4ece\u5b98\u65b9\u6216\u5185\u7f6e\u6a21\u677f\u521b\u5efa\u3001\u7f16\u8bd1\u548c\u6821\u9a8c\u6570\u5b66\u5efa\u6a21 LaTeX \u8bba\u6587\u9879\u76ee\uff0c\u5e76\u53ef\u914d\u5408 DOCX \u5de5\u5177\u628a\u5b8c\u6574 LaTeX \u8bba\u6587\u8f6c\u6362\u4e3a Word\u3002"
+}

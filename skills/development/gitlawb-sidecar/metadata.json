@@ -1,0 +1,30 @@
+{
+  "name": "gitlawb-sidecar",
+  "description": "Add a signed GitLawb mirror next to GitHub. Agents publish, backup, and attach verifiable certificates without using the gl CLI or changing origin.",
+  "repo": "DevOps21133/gitlawb-sidecar",
+  "path": "skills/gitlawb-sidecar",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [
+    "gitlawb",
+    "github",
+    "git",
+    "agents",
+    "provenance",
+    "did",
+    "cursor",
+    "claude-code"
+  ],
+  "stars": 0,
+  "source": "Community Skills",
+  "dir_name": "gitlawb-sidecar",
+  "archive_mode": "skill-md",
+  "bundled_files": [],
+  "author": "DevOps21133",
+  "source_url": "https://github.com/DevOps21133/gitlawb-sidecar/blob/main/skills/gitlawb-sidecar/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/DevOps21133/gitlawb-sidecar/blob/main/skills/gitlawb-sidecar/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

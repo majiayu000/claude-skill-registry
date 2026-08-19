@@ -1,0 +1,38 @@
+{
+  "name": "iso-24495-4",
+  "repo": "GaZmagik/iso-24495",
+  "path": "skills/iso-24495-4/SKILL.md",
+  "github_branch": "main",
+  "category": "productivity",
+  "source": "github.com/GaZmagik/iso-24495",
+  "dir_name": "iso-24495-4",
+  "downloaded_at": "2026-08-19T01:19:05.555723Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "productivity",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for productivity: workflow, task, planning",
+    "score": 3,
+    "runner_up": "bash",
+    "runner_up_score": 2,
+    "signals": [
+      "workflow",
+      "task",
+      "planning"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "GaZmagik",
+  "source_url": "https://github.com/GaZmagik/iso-24495/blob/main/skills/iso-24495-4/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/GaZmagik/iso-24495/blob/main/skills/iso-24495-4/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Provisional task skill for organisational plain language implementation (based on ISO/CD 24495-4, committee draft). Activates for plain language gap analysis, policy drafting, review workflow design, and organisational readiness for the future published standard. Does not activate for ordinary writing, rewriting, or reviewing of individual documents."
+}

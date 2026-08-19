@@ -1,0 +1,40 @@
+{
+  "name": "add-anydoc",
+  "repo": "nanocoai/nanoclaw",
+  "path": ".claude/skills/add-anydoc/SKILL.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/nanocoai/nanoclaw",
+  "dir_name": "add-anydoc",
+  "downloaded_at": "2026-08-19T01:38:47.477999Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "documents",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for documents: docs, pdf, word, excel, markdown",
+    "score": 5,
+    "runner_up": "bash",
+    "runner_up_score": 3,
+    "signals": [
+      "docs",
+      "pdf",
+      "word",
+      "excel",
+      "markdown"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "nanocoai",
+  "source_url": "https://github.com/nanocoai/nanoclaw/blob/main/.claude/skills/add-anydoc/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nanocoai/nanoclaw/blob/main/.claude/skills/add-anydoc/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Add local office-document-to-Markdown conversion to NanoClaw agent containers with the pinned Firecrawl AnyDoc CLI. Use when agents need to read attached Word, PowerPoint, Excel, OpenDocument, RTF, EPUB, CSV, or text-based PDF files without uploading them to a hosted parser."
+}

@@ -1,0 +1,37 @@
+{
+  "name": "iso-24495-2",
+  "repo": "GaZmagik/iso-24495",
+  "path": "skills/iso-24495-2/SKILL.md",
+  "github_branch": "main",
+  "category": "writing",
+  "source": "github.com/GaZmagik/iso-24495",
+  "dir_name": "iso-24495-2",
+  "downloaded_at": "2026-08-19T01:19:06.005218Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "writing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for writing: writing, copy",
+    "score": 2,
+    "runner_up": "analysis",
+    "runner_up_score": 1,
+    "signals": [
+      "writing",
+      "copy"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "GaZmagik",
+  "source_url": "https://github.com/GaZmagik/iso-24495/blob/main/skills/iso-24495-2/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/GaZmagik/iso-24495/blob/main/skills/iso-24495-2/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Sector-specific Plain Language standard for legal communication (ISO 24495-2:2025). Applied during contract drafting, license review, and legal/compliance writing."
+}

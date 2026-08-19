@@ -1,0 +1,38 @@
+{
+  "name": "\u79d1\u7814\u53ef\u89c6\u5316\u5de5\u5177",
+  "repo": "XiaoMaColtAI/math-modeling-skill",
+  "path": "dsh-plugin/math-modeling-agent/skills/math-modeling/tools/figure/SKILL.md",
+  "github_branch": "main",
+  "category": "bash",
+  "source": "github.com/XiaoMaColtAI/math-modeling-skill",
+  "dir_name": "figure-xiaomacoltai-math-modeling-skill",
+  "downloaded_at": "2026-08-19T01:25:12.627948Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "bash",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for bash: bash, script, cli",
+    "score": 3,
+    "runner_up": "ai-ml",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "script",
+      "cli"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "XiaoMaColtAI",
+  "source_url": "https://github.com/XiaoMaColtAI/math-modeling-skill/blob/main/dsh-plugin/math-modeling-agent/skills/math-modeling/tools/figure/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/XiaoMaColtAI/math-modeling-skill/blob/main/dsh-plugin/math-modeling-agent/skills/math-modeling/tools/figure/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u4ece\u6570\u636e\u5256\u6790\u5230\u51fa\u7248\u7ea7\u6210\u56fe\u7684\u5b8c\u6574\u53ef\u89c6\u5316\u5de5\u5177\u3002\u5148\u505a\u6570\u636e\u5256\u6790\uff08\u5217\u7c7b\u578b/\u6837\u672c\u91cf/\u5206\u5e03/\u5f02\u5e38\u503c/\u5206\u7ec4\u7ed3\u6784/\u76f8\u5173\u6027\uff09\uff0c \u518d\u7ed3\u5408\u8bba\u8bc1\u76ee\u6807\u63a8\u8350\u56fe\u578b\uff0c\u4e3b\u52a8\u62e6\u622a\u79d1\u7814\u753b\u56fe\u7ecf\u5178\u9519\u8bef\uff0c\u4ea7\u51fa Nature / Science / IEEE / Elsevier / PNAS / \u4e2d\u6587\u6838\u5fc3\u671f\u520a\u7ea7\u522b\u7684\u6210\u56fe\u3002\u8986\u76d6\u6570\u636e EDA\u3001\u56fe\u8868\u5951\u7ea6\u3001\u9009\u56fe\u51b3\u7b56\u3001\u51fa\u7248\u7ea7\u7ed8\u5236\u3001\u7a0b\u5e8f\u81ea\u68c0 + AI \u8bfb\u56fe\u95ed\u73af\u3001\u591a\u683c\u5f0f \u5bfc\u51fa\u548c\u6587\u4ef6\u5ba1\u8ba1\u3002\u6570\u5b66\u5efa\u6a21\u573a\u666f\u989d\u5916\u652f\u6301\u4e09\u7c7b\u56fe\u4f53\u7cfb\uff08\u539f\u59cb\u6570\u636e/\u8fc7\u7a0b/\u7ed3\u679c\uff09\u548c\u5b50\u95ee\u9898\u8986\u76d6\u68c0\u67e5\u3002 \u5f53\u7528\u6237\u6d89\u53ca\u8bba\u6587\u914d\u56fe\u3001\u79d1\u7814\u753b\u56fe\u3001\u6570\u636e\u53ef\u89c6\u5316\u3001\u9009\u56fe\u3001\u671f\u520a\u6295\u7a3f\u56fe\u3001figure\u3001\u51fa\u7248\u7ea7\u56fe\u8868\u3001matplotlib\u3001seaborn\u3001 plotly\u3001\u8bef\u5dee\u68d2\u3001\u663e\u8457\u6027\u6807\u6ce8\u3001\u8272\u76f2\u5b89\u5168\u914d\u8272\u3001\u77e2\u91cf\u56fe\u5bfc\u51fa\u3001\u4e2d\u6587\u8bba\u6587\u56fe\u8868\u3001\u591a\u9762\u677f\u65f6\u4f7f\u7528\u3002"
+}

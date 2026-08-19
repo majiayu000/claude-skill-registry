@@ -1,0 +1,37 @@
+{
+  "name": "ai-debt-detector",
+  "repo": "wshobson/agents",
+  "path": "plugins/skill-forge-essentials/skills/ai-debt-detector/SKILL.md",
+  "github_branch": "main",
+  "category": "data",
+  "source": "github.com/wshobson/agents",
+  "dir_name": "ai-debt-detector",
+  "downloaded_at": "2026-08-19T01:46:59.448836Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "data",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for data: data, database",
+    "score": 2,
+    "runner_up": "agent",
+    "runner_up_score": 1,
+    "signals": [
+      "data",
+      "database"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "wshobson",
+  "source_url": "https://github.com/wshobson/agents/blob/main/plugins/skill-forge-essentials/skills/ai-debt-detector/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/wshobson/agents/blob/main/plugins/skill-forge-essentials/skills/ai-debt-detector/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use after generating code, after accepting AI suggestions, or when reviewing AI-written modules. Also use when code works but feels brittle, when error handling seems thin, when orphaned resources or missing cleanup are suspected, or when the agent claims done but hidden debt may exist. Catches the specific failure patterns AI agents produce that humans would not."
+}

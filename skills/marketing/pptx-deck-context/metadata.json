@@ -1,0 +1,37 @@
+{
+  "name": "pptx-deck-context",
+  "repo": "wshobson/agents",
+  "path": "plugins/pptx-deck-creation/skills/pptx-deck-context/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/wshobson/agents",
+  "dir_name": "pptx-deck-context",
+  "downloaded_at": "2026-08-19T01:46:57.991627Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for marketing: content, brand",
+    "score": 2,
+    "runner_up": "business",
+    "runner_up_score": 1,
+    "signals": [
+      "content",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "wshobson",
+  "source_url": "https://github.com/wshobson/agents/blob/main/plugins/pptx-deck-creation/skills/pptx-deck-context/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/wshobson/agents/blob/main/plugins/pptx-deck-creation/skills/pptx-deck-context/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when preparing the narrative, sources, and design context for a new editable PPTX deck."
+}

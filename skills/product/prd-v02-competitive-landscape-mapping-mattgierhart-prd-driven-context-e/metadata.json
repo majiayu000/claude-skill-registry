@@ -1,0 +1,38 @@
+{
+  "name": "prd-v02-competitive-landscape-mapping",
+  "repo": "mattgierhart/PRD-driven-context-engineering",
+  "path": "plugins/prd-ce/skills/prd-v02-competitive-landscape-mapping/SKILL.md",
+  "github_branch": "main",
+  "category": "product",
+  "source": "github.com/mattgierhart/PRD-driven-context-engineering",
+  "dir_name": "prd-v02-competitive-landscape-mapping-mattgierhart-prd-driven-context-e",
+  "downloaded_at": "2026-08-20T01:37:45.686101Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "product",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for product: product, prd, feature",
+    "score": 3,
+    "runner_up": "analysis",
+    "runner_up_score": 2,
+    "signals": [
+      "product",
+      "prd",
+      "feature"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mattgierhart",
+  "source_url": "https://github.com/mattgierhart/PRD-driven-context-engineering/blob/main/plugins/prd-ce/skills/prd-v02-competitive-landscape-mapping/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mattgierhart/PRD-driven-context-engineering/blob/main/plugins/prd-ce/skills/prd-v02-competitive-landscape-mapping/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Map the competitive landscape before positioning your product for PRD v0.2 Market Definition. Triggers on completing v0.1 Spark, analyzing competitors, researching market, or requests like \"competitive analysis\", \"who else solves this\", \"market landscape\", \"what alternatives exist\", \"competitor research\", \"feature comparison\". Outputs CFD- entries for competitive intelligence and BR- entries for positioning rules."
+}

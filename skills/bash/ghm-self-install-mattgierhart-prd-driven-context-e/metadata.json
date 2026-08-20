@@ -1,0 +1,38 @@
+{
+  "name": "ghm-self-install",
+  "repo": "mattgierhart/PRD-driven-context-engineering",
+  "path": "plugins/prd-ce/skills/ghm-self-install/SKILL.md",
+  "github_branch": "main",
+  "category": "bash",
+  "source": "github.com/mattgierhart/PRD-driven-context-engineering",
+  "dir_name": "ghm-self-install-mattgierhart-prd-driven-context-e",
+  "downloaded_at": "2026-08-20T01:37:29.339313Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "bash",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for bash: bash, script, cli",
+    "score": 3,
+    "runner_up": "context-management",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "script",
+      "cli"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mattgierhart",
+  "source_url": "https://github.com/mattgierhart/PRD-driven-context-engineering/blob/main/plugins/prd-ce/skills/ghm-self-install/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mattgierhart/PRD-driven-context-engineering/blob/main/plugins/prd-ce/skills/ghm-self-install/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Install the PRD-Driven Context Engineering methodology into a fresh OR existing repository \u2014 the subscription-native alternative to forking the whole repo. Runs an interactive wizard that seeds the framework (.claude/ hooks, skills, agents, rules, scripts) without clobbering product content. Triggers on \"install the methodology\", \"adopt this into my repo\", \"self-install\", \"set up PRD lifecycle here\", \"onboard existing project\". Outputs an installed framework + a verification report."
+}

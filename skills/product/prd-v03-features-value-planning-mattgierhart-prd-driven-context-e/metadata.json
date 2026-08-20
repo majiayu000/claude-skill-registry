@@ -1,0 +1,39 @@
+{
+  "name": "prd-v03-features-value-planning",
+  "repo": "mattgierhart/PRD-driven-context-engineering",
+  "path": "plugins/prd-ce/skills/prd-v03-features-value-planning/SKILL.md",
+  "github_branch": "main",
+  "category": "product",
+  "source": "github.com/mattgierhart/PRD-driven-context-engineering",
+  "dir_name": "prd-v03-features-value-planning-mattgierhart-prd-driven-context-e",
+  "downloaded_at": "2026-08-20T01:37:42.582480Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "product",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for product: product, prd, feature, metrics",
+    "score": 4,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "product",
+      "prd",
+      "feature",
+      "metrics"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mattgierhart",
+  "source_url": "https://github.com/mattgierhart/PRD-driven-context-engineering/blob/main/plugins/prd-ce/skills/prd-v03-features-value-planning/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mattgierhart/PRD-driven-context-engineering/blob/main/plugins/prd-ce/skills/prd-v03-features-value-planning/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Define and prioritize features with strategic traceability during PRD v0.3 Commercial Model. Triggers on requests to define features, prioritize capabilities, scope MVP, map features to pricing tiers, identify parity vs. delta features, or when user asks \"what features do we build?\", \"what's in MVP?\", \"which features matter?\", \"feature priority\", \"parity features\", \"what's our delta?\". Consumes KPI- (Outcome Definition), BR- (Pricing Model, Moat), and CFD- (Market Moat Analysis) from v0.3. Outputs FEA- entries with strategic traceability and BR-FEA- governance rules. Feeds v0.4 User Journeys."
+}

@@ -1,0 +1,40 @@
+{
+  "name": "prd-v09-feedback-loop-setup",
+  "repo": "mattgierhart/PRD-driven-context-engineering",
+  "path": "plugins/prd-ce/skills/prd-v09-feedback-loop-setup/SKILL.md",
+  "github_branch": "main",
+  "category": "product",
+  "source": "github.com/mattgierhart/PRD-driven-context-engineering",
+  "dir_name": "prd-v09-feedback-loop-setup-mattgierhart-prd-driven-context-e",
+  "downloaded_at": "2026-08-20T01:37:39.973597Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "product",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for product: product, prd, feature, user-research, metrics",
+    "score": 5,
+    "runner_up": "communication",
+    "runner_up_score": 2,
+    "signals": [
+      "product",
+      "prd",
+      "feature",
+      "user-research",
+      "metrics"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mattgierhart",
+  "source_url": "https://github.com/mattgierhart/PRD-driven-context-engineering/blob/main/plugins/prd-ce/skills/prd-v09-feedback-loop-setup/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mattgierhart/PRD-driven-context-engineering/blob/main/plugins/prd-ce/skills/prd-v09-feedback-loop-setup/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Establish channels and processes for capturing and processing post-launch feedback during PRD v0.9 Go-to-Market. Triggers on requests to set up feedback systems, capture user input, or when user asks \"how do we collect feedback?\", \"feedback loop\", \"user research\", \"post-launch feedback\", \"customer feedback\", \"NPS\", \"voice of customer\". Outputs CFD- entries specialized for post-launch feedback capture."
+}

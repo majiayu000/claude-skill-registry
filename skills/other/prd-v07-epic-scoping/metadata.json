@@ -1,0 +1,38 @@
+{
+  "name": "prd-v07-epic-scoping",
+  "repo": "mattgierhart/PRD-driven-context-engineering",
+  "path": "plugins/prd-ce/skills/prd-v07-epic-scoping/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/mattgierhart/PRD-driven-context-engineering",
+  "dir_name": "prd-v07-epic-scoping",
+  "downloaded_at": "2026-08-20T01:37:31.253495Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: context-management=3, product=3",
+    "score": 3,
+    "runner_up": "product",
+    "runner_up_score": 3,
+    "signals": [
+      "context",
+      "context-window",
+      "memory"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mattgierhart",
+  "source_url": "https://github.com/mattgierhart/PRD-driven-context-engineering/blob/main/plugins/prd-ce/skills/prd-v07-epic-scoping/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mattgierhart/PRD-driven-context-engineering/blob/main/plugins/prd-ce/skills/prd-v07-epic-scoping/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Transform v0.6 specifications into context-window-sized work packages (EPICs) during PRD v0.7 Build Execution. Triggers on requests to create epics, scope work, break down implementation, or when user asks \"create epics\", \"scope work\", \"break down work\", \"context window sizing\", \"what to build first?\", \"implementation planning\", \"epic breakdown\". Consumes API-, DBT-, FEA-, ARC-. Outputs EPIC- entries with objectives, ID references, dependencies, and context windows. Feeds v0.7 Test Planning."
+}

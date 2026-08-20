@@ -1,0 +1,38 @@
+{
+  "name": "prd-v08-runbook-creation",
+  "repo": "mattgierhart/PRD-driven-context-engineering",
+  "path": "plugins/prd-ce/skills/prd-v08-runbook-creation/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/mattgierhart/PRD-driven-context-engineering",
+  "dir_name": "prd-v08-runbook-creation",
+  "downloaded_at": "2026-08-20T01:37:37.180670Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: data=3, productivity=3",
+    "score": 3,
+    "runner_up": "productivity",
+    "runner_up_score": 3,
+    "signals": [
+      "data",
+      "sql",
+      "database"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mattgierhart",
+  "source_url": "https://github.com/mattgierhart/PRD-driven-context-engineering/blob/main/plugins/prd-ce/skills/prd-v08-runbook-creation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mattgierhart/PRD-driven-context-engineering/blob/main/plugins/prd-ce/skills/prd-v08-runbook-creation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Create operational playbooks for incident response, deployments, and maintenance during PRD v0.8 Deployment & Ops. Triggers on requests to create runbooks, document procedures, or when user asks \"how do we handle incidents?\", \"runbook\", \"operational procedures\", \"on-call guide\", \"incident response\", \"maintenance procedures\". Outputs RUN- entries with step-by-step operational procedures."
+}

@@ -1,0 +1,38 @@
+{
+  "name": "prd-v09-offer-construction-hormozi",
+  "repo": "mattgierhart/PRD-driven-context-engineering",
+  "path": "plugins/prd-ce/skills/prd-v09-offer-construction-hormozi/SKILL.md",
+  "github_branch": "main",
+  "category": "product",
+  "source": "github.com/mattgierhart/PRD-driven-context-engineering",
+  "dir_name": "prd-v09-offer-construction-hormozi-mattgierhart-prd-driven-context-e",
+  "downloaded_at": "2026-08-20T01:37:44.689484Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "product",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for product: product, prd, feature",
+    "score": 3,
+    "runner_up": "design",
+    "runner_up_score": 2,
+    "signals": [
+      "product",
+      "prd",
+      "feature"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mattgierhart",
+  "source_url": "https://github.com/mattgierhart/PRD-driven-context-engineering/blob/main/plugins/prd-ce/skills/prd-v09-offer-construction-hormozi/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mattgierhart/PRD-driven-context-engineering/blob/main/plugins/prd-ce/skills/prd-v09-offer-construction-hormozi/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Construct a high-conversion offer using Alex Hormozi's value equation and Grand Slam Offer mechanics during PRD v0.9 Go-to-Market. Triggers on requests to design the offer, set up the pitch, build bonuses or guarantees, or when user asks \"how do we package this?\", \"what's the offer?\", \"build a grand slam offer\", \"Hormozi\", \"$100M offers\", \"guarantee\", \"bonus stack\". Outputs GTM-* entries with Type=Offer / Type=Guarantee and BR-PRICING-* updates."
+}

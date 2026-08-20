@@ -1,0 +1,38 @@
+{
+  "name": "prd-v08-changelog-as-marketing",
+  "repo": "mattgierhart/PRD-driven-context-engineering",
+  "path": ".claude/skills/prd-v08-changelog-as-marketing/SKILL.md",
+  "github_branch": "main",
+  "category": "product",
+  "source": "github.com/mattgierhart/PRD-driven-context-engineering",
+  "dir_name": "prd-v08-changelog-as-marketing",
+  "downloaded_at": "2026-08-20T01:37:35.360174Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "product",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for product: product, prd, feature",
+    "score": 3,
+    "runner_up": "api",
+    "runner_up_score": 2,
+    "signals": [
+      "product",
+      "prd",
+      "feature"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mattgierhart",
+  "source_url": "https://github.com/mattgierhart/PRD-driven-context-engineering/blob/main/.claude/skills/prd-v08-changelog-as-marketing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mattgierhart/PRD-driven-context-engineering/blob/main/.claude/skills/prd-v08-changelog-as-marketing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Design the changelog as a distribution surface bridging engineering releases (DEP-/FEA-) to marketing channels (GTM-) during PRD v0.8 Deployment & Ops. Triggers on requests to set up a changelog system, publish releases, or when user asks \"how should we publish releases?\", \"changelog as marketing\", \"release notes\", \"Stripe-style changelog\", \"what to do with our release notes\", \"ship and tell\". Outputs MON-CHG-* changelog entries and per-channel formats."
+}

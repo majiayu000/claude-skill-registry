@@ -1,0 +1,37 @@
+{
+  "name": "prd-v07-implementation-loop",
+  "repo": "mattgierhart/PRD-driven-context-engineering",
+  "path": "plugins/prd-ce/skills/prd-v07-implementation-loop/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/mattgierhart/PRD-driven-context-engineering",
+  "dir_name": "prd-v07-implementation-loop",
+  "downloaded_at": "2026-08-20T01:37:38.881259Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: api=2, development=2",
+    "score": 2,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "api",
+      "endpoint"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mattgierhart",
+  "source_url": "https://github.com/mattgierhart/PRD-driven-context-engineering/blob/main/plugins/prd-ce/skills/prd-v07-implementation-loop/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mattgierhart/PRD-driven-context-engineering/blob/main/plugins/prd-ce/skills/prd-v07-implementation-loop/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Execute implementation within EPICs following test-first development, continuous SoT updates, and code traceability during PRD v0.7 Build Execution. Triggers on requests to start building, implement an epic, begin coding, or when user asks \"start building\", \"implement epic\", \"coding\", \"development\", \"build execution\", \"implementation\", \"write code\". Consumes EPIC- (context), TEST- (acceptance criteria). Updates existing IDs and creates code. Outputs working code with @implements traceability tags."
+}

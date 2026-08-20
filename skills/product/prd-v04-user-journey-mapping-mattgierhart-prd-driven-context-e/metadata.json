@@ -1,0 +1,39 @@
+{
+  "name": "prd-v04-user-journey-mapping",
+  "repo": "mattgierhart/PRD-driven-context-engineering",
+  "path": "plugins/prd-ce/skills/prd-v04-user-journey-mapping/SKILL.md",
+  "github_branch": "main",
+  "category": "product",
+  "source": "github.com/mattgierhart/PRD-driven-context-engineering",
+  "dir_name": "prd-v04-user-journey-mapping-mattgierhart-prd-driven-context-e",
+  "downloaded_at": "2026-08-20T01:37:40.767025Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "product",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for product: prd, feature, backlog, metrics",
+    "score": 4,
+    "runner_up": "planning",
+    "runner_up_score": 2,
+    "signals": [
+      "prd",
+      "feature",
+      "backlog",
+      "metrics"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mattgierhart",
+  "source_url": "https://github.com/mattgierhart/PRD-driven-context-engineering/blob/main/plugins/prd-ce/skills/prd-v04-user-journey-mapping/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mattgierhart/PRD-driven-context-engineering/blob/main/plugins/prd-ce/skills/prd-v04-user-journey-mapping/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Map user missions from trigger to value moment, organizing features into coherent paths during PRD v0.4 User Journeys. Triggers on requests to map user journeys, define user flows, describe how users accomplish goals, or when user asks \"map user journeys\", \"define user flows\", \"user missions\", \"how do users accomplish X?\", \"journey mapping\", \"what steps do users take?\", \"pain to value flow\". Consumes PER- (Persona Definition), FEA- (Feature Value Planning), KPI- (Outcome Definition). Outputs UJ- entries with step flows, pain points, and value moments. Feeds v0.4 Screen Flow Definition."
+}

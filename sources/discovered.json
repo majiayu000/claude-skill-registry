@@ -1,7 +1,7 @@
 {
-  "discovered_at": "2026-08-19T01:47:12.078025Z",
+  "discovered_at": "2026-08-20T01:46:55.457830Z",
   "total_repos": 300,
-  "total_skills": 74,
+  "total_skills": 75,
   "scanned_repos": 300,
   "limits": {
     "max_repos": 300,
@@ -55,10 +55,10 @@
     "KadenMc/work-buddy",
     "Kaelio/ktx",
     "Kanevry/session-orchestrator",
-    "KarmaDevplacer/Mythos-Claude-Orchestrator",
     "KhazP/vibe-coding-prompt-template",
     "Klotzkette/claude-fuer-deutsches-recht",
     "Leutenegger/book-to-skill",
+    "Leutenegger/watermarks-remover",
     "LukasNiessen/terrashark",
     "MIKOTOKAWAII25/local-ai-code-assistant",
     "Mann1988/awesome-claude-skills",
@@ -106,7 +106,6 @@
     "alirezarezvani/claude-skills",
     "alookai/alook",
     "amElnagdy/delegate-skills",
-    "ammawla/encode-toolkit",
     "anbeime/skill",
     "ancoleman/ai-design-components",
     "anombyte93/prd-taskmaster",
@@ -193,7 +192,6 @@
     "jiweiyeah/Skills-Manager",
     "joeyvansommeren/journey-mapper",
     "jomeswang/agnes-ai-skill",
-    "jqueryscript/awesome-claude-code",
     "karanb192/awesome-claude-skills",
     "karanb192/itr-wala",
     "kazukinagata/shinkoku",
@@ -214,6 +212,7 @@
     "marketingjuliancongdanh79-pixel/skill-generator",
     "massimodeluisa/recursive-decomposition-skill",
     "matteotitta/claude-code-marketing-quickstart",
+    "mattgierhart/PRD-driven-context-engineering",
     "maxritter/pilot-shell",
     "memvid/claude-brain",
     "meshy-dev/meshy-3d-agent",
@@ -276,6 +275,7 @@
     "slimeglitch/gryffin-calorai-ventus",
     "specstoryai/getspecstory",
     "staruhub/ClaudeSkills",
+    "sunchaokun/PPT-Design-Skill",
     "syahiidkamil/Software-Engineer-AI-Agent-Atlas",
     "tamtom/play-console-cli",
     "tance-mang/chinese-webnovel-skills",
@@ -314,300 +314,304 @@
   ],
   "skills": [
     {
-      "repo": "Avijit07x/claude-db",
-      "path": "skills/cdb-scan/SKILL.md"
+      "repo": "hoangsonww/Claude-Code-Agent-Monitor",
+      "path": ".codex/skills/push-to-forked-pr/SKILL.md"
     },
     {
-      "repo": "GaZmagik/iso-24495",
-      "path": "skills/iso-24495-5/SKILL.md"
+      "repo": "hoangsonww/Claude-Code-Agent-Monitor",
+      "path": ".claude/skills/push-to-forked-pr/SKILL.md"
     },
     {
-      "repo": "GaZmagik/iso-24495",
-      "path": "skills/iso-24495-4/SKILL.md"
+      "repo": "hoangsonww/Claude-Code-Agent-Monitor",
+      "path": ".agents/skills/push-to-forked-pr/SKILL.md"
     },
     {
-      "repo": "GaZmagik/iso-24495",
-      "path": "skills/iso-24495-1/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": ".claude/skills/init/SKILL.md"
     },
     {
-      "repo": "GaZmagik/iso-24495",
-      "path": "skills/iso-24495-2/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": "plugins/prd-ce/skills/init/SKILL.md"
     },
     {
-      "repo": "GaZmagik/iso-24495",
-      "path": "skills/iso-24495-3/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": ".claude/skills/ghm-self-install/SKILL.md"
     },
     {
-      "repo": "GaZmagik/iso-24495",
-      "path": "skills/iso-24495-text-audit/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": ".claude/skills/prd-v09-aeo-audit/SKILL.md"
     },
     {
-      "repo": "GaZmagik/iso-24495",
-      "path": "codex-skills/iso-24495-style/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": ".claude/skills/ghm-template-sync/SKILL.md"
     },
     {
-      "repo": "JuneYaooo/self-media-compliance-review",
-      "path": "SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": "plugins/prd-ce/skills/ghm-harvest/SKILL.md"
     },
     {
-      "repo": "K-Dense-AI/scientific-agent-skills",
-      "path": "skills/waypoint-bio/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": ".claude/skills/prd-v09-gtm-strategy/SKILL.md"
     },
     {
-      "repo": "XiaoMaColtAI/math-modeling-skill",
-      "path": "dsh-plugin/math-modeling-agent/skills/math-modeling/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": "plugins/prd-ce/skills/ghm-gate-check/SKILL.md"
     },
     {
-      "repo": "XiaoMaColtAI/math-modeling-skill",
-      "path": "dsh-plugin/math-modeling-agent/skills/math-modeling/tools/pdf/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": "plugins/prd-ce/skills/SKILL_TEMPLATE/SKILL.md"
     },
     {
-      "repo": "XiaoMaColtAI/math-modeling-skill",
-      "path": "dsh-plugin/math-modeling-agent/skills/math-modeling/tools/xlsx/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": "plugins/prd-ce/skills/ghm-id-register/SKILL.md"
     },
     {
-      "repo": "XiaoMaColtAI/math-modeling-skill",
-      "path": "dsh-plugin/math-modeling-agent/skills/math-modeling/tools/docx/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": "plugins/prd-ce/skills/ghm-sot-builder/SKILL.md"
     },
     {
-      "repo": "XiaoMaColtAI/math-modeling-skill",
-      "path": "dsh-plugin/math-modeling-agent/skills/math-modeling/tools/latex/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": "plugins/prd-ce/skills/ghm-status-sync/SKILL.md"
     },
     {
-      "repo": "XiaoMaColtAI/math-modeling-skill",
-      "path": "dsh-plugin/math-modeling-agent/skills/math-modeling/tools/figure/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": "plugins/prd-ce/skills/ghm-self-install/SKILL.md"
     },
     {
-      "repo": "XiaoMaColtAI/math-modeling-skill",
-      "path": "dsh-plugin/math-modeling-agent/skills/math-modeling/tools/paper_search/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": "plugins/prd-ce/skills/prd-v09-aeo-audit/SKILL.md"
     },
     {
-      "repo": "XiaoMaColtAI/math-modeling-skill",
-      "path": "dsh-plugin/math-modeling-agent/skills/math-modeling/references/roles/建模手/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": ".claude/skills/prd-v09-hn-reddit-launch/SKILL.md"
     },
     {
-      "repo": "XiaoMaColtAI/math-modeling-skill",
-      "path": "dsh-plugin/math-modeling-agent/skills/math-modeling/references/roles/编程手/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": "plugins/prd-ce/skills/ghm-template-sync/SKILL.md"
     },
     {
-      "repo": "XiaoMaColtAI/math-modeling-skill",
-      "path": "dsh-plugin/math-modeling-agent/skills/math-modeling/references/roles/论文手/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": ".claude/skills/prd-v10-case-study-builder/SKILL.md"
     },
     {
-      "repo": "amElnagdy/delegate-skills",
-      "path": "skills/warp-delegate/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": ".claude/skills/prd-v09-alternatives-pages/SKILL.md"
     },
     {
-      "repo": "amElnagdy/delegate-skills",
-      "path": "skills/copilot-delegate/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": "plugins/prd-ce/skills/prd-v07-epic-scoping/SKILL.md"
     },
     {
-      "repo": "getaero-io/gtm-eng-skills",
-      "path": "skills/deepline-engine/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": "plugins/prd-ce/skills/prd-v09-gtm-strategy/SKILL.md"
     },
     {
-      "repo": "mxyhi/ok-skills",
-      "path": "diagram-design/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": ".claude/skills/prd-v09-launch-channels-orb/SKILL.md"
     },
     {
-      "repo": "nanocoai/nanoclaw",
-      "path": ".claude/skills/add-anydoc/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": ".claude/skills/prd-v09-positioning-dunford/SKILL.md"
     },
     {
-      "repo": "nanocoai/nanoclaw",
-      "path": ".claude/skills/add-anydoc/container-skills/convert-documents-to-markdown/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": "plugins/prd-ce/skills/prd-v03-pricing-model/SKILL.md"
     },
     {
-      "repo": "oxylabs/agent-skills",
-      "path": "skills/proxies/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": ".claude/skills/prd-v10-chasm-adoption-moore/SKILL.md"
     },
     {
-      "repo": "oxylabs/agent-skills",
-      "path": "skills/video-data/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": ".claude/skills/prd-v09-cold-outreach-tiered/SKILL.md"
     },
     {
-      "repo": "oxylabs/agent-skills",
-      "path": "skills/web-unblocker/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": ".claude/skills/prd-v04-visual-prototype-gate/SKILL.md"
     },
     {
-      "repo": "oxylabs/agent-skills",
-      "path": "skills/web-scraper-api/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": ".claude/skills/prd-v10-testimonial-collector/SKILL.md"
     },
     {
-      "repo": "oxylabs/agent-skills",
-      "path": "skills/headless-browser/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": ".claude/skills/prd-v08-marketing-ops-handoff/SKILL.md"
     },
     {
-      "repo": "saadshahd/moo.md",
-      "path": "hope/skills/shift/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": "plugins/prd-ce/skills/prd-v09-launch-metrics/SKILL.md"
     },
     {
-      "repo": "saadshahd/moo.md",
-      "path": "hope/skills/widen/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": "plugins/prd-ce/skills/prd-v01-problem-framing/SKILL.md"
     },
     {
-      "repo": "saadshahd/moo.md",
-      "path": "hope/skills/judge/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": "plugins/prd-ce/skills/prd-v03-moat-definition/SKILL.md"
     },
     {
-      "repo": "saadshahd/moo.md",
-      "path": "hope/skills/draft/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": ".claude/skills/prd-v08-changelog-as-marketing/SKILL.md"
     },
     {
-      "repo": "saadshahd/moo.md",
-      "path": "hope/skills/reduce/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": ".claude/skills/prd-v08-drift-baseline-compare/SKILL.md"
     },
     {
-      "repo": "saadshahd/moo.md",
-      "path": "hope/skills/anchor/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": "plugins/prd-ce/skills/prd-v08-release-planning/SKILL.md"
     },
     {
-      "repo": "saadshahd/moo.md",
-      "path": "hope/skills/elicit/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": "plugins/prd-ce/skills/prd-v08-monitoring-setup/SKILL.md"
     },
     {
-      "repo": "saadshahd/moo.md",
-      "path": "hope/skills/router/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": "plugins/prd-ce/skills/prd-v09-hn-reddit-launch/SKILL.md"
     },
     {
-      "repo": "saadshahd/moo.md",
-      "path": "hope/skills/reframe/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": "plugins/prd-ce/skills/prd-v08-runbook-creation/SKILL.md"
     },
     {
-      "repo": "saadshahd/moo.md",
-      "path": "hope/skills/compose/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": "plugins/prd-ce/skills/prd-v06-environment-setup/SKILL.md"
     },
     {
-      "repo": "saadshahd/moo.md",
-      "path": "hope/skills/explain/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": "plugins/prd-ce/skills/prd-v04-persona-definition/SKILL.md"
     },
     {
-      "repo": "saadshahd/moo.md",
-      "path": "hope/skills/clarify/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": "plugins/prd-ce/skills/prd-v09-alternatives-pages/SKILL.md"
     },
     {
-      "repo": "saadshahd/moo.md",
-      "path": "hope/skills/inversion/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": "plugins/prd-ce/skills/prd-v10-case-study-builder/SKILL.md"
     },
     {
-      "repo": "saadshahd/moo.md",
-      "path": "hope/skills/provocation/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": "plugins/prd-ce/skills/prd-v03-outcome-definition/SKILL.md"
     },
     {
-      "repo": "saadshahd/moo.md",
-      "path": "hope/skills/interrogate/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": "plugins/prd-ce/skills/prd-v09-launch-channels-orb/SKILL.md"
     },
     {
-      "repo": "serejaris/personal-corp-os",
-      "path": "templates/department/skills/daily/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": "plugins/prd-ce/skills/prd-v07-implementation-loop/SKILL.md"
     },
     {
-      "repo": "serejaris/personal-corp-os",
-      "path": "templates/department/skills/retro/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": "plugins/prd-ce/skills/prd-v06-architecture-design/SKILL.md"
     },
     {
-      "repo": "serejaris/personal-corp-os",
-      "path": "templates/department/skills/planning/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": "plugins/prd-ce/skills/prd-v09-positioning-dunford/SKILL.md"
     },
     {
-      "repo": "titanwings/colleague-skill",
-      "path": "SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": ".claude/skills/prd-v09-offer-construction-hormozi/SKILL.md"
     },
     {
-      "repo": "vitaecontext/vitaecontext",
-      "path": "skills/vitaecontext-wiki-maintenance/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": "plugins/prd-ce/skills/prd-v09-feedback-loop-setup/SKILL.md"
     },
     {
-      "repo": "wshobson/agents",
-      "path": "plugins/llm-finetuning/skills/vision-sft/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": "plugins/prd-ce/skills/prd-v09-cold-outreach-tiered/SKILL.md"
     },
     {
-      "repo": "wshobson/agents",
-      "path": "plugins/hermes-tweet/skills/hermes-tweet/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": ".claude/skills/prd-v10-continuous-discovery-torres/SKILL.md"
     },
     {
-      "repo": "wshobson/agents",
-      "path": "plugins/conductor/skills/workflow-patterns/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": "plugins/prd-ce/skills/prd-v04-user-journey-mapping/SKILL.md"
     },
     {
-      "repo": "wshobson/agents",
-      "path": "plugins/llm-finetuning/skills/dataset-curation/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": "plugins/prd-ce/skills/prd-v10-chasm-adoption-moore/SKILL.md"
     },
     {
-      "repo": "wshobson/agents",
-      "path": "plugins/file-conversion/skills/file-conversion/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": "plugins/prd-ce/skills/prd-v10-testimonial-collector/SKILL.md"
     },
     {
-      "repo": "wshobson/agents",
-      "path": "plugins/llm-finetuning/skills/quantized-export/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": "plugins/prd-ce/skills/prd-v08-marketing-ops-handoff/SKILL.md"
     },
     {
-      "repo": "wshobson/agents",
-      "path": "plugins/llm-finetuning/skills/eval-harness-first/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": "plugins/prd-ce/skills/prd-v04-visual-prototype-gate/SKILL.md"
     },
     {
-      "repo": "wshobson/agents",
-      "path": "plugins/before-you-build/skills/before-you-build/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": "plugins/prd-ce/skills/prd-v08-changelog-as-marketing/SKILL.md"
     },
     {
-      "repo": "wshobson/agents",
-      "path": "plugins/llm-finetuning/skills/lora-qlora-recipes/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": "plugins/prd-ce/skills/prd-v08-drift-baseline-compare/SKILL.md"
     },
     {
-      "repo": "wshobson/agents",
-      "path": "plugins/llm-finetuning/skills/grpo-rlvr-training/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": "plugins/prd-ce/skills/prd-v04-screen-flow-definition/SKILL.md"
     },
     {
-      "repo": "wshobson/agents",
-      "path": "plugins/avoid-ai-writing/skills/avoid-ai-writing/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": "plugins/prd-ce/skills/prd-v03-features-value-planning/SKILL.md"
     },
     {
-      "repo": "wshobson/agents",
-      "path": "plugins/social-publishing/skills/social-publishing/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": "plugins/prd-ce/skills/prd-v06-technical-specification/SKILL.md"
     },
     {
-      "repo": "wshobson/agents",
-      "path": "plugins/llm-finetuning/skills/checkpoint-promotion/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": "plugins/prd-ce/skills/prd-v01-user-value-articulation/SKILL.md"
     },
     {
-      "repo": "wshobson/agents",
-      "path": "plugins/skill-forge-essentials/skills/session-guard/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": "plugins/prd-ce/skills/prd-v05-risk-discovery-interview/SKILL.md"
     },
     {
-      "repo": "wshobson/agents",
-      "path": "plugins/dgx-spark-ops/skills/spark-training-gotchas/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": "plugins/prd-ce/skills/prd-v05-technical-stack-selection/SKILL.md"
     },
     {
-      "repo": "wshobson/agents",
-      "path": "plugins/pptx-deck-creation/skills/pptx-deck-context/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": "plugins/prd-ce/skills/prd-v09-offer-construction-hormozi/SKILL.md"
     },
     {
-      "repo": "wshobson/agents",
-      "path": "plugins/llm-finetuning/skills/trace-to-training-data/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": "temp/v0.5-requirements/prd-v05-technical-stack-selection/SKILL.md"
     },
     {
-      "repo": "wshobson/agents",
-      "path": "plugins/pptx-deck-creation/skills/pptx-visual-assets/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": "plugins/prd-ce/skills/prd-v10-continuous-discovery-torres/SKILL.md"
     },
     {
-      "repo": "wshobson/agents",
-      "path": "plugins/dgx-spark-ops/skills/spark-environment-setup/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": "plugins/prd-ce/skills/prd-v02-product-type-classification/SKILL.md"
     },
     {
-      "repo": "wshobson/agents",
-      "path": "plugins/pptx-deck-creation/skills/pptx-quality-gates/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": "plugins/prd-ce/skills/prd-v02-competitive-landscape-mapping/SKILL.md"
     },
     {
-      "repo": "wshobson/agents",
-      "path": "plugins/dgx-spark-ops/skills/spark-memory-thermal-ops/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": ".claude/skills/prd-v10-mom-test-interview/SKILL.md"
     },
     {
-      "repo": "wshobson/agents",
-      "path": "plugins/llm-finetuning/skills/preference-optimization/SKILL.md"
+      "repo": "mattgierhart/PRD-driven-context-engineering",
+      "path": "plugins/prd-ce/skills/prd-v07-test-planning/SKILL.md"
     },
     {
-      "repo": "wshobson/agents",
-      "path": "plugins/skill-forge-essentials/skills/ai-debt-detector/SKILL.md"
+      "repo": "respira-press/agent-skills-wordpress",
+      "path": "skills/html-to-breakdance/SKILL.md"
+    },
+    {
+      "repo": "sunchaokun/PPT-Design-Skill",
+      "path": "skill/SKILL.md"
     }
   ]
 }

@@ -1,0 +1,38 @@
+{
+  "name": "prd-v03-moat-definition",
+  "repo": "mattgierhart/PRD-driven-context-engineering",
+  "path": "plugins/prd-ce/skills/prd-v03-moat-definition/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/mattgierhart/PRD-driven-context-engineering",
+  "dir_name": "prd-v03-moat-definition",
+  "downloaded_at": "2026-08-20T01:37:35.136753Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: ai-ml=3, product=3",
+    "score": 3,
+    "runner_up": "product",
+    "runner_up_score": 3,
+    "signals": [
+      "ml",
+      "model",
+      "training"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mattgierhart",
+  "source_url": "https://github.com/mattgierhart/PRD-driven-context-engineering/blob/main/plugins/prd-ce/skills/prd-v03-moat-definition/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mattgierhart/PRD-driven-context-engineering/blob/main/plugins/prd-ce/skills/prd-v03-moat-definition/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Assess competitor defensibility and define our own moat strategy during PRD v0.3 Commercial Model. Triggers on requests to analyze competitor moats, define our defensibility, assess switching costs, identify vulnerabilities, find wedge opportunities, or when user asks \"what's our moat?\", \"how defensible are they?\", \"where can we compete?\", \"switching costs?\", \"defensibility\", \"who to target\". Consumes Competitive Landscape (v0.2) CFD- entries. Outputs CFD- entries for competitor moats and BR- entries for targeting rules and our defensibility strategy."
+}

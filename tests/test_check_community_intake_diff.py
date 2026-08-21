@@ -220,6 +220,80 @@ def test_accepts_category_only_canonicalization_of_existing_entries():
     assert validate_community_intake_text(base, head) == []
 
 
+def test_accepts_compatible_distribution_completion_for_existing_entries():
+    alpha = {
+        **make_skill("alpha"),
+        "license": "Apache-2.0",
+    }
+    beta = {
+        **make_skill("beta"),
+        "license": "MIT",
+    }
+    base = render_catalog([alpha, beta])
+    head = render_catalog(
+        [
+            {**alpha, "distribution": "compatible"},
+            {**beta, "distribution": "compatible"},
+        ]
+    )
+
+    assert validate_community_intake_text(base, head) == []
+
+
+def test_issue_285_sources_have_explicit_asset_redistribution_approval():
+    catalog = json.loads((ROOT / CATALOG_PATH).read_text(encoding="utf-8"))
+    entries = {entry["name"]: entry for entry in catalog["skills"]}
+
+    assert entries["hol-guard"]["distribution"] == "compatible"
+    assert entries["x-research"]["distribution"] == "compatible"
+
+
+def test_rejects_distribution_completion_for_restricted_license():
+    skill = {
+        **make_skill("alpha"),
+        "license": "CC-BY-SA-4.0",
+    }
+    base = render_catalog([skill])
+    head = render_catalog([{**skill, "distribution": "compatible"}])
+
+    assert validate_community_intake_text(base, head) == [
+        "community intake PRs must preserve the existing `skills` list and append new entries at the end"
+    ]
+
+
+def test_rejects_distribution_overwrite():
+    skill = {
+        **make_skill("alpha"),
+        "license": "MIT",
+        "distribution": "restricted",
+    }
+    base = render_catalog([skill])
+    head = render_catalog([{**skill, "distribution": "compatible"}])
+
+    assert validate_community_intake_text(base, head) == [
+        "community intake PRs must preserve the existing `skills` list and append new entries at the end"
+    ]
+
+
+def test_rejects_distribution_completion_combined_with_append():
+    alpha = {
+        **make_skill("alpha"),
+        "license": "MIT",
+    }
+    base = render_catalog([alpha, make_skill("beta")])
+    head = render_catalog(
+        [
+            {**alpha, "distribution": "compatible"},
+            make_skill("beta"),
+            make_skill("gamma"),
+        ]
+    )
+
+    assert validate_community_intake_text(base, head) == [
+        "community intake PRs must not rewrite lines before the final existing catalog entry"
+    ]
+
+
 def test_rejects_category_rewrite_from_already_canonical_existing_entry():
     base = render_catalog(
         [

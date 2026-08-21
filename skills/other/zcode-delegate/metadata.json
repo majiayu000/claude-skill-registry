@@ -1,0 +1,38 @@
+{
+  "name": "zcode-delegate",
+  "repo": "amElnagdy/delegate-skills",
+  "path": "skills/zcode-delegate/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/amElnagdy/delegate-skills",
+  "dir_name": "zcode-delegate",
+  "downloaded_at": "2026-08-21T01:29:33.245332Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=3, development=3",
+    "score": 3,
+    "runner_up": "development",
+    "runner_up_score": 3,
+    "signals": [
+      "bash",
+      "shell",
+      "cli"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "amElnagdy",
+  "source_url": "https://github.com/amElnagdy/delegate-skills/blob/master/skills/zcode-delegate/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/amElnagdy/delegate-skills/blob/master/skills/zcode-delegate/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Delegate a coding task to the Z.AI ZCode CLI as a background implementer, then review its diff and land it yourself. Use this whenever the user wants to hand implementation work to ZCode \u2014 phrasings like \"have ZCode do X\", \"delegate this to ZCode\", \"run it through ZCode\", or \"use ZCode to implement/fix/refactor\" \u2014 or to run a queue of coding tasks through ZCode while staying the reviewer. DO NOT USE for tasks small enough to do inline, or when the user wants the code written directly without delegating."
+}

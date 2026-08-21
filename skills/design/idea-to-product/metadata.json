@@ -1,0 +1,38 @@
+{
+  "name": "idea-to-product",
+  "repo": "majiayu000/spellbook",
+  "path": "skills/idea-to-product/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/majiayu000/spellbook",
+  "dir_name": "idea-to-product",
+  "downloaded_at": "2026-08-21T01:39:39.049562Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "design",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for design: design, ui, tailwind",
+    "score": 3,
+    "runner_up": "product",
+    "runner_up_score": 2,
+    "signals": [
+      "design",
+      "ui",
+      "tailwind"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "majiayu000",
+  "source_url": "https://github.com/majiayu000/spellbook/blob/main/skills/idea-to-product/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/majiayu000/spellbook/blob/main/skills/idea-to-product/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u7aef\u5230\u7aef\u4ea7\u54c1\u6559\u7ec3 \u2014 \u628a\u4e00\u53e5\u8bdd\u60f3\u6cd5\u8d70\u5230 PRD + \u53ef\u70b9\u51fb HTML \u539f\u578b\u3002\u4f1a\u9876\u5634\u3001\u5f3a\u5236\u780d\u529f\u80fd\u3001\u7528 Nielsen + Norman \u505a\u53cb\u597d\u6027\u786c\u68c0\u3002Use when user \u8bf4\"\u6211\u6709\u4e00\u4e2a\u60f3\u6cd5\"\u3001\"\u60f3\u505a\u4e00\u4e2a\u4ea7\u54c1\"\u3001\"\u505a MVP\"\u3001\"\u5199 PRD\"\u3001\"\u505a\u7528\u6237\u53cb\u597d\u7684\u4ea7\u54c1\"\uff0c\u6216\u8c03\u7528\u63d2\u4ef6\u547d\u4ee4 `/idea-coach:idea`\u3002Do NOT use when \u7528\u6237\u5df2\u6709\u5b8c\u6574 PRD \u5728\u8dd1\u3001\u660e\u786e\u8bf4\"\u53ea brainstorm \u4e0d\u51b3\u7b56\"\u3001\u53ea\u60f3\u8981 UI \u8bbe\u8ba1\uff08\u7528 design-shotgun\uff09\u3001\u6216\u53ea\u60f3\u8d77\u9879\u76ee\u9aa8\u67b6\uff08\u7528 /init\uff09\u3002"
+}

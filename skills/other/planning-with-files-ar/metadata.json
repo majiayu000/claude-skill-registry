@@ -1,0 +1,37 @@
+{
+  "name": "planning-with-files-ar",
+  "repo": "OthmanAdi/planning-with-files",
+  "path": "skills/i18n/planning-with-files-ar/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/OthmanAdi/planning-with-files",
+  "dir_name": "planning-with-files-ar",
+  "downloaded_at": "2026-08-21T01:25:14.280590Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=2, planning=2",
+    "score": 2,
+    "runner_up": "planning",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "OthmanAdi",
+  "source_url": "https://github.com/OthmanAdi/planning-with-files/blob/master/skills/i18n/planning-with-files-ar/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OthmanAdi/planning-with-files/blob/master/skills/i18n/planning-with-files-ar/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u0646\u0638\u0627\u0645 \u062a\u062e\u0637\u064a\u0637 \u0627\u0644\u0645\u0644\u0641\u0627\u062a \u0628\u0646\u0645\u0637 Manus \u0644\u062a\u0646\u0638\u064a\u0645 \u0648\u062a\u062a\u0628\u0639 \u062a\u0642\u062f\u0645 \u0627\u0644\u0645\u0647\u0627\u0645 \u0627\u0644\u0645\u0639\u0642\u062f\u0629. \u064a\u0646\u0634\u0626 \u0645\u0644\u0641\u0627\u062a task_plan.md \u0648 findings.md \u0648 progress.md. \u064a\u064f\u0633\u062a\u062e\u062f\u0645 \u0639\u0646\u062f \u0637\u0644\u0628 \u0627\u0644\u062a\u062e\u0637\u064a\u0637 \u0623\u0648 \u062a\u062d\u0644\u064a\u0644 \u0627\u0644\u0645\u0647\u0627\u0645 \u0623\u0648 \u062a\u0646\u0638\u064a\u0645 \u0627\u0644\u0645\u0634\u0627\u0631\u064a\u0639 \u0623\u0648 \u062a\u062a\u0628\u0639 \u0627\u0644\u062a\u0642\u062f\u0645 \u0623\u0648 \u0627\u0644\u062e\u0637\u0637 \u0645\u062a\u0639\u062f\u062f\u0629 \u0627\u0644\u062e\u0637\u0648\u0627\u062a. \u064a\u062f\u0639\u0645 \u0627\u0644\u0627\u0633\u062a\u0639\u0627\u062f\u0629 \u0627\u0644\u062a\u0644\u0642\u0627\u0626\u064a\u0629 \u0644\u0644\u062c\u0644\u0633\u0629 \u0628\u0639\u062f /clear. \u0643\u0644\u0645\u0627\u062a \u0627\u0644\u062a\u0634\u063a\u064a\u0644: \u062a\u062e\u0637\u064a\u0637 \u0627\u0644\u0645\u0647\u0627\u0645\u060c \u0625\u062f\u0627\u0631\u0629 \u0627\u0644\u0645\u0634\u0627\u0631\u064a\u0639\u060c \u062e\u0637\u0629 \u0627\u0644\u0639\u0645\u0644\u060c \u062a\u062d\u0644\u064a\u0644 \u0627\u0644\u0645\u0647\u0627\u0645\u060c \u062a\u0646\u0638\u064a\u0645 \u0627\u0644\u0645\u0634\u0631\u0648\u0639\u060c \u062a\u062a\u0628\u0639 \u0627\u0644\u062a\u0642\u062f\u0645\u060c \u062e\u0637\u0629 \u0645\u062a\u0639\u062f\u062f\u0629 \u0627\u0644\u062e\u0637\u0648\u0627\u062a\u060c \u0633\u0627\u0639\u062f\u0646\u064a \u0641\u064a \u0627\u0644\u062a\u062e\u0637\u064a\u0637\u060c \u062a\u062d\u0644\u064a\u0644 \u0627\u0644\u0645\u0634\u0631\u0648\u0639"
+}

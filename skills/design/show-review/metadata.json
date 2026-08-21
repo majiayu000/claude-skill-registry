@@ -1,0 +1,37 @@
+{
+  "name": "show-review",
+  "repo": "OutlineDriven/odin-claude-plugin",
+  "path": "skills/show-review/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/OutlineDriven/odin-claude-plugin",
+  "dir_name": "show-review",
+  "downloaded_at": "2026-08-21T01:26:04.763569Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "design",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for design: ui, component",
+    "score": 2,
+    "runner_up": "communication",
+    "runner_up_score": 1,
+    "signals": [
+      "ui",
+      "component"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "OutlineDriven",
+  "source_url": "https://github.com/OutlineDriven/odin-claude-plugin/blob/main/skills/show-review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OutlineDriven/odin-claude-plugin/blob/main/skills/show-review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the answer is a walk through the diff rather than a review report: the user says \"walk me through this review\", \"walk me through this PR\", \"show-review\", or \"review this interactively\". Emits one finding per turn as an ephemeral visual and a Keep/Skip/Discuss question. A written sectioned report goes to review; a GitHub PR sectioned report goes to pr-review; showing a topic without reviewing it goes to show-me."
+}

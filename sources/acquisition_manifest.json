@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updated_at": "2026-08-20T01:47:45.415440Z",
-  "total_count": 1620,
+  "updated_at": "2026-08-21T01:50:24.216210Z",
+  "total_count": 1621,
   "entries": {
     "Xquik-dev/x-twitter-scraper": {
       "repo": "Xquik-dev/x-twitter-scraper",
@@ -9205,13 +9205,13 @@
       "repo": "yusufkaraaslan/Skill_Seekers",
       "branch": "main",
       "relative_path": "skills/skill-seekers/SKILL.md",
-      "updated_at": "2026-08-20T01:47:37.944913Z"
+      "updated_at": "2026-08-21T01:50:18.106338Z"
     },
     "lackeyjb/playwright-skill:name:playwright-skill": {
       "repo": "lackeyjb/playwright-skill",
       "branch": "main",
       "relative_path": "skills/playwright-skill/SKILL.md",
-      "updated_at": "2026-08-20T01:47:37.557289Z"
+      "updated_at": "2026-08-21T01:50:18.331698Z"
     },
     "ToniPerea/humanizar-texto-es:name:humanizar-texto-es": {
       "repo": "ToniPerea/humanizar-texto-es",
@@ -9265,7 +9265,7 @@
       "repo": "Enreign/pagerunner-skill",
       "branch": "main",
       "relative_path": "skills/pagerunner-skill/SKILL.md",
-      "updated_at": "2026-08-20T01:47:37.583182Z"
+      "updated_at": "2026-08-21T01:50:18.026274Z"
     },
     "miningstore/confluence-to-agent-knowledge-base:name:confluence-to-agent-knowledge-base": {
       "repo": "miningstore/confluence-to-agent-knowledge-base",
@@ -9571,7 +9571,7 @@
       "repo": "RS42-AI/scout-ai-lite",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-08-20T01:47:36.330804Z"
+      "updated_at": "2026-08-21T01:50:18.409764Z"
     },
     "Dicklesworthstone/slb:name:unknown": {
       "repo": "Dicklesworthstone/slb",
@@ -9619,7 +9619,7 @@
       "repo": "tostechbr/sdk-apps-openai",
       "branch": "main",
       "relative_path": "skill.md",
-      "updated_at": "2026-08-20T01:47:35.040685Z"
+      "updated_at": "2026-08-21T01:50:18.401062Z"
     },
     "fredsun/CodeDiary:name:unknown": {
       "repo": "fredsun/CodeDiary",
@@ -9722,6 +9722,12 @@
       "branch": "main",
       "relative_path": "skills/gitlawb-sidecar/SKILL.md",
       "updated_at": "2026-08-19T01:47:30.246442Z"
+    },
+    "agentbody/skills:skills/x-research": {
+      "repo": "agentbody/skills",
+      "branch": "main",
+      "relative_path": "skills/x-research/SKILL.md",
+      "updated_at": "2026-08-21T01:50:21.023924Z"
     }
   }
 }

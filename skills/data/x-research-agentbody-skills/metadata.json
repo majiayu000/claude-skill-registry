@@ -1,0 +1,32 @@
+{
+  "name": "x-research",
+  "description": "Read-only X/Twitter research via AgentBody: public search, trends, posts, profiles, media, and replies.",
+  "repo": "agentbody/skills",
+  "path": "skills/x-research",
+  "github_branch": "main",
+  "category": "data",
+  "tags": [
+    "twitter",
+    "x",
+    "research",
+    "social-media",
+    "data"
+  ],
+  "stars": 1,
+  "source": "Community Skills",
+  "dir_name": "x-research-agentbody-skills",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "README.md",
+    "references/api-reference.md",
+    "scripts/test_x_client.py",
+    "scripts/x_client.py"
+  ],
+  "author": "agentbody",
+  "source_url": "https://github.com/agentbody/skills/blob/main/skills/x-research/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/agentbody/skills/blob/main/skills/x-research/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

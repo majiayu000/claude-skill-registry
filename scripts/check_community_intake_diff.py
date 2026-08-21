@@ -14,6 +14,7 @@ from pathlib import Path
 from typing import Any
 
 from category_taxonomy import category_slug, get_taxonomy
+from utils import classify_license
 
 
 @dataclass(frozen=True)
@@ -104,6 +105,26 @@ def _is_allowed_category_canonicalization(base_entry: Any, head_entry: Any) -> b
     )
 
 
+def _is_allowed_distribution_completion(base_entry: Any, head_entry: Any) -> bool:
+    """Allow only the deterministic legal-metadata completion used by bundling."""
+    if not isinstance(base_entry, dict) or not isinstance(head_entry, dict):
+        return False
+    if base_entry.get("distribution") not in (None, ""):
+        return False
+    if head_entry.get("distribution") != "compatible":
+        return False
+    base_without_distribution = {
+        key: value for key, value in base_entry.items() if key != "distribution"
+    }
+    head_without_distribution = {
+        key: value for key, value in head_entry.items() if key != "distribution"
+    }
+    return (
+        base_without_distribution == head_without_distribution
+        and classify_license(str(base_entry.get("license") or "")) == "compatible"
+    )
+
+
 def _same_skill_identity(base_entry: Any, head_entry: Any) -> bool:
     if not isinstance(base_entry, dict) or not isinstance(head_entry, dict):
         return False
@@ -157,7 +178,10 @@ def _existing_entries_are_preserved_or_canonicalized(
     ):
         if base_entry == head_entry:
             continue
-        if not _is_allowed_category_canonicalization(base_entry, head_entry):
+        if not (
+            _is_allowed_category_canonicalization(base_entry, head_entry)
+            or _is_allowed_distribution_completion(base_entry, head_entry)
+        ):
             return False, changed
         changed = True
     return True, changed
@@ -205,8 +229,15 @@ def validate_community_intake_text(base_text: str, head_text: str) -> list[str]:
     if _is_final_skill_metadata_correction(base_text, head_text, base_skills, head_skills):
         return errors
 
-    existing_entries_ok, canonicalized_existing_category = (
+    existing_entries_ok, normalized_existing_entries = (
         _existing_entries_are_preserved_or_canonicalized(base_skills, head_skills)
+    )
+    completed_distribution = any(
+        base_entry != head_entry
+        and _is_allowed_distribution_completion(base_entry, head_entry)
+        for base_entry, head_entry in zip(
+            base_skills, head_skills[: len(base_skills)], strict=True
+        )
     )
     if not existing_entries_ok:
         errors.append(
@@ -215,12 +246,12 @@ def validate_community_intake_text(base_text: str, head_text: str) -> list[str]:
         return errors
 
     if len(head_skills) == len(base_skills):
-        if canonicalized_existing_category:
+        if normalized_existing_entries:
             return errors
         errors.append("community intake PRs must add at least one new `skills` entry")
         return errors
 
-    if canonicalized_existing_category:
+    if normalized_existing_entries and not completed_distribution:
         return errors
 
     base_lines = base_text.splitlines()

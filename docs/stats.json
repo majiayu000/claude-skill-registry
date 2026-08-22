@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-21T02:38:01.410503Z",
-  "archive_skill_md_count_raw": 203413,
-  "archive_metadata_count_raw": 203411,
-  "indexed_skill_count_scan_shape": 162276,
-  "registry_skill_count_dedup": 161843,
+  "updated_at": "2026-08-22T02:38:12.287862Z",
+  "archive_skill_md_count_raw": 203422,
+  "archive_metadata_count_raw": 203420,
+  "indexed_skill_count_scan_shape": 162282,
+  "registry_skill_count_dedup": 161849,
   "total_plugins": 4,
   "categories": 40,
   "category_counts": [
@@ -16,7 +16,7 @@
     {
       "name": "ai-llm",
       "code": "ai-llm",
-      "count": 1756
+      "count": 1757
     },
     {
       "name": "ai-ml",
@@ -36,7 +36,7 @@
     {
       "name": "bash",
       "code": "bash",
-      "count": 566
+      "count": 567
     },
     {
       "name": "business",
@@ -76,7 +76,7 @@
     {
       "name": "development",
       "code": "dev",
-      "count": 37055
+      "count": 37056
     },
     {
       "name": "devops",
@@ -86,7 +86,7 @@
     {
       "name": "documents",
       "code": "doc",
-      "count": 6246
+      "count": 6247
     },
     {
       "name": "domains",
@@ -141,7 +141,7 @@
     {
       "name": "other",
       "code": "oth",
-      "count": 3108
+      "count": 3110
     },
     {
       "name": "performance",
@@ -257,36 +257,36 @@
   "asset_state_counts": {},
   "asset_liveness_counts": {},
   "index_size_bytes": 324,
-  "index_size_gzip_bytes": 243,
+  "index_size_gzip_bytes": 244,
   "search_shard_count": 5,
-  "search_largest_shard_bytes": 8388639,
+  "search_largest_shard_bytes": 8388633,
   "search_largest_shard_gzip_bytes": 1425725,
   "category_shard_count": 45,
-  "category_largest_part_bytes": 8388717,
+  "category_largest_part_bytes": 8388666,
   "category_largest_part_gzip_bytes": 1807014,
-  "lite_index_count": 162276,
+  "lite_index_count": 162282,
   "lite_index_included_count": 5000,
   "lite_index_size_bytes": 3493480,
   "lite_index_gzip_size_bytes": 672499,
   "quality_index_size_bytes": 364,
   "quality_index_gzip_size_bytes": 270,
   "quality_shard_count": 6,
-  "quality_largest_shard_bytes": 8388609,
-  "quality_largest_shard_gzip_bytes": 1766365,
+  "quality_largest_shard_bytes": 8388639,
+  "quality_largest_shard_gzip_bytes": 1766375,
   "security_index_size_bytes": 368,
   "security_index_gzip_size_bytes": 271,
   "security_shard_count": 20,
-  "security_largest_shard_bytes": 8388688,
-  "security_largest_shard_gzip_bytes": 1587776,
+  "security_largest_shard_bytes": 8388650,
+  "security_largest_shard_gzip_bytes": 1587941,
   "ranking_index_size_bytes": 364,
   "ranking_index_gzip_size_bytes": 270,
   "ranking_shard_count": 5,
   "ranking_largest_shard_bytes": 8388707,
-  "ranking_largest_shard_gzip_bytes": 2020828,
-  "largest_generated_file_bytes": 8388717,
+  "ranking_largest_shard_gzip_bytes": 2020780,
+  "largest_generated_file_bytes": 8388707,
   "security_scan": {
-    "total": 203411,
-    "passed": 203411,
+    "total": 203420,
+    "passed": 203420,
     "failed": 0
   }
 }

@@ -98,7 +98,7 @@ Tools to use:
 - Software used to edit
 
 Tools:
-- Jeffrey's EXIF Viewer (exif.regex.info)
+- ExifTool (exiftool.org) - local EXIF and metadata inspection
 - FotoForensics (fotoforensics.com)
 - InVID verification plugin
 

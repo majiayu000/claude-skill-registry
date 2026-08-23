@@ -1,7 +1,7 @@
 {
-  "discovered_at": "2026-08-22T01:46:32.839838Z",
+  "discovered_at": "2026-08-23T01:51:41.964274Z",
   "total_repos": 300,
-  "total_skills": 6,
+  "total_skills": 3,
   "scanned_repos": 300,
   "limits": {
     "max_repos": 300,
@@ -314,28 +314,16 @@
   ],
   "skills": [
     {
-      "repo": "amElnagdy/delegate-skills",
-      "path": "skills/commandcode-delegate/SKILL.md"
+      "repo": "GaZmagik/iso-24495",
+      "path": "skills/iso-24495-code/SKILL.md"
     },
     {
-      "repo": "nanocoai/nanoclaw",
-      "path": ".claude/skills/add-dial/SKILL.md"
+      "repo": "Kanevry/session-orchestrator",
+      "path": "skills/eli5/SKILL.md"
     },
     {
-      "repo": "nanocoai/nanoclaw",
-      "path": ".claude/skills/add-dial-tool/SKILL.md"
-    },
-    {
-      "repo": "nanocoai/nanoclaw",
-      "path": ".claude/skills/add-dial-number/SKILL.md"
-    },
-    {
-      "repo": "nanocoai/nanoclaw",
-      "path": ".claude/skills/add-dial-tool/container-skills/dial-cli/SKILL.md"
-    },
-    {
-      "repo": "rse/ase",
-      "path": "plugin/skills/ase-code-edit/SKILL.md"
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "skills/unlazy/SKILL.md"
     }
   ]
 }

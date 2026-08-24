@@ -1,0 +1,37 @@
+{
+  "name": "voice-profile",
+  "repo": "pedrohcgs/claude-code-my-workflow",
+  "path": ".claude/skills/voice-profile/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/pedrohcgs/claude-code-my-workflow",
+  "dir_name": "voice-profile",
+  "downloaded_at": "2026-08-24T01:43:35.898424Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: ai-llm=2, ai-ml=2",
+    "score": 2,
+    "runner_up": "ai-ml",
+    "runner_up_score": 2,
+    "signals": [
+      "ai",
+      "llm"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "pedrohcgs",
+  "source_url": "https://github.com/pedrohcgs/claude-code-my-workflow/blob/main/.claude/skills/voice-profile/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pedrohcgs/claude-code-my-workflow/blob/main/.claude/skills/voice-profile/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Extract a written voice profile from your own prior papers, then use it to keep new drafts sounding like you. Reads a corpus one document at a time via subagents, produces a reusable profile on disk (lexicon, sentence rhythm, how you open and close, hedging habits, deliberate quirks), and audits a draft against it. Use when the user says \"make this sound like me\", \"match my voice\", \"profile my writing\", \"why does this draft not sound like my papers\", or before drafting prose that will carry their name. The positive counterpart to /humanize, which only detects AI tells."
+}

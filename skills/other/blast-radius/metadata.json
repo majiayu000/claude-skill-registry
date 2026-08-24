@@ -1,0 +1,37 @@
+{
+  "name": "blast-radius",
+  "repo": "pedrohcgs/claude-code-my-workflow",
+  "path": ".claude/skills/blast-radius/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/pedrohcgs/claude-code-my-workflow",
+  "dir_name": "blast-radius",
+  "downloaded_at": "2026-08-24T01:43:35.583156Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=2, data=2",
+    "score": 2,
+    "runner_up": "data",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "pedrohcgs",
+  "source_url": "https://github.com/pedrohcgs/claude-code-my-workflow/blob/main/.claude/skills/blast-radius/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pedrohcgs/claude-code-my-workflow/blob/main/.claude/skills/blast-radius/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Before and after changing anything shared \u2014 a function's return value, a signature, a schema, a label set, a config default, a constant, a file format \u2014 find every consumer and actually run them. Catches the change that looks purely additive but silently breaks a contract in a file you never opened. Use when editing shared code, adding a field/column/return element, renaming, changing units or defaults, or touching a pipeline that produces reported numbers."
+}

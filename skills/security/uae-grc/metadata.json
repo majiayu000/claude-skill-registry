@@ -1,0 +1,37 @@
+{
+  "name": "uae-grc",
+  "repo": "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance",
+  "path": "plugins/uae-grc/skills/uae-grc/SKILL.md",
+  "github_branch": "main",
+  "category": "security",
+  "source": "github.com/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance",
+  "dir_name": "uae-grc",
+  "downloaded_at": "2026-08-24T01:26:05.050318Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "security",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for security: security, auth",
+    "score": 2,
+    "runner_up": "data",
+    "runner_up_score": 1,
+    "signals": [
+      "security",
+      "auth"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "Sushegaad",
+  "source_url": "https://github.com/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance/blob/main/plugins/uae-grc/skills/uae-grc/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance/blob/main/plugins/uae-grc/skills/uae-grc/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "United Arab Emirates Governance, Risk & Compliance advisor \u2014 a jurisdiction-first compliance router. In the UAE, WHERE an organization sits determines its law: mainland (Federal PDPL, Decree-Law 45/2021 \u2014 executive regulations still pending), DIFC (DP Law No. 5 of 2020 as amended 2025, with a private right of action), ADGM (DP Regulations 2021), CBUAE-licensed financial institutions (consumer-data residency, outsourcing approvals), healthcare (ICT Health Law data localization), and government/CNI (UAE IA Regulation, Cyber Security Council; Dubai ISR, ADHICS). Use for any UAE / Dubai / Abu Dhabi / Emirates compliance question: UAE data protection, DIFC or ADGM privacy, free-zone vs mainland obligations, health-data residency, CBUAE cyber and outsourcing rules, market entry (\"expanding to the UAE\"), breach notification, gap assessments, and mapping UAE requirements to ISO 27001 / NIST CSF / SOC 2. Trigger for any UAE privacy, cybersecurity, or regulatory question even if no framework is named."
+}

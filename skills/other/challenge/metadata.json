@@ -1,0 +1,37 @@
+{
+  "name": "challenge",
+  "repo": "pedrohcgs/claude-code-my-workflow",
+  "path": ".claude/skills/challenge/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/pedrohcgs/claude-code-my-workflow",
+  "dir_name": "challenge",
+  "downloaded_at": "2026-08-24T01:43:35.059019Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: ai-ml=2, bash=2",
+    "score": 2,
+    "runner_up": "bash",
+    "runner_up_score": 2,
+    "signals": [
+      "ai",
+      "model"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "pedrohcgs",
+  "source_url": "https://github.com/pedrohcgs/claude-code-my-workflow/blob/main/.claude/skills/challenge/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pedrohcgs/claude-code-my-workflow/blob/main/.claude/skills/challenge/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Stress-test a finding against the choices you did not make. Enumerates the discrete forks a competent analyst could have taken (measure definition, sample filter, control set, clustering level, weighting, functional form), runs the specification grid, and reports the distribution rather than a point estimate \u2014 then attacks the identifying assumption with named, computable sensitivity statistics. Use when the user says \"is this robust\", \"challenge this result\", \"specification curve\", \"multiverse\", \"how sensitive is this\", \"what if I'd used a different measure\", \"stress-test my estimate\", or before a result becomes a headline claim. NOT a reviewer of prose or code \u2014 it challenges the CLAIM."
+}

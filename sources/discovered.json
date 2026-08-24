@@ -1,7 +1,7 @@
 {
-  "discovered_at": "2026-08-23T01:51:41.964274Z",
+  "discovered_at": "2026-08-24T01:49:54.591935Z",
   "total_repos": 300,
-  "total_skills": 3,
+  "total_skills": 15,
   "scanned_repos": 300,
   "limits": {
     "max_repos": 300,
@@ -56,8 +56,6 @@
     "Kaelio/ktx",
     "Kanevry/session-orchestrator",
     "Klotzkette/claude-fuer-deutsches-recht",
-    "Leutenegger/book-to-skill",
-    "Leutenegger/watermarks-remover",
     "LukasNiessen/terrashark",
     "MIKOTOKAWAII25/local-ai-code-assistant",
     "Mann1988/awesome-claude-skills",
@@ -76,6 +74,7 @@
     "REMvisual/claude-handoff",
     "SamJHudson01/Carmack-Council",
     "SamurAIGPT/Generative-Media-Skills",
+    "ShadowAqueduct/watermark-remover",
     "Shanyin-ai/shanyin-screenwriting-master",
     "Shelpuk-AI-Technology-Consulting/agent-skill-tdd",
     "SnailSploit/Claude-Red",
@@ -93,6 +92,7 @@
     "XiaoMaColtAI/math-modeling-skill",
     "a5c-ai/babysitter",
     "aaddrick/attention-control",
+    "aaronjmars/agent-credit",
     "activeloopai/hivemind",
     "addyosmani/web-quality-skills",
     "adityaarsharma/youtube-marketing-skills",
@@ -104,7 +104,6 @@
     "alirezarezvani/claude-skills",
     "alookai/alook",
     "amElnagdy/delegate-skills",
-    "ammawla/encode-toolkit",
     "anbeime/skill",
     "ancoleman/ai-design-components",
     "anombyte93/prd-taskmaster",
@@ -192,6 +191,7 @@
     "jiweiyeah/Skills-Manager",
     "joeyvansommeren/journey-mapper",
     "jomeswang/agnes-ai-skill",
+    "jqueryscript/awesome-claude-code",
     "karanb192/awesome-claude-skills",
     "karanb192/itr-wala",
     "kazukinagata/shinkoku",
@@ -284,7 +284,7 @@
     "thedotmack/claude-mem",
     "theogbrand/yoink",
     "timescale/pg-aiguide",
-    "titanwings/colleague-skill",
+    "titanwings/distilly",
     "travisvn/awesome-claude-skills",
     "tripleyak/SkillForge",
     "tuan3w/obsidian-vault-agent",
@@ -314,16 +314,64 @@
   ],
   "skills": [
     {
-      "repo": "GaZmagik/iso-24495",
-      "path": "skills/iso-24495-code/SKILL.md"
+      "repo": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-graph-flo-xr/SKILL.md"
     },
     {
-      "repo": "Kanevry/session-orchestrator",
-      "path": "skills/eli5/SKILL.md"
+      "repo": "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance",
+      "path": "plugins/tisax/skills/tisax/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "skills/unlazy/SKILL.md"
+      "repo": "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance",
+      "path": "plugins/uae-grc/skills/uae-grc/SKILL.md"
+    },
+    {
+      "repo": "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance",
+      "path": "plugins/saudi-arabia-grc/skills/saudi-arabia-grc/SKILL.md"
+    },
+    {
+      "repo": "dongshuyan/compass-skills",
+      "path": "skills/assess-interview-candidate/SKILL.md"
+    },
+    {
+      "repo": "haabe/mycelium",
+      "path": "plugins/mycelium/skills/purpose-properties/SKILL.md"
+    },
+    {
+      "repo": "pedrohcgs/claude-code-my-workflow",
+      "path": ".claude/skills/challenge/SKILL.md"
+    },
+    {
+      "repo": "pedrohcgs/claude-code-my-workflow",
+      "path": ".claude/skills/vaccinate/SKILL.md"
+    },
+    {
+      "repo": "pedrohcgs/claude-code-my-workflow",
+      "path": ".claude/skills/blast-radius/SKILL.md"
+    },
+    {
+      "repo": "pedrohcgs/claude-code-my-workflow",
+      "path": ".claude/skills/voice-profile/SKILL.md"
+    },
+    {
+      "repo": "pedrohcgs/claude-code-my-workflow",
+      "path": ".claude/skills/credible-claims/SKILL.md"
+    },
+    {
+      "repo": "pedrohcgs/claude-code-my-workflow",
+      "path": ".claude/skills/verify-artifact/SKILL.md"
+    },
+    {
+      "repo": "pedrohcgs/claude-code-my-workflow",
+      "path": ".claude/skills/adjudicate-review/SKILL.md"
+    },
+    {
+      "repo": "pedrohcgs/claude-code-my-workflow",
+      "path": ".claude/skills/differential-audit/SKILL.md"
+    },
+    {
+      "repo": "titanwings/distilly",
+      "path": "SKILL.md"
     }
   ]
 }

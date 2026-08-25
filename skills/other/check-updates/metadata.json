@@ -1,0 +1,37 @@
+{
+  "name": "check-updates",
+  "repo": "microsoft/power-platform-skills",
+  "path": "plugins/mobile-apps/skills/check-updates/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/microsoft/power-platform-skills",
+  "dir_name": "check-updates",
+  "downloaded_at": "2026-08-25T01:39:46.161763Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=2, productivity=2",
+    "score": 2,
+    "runner_up": "productivity",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "cli"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "microsoft",
+  "source_url": "https://github.com/microsoft/power-platform-skills/blob/main/plugins/mobile-apps/skills/check-updates/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/microsoft/power-platform-skills/blob/main/plugins/mobile-apps/skills/check-updates/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when a Power Apps mobile project needs dependency updates or an npm audit review. Checks the mobile-app plugin first, then updates the native host, other Microsoft packages, and all remaining direct npm packages in order with validation and rollback."
+}

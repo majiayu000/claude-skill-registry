@@ -1,0 +1,37 @@
+{
+  "name": "story-short-write",
+  "repo": "zenstory-ai/oh-story-claudecode",
+  "path": "skills/story-short-write/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/zenstory-ai/oh-story-claudecode",
+  "dir_name": "story-short-write",
+  "downloaded_at": "2026-08-25T01:49:09.303610Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: ai-llm=2, creative=2",
+    "score": 2,
+    "runner_up": "creative",
+    "runner_up_score": 2,
+    "signals": [
+      "ai",
+      "prompt"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "zenstory-ai",
+  "source_url": "https://github.com/zenstory-ai/oh-story-claudecode/blob/main/skills/story-short-write/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/zenstory-ai/oh-story-claudecode/blob/main/skills/story-short-write/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u77ed\u7bc7\u7f51\u6587\u5199\u4f5c\u3002\u8f85\u52a9\u77ed\u7bc7\u5c0f\u8bf4\u521b\u4f5c\uff0c\u4ece\u6784\u601d\u5230\u6210\u7a3f\uff0c\u805a\u7126\u60c5\u7eea\u62c9\u626f\u4e0e\u8282\u594f\u628a\u63a7\u3002\u89e6\u53d1\u65b9\u5f0f\uff1a/story-short-write\u3001/\u5199\u77ed\u7bc7\u3001\u300c\u5e2e\u6211\u5199\u4e00\u7bc7\u77ed\u7bc7\u300d\u300c\u5199\u4e2a\u76d0\u8a00\u6545\u4e8b\u300d\u3002"
+}

@@ -1,0 +1,36 @@
+{
+  "name": "story-long-analyze",
+  "repo": "zenstory-ai/oh-story-claudecode",
+  "path": "skills/story-long-analyze/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/zenstory-ai/oh-story-claudecode",
+  "dir_name": "story-long-analyze",
+  "downloaded_at": "2026-08-25T01:49:09.459349Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category agent scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "ai-llm",
+    "runner_up_score": 1,
+    "signals": [
+      "agent"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "zenstory-ai",
+  "source_url": "https://github.com/zenstory-ai/oh-story-claudecode/blob/main/skills/story-long-analyze/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/zenstory-ai/oh-story-claudecode/blob/main/skills/story-long-analyze/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u957f\u7bc7\u7f51\u6587\u62c6\u6587\u3002\u6df1\u5ea6\u62c6\u89e3\u7206\u6b3e\u957f\u7bc7\u5c0f\u8bf4\u7684\u9ec4\u91d1\u4e09\u7ae0\u3001\u4eba\u8bbe\u67b6\u6784\u3001\u723d\u70b9\u8bbe\u8ba1\u3001\u8282\u594f\u63a7\u5236\u3002\u5355\u4e00\u6df1\u5ea6\u62c6\u89e3\u7ba1\u9053\uff1a\u8dd1\u5b8c\u9ec4\u91d1\u4e09\u7ae0\uff08Stage 1\uff09\u540e\u4ea7\u51fa\u5feb\u901f\u9884\u89c8\u62a5\u544a\u5e76\u8be2\u95ee\u662f\u5426\u7ee7\u7eed\u5168\u91cf\u62c6\u89e3\uff0c\u786e\u8ba4\u540e\u4ece Stage 2 \u7eed\u8dd1\u9010\u7ae0\u6458\u8981\u3001\u805a\u5408\u5206\u6790\u3001\u8bbe\u5b9a\u5173\u7cfb\u3001\u6c47\u603b\u62a5\u544a\uff0c\u5168\u7a0b\u4ea7\u7269\u843d\u76d8 \u62c6\u6587\u5e93/{\u4e66\u540d}/\u3002\u89e6\u53d1\u65b9\u5f0f\uff1a/story-long-analyze\u3001/\u957f\u7bc7\u62c6\u6587\u3001\u300c\u5e2e\u6211\u62c6\u8fd9\u672c\u4e66\u300d\u300c\u62c6\u8fd9\u672c\u4e66\u300d\u300c\u5206\u6790\u9ec4\u91d1\u4e09\u7ae0\u300d\u300c\u6df1\u5ea6\u62c6\u89e3\u300d\u300c\u5b8c\u6574\u62c6\u89e3\u300d\u300c\u7cfb\u7edf\u62c6\u89e3\u300d\u6216\u63d0\u4f9b\u5c0f\u8bf4\u6587\u672c\u6587\u4ef6\u8def\u5f84\u2014\u2014\u5168\u90e8\u8fdb\u5165\u540c\u4e00\u7ba1\u9053\u3002"
+}

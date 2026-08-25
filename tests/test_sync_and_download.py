@@ -588,6 +588,141 @@ def test_exact_download_pins_skill_and_bundled_files_to_commit_sha(
     assert metadata["bundled_file_blobs"] == {"scripts/setup.py": git_blob_sha(script_body)}
 
 
+def test_exact_download_allows_standalone_skill_with_empty_support_listing(
+    tmp_path, monkeypatch
+):
+    module = load_module()
+    registry_path = tmp_path / "registry.json"
+    output_dir = tmp_path / "skills"
+    registry_path.write_text(
+        json.dumps(
+            {
+                "skills": [
+                    {
+                        "name": "standalone",
+                        "repo": "acme/standalone",
+                        "path": "skills/standalone/SKILL.md",
+                        "category": "development",
+                        "github_branch": "main",
+                        "license": "MIT",
+                        "distribution": "compatible",
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+    sha = "a" * 40
+    skill_body = (
+        b"---\nname: standalone\ndescription: A complete standalone skill.\n---\n"
+        b"# Standalone\nFollow these self-contained instructions.\n"
+    )
+    install_fake_aiohttp(
+        monkeypatch,
+        {
+            **exact_repo_routes(
+                "acme/standalone",
+                "main",
+                sha,
+                [git_blob_entry("skills/standalone/SKILL.md", skill_body)],
+            ),
+            f"https://raw.githubusercontent.com/acme/standalone/{sha}/skills/standalone/SKILL.md": (  # noqa: E501
+                FakeResponse(200, body=skill_body)
+            ),
+        },
+    )
+
+    stats = asyncio.run(
+        module.download_skills(
+            registry_path,
+            output_dir,
+            manifest_path=None,
+            cleanup_ci_untracked=False,
+            exact_paths_only=True,
+            pin_commit_sha=True,
+        )
+    )
+
+    assert stats["downloaded"] == 1
+    assert stats["failed"] == 0
+    skill_dir = next(output_dir.glob("development/*"))
+    metadata = json.loads((skill_dir / "metadata.json").read_text(encoding="utf-8"))
+    assert metadata["bundled_files"] == []
+    assert "bundled_file_blobs" not in metadata
+
+
+@pytest.mark.parametrize(
+    ("upstream_description", "curated_description"),
+    [
+        ("x" * 501 + " See references/guide.md.", "A curated replacement description."),
+        ("x" * 501, "Read references/guide.md before use."),
+    ],
+    ids=["raw-reference", "normalized-reference"],
+)
+def test_exact_download_checks_dependencies_before_and_after_frontmatter_repair(
+    tmp_path, monkeypatch, upstream_description, curated_description
+):
+    module = load_module()
+    registry_path = tmp_path / "registry.json"
+    failure_report_path = tmp_path / "failures.json"
+    output_dir = tmp_path / "skills"
+    registry_path.write_text(
+        json.dumps(
+            {
+                "skills": [
+                    {
+                        "name": "demo",
+                        "description": curated_description,
+                        "repo": "acme/demo",
+                        "path": "skills/demo/SKILL.md",
+                        "category": "development",
+                        "github_branch": "main",
+                        "license": "MIT",
+                        "distribution": "compatible",
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+    sha = "a" * 40
+    skill_body = (
+        f"---\nname: demo\ndescription: {upstream_description}\n---\n# Demo\n"
+    ).encode()
+    install_fake_aiohttp(
+        monkeypatch,
+        {
+            **exact_repo_routes(
+                "acme/demo",
+                "main",
+                sha,
+                [git_blob_entry("skills/demo/SKILL.md", skill_body)],
+            ),
+            f"https://raw.githubusercontent.com/acme/demo/{sha}/skills/demo/SKILL.md": (
+                FakeResponse(200, body=skill_body)
+            ),
+        },
+    )
+
+    stats = asyncio.run(
+        module.download_skills(
+            registry_path,
+            output_dir,
+            failure_report_path=failure_report_path,
+            manifest_path=None,
+            cleanup_ci_untracked=False,
+            exact_paths_only=True,
+            pin_commit_sha=True,
+        )
+    )
+
+    assert stats["downloaded"] == 0
+    assert stats["failed"] == 1
+    report = json.loads(failure_report_path.read_text(encoding="utf-8"))
+    assert report["failure_reasons"]["bundled_listing_incomplete"] == 1
+    assert not list(output_dir.rglob("SKILL.md"))
+
+
 @pytest.mark.parametrize(
     ("commit_response", "error"),
     [

@@ -1,0 +1,36 @@
+{
+  "name": "decide",
+  "repo": "OutlineDriven/odin-claude-plugin",
+  "path": "skills/decide/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/OutlineDriven/odin-claude-plugin",
+  "dir_name": "decide-outlinedriven-odin-claude-plugin",
+  "downloaded_at": "2026-08-25T01:24:18.462724Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category design scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "development",
+    "runner_up_score": 1,
+    "signals": [
+      "design"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "OutlineDriven",
+  "source_url": "https://github.com/OutlineDriven/odin-claude-plugin/blob/main/skills/decide/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OutlineDriven/odin-claude-plugin/blob/main/skills/decide/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user has a fork and wants it resolved and applied, not explored: \"help me decide\", \"just decide this\", \"what should I do here\", \"decide and fix it\". Frames each fork as one single-select with a recommended default, takes the pick, and applies it. Requirement exploration that ends in a document goes to askme; a verdict on adopting a technology goes to pov."
+}

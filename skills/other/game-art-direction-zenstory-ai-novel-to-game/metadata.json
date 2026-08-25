@@ -1,0 +1,36 @@
+{
+  "name": "game-art-direction",
+  "repo": "zenstory-ai/novel-to-game",
+  "path": "skills/game-art-direction/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/zenstory-ai/novel-to-game",
+  "dir_name": "game-art-direction-zenstory-ai-novel-to-game",
+  "downloaded_at": "2026-08-25T01:49:05.803931Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category creative scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "design",
+    "runner_up_score": 1,
+    "signals": [
+      "creative"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "zenstory-ai",
+  "source_url": "https://github.com/zenstory-ai/novel-to-game/blob/main/skills/game-art-direction/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/zenstory-ai/novel-to-game/blob/main/skills/game-art-direction/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Direct game art and creative vision. Turn GAME_DESIGN into a production-level ART_DIRECTION defining a recognizable visual style, camera and composition, world and character grammar, functional colour/light/material, HUD feedback, motion and transition specs, audio direction, and a signature moment for every screen and mode. Use for what should the game look like, set the art direction, define the visual style. \u6e38\u620f\u7f8e\u672f\u4e0e\u521b\u610f\u65b9\u5411\u3002\u628a GAME_DESIGN \u8f6c\u6210\u7b56\u5212\u7ea7 ART_DIRECTION\uff0c\u5b9a\u4e49\u53ef\u8fa8\u8bc6\u89c6\u89c9\u98ce\u683c\u3001\u955c\u5934\u6784\u56fe\u3001\u4e16\u754c\u4e0e\u89d2\u8272\u8bed\u6cd5\u3001\u529f\u80fd\u6027\u8272\u5149\u6750\u8d28\u3001\u754c\u9762\u53cd\u9988\u3001\u8fd0\u52a8\u4e0e\u8f6c\u573a\u89c4\u683c\u3001\u58f0\u97f3\u65b9\u5411\u548c\u6bcf\u4e2a\u754c\u9762/\u6a21\u5f0f\u7684\u7b7e\u540d\u6e38\u620f\u65f6\u523b\u3002\u7528\u4e8e\u5224\u65ad\u6e38\u620f\u5e94\u8be5\u957f\u4ec0\u4e48\u6837\u3001\u5236\u5b9a\u6e38\u620f\u7f8e\u672f\u65b9\u5411\u7b49\u9700\u6c42\u3002"
+}

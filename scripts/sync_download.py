@@ -477,9 +477,13 @@ async def download_skills(
                                     and len(content) > 50
                                     and ("---" in content[:50] or "#" in content[:100])
                                 ):
-                                    require_complete_archive = requires_complete_bundled_archive(
-                                        content
-                                    ) or (exact_paths_only and pin_commit_sha)
+                                    content_requires_complete_archive = (
+                                        requires_complete_bundled_archive(source_text)
+                                        or requires_complete_bundled_archive(content)
+                                    )
+                                    require_complete_archive = content_requires_complete_archive or (
+                                        exact_paths_only and pin_commit_sha
+                                    )
                                     redistribution_approved = asset_redistribution_approved(skill)
                                     if require_complete_archive and not redistribution_approved:
                                         failure_reason = "asset_redistribution_not_approved"
@@ -509,6 +513,11 @@ async def download_skills(
                                             relative_path,
                                             skill_dir,
                                             require_complete_archive,
+                                            allow_empty_complete_archive=(
+                                                exact_paths_only
+                                                and pin_commit_sha
+                                                and not content_requires_complete_archive
+                                            ),
                                             pin_commit_sha=pin_commit_sha,
                                             timeout=request_timeout,
                                             tree_cache=tree_cache,

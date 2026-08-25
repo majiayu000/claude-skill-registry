@@ -334,6 +334,7 @@ async def download_bundled_files_to_directory(
     skill_dir: Path,
     require_complete_archive: bool,
     *,
+    allow_empty_complete_archive: bool = False,
     pin_commit_sha: bool,
     timeout: Any,
     tree_cache: dict[tuple[str, str], list[dict]],
@@ -370,7 +371,7 @@ async def download_bundled_files_to_directory(
         message = "eligible bundled files exceed per-skill count or byte limits"
         return archived, [message], "bundled_limits_exceeded", blob_ids
     if not entries:
-        if require_complete_archive:
+        if require_complete_archive and not allow_empty_complete_archive:
             return (
                 archived,
                 ["required bundled archive contains no eligible support files"],

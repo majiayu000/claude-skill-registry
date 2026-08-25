@@ -1,0 +1,38 @@
+{
+  "name": "generate-images-with-firebase-ai",
+  "repo": "evanca/flutter-ai-rules",
+  "path": "skills/generate-images-with-firebase-ai/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/evanca/flutter-ai-rules",
+  "dir_name": "generate-images-with-firebase-ai",
+  "downloaded_at": "2026-08-25T01:32:37.323119Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: api=3, development=3",
+    "score": 3,
+    "runner_up": "development",
+    "runner_up_score": 3,
+    "signals": [
+      "api",
+      "sdk",
+      "endpoint"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "evanca",
+  "source_url": "https://github.com/evanca/flutter-ai-rules/blob/main/skills/generate-images-with-firebase-ai/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/evanca/flutter-ai-rules/blob/main/skills/generate-images-with-firebase-ai/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when generating or editing images from Flutter/Dart with Firebase AI Logic and a Gemini image model (Nano Banana), making the first call work, choosing Gemini Developer API vs Vertex AI, hitting quota, billing or App Check failures, getting empty or image-only responses, sending a user photo as input, controlling aspect ratio or size, writing the image prompt, or deciding what to test."
+}

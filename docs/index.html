@@ -24,6 +24,24 @@
             <p class="tagline">Search <span id="total-count">skills</span> for Claude Code</p>
         </header>
 
+        <section class="study-panel hidden" id="study-panel" aria-live="polite">
+            <div class="study-copy">
+                <strong>Optional usability study</strong>
+                <p>
+                    After you agree, this tab records only coarse actions such as search,
+                    detail view, and install copy. Search text and personal identifiers are
+                    excluded, and study events are never uploaded. Existing community features
+                    may still contact Supabase when used.
+                </p>
+            </div>
+            <div class="study-actions">
+                <button type="button" id="study-start">Start study</button>
+                <button type="button" id="study-finish" disabled>Finish &amp; copy</button>
+                <button type="button" id="study-download" disabled>Download JSON</button>
+            </div>
+            <p class="study-status" id="study-status">Not recording.</p>
+        </section>
+
         <!-- Search Box -->
         <div class="search-container">
             <div class="search-box">
@@ -267,6 +285,7 @@
     <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="js/supabase-client.js"></script>
+    <script src="js/study-mode.js"></script>
     <script src="js/app-render.js"></script>
     <script src="js/artifact-api.js"></script>
     <script src="js/app.js"></script>

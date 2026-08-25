@@ -1,7 +1,7 @@
 {
-  "discovered_at": "2026-08-24T01:49:54.591935Z",
+  "discovered_at": "2026-08-25T01:49:10.782380Z",
   "total_repos": 300,
-  "total_skills": 15,
+  "total_skills": 32,
   "scanned_repos": 300,
   "limits": {
     "max_repos": 300,
@@ -104,6 +104,7 @@
     "alirezarezvani/claude-skills",
     "alookai/alook",
     "amElnagdy/delegate-skills",
+    "ammawla/encode-toolkit",
     "anbeime/skill",
     "ancoleman/ai-design-components",
     "anombyte93/prd-taskmaster",
@@ -191,7 +192,6 @@
     "jiweiyeah/Skills-Manager",
     "joeyvansommeren/journey-mapper",
     "jomeswang/agnes-ai-skill",
-    "jqueryscript/awesome-claude-code",
     "karanb192/awesome-claude-skills",
     "karanb192/itr-wala",
     "kazukinagata/shinkoku",
@@ -298,8 +298,6 @@
     "wanshuiyin/Auto-claude-code-research-in-sleep",
     "wesammustafa/Claude-Code-Everything-You-Need-to-Know",
     "wondelai/skills",
-    "worldwonderer/novel-to-game",
-    "worldwonderer/oh-story-claudecode",
     "wrsmith108/linear-claude-skill",
     "wrsmith108/varlock-claude-skill",
     "wshobson/agents",
@@ -310,68 +308,138 @@
     "zebbern/claude-code-guide",
     "zebbern/skills",
     "zenbu-labs/terminal-browser",
+    "zenstory-ai/novel-to-game",
+    "zenstory-ai/oh-story-claudecode",
     "zscole/adversarial-spec"
   ],
   "skills": [
     {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "skills/suede-graph-flo-xr/SKILL.md"
+      "repo": "2389-research/claude-plugins",
+      "path": ".claude/skills/authoring-motion-diagrams/SKILL.md"
     },
     {
-      "repo": "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance",
-      "path": "plugins/tisax/skills/tisax/SKILL.md"
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "skills/decide/SKILL.md"
     },
     {
-      "repo": "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance",
-      "path": "plugins/uae-grc/skills/uae-grc/SKILL.md"
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "skills/walk-with-me/SKILL.md"
     },
     {
-      "repo": "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance",
-      "path": "plugins/saudi-arabia-grc/skills/saudi-arabia-grc/SKILL.md"
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "skills/gate-and-merge/SKILL.md"
     },
     {
-      "repo": "dongshuyan/compass-skills",
-      "path": "skills/assess-interview-candidate/SKILL.md"
+      "repo": "evanca/flutter-ai-rules",
+      "path": "skills/generate-images-with-firebase-ai/SKILL.md"
     },
     {
-      "repo": "haabe/mycelium",
-      "path": "plugins/mycelium/skills/purpose-properties/SKILL.md"
+      "repo": "majiayu000/spellbook",
+      "path": "skills/xray/SKILL.md"
     },
     {
-      "repo": "pedrohcgs/claude-code-my-workflow",
-      "path": ".claude/skills/challenge/SKILL.md"
+      "repo": "microsoft/power-platform-skills",
+      "path": "plugins/mobile-apps/skills/check-updates/SKILL.md"
     },
     {
-      "repo": "pedrohcgs/claude-code-my-workflow",
-      "path": ".claude/skills/vaccinate/SKILL.md"
+      "repo": "microsoft/power-platform-skills",
+      "path": "plugins/power-apps-mobile-extension/skills/audit-ppmplugin/SKILL.md"
     },
     {
-      "repo": "pedrohcgs/claude-code-my-workflow",
-      "path": ".claude/skills/blast-radius/SKILL.md"
+      "repo": "microsoft/power-platform-skills",
+      "path": "plugins/power-apps-mobile-extension/skills/debug-extension/SKILL.md"
     },
     {
-      "repo": "pedrohcgs/claude-code-my-workflow",
-      "path": ".claude/skills/voice-profile/SKILL.md"
+      "repo": "microsoft/power-platform-skills",
+      "path": "plugins/power-apps-mobile-extension/skills/build-ios-binary/SKILL.md"
     },
     {
-      "repo": "pedrohcgs/claude-code-my-workflow",
-      "path": ".claude/skills/credible-claims/SKILL.md"
+      "repo": "microsoft/power-platform-skills",
+      "path": "plugins/power-apps-mobile-extension/skills/assemble-ppmplugin/SKILL.md"
     },
     {
-      "repo": "pedrohcgs/claude-code-my-workflow",
-      "path": ".claude/skills/verify-artifact/SKILL.md"
+      "repo": "mohitagw15856/pm-claude-skills",
+      "path": "skills/wellness-plan/SKILL.md"
     },
     {
-      "repo": "pedrohcgs/claude-code-my-workflow",
-      "path": ".claude/skills/adjudicate-review/SKILL.md"
+      "repo": "zenstory-ai/novel-to-game",
+      "path": "skills/game-qa/SKILL.md"
     },
     {
-      "repo": "pedrohcgs/claude-code-my-workflow",
-      "path": ".claude/skills/differential-audit/SKILL.md"
+      "repo": "zenstory-ai/novel-to-game",
+      "path": "skills/game-build/SKILL.md"
     },
     {
-      "repo": "titanwings/distilly",
-      "path": "SKILL.md"
+      "repo": "zenstory-ai/novel-to-game",
+      "path": "skills/game-concept/SKILL.md"
+    },
+    {
+      "repo": "zenstory-ai/novel-to-game",
+      "path": "skills/novel-to-game/SKILL.md"
+    },
+    {
+      "repo": "zenstory-ai/novel-to-game",
+      "path": "skills/game-world-design/SKILL.md"
+    },
+    {
+      "repo": "zenstory-ai/novel-to-game",
+      "path": "skills/game-art-direction/SKILL.md"
+    },
+    {
+      "repo": "zenstory-ai/novel-to-game",
+      "path": "skills/novel-game-analyze/SKILL.md"
+    },
+    {
+      "repo": "zenstory-ai/oh-story-claudecode",
+      "path": "skills/story/SKILL.md"
+    },
+    {
+      "repo": "zenstory-ai/oh-story-claudecode",
+      "path": "skills/browser-cdp/SKILL.md"
+    },
+    {
+      "repo": "zenstory-ai/oh-story-claudecode",
+      "path": "skills/story-cover/SKILL.md"
+    },
+    {
+      "repo": "zenstory-ai/oh-story-claudecode",
+      "path": "skills/story-setup/SKILL.md"
+    },
+    {
+      "repo": "zenstory-ai/oh-story-claudecode",
+      "path": "skills/story-import/SKILL.md"
+    },
+    {
+      "repo": "zenstory-ai/oh-story-claudecode",
+      "path": "skills/story-deslop/SKILL.md"
+    },
+    {
+      "repo": "zenstory-ai/oh-story-claudecode",
+      "path": "skills/story-review/SKILL.md"
+    },
+    {
+      "repo": "zenstory-ai/oh-story-claudecode",
+      "path": "skills/story-long-scan/SKILL.md"
+    },
+    {
+      "repo": "zenstory-ai/oh-story-claudecode",
+      "path": "skills/story-short-scan/SKILL.md"
+    },
+    {
+      "repo": "zenstory-ai/oh-story-claudecode",
+      "path": "skills/story-long-write/SKILL.md"
+    },
+    {
+      "repo": "zenstory-ai/oh-story-claudecode",
+      "path": "skills/story-short-write/SKILL.md"
+    },
+    {
+      "repo": "zenstory-ai/oh-story-claudecode",
+      "path": "skills/story-long-analyze/SKILL.md"
+    },
+    {
+      "repo": "zenstory-ai/oh-story-claudecode",
+      "path": "skills/story-short-analyze/SKILL.md"
     }
   ]
 }

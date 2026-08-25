@@ -1,0 +1,38 @@
+{
+  "name": "xray",
+  "repo": "majiayu000/spellbook",
+  "path": "skills/xray/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/majiayu000/spellbook",
+  "dir_name": "xray",
+  "downloaded_at": "2026-08-25T01:38:42.758996Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: development=3, security=3",
+    "score": 3,
+    "runner_up": "security",
+    "runner_up_score": 3,
+    "signals": [
+      "code",
+      "compile",
+      "debug"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "majiayu000",
+  "source_url": "https://github.com/majiayu000/spellbook/blob/main/skills/xray/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/majiayu000/spellbook/blob/main/skills/xray/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Investigate how a concept, code path, application, network flow, system, incident, document, or local artifact actually works, then deliver a two-depth visual HTML explainer with a dead-simple big-picture first layer and source-backed technical depth behind it. Use when the user invokes $xray, asks how something works under the hood, wants a module or app behavior traced across boundaries, requests web, code, network, or safe static artifact research before explanation, or asks for an evidence-backed explainer. Do not use for answer-only definitions, general web design, full codebase audits, or invasive binary reverse engineering without explicit authorization."
+}

@@ -1,0 +1,36 @@
+{
+  "name": "story-short-analyze",
+  "repo": "zenstory-ai/oh-story-claudecode",
+  "path": "skills/story-short-analyze/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/zenstory-ai/oh-story-claudecode",
+  "dir_name": "story-short-analyze",
+  "downloaded_at": "2026-08-25T01:49:09.626782Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category ai-llm scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "ai-ml",
+    "runner_up_score": 1,
+    "signals": [
+      "ai"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "zenstory-ai",
+  "source_url": "https://github.com/zenstory-ai/oh-story-claudecode/blob/main/skills/story-short-analyze/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/zenstory-ai/oh-story-claudecode/blob/main/skills/story-short-analyze/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u77ed\u7bc7\u7f51\u6587\u62c6\u6587\u3002\u62c6\u89e3\u7206\u6b3e\u77ed\u7bc7\u5c0f\u8bf4\uff08\u756a\u8304\u77ed\u7bc7 / \u6545\u4e8b\u4f1a / \u77e5\u4e4e\u76d0\u9009 / \u8ffd\u59bb / \u4e16\u60c5 / \u91cd\u751f / \u8650\u6e23\u7b49\u901a\u4fd7\u9898\u6750\uff09\u7684\u6545\u4e8b\u6838\u3001\u7ed3\u6784\u3001\u60c5\u611f\u7ebf\u3001\u53cd\u8f6c\u8bbe\u8ba1\u3001\u5199\u4f5c\u624b\u6cd5\u3001\u5171\u9e23\u5c42\u6b21\u3002\u5355\u4e00\u5168\u91cf\u62c6\u89e3\u7ba1\u9053\uff1a\u8dd1\u5b8c Stage 2-6 \u4ea7\u51fa\u5b8c\u6574\u62c6\u6587\u62a5\u544a\uff0c\u843d\u76d8\u5230 \u62c6\u6587\u5e93/{\u4e66\u540d}/\uff0c\u4e0b\u6e38 story-short-write \u540c\u65f6\u8bfb\u62c6\u6587\u62a5\u544a + \u60c5\u8282\u8282\u70b9 + \u5199\u4f5c\u624b\u6cd5 + \u539f\u6587 + _meta.json \u5199\u4e0b\u4e00\u7bc7\u3002\u89e6\u53d1\u65b9\u5f0f\uff1a/story-short-analyze\u3001/\u77ed\u7bc7\u62c6\u6587\u3001\u300c\u62c6\u77ed\u7bc7\u300d\u300c\u62c6\u8fd9\u7bc7\u77ed\u6587\u300d\u300c\u77ed\u7bc7\u62c6\u6587\u300d\u300c\u7cbe\u7ec6\u62c6\u89e3\u77ed\u7bc7\u300d\u300c8000 \u5b57\u77ed\u7bc7\u62c6\u89e3\u300d\u300c\u756a\u8304\u77ed\u7bc7\u62c6\u6587\u300d\u300c\u6545\u4e8b\u4f1a\u62c6\u89e3\u300d\u300c\u76d0\u8a00\u6545\u4e8b\u62c6\u89e3\u300d\u300c\u5206\u6790\u8fd9\u7bc7\u77ed\u7bc7\u300d\u2014\u2014\u5747\u8fdb\u5165\u540c\u4e00\u7ba1\u9053\u3002"
+}

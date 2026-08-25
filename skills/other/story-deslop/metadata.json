@@ -1,0 +1,37 @@
+{
+  "name": "story-deslop",
+  "repo": "zenstory-ai/oh-story-claudecode",
+  "path": "skills/story-deslop/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/zenstory-ai/oh-story-claudecode",
+  "dir_name": "story-deslop",
+  "downloaded_at": "2026-08-25T01:49:08.454864Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=2, creative=2",
+    "score": 2,
+    "runner_up": "creative",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "zenstory-ai",
+  "source_url": "https://github.com/zenstory-ai/oh-story-claudecode/blob/main/skills/story-deslop/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/zenstory-ai/oh-story-claudecode/blob/main/skills/story-deslop/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u7f51\u6587\u53bbAI\u5473\u3002\u68c0\u6d4b\u5e76\u6e05\u9664\u6587\u672c\u4e2d\u7684AI\u5199\u4f5c\u75d5\u8ff9\uff0c\u8ba9\u6587\u5b57\u56de\u5f52\u81ea\u7136\u3001\u975e\u6a21\u677f\u5316\u3002\u89e6\u53d1\u65b9\u5f0f\uff1a/story-deslop\u3001/\u53bbAI\u5473\u3001\u300c\u53bbAI\u5473\u300d\u300c\u8fd9\u7bc7\u592aAI\u4e86\u300d\u300c\u7f51\u6587\u53bbAI\u5473\u300d\u3002"
+}

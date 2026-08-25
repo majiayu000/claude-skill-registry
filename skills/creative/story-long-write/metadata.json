@@ -1,0 +1,37 @@
+{
+  "name": "story-long-write",
+  "repo": "zenstory-ai/oh-story-claudecode",
+  "path": "skills/story-long-write/SKILL.md",
+  "github_branch": "main",
+  "category": "creative",
+  "source": "github.com/zenstory-ai/oh-story-claudecode",
+  "dir_name": "story-long-write",
+  "downloaded_at": "2026-08-25T01:49:09.118625Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "creative",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for creative: story, writing",
+    "score": 2,
+    "runner_up": "agent",
+    "runner_up_score": 1,
+    "signals": [
+      "story",
+      "writing"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "zenstory-ai",
+  "source_url": "https://github.com/zenstory-ai/oh-story-claudecode/blob/main/skills/story-long-write/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/zenstory-ai/oh-story-claudecode/blob/main/skills/story-long-write/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u957f\u7bc7\u7f51\u6587\u5199\u4f5c\u3002\u4ece\u5927\u7eb2\u5230\u6b63\u6587\uff0c\u8f85\u52a9\u957f\u7bc7\u7f51\u7edc\u5c0f\u8bf4\u7684\u521b\u4f5c\uff0c\u5305\u62ec\u4e16\u754c\u89c2\u3001\u4eba\u7269\u3001\u60c5\u8282\u7ebf\u7ba1\u7406\u3002\u89e6\u53d1\u65b9\u5f0f\uff1a/story-long-write\u3001/\u5199\u957f\u7bc7\u3001\u300c\u5e2e\u6211\u5f00\u4e66\u300d\u300c\u5199\u5927\u7eb2\u300d\u300c\u65e5\u66f4\u300d\u300c\u7eed\u5199\u300d\u300c\u7ee7\u7eed\u5199\u300d\u300c\u4fee\u6539\u7b2cX\u7ae0\u300d\u300c\u56de\u7089\u300d\u300c\u91cd\u5199\u7b2cX\u7ae0\u300d\u3002"
+}

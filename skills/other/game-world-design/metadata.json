@@ -1,0 +1,37 @@
+{
+  "name": "game-world-design",
+  "repo": "zenstory-ai/novel-to-game",
+  "path": "skills/game-world-design/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/zenstory-ai/novel-to-game",
+  "dir_name": "game-world-design",
+  "downloaded_at": "2026-08-25T01:49:05.632982Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: creative=2, gaming=2",
+    "score": 2,
+    "runner_up": "gaming",
+    "runner_up_score": 2,
+    "signals": [
+      "story",
+      "writing"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "zenstory-ai",
+  "source_url": "https://github.com/zenstory-ai/novel-to-game/blob/main/skills/game-world-design/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/zenstory-ai/novel-to-game/blob/main/skills/game-world-design/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Design game experience, systems, and levels. Converge the chosen concept into one GAME_DESIGN defining the player promise, core loop, how the world responds, the systems actually needed, level pacing, feedback, failure, and a fully playable prototype. Use for design the game world, deepen the gameplay and levels, write the game design document, design the branching story structure, scenes, dialogue and consequences. \u6e38\u620f\u4f53\u9a8c\u3001\u7cfb\u7edf\u4e0e\u5173\u5361\u7b56\u5212\u3002\u628a\u9009\u5b9a\u6982\u5ff5\u6536\u675f\u4e3a\u4e00\u4efd GAME_DESIGN\uff0c\u5b9a\u4e49\u73a9\u5bb6\u627f\u8bfa\u3001\u6838\u5fc3\u5faa\u73af\u3001\u4e16\u754c\u54cd\u5e94\u3001\u5fc5\u8981\u7cfb\u7edf\u3001\u5173\u5361\u8282\u594f\u3001\u53cd\u9988\u3001\u5931\u8d25\u548c\u53ef\u5b8c\u6574\u6e38\u73a9\u7684\u539f\u578b\u3002\u7528\u4e8e\u8bbe\u8ba1\u6e38\u620f\u4e16\u754c\u3001\u6df1\u5316\u73a9\u6cd5\u548c\u5173\u5361\u3001\u8bbe\u8ba1\u4e92\u52a8\u53d9\u4e8b\u7684\u573a\u666f\u5bf9\u767d\u4e0e\u5206\u652f\u56e0\u679c\u7b49\u9700\u6c42\u3002"
+}

@@ -1,0 +1,36 @@
+{
+  "name": "game-concept",
+  "repo": "zenstory-ai/novel-to-game",
+  "path": "skills/game-concept/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/zenstory-ai/novel-to-game",
+  "dir_name": "game-concept",
+  "downloaded_at": "2026-08-25T01:49:05.326206Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category creative scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "design",
+    "runner_up_score": 1,
+    "signals": [
+      "story"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "zenstory-ai",
+  "source_url": "https://github.com/zenstory-ai/novel-to-game/blob/main/skills/game-concept/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/zenstory-ai/novel-to-game/blob/main/skills/game-concept/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Design game concepts from a novel. From SOURCE_BIBLE and PRODUCT_BRIEF, generate three genuinely different directions on the dimensions still unlocked, then pick the most worthwhile playable prototype using hard vetoes and explicit trade-offs. Use for what game should this novel become, compare game concepts, choose a game direction for this book, decide whether this novel should become an interactive story. \u5c0f\u8bf4\u6e38\u620f\u6982\u5ff5\u8bbe\u8ba1\u3002\u6839\u636e SOURCE_BIBLE \u4e0e PRODUCT_BRIEF \u5728\u672a\u9501\u5b9a\u7ef4\u5ea6\u4e0a\u751f\u6210\u4e09\u4e2a\u771f\u6b63\u4e0d\u540c\u7684\u65b9\u6848\uff0c\u7528\u786c\u5426\u51b3\u548c\u5173\u952e\u53d6\u820d\u9009\u62e9\u6700\u503c\u5f97\u505a\u7684\u53ef\u73a9\u539f\u578b\u3002\u7528\u4e8e\u5224\u65ad\u5c0f\u8bf4\u9002\u5408\u505a\u6210\u4ec0\u4e48\u6e38\u620f\u3001\u8be5\u4e0d\u8be5\u505a\u6210\u4e92\u52a8\u53d9\u4e8b\u3001\u6bd4\u8f83\u6e38\u620f\u65b9\u6848\u7b49\u9700\u6c42\u3002"
+}

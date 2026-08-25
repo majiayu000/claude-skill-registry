@@ -1,0 +1,37 @@
+{
+  "name": "game-build",
+  "repo": "zenstory-ai/novel-to-game",
+  "path": "skills/game-build/SKILL.md",
+  "github_branch": "main",
+  "category": "testing",
+  "source": "github.com/zenstory-ai/novel-to-game",
+  "dir_name": "game-build",
+  "downloaded_at": "2026-08-25T01:49:04.795784Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "testing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for testing: test, qa",
+    "score": 2,
+    "runner_up": "ai-ml",
+    "runner_up_score": 1,
+    "signals": [
+      "test",
+      "qa"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "zenstory-ai",
+  "source_url": "https://github.com/zenstory-ai/novel-to-game/blob/main/skills/game-build/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/zenstory-ai/novel-to-game/blob/main/skills/game-build/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Build a risk-matched whitebox or the approved production game for its target runtime. Turn GAME_DESIGN, and ART_DIRECTION when production begins, into a minimal BUILD_BRIEF and a runnable candidate that can be iterated with replayable evidence. Use for prototype the riskiest design question, implement the approved game design, or turn this design into a running game. \u6e38\u620f\u6784\u5efa\u6267\u884c\u3002\u5148\u6309\u6700\u5927\u98ce\u9669\u505a\u767d\u76d2\uff0c\u6216\u5728\u6b63\u5f0f\u751f\u4ea7\u65f6\u628a\u6279\u51c6\u540e\u7684 GAME_DESIGN \u4e0e ART_DIRECTION \u538b\u7f29\u6210\u6700\u5c0f BUILD_BRIEF\uff0c\u5728\u76ee\u6807\u8fd0\u884c\u73af\u5883\u4e2d\u5b9e\u73b0\u53ef\u8fd0\u884c\u5019\u9009\u5e76\u7528\u53ef\u56de\u653e\u8bc1\u636e\u8fed\u4ee3\u3002\u7528\u4e8e\u9a8c\u8bc1\u9ad8\u98ce\u9669\u8bbe\u8ba1\u95ee\u9898\u3001\u6784\u5efa\u6e38\u620f\u539f\u578b\u6216\u5b9e\u73b0\u6279\u51c6\u65b9\u6848\u3002"
+}

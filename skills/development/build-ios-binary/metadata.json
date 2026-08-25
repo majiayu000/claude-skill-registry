@@ -1,0 +1,39 @@
+{
+  "name": "build-ios-binary",
+  "repo": "microsoft/power-platform-skills",
+  "path": "plugins/power-apps-mobile-extension/skills/build-ios-binary/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/microsoft/power-platform-skills",
+  "dir_name": "build-ios-binary",
+  "downloaded_at": "2026-08-25T01:39:46.834655Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: code, framework, build, compile",
+    "score": 4,
+    "runner_up": "platform",
+    "runner_up_score": 3,
+    "signals": [
+      "code",
+      "framework",
+      "build",
+      "compile"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "microsoft",
+  "source_url": "https://github.com/microsoft/power-platform-skills/blob/main/plugins/power-apps-mobile-extension/skills/build-ios-binary/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/microsoft/power-platform-skills/blob/main/plugins/power-apps-mobile-extension/skills/build-ios-binary/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Compile a PAM control's iOS Obj-C/Swift module into the FLAT device-slice `.framework` for a `.ppmplugin` bundle (never an `.xcframework` \u2014 the wrap CI won't descend into one). Mac-only (Xcode). Builds from a throwaway staged copy so canonical `ios/` and the podspec stay untouched, references React-Core headers only (React is weak-linked and provided by the wrap host at runtime, no CocoaPods), generates the required umbrella header, module map and Info.plist, sets the critical build settings, asserts manifest conformance, then runs a device-only `xcodebuild archive` and copies out the flat framework to `ppmplugin/staging/ios/`. Known limitation \u2014 the React weak-link flags aren't yet validated against a live wrap host and the RN pin must match the host's. Run after /generate-ppmplugin-manifest for an iOS or Both target, before /assemble-ppmplugin."
+}

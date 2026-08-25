@@ -1,0 +1,38 @@
+{
+  "name": "audit-ppmplugin",
+  "repo": "microsoft/power-platform-skills",
+  "path": "plugins/power-apps-mobile-extension/skills/audit-ppmplugin/SKILL.md",
+  "github_branch": "main",
+  "category": "platform",
+  "source": "github.com/microsoft/power-platform-skills",
+  "dir_name": "audit-ppmplugin",
+  "downloaded_at": "2026-08-25T01:39:46.382844Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "platform",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for platform: device, android, ios",
+    "score": 3,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "device",
+      "android",
+      "ios"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "microsoft",
+  "source_url": "https://github.com/microsoft/power-platform-skills/blob/main/plugins/power-apps-mobile-extension/skills/audit-ppmplugin/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/microsoft/power-platform-skills/blob/main/plugins/power-apps-mobile-extension/skills/audit-ppmplugin/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Statically audit a built `.ppmplugin` before wrap testing. Checks archive layout, manifest compatibility, bundle consistency, Android DEX integrity and SDK leakage, iOS framework structure, native source-to-receiver alignment, and the PCF composite-key/sendAsync transport contract. Reports CRITICAL, WARNING, and INFO findings with fixes routed to the owning stage; never modifies the archive. Requires `jar`; `dexdump` or `strings` improves DEX inspection. Run after /assemble-ppmplugin or standalone on an existing bundle."
+}

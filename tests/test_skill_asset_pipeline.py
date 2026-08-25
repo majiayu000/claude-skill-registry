@@ -750,6 +750,30 @@ class TestBackfillTargets:
         assert result[1] == ["required bundled archive contains no eligible support files"]
         assert result[2] == "bundled_listing_incomplete"
 
+    def test_exact_pinned_standalone_bundle_allows_complete_empty_listing(self, tmp_path):
+        result = asyncio.run(
+            sync_download_support.download_bundled_files_to_directory(
+                object(),
+                "acme/tools",
+                "deadbeef" * 5,
+                "SKILL.md",
+                tmp_path,
+                True,
+                allow_empty_complete_archive=True,
+                pin_commit_sha=True,
+                timeout=None,
+                tree_cache={},
+                contents_collector=None,
+                pinned_tree_result=(
+                    [],
+                    False,
+                    {"repo_path": "SKILL.md", "relative_path": "SKILL.md", "size": 1, "sha": "x"},
+                ),
+            )
+        )
+
+        assert result == ([], [], "", {})
+
     @pytest.mark.parametrize(
         "paths",
         [

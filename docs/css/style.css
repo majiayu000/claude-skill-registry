@@ -179,6 +179,84 @@ body::after {
     animation: fadeInDown 0.8s ease-out;
 }
 
+.study-panel {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 1rem 1.5rem;
+    align-items: center;
+    margin: -1rem 0 2rem;
+    padding: 1rem 1.25rem;
+    background: rgba(255, 159, 10, 0.08);
+    border: 1px solid rgba(255, 159, 10, 0.45);
+    border-radius: var(--radius-md);
+}
+
+.study-copy strong {
+    color: var(--accent-warning);
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.study-copy p,
+.study-status {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+.study-copy p {
+    margin-top: 0.25rem;
+}
+
+.study-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.5rem;
+}
+
+.study-actions button {
+    padding: 0.55rem 0.75rem;
+    color: var(--text-primary);
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-glow);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+}
+
+.study-actions button:hover:not(:disabled) {
+    border-color: var(--accent-warning);
+}
+
+.study-actions button:disabled {
+    cursor: not-allowed;
+    opacity: 0.45;
+}
+
+.study-status {
+    grid-column: 1 / -1;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+@media (max-width: 768px) {
+    .study-panel {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .study-copy,
+    .study-actions {
+        min-width: 0;
+    }
+
+    .study-actions {
+        justify-content: flex-start;
+    }
+
+    .study-actions button {
+        flex: 1 1 9rem;
+    }
+}
+
 .header-top {
     display: flex;
     justify-content: center;

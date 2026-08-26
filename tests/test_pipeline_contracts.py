@@ -690,8 +690,23 @@ def test_sync_data_checks_sources_and_archive_categories():
 
 def test_sync_data_stages_registry_shard_artifacts():
     workflow = read_repo_file(".github/workflows/sync-data.yml")
+    gitignore = read_repo_file(".gitignore")
 
     assert "git add registry.json registry_summary.json registry-manifest.json registry-shards/" in workflow
+    assert "registry-shards/*.json.gz" in gitignore
+    assert "git rm -f --cached --ignore-unmatch registry-shards/*.json.gz" in workflow
+
+
+def test_sync_data_security_scope_fails_closed_on_git_errors():
+    workflow = read_repo_file(".github/workflows/sync-data.yml")
+    start = workflow.index("Resolve security scope")
+    end = workflow.index("Security scan (skills full)")
+    scope = workflow[start:end]
+
+    assert "git -C skills diff --name-only --diff-filter=AM || true" not in scope
+    assert "git -C skills ls-files --others --exclude-standard || true" not in scope
+    assert "--expected-security-paths" in workflow
+    assert "security-scan-targets.txt" in scope
 
 
 def test_sync_data_cleans_ci_archive_leftovers_before_discovery():

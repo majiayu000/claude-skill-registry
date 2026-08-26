@@ -1,0 +1,37 @@
+{
+  "name": "plan",
+  "repo": "Kanevry/session-orchestrator",
+  "path": ".cursor/skills/plan/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Kanevry/session-orchestrator",
+  "dir_name": "plan-kanevry-session-orchestrator",
+  "downloaded_at": "2026-08-26T01:24:26.480443Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: generation=2, planning=2",
+    "score": 2,
+    "runner_up": "planning",
+    "runner_up_score": 2,
+    "signals": [
+      "generation",
+      "scaffold"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "Kanevry",
+  "source_url": "https://github.com/Kanevry/session-orchestrator/blob/main/.cursor/skills/plan/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Kanevry/session-orchestrator/blob/main/.cursor/skills/plan/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use this skill when performing structured project planning and PRD generation with three modes: new (project kickoff with repo scaffolding), feature (compact feature PRD), retro (data-driven retrospective). All modes share a researched Q&A engine that dispatches parallel Explore agents before each question wave, presents options via AskUserQuestion with recommendations, and produces documents with prioritized issue creation."
+}

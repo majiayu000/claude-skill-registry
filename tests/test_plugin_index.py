@@ -64,6 +64,16 @@ def test_registry_loader_reads_valid_plugins(tmp_path):
     assert result.plugins == [_plugin()]
 
 
+def test_registry_loader_accepts_http_homepage(tmp_path):
+    registry = tmp_path / "registry.json"
+    expected = _plugin(homepage="https://example.com/plugin")
+    registry.write_text(json.dumps({"plugins": [expected]}), encoding="utf-8")
+
+    result = plugin_index.load_plugins_from_registry(registry)
+
+    assert result.plugins == [expected]
+
+
 def test_fallback_uses_registry_only_when_source_is_missing(tmp_path):
     sources = tmp_path / "sources"
     sources.mkdir()
@@ -90,6 +100,10 @@ def test_fallback_uses_registry_only_when_source_is_missing(tmp_path):
         ('{"plugins": [null]}', "invalid_shape"),
         ('{"plugins": [{"name": "demo"}]}', "invalid_shape"),
         ('{"plugins": [{"name": "", "repo": "owner/repo"}]}', "invalid_shape"),
+        ('{"plugins": [{"name": "demo", "repo": "owner/repo", "homepage": "javascript:alert(1)"}]}', "invalid_shape"),
+        ('{"plugins": [{"name": "demo", "repo": "owner/repo", "homepage": 42}]}', "invalid_shape"),
+        ('{"plugins": [{"name": "demo", "repo": "owner/repo", "homepage": "https:"}]}', "invalid_shape"),
+        ('{"plugins": [{"name": "demo", "repo": "owner/repo", "homepage": "https://["}]}', "invalid_shape"),
     ],
 )
 def test_present_malformed_source_fails_closed(tmp_path, payload, kind):

@@ -1,0 +1,31 @@
+{
+  "name": "shopaholic",
+  "description": "Evidence-based consumer decision support & supply chain intelligence skill for shoppers using AI across Chinese e-commerce (Taobao, JD, Pinduoduo, Douyin).",
+  "repo": "StaySound4/shopaholic-skill",
+  "path": "skills/shopaholic",
+  "github_branch": "main",
+  "category": "productivity",
+  "tags": [
+    "shopping",
+    "ecommerce",
+    "consumer-decision",
+    "evidence-based",
+    "product-research"
+  ],
+  "stars": 1,
+  "source": "Community Skills",
+  "dir_name": "shopaholic",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "references/category-checklists.md",
+    "references/evidence-and-risks.md",
+    "references/research-protocol.md"
+  ],
+  "author": "StaySound4",
+  "source_url": "https://github.com/StaySound4/shopaholic-skill/blob/main/skills/shopaholic/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/StaySound4/shopaholic-skill/blob/main/skills/shopaholic/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

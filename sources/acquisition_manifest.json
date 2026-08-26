@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updated_at": "2026-08-25T01:49:38.345069Z",
-  "total_count": 1621,
+  "updated_at": "2026-08-26T01:50:49.598827Z",
+  "total_count": 1624,
   "entries": {
     "Xquik-dev/x-twitter-scraper": {
       "repo": "Xquik-dev/x-twitter-scraper",
@@ -9205,13 +9205,13 @@
       "repo": "yusufkaraaslan/Skill_Seekers",
       "branch": "main",
       "relative_path": "skills/skill-seekers/SKILL.md",
-      "updated_at": "2026-08-25T01:49:30.981742Z"
+      "updated_at": "2026-08-26T01:50:42.919505Z"
     },
     "lackeyjb/playwright-skill:name:playwright-skill": {
       "repo": "lackeyjb/playwright-skill",
       "branch": "main",
       "relative_path": "skills/playwright-skill/SKILL.md",
-      "updated_at": "2026-08-25T01:49:32.906210Z"
+      "updated_at": "2026-08-26T01:50:41.688751Z"
     },
     "ToniPerea/humanizar-texto-es:name:humanizar-texto-es": {
       "repo": "ToniPerea/humanizar-texto-es",
@@ -9265,7 +9265,7 @@
       "repo": "Enreign/pagerunner-skill",
       "branch": "main",
       "relative_path": "skills/pagerunner-skill/SKILL.md",
-      "updated_at": "2026-08-25T01:49:32.952677Z"
+      "updated_at": "2026-08-26T01:50:42.645424Z"
     },
     "miningstore/confluence-to-agent-knowledge-base:name:confluence-to-agent-knowledge-base": {
       "repo": "miningstore/confluence-to-agent-knowledge-base",
@@ -9571,7 +9571,7 @@
       "repo": "RS42-AI/scout-ai-lite",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-08-25T01:49:32.290684Z"
+      "updated_at": "2026-08-26T01:50:42.933489Z"
     },
     "Dicklesworthstone/slb:name:unknown": {
       "repo": "Dicklesworthstone/slb",
@@ -9619,7 +9619,7 @@
       "repo": "tostechbr/sdk-apps-openai",
       "branch": "main",
       "relative_path": "skill.md",
-      "updated_at": "2026-08-25T01:49:33.030550Z"
+      "updated_at": "2026-08-26T01:50:42.948132Z"
     },
     "fredsun/CodeDiary:name:unknown": {
       "repo": "fredsun/CodeDiary",
@@ -9728,6 +9728,24 @@
       "branch": "main",
       "relative_path": "skills/x-research/SKILL.md",
       "updated_at": "2026-08-21T01:50:21.023924Z"
+    },
+    "hashgraph-online/hol-guard-plugin:skills/hol-guard": {
+      "repo": "hashgraph-online/hol-guard-plugin",
+      "branch": "main",
+      "relative_path": "skills/hol-guard/SKILL.md",
+      "updated_at": "2026-08-26T01:50:43.334147Z"
+    },
+    "StaySound4/shopaholic-skill:skills/shopaholic": {
+      "repo": "StaySound4/shopaholic-skill",
+      "branch": "main",
+      "relative_path": "skills/shopaholic/SKILL.md",
+      "updated_at": "2026-08-26T01:50:44.327922Z"
+    },
+    "PolarSnowflake/skills-from-expertise:skills/skills-from-expertise": {
+      "repo": "PolarSnowflake/skills-from-expertise",
+      "branch": "main",
+      "relative_path": "skills/skills-from-expertise/SKILL.md",
+      "updated_at": "2026-08-26T01:50:44.630407Z"
     }
   }
 }

@@ -1,0 +1,36 @@
+{
+  "name": "gitlab-portfolio",
+  "repo": "Kanevry/session-orchestrator",
+  "path": ".cursor/skills/gitlab-portfolio/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Kanevry/session-orchestrator",
+  "dir_name": "gitlab-portfolio",
+  "downloaded_at": "2026-08-26T01:24:34.957264Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category ai-ml scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "context-management",
+    "runner_up_score": 1,
+    "signals": [
+      "model"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "Kanevry",
+  "source_url": "https://github.com/Kanevry/session-orchestrator/blob/main/.cursor/skills/gitlab-portfolio/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Kanevry/session-orchestrator/blob/main/.cursor/skills/gitlab-portfolio/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when you need a single-pane cross-repo health view across all vault-registered GitLab and GitHub projects. Discovers repos from `_overview.md` frontmatter in `<vault>/01-projects/*/`, aggregates open issues, MRs, critical labels, and stale signals via parallel `glab`/`gh` calls, then writes an idempotent `_PORTFOLIO.md` dashboard. Runs automatically at session-start Phase 2 when `gitlab-portfolio.enabled=true`. Triggers: \"show portfolio status\", \"refresh the portfolio dashboard\", \"which repos have critical issues\", \"run /portfolio\". <example>Context: session-start, gitlab-portfolio.enabled=true, vault has 5 registered repos. user: \"/session deep\" assistant: \"Portfolio: 3 critical issues across 2 repos \u2014 run /portfolio for details. Dashboard written to vault/01-projects/_PORTFOLIO.md.\"</example>"
+}

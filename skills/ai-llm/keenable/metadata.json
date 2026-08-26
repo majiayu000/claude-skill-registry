@@ -1,0 +1,38 @@
+{
+  "name": "keenable",
+  "repo": "tdimino/claude-code-minoan",
+  "path": "skills/research/keenable/SKILL.md",
+  "github_branch": "main",
+  "category": "ai-llm",
+  "source": "github.com/tdimino/claude-code-minoan",
+  "dir_name": "keenable",
+  "downloaded_at": "2026-08-26T01:47:13.700039Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "ai-llm",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for ai-llm: ai, llm, prompt",
+    "score": 3,
+    "runner_up": "bash",
+    "runner_up_score": 2,
+    "signals": [
+      "ai",
+      "llm",
+      "prompt"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "tdimino",
+  "source_url": "https://github.com/tdimino/claude-code-minoan/blob/main/skills/research/keenable/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tdimino/claude-code-minoan/blob/main/skills/research/keenable/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Search the web and fetch page contents with Keenable AI \u2014 web search, page extraction, point-in-time queries, prompt-driven content extraction. Use when searching the web for current information, fetching webpage contents, extracting specific data from URLs, or researching topics with citations. Triggers on: web search, search the web, fetch page, read URL, find pages about, current information, Keenable, keen search, research with sources, look up, latest news, find information, check online, what is, who is."
+}

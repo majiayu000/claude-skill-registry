@@ -1,0 +1,31 @@
+{
+  "name": "skills-from-expertise",
+  "description": "Turns expertise from talks, books and interviews into a method an agent can follow, extracting decisions and criteria instead of merely restating the source material.",
+  "repo": "PolarSnowflake/skills-from-expertise",
+  "path": "skills/skills-from-expertise",
+  "github_branch": "main",
+  "category": "skills",
+  "tags": [
+    "skill-authoring",
+    "knowledge-extraction",
+    "methodology",
+    "expertise",
+    "legal"
+  ],
+  "stars": 2,
+  "source": "Community Skills",
+  "dir_name": "skills-from-expertise",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "references/legal.md",
+    "references/skill-sets.md",
+    "references/source-types.md"
+  ],
+  "author": "PolarSnowflake",
+  "source_url": "https://github.com/PolarSnowflake/skills-from-expertise/blob/main/skills/skills-from-expertise/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/PolarSnowflake/skills-from-expertise/blob/main/skills/skills-from-expertise/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

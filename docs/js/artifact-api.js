@@ -30,7 +30,6 @@ function validateCategoryTaxonomy(payload) {
         typeof payload.default_category !== 'string' || !payload.default_category ||
         typeof payload.default_code !== 'string' || !payload.default_code ||
         !Array.isArray(payload.categories) ||
-        payload.category_count !== 40 ||
         payload.categories.length !== payload.category_count) {
         throw new Error('Category taxonomy count or identity mismatch');
     }
@@ -65,7 +64,7 @@ function validateCategoryTaxonomy(payload) {
             throw new Error('Category taxonomy parent mismatch');
         }
     });
-    if (payload.categories.filter(category => !category.parent).length !== 12) {
+    if (payload.categories.filter(category => !category.parent).length < 1) {
         throw new Error('Category taxonomy root count mismatch');
     }
 }

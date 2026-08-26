@@ -1,0 +1,37 @@
+{
+  "name": "docs-orchestrator",
+  "repo": "Kanevry/session-orchestrator",
+  "path": ".cursor/skills/docs-orchestrator/SKILL.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/Kanevry/session-orchestrator",
+  "dir_name": "docs-orchestrator-kanevry-session-orchestrator",
+  "downloaded_at": "2026-08-26T01:24:35.815400Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "documents",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for documents: docs, documentation",
+    "score": 2,
+    "runner_up": "agent",
+    "runner_up_score": 1,
+    "signals": [
+      "docs",
+      "documentation"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "Kanevry",
+  "source_url": "https://github.com/Kanevry/session-orchestrator/blob/main/.cursor/skills/docs-orchestrator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Kanevry/session-orchestrator/blob/main/.cursor/skills/docs-orchestrator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use this skill when orchestrating documentation generation and updates within a session. Maps session scope to audience-specific docs tasks (User / Dev / Vault), dispatches the docs-writer agent with source-grounded prompts, and reports coverage gaps to session-end. Gated on `docs-orchestrator.enabled: true` in Session Config. Zero overhead when disabled."
+}

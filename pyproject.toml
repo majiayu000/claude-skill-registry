@@ -43,9 +43,9 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/your-org/claude-skill-registry"
-Repository = "https://github.com/your-org/claude-skill-registry"
-Issues = "https://github.com/your-org/claude-skill-registry/issues"
+Homepage = "https://github.com/majiayu000/claude-skill-registry-core"
+Repository = "https://github.com/majiayu000/claude-skill-registry-core"
+Issues = "https://github.com/majiayu000/claude-skill-registry-core/issues"
 
 [tool.setuptools]
 py-modules = []

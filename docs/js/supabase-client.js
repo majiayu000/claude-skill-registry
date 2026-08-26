@@ -125,12 +125,10 @@ const DEVICE_ID = getDeviceIdFallback();
 async function toggleLike(skillInstall) {
     try {
         await initAuth(); // 确保已初始化
-        const userId = getUserId();
 
         const { data, error } = await supabaseClient
             .rpc('toggle_like', {
-                p_skill_install: skillInstall,
-                p_device_id: userId
+                p_skill_install: skillInstall
             });
 
         if (error) throw error;
@@ -164,18 +162,8 @@ function toggleLikeLocal(skillInstall) {
  */
 async function isLiked(skillInstall) {
     try {
-        await initAuth();
-        const userId = getUserId();
-
-        const { data, error } = await supabaseClient
-            .from('skill_likes')
-            .select('id')
-            .eq('skill_install', skillInstall)
-            .eq('device_id', userId)
-            .single();
-
-        if (error && error.code !== 'PGRST116') throw error;
-        return !!data;
+        const stats = await getSkillStats(skillInstall);
+        return !!stats.liked;
     } catch (error) {
         // 降级检查本地
         const likes = JSON.parse(localStorage.getItem('localLikes') || '{}');
@@ -218,12 +206,10 @@ async function getLikesCount(skillInstall) {
 async function addComment(skillInstall, content, nickname = 'Anonymous', rating = null) {
     try {
         await initAuth();
-        const userId = getUserId();
 
         const { data, error } = await supabaseClient
             .rpc('add_comment', {
                 p_skill_install: skillInstall,
-                p_device_id: userId,
                 p_content: content,
                 p_nickname: nickname,
                 p_rating: rating
@@ -248,7 +234,7 @@ async function getComments(skillInstall, limit = 20, offset = 0) {
     try {
         const { data, error } = await supabaseClient
             .from('skill_comments')
-            .select('*')
+            .select('id,skill_install,nickname,content,rating,is_deleted,created_at,updated_at')
             .eq('skill_install', skillInstall)
             .eq('is_deleted', false)
             .order('created_at', { ascending: false })
@@ -270,13 +256,11 @@ async function getComments(skillInstall, limit = 20, offset = 0) {
 async function deleteComment(commentId) {
     try {
         await initAuth();
-        const userId = getUserId();
 
         const { error } = await supabaseClient
             .from('skill_comments')
             .update({ is_deleted: true })
-            .eq('id', commentId)
-            .eq('device_id', userId);
+            .eq('id', commentId);
 
         if (error) throw error;
         return true;
@@ -298,38 +282,11 @@ async function deleteComment(commentId) {
 async function toggleFavoriteCloud(skillInstall) {
     try {
         await initAuth();
-        const userId = getUserId();
+        const { data, error } = await supabaseClient
+            .rpc('toggle_favorite', { p_skill_install: skillInstall });
 
-        // 检查是否已收藏
-        const { data: existing } = await supabaseClient
-            .from('user_favorites')
-            .select('id')
-            .eq('skill_install', skillInstall)
-            .eq('device_id', userId)
-            .single();
-
-        if (existing) {
-            // 取消收藏
-            const { error } = await supabaseClient
-                .from('user_favorites')
-                .delete()
-                .eq('id', existing.id);
-
-            if (error) throw error;
-            return false;
-        } else {
-            // 添加收藏
-            const { error } = await supabaseClient
-                .from('user_favorites')
-                .insert({
-                    skill_install: skillInstall,
-                    device_id: userId,
-                    user_id: currentUser?.is_anonymous === false ? currentUser.id : null
-                });
-
-            if (error) throw error;
-            return true;
-        }
+        if (error) throw error;
+        return !!data;
     } catch (error) {
         console.error('Error toggling favorite:', error);
         // 降级到本地存储
@@ -360,12 +317,9 @@ function toggleFavoriteLocal(skillInstall) {
 async function getFavorites() {
     try {
         await initAuth();
-        const userId = getUserId();
 
         const { data, error } = await supabaseClient
-            .from('user_favorites')
-            .select('skill_install')
-            .eq('device_id', userId);
+            .rpc('get_favorites');
 
         if (error) throw error;
         return (data || []).map(f => f.skill_install);
@@ -384,7 +338,6 @@ async function syncFavoritesToCloud() {
 
     try {
         await initAuth();
-        const userId = getUserId();
 
         // 获取云端收藏
         const cloudFavorites = await getFavorites();
@@ -394,14 +347,7 @@ async function syncFavoritesToCloud() {
 
         if (toSync.length > 0) {
             const { error } = await supabaseClient
-                .from('user_favorites')
-                .upsert(
-                    toSync.map(skill_install => ({
-                        skill_install,
-                        device_id: userId
-                    })),
-                    { onConflict: 'skill_install,device_id' }
-                );
+                .rpc('sync_favorites', { p_skill_installs: toSync });
 
             if (error) throw error;
             console.log(`Synced ${toSync.length} favorites to cloud`);
@@ -423,12 +369,10 @@ async function syncFavoritesToCloud() {
 async function getSkillStats(skillInstall) {
     try {
         await initAuth();
-        const userId = getUserId();
 
         const { data, error } = await supabaseClient
             .rpc('get_skill_stats', {
-                p_skill_install: skillInstall,
-                p_device_id: userId
+                p_skill_install: skillInstall
             });
 
         if (error) throw error;

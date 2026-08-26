@@ -1,0 +1,37 @@
+{
+  "name": "test-runner",
+  "repo": "Kanevry/session-orchestrator",
+  "path": ".cursor/skills/test-runner/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Kanevry/session-orchestrator",
+  "dir_name": "test-runner",
+  "downloaded_at": "2026-08-26T01:24:38.160256Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: agent=2, bash=2",
+    "score": 2,
+    "runner_up": "bash",
+    "runner_up_score": 2,
+    "signals": [
+      "agent",
+      "agentic"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "Kanevry",
+  "source_url": "https://github.com/Kanevry/session-orchestrator/blob/main/.cursor/skills/test-runner/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Kanevry/session-orchestrator/blob/main/.cursor/skills/test-runner/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use this skill when orchestrating agentic end-to-end tests. Resolves target + profile, dispatches the right driver(s) (playwright for web today, peekaboo for macOS (issue #381)), invokes the ux-evaluator agent (opus, read-only) against driver artifacts, reconciles findings with the open issue tracker via scripts/lib/test-runner/issue-reconcile.mjs, and writes report.md + JSONL roll-up. Wraps upstream tools (no forks). Hard-gates Playwright MCP for browser drive (4\u00d7 token cost vs CLI per Microsoft's own benchmark)."
+}

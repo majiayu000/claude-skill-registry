@@ -257,7 +257,7 @@ function updateRegistryCountDisplay() {
 
 function updateSearchScopeDisplay() {
     const included = Number(state.index?.includedCount || state.index?.s?.length || 0);
-    const total = Number(state.index?.t || getDisplaySkillCount() || included);
+    const total = getDisplaySkillCount() || included;
     const full = !state.index?.isLite;
     elements.searchScope.textContent = full
         ? `Searching all ${total.toLocaleString()} skills`
@@ -710,9 +710,7 @@ function applyAllFilters(results) {
     }
 
     if (state.currentSourceFilter) {
-        if (state.currentSourceFilter === 'official') {
-            results = results.filter(r => r.item.c === 'off');
-        } else if (state.currentSourceFilter === 'community') {
+        if (state.currentSourceFilter === 'community') {
             results = results.filter(r => r.item.c !== 'off');
         }
     }

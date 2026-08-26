@@ -85,7 +85,7 @@ function createLeaderboardCard(skill, rank) {
                 <p class="skill-description">${escapeHtml(description)}</p>
                 <div class="leaderboard-meta">
                     <span class="skill-category">${escapeHtml(category)}</span>
-                    <button class="favorite-btn ${isFavorite ? 'active' : ''}" onclick="toggleFavorite(event, '${escapeHtml(install)}')" title="${isFavorite ? 'Remove from favorites' : 'Add to favorites'}">
+                    <button class="favorite-btn ${isFavorite ? 'active' : ''}" data-install="${escapeHtml(install)}" onclick="toggleFavorite(event)" title="${isFavorite ? 'Remove from favorites' : 'Add to favorites'}">
                         ${isFavorite ? '❤️' : '🤍'}
                     </button>
                 </div>
@@ -100,13 +100,11 @@ function showStats() {
 
     const totalSkills = getTotalSkillCount();
     const uniqueRepos = getNumericStat('unique_repo_count', countUniqueRepos(state.index.s));
-    const officialCount = getNumericStat('official_skill_count', getCategoryCount('off'));
     const categoryCount = state.categories.length || getNumericStat('categories', 0);
     const pluginCount = state.plugins.length || getNumericStat('total_plugins', 0);
 
     document.getElementById('stat-total').textContent = totalSkills.toLocaleString();
     document.getElementById('stat-repos').textContent = uniqueRepos.toLocaleString();
-    document.getElementById('stat-official').textContent = officialCount.toLocaleString();
     document.getElementById('stat-plugins').textContent = pluginCount.toLocaleString();
     document.getElementById('stat-categories').textContent = categoryCount;
 
@@ -301,14 +299,14 @@ function createPluginCard(plugin) {
                 <div class="install-cmd">
                     <span class="prefix">$</span>
                     <span>${escapeHtml(plugin.install || 'See repository')}</span>
-                    ${plugin.install ? `<button class="copy-btn" onclick="copyToClipboard(event, '${escapeHtml(plugin.install)}')" title="Copy">📋</button>` : ''}
+                    ${plugin.install ? `<button class="copy-btn" data-install="${escapeHtml(plugin.install)}" onclick="copyToClipboard(event)" title="Copy">📋</button>` : ''}
                 </div>
             </div>
             <div class="plugin-footer">
                 <a href="https://github.com/${escapeHtml(plugin.repo)}" target="_blank" style="color: var(--accent-primary); font-size: 0.85rem;">
                     View on GitHub →
                 </a>
-                ${plugin.homepage ? `<a href="${escapeHtml(plugin.homepage)}" target="_blank" style="color: var(--text-secondary); font-size: 0.85rem;">npm →</a>` : ''}
+                ${plugin.homepage && /^https?:\/\//i.test(plugin.homepage) ? `<a href="${escapeHtml(plugin.homepage)}" target="_blank" rel="noopener noreferrer" style="color: var(--text-secondary); font-size: 0.85rem;">npm →</a>` : ''}
             </div>
         </div>
     `;
@@ -317,8 +315,9 @@ function createPluginCard(plugin) {
 // Copy text to clipboard
 function copyToClipboard(event, text) {
     event.stopPropagation();
-    navigator.clipboard.writeText(text).then(() => {
-        const btn = event.target;
+    const value = text || event.currentTarget.getAttribute('data-install');
+    navigator.clipboard.writeText(value).then(() => {
+        const btn = event.currentTarget;
         btn.textContent = '✓';
         setTimeout(() => btn.textContent = '📋', 1500);
     });
@@ -350,6 +349,7 @@ function showFavorites() {
 // Toggle favorite
 function toggleFavorite(event, install) {
     event.stopPropagation();
+    install = install || event.currentTarget.getAttribute('data-install');
 
     const index = state.favorites.indexOf(install);
     if (index > -1) {
@@ -398,7 +398,7 @@ function createSkillCard(skill, isFeatured = false, showFavoriteBtn = true) {
     const isOfficial = categoryCode === 'off' || categoryCode === 'official';
 
     const tagsHtml = tags.slice(0, 3).map(tag =>
-        `<span class="skill-tag">#${tag}</span>`
+        `<span class="skill-tag">#${escapeHtml(tag)}</span>`
     ).join('');
 
     return `
@@ -411,7 +411,7 @@ function createSkillCard(skill, isFeatured = false, showFavoriteBtn = true) {
                 <div class="skill-header-right">
                     ${stars > 0 ? `<span class="skill-stars">⭐ ${stars.toLocaleString()}</span>` : ''}
                     ${showFavoriteBtn ? `
-                        <button class="favorite-btn ${isFavorite ? 'active' : ''}" onclick="toggleFavorite(event, '${escapeHtml(install)}')" title="${isFavorite ? 'Remove from favorites' : 'Add to favorites'}">
+                        <button class="favorite-btn ${isFavorite ? 'active' : ''}" data-install="${escapeHtml(install)}" onclick="toggleFavorite(event)" title="${isFavorite ? 'Remove from favorites' : 'Add to favorites'}">
                             ${isFavorite ? '❤️' : '🤍'}
                         </button>
                     ` : ''}
@@ -426,7 +426,7 @@ function createSkillCard(skill, isFeatured = false, showFavoriteBtn = true) {
                 <div class="install-cmd">
                     <span class="prefix">$</span>
                     <span>sk install ${escapeHtml(install)}</span>
-                    <button class="copy-btn" onclick="copyInstall(event, '${escapeHtml(install)}')" title="Copy">📋</button>
+                    <button class="copy-btn" data-install="${escapeHtml(install)}" onclick="copyInstall(event)" title="Copy">📋</button>
                 </div>
             </div>
         </div>
@@ -467,7 +467,7 @@ async function showSkillDetail(card) {
     if (!skill) return;
 
     const tagsHtml = (skill.g || []).map(tag =>
-        `<span class="tag">#${tag}</span>`
+        `<span class="tag">#${escapeHtml(tag)}</span>`
     ).join(' ');
 
     const isFavorite = state.favorites.includes(install);
@@ -495,7 +495,7 @@ async function showSkillDetail(card) {
                 ${escapeHtml(skill.n)}
                 ${isOfficial ? '<span class="official-badge" title="Official Anthropic Skill">✓</span>' : ''}
             </h2>
-            <button class="favorite-btn large ${isFavorite ? 'active' : ''}" onclick="toggleFavorite(event, '${escapeHtml(install)}')">
+            <button class="favorite-btn large ${isFavorite ? 'active' : ''}" data-install="${escapeHtml(install)}" onclick="toggleFavorite(event)">
                 ${isFavorite ? '❤️' : '🤍'}
             </button>
         </div>
@@ -510,7 +510,7 @@ async function showSkillDetail(card) {
 
         <!-- Community Stats -->
         <div class="community-stats" id="community-stats-${escapeHtml(install).replace(/[^a-zA-Z0-9]/g, '-')}">
-            <button class="like-btn" id="like-btn" onclick="handleLike('${escapeHtml(install)}')">
+            <button class="like-btn" id="like-btn" data-install="${escapeHtml(install)}" onclick="handleLike(event)">
                 <span class="like-icon">👍</span>
                 <span class="like-count" id="like-count">0</span>
             </button>
@@ -522,12 +522,12 @@ async function showSkillDetail(card) {
             <div class="install-cmd" style="margin-top: 0.5rem;">
                 <span class="prefix">$</span>
                 <span>sk install ${escapeHtml(install)}</span>
-                <button class="copy-btn" onclick="copyInstall(event, '${escapeHtml(install)}')" title="Copy">📋</button>
+                <button class="copy-btn" data-install="${escapeHtml(install)}" onclick="copyInstall(event)" title="Copy">📋</button>
             </div>
         </div>
 
         <div style="margin-top: 1rem;">
-            <a href="${getGitHubUrl(install, skill.b || 'main')}" target="_blank" style="color: var(--accent-primary);">
+            <a href="${escapeHtml(getGitHubUrl(install, skill.b || 'main'))}" target="_blank" rel="noopener noreferrer" style="color: var(--accent-primary);">
                 View on GitHub →
             </a>
         </div>
@@ -547,7 +547,7 @@ async function showSkillDetail(card) {
                     <span class="rating-star" data-rating="5">☆</span>
                 </div>
                 <textarea id="comment-content" placeholder="Share your thoughts about this skill..." maxlength="500"></textarea>
-                <button class="submit-comment-btn" onclick="handleSubmitComment('${escapeHtml(install)}')">Post Comment</button>
+                <button class="submit-comment-btn" data-install="${escapeHtml(install)}" onclick="handleSubmitComment(event)">Post Comment</button>
             </div>
             <div class="comments-list" id="comments-list">
                 <div class="loading-comments">Loading comments...</div>
@@ -593,8 +593,9 @@ async function loadCommunityData(install) {
 }
 
 // Handle like button click
-async function handleLike(install) {
+async function handleLike(event) {
     if (!window.SkillsDB) return;
+    const install = event.currentTarget.getAttribute('data-install');
 
     const likeBtn = document.getElementById('like-btn');
     const likeCount = document.getElementById('like-count');
@@ -633,8 +634,9 @@ function updateRatingDisplay(rating) {
 }
 
 // Handle comment submission
-async function handleSubmitComment(install) {
+async function handleSubmitComment(event) {
     if (!window.SkillsDB) return;
+    const install = event.currentTarget.getAttribute('data-install');
 
     const nicknameInput = document.getElementById('comment-nickname');
     const contentInput = document.getElementById('comment-content');
@@ -749,6 +751,7 @@ function findSimilarSkills(skill, limit = 4) {
 // Copy install command
 function copyInstall(event, install) {
     event.stopPropagation();
+    install = install || event.currentTarget.getAttribute('data-install');
     const cmd = `sk install ${install}`;
     navigator.clipboard.writeText(cmd).then(() => {
         const btn = event.target;
@@ -763,23 +766,30 @@ function getGitHubUrl(install, branch = 'main') {
     const parts = install.split('/');
     if (parts.length < 2) return '#';
 
-    const owner = parts[0];
-    const repo = parts[1];
-    const path = parts.slice(2).join('/');
+    const owner = encodeURIComponent(parts[0]);
+    const repo = encodeURIComponent(parts[1]);
+    let path = parts.slice(2).join('/').replace(/\/+$/, '');
+    if (/\/SKILL\.md$/i.test(path)) {
+        path = path.replace(/\/SKILL\.md$/i, '');
+    } else if (/^SKILL\.md$/i.test(path)) {
+        path = '';
+    }
 
     if (path) {
-        return `https://github.com/${owner}/${repo}/blob/${branch}/${path}/SKILL.md`;
-    } else {
-        return `https://github.com/${owner}/${repo}/blob/${branch}/SKILL.md`;
+        return `https://github.com/${owner}/${repo}/blob/${encodeURIComponent(branch)}/${path.split('/').map(encodeURIComponent).join('/')}/SKILL.md`;
     }
+    return `https://github.com/${owner}/${repo}/blob/${encodeURIComponent(branch)}/SKILL.md`;
 }
 
-// Escape HTML
 function escapeHtml(text) {
     if (!text) return '';
-    const div = document.createElement('div');
-    div.textContent = text;
-    return div.innerHTML;
+    return String(text).replace(/[&<>\x22\x27]/g, ch => {
+        if (ch === '&') return '&amp;';
+        if (ch === '<') return '&lt;';
+        if (ch === '>') return '&gt;';
+        if (ch === '\x22') return '&quot;';
+        return '&#39;';
+    });
 }
 
 // Debounce

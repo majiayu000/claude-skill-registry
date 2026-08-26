@@ -25,6 +25,7 @@ class PipelineHealthInput:
     security_outcome: str
     security_report: Path
     require_security_report: bool
+    expected_security_paths: Path | None = None
 
 
 def normalize_outcome(value: str) -> str:
@@ -40,7 +41,9 @@ def _validate_step(step_name: str, outcome: str) -> list[str]:
     return []
 
 
-def _validate_security_report(report_path: Path) -> list[str]:
+def _validate_security_report(
+    report_path: Path, expected_paths_path: Path | None = None
+) -> list[str]:
     if not report_path.exists():
         return [f"required security report is missing: {report_path}"]
 
@@ -49,26 +52,40 @@ def _validate_security_report(report_path: Path) -> list[str]:
     except json.JSONDecodeError as exc:
         return [f"security report is not valid JSON: {exc}"]
 
+    if not isinstance(payload, dict):
+        return ["security report root must be an object"]
+
     missing = sorted(REQUIRED_SECURITY_KEYS - set(payload))
     if missing:
         return [f"security report is missing keys: {', '.join(missing)}"]
 
-    invalid_keys = [key for key in REQUIRED_SECURITY_KEYS if not isinstance(payload.get(key), int)]
+    invalid_keys = [key for key in REQUIRED_SECURITY_KEYS if type(payload.get(key)) is not int]
     if invalid_keys:
         return [f"security report has non-integer fields: {', '.join(sorted(invalid_keys))}"]
 
-    failed = int(payload.get("failed", 0))
-    if failed > 0:
-        return [f"security report contains failed scans: failed={failed}"]
+    total = payload["total"]
+    passed = payload["passed"]
+    failed = payload["failed"]
+    if min(total, passed, failed) < 0:
+        return ["security report aggregate counts must be non-negative"]
 
     skills = payload.get("skills")
     if not isinstance(skills, list):
         return ["security report is missing per-skill evidence: skills"]
 
+    report_paths: list[str] = []
+    counted_passed = 0
+    counted_failed = 0
     for index, skill_result in enumerate(skills):
         if not isinstance(skill_result, dict):
             return [f"security report skill result is not an object: skills[{index}]"]
-        path = skill_result.get("path") or f"skills[{index}]"
+        path = skill_result.get("path")
+        if not isinstance(path, str) or not path.strip():
+            return [f"security report has invalid skill path: skills[{index}]"]
+        path = path.strip()
+        if path in report_paths:
+            return [f"security report contains duplicate skill path: {path}"]
+        report_paths.append(path)
         decision = skill_result.get("security_decision")
         if not isinstance(decision, dict):
             return [f"security report missing security_decision for {path}"]
@@ -81,8 +98,12 @@ def _validate_security_report(report_path: Path) -> list[str]:
         if status not in {"passed", "failed"}:
             return [f"security decision has invalid status for {path}: {status!r}"]
         safe = skill_result.get("safe")
-        if isinstance(safe, bool) and ((status == "passed") != safe):
+        if not isinstance(safe, bool):
+            return [f"security report has invalid safe field for {path}"]
+        if (status == "passed") != safe:
             return [f"security decision status disagrees with safe field for {path}"]
+        counted_passed += int(status == "passed")
+        counted_failed += int(status == "failed")
         scanner = decision.get("scanner")
         if not isinstance(scanner, dict):
             return [f"security decision scanner evidence is invalid for {path}"]
@@ -102,6 +123,32 @@ def _validate_security_report(report_path: Path) -> list[str]:
                 f"{path}: {', '.join(missing_provenance)}"
             ]
 
+    if (total, passed, failed) != (len(skills), counted_passed, counted_failed):
+        return ["security report aggregate counts do not match skill decisions"]
+
+    if expected_paths_path is not None:
+        if not expected_paths_path.exists():
+            return [f"expected security path list is missing: {expected_paths_path}"]
+        try:
+            expected_raw = expected_paths_path.read_bytes()
+        except OSError as exc:
+            return [f"cannot read expected security path list: {exc}"]
+        chunks = expected_raw.split(b"\0") if b"\0" in expected_raw else expected_raw.splitlines()
+        try:
+            expected_paths = {chunk.decode("utf-8") for chunk in chunks if chunk}
+        except UnicodeDecodeError:
+            return ["expected security path list contains a non-UTF-8 path"]
+        report_path_set = set(report_paths)
+        if report_path_set != expected_paths:
+            missing_paths = sorted(expected_paths - report_path_set)
+            unexpected_paths = sorted(report_path_set - expected_paths)
+            return [
+                "security report path coverage mismatch: "
+                f"missing={missing_paths}, unexpected={unexpected_paths}"
+            ]
+
+    if failed > 0:
+        return [f"security report contains failed scans: failed={failed}"]
     return []
 
 
@@ -115,7 +162,12 @@ def validate_pipeline_health(pipeline_input: PipelineHealthInput) -> list[str]:
         pipeline_input.require_security_report
         and normalize_outcome(pipeline_input.security_outcome) == "success"
     ):
-        errors.extend(_validate_security_report(pipeline_input.security_report))
+        errors.extend(
+            _validate_security_report(
+                pipeline_input.security_report,
+                expected_paths_path=pipeline_input.expected_security_paths,
+            )
+        )
 
     return errors
 
@@ -129,6 +181,7 @@ def parse_args() -> PipelineHealthInput:
     parser.add_argument("--security-outcome", required=True)
     parser.add_argument("--security-report", default="security-report.json")
     parser.add_argument("--require-security-report", action="store_true")
+    parser.add_argument("--expected-security-paths")
     args = parser.parse_args()
 
     return PipelineHealthInput(
@@ -137,6 +190,9 @@ def parse_args() -> PipelineHealthInput:
         security_outcome=args.security_outcome,
         security_report=Path(args.security_report),
         require_security_report=args.require_security_report,
+        expected_security_paths=(
+            Path(args.expected_security_paths) if args.expected_security_paths else None
+        ),
     )
 
 

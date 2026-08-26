@@ -38,6 +38,13 @@ DANGEROUS_PATTERNS = {
     "npm_url_install": r"npm\s+install\s+(?:https?://|git\+)",
     # Resource abuse
     "fork_bomb": r":\(\)\{\s*:\|:\s*&\s*\}\s*;\s*:",
+    # PHP / webshell
+    "php_request_exec": r"(?:system|passthru|shell_exec|exec|popen|proc_open|assert)\s*\(\s*\$_(GET|POST|REQUEST|COOKIE|SERVER)",
+    "php_eval_request": r"(?:eval|assert)\s*\(\s*\$_(GET|POST|REQUEST|COOKIE)",
+    # Reverse shells and pipe-to-shell
+    "reverse_shell_dev_tcp": r"(?:\b(?:bash|sh|zsh)\b[^\n]{0,120}(?:>&|<>|>|<)\s*|\bexec\s+\d*(?:<>|>|<)\s*)/dev/tcp/[^\s/]+/\d{1,5}\b",
+    "curl_pipe_shell": r"(?:curl|wget)\b[^\n]{0,200}\|\s*(?:bash|sh|zsh)\b",
+    "nc_exec_shell": r"\bnc\s+[^\n]{0,80}\s-e\b",
 }
 
 
@@ -134,6 +141,47 @@ BUNDLED_SCAN_EXTENSIONS = {
     ".txt",
     ".yaml",
     ".yml",
+    ".php",
+    ".phtml",
+    ".php5",
+    ".rb",
+    ".pl",
+    ".lua",
+    ".bat",
+    ".cmd",
+    ".psm1",
+    ".vbs",
+}
+
+
+BUNDLED_BINARY_EXTENSIONS = {
+    ".bin",
+    ".class",
+    ".dll",
+    ".dylib",
+    ".eot",
+    ".exe",
+    ".gif",
+    ".gz",
+    ".ico",
+    ".jpeg",
+    ".jpg",
+    ".mp3",
+    ".mp4",
+    ".npy",
+    ".parquet",
+    ".pdf",
+    ".png",
+    ".pyc",
+    ".pyo",
+    ".so",
+    ".sqlite",
+    ".ttf",
+    ".wasm",
+    ".webp",
+    ".woff",
+    ".woff2",
+    ".zip",
 }
 
 

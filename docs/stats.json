@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-25T02:39:03.415176Z",
-  "archive_skill_md_count_raw": 203481,
-  "archive_metadata_count_raw": 203479,
-  "indexed_skill_count_scan_shape": 162332,
-  "registry_skill_count_dedup": 161899,
+  "updated_at": "2026-08-26T02:43:26.873645Z",
+  "archive_skill_md_count_raw": 203543,
+  "archive_metadata_count_raw": 203541,
+  "indexed_skill_count_scan_shape": 162391,
+  "registry_skill_count_dedup": 161958,
   "total_plugins": 4,
   "categories": 40,
   "category_counts": [
@@ -16,7 +16,7 @@
     {
       "name": "ai-llm",
       "code": "ai-llm",
-      "count": 1757
+      "count": 1761
     },
     {
       "name": "ai-ml",
@@ -31,12 +31,12 @@
     {
       "name": "api",
       "code": "api",
-      "count": 838
+      "count": 839
     },
     {
       "name": "bash",
       "code": "bash",
-      "count": 571
+      "count": 575
     },
     {
       "name": "business",
@@ -66,7 +66,7 @@
     {
       "name": "data",
       "code": "dat",
-      "count": 30871
+      "count": 30873
     },
     {
       "name": "design",
@@ -76,7 +76,7 @@
     {
       "name": "development",
       "code": "dev",
-      "count": 37060
+      "count": 37063
     },
     {
       "name": "devops",
@@ -86,7 +86,7 @@
     {
       "name": "documents",
       "code": "doc",
-      "count": 6250
+      "count": 6252
     },
     {
       "name": "domains",
@@ -116,7 +116,7 @@
     {
       "name": "integration",
       "code": "integration",
-      "count": 6452
+      "count": 6451
     },
     {
       "name": "language",
@@ -136,12 +136,12 @@
     {
       "name": "orchestration",
       "code": "orchestration",
-      "count": 2602
+      "count": 2601
     },
     {
       "name": "other",
       "code": "oth",
-      "count": 3140
+      "count": 3179
     },
     {
       "name": "performance",
@@ -166,17 +166,17 @@
     {
       "name": "product",
       "code": "prd",
-      "count": 3099
+      "count": 3100
     },
     {
       "name": "productivity",
       "code": "pro",
-      "count": 2330
+      "count": 2331
     },
     {
       "name": "quality",
       "code": "quality",
-      "count": 4287
+      "count": 4288
     },
     {
       "name": "security",
@@ -196,20 +196,20 @@
     {
       "name": "testing",
       "code": "tst",
-      "count": 8907
+      "count": 8908
     },
     {
       "name": "workflow",
       "code": "workflow",
-      "count": 3561
+      "count": 3562
     },
     {
       "name": "writing",
       "code": "writing",
-      "count": 1166
+      "count": 1167
     }
   ],
-  "unique_repo_count": 9864,
+  "unique_repo_count": 9867,
   "official_skill_count": 0,
   "top_repositories": [
     {
@@ -257,36 +257,36 @@
   "asset_state_counts": {},
   "asset_liveness_counts": {},
   "index_size_bytes": 324,
-  "index_size_gzip_bytes": 245,
+  "index_size_gzip_bytes": 244,
   "search_shard_count": 5,
-  "search_largest_shard_bytes": 8388630,
-  "search_largest_shard_gzip_bytes": 1425657,
+  "search_largest_shard_bytes": 8388673,
+  "search_largest_shard_gzip_bytes": 1425409,
   "category_shard_count": 45,
-  "category_largest_part_bytes": 8388706,
-  "category_largest_part_gzip_bytes": 1807013,
-  "lite_index_count": 162332,
+  "category_largest_part_bytes": 8388729,
+  "category_largest_part_gzip_bytes": 1808049,
+  "lite_index_count": 162391,
   "lite_index_included_count": 5000,
-  "lite_index_size_bytes": 3493480,
-  "lite_index_gzip_size_bytes": 672500,
+  "lite_index_size_bytes": 3494087,
+  "lite_index_gzip_size_bytes": 673402,
   "quality_index_size_bytes": 364,
   "quality_index_gzip_size_bytes": 270,
   "quality_shard_count": 6,
-  "quality_largest_shard_bytes": 8388676,
-  "quality_largest_shard_gzip_bytes": 1766361,
+  "quality_largest_shard_bytes": 8388712,
+  "quality_largest_shard_gzip_bytes": 1768398,
   "security_index_size_bytes": 368,
   "security_index_gzip_size_bytes": 271,
   "security_shard_count": 20,
-  "security_largest_shard_bytes": 8388691,
-  "security_largest_shard_gzip_bytes": 1587790,
+  "security_largest_shard_bytes": 8388704,
+  "security_largest_shard_gzip_bytes": 1589129,
   "ranking_index_size_bytes": 364,
   "ranking_index_gzip_size_bytes": 270,
   "ranking_shard_count": 5,
-  "ranking_largest_shard_bytes": 8388554,
-  "ranking_largest_shard_gzip_bytes": 2020774,
-  "largest_generated_file_bytes": 8388706,
+  "ranking_largest_shard_bytes": 8388701,
+  "ranking_largest_shard_gzip_bytes": 2021154,
+  "largest_generated_file_bytes": 8388729,
   "security_scan": {
-    "total": 203479,
-    "passed": 203479,
-    "failed": 0
+    "total": 203541,
+    "passed": 202017,
+    "failed": 1524
   }
 }

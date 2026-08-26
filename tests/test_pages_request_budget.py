@@ -591,8 +591,13 @@ duplicate.categories[1].code = duplicate.categories[0].code;
 assert.throws(() => validateCategoryTaxonomy(duplicate), /identity mismatch/);
 const truncated = structuredClone(payload);
 truncated.categories = truncated.categories.slice(0, 1);
-truncated.category_count = 1;
 assert.throws(() => validateCategoryTaxonomy(truncated), /count or identity mismatch/);
+const extraCategory = structuredClone(payload);
+extraCategory.categories.push({
+  slug: 'future-root', code: 'future-root', display_name: 'Future', parent: ''
+});
+extraCategory.category_count = extraCategory.categories.length;
+validateCategoryTaxonomy(extraCategory);
 const noncanonical = structuredClone(payload);
 noncanonical.categories[0].slug = `${noncanonical.categories[0].slug} `;
 assert.throws(() => validateCategoryTaxonomy(noncanonical), /identity mismatch/);
@@ -603,9 +608,10 @@ const secondChildIndex = deep.categories.findIndex(
 );
 deep.categories[secondChildIndex].parent = deep.categories[childIndex].slug;
 assert.throws(() => validateCategoryTaxonomy(deep), /parent mismatch/);
-const wrongRootCount = structuredClone(payload);
-wrongRootCount.categories[childIndex].parent = '';
-assert.throws(() => validateCategoryTaxonomy(wrongRootCount), /root count mismatch/);
+const extraRoot = structuredClone(payload);
+extraRoot.categories[childIndex].parent = '';
+extraRoot.category_count = extraRoot.categories.length;
+validateCategoryTaxonomy(extraRoot);
 const unknownField = structuredClone(payload);
 unknownField.extra = true;
 assert.throws(() => validateCategoryTaxonomy(unknownField), /shape mismatch/);
@@ -619,3 +625,78 @@ process.stdout.write(JSON.stringify({
         json.dumps(contract),
     )
     assert result == {"count": 40, "roots": 12, "unknown": "future-category"}
+
+
+def test_github_url_and_html_escaping_contracts():
+    result = run_node_harness(
+        r"""
+const fs = require('fs');
+const assert = require('assert');
+const render = fs.readFileSync('docs/js/app-render.js', 'utf8');
+const index = fs.readFileSync('docs/index.html', 'utf8');
+
+function extract(source, name) {
+  const start = source.indexOf(`function ${name}(`);
+  assert(start >= 0, `missing function ${name}`);
+  const bodyStart = source.indexOf('{', start);
+  let depth = 0;
+  let quote = null;
+  let escaped = false;
+  for (let i = bodyStart; i < source.length; i += 1) {
+    const char = source[i];
+    if (quote) {
+      if (escaped) escaped = false;
+      else if (char === '\\') escaped = true;
+      else if (char === quote) quote = null;
+      continue;
+    }
+    if (char === "'" || char === '"' || char === '`') quote = char;
+    else if (char === '{') depth += 1;
+    else if (char === '}') {
+      depth -= 1;
+      if (depth === 0) return source.slice(start, i + 1);
+    }
+  }
+  throw new Error(`unterminated function ${name}`);
+}
+
+eval(extract(render, 'getGitHubUrl'));
+eval(extract(render, 'escapeHtml'));
+eval(extract(render, 'createSkillCard'));
+
+assert.strictEqual(
+  getGitHubUrl('facebook/react/.claude/skills/fix/SKILL.md', 'main'),
+  'https://github.com/facebook/react/blob/main/.claude/skills/fix/SKILL.md'
+);
+assert.strictEqual(
+  getGitHubUrl('facebook/react/.claude/skills/fix', 'main'),
+  'https://github.com/facebook/react/blob/main/.claude/skills/fix/SKILL.md'
+);
+assert.strictEqual(
+  getGitHubUrl('acme/demo', 'main'),
+  'https://github.com/acme/demo/blob/main/SKILL.md'
+);
+assert.strictEqual(escapeHtml(`<img src=x onerror=alert(1)>`), '&lt;img src=x onerror=alert(1)&gt;');
+assert.strictEqual(escapeHtml(`foo'"bar`), 'foo&#39;&quot;bar');
+const hostileUrl = getGitHubUrl(
+  `acme/demo/path" onmouseover="alert(1)`,
+  `main" onmouseover="alert(1)`
+);
+assert(!hostileUrl.includes('"'));
+assert(hostileUrl.includes('%22'));
+const state = { favorites: [] };
+const categoryDisplayName = value => value;
+const hostileCard = createSkillCard({
+  n: 'demo', d: 'safe', c: 'development',
+  g: [`</span><img src=x onerror=alert(1)>`], r: 0, i: 'acme/demo'
+}, false, false);
+assert(!hostileCard.includes('<img'));
+assert(render.includes('escapeHtml(getGitHubUrl('));
+assert(!render.includes("copyInstall(event, '${"));
+assert(!render.includes("toggleFavorite(event, '${"));
+assert(!index.includes('Official (Anthropic)'));
+assert(!index.includes('id="stat-official"'));
+process.stdout.write(JSON.stringify({ ok: true }));
+"""
+    )
+    assert result == {"ok": True}

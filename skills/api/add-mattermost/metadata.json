@@ -1,0 +1,38 @@
+{
+  "name": "add-mattermost",
+  "repo": "nanocoai/nanoclaw",
+  "path": ".claude/skills/add-mattermost/SKILL.md",
+  "github_branch": "main",
+  "category": "api",
+  "source": "github.com/nanocoai/nanoclaw",
+  "dir_name": "add-mattermost",
+  "downloaded_at": "2026-08-26T01:42:02.854560Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "api",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for api: api, sdk, endpoint",
+    "score": 3,
+    "runner_up": "security",
+    "runner_up_score": 2,
+    "signals": [
+      "api",
+      "sdk",
+      "endpoint"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "nanocoai",
+  "source_url": "https://github.com/nanocoai/nanoclaw/blob/main/.claude/skills/add-mattermost/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nanocoai/nanoclaw/blob/main/.claude/skills/add-mattermost/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Add a self-hosted or cloud Mattermost bot channel through the Chat SDK bridge, reusing a local server when available and offering an evaluation server when none exists."
+}

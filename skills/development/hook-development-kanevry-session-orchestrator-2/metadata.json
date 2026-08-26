@@ -1,0 +1,37 @@
+{
+  "name": "hook-development",
+  "repo": "Kanevry/session-orchestrator",
+  "path": ".cursor/skills/hook-development/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/Kanevry/session-orchestrator",
+  "dir_name": "hook-development-kanevry-session-orchestrator-2",
+  "downloaded_at": "2026-08-26T01:24:35.139818Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: code, debug",
+    "score": 2,
+    "runner_up": "ai-ml",
+    "runner_up_score": 1,
+    "signals": [
+      "code",
+      "debug"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "Kanevry",
+  "source_url": "https://github.com/Kanevry/session-orchestrator/blob/main/.cursor/skills/hook-development/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Kanevry/session-orchestrator/blob/main/.cursor/skills/hook-development/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when creating, modifying, or debugging Claude Code hooks \u2014 PreToolUse, PostToolUse, Stop, SubagentStop, SessionStart, SessionEnd, UserPromptSubmit, PreCompact, Notification. Covers the plugin `hooks/hooks.json` wrapper format vs. the user `settings.json` direct format, matchers, security patterns, `$CLAUDE_PLUGIN_ROOT` portability, lifecycle limitations, and debugging. Trigger on \"add a hook\", \"validate tool use\", \"block dangerous commands\", \"enforce completion\", \"hook-based automation\"."
+}

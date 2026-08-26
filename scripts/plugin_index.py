@@ -9,6 +9,7 @@ import tempfile
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
+from urllib.parse import urlparse
 
 
 class PluginIndexError(RuntimeError):
@@ -56,6 +57,23 @@ def _validate_plugins(payload: Any, *, source: str, path: Path) -> list[dict[str
                     "invalid_shape",
                     path,
                     f"plugins[{index}].{key} must be a non-empty string",
+                )
+        homepage = plugin.get("homepage")
+        if homepage is not None:
+            try:
+                parsed_homepage = urlparse(homepage) if isinstance(homepage, str) else None
+            except ValueError:
+                parsed_homepage = None
+            if (
+                parsed_homepage is None
+                or parsed_homepage.scheme not in {"http", "https"}
+                or not parsed_homepage.netloc
+            ):
+                raise PluginIndexError(
+                    source,
+                    "invalid_shape",
+                    path,
+                    f"plugins[{index}].homepage must be an HTTP(S) URL",
                 )
         validated.append(plugin)
     return validated

@@ -1,0 +1,28 @@
+{
+  "name": "hol-guard",
+  "description": "Local-first security workflow that installs HOL Guard, scans skills/plugins/MCP servers, and verifies risky agent actions before execution.",
+  "repo": "hashgraph-online/hol-guard-plugin",
+  "path": "skills/hol-guard",
+  "github_branch": "main",
+  "category": "security",
+  "tags": [
+    "security",
+    "scanner",
+    "mcp",
+    "plugins",
+    "claude-code",
+    "codex"
+  ],
+  "stars": 3,
+  "source": "Community Skills",
+  "dir_name": "hol-guard",
+  "archive_mode": "skill-md",
+  "bundled_files": [],
+  "author": "hashgraph-online",
+  "source_url": "https://github.com/hashgraph-online/hol-guard-plugin/blob/main/skills/hol-guard/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/hashgraph-online/hol-guard-plugin/blob/main/skills/hol-guard/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

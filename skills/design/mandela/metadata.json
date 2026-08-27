@@ -1,0 +1,37 @@
+{
+  "name": "mandela",
+  "repo": "OutlineDriven/odin-claude-plugin",
+  "path": "skills/mandela/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/OutlineDriven/odin-claude-plugin",
+  "dir_name": "mandela",
+  "downloaded_at": "2026-08-27T07:59:10.633992Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "design",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for design: design, component",
+    "score": 2,
+    "runner_up": "ai-ml",
+    "runner_up_score": 1,
+    "signals": [
+      "design",
+      "component"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "OutlineDriven",
+  "source_url": "https://github.com/OutlineDriven/odin-claude-plugin/blob/main/skills/mandela/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OutlineDriven/odin-claude-plugin/blob/main/skills/mandela/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Audit an evaluation, benchmark, or scoring harness for leakage, answering whether outside ground truth actually enters or the system is grading itself. Use when building or reviewing an eval or benchmark, or when the user says \"is this eval leaking\" or \"check this benchmark for contamination\". It reports where ground truth enters and where it does not, and it edits nothing."
+}

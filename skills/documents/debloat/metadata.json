@@ -1,0 +1,38 @@
+{
+  "name": "debloat",
+  "repo": "OutlineDriven/odin-claude-plugin",
+  "path": "skills/debloat/SKILL.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/OutlineDriven/odin-claude-plugin",
+  "dir_name": "debloat",
+  "downloaded_at": "2026-08-27T07:59:11.689173Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "documents",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for documents: docs, word, markdown",
+    "score": 3,
+    "runner_up": "ai-ml",
+    "runner_up_score": 1,
+    "signals": [
+      "docs",
+      "word",
+      "markdown"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "OutlineDriven",
+  "source_url": "https://github.com/OutlineDriven/odin-claude-plugin/blob/main/skills/debloat/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OutlineDriven/odin-claude-plugin/blob/main/skills/debloat/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Compress a bloated artifact to its load-bearing density, cutting words and never a rule. Use when a document, skill, or spec has grown padded while every rule in it still binds, or the user says \"debloat this\", \"tighten this up\", or \"this is too long\". Every rule present before the pass is present after it. To cut whole documents and stale content from a markdown tree, use purge-slop-docs; for a code diff, use simplify."
+}

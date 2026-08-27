@@ -1,0 +1,36 @@
+{
+  "name": "os-ask-simple",
+  "repo": "kharmanskyi/open-steps",
+  "path": "skills/os-ask-simple/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/kharmanskyi/open-steps",
+  "dir_name": "os-ask-simple",
+  "downloaded_at": "2026-08-27T08:12:29.808621Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category data scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "development",
+    "runner_up_score": 1,
+    "signals": [
+      "data"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "kharmanskyi",
+  "source_url": "https://github.com/kharmanskyi/open-steps/blob/main/skills/os-ask-simple/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/kharmanskyi/open-steps/blob/main/skills/os-ask-simple/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "ALWAYS invoke this skill before asking the user any technical question or offering options, and whenever they ask to be asked in plain words - \"ask simple\", \"ask me simply\", \"ask me in plain words\" - or ask if something is worth doing or if something simpler would do, in any language. Rewrites the question in plain words and always ends with one marked recommendation. A structural choice first passes six checks, shown as a table: effort now, simpler substitute, extra work later, lock-in, over-engineering, easy to undo. Doing nothing is always weighed."
+}

@@ -1,0 +1,38 @@
+{
+  "name": "gpt-image-2-prompt-engine",
+  "repo": "anbeime/skill",
+  "path": "skills/gpt-image-2-prompt-engine/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/anbeime/skill",
+  "dir_name": "gpt-image-2-prompt-engine",
+  "downloaded_at": "2026-08-27T08:03:38.168709Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=2, design=2",
+    "score": 2,
+    "runner_up": "design",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter",
+      "tags": "frontmatter:list"
+    }
+  },
+  "author": "anbeime",
+  "source_url": "https://github.com/anbeime/skill/blob/main/skills/gpt-image-2-prompt-engine/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/anbeime/skill/blob/main/skills/gpt-image-2-prompt-engine/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u9762\u5411\u7535\u5546\u8bbe\u8ba1\u5e08\u3001\u6d77\u62a5\u7f8e\u5de5\u3001\u54c1\u724c\u89c6\u89c9\u3001UI\u8bbe\u8ba1\u5e08\u3001\u4fe1\u606f\u56fe\u7f16\u8f91\u3001\u5546\u4e1a\u6444\u5f71\u5e08\u3001\u5185\u5bb9\u521b\u4f5c\u8005\u7b49\u9700\u8981\u9ad8\u8d28\u91cf\u53ef\u63a7\u51fa\u56fe\u7684\u89d2\u8272\uff0c\u5728\u9700\u8981\u7528 GPT-Image-2 \u751f\u6210\u7535\u5546\u4e3b\u56fe\u3001\u7535\u5f71\u6d77\u62a5\u3001\u4fe1\u606f\u56fe\u3001\u54c1\u724c\u89c6\u89c9\u3001UI\u622a\u56fe\u3001\u53e4\u7c4d\u56fd\u98ce\u3001\u89d2\u8272IP\u7b49\u573a\u666f\u65f6\uff0c\u901a\u8fc7\u300cPrompt as Code\u300d\u539f\u5b50\u5316Schema+20+\u5de5\u4e1aJSON\u6a21\u677f+\u56db\u6b65\u5de5\u4f5c\u6d41\uff0c\u4ea7\u51fa\u7ed3\u6784\u5316\u3001\u53ef\u590d\u7528\u3001\u53ef\u6279\u91cf\u7684\u751f\u56fe\u63d0\u793a\u8bcd\uff0c\u518d\u8c03\u7528 image_generation \u51fa\u56fe\u3002\u4e0d\u9002\u7528\u4e8e\u968f\u610f\u751f\u56fe\u6216\u7b80\u5355\u98ce\u666f\u7167\u3002"
+}

@@ -1,7 +1,7 @@
 {
-  "discovered_at": "2026-08-26T01:50:24.309300Z",
+  "discovered_at": "2026-08-27T08:23:57.801048Z",
   "total_repos": 300,
-  "total_skills": 56,
+  "total_skills": 40,
   "scanned_repos": 300,
   "limits": {
     "max_repos": 300,
@@ -74,6 +74,7 @@
     "REMvisual/claude-handoff",
     "SamJHudson01/Carmack-Council",
     "SamurAIGPT/Generative-Media-Skills",
+    "ScrapeCreators/social-media-research-skills",
     "ShadowAqueduct/watermark-remover",
     "Shanyin-ai/shanyin-screenwriting-master",
     "Shelpuk-AI-Technology-Consulting/agent-skill-tdd",
@@ -105,7 +106,6 @@
     "alookai/alook",
     "amElnagdy/delegate-skills",
     "anbeime/skill",
-    "ancoleman/ai-design-components",
     "anombyte93/prd-taskmaster",
     "antonbabenko/terraform-skill",
     "aofp/yume",
@@ -196,6 +196,7 @@
     "kazukinagata/shinkoku",
     "keskinonur/claude-code-ios-dev-guide",
     "keysersoose/claude-agent-builder",
+    "kharmanskyi/open-steps",
     "khendzel/skills-janitor",
     "kromahlusenii-ops/ham",
     "laolaoshiren/claude-code-skills-zh",
@@ -295,7 +296,6 @@
     "wanghuan9/skilldock",
     "wanshuiyin/Anti-Autoresearch",
     "wanshuiyin/Auto-claude-code-research-in-sleep",
-    "wells1137/media-skills",
     "wesammustafa/Claude-Code-Everything-You-Need-to-Know",
     "wondelai/skills",
     "wrsmith108/linear-claude-skill",
@@ -314,228 +314,164 @@
   ],
   "skills": [
     {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".cursor/skills/eval/SKILL.md"
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "skills/hate/SKILL.md"
     },
     {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".cursor/skills/eli5/SKILL.md"
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "skills/prism/SKILL.md"
     },
     {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".cursor/skills/plan/SKILL.md"
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "skills/shower/SKILL.md"
     },
     {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".cursor/skills/debug/SKILL.md"
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "skills/feynman/SKILL.md"
     },
     {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".cursor/skills/daily/SKILL.md"
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "skills/mandela/SKILL.md"
     },
     {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".cursor/skills/grill/SKILL.md"
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "skills/reorder/SKILL.md"
     },
     {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".cursor/skills/evolve/SKILL.md"
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "skills/debloat/SKILL.md"
     },
     {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".cursor/skills/spinout/SKILL.md"
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "skills/autobahn/SKILL.md"
     },
     {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".cursor/skills/reconcile/SKILL.md"
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "skills/size-the-run/SKILL.md"
     },
     {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".cursor/skills/discovery/SKILL.md"
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "skills/clean-and-true/SKILL.md"
     },
     {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".cursor/skills/bootstrap/SKILL.md"
+      "repo": "ScrapeCreators/social-media-research-skills",
+      "path": "skills/comment-mining/SKILL.md"
     },
     {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".cursor/skills/autopilot/SKILL.md"
+      "repo": "ScrapeCreators/social-media-research-skills",
+      "path": "skills/trend-discovery/SKILL.md"
     },
     {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".cursor/skills/vault-sync/SKILL.md"
+      "repo": "ScrapeCreators/social-media-research-skills",
+      "path": "skills/audience-research/SKILL.md"
     },
     {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".cursor/skills/gitlab-ops/SKILL.md"
+      "repo": "ScrapeCreators/social-media-research-skills",
+      "path": "skills/scrapecreators-api/SKILL.md"
     },
     {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".cursor/skills/repo-audit/SKILL.md"
+      "repo": "ScrapeCreators/social-media-research-skills",
+      "path": "skills/ad-library-teardown/SKILL.md"
     },
     {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".cursor/skills/brainstorm/SKILL.md"
+      "repo": "ScrapeCreators/social-media-research-skills",
+      "path": "skills/outlier-post-finder/SKILL.md"
     },
     {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".cursor/skills/dispatcher/SKILL.md"
+      "repo": "ScrapeCreators/social-media-research-skills",
+      "path": "skills/content-repurposing/SKILL.md"
     },
     {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".cursor/skills/npm-publish/SKILL.md"
+      "repo": "ScrapeCreators/social-media-research-skills",
+      "path": "skills/influencer-prospecting/SKILL.md"
     },
     {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".cursor/skills/session-end/SKILL.md"
+      "repo": "ScrapeCreators/social-media-research-skills",
+      "path": "skills/social-listening-brief/SKILL.md"
     },
     {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".cursor/skills/tmux-layout/SKILL.md"
+      "repo": "ScrapeCreators/social-media-research-skills",
+      "path": "skills/product-demand-research/SKILL.md"
     },
     {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".cursor/skills/mcp-builder/SKILL.md"
+      "repo": "ScrapeCreators/social-media-research-skills",
+      "path": "skills/transcript-intelligence/SKILL.md"
     },
     {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".cursor/skills/session-plan/SKILL.md"
+      "repo": "ScrapeCreators/social-media-research-skills",
+      "path": "skills/creator-profile-teardown/SKILL.md"
     },
     {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".cursor/skills/vault-mirror/SKILL.md"
+      "repo": "ScrapeCreators/social-media-research-skills",
+      "path": "skills/competitor-social-research/SKILL.md"
     },
     {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".cursor/skills/architecture/SKILL.md"
+      "repo": "anbeime/skill",
+      "path": "skills/icon-generator/SKILL.md"
     },
     {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".cursor/skills/domain-model/SKILL.md"
+      "repo": "anbeime/skill",
+      "path": "projects/companion-skill/SKILL.md"
     },
     {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".cursor/skills/skill-creator/SKILL.md"
+      "repo": "anbeime/skill",
+      "path": "skills/gpt-image-2-prompt-engine/SKILL.md"
     },
     {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".cursor/skills/mode-selector/SKILL.md"
+      "repo": "anbeime/skill",
+      "path": "skills/obsidian-skills-integrated/SKILL.md"
     },
     {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".cursor/skills/sunset-review/SKILL.md"
+      "repo": "dongshuyan/compass-skills",
+      "path": "skills/pause-and-resume/SKILL.md"
     },
     {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".cursor/skills/session-start/SKILL.md"
+      "repo": "fvadicamo/dev-agent-skills",
+      "path": "plugins/decision-records/skills/decision-records/SKILL.md"
     },
     {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".cursor/skills/persona-panel/SKILL.md"
+      "repo": "jiweiyeah/Skills-Manager",
+      "path": "skills/skills-manager-cli/SKILL.md"
     },
     {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".cursor/skills/quality-gates/SKILL.md"
+      "repo": "kharmanskyi/open-steps",
+      "path": "skills/os-whats-next/SKILL.md"
     },
     {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".cursor/skills/wave-executor/SKILL.md"
+      "repo": "kharmanskyi/open-steps",
+      "path": "skills/os-say-simple/SKILL.md"
     },
     {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".cursor/skills/memory-cleanup/SKILL.md"
+      "repo": "kharmanskyi/open-steps",
+      "path": "skills/os-check-work/SKILL.md"
     },
     {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".cursor/skills/peekaboo-driver/SKILL.md"
+      "repo": "kharmanskyi/open-steps",
+      "path": "skills/os-ask-simple/SKILL.md"
     },
     {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".cursor/skills/ecosystem-health/SKILL.md"
+      "repo": "kharmanskyi/open-steps",
+      "path": "skills/os-done-or-not/SKILL.md"
     },
     {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".cursor/skills/gitlab-portfolio/SKILL.md"
+      "repo": "kharmanskyi/open-steps",
+      "path": "skills/os-step-by-step/SKILL.md"
     },
     {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".cursor/skills/hook-development/SKILL.md"
+      "repo": "rse/ase",
+      "path": "plugin/skills/ase-spec-edit/SKILL.md"
     },
     {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".cursor/skills/playwright-driver/SKILL.md"
+      "repo": "sickn33/agentic-awesome-skills",
+      "path": "skills/ot-ics/SKILL.md"
     },
     {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".cursor/skills/docs-orchestrator/SKILL.md"
-    },
-    {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".cursor/skills/frontmatter-guard/SKILL.md"
-    },
-    {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".cursor/skills/using-orchestrator/SKILL.md"
-    },
-    {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".cursor/skills/ubiquitous-language/SKILL.md"
-    },
-    {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".cursor/skills/claude-md-drift-check/SKILL.md"
-    },
-    {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".cursor/skills/write-executable-plan/SKILL.md"
-    },
-    {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".cursor/skills/contract-version-bump/SKILL.md"
-    },
-    {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".cursor/skills/convergence-monitoring/SKILL.md"
-    },
-    {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".cursor/skills/test-runner/SKILL.md"
-    },
-    {
-      "repo": "alirezarezvani/claude-skills",
-      "path": "research/deepread/SKILL.md"
-    },
-    {
-      "repo": "alirezarezvani/claude-skills",
-      "path": "engineering/hivemind/SKILL.md"
-    },
-    {
-      "repo": "dembrandt/dembrandt-skills",
-      "path": "skills/app-shell/SKILL.md"
-    },
-    {
-      "repo": "nanocoai/nanoclaw",
-      "path": ".claude/skills/add-mattermost/SKILL.md"
-    },
-    {
-      "repo": "oprogramadorreal/optimus-claude",
-      "path": "skills/dream/SKILL.md"
+      "repo": "sickn33/agentic-awesome-skills",
+      "path": "skills/radare2/SKILL.md"
     },
     {
       "repo": "skyf0xx/hedgehog",
-      "path": "src/skills/hedgehog-code-intelligence-setup/SKILL.md"
-    },
-    {
-      "repo": "tdimino/claude-code-minoan",
-      "path": "skills/research/keenable/SKILL.md"
-    },
-    {
-      "repo": "thedotmack/claude-mem",
-      "path": "cowork/skills/mem-setup/SKILL.md"
-    },
-    {
-      "repo": "thedotmack/claude-mem",
-      "path": "cowork/skills/mem-search/SKILL.md"
+      "path": "src/skills/pr-writing/SKILL.md"
     }
   ]
 }

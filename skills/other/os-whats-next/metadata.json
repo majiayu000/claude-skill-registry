@@ -1,0 +1,37 @@
+{
+  "name": "os-whats-next",
+  "repo": "kharmanskyi/open-steps",
+  "path": "skills/os-whats-next/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/kharmanskyi/open-steps",
+  "dir_name": "os-whats-next",
+  "downloaded_at": "2026-08-27T08:12:29.212048Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: documents=2, planning=2",
+    "score": 2,
+    "runner_up": "planning",
+    "runner_up_score": 2,
+    "signals": [
+      "docs",
+      "word"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "kharmanskyi",
+  "source_url": "https://github.com/kharmanskyi/open-steps/blob/main/skills/os-whats-next/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/kharmanskyi/open-steps/blob/main/skills/os-whats-next/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "ALWAYS invoke this skill when the user asks what to do next, what is left, or what is blocked - \"what's next\", \"what now\", \"what should we work on\", \"anything I can do\" - in any language. This skill picks the next piece of work; when the user asks HOW to do a thing or says they do not understand what to do, that is os-step-by-step. Reads the last report, local changes, open pull requests and always the backlog. First finishes what is finished: verified-ready pull requests merge in the same pass. Then sorts the rest into doable-alone and needs-you, ending with one recommended next task in plain words - what it closes or unblocks. Never invents tasks."
+}

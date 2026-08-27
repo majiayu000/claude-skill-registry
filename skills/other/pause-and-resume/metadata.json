@@ -1,0 +1,37 @@
+{
+  "name": "pause-and-resume",
+  "repo": "dongshuyan/compass-skills",
+  "path": "skills/pause-and-resume/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/dongshuyan/compass-skills",
+  "dir_name": "pause-and-resume",
+  "downloaded_at": "2026-08-27T08:07:16.881682Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: productivity=2, workflow=2",
+    "score": 2,
+    "runner_up": "workflow",
+    "runner_up_score": 2,
+    "signals": [
+      "workflow",
+      "task"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "dongshuyan",
+  "source_url": "https://github.com/dongshuyan/compass-skills/blob/master/skills/pause-and-resume/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dongshuyan/compass-skills/blob/master/skills/pause-and-resume/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Cooperatively pause unfinished work in the current session, leave a precise continuation checkpoint, and resume from it when the user later says continue. Use only when the user explicitly requests this pause workflow. Do not use for crashes, app shutdown, new-session handoffs, or ordinary task summaries."
+}

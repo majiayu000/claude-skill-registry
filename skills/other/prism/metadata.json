@@ -1,0 +1,36 @@
+{
+  "name": "prism",
+  "repo": "OutlineDriven/odin-claude-plugin",
+  "path": "skills/prism/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/OutlineDriven/odin-claude-plugin",
+  "dir_name": "prism",
+  "downloaded_at": "2026-08-27T07:59:09.756486Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category ai-ml scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "quality",
+    "runner_up_score": 1,
+    "signals": [
+      "model"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "OutlineDriven",
+  "source_url": "https://github.com/OutlineDriven/odin-claude-plugin/blob/main/skills/prism/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OutlineDriven/odin-claude-plugin/blob/main/skills/prism/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Split one artifact across independent lenses and return where they clash, plus the single question that resolves the clash. Use when one reviewer angle is not enough, such as a spec read for security, cost, and operability at once, or when the user says \"prism this\" or \"review this from different angles\". It reports the disagreement and never the average. To repeat one identical read to measure divergence, use fan-out-fresh-reads."
+}

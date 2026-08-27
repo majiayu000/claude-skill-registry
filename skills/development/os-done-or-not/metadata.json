@@ -1,0 +1,37 @@
+{
+  "name": "os-done-or-not",
+  "repo": "kharmanskyi/open-steps",
+  "path": "skills/os-done-or-not/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/kharmanskyi/open-steps",
+  "dir_name": "os-done-or-not",
+  "downloaded_at": "2026-08-27T08:12:30.003864Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: dev, code",
+    "score": 2,
+    "runner_up": "agent",
+    "runner_up_score": 1,
+    "signals": [
+      "dev",
+      "code"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "kharmanskyi",
+  "source_url": "https://github.com/kharmanskyi/open-steps/blob/main/skills/os-done-or-not/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/kharmanskyi/open-steps/blob/main/skills/os-done-or-not/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "ALWAYS invoke this skill when work wraps up or the user asks how it went - \"done or not\", \"are we done\", \"what happened\", \"report\" - in any language, and when a Stop hook asks for a session report. Produces a ten-line plain- language report: a lead, a checkmark table, and a verdict - fully done, anything needed from you, new debt, safe to close. Every \"yes\" names its proof; unverified says \"not checked\". Saves the report so the next session starts from it instead of re-exploring the repo."
+}

@@ -1,0 +1,37 @@
+{
+  "name": "companion-skill",
+  "repo": "anbeime/skill",
+  "path": "projects/companion-skill/SKILL.md",
+  "github_branch": "main",
+  "category": "ai-llm",
+  "source": "github.com/anbeime/skill",
+  "dir_name": "companion-skill",
+  "downloaded_at": "2026-08-27T08:03:37.906881Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "ai-llm",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for ai-llm: ai, prompt",
+    "score": 2,
+    "runner_up": "ai-ml",
+    "runner_up_score": 1,
+    "signals": [
+      "ai",
+      "prompt"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "anbeime",
+  "source_url": "https://github.com/anbeime/skill/blob/main/projects/companion-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/anbeime/skill/blob/main/projects/companion-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u8f6f\u4ef6\u5f00\u53d1\u5de5\u7a0b\u5e08\u4e0e\u7efc\u5408\u529e\u516c\u6587\u5458\u5728\u957f\u65f6\u95f4\u72ec\u81ea\u6267\u884c\u540e\u53f0\u4efb\u52a1\u6216\u5904\u7406\u7e41\u7410\u5de5\u4f5c\u65f6\uff0c\u5f53\u9700\u8981\u60c5\u7eea\u966a\u4f34\u4e0e\u4e92\u52a8\u53cd\u9988\uff0c\u8bf7\u4f7f\u7528\u6b64\u6280\u80fd\u3002\u5c0f\u8dc3\u865a\u62df\u4f34\u4fa3\u4f1a\u5728\u4efb\u52a1\u671f\u95f4\u4e3b\u52a8\u966a\u804a\uff0c\u667a\u80fd\u751f\u6210\u4e13\u5c5e\u751f\u6d3b\u7167\u7247\u5e76\u901a\u8fc7\u98de\u4e66\u53d1\u9001\u6e29\u6696\u6d88\u606f\uff0c\u4e3a\u4f60\u63d0\u4f9b\u5168\u5929\u5019\u7684\u60c5\u7eea\u4ef7\u503c\u4e0e\u8d34\u5fc3\u966a\u4f34\u3002"
+}

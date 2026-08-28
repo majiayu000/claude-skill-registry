@@ -1,0 +1,37 @@
+{
+  "name": "paper-init",
+  "repo": "oprogramadorreal/optimus-claude",
+  "path": "skills/paper-init/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/oprogramadorreal/optimus-claude",
+  "dir_name": "paper-init",
+  "downloaded_at": "2026-08-28T10:22:33.694884Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: ai-ml=2, development=2",
+    "score": 2,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "ai",
+      "model"
+    ],
+    "semantic_sources": {
+      "name": "metadata",
+      "description": "frontmatter"
+    }
+  },
+  "author": "oprogramadorreal",
+  "source_url": "https://github.com/oprogramadorreal/optimus-claude/blob/master/skills/paper-init/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/oprogramadorreal/optimus-claude/blob/master/skills/paper-init/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Builds a self-contained paper-context bundle for implementing a research paper \u2014 sources, transcription, figures, annotated references, an implementation spec with the reported results, open questions, dataset provenance \u2014 under paper/, with datasets in a gitignored data/. Downloads files and edits .gitignore and the root README. Stack-agnostic; writes no implementation code. Use when implementing a paper from a URL, PDF, DOI, or arXiv id."
+}

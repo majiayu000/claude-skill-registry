@@ -1,0 +1,181 @@
+---
+name: phx-work
+description: Execute Elixir/Phoenix plan tasks with progress tracking. Use after /phx-plan
+  to implement features with mix compile and mix test verification after each step,
+  or --continue to resume interrupted work.
+---
+
+# Work
+
+Execute tasks from a plan file with checkpoint tracking and verification.
+
+## Usage
+
+```
+/phx-work .claude/plans/user-auth/plan.md
+/phx-work .claude/plans/user-auth/plan.md --from P2-T3
+/phx-work --skip-blockers
+/phx-work  # Resumes most recent plan
+```
+
+## Arguments
+
+- `<plan-file>` -- Path to plan file (optional, auto-detects recent)
+- `--from <task-id>` -- Resume from specific task (e.g., `P2-T3`)
+- `--skip-blockers` -- Continue past blocked tasks
+- `--continue` -- Resume IN_PROGRESS plan from checkboxes
+
+## Iron Laws (NON-NEGOTIABLE)
+
+1. **NEVER auto-proceed** to /phx-review or any next workflow
+   phase -- always ask the user what to do next
+2. **AUTO-CONTINUE between plan phases** -- when Phase N completes,
+   immediately start Phase N+1. Do NOT stop or ask for permission
+   between phases. Only stop at BLOCKERS or when ALL phases are done.
+3. **Plan checkboxes ARE the state** -- `[x]` = done; `[ ]` = pending
+   unless the row is visibly tagged `[BLOCKED]`. No separate JSON state files.
+   Resume by reading the plan.
+4. **Verify after EVERY task** -- never skip verification
+5. **Max 3 retries then BLOCKER** -- don't keep retrying forever
+6. **Stage specific files** -- never use `git add -A` or `git add .`
+7. **Read scratchpad BEFORE implementing** -- scratchpad has dead-ends
+   and decisions that prevent rework. Step 2 is not optional.
+8. **Clarify ambiguous tasks** -- ask the user rather than guessing
+   when a plan task's intent is unclear
+
+## Step 1: Research Decision
+
+Ask the user for plans with >3 tasks:
+
+> This plan has {count} remaining tasks across {count} phases.
+>
+> 1. **Start working** -- Begin immediately (familiar patterns)
+> 2. **Quick research** -- Read source files first (~10 min)
+> 3. **Extensive research** -- Web search + docs (~30 min)
+
+Skip for plans with 3 or fewer simple tasks -- just start.
+
+> **Split warning**: Plans with >10 tasks risk 2-3 context
+> compactions. Suggest splitting via `/phx-plan` if not already.
+
+## Step 2: Check Context (MANDATORY)
+
+Read scratchpad and compound docs before writing any code — skipping
+this causes rework. Read `.claude/plans/{slug}/scratchpad.md` (short,
+critical context) for dead-ends and decisions, then Grep `.claude/solutions/`
+for solved patterns. Apply findings: skip dead-ends, follow decisions,
+reuse patterns. Ask the user when a task's intent is ambiguous — never
+guess, corrections are expensive.
+
+## Step 3: Load, Create Task List, and Resume
+
+Read plan file, count `[x]` (completed) vs `[ ]` (remaining).
+Select the first unchecked task not tagged `[BLOCKED]`. Stop if an unresolved
+`[BLOCKED]` task precedes it unless `--skip-blockers` is explicit.
+`--skip-blockers` skips only tagged blocked rows; `--from <blocked-id>`
+explicitly retries that row and clears `[BLOCKED]` when starting.
+
+**Use the plan file as the portable task list.** For every unchecked item,
+preserve its `- [ ] [Pn-Tm]` row and ordering. At the start of a task, set its
+phase to `[IN_PROGRESS]` and append a `Started:` entry to
+`.claude/plans/{slug}/progress.md`. Mark the plan checkbox `[x]` only after
+verification passes, then append the completion evidence to `progress.md`.
+
+Dependencies remain explicit in phase order: do not start a later phase while
+an earlier phase has unchecked non-blocked tasks. This checklist is the progress
+UI, durable state, and resume mechanism; no runtime task API is required.
+
+With `--from P2-T3`: Skip to that specific task.
+
+**Stale-plan check**: if the plan predates this session (file mtime), spot-check
+2-3 files it references before executing — assumptions may have drifted.
+
+See `references/resume-strategies.md` for all resume modes.
+
+## Step 4: Execute Tasks
+
+Execute each unchecked task (`- [ ] [Pn-Tm][concern] Description`):
+
+1. **Start task**: mark its phase `[IN_PROGRESS]` and log the start in `.claude/plans/{slug}/progress.md`
+2. **Apply concern guidance** from the annotation and its required verification (see `references/execution-guide.md`); it never selects a named worker
+3. **Implement** the task
+4. **Verify**: `mix format` + `mix compile --warnings-as-errors`
+   (at phase end, also run `mix test <affected>` — see tiers below)
+5. **Complete task**: Mark checkbox `[x]` on pass, **append
+   implementation note** inline, and log verification evidence in `progress.md`. Example:
+   `- [x] [P1-T3] Add user schema — citext for email, composite index on [user_id, status]`
+   This survives context compaction; the plan is re-read on resume.
+6. **On failure**: retry up to 3 times, then keep the row unchecked and
+   append `[BLOCKED]`, optionally mark its phase `[BLOCKED]`, record the
+   blocker in `progress.md`, write a DEAD-END to scratchpad, and stop by
+   default. Continue only when `--skip-blockers` was explicitly supplied
+
+**Parallel groups**: Tasks under `### Parallel:` may use native generic workers only when independent; otherwise execute them sequentially in the current session. See `references/execution-guide.md`
+for the optional-worker pattern, sequential fallback, and checkpoint flow.
+
+**Verification tiers** (scoped to minimize redundant runs):
+
+- Per-task: `mix compile --warnings-as-errors` only
+  and `mix format --check-formatted <changed_files>`
+- Per-phase: `mix compile --warnings-as-errors` + `mix test <affected_files>` + `mix credo --strict`
+  (scope tests: `mix test test/path/to_affected_test.exs` — NOT full suite)
+- Per-feature: when Tidewave tools are independently configured and exposed, use a behavioral runtime smoke test; otherwise run a focused repository test and a local/manual smoke check (see execution-guide.md)
+- Final gate: `mix test` (full suite — run ONCE at the end, not per-phase)
+
+**Token efficiency**: Do NOT narrate each verification step. Execute
+tool calls directly without "Let me now run..." preamble. Only narrate
+when explaining a non-obvious decision or reporting a failure. When
+several checkboxes complete together (parallel groups, resume catch-up),
+batch them into ONE edit pass — never one Edit call per checkbox.
+No hook is assumed. Run `mix format` explicitly during verification and
+`mix format --check-formatted <changed_files>` before completing each task.
+
+## Step 5: Completion
+
+Summarize results, then ask the user a normal conversational question:
+
+> Implementation complete! {done}/{total} tasks finished.
+> {count} files modified across {count} phases.
+
+Options: 1. **Run review** (`/phx-review`) (Recommended),
+2. **Get a briefing** (`/phx-brief` — understand what was built),
+3. **Create a git commit** with the platform's native git workflow, 4. **Continue manually**.
+If any task fixed a non-obvious bug, also mention `/phx-compound`
+to capture the solution.
+
+With blockers: list them, offer **Replan** (`/phx-plan`),
+**Review first** (`/phx-review`), or **Handle myself**.
+
+**If blockers remain**, auto-write HANDOFF to scratchpad:
+
+```markdown
+### [HH:MM] HANDOFF: {plan name}
+Status: {done}/{total} tasks. Blockers: {list}.
+Next: {first unchecked task ID and description}.
+Key decisions: {brief list from this session}.
+```
+
+Include context beyond checkboxes for fresh session resume.
+
+**NEVER** auto-start /phx-review or any other phase.
+
+## Step 6: Check for Additional Plans
+
+After completion, use Glob to find other plan files matching
+`.claude/plans/*/plan.md`. If pending plans exist, inform the
+user. Do NOT auto-start.
+
+## Integration
+
+```text
+/phx-plan → /phx-work (YOU ARE HERE) → /phx-review → /phx-compound
+                 ↑ ASK USER before each transition
+```
+
+## References
+
+- `references/execution-guide.md` -- Task routing, parallel execution, verification
+- `references/resume-strategies.md` -- Resume modes and state persistence
+- `references/file-formats.md` -- Plan and progress file formats
+- `references/error-recovery.md` -- Error handling and blockers
+- `references/harness-patterns.md` -- Critic-refiner pattern for debugging loops

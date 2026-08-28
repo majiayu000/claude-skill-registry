@@ -1,7 +1,7 @@
 {
-  "discovered_at": "2026-08-27T08:23:57.801048Z",
+  "discovered_at": "2026-08-28T10:28:57.824422Z",
   "total_repos": 300,
-  "total_skills": 40,
+  "total_skills": 35,
   "scanned_repos": 300,
   "limits": {
     "max_repos": 300,
@@ -93,7 +93,6 @@
     "XiaoMaColtAI/math-modeling-skill",
     "a5c-ai/babysitter",
     "aaddrick/attention-control",
-    "aaronjmars/agent-credit",
     "activeloopai/hivemind",
     "addyosmani/web-quality-skills",
     "adityaarsharma/youtube-marketing-skills",
@@ -244,6 +243,7 @@
     "onsails/skills",
     "oprogramadorreal/optimus-claude",
     "oxylabs/agent-skills",
+    "pale-knight/redteam-skill",
     "parcadei/Continuous-Claude-v3",
     "pedrohcgs/claude-code-my-workflow",
     "plugin87/ux-ui-agent-skills",
@@ -314,164 +314,144 @@
   ],
   "skills": [
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "skills/hate/SKILL.md"
+      "repo": "fcakyon/claude-codex-settings",
+      "path": "plugins/seo-skills/skills/schema/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "skills/prism/SKILL.md"
+      "repo": "fcakyon/claude-codex-settings",
+      "path": "plugins/seo-skills/skills/seo-audit/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "skills/shower/SKILL.md"
+      "repo": "fcakyon/claude-codex-settings",
+      "path": "plugins/seo-skills/skills/programmatic-seo/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "skills/feynman/SKILL.md"
+      "repo": "fcakyon/claude-codex-settings",
+      "path": "plugins/seo-skills/skills/site-architecture/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "skills/mandela/SKILL.md"
+      "repo": "fcakyon/claude-codex-settings",
+      "path": "plugins/frontend-design-skills/skills/writing-guidelines/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "skills/reorder/SKILL.md"
+      "repo": "microsoft/power-platform-skills",
+      "path": "plugins/mobile-apps/skills/telemetry/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "skills/debloat/SKILL.md"
+      "repo": "motherduckdb/agent-skills",
+      "path": "skills/motherduck-cli/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "skills/autobahn/SKILL.md"
+      "repo": "motherduckdb/agent-skills",
+      "path": "skills/motherduck-manage-guides/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "skills/size-the-run/SKILL.md"
+      "repo": "motherduckdb/agent-skills",
+      "path": "plugins/motherduck-skills/skills/motherduck-cli/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "skills/clean-and-true/SKILL.md"
+      "repo": "motherduckdb/agent-skills",
+      "path": "plugins/motherduck-skills-claude/skills/motherduck-cli/SKILL.md"
     },
     {
-      "repo": "ScrapeCreators/social-media-research-skills",
-      "path": "skills/comment-mining/SKILL.md"
+      "repo": "motherduckdb/agent-skills",
+      "path": "plugins/motherduck-skills/skills/motherduck-manage-guides/SKILL.md"
     },
     {
-      "repo": "ScrapeCreators/social-media-research-skills",
-      "path": "skills/trend-discovery/SKILL.md"
+      "repo": "motherduckdb/agent-skills",
+      "path": "plugins/motherduck-skills-claude/skills/motherduck-manage-guides/SKILL.md"
     },
     {
-      "repo": "ScrapeCreators/social-media-research-skills",
-      "path": "skills/audience-research/SKILL.md"
+      "repo": "oliver-kriska/claude-elixir-phoenix",
+      "path": "targets/dsh/skills/oban/SKILL.md"
     },
     {
-      "repo": "ScrapeCreators/social-media-research-skills",
-      "path": "skills/scrapecreators-api/SKILL.md"
+      "repo": "oliver-kriska/claude-elixir-phoenix",
+      "path": "targets/dsh/skills/deploy/SKILL.md"
     },
     {
-      "repo": "ScrapeCreators/social-media-research-skills",
-      "path": "skills/ad-library-teardown/SKILL.md"
+      "repo": "oliver-kriska/claude-elixir-phoenix",
+      "path": "targets/dsh/skills/testing/SKILL.md"
     },
     {
-      "repo": "ScrapeCreators/social-media-research-skills",
-      "path": "skills/outlier-post-finder/SKILL.md"
+      "repo": "oliver-kriska/claude-elixir-phoenix",
+      "path": "targets/dsh/skills/security/SKILL.md"
     },
     {
-      "repo": "ScrapeCreators/social-media-research-skills",
-      "path": "skills/content-repurposing/SKILL.md"
+      "repo": "oliver-kriska/claude-elixir-phoenix",
+      "path": "targets/dsh/skills/phx-help/SKILL.md"
     },
     {
-      "repo": "ScrapeCreators/social-media-research-skills",
-      "path": "skills/influencer-prospecting/SKILL.md"
+      "repo": "oliver-kriska/claude-elixir-phoenix",
+      "path": "targets/dsh/skills/phx-init/SKILL.md"
     },
     {
-      "repo": "ScrapeCreators/social-media-research-skills",
-      "path": "skills/social-listening-brief/SKILL.md"
+      "repo": "oliver-kriska/claude-elixir-phoenix",
+      "path": "targets/dsh/skills/phx-full/SKILL.md"
     },
     {
-      "repo": "ScrapeCreators/social-media-research-skills",
-      "path": "skills/product-demand-research/SKILL.md"
+      "repo": "oliver-kriska/claude-elixir-phoenix",
+      "path": "targets/dsh/skills/phx-plan/SKILL.md"
     },
     {
-      "repo": "ScrapeCreators/social-media-research-skills",
-      "path": "skills/transcript-intelligence/SKILL.md"
+      "repo": "oliver-kriska/claude-elixir-phoenix",
+      "path": "targets/dsh/skills/phx-work/SKILL.md"
     },
     {
-      "repo": "ScrapeCreators/social-media-research-skills",
-      "path": "skills/creator-profile-teardown/SKILL.md"
+      "repo": "oliver-kriska/claude-elixir-phoenix",
+      "path": "targets/dsh/skills/phx-perf/SKILL.md"
     },
     {
-      "repo": "ScrapeCreators/social-media-research-skills",
-      "path": "skills/competitor-social-research/SKILL.md"
+      "repo": "oliver-kriska/claude-elixir-phoenix",
+      "path": "targets/dsh/skills/phx-quick/SKILL.md"
     },
     {
-      "repo": "anbeime/skill",
-      "path": "skills/icon-generator/SKILL.md"
+      "repo": "oliver-kriska/claude-elixir-phoenix",
+      "path": "targets/dsh/skills/phx-audit/SKILL.md"
     },
     {
-      "repo": "anbeime/skill",
-      "path": "projects/companion-skill/SKILL.md"
+      "repo": "oliver-kriska/claude-elixir-phoenix",
+      "path": "targets/dsh/skills/phx-trace/SKILL.md"
     },
     {
-      "repo": "anbeime/skill",
-      "path": "skills/gpt-image-2-prompt-engine/SKILL.md"
+      "repo": "oliver-kriska/claude-elixir-phoenix",
+      "path": "targets/dsh/skills/phx-brief/SKILL.md"
     },
     {
-      "repo": "anbeime/skill",
-      "path": "skills/obsidian-skills-integrated/SKILL.md"
+      "repo": "oliver-kriska/claude-elixir-phoenix",
+      "path": "targets/dsh/skills/phx-intro/SKILL.md"
     },
     {
-      "repo": "dongshuyan/compass-skills",
-      "path": "skills/pause-and-resume/SKILL.md"
+      "repo": "oliver-kriska/claude-elixir-phoenix",
+      "path": "targets/dsh/skills/phx-freeze/SKILL.md"
     },
     {
-      "repo": "fvadicamo/dev-agent-skills",
-      "path": "plugins/decision-records/skills/decision-records/SKILL.md"
+      "repo": "oliver-kriska/claude-elixir-phoenix",
+      "path": "targets/dsh/skills/phx-verify/SKILL.md"
     },
     {
-      "repo": "jiweiyeah/Skills-Manager",
-      "path": "skills/skills-manager-cli/SKILL.md"
+      "repo": "oliver-kriska/claude-elixir-phoenix",
+      "path": "targets/dsh/skills/lv-assigns/SKILL.md"
     },
     {
-      "repo": "kharmanskyi/open-steps",
-      "path": "skills/os-whats-next/SKILL.md"
+      "repo": "oliver-kriska/claude-elixir-phoenix",
+      "path": "targets/dsh/skills/phx-review/SKILL.md"
     },
     {
-      "repo": "kharmanskyi/open-steps",
-      "path": "skills/os-say-simple/SKILL.md"
+      "repo": "oliver-kriska/claude-elixir-phoenix",
+      "path": "targets/dsh/skills/phx-recall/SKILL.md"
     },
     {
-      "repo": "kharmanskyi/open-steps",
-      "path": "skills/os-check-work/SKILL.md"
+      "repo": "oliver-kriska/claude-elixir-phoenix",
+      "path": "targets/dsh/skills/phx-triage/SKILL.md"
     },
     {
-      "repo": "kharmanskyi/open-steps",
-      "path": "skills/os-ask-simple/SKILL.md"
-    },
-    {
-      "repo": "kharmanskyi/open-steps",
-      "path": "skills/os-done-or-not/SKILL.md"
-    },
-    {
-      "repo": "kharmanskyi/open-steps",
-      "path": "skills/os-step-by-step/SKILL.md"
-    },
-    {
-      "repo": "rse/ase",
-      "path": "plugin/skills/ase-spec-edit/SKILL.md"
+      "repo": "oprogramadorreal/optimus-claude",
+      "path": "skills/paper-init/SKILL.md"
     },
     {
       "repo": "sickn33/agentic-awesome-skills",
-      "path": "skills/ot-ics/SKILL.md"
-    },
-    {
-      "repo": "sickn33/agentic-awesome-skills",
-      "path": "skills/radare2/SKILL.md"
-    },
-    {
-      "repo": "skyf0xx/hedgehog",
-      "path": "src/skills/pr-writing/SKILL.md"
+      "path": "skills/falsify/SKILL.md"
     }
   ]
 }

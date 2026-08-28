@@ -1,0 +1,39 @@
+{
+  "name": "motherduck-cli",
+  "repo": "motherduckdb/agent-skills",
+  "path": "skills/motherduck-cli/SKILL.md",
+  "github_branch": "main",
+  "category": "productivity",
+  "source": "github.com/motherduckdb/agent-skills",
+  "dir_name": "motherduck-cli",
+  "downloaded_at": "2026-08-28T10:20:31.919403Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "productivity",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for productivity: automation, workflow, task, planning",
+    "score": 4,
+    "runner_up": "bash",
+    "runner_up_score": 3,
+    "signals": [
+      "automation",
+      "workflow",
+      "task",
+      "planning"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "motherduckdb",
+  "source_url": "https://github.com/motherduckdb/agent-skills/blob/main/skills/motherduck-cli/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/motherduckdb/agent-skills/blob/main/skills/motherduck-cli/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Operate MotherDuck from a terminal with the MotherDuck CLI. Use when a coding agent or developer needs shell-based authentication, structured query output, or file-oriented Dive and Flight authoring; use MCP instead for chat-only exploration and inline results."
+}

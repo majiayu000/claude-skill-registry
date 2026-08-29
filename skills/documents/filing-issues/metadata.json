@@ -1,0 +1,37 @@
+{
+  "name": "filing-issues",
+  "repo": "skyf0xx/hedgehog",
+  "path": "src/skills/filing-issues/SKILL.md",
+  "github_branch": "master",
+  "category": "documents",
+  "source": "github.com/skyf0xx/hedgehog",
+  "dir_name": "filing-issues",
+  "downloaded_at": "2026-08-29T06:24:46.710947Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "documents",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for documents: word, documentation",
+    "score": 2,
+    "runner_up": "creative",
+    "runner_up_score": 1,
+    "signals": [
+      "word",
+      "documentation"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "skyf0xx",
+  "source_url": "https://github.com/skyf0xx/hedgehog/blob/master/src/skills/filing-issues/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/skyf0xx/hedgehog/blob/master/src/skills/filing-issues/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when filing one or more GitHub issues for planned work \u2014 \"file an issue for this\", \"turn this plan into issues\", \"open a tracking issue\". Covers filing everything on skyf0xx/hedgehog regardless of which repo's code changes, whether to split a plan into a tracking issue plus sub-issues, which account files the issue, labels, and acceptance criteria. For how to word an issue, see the pr-writing skill."
+}

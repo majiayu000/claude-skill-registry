@@ -1,0 +1,40 @@
+{
+  "name": "developer-onboarding-doc",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/developer-onboarding-doc/SKILL.md",
+  "github_branch": "main",
+  "category": "devops",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "developer-onboarding-doc",
+  "downloaded_at": "2026-08-29T06:19:44.193406Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "devops",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for devops: ci, cd, docker, kubernetes, deploy",
+    "score": 5,
+    "runner_up": "data",
+    "runner_up_score": 3,
+    "signals": [
+      "ci",
+      "cd",
+      "docker",
+      "kubernetes",
+      "deploy"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/developer-onboarding-doc/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/developer-onboarding-doc/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Write a developer onboarding document for a service, codebase, or team. Use when asked to write a developer guide, service README, onboarding doc for a new engineer, codebase orientation, or getting-started guide for a technical team. Produces a structured doc covering service overview, architecture, local setup, key patterns, testing, deployment, and who to ask for what."
+}

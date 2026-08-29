@@ -1,0 +1,37 @@
+{
+  "name": "messaging-framework",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/messaging-framework/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "messaging-framework",
+  "downloaded_at": "2026-08-29T06:19:38.146520Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: development=2, documents=2",
+    "score": 2,
+    "runner_up": "documents",
+    "runner_up_score": 2,
+    "signals": [
+      "framework",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/messaging-framework/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/messaging-framework/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Build a messaging framework (message house) that the whole company can use consistently. Use when asked to create messaging, a value proposition, a message house, key messages, or to make marketing/sales/product say the same thing. Produces a messaging framework \u2014 audience & value proposition, the one-line positioning, 3 message pillars with proof points, objection handling, and a words-we-use/avoid list."
+}

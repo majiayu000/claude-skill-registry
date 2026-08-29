@@ -1,0 +1,38 @@
+{
+  "name": "design-patterns",
+  "repo": "decebals/claude-code-java",
+  "path": "skills/design-patterns/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/decebals/claude-code-java",
+  "dir_name": "design-patterns-decebals-claude-code-java-2",
+  "downloaded_at": "2026-08-29T06:10:32.719459Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: code, build, refactor",
+    "score": 3,
+    "runner_up": "design",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "build",
+      "refactor"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "decebals",
+  "source_url": "https://github.com/decebals/claude-code-java/blob/main/skills/design-patterns/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/decebals/claude-code-java/blob/main/skills/design-patterns/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Common design patterns with Java examples (Factory, Builder, Strategy, Observer, Decorator, etc.). Use when user asks \"implement pattern\", \"use factory\", \"strategy pattern\", or when designing extensible components."
+}

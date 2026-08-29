@@ -1,0 +1,37 @@
+{
+  "name": "jpa-patterns",
+  "repo": "decebals/claude-code-java",
+  "path": "skills/jpa-patterns/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/decebals/claude-code-java",
+  "dir_name": "jpa-patterns-decebals-claude-code-java-2",
+  "downloaded_at": "2026-08-29T06:10:31.850354Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: code, debug",
+    "score": 2,
+    "runner_up": "data",
+    "runner_up_score": 1,
+    "signals": [
+      "code",
+      "debug"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "decebals",
+  "source_url": "https://github.com/decebals/claude-code-java/blob/main/skills/jpa-patterns/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/decebals/claude-code-java/blob/main/skills/jpa-patterns/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "JPA/Hibernate patterns and common pitfalls (N+1, lazy loading, transactions, queries). Use when user has JPA performance issues, LazyInitializationException, or asks about entity relationships and fetching strategies."
+}

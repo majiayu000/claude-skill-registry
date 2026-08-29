@@ -1,0 +1,37 @@
+{
+  "name": "interview-framework-codex",
+  "repo": "tzachbon/smart-ralph",
+  "path": "plugins/ralph-specum-codex/skills/interview-framework-codex/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/tzachbon/smart-ralph",
+  "dir_name": "interview-framework-codex",
+  "downloaded_at": "2026-08-29T06:25:57.334368Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: development=2, productivity=2",
+    "score": 2,
+    "runner_up": "productivity",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "framework"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "tzachbon",
+  "source_url": "https://github.com/tzachbon/smart-ralph/blob/main/plugins/ralph-specum-codex/skills/interview-framework-codex/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tzachbon/smart-ralph/blob/main/plugins/ralph-specum-codex/skills/interview-framework-codex/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Internal Ralph Specum contract for Codex phase interviews, skill manifests, approval, and delegation gates. Phase coordinators load this skill directly; users do not invoke it as a workflow phase."
+}

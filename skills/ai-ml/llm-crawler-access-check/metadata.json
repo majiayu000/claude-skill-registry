@@ -1,0 +1,38 @@
+{
+  "name": "llm-crawler-access-check",
+  "repo": "davepoon/buildwithclaude",
+  "path": "plugins/all-skills/skills/llm-crawler-access-check/SKILL.md",
+  "github_branch": "main",
+  "category": "ai-ml",
+  "source": "github.com/davepoon/buildwithclaude",
+  "dir_name": "llm-crawler-access-check",
+  "downloaded_at": "2026-08-29T06:10:27.978498Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "ai-ml",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for ai-ml: ai, model, training",
+    "score": 3,
+    "runner_up": "ai-llm",
+    "runner_up_score": 2,
+    "signals": [
+      "ai",
+      "model",
+      "training"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "davepoon",
+  "source_url": "https://github.com/davepoon/buildwithclaude/blob/main/plugins/all-skills/skills/llm-crawler-access-check/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/davepoon/buildwithclaude/blob/main/plugins/all-skills/skills/llm-crawler-access-check/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Check whether a website's robots.txt allows the AI crawlers that decide visibility in ChatGPT Search, Perplexity, Claude, Gemini, and Microsoft Copilot. Use when someone asks whether AI bots are blocked, whether to allow or block GPTBot, why a site never appears in AI answers, or wants a robots.txt review for AI crawlers. Reads only robots.txt, then returns a per-agent allow/block table, the exact rule responsible for each verdict, and the precise lines to change. Distinguishes training crawlers from the search crawlers that actually control citations."
+}

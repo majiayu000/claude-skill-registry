@@ -1,0 +1,37 @@
+{
+  "name": "sprint-velocity-analysis",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/sprint-velocity-analysis/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "sprint-velocity-analysis",
+  "downloaded_at": "2026-08-29T06:19:43.983130Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: analysis=2, data=2",
+    "score": 2,
+    "runner_up": "data",
+    "runner_up_score": 2,
+    "signals": [
+      "analysis",
+      "analyze"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/sprint-velocity-analysis/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/sprint-velocity-analysis/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Analyze sprint velocity data and produce an engineering team health report covering delivery trends, capacity utilization, and improvement recommendations. Use when asked to analyze sprint velocity, review team delivery health, identify delivery risks, or produce a retrospective data analysis. Produces a velocity trend analysis, health diagnosis table, top improvement recommendations with implementation steps, and a next-sprint capacity forecast."
+}

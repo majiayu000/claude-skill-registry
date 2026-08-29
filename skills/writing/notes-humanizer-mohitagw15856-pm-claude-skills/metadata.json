@@ -1,0 +1,40 @@
+{
+  "name": "notes-humanizer",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "plugins/pm-writers/skills/notes-humanizer/SKILL.md",
+  "github_branch": "main",
+  "category": "writing",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "notes-humanizer-mohitagw15856-pm-claude-skills",
+  "downloaded_at": "2026-08-29T06:19:51.975678Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "writing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for writing: writing, writer, copy, blog, article",
+    "score": 5,
+    "runner_up": "ai-llm",
+    "runner_up_score": 2,
+    "signals": [
+      "writing",
+      "writer",
+      "copy",
+      "blog",
+      "article"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/plugins/pm-writers/skills/notes-humanizer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/plugins/pm-writers/skills/notes-humanizer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Strips AI writing patterns from text and rewrites it to sound genuinely human by removing statistical defaults and injecting the specific signals that human writers produce. Use when a draft reads as AI-generated, over-polished, or rhythmically uniform \u2014 including blog posts, emails, LinkedIn posts, or any prose that needs to sound like a real person wrote it. Produces a pattern audit, side-by-side comparison, itemised change log, and clean rewritten output ready to paste."
+}

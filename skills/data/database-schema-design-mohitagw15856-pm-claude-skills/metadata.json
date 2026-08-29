@@ -1,0 +1,38 @@
+{
+  "name": "database-schema-design",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/database-schema-design/SKILL.md",
+  "github_branch": "main",
+  "category": "data",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "database-schema-design-mohitagw15856-pm-claude-skills",
+  "downloaded_at": "2026-08-29T06:19:39.639965Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "data",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for data: data, analytics, database",
+    "score": 3,
+    "runner_up": "business",
+    "runner_up_score": 2,
+    "signals": [
+      "data",
+      "analytics",
+      "database"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/database-schema-design/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/database-schema-design/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Document or design a database schema with entity relationships, table definitions, constraints, indexes, and access patterns. Use when asked to design a database, document an existing schema, model entities and relationships, define table structures, plan an index strategy, or produce a data model for review. Produces a structured schema document covering an ER diagram, table DDL definitions, index strategy, access pattern analysis, normalization decisions, and migration notes."
+}

@@ -1,0 +1,27 @@
+{
+  "name": "hypergrok-trading-desk",
+  "description": "Turn a Grok Bot workspace into a 7-agent Hyperliquid trading desk: research, risk, execution, and review as separate agents.",
+  "repo": "galleonlabs/hypergrok-trading-desk",
+  "path": "skills/desk-operating-model",
+  "github_branch": "main",
+  "category": "orchestration",
+  "tags": [
+    "hyperliquid",
+    "trading",
+    "grok",
+    "desk",
+    "multi-agent"
+  ],
+  "stars": 20,
+  "source": "Community Skills",
+  "dir_name": "hypergrok-trading-desk",
+  "archive_mode": "skill-md",
+  "bundled_files": [],
+  "author": "Galleon Labs",
+  "source_url": "https://github.com/galleonlabs/hypergrok-trading-desk/blob/main/skills/desk-operating-model/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/galleonlabs/hypergrok-trading-desk/blob/main/skills/desk-operating-model/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

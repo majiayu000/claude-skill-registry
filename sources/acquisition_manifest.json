@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updated_at": "2026-08-29T06:28:46.596910Z",
-  "total_count": 1624,
+  "updated_at": "2026-08-30T04:31:29.697293Z",
+  "total_count": 1627,
   "entries": {
     "Xquik-dev/x-twitter-scraper": {
       "repo": "Xquik-dev/x-twitter-scraper",
@@ -9205,13 +9205,13 @@
       "repo": "yusufkaraaslan/Skill_Seekers",
       "branch": "main",
       "relative_path": "skills/skill-seekers/SKILL.md",
-      "updated_at": "2026-08-29T06:28:39.408997Z"
+      "updated_at": "2026-08-30T04:31:24.411756Z"
     },
     "lackeyjb/playwright-skill:name:playwright-skill": {
       "repo": "lackeyjb/playwright-skill",
       "branch": "main",
       "relative_path": "skills/playwright-skill/SKILL.md",
-      "updated_at": "2026-08-29T06:28:37.162329Z"
+      "updated_at": "2026-08-30T04:31:23.078752Z"
     },
     "ToniPerea/humanizar-texto-es:name:humanizar-texto-es": {
       "repo": "ToniPerea/humanizar-texto-es",
@@ -9265,7 +9265,7 @@
       "repo": "Enreign/pagerunner-skill",
       "branch": "main",
       "relative_path": "skills/pagerunner-skill/SKILL.md",
-      "updated_at": "2026-08-29T06:28:39.078920Z"
+      "updated_at": "2026-08-30T04:31:24.076416Z"
     },
     "miningstore/confluence-to-agent-knowledge-base:name:confluence-to-agent-knowledge-base": {
       "repo": "miningstore/confluence-to-agent-knowledge-base",
@@ -9571,7 +9571,7 @@
       "repo": "RS42-AI/scout-ai-lite",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-08-29T06:28:39.514519Z"
+      "updated_at": "2026-08-30T04:31:24.455839Z"
     },
     "Dicklesworthstone/slb:name:unknown": {
       "repo": "Dicklesworthstone/slb",
@@ -9619,7 +9619,7 @@
       "repo": "tostechbr/sdk-apps-openai",
       "branch": "main",
       "relative_path": "skill.md",
-      "updated_at": "2026-08-29T06:28:39.523730Z"
+      "updated_at": "2026-08-30T04:31:24.277228Z"
     },
     "fredsun/CodeDiary:name:unknown": {
       "repo": "fredsun/CodeDiary",
@@ -9746,6 +9746,24 @@
       "branch": "main",
       "relative_path": "skills/skills-from-expertise/SKILL.md",
       "updated_at": "2026-08-26T01:50:44.630407Z"
+    },
+    "galleonlabs/hypergrok-trading-desk:skills/desk-operating-model": {
+      "repo": "galleonlabs/hypergrok-trading-desk",
+      "branch": "main",
+      "relative_path": "skills/desk-operating-model/SKILL.md",
+      "updated_at": "2026-08-30T04:31:24.710946Z"
+    },
+    "ADWilkinson/usdctofiat-skills:skills/cashout": {
+      "repo": "ADWilkinson/usdctofiat-skills",
+      "branch": "main",
+      "relative_path": "skills/cashout/SKILL.md",
+      "updated_at": "2026-08-30T04:31:24.729632Z"
+    },
+    "galleonlabs/sell-unused-tokens:name:sell-unused-tokens": {
+      "repo": "galleonlabs/sell-unused-tokens",
+      "branch": "main",
+      "relative_path": "SKILL.md",
+      "updated_at": "2026-08-30T04:31:26.286901Z"
     }
   }
 }

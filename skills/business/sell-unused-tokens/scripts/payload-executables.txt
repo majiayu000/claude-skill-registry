@@ -1,0 +1,6 @@
+# Every executable or shebang file this repository is allowed to ship.
+# Installing copies the repo folder, so anything listed here lands in the
+# user's skills directory. Adding a line here is a disclosure decision:
+# SECURITY.md must name the path, and CI fails until it does.
+# One repo-relative path per line. Lines starting with # are ignored.
+scripts/validate.sh

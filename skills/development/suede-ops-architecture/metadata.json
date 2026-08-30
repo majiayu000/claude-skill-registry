@@ -1,0 +1,38 @@
+{
+  "name": "suede-ops-architecture",
+  "repo": "JasonColapietro/suede-creator-skills",
+  "path": "skills/suede-ops-architecture/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/JasonColapietro/suede-creator-skills",
+  "dir_name": "suede-ops-architecture",
+  "downloaded_at": "2026-08-30T04:04:05.789878Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: code, build, software",
+    "score": 3,
+    "runner_up": "ai-ml",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "build",
+      "software"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "JasonColapietro",
+  "source_url": "https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-ops-architecture/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-ops-architecture/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Suede-owned operations-architecture discipline that fixes the shape of a system before anyone builds it: entity schema first, exactly one write path per entity, every unit of work routed to a deterministic automation, an AI agent, or a human decision, every existing tool marked absorb, keep, or kill, and the build sequenced into phases whose completion is proved by a command. Use when scoping an automation or agent build, deciding whether a workflow needs a model at all, consolidating a sprawling tool stack, designing the data model under a workflow, choosing a migration path off an old system, or ordering a build so nothing lands on a moving foundation. NOT FOR: executing a planned multi-file repo change (use suede-graph-flo-xr); coordinating parallel builders with file ownership (use suede-agent-teams); lead lifecycle, scoring, and CRM routing rules (use suede-revops); proving agent output quality against an eval set (use suede-ai-eval); reviewing the finished diff (use suede-code-review)."
+}

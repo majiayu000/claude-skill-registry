@@ -1,0 +1,36 @@
+{
+  "name": "os-what-could-go-wrong",
+  "repo": "kharmanskyi/open-steps",
+  "path": "skills/os-what-could-go-wrong/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/kharmanskyi/open-steps",
+  "dir_name": "os-what-could-go-wrong",
+  "downloaded_at": "2026-08-30T04:19:37.953560Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category agent scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "ai-llm",
+    "runner_up_score": 1,
+    "signals": [
+      "agent"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "kharmanskyi",
+  "source_url": "https://github.com/kharmanskyi/open-steps/blob/main/skills/os-what-could-go-wrong/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/kharmanskyi/open-steps/blob/main/skills/os-what-could-go-wrong/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "ALWAYS invoke this skill before anything hard to undo gets agreed to - a contract, a purchase, a migration, a launch, a price change, a reorganisation - and whenever the user asks \"what could go wrong\", \"what are we missing\", \"poke holes in this\", or for a premortem or a red team, in any language. Assumes the decision already failed and works backwards to find out why, in a fresh agent that had no hand in making it. Sweeps nine areas and shows what each produced, including the empty ones. Ends on one verdict: go ahead, go but fix these first, try it small first, think again, do not do this."
+}

@@ -1,0 +1,35 @@
+{
+  "name": "sell-unused-tokens",
+  "description": "List leftover LLM API credits on tokensto.cash and cash out USDC.",
+  "repo": "galleonlabs/sell-unused-tokens",
+  "path": "SKILL.md",
+  "github_branch": "main",
+  "category": "business",
+  "tags": [
+    "tokens",
+    "usdc",
+    "credits",
+    "openai",
+    "openrouter"
+  ],
+  "stars": 0,
+  "source": "Community Skills",
+  "dir_name": "sell-unused-tokens",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "LICENSE",
+    "README.md",
+    "references/invariants.md",
+    "references/troubleshooting.md",
+    "scripts/link-allowlist.txt",
+    "scripts/payload-executables.txt",
+    "scripts/validate.sh"
+  ],
+  "author": "Galleon Labs",
+  "source_url": "https://github.com/galleonlabs/sell-unused-tokens/blob/main/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/galleonlabs/sell-unused-tokens/blob/main/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

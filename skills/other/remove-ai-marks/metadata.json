@@ -1,0 +1,37 @@
+{
+  "name": "remove-ai-marks",
+  "repo": "ShadowAqueduct/watermark-remover",
+  "path": "skills/remove-ai-marks/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/ShadowAqueduct/watermark-remover",
+  "dir_name": "remove-ai-marks",
+  "downloaded_at": "2026-08-30T04:07:13.815745Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: ai-llm=2, api=2",
+    "score": 2,
+    "runner_up": "api",
+    "runner_up_score": 2,
+    "signals": [
+      "ai",
+      "llm"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "ShadowAqueduct",
+  "source_url": "https://github.com/ShadowAqueduct/watermark-remover/blob/main/skills/remove-ai-marks/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ShadowAqueduct/watermark-remover/blob/main/skills/remove-ai-marks/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Strip multi-vendor AI provenance from owned files: hidden Unicode (Layer A), statistical sampling watermarks via rewrite (Layer B \u2014 always offer), and C2PA/EXIF/XMP/container metadata on PNG/JPEG/WebP/SVG/PDF/DOCX/ODT/HTML/MD. Covers Claude, Gemini/SynthID-class, OpenAI provenance surfaces, and open-LLM sampling marks. Use when the user wants watermark removal, C2PA/Content Credentials stripping, AI metadata cleanup, invisible Unicode hygiene, anti-detect cleaning of AI output, /remove-ai-marks, or /remove-claude-marks."
+}

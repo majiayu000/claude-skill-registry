@@ -1,0 +1,2 @@
+# URLs that legitimately reject automated clients. One exact URL per line.
+# Lines starting with # are ignored.

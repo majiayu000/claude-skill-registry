@@ -1,0 +1,27 @@
+{
+  "name": "cashout",
+  "description": "Sell Base USDC for fiat with cashout from @usdctofiat/offramp. Use when a user wants a non-custodial cash-out from a real Base wallet into Venmo, Revolut, PayPal, Zelle, Monzo, or Chime.",
+  "repo": "ADWilkinson/usdctofiat-skills",
+  "path": "skills/cashout",
+  "github_branch": "main",
+  "category": "api",
+  "tags": [
+    "usdc",
+    "offramp",
+    "base",
+    "cashout",
+    "sdk"
+  ],
+  "stars": 0,
+  "source": "Community Skills",
+  "dir_name": "cashout",
+  "archive_mode": "skill-md",
+  "bundled_files": [],
+  "author": "Galleon Labs",
+  "source_url": "https://github.com/ADWilkinson/usdctofiat-skills/blob/main/skills/cashout/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ADWilkinson/usdctofiat-skills/blob/main/skills/cashout/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

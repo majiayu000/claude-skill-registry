@@ -1,0 +1,37 @@
+{
+  "name": "retention",
+  "repo": "cbrock84/headcount",
+  "path": "plugins/revenue/skills/retention/SKILL.md",
+  "github_branch": "main",
+  "category": "product",
+  "source": "github.com/cbrock84/headcount",
+  "dir_name": "retention",
+  "downloaded_at": "2026-08-31T04:16:14.519722Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "product",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for product: product, feature",
+    "score": 2,
+    "runner_up": "business",
+    "runner_up_score": 1,
+    "signals": [
+      "product",
+      "feature"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "cbrock84",
+  "source_url": "https://github.com/cbrock84/headcount/blob/main/plugins/revenue/skills/retention/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cbrock84/headcount/blob/main/plugins/revenue/skills/retention/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Diagnoses and reduces churn \u2014 cancellation flows, save offers, failed-payment recovery, at-risk detection, and the product and service causes underneath. Use this when churn is rising or unexplained, to design a cancellation or win-back flow, to recover involuntary churn, to identify at-risk accounts before they leave, or to decide whether a retention problem is a product problem."
+}

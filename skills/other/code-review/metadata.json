@@ -1,0 +1,37 @@
+{
+  "name": "code-review",
+  "repo": "cbrock84/headcount",
+  "path": "plugins/technology/skills/code-review/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/cbrock84/headcount",
+  "dir_name": "code-review",
+  "downloaded_at": "2026-08-31T04:16:18.608192Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: quality=2, security=2",
+    "score": 2,
+    "runner_up": "security",
+    "runner_up_score": 2,
+    "signals": [
+      "lint",
+      "review"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "cbrock84",
+  "source_url": "https://github.com/cbrock84/headcount/blob/main/plugins/technology/skills/code-review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cbrock84/headcount/blob/main/plugins/technology/skills/code-review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Conducts and responds to code review \u2014 reviewing a change for correctness, design, and risk, and evaluating review feedback received on your own work. Use this before merging, when asked to review a diff or pull request, when review feedback has arrived and needs acting on, or when feedback seems wrong and needs a reasoned response rather than compliance."
+}

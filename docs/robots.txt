@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://majiayu000.github.io/claude-skill-registry/sitemap.xml

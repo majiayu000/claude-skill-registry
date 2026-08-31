@@ -1,0 +1,37 @@
+{
+  "name": "benefits-and-leave",
+  "repo": "cbrock84/headcount",
+  "path": "plugins/people/skills/benefits-and-leave/SKILL.md",
+  "github_branch": "main",
+  "category": "quality",
+  "source": "github.com/cbrock84/headcount",
+  "dir_name": "benefits-and-leave",
+  "downloaded_at": "2026-08-31T04:16:20.945063Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "quality",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for quality: quality, review",
+    "score": 2,
+    "runner_up": "ai-ml",
+    "runner_up_score": 1,
+    "signals": [
+      "quality",
+      "review"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "cbrock84",
+  "source_url": "https://github.com/cbrock84/headcount/blob/main/plugins/people/skills/benefits-and-leave/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cbrock84/headcount/blob/main/plugins/people/skills/benefits-and-leave/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Designs and runs employee benefits and leave \u2014 health and retirement plans, leave policy, cost and renewal, and the administration that keeps them compliant. Use this to design or review a benefits package, prepare for a renewal, write leave policy, handle a leave request, or decide what benefits are worth their cost."
+}

@@ -1,0 +1,36 @@
+{
+  "name": "performance-management",
+  "repo": "cbrock84/headcount",
+  "path": "plugins/people/skills/performance-management/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/cbrock84/headcount",
+  "dir_name": "performance-management",
+  "downloaded_at": "2026-08-31T04:16:24.780333Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category design scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "documents",
+    "runner_up_score": 1,
+    "signals": [
+      "design"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "cbrock84",
+  "source_url": "https://github.com/cbrock84/headcount/blob/main/plugins/people/skills/performance-management/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cbrock84/headcount/blob/main/plugins/people/skills/performance-management/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Runs performance systems that change behavior \u2014 expectations, feedback, review cycles, calibration, and handling underperformance. Use this to design or fix a review process, run calibration, write or coach on feedback, address sustained underperformance, or work out why reviews consume weeks and change nothing."
+}

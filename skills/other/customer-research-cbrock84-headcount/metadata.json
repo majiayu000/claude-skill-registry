@@ -1,0 +1,36 @@
+{
+  "name": "customer-research",
+  "repo": "cbrock84/headcount",
+  "path": "plugins/marketing/skills/customer-research/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/cbrock84/headcount",
+  "dir_name": "customer-research-cbrock84-headcount",
+  "downloaded_at": "2026-08-31T04:16:22.781761Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category analysis scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "communication",
+    "runner_up_score": 1,
+    "signals": [
+      "analysis"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "cbrock84",
+  "source_url": "https://github.com/cbrock84/headcount/blob/main/plugins/marketing/skills/customer-research/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cbrock84/headcount/blob/main/plugins/marketing/skills/customer-research/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Plans, runs, and synthesizes customer research \u2014 interviews, surveys, win-loss analysis, and message testing \u2014 into findings that change decisions. Use this when the customer is being guessed at, before positioning or a major launch, when churn or conversion has an unexplained cause, or when a team is arguing from anecdotes. Also use to turn raw interview notes into usable findings."
+}

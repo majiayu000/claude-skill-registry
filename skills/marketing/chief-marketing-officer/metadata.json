@@ -1,0 +1,39 @@
+{
+  "name": "chief-marketing-officer",
+  "repo": "cbrock84/headcount",
+  "path": "plugins/marketing/skills/chief-marketing-officer/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/cbrock84/headcount",
+  "dir_name": "chief-marketing-officer",
+  "downloaded_at": "2026-08-31T04:16:27.573437Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for marketing: marketing, content, campaign, brand",
+    "score": 4,
+    "runner_up": "business",
+    "runner_up_score": 2,
+    "signals": [
+      "marketing",
+      "content",
+      "campaign",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "cbrock84",
+  "source_url": "https://github.com/cbrock84/headcount/blob/main/plugins/marketing/skills/chief-marketing-officer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cbrock84/headcount/blob/main/plugins/marketing/skills/chief-marketing-officer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Owns brand, demand generation, content, communications, and how the market understands what the business does. Use this to set marketing strategy, allocate budget across channels, decide positioning and messaging, judge whether a campaign is worth running, diagnose why demand has stalled, or arbitrate between brand-building and short-term acquisition. Also use to decide which marketing work to stop."
+}

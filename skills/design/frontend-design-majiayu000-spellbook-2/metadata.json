@@ -1,0 +1,41 @@
+{
+  "name": "frontend-design",
+  "repo": "majiayu000/spellbook",
+  "path": "plugins/spellbook-ui/skills/frontend-design/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/majiayu000/spellbook",
+  "dir_name": "frontend-design-majiayu000-spellbook-2",
+  "downloaded_at": "2026-08-31T04:24:35.549602Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "design",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for design: design, ui, css, frontend, component, animation",
+    "score": 6,
+    "runner_up": "development",
+    "runner_up_score": 3,
+    "signals": [
+      "design",
+      "ui",
+      "css",
+      "frontend",
+      "component",
+      "animation"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "majiayu000",
+  "source_url": "https://github.com/majiayu000/spellbook/blob/main/plugins/spellbook-ui/skills/frontend-design/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/majiayu000/spellbook/blob/main/plugins/spellbook-ui/skills/frontend-design/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Create distinctive, production-grade web frontend interfaces with high design quality. Use when the user explicitly asks to build or substantially redesign a web component, page, or application. Only applies when repository inspection confirms that the visual surface is a browser-rendered web UI. Do not use for native or GPU-rendered graphics, shaders, games, terminal UIs, or other non-web visual systems. Ignore incidental mentions and traces."
+}

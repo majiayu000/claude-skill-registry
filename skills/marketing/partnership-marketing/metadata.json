@@ -1,0 +1,37 @@
+{
+  "name": "partnership-marketing",
+  "repo": "cbrock84/headcount",
+  "path": "plugins/marketing/skills/partnership-marketing/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/cbrock84/headcount",
+  "dir_name": "partnership-marketing",
+  "downloaded_at": "2026-08-31T04:16:25.849460Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for marketing: marketing, campaign",
+    "score": 2,
+    "runner_up": "bash",
+    "runner_up_score": 1,
+    "signals": [
+      "marketing",
+      "campaign"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "cbrock84",
+  "source_url": "https://github.com/cbrock84/headcount/blob/main/plugins/marketing/skills/partnership-marketing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cbrock84/headcount/blob/main/plugins/marketing/skills/partnership-marketing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Builds reach through other people's audiences \u2014 co-marketing partnerships, creator and influencer programs, community building, and affiliate arrangements. Use this to find and evaluate partners, structure a joint campaign or creator deal, plan a community strategy, or decide whether a partnership is worth the coordination cost."
+}

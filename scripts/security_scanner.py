@@ -32,7 +32,7 @@ from utils import split_frontmatter_content
 # Load schema
 SCHEMA_PATH = Path(__file__).parent.parent / "schema" / "skill.schema.json"
 SECURITY_SCANNER_NAME = "claude-skill-registry-security-scanner"
-SECURITY_SCANNER_VERSION = "1.1.4"
+SECURITY_SCANNER_VERSION = "1.1.5"
 
 
 def utc_now_isoformat() -> str:

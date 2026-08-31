@@ -1,0 +1,38 @@
+{
+  "name": "access-and-identity",
+  "repo": "cbrock84/headcount",
+  "path": "plugins/security/skills/access-and-identity/SKILL.md",
+  "github_branch": "main",
+  "category": "security",
+  "source": "github.com/cbrock84/headcount",
+  "dir_name": "access-and-identity",
+  "downloaded_at": "2026-08-31T04:16:24.040822Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "security",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for security: security, auth, audit",
+    "score": 3,
+    "runner_up": "ai-ml",
+    "runner_up_score": 1,
+    "signals": [
+      "security",
+      "auth",
+      "audit"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "cbrock84",
+  "source_url": "https://github.com/cbrock84/headcount/blob/main/plugins/security/skills/access-and-identity/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cbrock84/headcount/blob/main/plugins/security/skills/access-and-identity/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Designs and audits who can reach what \u2014 authentication, authorization models, privileged access, service credentials, and joiner-mover-leaver process. Use this to design a permissions model, run an access review, reduce standing privilege, handle offboarding, set up SSO or MFA, manage service and machine credentials, or diagnose why permissions have sprawled."
+}

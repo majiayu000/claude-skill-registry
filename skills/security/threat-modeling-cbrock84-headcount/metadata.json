@@ -1,0 +1,38 @@
+{
+  "name": "threat-modeling",
+  "repo": "cbrock84/headcount",
+  "path": "plugins/security/skills/threat-modeling/SKILL.md",
+  "github_branch": "main",
+  "category": "security",
+  "source": "github.com/cbrock84/headcount",
+  "dir_name": "threat-modeling-cbrock84-headcount",
+  "downloaded_at": "2026-08-31T04:16:19.716453Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "security",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for security: security, auth, vulnerability",
+    "score": 3,
+    "runner_up": "design",
+    "runner_up_score": 2,
+    "signals": [
+      "security",
+      "auth",
+      "vulnerability"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "cbrock84",
+  "source_url": "https://github.com/cbrock84/headcount/blob/main/plugins/security/skills/threat-modeling/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cbrock84/headcount/blob/main/plugins/security/skills/threat-modeling/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Identifies what could go wrong in a system before it is built or changed \u2014 the assets worth attacking, the entry points, the trust boundaries, and the controls that actually address the realistic threats. Use this when designing a feature or system, when a change touches authentication, data handling, payments, or external input, before a security review, or when deciding which security work is worth doing at all."
+}

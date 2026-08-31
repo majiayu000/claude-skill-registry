@@ -43,7 +43,19 @@ DANGEROUS_PATTERNS = {
     "php_eval_request": r"(?:eval|assert)\s*\(\s*\$_(GET|POST|REQUEST|COOKIE)",
     # Reverse shells and pipe-to-shell
     "reverse_shell_dev_tcp": r"(?:\b(?:bash|sh|zsh)\b[^\n]{0,120}(?:>&|<>|>|<)\s*|\bexec\s+\d*(?:<>|>|<)\s*)/dev/tcp/[^\s/]+/\d{1,5}\b",
-    "curl_pipe_shell": r"(?:curl|wget)\b[^\n]{0,200}\|\s*(?:bash|sh|zsh)\b",
+    # Require a concrete remote source. Abstract defensive notation such as
+    # `curl ... | sh` and `curl|bash` describes the risk but is not executable.
+    "curl_pipe_shell": (
+        r"(?:curl|wget)\b"
+        r"(?=[^\n|]{0,200}(?:"
+        r"https?://|"
+        r"\$(?:[A-Za-z_][A-Za-z0-9_]*|\{[A-Za-z_][A-Za-z0-9_]*\})|"
+        r"(?:[A-Za-z0-9-]+\.)+[A-Za-z]{2,}|"
+        r"(?:\d{1,3}\.){3}\d{1,3}|"
+        r"localhost(?::\d+)?"
+        r"))"
+        r"[^\n]{0,200}\|\s*(?:bash|sh|zsh)\b"
+    ),
     "nc_exec_shell": r"\bnc\s+[^\n]{0,80}\s-e\b",
 }
 

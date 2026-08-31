@@ -1,0 +1,37 @@
+{
+  "name": "presentation-design",
+  "repo": "cbrock84/headcount",
+  "path": "plugins/product/skills/presentation-design/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/cbrock84/headcount",
+  "dir_name": "presentation-design",
+  "downloaded_at": "2026-08-31T04:16:23.003512Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for marketing: marketing, social",
+    "score": 2,
+    "runner_up": "analysis",
+    "runner_up_score": 1,
+    "signals": [
+      "marketing",
+      "social"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "cbrock84",
+  "source_url": "https://github.com/cbrock84/headcount/blob/main/plugins/product/skills/presentation-design/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cbrock84/headcount/blob/main/plugins/product/skills/presentation-design/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Designs slide decks, one-pagers, and marketing graphics that carry an argument rather than decorate one. Use this to build or fix a pitch deck, board deck, or conference talk; to design a banner, social graphic, or one-pager; or when a deck is dense, unfocused, or being read aloud from the slides."
+}

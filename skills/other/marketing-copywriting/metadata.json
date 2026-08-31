@@ -1,0 +1,37 @@
+{
+  "name": "marketing-copywriting",
+  "repo": "cbrock84/headcount",
+  "path": "plugins/marketing/skills/marketing-copywriting/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/cbrock84/headcount",
+  "dir_name": "marketing-copywriting",
+  "downloaded_at": "2026-08-31T04:16:26.534118Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: product=2, writing=2",
+    "score": 2,
+    "runner_up": "writing",
+    "runner_up_score": 2,
+    "signals": [
+      "product",
+      "feature"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "cbrock84",
+  "source_url": "https://github.com/cbrock84/headcount/blob/main/plugins/marketing/skills/marketing-copywriting/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cbrock84/headcount/blob/main/plugins/marketing/skills/marketing-copywriting/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Writes and edits marketing copy for any surface \u2014 homepage, product and pricing pages, ads, emails, and collateral \u2014 and sharpens existing copy that is not working. Use this to write or rewrite page copy, tighten a draft, fix copy that is vague or feature-led, adapt one message across formats, or review copy before it ships."
+}

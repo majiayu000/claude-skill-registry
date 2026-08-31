@@ -1,0 +1,38 @@
+{
+  "name": "deepline-gtm",
+  "repo": "getaero-io/gtm-eng-skills",
+  "path": "skills/deepline-gtm/SKILL.md",
+  "github_branch": "main",
+  "category": "bash",
+  "source": "github.com/getaero-io/gtm-eng-skills",
+  "dir_name": "deepline-gtm",
+  "downloaded_at": "2026-08-31T04:20:19.351413Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "bash",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for bash: bash, shell, cli",
+    "score": 3,
+    "runner_up": "communication",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "shell",
+      "cli"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "getaero-io",
+  "source_url": "https://github.com/getaero-io/gtm-eng-skills/blob/main/skills/deepline-gtm/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/getaero-io/gtm-eng-skills/blob/main/skills/deepline-gtm/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "GTM prospecting, enrichment, outreach, plays. Providers: adyntel,affinity,ai_ark,akta,allegrow,amplemarket,apify,attention,attio,aviato,bettercontact,bigquery,bluesky,bounceban,browserbase,builtwith,clay,clickhouse,cloudflare,contactout,contextdev,crustdata-v3,customer_db,databricks,dataforseo,datagma,deepline_ip_to_company,deepline_native,deeplineagent,discolike,dropleads,emailbison,emailguard,enformion,enigma,exa,findymail,firecrawl,fireflies,firmable,forager,fullenrich,generic_http,gong,google_ads_audiences,google_workspace,hackernews,harvestapi,heyreach,hubspot,hunter,icypeas,instantly,intercom,ipqs,kernel,leadmagic,lemlist,limadata,linkedin_ads_audiences,linkedin_scraper,lusha,meta_audiences,nooks,openmart,opensosdata,openwebninja,outreach,parallel,peopledatalabs,podscan,predictleads,prospeo,quickenrich,redshift,rocketreach,salesforce,salesforge,salesloft,scrapecreators,sentrion,serper,slack,smartlead,snowflake,sumble,theirstack,trestle,twitterapi,upcell,versium,wiza,zerobounce,zoho_crm,zoominfo."
+}

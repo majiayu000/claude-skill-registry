@@ -1,0 +1,36 @@
+{
+  "name": "benefits-realization",
+  "repo": "cbrock84/headcount",
+  "path": "plugins/pmo/skills/benefits-realization/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/cbrock84/headcount",
+  "dir_name": "benefits-realization",
+  "downloaded_at": "2026-08-31T04:16:19.950125Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category business scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "quality",
+    "runner_up_score": 1,
+    "signals": [
+      "business"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "cbrock84",
+  "source_url": "https://github.com/cbrock84/headcount/blob/main/plugins/pmo/skills/benefits-realization/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cbrock84/headcount/blob/main/plugins/pmo/skills/benefits-realization/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Ensures projects deliver the value they were approved on \u2014 defining measurable benefits, baselining, tracking after delivery, and honest post-implementation review. Use this to define benefits for a business case, set a baseline, track whether value actually landed, or run a post-implementation review that produces something useful."
+}

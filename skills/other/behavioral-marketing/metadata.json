@@ -1,0 +1,37 @@
+{
+  "name": "behavioral-marketing",
+  "repo": "cbrock84/headcount",
+  "path": "plugins/marketing/skills/behavioral-marketing/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/cbrock84/headcount",
+  "dir_name": "behavioral-marketing",
+  "downloaded_at": "2026-08-31T04:16:25.064111Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: context-management=2, marketing=2",
+    "score": 2,
+    "runner_up": "marketing",
+    "runner_up_score": 2,
+    "signals": [
+      "context",
+      "memory"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "cbrock84",
+  "source_url": "https://github.com/cbrock84/headcount/blob/main/plugins/marketing/skills/behavioral-marketing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cbrock84/headcount/blob/main/plugins/marketing/skills/behavioral-marketing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Applies decision science and cognitive bias research to marketing and product decisions \u2014 how people actually choose under uncertainty, and how framing, defaults, sequencing, and social context change behavior. Use this to diagnose why a well-argued offer is not converting, to structure choices and pricing presentation, to design an experience around how attention and memory work, or to pressure-test whether a persuasion tactic is legitimate or manipulative."
+}

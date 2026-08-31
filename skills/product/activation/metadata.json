@@ -1,0 +1,37 @@
+{
+  "name": "activation",
+  "repo": "cbrock84/headcount",
+  "path": "plugins/revenue/skills/activation/SKILL.md",
+  "github_branch": "main",
+  "category": "product",
+  "source": "github.com/cbrock84/headcount",
+  "dir_name": "activation",
+  "downloaded_at": "2026-08-31T04:16:14.897358Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "product",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for product: product, feature",
+    "score": 2,
+    "runner_up": "ai-ml",
+    "runner_up_score": 1,
+    "signals": [
+      "product",
+      "feature"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "cbrock84",
+  "source_url": "https://github.com/cbrock84/headcount/blob/main/plugins/revenue/skills/activation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cbrock84/headcount/blob/main/plugins/revenue/skills/activation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Gets new users from signup to first real value \u2014 signup flow, onboarding, time-to-value, and the early experience that determines whether someone becomes a user or a lapsed account. Use this to design or fix signup and onboarding, diagnose why signups do not convert to active use, reduce time-to-value, or decide what a new user must accomplish first."
+}

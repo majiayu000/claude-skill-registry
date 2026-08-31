@@ -1,0 +1,37 @@
+{
+  "name": "cloud-administration",
+  "repo": "cbrock84/headcount",
+  "path": "plugins/it-operations/skills/cloud-administration/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/cbrock84/headcount",
+  "dir_name": "cloud-administration",
+  "downloaded_at": "2026-08-31T04:16:28.097824Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: business=2, devops=2",
+    "score": 2,
+    "runner_up": "devops",
+    "runner_up_score": 2,
+    "signals": [
+      "business",
+      "operations"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "cbrock84",
+  "source_url": "https://github.com/cbrock84/headcount/blob/main/plugins/it-operations/skills/cloud-administration/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cbrock84/headcount/blob/main/plugins/it-operations/skills/cloud-administration/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Administers the cloud the company runs on rather than the one it sells \u2014 tenant and subscription structure, the SaaS estate and who owns each app, identity as the real perimeter, cloud spend that arrives as a surprise, and what the provider does not do for you. Use this to structure subscriptions or tenants, get control of sprawling SaaS, cut a cloud bill, work out who owns an application nobody admits to buying, or decide what corporate workloads belong in cloud at all."
+}

@@ -1,0 +1,38 @@
+{
+  "name": "incident-response",
+  "repo": "cbrock84/headcount",
+  "path": "plugins/security/skills/incident-response/SKILL.md",
+  "github_branch": "main",
+  "category": "forensics",
+  "source": "github.com/cbrock84/headcount",
+  "dir_name": "incident-response-cbrock84-headcount",
+  "downloaded_at": "2026-08-31T04:16:22.269569Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "forensics",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for forensics: incident, evidence, triage",
+    "score": 3,
+    "runner_up": "security",
+    "runner_up_score": 2,
+    "signals": [
+      "incident",
+      "evidence",
+      "triage"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "cbrock84",
+  "source_url": "https://github.com/cbrock84/headcount/blob/main/plugins/security/skills/incident-response/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cbrock84/headcount/blob/main/plugins/security/skills/incident-response/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Runs a security incident from detection to closure \u2014 triage, containment, investigation, communication, and the review afterward. Use this when a compromise is suspected or confirmed, when preparing an incident response plan or running an exercise, when deciding whether something is an incident, or when a breach may trigger notification obligations."
+}

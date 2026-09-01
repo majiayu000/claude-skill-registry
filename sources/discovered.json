@@ -1,7 +1,7 @@
 {
-  "discovered_at": "2026-08-31T04:34:56.111651Z",
+  "discovered_at": "2026-09-01T04:25:24.791079Z",
   "total_repos": 300,
-  "total_skills": 112,
+  "total_skills": 18,
   "scanned_repos": 300,
   "limits": {
     "max_repos": 300,
@@ -213,7 +213,6 @@
     "massimodeluisa/recursive-decomposition-skill",
     "matteotitta/claude-code-marketing-quickstart",
     "mattgierhart/PRD-driven-context-engineering",
-    "maxritter/pilot-shell",
     "memvid/claude-brain",
     "meshy-dev/meshy-3d-agent",
     "mex-memory/mex",
@@ -293,6 +292,7 @@
     "vasilyu1983/AI-Agents-public",
     "vibeeval/vibecosystem",
     "vitaecontext/vitaecontext",
+    "vladikk/modularity",
     "wanghuan9/skilldock",
     "wanshuiyin/Anti-Autoresearch",
     "wanshuiyin/Auto-claude-code-research-in-sleep",
@@ -314,452 +314,76 @@
   ],
   "skills": [
     {
-      "repo": "K-Dense-AI/scientific-agent-skills",
-      "path": "skills/parallel-web/SKILL.md"
-    },
-    {
-      "repo": "arbiterForge/codeArbiter",
-      "path": "plugins/ca-codex/skills/ca-override/SKILL.md"
-    },
-    {
-      "repo": "arbiterForge/codeArbiter",
-      "path": "plugins/ca-codex/skills/ca-new-skill/SKILL.md"
-    },
-    {
-      "repo": "arbiterForge/codeArbiter",
-      "path": "plugins/ca-codex/routines/commit-gate/SKILL.md"
-    },
-    {
-      "repo": "arbiterForge/codeArbiter",
-      "path": "plugins/ca-codex/routines/dispatching-parallel-agents/SKILL.md"
-    },
-    {
-      "repo": "arbiterForge/codeArbiter",
-      "path": "plugins/ca-codex/routines/subagent-driven-development/SKILL.md"
-    },
-    {
-      "repo": "arbiterForge/codeArbiter",
-      "path": "plugins/ca-codex/routines/finishing-a-development-branch/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/finance/skills/tax/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/pmo/skills/head-of-pmo/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/revenue/skills/retention/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/people/skills/org-design/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/revenue/skills/activation/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/pmo/skills/project-delivery/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/product/skills/design-system/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/executive/skills/ceo-advisor/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/technology/skills/api-design/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/product/skills/design-styles/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/marketing/skills/brand-voice/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/finance/skills/unit-economics/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/pmo/skills/program-management/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/product/skills/brand-identity/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/technology/skills/code-review/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/product/skills/interface-craft/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/pmo/skills/change-and-adoption/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/marketing/skills/video-content/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/security/skills/threat-modeling/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/pmo/skills/portfolio-governance/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/pmo/skills/benefits-realization/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/marketing/skills/visual-content/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/revenue/skills/sales-enablement/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/people/skills/workforce-planning/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/executive/skills/agent-hierarchy/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/people/skills/employee-relations/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/executive/skills/chief-executive/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/revenue/skills/referral-programs/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/operations/skills/process-design/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/people/skills/benefits-and-leave/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/legal-risk/skills/enterprise-risk/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/revenue/skills/revenue-operations/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/technology/skills/skill-authoring/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/finance/skills/financial-modeling/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/marketing/skills/youtube-producer/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/legal-risk/skills/contract-review/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/product/skills/ux-product-auditor/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/marketing/skills/content-strategy/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/security/skills/incident-response/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/marketing/skills/public-relations/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/finance/skills/capital-allocation/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/it-operations/skills/service-desk/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/product/skills/interface-redesign/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/marketing/skills/customer-research/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/finance/skills/revenue-recognition/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/product/skills/presentation-design/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/marketing/skills/newsletter-writer/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/marketing/skills/social-post-craft/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/technology/skills/prompt-optimizer/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/data-analytics/skills/data-modeling/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/revenue/skills/outbound-prospecting/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/operations/skills/vendor-management/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/marketing/skills/marketing-planning/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/security/skills/access-and-identity/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/operations/skills/quality-management/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/revenue/skills/pricing-and-packaging/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/executive/skills/ai-research-analyst/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/executive/skills/saas-idea-validator/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/people/skills/performance-management/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/data-analytics/skills/data-governance/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/people/skills/hiring-and-interviewing/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/marketing/skills/behavioral-marketing/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/demand-generation/skills/lead-capture/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/demand-generation/skills/seo-strategy/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/finance/skills/treasury-and-liquidity/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/technology/skills/cloud-infrastructure/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/people/skills/learning-and-development/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/data-analytics/skills/data-engineering/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/marketing/skills/partnership-marketing/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/marketing/skills/chief-content-officer/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/legal-risk/skills/corporate-governance/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/technology/skills/systematic-debugging/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/data-analytics/skills/ai-ml-governance/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/technology/skills/solution-exploration/SKILL.md"
-    },
-    {
       "repo": "cbrock84/headcount",
-      "path": "plugins/marketing/skills/marketing-copywriting/SKILL.md"
+      "path": "plugins/finance/skills/cost-accounting/SKILL.md"
     },
     {
       "repo": "cbrock84/headcount",
-      "path": "plugins/legal-risk/skills/regulatory-compliance/SKILL.md"
+      "path": "plugins/revenue/skills/deal-negotiation/SKILL.md"
     },
     {
       "repo": "cbrock84/headcount",
-      "path": "plugins/technology/skills/ai-workflow-architect/SKILL.md"
+      "path": "plugins/marketing/skills/product-launch/SKILL.md"
     },
     {
       "repo": "cbrock84/headcount",
-      "path": "plugins/people/skills/compensation-and-leveling/SKILL.md"
+      "path": "plugins/product/skills/product-discovery/SKILL.md"
     },
     {
       "repo": "cbrock84/headcount",
-      "path": "plugins/technology/skills/solution-architecture/SKILL.md"
+      "path": "plugins/people/skills/payroll-operations/SKILL.md"
     },
     {
       "repo": "cbrock84/headcount",
-      "path": "plugins/it-operations/skills/it-asset-management/SKILL.md"
+      "path": "plugins/technology/skills/data-migration/SKILL.md"
     },
     {
       "repo": "cbrock84/headcount",
-      "path": "plugins/technology/skills/release-and-deployment/SKILL.md"
+      "path": "plugins/product/skills/product-requirements/SKILL.md"
     },
     {
       "repo": "cbrock84/headcount",
-      "path": "plugins/demand-generation/skills/experimentation/SKILL.md"
+      "path": "plugins/people/skills/employment-compliance/SKILL.md"
     },
     {
       "repo": "cbrock84/headcount",
-      "path": "plugins/finance/skills/budgeting-and-forecasting/SKILL.md"
+      "path": "plugins/operations/skills/operating-cadence/SKILL.md"
     },
     {
       "repo": "cbrock84/headcount",
-      "path": "plugins/it-operations/skills/backup-and-recovery/SKILL.md"
+      "path": "plugins/operations/skills/incident-management/SKILL.md"
     },
     {
       "repo": "cbrock84/headcount",
-      "path": "plugins/security/skills/vulnerability-management/SKILL.md"
+      "path": "plugins/pmo/skills/estimating-and-contingency/SKILL.md"
     },
     {
       "repo": "cbrock84/headcount",
-      "path": "plugins/marketing/skills/chief-marketing-officer/SKILL.md"
+      "path": "plugins/corporate-strategy/skills/market-entry/SKILL.md"
     },
     {
       "repo": "cbrock84/headcount",
-      "path": "plugins/data-analytics/skills/chief-data-officer/SKILL.md"
+      "path": "plugins/legal-risk/skills/intellectual-property/SKILL.md"
     },
     {
       "repo": "cbrock84/headcount",
-      "path": "plugins/it-operations/skills/endpoint-management/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/people/skills/onboarding-and-offboarding/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/demand-generation/skills/paid-advertising/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/demand-generation/skills/programmatic-seo/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/it-operations/skills/cloud-administration/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/pmo/skills/dependency-and-risk-management/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/technology/skills/implementation-planning/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/technology/skills/parallel-agent-delivery/SKILL.md"
-    },
-    {
-      "repo": "cbrock84/headcount",
-      "path": "plugins/technology/skills/completion-verification/SKILL.md"
-    },
-    {
-      "repo": "evanca/flutter-ai-rules",
-      "path": "skills/developing-genkit-dart/SKILL.md"
-    },
-    {
-      "repo": "getaero-io/gtm-eng-skills",
-      "path": "skills/deepline-gtm/SKILL.md"
-    },
-    {
-      "repo": "majiayu000/spellbook",
-      "path": "skills/build-product-demo/SKILL.md"
-    },
-    {
-      "repo": "majiayu000/spellbook",
-      "path": "skills/architecture-research/SKILL.md"
-    },
-    {
-      "repo": "majiayu000/spellbook",
-      "path": "plugins/spellbook-ui/skills/app-ui-design/SKILL.md"
+      "path": "plugins/security/skills/detection-and-monitoring/SKILL.md"
     },
     {
-      "repo": "majiayu000/spellbook",
-      "path": "plugins/spellbook-ui/skills/figma-to-react/SKILL.md"
+      "repo": "nanocoai/nanoclaw",
+      "path": ".claude/skills/slack-a2a-rooms/SKILL.md"
     },
     {
-      "repo": "majiayu000/spellbook",
-      "path": "plugins/spellbook-ui/skills/frontend-design/SKILL.md"
+      "repo": "nanocoai/nanoclaw",
+      "path": ".claude/skills/slack-agent-flow/SKILL.md"
     },
     {
-      "repo": "majiayu000/spellbook",
-      "path": "plugins/spellbook-ui/skills/ui-design-system/SKILL.md"
+      "repo": "nanocoai/nanoclaw",
+      "path": ".claude/skills/slack-agent-flow/container/skills/slack-construct-agents/SKILL.md"
     },
     {
-      "repo": "oliver-kriska/claude-elixir-phoenix",
-      "path": "targets/dsh/skills/phx-permissions/SKILL.md"
+      "repo": "tripleyak/SkillForge",
+      "path": "SKILL.md"
     }
   ]
 }

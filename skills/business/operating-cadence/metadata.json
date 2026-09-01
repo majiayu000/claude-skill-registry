@@ -1,0 +1,37 @@
+{
+  "name": "operating-cadence",
+  "repo": "cbrock84/headcount",
+  "path": "plugins/operations/skills/operating-cadence/SKILL.md",
+  "github_branch": "main",
+  "category": "business",
+  "source": "github.com/cbrock84/headcount",
+  "dir_name": "operating-cadence",
+  "downloaded_at": "2026-09-01T04:06:42.746280Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "business",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for business: operations, strategy",
+    "score": 2,
+    "runner_up": "design",
+    "runner_up_score": 1,
+    "signals": [
+      "operations",
+      "strategy"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "cbrock84",
+  "source_url": "https://github.com/cbrock84/headcount/blob/main/plugins/operations/skills/operating-cadence/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cbrock84/headcount/blob/main/plugins/operations/skills/operating-cadence/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Designs the rhythm an organization runs on \u2014 which reviews happen weekly, monthly and quarterly, what each one decides, who owns the numbers presented, and how a signal at the front line reaches the people who can act on it. Use this to set up a management operating system, fix a meeting calendar that produces no decisions, work out where a recurring problem keeps failing to surface, or cut a review structure that has grown past what it informs."
+}

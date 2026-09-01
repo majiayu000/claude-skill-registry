@@ -1,0 +1,38 @@
+{
+  "name": "intellectual-property",
+  "repo": "cbrock84/headcount",
+  "path": "plugins/legal-risk/skills/intellectual-property/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/cbrock84/headcount",
+  "dir_name": "intellectual-property",
+  "downloaded_at": "2026-09-01T04:06:44.800151Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: code, build, software",
+    "score": 3,
+    "runner_up": "writing",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "build",
+      "software"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "cbrock84",
+  "source_url": "https://github.com/cbrock84/headcount/blob/main/plugins/legal-risk/skills/intellectual-property/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cbrock84/headcount/blob/main/plugins/legal-risk/skills/intellectual-property/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Covers what the organization owns and what it is only borrowing \u2014 trademarks and clearance, copyright and work-for-hire, patents and trade secrets, open-source license obligations and copyleft reach, and IP terms in customer, contractor and AI-tool agreements. Use this to check whether a name is usable, establish that you own work you paid for, decide how to handle a license obligation in a dependency, or respond to an infringement claim."
+}

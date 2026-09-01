@@ -1,0 +1,36 @@
+{
+  "name": "deal-negotiation",
+  "repo": "cbrock84/headcount",
+  "path": "plugins/revenue/skills/deal-negotiation/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/cbrock84/headcount",
+  "dir_name": "deal-negotiation",
+  "downloaded_at": "2026-09-01T04:06:40.691504Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category data scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "product",
+    "runner_up_score": 1,
+    "signals": [
+      "pipeline"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "cbrock84",
+  "source_url": "https://github.com/cbrock84/headcount/blob/main/plugins/revenue/skills/deal-negotiation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cbrock84/headcount/blob/main/plugins/revenue/skills/deal-negotiation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Negotiates a commercial deal without giving away the terms that matter \u2014 preparing your walk-away and theirs, trading concessions rather than conceding them, recognizing the tactics that create false urgency, protecting price by moving other variables, and closing on terms someone can actually deliver. Use this to prepare for a negotiation, respond to a demand mid-deal, work out why discounts keep landing at quarter end, or review terms before they are signed."
+}

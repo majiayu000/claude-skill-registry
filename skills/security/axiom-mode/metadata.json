@@ -1,0 +1,37 @@
+{
+  "name": "axiom-mode",
+  "repo": "OutlineDriven/odin-claude-plugin",
+  "path": "plugins/odin-core/skills/axiom-mode/SKILL.md",
+  "github_branch": "main",
+  "category": "security",
+  "source": "github.com/OutlineDriven/odin-claude-plugin",
+  "dir_name": "axiom-mode",
+  "downloaded_at": "2026-09-02T03:20:27.751210Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "security",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for security: security, auth",
+    "score": 2,
+    "runner_up": "context-management",
+    "runner_up_score": 1,
+    "signals": [
+      "security",
+      "auth"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "OutlineDriven",
+  "source_url": "https://github.com/OutlineDriven/odin-claude-plugin/blob/main/plugins/odin-core/skills/axiom-mode/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OutlineDriven/odin-claude-plugin/blob/main/plugins/odin-core/skills/axiom-mode/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user requests axiom, axiom-mode, axiom-compact, formal-logic, or compact form. Switches responses to compact formal-logic English with predicate claims and ASCII keywords, then restores the register after clarity exceptions. Not for changing code or remote state."
+}

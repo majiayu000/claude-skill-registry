@@ -1,0 +1,38 @@
+{
+  "name": "ax-audit",
+  "repo": "OutlineDriven/odin-claude-plugin",
+  "path": "plugins/odin-agent/skills/ax-audit/SKILL.md",
+  "github_branch": "main",
+  "category": "productivity",
+  "source": "github.com/OutlineDriven/odin-claude-plugin",
+  "dir_name": "ax-audit",
+  "downloaded_at": "2026-09-02T03:20:25.328102Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "productivity",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for productivity: workflow, task, memory",
+    "score": 3,
+    "runner_up": "agent",
+    "runner_up_score": 2,
+    "signals": [
+      "workflow",
+      "task",
+      "memory"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "OutlineDriven",
+  "source_url": "https://github.com/OutlineDriven/odin-claude-plugin/blob/main/plugins/odin-agent/skills/ax-audit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OutlineDriven/odin-claude-plugin/blob/main/plugins/odin-agent/skills/ax-audit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when asked to audit an agent or AI feature for agentic-experience quality. Assesses target source or described behavior against Architecture and Agentic-experience rubrics, records findings with locators or logical bounds, and returns a severity-tiered report with a PASS/FAIL/INCOMPLETE verdict. Not for source or remote-system changes."
+}

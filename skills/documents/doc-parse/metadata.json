@@ -1,0 +1,40 @@
+{
+  "name": "doc-parse",
+  "repo": "anbeime/skill",
+  "path": "antinet-agentteams/skills/doc-parse/SKILL.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/anbeime/skill",
+  "dir_name": "doc-parse",
+  "downloaded_at": "2026-09-02T03:24:14.839589Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "documents",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for documents: doc, pdf, word, excel, markdown",
+    "score": 5,
+    "runner_up": "agent",
+    "runner_up_score": 1,
+    "signals": [
+      "doc",
+      "pdf",
+      "word",
+      "excel",
+      "markdown"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "anbeime",
+  "source_url": "https://github.com/anbeime/skill/blob/main/antinet-agentteams/skills/doc-parse/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/anbeime/skill/blob/main/antinet-agentteams/skills/doc-parse/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u5c06 PDF/PPT/Excel/Word \u7b49\u591a\u683c\u5f0f\u6587\u6863\u89e3\u6790\u4e3a\u7ed3\u6784\u5316 Markdown\uff0c\u5e76\u8f93\u51fa\u5143\u6570\u636e\u4e0e\u89e3\u6790\u7f6e\u4fe1\u5ea6\uff0c\u4f5c\u4e3a RAG \u4e0e\u56db\u8272\u5361\u7247\u7684\u6570\u636e\u5e95\u5ea7\u3002"
+}

@@ -1,0 +1,37 @@
+{
+  "name": "size-the-run",
+  "repo": "OutlineDriven/odin-claude-plugin",
+  "path": "plugins/odin-run/skills/size-the-run/SKILL.md",
+  "github_branch": "main",
+  "category": "security",
+  "source": "github.com/OutlineDriven/odin-claude-plugin",
+  "dir_name": "size-the-run",
+  "downloaded_at": "2026-09-02T03:20:29.639129Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "security",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for security: security, auth",
+    "score": 2,
+    "runner_up": "ai-ml",
+    "runner_up_score": 1,
+    "signals": [
+      "security",
+      "auth"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "OutlineDriven",
+  "source_url": "https://github.com/OutlineDriven/odin-claude-plugin/blob/main/plugins/odin-run/skills/size-the-run/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OutlineDriven/odin-claude-plugin/blob/main/plugins/odin-run/skills/size-the-run/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when a run could be over- or under-powered, before dispatching a subagent, or when the user asks how hard to think about a task. Recommends one capability tier and one effort level on a neutral two-dial scale, without pinning a vendor model."
+}

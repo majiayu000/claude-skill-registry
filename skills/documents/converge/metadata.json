@@ -1,0 +1,37 @@
+{
+  "name": "converge",
+  "repo": "OutlineDriven/odin-claude-plugin",
+  "path": "plugins/odin-create/skills/converge/SKILL.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/OutlineDriven/odin-claude-plugin",
+  "dir_name": "converge",
+  "downloaded_at": "2026-09-02T03:20:27.292901Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "documents",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for documents: docs, markdown",
+    "score": 2,
+    "runner_up": "agent",
+    "runner_up_score": 1,
+    "signals": [
+      "docs",
+      "markdown"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "OutlineDriven",
+  "source_url": "https://github.com/OutlineDriven/odin-claude-plugin/blob/main/plugins/odin-create/skills/converge/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OutlineDriven/odin-claude-plugin/blob/main/plugins/odin-create/skills/converge/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user wants to collapse an open decision field to one decision and record its rationale locally. Not for multi-lens pressure testing. No remote or irreversible changes."
+}

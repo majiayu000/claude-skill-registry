@@ -1,0 +1,38 @@
+{
+  "name": "why",
+  "repo": "OutlineDriven/odin-claude-plugin",
+  "path": "plugins/odin-research/skills/why/SKILL.md",
+  "github_branch": "main",
+  "category": "devops",
+  "source": "github.com/OutlineDriven/odin-claude-plugin",
+  "dir_name": "why",
+  "downloaded_at": "2026-09-02T03:20:20.284521Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "devops",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for devops: deploy, infra, infrastructure",
+    "score": 3,
+    "runner_up": "data",
+    "runner_up_score": 2,
+    "signals": [
+      "deploy",
+      "infra",
+      "infrastructure"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "OutlineDriven",
+  "source_url": "https://github.com/OutlineDriven/odin-claude-plugin/blob/main/plugins/odin-research/skills/why/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OutlineDriven/odin-claude-plugin/blob/main/plugins/odin-research/skills/why/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user asks \"why does X work this way\", requests design rationale, a postmortem, or a data-backed threshold. Dispatches parallel read-only investigators across seven evidence categories and returns a confidence-weighted cited narrative. Not for tasks that require source or remote-system changes; not for current runtime behavior \u2014 use how."
+}

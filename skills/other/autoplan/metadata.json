@@ -1,0 +1,37 @@
+{
+  "name": "autoplan",
+  "repo": "OutlineDriven/odin-claude-plugin",
+  "path": "plugins/odin-planning/skills/autoplan/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/OutlineDriven/odin-claude-plugin",
+  "dir_name": "autoplan",
+  "downloaded_at": "2026-09-02T03:20:31.285583Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: planning=2, productivity=2",
+    "score": 2,
+    "runner_up": "productivity",
+    "runner_up_score": 2,
+    "signals": [
+      "planning",
+      "plan"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "OutlineDriven",
+  "source_url": "https://github.com/OutlineDriven/odin-claude-plugin/blob/main/plugins/odin-planning/skills/autoplan/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OutlineDriven/odin-claude-plugin/blob/main/plugins/odin-planning/skills/autoplan/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user runs /autoplan on a plan or idea. Runs CEO, design, DX, and engineering review phases over the idea, amends the plan, derives deterministic task IDs into a task JSONL ledger, and waits at a final human approval gate. Not for remote, credential, publish, deploy, or irreversible changes."
+}

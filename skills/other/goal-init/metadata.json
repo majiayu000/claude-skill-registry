@@ -1,0 +1,36 @@
+{
+  "name": "goal-init",
+  "repo": "OutlineDriven/odin-claude-plugin",
+  "path": "plugins/odin-run/skills/goal-init/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/OutlineDriven/odin-claude-plugin",
+  "dir_name": "goal-init",
+  "downloaded_at": "2026-09-02T03:20:23.721890Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category creative scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "devops",
+    "runner_up_score": 1,
+    "signals": [
+      "writing"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "OutlineDriven",
+  "source_url": "https://github.com/OutlineDriven/odin-claude-plugin/blob/main/plugins/odin-run/skills/goal-init/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OutlineDriven/odin-claude-plugin/blob/main/plugins/odin-run/skills/goal-init/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when a durable effort needs an approved, checkable success predicate before work starts; writes the goal, verifier, budget, and run-log scaffold. Not for requirement-to-evidence contract ledgers. Never remote, credential, publish, deploy, or irreversible."
+}

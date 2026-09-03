@@ -1,0 +1,38 @@
+{
+  "name": "start-task",
+  "repo": "foyzulkarim/skills",
+  "path": "dev-pipeline/skills/start-task/SKILL.md",
+  "github_branch": "master",
+  "category": "documents",
+  "source": "github.com/foyzulkarim/skills",
+  "dir_name": "start-task",
+  "downloaded_at": "2026-09-03T03:31:41.420799Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "documents",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for documents: docs, word, documentation",
+    "score": 3,
+    "runner_up": "bash",
+    "runner_up_score": 2,
+    "signals": [
+      "docs",
+      "word",
+      "documentation"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "foyzulkarim",
+  "source_url": "https://github.com/foyzulkarim/skills/blob/master/dev-pipeline/skills/start-task/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/foyzulkarim/skills/blob/master/dev-pipeline/skills/start-task/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Bootstrap a task into a synced feature branch \u2014 one shot, zero confirmations. Detects the source from the args: GitHub issue ('#100', 'issue 100', 'gh issue 100', or bare '100'), Jira key ('PROJ-42'), or a local spec file path; ad-hoc conversation otherwise. Fetches the task, derives {type}/{number}/{slug}, syncs the default branch, creates and pushes the branch, and writes specs/context/<id>.md. Use only when the user explicitly asks to start a task or create a work branch \u2014 never trigger automatically."
+}

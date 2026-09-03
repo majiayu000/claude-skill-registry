@@ -1,0 +1,38 @@
+{
+  "name": "sync-skills",
+  "repo": "foyzulkarim/skills",
+  "path": "dev-pipeline/skills/sync-skills/SKILL.md",
+  "github_branch": "master",
+  "category": "bash",
+  "source": "github.com/foyzulkarim/skills",
+  "dir_name": "sync-skills",
+  "downloaded_at": "2026-09-03T03:31:42.244164Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "bash",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for bash: bash, shell, script",
+    "score": 3,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "shell",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "foyzulkarim",
+  "source_url": "https://github.com/foyzulkarim/skills/blob/master/dev-pipeline/skills/sync-skills/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/foyzulkarim/skills/blob/master/dev-pipeline/skills/sync-skills/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Copy this repo's skills into another agent harness's skills directory by name \u2014 resolves the harness alias to its path via scripts/sync-targets.json and runs sync-skills.sh. Use only when the user asks to copy/sync/push the skills to another harness (oh-my-pi, opencode, kimi, codex, etc.) \u2014 never trigger automatically."
+}

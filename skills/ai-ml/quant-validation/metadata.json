@@ -1,0 +1,39 @@
+{
+  "name": "quant-validation",
+  "repo": "avelikiy/great_cto",
+  "path": "skills/quant-validation/SKILL.md",
+  "github_branch": "main",
+  "category": "ai-ml",
+  "source": "github.com/avelikiy/great_cto",
+  "dir_name": "quant-validation",
+  "downloaded_at": "2026-09-03T03:26:34.290959Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "ai-ml",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for ai-ml: ml, machine-learning, model, training",
+    "score": 4,
+    "runner_up": "documents",
+    "runner_up_score": 2,
+    "signals": [
+      "ml",
+      "machine-learning",
+      "model",
+      "training"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "avelikiy",
+  "source_url": "https://github.com/avelikiy/great_cto/blob/main/skills/quant-validation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/avelikiy/great_cto/blob/main/skills/quant-validation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "The methods a financial-ML result has to survive before it is evidence \u2014 purged cross-validation with an embargo, triple-barrier labelling, sample uniqueness under overlapping labels, fractional differentiation, meta-labelling, and multiple-testing correction. Written because the invariants were required of quant-researcher and nothing in the project explained how to satisfy them: a rule without a method produces either an invention or a block. Applied whenever a backtest, a feature or a label is being designed or judged."
+}

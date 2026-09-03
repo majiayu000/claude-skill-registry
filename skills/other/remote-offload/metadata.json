@@ -1,0 +1,36 @@
+{
+  "name": "remote-offload",
+  "repo": "Kanevry/session-orchestrator",
+  "path": ".cursor/skills/remote-offload/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Kanevry/session-orchestrator",
+  "dir_name": "remote-offload",
+  "downloaded_at": "2026-09-03T03:21:24.351559Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category agent scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "ai-ml",
+    "runner_up_score": 1,
+    "signals": [
+      "agent"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "Kanevry",
+  "source_url": "https://github.com/Kanevry/session-orchestrator/blob/main/.cursor/skills/remote-offload/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Kanevry/session-orchestrator/blob/main/.cursor/skills/remote-offload/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when local resource pressure would shrink or coordinator-direct a wave, a wave plan carries heavy build/test/audit roles (test, ui, perf), or the operator says offload, remote host, or auslagern \u2014 reference for routing that wave role to a declared SSH-reachable host instead of reducing agent count"
+}

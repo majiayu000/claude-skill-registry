@@ -1,0 +1,38 @@
+{
+  "name": "vertical-fintech-mobile",
+  "repo": "avelikiy/great_cto",
+  "path": "skills/vertical-fintech-mobile/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/avelikiy/great_cto",
+  "dir_name": "vertical-fintech-mobile",
+  "downloaded_at": "2026-09-03T03:26:34.534469Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: framework, build, debug",
+    "score": 3,
+    "runner_up": "design",
+    "runner_up_score": 2,
+    "signals": [
+      "framework",
+      "build",
+      "debug"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "avelikiy",
+  "source_url": "https://github.com/avelikiy/great_cto/blob/main/skills/vertical-fintech-mobile/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/avelikiy/great_cto/blob/main/skills/vertical-fintech-mobile/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Domain-knowledge pack for money on a phone \u2014 wallets, payments, custody and signing, transaction lifecycle, KYC/AML gates, and offline reconciliation. The rules that separate a payments app from a CRUD app with a currency symbol: a balance is a claim about a server, an idempotency key must outlive the process that made it, keys never enter JavaScript memory, and a device clock may not order financial events. Applied by architect/pm/design-advisor when specing a mobile product that moves money, and by mobile-app-builder while implementing it."
+}

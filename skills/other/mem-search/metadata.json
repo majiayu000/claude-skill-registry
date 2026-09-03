@@ -1,0 +1,37 @@
+{
+  "name": "mem-search",
+  "repo": "thedotmack/claude-mem",
+  "path": "claude-mem-cursor/skills/mem-search/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/thedotmack/claude-mem",
+  "dir_name": "mem-search",
+  "downloaded_at": "2026-09-03T03:44:10.342464Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: context-management=2, productivity=2",
+    "score": 2,
+    "runner_up": "productivity",
+    "runner_up_score": 2,
+    "signals": [
+      "context",
+      "memory"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "thedotmack",
+  "source_url": "https://github.com/thedotmack/claude-mem/blob/main/claude-mem-cursor/skills/mem-search/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/thedotmack/claude-mem/blob/main/claude-mem-cursor/skills/mem-search/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use this when the user asks to search memory, \"did we already solve this?\", \"how did we do X last time?\", or wants work from previous sessions."
+}

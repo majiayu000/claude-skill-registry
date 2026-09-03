@@ -1,0 +1,37 @@
+{
+  "name": "claude-mem-install",
+  "repo": "thedotmack/claude-mem",
+  "path": "claude-mem-grok-bot/skills/install/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/thedotmack/claude-mem",
+  "dir_name": "install-thedotmack-claude-mem",
+  "downloaded_at": "2026-09-03T03:44:10.190117Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: ai-ml=2, context-management=2",
+    "score": 2,
+    "runner_up": "context-management",
+    "runner_up_score": 2,
+    "signals": [
+      "ai",
+      "model"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "thedotmack",
+  "source_url": "https://github.com/thedotmack/claude-mem/blob/main/claude-mem-grok-bot/skills/install/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/thedotmack/claude-mem/blob/main/claude-mem-grok-bot/skills/install/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use this when setting up claude-mem on Grok Bot: local worker plus CMEM Pro observer (default), optional host-login observer, or remote cmem.ai. No Cursor required."
+}

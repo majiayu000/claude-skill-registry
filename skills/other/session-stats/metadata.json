@@ -1,0 +1,37 @@
+{
+  "name": "session-stats",
+  "repo": "foyzulkarim/skills",
+  "path": "dev-pipeline/skills/session-stats/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/foyzulkarim/skills",
+  "dir_name": "session-stats",
+  "downloaded_at": "2026-09-03T03:31:42.688982Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=2, development=2",
+    "score": 2,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "foyzulkarim",
+  "source_url": "https://github.com/foyzulkarim/skills/blob/master/dev-pipeline/skills/session-stats/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/foyzulkarim/skills/blob/master/dev-pipeline/skills/session-stats/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Render a dashboard of the current Claude Code session \u2014 message counts, token usage, cache read/write, dollar cost, context %, lines changed, cost-per-turn sparkline, and a tool-call histogram \u2014 parsed from the session transcript JSONL by a bundled bash script. One bash call, zero analysis, zero confirmation. Optionally pass a session id to inspect a different session. Use when the user asks for session stats, usage, token or cost breakdown, or a session dashboard."
+}

@@ -1,7 +1,7 @@
 {
-  "discovered_at": "2026-09-02T03:45:04.243290Z",
+  "discovered_at": "2026-09-03T03:47:17.279179Z",
   "total_repos": 300,
-  "total_skills": 116,
+  "total_skills": 42,
   "scanned_repos": 300,
   "limits": {
     "max_repos": 300,
@@ -155,6 +155,7 @@
     "feiskyer/claude-code-settings",
     "ferdinandobons/startup-skill",
     "flysheep-ai/education-skills",
+    "foyzulkarim/skills",
     "fvadicamo/dev-agent-skills",
     "gabelul/stitch-kit",
     "gbessoni/seobuild-onpage",
@@ -178,7 +179,6 @@
     "ikaijua/Awesome-AITools",
     "ilang-ai/autocode",
     "indranilbanerjee/digital-marketing-pro",
-    "inngest/inngest-skills",
     "instavm/coderunner",
     "itsmostafa/aws-agent-skills",
     "iziqing/-disk-cleaner",
@@ -314,468 +314,172 @@
   ],
   "skills": [
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-run/skills/work/SKILL.md"
+      "repo": "JasonColapietro/suede-creator-skills",
+      "path": "vendorable/site-to-ios-app/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-code/skills/tdd/SKILL.md"
+      "repo": "JasonColapietro/suede-creator-skills",
+      "path": "vendorable/voice-preserving-line-edit/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-run/skills/duet/SKILL.md"
+      "repo": "Kanevry/session-orchestrator",
+      "path": "skills/remote-offload/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-run/skills/unlazy/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-code/skills/ci-cd/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-run/skills/wizard/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-code/skills/deslop/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-code/skills/review/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-code/skills/ci-fix/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-run/skills/loop-me/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-agent/skills/inits/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-agent/skills/setup/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-run/skills/wontfix/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-code/skills/commit/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-run/skills/resolve/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-create/skills/taste/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-research/skills/how/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-research/skills/why/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-code/skills/explore/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-run/skills/shipping/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-planning/skills/pov/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-run/skills/planning/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-code/skills/to-spec/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-core/skills/minimap/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-code/skills/offense/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-run/skills/autoship/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-agent/skills/reflect/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-design/skills/design/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-code/skills/dx-audit/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-create/skills/ideate/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-run/skills/goal-init/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-run/skills/issue-now/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-code/skills/simplify/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-run/skills/watch-for/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-code/skills/ast-grep/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-run/skills/new-space/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-code/skills/worktree/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-run/skills/scheduler/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-planning/skills/plan/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-create/skills/save-md/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-run/skills/cycle-memo/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-create/skills/show-me/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-agent/skills/ax-audit/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-research/skills/teach/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-planning/skills/shape/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-run/skills/browser-qa/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-create/skills/reorder/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-research/skills/drill/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-writing/skills/unslop/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-create/skills/diverge/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-run/skills/close-done/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-planning/skills/askme/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-create/skills/converge/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-research/skills/scrape/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-planning/skills/decide/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-core/skills/axiom-mode/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-create/skills/show-way/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-create/skills/solidate/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-run/skills/git-cleanup/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-research/skills/recall/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-agent/skills/agents-md/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-code/skills/principles/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-run/skills/watch-until/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-planning/skills/clarify/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-research/skills/handoff/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-create/skills/sync-docs/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-planning/skills/backlog/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-code/skills/spec-driven/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-research/skills/catchup/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-run/skills/issue-triage/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-run/skills/size-the-run/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-run/skills/fail-recover/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-create/skills/prototype/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-run/skills/issue-intake/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-product/skills/strategy/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-research/skills/onboard/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-run/skills/release-gate/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-code/skills/type-driven/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-research/skills/readout/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-code/skills/no-comments/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-design/skills/ui-design/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-create/skills/write-prd/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-run/skills/pr-link-issue/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-planning/skills/autoplan/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-web/skills/seo-aeo-audit/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-research/skills/compound/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-code/skills/deps-upgrade/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-agent/skills/setup-benny/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-agent/skills/automate-me/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-research/skills/capstone/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-agent/skills/mcp-builder/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-code/skills/doubt-driven/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-run/skills/fix-p0-issues/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-planning/skills/todo-add/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-run-advanced/skills/saga/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-run/skills/finish-it-now/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-run/skills/notion-writer/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-run/skills/seed-casebook/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-core/skills/diamond-task/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-run/skills/propose-issue/SKILL.md"
-    },
-    {
-      "repo": "anbeime/skill",
-      "path": "skills/archify/SKILL.md"
-    },
-    {
-      "repo": "anbeime/skill",
-      "path": "skills/ontoly-software-graph/SKILL.md"
-    },
-    {
-      "repo": "anbeime/skill",
-      "path": "antinet-agentteams/skills/doc-parse/SKILL.md"
-    },
-    {
-      "repo": "anbeime/skill",
-      "path": "antinet-agentteams/skills/provenance/SKILL.md"
-    },
-    {
-      "repo": "anbeime/skill",
-      "path": "antinet-agentteams/skills/security-scan/SKILL.md"
-    },
-    {
-      "repo": "anbeime/skill",
-      "path": "antinet-agentteams/skills/four-color-cards/SKILL.md"
+      "repo": "Kanevry/session-orchestrator",
+      "path": ".cursor/skills/remote-offload/SKILL.md"
     },
     {
       "repo": "avelikiy/great_cto",
-      "path": "skills/committed-aesthetic/SKILL.md"
+      "path": "skills/quant-validation/SKILL.md"
     },
     {
       "repo": "avelikiy/great_cto",
-      "path": "skills/aesthetic-instrument/SKILL.md"
+      "path": "skills/vertical-fintech-mobile/SKILL.md"
     },
     {
-      "repo": "dembrandt/dembrandt-skills",
-      "path": "skills/sizing-units/SKILL.md"
+      "repo": "foyzulkarim/skills",
+      "path": "dev-pipeline/skills/review/SKILL.md"
     },
     {
-      "repo": "microsoft/power-platform-skills",
-      "path": "plugins/power-pages/skills/migrate-webapi-selectall/SKILL.md"
+      "repo": "foyzulkarim/skills",
+      "path": "dev-pipeline/skills/commit/SKILL.md"
     },
     {
-      "repo": "tdimino/claude-code-minoan",
-      "path": "skills/core-development/tamarru/SKILL.md"
+      "repo": "foyzulkarim/skills",
+      "path": "dev-pipeline/skills/plan-qa/SKILL.md"
     },
     {
-      "repo": "tdimino/claude-code-minoan",
-      "path": "skills/design-media/overwatch-slidedeck/SKILL.md"
+      "repo": "foyzulkarim/skills",
+      "path": "dev-pipeline/skills/implement/SKILL.md"
     },
     {
-      "repo": "wdhwg001/csift",
-      "path": "SKILL.md"
+      "repo": "foyzulkarim/skills",
+      "path": "dev-pipeline/skills/start-task/SKILL.md"
     },
     {
-      "repo": "wshobson/agents",
-      "path": "plugins/superself/skills/superself/SKILL.md"
+      "repo": "foyzulkarim/skills",
+      "path": "dev-pipeline/skills/execute-qa/SKILL.md"
     },
     {
-      "repo": "wshobson/agents",
-      "path": "plugins/documentation-standards/skills/grounded-vault/SKILL.md"
+      "repo": "foyzulkarim/skills",
+      "path": "dev-pipeline/skills/sync-skills/SKILL.md"
     },
     {
-      "repo": "wshobson/agents",
-      "path": "plugins/database-design/skills/postgresql-table-design/SKILL.md"
+      "repo": "foyzulkarim/skills",
+      "path": "dev-pipeline/skills/archive-issue/SKILL.md"
+    },
+    {
+      "repo": "foyzulkarim/skills",
+      "path": "dev-pipeline/skills/session-stats/SKILL.md"
+    },
+    {
+      "repo": "foyzulkarim/skills",
+      "path": "dev-pipeline/skills/release-notes/SKILL.md"
+    },
+    {
+      "repo": "foyzulkarim/skills",
+      "path": "dev-pipeline/skills/generate-tasks/SKILL.md"
+    },
+    {
+      "repo": "foyzulkarim/skills",
+      "path": "dev-pipeline/skills/finish-worktree/SKILL.md"
+    },
+    {
+      "repo": "foyzulkarim/skills",
+      "path": "dev-pipeline/skills/move-to-worktree/SKILL.md"
+    },
+    {
+      "repo": "foyzulkarim/skills",
+      "path": "dev-pipeline/skills/plan-requirements/SKILL.md"
+    },
+    {
+      "repo": "foyzulkarim/skills",
+      "path": "dev-pipeline/skills/plan-architecture/SKILL.md"
+    },
+    {
+      "repo": "foyzulkarim/skills",
+      "path": "dev-pipeline/skills/setup-cost-tracking/SKILL.md"
+    },
+    {
+      "repo": "mex-memory/mex",
+      "path": "skills/mex-relay/SKILL.md"
+    },
+    {
+      "repo": "mex-memory/mex",
+      "path": "skills/mex-inbox/SKILL.md"
+    },
+    {
+      "repo": "mex-memory/mex",
+      "path": ".agents/skills/mex-relay/SKILL.md"
+    },
+    {
+      "repo": "mex-memory/mex",
+      "path": ".claude/skills/mex-inbox/SKILL.md"
+    },
+    {
+      "repo": "mex-memory/mex",
+      "path": ".claude/skills/mex-relay/SKILL.md"
+    },
+    {
+      "repo": "mex-memory/mex",
+      "path": ".agents/skills/mex-inbox/SKILL.md"
+    },
+    {
+      "repo": "mxyhi/ok-skills",
+      "path": "deep-research/SKILL.md"
+    },
+    {
+      "repo": "scdenney/open-science-skills",
+      "path": "codex/vlm-ocr/SKILL.md"
+    },
+    {
+      "repo": "scdenney/open-science-skills",
+      "path": "codex/orchestrate/SKILL.md"
+    },
+    {
+      "repo": "scdenney/open-science-skills",
+      "path": "codex/research-grill/SKILL.md"
+    },
+    {
+      "repo": "scdenney/open-science-skills",
+      "path": "plugin/skills/vlm-ocr/SKILL.md"
+    },
+    {
+      "repo": "scdenney/open-science-skills",
+      "path": "codex/referee-response/SKILL.md"
+    },
+    {
+      "repo": "scdenney/open-science-skills",
+      "path": "plugin/skills/orchestrate/SKILL.md"
+    },
+    {
+      "repo": "scdenney/open-science-skills",
+      "path": "plugin/skills/research-grill/SKILL.md"
+    },
+    {
+      "repo": "scdenney/open-science-skills",
+      "path": "plugin/skills/referee-response/SKILL.md"
+    },
+    {
+      "repo": "thedotmack/claude-mem",
+      "path": "claude-mem-cursor/skills/install/SKILL.md"
+    },
+    {
+      "repo": "thedotmack/claude-mem",
+      "path": "claude-mem-grok-bot/skills/install/SKILL.md"
+    },
+    {
+      "repo": "thedotmack/claude-mem",
+      "path": "claude-mem-cursor/skills/mem-search/SKILL.md"
+    },
+    {
+      "repo": "thedotmack/claude-mem",
+      "path": "claude-mem-grok-bot/skills/mem-search/SKILL.md"
+    },
+    {
+      "repo": "thedotmack/claude-mem",
+      "path": "claude-mem-grok-bot/skills/host-observer/SKILL.md"
     }
   ]
 }

@@ -1,0 +1,37 @@
+{
+  "name": "research-grill",
+  "repo": "scdenney/open-science-skills",
+  "path": "plugin/skills/research-grill/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/scdenney/open-science-skills",
+  "dir_name": "research-grill-scdenney-open-science-skills",
+  "downloaded_at": "2026-09-03T03:42:04.679232Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: build, software",
+    "score": 2,
+    "runner_up": "agent",
+    "runner_up_score": 1,
+    "signals": [
+      "build",
+      "software"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "scdenney",
+  "source_url": "https://github.com/scdenney/open-science-skills/blob/main/plugin/skills/research-grill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/scdenney/open-science-skills/blob/main/plugin/skills/research-grill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Interviews a researcher, in rounds, until a research idea, design, or draft has no silently assumed decision left \u2014 every question numbered, each with a plain-language \"why this matters\" and a recommended answer, facts fetched by the assistant rather than asked, and every settled decision written to a file. Three stages, idea (a topic or hunch \u2192 a falsifiable question and a contribution claim), design (a question \u2192 estimand, identification, sample and power, measurement, pre-registration, analysis plan, venue), and defend (a finished design or draft \u2192 the objections a reviewer would raise, before the reviewer does). Use when the user says \"grill me\", \"grill this\", \"stress-test my idea/design/plan\", \"interview me about this project\", \"poke holes in this\", \"what am I assuming\", or brings a research idea that is not yet a design. Suitable for BA, MA, and PhD students as well as grant designs; it never answers the research question for the researcher. Adapted for research from Matt Pocock's grill-me. For a software or process plan rather than research, run it with `--plan`."
+}

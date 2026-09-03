@@ -1,0 +1,38 @@
+{
+  "name": "execute-qa",
+  "repo": "foyzulkarim/skills",
+  "path": "dev-pipeline/skills/execute-qa/SKILL.md",
+  "github_branch": "master",
+  "category": "bash",
+  "source": "github.com/foyzulkarim/skills",
+  "dir_name": "execute-qa",
+  "downloaded_at": "2026-09-03T03:31:41.956631Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "bash",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for bash: bash, shell, cli",
+    "score": 3,
+    "runner_up": "data",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "shell",
+      "cli"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "foyzulkarim",
+  "source_url": "https://github.com/foyzulkarim/skills/blob/master/dev-pipeline/skills/execute-qa/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/foyzulkarim/skills/blob/master/dev-pipeline/skills/execute-qa/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Executes a QA specification (specs/qa/QA-<N>-<slug>.md) written by /plan-qa: drives every step with the plan's drivers, verifies each Expected line mechanically ([assert]) or by evidence-backed judgment against the plan's written criterion ([judge]), pauses at named operator handoffs, and writes the results artifact QA-RESULTS-<N>-<slug>.md. Use only when the user asks to run or execute a QA plan \u2014 never trigger automatically."
+}

@@ -1,0 +1,38 @@
+{
+  "name": "appllama-app-design-skill",
+  "repo": "Appllama/appllama-skills",
+  "path": "skills/appllama-app-design-skill/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Appllama/appllama-skills",
+  "dir_name": "appllama-app-design-skill",
+  "downloaded_at": "2026-09-04T03:17:17.429557Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: development=3, platform=3",
+    "score": 3,
+    "runner_up": "platform",
+    "runner_up_score": 3,
+    "signals": [
+      "code",
+      "build",
+      "compile"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "Appllama",
+  "source_url": "https://github.com/Appllama/appllama-skills/blob/main/skills/appllama-app-design-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Appllama/appllama-skills/blob/main/skills/appllama-app-design-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Build native-feeling, benchmark-quality mobile app screens (Expo / React Native). Use when designing or implementing any mobile UI \u2014 screens, flows, onboarding, paywalls, tab bars, sheets, settings, empty states \u2014 or when polishing motion, navigation, typography, dark mode, or perceived performance. Enforces Apple HIG fidelity, semantic colors, native controls, anti-slop discipline, navigation semantics (push vs replace, modal vs sheet vs overlay, the one-way doors where back must not exist), purposeful Reanimated motion, a full-motion simulator-verified iteration loop, and a study-real-apps-first workflow (pairs with the Appllama MCP). Trigger on \"build a screen\", \"make this screen better\", \"design the onboarding\", \"wire up this flow\", \"polish the UI\", \"make it feel native\", or any mobile design/implementation task."
+}

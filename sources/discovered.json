@@ -1,7 +1,7 @@
 {
-  "discovered_at": "2026-09-03T03:47:17.279179Z",
+  "discovered_at": "2026-09-04T03:46:36.728019Z",
   "total_repos": 300,
-  "total_skills": 42,
+  "total_skills": 11,
   "scanned_repos": 300,
   "limits": {
     "max_repos": 300,
@@ -17,6 +17,7 @@
     "24kchengYe/human-skill-tree",
     "Agents365-ai/drawio-skill",
     "AlpacaLabsLLC/skills-for-architects",
+    "Appllama/appllama-skills",
     "Ar9av/PaperOrchestra",
     "Arindam200/cc-lens",
     "Ashad001/remotion-transitions",
@@ -72,6 +73,7 @@
     "OutlineDriven/odin-claude-plugin",
     "Prat011/awesome-llm-skills",
     "REMvisual/claude-handoff",
+    "Rtur2003/Claude-Code-Promts-Skills",
     "SamJHudson01/Carmack-Council",
     "SamurAIGPT/Generative-Media-Skills",
     "ScrapeCreators/social-media-research-skills",
@@ -98,6 +100,7 @@
     "adityaarsharma/youtube-marketing-skills",
     "aeonfun/soul.md",
     "agiwhitelist/auteur",
+    "ahacker-1/cre-agent-skills",
     "alec-c4/claude-rails-dev",
     "alirezarezvani/claude-code-skill-factory",
     "alirezarezvani/claude-skills",
@@ -199,7 +202,6 @@
     "khendzel/skills-janitor",
     "kromahlusenii-ops/ham",
     "laolaoshiren/claude-code-skills-zh",
-    "lee-fuhr/claude-session-index",
     "levi-qiao/longgraph-skill",
     "levnikolaevich/claude-code-skills",
     "liustack/modlens",
@@ -249,7 +251,6 @@
     "proyecto26/sherlock-ai-plugin",
     "proyecto26/slides-ai-plugin",
     "radekamirko/C.R.I.S.P",
-    "ralfstrobel/agentic-brownfield-coding",
     "rampstackco/claude-skills",
     "respira-press/agent-skills-wordpress",
     "rohitg00/awesome-claude-design",
@@ -291,7 +292,6 @@
     "vasilyu1983/AI-Agents-public",
     "vibeeval/vibecosystem",
     "vitaecontext/vitaecontext",
-    "vladikk/modularity",
     "wanghuan9/skilldock",
     "wanshuiyin/Anti-Autoresearch",
     "wanshuiyin/Auto-claude-code-research-in-sleep",
@@ -314,172 +314,48 @@
   ],
   "skills": [
     {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "vendorable/site-to-ios-app/SKILL.md"
+      "repo": "Appllama/appllama-skills",
+      "path": "skills/appllama-usage/SKILL.md"
     },
     {
-      "repo": "JasonColapietro/suede-creator-skills",
-      "path": "vendorable/voice-preserving-line-edit/SKILL.md"
+      "repo": "Appllama/appllama-skills",
+      "path": "skills/appllama-app-design-skill/SKILL.md"
     },
     {
-      "repo": "Kanevry/session-orchestrator",
-      "path": "skills/remote-offload/SKILL.md"
+      "repo": "Rtur2003/Claude-Code-Promts-Skills",
+      "path": ".claude/skills/find-prompt/SKILL.md"
     },
     {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".cursor/skills/remote-offload/SKILL.md"
+      "repo": "ahacker-1/cre-agent-skills",
+      "path": "claude-code-plugins/cre-retail/SKILL.md"
     },
     {
-      "repo": "avelikiy/great_cto",
-      "path": "skills/quant-validation/SKILL.md"
+      "repo": "ahacker-1/cre-agent-skills",
+      "path": "claude-code-plugins/cre-development/SKILL.md"
     },
     {
-      "repo": "avelikiy/great_cto",
-      "path": "skills/vertical-fintech-mobile/SKILL.md"
+      "repo": "ahacker-1/cre-agent-skills",
+      "path": "claude-code-plugins/cre-lender-credit/SKILL.md"
     },
     {
-      "repo": "foyzulkarim/skills",
-      "path": "dev-pipeline/skills/review/SKILL.md"
-    },
-    {
-      "repo": "foyzulkarim/skills",
-      "path": "dev-pipeline/skills/commit/SKILL.md"
+      "repo": "anbeime/skill",
+      "path": "skills/atutun-xhs-cover/atutun-xhs-cover/SKILL.md"
     },
     {
       "repo": "foyzulkarim/skills",
-      "path": "dev-pipeline/skills/plan-qa/SKILL.md"
+      "path": "dev-pipeline/skills/session-audit/SKILL.md"
     },
     {
-      "repo": "foyzulkarim/skills",
-      "path": "dev-pipeline/skills/implement/SKILL.md"
+      "repo": "titanwings/distilly",
+      "path": "plugins/codex/skills/distilly/SKILL.md"
     },
     {
-      "repo": "foyzulkarim/skills",
-      "path": "dev-pipeline/skills/start-task/SKILL.md"
+      "repo": "titanwings/distilly",
+      "path": "plugins/shared/skills/distilly/SKILL.md"
     },
     {
-      "repo": "foyzulkarim/skills",
-      "path": "dev-pipeline/skills/execute-qa/SKILL.md"
-    },
-    {
-      "repo": "foyzulkarim/skills",
-      "path": "dev-pipeline/skills/sync-skills/SKILL.md"
-    },
-    {
-      "repo": "foyzulkarim/skills",
-      "path": "dev-pipeline/skills/archive-issue/SKILL.md"
-    },
-    {
-      "repo": "foyzulkarim/skills",
-      "path": "dev-pipeline/skills/session-stats/SKILL.md"
-    },
-    {
-      "repo": "foyzulkarim/skills",
-      "path": "dev-pipeline/skills/release-notes/SKILL.md"
-    },
-    {
-      "repo": "foyzulkarim/skills",
-      "path": "dev-pipeline/skills/generate-tasks/SKILL.md"
-    },
-    {
-      "repo": "foyzulkarim/skills",
-      "path": "dev-pipeline/skills/finish-worktree/SKILL.md"
-    },
-    {
-      "repo": "foyzulkarim/skills",
-      "path": "dev-pipeline/skills/move-to-worktree/SKILL.md"
-    },
-    {
-      "repo": "foyzulkarim/skills",
-      "path": "dev-pipeline/skills/plan-requirements/SKILL.md"
-    },
-    {
-      "repo": "foyzulkarim/skills",
-      "path": "dev-pipeline/skills/plan-architecture/SKILL.md"
-    },
-    {
-      "repo": "foyzulkarim/skills",
-      "path": "dev-pipeline/skills/setup-cost-tracking/SKILL.md"
-    },
-    {
-      "repo": "mex-memory/mex",
-      "path": "skills/mex-relay/SKILL.md"
-    },
-    {
-      "repo": "mex-memory/mex",
-      "path": "skills/mex-inbox/SKILL.md"
-    },
-    {
-      "repo": "mex-memory/mex",
-      "path": ".agents/skills/mex-relay/SKILL.md"
-    },
-    {
-      "repo": "mex-memory/mex",
-      "path": ".claude/skills/mex-inbox/SKILL.md"
-    },
-    {
-      "repo": "mex-memory/mex",
-      "path": ".claude/skills/mex-relay/SKILL.md"
-    },
-    {
-      "repo": "mex-memory/mex",
-      "path": ".agents/skills/mex-inbox/SKILL.md"
-    },
-    {
-      "repo": "mxyhi/ok-skills",
-      "path": "deep-research/SKILL.md"
-    },
-    {
-      "repo": "scdenney/open-science-skills",
-      "path": "codex/vlm-ocr/SKILL.md"
-    },
-    {
-      "repo": "scdenney/open-science-skills",
-      "path": "codex/orchestrate/SKILL.md"
-    },
-    {
-      "repo": "scdenney/open-science-skills",
-      "path": "codex/research-grill/SKILL.md"
-    },
-    {
-      "repo": "scdenney/open-science-skills",
-      "path": "plugin/skills/vlm-ocr/SKILL.md"
-    },
-    {
-      "repo": "scdenney/open-science-skills",
-      "path": "codex/referee-response/SKILL.md"
-    },
-    {
-      "repo": "scdenney/open-science-skills",
-      "path": "plugin/skills/orchestrate/SKILL.md"
-    },
-    {
-      "repo": "scdenney/open-science-skills",
-      "path": "plugin/skills/research-grill/SKILL.md"
-    },
-    {
-      "repo": "scdenney/open-science-skills",
-      "path": "plugin/skills/referee-response/SKILL.md"
-    },
-    {
-      "repo": "thedotmack/claude-mem",
-      "path": "claude-mem-cursor/skills/install/SKILL.md"
-    },
-    {
-      "repo": "thedotmack/claude-mem",
-      "path": "claude-mem-grok-bot/skills/install/SKILL.md"
-    },
-    {
-      "repo": "thedotmack/claude-mem",
-      "path": "claude-mem-cursor/skills/mem-search/SKILL.md"
-    },
-    {
-      "repo": "thedotmack/claude-mem",
-      "path": "claude-mem-grok-bot/skills/mem-search/SKILL.md"
-    },
-    {
-      "repo": "thedotmack/claude-mem",
-      "path": "claude-mem-grok-bot/skills/host-observer/SKILL.md"
+      "repo": "titanwings/distilly",
+      "path": "plugins/claude-code/skills/distilly/SKILL.md"
     }
   ]
 }

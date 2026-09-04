@@ -1,0 +1,37 @@
+{
+  "name": "appllama-usage",
+  "repo": "Appllama/appllama-skills",
+  "path": "skills/appllama-usage/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Appllama/appllama-skills",
+  "dir_name": "appllama-usage",
+  "downloaded_at": "2026-09-04T03:17:17.070148Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: design=2, product=2",
+    "score": 2,
+    "runner_up": "product",
+    "runner_up_score": 2,
+    "signals": [
+      "design",
+      "ui"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "Appllama",
+  "source_url": "https://github.com/Appllama/appllama-skills/blob/main/skills/appllama-usage/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Appllama/appllama-skills/blob/main/skills/appllama-usage/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use the Appllama MCP (mcp.appllama.io) well \u2014 research real top-grossing mobile apps, their screens, flows, and UI elements, then build from what you learn. Load when the Appllama MCP is connected and the task involves building a mobile app or screen, researching app design patterns, studying onboarding/paywall/feature flows, improving an existing screen, or whenever an appllama_* / search_apps / list_app_screens tool is available. Covers the tool map, pagination, expiring media, and the full build-from-research playbooks."
+}

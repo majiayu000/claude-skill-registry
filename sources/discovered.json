@@ -1,7 +1,7 @@
 {
-  "discovered_at": "2026-09-04T03:46:36.728019Z",
+  "discovered_at": "2026-09-05T03:48:31.389866Z",
   "total_repos": 300,
-  "total_skills": 11,
+  "total_skills": 10,
   "scanned_repos": 300,
   "limits": {
     "max_repos": 300,
@@ -77,7 +77,6 @@
     "SamJHudson01/Carmack-Council",
     "SamurAIGPT/Generative-Media-Skills",
     "ScrapeCreators/social-media-research-skills",
-    "ShadowAqueduct/watermark-remover",
     "Shanyin-ai/shanyin-screenwriting-master",
     "Shelpuk-AI-Technology-Consulting/agent-skill-tdd",
     "SnailSploit/Claude-Red",
@@ -292,6 +291,7 @@
     "vasilyu1983/AI-Agents-public",
     "vibeeval/vibecosystem",
     "vitaecontext/vitaecontext",
+    "vladikk/modularity",
     "wanghuan9/skilldock",
     "wanshuiyin/Anti-Autoresearch",
     "wanshuiyin/Auto-claude-code-research-in-sleep",
@@ -314,48 +314,44 @@
   ],
   "skills": [
     {
-      "repo": "Appllama/appllama-skills",
-      "path": "skills/appllama-usage/SKILL.md"
-    },
-    {
-      "repo": "Appllama/appllama-skills",
-      "path": "skills/appllama-app-design-skill/SKILL.md"
+      "repo": "Rtur2003/Claude-Code-Promts-Skills",
+      "path": ".claude/skills/skill-audit/SKILL.md"
     },
     {
       "repo": "Rtur2003/Claude-Code-Promts-Skills",
-      "path": ".claude/skills/find-prompt/SKILL.md"
+      "path": ".claude/skills/doc-link-audit/SKILL.md"
     },
     {
-      "repo": "ahacker-1/cre-agent-skills",
-      "path": "claude-code-plugins/cre-retail/SKILL.md"
+      "repo": "Rtur2003/Claude-Code-Promts-Skills",
+      "path": ".claude/skills/deterministic-checks/SKILL.md"
     },
     {
-      "repo": "ahacker-1/cre-agent-skills",
-      "path": "claude-code-plugins/cre-development/SKILL.md"
+      "repo": "Rtur2003/Claude-Code-Promts-Skills",
+      "path": ".claude/skills/changelog-from-commits/SKILL.md"
     },
     {
-      "repo": "ahacker-1/cre-agent-skills",
-      "path": "claude-code-plugins/cre-lender-credit/SKILL.md"
+      "repo": "avelikiy/great_cto",
+      "path": "skills/product-economics/SKILL.md"
     },
     {
-      "repo": "anbeime/skill",
-      "path": "skills/atutun-xhs-cover/atutun-xhs-cover/SKILL.md"
+      "repo": "coreyhaines31/makerskills",
+      "path": "skills/ingest/SKILL.md"
     },
     {
-      "repo": "foyzulkarim/skills",
-      "path": "dev-pipeline/skills/session-audit/SKILL.md"
+      "repo": "sergebulaev/linkedin-skills",
+      "path": "skills/linkedin-repurposer/SKILL.md"
     },
     {
-      "repo": "titanwings/distilly",
-      "path": "plugins/codex/skills/distilly/SKILL.md"
+      "repo": "sergebulaev/linkedin-skills",
+      "path": ".codex-marketplace/linkedin-skills/skills/linkedin-repurposer/SKILL.md"
     },
     {
-      "repo": "titanwings/distilly",
-      "path": "plugins/shared/skills/distilly/SKILL.md"
+      "repo": "sickn33/agentic-awesome-skills",
+      "path": "skills/slideops/SKILL.md"
     },
     {
-      "repo": "titanwings/distilly",
-      "path": "plugins/claude-code/skills/distilly/SKILL.md"
+      "repo": "tdimino/claude-code-minoan",
+      "path": "skills/design-media/photo-to-slack-emoji/SKILL.md"
     }
   ]
 }

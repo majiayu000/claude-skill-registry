@@ -1,0 +1,38 @@
+{
+  "name": "llvm",
+  "repo": "OutlineDriven/odin-claude-plugin",
+  "path": "plugins/odin-native/skills/llvm/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/OutlineDriven/odin-claude-plugin",
+  "dir_name": "llvm",
+  "downloaded_at": "2026-09-06T03:23:23.594060Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: dev, code, build",
+    "score": 3,
+    "runner_up": "communication",
+    "runner_up_score": 1,
+    "signals": [
+      "dev",
+      "code",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "OutlineDriven",
+  "source_url": "https://github.com/OutlineDriven/odin-claude-plugin/blob/main/plugins/odin-native/skills/llvm/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OutlineDriven/odin-claude-plugin/blob/main/plugins/odin-native/skills/llvm/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when working with LLVM IR as a user: emitting IR from clang, running opt passes, lowering with llc, reading IR, or finding a missed optimization. Not for writing new passes: use llvm-passes."
+}

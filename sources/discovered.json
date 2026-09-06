@@ -1,7 +1,7 @@
 {
-  "discovered_at": "2026-09-05T03:48:31.389866Z",
+  "discovered_at": "2026-09-06T03:48:06.683134Z",
   "total_repos": 300,
-  "total_skills": 10,
+  "total_skills": 80,
   "scanned_repos": 300,
   "limits": {
     "max_repos": 300,
@@ -314,44 +314,324 @@
   ],
   "skills": [
     {
-      "repo": "Rtur2003/Claude-Code-Promts-Skills",
-      "path": ".claude/skills/skill-audit/SKILL.md"
+      "repo": "JasonColapietro/suede-creator-skills",
+      "path": "vendorable/frontend-design-review/SKILL.md"
     },
     {
-      "repo": "Rtur2003/Claude-Code-Promts-Skills",
-      "path": ".claude/skills/doc-link-audit/SKILL.md"
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-run/skills/saga/SKILL.md"
     },
     {
-      "repo": "Rtur2003/Claude-Code-Promts-Skills",
-      "path": ".claude/skills/deterministic-checks/SKILL.md"
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-run/skills/swarm/SKILL.md"
     },
     {
-      "repo": "Rtur2003/Claude-Code-Promts-Skills",
-      "path": ".claude/skills/changelog-from-commits/SKILL.md"
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-native/skills/gcc/SKILL.md"
     },
     {
-      "repo": "avelikiy/great_cto",
-      "path": "skills/product-economics/SKILL.md"
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-native/skills/mpi/SKILL.md"
     },
     {
-      "repo": "coreyhaines31/makerskills",
-      "path": "skills/ingest/SKILL.md"
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-native/skills/pgo/SKILL.md"
     },
     {
-      "repo": "sergebulaev/linkedin-skills",
-      "path": "skills/linkedin-repurposer/SKILL.md"
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-git/skills/commit/SKILL.md"
     },
     {
-      "repo": "sergebulaev/linkedin-skills",
-      "path": ".codex-marketplace/linkedin-skills/skills/linkedin-repurposer/SKILL.md"
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-native/skills/gdb/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-learn/skills/teach/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-git/skills/wontfix/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-native/skills/ebpf/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-native/skills/cuda/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-infra/skills/ci-cd/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-native/skills/dpdk/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-testing/skills/tdd/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-native/skills/make/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-learn/skills/drill/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-native/skills/llvm/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-git/skills/resolve/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-native/skills/mlir/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-native/skills/lldb/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-code/skills/fastopt/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-git/skills/worktree/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-native/skills/meson/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-native/skills/bazel/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-native/skills/ninja/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-native/skills/clang/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-native/skills/cmake/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-infra/skills/ci-fix/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-learn/skills/onboard/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-native/skills/zephyr/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-native/skills/af-xdp/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-native/skills/openmp/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-fuzzing/skills/ruzzy/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-run/skills/autopilot/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-review/skills/review/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-code/skills/fromzero/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-code/skills/optimize/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-git/skills/issue-now/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-review/skills/no-hide/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-skills/skills/reflect/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-fuzzing/skills/libafl/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-code/skills/architect/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-critique/skills/taste/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-git/skills/close-done/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-visual/skills/show-me/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-native/skills/arm-sve/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-learn/skills/capstone/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-native/skills/msvc-cl/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-critique/skills/prism/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-git/skills/can-i-help/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-code/skills/guillotine/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-native/skills/freertos/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-native/skills/io-uring/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-native/skills/binutils/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-native/skills/rust-ffi/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-review/skills/dx-audit/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-git/skills/git-cleanup/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-fuzzing/skills/fuzzing/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-fuzzing/skills/atheris/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-writing/skills/reorder/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-learn/skills/wait-what/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-git/skills/commit-push/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-review/skills/ax-audit/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-native/skills/qemu-kvm/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-native/skills/valgrind/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-writing/skills/save-md/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-native/skills/hip-rocm/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-native/skills/zig-cross/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-planning/skills/diverge/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-web/skills/optimise-seo/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-planning/skills/minimap/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-learn/skills/map-corpus/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-planning/skills/to-spec/SKILL.md"
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "plugins/odin-release/skills/shipping/SKILL.md"
+    },
+    {
+      "repo": "hoangsonww/Claude-Code-Agent-Monitor",
+      "path": ".codex/skills/i18n-parity/SKILL.md"
+    },
+    {
+      "repo": "hoangsonww/Claude-Code-Agent-Monitor",
+      "path": ".claude/skills/i18n-parity/SKILL.md"
+    },
+    {
+      "repo": "hoangsonww/Claude-Code-Agent-Monitor",
+      "path": ".agents/skills/i18n-parity/SKILL.md"
     },
     {
       "repo": "sickn33/agentic-awesome-skills",
-      "path": "skills/slideops/SKILL.md"
+      "path": "skills/007/SKILL.md"
     },
     {
-      "repo": "tdimino/claude-code-minoan",
-      "path": "skills/design-media/photo-to-slack-emoji/SKILL.md"
+      "repo": "sickn33/agentic-awesome-skills",
+      "path": "skills/readme/SKILL.md"
     }
   ]
 }

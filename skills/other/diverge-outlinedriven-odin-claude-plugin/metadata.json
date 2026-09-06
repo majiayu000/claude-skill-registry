@@ -1,0 +1,37 @@
+{
+  "name": "diverge",
+  "repo": "OutlineDriven/odin-claude-plugin",
+  "path": "plugins/odin-planning/skills/diverge/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/OutlineDriven/odin-claude-plugin",
+  "dir_name": "diverge-outlinedriven-odin-claude-plugin",
+  "downloaded_at": "2026-09-06T03:23:31.186503Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: planning=2, productivity=2",
+    "score": 2,
+    "runner_up": "productivity",
+    "runner_up_score": 2,
+    "signals": [
+      "planning",
+      "plan"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "OutlineDriven",
+  "source_url": "https://github.com/OutlineDriven/odin-claude-plugin/blob/main/plugins/odin-planning/skills/diverge/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OutlineDriven/odin-claude-plugin/blob/main/plugins/odin-planning/skills/diverge/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user wants to expand a decision field with additional options and dimensions. Not for selecting or applying an option: use decide. No source or remote-system changes."
+}

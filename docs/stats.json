@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-05T04:37:30.581243Z",
-  "archive_skill_md_count_raw": 202608,
-  "archive_metadata_count_raw": 202606,
-  "indexed_skill_count_scan_shape": 161772,
-  "registry_skill_count_dedup": 161340,
+  "updated_at": "2026-09-06T04:32:53.733938Z",
+  "archive_skill_md_count_raw": 202691,
+  "archive_metadata_count_raw": 202689,
+  "indexed_skill_count_scan_shape": 161852,
+  "registry_skill_count_dedup": 161420,
   "total_plugins": 4,
   "categories": 40,
   "category_counts": [
@@ -26,7 +26,7 @@
     {
       "name": "analysis",
       "code": "analysis",
-      "count": 3163
+      "count": 3164
     },
     {
       "name": "api",
@@ -36,7 +36,7 @@
     {
       "name": "bash",
       "code": "bash",
-      "count": 579
+      "count": 581
     },
     {
       "name": "business",
@@ -71,17 +71,17 @@
     {
       "name": "design",
       "code": "des",
-      "count": 10422
+      "count": 10423
     },
     {
       "name": "development",
       "code": "dev",
-      "count": 36919
+      "count": 36946
     },
     {
       "name": "devops",
       "code": "ops",
-      "count": 8315
+      "count": 8316
     },
     {
       "name": "documents",
@@ -141,12 +141,12 @@
     {
       "name": "other",
       "code": "oth",
-      "count": 3424
+      "count": 3459
     },
     {
       "name": "performance",
       "code": "performance",
-      "count": 1083
+      "count": 1085
     },
     {
       "name": "personal-development",
@@ -166,22 +166,22 @@
     {
       "name": "product",
       "code": "prd",
-      "count": 3105
+      "count": 3106
     },
     {
       "name": "productivity",
       "code": "pro",
-      "count": 2318
+      "count": 2320
     },
     {
       "name": "quality",
       "code": "quality",
-      "count": 4293
+      "count": 4294
     },
     {
       "name": "security",
       "code": "sec",
-      "count": 4629
+      "count": 4635
     },
     {
       "name": "skills",
@@ -206,7 +206,7 @@
     {
       "name": "writing",
       "code": "writing",
-      "count": 1171
+      "count": 1172
     }
   ],
   "unique_repo_count": 9840,
@@ -234,7 +234,7 @@
     },
     {
       "repo": "sickn33/agentic-awesome-skills",
-      "count": 883
+      "count": 885
     },
     {
       "repo": "aiskillstore/marketplace",
@@ -257,36 +257,36 @@
   "asset_state_counts": {},
   "asset_liveness_counts": {},
   "index_size_bytes": 324,
-  "index_size_gzip_bytes": 245,
+  "index_size_gzip_bytes": 244,
   "search_shard_count": 5,
-  "search_largest_shard_bytes": 8388662,
-  "search_largest_shard_gzip_bytes": 1425889,
+  "search_largest_shard_bytes": 8388619,
+  "search_largest_shard_gzip_bytes": 1425890,
   "category_shard_count": 45,
-  "category_largest_part_bytes": 8388724,
+  "category_largest_part_bytes": 8388666,
   "category_largest_part_gzip_bytes": 1806212,
-  "lite_index_count": 161772,
+  "lite_index_count": 161852,
   "lite_index_included_count": 5000,
   "lite_index_size_bytes": 3502198,
   "lite_index_gzip_size_bytes": 683149,
   "quality_index_size_bytes": 364,
   "quality_index_gzip_size_bytes": 271,
   "quality_shard_count": 6,
-  "quality_largest_shard_bytes": 8388689,
-  "quality_largest_shard_gzip_bytes": 1766150,
+  "quality_largest_shard_bytes": 8388671,
+  "quality_largest_shard_gzip_bytes": 1765995,
   "security_index_size_bytes": 368,
   "security_index_gzip_size_bytes": 272,
-  "security_shard_count": 19,
-  "security_largest_shard_bytes": 8388690,
-  "security_largest_shard_gzip_bytes": 1590402,
+  "security_shard_count": 20,
+  "security_largest_shard_bytes": 8388651,
+  "security_largest_shard_gzip_bytes": 1590540,
   "ranking_index_size_bytes": 364,
   "ranking_index_gzip_size_bytes": 271,
   "ranking_shard_count": 5,
-  "ranking_largest_shard_bytes": 8388547,
-  "ranking_largest_shard_gzip_bytes": 1974160,
-  "largest_generated_file_bytes": 8388724,
+  "ranking_largest_shard_bytes": 8388625,
+  "ranking_largest_shard_gzip_bytes": 1974643,
+  "largest_generated_file_bytes": 8388671,
   "security_scan": {
-    "total": 202606,
-    "passed": 202606,
+    "total": 202689,
+    "passed": 202689,
     "failed": 0
   }
 }

@@ -1,0 +1,37 @@
+{
+  "name": "freertos",
+  "repo": "OutlineDriven/odin-claude-plugin",
+  "path": "plugins/odin-native/skills/freertos/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/OutlineDriven/odin-claude-plugin",
+  "dir_name": "freertos",
+  "downloaded_at": "2026-09-06T03:23:29.083366Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: compile, debug",
+    "score": 2,
+    "runner_up": "communication",
+    "runner_up_score": 1,
+    "signals": [
+      "compile",
+      "debug"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "OutlineDriven",
+  "source_url": "https://github.com/OutlineDriven/odin-claude-plugin/blob/main/plugins/odin-native/skills/freertos/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OutlineDriven/odin-claude-plugin/blob/main/plugins/odin-native/skills/freertos/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when creating FreeRTOS tasks, queues, semaphores, or mutexes, catching stack overflow, writing FreeRTOSConfig.h, or debugging tasks over OpenOCD and GDB. Not for probe setup: use openocd-jtag."
+}

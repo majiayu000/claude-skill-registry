@@ -1,0 +1,38 @@
+{
+  "name": "aws-wechat-article-main",
+  "repo": "aiworkskills/wechat-article-skills",
+  "path": "skills/aws-wechat-article-main/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/aiworkskills/wechat-article-skills",
+  "dir_name": "aws-wechat-article-main",
+  "downloaded_at": "2026-09-07T03:29:02.697508Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=3, workflow=3",
+    "score": 3,
+    "runner_up": "workflow",
+    "runner_up_score": 3,
+    "signals": [
+      "bash",
+      "shell",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "aiworkskills",
+  "source_url": "https://github.com/aiworkskills/wechat-article-skills/blob/main/skills/aws-wechat-article-main/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aiworkskills/wechat-article-skills/blob/main/skills/aws-wechat-article-main/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u516c\u4f17\u53f7\u8fd0\u8425\uff5c\u5fae\u4fe1\u516c\u4f17\u53f7\uff5c\u516c\u4f17\u53f7\u4e00\u6761\u9f99\uff5c\u516c\u4f17\u53f7\u5168\u6d41\u7a0b\uff5c\u81ea\u5a92\u4f53\u8fd0\u8425\uff5cwechat automation\uff5ccontent pipeline\uff5cAIGC workflow \u2014 \u516c\u4f17\u53f7\u4e00\u6761\u9f99\u8fd0\u8425\u603b\u63a7\u5165\u53e3\uff0c\u9009\u9898\u2192\u5199\u7a3f\u2192\u5ba1\u7a3f\u2192\u6392\u7248\u2192\u914d\u56fe\u2192\u53d1\u5e03\u4e32\u8054 8 \u4e2a\u5b50 skill\uff0c\u5355\u6761\u6307\u4ee4\u5b8c\u6210\u6574\u7bc7\u56fe\u6587\u4ece 0 \u5230\u4e0a\u67b6\u3002\u9762\u5411\u516c\u4f17\u53f7\u5c0f\u7f16\u3001\u81ea\u5a92\u4f53\u3001\u54c1\u724c\u5185\u5bb9\u3002\u89e6\u53d1\u8bcd\u5206\u5c42\uff1a**\u4e00\u6761\u9f99\u6d41\u7a0b**\u300c\u4e00\u6761\u9f99\u300d\u300c\u5b8c\u6574\u6d41\u7a0b\u300d\u300c\u4ece\u5934\u505a\u300d\u300c\u4ece 0 \u5230\u53d1\u5e03\u300d\uff1b**\u65b0\u505a\u65b0\u53d1**\u300c\u5e2e\u6211\u5199\u7bc7\u516c\u4f17\u53f7\u6587\u7ae0\u300d\u300c\u505a\u4e00\u7bc7\u516c\u4f17\u53f7\u6587\u7ae0\u300d\u300c\u6211\u60f3\u53d1\u4e00\u7bc7\u300d\u300c\u5e2e\u6211\u53d1\u4e00\u7bc7\u300d\u300c\u518d\u6765\u4e00\u7bc7\u300d\uff1b**\u9009\u9898\u8d77\u70b9**\u300c\u4eca\u5929\u5199\u4ec0\u4e48\u597d\u300d\u300c\u6709\u4ec0\u4e48\u597d\u5199\u7684\u300d\u300c\u627e\u4e2a\u8bdd\u9898\u300d\u300c\u7206\u6b3e\u9009\u9898\u300d\u300c\u70ed\u70b9\u9009\u9898\u300d\u300c\u8d77\u4e2a\u7206\u6b3e\u6807\u9898\u300d\uff1b**\u7b56\u5212\u8d77\u70b9**\u300c\u5185\u5bb9\u65e5\u5386\u300d\u300c\u7cfb\u5217\u7b56\u5212\u300d\u300c\u4e13\u680f\u89c4\u5212\u300d\u300c\u8fde\u8f7d\u300d\uff1b**\u6d41\u7a0b\u6062\u590d**\u300c\u63a5\u7740\u4e0a\u6b21\u90a3\u7bc7\u300d\u300c\u7ee7\u7eed\u6628\u5929\u7684\u300d\u300c\u7ee7\u7eed\u4e0a\u6b21\u7684\u300d\u300c\u63a5\u7740\u4e4b\u524d\u7684\u8fdb\u5ea6\u300d\uff1b**\u663e\u5f0f\u6a21\u578b\u65b0\u5199**\u300c\u7528 GPT \u5199\u4e00\u7bc7\u300d\u300c\u7528 DeepSeek \u5199\u4e00\u7bc7\u300d\u300c\u628a\u63d0\u7eb2\u5199\u6210\u6587\u7ae0\u300d\u3002\u5b50 skill\uff08topics/writing/review/formatting/images/publish/sticker/assets\uff09\u5355\u72ec\u89e6\u53d1\u4ec5\u9650\u5bf9**\u5df2\u6709\u4ea7\u7269**\u7684\u4fee\u6539\u573a\u666f\uff08\u5982\"\u6539\u6807\u9898\"\"\u6da6\u8272\u8fd9\u6bb5\"\"\u6392\u7248\"\"\u5ba1\u7a3f\"\"\u52a0\u5c01\u9762\"\"\u53d1\u5e03\"\uff09\uff1b\u65b0\u505a/\u7b56\u5212/\u591a\u73af\u8282\u4e32\u8054\u4e00\u5f8b\u8d70\u672c\u5165\u53e3\u3002"
+}

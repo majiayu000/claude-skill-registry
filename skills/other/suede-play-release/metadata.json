@@ -1,0 +1,38 @@
+{
+  "name": "suede-play-release",
+  "repo": "JasonColapietro/suede-creator-skills",
+  "path": "skills/suede-play-release/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/JasonColapietro/suede-creator-skills",
+  "dir_name": "suede-play-release",
+  "downloaded_at": "2026-09-07T03:22:52.821480Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=3, security=3",
+    "score": 3,
+    "runner_up": "security",
+    "runner_up_score": 3,
+    "signals": [
+      "bash",
+      "shell",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "JasonColapietro",
+  "source_url": "https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-play-release/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-play-release/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Suede Labs Google Play delivery skill: ship an Android release end to end from the agent interface, without opening the Play Console. Set up credentials, upload an AAB, promote between tracks, stage or complete a rollout, push per-locale release notes, and prove against the Play Developer API what is actually live. One step stays a Console action by design and the skill hands it to you: granting the service account release access the first time. Use when uploading or promoting an Android build, wiring a Play service account and fastlane supply lanes, fixing per-versionCode changelogs, raising or halting a staged rollout, or answering what version and fraction production is really serving. NOT FOR: planning or building the app itself (use android-app-factory); live listing and keyword audits (use suede-aso); CI required checks (use suede-ci-gate); iOS release (a private Suede Labs companion, not in this pack: ios-app-store-release)."
+}

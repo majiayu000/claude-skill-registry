@@ -1,0 +1,38 @@
+{
+  "name": "aws-wechat-article-writing",
+  "repo": "aiworkskills/wechat-article-skills",
+  "path": "skills/aws-wechat-article-writing/SKILL.md",
+  "github_branch": "main",
+  "category": "ai-llm",
+  "source": "github.com/aiworkskills/wechat-article-skills",
+  "dir_name": "aws-wechat-article-writing",
+  "downloaded_at": "2026-09-07T03:29:03.631703Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "ai-llm",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for ai-llm: ai, llm, prompt",
+    "score": 3,
+    "runner_up": "ai-ml",
+    "runner_up_score": 2,
+    "signals": [
+      "ai",
+      "llm",
+      "prompt"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "aiworkskills",
+  "source_url": "https://github.com/aiworkskills/wechat-article-skills/blob/main/skills/aws-wechat-article-writing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aiworkskills/wechat-article-skills/blob/main/skills/aws-wechat-article-writing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u516c\u4f17\u53f7\u5199\u7a3f\uff5c\u957f\u6587\u5199\u4f5c\uff5c\u6587\u7ae0\u6da6\u8272\uff5c\u6539\u5199\u7eed\u5199 \u2014 \u516c\u4f17\u53f7\u957f\u6587 AI \u5199\u4f5c\uff0c\u4ece\u8bdd\u9898\u6216\u63d0\u7eb2\u751f\u6210\u5b8c\u6574\u521d\u7a3f\uff0c\u652f\u6301\u6539\u5199\u3001\u7eed\u5199\u3001\u6da6\u8272\u3001\u5f00\u5934\u7ed3\u5c3e\u4f18\u5316\uff0c\u53ef\u8c03 DeepSeek / GPT / Claude \u6216\u7531 Agent \u4ee3\u5199\u3002\u9762\u5411\u81ea\u5a92\u4f53\u4f5c\u8005\u3001\u516c\u4f17\u53f7\u8fd0\u8425\u3001\u54c1\u724c\u6587\u6848\u3002\u89e6\u53d1\u8bcd\uff08**\u5355\u72ec\u89e6\u53d1\u4ec5\u9650\u5bf9\u5df2\u6709\u7a3f\u5b50\u7684\u4fee\u6539**\uff09\uff1a\u300c\u6539\u5199\u300d\u300c\u6da6\u8272\u300d\u300c\u7eed\u5199\u300d\u300c\u7eed\u4e00\u6bb5\u300d\u300c\u5f80\u4e0b\u5199\u300d\u300c\u63a5\u7740\u8fd9\u6bb5\u5199\u300d\u300c\u91cd\u5199\u5f00\u5934\u300d\u300c\u6539\u7ed3\u5c3e\u300d\u300c\u8c03\u6574\u8bed\u6c14\u300d\u300c\u8fd9\u6bb5\u6da6\u8272\u4e0b\u300d\u300c\u628a\u8fd9\u6bb5\u6539\u6d3b\u6cfc\u70b9\u300d\u300c\u4f18\u5316\u7528\u8bcd\u300d\u300c\u7528 GPT \u91cd\u5199\u300d\u300c\u7528 DeepSeek \u91cd\u5199\u300d\u3002\u65b0\u5199\u4e00\u7bc7\u8bf7\u8d70 aws-wechat-article-main\uff08main \u5185\u90e8\u4f1a\u8c03\u7528\u672c skill \u751f\u6210\u521d\u7a3f\uff09\uff1b\u9700\u8981\u591a\u73af\u8282\u4e32\u8054\uff08\u5199+\u5ba1+\u6392+\u914d\u56fe+\u53d1\uff09\u4e5f\u8d70 main\u3002"
+}

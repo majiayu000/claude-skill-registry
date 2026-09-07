@@ -1,0 +1,37 @@
+{
+  "name": "aws-wechat-sticker",
+  "repo": "aiworkskills/wechat-article-skills",
+  "path": "skills/aws-wechat-sticker/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/aiworkskills/wechat-article-skills",
+  "dir_name": "aws-wechat-sticker",
+  "downloaded_at": "2026-09-07T03:29:02.506796Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: ai-llm=2, ai-ml=2",
+    "score": 2,
+    "runner_up": "ai-ml",
+    "runner_up_score": 2,
+    "signals": [
+      "ai",
+      "prompt"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "aiworkskills",
+  "source_url": "https://github.com/aiworkskills/wechat-article-skills/blob/main/skills/aws-wechat-sticker/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aiworkskills/wechat-article-skills/blob/main/skills/aws-wechat-sticker/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u516c\u4f17\u53f7\u8d34\u56fe\uff5c\u4e5d\u5bab\u683c\uff5c\u591a\u56fe\u63a8\u9001\uff5c\u56fe\u7247\u6d88\u606f\uff5c\u8868\u60c5\u5305 \u2014 \u8d34\u56fe\u4e0e\u591a\u56fe\u63a8\u9001\uff1a\u4ece\u521b\u610f\u6784\u601d\u3001AI \u751f\u56fe\u5230\u516c\u4f17\u53f7\u56fe\u7247\u6d88\u606f\u53d1\u5e03\u5168\u6d41\u7a0b\uff0c\u542b\u4e5d\u5bab\u683c\u81ea\u52a8\u6392\u5e03\u3001\u591a\u56fe\u538b\u7f29\u3001\u7ec4\u56fe\u6253\u5305\u3002\u9762\u5411\u516c\u4f17\u53f7\u8fd0\u8425\u3001\u81ea\u5a92\u4f53\u3001IP \u8d26\u53f7\u3002\u89e6\u53d1\u8bcd\uff1a\u300c\u8d34\u56fe\u300d\u300c\u591a\u56fe\u63a8\u9001\u300d\u300c\u53d1\u7ec4\u56fe\u300d\u300c\u56fe\u7247\u6d88\u606f\u300d\u300c\u4e5d\u5bab\u683c\u300d\u300c\u505a\u4e00\u7ec4\u56fe\u300d\u300c\u56fe\u7247\u5e16\u5b50\u300d\u300c\u53d1\u51e0\u5f20\u56fe\u300d\u300c\u4e0d\u5199\u6b63\u6587\u53d1\u56fe\u300d\u300c\u53ea\u53d1\u56fe\u4e0d\u5199\u5b57\u300d\u3002\u662f\u6587\u7ae0\u5185\u914d\u56fe/\u5c01\u9762\u8bf7\u8d70 aws-wechat-article-images\uff1b\u9700\u8981\u591a\u73af\u8282\u4e32\u8054\uff08\u5199+\u5ba1+\u6392+\u914d\u56fe+\u53d1\uff09\u8bf7\u8d70 aws-wechat-article-main\u3002"
+}

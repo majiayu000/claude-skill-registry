@@ -1,0 +1,37 @@
+{
+  "name": "suede-parity-contract",
+  "repo": "JasonColapietro/suede-creator-skills",
+  "path": "skills/suede-parity-contract/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/JasonColapietro/suede-creator-skills",
+  "dir_name": "suede-parity-contract",
+  "downloaded_at": "2026-09-07T03:22:53.223305Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: development=2, platform=2",
+    "score": 2,
+    "runner_up": "platform",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "JasonColapietro",
+  "source_url": "https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-parity-contract/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-parity-contract/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Suede Labs cross-surface canon discipline: hold one canonical answer across every surface that states it (web, iOS, Android, docs, a second service) by generating a contract from the reference surface and making the others assert against it, so a divergence fails a test instead of reaching a user or an answer engine. Consistent canon is what makes a product citable: generative search quotes sources that do not contradict themselves, and a number that differs between your site and your app is a contradiction a model can see. Use when the same rule, threshold, ladder, or stated fact lives on two or more surfaces; when values are copied by hand out of a handoff; when two surfaces already disagree; or when auditing where they drifted. NOT FOR: deciding which surface is correct (a product call this skill records rather than makes); reviewing a diff (use suede-code-review); wiring merge gates (use suede-ci-gate); a generative-search audit of a page (use suede-seo-audit)."
+}

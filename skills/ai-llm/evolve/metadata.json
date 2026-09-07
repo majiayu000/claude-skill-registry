@@ -1,0 +1,37 @@
+{
+  "name": "evolve",
+  "repo": "Kanevry/session-orchestrator",
+  "path": ".agents/skills/evolve/SKILL.md",
+  "github_branch": "main",
+  "category": "ai-llm",
+  "source": "github.com/Kanevry/session-orchestrator",
+  "dir_name": "evolve",
+  "downloaded_at": "2026-09-07T03:23:59.521474Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "ai-llm",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for ai-llm: llm, prompt",
+    "score": 2,
+    "runner_up": "agent",
+    "runner_up_score": 1,
+    "signals": [
+      "llm",
+      "prompt"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "Kanevry",
+  "source_url": "https://github.com/Kanevry/session-orchestrator/blob/main/.agents/skills/evolve/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Kanevry/session-orchestrator/blob/main/.agents/skills/evolve/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use this skill when extracting session patterns into reusable learnings. Three modes: analyze (extract from session history), review (edit/manage existing learnings), list (display active learnings). Manages .orchestrator/metrics/learnings.jsonl."
+}

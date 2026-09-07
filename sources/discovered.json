@@ -1,7 +1,7 @@
 {
-  "discovered_at": "2026-09-06T03:48:06.683134Z",
+  "discovered_at": "2026-09-07T03:49:55.664586Z",
   "total_repos": 300,
-  "total_skills": 80,
+  "total_skills": 56,
   "scanned_repos": 300,
   "limits": {
     "max_repos": 300,
@@ -74,6 +74,7 @@
     "Prat011/awesome-llm-skills",
     "REMvisual/claude-handoff",
     "Rtur2003/Claude-Code-Promts-Skills",
+    "Ryze-AI-Adgent/open-seo-mcp-skills",
     "SamJHudson01/Carmack-Council",
     "SamurAIGPT/Generative-Media-Skills",
     "ScrapeCreators/social-media-research-skills",
@@ -100,6 +101,7 @@
     "aeonfun/soul.md",
     "agiwhitelist/auteur",
     "ahacker-1/cre-agent-skills",
+    "aiworkskills/wechat-article-skills",
     "alec-c4/claude-rails-dev",
     "alirezarezvani/claude-code-skill-factory",
     "alirezarezvani/claude-skills",
@@ -289,9 +291,7 @@
     "tuan3w/obsidian-vault-agent",
     "tzachbon/smart-ralph",
     "vasilyu1983/AI-Agents-public",
-    "vibeeval/vibecosystem",
     "vitaecontext/vitaecontext",
-    "vladikk/modularity",
     "wanghuan9/skilldock",
     "wanshuiyin/Anti-Autoresearch",
     "wanshuiyin/Auto-claude-code-research-in-sleep",
@@ -315,323 +315,227 @@
   "skills": [
     {
       "repo": "JasonColapietro/suede-creator-skills",
-      "path": "vendorable/frontend-design-review/SKILL.md"
+      "path": "skills/suede-play-release/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-run/skills/saga/SKILL.md"
+      "repo": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-parity-contract/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-run/skills/swarm/SKILL.md"
+      "repo": "Kanevry/session-orchestrator",
+      "path": ".agents/skills/eli5/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-native/skills/gcc/SKILL.md"
+      "repo": "Kanevry/session-orchestrator",
+      "path": ".agents/skills/plan/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-native/skills/mpi/SKILL.md"
+      "repo": "Kanevry/session-orchestrator",
+      "path": ".agents/skills/eval/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-native/skills/pgo/SKILL.md"
+      "repo": "Kanevry/session-orchestrator",
+      "path": ".agents/skills/debug/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-git/skills/commit/SKILL.md"
+      "repo": "Kanevry/session-orchestrator",
+      "path": ".agents/skills/grill/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-native/skills/gdb/SKILL.md"
+      "repo": "Kanevry/session-orchestrator",
+      "path": ".agents/skills/evolve/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-learn/skills/teach/SKILL.md"
+      "repo": "Kanevry/session-orchestrator",
+      "path": ".agents/skills/spinout/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-git/skills/wontfix/SKILL.md"
+      "repo": "Kanevry/session-orchestrator",
+      "path": ".agents/skills/reconcile/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-native/skills/ebpf/SKILL.md"
+      "repo": "Kanevry/session-orchestrator",
+      "path": ".agents/skills/bootstrap/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-native/skills/cuda/SKILL.md"
+      "repo": "Kanevry/session-orchestrator",
+      "path": ".agents/skills/autopilot/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-infra/skills/ci-cd/SKILL.md"
+      "repo": "Kanevry/session-orchestrator",
+      "path": ".agents/skills/discovery/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-native/skills/dpdk/SKILL.md"
+      "repo": "Kanevry/session-orchestrator",
+      "path": ".agents/skills/brainstorm/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-testing/skills/tdd/SKILL.md"
+      "repo": "Kanevry/session-orchestrator",
+      "path": ".agents/skills/repo-audit/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-native/skills/make/SKILL.md"
+      "repo": "Kanevry/session-orchestrator",
+      "path": ".agents/skills/gitlab-ops/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-learn/skills/drill/SKILL.md"
+      "repo": "Kanevry/session-orchestrator",
+      "path": ".agents/skills/vault-sync/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-native/skills/llvm/SKILL.md"
+      "repo": "Kanevry/session-orchestrator",
+      "path": ".agents/skills/dispatcher/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-git/skills/resolve/SKILL.md"
+      "repo": "Kanevry/session-orchestrator",
+      "path": ".agents/skills/mcp-builder/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-native/skills/mlir/SKILL.md"
+      "repo": "Kanevry/session-orchestrator",
+      "path": ".agents/skills/session-end/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-native/skills/lldb/SKILL.md"
+      "repo": "Kanevry/session-orchestrator",
+      "path": ".agents/skills/tmux-layout/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-code/skills/fastopt/SKILL.md"
+      "repo": "Kanevry/session-orchestrator",
+      "path": ".agents/skills/npm-publish/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-git/skills/worktree/SKILL.md"
+      "repo": "Kanevry/session-orchestrator",
+      "path": ".agents/skills/session-plan/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-native/skills/meson/SKILL.md"
+      "repo": "Kanevry/session-orchestrator",
+      "path": ".agents/skills/architecture/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-native/skills/bazel/SKILL.md"
+      "repo": "Kanevry/session-orchestrator",
+      "path": ".agents/skills/vault-mirror/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-native/skills/ninja/SKILL.md"
+      "repo": "Kanevry/session-orchestrator",
+      "path": ".agents/skills/session-start/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-native/skills/clang/SKILL.md"
+      "repo": "Kanevry/session-orchestrator",
+      "path": ".agents/skills/quality-gates/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-native/skills/cmake/SKILL.md"
+      "repo": "Kanevry/session-orchestrator",
+      "path": ".agents/skills/wave-executor/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-infra/skills/ci-fix/SKILL.md"
+      "repo": "Kanevry/session-orchestrator",
+      "path": ".agents/skills/mode-selector/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-learn/skills/onboard/SKILL.md"
+      "repo": "Kanevry/session-orchestrator",
+      "path": ".agents/skills/persona-panel/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-native/skills/zephyr/SKILL.md"
+      "repo": "Kanevry/session-orchestrator",
+      "path": ".agents/skills/sunset-review/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-native/skills/af-xdp/SKILL.md"
+      "repo": "Ryze-AI-Adgent/open-seo-mcp-skills",
+      "path": "skills/seo-audit/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-native/skills/openmp/SKILL.md"
+      "repo": "Ryze-AI-Adgent/open-seo-mcp-skills",
+      "path": "skills/seo-vs-ads/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-fuzzing/skills/ruzzy/SKILL.md"
+      "repo": "Ryze-AI-Adgent/open-seo-mcp-skills",
+      "path": "skills/content-brief/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-run/skills/autopilot/SKILL.md"
+      "repo": "Ryze-AI-Adgent/open-seo-mcp-skills",
+      "path": "skills/ai-visibility/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-review/skills/review/SKILL.md"
+      "repo": "Ryze-AI-Adgent/open-seo-mcp-skills",
+      "path": "skills/rank-tracking/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-code/skills/fromzero/SKILL.md"
+      "repo": "Ryze-AI-Adgent/open-seo-mcp-skills",
+      "path": "skills/competitor-gap/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-code/skills/optimize/SKILL.md"
+      "repo": "Ryze-AI-Adgent/open-seo-mcp-skills",
+      "path": "skills/backlink-check/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-git/skills/issue-now/SKILL.md"
+      "repo": "Ryze-AI-Adgent/open-seo-mcp-skills",
+      "path": "skills/keyword-research/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-review/skills/no-hide/SKILL.md"
+      "repo": "aiworkskills/wechat-article-skills",
+      "path": "skills/aws-wechat-sticker/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-skills/skills/reflect/SKILL.md"
+      "repo": "aiworkskills/wechat-article-skills",
+      "path": "skills/aws-wechat-article-main/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-fuzzing/skills/libafl/SKILL.md"
+      "repo": "aiworkskills/wechat-article-skills",
+      "path": "skills/aws-wechat-article-topics/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-code/skills/architect/SKILL.md"
+      "repo": "aiworkskills/wechat-article-skills",
+      "path": "skills/aws-wechat-article-images/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-critique/skills/taste/SKILL.md"
+      "repo": "aiworkskills/wechat-article-skills",
+      "path": "skills/aws-wechat-article-assets/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-git/skills/close-done/SKILL.md"
+      "repo": "aiworkskills/wechat-article-skills",
+      "path": "skills/aws-wechat-article-review/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-visual/skills/show-me/SKILL.md"
+      "repo": "aiworkskills/wechat-article-skills",
+      "path": "skills/aws-wechat-article-writing/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-native/skills/arm-sve/SKILL.md"
+      "repo": "aiworkskills/wechat-article-skills",
+      "path": "skills/aws-wechat-article-publish/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-learn/skills/capstone/SKILL.md"
+      "repo": "aiworkskills/wechat-article-skills",
+      "path": "skills/aws-wechat-article-formatting/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-native/skills/msvc-cl/SKILL.md"
+      "repo": "rse/ase",
+      "path": "plugin/skills/ase-docs-refine/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-critique/skills/prism/SKILL.md"
+      "repo": "rse/ase",
+      "path": "plugin/skills/ase-docs-shorten/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-git/skills/can-i-help/SKILL.md"
+      "repo": "saadshahd/moo.md",
+      "path": "hold/skills/toy/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-code/skills/guillotine/SKILL.md"
+      "repo": "saadshahd/moo.md",
+      "path": "hunch/skills/fly/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-native/skills/freertos/SKILL.md"
+      "repo": "saadshahd/moo.md",
+      "path": "hold/skills/land/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-native/skills/io-uring/SKILL.md"
+      "repo": "saadshahd/moo.md",
+      "path": "hold/skills/grasp/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-native/skills/binutils/SKILL.md"
+      "repo": "saadshahd/moo.md",
+      "path": "hold/skills/learn/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-native/skills/rust-ffi/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-review/skills/dx-audit/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-git/skills/git-cleanup/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-fuzzing/skills/fuzzing/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-fuzzing/skills/atheris/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-writing/skills/reorder/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-learn/skills/wait-what/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-git/skills/commit-push/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-review/skills/ax-audit/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-native/skills/qemu-kvm/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-native/skills/valgrind/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-writing/skills/save-md/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-native/skills/hip-rocm/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-native/skills/zig-cross/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-planning/skills/diverge/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-web/skills/optimise-seo/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-planning/skills/minimap/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-learn/skills/map-corpus/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-planning/skills/to-spec/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "plugins/odin-release/skills/shipping/SKILL.md"
-    },
-    {
-      "repo": "hoangsonww/Claude-Code-Agent-Monitor",
-      "path": ".codex/skills/i18n-parity/SKILL.md"
-    },
-    {
-      "repo": "hoangsonww/Claude-Code-Agent-Monitor",
-      "path": ".claude/skills/i18n-parity/SKILL.md"
-    },
-    {
-      "repo": "hoangsonww/Claude-Code-Agent-Monitor",
-      "path": ".agents/skills/i18n-parity/SKILL.md"
-    },
-    {
-      "repo": "sickn33/agentic-awesome-skills",
-      "path": "skills/007/SKILL.md"
-    },
-    {
-      "repo": "sickn33/agentic-awesome-skills",
-      "path": "skills/readme/SKILL.md"
+      "repo": "tdimino/claude-code-minoan",
+      "path": "skills/planning-productivity/codex-tracker-suite/SKILL.md"
     }
   ]
 }

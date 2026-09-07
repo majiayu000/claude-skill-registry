@@ -1,0 +1,37 @@
+{
+  "name": "aws-wechat-article-topics",
+  "repo": "aiworkskills/wechat-article-skills",
+  "path": "skills/aws-wechat-article-topics/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/aiworkskills/wechat-article-skills",
+  "dir_name": "aws-wechat-article-topics",
+  "downloaded_at": "2026-09-07T03:29:02.885902Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=2, writing=2",
+    "score": 2,
+    "runner_up": "writing",
+    "runner_up_score": 2,
+    "signals": [
+      "shell",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "aiworkskills",
+  "source_url": "https://github.com/aiworkskills/wechat-article-skills/blob/main/skills/aws-wechat-article-topics/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aiworkskills/wechat-article-skills/blob/main/skills/aws-wechat-article-topics/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u516c\u4f17\u53f7\u9009\u9898\uff5c\u7206\u6b3e\u6807\u9898\uff5c\u70ed\u70b9\u8ffd\u8e2a\uff5c\u7cfb\u5217\u7b56\u5212 \u2014 \u516c\u4f17\u53f7 AI \u9009\u9898\u4e0e\u6807\u9898\u751f\u6210\uff0c\u8986\u76d6\u70ed\u70b9\u8c03\u7814\u3001\u9009\u9898\u7b56\u5212\u3001\u8d77\u6807\u9898\u3001\u5199\u6458\u8981\u3001\u7cfb\u5217\u6392\u671f\u3002\u9762\u5411\u81ea\u5a92\u4f53\u7f16\u8f91\u3001\u5185\u5bb9\u8fd0\u8425\u3002\u89e6\u53d1\u8bcd\uff08**\u5355\u72ec\u89e6\u53d1\u4ec5\u9650\u5bf9\u5df2\u6709\u6807\u9898/\u6458\u8981\u7684\u4fee\u6539**\uff09\uff1a\u300c\u6539\u6807\u9898\u300d\u300c\u6362\u4e2a\u6807\u9898\u300d\u300c\u91cd\u8d77\u6807\u9898\u300d\u300c\u4f18\u5316\u6807\u9898\u300d\u300c\u6807\u9898\u518d\u60f3\u60f3\u300d\u300c\u6362\u4e2a\u6807\u9898\u8bd5\u8bd5\u300d\u300c\u6539\u6458\u8981\u300d\u300c\u91cd\u5199\u6458\u8981\u300d\u300c\u4f18\u5316\u6458\u8981\u300d\u300c\u6458\u8981\u518d\u4f18\u5316\u4e0b\u300d\u3002\u65b0\u505a\u9009\u9898\u3001\u8d77\u65b0\u6807\u9898\u3001\u7b56\u5212\u7cfb\u5217/\u5185\u5bb9\u65e5\u5386\u3001\u8ffd\u70ed\u70b9\u90fd\u8bf7\u8d70 aws-wechat-article-main\uff1b\u9700\u8981\u591a\u73af\u8282\u4e32\u8054\uff08\u5199+\u5ba1+\u6392+\u914d\u56fe+\u53d1\uff09\u4e5f\u8d70 main\u3002"
+}

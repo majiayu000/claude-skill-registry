@@ -1,0 +1,37 @@
+{
+  "name": "aws-wechat-article-formatting",
+  "repo": "aiworkskills/wechat-article-skills",
+  "path": "skills/aws-wechat-article-formatting/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/aiworkskills/wechat-article-skills",
+  "dir_name": "aws-wechat-article-formatting",
+  "downloaded_at": "2026-09-07T03:29:04.006527Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=2, design=2",
+    "score": 2,
+    "runner_up": "design",
+    "runner_up_score": 2,
+    "signals": [
+      "shell",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "aiworkskills",
+  "source_url": "https://github.com/aiworkskills/wechat-article-skills/blob/main/skills/aws-wechat-article-formatting/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aiworkskills/wechat-article-skills/blob/main/skills/aws-wechat-article-formatting/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u516c\u4f17\u53f7\u6392\u7248\uff5cMarkdown \u8f6c HTML\uff5c\u6392\u7248\u4e3b\u9898\uff5c\u6bb5\u843d\u6837\u5f0f \u2014 \u516c\u4f17\u53f7\u4e00\u952e\u6392\u7248\u5de5\u5177\uff0cMarkdown \u6587\u7a3f\u8f6c\u5fae\u4fe1\u540e\u53f0\u53ef\u7c98\u8d34 HTML\uff0c\u591a\u4e3b\u9898\u3001\u591a\u5b57\u53f7\u3001\u6bb5\u843d\u6837\u5f0f\u5207\u6362\uff0c\u6240\u89c1\u5373\u6240\u5f97\u3002\u9762\u5411\u516c\u4f17\u53f7\u7f16\u8f91\u3001\u72ec\u7acb\u4f5c\u8005\u3001\u6392\u7248\u5c97\u3002\u89e6\u53d1\u8bcd\uff1a\u300c\u6392\u7248\u300d\u300c\u7248\u5f0f\u300d\u300c\u7f8e\u5316\u300d\u300c\u683c\u5f0f\u5316\u300d\u300c\u5b57\u53f7\u300d\u300c\u6bb5\u843d\u6837\u5f0f\u300d\u300c\u6362\u4e2a\u6392\u7248\u4e3b\u9898\u300d\u300c\u6362\u4e2a\u7248\u5f0f\u300d\u300c\u8f6c HTML\u300d\u300c\u5f04\u597d\u770b\u70b9\u300d\u300c\u8c03\u6574\u683c\u5f0f\u300d\u3002\u6362\u9884\u8bbe\u5305/\u54c1\u724c\u5305/\u6574\u5957\u4e3b\u9898\u914d\u8272\u8bf7\u8d70 aws-wechat-article-assets\uff1b\u9700\u8981\u591a\u73af\u8282\u4e32\u8054\uff08\u5199+\u5ba1+\u6392+\u914d\u56fe+\u53d1\uff09\u8bf7\u8d70 aws-wechat-article-main\u3002"
+}

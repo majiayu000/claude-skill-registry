@@ -1,0 +1,37 @@
+{
+  "name": "spartan",
+  "repo": "alexgreensh/attention-span",
+  "path": "skills/spartan/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/alexgreensh/attention-span",
+  "dir_name": "spartan",
+  "downloaded_at": "2026-09-08T03:33:38.766416Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: communication=2, documents=2",
+    "score": 2,
+    "runner_up": "documents",
+    "runner_up_score": 2,
+    "signals": [
+      "email",
+      "chat"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "alexgreensh",
+  "source_url": "https://github.com/alexgreensh/attention-span/blob/main/skills/spartan/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alexgreensh/attention-span/blob/main/skills/spartan/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Answer in the terse, zero-warmth Spartan style for the rest of this chat."
+}

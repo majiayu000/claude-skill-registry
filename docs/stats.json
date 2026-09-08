@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-07T04:47:23.694675Z",
-  "archive_skill_md_count_raw": 202750,
-  "archive_metadata_count_raw": 202748,
-  "indexed_skill_count_scan_shape": 161908,
-  "registry_skill_count_dedup": 161476,
+  "updated_at": "2026-09-08T04:50:38.872329Z",
+  "archive_skill_md_count_raw": 202769,
+  "archive_metadata_count_raw": 202767,
+  "indexed_skill_count_scan_shape": 161924,
+  "registry_skill_count_dedup": 161492,
   "total_plugins": 4,
   "categories": 40,
   "category_counts": [
@@ -36,7 +36,7 @@
     {
       "name": "bash",
       "code": "bash",
-      "count": 587
+      "count": 593
     },
     {
       "name": "business",
@@ -141,7 +141,7 @@
     {
       "name": "other",
       "code": "oth",
-      "count": 3493
+      "count": 3503
     },
     {
       "name": "performance",
@@ -209,7 +209,7 @@
       "count": 1173
     }
   ],
-  "unique_repo_count": 9842,
+  "unique_repo_count": 9845,
   "official_skill_count": 0,
   "top_repositories": [
     {
@@ -259,34 +259,34 @@
   "index_size_bytes": 324,
   "index_size_gzip_bytes": 245,
   "search_shard_count": 5,
-  "search_largest_shard_bytes": 8388663,
-  "search_largest_shard_gzip_bytes": 1425402,
+  "search_largest_shard_bytes": 8388686,
+  "search_largest_shard_gzip_bytes": 1425483,
   "category_shard_count": 45,
   "category_largest_part_bytes": 8388635,
   "category_largest_part_gzip_bytes": 1806263,
-  "lite_index_count": 161908,
+  "lite_index_count": 161924,
   "lite_index_included_count": 5000,
   "lite_index_size_bytes": 3502198,
-  "lite_index_gzip_size_bytes": 683149,
+  "lite_index_gzip_size_bytes": 683150,
   "quality_index_size_bytes": 364,
-  "quality_index_gzip_size_bytes": 271,
+  "quality_index_gzip_size_bytes": 269,
   "quality_shard_count": 6,
-  "quality_largest_shard_bytes": 8388691,
-  "quality_largest_shard_gzip_bytes": 1766039,
+  "quality_largest_shard_bytes": 8388708,
+  "quality_largest_shard_gzip_bytes": 1766142,
   "security_index_size_bytes": 368,
-  "security_index_gzip_size_bytes": 271,
+  "security_index_gzip_size_bytes": 272,
   "security_shard_count": 20,
-  "security_largest_shard_bytes": 8388691,
-  "security_largest_shard_gzip_bytes": 1590610,
+  "security_largest_shard_bytes": 8388714,
+  "security_largest_shard_gzip_bytes": 1590685,
   "ranking_index_size_bytes": 364,
-  "ranking_index_gzip_size_bytes": 271,
+  "ranking_index_gzip_size_bytes": 270,
   "ranking_shard_count": 5,
-  "ranking_largest_shard_bytes": 8388615,
-  "ranking_largest_shard_gzip_bytes": 1974780,
-  "largest_generated_file_bytes": 8388691,
+  "ranking_largest_shard_bytes": 8388698,
+  "ranking_largest_shard_gzip_bytes": 1974798,
+  "largest_generated_file_bytes": 8388714,
   "security_scan": {
-    "total": 202748,
-    "passed": 202748,
+    "total": 202767,
+    "passed": 202767,
     "failed": 0
   }
 }

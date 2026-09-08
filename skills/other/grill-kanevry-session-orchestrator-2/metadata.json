@@ -1,0 +1,37 @@
+{
+  "name": "grill",
+  "repo": "Kanevry/session-orchestrator",
+  "path": ".codex-plugin/skills/grill/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Kanevry/session-orchestrator",
+  "dir_name": "grill-kanevry-session-orchestrator-2",
+  "downloaded_at": "2026-09-08T03:28:32.583725Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=2, development=2",
+    "score": 2,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "shell",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "Kanevry",
+  "source_url": "https://github.com/Kanevry/session-orchestrator/blob/main/.codex-plugin/skills/grill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Kanevry/session-orchestrator/blob/main/.codex-plugin/skills/grill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Stress-test a plan, design, or PRD before any build \u2014 relentless one-question-at-a-time interrogation that hunts contradictions against the code and challenges assumptions. Composable; no HARD-GATE."
+}

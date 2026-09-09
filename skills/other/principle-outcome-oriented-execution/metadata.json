@@ -1,0 +1,36 @@
+{
+  "name": "principle-outcome-oriented-execution",
+  "repo": "michael-denyer/pstack-claude",
+  "path": "plugins/pstack/skills/principle-outcome-oriented-execution/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/michael-denyer/pstack-claude",
+  "dir_name": "principle-outcome-oriented-execution",
+  "downloaded_at": "2026-09-09T03:48:25.248055Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category development scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "performance",
+    "runner_up_score": 1,
+    "signals": [
+      "code"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "michael-denyer",
+  "source_url": "https://github.com/michael-denyer/pstack-claude/blob/main/plugins/pstack/skills/principle-outcome-oriented-execution/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/michael-denyer/pstack-claude/blob/main/plugins/pstack/skills/principle-outcome-oriented-execution/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Apply during planned rewrites and migrations with explicit phase boundaries. Converge on the target architecture; don't preserve smooth intermediate states with throwaway compatibility code."
+}

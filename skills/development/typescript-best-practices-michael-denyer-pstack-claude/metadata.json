@@ -1,0 +1,40 @@
+{
+  "name": "typescript-best-practices",
+  "repo": "michael-denyer/pstack-claude",
+  "path": "plugins/pstack/skills/typescript-best-practices/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/michael-denyer/pstack-claude",
+  "dir_name": "typescript-best-practices-michael-denyer-pstack-claude",
+  "downloaded_at": "2026-09-09T03:48:21.935554Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for development: code, framework, build, compile, debug",
+    "score": 5,
+    "runner_up": "ai-ml",
+    "runner_up_score": 1,
+    "signals": [
+      "code",
+      "framework",
+      "build",
+      "compile",
+      "debug"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "michael-denyer",
+  "source_url": "https://github.com/michael-denyer/pstack-claude/blob/main/plugins/pstack/skills/typescript-best-practices/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/michael-denyer/pstack-claude/blob/main/plugins/pstack/skills/typescript-best-practices/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "TypeScript best practices. Use when reading or editing any .ts or .tsx file."
+}

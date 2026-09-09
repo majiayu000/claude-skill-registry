@@ -1,0 +1,37 @@
+{
+  "name": "setup-pstack",
+  "repo": "michael-denyer/pstack-claude",
+  "path": "plugins/pstack/skills/setup-pstack/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/michael-denyer/pstack-claude",
+  "dir_name": "setup-pstack",
+  "downloaded_at": "2026-09-09T03:48:19.901937Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: development=2, quality=2",
+    "score": 2,
+    "runner_up": "quality",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "refactor"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "michael-denyer",
+  "source_url": "https://github.com/michael-denyer/pstack-claude/blob/main/plugins/pstack/skills/setup-pstack/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/michael-denyer/pstack-claude/blob/main/plugins/pstack/skills/setup-pstack/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Configure which models pstack uses per role. Detects your available Claude models and writes a per-role override file that the user can include from their CLAUDE.md. Use for /setup-pstack, \"configure pstack models\", or changing pstack's model choices."
+}

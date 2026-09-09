@@ -1,0 +1,37 @@
+{
+  "name": "blast-radius",
+  "repo": "michael-denyer/pstack-claude",
+  "path": "plugins/pstack/skills/blast-radius/SKILL.md",
+  "github_branch": "main",
+  "category": "api",
+  "source": "github.com/michael-denyer/pstack-claude",
+  "dir_name": "blast-radius",
+  "downloaded_at": "2026-09-09T03:48:19.660276Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "api",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for api: api, endpoint",
+    "score": 2,
+    "runner_up": "agent",
+    "runner_up_score": 1,
+    "signals": [
+      "api",
+      "endpoint"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "michael-denyer",
+  "source_url": "https://github.com/michael-denyer/pstack-claude/blob/main/plugins/pstack/skills/blast-radius/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/michael-denyer/pstack-claude/blob/main/plugins/pstack/skills/blast-radius/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Find what a change could break somewhere else before it ships, beyond the diff, and prove the one fact it's safe because of by running real code instead of writing it up. Use for 'blast radius of X', 'what could this break', reviewing a small diff you don't trust, or a brief that asserts something about existing code ('make X public', 'X already handles Y') before you design against that assertion."
+}

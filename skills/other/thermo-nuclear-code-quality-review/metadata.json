@@ -1,0 +1,37 @@
+{
+  "name": "thermo-nuclear-code-quality-review",
+  "repo": "michael-denyer/pstack-claude",
+  "path": "plugins/pstack/skills/thermo-nuclear-code-quality-review/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/michael-denyer/pstack-claude",
+  "dir_name": "thermo-nuclear-code-quality-review",
+  "downloaded_at": "2026-09-09T03:48:24.928808Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: development=2, quality=2",
+    "score": 2,
+    "runner_up": "quality",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "refactor"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "michael-denyer",
+  "source_url": "https://github.com/michael-denyer/pstack-claude/blob/main/plugins/pstack/skills/thermo-nuclear-code-quality-review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/michael-denyer/pstack-claude/blob/main/plugins/pstack/skills/thermo-nuclear-code-quality-review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Run an extremely strict maintainability review for abstraction quality, giant files, and spaghetti-condition growth. Use for a thermo-nuclear code quality review, thermonuclear review, deep code quality audit, or especially harsh maintainability review."
+}

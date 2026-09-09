@@ -1,7 +1,7 @@
 {
-  "discovered_at": "2026-09-08T03:54:30.282669Z",
+  "discovered_at": "2026-09-09T03:57:34.289951Z",
   "total_repos": 300,
-  "total_skills": 16,
+  "total_skills": 69,
   "scanned_repos": 300,
   "limits": {
     "max_repos": 300,
@@ -115,7 +115,6 @@
     "avelikiy/great_cto",
     "avibebuilder/claude-prime",
     "avidevelops/claude-architect-exam-prep",
-    "axtonliu/smart-illustrator",
     "ayghri/i-have-adhd",
     "baidu-netdisk/bdpan-storage",
     "bawadou/claude-engineer",
@@ -184,6 +183,7 @@
     "ilang-ai/autocode",
     "indranilbanerjee/digital-marketing-pro",
     "instavm/coderunner",
+    "irinabuht12-oss/marketing-skills",
     "itsmostafa/aws-agent-skills",
     "iziqing/-disk-cleaner",
     "jabrena/plinth",
@@ -219,6 +219,7 @@
     "meshy-dev/meshy-3d-agent",
     "mex-memory/mex",
     "mhattingpete/claude-skills-marketplace",
+    "michael-denyer/pstack-claude",
     "michtio/craftcms-claude-skills",
     "microsoft/power-platform-skills",
     "mikesheehan54/Claude-Code-Design-AI",
@@ -306,7 +307,6 @@
     "yusufkaraaslan/Skill_Seekers",
     "zanwei/design-dna",
     "zebbern/claude-code-guide",
-    "zebbern/skills",
     "zenbu-labs/terminal-browser",
     "zenstory-ai/novel-to-game",
     "zenstory-ai/oh-story-claudecode",
@@ -314,68 +314,280 @@
   ],
   "skills": [
     {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".codex-plugin/skills/go/SKILL.md"
+      "repo": "fcakyon/claude-codex-settings",
+      "path": "plugins/cloudflare-skills/skills/web-perf/SKILL.md"
     },
     {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".codex-plugin/skills/eli5/SKILL.md"
+      "repo": "fcakyon/claude-codex-settings",
+      "path": "plugins/cloudflare-skills/skills/wrangler/SKILL.md"
     },
     {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".codex-plugin/skills/plan/SKILL.md"
+      "repo": "fcakyon/claude-codex-settings",
+      "path": "plugins/cloudflare-skills/skills/agents-sdk/SKILL.md"
     },
     {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".codex-plugin/skills/eval/SKILL.md"
+      "repo": "fcakyon/claude-codex-settings",
+      "path": "plugins/openship-skills/skills/openship-config/SKILL.md"
     },
     {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".codex-plugin/skills/close/SKILL.md"
+      "repo": "fcakyon/claude-codex-settings",
+      "path": "plugins/openship-skills/skills/openship-deploy/SKILL.md"
     },
     {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".codex-plugin/skills/debug/SKILL.md"
+      "repo": "fcakyon/claude-codex-settings",
+      "path": "plugins/cloudflare-skills/skills/cloudflare-one/SKILL.md"
     },
     {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".codex-plugin/skills/grill/SKILL.md"
+      "repo": "fcakyon/claude-codex-settings",
+      "path": "plugins/cloudflare-skills/skills/turnstile-spin/SKILL.md"
     },
     {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".codex-plugin/skills/evolve/SKILL.md"
+      "repo": "fcakyon/claude-codex-settings",
+      "path": "plugins/cloudflare-skills/skills/nextjs-on-cloudflare/SKILL.md"
     },
     {
-      "repo": "Kanevry/session-orchestrator",
-      "path": ".codex-plugin/skills/release/SKILL.md"
+      "repo": "fcakyon/claude-codex-settings",
+      "path": "plugins/cloudflare-skills/skills/workers-best-practices/SKILL.md"
     },
     {
-      "repo": "alexgreensh/attention-span",
-      "path": "skills/tldr/SKILL.md"
+      "repo": "fcakyon/claude-codex-settings",
+      "path": "plugins/cloudflare-skills/skills/cloudflare-email-service/SKILL.md"
     },
     {
-      "repo": "alexgreensh/attention-span",
-      "path": "skills/spartan/SKILL.md"
+      "repo": "fcakyon/claude-codex-settings",
+      "path": "plugins/cloudflare-skills/skills/cloudflare-one-migrations/SKILL.md"
     },
     {
-      "repo": "alexgreensh/attention-span",
-      "path": "skills/rundown/SKILL.md"
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/how/SKILL.md"
     },
     {
-      "repo": "alexgreensh/attention-span",
-      "path": "skills/attention-kind/SKILL.md"
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/why/SKILL.md"
     },
     {
-      "repo": "coldteadotai/pr-lens",
-      "path": "skills/pr-lens/SKILL.md"
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/bro/SKILL.md"
     },
     {
-      "repo": "coldteadotai/pr-lens",
-      "path": "packages/agent-skill/SKILL.md"
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/tdd/SKILL.md"
     },
     {
-      "repo": "seyedehsanhadi/sloptrim",
-      "path": "SKILL.md"
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/teach/SKILL.md"
+    },
+    {
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/arena/SKILL.md"
+    },
+    {
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/swarm/SKILL.md"
+    },
+    {
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/fix-ci/SKILL.md"
+    },
+    {
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/unslop/SKILL.md"
+    },
+    {
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/recall/SKILL.md"
+    },
+    {
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/deslop/SKILL.md"
+    },
+    {
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/reflect/SKILL.md"
+    },
+    {
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/babysit/SKILL.md"
+    },
+    {
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/architect/SKILL.md"
+    },
+    {
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/automate-me/SKILL.md"
+    },
+    {
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/interrogate/SKILL.md"
+    },
+    {
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/poteto-mode/SKILL.md"
+    },
+    {
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/no-comments/SKILL.md"
+    },
+    {
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/blast-radius/SKILL.md"
+    },
+    {
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/setup-pstack/SKILL.md"
+    },
+    {
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/figure-it-out/SKILL.md"
+    },
+    {
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/get-pr-comments/SKILL.md"
+    },
+    {
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/show-me-your-work/SKILL.md"
+    },
+    {
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/technical-writing/SKILL.md"
+    },
+    {
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/fix-merge-conflicts/SKILL.md"
+    },
+    {
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/what-did-i-get-done/SKILL.md"
+    },
+    {
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/make-pr-easy-to-review/SKILL.md"
+    },
+    {
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/principle-prove-it-works/SKILL.md"
+    },
+    {
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/create-verification-skill/SKILL.md"
+    },
+    {
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/principle-fix-root-causes/SKILL.md"
+    },
+    {
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/typescript-best-practices/SKILL.md"
+    },
+    {
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/principle-build-the-lever/SKILL.md"
+    },
+    {
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/principle-experience-first/SKILL.md"
+    },
+    {
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/principle-model-the-domain/SKILL.md"
+    },
+    {
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/maintain-verification-skill/SKILL.md"
+    },
+    {
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/principle-laziness-protocol/SKILL.md"
+    },
+    {
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/principle-attack-the-premise/SKILL.md"
+    },
+    {
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/principle-boundary-discipline/SKILL.md"
+    },
+    {
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/principle-minimize-reader-load/SKILL.md"
+    },
+    {
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/principle-foundational-thinking/SKILL.md"
+    },
+    {
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/principle-type-system-discipline/SKILL.md"
+    },
+    {
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/principle-subtract-before-you-add/SKILL.md"
+    },
+    {
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/principle-exhaust-the-design-space/SKILL.md"
+    },
+    {
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/principle-never-block-on-the-human/SKILL.md"
+    },
+    {
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/principle-guard-the-context-window/SKILL.md"
+    },
+    {
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/thermo-nuclear-code-quality-review/SKILL.md"
+    },
+    {
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/principle-sequence-verifiable-units/SKILL.md"
+    },
+    {
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/principle-outcome-oriented-execution/SKILL.md"
+    },
+    {
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/principle-make-operations-idempotent/SKILL.md"
+    },
+    {
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/principle-encode-lessons-in-structure/SKILL.md"
+    },
+    {
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/principle-redesign-from-first-principles/SKILL.md"
+    },
+    {
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/principle-migrate-callers-then-delete-legacy-apis/SKILL.md"
+    },
+    {
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/principle-separate-before-serializing-shared-state/SKILL.md"
+    },
+    {
+      "repo": "michael-denyer/pstack-claude",
+      "path": "plugins/pstack/skills/principle-test-behavior-not-implementation/SKILL.md"
+    },
+    {
+      "repo": "oprogramadorreal/optimus-claude",
+      "path": "skills/code-review/SKILL.md"
+    },
+    {
+      "repo": "respira-press/agent-skills-wordpress",
+      "path": "skills/woo-pricing-promotions/SKILL.md"
+    },
+    {
+      "repo": "respira-press/agent-skills-wordpress",
+      "path": "skills/woo-marketing-campaigns/SKILL.md"
+    },
+    {
+      "repo": "rse/ase",
+      "path": "plugin/skills/ase-spec-activate/SKILL.md"
     }
   ]
 }

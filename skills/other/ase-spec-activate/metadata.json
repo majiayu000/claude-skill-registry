@@ -1,0 +1,36 @@
+{
+  "name": "ase-spec-activate",
+  "repo": "rse/ase",
+  "path": "plugin/skills/ase-spec-activate/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/rse/ase",
+  "dir_name": "ase-spec-activate",
+  "downloaded_at": "2026-09-09T03:52:24.369032Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category ai-ml scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "context-management",
+    "runner_up_score": 1,
+    "signals": [
+      "model"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "rse",
+  "source_url": "https://github.com/rse/ase/blob/master/plugin/skills/ase-spec-activate/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/rse/ase/blob/master/plugin/skills/ase-spec-activate/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Activate Specification Know-How: load the SpecBook format contract, the SpecBook schema configuration of the project, and the list of specification (SPEC) artifacts into the context, so the specification can be read, queried, explained, and edited ad-hoc in plain conversation. Use *automatically* whenever the user wants to work with the specification files -- asks what the \"spec\" or \"specification\" says, wants to \"look up\", \"query\", \"check\", or \"explain\" specification content, or wants a small ad-hoc change to it -- and no dedicated specification skill (`ase-spec-edit`, `ase-sync-import`, `ase-sync-reconcile`, `ase-sync-export`) is invoked, as those activate the know-how implicitly."
+}

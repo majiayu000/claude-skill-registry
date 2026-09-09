@@ -1,0 +1,38 @@
+{
+  "name": "openship-deploy",
+  "repo": "fcakyon/claude-codex-settings",
+  "path": "plugins/openship-skills/skills/openship-deploy/SKILL.md",
+  "github_branch": "main",
+  "category": "devops",
+  "source": "github.com/fcakyon/claude-codex-settings",
+  "dir_name": "openship-deploy",
+  "downloaded_at": "2026-09-09T03:41:56.200836Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "devops",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for devops: deploy, infra, infrastructure",
+    "score": 3,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "deploy",
+      "infra",
+      "infrastructure"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "fcakyon",
+  "source_url": "https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/openship-skills/skills/openship-deploy/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/openship-skills/skills/openship-deploy/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "This skill should be used when the user asks to \"deploy with OpenShip\", \"manage a self-hosted OpenShip instance\", \"debug an OpenShip deployment\", or manage its domains, storage, backups, or upgrades through the CLI."
+}

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-09-09",
+  "updated_at": "2026-09-10",
   "blocked_repos": [
     {
       "repo": "blacklanternsecurity/red-run",
@@ -70,7 +70,7 @@
       "reason": "design-with-tailwind-plus is a personal skill that depends on private, license-restricted assets (Tailwind Plus components scraped from the author's paid Team account) that are unavailable to registry users; prompt text also hardcodes the author's name.",
       "source_issue": "https://github.com/majiayu000/claude-skill-registry/issues/57",
       "action": "reject",
-      "added_at": "2026-09-09"
+      "added_at": "2026-09-10"
     }
   ]
 }

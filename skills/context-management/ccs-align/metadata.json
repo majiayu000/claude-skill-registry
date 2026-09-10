@@ -1,0 +1,37 @@
+{
+  "name": "ccs-align",
+  "repo": "thedotmack/claude-mem",
+  "path": "plugin/skills/ccs-align/SKILL.md",
+  "github_branch": "main",
+  "category": "context-management",
+  "source": "github.com/thedotmack/claude-mem",
+  "dir_name": "ccs-align",
+  "downloaded_at": "2026-09-10T03:54:23.345840Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "context-management",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for context-management: context, memory",
+    "score": 2,
+    "runner_up": "agent",
+    "runner_up_score": 1,
+    "signals": [
+      "context",
+      "memory"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "thedotmack",
+  "source_url": "https://github.com/thedotmack/claude-mem/blob/main/plugin/skills/ccs-align/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/thedotmack/claude-mem/blob/main/plugin/skills/ccs-align/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Run the CCS Align seat's hourly breathing cycle \u2014 prove the local claude-mem worker is healthy, pull needle observations through search \u2192 timeline \u2192 get_observations, land them in a seat-owned middle cache via atomic grab \u2192 append \u2192 filter exclude-marks \u2192 replace, manage exclude marks, and walk house \u2192 project \u2192 seat rules to detect conflicts (SHADOW_HOUSE, DENY_ALLOW, DRIFT, CLOCK_HEADER) with an append-only rules-report.md. Use when asked to run CCS Align, breathe the alignment seat, refresh the middle cache, exclude or restore an observation, walk rules, check rules conflicts, or check the Worker Watch board."
+}

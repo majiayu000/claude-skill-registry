@@ -1,7 +1,7 @@
 {
-  "discovered_at": "2026-09-10T03:56:39.174416Z",
+  "discovered_at": "2026-09-11T03:53:08.638778Z",
   "total_repos": 300,
-  "total_skills": 23,
+  "total_skills": 4,
   "scanned_repos": 300,
   "limits": {
     "max_repos": 300,
@@ -115,9 +115,9 @@
     "avelikiy/great_cto",
     "avibebuilder/claude-prime",
     "avidevelops/claude-architect-exam-prep",
+    "axtonliu/smart-illustrator",
     "ayghri/i-have-adhd",
     "baidu-netdisk/bdpan-storage",
-    "bawadou/claude-engineer",
     "bevibing/tutor-skills",
     "billy-enrizky/openbrowser-ai",
     "bitjaru/styleseed",
@@ -314,96 +314,20 @@
   ],
   "skills": [
     {
-      "repo": "ciembor/agent-rules-books",
-      "path": "release-it/SKILL.md"
-    },
-    {
-      "repo": "ciembor/agent-rules-books",
-      "path": "clean-code/SKILL.md"
-    },
-    {
-      "repo": "ciembor/agent-rules-books",
-      "path": "refactoring/SKILL.md"
-    },
-    {
-      "repo": "ciembor/agent-rules-books",
-      "path": "code-complete/SKILL.md"
-    },
-    {
-      "repo": "ciembor/agent-rules-books",
-      "path": "refactoring-guru/SKILL.md"
-    },
-    {
-      "repo": "ciembor/agent-rules-books",
-      "path": "clean-architecture/SKILL.md"
-    },
-    {
-      "repo": "ciembor/agent-rules-books",
-      "path": "domain-driven-design/SKILL.md"
-    },
-    {
-      "repo": "ciembor/agent-rules-books",
-      "path": "the-pragmatic-programmer/SKILL.md"
-    },
-    {
-      "repo": "ciembor/agent-rules-books",
-      "path": "domain-driven-design-distilled/SKILL.md"
-    },
-    {
-      "repo": "ciembor/agent-rules-books",
-      "path": "a-philosophy-of-software-design/SKILL.md"
-    },
-    {
-      "repo": "ciembor/agent-rules-books",
-      "path": "implementing-domain-driven-design/SKILL.md"
-    },
-    {
-      "repo": "ciembor/agent-rules-books",
-      "path": "working-effectively-with-legacy-code/SKILL.md"
-    },
-    {
-      "repo": "ciembor/agent-rules-books",
-      "path": "designing-data-intensive-applications/SKILL.md"
-    },
-    {
-      "repo": "ciembor/agent-rules-books",
-      "path": "patterns-of-enterprise-application-architecture/SKILL.md"
+      "repo": "K-Dense-AI/scientific-agent-skills",
+      "path": "skills/datalad/SKILL.md"
     },
     {
       "repo": "ilyautov/humanizer-ru",
-      "path": "skills/humanizer-ru/SKILL.md"
+      "path": "eval/candidates/local-edit/SKILL.md"
     },
     {
-      "repo": "scdenney/open-science-skills",
-      "path": "codex/deliverable-lint/SKILL.md"
+      "repo": "ilyautov/humanizer-ru",
+      "path": "eval/candidates/local-edit-scope/SKILL.md"
     },
     {
-      "repo": "scdenney/open-science-skills",
-      "path": "codex/deliverable-open/SKILL.md"
-    },
-    {
-      "repo": "scdenney/open-science-skills",
-      "path": "codex/deliverable-intake/SKILL.md"
-    },
-    {
-      "repo": "scdenney/open-science-skills",
-      "path": "plugin/skills/deliverable-open/SKILL.md"
-    },
-    {
-      "repo": "scdenney/open-science-skills",
-      "path": "plugin/skills/deliverable-lint/SKILL.md"
-    },
-    {
-      "repo": "scdenney/open-science-skills",
-      "path": "plugin/skills/deliverable-intake/SKILL.md"
-    },
-    {
-      "repo": "secondsky/claude-skills",
-      "path": "plugins/humanize-writing/skills/humanize-writing/SKILL.md"
-    },
-    {
-      "repo": "thedotmack/claude-mem",
-      "path": "plugin/skills/ccs-align/SKILL.md"
+      "repo": "majiayu000/spellbook",
+      "path": "skills/blender-reference-to-3d/SKILL.md"
     }
   ]
 }

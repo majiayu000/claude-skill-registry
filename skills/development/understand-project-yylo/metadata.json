@@ -1,0 +1,29 @@
+{
+  "name": "understand-project-yylo",
+  "description": "Inspect product architecture, dependencies, and validation loops before planning or implementing a requested change with YYLO.",
+  "repo": "yylo-dev/yylo-skills",
+  "path": "skills/understand-project-yylo",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [
+    "task-management",
+    "workflow",
+    "coding-agents",
+    "ledger",
+    "project-planning"
+  ],
+  "stars": 1,
+  "source": "Community Skills",
+  "dir_name": "understand-project-yylo",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "README.md"
+  ],
+  "author": "yylo-dev",
+  "source_url": "https://github.com/yylo-dev/yylo-skills/blob/main/skills/understand-project-yylo/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/yylo-dev/yylo-skills/blob/main/skills/understand-project-yylo/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

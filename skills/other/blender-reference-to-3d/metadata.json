@@ -1,0 +1,36 @@
+{
+  "name": "blender-reference-to-3d",
+  "repo": "majiayu000/spellbook",
+  "path": "skills/blender-reference-to-3d/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/majiayu000/spellbook",
+  "dir_name": "blender-reference-to-3d",
+  "downloaded_at": "2026-09-11T03:43:39.003123Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category ai-llm scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "ai-ml",
+    "runner_up_score": 1,
+    "signals": [
+      "ai"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "majiayu000",
+  "source_url": "https://github.com/majiayu000/spellbook/blob/main/skills/blender-reference-to-3d/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/majiayu000/spellbook/blob/main/skills/blender-reference-to-3d/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u6839\u636e\u4eba\u7269\u53c2\u8003\u56fe\u5728 Blender \u5236\u4f5c\u3001\u4fee\u6574\u548c\u914d\u8272\u53ef\u7f16\u8f91\u89d2\u8272\uff0c\u5c24\u5176\u9002\u7528\u4e8e\u4e8c\u6b21\u5143\u5934\u90e8\u4e0e\u5934\u53d1\u3001\u9759\u6001\u591a\u89d2\u5ea6\u5c55\u793a\u3002\u8986\u76d6\u8f93\u5165\u62c6\u89e3\u3001\u8f6e\u5ed3\u4e0e\u4e94\u5b98\u6807\u6ce8\u3001\u4e5d\u89c6\u56fe\u53c2\u8003\u3001\u6a21\u677f\u9009\u578b\u3001\u51e0\u4f55\u5b9e\u73b0\u3001\u6750\u8d28\u914d\u8272\u3001\u89c6\u89c9\u68c0\u67e5\u548c\u5de5\u7a0b\u4ea4\u4ed8\uff1b\u5f53\u7528\u6237\u8981\u6c42\u56fe\u8f6c\u4e09\u7ef4\u5934\u50cf\u3001\u6309\u53c2\u8003\u5efa\u6a21\u3001\u4fee\u590d\u76f8\u4f3c\u5ea6\u3001\u5b8c\u5584\u914d\u8272\u6216\u8fd0\u884c\u5b8c\u6574\u4eba\u7269\u5236\u4f5c\u6d41\u7a0b\u65f6\u4f7f\u7528\u3002\u4ec5\u5206\u6790\u3001\u5199\u6d41\u7a0b\u6216\u5c01\u88c5\u6280\u80fd\u65f6\u4e0d\u4fee\u6539\u6a21\u578b\u3002"
+}

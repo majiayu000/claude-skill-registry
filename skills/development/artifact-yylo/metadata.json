@@ -1,0 +1,29 @@
+{
+  "name": "artifact-yylo",
+  "description": "Capture and retrieve durable YYLO Ledger artifact Records with intentional profiles, provenance, retention, and secret-safe evidence.",
+  "repo": "yylo-dev/yylo-skills",
+  "path": "skills/artifact-yylo",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [
+    "task-management",
+    "workflow",
+    "coding-agents",
+    "ledger",
+    "project-planning"
+  ],
+  "stars": 1,
+  "source": "Community Skills",
+  "dir_name": "artifact-yylo",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "README.md"
+  ],
+  "author": "yylo-dev",
+  "source_url": "https://github.com/yylo-dev/yylo-skills/blob/main/skills/artifact-yylo/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/yylo-dev/yylo-skills/blob/main/skills/artifact-yylo/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

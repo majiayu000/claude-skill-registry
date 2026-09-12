@@ -1,0 +1,36 @@
+{
+  "name": "the-ick-decoder",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/the-ick-decoder/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "the-ick-decoder",
+  "downloaded_at": "2026-09-12T03:49:44.007056Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category data scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "development",
+    "runner_up_score": 1,
+    "signals": [
+      "data"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/the-ick-decoder/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/the-ick-decoder/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Figure out whether 'the ick' about someone you're dating is a real incompatibility, a genuine red flag, or an anxious/avoidant self-sabotage pattern worth pushing through \u2014 by interrogating the specific ick honestly. Use when someone says 'I caught the ick and I don't know why', 'is this a red flag or am I just scared', 'I always find a reason to end things', or is talking themselves out of someone good. Produces a decode of the specific ick, a red-flag vs pattern verdict, and a next move. Honest self-reflection, not a permission slip in either direction."
+}

@@ -1,0 +1,37 @@
+{
+  "name": "app-store-screenshots",
+  "repo": "MoizIbnYousaf/marketing-cli",
+  "path": "skills/app-store-screenshots/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/MoizIbnYousaf/marketing-cli",
+  "dir_name": "app-store-screenshots",
+  "downloaded_at": "2026-09-12T03:32:23.061137Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: design=2, marketing=2",
+    "score": 2,
+    "runner_up": "marketing",
+    "runner_up_score": 2,
+    "signals": [
+      "ui",
+      "component"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "MoizIbnYousaf",
+  "source_url": "https://github.com/MoizIbnYousaf/marketing-cli/blob/main/skills/app-store-screenshots/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MoizIbnYousaf/marketing-cli/blob/main/skills/app-store-screenshots/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Generate Apple App Store screenshot pages as a Next.js app with html-to-image export at required resolutions. Screenshots are advertisements, not documentation \u2014 every screenshot sells one idea. Use when building App Store screenshots, generating exportable marketing screenshots for iOS apps, or creating programmatic screenshot generators. Triggers on 'app store screenshots', 'App Store', 'screenshot generator', 'iOS screenshots', 'marketing screenshots', 'phone mockup', 'ASO screenshots', 'app store assets', 'app listing', 'app store page', or 'app preview images'. Also use when someone is about to submit an app and needs store assets, or when they say 'make my app store page look good'. Includes iPhone and iPad mockup components with pre-measured dimensions."
+}

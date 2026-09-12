@@ -1,7 +1,7 @@
 {
-  "discovered_at": "2026-09-11T03:53:08.638778Z",
+  "discovered_at": "2026-09-12T03:58:02.755409Z",
   "total_repos": 300,
-  "total_skills": 4,
+  "total_skills": 132,
   "scanned_repos": 300,
   "limits": {
     "max_repos": 300,
@@ -14,7 +14,6 @@
     "0xGhostCAT/claude-ai-cyber-security-skills",
     "2389-research/claude-plugins",
     "23blocks-OS/ai-maestro",
-    "Agents365-ai/drawio-skill",
     "AlpacaLabsLLC/skills-for-architects",
     "Appllama/appllama-skills",
     "Ar9av/PaperOrchestra",
@@ -55,6 +54,7 @@
     "Kaelio/ktx",
     "Kanevry/session-orchestrator",
     "Klotzkette/claude-fuer-deutsches-recht",
+    "LLMQuant/awesome-trading-agents",
     "LukasNiessen/terrashark",
     "MIKOTOKAWAII25/local-ai-code-assistant",
     "Mann1988/awesome-claude-skills",
@@ -308,26 +308,538 @@
     "zanwei/design-dna",
     "zebbern/claude-code-guide",
     "zenbu-labs/terminal-browser",
+    "zenstory-ai/drama-skills",
     "zenstory-ai/novel-to-game",
-    "zenstory-ai/oh-story-claudecode",
-    "zscole/adversarial-spec"
+    "zenstory-ai/oh-story-claudecode"
   ],
   "skills": [
     {
-      "repo": "K-Dense-AI/scientific-agent-skills",
-      "path": "skills/datalad/SKILL.md"
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/cmo/SKILL.md"
     },
     {
-      "repo": "ilyautov/humanizer-ru",
-      "path": "eval/candidates/local-edit/SKILL.md"
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/axi/SKILL.md"
     },
     {
-      "repo": "ilyautov/humanizer-ru",
-      "path": "eval/candidates/local-edit-scope/SKILL.md"
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/mktg-x/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/ai-seo/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/postiz/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/openseo/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/page-cro/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/creative/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/seo-audit/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/image-gen/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/firecrawl/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/typefully/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/summarize/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/newsletter/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/brainstorm/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/exa-search/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/mktg-setup/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/send-email/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/seo-machine/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/deepen-plan/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/brand-voice/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/seo-content/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/lead-magnet/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/exa-contents/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/create-skill/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/visual-style/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/off-page-seo/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/cmo-remotion/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/video-content/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/openseo-coach/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/build-with-exa/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/text-to-speech/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/manim-composer/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/marketing-demo/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/resend-inbound/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/landscape-scan/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/lead-generation/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/frontend-slides/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/email-sequences/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/document-review/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/launch-strategy/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/paper-marketing/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/social-campaign/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/pricing-strategy/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/referral-program/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/company-research/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/tiktok-slideshow/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/churn-prevention/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/voice-extraction/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/slideshow-script/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/startup-launcher/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/keyword-research/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/content-atomizer/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/agent-email-inbox/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/audience-research/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/competitive-intel/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/free-tool-strategy/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/positioning-angles/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/conversion-flow-cro/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/marketing-psychology/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/direct-response-copy/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/brand-kit-playground/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/openseo-project-setup/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/app-store-screenshots/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/manimce-best-practices/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/manimgl-best-practices/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/competitor-alternatives/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/remotion-best-practices/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/openseo-keyword-research/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/openseo-link-prospecting/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/openseo-keyword-clustering/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/openseo-competitor-analysis/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/openseo-competitive-landscape/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "studio/skills/cmo-studio-integration/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/remotion-best-practices/references/upstream-internal/skills/pr/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/remotion-best-practices/references/upstream-internal/skills/add-sfx/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/remotion-best-practices/references/upstream-internal/skills/pr-name/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/remotion-best-practices/references/upstream-internal/skills/docs-demo/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/remotion-best-practices/references/upstream-internal/skills/add-expert/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/remotion-best-practices/references/upstream-internal/skills/video-report/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/remotion-best-practices/references/upstream-internal/skills/writing-docs/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/remotion-best-practices/references/upstream-internal/skills/fix-dependabot/SKILL.md"
+    },
+    {
+      "repo": "MoizIbnYousaf/marketing-cli",
+      "path": "skills/remotion-best-practices/references/upstream-internal/skills/web-renderer-test/SKILL.md"
+    },
+    {
+      "repo": "coldteadotai/pr-lens",
+      "path": "skills/eli5/SKILL.md"
+    },
+    {
+      "repo": "kharmanskyi/open-steps",
+      "path": "skills/os-big-picture/SKILL.md"
     },
     {
       "repo": "majiayu000/spellbook",
-      "path": "skills/blender-reference-to-3d/SKILL.md"
+      "path": "skills/illustrated-gallery/SKILL.md"
+    },
+    {
+      "repo": "microsoft/power-platform-skills",
+      "path": "plugins/mcp-apps/skills/generate-codeful-mcp-tool/SKILL.md"
+    },
+    {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "path": "skills/habit-builder/SKILL.md"
+    },
+    {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "path": "skills/press-kit-epk/SKILL.md"
+    },
+    {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "path": "skills/pip-responder/SKILL.md"
+    },
+    {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "path": "skills/deck-from-doc/SKILL.md"
+    },
+    {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "path": "skills/legacy-letter/SKILL.md"
+    },
+    {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "path": "skills/spoon-planner/SKILL.md"
+    },
+    {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "path": "skills/lower-my-bill/SKILL.md"
+    },
+    {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "path": "skills/the-understudy/SKILL.md"
+    },
+    {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "path": "skills/weekly-unstuck/SKILL.md"
+    },
+    {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "path": "skills-i18n/ja/resume/SKILL.md"
+    },
+    {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "path": "skills/emergency-fund/SKILL.md"
+    },
+    {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "path": "skills/warranty-claim/SKILL.md"
+    },
+    {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "path": "skills/one-hard-truth/SKILL.md"
+    },
+    {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "path": "skills-i18n/es/resume/SKILL.md"
+    },
+    {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "path": "skills/wedding-budget/SKILL.md"
+    },
+    {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "path": "skills/explain-simply/SKILL.md"
+    },
+    {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "path": "skills/go-bag-builder/SKILL.md"
+    },
+    {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "path": "skills/context-budget/SKILL.md"
+    },
+    {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "path": "skills/delegate-to-ai/SKILL.md"
+    },
+    {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "path": "skills/currency-rates/SKILL.md"
+    },
+    {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "path": "skills-i18n/fr/resume/SKILL.md"
+    },
+    {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "path": "skills/youtube-script/SKILL.md"
+    },
+    {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "path": "skills/public-comment/SKILL.md"
+    },
+    {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "path": "skills/policy-drafter/SKILL.md"
+    },
+    {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "path": "skills-i18n/zh/resume/SKILL.md"
+    },
+    {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "path": "skills/deepfake-drill/SKILL.md"
+    },
+    {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "path": "skills/package-health/SKILL.md"
+    },
+    {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "path": "skills/ai-tool-picker/SKILL.md"
+    },
+    {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "path": "skills/decision-panel/SKILL.md"
+    },
+    {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "path": "skills/the-ick-decoder/SKILL.md"
+    },
+    {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "path": "skills/statement-coach/SKILL.md"
+    },
+    {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "path": "skills/attention-reset/SKILL.md"
+    },
+    {
+      "repo": "mxyhi/ok-skills",
+      "path": "ponytail/SKILL.md"
+    },
+    {
+      "repo": "zenstory-ai/drama-skills",
+      "path": "skills/short-drama/SKILL.md"
+    },
+    {
+      "repo": "zenstory-ai/drama-skills",
+      "path": "skills/short-drama-edit/SKILL.md"
+    },
+    {
+      "repo": "zenstory-ai/drama-skills",
+      "path": "skills/short-drama-write/SKILL.md"
+    },
+    {
+      "repo": "zenstory-ai/drama-skills",
+      "path": "skills/short-drama-review/SKILL.md"
+    },
+    {
+      "repo": "zenstory-ai/drama-skills",
+      "path": "skills/short-drama-assets/SKILL.md"
+    },
+    {
+      "repo": "zenstory-ai/drama-skills",
+      "path": "skills/short-drama-develop/SKILL.md"
+    },
+    {
+      "repo": "zenstory-ai/drama-skills",
+      "path": "skills/short-drama-produce/SKILL.md"
+    },
+    {
+      "repo": "zenstory-ai/drama-skills",
+      "path": "skills/short-drama-storyboard/SKILL.md"
+    },
+    {
+      "repo": "zenstory-ai/drama-skills",
+      "path": "skills/short-drama-video-prompts/SKILL.md"
+    },
+    {
+      "repo": "zenstory-ai/drama-skills",
+      "path": "skills/short-drama-novel-analyze/SKILL.md"
+    },
+    {
+      "repo": "zenstory-ai/drama-skills",
+      "path": "skills/short-drama-image-prompts/SKILL.md"
+    },
+    {
+      "repo": "zenstory-ai/drama-skills",
+      "path": "maintainers/skills/short-drama-knowhow/SKILL.md"
     }
   ]
 }

@@ -1,0 +1,36 @@
+{
+  "name": "short-drama-edit",
+  "repo": "zenstory-ai/drama-skills",
+  "path": "skills/short-drama-edit/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/zenstory-ai/drama-skills",
+  "dir_name": "short-drama-edit",
+  "downloaded_at": "2026-09-12T03:57:58.744621Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category ai-llm scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "bash",
+    "runner_up_score": 1,
+    "signals": [
+      "prompt"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "zenstory-ai",
+  "source_url": "https://github.com/zenstory-ai/drama-skills/blob/main/skills/short-drama-edit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/zenstory-ai/drama-skills/blob/main/skills/short-drama-edit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u5c06\u5df2\u751f\u6210\u7684\u77ed\u5267\u955c\u5934\u526a\u6210\u6210\u7247\uff0c\u8bb0\u5f55\u5165\u51fa\u70b9\u3001\u955c\u5e8f\u3001\u58f0\u97f3\u3001\u5b57\u5e55\u4e0e\u4ea4\u4ed8\u89c4\u683c\u3002\u7528\u4e8e\u5957\u526a\u3001\u52a0\u5b57\u5e55\u3001\u7edf\u4e00\u54cd\u5ea6\u3001\u8c03\u6574\u8282\u594f\u6216\u5bfc\u51fa\u7cbe\u4fee\u7d20\u6750\uff1b\u9700\u8981\u8865\u7d20\u6750\u6216\u4fee\u6539\u6545\u4e8b\u65f6\u8f6c\u56de\u5bf9\u5e94\u521b\u4f5c\u9636\u6bb5\u3002"
+}

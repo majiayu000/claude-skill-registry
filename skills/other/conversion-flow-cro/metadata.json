@@ -1,0 +1,37 @@
+{
+  "name": "conversion-flow-cro",
+  "repo": "MoizIbnYousaf/marketing-cli",
+  "path": "skills/conversion-flow-cro/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/MoizIbnYousaf/marketing-cli",
+  "dir_name": "conversion-flow-cro",
+  "downloaded_at": "2026-09-12T03:32:22.077695Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: design=2, integration=2",
+    "score": 2,
+    "runner_up": "integration",
+    "runner_up_score": 2,
+    "signals": [
+      "ux",
+      "component"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "MoizIbnYousaf",
+  "source_url": "https://github.com/MoizIbnYousaf/marketing-cli/blob/main/skills/conversion-flow-cro/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MoizIbnYousaf/marketing-cli/blob/main/skills/conversion-flow-cro/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Optimizes multi-step conversion flows including signup, onboarding, upgrade, and checkout. Maps each step, identifies friction and drop-off risks, then recommends specific copy/UX changes with A/B test plans. Use when someone says 'signup flow', 'onboarding optimization', 'checkout conversion', 'paywall optimization', 'activation rate', 'funnel analysis', 'why are users dropping off', 'registration flow', 'trial conversion', 'free to paid', 'upgrade flow', 'user journey', or wants to improve any multi-step user journey. If they mention steps, screens, or a sequence that leads to signup, payment, or activation, this is the skill. Even casual mentions like 'users aren't finishing signup' or 'our onboarding sucks' should trigger this. Use this instead of page-cro when the problem spans multiple screens rather than a single page."
+}

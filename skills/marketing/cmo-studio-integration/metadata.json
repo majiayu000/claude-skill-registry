@@ -1,0 +1,39 @@
+{
+  "name": "cmo-studio-integration",
+  "repo": "MoizIbnYousaf/marketing-cli",
+  "path": "studio/skills/cmo-studio-integration/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/MoizIbnYousaf/marketing-cli",
+  "dir_name": "cmo-studio-integration",
+  "downloaded_at": "2026-09-12T03:32:26.697690Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for marketing: marketing, seo, content, brand",
+    "score": 4,
+    "runner_up": "api",
+    "runner_up_score": 2,
+    "signals": [
+      "marketing",
+      "seo",
+      "content",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "MoizIbnYousaf",
+  "source_url": "https://github.com/MoizIbnYousaf/marketing-cli/blob/main/studio/skills/cmo-studio-integration/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MoizIbnYousaf/marketing-cli/blob/main/studio/skills/cmo-studio-integration/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "When mktg-studio is running on this machine, /cmo proactively narrates work into the dashboard via Bash + curl against the localhost HTTP API. Detect via /api/health, then log every meaningful action \u2014 the user sees what /cmo is doing in real time."
+}

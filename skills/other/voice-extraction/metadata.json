@@ -1,0 +1,37 @@
+{
+  "name": "voice-extraction",
+  "repo": "MoizIbnYousaf/marketing-cli",
+  "path": "skills/voice-extraction/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/MoizIbnYousaf/marketing-cli",
+  "dir_name": "voice-extraction",
+  "downloaded_at": "2026-09-12T03:32:19.569632Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: marketing=2, writing=2",
+    "score": 2,
+    "runner_up": "writing",
+    "runner_up_score": 2,
+    "signals": [
+      "content",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "MoizIbnYousaf",
+  "source_url": "https://github.com/MoizIbnYousaf/marketing-cli/blob/main/skills/voice-extraction/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MoizIbnYousaf/marketing-cli/blob/main/skills/voice-extraction/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Reverse-engineer any person's writing voice from their content. Paste in posts, articles, tweets, or essays and this skill launches 10 parallel Sonnet subagents to analyze every dimension of the voice, then synthesizes into a voice file. Use when someone says 'match this voice,' 'analyze this writing,' 'extract their voice,' 'make me sound like this,' 'study this person's writing,' or pastes in content they want to learn from."
+}

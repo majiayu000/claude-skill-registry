@@ -1,0 +1,38 @@
+{
+  "name": "audience-research",
+  "repo": "MoizIbnYousaf/marketing-cli",
+  "path": "skills/audience-research/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/MoizIbnYousaf/marketing-cli",
+  "dir_name": "audience-research-moizibnyousaf-marketing-cli",
+  "downloaded_at": "2026-09-12T03:32:21.021110Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for marketing: marketing, content, brand",
+    "score": 3,
+    "runner_up": "creative",
+    "runner_up_score": 2,
+    "signals": [
+      "marketing",
+      "content",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "MoizIbnYousaf",
+  "source_url": "https://github.com/MoizIbnYousaf/marketing-cli/blob/main/skills/audience-research/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MoizIbnYousaf/marketing-cli/blob/main/skills/audience-research/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Build detailed buyer personas and audience profiles from research. Use this skill whenever the user mentions audience, buyer persona, ideal customer, target market, ICP, watering holes, 'who am I selling to', customer research, or audience profile. Also use when content feels unfocused or generic (that's an audience problem), when conversion is low because messaging doesn't resonate, when starting any new project (audience should be first), or when any downstream skill needs audience.md but it doesn't exist yet. Even if the user doesn't explicitly ask for audience research, trigger this if they're writing copy or building a landing page without a clear audience defined. Three approaches: Quick Profile, Persona Build, Community Mining."
+}

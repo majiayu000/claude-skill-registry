@@ -1,0 +1,39 @@
+{
+  "name": "seo-content",
+  "repo": "MoizIbnYousaf/marketing-cli",
+  "path": "skills/seo-content/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/MoizIbnYousaf/marketing-cli",
+  "dir_name": "seo-content",
+  "downloaded_at": "2026-09-12T03:32:13.486431Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: marketing=4, writing=4",
+    "score": 4,
+    "runner_up": "writing",
+    "runner_up_score": 4,
+    "signals": [
+      "seo",
+      "content",
+      "campaign",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "MoizIbnYousaf",
+  "source_url": "https://github.com/MoizIbnYousaf/marketing-cli/blob/main/skills/seo-content/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MoizIbnYousaf/marketing-cli/blob/main/skills/seo-content/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Create high-quality, SEO-optimized content that ranks AND reads like a human wrote it. Performs live SERP gap analysis, writes with anti-AI detection techniques, and adds schema markup. Use when someone needs a blog post, article, SEO page, or wants content that drives search traffic. Triggers on 'SEO content', 'blog post', 'article', 'SERP', 'programmatic SEO', 'content at scale', 'template pages at scale', 'write a post about', 'rank for', or 'search-optimized content'. Two modes: single article or programmatic SEO at scale. Owns programmatic SEO and content-at-scale generation. For a single alternatives or vs/comparison page, see /competitor-alternatives; for a multi-phase page roadmap with a persistent tracker, see /seo-machine."
+}

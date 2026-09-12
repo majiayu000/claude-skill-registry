@@ -1,0 +1,37 @@
+{
+  "name": "exa-search",
+  "repo": "MoizIbnYousaf/marketing-cli",
+  "path": "skills/exa-search/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/MoizIbnYousaf/marketing-cli",
+  "dir_name": "exa-search-moizibnyousaf-marketing-cli",
+  "downloaded_at": "2026-09-12T03:32:11.824868Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: api=2, context-management=2",
+    "score": 2,
+    "runner_up": "context-management",
+    "runner_up_score": 2,
+    "signals": [
+      "api",
+      "endpoint"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "MoizIbnYousaf",
+  "source_url": "https://github.com/MoizIbnYousaf/marketing-cli/blob/main/skills/exa-search/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MoizIbnYousaf/marketing-cli/blob/main/skills/exa-search/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Call Exa Search (POST /search) for semantic web retrieval with ranked results, filters, freshness, highlights/text, structured output, or streaming. Use when the agent needs open-ended web search, competitor discovery, news, people, or research papers and does not already have URLs. Prefer Exa MCP web_search_exa / web_search_advanced_exa when available; otherwise raw HTTP with EXA_API_KEY. NOT for known-URL extraction (use exa-contents or firecrawl) or multi-step list-building (use company-research / lead-generation / Agent API)."
+}

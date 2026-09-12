@@ -1,0 +1,39 @@
+{
+  "name": "brand-voice",
+  "repo": "MoizIbnYousaf/marketing-cli",
+  "path": "skills/brand-voice/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/MoizIbnYousaf/marketing-cli",
+  "dir_name": "brand-voice-moizibnyousaf-marketing-cli",
+  "downloaded_at": "2026-09-12T03:32:13.144911Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for marketing: marketing, content, social, brand",
+    "score": 4,
+    "runner_up": "analysis",
+    "runner_up_score": 2,
+    "signals": [
+      "marketing",
+      "content",
+      "social",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "MoizIbnYousaf",
+  "source_url": "https://github.com/MoizIbnYousaf/marketing-cli/blob/main/skills/brand-voice/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MoizIbnYousaf/marketing-cli/blob/main/skills/brand-voice/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Define or extract a consistent brand voice that other skills can use. Three modes: Extract (analyze existing content), Build (interview-based), Auto-Scrape (from URL). Use when copy sounds generic, when starting any new project, when voice feels inconsistent across channels, when onboarding a new brand, or when any skill needs voice-profile.md but it doesn't exist yet. This is always the first skill to run for a new project. Make sure to use this skill whenever the user mentions tone of voice, brand personality, 'my copy all sounds the same', 'how should I sound', 'analyze my website voice', 'define my tone', or anything about making content sound more human or distinctive. Even if the user just says 'my marketing sounds generic' \u2014 that's a voice problem."
+}

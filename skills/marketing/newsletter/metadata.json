@@ -1,0 +1,38 @@
+{
+  "name": "newsletter",
+  "repo": "MoizIbnYousaf/marketing-cli",
+  "path": "skills/newsletter/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/MoizIbnYousaf/marketing-cli",
+  "dir_name": "newsletter",
+  "downloaded_at": "2026-09-12T03:32:11.381541Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for marketing: marketing, content, brand",
+    "score": 3,
+    "runner_up": "documents",
+    "runner_up_score": 2,
+    "signals": [
+      "marketing",
+      "content",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "MoizIbnYousaf",
+  "source_url": "https://github.com/MoizIbnYousaf/marketing-cli/blob/main/skills/newsletter/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MoizIbnYousaf/marketing-cli/blob/main/skills/newsletter/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Design, write, and grow editorial newsletters with consistent voice and format. Creates newsletter strategy, templates, and growth playbook. Use when someone wants to start a newsletter, improve an existing one, grow subscribers, write a newsletter issue, plan newsletter content, or set up on Substack, Beehiiv, Ghost, or ConvertKit. Triggers on 'newsletter', 'editorial', 'weekly email', 'subscriber growth', 'newsletter template', 'email digest', 'Substack', 'Beehiiv', 'newsletter strategy', 'newsletter issue', 'recurring email', or 'email content'. Even if they just say 'I want to email my audience regularly' or 'start a weekly email', this is the skill. Covers curated, editorial, and hybrid formats with referral programs, platform guidance, and engagement metrics."
+}

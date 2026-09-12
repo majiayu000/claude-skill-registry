@@ -1,0 +1,37 @@
+{
+  "name": "positioning-angles",
+  "repo": "MoizIbnYousaf/marketing-cli",
+  "path": "skills/positioning-angles/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/MoizIbnYousaf/marketing-cli",
+  "dir_name": "positioning-angles",
+  "downloaded_at": "2026-09-12T03:32:21.557877Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: context-management=2, creative=2",
+    "score": 2,
+    "runner_up": "creative",
+    "runner_up_score": 2,
+    "signals": [
+      "context",
+      "memory"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "MoizIbnYousaf",
+  "source_url": "https://github.com/MoizIbnYousaf/marketing-cli/blob/main/skills/positioning-angles/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MoizIbnYousaf/marketing-cli/blob/main/skills/positioning-angles/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Find the angle that makes something sell. Use this skill whenever the user mentions positioning, angles, differentiation, unique selling proposition, 'how do I stand out', 'what makes us different', value proposition, messaging framework, or 'find the hook'. Also trigger when copy isn't converting (often a positioning problem), when marketing feels generic, when launching a product, creating a lead magnet, writing a landing page, or entering a crowded market. Even if the user is about to write copy without established positioning, run this first \u2014 the angle informs everything downstream. Generates 3-5 positioning angles with competitive web research and validation."
+}

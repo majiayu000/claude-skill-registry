@@ -1,0 +1,36 @@
+{
+  "name": "resume",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills-i18n/zh/resume/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "resume-mohitagw15856-pm-claude-skills-4",
+  "downloaded_at": "2026-09-12T03:49:43.128842Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category documents scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "language",
+    "runner_up_score": 1,
+    "signals": [
+      "pdf"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills-i18n/zh/resume/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills-i18n/zh/resume/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u64b0\u5199\u4e00\u4efd\u4ee5\u6210\u5c31\u4e3a\u4e3b\u7ebf\u3001\u80fd\u901a\u8fc7 ATS \u7b5b\u9009\u5e76\u8d62\u5f97\u9762\u8bd5\u7684\u7b80\u5386/CV\u3002\u5f53\u88ab\u8981\u6c42\u64b0\u5199\u6216\u91cd\u5199\u7b80\u5386\u3001\u628a\u7ecf\u5386\u6574\u7406\u6210\u7b80\u5386\u3001\u6216\u9488\u5bf9\u67d0\u4e2a\u804c\u4f4d\u5b9a\u5236\u7b80\u5386\u65f6\u4f7f\u7528\u3002\u4ea7\u51fa\u4e00\u4efd\u5e72\u51c0\u7684\u5355\u680f\u3001ATS \u53cb\u597d\u7684\u7b80\u5386\u2014\u2014\u6982\u8981\u3001\u4ee5\u91cf\u5316\u6210\u5c31\u8981\u70b9\u5448\u73b0\u7684\u5de5\u4f5c\u7ecf\u5386\u3001\u6280\u80fd\u4e0e\u6559\u80b2\u80cc\u666f\uff0c\u53ef\u76f4\u63a5\u5bfc\u51fa\u4e3a\u6392\u7248\u7cbe\u7f8e\u7684 PDF\u3002"
+}

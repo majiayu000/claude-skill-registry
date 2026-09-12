@@ -1,0 +1,36 @@
+{
+  "name": "resume",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills-i18n/es/resume/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "resume-mohitagw15856-pm-claude-skills-2",
+  "downloaded_at": "2026-09-12T03:49:40.116732Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category documents scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "language",
+    "runner_up_score": 1,
+    "signals": [
+      "pdf"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills-i18n/es/resume/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills-i18n/es/resume/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Redacta un curr\u00edculum (CV) afilado, centrado en logros, que pase los filtros ATS y consiga la entrevista. \u00dasalo cuando te pidan escribir o reescribir un curr\u00edculum o CV, convertir experiencia en un curr\u00edculum, o adaptar un curr\u00edculum a una vacante. Produce un curr\u00edculum limpio, de una sola columna y compatible con ATS \u2014 resumen, experiencia como vi\u00f1etas de logros cuantificados, habilidades y formaci\u00f3n \u2014 listo para exportar como PDF con dise\u00f1o."
+}

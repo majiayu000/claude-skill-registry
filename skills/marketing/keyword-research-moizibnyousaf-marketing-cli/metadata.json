@@ -1,0 +1,39 @@
+{
+  "name": "keyword-research",
+  "repo": "MoizIbnYousaf/marketing-cli",
+  "path": "skills/keyword-research/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/MoizIbnYousaf/marketing-cli",
+  "dir_name": "keyword-research-moizibnyousaf-marketing-cli",
+  "downloaded_at": "2026-09-12T03:32:20.476130Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for marketing: seo, content, campaign, brand",
+    "score": 4,
+    "runner_up": "business",
+    "runner_up_score": 2,
+    "signals": [
+      "seo",
+      "content",
+      "campaign",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "MoizIbnYousaf",
+  "source_url": "https://github.com/MoizIbnYousaf/marketing-cli/blob/main/skills/keyword-research/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MoizIbnYousaf/marketing-cli/blob/main/skills/keyword-research/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Strategic keyword research powered by web search and brand context. Use this skill whenever the user mentions keywords, keyword research, SEO topics, content topics, 'what should I write about', content strategy, blog ideas, search traffic, or content planning. Also trigger when the user wants to plan what content to create, when existing content isn't attracting search traffic, when any skill needs keyword-plan.md but it doesn't exist, or when the user asks about SEO in the context of content creation. Even casual mentions like 'I need blog post ideas' or 'what topics should I cover' warrant this skill. 8-phase process from seed to content brief."
+}

@@ -1,0 +1,40 @@
+{
+  "name": "free-tool-strategy",
+  "repo": "MoizIbnYousaf/marketing-cli",
+  "path": "skills/free-tool-strategy/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/MoizIbnYousaf/marketing-cli",
+  "dir_name": "free-tool-strategy-moizibnyousaf-marketing-cli",
+  "downloaded_at": "2026-09-12T03:32:21.372813Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for marketing: marketing, seo, content, social, brand",
+    "score": 5,
+    "runner_up": "design",
+    "runner_up_score": 2,
+    "signals": [
+      "marketing",
+      "seo",
+      "content",
+      "social",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "MoizIbnYousaf",
+  "source_url": "https://github.com/MoizIbnYousaf/marketing-cli/blob/main/skills/free-tool-strategy/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MoizIbnYousaf/marketing-cli/blob/main/skills/free-tool-strategy/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Plans free tools, calculators, generators, and interactive widgets that attract target audience through search and social sharing. Engineering as marketing \u2014 build something useful, capture leads. Use when someone wants to build a free tool for marketing, says 'free tool', 'calculator', 'generator', 'engineering as marketing', 'side project marketing', 'interactive widget', 'lead generation tool', 'SEO tool', 'growth hack', 'build something to attract users', or wants to attract users through utility rather than content. Also use when someone asks 'how do I get more signups', 'what should I build for marketing', or 'content marketing alternative' \u2014 a free tool is often the best answer. Includes search volume validation, UX flow templates, and conversion hook design."
+}

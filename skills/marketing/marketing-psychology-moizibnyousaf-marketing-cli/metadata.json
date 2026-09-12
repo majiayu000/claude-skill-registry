@@ -1,0 +1,38 @@
+{
+  "name": "marketing-psychology",
+  "repo": "MoizIbnYousaf/marketing-cli",
+  "path": "skills/marketing-psychology/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/MoizIbnYousaf/marketing-cli",
+  "dir_name": "marketing-psychology-moizibnyousaf-marketing-cli",
+  "downloaded_at": "2026-09-12T03:32:22.264850Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for marketing: marketing, social, brand",
+    "score": 3,
+    "runner_up": "creative",
+    "runner_up_score": 2,
+    "signals": [
+      "marketing",
+      "social",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "MoizIbnYousaf",
+  "source_url": "https://github.com/MoizIbnYousaf/marketing-cli/blob/main/skills/marketing-psychology/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MoizIbnYousaf/marketing-cli/blob/main/skills/marketing-psychology/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Knowledge skill that applies behavioral psychology and persuasion principles to any marketing asset. Covers Cialdini's 6 principles, cognitive biases, and ethical persuasion frameworks. This skill is invoked BY other skills to enhance their output. Use it whenever copy needs more psychological weight, when a landing page feels flat, when email sequences lack urgency, or when any marketing asset needs to be more persuasive. Also use when someone says 'make this more convincing', 'add urgency', 'psychological triggers', 'persuasion framework', 'behavioral psychology', 'conversion optimization', 'nudge', 'influence tactics', or 'why isn't this converting'. Make sure to use this whenever ANY marketing copy needs to be more persuasive, even if the user just says 'this feels weak' or 'how do I get more signups', psychology principles likely apply."
+}

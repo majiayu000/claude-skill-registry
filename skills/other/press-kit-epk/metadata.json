@@ -1,0 +1,37 @@
+{
+  "name": "press-kit-epk",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/press-kit-epk/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "press-kit-epk",
+  "downloaded_at": "2026-09-12T03:49:37.131967Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: development=2, documents=2",
+    "score": 2,
+    "runner_up": "documents",
+    "runner_up_score": 2,
+    "signals": [
+      "framework",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/press-kit-epk/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/press-kit-epk/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Build an electronic press kit that bookers and blogs actually read \u2014 the three-sentence bio that isn't 'genre-defying', a one-page layout with streaming numbers presented honestly, the photo and live-video requirements, and pitch emails tuned per target (venue, blog, radio, festival). Use when a musician says 'I need an EPK', 'venues keep ignoring my emails', 'write my band bio', or 'what do I send festivals'. Produces the EPK content, the one-page layout spec, and four pitch email templates."
+}

@@ -1,0 +1,37 @@
+{
+  "name": "referral-program",
+  "repo": "MoizIbnYousaf/marketing-cli",
+  "path": "skills/referral-program/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/MoizIbnYousaf/marketing-cli",
+  "dir_name": "referral-program",
+  "downloaded_at": "2026-09-12T03:32:18.845804Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: communication=2, product=2",
+    "score": 2,
+    "runner_up": "product",
+    "runner_up_score": 2,
+    "signals": [
+      "messaging",
+      "email"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "MoizIbnYousaf",
+  "source_url": "https://github.com/MoizIbnYousaf/marketing-cli/blob/main/skills/referral-program/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MoizIbnYousaf/marketing-cli/blob/main/skills/referral-program/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Designs viral referral programs with incentive structures, sharing mechanics, and tracking. Covers one-sided, two-sided, tiered, and milestone models with viral coefficient calculations. Use when someone wants word-of-mouth growth, viral loops, invite programs, or says 'referral', 'viral loop', 'word of mouth', 'invite program', 'refer a friend', 'growth loop', 'referral incentive', 'affiliate program', 'ambassador program', 'get users to invite friends', or 'organic growth'. Even casual mentions like 'how do I get my users to spread the word' or 'can users invite others' should trigger this. Includes anti-fraud measures and copy templates for both referrer and referee. Use this whenever user-driven acquisition or viral mechanics are discussed."
+}

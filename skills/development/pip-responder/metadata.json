@@ -1,0 +1,37 @@
+{
+  "name": "pip-responder",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/pip-responder/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "pip-responder",
+  "downloaded_at": "2026-09-12T03:49:37.412032Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: framework, build",
+    "score": 2,
+    "runner_up": "bash",
+    "runner_up_score": 1,
+    "signals": [
+      "framework",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/pip-responder/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/pip-responder/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Respond to a performance improvement plan strategically \u2014 decode what the PIP really is, decide fight-vs-land-softly with clear eyes, build the evidence file, and run the parallel job search the situation demands. Use when asked I was just put on a PIP what do I do, help me respond to a performance improvement plan, is my PIP survivable, or write my PIP check-in updates. Produces the honest read of the PIP, the two-track plan (perform + search), the documentation system, and templates for check-ins and the written response."
+}

@@ -1,0 +1,36 @@
+{
+  "name": "lower-my-bill",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/lower-my-bill/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "lower-my-bill",
+  "downloaded_at": "2026-09-12T03:49:38.833336Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category agent scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "bash",
+    "runner_up_score": 1,
+    "signals": [
+      "agent"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/lower-my-bill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/lower-my-bill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Negotiate a recurring bill down \u2014 internet, phone, insurance, cable, gym \u2014 with a ready-to-read script, the competitor leverage that actually moves the price, and exactly what to say when they say no. Use when asked to lower my bill, negotiate my internet/phone bill, my provider raised my price, or how do I get a discount on [service]. Produces a call-or-chat script in your words, the specific leverage for your situation, a fallback ladder (discount \u2192 downgrade \u2192 cancel lever), and a note of what to write down so the promised deal actually sticks."
+}

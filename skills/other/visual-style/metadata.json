@@ -1,0 +1,37 @@
+{
+  "name": "visual-style",
+  "repo": "MoizIbnYousaf/marketing-cli",
+  "path": "skills/visual-style/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/MoizIbnYousaf/marketing-cli",
+  "dir_name": "visual-style",
+  "downloaded_at": "2026-09-12T03:32:14.454358Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: development=2, marketing=2",
+    "score": 2,
+    "runner_up": "marketing",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "MoizIbnYousaf",
+  "source_url": "https://github.com/MoizIbnYousaf/marketing-cli/blob/main/skills/visual-style/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MoizIbnYousaf/marketing-cli/blob/main/skills/visual-style/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Build a persistent visual brand identity for image generation. Defines how the brand looks visually \u2014 aesthetic, lighting, composition, mood \u2014 and writes it to brand/creative-kit.md so /image-gen and other creative skills produce consistent on-brand visuals. Three modes: Extract (from website/URL), Build (interview), Reference (mood board/examples). Use when starting any project that needs images, when the user says \"visual style\", \"brand aesthetic\", \"image style\", \"visual identity\", \"how should our images look\", \"build visual brand\", \"define our look\", or when /image-gen outputs feel generic because no visual style exists yet."
+}

@@ -1,0 +1,36 @@
+{
+  "name": "resume",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills-i18n/fr/resume/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "resume-mohitagw15856-pm-claude-skills-3",
+  "downloaded_at": "2026-09-12T03:49:41.807483Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category documents scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "language",
+    "runner_up_score": 1,
+    "signals": [
+      "pdf"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills-i18n/fr/resume/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills-i18n/fr/resume/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "R\u00e9dige un CV percutant, orient\u00e9 r\u00e9sultats, qui passe les filtres ATS et d\u00e9croche l'entretien. \u00c0 utiliser quand on demande d'\u00e9crire ou de r\u00e9\u00e9crire un CV, de transformer une exp\u00e9rience en CV, ou d'adapter un CV \u00e0 une offre. Produit un CV sobre, en une colonne, compatible ATS \u2014 accroche, exp\u00e9rience en puces de r\u00e9alisations chiffr\u00e9es, comp\u00e9tences et formation \u2014 pr\u00eat \u00e0 exporter en PDF mis en page."
+}

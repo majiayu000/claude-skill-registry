@@ -1,0 +1,457 @@
+---
+name: app-store-screenshots
+description: "Generate Apple App Store screenshot pages as a Next.js app with html-to-image export at required resolutions. Screenshots are advertisements, not documentation — every screenshot sells one idea. Use when building App Store screenshots, generating exportable marketing screenshots for iOS apps, or creating programmatic screenshot generators. Triggers on 'app store screenshots', 'App Store', 'screenshot generator', 'iOS screenshots', 'marketing screenshots', 'phone mockup', 'ASO screenshots', 'app store assets', 'app listing', 'app store page', or 'app preview images'. Also use when someone is about to submit an app and needs store assets, or when they say 'make my app store page look good'. Includes iPhone and iPad mockup components with pre-measured dimensions."
+---
+
+# App Store Screenshots Generator
+
+## Overview
+
+Build a Next.js page that renders iOS App Store screenshots as **advertisements** (not UI showcases) and exports them via `html-to-image` at Apple's required resolutions. Screenshots are the single most important conversion asset on the App Store.
+
+## Reads
+
+- `brand/creative-kit.md` — Brand colors, fonts, logo paths
+- `brand/voice-profile.md` — Copy tone and personality
+- `brand/positioning.md` — Positioning angles for headline direction
+
+## On Activation
+
+1. Read `brand/creative-kit.md` for colors, fonts, and logo.
+2. Read `brand/voice-profile.md` for copy tone — this shapes headline style (playful vs. professional vs. minimal).
+3. Read `brand/positioning.md` for positioning angles — the primary angle informs the hero slide headline direction.
+4. If brand/ files don't exist, the skill works at zero context. Step 1 gathers everything needed.
+
+## Core Principle
+
+**Screenshots are advertisements, not documentation.** Every screenshot sells one idea. If you're showing UI, you're doing it wrong — you're selling a *feeling*, an *outcome*, or killing a *pain point*.
+
+## Step 1: Ask the User
+
+If brand/ files provided answers (colors, fonts, voice tone), confirm them with the user and skip those questions. Only ask what's genuinely unknown. Do not proceed until you have all answers:
+
+### Required
+
+1. **App screenshots** — "Where are your app screenshots? (PNG files of actual device captures)"
+2. **App icon** — "Where is your app icon PNG?"
+3. **Brand colors** — "What are your brand colors? (accent color, text color, background preference)"
+4. **Font** — "What font does your app use? (or what font do you want for the screenshots?)"
+5. **Feature list** — "List your app's features in priority order. What's the #1 thing your app does?"
+6. **Number of slides** — "How many screenshots do you want? (Apple allows up to 10)"
+7. **Style direction** — "What style do you want? Examples: warm/organic, dark/moody, clean/minimal, bold/colorful, gradient-heavy, flat. Share App Store screenshot references if you have any."
+
+### Optional
+
+8. **iPad screenshots** — "Do you also have iPad screenshots? If so, we'll generate iPad App Store screenshots too (recommended for universal apps)."
+9. **Component assets** — "Do you have any UI element PNGs (cards, widgets, etc.) you want as floating decorations? If not, that's fine — we'll skip them."
+10. **Additional instructions** — "Any specific requirements, constraints, or preferences?"
+
+### Derived from answers (do NOT ask — decide yourself)
+
+Based on the user's style direction, brand colors, and app aesthetic, decide:
+- **Background style**: gradient direction, colors, whether light or dark base
+- **Decorative elements**: blobs, glows, geometric shapes, or none — match the style
+- **Dark vs light slides**: how many of each, which features suit dark treatment
+- **Typography treatment**: weight, tracking, line height — match the brand personality
+- **Color palette**: derive text colors, secondary colors, shadow tints from the brand colors
+
+**IMPORTANT:** If the user gives additional instructions at any point during the process, follow them. User instructions always override skill defaults.
+
+## Step 2: Set Up the Project
+
+### Detect Package Manager
+
+Check what's available, use this priority: **bun > pnpm > yarn > npm**
+
+```bash
+# Check in order
+which bun && echo "use bun" || which pnpm && echo "use pnpm" || which yarn && echo "use yarn" || echo "use npm"
+```
+
+### Scaffold (if no existing Next.js project)
+
+```bash
+# With bun:
+bunx create-next-app@latest . --typescript --tailwind --app --src-dir --no-eslint --import-alias "@/*"
+bun add html-to-image
+
+# With pnpm:
+pnpx create-next-app@latest . --typescript --tailwind --app --src-dir --no-eslint --import-alias "@/*"
+pnpm add html-to-image
+
+# With yarn:
+yarn create next-app . --typescript --tailwind --app --src-dir --no-eslint --import-alias "@/*"
+yarn add html-to-image
+
+# With npm:
+npx create-next-app@latest . --typescript --tailwind --app --src-dir --no-eslint --import-alias "@/*"
+npm install html-to-image
+```
+
+### Copy the Phone Mockup
+
+The skill includes a pre-measured iPhone mockup at `mockup.png` (co-located with this SKILL.md). Copy it to the project's `public/` directory. The mockup file is in the same directory as this skill file. No iPad mockup is needed — the iPad frame is CSS-only.
+
+### File Structure
+
+```
+project/
+├── public/
+│   ├── mockup.png              # iPhone frame (included with skill)
+│   ├── app-icon.png            # User's app icon
+│   ├── screenshots/            # iPhone app screenshots
+│   │   ├── home.png
+│   │   ├── feature-1.png
+│   │   └── ...
+│   └── screenshots-ipad/       # iPad app screenshots (optional)
+│       ├── home.png
+│       ├── feature-1.png
+│       └── ...
+├── src/app/
+│   ├── layout.tsx              # Font setup
+│   └── page.tsx                # The screenshot generator (single file)
+└── package.json
+```
+
+**Note:** No iPad mockup PNG is needed — the iPad frame is rendered with CSS (see iPad Mockup Component below).
+
+**The entire generator is a single `page.tsx` file.** No routing, no extra layouts, no API routes.
+
+### Font Setup
+
+```tsx
+// src/app/layout.tsx
+import { YourFont } from "next/font/google"; // Use whatever font the user specified
+const font = YourFont({ subsets: ["latin"] });
+
+export default function Layout({ children }: { children: React.ReactNode }) {
+  return <html><body className={font.className}>{children}</body></html>;
+}
+```
+
+## Step 3: Plan the Slides
+
+### Screenshot Framework (Narrative Arc)
+
+Adapt this framework to the user's requested slide count. Not all slots are required — pick what fits:
+
+| Slot | Purpose | Notes |
+|------|---------|-------|
+| #1 | **Hero / Main Benefit** | App icon + tagline + home screen. This is the ONLY one most people see. |
+| #2 | **Differentiator** | What makes this app unique vs competitors |
+| #3 | **Ecosystem** | Widgets, extensions, watch — beyond the main app. Skip if N/A. |
+| #4+ | **Core Features** | One feature per slide, most important first |
+| 2nd to last | **Trust Signal** | Identity/craft — "made for people who [X]" |
+| Last | **More Features** | Pills listing extras + coming soon. Skip if few features. |
+
+**Rules:**
+- Each slide sells ONE idea. Never two features on one slide.
+- Vary layouts across slides — never repeat the same template structure.
+- Include 1-2 contrast slides (inverted bg) for visual rhythm.
+
+## Step 4: Write Copy FIRST
+
+Get all headlines approved before building layouts. Bad copy ruins good design.
+
+### The Iron Rules
+
+1. **One idea per headline.** Never join two things with "and."
+2. **Short, common words.** 1-2 syllables. No jargon unless it's domain-specific.
+3. **3-5 words per line.** Must be readable at thumbnail size in the App Store.
+4. **Line breaks are intentional.** Control where lines break with `<br />`.
+
+### Three Approaches (pick one per slide)
+
+| Type | What it does | Example |
+|------|-------------|---------|
+| **Paint a moment** | You picture yourself doing it | "Check your coffee without opening the app." |
+| **State an outcome** | What your life looks like after | "A home for every coffee you buy." |
+| **Kill a pain** | Name a problem and destroy it | "Never waste a great bag of coffee." |
+
+### What NEVER Works
+
+- **Feature lists as headlines**: "Log every item with tags, categories, and notes"
+- **Two ideas joined by "and"**: "Track X and never miss Y"
+- **Compound clauses**: "Save and customize X for every Y you own"
+- **Vague aspirational**: "Every item, tracked"
+- **Marketing buzzwords**: "AI-powered tips" (unless it's actually AI)
+
+### Copy Process
+
+1. Write 3 options per slide using the three approaches
+2. Read each at arm's length — if you can't parse it in 1 second, it's too complex
+3. Check: does each line have 3-5 words? If not, adjust line breaks
+4. Present options to the user with reasoning for each
+
+### Reference Apps for Copy Style
+
+- **Raycast** — specific, descriptive, one concrete value per slide
+- **Turf** — ultra-simple action verbs, conversational
+- **Mela / Notion** — warm, minimal, elegant
+
+## Step 5: Build the Page
+
+### Architecture
+
+```
+page.tsx
+├── Constants (IPHONE_W/H, IPAD_W/H, SIZES, design tokens)
+├── Phone component (mockup PNG with screen overlay)
+├── IPad component (CSS-only frame with screen overlay)
+├── Caption component (label + headline, accepts canvasW for scaling)
+├── Decorative components (blobs, glows, shapes — based on style direction)
+├── iPhoneSlide1..N components (one per slide)
+├── iPadSlide1..N components (same designs, adjusted for iPad proportions)
+├── IPHONE_SCREENSHOTS / IPAD_SCREENSHOTS arrays (registries)
+├── ScreenshotPreview (ResizeObserver scaling + hover export)
+└── ScreenshotsPage (grid + device toggle + size dropdown + export logic)
+```
+
+### Export Sizes (Apple Required, portrait)
+
+#### iPhone
+
+```typescript
+const IPHONE_SIZES = [
+  { label: '6.9"', w: 1320, h: 2868 },
+  { label: '6.5"', w: 1284, h: 2778 },
+  { label: '6.3"', w: 1206, h: 2622 },
+  { label: '6.1"', w: 1125, h: 2436 },
+] as const;
+```
+
+Design at the LARGEST size (1320x2868) and scale down for export.
+
+#### iPad (Optional)
+
+If the user provides iPad screenshots, also generate iPad App Store screenshots:
+
+```typescript
+const IPAD_SIZES = [
+  { label: '13" iPad', w: 2064, h: 2752 },
+  { label: '12.9" iPad Pro', w: 2048, h: 2732 },
+] as const;
+```
+
+Design iPad slides at 2064x2752 and scale down. iPad screenshots are optional but recommended — they're required for iPad-only apps and improve listing quality for universal apps.
+
+#### Device Toggle
+
+When supporting both devices, add a toggle (iPhone / iPad) in the toolbar next to the size dropdown. The size dropdown should switch between iPhone and iPad sizes based on the selected device. Support a `?device=ipad` URL parameter for headless/automated capture workflows.
+
+### Rendering Strategy
+
+Each screenshot is designed at full resolution (1320x2868px). Two copies exist:
+
+1. **Preview**: CSS `transform: scale()` via ResizeObserver to fit a grid card
+2. **Export**: Offscreen at `position: absolute; left: -9999px` at true resolution
+
+### Phone Mockup Component
+
+The included `mockup.png` has these pre-measured values:
+
+```typescript
+const MK_W = 1022;  // mockup image width
+const MK_H = 2082;  // mockup image height
+const SC_L = (52 / MK_W) * 100;   // screen left offset %
+const SC_T = (46 / MK_H) * 100;   // screen top offset %
+const SC_W = (918 / MK_W) * 100;  // screen width %
+const SC_H = (1990 / MK_H) * 100; // screen height %
+const SC_RX = (126 / 918) * 100;  // border-radius x %
+const SC_RY = (126 / 1990) * 100; // border-radius y %
+```
+
+```tsx
+function Phone({ src, alt, style, className = "" }: {
+  src: string; alt: string; style?: React.CSSProperties; className?: string;
+}) {
+  return (
+    <div className={`relative ${className}`}
+      style={{ aspectRatio: `${MK_W}/${MK_H}`, ...style }}>
+      <img src="/mockup.png" alt=""
+        className="block w-full h-full" draggable={false} />
+      <div className="absolute z-10 overflow-hidden"
+        style={{
+          left: `${SC_L}%`, top: `${SC_T}%`,
+          width: `${SC_W}%`, height: `${SC_H}%`,
+          borderRadius: `${SC_RX}% / ${SC_RY}%`,
+        }}>
+        <img src={src} alt={alt}
+          className="block w-full h-full object-cover object-top"
+          draggable={false} />
+      </div>
+    </div>
+  );
+}
+```
+
+### iPad Mockup Component (CSS-Only)
+
+Unlike the iPhone mockup which uses a pre-measured PNG frame, the iPad uses a **CSS-only frame**. This avoids needing a separate mockup asset and looks clean at any resolution.
+
+**Critical dimension:** The frame aspect ratio must be `770/1000` so the inner screen area (92% width × 94.4% height) matches the 3:4 aspect ratio of iPad screenshots. Using incorrect proportions causes black bars or stretched screenshots.
+
+```tsx
+function IPad({ src, alt, style, className = "" }: {
+  src: string; alt: string; style?: React.CSSProperties; className?: string;
+}) {
+  return (
+    <div className={`relative ${className}`}
+      style={{ aspectRatio: "770/1000", ...style }}>
+      <div style={{
+        width: "100%", height: "100%", borderRadius: "5% / 3.6%",
+        background: "linear-gradient(180deg, #2C2C2E 0%, #1C1C1E 100%)",
+        position: "relative", overflow: "hidden",
+        boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.1), 0 8px 40px rgba(0,0,0,0.6)",
+      }}>
+        {/* Front camera dot */}
+        <div style={{
+          position: "absolute", top: "1.2%", left: "50%",
+          transform: "translateX(-50%)", width: "0.9%", height: "0.65%",
+          borderRadius: "50%", background: "#111113",
+          border: "1px solid rgba(255,255,255,0.08)", zIndex: 20,
+        }} />
+        {/* Bezel edge highlight */}
+        <div style={{
+          position: "absolute", inset: 0, borderRadius: "5% / 3.6%",
+          border: "1px solid rgba(255,255,255,0.06)",
+          pointerEvents: "none", zIndex: 15,
+        }} />
+        {/* Screen area */}
+        <div style={{
+          position: "absolute", left: "4%", top: "2.8%",
+          width: "92%", height: "94.4%",
+          borderRadius: "2.2% / 1.6%", overflow: "hidden", background: "#000",
+        }}>
+          <img src={src} alt={alt}
+            style={{ display: "block", width: "100%", height: "100%",
+              objectFit: "cover", objectPosition: "top" }}
+            draggable={false} />
+        </div>
+      </div>
+    </div>
+  );
+}
+```
+
+**iPad layout adjustments vs iPhone:**
+- Use `width: "65-70%"` for iPad mockups (vs 82-86% for iPhone) — iPad is wider relative to its height
+- Two-iPad layouts work the same as two-phone layouts but with adjusted widths
+- Caption font sizes should scale from `canvasW` (which is 2064 for iPad vs 1320 for iPhone)
+- Same slide designs/copy can be reused — just swap the Phone component for IPad and adjust positioning
+
+### Typography (Resolution-Independent)
+
+All sizing relative to canvas width W:
+
+| Element | Size | Weight | Line Height |
+|---------|------|--------|-------------|
+| Category label | `W * 0.028` | 600 (semibold) | default |
+| Headline | `W * 0.09` to `W * 0.1` | 700 (bold) | 1.0 |
+| Hero headline | `W * 0.1` | 700 (bold) | 0.92 |
+
+### Phone Placement Patterns
+
+Vary across slides — NEVER use the same layout twice in a row:
+
+**Centered phone** (hero, single-feature):
+```
+bottom: 0, width: "82-86%", translateX(-50%) translateY(12-14%)
+```
+
+**Two phones layered** (comparison):
+```
+Back: left: "-8%", width: "65%", rotate(-4deg), opacity: 0.55
+Front: right: "-4%", width: "82%", translateY(10%)
+```
+
+**Phone + floating elements** (only if user provided component PNGs):
+```
+Cards should NOT block the phone's main content.
+Position at edges, slight rotation (2-5deg), drop shadows.
+If distracting, push partially off-screen or make smaller.
+```
+
+### "More Features" Slide (Optional)
+
+Dark/contrast background with app icon, headline ("And so much more."), and feature pills. Can include a "Coming Soon" section with dimmer pills.
+
+## Step 6: Export
+
+### Why html-to-image, NOT html2canvas
+
+`html2canvas` breaks on CSS filters, gradients, drop-shadow, backdrop-filter, and complex clipping. `html-to-image` uses native browser SVG serialization — handles all CSS faithfully.
+
+### Export Implementation
+
+```typescript
+import { toPng } from "html-to-image";
+
+// Before capture: move element on-screen
+el.style.left = "0px";
+el.style.opacity = "1";
+el.style.zIndex = "-1";
+
+const opts = { width: W, height: H, pixelRatio: 1, cacheBust: true };
+
+// CRITICAL: Double-call trick — first warms up fonts/images, second produces clean output
+await toPng(el, opts);
+const dataUrl = await toPng(el, opts);
+
+// After capture: move back off-screen
+el.style.left = "-9999px";
+el.style.opacity = "";
+el.style.zIndex = "";
+```
+
+### Key Rules
+
+- **Double-call trick**: First `toPng()` loads fonts/images lazily. Second produces clean output. Without this, exports are blank.
+- **On-screen for capture**: Temporarily move to `left: 0` before calling `toPng`.
+- **Offscreen container**: Use `position: absolute; left: -9999px` (not `fixed`).
+- **Resizing**: Load data URL into Image, draw onto canvas at target size.
+- 300ms delay between sequential exports.
+- Set `fontFamily` on the offscreen container.
+- **Numbered filenames**: Prefix exports with zero-padded index so they sort correctly: `01-hero-1320x2868.png`, `02-freshness-1320x2868.png`, etc. Use `String(index + 1).padStart(2, "0")`.
+
+## Common Mistakes
+
+| Mistake | Fix |
+|---------|-----|
+| All slides look the same | Vary phone position (center, left, right, two-phone, no-phone) |
+| Decorative elements invisible | Increase size and opacity — better too visible than invisible |
+| Copy is too complex | "One second at arm's length" test |
+| Floating elements block the phone | Move off-screen edges or above the phone |
+| Plain white/black background | Use gradients — even subtle ones add depth |
+| Too cluttered | Remove floating elements, simplify to phone + caption |
+| Too simple/empty | Add larger decorative elements, floating items at edges |
+| Headlines use "and" | Split into two slides or pick one idea |
+| No visual contrast across slides | Mix light and dark backgrounds |
+| Export is blank | Use double-call trick; move element on-screen before capture |
+| User has no app screenshots yet | Tell them to take simulator screenshots first. Provide sizes: iPhone 15 Pro Max (1320x2868), iPad Pro 13" (2064x2752). Don't proceed without real screenshots. |
+
+## Step 7: Completion Summary
+
+Present the final deliverable to the user:
+
+```markdown
+## App Store Screenshots Complete
+
+### Files Created
+| File | Size | Device | Purpose |
+|------|------|--------|---------|
+| 01-hero-1320x2868.png | [size] | iPhone 6.9" | Hero slide |
+| 01-hero-1284x2778.png | [size] | iPhone 6.5" | Hero slide |
+| ... | ... | ... | ... |
+
+### How to Upload
+1. Open App Store Connect → Your App → App Store tab
+2. Scroll to "Screenshots" section
+3. Upload each size set to its corresponding device slot
+4. iPhone 6.9" screenshots auto-apply to 6.7" and 6.3"
+5. iPhone 6.1" is only needed for older device support
+
+### Regenerating
+Run the Next.js app (`bun dev`) and use the export buttons to regenerate at any size.
+The generator is a permanent asset — update screenshots anytime by swapping PNGs in `public/screenshots/`.
+```

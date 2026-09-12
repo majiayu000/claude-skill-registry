@@ -1,0 +1,39 @@
+{
+  "name": "launch-strategy",
+  "repo": "MoizIbnYousaf/marketing-cli",
+  "path": "skills/launch-strategy/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/MoizIbnYousaf/marketing-cli",
+  "dir_name": "launch-strategy-moizibnyousaf-marketing-cli",
+  "downloaded_at": "2026-09-12T03:32:17.929350Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for marketing: marketing, social, campaign, brand",
+    "score": 4,
+    "runner_up": "productivity",
+    "runner_up_score": 3,
+    "signals": [
+      "marketing",
+      "social",
+      "campaign",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "MoizIbnYousaf",
+  "source_url": "https://github.com/MoizIbnYousaf/marketing-cli/blob/main/skills/launch-strategy/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MoizIbnYousaf/marketing-cli/blob/main/skills/launch-strategy/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "When the user wants to plan a product launch, feature announcement, release strategy, or go-to-market plan. Also use when the user mentions 'launch plan', 'go to market', 'GTM', 'Product Hunt', 'beta launch', 'how do I launch', 'pre-launch', 'launch checklist', 'distribution plan', 'release strategy', 'feature announcement', or is about to ship something and needs a distribution plan. Even vague requests like 'I'm almost done building, what now?' or 'how do I get users?' should trigger this skill. Make sure to use this whenever someone is planning ANY kind of product or feature release, even if they don't say 'launch' explicitly \u2014 if they're thinking about getting something in front of users, this is the skill. This is the STRATEGIC planner \u2014 for operational platform submissions and directory launches, see /startup-launcher instead."
+}

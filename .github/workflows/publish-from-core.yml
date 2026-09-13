@@ -254,7 +254,7 @@ jobs:
               entry_total = sum(int(entry.get("count", 0) or 0) for entry in shards)
               if total is not None and entry_total != int(total):
                   raise ValueError(f"{path} count mismatch: entries={entry_total}, total={total}")
-              for entry in shards[:3]:
+              for entry in shards:
                   shard_path = root / artifact_base / str(entry["path"])
                   if not shard_path.exists():
                       raise ValueError(f"missing shard {entry['path']}")
@@ -342,21 +342,28 @@ jobs:
               categories = index.get("categories")
               if not isinstance(categories, list) or not categories:
                   raise ValueError("docs/categories/index.json has no categories")
-              first = categories[0]
-              if not isinstance(first, dict):
-                  raise ValueError("docs/categories/index.json category entry is not an object")
-              manifest = first.get("manifest")
-              if not isinstance(manifest, str) or not manifest.strip():
-                  raise ValueError("docs/categories/index.json category entry missing manifest")
-              manifest_path = Path(manifest)
-              if manifest_path.is_absolute() or ".." in manifest_path.parts:
-                  raise ValueError(f"invalid category manifest path: {manifest}")
-              detail = assert_manifest(
-                  f"docs/{manifest}",
-                  count_key="count",
-                  artifact_base="docs",
-              )
-              return f"{len(categories)} categories indexed; {detail}"
+              details: list[str] = []
+              for position, entry in enumerate(categories):
+                  if not isinstance(entry, dict):
+                      raise ValueError(
+                          f"docs/categories/index.json category entry[{position}] is not an object"
+                      )
+                  manifest = entry.get("manifest")
+                  if not isinstance(manifest, str) or not manifest.strip():
+                      raise ValueError(
+                          f"docs/categories/index.json category entry[{position}] missing manifest"
+                      )
+                  manifest_path = Path(manifest)
+                  if manifest_path.is_absolute() or ".." in manifest_path.parts:
+                      raise ValueError(f"invalid category manifest path: {manifest}")
+                  details.append(
+                      assert_manifest(
+                          f"docs/{manifest}",
+                          count_key="count",
+                          artifact_base="docs",
+                      )
+                  )
+              return f"{len(categories)} categories indexed; " + "; ".join(details)
 
           check("provenance refs", validate_provenance)
           check("registry pointer and manifest", validate_registry)

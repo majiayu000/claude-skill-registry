@@ -1,0 +1,32 @@
+{
+  "name": "business-pulse",
+  "description": "Делает одностраничный сводный снимок бизнеса для собственника — позиция по деньгам (бухгалтерия), тренд продаж (платежи), движение по воронке (CRM), обязательства недели (календарь), срочный список наблюдения (почта, мессенджер) и единственное самое важное на сегодня. Сам пробует все доступные коннекторы и аккуратно сужается до того, что подключено: один коннектор — частичный пульс, полный стек...",
+  "repo": "ilyautov/small-business-ru",
+  "path": "small-business-ru/skills/business-pulse",
+  "github_branch": "main",
+  "category": "business",
+  "tags": [
+    "small-business",
+    "finance",
+    "crm",
+    "reporting",
+    "russian"
+  ],
+  "stars": 15,
+  "source": "Community Skills",
+  "dir_name": "business-pulse",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "reference/data_sources.md",
+    "reference/gotchas.md",
+    "reference/output_template.md",
+    "reference/thresholds.md"
+  ],
+  "author": "ilyautov",
+  "source_url": "https://github.com/ilyautov/small-business-ru/blob/main/small-business-ru/skills/business-pulse/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ilyautov/small-business-ru/blob/main/small-business-ru/skills/business-pulse/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

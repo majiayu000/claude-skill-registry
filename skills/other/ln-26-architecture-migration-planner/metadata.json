@@ -1,0 +1,37 @@
+{
+  "name": "ln-26-architecture-migration-planner",
+  "repo": "levnikolaevich/claude-code-skills",
+  "path": "plugins/architecture-suite/skills/ln-26-architecture-migration-planner/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/levnikolaevich/claude-code-skills",
+  "dir_name": "ln-26-architecture-migration-planner",
+  "downloaded_at": "2026-09-13T03:53:16.038618Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: development=2, planning=2",
+    "score": 2,
+    "runner_up": "planning",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "levnikolaevich",
+  "source_url": "https://github.com/levnikolaevich/claude-code-skills/blob/master/plugins/architecture-suite/skills/ln-26-architecture-migration-planner/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/levnikolaevich/claude-code-skills/blob/master/plugins/architecture-suite/skills/ln-26-architecture-migration-planner/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Plans architecture migrations with compatibility, data safety, rollout and recovery; does not execute them."
+}

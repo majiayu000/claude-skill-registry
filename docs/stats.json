@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-12T04:55:15.105942Z",
-  "archive_skill_md_count_raw": 203009,
-  "archive_metadata_count_raw": 203007,
-  "indexed_skill_count_scan_shape": 162153,
-  "registry_skill_count_dedup": 161721,
+  "updated_at": "2026-09-13T04:58:09.899134Z",
+  "archive_skill_md_count_raw": 203151,
+  "archive_metadata_count_raw": 203149,
+  "indexed_skill_count_scan_shape": 162292,
+  "registry_skill_count_dedup": 161860,
   "total_plugins": 4,
   "categories": 40,
   "category_counts": [
@@ -26,22 +26,22 @@
     {
       "name": "analysis",
       "code": "analysis",
-      "count": 3166
+      "count": 3167
     },
     {
       "name": "api",
       "code": "api",
-      "count": 846
+      "count": 847
     },
     {
       "name": "bash",
       "code": "bash",
-      "count": 598
+      "count": 602
     },
     {
       "name": "business",
       "code": "business",
-      "count": 806
+      "count": 840
     },
     {
       "name": "c-level",
@@ -61,32 +61,32 @@
     {
       "name": "creative",
       "code": "creative",
-      "count": 603
+      "count": 605
     },
     {
       "name": "data",
       "code": "dat",
-      "count": 30665
+      "count": 30667
     },
     {
       "name": "design",
       "code": "des",
-      "count": 10424
+      "count": 10427
     },
     {
       "name": "development",
       "code": "dev",
-      "count": 36986
+      "count": 36997
     },
     {
       "name": "devops",
       "code": "ops",
-      "count": 8319
+      "count": 8320
     },
     {
       "name": "documents",
       "code": "doc",
-      "count": 6265
+      "count": 6271
     },
     {
       "name": "domains",
@@ -131,7 +131,7 @@
     {
       "name": "marketing",
       "code": "mkt",
-      "count": 3534
+      "count": 3535
     },
     {
       "name": "orchestration",
@@ -141,12 +141,12 @@
     {
       "name": "other",
       "code": "oth",
-      "count": 3616
+      "count": 3672
     },
     {
       "name": "performance",
       "code": "performance",
-      "count": 1085
+      "count": 1086
     },
     {
       "name": "personal-development",
@@ -156,7 +156,7 @@
     {
       "name": "planning",
       "code": "planning",
-      "count": 1699
+      "count": 1700
     },
     {
       "name": "platform",
@@ -166,7 +166,7 @@
     {
       "name": "product",
       "code": "prd",
-      "count": 3107
+      "count": 3116
     },
     {
       "name": "productivity",
@@ -176,12 +176,12 @@
     {
       "name": "quality",
       "code": "quality",
-      "count": 4297
+      "count": 4299
     },
     {
       "name": "security",
       "code": "sec",
-      "count": 4639
+      "count": 4641
     },
     {
       "name": "skills",
@@ -201,15 +201,15 @@
     {
       "name": "workflow",
       "code": "workflow",
-      "count": 3555
+      "count": 3556
     },
     {
       "name": "writing",
       "code": "writing",
-      "count": 1174
+      "count": 1175
     }
   ],
-  "unique_repo_count": 9850,
+  "unique_repo_count": 9855,
   "official_skill_count": 0,
   "top_repositories": [
     {
@@ -229,11 +229,11 @@
       "count": 1033
     },
     {
-      "repo": "Klotzkette/claude-fuer-deutsches-recht",
-      "count": 885
+      "repo": "sickn33/agentic-awesome-skills",
+      "count": 886
     },
     {
-      "repo": "sickn33/agentic-awesome-skills",
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
       "count": 885
     },
     {
@@ -241,12 +241,12 @@
       "count": 810
     },
     {
-      "repo": "plurigrid/asi",
-      "count": 698
+      "repo": "levnikolaevich/claude-code-skills",
+      "count": 706
     },
     {
-      "repo": "levnikolaevich/claude-code-skills",
-      "count": 675
+      "repo": "plurigrid/asi",
+      "count": 698
     },
     {
       "repo": "TheBushidoCollective/han",
@@ -259,34 +259,34 @@
   "index_size_bytes": 324,
   "index_size_gzip_bytes": 244,
   "search_shard_count": 5,
-  "search_largest_shard_bytes": 8388673,
-  "search_largest_shard_gzip_bytes": 1426164,
+  "search_largest_shard_bytes": 8388681,
+  "search_largest_shard_gzip_bytes": 1426986,
   "category_shard_count": 45,
-  "category_largest_part_bytes": 8388717,
-  "category_largest_part_gzip_bytes": 1806204,
-  "lite_index_count": 162153,
+  "category_largest_part_bytes": 8388674,
+  "category_largest_part_gzip_bytes": 1806281,
+  "lite_index_count": 162292,
   "lite_index_included_count": 5000,
-  "lite_index_size_bytes": 3501844,
-  "lite_index_gzip_size_bytes": 683382,
+  "lite_index_size_bytes": 3507590,
+  "lite_index_gzip_size_bytes": 684238,
   "quality_index_size_bytes": 364,
   "quality_index_gzip_size_bytes": 270,
   "quality_shard_count": 6,
-  "quality_largest_shard_bytes": 8388598,
-  "quality_largest_shard_gzip_bytes": 1766350,
+  "quality_largest_shard_bytes": 8388670,
+  "quality_largest_shard_gzip_bytes": 1766527,
   "security_index_size_bytes": 368,
-  "security_index_gzip_size_bytes": 272,
+  "security_index_gzip_size_bytes": 271,
   "security_shard_count": 20,
-  "security_largest_shard_bytes": 8388675,
-  "security_largest_shard_gzip_bytes": 1590764,
+  "security_largest_shard_bytes": 8388679,
+  "security_largest_shard_gzip_bytes": 1590685,
   "ranking_index_size_bytes": 364,
   "ranking_index_gzip_size_bytes": 271,
   "ranking_shard_count": 5,
-  "ranking_largest_shard_bytes": 8388679,
-  "ranking_largest_shard_gzip_bytes": 1976230,
-  "largest_generated_file_bytes": 8388717,
+  "ranking_largest_shard_bytes": 8388659,
+  "ranking_largest_shard_gzip_bytes": 1977169,
+  "largest_generated_file_bytes": 8388681,
   "security_scan": {
-    "total": 203007,
-    "passed": 203007,
+    "total": 203149,
+    "passed": 203149,
     "failed": 0
   }
 }

@@ -1,0 +1,34 @@
+{
+  "name": "crm-maintenance",
+  "description": "Держит CRM в актуальном состоянии без того, чтобы собственник её открывал: создаёт и обновляет контакты и сделки из контекста переписки и календаря, заносит примечания и звонки, помечает зависшие записи. Скилл «хватит вбивать данные руками». Используй, когда собственник просит обновить CRM, занести звонок, почистить CRM или добавить контекст к сделке. Триггеры: \"занеси звонок в CRM\", \"обнови CR...",
+  "repo": "ilyautov/small-business-ru",
+  "path": "small-business-ru/skills/crm-maintenance",
+  "github_branch": "main",
+  "category": "business",
+  "tags": [
+    "small-business",
+    "finance",
+    "crm",
+    "reporting",
+    "russian"
+  ],
+  "stars": 15,
+  "source": "Community Skills",
+  "dir_name": "crm-maintenance",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "reference/cleanup-checklist.md",
+    "reference/examples/cleanup-deal.md",
+    "reference/examples/log-call-happy-path.md",
+    "reference/examples/log-email-happy-path.md",
+    "reference/gotchas.md",
+    "reference/hubspot-fields.md"
+  ],
+  "author": "ilyautov",
+  "source_url": "https://github.com/ilyautov/small-business-ru/blob/main/small-business-ru/skills/crm-maintenance/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ilyautov/small-business-ru/blob/main/small-business-ru/skills/crm-maintenance/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

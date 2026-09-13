@@ -1,0 +1,33 @@
+{
+  "name": "month-end-prep",
+  "description": "Проводит собственника через закрытие месяца: сверяет данные бухгалтерии (1С/МойСклад) с зачислениями эквайринга и выписками банка, помечает операции без статьи, подозрительные дубли и недостающие первичные документы, затем пишет ОПиУ-сводку простым языком и выгружает пакет закрытия месяца (xlsx + PDF на одну страницу). Триггеры: «закрой месяц», «закрытие месяца», «сделай месячную отчётность», «...",
+  "repo": "ilyautov/small-business-ru",
+  "path": "small-business-ru/skills/month-end-prep",
+  "github_branch": "main",
+  "category": "business",
+  "tags": [
+    "small-business",
+    "finance",
+    "crm",
+    "reporting",
+    "russian"
+  ],
+  "stars": 15,
+  "source": "Community Skills",
+  "dir_name": "month-end-prep",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "reference/close-packet-format.md",
+    "reference/examples/pl-narrative.md",
+    "reference/gotchas.md",
+    "reference/paypal-settlements.md",
+    "reference/quickbooks-reconcile.md"
+  ],
+  "author": "ilyautov",
+  "source_url": "https://github.com/ilyautov/small-business-ru/blob/main/small-business-ru/skills/month-end-prep/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ilyautov/small-business-ru/blob/main/small-business-ru/skills/month-end-prep/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

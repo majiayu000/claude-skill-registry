@@ -1,0 +1,33 @@
+{
+  "name": "tax-season-organizer",
+  "description": "Готовит материалы к налоговому периоду для собственников малого бизнеса на УСН и НПД: это пакет для бухгалтера, а не налоговая консультация. Четыре режима: авансовый платёж по УСН (доходы нарастающим итогом, ставка объекта «Доходы» 6% или «Доходы минус расходы» 15%, минимальный налог 1%); выплаты подрядчикам ГПХ и самозанятым (статусы, чеки «Мой налог», недостающие реквизиты); страховые взносы...",
+  "repo": "ilyautov/small-business-ru",
+  "path": "small-business-ru/skills/tax-season-organizer",
+  "github_branch": "main",
+  "category": "business",
+  "tags": [
+    "small-business",
+    "finance",
+    "crm",
+    "reporting",
+    "russian"
+  ],
+  "stars": 15,
+  "source": "Community Skills",
+  "dir_name": "tax-season-organizer",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "reference/calculation-assumptions.md",
+    "reference/connector-queries.md",
+    "reference/examples/quarterly-estimate.md",
+    "reference/examples/year-end-1099.md",
+    "reference/gotchas.md"
+  ],
+  "author": "ilyautov",
+  "source_url": "https://github.com/ilyautov/small-business-ru/blob/main/small-business-ru/skills/tax-season-organizer/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ilyautov/small-business-ru/blob/main/small-business-ru/skills/tax-season-organizer/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

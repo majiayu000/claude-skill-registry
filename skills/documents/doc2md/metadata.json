@@ -1,0 +1,30 @@
+{
+  "name": "doc2md",
+  "description": "Batch-convert Word, PowerPoint, Excel, OpenDocument, RTF, EPUB, CSV and PDF into clean GitHub-Flavored Markdown before the agent starts reading — one file, a list, or a whole folder at once. For when a pile of mixed-format documents is cheaper to normalise in one pass than to open one by one.",
+  "repo": "ilyautov/doc2md",
+  "path": "skills/doc2md",
+  "github_branch": "main",
+  "category": "documents",
+  "tags": [
+    "markdown",
+    "conversion",
+    "pdf",
+    "docx",
+    "batch"
+  ],
+  "stars": 5,
+  "source": "Community Skills",
+  "dir_name": "doc2md",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "scripts/convert.js",
+    "scripts/convert.sh"
+  ],
+  "author": "ilyautov",
+  "source_url": "https://github.com/ilyautov/doc2md/blob/main/skills/doc2md/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ilyautov/doc2md/blob/main/skills/doc2md/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

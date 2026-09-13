@@ -1,0 +1,32 @@
+{
+  "name": "invoice-chase",
+  "description": "Автопилот дебиторки. Готовит письма-напоминания об оплате просроченных счетов, подбирая тон под историю платежей клиента (мягко для добросовестных, твёрдо для хронических неплательщиков) и ступень эскалации под срок просрочки. Работает не только по запросу, но и проактивно: связывается с прогнозом денег (cash-flow-snapshot) и приоритизирует дожим тех клиентов, чья оплата закрывает ближайший кас...",
+  "repo": "ilyautov/small-business-ru",
+  "path": "small-business-ru/skills/invoice-chase",
+  "github_branch": "main",
+  "category": "business",
+  "tags": [
+    "small-business",
+    "finance",
+    "crm",
+    "reporting",
+    "russian"
+  ],
+  "stars": 15,
+  "source": "Community Skills",
+  "dir_name": "invoice-chase",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "reference/examples/firm-reminder.md",
+    "reference/examples/gentle-reminder.md",
+    "reference/gotchas.md",
+    "reference/tone-matching.md"
+  ],
+  "author": "ilyautov",
+  "source_url": "https://github.com/ilyautov/small-business-ru/blob/main/small-business-ru/skills/invoice-chase/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ilyautov/small-business-ru/blob/main/small-business-ru/skills/invoice-chase/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

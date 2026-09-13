@@ -1,0 +1,29 @@
+{
+  "name": "counterparty-guard",
+  "description": "Проверка контрагента (юрлица/ИП) по ИНН перед сделкой, отгрузкой в долг или предоплатой. Двухскоростная: быстрый quick-scan по deal-killer-сигналам (ликвидация/банкротство/недостоверность ЕГРЮЛ/дисквалификация/крупные долги), затем полное досье по запросу. Собирает открытые данные (ЕГРЮЛ, налоговые риск-флаги, финансы, суды, ФССП, банкротства, госконтракты) и выдаёт светофор риска (🟢/🟡/🔴) + рек...",
+  "repo": "ilyautov/small-business-ru",
+  "path": "small-business-ru/skills/counterparty-guard",
+  "github_branch": "main",
+  "category": "business",
+  "tags": [
+    "small-business",
+    "finance",
+    "crm",
+    "reporting",
+    "russian"
+  ],
+  "stars": 15,
+  "source": "Community Skills",
+  "dir_name": "counterparty-guard",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "scripts/fetch_counterparty.py"
+  ],
+  "author": "ilyautov",
+  "source_url": "https://github.com/ilyautov/small-business-ru/blob/main/small-business-ru/skills/counterparty-guard/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ilyautov/small-business-ru/blob/main/small-business-ru/skills/counterparty-guard/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

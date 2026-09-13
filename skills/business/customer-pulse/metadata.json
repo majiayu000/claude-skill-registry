@@ -1,0 +1,30 @@
+{
+  "name": "customer-pulse",
+  "description": "Собирает споры по платежам, обращения и отзывы клиентов из CRM, почты и поддержки (плюс вставленные или выгруженные отзывы с Яндекс Карт, 2ГИС, Авито, VK, Отзовика) в отчёт по темам с дословными цитатами и списком «сделайте эти три вещи на этой неделе». Триггеры: «что говорят клиенты», «как настроение у клиентов», «разбор отзывов», «что пишут про нас», «споры по платежам».",
+  "repo": "ilyautov/small-business-ru",
+  "path": "small-business-ru/skills/customer-pulse",
+  "github_branch": "main",
+  "category": "business",
+  "tags": [
+    "small-business",
+    "finance",
+    "crm",
+    "reporting",
+    "russian"
+  ],
+  "stars": 15,
+  "source": "Community Skills",
+  "dir_name": "customer-pulse",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "reference/examples/example-report.md",
+    "reference/gotchas.md"
+  ],
+  "author": "ilyautov",
+  "source_url": "https://github.com/ilyautov/small-business-ru/blob/main/small-business-ru/skills/customer-pulse/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ilyautov/small-business-ru/blob/main/small-business-ru/skills/customer-pulse/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

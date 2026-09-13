@@ -1,0 +1,31 @@
+{
+  "name": "content-strategy",
+  "description": "Анализирует данные о продажах из ~~платежи и ~~бухгалтерии (ЮKassa, 1С, МойСклад), находит хиты и зависшие позиции, накладывает сезонность и выдаёт приоритизированный контент-бриф на 30 дней: что продвигать, какие акции запускать, что придержать. На выходе только стратегия — без календарей и макетов. Используй, когда владелец спрашивает «что постить», просит контент-план, спрашивает «что продаё...",
+  "repo": "ilyautov/small-business-ru",
+  "path": "small-business-ru/skills/content-strategy",
+  "github_branch": "main",
+  "category": "business",
+  "tags": [
+    "small-business",
+    "finance",
+    "crm",
+    "reporting",
+    "russian"
+  ],
+  "stars": 15,
+  "source": "Community Skills",
+  "dir_name": "content-strategy",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "reference/examples/retail-boutique-example.md",
+    "reference/gotchas.md",
+    "reference/square-integration.md"
+  ],
+  "author": "ilyautov",
+  "source_url": "https://github.com/ilyautov/small-business-ru/blob/main/small-business-ru/skills/content-strategy/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ilyautov/small-business-ru/blob/main/small-business-ru/skills/content-strategy/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

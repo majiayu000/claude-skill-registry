@@ -1,0 +1,27 @@
+{
+  "name": "consilium-principis",
+  "description": "A personal advisory board of AI characters modelled on real thinkers. Public-domain figures ship in the box (Sun Tzu, Marcus Aurelius, Epictetus, Machiavelli); the skill builds profiles and runs a session on the user's question, the advisers argue with each other and with the user, then synthesis and a next step. Quotes come only from verified sources.",
+  "repo": "ilyautov/consilium-principis",
+  "path": "skills/consilium-principis/SKILL.md",
+  "github_branch": "master",
+  "category": "analysis",
+  "tags": [
+    "decision-making",
+    "advisory",
+    "strategy",
+    "monte-carlo",
+    "reasoning"
+  ],
+  "stars": 7,
+  "source": "Community Skills",
+  "dir_name": "consilium-principis",
+  "archive_mode": "skill-md",
+  "bundled_files": [],
+  "author": "ilyautov",
+  "source_url": "https://github.com/ilyautov/consilium-principis/blob/master/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ilyautov/consilium-principis/blob/master/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

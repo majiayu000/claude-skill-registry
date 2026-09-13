@@ -1,0 +1,37 @@
+{
+  "name": "small-claims-prep",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/small-claims-prep/SKILL.md",
+  "github_branch": "main",
+  "category": "creative",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "small-claims-prep",
+  "downloaded_at": "2026-09-13T03:55:16.746304Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "creative",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for creative: story, writing",
+    "score": 2,
+    "runner_up": "bash",
+    "runner_up_score": 1,
+    "signals": [
+      "story",
+      "writing"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/small-claims-prep/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/small-claims-prep/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Prepare a small-claims case end to end \u2014 the demand letter that often settles it first, the evidence pack, what to file, and a plain-English walkthrough of the hearing. Use when asked to take someone to small claims, sue in small claims court, prepare a small claims case, or someone owes me money and won't pay. Produces a final demand letter, the claim summary with amount and legal-ish basis, the organized evidence pack, a filing checklist, and a calm hearing script \u2014 flagging jurisdiction limits to verify. Not legal advice."
+}

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updated_at": "2026-09-12T03:58:46.485956Z",
-  "total_count": 1634,
+  "updated_at": "2026-09-13T04:03:59.627673Z",
+  "total_count": 1671,
   "entries": {
     "Xquik-dev/x-twitter-scraper": {
       "repo": "Xquik-dev/x-twitter-scraper",
@@ -9205,13 +9205,13 @@
       "repo": "yusufkaraaslan/Skill_Seekers",
       "branch": "main",
       "relative_path": "skills/skill-seekers/SKILL.md",
-      "updated_at": "2026-09-12T03:58:38.510051Z"
+      "updated_at": "2026-09-13T04:03:53.909135Z"
     },
     "lackeyjb/playwright-skill:name:playwright-skill": {
       "repo": "lackeyjb/playwright-skill",
       "branch": "main",
       "relative_path": "skills/playwright-skill/SKILL.md",
-      "updated_at": "2026-09-12T03:58:38.223325Z"
+      "updated_at": "2026-09-13T04:03:53.821003Z"
     },
     "ToniPerea/humanizar-texto-es:name:humanizar-texto-es": {
       "repo": "ToniPerea/humanizar-texto-es",
@@ -9265,7 +9265,7 @@
       "repo": "Enreign/pagerunner-skill",
       "branch": "main",
       "relative_path": "skills/pagerunner-skill/SKILL.md",
-      "updated_at": "2026-09-12T03:58:38.665202Z"
+      "updated_at": "2026-09-13T04:03:53.953420Z"
     },
     "miningstore/confluence-to-agent-knowledge-base:name:confluence-to-agent-knowledge-base": {
       "repo": "miningstore/confluence-to-agent-knowledge-base",
@@ -9571,7 +9571,7 @@
       "repo": "RS42-AI/scout-ai-lite",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-09-12T03:58:37.516981Z"
+      "updated_at": "2026-09-13T04:03:53.938322Z"
     },
     "Dicklesworthstone/slb:name:unknown": {
       "repo": "Dicklesworthstone/slb",
@@ -9619,7 +9619,7 @@
       "repo": "tostechbr/sdk-apps-openai",
       "branch": "main",
       "relative_path": "skill.md",
-      "updated_at": "2026-09-12T03:58:37.468409Z"
+      "updated_at": "2026-09-13T04:03:53.982110Z"
     },
     "fredsun/CodeDiary:name:unknown": {
       "repo": "fredsun/CodeDiary",
@@ -9806,6 +9806,228 @@
       "branch": "main",
       "relative_path": "skills/ralph-loop-yylo/SKILL.md",
       "updated_at": "2026-09-11T03:53:47.530357Z"
+    },
+    "ilyautov/small-business-ru:small-business-ru/skills/monday-brief": {
+      "repo": "ilyautov/small-business-ru",
+      "branch": "main",
+      "relative_path": "small-business-ru/skills/monday-brief/SKILL.md",
+      "updated_at": "2026-09-13T04:03:53.986877Z"
+    },
+    "ilyautov/small-business-ru:small-business-ru/skills/sales-brief": {
+      "repo": "ilyautov/small-business-ru",
+      "branch": "main",
+      "relative_path": "small-business-ru/skills/sales-brief/SKILL.md",
+      "updated_at": "2026-09-13T04:03:53.992336Z"
+    },
+    "ilyautov/small-business-ru:small-business-ru/skills/close-month": {
+      "repo": "ilyautov/small-business-ru",
+      "branch": "main",
+      "relative_path": "small-business-ru/skills/close-month/SKILL.md",
+      "updated_at": "2026-09-13T04:03:53.996896Z"
+    },
+    "ilyautov/small-business-ru:small-business-ru/skills/run-campaign": {
+      "repo": "ilyautov/small-business-ru",
+      "branch": "main",
+      "relative_path": "small-business-ru/skills/run-campaign/SKILL.md",
+      "updated_at": "2026-09-13T04:03:54.000958Z"
+    },
+    "ilyautov/small-business-ru:small-business-ru/skills/plan-payroll": {
+      "repo": "ilyautov/small-business-ru",
+      "branch": "main",
+      "relative_path": "small-business-ru/skills/plan-payroll/SKILL.md",
+      "updated_at": "2026-09-13T04:03:54.006545Z"
+    },
+    "ilyautov/small-business-ru:small-business-ru/skills/price-check": {
+      "repo": "ilyautov/small-business-ru",
+      "branch": "main",
+      "relative_path": "small-business-ru/skills/price-check/SKILL.md",
+      "updated_at": "2026-09-13T04:03:54.010889Z"
+    },
+    "ilyautov/small-business-ru:small-business-ru/skills/handle-complaint": {
+      "repo": "ilyautov/small-business-ru",
+      "branch": "main",
+      "relative_path": "small-business-ru/skills/handle-complaint/SKILL.md",
+      "updated_at": "2026-09-13T04:03:54.014374Z"
+    },
+    "ilyautov/small-business-ru:small-business-ru/skills/smb-router": {
+      "repo": "ilyautov/small-business-ru",
+      "branch": "main",
+      "relative_path": "small-business-ru/skills/smb-router/SKILL.md",
+      "updated_at": "2026-09-13T04:03:54.022592Z"
+    },
+    "ilyautov/small-business-ru:small-business-ru/skills/month-heads-up": {
+      "repo": "ilyautov/small-business-ru",
+      "branch": "main",
+      "relative_path": "small-business-ru/skills/month-heads-up/SKILL.md",
+      "updated_at": "2026-09-13T04:03:54.026894Z"
+    },
+    "ilyautov/small-business-ru:small-business-ru/skills/customer-pulse-check": {
+      "repo": "ilyautov/small-business-ru",
+      "branch": "main",
+      "relative_path": "small-business-ru/skills/customer-pulse-check/SKILL.md",
+      "updated_at": "2026-09-13T04:03:54.030973Z"
+    },
+    "ilyautov/small-business-ru:small-business-ru/skills/review-contract": {
+      "repo": "ilyautov/small-business-ru",
+      "branch": "main",
+      "relative_path": "small-business-ru/skills/review-contract/SKILL.md",
+      "updated_at": "2026-09-13T04:03:54.034715Z"
+    },
+    "ilyautov/small-business-ru:small-business-ru/skills/tax-prep": {
+      "repo": "ilyautov/small-business-ru",
+      "branch": "main",
+      "relative_path": "small-business-ru/skills/tax-prep/SKILL.md",
+      "updated_at": "2026-09-13T04:03:54.038965Z"
+    },
+    "ilyautov/small-business-ru:small-business-ru/skills/friday-brief": {
+      "repo": "ilyautov/small-business-ru",
+      "branch": "main",
+      "relative_path": "small-business-ru/skills/friday-brief/SKILL.md",
+      "updated_at": "2026-09-13T04:03:54.042311Z"
+    },
+    "ilyautov/small-business-ru:small-business-ru/skills/cross-source-verify": {
+      "repo": "ilyautov/small-business-ru",
+      "branch": "main",
+      "relative_path": "small-business-ru/skills/cross-source-verify/SKILL.md",
+      "updated_at": "2026-09-13T04:03:54.048317Z"
+    },
+    "ilyautov/small-business-ru:small-business-ru/skills/quarterly-review": {
+      "repo": "ilyautov/small-business-ru",
+      "branch": "main",
+      "relative_path": "small-business-ru/skills/quarterly-review/SKILL.md",
+      "updated_at": "2026-09-13T04:03:54.052048Z"
+    },
+    "ilyautov/small-business-ru:small-business-ru/skills/crm-cleanup": {
+      "repo": "ilyautov/small-business-ru",
+      "branch": "main",
+      "relative_path": "small-business-ru/skills/crm-cleanup/SKILL.md",
+      "updated_at": "2026-09-13T04:03:54.055941Z"
+    },
+    "ilyautov/small-business-ru:small-business-ru/skills/call-list": {
+      "repo": "ilyautov/small-business-ru",
+      "branch": "main",
+      "relative_path": "small-business-ru/skills/call-list/SKILL.md",
+      "updated_at": "2026-09-13T04:03:54.060105Z"
+    },
+    "ilyautov/rusvoice:skills/rusvoice": {
+      "repo": "ilyautov/rusvoice",
+      "branch": "main",
+      "relative_path": "skills/rusvoice/SKILL.md",
+      "updated_at": "2026-09-13T04:03:54.063068Z"
+    },
+    "ilyautov/doc2md:skills/doc2md": {
+      "repo": "ilyautov/doc2md",
+      "branch": "main",
+      "relative_path": "skills/doc2md/SKILL.md",
+      "updated_at": "2026-09-13T04:03:54.483091Z"
+    },
+    "ilyautov/small-business-ru:small-business-ru/skills/counterparty-guard": {
+      "repo": "ilyautov/small-business-ru",
+      "branch": "main",
+      "relative_path": "small-business-ru/skills/counterparty-guard/SKILL.md",
+      "updated_at": "2026-09-13T04:03:54.888310Z"
+    },
+    "ilyautov/small-business-ru:small-business-ru/skills/cash-flow-snapshot": {
+      "repo": "ilyautov/small-business-ru",
+      "branch": "main",
+      "relative_path": "small-business-ru/skills/cash-flow-snapshot/SKILL.md",
+      "updated_at": "2026-09-13T04:03:54.904440Z"
+    },
+    "ilyautov/small-business-ru:small-business-ru/skills/ticket-deflector": {
+      "repo": "ilyautov/small-business-ru",
+      "branch": "main",
+      "relative_path": "small-business-ru/skills/ticket-deflector/SKILL.md",
+      "updated_at": "2026-09-13T04:03:55.201770Z"
+    },
+    "ilyautov/small-business-ru:small-business-ru/skills/lead-triage": {
+      "repo": "ilyautov/small-business-ru",
+      "branch": "main",
+      "relative_path": "small-business-ru/skills/lead-triage/SKILL.md",
+      "updated_at": "2026-09-13T04:03:55.210459Z"
+    },
+    "ilyautov/small-business-ru:small-business-ru/skills/customer-pulse": {
+      "repo": "ilyautov/small-business-ru",
+      "branch": "main",
+      "relative_path": "small-business-ru/skills/customer-pulse/SKILL.md",
+      "updated_at": "2026-09-13T04:03:55.218019Z"
+    },
+    "ilyautov/small-business-ru:small-business-ru/skills/business-pulse": {
+      "repo": "ilyautov/small-business-ru",
+      "branch": "main",
+      "relative_path": "small-business-ru/skills/business-pulse/SKILL.md",
+      "updated_at": "2026-09-13T04:03:55.229104Z"
+    },
+    "ilyautov/consilium-principis:name:consilium-principis": {
+      "repo": "ilyautov/consilium-principis",
+      "branch": "master",
+      "relative_path": "skills/consilium-principis/SKILL.md",
+      "updated_at": "2026-09-13T04:03:55.323055Z"
+    },
+    "ilyautov/small-business-ru:small-business-ru/skills/content-strategy": {
+      "repo": "ilyautov/small-business-ru",
+      "branch": "main",
+      "relative_path": "small-business-ru/skills/content-strategy/SKILL.md",
+      "updated_at": "2026-09-13T04:03:55.365691Z"
+    },
+    "ilyautov/small-business-ru:small-business-ru/skills/smb-onboard": {
+      "repo": "ilyautov/small-business-ru",
+      "branch": "main",
+      "relative_path": "small-business-ru/skills/smb-onboard/SKILL.md",
+      "updated_at": "2026-09-13T04:03:55.378152Z"
+    },
+    "ilyautov/small-business-ru:small-business-ru/skills/invoice-chase": {
+      "repo": "ilyautov/small-business-ru",
+      "branch": "main",
+      "relative_path": "small-business-ru/skills/invoice-chase/SKILL.md",
+      "updated_at": "2026-09-13T04:03:55.447802Z"
+    },
+    "ilyautov/small-business-ru:small-business-ru/skills/contract-review": {
+      "repo": "ilyautov/small-business-ru",
+      "branch": "main",
+      "relative_path": "small-business-ru/skills/contract-review/SKILL.md",
+      "updated_at": "2026-09-13T04:03:55.495556Z"
+    },
+    "ilyautov/small-business-ru:small-business-ru/skills/margin-analyzer": {
+      "repo": "ilyautov/small-business-ru",
+      "branch": "main",
+      "relative_path": "small-business-ru/skills/margin-analyzer/SKILL.md",
+      "updated_at": "2026-09-13T04:03:55.511487Z"
+    },
+    "ilyautov/small-business-ru:small-business-ru/skills/canva-creator": {
+      "repo": "ilyautov/small-business-ru",
+      "branch": "main",
+      "relative_path": "small-business-ru/skills/canva-creator/SKILL.md",
+      "updated_at": "2026-09-13T04:03:55.613685Z"
+    },
+    "ilyautov/small-business-ru:small-business-ru/skills/crm-maintenance": {
+      "repo": "ilyautov/small-business-ru",
+      "branch": "main",
+      "relative_path": "small-business-ru/skills/crm-maintenance/SKILL.md",
+      "updated_at": "2026-09-13T04:03:55.747595Z"
+    },
+    "ilyautov/small-business-ru:small-business-ru/skills/job-post-builder": {
+      "repo": "ilyautov/small-business-ru",
+      "branch": "main",
+      "relative_path": "small-business-ru/skills/job-post-builder/SKILL.md",
+      "updated_at": "2026-09-13T04:03:55.845584Z"
+    },
+    "ilyautov/small-business-ru:small-business-ru/skills/tax-season-organizer": {
+      "repo": "ilyautov/small-business-ru",
+      "branch": "main",
+      "relative_path": "small-business-ru/skills/tax-season-organizer/SKILL.md",
+      "updated_at": "2026-09-13T04:03:55.863833Z"
+    },
+    "ilyautov/small-business-ru:small-business-ru/skills/month-end-prep": {
+      "repo": "ilyautov/small-business-ru",
+      "branch": "main",
+      "relative_path": "small-business-ru/skills/month-end-prep/SKILL.md",
+      "updated_at": "2026-09-13T04:03:55.936424Z"
+    },
+    "ilyautov/humanizer-it:skills/humanizer-it": {
+      "repo": "ilyautov/humanizer-it",
+      "branch": "main",
+      "relative_path": "skills/humanizer-it/SKILL.md",
+      "updated_at": "2026-09-13T04:03:56.273808Z"
     }
   }
 }

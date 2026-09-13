@@ -1,0 +1,33 @@
+{
+  "name": "job-post-builder",
+  "description": "Собирает полный пакет для найма — вакансию, структурированный гайд собеседования с системой оценки и шаблон оффера (предложения о работе) — из короткого брифа по роли. Триггеры: «помоги нанять», «мы ищем», «напиши вакансию», «составь описание вакансии», «текст для hh.ru / Авито / VK Работа», «открытая позиция», «вопросы для собеседования», «система оценки кандидата», «составь оффер», «отправь п...",
+  "repo": "ilyautov/small-business-ru",
+  "path": "small-business-ru/skills/job-post-builder",
+  "github_branch": "main",
+  "category": "business",
+  "tags": [
+    "small-business",
+    "finance",
+    "crm",
+    "reporting",
+    "russian"
+  ],
+  "stars": 15,
+  "source": "Community Skills",
+  "dir_name": "job-post-builder",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "reference/examples/worked-example.md",
+    "reference/gotchas.md",
+    "reference/interview-guide-structure.md",
+    "reference/job-post-structure.md",
+    "reference/offer-letter-template.md"
+  ],
+  "author": "ilyautov",
+  "source_url": "https://github.com/ilyautov/small-business-ru/blob/main/small-business-ru/skills/job-post-builder/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ilyautov/small-business-ru/blob/main/small-business-ru/skills/job-post-builder/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

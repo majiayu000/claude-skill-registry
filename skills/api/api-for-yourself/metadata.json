@@ -1,0 +1,38 @@
+{
+  "name": "api-for-yourself",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/api-for-yourself/SKILL.md",
+  "github_branch": "main",
+  "category": "api",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "api-for-yourself",
+  "downloaded_at": "2026-09-13T03:55:13.893439Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "api",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for api: api, endpoint, openapi",
+    "score": 3,
+    "runner_up": "testing",
+    "runner_up_score": 2,
+    "signals": [
+      "api",
+      "endpoint",
+      "openapi"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/api-for-yourself/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/api-for-yourself/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Publish 'how to work with me' as a literal API spec \u2014 endpoints (what to ask me for and what you'll get back), rate limits (meeting and interrupt tolerance), error codes (what happens when you surprise me Friday 5pm), auth (how to earn trust), and a changelog. Use when onboarding to a new team, when a new manager or report arrives, for a team working-styles session, or 'write my README/user manual'. Produces a personal API spec that's genuinely funny and secretly the best onboarding doc on the team."
+}

@@ -1,0 +1,31 @@
+{
+  "name": "smb-onboard",
+  "description": "Claude как наставник. Проводит собственника малого бизнеса через подключение первых двух инструментов, запускает один рецепт, чтобы сразу показать пользу, расспрашивает о бизнесе (сфера, размер, три главные головные боли), сохраняет этот контекст в память, чтобы им пользовались все остальные скиллы, и задаёт ритм еженедельной сверки. Используй ровно один раз, на первой сессии владельца, или ког...",
+  "repo": "ilyautov/small-business-ru",
+  "path": "small-business-ru/skills/smb-onboard",
+  "github_branch": "main",
+  "category": "business",
+  "tags": [
+    "small-business",
+    "finance",
+    "crm",
+    "reporting",
+    "russian"
+  ],
+  "stars": 15,
+  "source": "Community Skills",
+  "dir_name": "smb-onboard",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "reference/examples/happy-path.md",
+    "reference/gotchas.md",
+    "reference/onboard-checklist.md"
+  ],
+  "author": "ilyautov",
+  "source_url": "https://github.com/ilyautov/small-business-ru/blob/main/small-business-ru/skills/smb-onboard/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ilyautov/small-business-ru/blob/main/small-business-ru/skills/smb-onboard/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

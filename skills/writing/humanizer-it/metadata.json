@@ -1,0 +1,36 @@
+{
+  "name": "humanizer-it",
+  "description": "Humanize Italian-language text: remove the signs of AI generation and bring the writing back to life. Works only with Italian — humanizer-ru covers Russian and the original humanizer covers English. Not for translation, writing from scratch, grammar-only passes or code.",
+  "repo": "ilyautov/humanizer-it",
+  "path": "skills/humanizer-it",
+  "github_branch": "main",
+  "category": "writing",
+  "tags": [
+    "italian",
+    "humanize",
+    "ai-detection",
+    "editing",
+    "writing"
+  ],
+  "stars": 2,
+  "source": "Community Skills",
+  "dir_name": "humanizer-it",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "scripts/humanizer_metrics/__init__.py",
+    "scripts/humanizer_metrics/burstiness.py",
+    "scripts/humanizer_metrics/markers.py",
+    "scripts/humanizer_metrics/morphology.py",
+    "scripts/humanizer_metrics/score.py",
+    "scripts/humanizer_metrics/segmentation.py",
+    "scripts/humanizer_metrics/structure.py",
+    "scripts/scan.py"
+  ],
+  "author": "ilyautov",
+  "source_url": "https://github.com/ilyautov/humanizer-it/blob/main/skills/humanizer-it/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ilyautov/humanizer-it/blob/main/skills/humanizer-it/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

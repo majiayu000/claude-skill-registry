@@ -1,0 +1,27 @@
+{
+  "name": "friday-brief",
+  "description": "Выдаёт пятничный пульс конца недели — выручка против прошлой недели, топ-продавцы, победы и точки наблюдения. Принимает необязательное окно обзора 7 или 14 дней. Командная форма: вызывается по имени.",
+  "repo": "ilyautov/small-business-ru",
+  "path": "small-business-ru/skills/friday-brief",
+  "github_branch": "main",
+  "category": "business",
+  "tags": [
+    "small-business",
+    "finance",
+    "crm",
+    "reporting",
+    "russian"
+  ],
+  "stars": 15,
+  "source": "Community Skills",
+  "dir_name": "friday-brief",
+  "archive_mode": "skill-md",
+  "bundled_files": [],
+  "author": "ilyautov",
+  "source_url": "https://github.com/ilyautov/small-business-ru/blob/main/small-business-ru/skills/friday-brief/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ilyautov/small-business-ru/blob/main/small-business-ru/skills/friday-brief/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

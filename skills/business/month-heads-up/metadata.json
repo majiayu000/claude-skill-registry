@@ -1,0 +1,27 @@
+{
+  "name": "month-heads-up",
+  "description": "Запускается 25-го числа — показывает прогноз денежного потока на ближайшие 30 дней и помечает всё, на что стоит обратить внимание до конца месяца. Принимает необязательный горизонт 30 или 60 дней. Командная форма: вызывается по имени.",
+  "repo": "ilyautov/small-business-ru",
+  "path": "small-business-ru/skills/month-heads-up",
+  "github_branch": "main",
+  "category": "business",
+  "tags": [
+    "small-business",
+    "finance",
+    "crm",
+    "reporting",
+    "russian"
+  ],
+  "stars": 15,
+  "source": "Community Skills",
+  "dir_name": "month-heads-up",
+  "archive_mode": "skill-md",
+  "bundled_files": [],
+  "author": "ilyautov",
+  "source_url": "https://github.com/ilyautov/small-business-ru/blob/main/small-business-ru/skills/month-heads-up/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ilyautov/small-business-ru/blob/main/small-business-ru/skills/month-heads-up/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

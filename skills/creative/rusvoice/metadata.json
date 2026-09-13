@@ -1,0 +1,27 @@
+{
+  "name": "rusvoice",
+  "description": "Prepare Russian text for text-to-speech and see what the pipeline will do to it before synthesis: stress marks, a brand dictionary, hard 'e' in loanwords, abbreviations read letter by letter, numbers spelled out. Ships a CLI whose core runs on the bare standard library.",
+  "repo": "ilyautov/rusvoice",
+  "path": "skills/rusvoice",
+  "github_branch": "main",
+  "category": "creative",
+  "tags": [
+    "tts",
+    "russian",
+    "speech",
+    "text-normalization",
+    "voice"
+  ],
+  "stars": 1,
+  "source": "Community Skills",
+  "dir_name": "rusvoice",
+  "archive_mode": "skill-md",
+  "bundled_files": [],
+  "author": "ilyautov",
+  "source_url": "https://github.com/ilyautov/rusvoice/blob/main/skills/rusvoice/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ilyautov/rusvoice/blob/main/skills/rusvoice/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

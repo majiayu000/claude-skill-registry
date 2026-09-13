@@ -1,0 +1,32 @@
+{
+  "name": "canva-creator",
+  "description": "Берёт согласованный контент-бриф и выполняет кампанию от начала до конца: строит календарь публикаций, генерирует макеты для постов в соцсетях через ~~дизайн (VistaCreate, Supa, Поликрафт), пишет тексты подписей и писем, ставит публикации в очередь через ~~crm. Макеты делаются только для постов в соцсетях (Telegram, VK, Дзен, Одноклассники) — письма пишутся обычным текстом и выдаются владельцу...",
+  "repo": "ilyautov/small-business-ru",
+  "path": "small-business-ru/skills/canva-creator",
+  "github_branch": "main",
+  "category": "business",
+  "tags": [
+    "small-business",
+    "finance",
+    "crm",
+    "reporting",
+    "russian"
+  ],
+  "stars": 15,
+  "source": "Community Skills",
+  "dir_name": "canva-creator",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "reference/canva-api.md",
+    "reference/examples/boutique-brief-campaign.md",
+    "reference/gotchas.md",
+    "reference/hubspot-staging.md"
+  ],
+  "author": "ilyautov",
+  "source_url": "https://github.com/ilyautov/small-business-ru/blob/main/small-business-ru/skills/canva-creator/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ilyautov/small-business-ru/blob/main/small-business-ru/skills/canva-creator/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,37 @@
+{
+  "name": "downloads-triage",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/downloads-triage/SKILL.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "downloads-triage",
+  "downloaded_at": "2026-09-13T03:55:14.099146Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "documents",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for documents: docs, pdf",
+    "score": 2,
+    "runner_up": "design",
+    "runner_up_score": 1,
+    "signals": [
+      "docs",
+      "pdf"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/downloads-triage/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/downloads-triage/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Empty the Downloads folder that's become a junk drawer \u2014 the four-bucket pass (file, delete, action, quarantine), the age-based bulk rules that make 2,000 items tractable, and the tiny habit that keeps it empty. Use when asked clean up my downloads folder, 2000 files in downloads help, what's safe to delete here, or stop my downloads from piling up. Produces the bucket pass with bulk rules, the safe-delete classes, the keeper-filing routes, and the weekly sweep habit."
+}

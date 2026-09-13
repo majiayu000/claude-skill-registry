@@ -1,0 +1,27 @@
+{
+  "name": "smb-router",
+  "description": "Парадная дверь плагина для малого бизнеса. Слушает, что владельцу нужно прямо сейчас — расплывчато или конкретно — и направляет к лучшему скиллу или команде для момента. Ещё и проводник: объясняет, что доступно, подсказывает, что попробовать дальше, и подстраивает рекомендации под сохранённый контекст бизнеса. Срабатывает, когда владелец спрашивает «что ты умеешь», «помоги с бизнесом», «на чём...",
+  "repo": "ilyautov/small-business-ru",
+  "path": "small-business-ru/skills/smb-router",
+  "github_branch": "main",
+  "category": "business",
+  "tags": [
+    "small-business",
+    "finance",
+    "crm",
+    "reporting",
+    "russian"
+  ],
+  "stars": 15,
+  "source": "Community Skills",
+  "dir_name": "smb-router",
+  "archive_mode": "skill-md",
+  "bundled_files": [],
+  "author": "ilyautov",
+  "source_url": "https://github.com/ilyautov/small-business-ru/blob/main/small-business-ru/skills/smb-router/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ilyautov/small-business-ru/blob/main/small-business-ru/skills/smb-router/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -43,29 +43,64 @@ jobs:
           INPUT_DATA_REPO: ${{ github.event.inputs.data_repo }}
           INPUT_DATA_SHA: ${{ github.event.inputs.data_sha }}
           DEFAULT_DATA_REPO: ${{ vars.REGISTRY_DATA_REPO }}
+          ALLOWED_CORE_REPO: majiayu000/claude-skill-registry-core
+          ALLOWED_DATA_REPO: majiayu000/claude-skill-registry-data
         run: |
-          core_repo="${PAYLOAD_CORE_REPO:-$INPUT_CORE_REPO}"
-          core_sha="${PAYLOAD_CORE_SHA:-$INPUT_CORE_SHA}"
-          data_repo="${PAYLOAD_DATA_REPO:-$INPUT_DATA_REPO}"
-          data_sha="${PAYLOAD_DATA_SHA:-$INPUT_DATA_SHA}"
+          set -euo pipefail
 
+          core_repo="${PAYLOAD_CORE_REPO:-${INPUT_CORE_REPO:-}}"
+          core_sha="${PAYLOAD_CORE_SHA:-${INPUT_CORE_SHA:-}}"
+          data_repo="${PAYLOAD_DATA_REPO:-${INPUT_DATA_REPO:-}}"
+          data_sha="${PAYLOAD_DATA_SHA:-${INPUT_DATA_SHA:-}}"
+
+          if [ -z "$core_repo" ]; then
+            core_repo="$ALLOWED_CORE_REPO"
+          fi
           if [ -z "$data_repo" ]; then
-            data_repo="$DEFAULT_DATA_REPO"
+            data_repo="${DEFAULT_DATA_REPO:-$ALLOWED_DATA_REPO}"
           fi
 
-          if [ -z "$core_repo" ] || [ -z "$core_sha" ] || [ -z "$data_repo" ] || [ -z "$data_sha" ]; then
-            echo "Missing required publish refs."
-            echo "core_repo=$core_repo"
+          if [ -z "$core_sha" ] || [ -z "$data_sha" ]; then
+            echo "Missing required publish SHAs."
             echo "core_sha=$core_sha"
-            echo "data_repo=$data_repo"
             echo "data_sha=$data_sha"
             exit 1
           fi
 
-          echo "core_repo=$core_repo" >> "$GITHUB_OUTPUT"
-          echo "core_sha=$core_sha" >> "$GITHUB_OUTPUT"
-          echo "data_repo=$data_repo" >> "$GITHUB_OUTPUT"
-          echo "data_sha=$data_sha" >> "$GITHUB_OUTPUT"
+          if [ "$core_repo" != "$ALLOWED_CORE_REPO" ]; then
+            echo "Rejected core_repo (not allowlisted): $core_repo"
+            exit 1
+          fi
+          if [ "$data_repo" != "$ALLOWED_DATA_REPO" ]; then
+            echo "Rejected data_repo (not allowlisted): $data_repo"
+            exit 1
+          fi
+
+          if ! [[ "$core_sha" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "Invalid core_sha (want 40-char lowercase hex)."
+            exit 1
+          fi
+          if ! [[ "$data_sha" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "Invalid data_sha (want 40-char lowercase hex)."
+            exit 1
+          fi
+
+          append_output() {
+            local name="$1"
+            local value="$2"
+            local delim
+            delim="$(python3 -c 'import secrets; print(secrets.token_hex(16))')"
+            {
+              printf '%s<<%s\n' "$name" "$delim"
+              printf '%s\n' "$value"
+              printf '%s\n' "$delim"
+            } >> "$GITHUB_OUTPUT"
+          }
+
+          append_output core_repo "$core_repo"
+          append_output core_sha "$core_sha"
+          append_output data_repo "$data_repo"
+          append_output data_sha "$data_sha"
 
       - name: Free runner disk for large publish
         run: |
@@ -158,17 +193,32 @@ jobs:
             --main "$GITHUB_WORKSPACE"
 
       - name: Write provenance manifest
+        env:
+          CORE_REPO: ${{ steps.refs.outputs.core_repo }}
+          CORE_SHA: ${{ steps.refs.outputs.core_sha }}
+          DATA_REPO: ${{ steps.refs.outputs.data_repo }}
+          DATA_SHA: ${{ steps.refs.outputs.data_sha }}
         run: |
+          set -euo pipefail
           mkdir -p provenance
-          cat > provenance/merge-source.json <<EOF
-          {
-            "generated_at": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
-            "core_repo": "${{ steps.refs.outputs.core_repo }}",
-            "core_sha": "${{ steps.refs.outputs.core_sha }}",
-            "data_repo": "${{ steps.refs.outputs.data_repo }}",
-            "data_sha": "${{ steps.refs.outputs.data_sha }}"
+          python3 - <<'PY'
+          import json
+          import os
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          payload = {
+              "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+              "core_repo": os.environ["CORE_REPO"],
+              "core_sha": os.environ["CORE_SHA"],
+              "data_repo": os.environ["DATA_REPO"],
+              "data_sha": os.environ["DATA_SHA"],
           }
-          EOF
+          Path("provenance/merge-source.json").write_text(
+              json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
+              encoding="utf-8",
+          )
+          PY
 
       - name: Validate final artifact API contract
         run: |

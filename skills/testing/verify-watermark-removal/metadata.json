@@ -1,0 +1,29 @@
+{
+  "name": "verify-watermark-removal",
+  "description": "Measures whether a watermark remover actually removed the mark: plant a SynthID-class watermark with your own key, run the tool, and compare what came back.",
+  "repo": "Yurakonoplya/unmark-checker",
+  "path": "skills/verify-watermark-removal",
+  "github_branch": "main",
+  "github_commit_sha": "d445d190bf28a129802283de9bff7e8d7f98e77f",
+  "assets_verified_at": "2026-09-14T04:15:23.316451Z",
+  "category": "testing",
+  "tags": [
+    "watermark",
+    "synthid",
+    "detector",
+    "benchmark",
+    "verification"
+  ],
+  "stars": 0,
+  "source": "Community Skills",
+  "dir_name": "verify-watermark-removal",
+  "archive_mode": "skill-md",
+  "bundled_files": [],
+  "author": "Yurakonoplya",
+  "source_url": "https://github.com/Yurakonoplya/unmark-checker/blob/main/skills/verify-watermark-removal/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Yurakonoplya/unmark-checker/blob/main/skills/verify-watermark-removal/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -45,11 +45,20 @@ DANGEROUS_PATTERNS = {
     "reverse_shell_dev_tcp": r"(?:\b(?:bash|sh|zsh)\b[^\n]{0,120}(?:>&|<>|>|<)\s*|\bexec\s+\d*(?:<>|>|<)\s*)/dev/tcp/[^\s/]+/\d{1,5}\b",
     # Require a concrete remote source. Abstract defensive notation such as
     # `curl ... | sh` and `curl|bash` describes the risk but is not executable.
+    # Named vars, positional params ($0/$1/${1}), and special params ($@/$*/${@…}/${*…})
+    # are concrete enough to fetch attacker-controlled content.
     "curl_pipe_shell": (
         r"(?:curl|wget)\b"
         r"(?=[^\n|]{0,200}(?:"
         r"https?://|"
-        r"\$(?:[A-Za-z_][A-Za-z0-9_]*|\{[A-Za-z_][A-Za-z0-9_]*\})|"
+        r"\$(?:"
+        r"[A-Za-z_][A-Za-z0-9_]*|"
+        r"\{[A-Za-z_][A-Za-z0-9_]*\}|"
+        r"[0-9]+|"
+        r"\{[0-9]+\}|"
+        r"[@*]|"
+        r"\{[@*][^}\n]*\}"
+        r")|"
         r"(?:[A-Za-z0-9-]+\.)+[A-Za-z]{2,}|"
         r"(?:\d{1,3}\.){3}\d{1,3}|"
         r"localhost(?::\d+)?"

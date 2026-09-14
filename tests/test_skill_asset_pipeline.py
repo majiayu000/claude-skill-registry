@@ -774,6 +774,124 @@ class TestBackfillTargets:
 
         assert result == ([], [], "", {})
 
+    def test_unpinned_bundle_rejects_response_larger_than_advertised_size(self, tmp_path):
+        """Fail closed when body exceeds listing size; leave no on-disk artifact."""
+        advertised = b"ok\n"
+        oversized = advertised + b"x" * 64
+
+        class FakeStream:
+            def __init__(self, body: bytes):
+                self._body = body
+
+            async def iter_chunked(self, size):
+                for offset in range(0, len(self._body), size):
+                    yield self._body[offset : offset + size]
+
+        class FakeResponse:
+            def __init__(self, body: bytes):
+                self.status = 200
+                self.content_length = None
+                self.content = FakeStream(body)
+
+            async def __aenter__(self):
+                return self
+
+            async def __aexit__(self, exc_type, exc, tb):
+                return None
+
+            async def read(self):
+                return oversized
+
+        class FakeSession:
+            def get(self, url, timeout=None):
+                return FakeResponse(oversized)
+
+        async def contents_collector(*_args):
+            return (
+                [
+                    {
+                        "repo_path": "skills/demo/scripts/tool.py",
+                        "relative_path": "scripts/tool.py",
+                        "download_url": "https://download.example/tool.py",
+                        "size": len(advertised),
+                        "sha": "a" * 40,
+                    }
+                ],
+                False,
+            )
+
+        skill_dir = tmp_path / "demo"
+        skill_dir.mkdir()
+        result = asyncio.run(
+            sync_download_support.download_bundled_files_to_directory(
+                FakeSession(),
+                "acme/tools",
+                "main",
+                "skills/demo/SKILL.md",
+                skill_dir,
+                True,
+                pin_commit_sha=False,
+                timeout=None,
+                tree_cache={},
+                contents_collector=contents_collector,
+            )
+        )
+
+        assert result[0] == []
+        assert result[1] == ["scripts/tool.py"]
+        assert result[2] == "bundled_download_failed"
+        assert not (skill_dir / "scripts" / "tool.py").exists()
+        assert list(skill_dir.rglob("*")) == []
+
+    @pytest.mark.parametrize(
+        "size",
+        [None, "not-a-size", -1],
+        ids=["none", "non-numeric", "negative"],
+    )
+    def test_unpinned_bundle_rejects_invalid_advertised_size(self, tmp_path, size):
+        """Fail closed on unusable listing sizes without starting a download."""
+
+        class FakeSession:
+            def get(self, url, timeout=None):
+                raise AssertionError("invalid advertised size must not start a download")
+
+        async def contents_collector(*_args):
+            return (
+                [
+                    {
+                        "repo_path": "skills/demo/scripts/tool.py",
+                        "relative_path": "scripts/tool.py",
+                        "download_url": "https://download.example/tool.py",
+                        "size": size,
+                        "sha": "a" * 40,
+                    }
+                ],
+                False,
+            )
+
+        skill_dir = tmp_path / "demo"
+        skill_dir.mkdir()
+        result = asyncio.run(
+            sync_download_support.download_bundled_files_to_directory(
+                FakeSession(),
+                "acme/tools",
+                "main",
+                "skills/demo/SKILL.md",
+                skill_dir,
+                True,
+                pin_commit_sha=False,
+                timeout=None,
+                tree_cache={},
+                contents_collector=contents_collector,
+            )
+        )
+
+        assert result[0] == []
+        assert result[1] == ["scripts/tool.py"]
+        assert result[2] == "bundled_download_failed"
+        assert not (skill_dir / "scripts" / "tool.py").exists()
+        assert list(skill_dir.rglob("*")) == []
+
     @pytest.mark.parametrize(
         "paths",
         [

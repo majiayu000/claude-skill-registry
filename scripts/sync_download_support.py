@@ -21,6 +21,7 @@ from sync_pipeline_support import (
     should_recurse_bundled_dir,
     skill_source_dir,
 )
+from sync_pipeline_support import MAX_BUNDLED_BIN_FILE_BYTES as MAX_BUNDLED_BIN_FILE_BYTES
 from sync_pipeline_support import MAX_BUNDLED_FILE_BYTES as MAX_BUNDLED_FILE_BYTES
 from utils import build_legal_metadata, classify_license, normalize_license
 
@@ -393,14 +394,27 @@ async def download_bundled_files_to_directory(
         pinned_url = f"{GITHUB_RAW_BASE}/{repo}/{branch}/{quote(entry['repo_path'], safe='/')}"
         url = pinned_url if pin_commit_sha else entry["download_url"] or pinned_url
         try:
+            advertised_size = int(entry["size"])
+        except (TypeError, ValueError):
+            failed.append(rel_path)
+            continue
+        # Cap at the larger per-file limit so bin/ assets remain downloadable while
+        # still refusing to buffer more than the listing advertised (or absolute max).
+        absolute_max = (
+            MAX_BUNDLED_BIN_FILE_BYTES
+            if rel_path.split("/", 1)[0] == "bin"
+            else MAX_BUNDLED_FILE_BYTES
+        )
+        max_bytes = min(advertised_size, absolute_max)
+        if max_bytes < 0:
+            failed.append(rel_path)
+            continue
+        try:
             async with session.get(url, timeout=timeout) as response:
                 if response.status != 200:
                     failed.append(rel_path)
                     continue
-                if pin_commit_sha:
-                    content = await read_response_bytes_limited(response, entry["size"])
-                else:
-                    content = await response.read()
+                content = await read_response_bytes_limited(response, max_bytes)
         except Exception:
             failed.append(rel_path)
             continue

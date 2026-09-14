@@ -348,6 +348,7 @@ def main():
                 observations_output_path=observations_output,
                 learning_priors_path=learning_priors,
                 cleanup_ci_untracked=not args.skip_ci_untracked_cleanup,
+                pin_commit_sha=True,
             )
         )
         if args.fail_on_empty_download and should_fail_on_empty_download(stats):

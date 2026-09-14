@@ -1,0 +1,28 @@
+{
+  "name": "orca-replay",
+  "description": "Answers questions about a past agent run from its recording rather than from memory, and replays or forks that run",
+  "repo": "Continuum-AI-Corp/OrcaReplay",
+  "path": "skills/orca-replay",
+  "github_branch": "main",
+  "github_commit_sha": "2ba42e7868118a68eafa554a07ea6f6f4ee431e1",
+  "assets_verified_at": "2026-09-14T04:15:24.689291Z",
+  "category": "development",
+  "tags": [
+    "debugging",
+    "replay",
+    "traces",
+    "reproducibility"
+  ],
+  "stars": 0,
+  "source": "Community Skills",
+  "dir_name": "orca-replay",
+  "archive_mode": "skill-md",
+  "bundled_files": [],
+  "author": "Continuum-AI-Corp",
+  "source_url": "https://github.com/Continuum-AI-Corp/OrcaReplay/blob/main/skills/orca-replay/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Continuum-AI-Corp/OrcaReplay/blob/main/skills/orca-replay/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

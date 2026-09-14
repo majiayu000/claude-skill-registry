@@ -20,11 +20,13 @@ def load_module():
 
 
 class FakeResponse:
-    def __init__(self, status, *, text="", json_payload=None, body=b""):
+    def __init__(self, status, *, text="", json_payload=None, body=b"", content_length=None):
         self.status = status
         self._text = text
         self._json_payload = json_payload
-        self._body = body
+        self._body = text.encode("utf-8") if body == b"" and text else body
+        self.content_length = len(self._body) if content_length is None else content_length
+        self.content = self
 
     async def __aenter__(self):
         return self
@@ -40,6 +42,10 @@ class FakeResponse:
 
     async def read(self):
         return self._body
+
+    async def iter_chunked(self, size):
+        for offset in range(0, len(self._body), size):
+            yield self._body[offset : offset + size]
 
 
 def install_fake_aiohttp(monkeypatch, routes):

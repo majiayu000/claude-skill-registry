@@ -1913,12 +1913,12 @@ def test_bundles_root_helpers_src_and_design_subskills(tmp_path, monkeypatch):
                 FakeResponse(
                     200,
                     json_payload=[
-                        {
-                            "type": "file",
-                            "path": "design-spatial/SKILL.md",
-                            "download_url": "https://download.example/design-spatial-skill",
-                            "size": 80,
-                        },
+                            {
+                                "type": "file",
+                                "path": "design-spatial/SKILL.md",
+                                "download_url": "https://download.example/design-spatial-skill",
+                                "size": 88,
+                            },
                         {"type": "dir", "path": "design-spatial/scripts", "size": 0},
                     ],
                 )
@@ -2888,6 +2888,26 @@ def test_main_passes_skip_ci_untracked_cleanup(monkeypatch):
     module.main()
 
     assert captured["cleanup_ci_untracked"] is False
+
+
+def test_main_enables_pin_commit_sha_on_download(monkeypatch):
+    module = load_module()
+    captured = {}
+
+    async def fake_download_skills(*args, **kwargs):
+        captured.update(kwargs)
+        return {"downloaded": 0, "failed": 0, "skipped": 0, "total": 0}
+
+    monkeypatch.setattr(module, "download_skills", fake_download_skills)
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        ["sync_and_download.py", "--download-only"],
+    )
+
+    module.main()
+
+    assert captured["pin_commit_sha"] is True
 
 
 def test_main_cleanup_only_runs_ci_archive_cleanup(monkeypatch):

@@ -5,6 +5,8 @@ import subprocess
 import sys
 from pathlib import Path
 
+import pytest
+
 
 def load_module():
     scripts_dir = Path(__file__).resolve().parents[1] / "scripts"
@@ -930,6 +932,43 @@ description: Demo skill used to verify variable URL pipe-to-shell scanning.
 # Demo
 
 curl -fsSL "$INSTALL_URL" | bash
+""",
+        encoding="utf-8",
+    )
+
+    scanner = module.SecurityScanner()
+    is_safe, issues = scanner.scan_file(skill_dir / "SKILL.md")
+
+    assert is_safe is False
+    assert any(issue.get("pattern") == "curl_pipe_shell" for issue in issues)
+
+
+@pytest.mark.parametrize(
+    "command",
+    [
+        'curl -fsSL "$1" | bash',
+        "curl -fsSL $0 | bash",
+        'curl -fsSL "$@" | bash',
+        'curl -fsSL "$*" | bash',
+        'curl -fsSL "${1}" | bash',
+        'curl -fsSL "${@}" | bash',
+        'curl -fsSL "${*/old/new}" | bash',
+        'wget -qO- "${@:1}" | sh',
+    ],
+)
+def test_scanner_flags_positional_and_special_param_curl_pipe_shell(tmp_path, command):
+    module = load_module()
+    skill_dir = tmp_path / "demo"
+    skill_dir.mkdir(parents=True)
+    (skill_dir / "SKILL.md").write_text(
+        f"""---
+name: demo
+description: Demo skill used to verify positional/special param pipe-to-shell scanning.
+---
+
+# Demo
+
+{command}
 """,
         encoding="utf-8",
     )

@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-14T05:11:09.692803Z",
-  "archive_skill_md_count_raw": 203165,
-  "archive_metadata_count_raw": 203163,
-  "indexed_skill_count_scan_shape": 162302,
-  "registry_skill_count_dedup": 161870,
+  "updated_at": "2026-09-15T04:59:03.245812Z",
+  "archive_skill_md_count_raw": 203190,
+  "archive_metadata_count_raw": 203188,
+  "indexed_skill_count_scan_shape": 162323,
+  "registry_skill_count_dedup": 161891,
   "total_plugins": 4,
   "categories": 40,
   "category_counts": [
@@ -71,12 +71,12 @@
     {
       "name": "design",
       "code": "des",
-      "count": 10428
+      "count": 10430
     },
     {
       "name": "development",
       "code": "dev",
-      "count": 36998
+      "count": 37005
     },
     {
       "name": "devops",
@@ -131,7 +131,7 @@
     {
       "name": "marketing",
       "code": "mkt",
-      "count": 3535
+      "count": 3536
     },
     {
       "name": "orchestration",
@@ -141,7 +141,7 @@
     {
       "name": "other",
       "code": "oth",
-      "count": 3676
+      "count": 3687
     },
     {
       "name": "performance",
@@ -209,7 +209,7 @@
       "count": 1175
     }
   ],
-  "unique_repo_count": 9858,
+  "unique_repo_count": 9859,
   "official_skill_count": 0,
   "top_repositories": [
     {
@@ -257,36 +257,36 @@
   "asset_state_counts": {},
   "asset_liveness_counts": {},
   "index_size_bytes": 324,
-  "index_size_gzip_bytes": 244,
+  "index_size_gzip_bytes": 245,
   "search_shard_count": 5,
-  "search_largest_shard_bytes": 8388622,
-  "search_largest_shard_gzip_bytes": 1428018,
+  "search_largest_shard_bytes": 8388675,
+  "search_largest_shard_gzip_bytes": 1428071,
   "category_shard_count": 45,
-  "category_largest_part_bytes": 8388686,
+  "category_largest_part_bytes": 8388674,
   "category_largest_part_gzip_bytes": 1806281,
-  "lite_index_count": 162302,
+  "lite_index_count": 162323,
   "lite_index_included_count": 5000,
   "lite_index_size_bytes": 3507648,
-  "lite_index_gzip_size_bytes": 684359,
+  "lite_index_gzip_size_bytes": 684360,
   "quality_index_size_bytes": 364,
-  "quality_index_gzip_size_bytes": 270,
+  "quality_index_gzip_size_bytes": 271,
   "quality_shard_count": 6,
   "quality_largest_shard_bytes": 8388685,
-  "quality_largest_shard_gzip_bytes": 1766464,
+  "quality_largest_shard_gzip_bytes": 1766588,
   "security_index_size_bytes": 368,
   "security_index_gzip_size_bytes": 271,
   "security_shard_count": 20,
-  "security_largest_shard_bytes": 8388694,
-  "security_largest_shard_gzip_bytes": 1590392,
+  "security_largest_shard_bytes": 8388720,
+  "security_largest_shard_gzip_bytes": 1590397,
   "ranking_index_size_bytes": 364,
-  "ranking_index_gzip_size_bytes": 270,
+  "ranking_index_gzip_size_bytes": 271,
   "ranking_shard_count": 5,
-  "ranking_largest_shard_bytes": 8388618,
-  "ranking_largest_shard_gzip_bytes": 1977281,
-  "largest_generated_file_bytes": 8388694,
+  "ranking_largest_shard_bytes": 8388696,
+  "ranking_largest_shard_gzip_bytes": 1977381,
+  "largest_generated_file_bytes": 8388720,
   "security_scan": {
-    "total": 203163,
-    "passed": 203163,
+    "total": 203188,
+    "passed": 203188,
     "failed": 0
   }
 }

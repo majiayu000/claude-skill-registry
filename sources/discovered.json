@@ -1,7 +1,7 @@
 {
-  "discovered_at": "2026-09-14T04:14:45.312763Z",
+  "discovered_at": "2026-09-15T04:15:18.039275Z",
   "total_repos": 300,
-  "total_skills": 8,
+  "total_skills": 21,
   "scanned_repos": 300,
   "limits": {
     "max_repos": 300,
@@ -18,6 +18,7 @@
     "Appllama/appllama-skills",
     "Ar9av/PaperOrchestra",
     "Arindam200/cc-lens",
+    "Ark0N/Codeman",
     "Ashad001/remotion-transitions",
     "AsiaOstrich/universal-dev-skills",
     "Avijit07x/claude-db",
@@ -112,7 +113,6 @@
     "avelikiy/great_cto",
     "avibebuilder/claude-prime",
     "avidevelops/claude-architect-exam-prep",
-    "axtonliu/smart-illustrator",
     "ayghri/i-have-adhd",
     "baidu-netdisk/bdpan-storage",
     "bevibing/tutor-skills",
@@ -254,6 +254,7 @@
     "radekamirko/C.R.I.S.P",
     "rampstackco/claude-skills",
     "respira-press/agent-skills-wordpress",
+    "reticlehq/reticle",
     "rohitg00/awesome-claude-design",
     "rohitg00/pro-workflow",
     "romainsimon/paperasse",
@@ -309,41 +310,92 @@
     "zenbu-labs/terminal-browser",
     "zenstory-ai/drama-skills",
     "zenstory-ai/novel-to-game",
-    "zenstory-ai/oh-story-claudecode",
-    "zscole/adversarial-spec"
+    "zenstory-ai/oh-story-claudecode"
   ],
   "skills": [
     {
-      "repo": "K-Dense-AI/scientific-agent-skills",
-      "path": "skills/alphagenome/SKILL.md"
+      "repo": "Ark0N/Codeman",
+      "path": "skills/codeman/SKILL.md"
     },
     {
-      "repo": "eternityspring/reelbench-skills",
-      "path": "skills/video-sync/SKILL.md"
+      "repo": "Ark0N/Codeman",
+      "path": "plugins/codeman/skills/codeman/SKILL.md"
     },
     {
-      "repo": "eternityspring/reelbench-skills",
-      "path": "skills/video-shots/SKILL.md"
+      "repo": "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance",
+      "path": "plugins/tprm/skills/tprm/SKILL.md"
     },
     {
-      "repo": "plugin87/ux-ui-agent-skills",
-      "path": ".claude/skills/design-doctrine/SKILL.md"
+      "repo": "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance",
+      "path": "plugins/sox-itgc/skills/sox-itgc/SKILL.md"
     },
     {
-      "repo": "respira-press/agent-skills-wordpress",
-      "path": "skills/murmur-review-loop/SKILL.md"
+      "repo": "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance",
+      "path": "plugins/cyber-essentials/skills/cyber-essentials/SKILL.md"
     },
     {
-      "repo": "respira-press/agent-skills-wordpress",
-      "path": "skills/wordpress-security-review/SKILL.md"
+      "repo": "avelikiy/great_cto",
+      "path": "skills/codex-host/SKILL.md"
     },
     {
-      "repo": "sergebulaev/linkedin-skills",
-      "path": "skills/linkedin-interviewer/SKILL.md"
+      "repo": "cgallic/kai-cmo-harness",
+      "path": "harness/skills/kai-bulkpublish/SKILL.md"
     },
     {
-      "repo": "sergebulaev/linkedin-skills",
-      "path": ".codex-marketplace/linkedin-skills/skills/linkedin-interviewer/SKILL.md"
+      "repo": "reticlehq/reticle",
+      "path": "plugin/SKILL.md"
+    },
+    {
+      "repo": "reticlehq/reticle",
+      "path": "skills/agentic-tdd/SKILL.md"
+    },
+    {
+      "repo": "reticlehq/reticle",
+      "path": "skills/audit-my-app/SKILL.md"
+    },
+    {
+      "repo": "reticlehq/reticle",
+      "path": "skills/debug-broken-ui/SKILL.md"
+    },
+    {
+      "repo": "reticlehq/reticle",
+      "path": "skills/verify-ui-change/SKILL.md"
+    },
+    {
+      "repo": "reticlehq/reticle",
+      "path": "skills/replay-user-flows/SKILL.md"
+    },
+    {
+      "repo": "reticlehq/reticle",
+      "path": "skills/verify-unattended/SKILL.md"
+    },
+    {
+      "repo": "reticlehq/reticle",
+      "path": "skills/drive-desktop-app/SKILL.md"
+    },
+    {
+      "repo": "reticlehq/reticle",
+      "path": "skills/install-and-verify/SKILL.md"
+    },
+    {
+      "repo": "reticlehq/reticle",
+      "path": "skills/fix-what-i-pointed-at/SKILL.md"
+    },
+    {
+      "repo": "reticlehq/reticle",
+      "path": "skills/design-system-compliance/SKILL.md"
+    },
+    {
+      "repo": "reticlehq/reticle",
+      "path": "skills/false-green-tests/SKILL.md"
+    },
+    {
+      "repo": "reticlehq/reticle",
+      "path": "skills/test-error-states/SKILL.md"
+    },
+    {
+      "repo": "rse/ase",
+      "path": "plugin/skills/ase-task-status/SKILL.md"
     }
   ]
 }

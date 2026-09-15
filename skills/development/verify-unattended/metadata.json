@@ -1,0 +1,39 @@
+{
+  "name": "verify-unattended",
+  "repo": "reticlehq/reticle",
+  "path": "skills/verify-unattended/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/reticlehq/reticle",
+  "dir_name": "verify-unattended",
+  "downloaded_at": "2026-09-15T04:10:02.659674Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for development: dev, code, build, compile",
+    "score": 4,
+    "runner_up": "bash",
+    "runner_up_score": 2,
+    "signals": [
+      "dev",
+      "code",
+      "build",
+      "compile"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "reticlehq",
+  "source_url": "https://github.com/reticlehq/reticle/blob/main/skills/verify-unattended/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/reticlehq/reticle/blob/main/skills/verify-unattended/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Install, instrument and verify a web app end to end without pausing for a human. Use in an autonomous or goal-mode agent, in CI, or in any client that asks for approval on every command: it never says \"restart your client\" or \"open a browser\", because it takes a route that needs neither. Prefer the normal install-and-verify skill when a human is present and can answer."
+}

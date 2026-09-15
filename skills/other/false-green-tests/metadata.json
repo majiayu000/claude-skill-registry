@@ -1,0 +1,36 @@
+{
+  "name": "false-green-tests",
+  "repo": "reticlehq/reticle",
+  "path": "skills/false-green-tests/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/reticlehq/reticle",
+  "dir_name": "false-green-tests",
+  "downloaded_at": "2026-09-15T04:10:04.861905Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category api scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "design",
+    "runner_up_score": 1,
+    "signals": [
+      "api"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "reticlehq",
+  "source_url": "https://github.com/reticlehq/reticle/blob/main/skills/false-green-tests/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/reticlehq/reticle/blob/main/skills/false-green-tests/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Find out why the tests pass but the app is broken. Catches false greens: a green suite over a feature that does not work, a mocked API standing in for a real one, an assertion that holds no matter what the app does, a click handler wired to nothing. Use when the suite is green and the user says it is broken, when a test never fails, when coverage looks fine but bugs still ship, or before trusting a passing run you did not watch."
+}

@@ -1,0 +1,38 @@
+{
+  "name": "agentic-tdd",
+  "repo": "reticlehq/reticle",
+  "path": "skills/agentic-tdd/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/reticlehq/reticle",
+  "dir_name": "agentic-tdd",
+  "downloaded_at": "2026-09-15T04:10:01.641687Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: code, build, refactor",
+    "score": 3,
+    "runner_up": "agent",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "build",
+      "refactor"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "reticlehq",
+  "source_url": "https://github.com/reticlehq/reticle/blob/main/skills/agentic-tdd/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/reticlehq/reticle/blob/main/skills/agentic-tdd/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Test-driven development for behaviour a unit test cannot reach, by writing the expectation against the running app before writing the code. Declare the consequence first, watch it fail, implement, watch it pass. Use when building a user-facing feature, when the user asks for TDD on UI or full-stack work, when a unit test cannot express the outcome that matters, or when you want a red-green loop that runs against the real app instead of mocks."
+}

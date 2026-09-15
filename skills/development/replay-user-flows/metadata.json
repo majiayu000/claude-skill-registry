@@ -1,0 +1,38 @@
+{
+  "name": "replay-user-flows",
+  "repo": "reticlehq/reticle",
+  "path": "skills/replay-user-flows/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/reticlehq/reticle",
+  "dir_name": "replay-user-flows",
+  "downloaded_at": "2026-09-15T04:10:02.460558Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: code, build, refactor",
+    "score": 3,
+    "runner_up": "testing",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "build",
+      "refactor"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "reticlehq",
+  "source_url": "https://github.com/reticlehq/reticle/blob/main/skills/replay-user-flows/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/reticlehq/reticle/blob/main/skills/replay-user-flows/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Turn a user journey you just clicked through into a saved regression check that re-runs deterministically, with no model in the loop and no test code to write. Use when you have driven the same flow twice, when the user wants regression coverage without a Playwright suite, when a refactor needs proving against every existing journey, or when re-verifying by hand is costing a full drive every time."
+}

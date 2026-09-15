@@ -1,0 +1,37 @@
+{
+  "name": "debug-broken-ui",
+  "repo": "reticlehq/reticle",
+  "path": "skills/debug-broken-ui/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/reticlehq/reticle",
+  "dir_name": "debug-broken-ui",
+  "downloaded_at": "2026-09-15T04:10:02.028764Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: code, debug",
+    "score": 2,
+    "runner_up": "ai-ml",
+    "runner_up_score": 1,
+    "signals": [
+      "code",
+      "debug"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "reticlehq",
+  "source_url": "https://github.com/reticlehq/reticle/blob/main/skills/debug-broken-ui/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/reticlehq/reticle/blob/main/skills/debug-broken-ui/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Find out why something in a running web app does not work, when the console is empty and the code looks correct. Reads the click, the request, the store and the console together and returns the file:line to open. Use when a button does nothing, a form will not submit, data will not load, a page renders blank or stale, a modal will not close, or the user says \"it's broken\" and the code review says it is fine."
+}

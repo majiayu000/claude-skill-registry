@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updated_at": "2026-09-15T04:16:03.173184Z",
-  "total_count": 1673,
+  "updated_at": "2026-09-16T04:12:48.111222Z",
+  "total_count": 1674,
   "entries": {
     "Xquik-dev/x-twitter-scraper": {
       "repo": "Xquik-dev/x-twitter-scraper",
@@ -9206,14 +9206,14 @@
       "branch": "main",
       "relative_path": "skills/skill-seekers/SKILL.md",
       "commit_sha": "c333a379bfb43f42eb605fd575be955762a9fa7b",
-      "updated_at": "2026-09-15T04:15:56.309697Z"
+      "updated_at": "2026-09-16T04:12:38.948056Z"
     },
     "lackeyjb/playwright-skill:name:playwright-skill": {
       "repo": "lackeyjb/playwright-skill",
       "branch": "main",
       "relative_path": "skills/playwright-skill/SKILL.md",
       "commit_sha": "dd47a6a023e249eb1b36e9e943eab89d0900865d",
-      "updated_at": "2026-09-15T04:15:53.202671Z"
+      "updated_at": "2026-09-16T04:12:38.387773Z"
     },
     "ToniPerea/humanizar-texto-es:name:humanizar-texto-es": {
       "repo": "ToniPerea/humanizar-texto-es",
@@ -9268,7 +9268,7 @@
       "branch": "main",
       "relative_path": "skills/pagerunner-skill/SKILL.md",
       "commit_sha": "de62d40327b23023f3153424e09f0d4658c72cbb",
-      "updated_at": "2026-09-15T04:15:55.515562Z"
+      "updated_at": "2026-09-16T04:12:38.533722Z"
     },
     "miningstore/confluence-to-agent-knowledge-base:name:confluence-to-agent-knowledge-base": {
       "repo": "miningstore/confluence-to-agent-knowledge-base",
@@ -9575,7 +9575,7 @@
       "branch": "main",
       "relative_path": "SKILL.md",
       "commit_sha": "a4d22c97a3c9b3b6a6a57a86acab82cfaf89a921",
-      "updated_at": "2026-09-15T04:15:55.150712Z"
+      "updated_at": "2026-09-16T04:12:37.655718Z"
     },
     "Dicklesworthstone/slb:name:unknown": {
       "repo": "Dicklesworthstone/slb",
@@ -9624,7 +9624,7 @@
       "branch": "main",
       "relative_path": "skill.md",
       "commit_sha": "fd1fbb3acedd22175bad0c24a9c465dcc7933f18",
-      "updated_at": "2026-09-15T04:15:55.547134Z"
+      "updated_at": "2026-09-16T04:12:37.360010Z"
     },
     "fredsun/CodeDiary:name:unknown": {
       "repo": "fredsun/CodeDiary",
@@ -9967,7 +9967,7 @@
       "branch": "master",
       "relative_path": "skills/consilium-principis/SKILL.md",
       "commit_sha": "1231d20ff70921f8060d6274297184838cb6535e",
-      "updated_at": "2026-09-15T04:15:57.096369Z"
+      "updated_at": "2026-09-16T04:12:39.203081Z"
     },
     "ilyautov/small-business-ru:small-business-ru/skills/content-strategy": {
       "repo": "ilyautov/small-business-ru",
@@ -10046,6 +10046,13 @@
       "branch": "main",
       "relative_path": "skills/orca-replay/SKILL.md",
       "updated_at": "2026-09-14T04:15:24.700087Z"
+    },
+    "dorelysm/naturalizacion-texto-es:.claude/skills/naturalizacion-texto-ia": {
+      "repo": "dorelysm/naturalizacion-texto-es",
+      "branch": "main",
+      "relative_path": ".claude/skills/naturalizacion-texto-ia/SKILL.md",
+      "commit_sha": "7eaba75f50678343263a17ace92bf09dff9af876",
+      "updated_at": "2026-09-16T04:12:35.364163Z"
     }
   }
 }

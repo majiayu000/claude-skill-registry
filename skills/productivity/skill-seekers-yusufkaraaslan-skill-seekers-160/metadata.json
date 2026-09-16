@@ -1,0 +1,27 @@
+{
+  "name": "skill-seekers",
+  "description": "Convert docs, repos, PDFs into Claude Skills with conflict detection",
+  "repo": "yusufkaraaslan/Skill_Seekers",
+  "path": "skills/skill-seekers/SKILL.md",
+  "github_branch": "main",
+  "github_commit_sha": "c333a379bfb43f42eb605fd575be955762a9fa7b",
+  "assets_verified_at": "2026-09-16T04:12:38.943539Z",
+  "category": "productivity",
+  "tags": [
+    "converter",
+    "skills",
+    "documentation"
+  ],
+  "stars": 0,
+  "source": "Community Skills",
+  "dir_name": "skill-seekers-yusufkaraaslan-skill-seekers-160",
+  "archive_mode": "skill-md",
+  "bundled_files": [],
+  "author": "yusufkaraaslan",
+  "source_url": "https://github.com/yusufkaraaslan/Skill_Seekers/blob/main/skills/skill-seekers/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/yusufkaraaslan/Skill_Seekers/blob/main/skills/skill-seekers/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

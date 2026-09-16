@@ -1,7 +1,7 @@
 {
-  "discovered_at": "2026-09-15T04:15:18.039275Z",
+  "discovered_at": "2026-09-16T04:11:59.848362Z",
   "total_repos": 300,
-  "total_skills": 21,
+  "total_skills": 3,
   "scanned_repos": 300,
   "limits": {
     "max_repos": 300,
@@ -314,88 +314,16 @@
   ],
   "skills": [
     {
-      "repo": "Ark0N/Codeman",
-      "path": "skills/codeman/SKILL.md"
+      "repo": "23blocks-OS/ai-maestro",
+      "path": ".agents/skills/agent-browser/SKILL.md"
     },
     {
-      "repo": "Ark0N/Codeman",
-      "path": "plugins/codeman/skills/codeman/SKILL.md"
+      "repo": "haabe/mycelium",
+      "path": "plugins/mycelium/skills/count/SKILL.md"
     },
     {
-      "repo": "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance",
-      "path": "plugins/tprm/skills/tprm/SKILL.md"
-    },
-    {
-      "repo": "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance",
-      "path": "plugins/sox-itgc/skills/sox-itgc/SKILL.md"
-    },
-    {
-      "repo": "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance",
-      "path": "plugins/cyber-essentials/skills/cyber-essentials/SKILL.md"
-    },
-    {
-      "repo": "avelikiy/great_cto",
-      "path": "skills/codex-host/SKILL.md"
-    },
-    {
-      "repo": "cgallic/kai-cmo-harness",
-      "path": "harness/skills/kai-bulkpublish/SKILL.md"
-    },
-    {
-      "repo": "reticlehq/reticle",
-      "path": "plugin/SKILL.md"
-    },
-    {
-      "repo": "reticlehq/reticle",
-      "path": "skills/agentic-tdd/SKILL.md"
-    },
-    {
-      "repo": "reticlehq/reticle",
-      "path": "skills/audit-my-app/SKILL.md"
-    },
-    {
-      "repo": "reticlehq/reticle",
-      "path": "skills/debug-broken-ui/SKILL.md"
-    },
-    {
-      "repo": "reticlehq/reticle",
-      "path": "skills/verify-ui-change/SKILL.md"
-    },
-    {
-      "repo": "reticlehq/reticle",
-      "path": "skills/replay-user-flows/SKILL.md"
-    },
-    {
-      "repo": "reticlehq/reticle",
-      "path": "skills/verify-unattended/SKILL.md"
-    },
-    {
-      "repo": "reticlehq/reticle",
-      "path": "skills/drive-desktop-app/SKILL.md"
-    },
-    {
-      "repo": "reticlehq/reticle",
-      "path": "skills/install-and-verify/SKILL.md"
-    },
-    {
-      "repo": "reticlehq/reticle",
-      "path": "skills/fix-what-i-pointed-at/SKILL.md"
-    },
-    {
-      "repo": "reticlehq/reticle",
-      "path": "skills/design-system-compliance/SKILL.md"
-    },
-    {
-      "repo": "reticlehq/reticle",
-      "path": "skills/false-green-tests/SKILL.md"
-    },
-    {
-      "repo": "reticlehq/reticle",
-      "path": "skills/test-error-states/SKILL.md"
-    },
-    {
-      "repo": "rse/ase",
-      "path": "plugin/skills/ase-task-status/SKILL.md"
+      "repo": "skyf0xx/hedgehog",
+      "path": "src/skills/code-comment-discipline/SKILL.md"
     }
   ]
 }

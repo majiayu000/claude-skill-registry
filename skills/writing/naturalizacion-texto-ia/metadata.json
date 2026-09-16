@@ -1,0 +1,29 @@
+{
+  "name": "naturalizacion-texto-ia",
+  "description": "Rewrites Spanish prose with stylistic and linguistic editing techniques while preserving meaning and register.",
+  "repo": "dorelysm/naturalizacion-texto-es",
+  "path": ".claude/skills/naturalizacion-texto-ia",
+  "github_branch": "main",
+  "github_commit_sha": "7eaba75f50678343263a17ace92bf09dff9af876",
+  "assets_verified_at": "2026-09-16T04:12:35.347106Z",
+  "category": "writing",
+  "tags": [
+    "spanish",
+    "spanish-nlp",
+    "humanize-text",
+    "editorial",
+    "prompt-engineering"
+  ],
+  "stars": 1,
+  "source": "Community Skills",
+  "dir_name": "naturalizacion-texto-ia",
+  "archive_mode": "skill-md",
+  "bundled_files": [],
+  "author": "dorelysm",
+  "source_url": "https://github.com/dorelysm/naturalizacion-texto-es/blob/main/.claude/skills/naturalizacion-texto-ia/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dorelysm/naturalizacion-texto-es/blob/main/.claude/skills/naturalizacion-texto-ia/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,7 +1,7 @@
 {
-  "discovered_at": "2026-09-16T04:11:59.848362Z",
+  "discovered_at": "2026-09-17T04:17:14.646547Z",
   "total_repos": 300,
-  "total_skills": 3,
+  "total_skills": 14,
   "scanned_repos": 300,
   "limits": {
     "max_repos": 300,
@@ -29,7 +29,6 @@
     "CesiumGS/cesiumjs-skills",
     "CodelyTV/agentic_programming-course",
     "ComPDFKit/compdf-skills",
-    "Darthflute/social-calendar-skill",
     "DeliciousBuding/xiaohongshu-skill",
     "DheerG/swarms",
     "Egonex-AI/Understand-Anything",
@@ -42,6 +41,7 @@
     "IJONIS/geo-lint",
     "J-nowcow/awesome-korean-agent-skills",
     "JasonColapietro/suede-creator-skills",
+    "JayPokale/Chisle",
     "JayantDevkar/claude-code-karma",
     "Jeffallan/claude-skills",
     "JimLiu/baoyu-skills",
@@ -215,7 +215,6 @@
     "massimodeluisa/recursive-decomposition-skill",
     "matteotitta/claude-code-marketing-quickstart",
     "mattgierhart/PRD-driven-context-engineering",
-    "memvid/claude-brain",
     "meshy-dev/meshy-3d-agent",
     "mex-memory/mex",
     "mhattingpete/claude-skills-marketplace",
@@ -277,6 +276,7 @@
     "slimeglitch/gryffin-calorai-ventus",
     "specstoryai/getspecstory",
     "staruhub/ClaudeSkills",
+    "suboss87/FDEOps",
     "sunchaokun/PPT-Design-Skill",
     "syahiidkamil/Software-Engineer-AI-Agent-Atlas",
     "tamtom/play-console-cli",
@@ -314,16 +314,60 @@
   ],
   "skills": [
     {
-      "repo": "23blocks-OS/ai-maestro",
-      "path": ".agents/skills/agent-browser/SKILL.md"
+      "repo": "JayPokale/Chisle",
+      "path": "skills/chisle/SKILL.md"
     },
     {
-      "repo": "haabe/mycelium",
-      "path": "plugins/mycelium/skills/count/SKILL.md"
+      "repo": "JayPokale/Chisle",
+      "path": "skills/chisle-help/SKILL.md"
     },
     {
-      "repo": "skyf0xx/hedgehog",
-      "path": "src/skills/code-comment-discipline/SKILL.md"
+      "repo": "JayPokale/Chisle",
+      "path": "skills/chisle-audit/SKILL.md"
+    },
+    {
+      "repo": "JayPokale/Chisle",
+      "path": "skills/chisle-review/SKILL.md"
+    },
+    {
+      "repo": "hypnguyen1209/offensive-claude",
+      "path": "skills/wireless-rf/SKILL.md"
+    },
+    {
+      "repo": "irinabuht12-oss/marketing-skills",
+      "path": "skills/programmatic-seo-playbook/SKILL.md"
+    },
+    {
+      "repo": "majiayu000/spellbook",
+      "path": "skills/blender-editable-3d/SKILL.md"
+    },
+    {
+      "repo": "microsoft/power-platform-skills",
+      "path": "plugins/mobile-apps/skills/setup-app-insights/SKILL.md"
+    },
+    {
+      "repo": "nowork-studio/notfair-plugin",
+      "path": "wordpress/SKILL.md"
+    },
+    {
+      "repo": "nowork-studio/notfair-plugin",
+      "path": "gohighlevel/SKILL.md"
+    },
+    {
+      "repo": "nowork-studio/notfair-plugin",
+      "path": "skills/wordpress/SKILL.md"
+    },
+    {
+      "repo": "nowork-studio/notfair-plugin",
+      "path": "skills/gohighlevel/SKILL.md"
+    },
+    {
+      "repo": "nowork-studio/notfair-plugin",
+      "path": "skills/paid-ads-reddit/SKILL.md"
+    },
+    {
+      "repo": "nowork-studio/notfair-plugin",
+      "path": "paid-ads/paid-ads-reddit/SKILL.md"
     }
   ]
 }

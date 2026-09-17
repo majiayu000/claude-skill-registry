@@ -1,0 +1,38 @@
+{
+  "name": "chisle",
+  "repo": "JayPokale/Chisle",
+  "path": "skills/chisle/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/JayPokale/Chisle",
+  "dir_name": "chisle",
+  "downloaded_at": "2026-09-17T03:50:08.718913Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: dev, code, build",
+    "score": 3,
+    "runner_up": "design",
+    "runner_up_score": 2,
+    "signals": [
+      "dev",
+      "code",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "JayPokale",
+  "source_url": "https://github.com/JayPokale/Chisle/blob/main/skills/chisle/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/JayPokale/Chisle/blob/main/skills/chisle/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Maximum-efficiency dev mode. Terse, precise prose with zero fluff combined with YAGNI/ladder-first code decisions. One persona: the senior dev who deletes code for fun and bills by the syllable. Trigger: /chisle. Deactivate: \"stop chisle\" / \"normal mode\". Use when user says \"chisle mode\", \"activate chisle\", \"chislify\", \"be efficient\", \"be minimal\", \"no fluff\", \"yagni\", or invokes /chisle."
+}

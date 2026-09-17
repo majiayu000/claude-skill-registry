@@ -1,0 +1,36 @@
+{
+  "name": "chisle-review",
+  "repo": "JayPokale/Chisle",
+  "path": "skills/chisle-review/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/JayPokale/Chisle",
+  "dir_name": "chisle-review",
+  "downloaded_at": "2026-09-17T03:50:11.243339Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category data scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "design",
+    "runner_up_score": 1,
+    "signals": [
+      "data"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "JayPokale",
+  "source_url": "https://github.com/JayPokale/Chisle/blob/main/skills/chisle-review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/JayPokale/Chisle/blob/main/skills/chisle-review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Review a diff or file through the Chisle lens: flag over-engineering, speculative abstractions, reinvented stdlib, and verbose code that a lazier approach would shrink. One finding per line, no praise. Use when the user says \"chisle review\", \"review this for bloat\", or invokes /chisle-review."
+}

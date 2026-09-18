@@ -1,0 +1,36 @@
+{
+  "name": "finished",
+  "repo": "scdenney/open-science-skills",
+  "path": "plugin/skills/finished/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/scdenney/open-science-skills",
+  "dir_name": "finished-scdenney-open-science-skills",
+  "downloaded_at": "2026-09-18T03:57:50.508862Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category agent scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "ai-ml",
+    "runner_up_score": 1,
+    "signals": [
+      "agent"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "scdenney",
+  "source_url": "https://github.com/scdenney/open-science-skills/blob/main/plugin/skills/finished/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/scdenney/open-science-skills/blob/main/plugin/skills/finished/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "End-of-session closure for a research or code repository. Records what actually changed into the project's own handoff and log files, distinguishing verified work from work merely attempted, and reports what was left uncommitted. Use when wrapping up a work session so the next one can resume without re-deriving state. Its start-of-session twin is sitrep."
+}

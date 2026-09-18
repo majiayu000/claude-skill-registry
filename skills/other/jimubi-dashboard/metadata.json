@@ -1,0 +1,37 @@
+{
+  "name": "jimubi-dashboard",
+  "repo": "jeecgboot/skills",
+  "path": "jimubi-dashboard/skill.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/jeecgboot/skills",
+  "dir_name": "jimubi-dashboard",
+  "downloaded_at": "2026-09-18T03:50:40.781911Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: data=2, design=2",
+    "score": 2,
+    "runner_up": "design",
+    "runner_up_score": 2,
+    "signals": [
+      "data",
+      "sql"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "jeecgboot",
+  "source_url": "https://github.com/jeecgboot/skills/blob/main/jimubi-dashboard/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jeecgboot/skills/blob/main/jimubi-dashboard/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when user asks to create/design a dashboard (\u4eea\u8868\u76d8/\u770b\u677f), data kanban, or says \"\u521b\u5efa\u4eea\u8868\u76d8\", \"\u751f\u6210\u4eea\u8868\u76d8\", \"\u505a\u4e00\u4e2a\u4eea\u8868\u76d8\", \"\u6570\u636e\u770b\u677f\", \"\u505a\u4e00\u4e2a\u770b\u677f\", \"\u521b\u5efa\u770b\u677f\", \"\u6570\u636e\u9762\u677f\", \"\u7edf\u8ba1\u770b\u677f\", \"\u8fd0\u8425\u770b\u677f\", \"create dashboard\", \"generate dashboard\", \"design dashboard\", \"data kanban\", \"KPI dashboard\". Also triggers when user describes dashboard/kanban requirements like \"\u505a\u4e00\u4e2a\u8fd0\u8425\u6570\u636e\u770b\u677f\" or mentions grid-layout data display like \"\u7edf\u8ba1\u7cfb\u7edf\u6570\u636e\". NOT for \u6572\u6572\u4e91/QQY low-code app dashboards (use jeecg-lowcode-dashboard). Make sure to use this skill for dashboards (\u4eea\u8868\u76d8/\u770b\u677f) \u2014 NOT big screens (\u5927\u5c4f), which use completely different positioning, styling, and component configurations."
+}

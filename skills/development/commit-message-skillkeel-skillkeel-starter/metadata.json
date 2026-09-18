@@ -1,0 +1,28 @@
+{
+  "name": "commit-message",
+  "description": "Writes a Conventional Commits message from the staged diff, without inventing changes that are not in the diff.",
+  "repo": "skillkeel/skillkeel-starter",
+  "path": "skills/commit-message",
+  "github_branch": "main",
+  "github_commit_sha": "1933c3f8942e7d9b50cb573f52b6de93251dc1ac",
+  "assets_verified_at": "2026-09-18T09:25:04.820096Z",
+  "category": "development",
+  "tags": [
+    "git",
+    "conventional-commits",
+    "commit",
+    "repo-hygiene"
+  ],
+  "stars": 1,
+  "source": "Community Skills",
+  "dir_name": "commit-message-skillkeel-skillkeel-starter",
+  "archive_mode": "skill-md",
+  "bundled_files": [],
+  "author": "skillkeel",
+  "source_url": "https://github.com/skillkeel/skillkeel-starter/blob/main/skills/commit-message/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/skillkeel/skillkeel-starter/blob/main/skills/commit-message/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

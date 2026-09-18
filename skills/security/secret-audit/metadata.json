@@ -1,0 +1,28 @@
+{
+  "name": "secret-audit",
+  "description": "Scans the working tree and git history for credentials, masks findings, and plans rotate-first remediation without rewriting history.",
+  "repo": "skillkeel/skillkeel-starter",
+  "path": "skills/secret-audit",
+  "github_branch": "main",
+  "github_commit_sha": "1933c3f8942e7d9b50cb573f52b6de93251dc1ac",
+  "assets_verified_at": "2026-09-18T09:25:04.908031Z",
+  "category": "security",
+  "tags": [
+    "security",
+    "secrets",
+    "gitleaks",
+    "git-history"
+  ],
+  "stars": 1,
+  "source": "Community Skills",
+  "dir_name": "secret-audit",
+  "archive_mode": "skill-md",
+  "bundled_files": [],
+  "author": "skillkeel",
+  "source_url": "https://github.com/skillkeel/skillkeel-starter/blob/main/skills/secret-audit/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/skillkeel/skillkeel-starter/blob/main/skills/secret-audit/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,28 @@
+{
+  "name": "dependency-audit",
+  "description": "Runs the ecosystem audit tool, ranks fixes by safety, and never uses force upgrades.",
+  "repo": "skillkeel/skillkeel-starter",
+  "path": "skills/dependency-audit",
+  "github_branch": "main",
+  "github_commit_sha": "a7b35c9c5fa9f66825f2fa278b7f695a14169792",
+  "assets_verified_at": "2026-09-18T11:05:16.407430Z",
+  "category": "security",
+  "tags": [
+    "security",
+    "dependencies",
+    "audit",
+    "vulnerabilities"
+  ],
+  "stars": 1,
+  "source": "Community Skills",
+  "dir_name": "dependency-audit-skillkeel-skillkeel-starter",
+  "archive_mode": "skill-md",
+  "bundled_files": [],
+  "author": "skillkeel",
+  "source_url": "https://github.com/skillkeel/skillkeel-starter/blob/main/skills/dependency-audit/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/skillkeel/skillkeel-starter/blob/main/skills/dependency-audit/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

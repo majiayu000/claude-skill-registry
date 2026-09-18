@@ -1,0 +1,29 @@
+{
+  "name": "cordon-install",
+  "description": "Install Cordon, a deterministic layer between untrusted content and agent actions, and verify the harness actually calls it. Strips the hidden layer from what the agent reads, keeps provenance of every piece of data, and refuses calls outside the effect classes the user's own instruction allows. No model call on the hot path.",
+  "repo": "ilyautov/cordon",
+  "path": "skills/cordon-install",
+  "github_branch": "main",
+  "github_commit_sha": "beb14a82d0239026415ffe82871717cc7a72f53a",
+  "assets_verified_at": "2026-09-18T11:05:16.050616Z",
+  "category": "security",
+  "tags": [
+    "prompt-injection",
+    "agent-safety",
+    "security",
+    "hooks",
+    "provenance"
+  ],
+  "stars": 2,
+  "source": "Community Skills",
+  "dir_name": "cordon-install",
+  "archive_mode": "skill-md",
+  "bundled_files": [],
+  "author": "ilyautov",
+  "source_url": "https://github.com/ilyautov/cordon/blob/main/skills/cordon-install/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ilyautov/cordon/blob/main/skills/cordon-install/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

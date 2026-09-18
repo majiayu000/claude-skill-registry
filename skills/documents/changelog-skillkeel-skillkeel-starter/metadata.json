@@ -1,0 +1,28 @@
+{
+  "name": "changelog",
+  "description": "Adds Keep a Changelog entries from git history since the last tag, grouped by change type and without invented items.",
+  "repo": "skillkeel/skillkeel-starter",
+  "path": "skills/changelog",
+  "github_branch": "main",
+  "github_commit_sha": "a7b35c9c5fa9f66825f2fa278b7f695a14169792",
+  "assets_verified_at": "2026-09-18T11:05:15.113603Z",
+  "category": "documents",
+  "tags": [
+    "changelog",
+    "git",
+    "release-notes",
+    "documentation"
+  ],
+  "stars": 1,
+  "source": "Community Skills",
+  "dir_name": "changelog-skillkeel-skillkeel-starter",
+  "archive_mode": "skill-md",
+  "bundled_files": [],
+  "author": "skillkeel",
+  "source_url": "https://github.com/skillkeel/skillkeel-starter/blob/main/skills/changelog/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/skillkeel/skillkeel-starter/blob/main/skills/changelog/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

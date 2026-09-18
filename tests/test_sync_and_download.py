@@ -651,6 +651,70 @@ def test_exact_download_allows_standalone_skill_with_empty_support_listing(
     assert "bundled_file_blobs" not in metadata
 
 
+def test_exact_download_allows_standalone_skill_naming_target_repo_files(
+    tmp_path, monkeypatch
+):
+    module = load_module()
+    registry_path = tmp_path / "registry.json"
+    output_dir = tmp_path / "skills"
+    registry_path.write_text(
+        json.dumps(
+            {
+                "skills": [
+                    {
+                        "name": "test-gap-finder",
+                        "repo": "acme/chores",
+                        "path": "skills/test-gap-finder/SKILL.md",
+                        "category": "development",
+                        "github_branch": "main",
+                        "license": "MIT",
+                        "distribution": "compatible",
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+    sha = "a" * 40
+    skill_body = (
+        b"---\nname: test-gap-finder\ndescription: Finds untested code paths.\n---\n"
+        b"# Test gap finder\n"
+        b"Read the target repository's package.json and pyproject.toml for its test "
+        b"command, then report the untested branches in files such as auth.py.\n"
+    )
+    install_fake_aiohttp(
+        monkeypatch,
+        {
+            **exact_repo_routes(
+                "acme/chores",
+                "main",
+                sha,
+                [git_blob_entry("skills/test-gap-finder/SKILL.md", skill_body)],
+            ),
+            f"https://raw.githubusercontent.com/acme/chores/{sha}/skills/test-gap-finder/SKILL.md": (  # noqa: E501
+                FakeResponse(200, body=skill_body)
+            ),
+        },
+    )
+
+    stats = asyncio.run(
+        module.download_skills(
+            registry_path,
+            output_dir,
+            manifest_path=None,
+            cleanup_ci_untracked=False,
+            exact_paths_only=True,
+            pin_commit_sha=True,
+        )
+    )
+
+    assert stats["downloaded"] == 1
+    assert stats["failed"] == 0
+    skill_dir = next(output_dir.glob("development/*"))
+    metadata = json.loads((skill_dir / "metadata.json").read_text(encoding="utf-8"))
+    assert metadata["bundled_files"] == []
+
+
 @pytest.mark.parametrize(
     ("upstream_description", "curated_description"),
     [
@@ -1821,9 +1885,15 @@ def test_bundled_file_allowlist_is_scoped_and_size_limited():
     )
     assert support.requires_complete_bundled_archive("See references/guide.md") is True
     assert support.requires_complete_bundled_archive("Run src/polish.py") is True
-    assert support.requires_complete_bundled_archive("Run webmedia.py") is True
     assert support.requires_complete_bundled_archive("Read design-spatial/SKILL.md") is True
     assert support.requires_complete_bundled_archive("Set user preference/theme.md") is False
+    assert support.requires_complete_bundled_archive("Run webmedia.py") is False
+    assert (
+        support.requires_complete_bundled_archive(
+            "Check package.json, pyproject.toml and requirements.txt for a test command."
+        )
+        is False
+    )
     normalized = support.normalize_skill_frontmatter_description(
         f"---\nname: demo\ndescription: {'x' * 501}\n---\n# Demo\n",
         {"description": "Curated short source description."},

@@ -1,0 +1,28 @@
+{
+  "name": "claude-md-init",
+  "description": "Generates a short CLAUDE.md from verified repo commands and layout, without inventing install or test scripts.",
+  "repo": "skillkeel/skillkeel-starter",
+  "path": "skills/claude-md-init",
+  "github_branch": "main",
+  "github_commit_sha": "a7b35c9c5fa9f66825f2fa278b7f695a14169792",
+  "assets_verified_at": "2026-09-18T11:05:14.740895Z",
+  "category": "development",
+  "tags": [
+    "claude-code",
+    "documentation",
+    "onboarding",
+    "repo-hygiene"
+  ],
+  "stars": 1,
+  "source": "Community Skills",
+  "dir_name": "claude-md-init",
+  "archive_mode": "skill-md",
+  "bundled_files": [],
+  "author": "skillkeel",
+  "source_url": "https://github.com/skillkeel/skillkeel-starter/blob/main/skills/claude-md-init/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/skillkeel/skillkeel-starter/blob/main/skills/claude-md-init/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

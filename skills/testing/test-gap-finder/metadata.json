@@ -1,0 +1,28 @@
+{
+  "name": "test-gap-finder",
+  "description": "Ranks untested modules by recent churn and size, then proposes concrete test cases without writing tests unasked.",
+  "repo": "skillkeel/skillkeel-starter",
+  "path": "skills/test-gap-finder",
+  "github_branch": "main",
+  "github_commit_sha": "a7b35c9c5fa9f66825f2fa278b7f695a14169792",
+  "assets_verified_at": "2026-09-18T11:05:17.170470Z",
+  "category": "testing",
+  "tags": [
+    "testing",
+    "coverage",
+    "gap-analysis",
+    "repo-hygiene"
+  ],
+  "stars": 1,
+  "source": "Community Skills",
+  "dir_name": "test-gap-finder",
+  "archive_mode": "skill-md",
+  "bundled_files": [],
+  "author": "skillkeel",
+  "source_url": "https://github.com/skillkeel/skillkeel-starter/blob/main/skills/test-gap-finder/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/skillkeel/skillkeel-starter/blob/main/skills/test-gap-finder/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

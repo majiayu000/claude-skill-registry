@@ -34,26 +34,19 @@ BUNDLED_ROOT_FILE_ALLOWLIST = {
     "LICENSE.md",
 }
 
-BUNDLED_REQUIRED_ROOT_FILE_HINTS = BUNDLED_ROOT_FILE_ALLOWLIST - {
-    "README.md",
-    "LICENSE",
-    "LICENSE.md",
-}
 _URL_RE = re.compile(r"https?://\S+")
 
 
 def requires_complete_bundled_archive(skill_content: str) -> bool:
-    """Return True when SKILL.md explicitly depends on bundled support files."""
+    """Return True when SKILL.md explicitly depends on bundled support files.
+
+    Only directory-scoped references count as a dependency. A bare filename such as
+    ``package.json`` or ``auth.py`` normally names a file in the repository the skill
+    operates on, so it is no evidence that the skill ships that file itself.
+    """
     without_urls = _URL_RE.sub("", skill_content or "")
     normalized = without_urls.lower().replace("\\", "/")
     for dirname in BUNDLED_DIR_ALLOWLIST:
         if re.search(rf"(?<![a-z0-9_.-]){re.escape(dirname)}/", normalized):
             return True
-    if re.search(r"(?<![a-z0-9_.-])design-[a-z0-9-]+/", normalized):
-        return True
-    if re.search(
-        r"(?<![a-z0-9_/.-])[a-z0-9][a-z0-9_.-]*\.(?:py|swift)(?![a-z0-9_.-])",
-        normalized,
-    ):
-        return True
-    return any(filename.lower() in normalized for filename in BUNDLED_REQUIRED_ROOT_FILE_HINTS)
+    return bool(re.search(r"(?<![a-z0-9_.-])design-[a-z0-9-]+/", normalized))

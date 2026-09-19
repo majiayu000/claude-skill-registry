@@ -1,7 +1,7 @@
 {
-  "discovered_at": "2026-09-18T04:03:00.749003Z",
+  "discovered_at": "2026-09-19T03:59:05.112358Z",
   "total_repos": 300,
-  "total_skills": 8,
+  "total_skills": 37,
   "scanned_repos": 300,
   "limits": {
     "max_repos": 300,
@@ -112,7 +112,6 @@
     "arvindrk/extract-design-system",
     "avelikiy/great_cto",
     "avibebuilder/claude-prime",
-    "avidevelops/claude-architect-exam-prep",
     "ayghri/i-have-adhd",
     "baidu-netdisk/bdpan-storage",
     "bevibing/tutor-skills",
@@ -131,6 +130,7 @@
     "claude-world/director-mode-lite",
     "code-yeongyu/oh-my-openagent",
     "codeaashu/claude-code",
+    "coldteadotai/abide",
     "coldteadotai/pr-lens",
     "composio-community/awesome-claude-plugins",
     "conorluddy/ios-simulator-skill",
@@ -155,6 +155,7 @@
     "fcavalcantirj/claude-code-eyes",
     "feiskyer/claude-code-settings",
     "ferdinandobons/startup-skill",
+    "filtalgo/Filtmall-Shopping-Skill",
     "flysheep-ai/education-skills",
     "foyzulkarim/skills",
     "fvadicamo/dev-agent-skills",
@@ -162,7 +163,6 @@
     "gbessoni/seobuild-onpage",
     "gcpdev/llm-council-skill",
     "geekjourneyx/md2wechat-skill",
-    "geoffreycrofte/luxembourg-accessibility-skillset",
     "getaero-io/gtm-eng-skills",
     "ginuim/skill-base",
     "giuseppe-trisciuoglio/developer-kit",
@@ -314,36 +314,152 @@
   ],
   "skills": [
     {
-      "repo": "cgallic/kai-cmo-harness",
-      "path": "harness/skills/kai-local-audit/SKILL.md"
+      "repo": "coldteadotai/abide",
+      "path": "skills/abide-compile/SKILL.md"
     },
     {
-      "repo": "cgallic/kai-cmo-harness",
-      "path": "harness/skills-v2/kai-local-audit/SKILL.md"
+      "repo": "suboss87/FDEOps",
+      "path": "skills/qa/SKILL.md"
     },
     {
-      "repo": "jeecgboot/skills",
-      "path": "jeecg-portal/SKILL.md"
+      "repo": "suboss87/FDEOps",
+      "path": "skills/poc/SKILL.md"
     },
     {
-      "repo": "jeecgboot/skills",
-      "path": "jimubi-dashboard/skill.md"
+      "repo": "suboss87/FDEOps",
+      "path": "skills/fde/SKILL.md"
     },
     {
-      "repo": "scdenney/open-science-skills",
-      "path": "codex/sitrep/SKILL.md"
+      "repo": "suboss87/FDEOps",
+      "path": "skills/plan/SKILL.md"
     },
     {
-      "repo": "scdenney/open-science-skills",
-      "path": "codex/finished/SKILL.md"
+      "repo": "suboss87/FDEOps",
+      "path": "skills/ship/SKILL.md"
     },
     {
-      "repo": "scdenney/open-science-skills",
-      "path": "plugin/skills/sitrep/SKILL.md"
+      "repo": "suboss87/FDEOps",
+      "path": "skills/brief/SKILL.md"
     },
     {
-      "repo": "scdenney/open-science-skills",
-      "path": "plugin/skills/finished/SKILL.md"
+      "repo": "suboss87/FDEOps",
+      "path": "skills/audit/SKILL.md"
+    },
+    {
+      "repo": "suboss87/FDEOps",
+      "path": "skills/build/SKILL.md"
+    },
+    {
+      "repo": "suboss87/FDEOps",
+      "path": "skills/scope/SKILL.md"
+    },
+    {
+      "repo": "suboss87/FDEOps",
+      "path": "skills/debug/SKILL.md"
+    },
+    {
+      "repo": "suboss87/FDEOps",
+      "path": "skills/rescue/SKILL.md"
+    },
+    {
+      "repo": "suboss87/FDEOps",
+      "path": "skills/ingest/SKILL.md"
+    },
+    {
+      "repo": "suboss87/FDEOps",
+      "path": "skills/review/SKILL.md"
+    },
+    {
+      "repo": "suboss87/FDEOps",
+      "path": "skills/options/SKILL.md"
+    },
+    {
+      "repo": "suboss87/FDEOps",
+      "path": "skills/runbook/SKILL.md"
+    },
+    {
+      "repo": "suboss87/FDEOps",
+      "path": "skills/debrief/SKILL.md"
+    },
+    {
+      "repo": "suboss87/FDEOps",
+      "path": "skills/connect/SKILL.md"
+    },
+    {
+      "repo": "suboss87/FDEOps",
+      "path": "skills/readout/SKILL.md"
+    },
+    {
+      "repo": "suboss87/FDEOps",
+      "path": "skills/handoff/SKILL.md"
+    },
+    {
+      "repo": "suboss87/FDEOps",
+      "path": "skills/evaluate/SKILL.md"
+    },
+    {
+      "repo": "suboss87/FDEOps",
+      "path": "skills/feedback/SKILL.md"
+    },
+    {
+      "repo": "suboss87/FDEOps",
+      "path": "skills/rollback/SKILL.md"
+    },
+    {
+      "repo": "suboss87/FDEOps",
+      "path": "skills/discover/SKILL.md"
+    },
+    {
+      "repo": "suboss87/FDEOps",
+      "path": "skills/red-team/SKILL.md"
+    },
+    {
+      "repo": "suboss87/FDEOps",
+      "path": "skills/demo-prep/SKILL.md"
+    },
+    {
+      "repo": "suboss87/FDEOps",
+      "path": "skills/dashboard/SKILL.md"
+    },
+    {
+      "repo": "suboss87/FDEOps",
+      "path": "skills/integrate/SKILL.md"
+    },
+    {
+      "repo": "suboss87/FDEOps",
+      "path": "skills/prioritize/SKILL.md"
+    },
+    {
+      "repo": "suboss87/FDEOps",
+      "path": "skills/board-memo/SKILL.md"
+    },
+    {
+      "repo": "suboss87/FDEOps",
+      "path": "skills/earn-trust/SKILL.md"
+    },
+    {
+      "repo": "suboss87/FDEOps",
+      "path": "skills/who-decides/SKILL.md"
+    },
+    {
+      "repo": "suboss87/FDEOps",
+      "path": "skills/what-breaks/SKILL.md"
+    },
+    {
+      "repo": "suboss87/FDEOps",
+      "path": "skills/business-case/SKILL.md"
+    },
+    {
+      "repo": "suboss87/FDEOps",
+      "path": "skills/switch-clients/SKILL.md"
+    },
+    {
+      "repo": "suboss87/FDEOps",
+      "path": "skills/score-use-cases/SKILL.md"
+    },
+    {
+      "repo": "suboss87/FDEOps",
+      "path": "skills/test-assumptions/SKILL.md"
     }
   ]
 }

@@ -1,0 +1,38 @@
+{
+  "name": "fde",
+  "repo": "suboss87/FDEOps",
+  "path": "skills/fde/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/suboss87/FDEOps",
+  "dir_name": "fde",
+  "downloaded_at": "2026-09-19T03:55:53.864054Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: development=3, devops=3",
+    "score": 3,
+    "runner_up": "devops",
+    "runner_up_score": 3,
+    "signals": [
+      "code",
+      "build",
+      "debug"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "suboss87",
+  "source_url": "https://github.com/suboss87/FDEOps/blob/master/skills/fde/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/suboss87/FDEOps/blob/master/skills/fde/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Keeps the engagement record for client work. Use when they name a client or stakeholder. Use when they debrief a meeting or paste notes. Use when they ask what was agreed. Use when they run a POC, change the client's codebase, prove it on their staging, go live, or need evals before a model acts. Use when they prep a readout, when trust shifts, or they say @fde. Route and run the local fde CLI (or npx --yes fdeops). Never ask them to type commands. Not for ordinary code edits in an unbound repo."
+}

@@ -1,0 +1,38 @@
+{
+  "name": "poc",
+  "repo": "suboss87/FDEOps",
+  "path": "skills/poc/SKILL.md",
+  "github_branch": "master",
+  "category": "devops",
+  "source": "github.com/suboss87/FDEOps",
+  "dir_name": "poc",
+  "downloaded_at": "2026-09-19T03:55:53.440530Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "devops",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for devops: deploy, infra, infrastructure",
+    "score": 3,
+    "runner_up": "context-management",
+    "runner_up_score": 1,
+    "signals": [
+      "deploy",
+      "infra",
+      "infrastructure"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "suboss87",
+  "source_url": "https://github.com/suboss87/FDEOps/blob/master/skills/poc/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/suboss87/FDEOps/blob/master/skills/poc/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Run a bounded customer proof of concept to test a consequential uncertainty. Use for a spike or pilot with a question and decision deadline, not a full rollout."
+}

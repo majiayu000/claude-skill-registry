@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "status": "passed",
-  "generated_at": "2026-09-19T04:59:53Z",
+  "generated_at": "2026-09-20T05:20:34Z",
   "core_repo": "majiayu000/claude-skill-registry-core",
-  "core_sha": "eaf22aa9a8bde52b08acc3c59d0af82eeccd5fe2",
+  "core_sha": "769f7d749f3ec0a02313ce5f7a247fa5f6ea28a0",
   "data_repo": "majiayu000/claude-skill-registry-data",
-  "data_sha": "d5a9e94109f7b261f6a3ce83e1e7ad42acf22d22",
-  "github_run_id": "35420226482",
+  "data_sha": "7983ce96c52f43e0c367935ef6b43fbb6d9c5410",
+  "github_run_id": "35489043071",
   "github_run_attempt": "1",
-  "github_run_url": "https://github.com/majiayu000/claude-skill-registry/actions/runs/35420226482",
+  "github_run_url": "https://github.com/majiayu000/claude-skill-registry/actions/runs/35489043071",
   "promotion_gate": {
     "mode": "pre-commit canary validation",
     "result": "allowed"
@@ -65,7 +65,7 @@
     {
       "name": "skills mirror count and gitignore",
       "status": "passed",
-      "detail": "203290 SKILL.md and 203288 metadata files match stats and are not ignored"
+      "detail": "203294 SKILL.md and 203292 metadata files match stats and are not ignored"
     }
   ]
 }

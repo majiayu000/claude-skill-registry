@@ -1,7 +1,7 @@
 {
-  "discovered_at": "2026-09-21T04:12:22.444022Z",
+  "discovered_at": "2026-09-22T04:10:36.581622Z",
   "total_repos": 300,
-  "total_skills": 28,
+  "total_skills": 15,
   "scanned_repos": 300,
   "limits": {
     "max_repos": 300,
@@ -314,116 +314,64 @@
   ],
   "skills": [
     {
-      "repo": "AlpacaLabsLLC/skills-for-architects",
-      "path": "skills/norma/SKILL.md"
-    },
-    {
-      "repo": "AlpacaLabsLLC/skills-for-architects",
-      "path": "skills/receive/SKILL.md"
-    },
-    {
-      "repo": "AlpacaLabsLLC/skills-for-architects",
-      "path": "skills/invoice/SKILL.md"
-    },
-    {
-      "repo": "AlpacaLabsLLC/skills-for-architects",
-      "path": "skills/proposal/SKILL.md"
-    },
-    {
-      "repo": "AlpacaLabsLLC/skills-for-architects",
-      "path": "skills/spec-book/SKILL.md"
-    },
-    {
-      "repo": "AlpacaLabsLLC/skills-for-architects",
-      "path": "skills/agreement/SKILL.md"
-    },
-    {
-      "repo": "AlpacaLabsLLC/skills-for-architects",
-      "path": "skills/norma-support/SKILL.md"
-    },
-    {
-      "repo": "AlpacaLabsLLC/skills-for-architects",
-      "path": "skills/product-audit/SKILL.md"
-    },
-    {
-      "repo": "AlpacaLabsLLC/skills-for-architects",
-      "path": "skills/product-library/SKILL.md"
-    },
-    {
-      "repo": "AlpacaLabsLLC/skills-for-architects",
-      "path": "skills/product-url-clip/SKILL.md"
-    },
-    {
-      "repo": "AlpacaLabsLLC/skills-for-architects",
-      "path": "skills/product-cut-sheet/SKILL.md"
-    },
-    {
-      "repo": "AlpacaLabsLLC/skills-for-architects",
-      "path": "skills/architecture-knowledge/SKILL.md"
-    },
-    {
-      "repo": "AlpacaLabsLLC/skills-for-architects",
-      "path": "skills/lighting-report-extract/SKILL.md"
-    },
-    {
-      "repo": "AlpacaLabsLLC/skills-for-architects",
-      "path": "skills/drawing-quantity-extract/SKILL.md"
-    },
-    {
-      "repo": "AlpacaLabsLLC/skills-for-architects",
-      "path": "skills/schedule-quantity-reconcile/SKILL.md"
+      "repo": "eternityspring/reelbench-skills",
+      "path": "skills/video-scrub/SKILL.md"
     },
     {
       "repo": "getaero-io/gtm-eng-skills",
-      "path": "skills/deepline-scoring/SKILL.md"
+      "path": "drafts/luma-event-campaign/SKILL.md"
     },
     {
       "repo": "getaero-io/gtm-eng-skills",
-      "path": "skills/deepline-research/SKILL.md"
+      "path": "drafts/hubspot-follow-email/SKILL.md"
     },
     {
-      "repo": "sickn33/agentic-awesome-skills",
-      "path": "skills/mysql/SKILL.md"
+      "repo": "getaero-io/gtm-eng-skills",
+      "path": "drafts/event-ops-score-and-door/SKILL.md"
     },
     {
-      "repo": "sickn33/agentic-awesome-skills",
-      "path": "skills/redis/SKILL.md"
+      "repo": "getaero-io/gtm-eng-skills",
+      "path": "drafts/event-host-prep-dossiers/SKILL.md"
     },
     {
-      "repo": "sickn33/agentic-awesome-skills",
-      "path": "skills/aws-s3/SKILL.md"
+      "repo": "getaero-io/gtm-eng-skills",
+      "path": "drafts/luma-inbound-webhook-enrich/SKILL.md"
     },
     {
-      "repo": "sickn33/agentic-awesome-skills",
-      "path": "skills/podman/SKILL.md"
+      "repo": "gooseworks-ai/goose-skills",
+      "path": "skills/ads/composites/launch-meta-ad-campaign/SKILL.md"
     },
     {
-      "repo": "sickn33/agentic-awesome-skills",
-      "path": "skills/aws-vpc/SKILL.md"
+      "repo": "haabe/mycelium",
+      "path": "plugins/mycelium/skills/friction-log/SKILL.md"
     },
     {
-      "repo": "sickn33/agentic-awesome-skills",
-      "path": "skills/aws-rds/SKILL.md"
+      "repo": "motiful/product-shots",
+      "path": "skills/product-shots/SKILL.md"
     },
     {
-      "repo": "sickn33/agentic-awesome-skills",
-      "path": "skills/jev-use/SKILL.md"
+      "repo": "motiful/product-shots",
+      "path": "skills/product-shots-image-gen/SKILL.md"
     },
     {
-      "repo": "sickn33/agentic-awesome-skills",
-      "path": "skills/datadog/SKILL.md"
+      "repo": "motiful/product-shots",
+      "path": "skills/product-shots-main-image/SKILL.md"
     },
     {
-      "repo": "sickn33/agentic-awesome-skills",
-      "path": "skills/aws-ec2/SKILL.md"
+      "repo": "motiful/product-shots",
+      "path": "skills/product-shots-multi-angle/SKILL.md"
     },
     {
-      "repo": "sickn33/agentic-awesome-skills",
-      "path": "skills/jenkins/SKILL.md"
+      "repo": "motiful/product-shots",
+      "path": "skills/product-shots-detail-page/SKILL.md"
     },
     {
-      "repo": "sickn33/agentic-awesome-skills",
-      "path": "skills/aws-iam/SKILL.md"
+      "repo": "motiful/product-shots",
+      "path": "skills/product-shots-social-post/SKILL.md"
+    },
+    {
+      "repo": "motiful/product-shots",
+      "path": "skills/product-shots-ad-creative/SKILL.md"
     }
   ]
 }

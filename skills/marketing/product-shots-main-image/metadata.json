@@ -1,0 +1,37 @@
+{
+  "name": "product-shots-main-image",
+  "repo": "motiful/product-shots",
+  "path": "skills/product-shots-main-image/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/motiful/product-shots",
+  "dir_name": "product-shots-main-image",
+  "downloaded_at": "2026-09-22T04:02:14.118541Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for marketing: content, brand",
+    "score": 2,
+    "runner_up": "ai-ml",
+    "runner_up_score": 1,
+    "signals": [
+      "content",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "motiful",
+  "source_url": "https://github.com/motiful/product-shots/blob/main/skills/product-shots-main-image/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/motiful/product-shots/blob/main/skills/product-shots-main-image/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Designs Amazon-compliant main product images and the 7 secondary image types (Infographic / Multi-angle / Detail Shot / Lifestyle / Variants / What's in Box / Size Reference) \u2014 with platform-mandatory main-image rules, conversion-rate-tuned secondary types per product category, and multi-image consistency anchored to the main image URL. Use when the user says \"Amazon main image\", \"\u4e9a\u9a6c\u900a\u4e3b\u56fe\", \"product main image\", \"white background product image\", \"Amazon listing image\", \"\u4e9a\u9a6c\u900a\u526f\u56fe\", \"secondary images\", \"product carousel images\", or any request for the 1:1 product image suite that lives on the Amazon detail page carousel. For A+ Content / detail-page modules (21:9 Hero Banner and 3:2 module layouts), see the `product-shots-detail-page` skill."
+}

@@ -1,0 +1,11 @@
+{
+  "exceptions": [
+    {
+      "path": "skills/devops/web-xss-stored/SKILL.md",
+      "signature": "Img.Phishing.SvgJsPhishing-10044283-0",
+      "source": "ajtazer/heckit skills/web/web-xss-stored/SKILL.md",
+      "reason": "Web pentest teaching note. The signature matches documented <svg onload=...> XSS payload examples quoted in Markdown, not an executable image.",
+      "reviewed_at": "2026-09-21"
+    }
+  ]
+}

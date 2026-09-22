@@ -1,0 +1,38 @@
+{
+  "name": "luma-event-campaign",
+  "repo": "getaero-io/gtm-eng-skills",
+  "path": "drafts/luma-event-campaign/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/getaero-io/gtm-eng-skills",
+  "dir_name": "luma-event-campaign",
+  "downloaded_at": "2026-09-22T03:55:58.050368Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for marketing: social, campaign, brand",
+    "score": 3,
+    "runner_up": "communication",
+    "runner_up_score": 2,
+    "signals": [
+      "social",
+      "campaign",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "getaero-io",
+  "source_url": "https://github.com/getaero-io/gtm-eng-skills/blob/main/drafts/luma-event-campaign/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/getaero-io/gtm-eng-skills/blob/main/drafts/luma-event-campaign/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "DRAFT. Use when running a Luma-centered GTM event campaign: pull/export guests, enrich and score, draft invites and social, stage email+LI sequences paused for approval, and wire registration sync. Not installed by deepline skills."
+}

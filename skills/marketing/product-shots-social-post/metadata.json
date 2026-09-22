@@ -1,0 +1,38 @@
+{
+  "name": "product-shots-social-post",
+  "repo": "motiful/product-shots",
+  "path": "skills/product-shots-social-post/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/motiful/product-shots",
+  "dir_name": "product-shots-social-post",
+  "downloaded_at": "2026-09-22T04:02:14.562637Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for marketing: content, social, brand",
+    "score": 3,
+    "runner_up": "design",
+    "runner_up_score": 2,
+    "signals": [
+      "content",
+      "social",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "motiful",
+  "source_url": "https://github.com/motiful/product-shots/blob/main/skills/product-shots-social-post/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/motiful/product-shots/blob/main/skills/product-shots-social-post/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Designs social-platform-native visuals (Feed, Story, Reel, Carousel formats) for Instagram, TikTok, Facebook, Pinterest, RedNote, LinkedIn, X/Twitter and other social platforms \u2014 with platform-correct dimensions, safe zones, industry visual DNA, engagement hooks, and cross-slide consistency. Use when the user says \"social post\", \"Instagram post\", \"IG post\", \"TikTok post\", \"Facebook post\", \"Pinterest pin\", \"social carousel\", \"feed post\", \"story post\", \"make a post\", \"design a social visual\", \"\u793e\u5a92\u5e16\", \"\u505a\u4e00\u4e2a\u793e\u5a92\u56fe\", or any underspecified social-media visual request. Routed from `product-shots` for the organic-social branch (non-ad)."
+}

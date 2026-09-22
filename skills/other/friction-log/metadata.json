@@ -1,0 +1,37 @@
+{
+  "name": "friction-log",
+  "repo": "haabe/mycelium",
+  "path": "plugins/mycelium/skills/friction-log/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/haabe/mycelium",
+  "dir_name": "friction-log",
+  "downloaded_at": "2026-09-22T03:56:08.954348Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: development=2, product=2",
+    "score": 2,
+    "runner_up": "product",
+    "runner_up_score": 2,
+    "signals": [
+      "framework",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "haabe",
+  "source_url": "https://github.com/haabe/mycelium/blob/main/plugins/mycelium/skills/friction-log/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/haabe/mycelium/blob/main/plugins/mycelium/skills/friction-log/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Draft a short, honest account of where using Mycelium was confusing or slow, for the user to edit and choose whether to send. Reports experience; never prescribes fixes. Based on Hoskins's friction logging."
+}

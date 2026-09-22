@@ -1,0 +1,38 @@
+{
+  "name": "product-shots",
+  "repo": "motiful/product-shots",
+  "path": "skills/product-shots/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/motiful/product-shots",
+  "dir_name": "product-shots",
+  "downloaded_at": "2026-09-22T04:02:13.727394Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for marketing: content, social, brand",
+    "score": 3,
+    "runner_up": "design",
+    "runner_up_score": 2,
+    "signals": [
+      "content",
+      "social",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "motiful",
+  "source_url": "https://github.com/motiful/product-shots/blob/main/skills/product-shots/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/motiful/product-shots/blob/main/skills/product-shots/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Front-door router for the product-shots ecosystem. Clarifies underspecified visual creation requests through a 4-stage state machine, injects platform visual DNA (Amazon + 7 social platforms) and industry visual DNA (7 industries), enforces a unified Negative Constraints prompt patch, then routes to one of five downstream business skills (product-shots-main-image / product-shots-detail-page / product-shots-multi-angle / product-shots-ad-creative / product-shots-social-post). Use when the user says \"I need a product image\", \"design something for my listing\", \"I need content for Instagram\", \"make an ad for me\", \"make a cover image\", \"create a post\", \"\u505a\u4e00\u4e2a\u5546\u54c1\u56fe\", \"\u5e2e\u6211\u505a\u4e2a\u8be6\u60c5\u9875\", \"\u5e2e\u6211\u505a\u4e2a\u5e7f\u544a\u56fe\", \"\u505a\u4e00\u4e2a\u793e\u5a92\u56fe\", \"\u505a\u4e00\u5f20\u56fe\", \"\u5e2e\u6211\u8bbe\u8ba1\", \"\u505a\u4e2a\u5c01\u9762\" \u2014 i.e. any underspecified visual creation request that needs clarification before generation. This is the intent-routing hub of the product-shots ecosystem."
+}

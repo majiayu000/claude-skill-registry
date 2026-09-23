@@ -1,0 +1,38 @@
+{
+  "name": "faq-shortcuts",
+  "repo": "kishormorol/cli-faq-shortcuts",
+  "path": "SKILL.md",
+  "github_branch": "main",
+  "category": "bash",
+  "source": "github.com/kishormorol/cli-faq-shortcuts",
+  "dir_name": "cli-faq-shortcuts",
+  "downloaded_at": "2026-09-23T03:58:27.675858Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "bash",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for bash: bash, script, cli",
+    "score": 3,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "script",
+      "cli"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "kishormorol",
+  "source_url": "https://github.com/kishormorol/cli-faq-shortcuts/blob/main/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/kishormorol/cli-faq-shortcuts/blob/main/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Turn the questions and instructions a user keeps typing into a project into short slash-command skills, mined from their real Claude Code and Codex session history and git log. The shortcuts load in Claude Code, Codex and Cursor. Use when the user says they ask the same things every day, wants an FAQ or shortcuts or abbreviations for a project, wants to \"stop writing the whole command\", or asks what they repeat most."
+}

@@ -1,0 +1,37 @@
+{
+  "name": "secrets-rotation",
+  "repo": "avelikiy/great_cto",
+  "path": "skills/secrets-rotation/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/avelikiy/great_cto",
+  "dir_name": "secrets-rotation",
+  "downloaded_at": "2026-09-23T03:49:37.256763Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=2, context-management=2",
+    "score": 2,
+    "runner_up": "context-management",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "avelikiy",
+  "source_url": "https://github.com/avelikiy/great_cto/blob/main/skills/secrets-rotation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/avelikiy/great_cto/blob/main/skills/secrets-rotation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "What to do the moment a secret is exposed \u2014 pasted into chat, committed, logged, shown in a transcript or a screenshot. The secret is compromised; only revoking and rotating it helps. Turns it into one tracked task with an escalation, not a reminder repeated every session. Use when you see a key, token, password or private key anywhere it should not be (\"\u043a\u043b\u044e\u0447 \u0432 \u0447\u0430\u0442\u0435\", \"\u0442\u043e\u043a\u0435\u043d \u0432 \u043b\u043e\u0433\u0430\u0445\", \"\u0437\u0430\u043a\u043e\u043c\u043c\u0438\u0442\u0438\u043b .env\"). Loaded by security-officer, l3-support, devops."
+}

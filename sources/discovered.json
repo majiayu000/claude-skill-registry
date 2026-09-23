@@ -1,7 +1,7 @@
 {
-  "discovered_at": "2026-09-22T04:10:36.581622Z",
+  "discovered_at": "2026-09-23T04:09:52.650536Z",
   "total_repos": 300,
-  "total_skills": 15,
+  "total_skills": 12,
   "scanned_repos": 300,
   "limits": {
     "max_repos": 300,
@@ -200,6 +200,7 @@
     "keysersoose/claude-agent-builder",
     "kharmanskyi/open-steps",
     "khendzel/skills-janitor",
+    "kishormorol/cli-faq-shortcuts",
     "kromahlusenii-ops/ham",
     "laolaoshiren/claude-code-skills-zh",
     "levi-qiao/longgraph-skill",
@@ -296,7 +297,6 @@
     "wanghuan9/skilldock",
     "wanshuiyin/Anti-Autoresearch",
     "wanshuiyin/Auto-claude-code-research-in-sleep",
-    "wdhwg001/csift",
     "wesammustafa/Claude-Code-Everything-You-Need-to-Know",
     "wondelai/skills",
     "wrsmith108/linear-claude-skill",
@@ -314,64 +314,52 @@
   ],
   "skills": [
     {
-      "repo": "eternityspring/reelbench-skills",
-      "path": "skills/video-scrub/SKILL.md"
+      "repo": "Rtur2003/Claude-Code-Promts-Skills",
+      "path": ".agents/skills/find-prompt/SKILL.md"
     },
     {
-      "repo": "getaero-io/gtm-eng-skills",
-      "path": "drafts/luma-event-campaign/SKILL.md"
+      "repo": "Rtur2003/Claude-Code-Promts-Skills",
+      "path": ".agents/skills/skill-audit/SKILL.md"
     },
     {
-      "repo": "getaero-io/gtm-eng-skills",
-      "path": "drafts/hubspot-follow-email/SKILL.md"
+      "repo": "Rtur2003/Claude-Code-Promts-Skills",
+      "path": ".agents/skills/doc-link-audit/SKILL.md"
     },
     {
-      "repo": "getaero-io/gtm-eng-skills",
-      "path": "drafts/event-ops-score-and-door/SKILL.md"
+      "repo": "Rtur2003/Claude-Code-Promts-Skills",
+      "path": ".claude/skills/capability-audit/SKILL.md"
     },
     {
-      "repo": "getaero-io/gtm-eng-skills",
-      "path": "drafts/event-host-prep-dossiers/SKILL.md"
+      "repo": "Rtur2003/Claude-Code-Promts-Skills",
+      "path": ".agents/skills/capability-audit/SKILL.md"
     },
     {
-      "repo": "getaero-io/gtm-eng-skills",
-      "path": "drafts/luma-inbound-webhook-enrich/SKILL.md"
+      "repo": "Rtur2003/Claude-Code-Promts-Skills",
+      "path": ".agents/skills/deterministic-checks/SKILL.md"
     },
     {
-      "repo": "gooseworks-ai/goose-skills",
-      "path": "skills/ads/composites/launch-meta-ad-campaign/SKILL.md"
+      "repo": "Rtur2003/Claude-Code-Promts-Skills",
+      "path": ".agents/skills/changelog-from-commits/SKILL.md"
     },
     {
-      "repo": "haabe/mycelium",
-      "path": "plugins/mycelium/skills/friction-log/SKILL.md"
+      "repo": "avelikiy/great_cto",
+      "path": "skills/deploy-landed/SKILL.md"
     },
     {
-      "repo": "motiful/product-shots",
-      "path": "skills/product-shots/SKILL.md"
+      "repo": "avelikiy/great_cto",
+      "path": "skills/secrets-rotation/SKILL.md"
     },
     {
-      "repo": "motiful/product-shots",
-      "path": "skills/product-shots-image-gen/SKILL.md"
+      "repo": "avelikiy/great_cto",
+      "path": "skills/signing-preflight/SKILL.md"
     },
     {
-      "repo": "motiful/product-shots",
-      "path": "skills/product-shots-main-image/SKILL.md"
+      "repo": "kishormorol/cli-faq-shortcuts",
+      "path": "SKILL.md"
     },
     {
-      "repo": "motiful/product-shots",
-      "path": "skills/product-shots-multi-angle/SKILL.md"
-    },
-    {
-      "repo": "motiful/product-shots",
-      "path": "skills/product-shots-detail-page/SKILL.md"
-    },
-    {
-      "repo": "motiful/product-shots",
-      "path": "skills/product-shots-social-post/SKILL.md"
-    },
-    {
-      "repo": "motiful/product-shots",
-      "path": "skills/product-shots-ad-creative/SKILL.md"
+      "repo": "skyf0xx/hedgehog",
+      "path": "src/skills/hedgehog-orchestrating/SKILL.md"
     }
   ]
 }

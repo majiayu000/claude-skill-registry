@@ -1,0 +1,37 @@
+{
+  "name": "li-comment",
+  "repo": "Jakeschincariol/linkedin-agent-skill",
+  "path": "skills/li-comment/SKILL.md",
+  "github_branch": "main",
+  "category": "productivity",
+  "source": "github.com/Jakeschincariol/linkedin-agent-skill",
+  "dir_name": "li-comment",
+  "downloaded_at": "2026-09-24T03:32:57.426903Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "productivity",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for productivity: automation, task",
+    "score": 2,
+    "runner_up": "data",
+    "runner_up_score": 1,
+    "signals": [
+      "automation",
+      "task"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "Jakeschincariol",
+  "source_url": "https://github.com/Jakeschincariol/linkedin-agent-skill/blob/main/skills/li-comment/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Jakeschincariol/linkedin-agent-skill/blob/main/skills/li-comment/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Write comments on other people's LinkedIn posts that read as a person with an opinion, not a bot. Use when the user pastes a post and wants a comment, says \"comment on this\", \"engage with this\", \"what do I say here\", or wants a batch of comments for their engagement round."
+}

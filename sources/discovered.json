@@ -1,7 +1,7 @@
 {
-  "discovered_at": "2026-09-23T04:09:52.650536Z",
+  "discovered_at": "2026-09-24T04:00:51.771571Z",
   "total_repos": 300,
-  "total_skills": 12,
+  "total_skills": 18,
   "scanned_repos": 300,
   "limits": {
     "max_repos": 300,
@@ -17,7 +17,6 @@
     "AlpacaLabsLLC/skills-for-architects",
     "Appllama/appllama-skills",
     "Ar9av/PaperOrchestra",
-    "Arindam200/cc-lens",
     "Ark0N/Codeman",
     "Ashad001/remotion-transitions",
     "AsiaOstrich/universal-dev-skills",
@@ -40,6 +39,7 @@
     "Hainrixz/skill-vault",
     "IJONIS/geo-lint",
     "J-nowcow/awesome-korean-agent-skills",
+    "Jakeschincariol/linkedin-agent-skill",
     "JasonColapietro/suede-creator-skills",
     "JayPokale/Chisle",
     "JayantDevkar/claude-code-karma",
@@ -63,6 +63,7 @@
     "Natively-AI-assistant/natively-cluely-ai-assistant",
     "NevaMind-AI/memU",
     "NulightJens/rocket-fuel-skill",
+    "OneMoh/html-explainer",
     "OpenRaiser/NanoResearch",
     "Orchestra-Research/AI-Research-SKILLs",
     "OthmanAdi/planning-with-files",
@@ -300,7 +301,6 @@
     "wesammustafa/Claude-Code-Everything-You-Need-to-Know",
     "wondelai/skills",
     "wrsmith108/linear-claude-skill",
-    "wrsmith108/varlock-claude-skill",
     "wshobson/agents",
     "xiaobei930/cc-best",
     "y49/tlive",
@@ -314,52 +314,76 @@
   ],
   "skills": [
     {
-      "repo": "Rtur2003/Claude-Code-Promts-Skills",
-      "path": ".agents/skills/find-prompt/SKILL.md"
+      "repo": "Jakeschincariol/linkedin-agent-skill",
+      "path": "skills/li-dm/SKILL.md"
     },
     {
-      "repo": "Rtur2003/Claude-Code-Promts-Skills",
-      "path": ".agents/skills/skill-audit/SKILL.md"
+      "repo": "Jakeschincariol/linkedin-agent-skill",
+      "path": "skills/li-post/SKILL.md"
     },
     {
-      "repo": "Rtur2003/Claude-Code-Promts-Skills",
-      "path": ".agents/skills/doc-link-audit/SKILL.md"
+      "repo": "Jakeschincariol/linkedin-agent-skill",
+      "path": "skills/li-plan/SKILL.md"
     },
     {
-      "repo": "Rtur2003/Claude-Code-Promts-Skills",
-      "path": ".claude/skills/capability-audit/SKILL.md"
+      "repo": "Jakeschincariol/linkedin-agent-skill",
+      "path": "skills/li-inbox/SKILL.md"
     },
     {
-      "repo": "Rtur2003/Claude-Code-Promts-Skills",
-      "path": ".agents/skills/capability-audit/SKILL.md"
+      "repo": "Jakeschincariol/linkedin-agent-skill",
+      "path": "skills/li-reply/SKILL.md"
     },
     {
-      "repo": "Rtur2003/Claude-Code-Promts-Skills",
-      "path": ".agents/skills/deterministic-checks/SKILL.md"
+      "repo": "Jakeschincariol/linkedin-agent-skill",
+      "path": "skills/li-audit/SKILL.md"
     },
     {
-      "repo": "Rtur2003/Claude-Code-Promts-Skills",
-      "path": ".agents/skills/changelog-from-commits/SKILL.md"
+      "repo": "Jakeschincariol/linkedin-agent-skill",
+      "path": "skills/li-human/SKILL.md"
     },
     {
-      "repo": "avelikiy/great_cto",
-      "path": "skills/deploy-landed/SKILL.md"
+      "repo": "Jakeschincariol/linkedin-agent-skill",
+      "path": "skills/li-comment/SKILL.md"
     },
     {
-      "repo": "avelikiy/great_cto",
-      "path": "skills/secrets-rotation/SKILL.md"
+      "repo": "Jakeschincariol/linkedin-agent-skill",
+      "path": "skills/li-profile/SKILL.md"
     },
     {
-      "repo": "avelikiy/great_cto",
-      "path": "skills/signing-preflight/SKILL.md"
+      "repo": "Jakeschincariol/linkedin-agent-skill",
+      "path": "skills/li-carousel/SKILL.md"
     },
     {
-      "repo": "kishormorol/cli-faq-shortcuts",
-      "path": "SKILL.md"
+      "repo": "Jakeschincariol/linkedin-agent-skill",
+      "path": "skills/li-repurpose/SKILL.md"
     },
     {
-      "repo": "skyf0xx/hedgehog",
-      "path": "src/skills/hedgehog-orchestrating/SKILL.md"
+      "repo": "getaero-io/gtm-eng-skills",
+      "path": "engineering/warm-intro-scoring/SKILL.md"
+    },
+    {
+      "repo": "nanocoai/nanoclaw",
+      "path": ".claude/skills/add-onecli/SKILL.md"
+    },
+    {
+      "repo": "nanocoai/nanoclaw",
+      "path": ".claude/skills/add-iron-proxy/SKILL.md"
+    },
+    {
+      "repo": "nanocoai/nanoclaw",
+      "path": ".claude/skills/add-onecli/payload/container/skills/onecli-gateway/SKILL.md"
+    },
+    {
+      "repo": "nanocoai/nanoclaw",
+      "path": ".claude/skills/add-iron-proxy/payload/container/skills/iron-proxy-gateway/SKILL.md"
+    },
+    {
+      "repo": "reticlehq/reticle",
+      "path": "skills/verify-cli-run/SKILL.md"
+    },
+    {
+      "repo": "vasilyu1983/AI-Agents-public",
+      "path": "frameworks/shared-skills/skills/ai-coding-agents-plugins/SKILL.md"
     }
   ]
 }

@@ -1,0 +1,37 @@
+{
+  "name": "onecli-gateway",
+  "repo": "nanocoai/nanoclaw",
+  "path": ".claude/skills/add-onecli/payload/container/skills/onecli-gateway/SKILL.md",
+  "github_branch": "main",
+  "category": "bash",
+  "source": "github.com/nanocoai/nanoclaw",
+  "dir_name": "onecli-gateway",
+  "downloaded_at": "2026-09-24T03:53:23.508093Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "bash",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for bash: bash, cli",
+    "score": 2,
+    "runner_up": "api",
+    "runner_up_score": 1,
+    "signals": [
+      "bash",
+      "cli"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "nanocoai",
+  "source_url": "https://github.com/nanocoai/nanoclaw/blob/main/.claude/skills/add-onecli/payload/container/skills/onecli-gateway/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nanocoai/nanoclaw/blob/main/.claude/skills/add-onecli/payload/container/skills/onecli-gateway/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "OneCLI Gateway: transparent HTTPS proxy that injects stored credentials into outbound calls. You MUST use this skill when the user asks you to read emails, check calendar, access GitHub repos, create issues, check Stripe payments, or interact with ANY external service or API. Do NOT use browser extensions or OAuth CLI tools. Make HTTP requests directly; the gateway injects credentials automatically."
+}

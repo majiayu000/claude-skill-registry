@@ -1,0 +1,37 @@
+{
+  "name": "add-iron-proxy",
+  "repo": "nanocoai/nanoclaw",
+  "path": ".claude/skills/add-iron-proxy/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/nanocoai/nanoclaw",
+  "dir_name": "add-iron-proxy",
+  "downloaded_at": "2026-09-24T03:53:23.316620Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: data=2, testing=2",
+    "score": 2,
+    "runner_up": "testing",
+    "runner_up_score": 2,
+    "signals": [
+      "data",
+      "database"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "nanocoai",
+  "source_url": "https://github.com/nanocoai/nanoclaw/blob/main/.claude/skills/add-iron-proxy/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nanocoai/nanoclaw/blob/main/.claude/skills/add-iron-proxy/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Install or refresh Iron Proxy and its official Iron Control web console for NanoClaw. Use when selecting the Iron gateway, adding its management UI, configuring credentials and grants, or restoring the proxy, approval bridge, and agent guidance."
+}

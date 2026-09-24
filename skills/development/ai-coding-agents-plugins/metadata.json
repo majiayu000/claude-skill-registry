@@ -1,0 +1,38 @@
+{
+  "name": "ai-coding-agents-plugins",
+  "repo": "vasilyu1983/AI-Agents-public",
+  "path": "frameworks/shared-skills/skills/ai-coding-agents-plugins/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/vasilyu1983/AI-Agents-public",
+  "dir_name": "ai-coding-agents-plugins",
+  "downloaded_at": "2026-09-24T03:59:38.095095Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: code, framework, software",
+    "score": 3,
+    "runner_up": "ai-ml",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "framework",
+      "software"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "vasilyu1983",
+  "source_url": "https://github.com/vasilyu1983/AI-Agents-public/blob/main/frameworks/shared-skills/skills/ai-coding-agents-plugins/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vasilyu1983/AI-Agents-public/blob/main/frameworks/shared-skills/skills/ai-coding-agents-plugins/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Designs plugin systems for coding-agent runtimes and CLIs. Use when adding plugin manifests, extension points, built-in plugins, or reloadable agent integrations."
+}

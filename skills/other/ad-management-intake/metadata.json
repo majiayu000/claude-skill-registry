@@ -1,0 +1,37 @@
+{
+  "name": "ad-management-intake",
+  "repo": "gooseworks-ai/goose-skills",
+  "path": "skills/ads/composites/ad-management-intake/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/gooseworks-ai/goose-skills",
+  "dir_name": "ad-management-intake",
+  "downloaded_at": "2026-09-25T04:03:04.528635Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: documents=2, marketing=2",
+    "score": 2,
+    "runner_up": "marketing",
+    "runner_up_score": 2,
+    "signals": [
+      "docs",
+      "word"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "gooseworks-ai",
+  "source_url": "https://github.com/gooseworks-ai/goose-skills/blob/main/skills/ads/composites/ad-management-intake/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gooseworks-ai/goose-skills/blob/main/skills/ads/composites/ad-management-intake/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "The intake stage of a Meta ad harness. Researches the brand first, states what it assumes, and asks only what it cannot infer and what would change money, claims or legal exposure if guessed wrong \u2014 at most four questions a turn, in plain business language. Writes the brand's stable facts (ads/brand.md), the campaign brief, and a log of what was asked vs assumed. Use it when someone wants to run Meta ads and the brand's ad facts are not yet recorded."
+}

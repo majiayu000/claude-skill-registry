@@ -1,7 +1,7 @@
 {
-  "discovered_at": "2026-09-24T04:00:51.771571Z",
+  "discovered_at": "2026-09-25T04:17:37.832197Z",
   "total_repos": 300,
-  "total_skills": 18,
+  "total_skills": 9,
   "scanned_repos": 300,
   "limits": {
     "max_repos": 300,
@@ -106,7 +106,6 @@
     "alookai/alook",
     "amElnagdy/delegate-skills",
     "anbeime/skill",
-    "anombyte93/prd-taskmaster",
     "antonbabenko/terraform-skill",
     "aofp/yume",
     "arbiterForge/codeArbiter",
@@ -147,7 +146,7 @@
     "drayline/rootnode-skills",
     "dream-num/skills",
     "drobins25/craft",
-    "echoVic/spec-flow",
+    "eatmoreduck/boss-zhipin-scraper",
     "elementalsouls/Claude-BugHunter",
     "eternityspring/reelbench-skills",
     "evanca/flutter-ai-rules",
@@ -268,6 +267,7 @@
     "sequenzia/agent-alchemy",
     "serejaris/personal-corp-os",
     "sergebulaev/linkedin-skills",
+    "sevenevesai/riso-windowseat",
     "seyedehsanhadi/sloptrim",
     "shahshrey/awesome-claude-code-mastery",
     "shanraisshan/claude-code-best-practice",
@@ -314,76 +314,40 @@
   ],
   "skills": [
     {
-      "repo": "Jakeschincariol/linkedin-agent-skill",
-      "path": "skills/li-dm/SKILL.md"
+      "repo": "AlpacaLabsLLC/skills-for-architects",
+      "path": "skills/ffe-spec-book/SKILL.md"
     },
     {
-      "repo": "Jakeschincariol/linkedin-agent-skill",
-      "path": "skills/li-post/SKILL.md"
+      "repo": "eatmoreduck/boss-zhipin-scraper",
+      "path": "SKILL.md"
     },
     {
-      "repo": "Jakeschincariol/linkedin-agent-skill",
-      "path": "skills/li-plan/SKILL.md"
+      "repo": "gooseworks-ai/goose-skills",
+      "path": "skills/ads/playbooks/meta-ad-manager/SKILL.md"
     },
     {
-      "repo": "Jakeschincariol/linkedin-agent-skill",
-      "path": "skills/li-inbox/SKILL.md"
+      "repo": "gooseworks-ai/goose-skills",
+      "path": "skills/ads/composites/ad-management-intake/SKILL.md"
     },
     {
-      "repo": "Jakeschincariol/linkedin-agent-skill",
-      "path": "skills/li-reply/SKILL.md"
+      "repo": "gooseworks-ai/goose-skills",
+      "path": "skills/ads/capabilities/answer-ads-questions/SKILL.md"
     },
     {
-      "repo": "Jakeschincariol/linkedin-agent-skill",
-      "path": "skills/li-audit/SKILL.md"
+      "repo": "gooseworks-ai/goose-skills",
+      "path": "skills/ads/composites/ads-north-star-strategy/SKILL.md"
     },
     {
-      "repo": "Jakeschincariol/linkedin-agent-skill",
-      "path": "skills/li-human/SKILL.md"
+      "repo": "sevenevesai/riso-windowseat",
+      "path": ".claude/skills/riso-film/SKILL.md"
     },
     {
-      "repo": "Jakeschincariol/linkedin-agent-skill",
-      "path": "skills/li-comment/SKILL.md"
+      "repo": "sevenevesai/riso-windowseat",
+      "path": ".claude/skills/riso-still/SKILL.md"
     },
     {
-      "repo": "Jakeschincariol/linkedin-agent-skill",
-      "path": "skills/li-profile/SKILL.md"
-    },
-    {
-      "repo": "Jakeschincariol/linkedin-agent-skill",
-      "path": "skills/li-carousel/SKILL.md"
-    },
-    {
-      "repo": "Jakeschincariol/linkedin-agent-skill",
-      "path": "skills/li-repurpose/SKILL.md"
-    },
-    {
-      "repo": "getaero-io/gtm-eng-skills",
-      "path": "engineering/warm-intro-scoring/SKILL.md"
-    },
-    {
-      "repo": "nanocoai/nanoclaw",
-      "path": ".claude/skills/add-onecli/SKILL.md"
-    },
-    {
-      "repo": "nanocoai/nanoclaw",
-      "path": ".claude/skills/add-iron-proxy/SKILL.md"
-    },
-    {
-      "repo": "nanocoai/nanoclaw",
-      "path": ".claude/skills/add-onecli/payload/container/skills/onecli-gateway/SKILL.md"
-    },
-    {
-      "repo": "nanocoai/nanoclaw",
-      "path": ".claude/skills/add-iron-proxy/payload/container/skills/iron-proxy-gateway/SKILL.md"
-    },
-    {
-      "repo": "reticlehq/reticle",
-      "path": "skills/verify-cli-run/SKILL.md"
-    },
-    {
-      "repo": "vasilyu1983/AI-Agents-public",
-      "path": "frameworks/shared-skills/skills/ai-coding-agents-plugins/SKILL.md"
+      "repo": "sevenevesai/riso-windowseat",
+      "path": ".claude/skills/riso-score/SKILL.md"
     }
   ]
 }

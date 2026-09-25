@@ -1,0 +1,37 @@
+{
+  "name": "meta-ad-manager",
+  "repo": "gooseworks-ai/goose-skills",
+  "path": "skills/ads/playbooks/meta-ad-manager/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/gooseworks-ai/goose-skills",
+  "dir_name": "meta-ad-manager",
+  "downloaded_at": "2026-09-25T04:03:04.372421Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: business=2, development=2",
+    "score": 2,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "business",
+      "strategy"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "gooseworks-ai",
+  "source_url": "https://github.com/gooseworks-ai/goose-skills/blob/main/skills/ads/playbooks/meta-ad-manager/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gooseworks-ai/goose-skills/blob/main/skills/ads/playbooks/meta-ad-manager/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Front door and loop owner of a Meta (Facebook/Instagram) ad harness. Reads the brand's ads/ docs, works out which campaign the user means and which stage it is at, hands off to the stage skill that runs it (intake, strategy, creative, launch, checks, fixes, answers), and writes every stage change back to the docs. Use it when someone wants to run ads on Meta, comes back to ads they started earlier, a stage skill hands back, or a scheduled check fires."
+}

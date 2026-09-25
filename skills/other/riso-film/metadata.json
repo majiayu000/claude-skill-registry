@@ -1,0 +1,37 @@
+{
+  "name": "riso-film",
+  "repo": "sevenevesai/riso-windowseat",
+  "path": ".claude/skills/riso-film/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/sevenevesai/riso-windowseat",
+  "dir_name": "riso-film",
+  "downloaded_at": "2026-09-25T04:13:27.074356Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: design=2, development=2",
+    "score": 2,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "design",
+      "animation"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "sevenevesai",
+  "source_url": "https://github.com/sevenevesai/riso-windowseat/blob/main/.claude/skills/riso-film/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sevenevesai/riso-windowseat/blob/main/.claude/skills/riso-film/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Design, build or improve procedural risograph animations and videos in this repo, including narrative films, abstract shorts, motion effects and visual inspection. Delivers self-contained Canvas 2D HTML and a verified MP4. For standalone still art use riso-still; for sound use riso-score. Not for editing tools/."
+}

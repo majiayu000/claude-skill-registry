@@ -1,0 +1,38 @@
+{
+  "name": "spine",
+  "repo": "tonone-ai/tonone",
+  "path": "skills/spine/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/tonone-ai/tonone",
+  "dir_name": "spine",
+  "downloaded_at": "2026-09-26T04:22:19.303402Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: ai-ml=2, api=2",
+    "score": 2,
+    "runner_up": "api",
+    "runner_up_score": 2,
+    "signals": [
+      "ai",
+      "model"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter",
+      "tags": "frontmatter:list"
+    }
+  },
+  "author": "tonone-ai",
+  "source_url": "https://github.com/tonone-ai/tonone/blob/main/skills/spine/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tonone-ai/tonone/blob/main/skills/spine/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Backend engineer \u2014 APIs, system design, performance, distributed systems, and service scaffolding. Use when asked to \"design this API\", \"review backend code\", \"scaffold a service\", or \"fix a performance issue\"."
+}

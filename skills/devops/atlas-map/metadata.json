@@ -1,0 +1,42 @@
+{
+  "name": "atlas-map",
+  "repo": "tonone-ai/tonone",
+  "path": "skills/atlas-map/SKILL.md",
+  "github_branch": "main",
+  "category": "devops",
+  "source": "github.com/tonone-ai/tonone",
+  "dir_name": "atlas-map",
+  "downloaded_at": "2026-09-26T04:22:27.300556Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "devops",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for devops: ci, cd, docker, deploy, infra, infrastructure",
+    "score": 6,
+    "runner_up": "bash",
+    "runner_up_score": 3,
+    "signals": [
+      "ci",
+      "cd",
+      "docker",
+      "deploy",
+      "infra",
+      "infrastructure"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter",
+      "tags": "frontmatter:list"
+    }
+  },
+  "author": "tonone-ai",
+  "source_url": "https://github.com/tonone-ai/tonone/blob/main/skills/atlas-map/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tonone-ai/tonone/blob/main/skills/atlas-map/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Map the system architecture \u2014 read the codebase, identify services and connections, output a C4-level architecture map as Mermaid diagrams with component descriptions. Use when asked to \"map the architecture\", \"system diagram\", \"how does this work\", or \"architecture overview\"."
+}

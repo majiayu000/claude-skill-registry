@@ -1,0 +1,39 @@
+{
+  "name": "crest-okr",
+  "repo": "tonone-ai/tonone",
+  "path": "skills/crest-okr/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/tonone-ai/tonone",
+  "dir_name": "crest-okr",
+  "downloaded_at": "2026-09-26T04:22:33.485201Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: code, framework, build",
+    "score": 3,
+    "runner_up": "bash",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "framework",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter",
+      "tags": "frontmatter:list"
+    }
+  },
+  "author": "tonone-ai",
+  "source_url": "https://github.com/tonone-ai/tonone/blob/main/skills/crest-okr/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tonone-ai/tonone/blob/main/skills/crest-okr/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "OKR design \u2014 create objectives and key results with a North Star metric, input metrics tree, and cadence. Use when asked to \"set OKRs\", \"define our objectives\", \"what should we measure this quarter\", \"design our OKR framework\", \"build a metrics tree\", or \"what's our North Star\"."
+}

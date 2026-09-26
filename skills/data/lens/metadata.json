@@ -1,0 +1,41 @@
+{
+  "name": "lens",
+  "repo": "tonone-ai/tonone",
+  "path": "skills/lens/SKILL.md",
+  "github_branch": "main",
+  "category": "data",
+  "source": "github.com/tonone-ai/tonone",
+  "dir_name": "lens",
+  "downloaded_at": "2026-09-26T04:22:18.525271Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "data",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for data: data, analytics, sql, pipeline, visualization",
+    "score": 5,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "data",
+      "analytics",
+      "sql",
+      "pipeline",
+      "visualization"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter",
+      "tags": "frontmatter:list"
+    }
+  },
+  "author": "tonone-ai",
+  "source_url": "https://github.com/tonone-ai/tonone/blob/main/skills/lens/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tonone-ai/tonone/blob/main/skills/lens/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Analytics and BI engineer \u2014 dashboards, metrics design, reporting pipelines, and data storytelling. Use when asked to \"build a dashboard\", \"design a metric\", \"write a report\", or \"audit our analytics\"."
+}

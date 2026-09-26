@@ -1,0 +1,41 @@
+{
+  "name": "flux",
+  "repo": "tonone-ai/tonone",
+  "path": "skills/flux/SKILL.md",
+  "github_branch": "main",
+  "category": "data",
+  "source": "github.com/tonone-ai/tonone",
+  "dir_name": "flux",
+  "downloaded_at": "2026-09-26T04:22:16.829936Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "data",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for data: data, sql, database, etl, pipeline",
+    "score": 5,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "data",
+      "sql",
+      "database",
+      "etl",
+      "pipeline"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter",
+      "tags": "frontmatter:list"
+    }
+  },
+  "author": "tonone-ai",
+  "source_url": "https://github.com/tonone-ai/tonone/blob/main/skills/flux/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tonone-ai/tonone/blob/main/skills/flux/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Data engineer \u2014 databases, migrations, pipelines, schema design, and query optimization. Use when asked to \"design a schema\", \"write a migration\", \"build a data pipeline\", or \"optimize this query\"."
+}

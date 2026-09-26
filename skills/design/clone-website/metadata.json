@@ -1,0 +1,38 @@
+{
+  "name": "clone-website",
+  "repo": "dembrandt/dembrandt-skills",
+  "path": "skills/clone-website/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/dembrandt/dembrandt-skills",
+  "dir_name": "clone-website",
+  "downloaded_at": "2026-09-26T04:07:36.593913Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "design",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for design: design, component, figma",
+    "score": 3,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "design",
+      "component",
+      "figma"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "dembrandt",
+  "source_url": "https://github.com/dembrandt/dembrandt-skills/blob/main/skills/clone-website/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dembrandt/dembrandt-skills/blob/main/skills/clone-website/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Rebuild an existing web page 1:1 from measurement instead of by eye \u2014 into Figma, Penpot, or code. Captures the rendered page, the raw source and the computed styles, rebuilds section by section, then verifies the result visually, structurally and semantically. Use when reproducing a live page as editable layers or components, or when checking whether a rebuild actually matches the original."
+}

@@ -320,6 +320,8 @@ def build_search_index(
             "_asset_ranking_penalty": asset_penalty,
             "_description_length": len(description),
         }
+        if archive_path:
+            lite_record["archive_path"] = archive_path
         dedupe_key = f"{install}|{branch}"
         existing_records = records_by_key.get(dedupe_key)
         existing = existing_records["lite"] if existing_records else None

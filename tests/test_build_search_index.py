@@ -518,6 +518,11 @@ def test_registry_and_search_keep_legacy_github_path_install_identity(tmp_path):
     assert search_record["install"] == "acme/identity/legacy/location/SKILL.md"
     assert registry_record["path"] == "legacy/location/SKILL.md"
 
+    output_dir = tmp_path / "docs"
+    build_search_index([search_record], output_dir)
+    lite = json.loads((output_dir / "search-index-lite.json").read_text())
+    assert lite["skills"][0]["archive_path"] == "development/identity-demo/SKILL.md"
+
 
 def test_live_asset_facets_win_equal_search_ranks_by_downranking_only(tmp_path):
     plain = _skill(

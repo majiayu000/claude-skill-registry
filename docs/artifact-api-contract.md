@@ -20,7 +20,7 @@ artifact is optimized for bulk registry compatibility and raw archive browsing.
 
 | Path | Location | Contract |
 | --- | --- | --- |
-| `search-index-lite.json` | Core Pages | Startup catalog index with deduped summaries and quality/security signals. |
+| `search-index-lite.json` | Core Pages | Startup catalog index with deduped summaries, quality/security signals, and `archive_path` for archived skills. |
 | `search-index.json` | Core Pages | Compatibility pointer for the full search payload. |
 | `search-index-manifest.json` | Core Pages | Full search shard manifest. |
 | `search-shards/part-000.json` | Core Pages | Full search shard part pattern. |
@@ -48,6 +48,9 @@ artifact is optimized for bulk registry compatibility and raw archive browsing.
 
 Any new public JSON artifact must be added to this table in the same PR that
 adds or changes the generated artifact.
+
+When present, a lite skill's `archive_path` is its exact `SKILL.md` path relative
+to the root of `claude-skill-registry-data`. It is not the upstream GitHub path.
 
 ## Compatibility Pointers
 

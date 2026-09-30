@@ -13,15 +13,15 @@
   <a href="https://majiayu000.github.io/claude-skill-registry/"><img src="https://img.shields.io/badge/Web-Search-blue?style=flat-square" alt="Web Search"></a>
 </p>
 
-> The most comprehensive Claude Code skills registry — updated daily with the latest skills
+> A searchable Claude Code skills catalog, published from pinned core and data commits.
 
 ## What is this?
 
-The largest searchable index of Claude Code skills, aggregated from GitHub and community sources.
+Search skill descriptions, inspect source links and registry signals, and find installation guidance. This repository publishes the merged browsing catalog and JSON artifacts produced by the core pipeline and skill archive.
 
 **Three ways to use:**
 1. **[Web Search](https://majiayu000.github.io/claude-skill-registry/)** - Fast browser-based search
-2. **[sk CLI](https://github.com/majiayu000/caude-skill-manager)** - Terminal package manager
+2. **[sk CLI](https://github.com/majiayu000/claude-skill-manager)** - Terminal package manager
 3. **API** - Direct JSON access
 
 **Repo layout note:** `core` owns workflows/pipeline logic, `data` stores `skills/**`, and `main` is generated from `core + data`. See `SCHEME2_SPLIT.md`.
@@ -36,7 +36,7 @@ This repository is the merged publish artifact for browsing and compatibility co
 
 ## Highlights
 
-- **Massive Skill Index** - Deduplicated, high-quality registry (see badge for live count)
+- **Skill Index** - Deduplicated registry entries (see badge for live count)
 - **Rich Categories** - Development, Testing, DevOps, Design, and more
 - **Daily Updates** - Automated crawling/validation by core scheduled workflows
 - **Quality Indexed** - Metadata, descriptions, and star counts
@@ -62,7 +62,12 @@ For clone/update tips on large repositories, see [docs/FAST_CLONE.md](docs/FAST_
 
 ```bash
 # Install sk
-go install github.com/majiayu000/caude-skill-manager@latest
+go install github.com/majiayu000/claude-skill-manager@latest
+# Go names the executable claude-skill-manager; expose the documented sk command.
+sk_bin_dir="$(go env GOBIN)"
+if [ -z "$sk_bin_dir" ]; then sk_bin_dir="$(go env GOPATH)/bin"; fi
+mv "$sk_bin_dir/claude-skill-manager" "$sk_bin_dir/sk"
+# Ensure sk_bin_dir is on your PATH.
 
 # Search skills
 sk search testing
@@ -372,7 +377,7 @@ In this stack, the registry is the **Extend** layer — the front door where you
 
 | Project | Description |
 |---------|-------------|
-| [caude-skill-manager](https://github.com/majiayu000/caude-skill-manager) | CLI tool for installing skills (`sk`) |
+| [claude-skill-manager](https://github.com/majiayu000/claude-skill-manager) | CLI tool for installing skills (`sk`) |
 | [anthropics/skills](https://github.com/anthropics/skills) | Official Anthropic skills |
 | [SkillsMP](https://skillsmp.com) | Web-based skill marketplace |
 | [awesome-claude-skills](https://github.com/travisvn/awesome-claude-skills) | Curated skill list |

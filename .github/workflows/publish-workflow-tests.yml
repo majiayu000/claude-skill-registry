@@ -1,0 +1,40 @@
+name: Publish Workflow Security Tests
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/publish-from-core.yml"
+      - ".github/workflows/publish-workflow-tests.yml"
+      - "tests/test_publish_from_core_workflow.py"
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/publish-from-core.yml"
+      - ".github/workflows/publish-workflow-tests.yml"
+      - "tests/test_publish_from_core_workflow.py"
+
+permissions:
+  contents: read
+
+jobs:
+  publish-workflow-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          sparse-checkout: |
+            /.github/workflows/
+            /tests/test_publish_from_core_workflow.py
+          sparse-checkout-cone-mode: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Install test dependencies
+        run: python -m pip install pytest pyyaml
+
+      - name: Test publish workflow security
+        run: python -m pytest -q -o addopts= tests/test_publish_from_core_workflow.py

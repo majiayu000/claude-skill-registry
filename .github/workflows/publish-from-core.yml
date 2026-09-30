@@ -523,3 +523,16 @@ jobs:
           done
           echo "Push failed after 3 attempts."
           exit 1
+
+  deploy-site:
+    needs: publish
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: write
+    steps:
+      - name: Deploy the successfully published artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: gh workflow run deploy-pages.yml --ref main

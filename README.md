@@ -26,6 +26,21 @@ Search skill descriptions, inspect source links and registry signals, and find i
 
 **Repo layout note:** `core` owns workflows/pipeline logic, `data` stores `skills/**`, and `main` is generated from `core + data`. See `SCHEME2_SPLIT.md`.
 
+## Choose a skill, not the whole archive
+
+This is an aggregate catalog, not a single plugin or a first-party skill pack.
+Search for your task, open the original source and review the skill's own license
+before installing its exact directory. A registry listing or scan signal does
+not establish authorship, safety or permission to redistribute.
+
+The maintainer of this mirror is not necessarily the author of a listed skill.
+Follow its source link or the archive metadata's `author`, `source_url`, `license`
+and `permission_note`. See [how to trace an archived skill](https://github.com/majiayu000/claude-skill-registry-data#trace-an-archived-skill).
+
+Read the [choose and install one skill guide](https://majiayu000.github.io/claude-skill-registry/choose-a-skill.html)
+for a worked example and troubleshooting. For a maintained collection of task
+bundles, see [Spellbook](https://github.com/majiayu000/spellbook#install).
+
 ## Generated Mirror Notice
 
 This repository is the merged publish artifact for browsing and compatibility consumers. Source changes for discovery, download, security scanning, index generation, search, Pages, or publish orchestration belong in [`claude-skill-registry-core`](https://github.com/majiayu000/claude-skill-registry-core). Archived skill body and archive metadata issues belong in [`claude-skill-registry-data`](https://github.com/majiayu000/claude-skill-registry-data).

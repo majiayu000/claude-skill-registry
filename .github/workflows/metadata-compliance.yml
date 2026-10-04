@@ -82,3 +82,4 @@ jobs:
           path: |
             metadata-compliance-report.json
             THIRD_PARTY_NOTICES.md
+            THIRD_PARTY_NOTICES.d/**

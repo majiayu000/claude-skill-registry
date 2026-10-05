@@ -80,6 +80,17 @@ def valid_publish_ref_env() -> dict[str, str]:
     }
 
 
+def test_publish_from_core_checks_out_current_main_and_pinned_sources():
+    # A queued dispatch may carry an old event SHA after main has advanced.
+    main = publish_from_core_step("Checkout main")
+    assert main["with"]["ref"] == "main"
+    assert main["with"]["fetch-depth"] == 0
+
+    for source in ("core", "data"):
+        pinned = publish_from_core_step(f"Checkout pinned {source}")
+        assert pinned["with"]["ref"] == "${{ steps.refs.outputs." + source + "_sha }}"
+
+
 def test_publish_from_core_workflow_parses_and_hardens_publish_refs():
     workflow_text = read_repo_file(".github/workflows/publish-from-core.yml")
     workflow = yaml.safe_load(workflow_text)

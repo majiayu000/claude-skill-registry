@@ -1,9 +1,0 @@
-{
-  "name": "jomonsho-release-preflight",
-  "repo": "riffluv/ito",
-  "category": "development",
-  "description": "Jomonsho のリリース前チェックリストを実行する。",
-  "source": "GitHub Search API",
-  "downloaded_at": "2026-01-08T03:31:46.263226Z",
-  "dir_name": "jomonsho-release-preflight"
-}

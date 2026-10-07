@@ -1,9 +1,0 @@
-{
-  "name": "master-data",
-  "repo": "Osakana3610/Osakana-Guild",
-  "category": "data",
-  "description": "マスターデータ（SQLite）のパターンとチェックリスト。新規マスタ追加時に参照。",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:30.732407Z",
-  "dir_name": "master-data"
-}

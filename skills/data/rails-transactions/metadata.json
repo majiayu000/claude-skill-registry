@@ -1,9 +1,0 @@
-{
-  "name": "rails-transactions",
-  "repo": "nekorush14/dotfiles",
-  "category": "data",
-  "description": "Implement database transactions for data consistency and atomicity. Use when operations must succeed or fail together, coordinating multiple database operations, or ensuring data integrity across mode",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:03.191332Z",
-  "dir_name": "rails-transactions"
-}

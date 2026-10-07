@@ -1,9 +1,0 @@
-{
-  "name": "mcp-mcp-apps-kit",
-  "repo": "AndurilCode/mcp-apps-kit",
-  "category": "data",
-  "description": "Guide for implementing MCP Apps (SEP-1865) - interactive UI extensions for MCP servers. Use when building MCP servers that need to return rich, interactive HTML-based UIs alongside tool results for co",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:55.473458Z",
-  "dir_name": "mcp-mcp-apps-kit"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "skill-judge",
-  "repo": "lloydli/PackAI",
-  "category": "development",
-  "description": "根据官方规范和最佳实践评估 Agent Skill 设计质量。用于审查、审计或改进 SKILL.md 文件和 skill 包。提供多维度评分和可操作的改进建议。",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:11:06.657323Z",
-  "dir_name": "skill-judge"
-}

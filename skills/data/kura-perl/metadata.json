@@ -1,9 +1,0 @@
-{
-  "name": "kura-perl",
-  "repo": "kfly8/claude-cpan-plugins",
-  "category": "data",
-  "description": "Store and export type constraints for Type::Tiny, Moose, Data::Checks, and more",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:38.864477Z",
-  "dir_name": "kura-perl"
-}

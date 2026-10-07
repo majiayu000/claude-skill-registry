@@ -1,9 +1,0 @@
-{
-  "name": "codexray",
-  "repo": "NAMEWTA/ai-omni",
-  "category": "development",
-  "description": "codeXray 功能开发模块。当需要实现项目分析、文档生成、代码注释、AI 工作流、Copilot API 集成时使用。涵盖文件遍历、分层分析、上下文管理、文档输出等核心功能。",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:15.802611Z",
-  "dir_name": "codexray"
-}

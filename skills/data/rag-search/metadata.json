@@ -1,9 +1,0 @@
-{
-  "name": "rag-search",
-  "repo": "grc-iit/Phagocyte",
-  "category": "data",
-  "description": "Search RAG database for relevant content. Use for semantic queries over processed documents, code, or papers.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:18.327080Z",
-  "dir_name": "rag-search"
-}

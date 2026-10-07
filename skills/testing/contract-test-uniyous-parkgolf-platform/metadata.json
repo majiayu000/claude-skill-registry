@@ -1,9 +1,0 @@
-{
-  "name": "contract-test",
-  "repo": "uniyous/parkgolf-platform",
-  "category": "testing",
-  "description": "Park Golf Platform 계약 테스트 가이드. Pact를 사용한 Consumer-Driven Contract Testing, OpenAPI 스펙 검증, NATS 메시지 스키마 검증 방법 안내. \"계약테스트\", \"contract\", \"pact\", \"스키마 검증\" 관련 질문 시 사용합니다.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:19.528217Z",
-  "dir_name": "contract-test-uniyous-parkgolf-platform"
-}

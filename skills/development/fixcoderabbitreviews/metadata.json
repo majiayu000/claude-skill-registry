@@ -1,9 +1,0 @@
-{
-  "name": "fixcoderabbitreviews",
-  "repo": "udondon1478/Project-PS",
-  "category": "development",
-  "description": "CodeRabbitのレビューコメントを自動修正するためのワークフロー手順です。レビュー修正の依頼があった場合に使用してください。",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:27.268734Z",
-  "dir_name": "fixcoderabbitreviews"
-}

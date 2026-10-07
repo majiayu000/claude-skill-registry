@@ -1,9 +1,0 @@
-{
-  "name": "bun-test",
-  "repo": "interactive-inc/open-prompt",
-  "category": "testing",
-  "description": "Bunを用いたテストを作成・編集します。テストを作成する際、ファイル「*.test.ts」を編集する際に呼び出します。",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:07.932217Z",
-  "dir_name": "bun-test-interactive-inc-open-prompt"
-}

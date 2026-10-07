@@ -1,9 +1,0 @@
-{
-  "name": "rust-repository",
-  "repo": "gar-ai/mallorn",
-  "category": "data",
-  "description": "Implement the repository pattern for database abstraction with sqlx, transactions, and retry logic. Use when building data access layers.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:05:49.608936Z",
-  "dir_name": "rust-repository"
-}

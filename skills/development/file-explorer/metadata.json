@@ -1,9 +1,0 @@
-{
-  "name": "file-explorer",
-  "repo": "ArcaneOrion/Alice-Single",
-  "category": "development",
-  "description": "高效的项目文件浏览器。当需要列出整个项目结构、模糊搜索文件或安全地读取（支持大文件分块）本地代码库内容时使用。",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:58.496214Z",
-  "dir_name": "file-explorer"
-}

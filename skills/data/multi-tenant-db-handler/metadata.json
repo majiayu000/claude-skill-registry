@@ -1,9 +1,0 @@
-{
-  "name": "multi-tenant-db-handler",
-  "repo": "masanao-ohba/claude-manifests",
-  "category": "data",
-  "description": "Handles multi-tenant database connections and operations for CakePHP projects using company-specific database patterns",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:00.675129Z",
-  "dir_name": "multi-tenant-db-handler"
-}

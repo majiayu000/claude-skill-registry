@@ -1,9 +1,0 @@
-{
-  "name": "avoid-ambiguous-suffixes",
-  "repo": "j5ik2o/fraktor-rs",
-  "category": "development",
-  "description": "命名・設計レビューにおいて、Manager / Util / Facade / Service / Runtime / Engine など意味が一意に定まらないサフィックスの使用を検出し、責務・境界・契約が明確に伝わる命名へ導くためのスキル。",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:51.902780Z",
-  "dir_name": "avoid-ambiguous-suffixes"
-}

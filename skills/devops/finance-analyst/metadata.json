@@ -1,9 +1,0 @@
-{
-  "name": "finance-analyst",
-  "repo": "kylesean/augo",
-  "category": "devops",
-  "description": "Provides financial analysis and forecasting capabilities. Use when user asks about: - Financial summary or cash flow (收支分析, 现金流) - Financial health evaluation (财务健康, 财务评分) - Future balance predictions",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:14.561238Z",
-  "dir_name": "finance-analyst"
-}

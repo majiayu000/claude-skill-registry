@@ -1,9 +1,0 @@
-{
-  "name": "jomonsho-incident-triage",
-  "repo": "riffluv/ito",
-  "category": "devops",
-  "description": "本番インシデントの調査データを収集する。",
-  "source": "GitHub Search API",
-  "downloaded_at": "2026-01-08T03:31:16.344286Z",
-  "dir_name": "jomonsho-incident-triage"
-}

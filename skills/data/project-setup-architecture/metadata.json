@@ -1,9 +1,0 @@
-{
-  "name": "project-setup-architecture",
-  "repo": "BabakBar/VibeKeeper",
-  "category": "data",
-  "description": "Set up project infrastructure including TypeScript, database, state management, navigation, and testing. Use when initializing new features or configuring development environment.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:07.375184Z",
-  "dir_name": "project-setup-architecture"
-}

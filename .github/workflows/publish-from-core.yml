@@ -128,7 +128,9 @@ jobs:
         uses: actions/checkout@v6
         with:
           ref: main
-          fetch-depth: 0
+          # Only the current tree and the previous provenance file are needed;
+          # the push step fetches newer main commits itself before retrying.
+          fetch-depth: 1
 
       - name: Capture previous publish provenance
         run: |
@@ -191,7 +193,8 @@ jobs:
           bash "${{ steps.srcpaths.outputs.core_dir }}/scripts/sync_main_repo.sh" \
             --core "${{ steps.srcpaths.outputs.core_dir }}" \
             --data "${{ steps.srcpaths.outputs.data_dir }}" \
-            --main "$GITHUB_WORKSPACE"
+            --main "$GITHUB_WORKSPACE" \
+            --no-skills-mirror
 
       - name: Write provenance manifest
         env:
@@ -229,6 +232,7 @@ jobs:
 
       - name: Validate canary artifact and write publish status
         env:
+          ARCHIVE_DIR: ${{ steps.srcpaths.outputs.data_dir }}
           CORE_REPO: ${{ steps.refs.outputs.core_repo }}
           CORE_SHA: ${{ steps.refs.outputs.core_sha }}
           DATA_REPO: ${{ steps.refs.outputs.data_repo }}
@@ -339,49 +343,41 @@ jobs:
                   raise ValueError(f"missing positive shard counts: {', '.join(missing)}")
               return f"largest_generated_file_bytes={largest}"
 
-          def validate_skill_mirror() -> str:
+          def validate_archive_source() -> str:
+              # The archive lives in the data repo; main no longer mirrors it under skills/.
               stats = load_json("docs/stats.json")
               expected_skills = int(stats.get("archive_skill_md_count_raw", 0) or 0)
               expected_metadata = int(stats.get("archive_metadata_count_raw", 0) or 0)
-              skill_paths = sorted((root / "skills").rglob("SKILL.md"))
-              metadata_paths = sorted((root / "skills").rglob("metadata.json"))
-              if len(skill_paths) != expected_skills:
-                  raise ValueError(
-                      f"skills/SKILL.md count={len(skill_paths)}, expected {expected_skills}"
+              archive = Path(os.environ["ARCHIVE_DIR"])
+
+              def count(name: str) -> int:
+                  return sum(
+                      1 for path in archive.rglob(name) if ".git" not in path.relative_to(archive).parts
                   )
-              if len(metadata_paths) != expected_metadata:
+
+              skill_count = count("SKILL.md")
+              metadata_count = count("metadata.json")
+              if skill_count != expected_skills:
+                  raise ValueError(f"archive SKILL.md count={skill_count}, expected {expected_skills}")
+              if metadata_count != expected_metadata:
                   raise ValueError(
-                      f"skills/metadata.json count={len(metadata_paths)}, expected {expected_metadata}"
+                      f"archive metadata.json count={metadata_count}, expected {expected_metadata}"
                   )
-              ignored_scan = subprocess.run(
-                  [
-                      "git",
-                      "ls-files",
-                      "--others",
-                      "--ignored",
-                      "--exclude-standard",
-                      "--",
-                      "skills",
-                  ],
+              tracked = subprocess.run(
+                  ["git", "ls-files", "--", "skills"],
                   text=True,
                   capture_output=True,
                   check=False,
               )
-              if ignored_scan.returncode != 0:
-                  raise ValueError(ignored_scan.stderr.strip() or "git ignored-file scan failed")
-              ignored = [
-                  line
-                  for line in ignored_scan.stdout.splitlines()
-                  if line.endswith("/SKILL.md") or line.endswith("/metadata.json")
-              ]
-              if ignored:
-                  sample = ", ".join(ignored[:5])
-                  raise ValueError(
-                      f"{len(ignored)} mirrored skill files are ignored by git: {sample}"
-                  )
+              if tracked.returncode != 0:
+                  raise ValueError(tracked.stderr.strip() or "git ls-files failed")
+              if tracked.stdout.strip():
+                  raise ValueError("main still tracks a skills/ mirror")
+              if (root / "skills").exists():
+                  raise ValueError("publish workspace unexpectedly contains skills/")
               return (
-                  f"{len(skill_paths)} SKILL.md and {len(metadata_paths)} metadata files "
-                  "match stats and are not ignored"
+                  f"{skill_count} SKILL.md and {metadata_count} metadata files in the data "
+                  "archive match stats; main carries no skills/ mirror"
               )
 
           def validate_registry() -> str:
@@ -440,7 +436,7 @@ jobs:
               )
           check("category index and dynamic manifest", validate_category_manifest)
           check("stats shard summary", validate_stats)
-          check("skills mirror count and gitignore", validate_skill_mirror)
+          check("archive source counts and no main mirror", validate_archive_source)
 
           failed = [item for item in checks if item["status"] != "passed"]
           status = {
@@ -499,11 +495,13 @@ jobs:
           CORE_SHA: ${{ steps.refs.outputs.core_sha }}
           DATA_SHA: ${{ steps.refs.outputs.data_sha }}
         run: |
+          set -euo pipefail
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
 
+          # Generated Pages-only shards and the skills archive are ignored by
+          # .gitignore; they are deployed from this workspace, not committed.
           git add -A
-          git add -f skills
           if git diff --staged --quiet; then
             echo "No main artifact changes"
             exit 0
@@ -512,28 +510,43 @@ jobs:
           test -s "$RUNNER_TEMP/publish-commit-message.txt"
           git commit --file "$RUNNER_TEMP/publish-commit-message.txt"
           for attempt in 1 2 3; do
-            if git push; then
+            if git push origin HEAD:main; then
               echo "Push succeeded on attempt $attempt"
               exit 0
             fi
             if [ "$attempt" -lt 3 ]; then
               wait_time=$((attempt * 20))
-              echo "Push failed (attempt $attempt). Retrying in ${wait_time}s..."
+              echo "Push failed (attempt $attempt). Rebasing onto current main in ${wait_time}s..."
               sleep "$wait_time"
+              git fetch --no-tags origin main
+              if ! git rebase origin/main; then
+                git rebase --abort || true
+                echo "::error::main changed generated publish files concurrently; rerun the publish."
+                exit 1
+              fi
             fi
           done
           echo "Push failed after 3 attempts."
           exit 1
 
+      - name: Upload Pages artifact from the publish workspace
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: docs
+
   deploy-site:
     needs: publish
     runs-on: ubuntu-latest
     permissions:
-      contents: read
-      actions: write
+      pages: write
+      id-token: write
+    concurrency:
+      group: github-pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Deploy the successfully published artifact
-        env:
-          GH_TOKEN: ${{ github.token }}
-          GH_REPO: ${{ github.repository }}
-        run: gh workflow run deploy-pages.yml --ref main
+        id: deployment
+        uses: actions/deploy-pages@v5

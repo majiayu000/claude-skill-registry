@@ -1,9 +1,0 @@
-{
-  "name": "sdd-init",
-  "repo": "See2et/bakopa-vr",
-  "category": "testing",
-  "description": "sdd-slice-wishで決めた「推奨スライス」を入力として、仕様書 docs/specs/YYYYMMDD-{name}.md のドラフトを作成する。ここでは実装もテスト実装も行わない。テストケースの網羅（境界・異常・不変条件の列挙）は sdd-test-cases の責務。",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:50.367556Z",
-  "dir_name": "sdd-init-see2et-bakopa-vr"
-}

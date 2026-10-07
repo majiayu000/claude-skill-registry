@@ -1,9 +1,0 @@
-{
-  "name": "stockfish-analyzer",
-  "repo": "CK991357/gemini-chat",
-  "category": "development",
-  "description": "国际象棋引擎分析工具，提供最佳走法推荐、局面评估和多种走法选择分析。支持FEN字符串直接输入分析。",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:31.841165Z",
-  "dir_name": "stockfish-analyzer"
-}

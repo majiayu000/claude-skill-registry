@@ -1,9 +1,0 @@
-{
-  "name": "lms-features",
-  "repo": "geonook/learning-management-system-esid",
-  "category": "data",
-  "description": "LMS feature implementations including Browse Gradebook, Course Kanban, Communications, Statistics Module, MAP Analytics, Teacher Schedule, and Attendance System. Use this skill when implementing or mo",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:56.433751Z",
-  "dir_name": "lms-features"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "tdd-wada-style",
-  "repo": "YunosukeYoshino/ImageScraper",
-  "category": "development",
-  "description": "t.wada流TDD（テスト駆動開発）。新機能実装、バグ修正、リファクタリング時に自動適用。Red-Green-Refactorサイクル、AAA構造、振る舞いテストの原則に従う。テストを書く、テストファーストで実装する、テストコードをレビューする際に使用。",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:41.266882Z",
-  "dir_name": "tdd-wada-style"
-}

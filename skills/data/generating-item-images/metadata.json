@@ -1,9 +1,0 @@
-{
-  "name": "generating-item-images",
-  "repo": "CaptainCrouton89/new-mystica",
-  "category": "data",
-  "description": "Generate AI-powered item images for Mystica game using Gemini with R2-hosted reference images. Use when creating item assets, generating game art, or when user mentions \"item image\", \"generate image\",",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:22.106464Z",
-  "dir_name": "generating-item-images"
-}

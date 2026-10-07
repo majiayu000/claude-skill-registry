@@ -1,1 +1,0 @@
-{"schema_version":1,"total_count":269371,"deprecated_full_payload":true,"message":"Full ranking-index payload moved to ranking-shards/*.json","manifest":"ranking-index-manifest.json","replacement":"ranking-shards/part-*.json","compat_since":"static-artifact-api-v1","compat_until":"static-artifact-api-v2","count":269371,"updated_at":"2026-10-07T17:55:17.417472Z"}

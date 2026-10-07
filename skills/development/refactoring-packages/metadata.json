@@ -1,9 +1,0 @@
-{
-  "name": "refactoring-packages",
-  "repo": "j5ik2o/fraktor-rs",
-  "category": "development",
-  "description": "パッケージ/モジュール構造の分析とリファクタリング支援。循環依存の検出、責務分離の提案、移行計画の作成を行う。「パッケージ構造を見直したい」「モジュールの依存関係が複雑」「ファイル配置を整理したい」「循環依存を解消したい」といった構造改善リクエストで起動。",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:51.950347Z",
-  "dir_name": "refactoring-packages"
-}

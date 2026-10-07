@@ -1,9 +1,0 @@
-{
-  "name": "branch",
-  "repo": "Clionegohan/YoRuH-Resonance-Archive-C4-Sync-",
-  "category": "testing",
-  "description": "ブランチ作成Skill。仕様策定用（spec/*）または実装用（impl/*）のブランチを作成。/spec や spec-workflow から呼び出される。",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:37.648510Z",
-  "dir_name": "branch-clionegohan-yoruh-resonance-arch"
-}

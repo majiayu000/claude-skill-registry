@@ -1,9 +1,0 @@
-{
-  "name": "input-validation-xss-prevention",
-  "repo": "harperaa/secure-claude-skills",
-  "category": "data",
-  "description": "Validate and sanitize user input to prevent XSS, injection attacks, and ensure data quality. Use this skill when you need to validate forms, sanitize user input, prevent cross-site scripting, use Zod ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:05.306377Z",
-  "dir_name": "input-validation-xss-prevention"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "webview-dev",
-  "repo": "NAMEWTA/ai-omni",
-  "category": "design",
-  "description": "Vue3 Webview 前端开发模块。当需要创建 Vue 组件、修改 UI、添加样式、使用 Vite 构建、与 Extension 通信时使用。涵盖组件开发、状态管理、样式系统、API 封装等。",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:15.856263Z",
-  "dir_name": "webview-dev-namewta-ai-omni"
-}

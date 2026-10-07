@@ -1,9 +1,0 @@
-{
-  "name": "test-script-generate",
-  "repo": "cmw-coder/coder-templates",
-  "category": "testing",
-  "description": "编写用于新华三技术有限公司H3C网络设备自动化测试脚本。支持全库检索、迭代优化策略以及过程文档自动归档。",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:35.840304Z",
-  "dir_name": "test-script-generate"
-}

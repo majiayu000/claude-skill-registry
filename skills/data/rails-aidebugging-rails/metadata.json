@@ -1,9 +1,0 @@
-{
-  "name": "rails-aidebugging-rails",
-  "repo": "zerobearing2/rails-ai",
-  "category": "data",
-  "description": "Use when debugging Rails issues - provides Rails-specific debugging tools (logs, console, byebug, SQL logging) integrated with systematic debugging process",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:15.060234Z",
-  "dir_name": "rails-aidebugging-rails"
-}

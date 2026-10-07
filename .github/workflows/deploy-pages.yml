@@ -1,11 +1,13 @@
 name: Deploy GitHub Pages
 
+# The complete site is deployed by publish-from-core.yml straight from its
+# publish workspace: Pages-only shards (security/quality/ranking/skill-detail
+# shards, docs/skills/ pages, lite index) are no longer committed to main.
+# A checkout of main is therefore an incomplete site, so this workflow no longer
+# runs on push. Manual runs fail closed unless the checkout is complete; to
+# redeploy, re-run publish-from-core with the last known-good core/data SHAs
+# from provenance/merge-source.json.
 on:
-  push:
-    branches: [main]
-    paths:
-      - "docs/**"
-      - ".github/workflows/deploy-pages.yml"
   workflow_dispatch:
 
 permissions:
@@ -27,6 +29,23 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+
+      - name: Refuse to deploy an incomplete site
+        run: |
+          set -euo pipefail
+          missing=0
+          for path in \
+            docs/security-index-manifest.json \
+            docs/quality-index-manifest.json \
+            docs/ranking-index-manifest.json \
+            docs/search-index-lite.json \
+            docs/skill-detail-shards; do
+            if [ ! -e "$path" ]; then
+              echo "::error::$path is not committed; deploy via publish-from-core instead."
+              missing=1
+            fi
+          done
+          exit "$missing"
 
       - name: Setup Pages
         uses: actions/configure-pages@v6

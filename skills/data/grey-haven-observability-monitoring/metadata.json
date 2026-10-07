@@ -1,9 +1,0 @@
-{
-  "name": "grey-haven-observability-monitoring",
-  "repo": "greyhaven-ai/claude-code-config",
-  "category": "data",
-  "description": "Implement observability and monitoring using Cloudflare Workers Analytics, wrangler tail for logs, and health checks. Use when setting up monitoring, implementing logging, configuring alerts, or debug",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:13.990814Z",
-  "dir_name": "grey-haven-observability-monitoring"
-}

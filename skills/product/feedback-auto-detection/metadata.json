@@ -1,9 +1,0 @@
-{
-  "name": "feedback-auto-detection",
-  "repo": "customer-cloud-club/meeting-visualizer",
-  "category": "product",
-  "description": "ユーザーの会話から「こうしてほしい」「これが足りない」などの要望を自動検出し、適切な場所に記録する。専門知識不要。Claude専用（/user-feedbackコマンドはユーザーが直接利用可能）。",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:06.471337Z",
-  "dir_name": "feedback-auto-detection"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "work-plan",
-  "repo": "Kiikurage/Claude-Code-Sample",
-  "category": "development",
-  "description": "作業計画を立てたり遂行する際に利用するスキル。作業項目の追加、次のタスク取得、完了マークなどの機能を提供します。",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:39.542305Z",
-  "dir_name": "work-plan"
-}

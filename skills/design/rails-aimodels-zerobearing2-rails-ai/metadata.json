@@ -1,9 +1,0 @@
-{
-  "name": "rails-aimodels",
-  "repo": "zerobearing2/rails-ai",
-  "category": "design",
-  "description": "Use when designing Rails models - ActiveRecord patterns, validations, callbacks, scopes, associations, concerns, query objects, form objects",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:15.213765Z",
-  "dir_name": "rails-aimodels-zerobearing2-rails-ai"
-}

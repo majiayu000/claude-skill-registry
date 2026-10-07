@@ -1,9 +1,0 @@
-{
-  "name": "issues-guide",
-  "repo": "manaca0923/vtuber-overlay-suite",
-  "category": "design",
-  "description": "実装前にノウハウを確認。Tauriコマンド追加、serde、WebSocket通信、設定項目追加、UI/オーバーレイ実装、セキュリティ関連の作業時に自動的にチェックリストを提供する。",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:55.734908Z",
-  "dir_name": "issues-guide"
-}

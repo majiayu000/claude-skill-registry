@@ -1,9 +1,0 @@
-{
-  "name": "refactoring-analyst",
-  "repo": "ryu-qqq/setof-commerce",
-  "category": "development",
-  "description": "리팩토링 분석 전문가. 기존 코드베이스를 컨벤션 기준으로 분석.Zero-Tolerance 위반 탐지, 영향도 분석, 단계별 리팩토링 계획 수립./refactor-plan 명령 시 자동 활성화. Serena Memory에 결과 저장.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:08:01.557612Z",
-  "dir_name": "refactoring-analyst"
-}

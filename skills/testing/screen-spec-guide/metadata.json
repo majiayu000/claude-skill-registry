@@ -1,9 +1,0 @@
-{
-  "name": "screen-spec-guide",
-  "repo": "yuya296/QuickType",
-  "category": "testing",
-  "description": "画面ID（SAPP-CTG-030 など）から仕様・ワイヤーフレーム・Figma ノードを特定し、関連ドキュメントや画面遷移を横断して確認したいときに使います。docs/2-requirements/24-画面一覧.csv・23-画面設計.md・assets/*.svg・figma・docs/3-external/31-画面遷移図.md を参照して要件を整理する用途を想定しています。",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:17.332723Z",
-  "dir_name": "screen-spec-guide"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "starting-issues",
-  "repo": "ssd-mkdocs-platform/ssd-mkdocs-sample",
-  "category": "development",
-  "description": "Issue作業を開始し、ブランチを作成してPlanモードに入る。Use when the user wants to start working on an issue (Issue対応開始), begin a task (タスク開始), or tackle a GitHub issue (課題着手).",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:35.445909Z",
-  "dir_name": "starting-issues"
-}

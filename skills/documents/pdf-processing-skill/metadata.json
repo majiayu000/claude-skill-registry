@@ -1,9 +1,0 @@
-{
-  "name": "pdf-processing-skill",
-  "repo": "ZBCccc/claude-skills",
-  "category": "documents",
-  "description": "提取PDF文件中的文本，并按标题/段落结构化输出。适用于文档总结、数据提取等场景。",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:43.588657Z",
-  "dir_name": "pdf-processing-skill"
-}

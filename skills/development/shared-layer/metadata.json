@@ -1,9 +1,0 @@
-{
-  "name": "shared-layer",
-  "repo": "NAMEWTA/ai-omni",
-  "category": "development",
-  "description": "共享层与通信机制模块。当需要定义消息类型、添加共享常量、设计 Extension-Webview 通信协议时使用。涵盖类型定义、消息格式、双向通信模式等。",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:15.817215Z",
-  "dir_name": "shared-layer"
-}

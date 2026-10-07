@@ -1,9 +1,0 @@
-{
-  "name": "rust-simplify",
-  "repo": "j5ik2o/fraktor-rs",
-  "category": "development",
-  "description": "Rustコードの過剰設計を解消してシンプルにする依頼で使う。抽象化の過多、不要な分割、過剰な汎用化を減らし、読みやすさと保守性を優先する。",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:51.943794Z",
-  "dir_name": "rust-simplify"
-}

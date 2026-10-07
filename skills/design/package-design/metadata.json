@@ -1,9 +1,0 @@
-{
-  "name": "package-design",
-  "repo": "j5ik2o/fraktor-rs",
-  "category": "design",
-  "description": "乱雑なコードベースを、明確なパッケージ/モジュール構造に再設計するための指針。対象は (1) 乱雑なコードの再整理、(2) 単一巨大モジュールの分割、(3) パッケージ境界のレビュー、(4) 新規プロジェクトのモジュール階層設計。",
-  "source": "GitHub Search API",
-  "downloaded_at": "2026-01-08T03:32:05.364098Z",
-  "dir_name": "package-design"
-}

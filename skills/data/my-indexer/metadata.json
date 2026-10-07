@@ -1,9 +1,0 @@
-{
-  "name": "my-indexer",
-  "repo": "enviodev/envio-plugins",
-  "category": "data",
-  "description": "This skill should be used when the user asks to \"create an indexer\", \"build a hyperindex\", \"index blockchain events\", \"write event handlers\", \"configure config.yaml\", \"define schema.graphql\", \"use env",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:05:27.370885Z",
-  "dir_name": "my-indexer"
-}

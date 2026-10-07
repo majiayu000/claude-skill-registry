@@ -1,6 +1,0 @@
----
-name: using-test
-description: "Use when starting a session to discover available skills."
----
-
-Available skills: `test-project:skill-producer`, `test-project:skill-consumer`.

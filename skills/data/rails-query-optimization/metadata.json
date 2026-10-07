@@ -1,9 +1,0 @@
-{
-  "name": "rails-query-optimization",
-  "repo": "nekorush14/dotfiles",
-  "category": "data",
-  "description": "Optimize ActiveRecord queries to prevent N+1 queries and improve performance. Use when experiencing slow queries, optimizing database access, or implementing eager loading strategies.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:02.542632Z",
-  "dir_name": "rails-query-optimization"
-}

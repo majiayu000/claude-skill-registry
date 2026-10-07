@@ -1,9 +1,0 @@
-{
-  "name": "xsky-core-architecture",
-  "repo": "anujkumar001111/xsky-agent",
-  "category": "data",
-  "description": "This skill should be used when the user asks about \"XSky architecture\", \"XSky class\", \"how XSky works\", \"agent execution\", \"workflow system\", \"Chain class\", \"Context class\", or needs to understand the",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:56.484801Z",
-  "dir_name": "xsky-core-architecture"
-}

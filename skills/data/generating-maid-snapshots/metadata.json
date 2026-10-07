@@ -1,9 +1,0 @@
-{
-  "name": "generating-maid-snapshots",
-  "repo": "Graffioh/myagentisdumb",
-  "category": "data",
-  "description": "Generates MAID snapshot JSON for agent inspection visualization. Use when asked to create snapshot data, export agent traces, or generate JSON for the MAID inspection panel.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:00.524623Z",
-  "dir_name": "generating-maid-snapshots"
-}

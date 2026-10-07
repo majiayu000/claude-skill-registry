@@ -1,9 +1,0 @@
-{
-  "name": "hf-job-logs",
-  "repo": "vm0-ai/vm0-cookbooks",
-  "category": "data",
-  "description": "View logs from a Hugging Face training job",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:43.545274Z",
-  "dir_name": "hf-job-logs"
-}

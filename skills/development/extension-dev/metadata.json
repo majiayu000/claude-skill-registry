@@ -1,9 +1,0 @@
-{
-  "name": "extension-dev",
-  "repo": "NAMEWTA/ai-omni",
-  "category": "development",
-  "description": "VS Code Extension 后端开发模块。当需要添加命令、修改插件入口、管理 Webview Panel、处理消息、使用 VS Code API 时使用。涵盖命令注册、Webview 管理、文件操作、配置管理等。",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:15.823898Z",
-  "dir_name": "extension-dev"
-}

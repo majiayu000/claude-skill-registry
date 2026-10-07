@@ -1,9 +1,0 @@
-{
-  "name": "python-quality-check",
-  "repo": "Kosuke-Yamada/dotfiles",
-  "category": "development",
-  "description": "PEP8、クリーンコード原則、Pythonのベストプラクティスに基づいてコード品質をチェック。Pythonプロジェクトでコード品質チェック、リント、フォーマットを依頼された時に使用。",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:32.052990Z",
-  "dir_name": "python-quality-check"
-}

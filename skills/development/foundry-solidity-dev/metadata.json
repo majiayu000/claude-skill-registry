@@ -1,9 +1,0 @@
-{
-  "name": "foundry-solidity-dev",
-  "repo": "phpmac/foundry",
-  "category": "development",
-  "description": "提供Foundry智能合约开发的专业指导,包括合约编写、测试、部署和安全最佳实践。当需要开发、测试或部署Solidity智能合约时使用此技能。",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:30.527769Z",
-  "dir_name": "foundry-solidity-dev"
-}

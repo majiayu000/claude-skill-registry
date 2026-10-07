@@ -1,9 +1,0 @@
-{
-  "name": "fullstory-data-scoping-decoration",
-  "repo": "fullstorydev/fs-skills",
-  "category": "data",
-  "description": "Strategic meta-skill for Fullstory data semantic decoration. Teaches when to use page properties vs element properties vs user properties vs events. Provides a deterministic framework for scoping data",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:51.771489Z",
-  "dir_name": "fullstory-data-scoping-decoration"
-}

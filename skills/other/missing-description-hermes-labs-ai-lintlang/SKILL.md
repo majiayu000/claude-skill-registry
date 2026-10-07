@@ -1,5 +1,0 @@
----
-name: missing-description
----
-
-Body.

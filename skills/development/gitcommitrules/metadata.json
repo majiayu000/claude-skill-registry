@@ -1,9 +1,0 @@
-{
-  "name": "gitcommitrules",
-  "repo": "udondon1478/Project-PS",
-  "category": "development",
-  "description": "Gitのコミットメッセージを作成する際のルールとフォーマットを定義します。コミットメッセージを作成または提案する際に必ず使用してください。",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:25.205800Z",
-  "dir_name": "gitcommitrules"
-}

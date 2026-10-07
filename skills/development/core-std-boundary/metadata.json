@@ -1,9 +1,0 @@
-{
-  "name": "core-std-boundary",
-  "repo": "j5ik2o/fraktor-rs",
-  "category": "development",
-  "description": "modules/* の core と std の依存境界を守る依頼で使う。core は no_std のみに依存し、std は std/tokio などに依存できる。テストコードは例外。",
-  "source": "GitHub Search API",
-  "downloaded_at": "2026-01-08T03:30:23.053125Z",
-  "dir_name": "core-std-boundary"
-}

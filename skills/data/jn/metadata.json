@@ -1,9 +1,0 @@
-{
-  "name": "jn",
-  "description": "Use JN for data transformation and ETL. Read data with 'jn cat', filter with 'jn filter', write with 'jn put'. Convert between CSV/JSON/Excel/YAML formats. Stream data through Unix pipes. Integrate wi",
-  "repo": "botassembly/jn",
-  "category": "data",
-  "tags": [],
-  "stars": 1,
-  "dir_name": "jn"
-}

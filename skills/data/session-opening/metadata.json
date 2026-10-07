@@ -1,9 +1,0 @@
-{
-  "name": "session-opening",
-  "repo": "spm1001/claude-config-public",
-  "category": "data",
-  "description": "Start a session with context from previous work. Triggers on /open, 'what were we working on', 'where did we leave off', or session start. Pairs with /ground and /close. (user)",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:08:32.562780Z",
-  "dir_name": "session-opening"
-}

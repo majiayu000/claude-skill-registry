@@ -4,13 +4,17 @@ on:
   pull_request:
     paths:
       - ".github/workflows/publish-from-core.yml"
+      - ".github/workflows/deploy-pages.yml"
       - ".github/workflows/publish-workflow-tests.yml"
+      - ".gitignore"
       - "tests/test_publish_from_core_workflow.py"
   push:
     branches: [main]
     paths:
       - ".github/workflows/publish-from-core.yml"
+      - ".github/workflows/deploy-pages.yml"
       - ".github/workflows/publish-workflow-tests.yml"
+      - ".gitignore"
       - "tests/test_publish_from_core_workflow.py"
 
 permissions:
@@ -25,6 +29,7 @@ jobs:
         with:
           sparse-checkout: |
             /.github/workflows/
+            /.gitignore
             /tests/test_publish_from_core_workflow.py
           sparse-checkout-cone-mode: false
 

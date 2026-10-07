@@ -1,9 +1,0 @@
-{
-  "name": "layer-architect",
-  "repo": "ryu-qqq/setof-commerce",
-  "category": "development",
-  "description": "레이어 아키텍트. 기능을 헥사고날 레이어에 매핑. 기존 코드 영향도 분석.수정 vs 신규 판단 (TDD vs Doc-Driven 분기). Serena MCP 검색 활용./plan 명령 시 자동 활성화. 구현 순서 및 전략 결정.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:08:01.423309Z",
-  "dir_name": "layer-architect"
-}

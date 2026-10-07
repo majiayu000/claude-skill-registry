@@ -1,9 +1,0 @@
-{
-  "name": "adapter-expert",
-  "repo": "ryu-qqq/setof-commerce",
-  "category": "design",
-  "description": "Adapter Layer 전문가. CommandAdapter(persist만, JpaRepository 1:1), QueryAdapter(4개 메서드, QueryDslRepository 1:1),AdminQueryAdapter(Join 허용, DTO Projection), LockQueryAdapter(6개 Lock 메서드).필드 2개만(Repository",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:08:01.065856Z",
-  "dir_name": "adapter-expert"
-}

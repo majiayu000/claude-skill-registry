@@ -1,9 +1,0 @@
-{
-  "name": "unrealcodeimitator",
-  "repo": "lloydli/PackAI",
-  "category": "development",
-  "description": "Unreal 引擎源码学习和插件开发 Skill - 通过学习 Unreal 源码，参考官方实现来开发自己的插件功能或修改引擎。支持网络搜索、源码分析、代码生成、自动编译和迭代修复。【强制规则】所有 Unreal 项目编译必须且只能通过本 Skill 的 compile.bat 脚本执行，绝对禁止使用任何其他方式（如直接调用 RunUAT.bat、Build.bat、Visual Studio 等",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:47.023337Z",
-  "dir_name": "unrealcodeimitator"
-}

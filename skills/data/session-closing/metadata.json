@@ -1,9 +1,0 @@
-{
-  "name": "session-closing",
-  "repo": "spm1001/claude-config-public",
-  "category": "data",
-  "description": "End-of-session ritual. Reflect while context is rich, then seal. Triggers on /close, 'wrap up', 'let's finish', or context nearly full. Pairs with /open and /close. (user)",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:08:32.537525Z",
-  "dir_name": "session-closing"
-}

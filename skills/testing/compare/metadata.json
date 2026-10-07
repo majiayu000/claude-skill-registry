@@ -1,9 +1,0 @@
-{
-  "name": "compare",
-  "repo": "MilesChou/claude-spec-kit-workflow",
-  "category": "testing",
-  "description": "比較原始 spec-kit 與當前版本在設計上的差異",
-  "source": "GitHub Search API",
-  "downloaded_at": "2026-01-08T03:19:16.046347Z",
-  "dir_name": "compare"
-}

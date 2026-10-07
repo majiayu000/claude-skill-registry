@@ -1,9 +1,0 @@
-{
-  "name": "managing-supabase-schema-migrations",
-  "repo": "lifegenieai/claude-skills",
-  "category": "data",
-  "description": "Guides creation, validation, and application of Supabase database migrations with RLS policy checks and type generation. Use when adding tables, modifying schema, or updating database structure.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:59.627422Z",
-  "dir_name": "managing-supabase-schema-migrations"
-}

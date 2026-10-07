@@ -1,9 +1,0 @@
-{
-  "name": "novel-generator",
-  "repo": "Jasonzhangf/claudecode-skills",
-  "category": "data",
-  "description": "智能小说生成器v2.0，支持长篇小说的断点续传、智能上下文管理、三层压缩机制、章节跳转、智能导入设定、AI辅助编辑和记忆管理。当用户需要创作长篇小说、管理复杂故事结构、从外部资源导入设定、或需要AI辅助进行持续性的创意写作时使用此技能。",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:20.707515Z",
-  "dir_name": "novel-generator"
-}

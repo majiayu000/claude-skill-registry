@@ -1,9 +1,0 @@
-{
-  "name": "registry-database",
-  "repo": "theslyprofessor/claude-skills",
-  "category": "data",
-  "description": "Manage the Registry platform - unified Convex database for tasks, articles, courses, emails, and all personal/professional data with MCP server integration",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:08:59.295185Z",
-  "dir_name": "registry-database"
-}

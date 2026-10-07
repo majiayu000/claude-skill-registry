@@ -57,8 +57,26 @@ coverage.xml
 .pytest_cache/
 .mypy_cache/
 
-# The publish artifact mirrors the data repository under skills/**.
-# Skill names can legitimately collide with generic ignored directories
-# such as build/ or dist/, so never ignore mirrored skill files.
-!/skills/
-!/skills/**
+# The skills archive lives in claude-skill-registry-data; main no longer mirrors it.
+/skills/
+
+# Pages-only generated artifacts. publish-from-core deploys them to GitHub Pages
+# straight from its workspace, so they are not committed. Raw-URL consumers
+# (claude-skill-manager, Dash) read registry*.json, registry-shards/,
+# docs/featured.json, docs/categories/ and docs/search-*; those stay committed.
+/docs/skills/
+/docs/skill-detail-shards/
+/docs/quality-shards/
+/docs/security-shards/
+/docs/ranking-shards/
+/docs/quality-index.json
+/docs/quality-index.json.gz
+/docs/quality-index-manifest.json
+/docs/security-index.json
+/docs/security-index.json.gz
+/docs/security-index-manifest.json
+/docs/ranking-index.json
+/docs/ranking-index.json.gz
+/docs/ranking-index-manifest.json
+/docs/search-index-lite.json
+/docs/search-index-lite.json.gz

@@ -1,9 +1,0 @@
-{
-  "name": "verifying-changelog-in-framework",
-  "repo": "Seika139/dotfiles",
-  "category": "development",
-  "description": "外部公開を想定したフレームワークにある CHANGELOG.md の内容が適切かどうかを確認するスキルです。CHANGELOG.md を更新する際、またはレビューする際に利用します。",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:08:10.932102Z",
-  "dir_name": "verifying-changelog-in-framework"
-}

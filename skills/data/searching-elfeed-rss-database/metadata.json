@@ -1,9 +1,0 @@
-{
-  "name": "searching-elfeed-rss-database",
-  "repo": "markus1189/nixos-config",
-  "category": "data",
-  "description": "Autonomously search the user's elfeed RSS feed database when researching topics they've read about, finding specific articles they mention, analyzing their reading patterns, or gathering context from ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:19.732324Z",
-  "dir_name": "searching-elfeed-rss-database"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "rust-iterators",
-  "repo": "gar-ai/mallorn",
-  "category": "data",
-  "description": "Leverage iterator chains for efficient, lazy data processing without intermediate allocations. Use when processing collections.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:05:49.624550Z",
-  "dir_name": "rust-iterators"
-}

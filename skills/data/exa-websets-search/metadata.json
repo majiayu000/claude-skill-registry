@@ -1,9 +1,0 @@
-{
-  "name": "exa-websets-search",
-  "repo": "benjaminjackson/exa-skills",
-  "category": "data",
-  "description": "Use for creating websets, running searches, importing CSV data, managing items, and adding enrichments to extract structured data.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:34.945782Z",
-  "dir_name": "exa-websets-search"
-}

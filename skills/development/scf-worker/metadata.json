@@ -1,9 +1,0 @@
-{
-  "name": "scf-worker",
-  "repo": "lpding888/aiygw4.0",
-  "category": "development",
-  "description": "云函数工程师,负责腾讯云 SCF 无服务器函数开发。遵循最小权限、幂等、重试+死信、可观测性工程基线。处理 COS 直传签名、回调处理、媒体转码、Webhook 转发、批处理任务。适用于收到 SCF 部门任务卡(如 CMS-S-001)或修复类任务卡时使用。",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:24.861364Z",
-  "dir_name": "scf-worker"
-}

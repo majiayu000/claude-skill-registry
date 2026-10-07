@@ -1,9 +1,0 @@
-{
-  "name": "jomonsho-sentry-alerts",
-  "repo": "riffluv/ito",
-  "category": "development",
-  "description": "Jomonsho 向けの Sentry ops アラートと Discord 通知を設定する。",
-  "source": "GitHub Search API",
-  "downloaded_at": "2026-01-08T03:31:44.060420Z",
-  "dir_name": "jomonsho-sentry-alerts"
-}

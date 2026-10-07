@@ -1,9 +1,0 @@
-{
-  "name": "billing-guard",
-  "repo": "lpding888/aiygw4.0",
-  "category": "development",
-  "description": "计费审计专家,在规划/开发/运行阶段持续审计与优化成本。评估任务卡预算、模拟调用成本、监控高成本路径,在超出预算或异常时阻断执行并提出替代方案。遵循数据驱动、三板斧优化(缓存/批量/降级)、预警阻断的工程基线。适用于规划预审、PR成本审查、运行时监控时使用。",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:24.516990Z",
-  "dir_name": "billing-guard"
-}

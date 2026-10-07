@@ -1,9 +1,0 @@
-{
-  "name": "creating-prs",
-  "repo": "ssd-mkdocs-platform/ssd-mkdocs-sample",
-  "category": "development",
-  "description": "mainブランチからの差分を分析してPull Requestを作成する。Use when the user wants to create a PR (PR作成), merge changes (変更のマージ), or submit code for review (コードレビュー依頼).",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:37.180476Z",
-  "dir_name": "creating-prs"
-}

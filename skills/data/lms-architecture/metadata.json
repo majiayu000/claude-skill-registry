@@ -1,9 +1,0 @@
-{
-  "name": "lms-architecture",
-  "repo": "geonook/learning-management-system-esid",
-  "category": "data",
-  "description": "LMS-ESID core architecture including one-class-three-teachers system, course structure, grade levels, role permissions, and database schema. Use this skill when understanding teacher types (LT/IT/KCFS",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:58.075686Z",
-  "dir_name": "lms-architecture"
-}

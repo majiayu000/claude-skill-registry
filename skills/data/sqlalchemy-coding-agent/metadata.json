@@ -1,9 +1,0 @@
-{
-  "name": "sqlalchemy-coding-agent",
-  "repo": "TheApolloProject/ops_deck",
-  "category": "data",
-  "description": "Turn the model into a SQLAlchemy-focused Python coding agent for designing models, writing queries, debugging database issues, and integrating SQLAlchemy with Alembic and FastAPI in new or existing Py",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:08:53.959007Z",
-  "dir_name": "sqlalchemy-coding-agent"
-}

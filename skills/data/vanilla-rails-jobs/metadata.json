@@ -1,9 +1,0 @@
-{
-  "name": "vanilla-rails-jobs",
-  "repo": "ZempTime/zemptime-marketplace",
-  "category": "data",
-  "description": "Use when writing background jobs or async operations - enforces thin job wrappers (3-5 lines) that delegate to models using _later/_now naming pattern",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:44.452263Z",
-  "dir_name": "vanilla-rails-jobs"
-}

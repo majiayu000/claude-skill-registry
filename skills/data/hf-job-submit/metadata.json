@@ -1,9 +1,0 @@
-{
-  "name": "hf-job-submit",
-  "repo": "vm0-ai/vm0-cookbooks",
-  "category": "data",
-  "description": "Submit training jobs to Hugging Face cloud GPUs",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:43.652808Z",
-  "dir_name": "hf-job-submit"
-}

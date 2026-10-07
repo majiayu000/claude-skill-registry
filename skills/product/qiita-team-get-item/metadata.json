@@ -1,9 +1,0 @@
-{
-  "name": "qiita-team-get-item",
-  "repo": "minamijoyo/dotfiles",
-  "category": "product",
-  "description": "社内Qiita:Teamのドキュメントコンテンツを取得する。コード内のコメントやドキュメントにQiita:TeamのURL（https://[team_id].qiita.com/[user_id]/items/[item_id]形式）が含まれている場合に使用する",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:10.590180Z",
-  "dir_name": "qiita-team-get-item"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "synthese-multi-llm",
-  "repo": "Alexmacapple/Synthese-Council",
-  "category": "development",
-  "description": "Synthèse co-fabriquée par un conseil de 3 LLMs (Claude, Gemini, Codex). Ce skill devrait être utilisé quand l'utilisateur demande une synthèse robuste, traçable et vérifiée. Il orchestre trois modèles",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:05.046525Z",
-  "dir_name": "synthese-multi-llm"
-}

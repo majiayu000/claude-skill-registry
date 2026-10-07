@@ -1,9 +1,0 @@
-{
-  "name": "stagehand",
-  "repo": "bout3fiddy/agents",
-  "category": "data",
-  "description": "Stagehand Python AI-powered browser automation. Use for web scraping, form filling, clicking elements, extracting structured data, and autonomous multi-step browser workflows. Covers act(), extract(),",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:38.454153Z",
-  "dir_name": "stagehand"
-}

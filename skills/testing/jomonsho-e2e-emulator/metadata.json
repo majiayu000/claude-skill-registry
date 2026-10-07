@@ -1,9 +1,0 @@
-{
-  "name": "jomonsho-e2e-emulator",
-  "repo": "riffluv/ito",
-  "category": "testing",
-  "description": "エミュレータを使った Playwright E2E を2回連続で実行する。",
-  "source": "GitHub Search API",
-  "downloaded_at": "2026-01-08T03:32:15.838463Z",
-  "dir_name": "jomonsho-e2e-emulator"
-}

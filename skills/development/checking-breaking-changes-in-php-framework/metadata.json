@@ -1,9 +1,0 @@
-{
-  "name": "checking-breaking-changes-in-php-framework",
-  "repo": "Seika139/dotfiles",
-  "category": "development",
-  "description": "外部公開を想定したphpフレームワークのコードレビューをする際に、破壊的変更（breaking change）の有無を確認し、破壊的変更がある場合は適切に処理されているかをチェックするスキルです。",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:08:10.805859Z",
-  "dir_name": "checking-breaking-changes-in-php-framework"
-}

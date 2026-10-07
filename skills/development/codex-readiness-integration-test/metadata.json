@@ -1,6 +1,0 @@
-{
-  "name": "codex-readiness-integration-test",
-  "source": "github.com/openai/skills",
-  "category": "development",
-  "dir_name": "codex-readiness-integration-test"
-}

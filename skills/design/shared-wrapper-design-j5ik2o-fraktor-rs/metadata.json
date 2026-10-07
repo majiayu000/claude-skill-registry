@@ -1,9 +1,0 @@
-{
-  "name": "shared-wrapper-design",
-  "repo": "j5ik2o/fraktor-rs",
-  "category": "design",
-  "description": "共有ラッパー（*Shared）と非共有本体（*）、Handle の使い分け、ArcShared+ToolboxMutex、SharedAccess/Clone の設計判断を扱う。共有の要否を判断し、shared_vs_handle ガイドに従って設計・実装する場面で使う。",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:52.005998Z",
-  "dir_name": "shared-wrapper-design-j5ik2o-fraktor-rs"
-}

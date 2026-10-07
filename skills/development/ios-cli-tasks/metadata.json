@@ -1,9 +1,0 @@
-{
-  "name": "ios-cli-tasks",
-  "repo": "yuya296/QuickType",
-  "category": "development",
-  "description": "QuickTypeの`.vscode/tasks.json`に定義されたiOSアプリ開発用コマンド（Simulator起動、xcodebuild、simctlインストール/起動など）をCLIから再現する。タスクごとの依存関係を解決してシミュレータ検証を自動化したいときに使用する。",
-  "source": "GitHub Search API",
-  "downloaded_at": "2026-01-08T03:30:56.770378Z",
-  "dir_name": "ios-cli-tasks"
-}

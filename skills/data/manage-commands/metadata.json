@@ -1,9 +1,0 @@
-{
-  "name": "manage-commands",
-  "repo": "Git-Fg/thecattoolkit",
-  "category": "data",
-  "description": "MUST INVOKE this skill when creating custom slash commands, standardizing workflows, or adding reusable operations. Secondary: understanding command structure, learning YAML configuration, or optimizi",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:33.514855Z",
-  "dir_name": "manage-commands"
-}

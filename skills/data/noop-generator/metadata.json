@@ -1,9 +1,0 @@
-{
-  "name": "noop-generator",
-  "repo": "HDeibler/noop",
-  "category": "data",
-  "description": "Generate production-ready Express + TypeScript + PostgreSQL + Redis projects. Use when the user wants to create a new backend service, API, or microservice from scratch. Automatically invoked when dis",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:11:00.953146Z",
-  "dir_name": "noop-generator"
-}

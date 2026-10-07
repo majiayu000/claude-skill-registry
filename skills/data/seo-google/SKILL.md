@@ -1,6 +1,0 @@
----
-name: seo-google
-description: "Google SEO APIs: Search Console (Search Analytics, URL Inspection, Sitemaps), PageSpeed Insights v5, CrUX field data with 25-week history, Indexing API v3, and GA4 organic traffic. Provides real Google field data for Core Web Vitals, indexation status, search performance, and organic traffic trends. Use when user says \"search console\", \"GSC\", \"PageSpeed\", \"CrUX\", \"field data\", \"indexing API\", \"GA4 organic\", \"URL inspection\", \"google api setup\", \"real CWV data\", \"impressions\", \"clicks\", \"CTR\", \"position data\", \"LCP\", \"INP\", \"CLS\", \"FCP\", \"TTFB\", or \"Lighthouse scores\"."
-argument-hint: '[command] [url|property]'
-user_invocable: false
----

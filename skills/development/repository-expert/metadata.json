@@ -1,9 +1,0 @@
-{
-  "name": "repository-expert",
-  "repo": "ryu-qqq/setof-commerce",
-  "category": "development",
-  "description": "Repository 전문가. JpaRepository(Command: save/delete), QueryDslRepository(Query: 4개 메서드),AdminQueryDslRepository(Join 허용, DTO Projection), LockRepository(Pessimistic Lock).Entity 직접 반환 금지, N+1은 Applicat",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:08:01.594744Z",
-  "dir_name": "repository-expert"
-}

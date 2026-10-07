@@ -6,7 +6,7 @@
 > **Authority:** core workflows are canonical; main is a publish mirror.  
 <p align="center">
   <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fmajiayu000.github.io%2Fclaude-skill-registry%2Fstats.json&query=%24.archive_skill_md_count_raw&label=SKILL.md%20files%20(raw)&color=blueviolet&style=flat-square" alt="SKILL.md files (raw)">
-  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fmajiayu000.github.io%2Fclaude-skill-registry%2Fstats.json&query=%24.registry_skill_count_dedup&label=Skills%20(dedup)&color=purple&style=flat-square" alt="Skills (dedup)">
+  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fmajiayu000.github.io%2Fclaude-skill-registry%2Fstats.json&query=%24.independent_skill_count&label=Independent%20skills&color=purple&style=flat-square" alt="Independent skills">
   <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fmajiayu000.github.io%2Fclaude-skill-registry%2Fstats.json&query=%24.total_plugins&label=Plugins&color=1f6feb&style=flat-square" alt="Plugins">
   <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fmajiayu000.github.io%2Fclaude-skill-registry%2Fstats.json&query=%24.updated_at&label=Updated%20UTC&color=2ea043&style=flat-square" alt="Updated UTC">
   <img src="https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square" alt="License">
@@ -18,6 +18,8 @@
 ## What is this?
 
 Search skill descriptions, inspect source links and registry signals, and find installation guidance. This repository publishes the merged browsing catalog and JSON artifacts produced by the core pipeline and skill archive.
+
+The same skill copied into multiple repositories counts once. Independent skills use a normalized name and an exact Markdown-body fingerprint; sources without a fingerprint count separately by install path and branch.
 
 **Three ways to use:**
 1. **[Web Search](https://majiayu000.github.io/claude-skill-registry/)** - Fast browser-based search
@@ -51,7 +53,7 @@ This repository is the merged publish artifact for browsing and compatibility co
 
 ## Highlights
 
-- **Skill Index** - Deduplicated registry entries (see badge for live count)
+- **Skill Index** - Independent skills (see badge for live count), with matching source copies linked in each detail view
 - **Rich Categories** - Development, Testing, DevOps, Design, and more
 - **Daily Updates** - Automated crawling/validation by core scheduled workflows
 - **Quality Indexed** - Metadata, descriptions, and star counts

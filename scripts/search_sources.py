@@ -277,7 +277,8 @@ def scan_skills_v2(skills_dir: Path) -> List[Dict]:
         return skills
 
     list(iter_canonical_archive_paths(skills_dir, strict_registry=True))
-    for skill_md in skills_dir.rglob("SKILL.md"):
+    # Sorted traversal keeps generated artifact order filesystem-independent.
+    for skill_md in sorted(skills_dir.rglob("SKILL.md")):
         if is_declared_bundled_skill_file(skill_md, skills_dir):
             continue
         skill_dir = skill_md.parent

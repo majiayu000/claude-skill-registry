@@ -571,3 +571,45 @@ def test_validator_rejects_docs_dir_outside_root(tmp_path):
     outside.mkdir(exist_ok=True)
     with pytest.raises(ValueError, match="inside root"):
         check_artifact_api.validate_artifact_api(tmp_path, outside)
+
+
+def _rewrite_registry_shard(root: Path, mutate) -> None:
+    manifest_path = root / "registry-manifest.json"
+    manifest = _read(manifest_path)
+    entry = next(item for item in manifest["shards"] if item["count"])
+    plain_path = root / entry["path"]
+    gzip_path = root / entry["gzip_path"]
+    payload = _read(plain_path)
+    mutate(payload)
+    rebuild_registry.safe_write_json(plain_path, payload)
+    rebuild_registry.safe_write_gzip_json(gzip_path, payload)
+    entry["bytes"] = plain_path.stat().st_size
+    entry["gzip_bytes"] = gzip_path.stat().st_size
+    entry["sha256"] = rebuild_registry.file_sha256(plain_path)
+    rebuild_registry.safe_write_json(manifest_path, manifest)
+
+
+def test_validator_accepts_carried_forward_registry_shard_timestamp(tmp_path):
+    docs = build_generated_fixture(tmp_path)
+    _rewrite_registry_shard(
+        tmp_path, lambda payload: payload.__setitem__("generated_at", "2026-07-10T23:59:59.5Z")
+    )
+
+    report = check_artifact_api.validate_artifact_api(tmp_path, docs)
+
+    assert "payload_identity_mismatch" not in _codes(report)
+
+
+@pytest.mark.parametrize(
+    "generated_at",
+    ["2026-07-11T00:00:01Z", "not-a-time", "2026-07-10T00:00:00", "", None],
+)
+def test_validator_rejects_invalid_or_future_registry_shard_timestamp(tmp_path, generated_at):
+    docs = build_generated_fixture(tmp_path)
+    _rewrite_registry_shard(
+        tmp_path, lambda payload: payload.__setitem__("generated_at", generated_at)
+    )
+
+    report = check_artifact_api.validate_artifact_api(tmp_path, docs)
+
+    assert "payload_identity_mismatch" in _codes(report)

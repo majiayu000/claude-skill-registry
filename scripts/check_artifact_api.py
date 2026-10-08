@@ -7,11 +7,37 @@ import gzip
 import hashlib
 import json
 from dataclasses import asdict, dataclass
+from datetime import datetime
 from pathlib import Path, PurePosixPath
 from typing import Any
 
 import check_registry_shard_placement as registry_placement
 from artifact_api_records import is_int, search_key_errors
+
+
+def parse_utc_timestamp(value: object) -> datetime | None:
+    if not isinstance(value, str) or not value:
+        return None
+    try:
+        parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except ValueError:
+        return None
+    if parsed.tzinfo is None:
+        return None
+    return parsed
+
+
+def registry_shard_timestamp_ok(shard_generated_at: object, manifest_generated_at: object) -> bool:
+    """Registry shards carry the time their content last changed.
+
+    Unchanged shards keep their previous ``generated_at`` so publishes do not
+    rewrite them; the value must be a valid UTC timestamp no later than the
+    manifest's ``generated_at``.
+    """
+    shard_time = parse_utc_timestamp(shard_generated_at)
+    manifest_time = parse_utc_timestamp(manifest_generated_at)
+    return shard_time is not None and manifest_time is not None and shard_time <= manifest_time
+
 
 POINTER_REQUIRED = {
     "schema_version",
@@ -439,7 +465,9 @@ class ArtifactValidator:
                 expected_fields |= {"shard", "generated_at"}
                 for code in registry_placement.registry_payload_errors(entry, payload):
                     self.error(code, owner, "registry shard placement is invalid")
-                identity_ok = payload.get("generated_at") == manifest.get("generated_at")
+                identity_ok = registry_shard_timestamp_ok(
+                    payload.get("generated_at"), manifest.get("generated_at")
+                )
             else:
                 expected_fields |= {"part", "part_count"}
                 if kind == "search":

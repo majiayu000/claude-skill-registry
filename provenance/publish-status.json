@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "status": "passed",
-  "generated_at": "2026-10-07T18:02:56Z",
+  "generated_at": "2026-10-08T06:51:05Z",
   "core_repo": "majiayu000/claude-skill-registry-core",
-  "core_sha": "7cdba577ce9364fa1746841981522bd5ebce336d",
+  "core_sha": "3a8ceff4584051bcb74dde6efc297aa3f6487ab5",
   "data_repo": "majiayu000/claude-skill-registry-data",
-  "data_sha": "8dc0adab6588e963b72e8ce43538e6f6bf8d121e",
-  "github_run_id": "37654603372",
+  "data_sha": "a21980a5b576646393ed574f158d7dd92fae4c3f",
+  "github_run_id": "37732906704",
   "github_run_attempt": "1",
-  "github_run_url": "https://github.com/majiayu000/claude-skill-registry/actions/runs/37654603372",
+  "github_run_url": "https://github.com/majiayu000/claude-skill-registry/actions/runs/37732906704",
   "promotion_gate": {
     "mode": "pre-commit canary validation",
     "result": "allowed"
@@ -30,42 +30,42 @@
     {
       "name": "registry pointer and manifest",
       "status": "passed",
-      "detail": "registry-manifest.json: 256 shards, 268939 records"
+      "detail": "registry-manifest.json: 256 shards, 268988 records"
     },
     {
       "name": "search pointer and manifest",
       "status": "passed",
-      "detail": "docs/search-index.json -> search-index-manifest.json; docs/search-index-manifest.json: 11 shards, 269371 records"
+      "detail": "docs/search-index.json -> search-index-manifest.json; docs/search-index-manifest.json: 11 shards, 269420 records"
     },
     {
       "name": "quality signal pointer and manifest",
       "status": "passed",
-      "detail": "docs/quality-index.json -> quality-index-manifest.json; docs/quality-index-manifest.json: 10 shards, 269371 records"
+      "detail": "docs/quality-index.json -> quality-index-manifest.json; docs/quality-index-manifest.json: 10 shards, 269420 records"
     },
     {
       "name": "security signal pointer and manifest",
       "status": "passed",
-      "detail": "docs/security-index.json -> security-index-manifest.json; docs/security-index-manifest.json: 32 shards, 269371 records"
+      "detail": "docs/security-index.json -> security-index-manifest.json; docs/security-index-manifest.json: 32 shards, 269420 records"
     },
     {
       "name": "ranking signal pointer and manifest",
       "status": "passed",
-      "detail": "docs/ranking-index.json -> ranking-index-manifest.json; docs/ranking-index-manifest.json: 8 shards, 269371 records"
+      "detail": "docs/ranking-index.json -> ranking-index-manifest.json; docs/ranking-index-manifest.json: 8 shards, 269420 records"
     },
     {
       "name": "category index and dynamic manifest",
       "status": "passed",
-      "detail": "40 categories indexed; docs/categories/agent/manifest.json: 1 shards, 1465 records; docs/categories/ai-llm/manifest.json: 1 shards, 2822 records; docs/categories/ai-ml/manifest.json: 1 shards, 3075 records; docs/categories/analysis/manifest.json: 1 shards, 3631 records; docs/categories/api/manifest.json: 1 shards, 1844 records; docs/categories/bash/manifest.json: 1 shards, 6558 records; docs/categories/business/manifest.json: 1 shards, 1008 records; docs/categories/c-level/manifest.json: 1 shards, 48 records; docs/categories/communication/manifest.json: 1 shards, 720 records; docs/categories/context-management/manifest.json: 1 shards, 1564 records; docs/categories/creative/manifest.json: 1 shards, 747 records; docs/categories/data/manifest.json: 4 shards, 33545 records; docs/categories/design/manifest.json: 2 shards, 17040 records; docs/categories/development/manifest.json: 6 shards, 46845 records; docs/categories/devops/manifest.json: 2 shards, 10393 records; docs/categories/documents/manifest.json: 2 shards, 10399 records; docs/categories/domains/manifest.json: 1 shards, 3065 records; docs/categories/examples/manifest.json: 1 shards, 165 records; docs/categories/forensics/manifest.json: 1 shards, 407 records; docs/categories/gaming/manifest.json: 1 shards, 1054 records; docs/categories/generation/manifest.json: 1 shards, 1507 records; docs/categories/integration/manifest.json: 1 shards, 6586 records; docs/categories/language/manifest.json: 1 shards, 206 records; docs/categories/local-ai-infrastructure/manifest.json: 1 shards, 125 records; docs/categories/marketing/manifest.json: 1 shards, 6446 records; docs/categories/orchestration/manifest.json: 1 shards, 2693 records; docs/categories/other/manifest.json: 7 shards, 55937 records; docs/categories/performance/manifest.json: 1 shards, 1791 records; docs/categories/personal-development/manifest.json: 1 shards, 697 records; docs/categories/planning/manifest.json: 1 shards, 2052 records; docs/categories/platform/manifest.json: 1 shards, 1299 records; docs/categories/product/manifest.json: 1 shards, 4432 records; docs/categories/productivity/manifest.json: 1 shards, 5635 records; docs/categories/quality/manifest.json: 1 shards, 5858 records; docs/categories/security/manifest.json: 1 shards, 7655 records; docs/categories/skills/manifest.json: 1 shards, 2498 records; docs/categories/system/manifest.json: 1 shards, 348 records; docs/categories/testing/manifest.json: 2 shards, 10773 records; docs/categories/workflow/manifest.json: 1 shards, 4572 records; docs/categories/writing/manifest.json: 1 shards, 1866 records"
+      "detail": "40 categories indexed; docs/categories/agent/manifest.json: 1 shards, 1465 records; docs/categories/ai-llm/manifest.json: 1 shards, 2822 records; docs/categories/ai-ml/manifest.json: 1 shards, 3075 records; docs/categories/analysis/manifest.json: 1 shards, 3631 records; docs/categories/api/manifest.json: 1 shards, 1844 records; docs/categories/bash/manifest.json: 1 shards, 6558 records; docs/categories/business/manifest.json: 1 shards, 1008 records; docs/categories/c-level/manifest.json: 1 shards, 48 records; docs/categories/communication/manifest.json: 1 shards, 720 records; docs/categories/context-management/manifest.json: 1 shards, 1564 records; docs/categories/creative/manifest.json: 1 shards, 747 records; docs/categories/data/manifest.json: 4 shards, 33547 records; docs/categories/design/manifest.json: 2 shards, 17045 records; docs/categories/development/manifest.json: 6 shards, 46845 records; docs/categories/devops/manifest.json: 2 shards, 10393 records; docs/categories/documents/manifest.json: 2 shards, 10399 records; docs/categories/domains/manifest.json: 1 shards, 3065 records; docs/categories/examples/manifest.json: 1 shards, 165 records; docs/categories/forensics/manifest.json: 1 shards, 407 records; docs/categories/gaming/manifest.json: 1 shards, 1054 records; docs/categories/generation/manifest.json: 1 shards, 1507 records; docs/categories/integration/manifest.json: 1 shards, 6586 records; docs/categories/language/manifest.json: 1 shards, 206 records; docs/categories/local-ai-infrastructure/manifest.json: 1 shards, 125 records; docs/categories/marketing/manifest.json: 1 shards, 6468 records; docs/categories/orchestration/manifest.json: 1 shards, 2693 records; docs/categories/other/manifest.json: 7 shards, 55952 records; docs/categories/performance/manifest.json: 1 shards, 1791 records; docs/categories/personal-development/manifest.json: 1 shards, 697 records; docs/categories/planning/manifest.json: 1 shards, 2052 records; docs/categories/platform/manifest.json: 1 shards, 1299 records; docs/categories/product/manifest.json: 1 shards, 4435 records; docs/categories/productivity/manifest.json: 1 shards, 5635 records; docs/categories/quality/manifest.json: 1 shards, 5858 records; docs/categories/security/manifest.json: 1 shards, 7655 records; docs/categories/skills/manifest.json: 1 shards, 2498 records; docs/categories/system/manifest.json: 1 shards, 348 records; docs/categories/testing/manifest.json: 2 shards, 10774 records; docs/categories/workflow/manifest.json: 1 shards, 4572 records; docs/categories/writing/manifest.json: 1 shards, 1867 records"
     },
     {
       "name": "stats shard summary",
       "status": "passed",
-      "detail": "largest_generated_file_bytes=8706566"
+      "detail": "largest_generated_file_bytes=8705895"
     },
     {
       "name": "skills mirror count and gitignore",
       "status": "passed",
-      "detail": "312111 SKILL.md and 312109 metadata files match stats and are not ignored"
+      "detail": "312160 SKILL.md and 312158 metadata files match stats and are not ignored"
     }
   ]
 }

@@ -6,7 +6,13 @@ usage() {
 Sync main repo from core + data (merge artifact).
 
 Usage:
-  scripts/sync_main_repo.sh --core <core_dir> --data <data_dir> --main <main_dir> [--no-rebuild]
+  scripts/sync_main_repo.sh --core <core_dir> --data <data_dir> --main <main_dir> [--no-rebuild] [--no-skills-mirror]
+
+Options:
+  --no-skills-mirror  Build every artifact directly from <data_dir> and do not
+                      copy the archive into <main_dir>/skills. The data repo is
+                      the canonical archive; the mirror only duplicates it.
+                      Rebuild steps may prune orphan metadata.json files there.
 
 Example:
   scripts/sync_main_repo.sh \
@@ -20,6 +26,7 @@ core_dir=""
 data_dir=""
 main_dir=""
 rebuild=1
+mirror_skills=1
 security_report_path=""
 
 while [[ $# -gt 0 ]]; do
@@ -28,6 +35,7 @@ while [[ $# -gt 0 ]]; do
     --data) data_dir="$2"; shift 2;;
     --main) main_dir="$2"; shift 2;;
     --no-rebuild) rebuild=0; shift;;
+    --no-skills-mirror) mirror_skills=0; shift;;
     -h|--help) usage; exit 0;;
     *) echo "Unknown arg: $1"; usage; exit 2;;
   esac
@@ -155,11 +163,18 @@ sync_data_to_main() {
 }
 
 run_step "Sync core -> main (excluding skills and local caches)" sync_core_to_main
-run_step "Sync data -> main/skills" sync_data_to_main
+if [[ "$mirror_skills" -eq 1 ]]; then
+  run_step "Sync data -> main/skills" sync_data_to_main
+  archive_dir="$main_dir/skills"
+else
+  log "Skipping data -> main/skills mirror; building from $data_dir"
+  run_step "Remove previous main/skills mirror" rm -rf "$main_dir/skills"
+  archive_dir="$data_dir"
+fi
 
 if [[ "$rebuild" -eq 1 ]]; then
   run_step "Rebuild registry shards and category indexes" python "$main_dir/scripts/rebuild_registry.py" \
-    --skills-dir "$main_dir/skills" \
+    --skills-dir "$archive_dir" \
     --registry "$main_dir/registry.json" \
     --categories-dir "$main_dir/docs/categories" \
     --compat-manifest-pointer
@@ -172,27 +187,35 @@ if [[ "$rebuild" -eq 1 ]]; then
   security_report_path="$(mktemp)"
   mkdir -p "$main_dir/docs"
   run_step "Generate required security evidence" python "$main_dir/scripts/security_scanner.py" \
-    "$main_dir/skills" \
+    "$archive_dir" \
     --quiet \
     --progress-interval 10000 \
     --report-only \
     --output "$security_report_path"
 
   run_step "Build search and signal indexes" python "$main_dir/scripts/build_search_index.py" \
-    --skills-dir "$main_dir/skills" \
+    --skills-dir "$archive_dir" \
     --output "$main_dir/docs" \
     --security-report "$security_report_path"
 
-  run_step "Build static featured skill pages" python "$main_dir/scripts/build_static_skill_pages.py" \
-    --catalog "$main_dir/docs/page-catalog.json" \
-    --archive "$main_dir/skills" \
-    --output "$main_dir/docs"
+  # --archive writes category READMEs; only the publishing mirror is writable.
+  # In no-mirror mode the catalog already contains everything needed for pages.
+  if [[ "$mirror_skills" -eq 1 ]]; then
+    run_step "Build static featured skill pages" python "$main_dir/scripts/build_static_skill_pages.py" \
+      --catalog "$main_dir/docs/page-catalog.json" \
+      --archive "$archive_dir" \
+      --output "$main_dir/docs"
+  else
+    run_step "Build static featured skill pages" python "$main_dir/scripts/build_static_skill_pages.py" \
+      --catalog "$main_dir/docs/page-catalog.json" \
+      --output "$main_dir/docs"
+  fi
   run_step "Remove temporary guide catalog" rm "$main_dir/docs/page-catalog.json"
   rm -f "$security_report_path"
   security_report_path=""
 
   run_step "Check published categories are canonical" python "$main_dir/scripts/check_canonical_categories.py" \
-    --skills-dir "$main_dir/skills" \
+    --skills-dir "$archive_dir" \
     --registry-shards "$main_dir/registry-shards" \
     --docs-dir "$main_dir/docs"
 
@@ -211,7 +234,7 @@ if [[ "$rebuild" -eq 1 ]]; then
 fi
 
 run_step "Generate third-party notices (advisory full-archive metadata scan)" python "$main_dir/scripts/check_metadata_compliance.py" \
-  --skills-dir "$main_dir/skills" \
+  --skills-dir "$archive_dir" \
   --metadata-schema "$main_dir/schema/metadata.schema.json" \
   --notices "$main_dir/THIRD_PARTY_NOTICES.md" \
   --report-only

@@ -14,6 +14,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from archive_preflight import iter_canonical_archive_paths
+from check_artifact_api import registry_shard_timestamp_ok
 from plugin_index import load_plugins_from_source
 from search_sources import metadata_source_path, verified_asset_fields
 from utils import (
@@ -69,11 +70,17 @@ def safe_write_json(output_path: Path, payload: dict) -> None:
 
 
 def safe_write_gzip_json(output_path: Path, payload: dict) -> None:
-    """Write compact gzipped JSON atomically."""
+    """Write compact gzipped JSON atomically.
+
+    The gzip header carries no file name and a zero mtime so identical payloads
+    produce byte-identical files and do not churn the published git history.
+    """
     output_path.parent.mkdir(parents=True, exist_ok=True)
     temp_path = output_path.with_suffix(output_path.suffix + ".tmp")
-    with gzip.open(temp_path, "wt", encoding="utf-8") as f:
-        json.dump(payload, f, ensure_ascii=False, separators=(",", ":"))
+    data = json.dumps(payload, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
+    with open(temp_path, "wb") as raw:
+        with gzip.GzipFile(filename="", mode="wb", fileobj=raw, mtime=0) as f:
+            f.write(data)
     temp_path.replace(output_path)
 
 
@@ -98,6 +105,30 @@ def registry_shard_id(skill: dict) -> str:
     branch = skill.get("branch", "main") or "main"
     key = f"{skill_install_key(skill)}|{branch}".encode("utf-8")
     return hashlib.sha256(key).hexdigest()[:2]
+
+
+def load_unchanged_shard_generated_at(shard_path: Path, shard_payload: dict) -> str | None:
+    """Return the existing shard timestamp when its content is otherwise unchanged.
+
+    Registry shards are committed to the merged repository. Carrying forward the
+    previous ``generated_at`` for content-identical shards keeps their bytes
+    stable, so a publish only rewrites shards whose records actually changed.
+    """
+    try:
+        with open(shard_path, encoding="utf-8") as f:
+            previous = json.load(f)
+    except (OSError, ValueError):
+        return None
+    if not isinstance(previous, dict):
+        return None
+    previous_generated_at = previous.get("generated_at")
+    if not registry_shard_timestamp_ok(previous_generated_at, shard_payload.get("generated_at")):
+        return None
+    comparable = {key: value for key, value in previous.items() if key != "generated_at"}
+    expected = {key: value for key, value in shard_payload.items() if key != "generated_at"}
+    if comparable != expected:
+        return None
+    return previous_generated_at
 
 
 def remove_stale_shards(shards_dir: Path) -> int:
@@ -169,15 +200,18 @@ def write_registry_shards(
     generated_at: str,
     reference_base: Path | None = None,
 ) -> list[dict]:
-    """Write 256 registry shards and return manifest entries."""
-    remove_stale_shards(shards_dir)
+    """Write 256 registry shards and return manifest entries.
+
+    A shard whose records are unchanged keeps its previous ``generated_at`` (which
+    is therefore never later than the manifest ``generated_at``).
+    """
     reference_base = reference_base or shards_dir.parent
     shards: dict[str, list[dict]] = {f"{idx:02x}": [] for idx in range(256)}
 
     for skill in skills:
         shards[registry_shard_id(skill)].append(skill)
 
-    manifest_entries: list[dict] = []
+    payloads: dict[str, dict] = {}
     for shard_id, shard_skills in sorted(shards.items()):
         shard_payload = {
             "schema_version": 1,
@@ -186,6 +220,17 @@ def write_registry_shards(
             "count": len(shard_skills),
             "skills": shard_skills,
         }
+        previous_generated_at = load_unchanged_shard_generated_at(
+            shards_dir / f"{shard_id}.json", shard_payload
+        )
+        if previous_generated_at is not None:
+            shard_payload["generated_at"] = previous_generated_at
+        payloads[shard_id] = shard_payload
+
+    remove_stale_shards(shards_dir)
+    manifest_entries: list[dict] = []
+    for shard_id, shard_payload in payloads.items():
+        shard_skills = shard_payload["skills"]
         shard_path = shards_dir / f"{shard_id}.json"
         gzip_path = shards_dir / f"{shard_id}.json.gz"
         safe_write_json(shard_path, shard_payload)
@@ -275,7 +320,9 @@ def scan_skills(skills_dir: Path) -> list:
         return skills
 
     list(iter_canonical_archive_paths(skills_dir, strict_registry=True))
-    for skill_md in skills_dir.rglob("SKILL.md"):
+    # Sorted traversal keeps duplicate resolution and record order independent of
+    # filesystem directory-listing order.
+    for skill_md in sorted(skills_dir.rglob("SKILL.md")):
         if is_declared_bundled_skill_file(skill_md, skills_dir):
             continue
         skill_dir = skill_md.parent
@@ -441,11 +488,6 @@ if __name__ == "__main__":
         print("=" * 60)
         print("REBUILDING REGISTRY FROM DOWNLOADED SKILLS")
         print("=" * 60)
-        print()
-
-        print("Cleaning orphan metadata.json files...")
-        orphan_removed = cleanup_orphan_metadata(skills_dir)
-        print(f"Removed {orphan_removed} orphan metadata files")
         print()
 
         print(f"Scanning skills directory: {skills_dir}")

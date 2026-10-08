@@ -16,7 +16,6 @@ Output files:
 
 import argparse
 import base64
-import gzip
 import hashlib
 import json
 import logging
@@ -29,7 +28,7 @@ from build_static_skill_pages import group_skill_copies, select_featured_skills
 from category_taxonomy import get_category_code, get_taxonomy, resolve_category
 from index_artifacts import write_category_artifacts, write_search_artifacts, write_signal_artifacts
 from plugin_index import build_plugins_index, load_plugins_with_fallback
-from rebuild_registry import safe_write_json
+from rebuild_registry import safe_write_gzip_json, safe_write_json
 from search_sources import (
     asset_ranking_penalty,
     count_named_files,
@@ -543,8 +542,7 @@ def build_search_index(
         json.dump(lite_index, f, ensure_ascii=False, separators=(",", ":"))
 
     search_index_lite_gz_path = output_dir / "search-index-lite.json.gz"
-    with gzip.open(search_index_lite_gz_path, "wt", encoding="utf-8") as f:
-        json.dump(lite_index, f, ensure_ascii=False, separators=(",", ":"))
+    safe_write_gzip_json(search_index_lite_gz_path, lite_index)
 
     # Detail lookups need the same deduplicated records beyond the startup cap.
     # The stable id's first character selects a small, directly addressable shard.

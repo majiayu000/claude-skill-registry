@@ -421,19 +421,22 @@ def test_publish_sync_has_observable_steps_and_cache_excludes():
     assert "-exec rm -f {} +" in cleanup_block
 
 
-def test_publish_static_pages_receives_catalog_archive_and_output_together():
+@pytest.mark.parametrize("shell", ["bash", "/bin/bash"])
+@pytest.mark.parametrize("mirror_skills", [0, 1])
+def test_publish_static_pages_receives_catalog_archive_and_output_together(mirror_skills, shell):
     sync_script = read_repo_file("scripts/sync_main_repo.sh")
-    command = sync_script.split('  run_step "Build static featured skill pages"', 1)[1]
-    command = (
-        'run_step "Build static featured skill pages"'
-        + command.split('\n  run_step "Remove temporary guide catalog"', 1)[0]
-    )
+    command = sync_script[sync_script.index('if [[ "$rebuild" -eq 1 ]]') :]
+    command = command.split('\n  run_step "Remove temporary guide catalog"', 1)[0] + '\nfi'
     result = subprocess.run(
         [
-            "bash",
-            "-e",
+            shell,
+            "-eu",
             "-c",
-            'main_dir=/tmp/publish\nrun_step() { printf "%s\\n" "$@"; }\n' + command,
+            'main_dir=/tmp/publish\narchive_dir=/tmp/publish/skills\nrebuild=1\n'
+            f'mirror_skills={mirror_skills}\n'
+            'mktemp() { :; }\nmkdir() { :; }\n'
+            'run_step() { if [[ "$1" == "Build static featured skill pages" ]]; then '
+            'printf "%s\\n" "$@"; fi; }\n' + command,
         ],
         capture_output=True,
         text=True,
@@ -445,11 +448,155 @@ def test_publish_static_pages_receives_catalog_archive_and_output_together():
         "/tmp/publish/scripts/build_static_skill_pages.py",
         "--catalog",
         "/tmp/publish/docs/page-catalog.json",
-        "--archive",
-        "/tmp/publish/skills",
+        *(["--archive", "/tmp/publish/skills"] if mirror_skills else []),
         "--output",
         "/tmp/publish/docs",
     ]
+
+
+@pytest.mark.parametrize("mirror_skills", [0, 1])
+def test_publish_static_pages_preserves_data_checkout(tmp_path, mirror_skills):
+    """Run the real page generator through the publish shell's rebuild wiring."""
+    data = tmp_path / "data source"
+    main = tmp_path / "publish target"
+    for category in ("development", "design"):
+        skill_dir = data / category / "demo"
+        skill_dir.mkdir(parents=True)
+        (skill_dir / "SKILL.md").write_text("# Original archived skill\n", encoding="utf-8")
+        (skill_dir / "metadata.json").write_text('{"name":"demo"}\n', encoding="utf-8")
+    (data / "development/README.md").write_text("# Maintained category notes\n", encoding="utf-8")
+
+    def snapshot():
+        return {path.relative_to(data): path.read_bytes() for path in data.rglob("*") if path.is_file()}
+
+    before = snapshot()
+    archive = data
+    if mirror_skills:
+        archive = main / "skills"
+        shutil.copytree(data, archive)
+    (main / "scripts").mkdir(parents=True)
+    shutil.copy2(ROOT / "scripts/build_static_skill_pages.py", main / "scripts")
+    docs = main / "docs"
+    docs.mkdir()
+    (docs / "page-catalog.json").write_text(json.dumps({"skills": [{
+        "id": "demo", "name": "demo", "repo": "owner/repo", "category": "development",
+        "description": "A useful skill with a substantive description for publishing.",
+        "security_status": "passed", "install_status": "known_good", "quality_score": 80,
+    }]}), encoding="utf-8")
+    sync_script = read_repo_file("scripts/sync_main_repo.sh")
+    rebuild_block = sync_script[sync_script.index('if [[ "$rebuild" -eq 1 ]]') :]
+    rebuild_block = rebuild_block.split('\nrun_step "Generate third-party notices', 1)[0]
+    command = '''set -euo pipefail
+rebuild=1
+run_step() {
+  local label="$1"
+  shift
+  if [[ "$label" == "Build static featured skill pages" ]]; then
+    "$@"
+  fi
+}
+''' + rebuild_block
+
+    for _ in range(2):
+        result = subprocess.run(
+            ["bash", "-c", command], capture_output=True, text=True, check=False,
+            env={**os.environ, "main_dir": str(main), "archive_dir": str(archive),
+                 "mirror_skills": str(mirror_skills),
+                 "PATH": f"{Path(sys.executable).parent}{os.pathsep}{os.environ['PATH']}"},
+        )
+        assert result.returncode == 0, result.stdout + result.stderr
+        assert "Generated 1 static skill pages" in result.stdout
+        assert snapshot() == before
+        assert (docs / "skills/index.html").is_file()
+        assert len(list((docs / "skills").glob("*/index.html"))) == 1
+        assert (docs / "sitemap.xml").is_file()
+        if mirror_skills:
+            for category in ("development", "design"):
+                assert "Browse [skill guides" in (archive / category / "README.md").read_text()
+        else:
+            assert not (main / "skills").exists()
+
+
+def test_publish_sync_rebuild_steps_read_the_selected_archive_dir():
+    sync_script = read_repo_file("scripts/sync_main_repo.sh")
+    rebuild_block = sync_script[sync_script.index('if [[ "$rebuild" -eq 1 ]]') :]
+
+    assert '"$main_dir/skills"' not in rebuild_block
+    assert rebuild_block.count('"$archive_dir"') == 6
+    selection = sync_script[
+        sync_script.index('if [[ "$mirror_skills" -eq 1 ]]') : sync_script.index(
+            'if [[ "$rebuild" -eq 1 ]]'
+        )
+    ]
+    assert 'run_step "Sync data -> main/skills" sync_data_to_main' in selection
+    assert 'archive_dir="$main_dir/skills"' in selection
+    assert 'archive_dir="$data_dir"' in selection
+
+
+@pytest.mark.parametrize("shell", ["bash", "/bin/bash"])
+def test_publish_sync_without_skills_mirror_builds_from_data_dir(tmp_path, shell):
+    core, data, main = (tmp_path / name for name in ("core", "data", "main"))
+    for path in (core, data, main):
+        path.mkdir()
+    for directory in ("scripts", "schema", "taxonomy"):
+        shutil.copytree(ROOT / directory, core / directory)
+    skill = data / "design/legal-example"
+    skill.mkdir(parents=True)
+    (skill / "SKILL.md").write_text("# legal example\n", encoding="utf-8")
+    (skill / "metadata.json").write_text(
+        json.dumps(
+            {
+                "name": "legal-example",
+                "repo": "owner/repo",
+                "category": "design",
+                "dir_name": "legal-example",
+                "author": "Owner",
+                "license": "MIT",
+                "copyright": "Copyright 2026 Owner",
+                "distribution": "compatible",
+                "source_url": "https://github.com/owner/repo/blob/main/SKILL.md",
+                "permission_note": "Preserve the copyright and permission notice.",
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    stale_skill = main / "skills/design/stale-skill/SKILL.md"
+    stale_skill.parent.mkdir(parents=True)
+    stale_skill.write_text("# Previous publishing mirror\n", encoding="utf-8")
+    archive_before = {
+        path.relative_to(data): path.read_bytes()
+        for path in data.rglob("*") if path.is_file()
+    }
+
+    result = subprocess.run(
+        [
+            shell, str(core / "scripts/sync_main_repo.sh"),
+            "--core", str(core), "--data", str(data), "--main", str(main),
+            "--no-rebuild", "--no-skills-mirror",
+        ],
+        cwd=main,
+        env={
+            **os.environ,
+            "PATH": f"{Path(sys.executable).parent}{os.pathsep}{os.environ['PATH']}",
+        },
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+
+    assert result.returncode == 0, result.stdout + result.stderr
+    assert "Skipping data -> main/skills mirror" in result.stdout
+    assert "START: Sync data -> main/skills" not in result.stdout
+    assert not (main / "skills").exists()
+    assert (skill / "SKILL.md").is_file()
+    assert {
+        path.relative_to(data): path.read_bytes()
+        for path in data.rglob("*") if path.is_file()
+    } == archive_before
+    assert "Copyright 2026 Owner" in (main / "THIRD_PARTY_NOTICES.d/part-00001.md").read_text(
+        encoding="utf-8"
+    )
 
 
 def test_publish_sync_preserves_main_owned_routing_files():

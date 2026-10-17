@@ -235,6 +235,8 @@ def test_publish_deploys_pages_from_publish_workspace_after_push():
     )
     assert upload["uses"].startswith("actions/upload-pages-artifact@")
     assert upload["with"]["path"] == "docs"
+    # Guide pages publish .well-known/agent-skills/ discovery indexes.
+    assert upload["with"]["include-hidden-files"] is True
     assert "if" not in upload
 
     deploy = workflow["jobs"]["deploy-site"]

@@ -533,6 +533,8 @@ jobs:
         uses: actions/upload-pages-artifact@v5
         with:
           path: docs
+          # Publish docs/skills/<slug>/.well-known/agent-skills/ discovery indexes.
+          include-hidden-files: true
 
   deploy-site:
     needs: publish

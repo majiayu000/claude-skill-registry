@@ -57,7 +57,9 @@ coverage.xml
 .pytest_cache/
 .mypy_cache/
 
-# The skills archive lives in claude-skill-registry-data; main no longer mirrors it.
+# Ignore untracked archive content; frozen pointers and skills/README.md are
+# force-added once. Ignore rules never untrack them. Publish sparse checkout
+# marks them skip-worktree, so git add -A preserves their absent index entries.
 /skills/
 
 # Pages-only generated artifacts. publish-from-core deploys them to GitHub Pages

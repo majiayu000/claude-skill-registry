@@ -27,6 +27,9 @@ concurrency:
   group: publish-main-artifact
   cancel-in-progress: false
 
+env:
+  LEGACY_SKILL_POINTERS_TREE: 72f1d00964883e70b74533eb634dda53a1bee431
+
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -131,6 +134,23 @@ jobs:
           # Only the current tree and the previous provenance file are needed;
           # the push step fetches newer main commits itself before retrying.
           fetch-depth: 1
+          # Keep the frozen pointer tree in the index without checking it out.
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /*
+            !/skills/
+
+      - name: Validate legacy skill pointer tree
+        run: |
+          set -euo pipefail
+          if ! actual_tree="$(git rev-parse HEAD:skills)"; then
+            echo "::error::main is missing the frozen legacy skills/ pointer tree."
+            exit 1
+          fi
+          if [ "$actual_tree" != "$LEGACY_SKILL_POINTERS_TREE" ]; then
+            echo "::error::Legacy skills/ pointer tree changed: expected $LEGACY_SKILL_POINTERS_TREE, got $actual_tree."
+            exit 1
+          fi
 
       - name: Capture previous publish provenance
         run: |
@@ -244,7 +264,6 @@ jobs:
           import hashlib
           import json
           import os
-          import subprocess
           from datetime import datetime, timezone
           from pathlib import Path
           from typing import Any
@@ -363,21 +382,9 @@ jobs:
                   raise ValueError(
                       f"archive metadata.json count={metadata_count}, expected {expected_metadata}"
                   )
-              tracked = subprocess.run(
-                  ["git", "ls-files", "--", "skills"],
-                  text=True,
-                  capture_output=True,
-                  check=False,
-              )
-              if tracked.returncode != 0:
-                  raise ValueError(tracked.stderr.strip() or "git ls-files failed")
-              if tracked.stdout.strip():
-                  raise ValueError("main still tracks a skills/ mirror")
-              if (root / "skills").exists():
-                  raise ValueError("publish workspace unexpectedly contains skills/")
               return (
                   f"{skill_count} SKILL.md and {metadata_count} metadata files in the data "
-                  "archive match stats; main carries no skills/ mirror"
+                  "archive match stats"
               )
 
           def validate_registry() -> str:
@@ -436,7 +443,7 @@ jobs:
               )
           check("category index and dynamic manifest", validate_category_manifest)
           check("stats shard summary", validate_stats)
-          check("archive source counts and no main mirror", validate_archive_source)
+          check("archive source counts", validate_archive_source)
 
           failed = [item for item in checks if item["status"] != "passed"]
           status = {
@@ -499,9 +506,17 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
 
-          # Generated Pages-only shards and the skills archive are ignored by
-          # .gitignore; they are deployed from this workspace, not committed.
+          # Sparse checkout preserves the frozen skills/ pointer index entries.
+          # Generated Pages-only shards and untracked archive content are ignored.
           git add -A
+          if ! staged_skills="$(git diff --cached --name-only -- skills)"; then
+            echo "::error::Unable to inspect staged skills/ changes; refusing to commit."
+            exit 1
+          fi
+          if [ -n "$staged_skills" ]; then
+            echo "::error::Publish staged changes under frozen skills/; refusing to commit."
+            exit 1
+          fi
           if git diff --staged --quiet; then
             echo "No main artifact changes"
             exit 0
@@ -522,6 +537,10 @@ jobs:
               if ! git rebase origin/main; then
                 git rebase --abort || true
                 echo "::error::main changed generated publish files concurrently; rerun the publish."
+                exit 1
+              fi
+              if ! rebased_tree="$(git rev-parse HEAD:skills)" || [ "$rebased_tree" != "$LEGACY_SKILL_POINTERS_TREE" ]; then
+                echo "::error::main changed frozen skills/ pointers concurrently; refusing to publish."
                 exit 1
               fi
             fi

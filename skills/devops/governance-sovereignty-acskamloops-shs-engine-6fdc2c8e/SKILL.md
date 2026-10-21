@@ -1,0 +1,9 @@
+# governance-sovereignty-acskamloops-shs-engine-6fdc2c8e
+
+This page used to hold an archived copy of this skill. The archive now lives in the registry's data repository.
+
+- [Archived SKILL.md (snapshot from 2026-10-08)](https://github.com/majiayu000/claude-skill-registry-data/blob/a21980a5b576646393ed574f158d7dd92fae4c3f/devops/governance-sovereignty-acskamloops-shs-engine-6fdc2c8e/SKILL.md)
+- [Find this skill in Claude Skills Registry](https://majiayu000.github.io/claude-skill-registry/?q=governance-sovereignty-acskamloops-shs-engine-6fdc2c8e)
+- [Request removal](https://github.com/majiayu000/claude-skill-registry-core/issues/new?template=removal-request.yml)
+
+This pointer keeps old links working. It is not an installable skill.

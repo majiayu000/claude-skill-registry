@@ -48,6 +48,19 @@ jobs:
           else
             git diff --name-only --diff-filter=ACMR HEAD~1 HEAD > .tmp/changed-files.txt
           fi
+          # Main tracks only frozen URL pointers here, without archive metadata.
+          # Keep metadata.json and other changed archive files in the check.
+          python - <<'PY'
+          from pathlib import Path
+
+          file_list = Path(".tmp/changed-files.txt")
+          paths = file_list.read_text(encoding="utf-8").splitlines()
+          paths = [path for path in paths if not (
+              path == "skills/README.md"
+              or (path.startswith("skills/") and path.endswith("/SKILL.md"))
+          )]
+          file_list.write_text("".join(path + "\n" for path in paths), encoding="utf-8")
+          PY
           echo "Changed files:"
           cat .tmp/changed-files.txt || true
 

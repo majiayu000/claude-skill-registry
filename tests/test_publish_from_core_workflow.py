@@ -91,6 +91,8 @@ def test_publish_from_core_checks_out_current_main_and_pinned_sources():
     # History is not needed: provenance comes from the checked-out file and the
     # push step fetches newer main commits before retrying.
     assert main["with"]["fetch-depth"] == 1
+    assert main["with"]["sparse-checkout-cone-mode"] is False
+    assert main["with"]["sparse-checkout"].splitlines() == ["/*", "!/skills/"]
 
     for source in ("core", "data"):
         pinned = publish_from_core_step(f"Checkout pinned {source}")
@@ -221,7 +223,8 @@ def test_publish_builds_from_data_checkout_without_skills_mirror():
 
     assert "--no-skills-mirror" in rebuild["run"]
     assert canary["env"]["ARCHIVE_DIR"] == "${{ steps.srcpaths.outputs.data_dir }}"
-    assert "main still tracks a skills/ mirror" in canary["run"]
+    assert "main still tracks a skills/ mirror" not in canary["run"]
+    assert "archive source counts" in canary["run"]
     assert "git add -f" not in commit["run"]
 
 
@@ -313,6 +316,8 @@ def _push_race_fixture(tmp_path: Path, concurrent_file: str) -> Path:
     _git(tmp_path, "clone", "-q", str(remote), str(seed))
     _commit_file(seed, "registry.json", "old\n", "seed")
     _commit_file(seed, "README.md", "readme\n", "seed readme")
+    (seed / "skills").mkdir()
+    _commit_file(seed, "skills/README.md", "frozen pointers\n", "seed pointers")
     _git(seed, "push", "-q", "origin", "HEAD:main")
 
     work = tmp_path / "work"
@@ -343,6 +348,7 @@ def _run_commit_step(tmp_path: Path, work: Path):
             "RUNNER_TEMP": str(runner_temp),
             "CORE_SHA": "a" * 40,
             "DATA_SHA": "b" * 40,
+            "LEGACY_SKILL_POINTERS_TREE": _git(work, "rev-parse", "HEAD:skills"),
         },
         capture_output=True,
         text=True,
@@ -372,3 +378,112 @@ def test_publish_push_fails_closed_on_conflicting_concurrent_change(tmp_path):
     assert "rerun the publish" in result.stdout
     assert _git(tmp_path / "remote.git", "show", "main:registry.json") == "concurrent"
     assert not (work / ".git" / "rebase-merge").exists()
+
+
+def test_publish_push_refuses_concurrent_pointer_change(tmp_path):
+    work = _push_race_fixture(tmp_path, "skills/README.md")
+    result = _run_commit_step(tmp_path, work)
+    assert result.returncode == 1
+    assert "changed frozen skills/ pointers concurrently" in result.stdout
+    assert _git(tmp_path / "remote.git", "show", "main:registry.json") == "old"
+
+
+def _pointer_repo(tmp_path: Path) -> tuple[Path, str]:
+    repo = tmp_path / "main"
+    repo.mkdir()
+    _git(repo, "init", "-q", "-b", "main")
+    (repo / ".gitignore").write_text(read_repo_file(".gitignore"), encoding="utf-8")
+    (repo / "registry.json").write_text("old\n", encoding="utf-8")
+    pointer = repo / "skills/design/legacy/SKILL.md"
+    pointer.parent.mkdir(parents=True)
+    pointer.write_text("# Frozen pointer\n", encoding="utf-8")
+    (repo / "skills/README.md").write_text("# Frozen pointer set\n", encoding="utf-8")
+    _git(repo, "add", "-f", ".gitignore", "registry.json", "skills")
+    _git(repo, "-c", "user.email=t@example.com", "-c", "user.name=t", "commit", "-qm", "seed")
+    return repo, _git(repo, "rev-parse", "HEAD:skills")
+
+
+@pytest.mark.parametrize("matches", [True, False])
+def test_legacy_pointer_tree_guard(tmp_path, matches):
+    repo, tree = _pointer_repo(tmp_path)
+    result = run_workflow_script(
+        publish_from_core_step("Validate legacy skill pointer tree"), repo,
+        {"LEGACY_SKILL_POINTERS_TREE": tree if matches else "0" * 40},
+    )
+    assert result.returncode == (0 if matches else 1), result.stdout + result.stderr
+    if not matches:
+        assert "pointer tree changed" in result.stdout
+
+
+def test_legacy_pointer_tree_guard_rejects_missing_tree(tmp_path):
+    _git(tmp_path, "init", "-q", "-b", "main")
+    _commit_file(tmp_path, "README.md", "readme\n", "seed")
+    result = run_workflow_script(
+        publish_from_core_step("Validate legacy skill pointer tree"), tmp_path,
+        {"LEGACY_SKILL_POINTERS_TREE": "0" * 40},
+    )
+    assert result.returncode == 1
+    assert "missing the frozen legacy" in result.stdout
+
+
+@pytest.mark.parametrize("change", ["modify", "delete", "add", "readme"])
+def test_publish_refuses_staged_skills_changes(tmp_path, change):
+    repo, _ = _pointer_repo(tmp_path)
+    head = _git(repo, "rev-parse", "HEAD")
+    pointer = repo / "skills/design/legacy/SKILL.md"
+    if change == "delete":
+        pointer.unlink()
+    elif change == "add":
+        pointer = repo / "skills/design/legacy/new.md"
+        pointer.write_text("unwanted\n", encoding="utf-8")
+        _git(repo, "add", "-f", str(pointer))
+    elif change == "readme":
+        (repo / "skills/README.md").write_text("changed\n", encoding="utf-8")
+    else:
+        pointer.write_text("changed\n", encoding="utf-8")
+    result = _run_commit_step(tmp_path, repo)
+    assert result.returncode == 1
+    assert "Publish staged changes under frozen skills/" in result.stdout
+    assert _git(repo, "rev-parse", "HEAD") == head
+
+
+def test_sparse_checkout_and_add_all_preserve_pointer_index(tmp_path):
+    repo, tree = _pointer_repo(tmp_path)
+    checkout = publish_from_core_step("Checkout main")["with"]
+    subprocess.run(
+        ["git", "sparse-checkout", "set", "--no-cone", "--stdin"],
+        input=checkout["sparse-checkout"], cwd=repo, text=True, check=True,
+        capture_output=True,
+    )
+    assert not (repo / "skills").exists()
+    before = _git(repo, "ls-files", "-t", "--", "skills").splitlines()
+    assert len(before) == 2
+    assert all(line.startswith("S ") for line in before)
+    (repo / "registry.json").write_text("published\n", encoding="utf-8")
+    # A stray archive file must remain ignored, along with the local test venv.
+    archive = repo / "skills/design/new/metadata.json"
+    archive.parent.mkdir(parents=True)
+    archive.write_text("{}\n", encoding="utf-8")
+    (repo / ".venv").mkdir()
+    (repo / ".venv/pyvenv.cfg").write_text("test\n", encoding="utf-8")
+    _git(repo, "add", "-A")
+    assert _git(repo, "diff", "--cached", "--name-only") == "registry.json"
+    assert _git(repo, "ls-files", "-t", "--", "skills").splitlines() == before
+    assert _git(repo, "write-tree", "--prefix=skills/") == tree
+    assert _git(repo, "rev-parse", "HEAD:skills") == tree
+
+
+def test_metadata_workflow_excludes_pointers_but_keeps_metadata(tmp_path):
+    repo, _ = _pointer_repo(tmp_path)
+    (repo / "skills/design/legacy/SKILL.md").write_text("pointer\n", encoding="utf-8")
+    (repo / "skills/README.md").write_text("pointers\n", encoding="utf-8")
+    (repo / "skills/design/legacy/metadata.json").write_text("{}\n", encoding="utf-8")
+    _git(repo, "add", "-f", "skills")
+    _git(repo, "-c", "user.email=t@example.com", "-c", "user.name=t", "commit", "-qm", "change")
+    workflow = load_workflow(".github/workflows/metadata-compliance.yml")
+    step = next(step for step in workflow["jobs"]["metadata-compliance"]["steps"]
+                if step["name"] == "Build changed files list")
+    step = {**step, "run": step["run"].replace("${{ github.event_name }}", "workflow_dispatch")}
+    result = run_workflow_script(step, repo, {"PR_BASE_SHA": ""})
+    assert result.returncode == 0, result.stdout + result.stderr
+    assert (repo / ".tmp/changed-files.txt").read_text() == "skills/design/legacy/metadata.json\n"

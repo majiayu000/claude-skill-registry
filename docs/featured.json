@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-28T10:11:55.918772Z",
+  "updated_at": "2026-10-29T09:41:08.897981Z",
   "count": 100,
   "skills": [
     {
@@ -2111,8 +2111,8 @@
       "compatible_agents": [
         "Claude Code"
       ],
-      "canonical_id": "huuak3fbqyt9msozodphu44oa-ntwewiw0kh-znt4ge",
-      "copies": 47,
+      "canonical_id": "j539tnjw4mfjlkb-kekbnc1hscysky5g2ui_lcunq44",
+      "copies": 48,
       "is_canonical": false,
       "u": "skills/web-artifacts-builder-36ce2134fea0/"
     },

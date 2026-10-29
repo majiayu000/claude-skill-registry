@@ -623,7 +623,7 @@ code{{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}}li{{margin:.7r
 details{{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem}}summary{{cursor:pointer;font-weight:600}}.limits{{font-size:.9rem;color:var(--muted)}}
 @media(prefers-color-scheme:dark){{:root{{--ink:#e3e6f6;--muted:#a3aec3;--border:#35405a;--accent:#b2adff;--page:#131a29;--surface:#1c2538;--code:#202b41;color-scheme:dark}}}}
 @media(max-width:600px){{main,header,footer{{padding:1rem}}.numbers{{gap:.6rem}}.numbers div{{padding:.8rem}}.numbers strong{{font-size:1.6rem}}}}
-</style></head><body><header><a href="{PUBLIC_SITE}">Claude Skill Registry</a> / Research reports</header><main><article>
+</style><script defer src="../../js/analytics.js"></script></head><body><header><a href="{PUBLIC_SITE}">Claude Skill Registry</a> / Research reports</header><main><article>
 <p class="note">Observed {esc(observed[:10])} · October 2026 snapshot</p>
 <h1>When skill guides change after a registry scan</h1>
 <p class="intro">The registry’s checks flagged {summary['changed_total']:,} of {summary['pins_total']:,} skill guides ({share:.1f}%) as no longer matching the version it scanned.</p>

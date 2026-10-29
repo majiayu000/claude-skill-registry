@@ -114,7 +114,8 @@ def test_generator_escapes_metadata_and_writes_homepage_links_and_sitemap(tmp_pa
 
     assert summary == {"generated_count": 1, "slugs": [slug], "pinned_count": 0, "history_count": 0}
     assert "<script>alert" not in detail
-    assert detail.count("<script") == 1
+    assert detail.count("<script") == 2
+    assert '<script defer src="../../js/analytics.js"></script>' in detail
     assert 'type="application/ld+json"' in detail
     assert "&lt;script&gt;" in detail
     assert "&lt;tag&gt;" in detail

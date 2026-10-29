@@ -439,6 +439,7 @@ def _render_category_page(category: str, slug: str, items: list[dict[str, Any]])
   <meta name="twitter:image:alt" content="Claude Skills Registry — source-linked skill guides">
   {structured}
   <link rel="stylesheet" href="../../../css/skill-detail.css">
+  <script defer src="../../../js/analytics.js"></script>
 </head>
 <body>
 <header><a class="brand" href="{PUBLIC_SITE}">◈ Skill Registry</a><nav class="header-links"><a href="{PUBLIC_SITE}skills/">All guides</a><a class="star" href="{REGISTRY_REPO_URL}">Star on GitHub</a></nav></header>
@@ -520,6 +521,7 @@ def _render_detail_page(record: dict[str, Any], slug: str, related: list[dict[st
   <meta name="twitter:image:alt" content="Claude Skills Registry — source-linked skill guides">
   {structured}
   <link rel="stylesheet" href="../../css/skill-detail.css">
+  <script defer src="../../js/analytics.js"></script>
 </head>
 <body>
 <header><a class="brand" href="{PUBLIC_SITE}">◈ Skill Registry</a><nav class="header-links"><a href="{PUBLIC_SITE}">Explore skills</a><a class="star" href="{REGISTRY_REPO_URL}">Star on GitHub</a></nav></header>
@@ -693,7 +695,7 @@ def build_static_skill_pages(
 <meta name="twitter:image" content="{PUBLIC_SITE}assets/registry-social-preview.png">
 <meta name="twitter:image:alt" content="Claude Skills Registry — source-linked skill guides">
 {browse_structured}
-<link rel="stylesheet" href="../css/skill-detail.css"></head><body>
+<link rel="stylesheet" href="../css/skill-detail.css"><script defer src="../js/analytics.js"></script></head><body>
 <header><a class="brand" href="{PUBLIC_SITE}">◈ Skill Registry</a><nav class="header-links"><a href="{PUBLIC_SITE}">Search</a><a class="star" href="{REGISTRY_REPO_URL}">Star on GitHub</a></nav></header>
 <main><h1>Browse skill guides</h1><nav class="category-nav" aria-label="Categories">{category_nav}</nav>'''
     for category, items in sorted(categories.items()):

@@ -26,6 +26,8 @@ The same skill copied into multiple repositories counts once. Independent skills
 2. **[sk CLI](https://github.com/majiayu000/claude-skill-manager)** - Terminal package manager
 3. **API** - Direct JSON access
 
+Or [browse the skill guides by category](https://majiayu000.github.io/claude-skill-registry/skills/): each guide links the original source and shows its install command, license and scan results.
+
 **Repo layout note:** `core` owns workflows/pipeline logic, `data` stores `skills/**`, and `main` is generated from `core + data`. See `SCHEME2_SPLIT.md`.
 
 ## Choose a skill, not the whole archive

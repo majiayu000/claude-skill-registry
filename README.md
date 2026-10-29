@@ -1,9 +1,8 @@
 # Claude Skills Registry
 
-> **Core repo:** logic + index + site.  
-> **Main repo (merged artifact):** https://github.com/majiayu000/claude-skill-registry  
+> **This repo (main):** the published catalog and JSON artifacts. Browse it at https://majiayu000.github.io/claude-skill-registry/  
+> **Core repo (pipeline, index, site; send PRs here):** https://github.com/majiayu000/claude-skill-registry-core  
 > **Data repo (skills archive):** https://github.com/majiayu000/claude-skill-registry-data  
-> **Authority:** core workflows are canonical; main is a publish mirror.  
 <p align="center">
   <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fmajiayu000.github.io%2Fclaude-skill-registry%2Fstats.json&query=%24.archive_skill_md_count_raw&label=SKILL.md%20files%20(raw)&color=blueviolet&style=flat-square" alt="SKILL.md files (raw)">
   <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fmajiayu000.github.io%2Fclaude-skill-registry%2Fstats.json&query=%24.independent_skill_count&label=Independent%20skills&color=purple&style=flat-square" alt="Independent skills">

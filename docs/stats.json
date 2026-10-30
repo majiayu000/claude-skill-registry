@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-30T10:33:14.332647Z",
-  "archive_skill_md_count_raw": 351607,
-  "archive_metadata_count_raw": 351605,
-  "indexed_skill_count_scan_shape": 308868,
-  "registry_skill_count_dedup": 308436,
+  "updated_at": "2026-10-30T12:00:09.284024Z",
+  "archive_skill_md_count_raw": 351608,
+  "archive_metadata_count_raw": 351606,
+  "indexed_skill_count_scan_shape": 308869,
+  "registry_skill_count_dedup": 308437,
   "total_plugins": 5,
   "categories": 40,
   "category_counts": [
@@ -171,7 +171,7 @@
     {
       "name": "productivity",
       "code": "pro",
-      "count": 6966
+      "count": 6967
     },
     {
       "name": "quality",
@@ -209,7 +209,7 @@
       "count": 2071
     }
   ],
-  "unique_repo_count": 15033,
+  "unique_repo_count": 15034,
   "official_skill_count": 0,
   "top_repositories": [
     {
@@ -254,7 +254,7 @@
     }
   ],
   "featured_count": 100,
-  "independent_skill_count": 196691,
+  "independent_skill_count": 196692,
   "static_skill_page_count": 5800,
   "asset_state_counts": {
     "verified": 30
@@ -264,17 +264,17 @@
     "live": 29
   },
   "index_size_bytes": 324,
-  "index_size_gzip_bytes": 211,
+  "index_size_gzip_bytes": 212,
   "search_shard_count": 12,
   "search_largest_shard_bytes": 8388685,
-  "search_largest_shard_gzip_bytes": 1988415,
+  "search_largest_shard_gzip_bytes": 1988379,
   "category_shard_count": 64,
   "category_largest_part_bytes": 8388743,
   "category_largest_part_gzip_bytes": 2006234,
-  "lite_index_count": 308868,
+  "lite_index_count": 308869,
   "lite_index_included_count": 5000,
-  "lite_index_size_bytes": 4267650,
-  "lite_index_gzip_size_bytes": 835143,
+  "lite_index_size_bytes": 4267696,
+  "lite_index_gzip_size_bytes": 835165,
   "quality_index_size_bytes": 364,
   "quality_index_gzip_size_bytes": 238,
   "quality_shard_count": 11,
@@ -284,16 +284,16 @@
   "security_index_gzip_size_bytes": 238,
   "security_shard_count": 44,
   "security_largest_shard_bytes": 8388699,
-  "security_largest_shard_gzip_bytes": 1236486,
+  "security_largest_shard_gzip_bytes": 1236477,
   "ranking_index_size_bytes": 364,
   "ranking_index_gzip_size_bytes": 238,
   "ranking_shard_count": 10,
-  "ranking_largest_shard_bytes": 8388711,
-  "ranking_largest_shard_gzip_bytes": 1750843,
+  "ranking_largest_shard_bytes": 8388718,
+  "ranking_largest_shard_gzip_bytes": 1750842,
   "largest_generated_file_bytes": 10006302,
   "security_scan": {
-    "total": 351605,
-    "passed": 351605,
+    "total": 351606,
+    "passed": 351606,
     "failed": 0
   }
 }

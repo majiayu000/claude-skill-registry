@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updated_at": "2026-10-27T03:29:48.016427Z",
-  "total_count": 1717,
+  "updated_at": "2026-10-30T09:27:56.185263Z",
+  "total_count": 1718,
   "entries": {
     "Xquik-dev/x-twitter-scraper": {
       "repo": "Xquik-dev/x-twitter-scraper",
@@ -10303,8 +10303,14 @@
       "repo": "f-o-x11/deed-page-skill",
       "branch": "main",
       "relative_path": "skills/deed-page/SKILL.md",
-      "commit_sha": "ad901ca70fb76d079bd5989e15af50bd89d6a2cb",
       "updated_at": "2026-10-27T03:29:36.531812Z"
+    },
+    "kasovy/neverapply-mcp:skills/find-jobs/SKILL.md": {
+      "repo": "kasovy/neverapply-mcp",
+      "branch": "main",
+      "relative_path": "skills/find-jobs/SKILL.md",
+      "commit_sha": "d4e6d02aa0eea588e78a468df254d7e8b7a269f4",
+      "updated_at": "2026-10-30T09:27:46.137407Z"
     }
   }
 }

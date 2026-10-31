@@ -1207,18 +1207,6 @@
    "digest": "sha256:122c5e6573ead167fc58e8064990b582e355d8d891b640562f1e62c3f833d838",
    "checked_at": "2026-10-25T04:55:45+00:00"
   },
-  "0ajchk2y1ymiysbcvo1eux5hddeuqragab5khu3qumy": {
-   "status": "pinned",
-   "path": "config/gemini/config/skills/ai-learning-science/erroneous-example-designer/SKILL.md",
-   "archive_path": "other/erroneous-example-designer-sahil-958-dots/SKILL.md",
-   "repo": "Sahil-958/dots",
-   "branch": "main",
-   "digest": "sha256:36691fc700df204168c7e1a8c99e35460d12eda45aa5af2471acd4cbaeb80d3c",
-   "checked_at": "2026-10-25T12:05:25+00:00",
-   "commit": "f390e7e2f58d3bfea60dd6ec81ef54300a19ac3d",
-   "name": "erroneous-example-designer",
-   "description": "Design deliberately flawed examples that develop error-detection skills and deepen understanding. Use when students make characteristic errors and need practice spotting mistakes."
-  },
   "0aton1wiwoigeizqszesswliwihdgos6wzkymmtgacw": {
    "status": "bundled_files",
    "archive_path": "other/emil-design-eng-pedro-gilmora-source-crafter-xzor/SKILL.md",
@@ -1246,14 +1234,6 @@
    "commit": "19300aeefedaad850b675155495a498ebeb617d1",
    "name": "persona-content-creator",
    "description": "Create, organize, and distribute content across Workspace."
-  },
-  "0bdnwcohqxkaahw1d7fjooribzf6vqrhspll0r8hdmm": {
-   "status": "bundled_files",
-   "archive_path": "other/in-your-own-words-maxfabian25-pstack-harness-adapt/SKILL.md",
-   "repo": "MaxFabian25/pstack-harness-adaptations",
-   "branch": "main",
-   "digest": "sha256:fa8ba74e27d7be371dc270ec78bbf816411477d0dfab185356c861ac8dd413ad",
-   "checked_at": "2026-10-26T08:49:40+00:00"
   },
   "0bkqjflsucfubp-u21vb4ebzcneczvgwt9mkympsums": {
    "status": "bundled_files",
@@ -1674,6 +1654,18 @@
    "digest": "sha256:68491d306ee3d365f1186f565b586cb621814acfd873ee115176745de6d2827e",
    "checked_at": "2026-10-25T04:55:45+00:00"
   },
+  "0vl7awkgw4xr9zama5z5xccb4n4jg9n2rrv7jaofq9q": {
+   "status": "pinned",
+   "path": "skills/principle-foundational-thinking/SKILL.md",
+   "archive_path": "devops/principle-foundational-thinking-backnotprop-pstack/SKILL.md",
+   "repo": "backnotprop/pstack",
+   "branch": "main",
+   "digest": "sha256:864b827e8199d946ce58beca0f89c4ed4099ed6e426fb698a3aaa45de2a9eea2",
+   "checked_at": "2026-10-31T06:11:23+00:00",
+   "commit": "25abb38559ddbabec563646224d09eff9a250eca",
+   "name": "principle-foundational-thinking",
+   "description": "Apply before writing logic: choosing core types and data structures, sequencing scaffold-vs-feature work, asking what concurrent actors share. Get the data structures right so downstream code becomes obvious."
+  },
   "0vvnwvzrfhiksulk5hystfdt00pdgymdestcnriiagc": {
    "status": "upstream_changed",
    "archive_path": "other/recipe-email-drive-link-kemendikbud-kgc-llm-kg-completion/SKILL.md",
@@ -2042,14 +2034,6 @@
    "digest": "sha256:ea1e2951e23f3db0d5686c4e60d84bb3518e5e1014e80bf7652c6b572c3ed77c",
    "checked_at": "2026-10-25T04:55:45+00:00"
   },
-  "1gu6ekrx3ygpmrj8d1qn25z5yyrsn2rgvncsmea1-oi": {
-   "status": "bundled_files",
-   "archive_path": "api/erc-8004-enuno-crewless-capital/SKILL.md",
-   "repo": "enuno/crewless-capital",
-   "branch": "main",
-   "digest": "sha256:e90b1b17c77ac01e7db5a888bf751d6f4b9830ce1b6d5ba506690ac49fa740ee",
-   "checked_at": "2026-10-25T04:55:45+00:00"
-  },
   "1hi19gzzmdfhkckmqvgtf53nhbxd4rc13wz01jmhsze": {
    "status": "bundled_files",
    "archive_path": "other/theme-factory-ratnesh-maurya-tracker-ratnesh-maur/SKILL.md",
@@ -2227,18 +2211,6 @@
    "branch": "main",
    "digest": "sha256:70f40b01a184cfd5cd2177c9b91bf6305ccca5f7d3a79703c698d34417712586",
    "checked_at": "2026-10-29T09:25:22+00:00"
-  },
-  "1mhhhfbzel9cpjn-r_jzab5nypkuszfr_rrtjrpdobw": {
-   "status": "pinned",
-   "path": "source/upstream/pstack/skills/teach/SKILL.md",
-   "archive_path": "development/teach-solimancifuentes-pstack-codex-2/SKILL.md",
-   "repo": "solimancifuentes/pstack-codex",
-   "branch": "main",
-   "digest": "sha256:bd286e5a6290673be2cd28aef7af2ec7f1fb138e6bce156ea657368c7e7fc8a4",
-   "checked_at": "2026-10-29T09:25:22+00:00",
-   "commit": "93bcde3b0287b629450f74037f1a68a06b0c702b",
-   "name": "teach",
-   "description": "Explain a body of work plainly so a person actually understands it. Runs the `how` and `why` skills and weaves what they find into one clear explanation. Use for 'teach me this', 'help me really understand X', 'explain this change or subsystem to me'."
   },
   "1mz3-5vna9fpqqwp1lvfj5b2zlvwhecqbz7td076j0m": {
    "status": "bundled_files",
@@ -4504,18 +4476,6 @@
    "digest": "sha256:c81ab6e44d8b69cd7edf198014839d838a30bffb2706df5e41ce60bda3bc7209",
    "checked_at": "2026-10-25T04:55:45+00:00"
   },
-  "4hajc1qgg2da2xmzy1qk0e3fffpw7dhcfj2u0h0gm5g": {
-   "status": "pinned",
-   "path": ".claude/skills/error-handling-patterns/SKILL.md",
-   "archive_path": "development/error-handling-patterns-pythoninthegrasses-lunchjs/SKILL.md",
-   "repo": "pythoninthegrasses/lunchjs",
-   "branch": "main",
-   "digest": "sha256:e3994dd57742ff269184e496a7eedfce948c6fd7c3ac0526611d99d54ab63181",
-   "checked_at": "2026-10-25T04:55:45+00:00",
-   "commit": "784520b63af301a40707663a9e2ab44c81a3271f",
-   "name": "error-handling-patterns",
-   "description": "Master error handling patterns across languages including exceptions, Result types, error propagation, and graceful degradation to build resilient applications. Use when implementing error handling, designing APIs, or improving application reliability."
-  },
   "4hbnm1gl3e2nghidljacjx0t4-gmju66z9_emxh2kzk": {
    "status": "ambiguous",
    "archive_path": "other/context-engine-smartrickpicks-substrate-bk-airlock-2/SKILL.md",
@@ -5747,14 +5707,6 @@
    "branch": "master",
    "digest": "sha256:9a91f35639fabff432f1ed8b79c2a4249d53a0a4eb7019c1aa2b8855224f27ea",
    "checked_at": "2026-10-25T04:55:45+00:00"
-  },
-  "5p14y4zqthvqshhbcloqikf1mt5w-u6jyikoy-mtgei": {
-   "status": "bundled_files",
-   "archive_path": "productivity/error-diagnostics-error-trace-pratyushdeosingh-mdp/SKILL.md",
-   "repo": "pratyushdeosingh/mdp",
-   "branch": "main",
-   "digest": "sha256:09fcd632c933ca61881aef8c84e656cb1c103b76e5cdadf1c4b7f5d36a7bb48f",
-   "checked_at": "2026-10-29T09:25:22+00:00"
   },
   "5pbix1pmbxbpcqg0jf5ro4wlo0qv-z6ucsd-inyhtk0": {
    "status": "upstream_changed",
@@ -8081,6 +8033,18 @@
    "digest": "sha256:22beb7ea1b921a9cd5ef8263e9986fcfe2a04dc864ab4c694ef29378f3ebf91b",
    "checked_at": "2026-10-25T04:55:45+00:00"
   },
+  "8jk7ktawtqijdo-ylrvc4ctwvhdowbjsbr5bjk0ca3g": {
+   "status": "pinned",
+   "path": "skills/principle-experience-first/SKILL.md",
+   "archive_path": "design/principle-experience-first-backnotprop-pstack/SKILL.md",
+   "repo": "backnotprop/pstack",
+   "branch": "main",
+   "digest": "sha256:58903529d733b1c1a7c9ccf127d45ef3c7d0d9f0b81164a4dc6b80efe6f2912b",
+   "checked_at": "2026-10-31T06:11:23+00:00",
+   "commit": "25abb38559ddbabec563646224d09eff9a250eca",
+   "name": "principle-experience-first",
+   "description": "Apply when product, UX, or feature-scope tradeoffs come up. Choose user delight over implementation convenience; ship fewer polished features over more rough ones."
+  },
   "8jtoaeypvchv8wt13lfrysyd0flthtrbxfgodagg1ic": {
    "status": "pinned",
    "path": "agent-marketplace/vendor/apm_modules/cursor/plugins/pstack/skills/sharpen/SKILL.md",
@@ -9909,14 +9873,6 @@
    "name": "bazel-build-optimization",
    "description": "Optimize Bazel builds for large-scale monorepos. Use when configuring Bazel, implementing remote execution, or optimizing build performance for enterprise codebases."
   },
-  "_smfowccnkkhyjymfynyt5oazz-xxcstt350izdaqvs": {
-   "status": "bundled_files",
-   "archive_path": "data/epidemiologist-analyst-rysweet-azurehaymaker/SKILL.md",
-   "repo": "rysweet/AzureHayMaker",
-   "branch": "main",
-   "digest": "sha256:234fa275b45807089455b7f1f10516acb49f9bb81ddf5eaa9ea2e2ae71ab1d3e",
-   "checked_at": "2026-10-25T04:55:45+00:00"
-  },
   "_sr-9jdf7fpoodaxviq7wcktamz-gambvy2j1elekz0": {
    "status": "bundled_files",
    "archive_path": "workflow/changelog-automation-pratyushdeosingh-mdp/SKILL.md",
@@ -11186,6 +11142,14 @@
    "digest": "sha256:87b31c016d990581b043d3d443b99c7bef427aec2112002da1efed730d953bee",
    "checked_at": "2026-10-25T04:55:45+00:00"
   },
+  "aobg1ww0ju3ti_edrhar1k0qe_9xst5-eh2la7r-ngm": {
+   "status": "bundled_files",
+   "archive_path": "other/triage-issue-reports-backnotprop-pstack/SKILL.md",
+   "repo": "backnotprop/pstack",
+   "branch": "main",
+   "digest": "sha256:216a758b8711e64d19a55e6032c496527daac6364d010611040f3c04ef1a448f",
+   "checked_at": "2026-10-31T06:11:23+00:00"
+  },
   "aoeft7vwae5jsp7l5ip4yuruuaclxk05iaunxhhybe8": {
    "status": "upstream_changed",
    "archive_path": "marketing/seo-audit-petekp-claude-code-setup/SKILL.md",
@@ -11855,14 +11819,6 @@
    "name": "aidlc-approval-handoff",
    "description": "Run the AI-DLC `approval-handoff` stage (ideation phase) in isolation, without advancing the main workflow. Packages `/aidlc --stage approval-handoff --single`: the engine emits one run-stage directive for approval-handoff and its gate, the conductor runs it, then the single-stage run commits a synthetic-id pair and stops. The main workflow's Current Stage is never touched."
   },
-  "b-d6b0xfh6x5rocpvxpltnorjfzjrahykunsyz0zohy": {
-   "status": "bundled_files",
-   "archive_path": "other/correct-maxfabian25-pstack-harness-adapt/SKILL.md",
-   "repo": "MaxFabian25/pstack-harness-adaptations",
-   "branch": "main",
-   "digest": "sha256:e347045d00c967a0b831ef883cc6ac79d21329aa10b5968637df95de7febf0ba",
-   "checked_at": "2026-10-26T08:49:40+00:00"
-  },
   "b-ryeng7z-jfpjh3p1waiwod0vpyjidiwxxofanrdbw": {
    "status": "pinned",
    "path": "skills/superpowers/executing-plans/SKILL.md",
@@ -11902,6 +11858,18 @@
    "branch": "main",
    "digest": "sha256:03b55cab50570fc39fa1ad8ebedc9753656745826308da416c4d51623be8d565",
    "checked_at": "2026-10-29T09:25:22+00:00"
+  },
+  "b1y0zlr2svcsh_yqiceypyrxgw10i_pkrznr8dhuajc": {
+   "status": "pinned",
+   "path": "skills/correct/SKILL.md",
+   "archive_path": "other/correct-backnotprop-pstack/SKILL.md",
+   "repo": "backnotprop/pstack",
+   "branch": "main",
+   "digest": "sha256:e347045d00c967a0b831ef883cc6ac79d21329aa10b5968637df95de7febf0ba",
+   "checked_at": "2026-10-31T06:11:23+00:00",
+   "commit": "25abb38559ddbabec563646224d09eff9a250eca",
+   "name": "correct",
+   "description": "Find the mistakes agents keep repeating in this repo and make each one impossible. Try architecture first, then types, then a lint whose error names the fix, then a test, and write docs last. Prove each check fails on a real past mistake. Repeat this each time the operator corrects you. Use for /correct."
   },
   "b2jtcctbdala8vp3k12pp18ardhgztjyoelz7up7ubm": {
    "status": "pinned",
@@ -12162,6 +12130,18 @@
    "name": "datamol",
    "description": "Pythonic wrapper around RDKit with simplified interface and sensible defaults. Preferred for standard drug discovery including SMILES parsing, standardization, descriptors, fingerprints, clustering, 3D conformers, parallel processing. Returns native rdkit.Chem.Mol objects. For advanced control or custom parameters, use rdkit directly."
   },
+  "bb-l5t8lgyfb-nmgtp3ziv-cwqv-rwpkvgrrkg39o4u": {
+   "status": "pinned",
+   "path": "skills/figure-it-out/SKILL.md",
+   "archive_path": "other/figure-it-out-backnotprop-pstack/SKILL.md",
+   "repo": "backnotprop/pstack",
+   "branch": "main",
+   "digest": "sha256:bdb23cdbd82a1e6af094b495691c832a6f7f3ab9706ba9edbeb664ef51a726e1",
+   "checked_at": "2026-10-31T06:11:23+00:00",
+   "commit": "25abb38559ddbabec563646224d09eff9a250eca",
+   "name": "figure-it-out",
+   "description": "Design an auditable playbook when no narrower one fits: a large migration, an ambitious multi-part change, or work a human reviews after stepping away. Scales rigor to the task, runs a hypothesis loop, and logs decisions. Use for /figure-it-out or 'figure it out'."
+  },
   "bbdqa_nupgmgqrredbtsailrqn5c60wpiiqpyhddxm8": {
    "status": "ambiguous",
    "archive_path": "testing/pw-ziyabicilecommerce-h-ai-cash-machine/SKILL.md",
@@ -12340,6 +12320,18 @@
    "branch": "main",
    "digest": "sha256:88d1680c630c3225d2861524bebed7917fdaee554e52aa72c567b47119f2256a",
    "checked_at": "2026-10-25T04:55:45+00:00"
+  },
+  "bgokjjqhglncwhvrxfw-mp1o2rev3wxcmoj62qgyrhk": {
+   "status": "pinned",
+   "path": "skills/in-your-own-words/SKILL.md",
+   "archive_path": "other/in-your-own-words-backnotprop-pstack/SKILL.md",
+   "repo": "backnotprop/pstack",
+   "branch": "main",
+   "digest": "sha256:fa8ba74e27d7be371dc270ec78bbf816411477d0dfab185356c861ac8dd413ad",
+   "checked_at": "2026-10-31T06:11:23+00:00",
+   "commit": "25abb38559ddbabec563646224d09eff9a250eca",
+   "name": "in-your-own-words",
+   "description": "Restate in your own words what you think the user's goals are and what problem they're trying to solve. Use for /in-your-own-words."
   },
   "bgvjwkmlqamg7vzw_p1scss6dchb7jfvelhbmvy4itu": {
    "status": "pinned",
@@ -12570,7 +12562,7 @@
    "repo": "alirezarezvani/claude-skills",
    "branch": "main",
    "digest": "sha256:613b78af57e61291c106c34115b6f0da1618a644c1918d158bc66320a90c62d4",
-   "checked_at": "2026-10-24T05:05:55+00:00"
+   "checked_at": "2026-10-31T06:11:23+00:00"
   },
   "bkyg7e_jepst339-nfajiyfavhl11p7yu3rlunzzsbc": {
    "status": "bundled_files",
@@ -19126,7 +19118,7 @@
    "repo": "alirezarezvani/claude-skills",
    "branch": "main",
    "digest": "sha256:a62efa4e6d596e442083543f86a6bfc5724b0d06a4921d9a31bbc1c5d12e23e0",
-   "checked_at": "2026-10-24T05:05:55+00:00"
+   "checked_at": "2026-10-31T06:11:23+00:00"
   },
   "fj6sgpyefmwq4zergv1cyrwmswlqawgscizxiuejexg": {
    "status": "pinned",
@@ -19151,18 +19143,6 @@
    "commit": "19300aeefedaad850b675155495a498ebeb617d1",
    "name": "gws-events-subscribe",
    "description": "Google Workspace Events: Subscribe to Workspace events and stream them as NDJSON."
-  },
-  "fjxdtoc4fnxht9mii25_oqcandpxw6jg3mqnfwerygw": {
-   "status": "pinned",
-   "path": "config/gemini/config/skills/self-regulated-learning/error-analysis-protocol/SKILL.md",
-   "archive_path": "other/error-analysis-protocol-sahil-958-dots/SKILL.md",
-   "repo": "Sahil-958/dots",
-   "branch": "main",
-   "digest": "sha256:c58a67e286c73a607ec7d24b86c6ec4a855829d43c5d32d094c387e46d2647b7",
-   "checked_at": "2026-10-25T12:05:25+00:00",
-   "commit": "f390e7e2f58d3bfea60dd6ec81ef54300a19ac3d",
-   "name": "error-analysis-protocol",
-   "description": "Design an error analysis protocol to diagnose the root cause of student mistakes and misconceptions. Use when error patterns appear in student work and targeted feedback is needed."
   },
   "fjzpqobkqud9szzxy9ou46fjngbs8x0i3ybt0nqz4jc": {
    "status": "pinned",
@@ -19243,6 +19223,18 @@
    "commit": "68e21115feafa23474de233000c85a27adbddf67",
    "name": "geo-citability",
    "description": "AI citability scoring and optimization. Analyzes web page content to determine how likely AI systems (ChatGPT, Claude, Perplexity, Gemini) are to cite or quote passages from the page. Provides a citability score (0-100) with specific rewrite suggestions."
+  },
+  "flmvod72u7vv__yl-4t9_ohxbzqvqp4eaobpu4fxhaq": {
+   "status": "pinned",
+   "path": "skills/principle-boundary-discipline/SKILL.md",
+   "archive_path": "other/principle-boundary-discipline-backnotprop-pstack/SKILL.md",
+   "repo": "backnotprop/pstack",
+   "branch": "main",
+   "digest": "sha256:62ac2862c2caa22dd14531f51c9c6bb445ceb198ca98a687e25b4d47c1f10a28",
+   "checked_at": "2026-10-31T06:11:23+00:00",
+   "commit": "25abb38559ddbabec563646224d09eff9a250eca",
+   "name": "principle-boundary-discipline",
+   "description": "Apply when wiring validation, error handling, or framework adapters. Concentrate guards at system boundaries (CLI, config, network, external APIs); trust internal types and keep business logic in pure functions."
   },
   "flppq7rs2mq5topun2qty8nwcyrmyqiu0lprcpxvb58": {
    "status": "bundled_files",
@@ -19495,14 +19487,6 @@
    "digest": "sha256:88b62c21b51eae08cd9af282d29d5adb9fa06626af59768cd4e9d739791e5a65",
    "checked_at": "2026-10-25T04:55:45+00:00"
   },
-  "fpk7wiml7z8krlqqf9i0s6pjxft146enszc4qkbtdpw": {
-   "status": "bundled_files",
-   "archive_path": "data/unslop-maxfabian25-pstack-harness-adapt/SKILL.md",
-   "repo": "MaxFabian25/pstack-harness-adaptations",
-   "branch": "main",
-   "digest": "sha256:ccab208e315ce05e2fab8eeee2f7879f1289b5c6844840b2d307adf31c79144f",
-   "checked_at": "2026-10-26T08:49:40+00:00"
-  },
   "fponpa2kqib_f0fx77kq50ky1b2wtpkh_bie8obn-60": {
    "status": "pinned",
    "path": ".claude/skills/productivity/handoff/SKILL.md",
@@ -19666,6 +19650,18 @@
    "branch": "main",
    "digest": "sha256:eb60b0922e324ed269a54e4c47904ad11b82139905b3d08d354a57a5e3e558f3",
    "checked_at": "2026-10-25T04:55:45+00:00"
+  },
+  "fshvygg05xh7k8qsm1ke88bk_c91y0bxuwjgcyoih3q": {
+   "status": "pinned",
+   "path": "skills/principle-laziness-protocol/SKILL.md",
+   "archive_path": "other/principle-laziness-protocol-backnotprop-pstack/SKILL.md",
+   "repo": "backnotprop/pstack",
+   "branch": "main",
+   "digest": "sha256:1be6e7a435f26a75a76eb848b9c3d611b9977d0f5822361753244da25ca3ca45",
+   "checked_at": "2026-10-31T06:11:23+00:00",
+   "commit": "25abb38559ddbabec563646224d09eff9a250eca",
+   "name": "principle-laziness-protocol",
+   "description": "Apply when refactoring, evaluating diff size, or tempted to add abstractions, layers, or signal threading. Bias toward deletion and the smallest change that solves the problem."
   },
   "fska-jchcmlup4fhpvzscwnf1rot-ov_a9utrrjgry4": {
    "status": "ambiguous",
@@ -20330,14 +20326,6 @@
    "digest": "sha256:06f3abcebf414e92fd93abef15e33eebcbde2382e861d13af30aecef5929b3c5",
    "checked_at": "2026-10-25T04:55:45+00:00"
   },
-  "g8eh5pxbfeazwoku1z1vvt6cqpka3cabyunpcpzzdrm": {
-   "status": "bundled_files",
-   "archive_path": "testing/tdd-maxfabian25-pstack-harness-adapt/SKILL.md",
-   "repo": "MaxFabian25/pstack-harness-adaptations",
-   "branch": "main",
-   "digest": "sha256:eeb868e2dfebee528d730a67d7b17498fac4bb85dec2e38bc5c5176aca4d5d2f",
-   "checked_at": "2026-10-26T08:49:40+00:00"
-  },
   "g8mvsof6xcqfmsr4kt6te4ene-u68dee-1veno_vlc8": {
    "status": "bundled_files",
    "archive_path": "other/rules-distill-nguyentrunghieutcu-ctxora-engine/SKILL.md",
@@ -20690,7 +20678,7 @@
    "repo": "alirezarezvani/claude-skills",
    "branch": "main",
    "digest": "sha256:988e40e73758bbaed5dc553dc80656448fd32ba9715c016ef414d67f7912b047",
-   "checked_at": "2026-10-24T05:05:55+00:00"
+   "checked_at": "2026-10-31T06:11:23+00:00"
   },
   "gfnbdaugzkmngnfkntguwbgihoz8gliobmzk22g4qfk": {
    "status": "ambiguous",
@@ -22568,18 +22556,6 @@
    "name": "nano-pdf",
    "description": "Edit PDFs with natural-language instructions using the nano-pdf CLI. Modify text, fix typos, update titles, and make content changes to specific pages without manual editing."
   },
-  "hjsxulspahaq2i4geofgfl_t3tsv7c0fv1mgxelibom": {
-   "status": "pinned",
-   "path": "skills/principle-prove-it-works/SKILL.md",
-   "archive_path": "other/principle-prove-it-works-uzairansaruzi-p3-stack/SKILL.md",
-   "repo": "uzairansaruzi/p3-stack",
-   "branch": "main",
-   "digest": "sha256:ec79a15025bac8d33d62011c54f3b612733fd2a024e623b531b3637aa75070e2",
-   "checked_at": "2026-10-29T09:25:22+00:00",
-   "commit": "09909ebb5c0125e27fad3e57d96b81e832696d69",
-   "name": "principle-prove-it-works",
-   "description": "Apply after completing a task, before declaring done. Verify against the real artifact (run the feature, read the actual value, inspect the diff), not a proxy, self-report, or 'it compiles.'"
-  },
   "hjvl3xomnimcxvfjtvnt8jopebo55lidd1ubklvdbmw": {
    "status": "pinned",
    "path": "skills/design-review/SKILL.md",
@@ -22682,7 +22658,7 @@
    "repo": "alirezarezvani/claude-skills",
    "branch": "main",
    "digest": "sha256:c27d3249c7251bbfd8d2dc624b2c3b31120ffdc173fc937c12373ce8caad86dd",
-   "checked_at": "2026-10-24T05:05:55+00:00"
+   "checked_at": "2026-10-31T06:11:23+00:00"
   },
   "hl551eenjgmvsd5nj3ljufjhc6pqqhthwv2tkjafdwc": {
    "status": "upstream_changed",
@@ -23485,6 +23461,18 @@
    "digest": "sha256:b09ec7a8da83019f16a8e89b42d0641ccf28060415a475e00e26706ef4906895",
    "checked_at": "2026-10-25T04:55:45+00:00"
   },
+  "i5v3scg4l5dojiejfqhr-clft3x1byn1tsvnpus884g": {
+   "status": "pinned",
+   "path": "skills/principle-separate-before-serializing-shared-state/SKILL.md",
+   "archive_path": "writing/principle-separate-before-serializing-shared-state-backnotprop-pstack/SKILL.md",
+   "repo": "backnotprop/pstack",
+   "branch": "main",
+   "digest": "sha256:05294b40448e927c5da1c7b6f5c6b9fed3744637e3833d2d948b9154a9dd00bb",
+   "checked_at": "2026-10-31T06:11:23+00:00",
+   "commit": "25abb38559ddbabec563646224d09eff9a250eca",
+   "name": "principle-separate-before-serializing-shared-state",
+   "description": "Apply when concurrent actors might write to the same file, branch, key, or state object. Eliminate the sharing first; serialize structurally only when one shared writer is a real invariant."
+  },
   "i8ss5ibp4ucwtnryrsvomgvetdtzrguga7cbrttmme8": {
    "status": "bundled_files",
    "archive_path": "other/templates-pratyushdeosingh-mdp/SKILL.md",
@@ -24248,7 +24236,7 @@
    "repo": "alirezarezvani/claude-skills",
    "branch": "main",
    "digest": "sha256:86c488d786387de64bb99036ba6091a1179c73258997093e2fede45abd5bb292",
-   "checked_at": "2026-10-24T05:05:55+00:00"
+   "checked_at": "2026-10-31T06:11:23+00:00"
   },
   "ins9_hyptoqrcv0ya2a8-dapztq8-zardpgbxeab3yc": {
    "status": "ambiguous",
@@ -25317,7 +25305,7 @@
    "repo": "alirezarezvani/claude-skills",
    "branch": "main",
    "digest": "sha256:05f7eee0d78735f3076fc02c732e4c660f55e2f058922e1ef46280a414294fa5",
-   "checked_at": "2026-10-24T05:05:55+00:00"
+   "checked_at": "2026-10-31T06:11:23+00:00"
   },
   "jc5jofnk7wu04gjcu6clpqebhiseoig32lyniostfw4": {
    "status": "upstream_changed",
@@ -26862,14 +26850,6 @@
    "name": "assessment-design-orchestrator",
    "description": "Routes between five assessment pathways — formative, rubric/criteria, authentic/performance, peer/self, and diagnostic — with validity and equity checks. Use when a teacher needs help choosing how to assess."
   },
-  "ka8esrr2a9swjbpytd_7hp8-x2a0hg-nlaf7s2thtpc": {
-   "status": "bundled_files",
-   "archive_path": "other/bro-maxfabian25-pstack-harness-adapt/SKILL.md",
-   "repo": "MaxFabian25/pstack-harness-adaptations",
-   "branch": "main",
-   "digest": "sha256:aa329d0ceeeecb6822a7174ad76bb07a7826a3c52ceb6a588dec4138815084bb",
-   "checked_at": "2026-10-26T08:49:40+00:00"
-  },
   "kac59gyuccdgk-mvs5wby_hqpymv2itwxsnyvcybb8q": {
    "status": "upstream_changed",
    "archive_path": "integration/food-order/SKILL.md",
@@ -27494,6 +27474,18 @@
    "branch": "main",
    "digest": "sha256:8556594bd39fe1cb374c394a3fd8b45daba604c354f659d482a2de3dfadda827",
    "checked_at": "2026-10-25T04:55:45+00:00"
+  },
+  "klf51ec92ciwxvgpdb34d4zx6mejbd4zmyp6sinhfia": {
+   "status": "pinned",
+   "path": "automations/benny/skills/setup-benny/SKILL.md",
+   "archive_path": "context-management/setup-benny-backnotprop-pstack/SKILL.md",
+   "repo": "backnotprop/pstack",
+   "branch": "main",
+   "digest": "sha256:5a3cbe63360c9f6373b6cb6c79a1eaf7e0eba181bfaa1577e2e6431af3407282",
+   "checked_at": "2026-10-31T06:11:23+00:00",
+   "commit": "25abb38559ddbabec563646224d09eff9a250eca",
+   "name": "setup-benny",
+   "description": "Configure Benny and prepare its triage and repro automations. Use when installing Benny or changing its Slack, tracker, repository, routing, control, model, or budget settings."
   },
   "klgovrxuo24ucn6gho2c_hf6f4y0nzpiy-3aru2gwl8": {
    "status": "bundled_files",
@@ -29035,7 +29027,7 @@
    "repo": "alirezarezvani/claude-skills",
    "branch": "main",
    "digest": "sha256:c2b1fe51416b7e4e951ce55072d937c4c5783b92573c88714c58e27cefa862fe",
-   "checked_at": "2026-10-24T05:05:55+00:00"
+   "checked_at": "2026-10-31T06:11:23+00:00"
   },
   "ljwkcbwgt3_c1ll0s3au1_ksidlmb4vdhptfoeaitsw": {
    "status": "bundled_files",
@@ -29705,6 +29697,18 @@
    "digest": "sha256:3b8317a5f11e18668d23f7778440a728bf3287d16fb9fc53337af137c347f6b7",
    "checked_at": "2026-10-25T04:55:45+00:00"
   },
+  "lwilbdcltsxdkgm9rkibqbgccnoi1k9apkl3ob2isoq": {
+   "status": "pinned",
+   "path": "skills/teach/SKILL.md",
+   "archive_path": "development/teach-backnotprop-pstack/SKILL.md",
+   "repo": "backnotprop/pstack",
+   "branch": "main",
+   "digest": "sha256:bd286e5a6290673be2cd28aef7af2ec7f1fb138e6bce156ea657368c7e7fc8a4",
+   "checked_at": "2026-10-31T06:11:23+00:00",
+   "commit": "25abb38559ddbabec563646224d09eff9a250eca",
+   "name": "teach",
+   "description": "Explain a body of work plainly so a person actually understands it. Runs the `how` and `why` skills and weaves what they find into one clear explanation. Use for 'teach me this', 'help me really understand X', 'explain this change or subsystem to me'."
+  },
   "lwjeqzghvmjbwogpw6zjfueecrw3n9req8d0cs3nxec": {
    "status": "pinned",
    "path": "plugins/pstack/skills/what-did-i-get-done/SKILL.md",
@@ -29876,6 +29880,18 @@
    "commit": "b30ebfc3c4e92bbb56d02759bd690a92cab52265",
    "name": "steve-jobs",
    "description": "Agente que simula Steve Jobs — cofundador da Apple, CEO da Pixar, fundador da NeXT, o maior designer de produtos tecnologicos da historia e o mais influente apresentador de produtos do mundo. Use..."
+  },
+  "m-i6jhhlbp3k43mlkyst43l2qi6nx8bzzv-bqsus8p4": {
+   "status": "pinned",
+   "path": "skills/bro/SKILL.md",
+   "archive_path": "other/bro-backnotprop-pstack/SKILL.md",
+   "repo": "backnotprop/pstack",
+   "branch": "main",
+   "digest": "sha256:aa329d0ceeeecb6822a7174ad76bb07a7826a3c52ceb6a588dec4138815084bb",
+   "checked_at": "2026-10-31T06:11:23+00:00",
+   "commit": "25abb38559ddbabec563646224d09eff9a250eca",
+   "name": "bro",
+   "description": "Restate the last message in plain human language, with no jargon."
   },
   "m-rdv3_8gl6ool4y0cz3e3cbxgbvasa1ka5scjno32i": {
    "status": "pinned",
@@ -31012,14 +31028,6 @@
    "commit": "f02989a78c06edbe97f99377f9c5c48d36168575",
    "name": "agent-sandbox",
    "description": "Agent skill for sandbox - invoke with $agent-sandbox"
-  },
-  "mocvquwmkv34-9lrpns5ljlzadk583hilyny4gguqsm": {
-   "status": "bundled_files",
-   "archive_path": "design/principle-experience-first-maxfabian25-pstack-harness-adapt/SKILL.md",
-   "repo": "MaxFabian25/pstack-harness-adaptations",
-   "branch": "main",
-   "digest": "sha256:58903529d733b1c1a7c9ccf127d45ef3c7d0d9f0b81164a4dc6b80efe6f2912b",
-   "checked_at": "2026-10-26T08:49:40+00:00"
   },
   "mogkdh8na_f8uxijhp8282v5uwphvhsnglwjuckorcu": {
    "status": "pinned",
@@ -33360,6 +33368,18 @@
    "commit": "e2a0f8ed8d64b61ac442dbc095b8160e4d4b1a3d",
    "name": "feishu-wiki",
    "description": "Feishu knowledge base navigation. Activate when user mentions knowledge base, wiki, or wiki links."
+  },
+  "nyumz_43lwev4v65chjg02hfsifp-8zf9mwgqv4xcy0": {
+   "status": "pinned",
+   "path": "skills/unslop/SKILL.md",
+   "archive_path": "data/unslop-backnotprop-pstack/SKILL.md",
+   "repo": "backnotprop/pstack",
+   "branch": "main",
+   "digest": "sha256:ccab208e315ce05e2fab8eeee2f7879f1289b5c6844840b2d307adf31c79144f",
+   "checked_at": "2026-10-31T06:11:23+00:00",
+   "commit": "25abb38559ddbabec563646224d09eff9a250eca",
+   "name": "unslop",
+   "description": "Cut AI tells from any writing."
   },
   "nywz_whjhbxbq1om3elj8rvdvo07p5hpn7bttgfoams": {
    "status": "upstream_unavailable",
@@ -39446,6 +39466,18 @@
    "name": "issues",
    "description": "Interact with GitHub issues - create, list, and view issues."
   },
+  "rshzepxomzokhc5uwlwdc4nbk7d8c3g0bqufm6eqrxm": {
+   "status": "pinned",
+   "path": "skills/blast-radius/SKILL.md",
+   "archive_path": "other/blast-radius-backnotprop-pstack/SKILL.md",
+   "repo": "backnotprop/pstack",
+   "branch": "main",
+   "digest": "sha256:2e10745b97f5862323dcda3b29ca60d56b5c3c98e37020085d26b48efbe0a436",
+   "checked_at": "2026-10-31T06:11:23+00:00",
+   "commit": "25abb38559ddbabec563646224d09eff9a250eca",
+   "name": "blast-radius",
+   "description": "Find what a change could break somewhere else before it ships, beyond the diff, and prove the one fact it's safe because of by running real code instead of writing it up. Use for 'blast radius of X', 'what could this break', or reviewing a small diff you don't trust."
+  },
   "rssusdpg56fekn86llqobh-zltrhmwzz6h55refujlc": {
    "status": "ambiguous",
    "archive_path": "bash/jq-yanacuti1121-yana-ai/SKILL.md",
@@ -40167,18 +40199,6 @@
    "branch": "main",
    "digest": "sha256:1ec3d558d3364ac7f768471055ded521f95bdb0f3e7239be9e4c8e0b219c587e",
    "checked_at": "2026-10-25T04:55:45+00:00"
-  },
-  "s9hm9tuedm-e01aw9tzjwrl5tj3qem89epyqq_wgtqo": {
-   "status": "pinned",
-   "path": ".github/skills/entra-agent-user/SKILL.md",
-   "archive_path": "security/entra-agent-user-trumedia-creative-live-events-dashboar/SKILL.md",
-   "repo": "TruMedia-Creative/live-events-dashboard",
-   "branch": "main",
-   "digest": "sha256:68f3b1f13c7ffb2aee0371fbb7887b9be02657caa5ec65543394ced1493b11a5",
-   "checked_at": "2026-10-25T04:55:45+00:00",
-   "commit": "ba021c0846a53566a3bfde95009077974d2da535",
-   "name": "entra-agent-user",
-   "description": "Create Agent Users in Microsoft Entra ID from Agent Identities, enabling AI agents to act as digital workers with user identity capabilities in Microsoft 365 and Azure environments."
   },
   "s9rvad2gz6wjbcooseh-ve8_k8bn5h389rqn8kkxct0": {
    "status": "pinned",
@@ -42733,18 +42753,6 @@
    "digest": "sha256:400a2fd76a3818b9023a1a69a6237c20b93b5dd51dce1d507a38c10baaaba8cd",
    "checked_at": "2026-10-25T04:55:45+00:00"
   },
-  "tprg7rqosfhwfpzxaava6afm048e__ggmjsvvxew99i": {
-   "status": "pinned",
-   "path": "skills/entra-agent-user/SKILL.md",
-   "archive_path": "security/entra-agent-user/SKILL.md",
-   "repo": "github/awesome-copilot",
-   "branch": "main",
-   "digest": "sha256:1d36474ce96eb53bc1aabe1f0005fa9df18e7502af1e412d7c679ce45c4e6807",
-   "checked_at": "2026-10-25T04:55:45+00:00",
-   "commit": "d85f762d6e521abf5fe16703946e9b38adc42da7",
-   "name": "entra-agent-user",
-   "description": "Create Agent Users in Microsoft Entra ID from Agent Identities, enabling AI agents to act as digital workers with user identity capabilities in Microsoft 365 and Azure environments."
-  },
   "tps_w-e4qamzszjkfvtafjuosswuw0hye-rykpb7sbo": {
    "status": "tree_truncated",
    "archive_path": "development/php-reviewer-domehahn-skrun/SKILL.md",
@@ -45015,6 +45023,18 @@
    "digest": "sha256:3ebb2c70e4d816c24ce7ac03c762b0bba1afaa34505e3aaa3c04f65ed8270297",
    "checked_at": "2026-10-25T04:55:45+00:00"
   },
+  "uwdws6tohh4awv5daup0gitw8t8ftrv-vlnwnmbbsve": {
+   "status": "pinned",
+   "path": "skills/principle-prove-it-works/SKILL.md",
+   "archive_path": "other/principle-prove-it-works-backnotprop-pstack/SKILL.md",
+   "repo": "backnotprop/pstack",
+   "branch": "main",
+   "digest": "sha256:ec79a15025bac8d33d62011c54f3b612733fd2a024e623b531b3637aa75070e2",
+   "checked_at": "2026-10-31T06:11:23+00:00",
+   "commit": "25abb38559ddbabec563646224d09eff9a250eca",
+   "name": "principle-prove-it-works",
+   "description": "Apply after completing a task, before declaring done. Verify against the real artifact (run the feature, read the actual value, inspect the diff), not a proxy, self-report, or 'it compiles.'"
+  },
   "uwjse5qu5e8zg-f59qci7iizuboulkubmwpnb5d0j2i": {
    "status": "ambiguous",
    "archive_path": "bash/assay-ibrdot-swe-re-expert/SKILL.md",
@@ -45038,6 +45058,18 @@
    "branch": "main",
    "digest": "sha256:9a68336f482751b7ec05cb57385a5ede9503d0631b695b12e935fa903750984f",
    "checked_at": "2026-10-25T04:55:45+00:00"
+  },
+  "uwvh9imq_5sra5i2qklyf4wyl4tzqg0go7pp77mupye": {
+   "status": "pinned",
+   "path": "skills/tdd/SKILL.md",
+   "archive_path": "testing/tdd-backnotprop-pstack/SKILL.md",
+   "repo": "backnotprop/pstack",
+   "branch": "main",
+   "digest": "sha256:eeb868e2dfebee528d730a67d7b17498fac4bb85dec2e38bc5c5176aca4d5d2f",
+   "checked_at": "2026-10-31T06:11:23+00:00",
+   "commit": "25abb38559ddbabec563646224d09eff9a250eca",
+   "name": "tdd",
+   "description": "Use only when the user explicitly asks for TDD, a failing test, or a regression test, OR when the bug has an obvious cheap local test target. Skip when the test path is unclear, expensive, integration-heavy, or not requested."
   },
   "uwwatthlgmkqand1tondzt5erjr3zll6mxqcbgkejxw": {
    "status": "bundled_files",
@@ -45224,7 +45256,7 @@
    "repo": "alirezarezvani/claude-skills",
    "branch": "main",
    "digest": "sha256:3a3577e78544216783cd5aadf0cfa8c5b0c7539934d139d87dc964bb8a076a95",
-   "checked_at": "2026-10-24T05:05:55+00:00"
+   "checked_at": "2026-10-31T06:11:23+00:00"
   },
   "v3q1kal87c3do1nl4ock0m_nuzttxyeg4rutqji0tla": {
    "status": "ambiguous",
@@ -45734,6 +45766,18 @@
    "commit": "d07ff4b06b62f43771bc0c927d0211b734d6149e",
    "name": "debug-hooks",
    "description": "Systematic hook debugging workflow. Use when hooks aren't firing, producing wrong output, or behaving unexpectedly."
+  },
+  "veqkzjxjuzumx1ypmn-mqjk2rpp5cmszni_zaiopqbq": {
+   "status": "pinned",
+   "path": "skills/principle-outcome-oriented-execution/SKILL.md",
+   "archive_path": "other/principle-outcome-oriented-execution-backnotprop-pstack/SKILL.md",
+   "repo": "backnotprop/pstack",
+   "branch": "main",
+   "digest": "sha256:10eb91633aa570355ba4bb37088fcade2b22e498df7a58edc749e65bc5a78e2d",
+   "checked_at": "2026-10-31T06:11:23+00:00",
+   "commit": "25abb38559ddbabec563646224d09eff9a250eca",
+   "name": "principle-outcome-oriented-execution",
+   "description": "Apply during planned rewrites and migrations with explicit phase boundaries. Converge on the target architecture; don't preserve smooth intermediate states with throwaway compatibility code."
   },
   "vesu11jyuxfgt3zji6epw7n365-aw4c6rmqb_had_5u": {
    "status": "bundled_files",
@@ -47110,14 +47154,6 @@
    "repo": "erichowens/some_claude_skills",
    "branch": "main",
    "digest": "sha256:20d2dd7cb4d6d369cfc479cc4a0f3c56fc17352f5f007c9af58900a1bc3e19b6",
-   "checked_at": "2026-10-25T04:55:45+00:00"
-  },
-  "wawsrkvaywridlqgb2omlzxcowbok3wmtx-c2jhj_hw": {
-   "status": "upstream_changed",
-   "archive_path": "security/entry-point-analyzer/SKILL.md",
-   "repo": "trailofbits/skills",
-   "branch": "main",
-   "digest": "sha256:30ee63ad5132dbfd760a86d0b5e626299c297100bc6d2fc7ca0a93ce037cbb02",
    "checked_at": "2026-10-25T04:55:45+00:00"
   },
   "wb8a0i_xmyl9wziy0wgo-otws3tnxawy7nlxefltqze": {
@@ -48886,6 +48922,14 @@
    "name": "malware-analyst",
    "description": "Expert malware analyst specializing in defensive malware research, threat intelligence, and incident response. Masters sandbox analysis, behavioral analysis, and malware family identification. Handles static/dynamic analysis, unpacking, and IOC extraction. Use PROACTIVELY for malware triage, threat hunting, incident response, or security research."
   },
+  "xi16o9op78leqscceobf9cstu99rs5hgv_zpgljk5xs": {
+   "status": "bundled_files",
+   "archive_path": "other/reproduce-and-fix-issues-backnotprop-pstack/SKILL.md",
+   "repo": "backnotprop/pstack",
+   "branch": "main",
+   "digest": "sha256:1363cc07343fe86aab42853b1bd4563288cbcbdf12f1c265b3b3b1afa25c09cb",
+   "checked_at": "2026-10-31T06:11:23+00:00"
+  },
   "xi3l3kfhhqwic3ukwnv3t8jyxafof4eo6pqvv6kpxym": {
    "status": "bundled_files",
    "archive_path": "other/arize-link-praxstack-markdown-viewer-app/SKILL.md",
@@ -50407,14 +50451,6 @@
    "commit": "63c3c91b5d8a46d1b5625d144abb6543259d30a5",
    "name": "ads-setup",
    "description": "Set up a paid-media client, brand, account, data-source, privacy, and mutation-guardrail profile for Claude Ads. Use for onboarding, initial configuration, brand DNA, API tokens or credential profiles, environment-variable or keychain setup, connecting exports or read adapters, safe native or verified-local installation, curl-pipe-bash install requests, declaring KPIs, or preparing a new advertising project."
-  },
-  "yg8a3cehgoh5r584mllqlthtddtg6hq5fnzlmzkrebq": {
-   "status": "bundled_files",
-   "archive_path": "other/blast-radius-maxfabian25-pstack-harness-adapt/SKILL.md",
-   "repo": "MaxFabian25/pstack-harness-adaptations",
-   "branch": "main",
-   "digest": "sha256:2e10745b97f5862323dcda3b29ca60d56b5c3c98e37020085d26b48efbe0a436",
-   "checked_at": "2026-10-26T08:49:40+00:00"
   },
   "yg9eulo6crjwifwavkgq4ciglw_b5r8x2rdnmoesqi0": {
    "status": "pinned",

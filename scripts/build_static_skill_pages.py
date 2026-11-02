@@ -222,6 +222,38 @@ def _discovery_index(pin: dict[str, Any]) -> dict[str, Any]:
     }]}
 
 
+BRAND_MARK = ('<svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true">'
+              '<path d="M4 5h7l2.2 2.6H20V19H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>'
+              '<path d="M4 12h16" stroke="currentColor" stroke-width="1.8"/></svg>')
+FONTS_LINK = ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
+              '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700'
+              '&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">')
+# Signal vocabularies from build_search_index.py, grouped for the stamp colours.
+STAMP_CLASSES = {
+    "passed": "stamp-ok", "known_good": "stamp-ok", "pinned": "stamp-ok",
+    "warning": "stamp-warn", "risky": "stamp-warn", "upstream_changed": "stamp-warn",
+    "failed": "stamp-bad", "broken": "stamp-bad", "blocked": "stamp-bad",
+}
+
+
+def _site_header(primary_label: str, primary_href: str) -> str:
+    return (f'<header class="site-header"><a class="brand" href="{PUBLIC_SITE}">{BRAND_MARK}'
+            '<span class="brand-text"><span class="brand-eyebrow">Claude Code</span><span class="brand-name">Skills Registry</span></span></a>'
+            f'<nav class="header-links"><a href="{primary_href}">{primary_label}</a><a href="{PUBLIC_SITE}choose-a-skill.html">How to choose</a>'
+            f'<a class="star" href="{REGISTRY_REPO_URL}">Star on GitHub</a></nav></header>')
+
+
+def _site_footer(extra: str = "") -> str:
+    return (f'<footer class="site-footer"><a href="{PUBLIC_SITE}">Claude Skills Registry</a> · '
+            f'<a href="{PUBLIC_SITE}skills/">All guides</a> · <a href="{REGISTRY_REPO_URL}">Star on GitHub</a>{extra}</footer>')
+
+
+def _stamp(value: Any) -> str:
+    status = str(value or "unknown")
+    label = html.escape(status.replace("_", " "), quote=True)
+    return f'<span class="stamp {STAMP_CLASSES.get(status, "")}">{label}</span>'
+
+
 def _render_content_history(entries: list[dict[str, Any]] | None) -> str:
     """Periods in which the scanned files and their upstream match stayed the same, newest first."""
     if not entries:
@@ -415,9 +447,19 @@ def _render_category_page(category: str, slug: str, items: list[dict[str, Any]])
             {"@type": "ListItem", "position": 3, "name": category, "item": canonical},
         ]},
     ]})
-    links = "".join(
-        f'<li><a href="../../{skill_page_slug(item)}/">{html.escape(str(item["name"]))}</a></li>' for item in items
-    )
+
+    def card(item: dict[str, Any]) -> str:
+        name = html.escape(str(item["name"]), quote=True)
+        summary = html.escape(str(item.get("description") or "")[:180], quote=True)
+        stars = int(item.get("stars") or 0)
+        grade = html.escape(str(item.get("quality_grade") or ""), quote=True)
+        meta_parts = [f"★ {stars:,}"] if stars else []
+        if grade:
+            meta_parts.append(f"quality {grade}")
+        meta_html = f'<span class="meta">{" · ".join(meta_parts)}</span>' if meta_parts else ""
+        return f'<a class="guide-card" href="../../{skill_page_slug(item)}/"><strong>{name}</strong><span>{summary}</span>{meta_html}</a>'
+
+    cards = "".join(card(item) for item in items)
     return f'''<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -438,18 +480,20 @@ def _render_category_page(category: str, slug: str, items: list[dict[str, Any]])
   <meta name="twitter:image" content="{PUBLIC_SITE}assets/registry-social-preview.png">
   <meta name="twitter:image:alt" content="Claude Skills Registry — source-linked skill guides">
   {structured}
+  {FONTS_LINK}
   <link rel="stylesheet" href="../../../css/skill-detail.css">
   <script defer src="../../../js/analytics.js"></script>
 </head>
 <body>
-<header><a class="brand" href="{PUBLIC_SITE}">◈ Skill Registry</a><nav class="header-links"><a href="{PUBLIC_SITE}skills/">All guides</a><a class="star" href="{REGISTRY_REPO_URL}">Star on GitHub</a></nav></header>
+{_site_header("All guides", f"{PUBLIC_SITE}skills/")}
 <main>
-  <nav class="crumbs" aria-label="Breadcrumb"><a href="{PUBLIC_SITE}">Registry</a> · <a href="{PUBLIC_SITE}skills/">Guides</a> · <span aria-current="page">{label}</span></nav>
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="{PUBLIC_SITE}">Registry</a> / <a href="{PUBLIC_SITE}skills/">Guides</a> / <span aria-current="page">{label}</span></nav>
+  <p class="kicker">Category · {len(items):,} guide{"" if len(items) == 1 else "s"}</p>
   <h1>{label} skills</h1>
   <p class="intro">{meta}</p>
-  <ul class="guide-index">{links}</ul>
+  <div class="guide-grid">{cards}</div>
 </main>
-<footer><a href="{PUBLIC_SITE}">Claude Skills Registry</a> · <a href="{REGISTRY_REPO_URL}">Star on GitHub</a></footer>
+{_site_footer()}
 </body>
 </html>
 '''
@@ -488,7 +532,7 @@ def _render_detail_page(record: dict[str, Any], slug: str, related: list[dict[st
     )
     install_details = (
         f'<p>Install with the <a href="{SKILLS_CLI_URL}">skills CLI</a>. It asks which coding agents to install into:</p>'
-        f'<code>{esc(command)}</code><p>Or install globally for one agent:</p><code>{esc(runtime_commands)}</code>'
+        f'<pre class="cmd"><code>{esc(command)}</code></pre><p>Or install globally for one agent:</p><pre class="cmd multi"><code>{esc(runtime_commands)}</code></pre>'
         if install_source else
         '<p>Open the source above and copy the folder containing SKILL.md into your agent’s skills directory.</p>'
     )
@@ -497,9 +541,15 @@ def _render_detail_page(record: dict[str, Any], slug: str, related: list[dict[st
         install_details = (
             f'<p>Verified install: the <a href="{SKILLS_CLI_URL}">skills CLI</a> reads this guide\'s discovery index and installs SKILL.md '
             f'from <a href="{esc(_pinned_skill_url(pin))}">{esc(pin["repo"])} at commit {esc(pin["commit"][:12])}</a>, '
-            f'checking its SHA-256 against the version the registry scanned:</p><code>{esc("npx skills add " + canonical)}</code>'
+            f'checking its SHA-256 against the version the registry scanned:</p><pre class="cmd"><code>{esc("npx skills add " + canonical)}</code></pre>'
             '<p>Or install the latest version from source:</p>' + install_details
         )
+    quality_score = int(record.get("quality_score") or 0)
+    trust_score = int(record.get("trust_score") or 0)
+    repository_total = int(record.get("repository_count") or 1)
+    repository_count = esc(repository_total)
+    repository_word = "repository" if repository_total == 1 else "repositories"
+    stars = int(record.get("stars") or 0)
     return f'''<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -520,32 +570,22 @@ def _render_detail_page(record: dict[str, Any], slug: str, related: list[dict[st
   <meta name="twitter:image" content="{PUBLIC_SITE}assets/registry-social-preview.png">
   <meta name="twitter:image:alt" content="Claude Skills Registry — source-linked skill guides">
   {structured}
+  {FONTS_LINK}
   <link rel="stylesheet" href="../../css/skill-detail.css">
   <script defer src="../../js/analytics.js"></script>
 </head>
 <body>
-<header><a class="brand" href="{PUBLIC_SITE}">◈ Skill Registry</a><nav class="header-links"><a href="{PUBLIC_SITE}">Explore skills</a><a class="star" href="{REGISTRY_REPO_URL}">Star on GitHub</a></nav></header>
+{_site_header("Explore skills", PUBLIC_SITE)}
 <main>
-  <nav class="crumbs" aria-label="Breadcrumb"><a href="{PUBLIC_SITE}">Registry</a> · <a href="{PUBLIC_SITE}skills/">Guides</a> · <a href="../category/{category_slug}/">{esc(category_name)}</a> · <span aria-current="page">{name}</span></nav>
-  <div class="kicker">Found in {esc(record.get('repository_count', 1))} repositories</div>
-  <h1>{name}</h1><p class="intro">{description}</p>
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="{PUBLIC_SITE}">Registry</a> / <a href="{PUBLIC_SITE}skills/">Guides</a> / <a href="../category/{category_slug}/">{esc(category_name)}</a> / <span aria-current="page">{name}</span></nav>
+  <section class="page-hero">
+    <p class="kicker">{esc(category_name)} · Found in {repository_count} {repository_word}</p>
+    <h1>{name}</h1><p class="intro">{description}</p>
+    <div class="tags">{tags}</div>
+    <div class="hero-actions"><a class="button primary" href="#install">{install_heading}</a><a class="source" href="{esc(_source_url(record))}">View source: {repo} ↗</a></div>
+  </section>
   <div class="layout">
-    <aside>
-      <div class="terminal">&gt;_</div>
-      <h2>Signals</h2>
-      <dl><dt>Quality score</dt><dd>{esc(record.get('quality_grade', 'unknown'))} · {esc(record.get('quality_score', 0))}/100</dd>
-      <dt>Registry scan</dt><dd>{esc(str(record.get('security_status', 'unknown')).replace('_', ' '))}</dd>
-      <dt>Source path</dt><dd>{esc(str(record.get('install_status', 'unknown')).replace('_', ' '))}</dd>
-      <dt>Trust score</dt><dd>{esc(record.get('trust_score', 0))}/100</dd></dl>
-      <h2>Metadata</h2>
-      <dl><dt>Category</dt><dd>{esc(record.get('category', 'other'))}</dd>
-      <dt>Repository stars</dt><dd>{esc(record.get('stars', 0))}</dd>
-      <dt>Author</dt><dd>{esc(record.get('author') or 'See original repository')}</dd>
-      <dt>License</dt><dd>{esc(license_name)}</dd></dl>
-    </aside>
     <article>
-      <div class="tags">{tags}</div>
-      <a class="source" href="{esc(_source_url(record))}">View source: {repo} ↗</a>
       <section{cta_attr} id="install"><h2>{install_heading}</h2>{install_details}
       <p class="note">Manual install locations: Claude Code ~/.claude/skills/, Codex ~/.agents/skills/, Cursor ~/.cursor/skills/. Source-path status is inferred from metadata; it does not verify a live download. Scan and quality scores describe registry checks and are not a guarantee of safety.</p></section>
       {scan_details}
@@ -554,13 +594,25 @@ def _render_detail_page(record: dict[str, Any], slug: str, related: list[dict[st
       <a href="{REMOVAL_URL}">Request removal or correct attribution</a></section>
       <section><h2>For the skill author</h2><p>Add this badge to your README to link readers to the registry home:</p>
       <p><img src="{BADGE_URL}" alt="Listed on Claude Skills Registry" width="140" height="20"></p>
-      <code>{esc(badge_markdown)}</code></section>
-      <section><h2>Copies with matching content</h2><p>Exact Markdown body copies across {esc(record.get('repository_count', 1))} repositories. This count does not identify the original author.</p><ul>{copy_links}</ul></section>
+      <pre><code>{esc(badge_markdown)}</code></pre></section>
+      <section><h2>Copies with matching content</h2><p>Exact Markdown body copies across {repository_count} {repository_word}. This count does not identify the original author.</p><ul class="copies">{copy_links}</ul></section>
       <section><h2>More in <a href="../category/{category_slug}/">{esc(category_name)}</a></h2><div class="related-grid">{similar}</div></section>
     </article>
+    <aside>
+      <h2>Signals</h2>
+      <dl><dt>Quality score</dt><dd><strong class="grade">{esc(record.get('quality_grade', 'unknown'))}</strong><span class="meter"><i style="width:{max(0, min(100, quality_score))}%"></i></span>{esc(quality_score)}/100</dd>
+      <dt>Registry scan</dt><dd>{_stamp(record.get('security_status'))}</dd>
+      <dt>Source path</dt><dd>{_stamp(record.get('install_status'))}</dd>
+      <dt>Trust score</dt><dd><span class="meter"><i style="width:{max(0, min(100, trust_score))}%"></i></span>{esc(trust_score)}/100</dd></dl>
+      <h2>Metadata</h2>
+      <dl><dt>Category</dt><dd><a href="../category/{category_slug}/">{esc(category_name)}</a></dd>
+      <dt>Repository stars</dt><dd>{stars:,}</dd>
+      <dt>Author</dt><dd>{esc(record.get('author') or 'See original repository')}</dd>
+      <dt>License</dt><dd>{esc(license_name)}</dd></dl>
+    </aside>
   </div>
 </main>
-<footer><a href="{PUBLIC_SITE}">Claude Skills Registry</a> · <a href="{REGISTRY_REPO_URL}">Star on GitHub</a> · <a href="{REMOVAL_URL}">Removal requests</a></footer>
+{_site_footer(f' · <a href="{REMOVAL_URL}">Removal requests</a>')}
 </body>
 </html>
 '''
@@ -678,6 +730,7 @@ def build_static_skill_pages(
     category_nav = "".join(
         f'<a href="category/{hub_slug}/">{html.escape(hub_labels[hub_slug])}</a>' for hub_slug in sorted(hub_items)
     )
+    total = sum(len(items) for items in categories.values())
     browse = f'''<!doctype html><html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Skill guides — Claude Skills Registry</title>
@@ -695,14 +748,20 @@ def build_static_skill_pages(
 <meta name="twitter:image" content="{PUBLIC_SITE}assets/registry-social-preview.png">
 <meta name="twitter:image:alt" content="Claude Skills Registry — source-linked skill guides">
 {browse_structured}
+{FONTS_LINK}
 <link rel="stylesheet" href="../css/skill-detail.css"><script defer src="../js/analytics.js"></script></head><body>
-<header><a class="brand" href="{PUBLIC_SITE}">◈ Skill Registry</a><nav class="header-links"><a href="{PUBLIC_SITE}">Search</a><a class="star" href="{REGISTRY_REPO_URL}">Star on GitHub</a></nav></header>
-<main><h1>Browse skill guides</h1><nav class="category-nav" aria-label="Categories">{category_nav}</nav>'''
+{_site_header("Search", PUBLIC_SITE)}
+<main><nav class="crumbs" aria-label="Breadcrumb"><a href="{PUBLIC_SITE}">Registry</a> / <span aria-current="page">Guides</span></nav>
+<p class="kicker">{total:,} guides · {len(categories)} categories</p>
+<h1>Browse skill guides</h1>
+<p class="intro">Every guide links to the author’s source and records what the registry scan checked. Pick a category, or <a href="{PUBLIC_SITE}">search the full catalog</a>.</p>
+<nav class="category-nav" aria-label="Categories">{category_nav}</nav>'''
     for category, items in sorted(categories.items()):
         hub_slug = _category_slug(category)
-        browse += f'<section id="{html.escape(category, quote=True)}"><h2><a href="category/{hub_slug}/">{html.escape(category)}</a></h2><ul>'
+        browse += (f'<section class="browse-section" id="{html.escape(category, quote=True)}"><h2><a href="category/{hub_slug}/">{html.escape(category)}</a>'
+                   f'<small>{len(items):,}</small></h2><ul class="guide-index">')
         browse += ''.join(f'<li><a href="{skill_page_slug(item)}/">{html.escape(str(item["name"]))}</a></li>' for item in items) + '</ul></section>'
-    (generated_root / "index.html").write_text(browse + '</main></body></html>', encoding="utf-8")
+    (generated_root / "index.html").write_text(browse + '</main>' + _site_footer() + '</body></html>', encoding="utf-8")
     if archive_dir is not None:
         for directory in sorted(Path(archive_dir).iterdir()):
             if directory.is_dir() and not directory.name.startswith('.'):

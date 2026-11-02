@@ -73,7 +73,7 @@ let state = {
     categoryCache: {},
     taxonomy: null,
     favorites: JSON.parse(localStorage.getItem('skillFavorites') || '[]'),
-    theme: localStorage.getItem('theme') || 'dark',
+    theme: globalThis.document?.documentElement?.getAttribute?.('data-theme') === 'dark' ? 'dark' : 'light',
     isLoading: true
 };
 
@@ -226,6 +226,20 @@ function getDisplaySkillCount() {
     return readNumericStat('independent_skill_count', 0);
 }
 
+function updateHeroStats() {
+    const values = {
+        'hero-stat-skills': getDisplaySkillCount(),
+        'hero-stat-repos': readNumericStat('unique_repo_count', 0),
+        'hero-stat-plugins': state.plugins.length || readNumericStat('total_plugins', 0),
+        'hero-stat-categories': state.categories.length || readNumericStat('categories', 0)
+    };
+    Object.entries(values).forEach(([id, value]) => {
+        const node = document.getElementById(id);
+        if (!node) return;
+        node.textContent = Number.isFinite(value) && value > 0 ? value.toLocaleString() : '—';
+    });
+}
+
 function updateRegistryCountDisplay() {
     updateSearchScopeDisplay();
     const dedupedCount = getDisplaySkillCount();
@@ -293,6 +307,7 @@ async function init() {
         state.fuse = new Fuse(state.index.s, CONFIG.FUSE_OPTIONS);
 
         updateRegistryCountDisplay();
+        updateHeroStats();
         elements.lastUpdated.textContent = `Updated: ${state.index.v}`;
 
         populateCategoryFilter();
@@ -312,7 +327,7 @@ async function init() {
         console.error('Failed to load index:', error);
         elements.searchScope.textContent = 'Failed to load skills index. Reload the page to try again.';
         elements.loading.innerHTML = `
-            <span style="font-size: 2rem;">❌</span>
+            <span class="empty-icon" aria-hidden="true"><svg class="ic"><use href="#i-empty"/></svg></span>
             <p>Failed to load skills index</p>
             <p style="font-size: 0.9rem; color: var(--text-muted);">${error.message}</p>
         `;
@@ -801,14 +816,13 @@ function parseStarsFilter(value) {
 
 function initTheme() {
     document.documentElement.setAttribute('data-theme', state.theme);
-    elements.themeIcon.textContent = state.theme === 'dark' ? '🌙' : '☀️';
+    elements.themeToggle.setAttribute('aria-label', state.theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
 }
 
 elements.themeToggle.addEventListener('click', () => {
     state.theme = state.theme === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', state.theme);
     localStorage.setItem('theme', state.theme);
-    elements.themeIcon.textContent = state.theme === 'dark' ? '🌙' : '☀️';
+    initTheme();
 });
 
 initTheme();

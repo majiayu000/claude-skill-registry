@@ -17,31 +17,22 @@
   <meta name="twitter:description" content="Add Sentry's code review skill to one Claude Code project, check the installation, and try it on an uncommitted diff.">
   <meta name="twitter:image" content="https://majiayu000.github.io/claude-skill-registry/assets/registry-social-preview.png">
   <meta name="twitter:image:alt" content="Claude Skills Registry — install a code review skill">
-  <style>
-    :root { color-scheme: light dark; font: 17px/1.65 system-ui, sans-serif; }
-    body { max-width: 780px; margin: 3rem auto; padding: 0 1.25rem; }
-    a { color: light-dark(#2254c5, #99baff); }
-    h1 { line-height: 1.15; font-size: clamp(2rem, 6vw, 3rem); }
-    h2 { margin-top: 2rem; }
-    pre { padding: 1rem; border: 1px solid #8886; border-radius: .65rem; white-space: pre-wrap; overflow-wrap: anywhere; }
-    code { font-size: .9em; }
-    .label { letter-spacing: .06em; text-transform: uppercase; font-size: .8rem; }
-    .note { border-left: 3px solid #6389ed; padding-left: 1rem; }
-    button { padding: .6rem 1rem; border: 1px solid #888; border-radius: .4rem; font: inherit; cursor: pointer; }
-    button:focus-visible, a:focus-visible { outline: 3px solid #6389ed; outline-offset: 3px; }
-    #copy-status { margin-left: .6rem; }
-    footer { margin-top: 3rem; font-size: .85rem; }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
+  <link rel="stylesheet" href="../css/skill-detail.css">
   <script defer src="../js/analytics.js"></script>
 </head>
 <body>
-  <nav><a href="../index.html">← Browse the registry</a> · <a href="https://github.com/majiayu000/claude-skill-registry">Star on GitHub</a></nav>
+  <header class="site-header"><a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h7l2.2 2.6H20V19H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M4 12h16" stroke="currentColor" stroke-width="1.8"/></svg><span class="brand-text"><span class="brand-eyebrow">Claude Code</span><span class="brand-name">Skills Registry</span></span></a><nav class="header-links"><a href="../">Browse the registry</a><a href="../skills/">Guides</a><a class="star" href="https://github.com/majiayu000/claude-skill-registry">Star on GitHub</a></nav></header>
   <main>
-    <p class="label">Start with one project · Claude Code</p>
+    <article class="prose">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../">Registry</a> / <a href="../choose-a-skill.html">How to choose</a> / <span aria-current="page">Code review</span></nav>
+    <p class="label kicker">Start with one project · Claude Code</p>
     <h1>Review your next diff with a reusable checklist</h1>
-    <p>Install one skill, check where it landed, then ask Claude Code to review
+    <p class="intro">Install one skill, check where it landed, then ask Claude Code to review
       your uncommitted changes. You keep control of which findings become edits.</p>
 
+    <section>
     <h2>1. Choose the skill</h2>
     <p><strong>Sentry's code-review</strong> covers runtime errors, security,
       performance, design and test coverage. Its examples focus on Python/Django
@@ -49,29 +40,35 @@
       adapt its Sentry-specific conventions to your project's rules.</p>
     <p><a href="https://github.com/getsentry/skills/blob/main/skills/code-review/SKILL.md">Read the complete skill</a>
       · <a href="https://github.com/getsentry/skills">Upstream repository</a></p>
+    </section>
 
+    <section>
     <h2>2. Install into your project</h2>
     <p>Requires Node.js 22.20+ and Claude Code. Open a terminal in the Git project
       you want to review, then run:</p>
-    <pre><code id="install-command">npx --yes skills@1.7.0 add getsentry/skills --skill code-review --agent claude-code --copy --yes</code></pre>
-    <button type="button" id="copy-install">Copy install command</button>
-    <span id="copy-status" role="status" aria-live="polite"></span>
+    <pre class="cmd"><code id="install-command">npx --yes skills@1.7.0 add getsentry/skills --skill code-review --agent claude-code --copy --yes</code></pre>
+    <p><button type="button" id="copy-install">Copy install command</button>
+    <span class="status" id="copy-status" role="status" aria-live="polite"></span></p>
     <p>This installs only <code>code-review</code> into
       <code>.claude/skills/code-review/</code> in the current project.
       With <code>--copy</code>, files go directly to that directory;
       <code>.agents/skills/code-review/</code> appears in the installer's summary
       but is not created by this command.
       The command does not use the global installation flag.</p>
-    <p class="note">If this project already has
+    <p class="aside">If this project already has
       <code>.claude/skills/code-review/</code>, inspect it before running the
       command: this installation can replace it.</p>
+    </section>
 
+    <section>
     <h2>3. Check the installation</h2>
-    <pre><code>npx --yes skills@1.7.0 list --agent claude-code</code></pre>
+    <pre class="cmd"><code>npx --yes skills@1.7.0 list --agent claude-code</code></pre>
     <p>The project list should include <code>code-review</code>. Open
       <code>.claude/skills/code-review/SKILL.md</code> and confirm its name is
       <code>code-review</code> and its heading is <code>Sentry Code Review</code>.</p>
+    </section>
 
+    <section>
     <h2>4. Try it on a small change</h2>
     <p>Start a new Claude Code session in that project. With uncommitted changes
       available, send:</p>
@@ -83,13 +80,16 @@ Report concrete bugs and missing tests with file locations and reasons.
 Do not edit files. If no actionable issues are found, say so.</code></pre>
     <p>Check whether each finding cites the actual diff and explains a reproducible
       problem. Installing a skill does not establish that its review is correct.</p>
+    </section>
 
+    <section>
     <h2>Remove it from this project</h2>
-    <pre><code>npx --yes skills@1.7.0 remove code-review --agent claude-code --yes</code></pre>
+    <pre class="cmd"><code>npx --yes skills@1.7.0 remove code-review --agent claude-code --yes</code></pre>
     <p>Remove any skill-installer lockfile changes from your Git diff only if you
       no longer want them tracked with the project.</p>
-  </main>
-  <footer>
+    </section>
+
+    <div class="article-footer">
     <p>Installation checked on 2026-09-30 with skills 1.7.0 on macOS in an empty
       Git project. The skill file was compared with upstream commit
       <a href="https://github.com/getsentry/skills/commit/d18b7aa8ba878354e5c348310230e652f7690f9c">d18b7aa</a>.
@@ -97,7 +97,10 @@ Do not edit files. If no actionable issues are found, say so.</code></pre>
       upstream repository's current branch; later content can change.</p>
     <p><a href="https://github.com/vercel-labs/skills#readme">Installer documentation</a>
       · <a href="https://github.com/majiayu000/claude-skill-registry-core/issues/new">Report a broken step</a></p>
-  </footer>
+    </div>
+    </article>
+  </main>
+  <footer class="site-footer"><a href="../">Claude Skills Registry</a> · <a href="../skills/">All guides</a> · <a href="https://github.com/majiayu000/claude-skill-registry">Star on GitHub</a></footer>
   <script>
     document.getElementById('copy-install').addEventListener('click', async () => {
       const status = document.getElementById('copy-status');

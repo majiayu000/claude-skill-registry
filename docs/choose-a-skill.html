@@ -17,33 +17,42 @@
 <meta name="twitter:description" content="Find a skill for your task and inspect its upstream source before installation.">
 <meta name="twitter:image" content="https://majiayu000.github.io/claude-skill-registry/assets/registry-social-preview.png">
 <meta name="twitter:image:alt" content="Claude Skills Registry — choose a source-linked skill">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
 <link rel="stylesheet" href="css/skill-detail.css">
 <script defer src="js/analytics.js"></script>
 </head>
 <body>
-<header><a class="brand" href="./">Claude Skills Registry</a><nav class="header-links"><a href="skills/">Browse skill guides</a><a class="star" href="https://github.com/majiayu000/claude-skill-registry">Star on GitHub</a></nav></header>
-<main><article>
+<header class="site-header"><a class="brand" href="./"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h7l2.2 2.6H20V19H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M4 12h16" stroke="currentColor" stroke-width="1.8"/></svg><span class="brand-text"><span class="brand-eyebrow">Claude Code</span><span class="brand-name">Skills Registry</span></span></a><nav class="header-links"><a href="./">Search</a><a href="skills/">Guides</a><a class="star" href="https://github.com/majiayu000/claude-skill-registry">Star on GitHub</a></nav></header>
+<main><article class="prose">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="./">Registry</a> / <span aria-current="page">How to choose a skill</span></nav>
+<p class="kicker">Field guide</p>
 <h1>Choose and install one Claude Code skill</h1>
 <p class="intro">Start with a task, inspect the original source, and install the skill directory you actually need. This registry aggregates third-party entries; it is not a single first-party skill pack.</p>
+<ul class="toc"><li><a href="#find">1. Search for the task</a></li><li><a href="#source">2. Open the source and license</a></li><li><a href="#install">3. Select the installation path</a></li><li><a href="#faq">Common questions</a></li></ul>
 <section id="find"><h2>1. Search for the task you need</h2>
 <p>Use concrete terms such as <strong>PDF extraction</strong>, <strong>frontend design</strong> or <strong>testing</strong> in <a href="./">skill search</a>. The homepage starts with highlighted coverage; use <strong>Search all</strong> to load full search coverage. You can also <a href="skills/">browse the static skill guides</a> by category without running search JavaScript.</p>
 <p>Read what a skill does, which tools it expects and which output it produces. Prefer a skill whose documented workflow matches your task rather than a repository with an attractive name or star count.</p></section>
 <section id="source"><h2>2. Open the upstream source and license</h2>
 <p>A guide's source link identifies the original repository or skill file. Review its <strong>SKILL.md</strong>, referenced scripts, required tools and permissions. The registry maintainer is not necessarily the skill's author. Archived copies can lag upstream changes.</p>
 <p>For a document-editing example, Anthropic's skill lives at <a href="https://github.com/anthropics/skills/tree/main/skills/docx">anthropics/skills → skills/docx</a>. Read that directory's <a href="https://github.com/anthropics/skills/blob/main/skills/docx/LICENSE.txt">license</a> before reuse. Each third-party skill retains its own terms; the registry pipeline's MIT license does not relicense it.</p>
-<p>A scan signal records a check against content at a point in time. It does not guarantee safe behavior, current upstream contents or permission to redistribute. Unknown licenses require an upstream permission check.</p></section>
+<p class="aside">A scan signal records a check against content at a point in time. It does not guarantee safe behavior, current upstream contents or permission to redistribute. Unknown licenses require an upstream permission check.</p></section>
 <section id="install"><h2>3. Select the exact installation path</h2>
-<p>Review the source first, then install the exact subdirectory with <a href="https://github.com/vercel-labs/skills">the skills CLI</a>. It asks which coding agents to install into:</p>
-<code>npx skills add https://github.com/anthropics/skills/tree/main/skills/docx</code>
-<p>To install globally for one agent, add <strong>-g -a claude-code</strong> (installs to ~/.claude/skills/), <strong>-g -a codex</strong> (~/.agents/skills/) or <strong>-g -a cursor</strong> (~/.cursor/skills/). Guides show these commands for supported source paths; other paths include manual installation instructions. For a maintained collection organized into task bundles, see <a href="https://github.com/majiayu000/spellbook#install">Spellbook</a>. Do not copy the entire aggregate archive as one skill.</p></section>
+<p>If you use <a href="https://github.com/majiayu000/claude-skill-manager">sk, the Claude Code skill manager</a>, review the source first, then install the exact subdirectory:</p>
+<pre class="cmd multi"><code>sk install anthropics/skills/skills/docx
+sk list
+sk info docx
+sk doctor</code></pre>
+<p>The first <strong>skills</strong> is the repository name; the second is the directory inside it. A short path selects that directory directly. <strong>sk info</strong> describes an installed skill, while <strong>sk doctor</strong> checks local installation health.</p>
+<p>For other agent runtimes, follow their installation instructions. <a href="https://github.com/vercel-labs/skills">Vercel's skills CLI</a> documents agent selection and project/global scopes. For a maintained collection organized into task bundles, see <a href="https://github.com/majiayu000/spellbook#install">Spellbook</a>. Do not copy the entire aggregate archive as one skill.</p></section>
 <section id="faq"><h2>Common questions</h2>
 <h3>The skill installed, but my agent cannot see it. What next?</h3>
-<p>Compare the installed location with the directory read by your agent and session. Run <strong>npx skills ls</strong> to see where each skill was installed, then restart the agent so it reloads its skills directory. Installation into one runtime's directory does not establish visibility in another.</p>
+<p>Compare the installed location with the directory read by your agent and session. For sk, run <strong>sk info &lt;name&gt;</strong> and check its path against the configured Claude Code skills directory. Installation into one runtime's directory does not establish visibility in another.</p>
 <h3>Does a catalog entry belong to majiayu000?</h3>
 <p>Not necessarily. Check the source link and archive metadata's <strong>author</strong>, <strong>source_url</strong>, <strong>license</strong> and <strong>permission_note</strong>. The <a href="https://github.com/majiayu000/claude-skill-registry-data#trace-an-archived-skill">archive README</a> explains how to trace these fields.</p>
 <h3>Where do I report a problem?</h3>
-<p>Send skill behavior questions to its upstream repository. Report search, attribution or catalog problems to <a href="https://github.com/majiayu000/claude-skill-registry-core/issues">the core issue tracker</a>; authors can follow the <a href="https://github.com/majiayu000/claude-skill-registry-core/blob/main/REMOVAL.md">removal and attribution request procedure</a>. Report installer problems to <a href="https://github.com/vercel-labs/skills/issues">the skills CLI issue tracker</a>.</p></section>
+<p>Send skill behavior questions to its upstream repository. Report search, attribution or catalog problems to <a href="https://github.com/majiayu000/claude-skill-registry-core/issues">the core issue tracker</a>; authors can follow the <a href="https://github.com/majiayu000/claude-skill-registry-core/blob/main/REMOVAL.md">removal and attribution request procedure</a>. Report sk installation problems to <a href="https://github.com/majiayu000/claude-skill-manager/issues">the CLI issue tracker</a>.</p></section>
 </article></main>
-<footer><a href="./">Search skills</a><a href="https://github.com/majiayu000/claude-skill-registry-core">Pipeline source and license</a></footer>
+<footer class="site-footer"><a href="./">Search skills</a> · <a href="skills/">All guides</a> · <a href="https://github.com/majiayu000/claude-skill-registry-core">Pipeline source and license</a></footer>
 </body>
 </html>

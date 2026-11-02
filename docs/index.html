@@ -39,32 +39,188 @@
       ]
     }
     </script>
+    <script>
+        /* Apply the stored or system theme before first paint to avoid a flash. */
+        (function () {
+            try {
+                var stored = localStorage.getItem('theme');
+                var theme = stored === 'light' || stored === 'dark'
+                    ? stored
+                    : 'dark';
+                document.documentElement.setAttribute('data-theme', theme);
+            } catch (error) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Outfit:wght@300;400;500;600;700&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Outfit:wght@300;400;500;600;700&amp;display=swap"></noscript>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"></noscript>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23f4f4f5'/%3E%3Cpath d='M8 9h8l2.5 3H24v11H8z' fill='none' stroke='%230a0a0b' stroke-width='2.2' stroke-linejoin='round'/%3E%3Cpath d='M8 16h16' stroke='%230a0a0b' stroke-width='2.2'/%3E%3C/svg%3E">
     <script defer src="js/analytics.js"></script>
 </head>
 <body>
+    <a class="skip-link" href="#results">Skip to results</a>
+
+    <svg class="sprite" aria-hidden="true" focusable="false">
+        <symbol id="i-mark" viewBox="0 0 24 24"><path d="M4 5h7l2.2 2.6H20V19H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M4 12h16" stroke="currentColor" stroke-width="1.8"/></symbol>
+        <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M15.5 15.5 21 21" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+        <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3.2l2.7 5.6 6.1.8-4.5 4.3 1.1 6.1L12 17.1 6.6 20l1.1-6.1L3.2 9.6l6.1-.8z" fill="currentColor"/></symbol>
+        <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.4 4.6 13A4.6 4.6 0 0 1 11 6.5l1 1 1-1A4.6 4.6 0 0 1 19.4 13z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+        <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M15 9V5.5A1.5 1.5 0 0 0 13.5 4h-8A1.5 1.5 0 0 0 4 5.5v8A1.5 1.5 0 0 0 5.5 15H9" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+        <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+        <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+        <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+        <symbol id="i-dice" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="9" cy="9" r="1.4" fill="currentColor"/><circle cx="15" cy="15" r="1.4" fill="currentColor"/><circle cx="15" cy="9" r="1.4" fill="currentColor"/><circle cx="9" cy="15" r="1.4" fill="currentColor"/></symbol>
+        <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="9" cy="7" r="2" fill="var(--surface)" stroke="currentColor" stroke-width="1.8"/><circle cx="15" cy="12" r="2" fill="var(--surface)" stroke="currentColor" stroke-width="1.8"/><circle cx="8" cy="17" r="2" fill="var(--surface)" stroke="currentColor" stroke-width="1.8"/></symbol>
+        <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+        <symbol id="i-github" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.2-3.4-1.2-.5-1.1-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.3-1.1.6-1.4-2.2-.2-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.2-.4-1.2.1-2.6 0 0 .8-.3 2.8 1a9.5 9.5 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.6.6.7 1 1.6 1 2.7 0 3.9-2.4 4.8-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A10 10 0 0 0 12 2z" fill="currentColor"/></symbol>
+        <symbol id="i-thumb" viewBox="0 0 24 24"><path d="M7 11v9H4v-9zM7 11l4-7c1.6 0 2.5 1 2.5 2.4L13 10h5.2a2 2 0 0 1 2 2.4l-1.3 6a2 2 0 0 1-2 1.6H7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+        <symbol id="i-box" viewBox="0 0 24 24"><path d="M12 3 4 7v10l8 4 8-4V7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M4 7l8 4 8-4M12 11v10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+        <symbol id="i-empty" viewBox="0 0 64 64"><rect x="8" y="14" width="48" height="38" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 24h48M18 14v-4h12l3 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M20 36h24M20 43h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".45"/></symbol>
+    </svg>
+
     <div class="container">
-        <!-- Header -->
         <header class="header">
             <div class="header-top">
-                <div class="logo">
-                    <span class="logo-icon">🎯</span>
-                    <h1>Claude Skills Registry</h1>
-                </div>
-                <button class="theme-toggle" id="theme-toggle" title="Toggle theme">
-                    <span class="theme-icon" id="theme-icon">🌙</span>
-                </button>
+                <a class="logo" href="./" aria-label="Claude Skills Registry home">
+                    <span class="logo-mark"><svg class="ic" aria-hidden="true"><use href="#i-mark"/></svg></span>
+                    <span class="logo-text"><h1>Skills Registry</h1><span class="logo-eyebrow">for Claude Code</span></span>
+                </a>
+                <nav class="site-nav" aria-label="Site">
+                    <a href="skills/">Guides</a>
+                    <a href="choose-a-skill.html">How to choose</a>
+                    <a href="reports/skill-drift-2026-10/">Drift report</a>
+                    <a class="nav-github" href="https://github.com/majiayu000/claude-skill-registry"><svg class="ic" aria-hidden="true"><use href="#i-github"/></svg><span>Star on GitHub</span></a>
+                    <button class="theme-toggle" id="theme-toggle" type="button" title="Toggle theme" aria-label="Toggle color theme">
+                        <span class="theme-icon" id="theme-icon" aria-hidden="true"><svg class="ic ic-sun"><use href="#i-sun"/></svg><svg class="ic ic-moon"><use href="#i-moon"/></svg></span>
+                    </button>
+                </nav>
             </div>
-            <p class="tagline">Search <span id="total-count">skills</span> for Claude Code</p>
-            <p><a href="choose-a-skill.html">How to choose and install one skill</a> · <a href="skills/">Browse source-linked guides</a> · <a href="https://github.com/majiayu000/claude-skill-registry">Star on GitHub</a></p>
+
+            <div class="hero">
+                <p class="hero-eyebrow"><span class="hero-dot" aria-hidden="true"></span>SKILL.md files indexed from GitHub · rebuilt daily</p>
+                <h2 class="hero-title">Find a skill.<br>Check its source.<br>Install it.</h2>
+                <p class="tagline">Search <span id="total-count">skills</span> for Claude Code</p>
+                <p class="hero-links"><a href="choose-a-skill.html">How to choose and install one skill</a> · <a href="skills/">Browse source-linked guides</a> · <a href="https://github.com/majiayu000/claude-skill-registry">Star on GitHub</a></p>
+            </div>
         </header>
 
-        <section class="featured-static" aria-labelledby="getting-started-heading">
+        <section class="study-panel hidden" id="study-panel" aria-live="polite">
+            <div class="study-copy">
+                <strong>Optional usability study</strong>
+                <p>
+                    After you agree, this tab records only coarse actions such as search,
+                    detail view, and install copy. Search text and personal identifiers are
+                    excluded, and study events are never uploaded. Existing community features
+                    may still contact Supabase when used.
+                </p>
+            </div>
+            <div class="study-actions">
+                <button type="button" id="study-start">Start study</button>
+                <button type="button" id="study-finish" disabled>Finish &amp; copy</button>
+                <button type="button" id="study-download" disabled>Download JSON</button>
+            </div>
+            <p class="study-status" id="study-status">Not recording.</p>
+        </section>
+
+        <!-- Search -->
+        <div class="search-container">
+            <div class="search-box">
+                <span class="search-icon" aria-hidden="true"><svg class="ic"><use href="#i-search"/></svg></span>
+                <input
+                    type="text"
+                    id="search-input"
+                    placeholder="Search skills… Press Enter to search the full catalog"
+                    autocomplete="off"
+                    aria-label="Search Claude Code skills"
+                    autofocus
+                >
+                <kbd class="search-hint">Enter</kbd>
+            </div>
+            <div class="search-scope-row" aria-live="polite">
+                <span id="search-scope">Loading highlighted search coverage…</span>
+                <button id="search-all-btn" class="search-all-btn" type="button" disabled>
+                    Search all
+                </button>
+            </div>
+
+            <div class="filters">
+                <label class="select-wrap">
+                    <span class="select-label">Category</span>
+                    <select id="category-filter" aria-label="Category">
+                        <option value="">All Categories</option>
+                    </select>
+                </label>
+                <label class="select-wrap">
+                    <span class="select-label">Sort</span>
+                    <select id="sort-filter" aria-label="Sort order">
+                        <option value="relevance">Relevance</option>
+                        <option value="stars">Most Stars</option>
+                        <option value="name">Name A-Z</option>
+                    </select>
+                </label>
+                <button class="filter-toggle" id="filter-toggle" type="button" title="Advanced Filters" aria-controls="advanced-filters">
+                    <span class="filter-icon" aria-hidden="true"><svg class="ic"><use href="#i-sliders"/></svg></span>
+                    <span class="filter-label">Filters</span>
+                </button>
+            </div>
+
+            <div class="advanced-filters hidden" id="advanced-filters">
+                <div class="filter-group">
+                    <label for="stars-filter">Stars</label>
+                    <select id="stars-filter">
+                        <option value="">Any Stars</option>
+                        <option value="1000+">1,000+</option>
+                        <option value="500+">500+</option>
+                        <option value="100+">100+</option>
+                        <option value="10+">10+</option>
+                        <option value="0">No stars</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="source-filter">Source</label>
+                    <select id="source-filter">
+                        <option value="">All Sources</option>
+                        <option value="community">Community</option>
+                    </select>
+                </div>
+                <div class="filter-group filter-group-tags">
+                    <label for="tag-filter">Tags</label>
+                    <div class="tag-filter-input">
+                        <input type="text" id="tag-filter" placeholder="Type a tag and press Enter" autocomplete="off">
+                        <div class="active-tags" id="active-tags"></div>
+                    </div>
+                </div>
+                <button class="clear-filters" id="clear-filters" type="button">Clear all filters</button>
+            </div>
+        </div>
+
+        <!-- Quick Tags -->
+        <div class="quick-tags" id="quick-tags">
+            <span class="quick-tags-label">Try</span>
+            <span class="tag" data-query="typescript">typescript</span>
+            <span class="tag" data-query="react">react</span>
+            <span class="tag" data-query="python">python</span>
+            <span class="tag" data-query="testing">testing</span>
+            <span class="tag" data-query="api">api</span>
+            <span class="tag" data-query="database">database</span>
+            <span class="tag" data-query="security">security</span>
+            <span class="tag" data-query="docker">docker</span>
+            <button class="random-btn" id="random-btn" type="button" title="Open a random skill"><svg class="ic" aria-hidden="true"><use href="#i-dice"/></svg><span>Random skill</span></button>
+        </div>
+
+        <dl class="hero-stats" aria-label="Registry statistics">
+            <div class="hero-stat"><dd><strong id="hero-stat-skills">—</strong></dd><dt><span>independent skills</span></dt></div>
+            <div class="hero-stat"><dd><strong id="hero-stat-repos">—</strong></dd><dt><span>source repositories</span></dt></div>
+            <div class="hero-stat"><dd><strong id="hero-stat-plugins">—</strong></dd><dt><span>plugins</span></dt></div>
+            <div class="hero-stat"><dd><strong id="hero-stat-categories">—</strong></dd><dt><span>categories</span></dt></div>
+        </dl>
+
+        <section class="featured-static start-here" aria-labelledby="getting-started-heading">
+            <span class="section-kicker">Start here</span>
             <h2 id="getting-started-heading">Start with a working setup</h2>
             <p><a href="guides/code-review.html">Add a code review skill to your project</a>
                 — choose a skill, install it, and try it on your next diff.</p>
@@ -99,130 +255,25 @@
 </section>
 <!-- static-featured:end -->
 
-        <section class="study-panel hidden" id="study-panel" aria-live="polite">
-            <div class="study-copy">
-                <strong>Optional usability study</strong>
-                <p>
-                    After you agree, this tab records only coarse actions such as search,
-                    detail view, and install copy. Search text and personal identifiers are
-                    excluded, and study events are never uploaded. Existing community features
-                    may still contact Supabase when used.
-                </p>
-            </div>
-            <div class="study-actions">
-                <button type="button" id="study-start">Start study</button>
-                <button type="button" id="study-finish" disabled>Finish &amp; copy</button>
-                <button type="button" id="study-download" disabled>Download JSON</button>
-            </div>
-            <p class="study-status" id="study-status">Not recording.</p>
-        </section>
-
-        <!-- Search Box -->
-        <div class="search-container">
-            <div class="search-box">
-                <span class="search-icon">🔍</span>
-                <input
-                    type="text"
-                    id="search-input"
-                    placeholder="Search skills… Press Enter to search the full catalog"
-                    autocomplete="off"
-                    autofocus
-                    aria-label="Search Claude Code skills"
-                >
-                <kbd class="search-hint">Enter</kbd>
-            </div>
-            <div class="search-scope-row" aria-live="polite">
-                <span id="search-scope">Loading highlighted search coverage…</span>
-                <button id="search-all-btn" class="search-all-btn" type="button" disabled>
-                    Search all
-                </button>
-            </div>
-
-            <!-- Filters -->
-            <div class="filters">
-                <select id="category-filter">
-                    <option value="">All Categories</option>
-                </select>
-                <select id="sort-filter">
-                    <option value="relevance">Relevance</option>
-                    <option value="stars">Most Stars</option>
-                    <option value="name">Name A-Z</option>
-                </select>
-                <button class="filter-toggle" id="filter-toggle" title="Advanced Filters">
-                    <span class="filter-icon">⚙️</span>
-                    <span class="filter-label">Filters</span>
-                </button>
-            </div>
-
-            <!-- Advanced Filters Panel -->
-            <div class="advanced-filters hidden" id="advanced-filters">
-                <div class="filter-group">
-                    <label>Stars</label>
-                    <select id="stars-filter">
-                        <option value="">Any Stars</option>
-                        <option value="1000+">1,000+ ⭐⭐⭐</option>
-                        <option value="500+">500+ ⭐⭐</option>
-                        <option value="100+">100+ ⭐</option>
-                        <option value="10+">10+</option>
-                        <option value="0">No stars</option>
-                    </select>
-                </div>
-                <div class="filter-group">
-                    <label>Source</label>
-                    <select id="source-filter">
-                        <option value="">All Sources</option>
-                        <option value="community">Community</option>
-                    </select>
-                </div>
-                <div class="filter-group">
-                    <label>Tags</label>
-                    <div class="tag-filter-input">
-                        <input type="text" id="tag-filter" placeholder="Filter by tag..." autocomplete="off">
-                        <div class="active-tags" id="active-tags"></div>
-                    </div>
-                </div>
-                <button class="clear-filters" id="clear-filters">Clear All Filters</button>
-            </div>
-        </div>
-
-        <!-- Navigation Tabs -->
-        <nav class="nav-tabs" id="nav-tabs">
-            <button class="nav-tab active" data-view="featured">
-                <span class="tab-icon">⭐</span>
+        <!-- Views -->
+        <nav class="nav-tabs" id="nav-tabs" aria-label="Views">
+            <button class="nav-tab active" data-view="featured" type="button">
                 <span class="tab-label">Featured</span>
             </button>
-            <button class="nav-tab" data-view="leaderboard">
-                <span class="tab-icon">🏆</span>
+            <button class="nav-tab" data-view="leaderboard" type="button">
                 <span class="tab-label">Leaderboard</span>
             </button>
-            <button class="nav-tab" data-view="stats">
-                <span class="tab-icon">📊</span>
+            <button class="nav-tab" data-view="stats" type="button">
                 <span class="tab-label">Stats</span>
             </button>
-            <button class="nav-tab" data-view="plugins">
-                <span class="tab-icon">📦</span>
+            <button class="nav-tab" data-view="plugins" type="button">
                 <span class="tab-label">Plugins</span>
             </button>
-            <button class="nav-tab" data-view="favorites">
-                <span class="tab-icon">💾</span>
+            <button class="nav-tab" data-view="favorites" type="button">
                 <span class="tab-label">Favorites</span>
             </button>
         </nav>
 
-        <!-- Quick Tags -->
-        <div class="quick-tags" id="quick-tags">
-            <span class="tag" data-query="typescript">typescript</span>
-            <span class="tag" data-query="react">react</span>
-            <span class="tag" data-query="python">python</span>
-            <span class="tag" data-query="testing">testing</span>
-            <span class="tag" data-query="api">api</span>
-            <span class="tag" data-query="database">database</span>
-            <span class="tag" data-query="security">security</span>
-            <span class="tag" data-query="docker">docker</span>
-            <button class="random-btn" id="random-btn" title="Discover random skill">🎲</button>
-        </div>
-
-        <!-- Stats Bar -->
         <div class="stats-bar" id="stats-bar">
             <span id="result-count" role="status" aria-atomic="true"></span>
             <span id="search-time"></span>
@@ -230,37 +281,42 @@
 
         <!-- Results -->
         <div class="results" id="results">
-            <!-- Loading state -->
             <div class="loading" id="loading">
-                <div class="spinner"></div>
-                <p>Loading skills index...</p>
+                <div class="spinner" aria-hidden="true"></div>
+                <p>Loading skills index…</p>
             </div>
 
-            <!-- Featured skills (shown by default) -->
             <div id="featured-section" class="featured-section hidden">
-                <h2>⭐ Featured Skills</h2>
+                <div class="section-head">
+                    <h2>Featured skills</h2>
+                    <p class="section-note">Highlighted entries with source links and install commands.</p>
+                </div>
                 <div id="featured-list" class="skill-grid"></div>
             </div>
 
-            <!-- Leaderboard Section -->
             <div id="leaderboard-section" class="leaderboard-section hidden">
-                <div class="leaderboard-header">
-                    <h2>🏆 Top Skills by Stars</h2>
-                    <select id="leaderboard-category" class="leaderboard-filter">
-                        <option value="">All Categories</option>
-                    </select>
+                <div class="leaderboard-header section-head">
+                    <h2>Top skills by stars</h2>
+                    <label class="select-wrap">
+                        <span class="select-label">Category</span>
+                        <select id="leaderboard-category" class="leaderboard-filter" aria-label="Leaderboard category">
+                            <option value="">All Categories</option>
+                        </select>
+                    </label>
                 </div>
                 <p id="leaderboard-status" class="leaderboard-status" aria-live="polite"></p>
                 <div id="leaderboard-list" class="leaderboard-grid"></div>
             </div>
 
-            <!-- Stats Section -->
             <div id="stats-section" class="stats-section hidden">
-                <h2>📊 Registry Statistics</h2>
+                <div class="section-head">
+                    <h2>Registry statistics</h2>
+                    <p class="section-note">Counts come from the latest index build.</p>
+                </div>
                 <div class="stats-grid">
                     <div class="stat-card">
                         <div class="stat-number" id="stat-total">0</div>
-                        <div class="stat-label">Independent Skills</div>
+                        <div class="stat-label">Independent skills</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-number" id="stat-repos">0</div>
@@ -277,78 +333,78 @@
                 </div>
                 <div class="stats-charts">
                     <div class="chart-container">
-                        <h3>Category Distribution (source entries)</h3>
+                        <h3>Category distribution <span class="chart-sub">source entries</span></h3>
                         <div id="category-chart" class="chart"></div>
                     </div>
                     <div class="chart-container">
-                        <h3>Top Repositories</h3>
+                        <h3>Top repositories</h3>
                         <div id="repos-chart" class="chart"></div>
                     </div>
                 </div>
             </div>
 
-            <!-- Plugins Section -->
             <div id="plugins-section" class="plugins-section hidden">
-                <h2>📦 Claude Code Plugins</h2>
-                <p class="plugins-hint">Curated plugin packs — bundled skills, commands, and hooks in one install</p>
+                <div class="section-head">
+                    <h2>Claude Code plugins</h2>
+                    <p class="plugins-hint section-note">Curated plugin packs — bundled skills, commands, and hooks in one install.</p>
+                </div>
                 <div id="plugins-list" class="plugins-grid"></div>
                 <div id="plugins-empty" class="empty-state hidden">
-                    <span class="empty-icon">📦</span>
+                    <span class="empty-icon" aria-hidden="true"><svg class="ic"><use href="#i-box"/></svg></span>
                     <h3>No plugins yet</h3>
-                    <p>Submit yours via <a href="https://github.com/majiayu000/claude-skill-registry/issues" target="_blank">GitHub Issues</a></p>
+                    <p>Submit yours via <a href="https://github.com/majiayu000/claude-skill-registry/issues" target="_blank" rel="noopener noreferrer">GitHub Issues</a></p>
                 </div>
             </div>
 
-            <!-- Favorites Section -->
             <div id="favorites-section" class="favorites-section hidden">
-                <h2>💾 Your Favorites</h2>
-                <p class="favorites-hint">Click the ❤️ on any skill to save it here</p>
+                <div class="section-head">
+                    <h2>Your favorites</h2>
+                    <p class="favorites-hint section-note">Saved in this browser only. Use the heart on any skill to keep it here.</p>
+                </div>
                 <div id="favorites-list" class="skill-grid"></div>
                 <div id="favorites-empty" class="empty-state">
-                    <span class="empty-icon">💾</span>
+                    <span class="empty-icon" aria-hidden="true"><svg class="ic"><use href="#i-heart"/></svg></span>
                     <h3>No favorites yet</h3>
-                    <p>Browse skills and click ❤️ to save them here</p>
+                    <p>Browse skills and press the heart to save them here.</p>
                 </div>
             </div>
 
-            <!-- Search results -->
             <div id="search-results" class="skill-list hidden"></div>
 
-            <!-- Empty state -->
             <div id="empty-state" class="empty-state hidden">
-                <span class="empty-icon">🔍</span>
+                <span class="empty-icon" aria-hidden="true"><svg class="ic"><use href="#i-empty"/></svg></span>
                 <h3>No skills found</h3>
-                <p>Try different keywords or browse by category</p>
+                <p>Try different keywords, clear a filter, or use <strong>Search all</strong> to load the full catalog.</p>
             </div>
         </div>
 
-        <!-- Load More -->
         <div class="load-more hidden" id="load-more">
-            <button id="load-more-btn">Load More</button>
+            <button id="load-more-btn" type="button">Load more</button>
         </div>
 
-        <!-- Footer -->
         <footer class="footer">
+            <div class="footer-brand">
+                <svg class="ic" aria-hidden="true"><use href="#i-mark"/></svg>
+                <span>Claude Skills Registry</span>
+            </div>
             <div class="footer-links">
-                <a href="https://github.com/majiayu000/claude-skill-registry" target="_blank">
-                    GitHub
-                </a>
-                <span class="divider">•</span>
-                <a href="choose-a-skill.html#install">
-                    Install guide
-                </a>
+                <a href="https://github.com/majiayu000/claude-skill-registry" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="choose-a-skill.html#install">Install guide</a>
+                <a href="skills/">All guides</a>
+                <a href="reports/skill-drift-2026-10/">Drift report</a>
+                <a href="https://github.com/majiayu000/claude-skill-registry-core/blob/main/REMOVAL.md">Removal requests</a>
             </div>
             <p class="footer-note">
-                Open source • Updated daily • <span id="last-updated"></span>
+                Open source · Updated daily · <span id="last-updated"></span>
             </p>
         </footer>
     </div>
 
     <!-- Skill Detail Modal -->
-    <div class="modal hidden" id="skill-modal">
+    <div class="modal hidden" id="skill-modal" role="dialog" aria-modal="true" aria-label="Skill details">
         <div class="modal-backdrop"></div>
         <div class="modal-content">
-            <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+            <button class="modal-close" id="modal-close" type="button" aria-label="Close">&times;</button>
             <div id="modal-body"></div>
         </div>
     </div>

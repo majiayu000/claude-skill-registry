@@ -64,30 +64,29 @@ function createLeaderboardCard(skill, rank) {
     const isFavorite = state.favorites.includes(install);
 
     let rankClass = '';
-    let rankIcon = '';
-    if (rank === 1) { rankClass = 'gold'; rankIcon = '🥇'; }
-    else if (rank === 2) { rankClass = 'silver'; rankIcon = '🥈'; }
-    else if (rank === 3) { rankClass = 'bronze'; rankIcon = '🥉'; }
+    if (rank === 1) rankClass = 'gold';
+    else if (rank === 2) rankClass = 'silver';
+    else if (rank === 3) rankClass = 'bronze';
 
     const isOfficial = skill.c === 'off';
 
     return `
         <div class="leaderboard-card ${rankClass}" data-install="${escapeHtml(install)}" data-branch="${escapeHtml(skill.b || 'main')}" onclick="showSkillDetail(this)">
-            <div class="rank ${rankClass}">${rankIcon || '#' + rank}</div>
+            <div class="rank ${rankClass}">${String(rank).padStart(2, '0')}</div>
             <div class="leaderboard-info">
                 <div class="leaderboard-header">
                     <span class="skill-name">
                         ${skill.u ? `<a href="${escapeHtml(skill.u)}" onclick="event.stopPropagation()">${escapeHtml(name)}</a>` : escapeHtml(name)}
                         ${isOfficial ? '<span class="official-badge" title="Official Anthropic Skill">✓</span>' : ''}
                     </span>
-                    <span class="skill-stars">⭐ ${stars.toLocaleString()}</span>
+                    <span class="skill-stars"><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg> ${stars.toLocaleString()}</span>
                 </div>
                 <p class="skill-description">${escapeHtml(description)}</p>
                 <div class="leaderboard-meta">
                     <span class="skill-category">${escapeHtml(category)}</span>
                     ${skill.tier === 'listed' ? '<span>Listed only · Not archived or verified</span>' : ''}
                     <button class="favorite-btn ${isFavorite ? 'active' : ''}" data-install="${escapeHtml(install)}" onclick="toggleFavorite(event)" title="${isFavorite ? 'Remove from favorites' : 'Add to favorites'}">
-                        ${isFavorite ? '❤️' : '🤍'}
+                        <svg class="ic" aria-hidden="true"><use href="#i-heart"/></svg>
                     </button>
                 </div>
             </div>
@@ -163,7 +162,6 @@ function renderCategoryChart() {
     const totalSkills = sorted.reduce((total, [, count]) => total + count, 0);
 
     chartContainer.innerHTML = sorted.map(([code, count, name]) => {
-        const color = CATEGORY_COLORS[code] || '#576574';
         const percentage = totalSkills > 0 ? ((count / totalSkills) * 100).toFixed(1) : '0.0';
         const barWidth = (count / maxCount) * 100;
 
@@ -171,7 +169,7 @@ function renderCategoryChart() {
             <div class="chart-row">
                 <div class="chart-label">${escapeHtml(name)}</div>
                 <div class="chart-bar-container">
-                    <div class="chart-bar" style="width: ${barWidth}%; background: ${color}"></div>
+                    <div class="chart-bar" style="width: ${barWidth}%"></div>
                 </div>
                 <div class="chart-value">${count.toLocaleString()} (${percentage}%)</div>
             </div>
@@ -194,14 +192,11 @@ function renderReposChart() {
 
     chartContainer.innerHTML = sorted.map(([repo, count], index) => {
         const barWidth = (count / maxCount) * 100;
-        const colors = ['#00fff2', '#ff6b6b', '#ffd93d', '#6bcb77', '#c56cf0',
-                        '#ff9ff3', '#54a0ff', '#ff9f43', '#5f27cd', '#00d2d3'];
-
         return `
             <div class="chart-row">
                 <div class="chart-label" title="${escapeHtml(repo)}">${escapeHtml(repo.length > 25 ? repo.slice(0, 25) + '...' : repo)}</div>
                 <div class="chart-bar-container">
-                    <div class="chart-bar" style="width: ${barWidth}%; background: ${colors[index % colors.length]}"></div>
+                    <div class="chart-bar" style="width: ${barWidth}%"></div>
                 </div>
                 <div class="chart-value">${count.toLocaleString()}</div>
             </div>
@@ -269,7 +264,7 @@ function createPluginCard(plugin) {
     return `
         <div class="plugin-card">
             <div class="plugin-header">
-                <span class="plugin-icon">📦</span>
+                <span class="plugin-icon" aria-hidden="true"><svg class="ic"><use href="#i-box"/></svg></span>
                 <span class="plugin-name">${escapeHtml(plugin.name)}</span>
                 <span class="skill-category">${escapeHtml(category)}</span>
             </div>
@@ -297,7 +292,7 @@ function createPluginCard(plugin) {
                 <div class="install-cmd">
                     <span class="prefix">$</span>
                     <span>${escapeHtml(plugin.install || 'See repository')}</span>
-                    ${plugin.install ? `<button class="copy-btn" data-install="${escapeHtml(plugin.install)}" onclick="copyToClipboard(event)" title="Copy">📋</button>` : ''}
+                    ${plugin.install ? `<button class="copy-btn" data-install="${escapeHtml(plugin.install)}" onclick="copyToClipboard(event)" title="Copy" aria-label="Copy install command"><svg class="ic ic-copy" aria-hidden="true"><use href="#i-copy"/></svg><svg class="ic ic-check" aria-hidden="true"><use href="#i-check"/></svg></button>` : ''}
                 </div>
             </div>
             <div class="plugin-footer">
@@ -313,11 +308,11 @@ function createPluginCard(plugin) {
 // Copy text to clipboard
 function copyToClipboard(event, text) {
     event.stopPropagation();
-    const value = text || event.currentTarget.getAttribute('data-install');
+    const btn = event.currentTarget;
+    const value = text || btn.getAttribute('data-install');
     navigator.clipboard.writeText(value).then(() => {
-        const btn = event.currentTarget;
-        btn.textContent = '✓';
-        setTimeout(() => btn.textContent = '📋', 1500);
+        btn.classList.add('copied');
+        setTimeout(() => btn.classList.remove('copied'), 1500);
     });
 }
 
@@ -360,10 +355,10 @@ function toggleFavorite(event, install) {
     localStorage.setItem('skillFavorites', JSON.stringify(state.favorites));
 
     // Update button
-    const btn = event.target;
+    const btn = event.currentTarget;
     const isFavorite = state.favorites.includes(install);
-    btn.textContent = isFavorite ? '❤️' : '🤍';
     btn.classList.toggle('active', isFavorite);
+    btn.title = isFavorite ? 'Remove from favorites' : 'Add to favorites';
 
     // Update favorites view if currently showing
     if (state.currentView === 'favorites') {
@@ -411,10 +406,10 @@ function createSkillCard(skill, isFeatured = false, showFavoriteBtn = true) {
                     ${isOfficial ? '<span class="official-badge" title="Official Anthropic Skill">✓</span>' : ''}
                 </span>
                 <div class="skill-header-right">
-                    ${stars > 0 ? `<span class="skill-stars">⭐ ${stars.toLocaleString()}</span>` : ''}
+                    ${stars > 0 ? `<span class="skill-stars"><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg> ${stars.toLocaleString()}</span>` : ''}
                     ${showFavoriteBtn ? `
                         <button class="favorite-btn ${isFavorite ? 'active' : ''}" data-install="${escapeHtml(install)}" onclick="toggleFavorite(event)" title="${isFavorite ? 'Remove from favorites' : 'Add to favorites'}">
-                            ${isFavorite ? '❤️' : '🤍'}
+                            <svg class="ic" aria-hidden="true"><use href="#i-heart"/></svg>
                         </button>
                     ` : ''}
                 </div>
@@ -429,7 +424,7 @@ function createSkillCard(skill, isFeatured = false, showFavoriteBtn = true) {
                 ${installCommand ? `<div class="install-cmd">
                     <span class="prefix">$</span>
                     <span>${escapeHtml(installCommand)}</span>
-                    <button class="copy-btn" data-install="${escapeHtml(install)}" data-branch="${escapeHtml(branch)}" onclick="copyInstall(event)" title="Copy">📋</button>
+                    <button class="copy-btn" data-install="${escapeHtml(install)}" data-branch="${escapeHtml(branch)}" onclick="copyInstall(event)" title="Copy" aria-label="Copy install command"><svg class="ic ic-copy" aria-hidden="true"><use href="#i-copy"/></svg><svg class="ic ic-check" aria-hidden="true"><use href="#i-check"/></svg></button>
                 </div>` : `<a href="${escapeHtml(getGitHubUrl(install, branch))}" onclick="event.stopPropagation()">${isListed ? 'View upstream skill →' : 'Open source for manual installation →'}</a>`}
             </div>
         </div>
@@ -486,12 +481,12 @@ async function showSkillDetail(card) {
     const similarSkills = findSimilarSkills(skill, 4);
     const similarHtml = similarSkills.length > 0 ? `
         <div class="similar-skills">
-            <h4>Similar Skills</h4>
+            <h4>Similar skills</h4>
             <div class="similar-grid">
                 ${similarSkills.map(s => `
                     <div class="similar-card" data-install="${escapeHtml(s.i)}" data-branch="${escapeHtml(s.b || 'main')}" onclick="showSkillDetail(this)">
                         <span class="similar-name">${escapeHtml(s.n)}</span>
-                        <span class="similar-stars">${s.r > 0 ? '⭐' + s.r.toLocaleString() : ''}</span>
+                        <span class="similar-stars">${s.r > 0 ? '<svg class="ic" aria-hidden="true"><use href="#i-star"/></svg> ' + s.r.toLocaleString() : ''}</span>
                     </div>
                 `).join('')}
             </div>
@@ -500,12 +495,12 @@ async function showSkillDetail(card) {
 
     elements.modalBody.innerHTML = `
         <div class="modal-header-row">
-            <h2 style="color: var(--accent-primary);">
+            <h2>
                 ${escapeHtml(skill.n)}
                 ${isOfficial ? '<span class="official-badge" title="Official Anthropic Skill">✓</span>' : ''}
             </h2>
             <button class="favorite-btn large ${isFavorite ? 'active' : ''}" data-install="${escapeHtml(install)}" onclick="toggleFavorite(event)">
-                ${isFavorite ? '❤️' : '🤍'}
+                <svg class="ic" aria-hidden="true"><use href="#i-heart"/></svg>
             </button>
         </div>
         <p style="margin-bottom: 1rem; color: var(--text-secondary);">${escapeHtml(skill.d)}</p>
@@ -515,7 +510,7 @@ async function showSkillDetail(card) {
 
         <div style="margin-bottom: 1rem;">
             <strong>Category:</strong> ${escapeHtml(categoryDisplayName(skill.c))}<br>
-            <strong>Stars:</strong> ${skill.r > 0 ? '⭐ ' + skill.r.toLocaleString() : 'N/A'}
+            <strong>Stars:</strong> ${skill.r > 0 ? '<svg class="ic" aria-hidden="true"><use href="#i-star"/></svg> ' + skill.r.toLocaleString() : 'N/A'}
         </div>
 
         ${tagsHtml ? `<div style="margin-bottom: 1rem;">${tagsHtml}</div>` : ''}
@@ -523,10 +518,10 @@ async function showSkillDetail(card) {
         <!-- Community Stats -->
         <div class="community-stats" id="community-stats-${escapeHtml(install).replace(/[^a-zA-Z0-9]/g, '-')}">
             <button class="like-btn" id="like-btn" data-install="${escapeHtml(install)}" onclick="handleLike(event)">
-                <span class="like-icon">👍</span>
+                <span class="like-icon" aria-hidden="true"><svg class="ic"><use href="#i-thumb"/></svg></span>
                 <span class="like-count" id="like-count">0</span>
             </button>
-            <span class="comment-count" id="comment-count-display">💬 0 comments</span>
+            <span class="comment-count" id="comment-count-display">0 comments</span>
         </div>
 
         <div style="margin-top: 1.5rem;">
@@ -534,7 +529,7 @@ async function showSkillDetail(card) {
             ${installCommand ? `<div class="install-cmd" style="margin-top: 0.5rem;">
                 <span class="prefix">$</span>
                 <span>${escapeHtml(installCommand)}</span>
-                <button class="copy-btn" data-install="${escapeHtml(install)}" data-branch="${escapeHtml(skill.b || 'main')}" onclick="copyInstall(event)" title="Copy">📋</button>
+                <button class="copy-btn" data-install="${escapeHtml(install)}" data-branch="${escapeHtml(skill.b || 'main')}" onclick="copyInstall(event)" title="Copy" aria-label="Copy install command"><svg class="ic ic-copy" aria-hidden="true"><use href="#i-copy"/></svg><svg class="ic ic-check" aria-hidden="true"><use href="#i-check"/></svg></button>
             </div>` : `<p>${isListed ? 'Read the upstream documentation for setup and usage.' : 'Open the source below and copy the folder containing SKILL.md into your agent’s skills directory.'}</p>`}
         </div>
 
@@ -548,7 +543,7 @@ async function showSkillDetail(card) {
 
         <!-- Comments Section -->
         <div class="comments-section">
-            <h4>💬 Comments</h4>
+            <h4>Comments</h4>
             <div class="comment-form">
                 <input type="text" id="comment-nickname" placeholder="Nickname (optional)" maxlength="30">
                 <div class="rating-input" id="rating-input">
@@ -611,11 +606,10 @@ async function loadCommunityData(install) {
             likeCount.textContent = stats.likes_count || 0;
             if (stats.liked) {
                 likeBtn.classList.add('liked');
-                likeBtn.querySelector('.like-icon').textContent = '👍';
             }
         }
         if (commentCountDisplay) {
-            commentCountDisplay.textContent = `💬 ${stats.comments_count || 0} comments`;
+            commentCountDisplay.textContent = `${stats.comments_count || 0} comments`;
         }
 
         // Load comments
@@ -707,7 +701,7 @@ async function handleSubmitComment(event) {
             const commentCountDisplay = document.getElementById('comment-count-display');
             if (commentCountDisplay) {
                 const count = parseInt(commentCountDisplay.textContent.match(/\d+/)?.[0] || 0) + 1;
-                commentCountDisplay.textContent = `💬 ${count} comments`;
+                commentCountDisplay.textContent = `${count} comments`;
             }
         } else {
             alert('Failed to post comment. Please try again.');
@@ -790,10 +784,10 @@ function copyInstall(event, install) {
     const branch = event.currentTarget.getAttribute('data-branch') || 'main';
     const cmd = getInstallCommand(install, branch);
     if (!cmd) return;
+    const btn = event.currentTarget;
     navigator.clipboard.writeText(cmd).then(() => {
-        const btn = event.target;
-        btn.textContent = '✓';
-        setTimeout(() => btn.textContent = '📋', 1500);
+        btn.classList.add('copied');
+        setTimeout(() => btn.classList.remove('copied'), 1500);
     });
 }
 

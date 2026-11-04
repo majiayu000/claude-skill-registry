@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-03T13:32:06.497159Z",
+  "updated_at": "2026-11-04T10:46:34.021240Z",
   "count": 100,
   "skills": [
     {
@@ -2018,7 +2018,7 @@
         "Claude Code"
       ],
       "canonical_id": "vmk1-umyiqqkyffjtyk4g502i_pbaq_iqpnr8ubfvk4",
-      "copies": 87,
+      "copies": 88,
       "is_canonical": false,
       "u": "skills/internal-comms-75ef6b7c1d3a/"
     },
@@ -2112,7 +2112,7 @@
         "Claude Code"
       ],
       "canonical_id": "j539tnjw4mfjlkb-kekbnc1hscysky5g2ui_lcunq44",
-      "copies": 49,
+      "copies": 50,
       "is_canonical": false,
       "u": "skills/web-artifacts-builder-36ce2134fea0/"
     },
@@ -2142,7 +2142,7 @@
       "trust_score": 100,
       "compatible_agents": [],
       "canonical_id": "tbg-jiygramwkry1ostzwjuecxrduzjxio13-fps1xs",
-      "copies": 114,
+      "copies": 115,
       "is_canonical": false,
       "u": "skills/webapp-testing-d77a2080404e/"
     },

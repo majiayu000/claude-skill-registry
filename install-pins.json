@@ -822,6 +822,14 @@
    "digest": "sha256:d09a57a904c8d918bb67cf67f63233e97b6bfddb1c9a4259b09d9f166d06e4e2",
    "checked_at": "2026-11-01T06:29:36+00:00"
   },
+  "-x7kdrqd3czfjzl1an0gp7t1o7i1dkrwmo_5dqtswna": {
+   "status": "ambiguous",
+   "archive_path": "bash/clawdhub-themusebook-skills/SKILL.md",
+   "repo": "themusebook/skills",
+   "branch": "main",
+   "digest": "sha256:8917808f0967184d9118b4af4c6b7d98fe0a46c6a51d1ab24972e576e0de9b96",
+   "checked_at": "2026-11-06T09:52:07+00:00"
+  },
   "-xjsvuziro_zsf5p8fvuoolzlssrfjod-jxpwzyqic8": {
    "status": "pinned",
    "path": ".agent/skills/flutter-expert/SKILL.md",
@@ -1003,6 +1011,14 @@
    "branch": "main",
    "digest": "sha256:d8c1a539bef93200abe8b6ed4c8ca87ea4d6a01e2c0a3b228356caa96f2dec05",
    "checked_at": "2026-11-01T06:29:36+00:00"
+  },
+  "03hwtctqqyggex-krd5rp0zdh5ztbpmlwhkwab1xb94": {
+   "status": "ambiguous",
+   "archive_path": "api/trello-themusebook-skills/SKILL.md",
+   "repo": "themusebook/skills",
+   "branch": "main",
+   "digest": "sha256:ede0f3181af05734e178a9415295402ecfe4cb2da08d1d26515634e874ec08e1",
+   "checked_at": "2026-11-06T09:52:07+00:00"
   },
   "03yyviihbj-a2werrftop4q360zthus__slff-wtuee": {
    "status": "pinned",
@@ -1386,6 +1402,14 @@
    "digest": "sha256:3fc2fc7f3dba9decd2dd9e449150395cf62ee156c8dd1c48d09a233318f4dc69",
    "checked_at": "2026-11-01T06:29:36+00:00"
   },
+  "0ngxz1dcnbzcnsgg_zlqceglwmqkqhq49rqf261iub8": {
+   "status": "ambiguous",
+   "archive_path": "other/deployer-themusebook-skills/SKILL.md",
+   "repo": "themusebook/skills",
+   "branch": "main",
+   "digest": "sha256:aaf51bca8983f2adebb953520779c85d34a1971fe8620927eab062d1a538e4b6",
+   "checked_at": "2026-11-06T09:52:07+00:00"
+  },
   "0nvmvru6bm8fxf4xgg9roqinjp18sjpla17i3rwxfn0": {
    "status": "ambiguous",
    "archive_path": "other/azure-kusto-robertjam954-multimodal-rag-appli/SKILL.md",
@@ -1677,12 +1701,28 @@
    "digest": "sha256:44e118a409727f7e1d9542a9952632c0ef7db13b5fbc822a95c16d67ae0fbe75",
    "checked_at": "2026-11-01T06:29:36+00:00"
   },
+  "15houppi0ehwc522y-mhcu9egr91scafo50ykewlkt4": {
+   "status": "ambiguous",
+   "archive_path": "bash/agent-browser-themusebook-skills/SKILL.md",
+   "repo": "themusebook/skills",
+   "branch": "main",
+   "digest": "sha256:34866c7bca14d4ac25d0d379a32576a723792daeb853dd1453d58c27c9202026",
+   "checked_at": "2026-11-06T09:52:07+00:00"
+  },
   "16ynzlz3jnep8ga_gitg_01cj98ueo0qok6uav0x0ig": {
    "status": "upstream_unavailable",
    "error": "GitHub API 404: {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest\",\"status\":\"404\"}",
    "archive_path": "integration/unifi-moltbot-skills/SKILL.md",
    "digest": "sha256:59b21fecb91d469dc7d2dd0536a7d09713de3e8eb7ec666279fb7b70cb6997e5",
    "checked_at": "2026-11-01T06:29:36+00:00"
+  },
+  "17rwvjt61fdg1zkvsceyqn0gtol78pae4wu7ewoz6wi": {
+   "status": "ambiguous",
+   "archive_path": "other/magicblock-themusebook-skills/SKILL.md",
+   "repo": "themusebook/skills",
+   "branch": "main",
+   "digest": "sha256:793e4f178db70d6c05a983cbc097483c3b02cd73ebab1d0d95c65c718c19789e",
+   "checked_at": "2026-11-06T09:52:07+00:00"
   },
   "17xgg5dtuv0z4s7_gfdizk0xdee9e6qvrl1m77dsm0u": {
    "status": "bundled_files",
@@ -1830,14 +1870,6 @@
    "branch": "master",
    "digest": "sha256:be38855ab5d7a9f4f92c79e07ef560c9c7eb71da8337ad3817f3dd3eea82222c",
    "checked_at": "2026-10-30T10:36:21+00:00"
-  },
-  "1gdoawt_yltimrrxsykhqbj4j6j4ghot6v9s442uaze": {
-   "status": "ambiguous",
-   "archive_path": "development/local-f8a4b6e6cf297c9741b3ac6b-gutsofpratik-horizon-skills/SKILL.md",
-   "repo": "gutsofpratik/Horizon-Skills",
-   "branch": "main",
-   "digest": "sha256:2befe7fc55bcadaa3d97dd9e8efeb633d2561c0ebe74c5a8b17c4d9e7e4520b3",
-   "checked_at": "2026-11-04T11:01:12+00:00"
   },
   "1gngebfrf1bt1xbx3srzthoppz1vigldubg-oyb33gc": {
    "status": "upstream_unavailable",
@@ -2004,14 +2036,6 @@
    "digest": "sha256:70f40b01a184cfd5cd2177c9b91bf6305ccca5f7d3a79703c698d34417712586",
    "checked_at": "2026-11-05T11:19:32+00:00"
   },
-  "1mz3-5vna9fpqqwp1lvfj5b2zlvwhecqbz7td076j0m": {
-   "status": "bundled_files",
-   "archive_path": "other/cost-estimation-microsoft-skills/SKILL.md",
-   "repo": "microsoft/skills",
-   "branch": "main",
-   "digest": "sha256:17f6d77d27ede847ce910183a232d4fdcd999a7501d9a5a13391e51a91231f16",
-   "checked_at": "2026-11-01T06:29:36+00:00"
-  },
   "1npwhtd0f-m_ksyupasb-lxfp4v6t4gpktkn4c-jrok": {
    "status": "upstream_changed",
    "archive_path": "security/cloudflare-turnstile-jezweb-claude-skills/SKILL.md",
@@ -2083,6 +2107,18 @@
    "commit": "fc10a8bb09c79cbb1552e5bc0a84bbf920f759d3",
    "name": "assets-copy",
    "description": "Copy assets at given paths and store them at new paths. Refreshes the AssetDatabase at the end. Use 'assets-find' to locate the source assets first."
+  },
+  "1pieff48vinz8lbdmawe9fqzgxm2ql-tv7jxikpwpre": {
+   "status": "pinned",
+   "path": ".claude/skills/using-git-worktrees/SKILL.md",
+   "archive_path": "other/using-git-worktrees-yhyu13-doom3-ainative/SKILL.md",
+   "repo": "yhyu13/DOOM3_AINative",
+   "branch": "main",
+   "digest": "sha256:8cfb86f121269e8f7f12361e6795c4f6738828340e28964c9229d365666c9edd",
+   "checked_at": "2026-11-06T09:52:07+00:00",
+   "commit": "8c5368e6b47aeaa6b9ab69c319d4faf9cd5a5f4d",
+   "name": "using-git-worktrees",
+   "description": "Use when starting feature work that needs isolation from current workspace or before executing implementation plans - ensures an isolated workspace exists via native tools or git worktree fallback"
   },
   "1pmmje0tqtemw03nzfi7sivvmhhh7mwnihayao67_qi": {
    "status": "upstream_changed",
@@ -2493,18 +2529,6 @@
    "branch": "main",
    "digest": "sha256:d6cc2a732917559cb81a83a5426e19806539f0e7c6667da03b88e64685a51c8e",
    "checked_at": "2026-11-01T06:29:36+00:00"
-  },
-  "24uvg5nzrbaueqlqt8qx3t1ig6bthnsp4bjvtqoxq3a": {
-   "status": "pinned",
-   "path": "skills/apple-design/SKILL.md",
-   "archive_path": "design/apple-design-samuelpatro-claude/SKILL.md",
-   "repo": "samuelpatro/.claude",
-   "branch": "main",
-   "digest": "sha256:d590f7589559da987cdfb4b0e9c69d538fb96d503cfc8532b3f9e6175b22f251",
-   "checked_at": "2026-11-01T06:29:36+00:00",
-   "commit": "bc5b4381cdffb19cd0dd1935a4afb314fad7b1a8",
-   "name": "apple-design",
-   "description": "Apple's approach to interface design and fluid, physical motion, translated for the web. Use when building or reviewing gesture-driven UI, spring animations, drag/swipe/sheet interactions, momentum and interruptible transitions, translucent materials and depth, typography (optical sizing, tracking, leading), reduced-motion, or the design foundations (feedback, spatial consistency, restraint) behind Apple-style interfaces."
   },
   "25rqmwju4mjhs63kseb815zxdprquetedenge2drypu": {
    "status": "upstream_changed",
@@ -3417,6 +3441,14 @@
    "digest": "sha256:12cdb0320fec2d3222e3e4ac7b547e6484f46569e709b9f7213ea25166398b2a",
    "checked_at": "2026-11-04T11:01:12+00:00"
   },
+  "350k57lk0-dfrujr4r5u8zrz2yeykukb0cymcu8zjro": {
+   "status": "ambiguous",
+   "archive_path": "productivity/agent-desktop-themusebook-skills/SKILL.md",
+   "repo": "themusebook/skills",
+   "branch": "main",
+   "digest": "sha256:5b817bb2fa21aa2805bdac04a53e89d018d1fd82df5754b0bcb614382421af6e",
+   "checked_at": "2026-11-06T09:52:07+00:00"
+  },
   "35eb_atc9wdtv4pgel3ybi98lbd9yg3qdahf4aimgwm": {
    "status": "pinned",
    "path": "skills/daily/SKILL.md",
@@ -4127,6 +4159,14 @@
    "digest": "sha256:2a662f3ff8c647ac4334640b674cb7932bd71d1484ca0ee362ba623a7d1325d8",
    "checked_at": "2026-11-04T11:01:12+00:00"
   },
+  "44tp2ngqezd21gp2iasmspajxtj8kqlc9omnuojzfv4": {
+   "status": "ambiguous",
+   "archive_path": "productivity/swap-planner-themusebook-skills/SKILL.md",
+   "repo": "themusebook/skills",
+   "branch": "main",
+   "digest": "sha256:a1c3910c788f601c7d49391489b2654edd95c759a85eea5b26433d9b6e9f3bee",
+   "checked_at": "2026-11-06T09:52:07+00:00"
+  },
   "46ofm-z03wsjujn1y6pgbu2hqlieuitx_gyy09npets": {
    "status": "bundled_files",
    "archive_path": "platform/login-flow/SKILL.md",
@@ -4828,14 +4868,6 @@
    "digest": "sha256:750852f6d7805800c51ac27bd066794457764e6babbbaa355aee5490d83bf2e2",
    "checked_at": "2026-11-01T06:29:36+00:00"
   },
-  "4xtzdne0fcxmzsjn9dxqavcj_g9lxjst1uatr856t4s": {
-   "status": "upstream_changed",
-   "archive_path": "marketing/copywriting-hotriluan-alkana-kpi/SKILL.md",
-   "repo": "hotriluan/alkana_kpi",
-   "branch": "main",
-   "digest": "sha256:078b86f115c76d6843a6092d349211fe271cf9539e89b0f37fc4fcf8e950d1b3",
-   "checked_at": "2026-11-01T06:29:36+00:00"
-  },
   "4xublmn-53duqpzjcz56jnur7ciaenbizfdydvalhn0": {
    "status": "pinned",
    "path": "skills/antigravity-awesome-skills/langfuse/SKILL.md",
@@ -5498,18 +5530,6 @@
    "branch": "main",
    "digest": "sha256:7333260ccd015b0749c6d9c96cdecc398eebdb8948bd765666e0124fce3d9b32",
    "checked_at": "2026-11-01T06:29:36+00:00"
-  },
-  "5jsxk7ekpjlhldge_6zddvc6meyuulzex66rmmpcj28": {
-   "status": "pinned",
-   "path": "skills/create-an-asset/SKILL.md",
-   "archive_path": "business/create-an-asset-tmcfarlane-team-avatar/SKILL.md",
-   "repo": "tmcfarlane/team-avatar",
-   "branch": "main",
-   "digest": "sha256:02857091cc9927090a7fd128c9bc906f67b29533f095a08493c320174c0f8678",
-   "checked_at": "2026-10-30T10:36:21+00:00",
-   "commit": "1a301358f7fa8786a5fb8151aea47d93ca547f54",
-   "name": "create-an-asset",
-   "description": "Generate tailored sales assets (landing pages, decks, one-pagers, workflow demos) from your deal context. Describe your prospect, audience, and goal — get a polished, branded asset ready to share with customers."
   },
   "5k9ux9gx2u1x9lpb--kr6b7jhzwu4bisau6zxgrpn7c": {
    "status": "pinned",
@@ -6889,14 +6909,6 @@
    "digest": "sha256:4da03b00af5f60beaf9e6aa65113d7f1c1fbdc49dc1bcef7556ae77dc90a1ee1",
    "checked_at": "2026-11-01T06:29:36+00:00"
   },
-  "77qsazvvp9oo_cln04_y_se2651sq2gmh7kpd8fttuk": {
-   "status": "bundled_files",
-   "archive_path": "other/core-dynamic-skills-trayhard-d2r-ultra-utility-2/SKILL.md",
-   "repo": "TrayHard/d2r-ultra-utility",
-   "branch": "master",
-   "digest": "sha256:a893ce3f9eb8cd9c41c516687111a672af2e7a333a5ab0a96ca25ee701f78494",
-   "checked_at": "2026-11-01T06:29:36+00:00"
-  },
   "7_u0-snuwzx-okythg_rum0crofeuhejippkspmhvy0": {
    "status": "ambiguous",
    "archive_path": "ai-ml/azure-ai-robertjam954-multimodal-rag-appli/SKILL.md",
@@ -8007,6 +8019,14 @@
    "digest": "sha256:20d370bbfb5c6c7efbdfe5d86ca42f5c49ef968b7b84821abc85089a96aa6bb9",
    "checked_at": "2026-10-30T10:36:21+00:00"
   },
+  "8l1je99ce9grxnrrviajxkf5b-o9nppnct2m89q3zz4": {
+   "status": "ambiguous",
+   "archive_path": "devops/cloudflare-one-themusebook-skills/SKILL.md",
+   "repo": "themusebook/skills",
+   "branch": "main",
+   "digest": "sha256:605336f84979367b6235a57da8ea43e4f3b856a97efd2c95d9e7f90e41bf17ec",
+   "checked_at": "2026-11-06T09:52:07+00:00"
+  },
   "8ldmdumrfv1h7_czpbea2vqddrtidjha8qtzfhsfhga": {
    "status": "pinned",
    "path": ".rulesync/skills/handoff/SKILL.md",
@@ -8082,6 +8102,14 @@
    "branch": "main",
    "digest": "sha256:ef774b925eb1d1fc12e4f5ddc3f5ad925ecd795315827447228c70cc44c6170c",
    "checked_at": "2026-11-01T06:29:36+00:00"
+  },
+  "8mmwasctduv6qclfebtj6lliox5xpcueduokmdsq5qe": {
+   "status": "bundled_files",
+   "archive_path": "design/frontend-design-yahor-punko-mavericks-os/SKILL.md",
+   "repo": "yahor-punko/mavericks-os",
+   "branch": "main",
+   "digest": "sha256:b81e2ff87ed8fa4d6c377ccb127a7254c9e6a77e3ae94f21e6b514f7bb2945a0",
+   "checked_at": "2026-11-06T09:52:07+00:00"
   },
   "8mtihi18c1v_widseble2g-wlav0h1iwkawsp460tj8": {
    "status": "pinned",
@@ -8541,14 +8569,6 @@
    "digest": "sha256:027244a3587e70c3e2f1aed4bfb5d737cb24fdc6b2ad276302ed81c02e38a7fc",
    "checked_at": "2026-11-05T11:19:32+00:00"
   },
-  "9ez8d__y6d5jw-chp4hkjukuu04gvzjms_qxcuyeclu": {
-   "status": "upstream_changed",
-   "archive_path": "development/cqrs-event-sourcing/SKILL.md",
-   "repo": "NickCrew/claude-cortex",
-   "branch": "main",
-   "digest": "sha256:5428dbbc152f72d4f6ee6e9af1a5e92b66975911e2b627a2d1e6a4410ece2fd8",
-   "checked_at": "2026-11-01T06:29:36+00:00"
-  },
   "9ff9z5b9kefm06kntdpyccg9fz76hxdq7xvze-yofbi": {
    "status": "bundled_files",
    "archive_path": "other/context7-cli/SKILL.md",
@@ -8793,14 +8813,6 @@
    "commit": "b75472b4d9aa5217efc405f6c2693809ae4c9711",
    "name": "antislop-ui",
    "description": "UI and visual skill for antislop. Use when building or editing any interface: color, layout, components, motion. Load with the core."
-  },
-  "9noam8ksb-pn0_rmpc7zlrbvcoujsjyge_26i7samk4": {
-   "status": "bundled_files",
-   "archive_path": "other/cqrs-implementation-pratyushdeosingh-mdp/SKILL.md",
-   "repo": "pratyushdeosingh/mdp",
-   "branch": "main",
-   "digest": "sha256:750a9b4027570704e10e0e15f6a7086e84edd1743aa02c2a15babd775eb97d5c",
-   "checked_at": "2026-11-05T11:19:32+00:00"
   },
   "9nojxde55jpeo1yhvxakeuwvj_cdnhtlfegsva_flc8": {
    "status": "upstream_changed",
@@ -9288,14 +9300,6 @@
    "digest": "sha256:057a610eab12e16bf447a46dd91de867ea450ce541fddc956d1abd55be5ec2cc",
    "checked_at": "2026-11-01T06:29:36+00:00"
   },
-  "_8pxlfo7a4xv-qq3iuonuedogfvh9w8_lpl4pf4wuy0": {
-   "status": "bundled_files",
-   "archive_path": "design/apple-design-suphiozdedee-projenicdesign-com/SKILL.md",
-   "repo": "suphiozdedee/projenicdesign.com",
-   "branch": "main",
-   "digest": "sha256:77bb63b7043bb93aca2ff4ab040c249484eef35682bb6ff7163433c31d30adc7",
-   "checked_at": "2026-11-01T06:29:36+00:00"
-  },
   "_98mcyzbca2zclwgckc5zxoj7yd0-sqq0snka1bz9uu": {
    "status": "upstream_changed",
    "archive_path": "development/clojure-review/SKILL.md",
@@ -9342,14 +9346,6 @@
    "branch": "main",
    "digest": "sha256:746b98e03e7c7f76f4f3aa8557cb25e693a8ece3e800080216fc394b685b00df",
    "checked_at": "2026-11-03T11:39:05+00:00"
-  },
-  "_bpdouwpbcpgxchu_zeshh4h0qhogsesoy9cbtdn3oc": {
-   "status": "upstream_changed",
-   "archive_path": "other/cost-analysis-microsoft-skills/SKILL.md",
-   "repo": "microsoft/skills",
-   "branch": "main",
-   "digest": "sha256:a3708374c3c66dc2e353e745ca9c9e3b48632b8abbfd7b6c64ab2cbb31693594",
-   "checked_at": "2026-11-01T06:29:36+00:00"
   },
   "_bucea8hl77d9bbblv-1xm7pnrwdrk9ywve4tb2_cwi": {
    "status": "bundled_files",
@@ -10083,18 +10079,6 @@
    "digest": "sha256:3d843295599bc97fbbe52852224d87c153135612c1fe7fc4b742795d5bfe59b5",
    "checked_at": "2026-11-01T06:29:36+00:00"
   },
-  "a6ee50rfc30pz_sydu5znrgq6ugmrq8cx74bcxgjqw8": {
-   "status": "pinned",
-   "path": "skills/copywriting/SKILL.md",
-   "archive_path": "other/copywriting-mrglennc64-new-ac/SKILL.md",
-   "repo": "mrglennc64/new-ac",
-   "branch": "main",
-   "digest": "sha256:102ec3cf9028910e52a0e30ec22641a50fbb6c95a8330597cf1a0524d3c7f8af",
-   "checked_at": "2026-11-01T06:29:36+00:00",
-   "commit": "026d0842ca42ec6ce67e17117b281429181e845a",
-   "name": "copywriting",
-   "description": "Write and rewrite marketing copy for landing pages, homepages, and ads. Useful as a copy chief partner during launches."
-  },
   "a6ghrri_aa2jnzarob0nyxrze7iqmrjiihtdsh1sw54": {
    "status": "upstream_changed",
    "archive_path": "security/sharp-edges/SKILL.md",
@@ -10273,6 +10257,14 @@
    "commit": "e580bbc8204874f762d132fe441b18192979211b",
    "name": "agent-goal-planner",
    "description": "Agent skill for goal-planner - invoke with $agent-goal-planner"
+  },
+  "aayqbizz-arlbcdx-lcaxzsbwe2ftt4awdkbudhfowa": {
+   "status": "bundled_files",
+   "archive_path": "data/lambda/SKILL.md",
+   "repo": "northseadl/skillwisp",
+   "branch": "main",
+   "digest": "sha256:79a78fcd14e8c4634b1be8e28d4f2e341742acaf3f7c7f81eebbc6f733439ef1",
+   "checked_at": "2026-11-06T09:52:07+00:00"
   },
   "ab0antgv2jttjnkcel7ug3tkyvvn0_cmdfa1bkb5nf0": {
    "status": "bundled_files",
@@ -11789,6 +11781,18 @@
    "name": "colorize",
    "description": "Add strategic color to features that are too monochromatic or lack visual interest, making interfaces more engaging and expressive. Use when the user mentions the design looking gray, dull, lacking warmth, needing more color, or wanting a more vibrant or expressive palette."
   },
+  "b-miy4c9edz-e-pdqsmbp3pqtmkc26kxsf1jhilongq": {
+   "status": "pinned",
+   "path": ".claude/skills/speckit-specify/SKILL.md",
+   "archive_path": "integration/speckit-specify-yhyu13-doom3-ainative/SKILL.md",
+   "repo": "yhyu13/DOOM3_AINative",
+   "branch": "main",
+   "digest": "sha256:d4d93f2444355136e78bb533988aa2dd560dc4b258f4923f67b1a437e7de38f8",
+   "checked_at": "2026-11-06T09:52:07+00:00",
+   "commit": "8c5368e6b47aeaa6b9ab69c319d4faf9cd5a5f4d",
+   "name": "speckit-specify",
+   "description": "Create or update the feature specification from a natural language feature description."
+  },
   "b-ryeng7z-jfpjh3p1waiwod0vpyjidiwxxofanrdbw": {
    "status": "pinned",
    "path": "skills/superpowers/executing-plans/SKILL.md",
@@ -12030,14 +12034,6 @@
    "repo": "softaworks/agent-toolkit",
    "branch": "main",
    "digest": "sha256:f20e68b59875ba43cd2680519cf5e77f6c55b51330b927394291f8f11478c21e",
-   "checked_at": "2026-11-01T06:29:36+00:00"
-  },
-  "ba0u4ka71-93ly0z6i4jg8fytk4xrb7zlts3zwbupoc": {
-   "status": "bundled_files",
-   "archive_path": "design/break-ui-laurentvv-agents-kit/SKILL.md",
-   "repo": "laurentvv/agents-kit",
-   "branch": "main",
-   "digest": "sha256:e7eec1d70ac56a04255e9c0dbe98084ea3d544cc04aaad34f32c95d6fa9dff5e",
    "checked_at": "2026-11-01T06:29:36+00:00"
   },
   "babzrpy9o6lihhlkv7r5d-v54y6-lk-_vsct7k7yjae": {
@@ -12484,6 +12480,14 @@
    "branch": "main",
    "digest": "sha256:fe774a50566508203ee5c385b6f0cc19df4311ed0765ac522ba015ab083b236f",
    "checked_at": "2026-11-01T06:29:36+00:00"
+  },
+  "bk9ishwjtdx-vshilkjtc7qosdiblvgsfsh8xfba05a": {
+   "status": "bundled_files",
+   "archive_path": "bash/skill-tanjcf-newbrian/SKILL.md",
+   "repo": "tanjcf/NewBrian",
+   "branch": "main",
+   "digest": "sha256:621796ede32bbac680dcbc9f15110cdb9b569ebffc3de27ed9aafda9e0f9fbcf",
+   "checked_at": "2026-11-06T09:52:07+00:00"
   },
   "bkjxjkure9ubybuo2dw05edn3ggy14e6eepjbbvamue": {
    "status": "upstream_changed",
@@ -13308,6 +13312,18 @@
    "digest": "sha256:e35f3f853bfec58d1b04f00a687c54921d19495e6b2045c9b21a10d651d5565b",
    "checked_at": "2026-11-01T06:29:36+00:00"
   },
+  "bzoqw7b6q3eirwxym9c_c1cffkr-ikhe9ndpffbike0": {
+   "status": "pinned",
+   "path": "skills/xhs-interact/SKILL.md",
+   "archive_path": "bash/xhs-interact-xinyaoliao93-xiaohongshu-research/SKILL.md",
+   "repo": "xinyaoliao93/xiaohongshu-research-agent",
+   "branch": "main",
+   "digest": "sha256:4740b22b0bbc7d739bf54cfd7b8ffa28e837ad28d900f77b9fa2157350590e51",
+   "checked_at": "2026-11-06T09:52:07+00:00",
+   "commit": "b354685f0a17f3fcc6d072b511ffa4e342e40db2",
+   "name": "xhs-interact",
+   "description": "小红书社交互动技能。发表评论、回复评论、点赞、收藏。\n当用户要求评论、回复、点赞或收藏小红书帖子时触发。"
+  },
   "bzp4dieetxelgazoam1soyagtkthaqezcbddyipmaq0": {
    "status": "bundled_files",
    "archive_path": "design/clean-karanmrn-karanagentskills/SKILL.md",
@@ -13427,6 +13443,14 @@
    "branch": "main",
    "digest": "sha256:3af06e403c3b00521c99b28d600a2827782dce2b3cd9867b0556c749cbf441f0",
    "checked_at": "2026-11-01T06:29:36+00:00"
+  },
+  "c3bi4bt4xtu5oh0_9vsidstalzdmr-nodpfobsgzlnq": {
+   "status": "ambiguous",
+   "archive_path": "api/imperial-themusebook-skills/SKILL.md",
+   "repo": "themusebook/skills",
+   "branch": "main",
+   "digest": "sha256:61d7a9750374cbb7b7d4572b36d35ae92e99f1002b996eb56ea47469f95f4eca",
+   "checked_at": "2026-11-06T09:52:07+00:00"
   },
   "c3dy_jwtauxxcc6brhjlcanbf0xq7b2yxufnss2abra": {
    "status": "pinned",
@@ -14482,14 +14506,6 @@
    "digest": "sha256:253303a8d7dd4e74027bd594f84b22f42b7f90230adf505ff5a96b18350be235",
    "checked_at": "2026-11-01T06:29:36+00:00"
   },
-  "csvwcpzosc0wyvqwtcabk3sruimzoluijmngslxbv3g": {
-   "status": "ambiguous",
-   "archive_path": "product/copywriting-patrickserrano-lacquer-2/SKILL.md",
-   "repo": "patrickserrano/lacquer",
-   "branch": "main",
-   "digest": "sha256:ce18137ae31ab37f261078501431649865ab6b403054d97490754e82acb002d8",
-   "checked_at": "2026-11-01T06:29:36+00:00"
-  },
   "cszhpsz5vvxlnamtmdnwae4qexpaxxtxcmijosssoog": {
    "status": "upstream_changed",
    "archive_path": "testing/springboot-verification/SKILL.md",
@@ -14752,6 +14768,14 @@
    "digest": "sha256:2d999e911d49903368e7a25e0ca2acfb0f6ccb799113b32c6917cf4e13f8798a",
    "checked_at": "2026-11-01T06:29:36+00:00"
   },
+  "cxj6ug-gscy4fgsb6vo0wioponx7mgkbt_a5-g_nits": {
+   "status": "ambiguous",
+   "archive_path": "other/dca-bot-themusebook-skills/SKILL.md",
+   "repo": "themusebook/skills",
+   "branch": "main",
+   "digest": "sha256:5278af3e8be5ab45a2be77bf17df0b162e97c56850b095e3630e6a822b066183",
+   "checked_at": "2026-11-06T09:52:07+00:00"
+  },
   "cxmrlafvhiqs-zbr1oqe0fljxjomh6qmcc6l0uubcco": {
    "status": "ambiguous",
    "archive_path": "design/ckm-banner-design-luicabref97-sushi-jungle-web/SKILL.md",
@@ -14759,6 +14783,14 @@
    "branch": "master",
    "digest": "sha256:b55b30c763e2aa9aac953021bcb72bd03669f187150fc0815ab1313846b79466",
    "checked_at": "2026-11-01T06:29:36+00:00"
+  },
+  "cy5a2-1kxclkmpdwa-8izmpp_thagrmmpxbpywtqipe": {
+   "status": "bundled_files",
+   "archive_path": "data/ecs/SKILL.md",
+   "repo": "northseadl/skillwisp",
+   "branch": "main",
+   "digest": "sha256:7d16c78f8f0dc9173db838f774ce6c0275f8acd92a21f91ead5d6939f13ad1c7",
+   "checked_at": "2026-11-06T09:52:07+00:00"
   },
   "cycvoorgzvdawe4srf_mli-lggzczqr9y5zurg4gqxg": {
    "status": "pinned",
@@ -15124,14 +15156,6 @@
    "digest": "sha256:a75d2ae2470db8debd5a632706b328004bacaa63845a412d81e2c0c245b4d760",
    "checked_at": "2026-11-01T06:29:36+00:00"
   },
-  "dbgb_iamlkhj_6ln3pti8bv38mova3dyewlictzfvpq": {
-   "status": "upstream_changed",
-   "archive_path": "performance/cost-accrual-tracker/SKILL.md",
-   "repo": "erichowens/some_claude_skills",
-   "branch": "main",
-   "digest": "sha256:3b6686175bb39d478c5c6e5bf0160085aad1900ad7cace0208b4d1e87403fabd",
-   "checked_at": "2026-11-01T06:29:36+00:00"
-  },
   "dbgtr61wr--3i577fas7vtynjriiorwtclifx_magv8": {
    "status": "upstream_changed",
    "archive_path": "development/convex-waynesutton-convexskills/SKILL.md",
@@ -15383,6 +15407,14 @@
    "name": "breakdown-plan",
    "description": "Issue Planning and Automation prompt that generates comprehensive project plans with Epic > Feature > Story/Enabler > Test hierarchy, dependencies, priorities, and automated tracking."
   },
+  "dhatzydzto8rgkmhw66mgkgirnwgtzle5g9silnauuu": {
+   "status": "bundled_files",
+   "archive_path": "other/code-review-yhyu13-doom3-ainative/SKILL.md",
+   "repo": "yhyu13/DOOM3_AINative",
+   "branch": "main",
+   "digest": "sha256:9cf46653dd9c710ea1e6c22423caf31a794c88773bc94bdaa23140277f470442",
+   "checked_at": "2026-11-06T09:52:07+00:00"
+  },
   "dhhuec2kh2zz2vlwk7sexyihflfevhh2addi6clpfim": {
    "status": "upstream_unavailable",
    "error": "GitHub API 404: {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/branches/branches#get-a-branch\",\"status\":\"404\"}",
@@ -15477,6 +15509,14 @@
    "branch": "main",
    "digest": "sha256:bcbb49e47b76620b6303f508c323bd12897a730b80a29f7a760bbaed9a6002f2",
    "checked_at": "2026-11-01T06:29:36+00:00"
+  },
+  "dir9aqgdaf_zzo0beszpbwm5rg6h0elkupseufbl8tu": {
+   "status": "ambiguous",
+   "archive_path": "other/local-places-themusebook-skills/SKILL.md",
+   "repo": "themusebook/skills",
+   "branch": "main",
+   "digest": "sha256:20e1cc6473c9704775076f8aa48b01ba6b0ac8006e8841f64927c962fe17561f",
+   "checked_at": "2026-11-06T09:52:07+00:00"
   },
   "dj33-20z1pkgnqpenqk39am6bgrfvpr3vptqt-83bbq": {
    "status": "bundled_files",
@@ -16447,18 +16487,6 @@
    "branch": "main",
    "digest": "sha256:cd509d43a30e05b906f151b39cdda1f132fb9b792c62cc3e5e9ddf9e382fb0eb",
    "checked_at": "2026-11-01T06:29:36+00:00"
-  },
-  "dxq0qssyzyw8d778xvleakehowo3pudcbwbok3uo0ug": {
-   "status": "pinned",
-   "path": "skills/pick-ui-library/SKILL.md",
-   "archive_path": "design/pick-ui-library-laurentvv-agents-kit/SKILL.md",
-   "repo": "laurentvv/agents-kit",
-   "branch": "main",
-   "digest": "sha256:675fdce308683256ed617351a9b74d23457a5fbd0a562d9831b9c764b8c5e682",
-   "checked_at": "2026-11-01T06:29:36+00:00",
-   "commit": "351e78c60e3a25763910e44103bb49ed5f8438a5",
-   "name": "pick-ui-library",
-   "description": "Pick the right library for a given frontend task from a curated, opinionated list — numbers, OTP inputs, charts, command menus, virtualization, drag and drop, toasts, state, styling, and more. Only runs when explicitly invoked; it does not trigger on its own."
   },
   "dxssve1zxwpdo95zdyiwxd6cicjttlswchsacfqn85i": {
    "status": "pinned",
@@ -18972,6 +19000,14 @@
    "digest": "sha256:deba6c5152d9835892fa7dffeb1fedbb689ddac7e59e14e57ec5eaf9463309e4",
    "checked_at": "2026-11-01T06:29:36+00:00"
   },
+  "fg_hhwbvul86mftolqxnlnzohoprtnkh6_eon4y-zvq": {
+   "status": "bundled_files",
+   "archive_path": "data/eventbridge/SKILL.md",
+   "repo": "northseadl/skillwisp",
+   "branch": "main",
+   "digest": "sha256:31dee493c674c68e1858633b85e6dba0bf4a549fe5dc3a2bbe2da62989263290",
+   "checked_at": "2026-11-06T09:52:07+00:00"
+  },
   "fgf74wllaqvbylbni9rhiiymmzsiuwalod683u9gq5a": {
    "status": "pinned",
    "path": "skills/artwalker/cc/SKILL.md",
@@ -19174,18 +19210,6 @@
    "commit": "69348fb0484447374e461e91c717d70697047846",
    "name": "gws-events-subscribe",
    "description": "Google Workspace Events: Subscribe to Workspace events and stream them as NDJSON."
-  },
-  "fjzpqobkqud9szzxy9ou46fjngbs8x0i3ybt0nqz4jc": {
-   "status": "pinned",
-   "path": "skills/custom/ai-agent/find-skills/SKILL.md",
-   "archive_path": "design/find-skills-tangchunwu-skill-hub/SKILL.md",
-   "repo": "tangchunwu/skill-hub",
-   "branch": "main",
-   "digest": "sha256:1e85f6f9686e145aca4a124e3b704b9bbea9aa87e08515c1e352eee70f6e6e7a",
-   "checked_at": "2026-11-01T06:29:36+00:00",
-   "commit": "6bb8dc313b43ae7077e57a9ed24eb79fa1b81351",
-   "name": "find-skills",
-   "description": "Helps users discover and install agent skills when they ask questions like \"how do I do X\", \"find a skill for X\", \"is there a skill that can...\", or express interest in extending capabilities. This skill should be used when the user is looking for functionality that might exist as an installable skill."
   },
   "fk1cbea9yo7zibz0wkwgmlmhyqhznhzc10r809vp0pi": {
    "status": "bundled_files",
@@ -19717,14 +19741,6 @@
    "digest": "sha256:790df1cfd8c931df42805728fe305b19f08036ab710124b1f36327021590b0da",
    "checked_at": "2026-11-05T11:19:32+00:00"
   },
-  "fsrmatcuidkhfvqnuctzedi6zagpmhyane45ieildke": {
-   "status": "bundled_files",
-   "archive_path": "product/lean-ux-mhyahya854-ai-second-brain-univ/SKILL.md",
-   "repo": "mhyahya854/AI-Second-Brain_Universal-Rules",
-   "branch": "main",
-   "digest": "sha256:4fe0a10132650ad36bc79676b12c8f58b19035a40ac6587c864387d0f808cf04",
-   "checked_at": "2026-11-05T11:19:32+00:00"
-  },
   "fss1psg2zvsiv_sl-uqrzddyzibz-_q0ke2hya_tljw": {
    "status": "upstream_changed",
    "archive_path": "development/peekaboo-youjjwal-clawdbot/SKILL.md",
@@ -19893,6 +19909,14 @@
    "name": "kotlin-testing",
    "description": "Kotlin testing patterns with Kotest, MockK, coroutine testing, property-based testing, and Kover coverage. Follows TDD methodology with idiomatic Kotlin practices."
   },
+  "fwdza9yaqh7aosehdh-_rnluokyzywxhnu0jymivmxq": {
+   "status": "ambiguous",
+   "archive_path": "productivity/agents-sdk-themusebook-skills/SKILL.md",
+   "repo": "themusebook/skills",
+   "branch": "main",
+   "digest": "sha256:a05244d3cfb23330daff956ec28a990241f5dbbe489cd7fd6489c8f76bb60877",
+   "checked_at": "2026-11-06T09:52:07+00:00"
+  },
   "fwip9h91q9no-0wrlzxeyverfqu2s-pssnyyh-o1pkq": {
    "status": "upstream_unavailable",
    "error": "GitHub API 404: {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/branches/branches#get-a-branch\",\"status\":\"404\"}",
@@ -19970,6 +19994,14 @@
    "digest": "sha256:794aaf10328964ece697951af807477f84d6f3250fab2aca6cc164aca441d359",
    "checked_at": "2026-11-01T06:29:36+00:00"
   },
+  "fxvfi70m37ws0mt24miojfjqcsck7ievu6pasldkfoe": {
+   "status": "bundled_files",
+   "archive_path": "data/sns/SKILL.md",
+   "repo": "northseadl/skillwisp",
+   "branch": "main",
+   "digest": "sha256:ba2221095e33370a0541d546a549f7c9c9109bbc5ef41eef0841446a9b3049e8",
+   "checked_at": "2026-11-06T09:52:07+00:00"
+  },
   "fy5iudp0hnnw3gw5ijqciyqnxrjfl6uryojhage3nfw": {
    "status": "bundled_files",
    "archive_path": "other/pyopenms-raktim-mondol-academic-harness/SKILL.md",
@@ -19977,14 +20009,6 @@
    "branch": "main",
    "digest": "sha256:34f7077c319f20e028f8d4f6421a09bddcc299670b6c3ae6755264211eeac1a9",
    "checked_at": "2026-11-05T11:19:32+00:00"
-  },
-  "fy_zexavi3mrxpfj0sq5oaeg7h9j4ens4tjoujijbmi": {
-   "status": "bundled_files",
-   "archive_path": "other/git-sync-nicanac-blanmont/SKILL.md",
-   "repo": "nicanac/blanmont",
-   "branch": "master",
-   "digest": "sha256:7a92e9777c96424ae5d85db792199ef20bc89c3e48bab271091b0ecf0f10a2fe",
-   "checked_at": "2026-11-02T10:43:26+00:00"
   },
   "fyjr-t3k-ggvgnwiug-jhoxp2cw8pajkeaetnqeyzsy": {
    "status": "upstream_changed",
@@ -20336,6 +20360,14 @@
    "digest": "sha256:06f3abcebf414e92fd93abef15e33eebcbde2382e861d13af30aecef5929b3c5",
    "checked_at": "2026-11-01T06:29:36+00:00"
   },
+  "g8bljvwelkfbvobkacu0cswbly1n4t0of8vmmivkj3m": {
+   "status": "bundled_files",
+   "archive_path": "other/webapp-testing-yhyu13-doom3-ainative/SKILL.md",
+   "repo": "yhyu13/DOOM3_AINative",
+   "branch": "main",
+   "digest": "sha256:17cda92e96dabb2104fd40eae7f74d990d510b566c3ba021bab6b109c5737f0d",
+   "checked_at": "2026-11-06T09:52:07+00:00"
+  },
   "g8mvsof6xcqfmsr4kt6te4ene-u68dee-1veno_vlc8": {
    "status": "bundled_files",
    "archive_path": "other/rules-distill-nguyentrunghieutcu-ctxora-engine/SKILL.md",
@@ -20445,14 +20477,6 @@
    "error": "GitHub API 404: {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest\",\"status\":\"404\"}",
    "archive_path": "integration/putio-moltbot-skills/SKILL.md",
    "digest": "sha256:e79006fae037312430d101340b4b1f6dece669de408c5ee8dd2145f96379e265",
-   "checked_at": "2026-11-01T06:29:36+00:00"
-  },
-  "gc0uz4rgbryu0jqaddq9ggn0w8ocamtexdxiydmawve": {
-   "status": "bundled_files",
-   "archive_path": "other/crane-access-cyotee-indexedex/SKILL.md",
-   "repo": "cyotee/indexedex",
-   "branch": "main",
-   "digest": "sha256:403ecee4ee6a6814a7fa106a0dc96ad12f5855dc61075675dc51118e2966b00e",
    "checked_at": "2026-11-01T06:29:36+00:00"
   },
   "gc6j1zu7p-dknntkyx6x-rwbtjdid3yvw39fbpvk7pc": {
@@ -21904,14 +21928,6 @@
    "digest": "sha256:91f5d120fab78faa54276ccb07bf298c17cd69d1b9c15ece2cd3bee966b98975",
    "checked_at": "2026-11-01T06:29:36+00:00"
   },
-  "h2vhtdwqoeddtbo45gkjkhpaegw8avktbyiplruwenm": {
-   "status": "ambiguous",
-   "archive_path": "bash/voice-call-solizardking-skills/SKILL.md",
-   "repo": "Solizardking/skills",
-   "branch": "main",
-   "digest": "sha256:3a2484447386997e60c6137715ff493d8d5b499eb937748f8c4364924de035b6",
-   "checked_at": "2026-11-01T06:29:36+00:00"
-  },
   "h3dzufaglsg8jwjdzkj_huzvrjq_x58s15wo_wjh3hg": {
    "status": "upstream_changed",
    "archive_path": "marketing/onboarding-cro-im5tu-claude/SKILL.md",
@@ -22142,6 +22158,14 @@
    "digest": "sha256:7fd339c353914e33e1cc9f55baba528e926821b9a6e031700539e9d981c40015",
    "checked_at": "2026-11-01T06:29:36+00:00"
   },
+  "hc3kahiexjh5vov89wntjdjv-g9ioq1jkugvba9du7g": {
+   "status": "ambiguous",
+   "archive_path": "development/solana-clawd-themusebook-skills/SKILL.md",
+   "repo": "themusebook/skills",
+   "branch": "main",
+   "digest": "sha256:ed7ba8836028118c4a130025fbc27684c095c3f678b010b714bd07c2bb2374d1",
+   "checked_at": "2026-11-06T09:52:07+00:00"
+  },
   "hc_nojbzxyexa2dwwoznrpbw8e-yatguqjzjnnkco58": {
    "status": "pinned",
    "path": ".claude/skills/changelog/SKILL.md",
@@ -22269,6 +22293,14 @@
    "branch": "main",
    "digest": "sha256:3f80369ef73ccb8c20e2e49ad2b9bd71da3ffa4a819c035691ca4a5b26cb8399",
    "checked_at": "2026-11-04T11:01:12+00:00"
+  },
+  "heocgplm6ftn2smxkdtao3slgmjep3fcfmc76hekzp8": {
+   "status": "ambiguous",
+   "archive_path": "security/testing-themusebook-skills/SKILL.md",
+   "repo": "themusebook/skills",
+   "branch": "main",
+   "digest": "sha256:b98ef94417d90478a7177fbeb671f5156977bebf6f36011fa39d173c36eda499",
+   "checked_at": "2026-11-06T09:52:07+00:00"
   },
   "heqq7hrzov-sdsf2pd_jayh1nfei5ues6g-ic0uwlss": {
    "status": "upstream_unavailable",
@@ -22496,6 +22528,14 @@
    "branch": "main",
    "digest": "sha256:f29251d112f6ba935eed0b36ccae2696f9080bdeb7fd852846f729161f7e30f2",
    "checked_at": "2026-11-05T11:19:32+00:00"
+  },
+  "hja4nchswkm-fepvtyaonxs0x5gidt0egya3uowvx18": {
+   "status": "bundled_files",
+   "archive_path": "other/git-sync-zzsoszz-ai-software-factory/SKILL.md",
+   "repo": "zzsoszz/ai-software-factory",
+   "branch": "main",
+   "digest": "sha256:7a92e9777c96424ae5d85db792199ef20bc89c3e48bab271091b0ecf0f10a2fe",
+   "checked_at": "2026-11-06T09:52:07+00:00"
   },
   "hjhha4sn_-c83npb50aq-gmk_yuo_pq6wkgcemqvxpk": {
    "status": "pinned",
@@ -22813,18 +22853,6 @@
    "commit": "9a628f4917581c2e234f1f5893c609c8ce28a151",
    "name": "twilio-communications",
    "description": "Build communication features with Twilio: SMS messaging, voice calls, WhatsApp Business API, and user verification (2FA). Covers the full spectrum from simple notifications to complex IVR systems and multi-channel authentication. Critical focus on compliance, rate limits, and error handling. Use when: twilio, send SMS, text message, voice call, phone verification."
-  },
-  "hpkixbrrjszzijwpiibdg4w9zbvx3zfqi3vbknhkyay": {
-   "status": "pinned",
-   "path": ".agents/skills/create-plan/SKILL.md",
-   "archive_path": "planning/create-plan-workonthestreets-wolo/SKILL.md",
-   "repo": "workonthestreets/wolo",
-   "branch": "main",
-   "digest": "sha256:617af0c2a6cdbda4dcf400c5fe052c686ea63a0b525c7971c37fddcf8e5fe70d",
-   "checked_at": "2026-11-01T06:29:36+00:00",
-   "commit": "87f9a0a9c6b03d9ba390e359a5aa3a2e98a0f832",
-   "name": "create-plan",
-   "description": "Generate detailed implementation plans for complex tasks. Creates comprehensive strategic plans in Markdown format with objectives, step-by-step implementation tasks using checkbox format, verification criteria, risk assessments, and alternative approaches. All plans MUST be validated using the included validation script. Use when users need thorough analysis and structured planning before implementation, when breaking down complex features into actionable steps, or when they explicitly ask for a plan, roadmap, or strategy. Strictly planning-focused with no code modifications."
   },
   "hptdcyf1pa_bc9lsxtry8szabemuloub_c9-vsswo2a": {
    "status": "upstream_changed",
@@ -23145,6 +23173,18 @@
    "name": "loop-me",
    "description": "Grill me about specs for the workflows I want to build, within this workspace."
   },
+  "hvlsex-kb9xdx9voekezefefsi6pkoz4qsp_7h71d1w": {
+   "status": "pinned",
+   "path": "skills/pump-testing/SKILL.md",
+   "archive_path": "bash/pump-testing-x402agent-solanaos/SKILL.md",
+   "repo": "x402agent/SolanaOS",
+   "branch": "main",
+   "digest": "sha256:a956dc6643dd9f1e591e8cc9f0c38a427f2bc32f3b20bad6ad75bef6a93f53f7",
+   "checked_at": "2026-11-06T09:52:07+00:00",
+   "commit": "37041b5d74e4da89b4f23b688588953911547651",
+   "name": "pump-testing",
+   "description": "Multi-language test infrastructure for the Pump SDK — Rust unit/integration/security/performance tests, TypeScript Jest tests, Python fuzz tests, shell test orchestration, Criterion benchmarks, and CI quality gates."
+  },
   "hvza5ufolsxffjoqx3j2wiyaaearekkagymtfvnghai": {
    "status": "pinned",
    "path": "packages/opencode/altrucoder-skill-packs/awesome-claude-skills/composio-skills/ably-automation/SKILL.md",
@@ -23172,6 +23212,14 @@
    "branch": "main",
    "digest": "sha256:e798ce8e1ce54610598b3c37b6e7a872712062bbe6d3106dad4f0287f1cfb1cb",
    "checked_at": "2026-11-01T06:29:36+00:00"
+  },
+  "hwfm4poi7gnv2xdfgbpvp6i_zq2pqy9fgu_ulwvnmx4": {
+   "status": "bundled_files",
+   "archive_path": "other/writing-plans-tjl8787-mycodex-skills/SKILL.md",
+   "repo": "tjl8787/mycodex-skills",
+   "branch": "main",
+   "digest": "sha256:4a079ecfc750c5afa98e6d1b82bc9ac0b6521bde56ed476fcf6b7e168e31946f",
+   "checked_at": "2026-11-06T09:52:07+00:00"
   },
   "hwxpitjfw9z0tw32ujzxj3vclvclv9bwzmucnopyndu": {
    "status": "ambiguous",
@@ -23637,18 +23685,6 @@
    "digest": "sha256:a6e064274364a743faeebe24c767ead7c5259cd71025aee784b2414c2e014918",
    "checked_at": "2026-11-01T06:29:36+00:00"
   },
-  "ibofq5teg4gadyosilagvtcvawsk0rf43cp95gp8r2e": {
-   "status": "pinned",
-   "path": "skills/mobile-native/SKILL.md",
-   "archive_path": "other/mobile-native-laurentvv-agents-kit/SKILL.md",
-   "repo": "laurentvv/agents-kit",
-   "branch": "main",
-   "digest": "sha256:888b7651d66d66dbac4e72b7c554638eb19bd971d686d6cbdf030a5ef3788f55",
-   "checked_at": "2026-11-01T06:29:36+00:00",
-   "commit": "351e78c60e3a25763910e44103bb49ed5f8438a5",
-   "name": "mobile-native",
-   "description": "Make a web app feel native on a phone — the small CSS and meta-tag fixes that separate \"a website in a browser\" from something that feels installed. Covers sticky hover states, tap highlight flashes, the 100vh bug, inputs that zoom the page, laggy taps, pull-to-refresh hijacking scroll, content under the notch, long-press selecting button text, carousels that scroll the wrong way, mismatched status bars, and the rule that you test on real hardware. Use when a web app is being built for or reviewed on mobile, when something \"works in Chrome but feels wrong on my phone\", when building a PWA, a bottom sheet, a carousel, a full-screen layout, or any touch interaction. For motion itself use animate; for React Native use animate-expo."
-  },
   "ibowhpdxovjjqwyymqtchsezi5k_x3aenny4lgjk7ec": {
    "status": "upstream_changed",
    "archive_path": "design/imagemagick/SKILL.md",
@@ -23671,6 +23707,18 @@
    "branch": "main",
    "digest": "sha256:d25cb774f1f1e8d6b111ccc6894a2c912c881c73858e78dd9a6f932fec122781",
    "checked_at": "2026-11-01T06:29:36+00:00"
+  },
+  "ibtqvqevwpzbmlj8vhdiczbn3gogaorzxykexrhhkxe": {
+   "status": "pinned",
+   "path": ".claude/skills/verification-before-completion/SKILL.md",
+   "archive_path": "development/verification-before-completion-yhyu13-doom3-ainative/SKILL.md",
+   "repo": "yhyu13/DOOM3_AINative",
+   "branch": "main",
+   "digest": "sha256:2befe7fc55bcadaa3d97dd9e8efeb633d2561c0ebe74c5a8b17c4d9e7e4520b3",
+   "checked_at": "2026-11-06T09:52:07+00:00",
+   "commit": "8c5368e6b47aeaa6b9ab69c319d4faf9cd5a5f4d",
+   "name": "verification-before-completion",
+   "description": "Use when about to claim work is complete, fixed, or passing, before committing or creating PRs - requires running verification commands and confirming output before making any success claims; evidence before assertions always"
   },
   "ibuybnzgf88zsq1skq_thtwd7xq_ifih64flktfambq": {
    "status": "pinned",
@@ -23801,14 +23849,6 @@
    "branch": "main",
    "digest": "sha256:3a15417e727f34ef647c66692cc2bce7454776ad5c02e16a024d84f945397a59",
    "checked_at": "2026-11-01T06:29:36+00:00"
-  },
-  "ie1dniy-usvegj-lvynddme9lbm2i_fls38k14nht3a": {
-   "status": "bundled_files",
-   "archive_path": "performance/web-perf-stanfish06-skillquarium/SKILL.md",
-   "repo": "stanfish06/skillquarium",
-   "branch": "master",
-   "digest": "sha256:746b3490d401c8020900f0a62ece846c22d3df15782ee843c082acfa89f26703",
-   "checked_at": "2026-10-30T10:36:21+00:00"
   },
   "ie7arv8wafjk45c0s0tjsyhxsintj0mq-sfobgdelgs": {
    "status": "pinned",
@@ -23957,14 +23997,6 @@
    "branch": "main",
    "digest": "sha256:6ab4c57fd133d21013ac0a8cfdbb2235dcc461d6fc82445693ea475c3d5d6bc1",
    "checked_at": "2026-11-05T11:19:32+00:00"
-  },
-  "ig6hnlsv_0as9fgv09strfw8kjgtb6k7btwlr0_ni6q": {
-   "status": "bundled_files",
-   "archive_path": "other/write-swift-sgomez-dev-claude-skills/SKILL.md",
-   "repo": "sgomez-dev/claude-skills",
-   "branch": "main",
-   "digest": "sha256:16a4b6adb74e338e55e704ce5753ad54d825438b8a63930eeaede9f3c04c9447",
-   "checked_at": "2026-11-01T06:29:36+00:00"
   },
   "igb0lxkmiv-ecyjwrec6dlgdz-iedqttqaimlg3zmh8": {
    "status": "bundled_files",
@@ -24860,6 +24892,14 @@
    "digest": "sha256:2b4583b296a3a043b9002cd74e3ca5407fce832598dcd428272da08a9839f64b",
    "checked_at": "2026-11-05T11:19:32+00:00"
   },
+  "iwdxzphhnm0e7t9qe0c-sgtocxuts1ivzdybidcl7gq": {
+   "status": "ambiguous",
+   "archive_path": "design/apple-design-themusebook-skills/SKILL.md",
+   "repo": "themusebook/skills",
+   "branch": "main",
+   "digest": "sha256:11840b24a11d7f94f39c6aaab074750ae4e4de4ef54ee4b1dd97e16ebd485e61",
+   "checked_at": "2026-11-06T09:52:07+00:00"
+  },
   "iwg46a_ta6lze-jueiclgho3z7qu6lqrp69cfupaagu": {
    "status": "pinned",
    "path": "components/skills/git/commit-smart/SKILL.md",
@@ -25298,18 +25338,6 @@
    "name": "api-and-interface-design",
    "description": "Guides stable API and interface design. Use when designing APIs, module boundaries, or any public interface. Use when creating REST or GraphQL endpoints."
   },
-  "j9bad2r80x-cpzkcsktegcgh1zv1-b48knlheucjh4m": {
-   "status": "pinned",
-   "path": "config/gemini/config/skills/curriculum-alignment/coverage-audit/SKILL.md",
-   "archive_path": "documents/coverage-audit-sahil-958-dots/SKILL.md",
-   "repo": "Sahil-958/dots",
-   "branch": "main",
-   "digest": "sha256:464d31856c3b441ee8b5f307b4b1903c50f299eac0eb363f2cf3a1adc3101c72",
-   "checked_at": "2026-11-01T15:05:43+00:00",
-   "commit": "3a17ecc6a801bd70a1299051fa879a7df1378ec4",
-   "name": "coverage-audit",
-   "description": "Takes a curriculum framework and a statutory or accreditation requirement list; produces a coverage table, gap summary, and CSV showing which framework content covers each requirement and where gaps exist."
-  },
   "j9dko-cyem-v-gypicql5a_xzyou_6pcyqdizm61jri": {
    "status": "upstream_changed",
    "archive_path": "documents/clinical-decision-support/SKILL.md",
@@ -25625,18 +25653,6 @@
    "commit": "615d69ab2dbb42c5921eaf62198dea8876f031af",
    "name": "qa-plan",
    "description": "QA test plan for a sprint — classifies stories by Logic/Integration/Visual/UI, covers automated tests, manual cases, smoke scope."
-  },
-  "jftyajrvmwhbhganbs4lunb1w5xpctrtpdczcedztpk": {
-   "status": "pinned",
-   "path": "skills/cloudflare-one/SKILL.md",
-   "archive_path": "devops/cloudflare-one-mppyxx-claude-power-pack/SKILL.md",
-   "repo": "mppyxx/claude-power-pack",
-   "branch": "main",
-   "digest": "sha256:605336f84979367b6235a57da8ea43e4f3b856a97efd2c95d9e7f90e41bf17ec",
-   "checked_at": "2026-11-05T11:19:32+00:00",
-   "commit": "a283b4d7397e322f539852645e72536c63b04a7e",
-   "name": "cloudflare-one",
-   "description": "Guides Cloudflare One Zero Trust and SASE work across Access, Gateway, WARP, Tunnel, Cloudflare WAN, DLP, CASB, device posture, and identity. Use when designing, configuring, troubleshooting, or reviewing Cloudflare One deployments. Retrieval-first: use current Cloudflare docs/API schemas instead of embedded product docs."
   },
   "jfv81c2ivcmzfkqvdgpvjausqhcrr9u6unk1livctuq": {
    "status": "pinned",
@@ -26496,18 +26512,6 @@
    "archive_path": "integration/agiled-automation/SKILL.md",
    "digest": "sha256:1f52da15b96fade935f6f8e6e7fa900d9dafd6942f1112751fb937f743ce900f",
    "checked_at": "2026-11-01T06:29:36+00:00"
-  },
-  "jyt-9l7rek15grwnq2vg73j8hkddwlqmaahl4premfg": {
-   "status": "pinned",
-   "path": ".agents/skills/cpp/SKILL.md",
-   "archive_path": "development/cpp-ziyabicilecommerce-h-ai-cash-machine/SKILL.md",
-   "repo": "ziyabicilecommerce-hub/ai-cash-machine",
-   "branch": "main",
-   "digest": "sha256:866c51a2e7c23e65a80f1a1fef99ea73d89b5b296fc2748ac25cd647939a8663",
-   "checked_at": "2026-11-01T06:29:36+00:00",
-   "commit": "1e1459fd993dbc8ed1d1102ae5e71592f7392e46",
-   "name": "cpp",
-   "description": "Guidelines for modern C++ development with C++17/20 standards, memory safety, and performance optimization"
   },
   "jywb5uk7nqbteuacr7-yguxp7-f7n6ucy687hdlw6uq": {
    "status": "upstream_unavailable",
@@ -27553,6 +27557,14 @@
    "digest": "sha256:eee6e7317a1b2be8856ef87128c2759aabdddaccdbe9dc440e6cf4d9e5d10fb1",
    "checked_at": "2026-11-01T06:29:36+00:00"
   },
+  "kk2nttewl2qceiouslrcqm_oq-tmjhgihtg1agl95nq": {
+   "status": "bundled_files",
+   "archive_path": "design/figma-swiftui-tanjcf-newbrian/SKILL.md",
+   "repo": "tanjcf/NewBrian",
+   "branch": "main",
+   "digest": "sha256:868c4defe2c0854f5a3e27594d3fa0f20347c86a9b15d103483b7488bfa8affe",
+   "checked_at": "2026-11-06T09:52:07+00:00"
+  },
   "kk805gm5yfka4nane2i2mxe-dflykkikurgz2f1ip14": {
    "status": "bundled_files",
    "archive_path": "performance/sui-kbarbel640-del-skills/SKILL.md",
@@ -27576,18 +27588,6 @@
    "branch": "main",
    "digest": "sha256:08e8b7c38e142210b880b50cd81ee11aa62ead00632080002d949d625ee9fb93",
    "checked_at": "2026-11-02T10:43:26+00:00"
-  },
-  "kkrdh_hf2xmio6ltmvjx-a0wt-7yiti31zavmsq57vq": {
-   "status": "pinned",
-   "path": "skills/cursor-managed/create-skill/SKILL.md",
-   "archive_path": "documents/create-skill-makemoney2023-renewimplants/SKILL.md",
-   "repo": "makemoney2023/renewimplants",
-   "branch": "main",
-   "digest": "sha256:f3df382ea9cf2119ee8f121143b2ec0cacbd8bbc6dc3a15fd981ea547cef42f8",
-   "checked_at": "2026-11-04T11:01:12+00:00",
-   "commit": "37ed4a33d5289a4fdf8019eb73e2400f99724264",
-   "name": "create-skill",
-   "description": "Create Cursor Agent Skills. Use when authoring a new skill or asking about SKILL.md structure."
   },
   "kl8geex_ryst2qoi9hx2vaka6tyso91db-ykad4_oym": {
    "status": "bundled_files",
@@ -28107,6 +28107,18 @@
    "digest": "sha256:3611688a297b95bd8695cdaa9e9f12db4c7cda6c94a4ae82e55f99fa6cbf7f53",
    "checked_at": "2026-11-01T06:29:36+00:00"
   },
+  "kxfgianxqp1opgxkd7vateh7dvxuaaaccyydfdk8-4y": {
+   "status": "pinned",
+   "path": "skills/xhs-auth/SKILL.md",
+   "archive_path": "bash/xhs-auth-xinyaoliao93-xiaohongshu-research/SKILL.md",
+   "repo": "xinyaoliao93/xiaohongshu-research-agent",
+   "branch": "main",
+   "digest": "sha256:5714a9945ef465c766e3f2de935cb89f1d6f45a24bc1af3e327a64fae8910171",
+   "checked_at": "2026-11-06T09:52:07+00:00",
+   "commit": "b354685f0a17f3fcc6d072b511ffa4e342e40db2",
+   "name": "xhs-auth",
+   "description": "小红书认证管理技能。检查登录状态、登录（二维码或手机号）、退出登录。\n当用户要求登录小红书、检查登录状态、退出登录时触发。"
+  },
   "kxntf6s4anlikjurlv2oxhwcgjfp3676gh_dsfoe7m0": {
    "status": "pinned",
    "path": "skills/superpowers/dispatching-parallel-agents/SKILL.md",
@@ -28295,14 +28307,6 @@
    "repo": "zzh0u/gojet",
    "branch": "main",
    "digest": "sha256:f8cd7650b24ba894fb111cc43bc4059306403ec9c14fee005d7245bebc7dee1d",
-   "checked_at": "2026-11-01T06:29:36+00:00"
-  },
-  "l0sanczboudcucqrxe6is6j3gal2hcotnh5ts7k4dc4": {
-   "status": "upstream_changed",
-   "archive_path": "product/ai-product-sickn33-antigravity-awesome/SKILL.md",
-   "repo": "sickn33/antigravity-awesome-skills",
-   "branch": "main",
-   "digest": "sha256:16a4aafed03f090753fbe8151a03bc5e623682867c16a1760b503e659cbb6582",
    "checked_at": "2026-11-01T06:29:36+00:00"
   },
   "l0u9kkysp_8qxie534qgcly0a-ykm-pxdxv3qbafjoy": {
@@ -28549,6 +28553,18 @@
    "commit": "e580bbc8204874f762d132fe441b18192979211b",
    "name": "agent-challenges",
    "description": "Agent skill for challenges - invoke with $agent-challenges"
+  },
+  "l7hdfsrudkgz6bzczir9pryvucx5bqnxpx83mrvuqwo": {
+   "status": "pinned",
+   "path": "skills/pump-admin-ops/SKILL.md",
+   "archive_path": "other/pump-admin-ops/SKILL.md",
+   "repo": "x402agent/SolanaOS",
+   "branch": "main",
+   "digest": "sha256:add8164a50cb019c154271ecb780075c5b6c89f02c85b1449a118552b34221a5",
+   "checked_at": "2026-11-06T09:52:07+00:00",
+   "commit": "37041b5d74e4da89b4f23b688588953911547651",
+   "name": "pump-admin-ops",
+   "description": "Admin and authority operations for the Pump protocol — set coin creator, update token incentives, set IDL authority, claim cashback, Mayhem mode, and BothPrograms cross-program admin instructions."
   },
   "l8ni8w7i7d58vywxeoxt-dbocxvxbni5skvmlffflea": {
    "status": "bundled_files",
@@ -29138,6 +29154,14 @@
    "digest": "sha256:6741ecdc9895cbf29b6b007965b350c15c974eff09f4ee003edb32eec90baeec",
    "checked_at": "2026-11-01T06:29:36+00:00"
   },
+  "ll7qn2mhzyhyzgujqmed3opcg_ppcwbqmpup-fq6lwo": {
+   "status": "ambiguous",
+   "archive_path": "documents/forge-themusebook-skills/SKILL.md",
+   "repo": "themusebook/skills",
+   "branch": "main",
+   "digest": "sha256:98bffeb35be956067da2c20d66a922f27d4870ff51e69060d0f2b3a69b56e3c1",
+   "checked_at": "2026-11-06T09:52:07+00:00"
+  },
   "ll_uq6karyoc3aohdhiyo-0kgwn0416kjrdaycefstk": {
    "status": "bundled_files",
    "archive_path": "documents/datamol-marnixgeerkens-rocketlauncher-claud/SKILL.md",
@@ -29297,6 +29321,14 @@
    "commit": "69348fb0484447374e461e91c717d70697047846",
    "name": "gws-shared",
    "description": "gws CLI: Shared patterns for authentication, global flags, and output formatting."
+  },
+  "loumjnlo4muwdl37cbosavy3jhlwddhhetshllf_xb4": {
+   "status": "ambiguous",
+   "archive_path": "ai-llm/ai-product-yanacuti1121-yana-ai/SKILL.md",
+   "repo": "yanacuti1121/Yana-AI",
+   "branch": "main",
+   "digest": "sha256:16a4aafed03f090753fbe8151a03bc5e623682867c16a1760b503e659cbb6582",
+   "checked_at": "2026-11-06T09:52:07+00:00"
   },
   "lpaxesy7l_ugxta-kkwdsnwg9jgvtowdpynd0bp1bng": {
    "status": "upstream_changed",
@@ -30379,18 +30411,6 @@
    "commit": "e580bbc8204874f762d132fe441b18192979211b",
    "name": "agent-app-store",
    "description": "Agent skill for app-store - invoke with $agent-app-store"
-  },
-  "mdsbdse7pyqkqupux03e9f3y-yszrupeo6878-jqj_k": {
-   "status": "pinned",
-   "path": "skills/forge/create-skill/SKILL.md",
-   "archive_path": "skills/create-skill-helixdevelopment-helixagent/SKILL.md",
-   "repo": "HelixDevelopment/HelixAgent",
-   "branch": "main",
-   "digest": "sha256:4e7f4f37887f9d68f2007e23d5b8cb2f0fa6cbeaff6f2d388f72e449b2872d0c",
-   "checked_at": "2026-11-01T06:29:36+00:00",
-   "commit": "2fca246d93eb2b643eb88fb2a91a1d3b0071ae02",
-   "name": "create-skill",
-   "description": "Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends your capabilities with specialized knowledge, workflows, or tool integrations."
   },
   "mdugayskq0eumlyxywykniztqduqpvc1sal_vgvbqoc": {
    "status": "pinned",
@@ -31837,6 +31857,18 @@
    "digest": "sha256:87d2f35b976616f505684db89a6f93ebba3c47020ce2b23d893e2eaf45ca009a",
    "checked_at": "2026-11-01T06:29:36+00:00"
   },
+  "n4ov6vlc85lbk2eonta93j_uzxvtefzcuiizc4l-pry": {
+   "status": "pinned",
+   "path": "skills/xhs-publish/SKILL.md",
+   "archive_path": "bash/xhs-publish-xinyaoliao93-xiaohongshu-research/SKILL.md",
+   "repo": "xinyaoliao93/xiaohongshu-research-agent",
+   "branch": "main",
+   "digest": "sha256:686ea0a0f5a82bc2dd840565f32c28582ba4663a738e548ffee1daa9042c6a50",
+   "checked_at": "2026-11-06T09:52:07+00:00",
+   "commit": "b354685f0a17f3fcc6d072b511ffa4e342e40db2",
+   "name": "xhs-publish",
+   "description": "小红书内容发布技能。支持图文发布、视频发布、长文发布、定时发布、标签、可见性设置。\n当用户要求发布内容到小红书、上传图文、上传视频、发长文时触发。"
+  },
   "n4vxa6jsw8owmbfws2kzbjvlsqirmniulenslrqpfgk": {
    "status": "bundled_files",
    "archive_path": "other/offers-nguyen-thanh-1-askills/SKILL.md",
@@ -31923,14 +31955,6 @@
    "branch": "master",
    "digest": "sha256:6618e89e95a6c975963f360a10786ee6fb22d8ee8ca28dce11159d9567ee3116",
    "checked_at": "2026-11-05T11:19:32+00:00"
-  },
-  "n9cbd1k7dnfpuxbh9t_35k7zi9jfnq4htrbx4o8iraa": {
-   "status": "upstream_changed",
-   "archive_path": "design/create-blazor-project-ecodriverltd-foundryagentsexperim-2/SKILL.md",
-   "repo": "ecoDriverltd/FoundryAgentsExperiment",
-   "branch": "master",
-   "digest": "sha256:5157cd17070468aa1c3e9244f98a3a2a991b50ef0dbdd074387eb61e13c5e813",
-   "checked_at": "2026-11-01T06:29:36+00:00"
   },
   "n9d74rb-ucou0-7a8ondt6vxzmuiy4ewwbtnkmjq0rk": {
    "status": "bundled_files",
@@ -32023,14 +32047,6 @@
    "branch": "main",
    "digest": "sha256:3cb2e039d77927a4d2b0d7b8ea4d6ada58f099db0139ba368748909d0dae7e1f",
    "checked_at": "2026-11-01T06:29:36+00:00"
-  },
-  "nc1dyf_7oayg2nahqyz7k-vxvbvr-ra-axqjouuprso": {
-   "status": "ambiguous",
-   "archive_path": "other/create-pr-eery1677-lab-antigravity-awesome-/SKILL.md",
-   "repo": "eery1677-lab/Antigravity-Awesome-Skills",
-   "branch": "main",
-   "digest": "sha256:72c5cd0b6606fcb483e9b1f73b1a6f5f0c8e4c7b1e7d76880b3531b60b4217e0",
-   "checked_at": "2026-11-03T11:39:05+00:00"
   },
   "nc3afjxgbngchlr_qqljozwoljqk68y3a52azbiog9m": {
    "status": "upstream_changed",
@@ -32868,18 +32884,6 @@
    "name": "esm",
    "description": "Comprehensive toolkit for protein language models including ESM3 (generative multimodal protein design across sequence, structure, and function) and ESM C (efficient protein embeddings and representations). Use this skill when working with protein sequences, structures, or function prediction; designing novel proteins; generating protein embeddings; performing inverse folding; or conducting protein engineering tasks. Supports both local model usage and cloud-based Forge API for scalable inference."
   },
-  "nojobdidguk1s6tldivgq8cupfzryvil5bueybh7kma": {
-   "status": "pinned",
-   "path": "SKILLS/copywriting/SKILL.md",
-   "archive_path": "marketing/copywriting-marysatasselshaped66-skills-collection-1/SKILL.md",
-   "repo": "marysatasselshaped667/skills-collection-1",
-   "branch": "main",
-   "digest": "sha256:1c0ae2b23472da72dd970337b98a061cb4501602746a45a68f71b6e761895d90",
-   "checked_at": "2026-11-01T06:29:36+00:00",
-   "commit": "143ea22157f77c1f5fc67fd2d773b3ff53d55d79",
-   "name": "copywriting",
-   "description": "Write rigorous, conversion-focused marketing copy for landing pages and emails. Enforces brief confirmation and strict no-fabrication rules."
-  },
   "nowbxwdeworf5zvtxihotn0ghzro7avcsytbd6hkpis": {
    "status": "pinned",
    "path": "skills/pdf/SKILL.md",
@@ -33272,6 +33276,14 @@
    "digest": "sha256:a43727559fc2d7b973f65922397158dcfa14b2d3c648efb834f1201aec207257",
    "checked_at": "2026-11-02T10:43:26+00:00"
   },
+  "nw9hv_cm7fj6mzalr0d76eoxnedkyhxxx5bylxzbcu8": {
+   "status": "bundled_files",
+   "archive_path": "other/using-superpowers-tjl8787-mycodex-skills/SKILL.md",
+   "repo": "tjl8787/mycodex-skills",
+   "branch": "main",
+   "digest": "sha256:5fa548a85ce639dc6a2ea53607f9d405363c9b935004d0d95dc16e9629752d00",
+   "checked_at": "2026-11-06T09:52:07+00:00"
+  },
   "nwcp2s_hporypxduhevcmvmcfcj2r8ouaf3kxcs9hoi": {
    "status": "bundled_files",
    "archive_path": "other/cirq-plurigrid-asi/SKILL.md",
@@ -33293,14 +33305,6 @@
    "error": "GitHub API 404: {\"message\":\"Branch not found\",\"documentation_url\":\"https://docs.github.com/rest/branches/branches#get-a-branch\",\"status\":\"404\"}",
    "archive_path": "integration/cloudflare-browser-rendering-huydepzai121-skill/SKILL.md",
    "digest": "sha256:8881e14064f3758ceaa91500a94ac6399b18db598986e453bcc7bb7e0b6c8be2",
-   "checked_at": "2026-11-01T06:29:36+00:00"
-  },
-  "nxbxmvfyfc8y8s6jkiwawselkpmxs_w1mhdjyd07ase": {
-   "status": "bundled_files",
-   "archive_path": "documents/create-rfc-gabrielauzier-financials/SKILL.md",
-   "repo": "gabrielauzier/financials",
-   "branch": "main",
-   "digest": "sha256:8947fde8782d1632a96582e29ae05e43e4267155f56aa81a96312599f8d8bdca",
    "checked_at": "2026-11-01T06:29:36+00:00"
   },
   "nxfarke0g8zp4b4ifjoxhpumbmusj4bdc-lqjb0kxd8": {
@@ -33828,6 +33832,14 @@
    "digest": "sha256:be2052f6291477adc164503af13dbd73dfeba79f77ead03624c45f0b28f8a87a",
    "checked_at": "2026-11-01T06:29:36+00:00"
   },
+  "ocimv5ivdjojwoopiajz2-xew8h2wrv3uq3_09too8y": {
+   "status": "bundled_files",
+   "archive_path": "data/rds/SKILL.md",
+   "repo": "northseadl/skillwisp",
+   "branch": "main",
+   "digest": "sha256:3eb29bfa968630ffda5b626571c96cf98f7c05408a1407e94783676ade543e9b",
+   "checked_at": "2026-11-06T09:52:07+00:00"
+  },
   "ocxtc5g7zyhxx0fhmf5wtx9krypayin9wcfashex2hm": {
    "status": "bundled_files",
    "archive_path": "other/eval-driven-dev-ggogogohub-portfolio/SKILL.md",
@@ -34272,6 +34284,14 @@
    "commit": "799a460f2c020546ab253305f411a7ed44a70996",
    "name": "azure-cosmos-java",
    "description": "Azure Cosmos DB SDK for Java. NoSQL database operations with global distribution, multi-model support, and reactive patterns."
+  },
+  "oku9pftnwamubd84fsscv7pirbrqlchylt1nbbc2lry": {
+   "status": "repo_root",
+   "archive_path": "bash/xiaohongshu-skills-yuymf-xiaohongshu-skills/SKILL.md",
+   "repo": "yuymf/xiaohongshu-skills",
+   "branch": "main",
+   "digest": "sha256:e01604d830c13d92c568a8a6237d7071e04bc49cfe2217a8a466203789ab6a99",
+   "checked_at": "2026-11-06T09:52:07+00:00"
   },
   "okvqsumwjt0622mpxarby0ccsad3bjdntuzbbm3xyzo": {
    "status": "upstream_changed",
@@ -34745,6 +34765,18 @@
    "digest": "sha256:9f0ed33f607a8e8065bca02f72346cf53d6999451b31d2ef37f53046f248219a",
    "checked_at": "2026-11-01T06:29:36+00:00"
   },
+  "otdxriw7d9bdt9k6f8rkin1se2ueycxk-uehwkbdtiq": {
+   "status": "pinned",
+   "path": "skills/xhs-content-ops/SKILL.md",
+   "archive_path": "bash/xhs-content-ops-xinyaoliao93-xiaohongshu-research/SKILL.md",
+   "repo": "xinyaoliao93/xiaohongshu-research-agent",
+   "branch": "main",
+   "digest": "sha256:f034419b37885ba67d2f08a19e2c36658dde0983f8536e15c67d4ba0eeabcf8a",
+   "checked_at": "2026-11-06T09:52:07+00:00",
+   "commit": "b354685f0a17f3fcc6d072b511ffa4e342e40db2",
+   "name": "xhs-content-ops",
+   "description": "小红书复合内容运营技能。组合搜索、详情、发布、互动等能力完成运营工作流。\n当用户要求竞品分析、热点追踪、内容创作、互动管理等复合任务时触发。"
+  },
   "ouc1gykjbskhj0m_qmbgvlrqu9ixlioxj-3caw7lol8": {
    "status": "bundled_files",
    "archive_path": "other/cto-advisor-taiberium-claude-code-setting/SKILL.md",
@@ -34894,14 +34926,6 @@
    "branch": "main",
    "digest": "sha256:f02553dd64733891481ac1df303d34e0773259c970cfc61b7a5e95da158f308a",
    "checked_at": "2026-11-01T06:29:36+00:00"
-  },
-  "ownyyuywaj-rtokilqtmqb5r1ohplejlf-np1un5dai": {
-   "status": "bundled_files",
-   "archive_path": "other/hooked-ux-mhyahya854-ai-second-brain-univ/SKILL.md",
-   "repo": "mhyahya854/AI-Second-Brain_Universal-Rules",
-   "branch": "main",
-   "digest": "sha256:775ae946b15f03d787077c35d166a9addb1e241cb9ffea03ceee3a1be198175e",
-   "checked_at": "2026-11-05T11:19:32+00:00"
   },
   "owt2nn7sem1pcfamdt1rkbel28lwj8l16orrgiwhvau": {
    "status": "upstream_changed",
@@ -35136,14 +35160,6 @@
    "repo": "tuorjp/users-flutter-speckit",
    "branch": "master",
    "digest": "sha256:4c73139b26481c0df8c49a7671c5e57d98be08e56d1e51ba034fecc8acf70140",
-   "checked_at": "2026-11-01T06:29:36+00:00"
-  },
-  "p2qhddjuvl18ytkzcrc0npsaa3w1mgp8dxa3ixjn4gm": {
-   "status": "bundled_files",
-   "archive_path": "design/frontend-design-pythoninthegrasses-lunchjs/SKILL.md",
-   "repo": "pythoninthegrasses/lunchjs",
-   "branch": "main",
-   "digest": "sha256:b81e2ff87ed8fa4d6c377ccb127a7254c9e6a77e3ae94f21e6b514f7bb2945a0",
    "checked_at": "2026-11-01T06:29:36+00:00"
   },
   "p3m1nhys-vzzp2qsf5kjv4qnpmycu9lwqukbwrbwaco": {
@@ -36054,14 +36070,6 @@
    "digest": "sha256:f148858ffb7f63c03c06fca06e6fdb1d91a35c6b293244b8fdfacd5f4cc028c4",
    "checked_at": "2026-11-05T11:19:32+00:00"
   },
-  "pnzusg71otowpcjafqp0vz1oyvgdh4s2gkgxrsjkveo": {
-   "status": "ambiguous",
-   "archive_path": "development/clawdex-solizardking-skills/SKILL.md",
-   "repo": "Solizardking/skills",
-   "branch": "main",
-   "digest": "sha256:eb8b30b6b5a594837dfeb9cd5738bb244efcbc7c42ab0a0691df7a697ff163ab",
-   "checked_at": "2026-11-01T06:29:36+00:00"
-  },
   "pobdw47bavdbrdkchvlkls1xdp89sglfwnbpq70am6y": {
    "status": "pinned",
    "path": "skills/arch-linux-triage/SKILL.md",
@@ -36073,6 +36081,14 @@
    "commit": "6f0b1ef93a54040fd5e035dccd0393725e014613",
    "name": "arch-linux-triage",
    "description": "Triage and resolve Arch Linux issues with pacman, systemd, and rolling-release best practices."
+  },
+  "por1k0uswte9_l3x9ny8rr152qrkhrwbcnjrtdfgsmm": {
+   "status": "bundled_files",
+   "archive_path": "devops/s3-northseadl-skillwisp/SKILL.md",
+   "repo": "northseadl/skillwisp",
+   "branch": "main",
+   "digest": "sha256:d256ef62022cc17bcea31bb8ce1c22abfbf70f452721429219c7afedf2117cb0",
+   "checked_at": "2026-11-06T09:52:07+00:00"
   },
   "pot44mq4lp4-ghicdnclxbsbdjpb1apsicvjw9wo8k8": {
    "status": "pinned",
@@ -36210,6 +36226,14 @@
    "digest": "sha256:60eaf1530731a868c43a25eeb21eb177fcc5013e78f54ae2c0e7f0a20b34cd2e",
    "checked_at": "2026-11-04T11:01:12+00:00"
   },
+  "pqd3f38ng7oh1xz9t7nteo0b_-vmfhdrf7k1ghtk6zg": {
+   "status": "ambiguous",
+   "archive_path": "other/cufolio-themusebook-skills/SKILL.md",
+   "repo": "themusebook/skills",
+   "branch": "main",
+   "digest": "sha256:6da1f37f63864f3dd9b66a3a18eded793f1bae3689305afaeed9d6ead04473d6",
+   "checked_at": "2026-11-06T09:52:07+00:00"
+  },
   "pqvhad5h3i4p7uhyzcxc1_p5nmpzr8kd8nqdbhhxh4c": {
    "status": "pinned",
    "path": ".agents/skills/bazel-build-optimization/SKILL.md",
@@ -36337,6 +36361,14 @@
    "commit": "fc10a8bb09c79cbb1552e5bc0a84bbf920f759d3",
    "name": "timeline-modify",
    "description": "Generic write: apply a `SerializedMember` diff to a Timeline object (the `TimelineAsset`, a `TrackAsset`, or a clip's `PlayableAsset`) via ReflectorNet `TryModify`. Use 'timeline-get' first to inspect the structure. Remember: object *fields* must be supplied through the `fields` channel and *properties* through `props` — there is no cross-fallback."
+  },
+  "pt6oui5oeltfmbiyamm9oznoln6u6-ojkbskfnpbylc": {
+   "status": "ambiguous",
+   "archive_path": "bash/voice-call-themusebook-skills/SKILL.md",
+   "repo": "themusebook/skills",
+   "branch": "main",
+   "digest": "sha256:3a2484447386997e60c6137715ff493d8d5b499eb937748f8c4364924de035b6",
+   "checked_at": "2026-11-06T09:52:07+00:00"
   },
   "ptb-56fsg2yr6dujjxqa_sma7irmmrecwyaqbwioeh8": {
    "status": "pinned",
@@ -36513,18 +36545,6 @@
    "branch": "main",
    "digest": "sha256:a1e1683cac9281266593309e6892091796a53f7c41b6bea981482290b50365ae",
    "checked_at": "2026-11-01T06:29:36+00:00"
-  },
-  "pxlm7_rz4utwnqw2me4mj8bmq1u8acczgdbph0stl7e": {
-   "status": "pinned",
-   "path": ".agent/skills/cost-optimization/SKILL.md",
-   "archive_path": "devops/cost-optimization-techie829-oss-gn/SKILL.md",
-   "repo": "techie829-oss/gn",
-   "branch": "main",
-   "digest": "sha256:e535c24c12149ee1beed844b966c1f4c14615e22881c31825ef437b73d8ea6f5",
-   "checked_at": "2026-11-01T06:29:36+00:00",
-   "commit": "1e6c7e3218d4097fcb2cc86a34b2b2f4b0d3908b",
-   "name": "cost-optimization",
-   "description": "Optimize cloud costs through resource rightsizing, tagging strategies, reserved instances, and spending analysis. Use when reducing cloud expenses, analyzing infrastructure costs, or implementing cost governance policies."
   },
   "pxy68_v8lfjoatgojcyt-e_ioz_lonyiwbzuaalxqs8": {
    "status": "upstream_changed",
@@ -37028,18 +37048,6 @@
    "digest": "sha256:e2ca66469e396bfd53de98fe3ba9761c24ce76b514cb933e5c5b00f17b36c8de",
    "checked_at": "2026-11-05T11:19:32+00:00"
   },
-  "q_52xl34u23odirjw1d5wpyapahgzx7tmd2ah7gusuu": {
-   "status": "pinned",
-   "path": ".github/skills/create-llms/SKILL.md",
-   "archive_path": "documents/create-llms-trumedia-creative-live-events-dashboar/SKILL.md",
-   "repo": "TruMedia-Creative/live-events-dashboard",
-   "branch": "main",
-   "digest": "sha256:6ab3b7ca987fc70d8f656fb4be1fa11546d2eae6e604c58e26a5895d88878c35",
-   "checked_at": "2026-11-01T06:29:36+00:00",
-   "commit": "ba021c0846a53566a3bfde95009077974d2da535",
-   "name": "create-llms",
-   "description": "Create an llms.txt file from scratch based on repository structure following the llms.txt specification at https://llmstxt.org/"
-  },
   "q_dodoq7mxn_meakbzqlnopf42k_qcbq1h7s55imrqe": {
    "status": "bundled_files",
    "archive_path": "other/doppel-kbarbel640-del-skills/SKILL.md",
@@ -37447,14 +37455,6 @@
    "repo": "domehahn/skrun",
    "branch": "main",
    "digest": "sha256:8219d6a61ba052e426eee675daca3f9dc3f84ab914d019bab04a4ef41e44865e",
-   "checked_at": "2026-11-01T06:29:36+00:00"
-  },
-  "qixwcnlais0s2y4qlksppsvsnzsgknjfp_kp_itxiqs": {
-   "status": "bundled_files",
-   "archive_path": "design/ask-sonner-sgomez-dev-claude-skills/SKILL.md",
-   "repo": "sgomez-dev/claude-skills",
-   "branch": "main",
-   "digest": "sha256:39f3ee185b3aa2cf70a689052ff078953ce7ba5915ed7a9391d232e9d4dcf57f",
    "checked_at": "2026-11-01T06:29:36+00:00"
   },
   "qj89szdm1stmrfdd2i66un6rb51gu5mvldmdqw9pnji": {
@@ -38148,18 +38148,6 @@
    "branch": "main",
    "digest": "sha256:0b8f42149d053242c142ef13257f43926fa55dfac3da5f3de07915db2f225037",
    "checked_at": "2026-11-01T06:29:36+00:00"
-  },
-  "qz7nygi_t1svihmmjr64icrmleiummwzlvocm2ay3qc": {
-   "status": "pinned",
-   "path": "config/gemini/config/skills/historical-thinking/corroboration-skill-builder/SKILL.md",
-   "archive_path": "development/corroboration-skill-builder-sahil-958-dots/SKILL.md",
-   "repo": "Sahil-958/dots",
-   "branch": "main",
-   "digest": "sha256:622a3578533bca6168474b8d9b2c9a0f778abb6c6e57a72498765f7f63494be5",
-   "checked_at": "2026-11-01T15:05:43+00:00",
-   "commit": "3a17ecc6a801bd70a1299051fa879a7df1378ec4",
-   "name": "corroboration-skill-builder",
-   "description": "Build students' capacity to compare accounts across multiple historical sources — identifying agreements, contradictions, and gaps. Use when students treat individual documents as complete answers rather than partial perspectives."
   },
   "qzcqah8zsnspiajerebi8gjswl8bfu3uzfvisgpjrtm": {
    "status": "bundled_files",
@@ -38908,14 +38896,6 @@
    "repo": "domehahn/skrun",
    "branch": "main",
    "digest": "sha256:f6edddc23da529ca37e0e49b070864427aa8f2efc176440db7a3ebccd057ac51",
-   "checked_at": "2026-11-01T06:29:36+00:00"
-  },
-  "rhzbsyuh4wtnalrswkwaiqldax5jaxgndtc2lwwzeo4": {
-   "status": "bundled_files",
-   "archive_path": "documents/create-adr-gabrielauzier-financials/SKILL.md",
-   "repo": "gabrielauzier/financials",
-   "branch": "main",
-   "digest": "sha256:cde8b63afba27bcbbe22e46de64ed63287314233c331420bc33f50abdde06d1a",
    "checked_at": "2026-11-01T06:29:36+00:00"
   },
   "rhzedgfpi6efpehvgsukbshonuzu79rpvchkauzvr1c": {
@@ -39777,14 +39757,6 @@
    "repo": "Im5tu/claude",
    "branch": "main",
    "digest": "sha256:0c7a8efd3d641bed30cc99a927c81b5df75801397c1988f5de59eefdc050a126",
-   "checked_at": "2026-11-01T06:29:36+00:00"
-  },
-  "rxn9pzwoqjd9mhwzxtw8jbcwh-zr7kfxmcbgamoai_w": {
-   "status": "bundled_files",
-   "archive_path": "productivity/agents-sdk-shengdabai-tony-claude-code-ski/SKILL.md",
-   "repo": "shengdabai/Tony-Claude-Code-Skills",
-   "branch": "main",
-   "digest": "sha256:a05244d3cfb23330daff956ec28a990241f5dbbe489cd7fd6489c8f76bb60877",
    "checked_at": "2026-11-01T06:29:36+00:00"
   },
   "rxo5ogqkoxeddsbhl_knxfsihvejmuc0mf3uogkyf9m": {
@@ -40709,14 +40681,6 @@
    "name": "agentflow",
    "description": "Orchestrate autonomous AI development pipelines through your Kanban board (Asana, GitHub Projects, Linear). Manages multi-worker Claude Code dispatch, deterministic quality gates, adversarial review, per-task cost tracking, and crash-proof pipeline execution."
   },
-  "sj5qucf_b3oqg9mvmc1xopfb2kuaxhjzivw2ygqcbac": {
-   "status": "bundled_files",
-   "archive_path": "documents/core-fix-skill-docs-trayhard-d2r-ultra-utility-2/SKILL.md",
-   "repo": "TrayHard/d2r-ultra-utility",
-   "branch": "master",
-   "digest": "sha256:7b8fd7636601cc1da04ea8ef859b5f4d8f261c74eea05fd1388b41edf30bb6c8",
-   "checked_at": "2026-11-01T06:29:36+00:00"
-  },
   "sj9wggeqv_-wq9atw78yokzoqajuoeocxmpf1njzaxa": {
    "status": "bundled_files",
    "archive_path": "other/analyzing-cyber-kill-chain-xtofuub-openrecon-ios/SKILL.md",
@@ -40831,14 +40795,6 @@
    "branch": "main",
    "digest": "sha256:2f33dd660e1e7b25bd7b5c8b4e58f23c89818082cf2512fa82234bf407e8107c",
    "checked_at": "2026-11-05T11:19:32+00:00"
-  },
-  "sla5pafxcfyoixwgn3z_8ov3zap083gcavqszg0axxc": {
-   "status": "ambiguous",
-   "archive_path": "other/writing-plans-pd-phuc-laravel-template-2/SKILL.md",
-   "repo": "pd-phuc/laravel-template",
-   "branch": "main",
-   "digest": "sha256:4a079ecfc750c5afa98e6d1b82bc9ac0b6521bde56ed476fcf6b7e168e31946f",
-   "checked_at": "2026-11-01T06:29:36+00:00"
   },
   "slk5dyu4dvmsfwyjw6po_sxrgpss3pt9fe0g3kukgs8": {
    "status": "upstream_unavailable",
@@ -41952,22 +41908,6 @@
    "digest": "sha256:f3abdfffefe27a05db66e42d421abf35e615a8195a67848c3bcd0fa9be0ef328",
    "checked_at": "2026-11-01T06:29:36+00:00"
   },
-  "tbcjavwtohuwpwf1nmbnf7pzysry4qooh_ay6molcum": {
-   "status": "ambiguous",
-   "archive_path": "bash/clawdhub-solizardking-skills/SKILL.md",
-   "repo": "Solizardking/skills",
-   "branch": "main",
-   "digest": "sha256:8917808f0967184d9118b4af4c6b7d98fe0a46c6a51d1ab24972e576e0de9b96",
-   "checked_at": "2026-11-01T06:29:36+00:00"
-  },
-  "tbg-jiygramwkry1ostzwjuecxrduzjxio13-fps1xs": {
-   "status": "upstream_changed",
-   "archive_path": "data/webapp-testing/SKILL.md",
-   "repo": "sickn33/antigravity-awesome-skills",
-   "branch": "main",
-   "digest": "sha256:51b7349e77ec63b7744a6f63647e7566a0b4d2e301121cc10e8c2113af6556a2",
-   "checked_at": "2026-11-01T06:29:36+00:00"
-  },
   "tce7omcsbnlxewwkygsik7w6-q9tr6iadrq1uc7052s": {
    "status": "pinned",
    "path": "skills/common/redesign-existing-projects/SKILL.md",
@@ -42582,14 +42522,6 @@
    "commit": "28ff260af2593b034fdf8303b67bc63493ecf8d7",
    "name": "assets-prefab-create",
    "description": "Create a Prefab (or Prefab Variant) at a project asset path. Source can be a scene GameObject (`gameObjectRef`) or an existing prefab asset (`sourcePrefabAssetPath`). Creates intermediate folders if missing. Use 'gameobject-find' to locate the source GameObject first."
-  },
-  "tnpgzqft9szmptebr2e1bedcijuxnik-qexjtzgd9n0": {
-   "status": "bundled_files",
-   "archive_path": "design/animate-suphiozdedee-projenicdesign-com/SKILL.md",
-   "repo": "suphiozdedee/projenicdesign.com",
-   "branch": "main",
-   "digest": "sha256:b8ede161270458e6ae2e45e8a1985373515d4c63de5568ddb0f9012d7634356c",
-   "checked_at": "2026-11-01T06:29:36+00:00"
   },
   "tnuwmcsy_slb1lsrevxkr5nac6jdfig1tudsxmrxui4": {
    "status": "upstream_changed",
@@ -43361,14 +43293,6 @@
    "digest": "sha256:12a6035f83a48fea0cb08443b291e018dafe97a2f14b21db685e7176cbaaaa1c",
    "checked_at": "2026-11-01T06:29:36+00:00"
   },
-  "u4ulthpz1mrfd7ve96dfefjjs6xwsmwximnfrqrwmb0": {
-   "status": "upstream_changed",
-   "archive_path": "marketing/copywriting-nhile-team-webs-nedu/SKILL.md",
-   "repo": "NhiLe-Team-Webs/nedu",
-   "branch": "main",
-   "digest": "sha256:77cec3ba002a14f690732fb783140b2c69940185ad6287fb5a32ca07a0217cb8",
-   "checked_at": "2026-11-01T06:29:36+00:00"
-  },
   "u5irybiyekps00f75eunkv_avcwm9jmpiszpm4adxmw": {
    "status": "pinned",
    "path": "skills/antigravity-awesome-skills/agentmail/SKILL.md",
@@ -44007,13 +43931,6 @@
    "digest": "sha256:0f48302235ffcbc341825f54d7d51ff11b0a93f2fc3d939d0151b98b2750b1e4",
    "checked_at": "2026-10-30T10:36:21+00:00"
   },
-  "uh8lvtl4bdezjfzz15j_nbo04vqcytngo51tbhrjwmu": {
-   "status": "upstream_unavailable",
-   "error": "GitHub API 404: {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/branches/branches#get-a-branch\",\"status\":\"404\"}",
-   "archive_path": "integration/trello-ishuru-ishuru/SKILL.md",
-   "digest": "sha256:ede0f3181af05734e178a9415295402ecfe4cb2da08d1d26515634e874ec08e1",
-   "checked_at": "2026-11-01T06:29:36+00:00"
-  },
   "uhi3ae2fgnmkk9gctanncf6lgdjc5xkffntygenijis": {
    "status": "bundled_files",
    "archive_path": "ai-ml/ito-training-nguyentrunghieutcu-ctxora-engine/SKILL.md",
@@ -44141,6 +44058,14 @@
    "branch": "main",
    "digest": "sha256:235a6d680774c73249f9084308c4c2ebd03b19bb51472526903895c725b4c332",
    "checked_at": "2026-11-01T06:29:36+00:00"
+  },
+  "ujt226afcord8gj_gr9kbdbiwgly8-nw6umkaktb3m0": {
+   "status": "ambiguous",
+   "archive_path": "other/web-perf-themusebook-skills/SKILL.md",
+   "repo": "themusebook/skills",
+   "branch": "main",
+   "digest": "sha256:94c5cb37766676a8321a82861d2ac1072d3dd0ef612f0c946792014ad48fb0c2",
+   "checked_at": "2026-11-06T09:52:07+00:00"
   },
   "ujtrtmykheylvhdegob4knwppogbmz1ry7r75f1z51c": {
    "status": "upstream_changed",
@@ -44411,14 +44336,6 @@
    "repo": "vinnie357/claude-skills",
    "branch": "main",
    "digest": "sha256:e6d1552abfb94fa1ce0f9b9527aa1c336751d7c0430e2d4af22db17933c80976",
-   "checked_at": "2026-11-01T06:29:36+00:00"
-  },
-  "uorobdx5cjxiijjgsodnqg8gvr-janmovkhxnpqi8j4": {
-   "status": "bundled_files",
-   "archive_path": "analysis/copilot-usage-metrics-github-awesome-copilot/SKILL.md",
-   "repo": "github/awesome-copilot",
-   "branch": "main",
-   "digest": "sha256:5ebe9cf0fd07a9be9dacb36c0dfd00c00bd30328ef086928be6d850bda9cebe6",
    "checked_at": "2026-11-01T06:29:36+00:00"
   },
   "uov2ibgztvrhqzwxie3kq9o8xsea_5ifbbu-g3yrxrs": {
@@ -44801,14 +44718,6 @@
    "digest": "sha256:3c8b2bced3222051cad6032d06cae4ac40e8a1376255e308d2c6f405cf2ea355",
    "checked_at": "2026-11-01T06:29:36+00:00"
   },
-  "uw1scar8o63kdss7qgr7elh7scpytjhcmbj5emwvm4c": {
-   "status": "ambiguous",
-   "archive_path": "other/local-a7c2ca31e742d64da776713f-gutsofpratik-horizon-skills/SKILL.md",
-   "repo": "gutsofpratik/Horizon-Skills",
-   "branch": "main",
-   "digest": "sha256:8cfb86f121269e8f7f12361e6795c4f6738828340e28964c9229d365666c9edd",
-   "checked_at": "2026-11-04T11:01:12+00:00"
-  },
   "uw5gxnnrwd-go8pzica0hmygxsoji_kgt0wjzymdznk": {
    "status": "pinned",
    "path": "templates/skills/agent-tool-builder/SKILL.md",
@@ -45111,14 +45020,6 @@
    "branch": "main",
    "digest": "sha256:3a3577e78544216783cd5aadf0cfa8c5b0c7539934d139d87dc964bb8a076a95",
    "checked_at": "2026-10-31T06:11:23+00:00"
-  },
-  "v3q1kal87c3do1nl4ock0m_nuzttxyeg4rutqji0tla": {
-   "status": "ambiguous",
-   "archive_path": "design/brainstorming-pd-phuc-laravel-template-2/SKILL.md",
-   "repo": "pd-phuc/laravel-template",
-   "branch": "main",
-   "digest": "sha256:108ec2f11ec511b4438d9d4f7b3db88cbf9646d9706bd1008cb342d8d46e6241",
-   "checked_at": "2026-11-01T06:29:36+00:00"
   },
   "v3uddit0jkdmpyx7wqqwqsvbybc5dlolkxhzs78tvu8": {
    "status": "upstream_unavailable",
@@ -45659,18 +45560,6 @@
    "digest": "sha256:bb61a0053efd3932747510ad58384d2b5b70281c5ee9adefe7f5017f73243020",
    "checked_at": "2026-11-01T06:29:36+00:00"
   },
-  "vg5owgrsdlt4o_00srjrsz6oootxmgmelesx9qbs3is": {
-   "status": "pinned",
-   "path": "skills/engineering/code-review/SKILL.md",
-   "archive_path": "other/code-review-bughunt8-skills/SKILL.md",
-   "repo": "bughunt8/skills",
-   "branch": "main",
-   "digest": "sha256:9cf46653dd9c710ea1e6c22423caf31a794c88773bc94bdaa23140277f470442",
-   "checked_at": "2026-11-01T06:29:36+00:00",
-   "commit": "894d040e8d8303d3353ed6dc58a920436ab69586",
-   "name": "code-review",
-   "description": "Review the changes since a fixed point (commit, branch, tag, or merge-base) along two axes — Standards (does the code follow this repo's documented coding standards?) and Spec (does the code match what the originating issue/spec asked for?). Runs both reviews in parallel sub-agents and reports them side by side. Use when the user wants to review a branch, a PR, work-in-progress changes, or asks to \"review since X\"."
-  },
   "vgcehtfwdzamike5jmkgjne9lzhyum7yizak8gyf_v0": {
    "status": "bundled_files",
    "archive_path": "other/bids-lilinji-genetind-life-skills/SKILL.md",
@@ -45770,6 +45659,14 @@
    "digest": "sha256:bd51e67f78eefa6af7e1d12cd15dba9e55fd9ab96f7942163fe5bacc36b79941",
    "checked_at": "2026-11-01T06:29:36+00:00"
   },
+  "viefw6lwasi5dkik4u4hpmjfxh21lefxaguteiwhdxy": {
+   "status": "bundled_files",
+   "archive_path": "data/iam/SKILL.md",
+   "repo": "northseadl/skillwisp",
+   "branch": "main",
+   "digest": "sha256:f30817982d3454139e3eecbf930f347ffd1b79c4e8a6cef851f75c5e8e02a1d7",
+   "checked_at": "2026-11-06T09:52:07+00:00"
+  },
   "vikpeymm5awq6cbxzj3qxcw5g3oo9mi8-gucgjpgdyg": {
    "status": "bundled_files",
    "archive_path": "design/cook-haidonglethqb-oldschool-3/SKILL.md",
@@ -45817,6 +45714,14 @@
    "branch": "main",
    "digest": "sha256:76e2e465a8f2726c135a3835c520ed2e8752b416a5199938e6226ce6a3dec64b",
    "checked_at": "2026-11-01T06:29:36+00:00"
+  },
+  "vjo_9wa7msm4jwmgxuq3558pasa7wrxwmamyizjma8i": {
+   "status": "ambiguous",
+   "archive_path": "other/compressed-pda-themusebook-skills/SKILL.md",
+   "repo": "themusebook/skills",
+   "branch": "main",
+   "digest": "sha256:fa6c22d1402b6808dc59415604129ee8fe5e9447172604144d91c0f2158c3440",
+   "checked_at": "2026-11-06T09:52:07+00:00"
   },
   "vjy7vu-echgt9_5m_tfw27zgwxmdriov1mzu5h7f6oq": {
    "status": "upstream_changed",
@@ -45898,18 +45803,6 @@
    "name": "vizcom",
    "description": "AI-powered product design tool for transforming sketches into full-fidelity 3D renders."
   },
-  "vlza-ydx481yxc45wrafvdxssf3xtoflrqzrsjfxcue": {
-   "status": "pinned",
-   "path": ".claude/skills/backend-development/skills/cqrs-implementation/SKILL.md",
-   "archive_path": "devops/cqrs-implementation/SKILL.md",
-   "repo": "TechCorp25/kingdom",
-   "branch": "main",
-   "digest": "sha256:4c9f24281d52e58d5bdfe9d7978e816c26403a2840524b30fa496c113a883170",
-   "checked_at": "2026-11-01T06:29:36+00:00",
-   "commit": "8b177a9ab4c9df22c4f74dd2a6d6b2d273941500",
-   "name": "cqrs-implementation",
-   "description": "Implement Command Query Responsibility Segregation for scalable architectures. Use when separating read and write models, optimizing query performance, or building event-sourced systems."
-  },
   "vm5zoodsxvyfzuffdupma-89zbd_jeognzommyasukk": {
    "status": "pinned",
    "path": "08-it-engineering/langsmith-fetch/SKILL.md",
@@ -45965,14 +45858,6 @@
    "branch": "main",
    "digest": "sha256:067b7587a344a928fc6534ef66b1bcd591fc7c26d207ea7ca3334aeb678d6475",
    "checked_at": "2026-11-01T06:29:36+00:00"
-  },
-  "vmocvhtmotoofmr2clkogxutx2s_n6i-n62yqpvzniq": {
-   "status": "ambiguous",
-   "archive_path": "marketing/copywriting-prasanth595-agentic-awesome-skil/SKILL.md",
-   "repo": "Prasanth595/agentic-awesome-skills",
-   "branch": "main",
-   "digest": "sha256:adcd67eb35b5bac367d4558f1017bd6a73edff05dcecaa7685ae18dfa91b97cc",
-   "checked_at": "2026-11-02T10:43:26+00:00"
   },
   "vnlheyvsvngn9823lzlyr-lvh1boz0fdzjux9qhxmyu": {
    "status": "pinned",
@@ -46292,6 +46177,14 @@
    "branch": "main",
    "digest": "sha256:7284678a518ff9dedb125ce39d04732fb532e32adea6fe0913e64928ab7e8282",
    "checked_at": "2026-11-01T06:29:36+00:00"
+  },
+  "vtdjulizx5zi_l1_fladgttu0wjpj1tqbzk1iphjiog": {
+   "status": "ambiguous",
+   "archive_path": "development/clawdex-themusebook-skills/SKILL.md",
+   "repo": "themusebook/skills",
+   "branch": "main",
+   "digest": "sha256:eb8b30b6b5a594837dfeb9cd5738bb244efcbc7c42ab0a0691df7a697ff163ab",
+   "checked_at": "2026-11-06T09:52:07+00:00"
   },
   "vtej_xe2z1pflqvvhr-mgg8jieokkmg0dmksl822ute": {
    "status": "bundled_files",
@@ -47385,14 +47278,6 @@
    "digest": "sha256:ac32c8e77678223079e2e8466177c4889476d8102374afc5b57adb1c15984c45",
    "checked_at": "2026-11-01T06:29:36+00:00"
   },
-  "wjz4zzo8ypeikdkmoavxnoyyzxa3g4p32f46ehh2wrc": {
-   "status": "ambiguous",
-   "archive_path": "other/cufolio-headmktlucca-ui-neuroads-lp/SKILL.md",
-   "repo": "headmktlucca-ui/neuroads-lp",
-   "branch": "main",
-   "digest": "sha256:6da1f37f63864f3dd9b66a3a18eded793f1bae3689305afaeed9d6ead04473d6",
-   "checked_at": "2026-11-01T06:29:36+00:00"
-  },
   "wk0njzioep5zr6lpaf6h1xd8vuatvsjbb9zlbhsvmzy": {
    "status": "tree_truncated",
    "archive_path": "other/cncf-k3k-reviewer-domehahn-skrun-2/SKILL.md",
@@ -47591,6 +47476,14 @@
    "branch": "main",
    "digest": "sha256:2b4cf822e3067af2a21d142edd31a3fed6bac667136f0f7895733b3dbdcf1a34",
    "checked_at": "2026-11-01T06:29:36+00:00"
+  },
+  "wnobp9nrpps2pvmvuq5i5u8zyeshvnsal6ca_erov3e": {
+   "status": "bundled_files",
+   "archive_path": "design/brainstorming-tjl8787-mycodex-skills/SKILL.md",
+   "repo": "tjl8787/mycodex-skills",
+   "branch": "main",
+   "digest": "sha256:108ec2f11ec511b4438d9d4f7b3db88cbf9646d9706bd1008cb342d8d46e6241",
+   "checked_at": "2026-11-06T09:52:07+00:00"
   },
   "wo3o5ohlz4iqyyfnowmis4iqa5ox6_teovgbpwfrc-4": {
    "status": "ambiguous",
@@ -48335,14 +48228,6 @@
    "digest": "sha256:4244be1fd746625cca59d9d04736357c587b270d8840f750b6ac9894886cf2aa",
    "checked_at": "2026-11-01T06:29:36+00:00"
   },
-  "x7ebu8ykv1guu-pr-kxddiommqpizb5nk8-m8eh453w": {
-   "status": "bundled_files",
-   "archive_path": "other/cost-governance-microsoft-skills/SKILL.md",
-   "repo": "microsoft/skills",
-   "branch": "main",
-   "digest": "sha256:4241add12fefc5e51afc1a925426dd5f7d3494e642753fedb03273a3f2fcd30a",
-   "checked_at": "2026-11-01T06:29:36+00:00"
-  },
   "x7m9m8ismmc2lhetkmkcp82s_hg7srim9vnis_osqve": {
    "status": "upstream_changed",
    "archive_path": "data/dotnet-architect/SKILL.md",
@@ -48374,6 +48259,14 @@
    "branch": "main",
    "digest": "sha256:b9d75a7fc55a7e4231048545611f64d6a5c9451856806601e5fd087c5ac1a5d3",
    "checked_at": "2026-11-04T11:01:12+00:00"
+  },
+  "x9i_-b7yjxt7bm9wt0i3d3hcohu5htmsbw4emnt_10o": {
+   "status": "ambiguous",
+   "archive_path": "api/cheshire-noxa-themusebook-skills/SKILL.md",
+   "repo": "themusebook/skills",
+   "branch": "main",
+   "digest": "sha256:393ce4cb5aa7daf9c7910eede05015e4d8b405048fcdc3dd0855402e2ab8480e",
+   "checked_at": "2026-11-06T09:52:07+00:00"
   },
   "x9v36rsvg2vmshfxq5s1ern8vd4zohbyqcxxvoheknq": {
    "status": "upstream_changed",
@@ -49041,14 +48934,6 @@
    "digest": "sha256:b4e8829cbd061f253c5b2d471bab9b8a666eee97e0f9f5696dcd593060a85f25",
    "checked_at": "2026-11-01T06:29:36+00:00"
   },
-  "xpn9h-a6vpimyryneqdb-08tcog1rdtasbf9n8dbh6m": {
-   "status": "ambiguous",
-   "archive_path": "other/ask-mcp-solizardking-skills/SKILL.md",
-   "repo": "Solizardking/skills",
-   "branch": "main",
-   "digest": "sha256:a2ed6d7f1ef6a530b23f301547f43050e36f6d0ce79c2de55d30e6c858b8c344",
-   "checked_at": "2026-11-01T06:29:36+00:00"
-  },
   "xpscb27zchgvay883gdp-3uzbdtswcceylfw0t4k1wa": {
    "status": "upstream_changed",
    "archive_path": "data/azure-messaging-webpubsubservice-py/SKILL.md",
@@ -49701,6 +49586,14 @@
    "archive_path": "development/assessment-builder/SKILL.md",
    "digest": "sha256:947f8951ca0465ec57429220e5dd09385aa383bf9b159ea9bd30a2430c2e54ae",
    "checked_at": "2026-11-01T06:29:36+00:00"
+  },
+  "y5ubeutzq4xaxjltzh2l3y9tn1blsp2_pua1wmwoxqu": {
+   "status": "ambiguous",
+   "archive_path": "other/vulcan-themusebook-skills/SKILL.md",
+   "repo": "themusebook/skills",
+   "branch": "main",
+   "digest": "sha256:eea115b7bf45dc8c5b1da87053334713fefc945ffe788a4728df10cfddaa3579",
+   "checked_at": "2026-11-06T09:52:07+00:00"
   },
   "y68niw3zodvflmchjtdf-koysw-uaztpom1clrt2cdo": {
    "status": "pinned",
@@ -50646,6 +50539,14 @@
    "digest": "sha256:d34db5c8aed6a4e0440132bd0613aace70a693ec7819d5637ad77481d8e10d1b",
    "checked_at": "2026-11-01T06:29:36+00:00"
   },
+  "yq6_iomqyhuyhqcrie7wedhbqg_mhyl1y-6iceyeftc": {
+   "status": "ambiguous",
+   "archive_path": "other/zk-themusebook-skills/SKILL.md",
+   "repo": "themusebook/skills",
+   "branch": "main",
+   "digest": "sha256:b72c6160f37d15231bdc04d1f1e41f6b87dfc748f7f826bb39feabc36e1dbb52",
+   "checked_at": "2026-11-06T09:52:07+00:00"
+  },
   "yq6leqefzndcfl_vtj_d8cmwu6qwhahf5oywxbwsedq": {
    "status": "pinned",
    "path": "skills/deep-research/SKILL.md",
@@ -50741,6 +50642,18 @@
    "branch": "main",
    "digest": "sha256:47467011be13383492973779a7a4e245cc48c2340343f710d9a2725bc8d1fba4",
    "checked_at": "2026-11-05T11:19:32+00:00"
+  },
+  "ysbaghb8v2lqmxqoqheaaimoxeromymvff_lhzr7rlo": {
+   "status": "pinned",
+   "path": "skills/find-skills/SKILL.md",
+   "archive_path": "design/find-skills-tjl8787-mycodex-skills/SKILL.md",
+   "repo": "tjl8787/mycodex-skills",
+   "branch": "main",
+   "digest": "sha256:1e85f6f9686e145aca4a124e3b704b9bbea9aa87e08515c1e352eee70f6e6e7a",
+   "checked_at": "2026-11-06T09:52:07+00:00",
+   "commit": "178625ff835df472990149bd1efa5473813c3e6a",
+   "name": "find-skills",
+   "description": "Helps users discover and install agent skills when they ask questions like \"how do I do X\", \"find a skill for X\", \"is there a skill that can...\", or express interest in extending capabilities. This skill should be used when the user is looking for functionality that might exist as an installable skill."
   },
   "ysdmwbh98xpayycrt7o4g569qpjdyu043rdsjgwb21e": {
    "status": "pinned",
@@ -50991,14 +50904,6 @@
    "name": "breakdown-epic-pm",
    "description": "Prompt for creating an Epic Product Requirements Document (PRD) for a new epic. This PRD will be used as input for generating a technical architecture specification."
   },
-  "ywysmjmhgcbbo2xhb7niqb6_qiiuj8d98fvspp8jisq": {
-   "status": "bundled_files",
-   "archive_path": "other/animate-expo-sgomez-dev-claude-skills/SKILL.md",
-   "repo": "sgomez-dev/claude-skills",
-   "branch": "main",
-   "digest": "sha256:9a01a91701e6563c67677dde6b66ab30f066a5341d42c21a90ba51d99679274a",
-   "checked_at": "2026-11-01T06:29:36+00:00"
-  },
   "yx3ct0i-0lm1pimv8bp-g9yygx-vdmvhfhllpjkzfto": {
    "status": "upstream_changed",
    "archive_path": "design/frontend-design-yunaamelia-vps-rdp-workstation/SKILL.md",
@@ -51054,14 +50959,6 @@
    "branch": "main",
    "digest": "sha256:51a833e5f5edab03b5632b1da1a7587fe1d812fc149e3acc69f59cccd39369e3",
    "checked_at": "2026-11-05T11:19:32+00:00"
-  },
-  "yy3160qjcggbrihdilmkjqsmvmgbqujvaev0gi-u328": {
-   "status": "upstream_changed",
-   "archive_path": "quality/cost-optimization-microsoft-skills/SKILL.md",
-   "repo": "microsoft/skills",
-   "branch": "main",
-   "digest": "sha256:e9cf29cb3c460ee01e105321f422e8471f8150aaeb3ae90aa52c4748cd22dded",
-   "checked_at": "2026-11-01T06:29:36+00:00"
   },
   "yy6zjfnhlnxpcnqierxaayoy-zwlmlthl4co0qfgtpg": {
    "status": "upstream_changed",
@@ -52179,14 +52076,6 @@
    "digest": "sha256:db16a65fb8bab450f7a97d73be83f2c5110382c28c5648b5d15a3c902c71d308",
    "checked_at": "2026-11-01T06:29:36+00:00"
   },
-  "zo3f1tjsj1g4qjmiodbvwl1zeplalvv--swb_sbh1vk": {
-   "status": "bundled_files",
-   "archive_path": "design/prototype-sgomez-dev-claude-skills/SKILL.md",
-   "repo": "sgomez-dev/claude-skills",
-   "branch": "main",
-   "digest": "sha256:bba39c955eb1871c5a02733976ceec5d0324198e0812e667604756489c89f7b9",
-   "checked_at": "2026-11-01T06:29:36+00:00"
-  },
   "zodj5yrih1dqs7pu548udd9ccohk8bbq3xkutrtsk4i": {
    "status": "bundled_files",
    "archive_path": "ai-ml/geniml-raktim-mondol-academic-harness/SKILL.md",
@@ -52194,14 +52083,6 @@
    "branch": "main",
    "digest": "sha256:106e625ce5f70c8daa025a5f1e7602ca376ba6781b479e157a3581b6a83f7cfe",
    "checked_at": "2026-11-05T11:19:32+00:00"
-  },
-  "zoneo8hqifmzmmmyso1dljqvlgkq2tniygwf6-hmrqg": {
-   "status": "ambiguous",
-   "archive_path": "productivity/swap-planner-solizardking-skills/SKILL.md",
-   "repo": "Solizardking/skills",
-   "branch": "main",
-   "digest": "sha256:a1c3910c788f601c7d49391489b2654edd95c759a85eea5b26433d9b6e9f3bee",
-   "checked_at": "2026-11-01T06:29:36+00:00"
   },
   "zooaei8gp1nze5cdytqr7-3yslns2vfr0jpkfccvedc": {
    "status": "pinned",
@@ -52234,6 +52115,14 @@
    "commit": "02790cdbb6f586149395acb6b01ee96c8c3d5a42",
    "name": "pr-description",
    "description": "Use this skill when creating or updating PR descriptions. Provides detailed guidelines for writing clear, comprehensive pull request descriptions with proper Summary and Testing sections."
+  },
+  "zow2alpynmw6qu54wyfs15pgu6_xwjoanr90d5xmmkk": {
+   "status": "ambiguous",
+   "archive_path": "other/ask-mcp-themusebook-skills/SKILL.md",
+   "repo": "themusebook/skills",
+   "branch": "main",
+   "digest": "sha256:a2ed6d7f1ef6a530b23f301547f43050e36f6d0ce79c2de55d30e6c858b8c344",
+   "checked_at": "2026-11-06T09:52:07+00:00"
   },
   "zp1uv_sw27_7gihkl2rxurgvrslowoqqpom2saaedce": {
    "status": "bundled_files",

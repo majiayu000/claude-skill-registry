@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updated_at": "2026-10-30T09:27:56.185263Z",
-  "total_count": 1718,
+  "updated_at": "2026-11-07T05:31:43.404111Z",
+  "total_count": 1719,
   "entries": {
     "Xquik-dev/x-twitter-scraper": {
       "repo": "Xquik-dev/x-twitter-scraper",
@@ -10309,8 +10309,14 @@
       "repo": "kasovy/neverapply-mcp",
       "branch": "main",
       "relative_path": "skills/find-jobs/SKILL.md",
-      "commit_sha": "d4e6d02aa0eea588e78a468df254d7e8b7a269f4",
       "updated_at": "2026-10-30T09:27:46.137407Z"
+    },
+    "financeailab/skills-financas-br:plugins/auditor-de-tarifas/skills/auditor-de-tarifas/SKILL.md": {
+      "repo": "financeailab/skills-financas-br",
+      "branch": "main",
+      "relative_path": "plugins/auditor-de-tarifas/skills/auditor-de-tarifas/SKILL.md",
+      "commit_sha": "62c6f18cd67e96a80985583ecb42324c2f74c355",
+      "updated_at": "2026-11-07T05:31:26.725762Z"
     }
   }
 }

@@ -82,7 +82,7 @@
    "repo": "vikasvardhanv/jerry_skills",
    "branch": "main",
    "digest": "sha256:22f46358aeb87caddde759176073aea63dab402930ada7250741068a67318e3f",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "-4gyux-dejdpetndfzsastbo3ea9e8qpp7zeynciymq": {
    "status": "tree_truncated",
@@ -537,7 +537,7 @@
    "repo": "stanfish06/skillquarium",
    "branch": "master",
    "digest": "sha256:0a31023527808e68a53b81b89c7a6c10c6f84755a410df820facef44252e518d",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "-mlnpz0d1h-l0rtd_d11bjoanrsl15hkcfhtesy3sxm": {
    "status": "bundled_files",
@@ -1505,8 +1505,8 @@
    "repo": "backnotprop/pstack",
    "branch": "main",
    "digest": "sha256:864b827e8199d946ce58beca0f89c4ed4099ed6e426fb698a3aaa45de2a9eea2",
-   "checked_at": "2026-10-31T06:11:23+00:00",
-   "commit": "25abb38559ddbabec563646224d09eff9a250eca",
+   "checked_at": "2026-11-07T06:30:36+00:00",
+   "commit": "f104aa8f821a3f7397318b0dc8ad2f7e4a1f8bc7",
    "name": "principle-foundational-thinking",
    "description": "Apply before writing logic: choosing core types and data structures, sequencing scaffold-vs-feature work, asking what concurrent actors share. Get the data structures right so downstream code becomes obvious."
   },
@@ -1826,7 +1826,7 @@
    "repo": "yanacuti1121/Yana-AI",
    "branch": "main",
    "digest": "sha256:4028e3e0eba91b9f5458cb7c0e08fb768b4c011d8e50667be73be58cc6e66c3a",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "1dvjuicsdb8gt8a7nvjnh-t8qpwn8cvrsrxkf1hod58": {
    "status": "pinned",
@@ -1869,7 +1869,7 @@
    "repo": "sinhoneyy/master-skills",
    "branch": "master",
    "digest": "sha256:be38855ab5d7a9f4f92c79e07ef560c9c7eb71da8337ad3817f3dd3eea82222c",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "1gngebfrf1bt1xbx3srzthoppz1vigldubg-oyb33gc": {
    "status": "upstream_unavailable",
@@ -2901,7 +2901,7 @@
    "repo": "tt-a1i/matt-skills-with-to-goal",
    "branch": "main",
    "digest": "sha256:985569f15739c713d6784887c3d186d4ef9ac85bec5ad9c068d25bf0739928e4",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "2komiwaxkmg8popvdzkfkwi6tpq-9tsntshezzcfcro": {
    "status": "ambiguous",
@@ -2958,7 +2958,7 @@
    "repo": "youlianvr/oper-share",
    "branch": "master",
    "digest": "sha256:9e5cbb3674304ab1b2d08a0379e702d0c2029ddcb1a64451313ca610178ce5c7",
-   "checked_at": "2026-10-30T10:36:21+00:00",
+   "checked_at": "2026-11-07T06:30:36+00:00",
    "commit": "d4fe1811f8a2a920cda5bb35b3359e4fdd92b5b1",
    "name": "challenge",
    "description": "Pre-mortem plan analysis. Imagine the plan failed 12 months from now and work backwards to find the weaknesses. Surfaces assumptions, dependencies, and execution risks before committing resources. Use when before significant resource commitment, before presenting to a board or investors, when feedback has been one-sidedly positive, or when there is pressure to move fast and figure it out later."
@@ -2969,7 +2969,7 @@
    "repo": "yanacuti1121/Yana-AI",
    "branch": "main",
    "digest": "sha256:f0e8c8dd2cfb908dc6b61c93ed04dd430eefc7eabecbdb6a3f0b91e8ee400a14",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "2m_vfvxmwiktjgiynmjo6w6jrgpw1p6jebeb4_lo_7u": {
    "status": "bundled_files",
@@ -3105,7 +3105,7 @@
    "repo": "wso2/labs-agentic-engineer",
    "branch": "main",
    "digest": "sha256:77f3cf31bc99b2f49af943222526531fcc9fc41d047626d3640e875e85af3e84",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "2rju8r0vtx7uibofnasbcmyjkjiuqacfuv6_j23lzpy": {
    "status": "upstream_changed",
@@ -3121,7 +3121,7 @@
    "repo": "tmcfarlane/team-avatar",
    "branch": "main",
    "digest": "sha256:638b271fdc148249ed8896dbdcf15f9067a8d64ba7d2d82ec3e86f8d82831b51",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "2s1j1wp-zgdmogks7-ubj7uqdlwhsjqa6xcb_15jmsg": {
    "status": "ambiguous",
@@ -3411,7 +3411,7 @@
    "repo": "thai06052003/Tool-Kit-for-AI-Agent",
    "branch": "main",
    "digest": "sha256:cebbdbaa558d7d4b428c8ab52b2db0bf2fd399b24b8574a49134ae29688483c1",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "334gk_bfr41vtd_l8bdafehv9yhdehtzdaa23lojdne": {
    "status": "upstream_changed",
@@ -3456,7 +3456,7 @@
    "repo": "wellingtonspdev/skills-wsp",
    "branch": "main",
    "digest": "sha256:8e2360251443fa5939536b0562a25ebcb0e7cf397e402d6df77bc4c37523db45",
-   "checked_at": "2026-10-30T10:36:21+00:00",
+   "checked_at": "2026-11-07T06:30:36+00:00",
    "commit": "f3f9b58f3f9a1c9879bd297bac33888d4d8b801f",
    "name": "daily",
    "description": "Documentation and capabilities reference for Daily"
@@ -4759,7 +4759,7 @@
    "repo": "shortcuts/locationjoystick",
    "branch": "main",
    "digest": "sha256:9ef09065f26b9781275b5a4775e14870e331fab833efb2a2aa33f3205a2b83c3",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "4swvae_fe_fuduv5hbjwzqz1h1lm6moxaaxjygdx7eu": {
    "status": "pinned",
@@ -5136,7 +5136,7 @@
    "repo": "yanacuti1121/Yana-AI",
    "branch": "main",
    "digest": "sha256:1d6fdc9e0b28b306b205865aaec1efe24942ef431e6520c2d9bd46fe3a6918b7",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "587dvrsef4pdmhvz5qp6a0tolq13hwoq5eamt0ktvme": {
    "status": "pinned",
@@ -6496,7 +6496,7 @@
    "repo": "yanacuti1121/Yana-AI",
    "branch": "main",
    "digest": "sha256:da5f6567807803e7a610456c08812cd864a7bef917883efc1d03be9ce7296c09",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "6orfzmvt3xy_3zsts26gxu-3_nwoxr99l4-j4knzj6u": {
    "status": "upstream_unavailable",
@@ -6664,8 +6664,8 @@
    "repo": "shengdabai/Tony-Claude-Code-Skills",
    "branch": "main",
    "digest": "sha256:a960b3dec6b096ee11a712f952c21a86c0d2856fe45588fe7486bfd482445438",
-   "checked_at": "2026-10-30T10:36:21+00:00",
-   "commit": "c05bc40081435302a8861ee1dac134b323a2adac",
+   "checked_at": "2026-11-07T06:30:36+00:00",
+   "commit": "7850740bd837adb32f0a109ab2af82482196c6f2",
    "name": "adapt",
    "description": "Adapt designs to work across different screen sizes, devices, contexts, or platforms. Implements breakpoints, fluid layouts, and touch targets. Use when the user mentions responsive design, mobile layouts, breakpoints, viewport adaptation, or cross-device compatibility."
   },
@@ -7950,8 +7950,8 @@
    "repo": "backnotprop/pstack",
    "branch": "main",
    "digest": "sha256:58903529d733b1c1a7c9ccf127d45ef3c7d0d9f0b81164a4dc6b80efe6f2912b",
-   "checked_at": "2026-10-31T06:11:23+00:00",
-   "commit": "25abb38559ddbabec563646224d09eff9a250eca",
+   "checked_at": "2026-11-07T06:30:36+00:00",
+   "commit": "f104aa8f821a3f7397318b0dc8ad2f7e4a1f8bc7",
    "name": "principle-experience-first",
    "description": "Apply when product, UX, or feature-scope tradeoffs come up. Choose user delight over implementation convenience; ship fewer polished features over more rough ones."
   },
@@ -8017,7 +8017,7 @@
    "repo": "thai06052003/Tool-Kit-for-AI-Agent",
    "branch": "main",
    "digest": "sha256:20d370bbfb5c6c7efbdfe5d86ca42f5c49ef968b7b84821abc85089a96aa6bb9",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "8l1je99ce9grxnrrviajxkf5b-o9nppnct2m89q3zz4": {
    "status": "ambiguous",
@@ -8137,7 +8137,7 @@
    "repo": "yanacuti1121/Yana-AI",
    "branch": "main",
    "digest": "sha256:f98c8d0c338abd58445649653c6477d7351a6511667d6dfc5d05e0fc6333e3f1",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "8nwzvwqskmgsjd7poeiyb1uwrsvup5lxk6k55blanfi": {
    "status": "upstream_changed",
@@ -8292,7 +8292,7 @@
    "repo": "wso2/labs-agentic-engineer",
    "branch": "main",
    "digest": "sha256:5c9fba69845c2519b9b35b9af42ae5142c21f8ca15ac2123dc2722002c8058ae",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "8x_hjugfolrcil_pwujtv7rymnie_zvi1lhi-1mg_si": {
    "status": "pinned",
@@ -8364,7 +8364,7 @@
    "repo": "wso2/labs-agentic-engineer",
    "branch": "main",
    "digest": "sha256:a32df9dcdfc0c4fdc1c98e1ed3940c5f56b84c1aa90ff60346f32b8b53915b43",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "8zgt9dmkod1qoflclpjr2yxoywfmveo1ab0x9ij_oz0": {
    "status": "upstream_changed",
@@ -8939,7 +8939,7 @@
    "repo": "sinhoneyy/master-skills",
    "branch": "master",
    "digest": "sha256:7a11ba564076b882d8d67f26bdd1ed115b3bb2281f029581c384357b82425305",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "9r2oghlxw68sii92pmeaooa2my_60sjch7bqsgaorko": {
    "status": "bundled_files",
@@ -9186,7 +9186,7 @@
    "repo": "yanacuti1121/Yana-AI",
    "branch": "main",
    "digest": "sha256:85e9391e62346721a6248c952ff196e966f2907991a56e98b7d760585893b263",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "_1x8nykyi1uwvl4m435anccigxa7fwbcfqftndaofeg": {
    "status": "pinned",
@@ -9886,7 +9886,7 @@
    "repo": "yanacuti1121/Yana-AI",
    "branch": "main",
    "digest": "sha256:22338b7be6a55f084f42dd33b4b1fae2ac8ad0c1e524c5352b604d87e7e53e2a",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "_xmpqkdj6a2y_dh1rw-rk-gmey5jhll45r8isrtiup8": {
    "status": "pinned",
@@ -9933,7 +9933,7 @@
    "repo": "xanderc123/Zhizhu-Tong-BA-RAG",
    "branch": "main",
    "digest": "sha256:85f2083cf4788f56e7a9e7f01e9d352867c31ef49c3426dd8d4118972f86d49c",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "a-p0q3j56ijgbcertd7mmmbfmzyk5bsmkk0rzrqsmz4": {
    "status": "bundled_files",
@@ -10244,7 +10244,7 @@
    "repo": "yanacuti1121/Yana-AI",
    "branch": "main",
    "digest": "sha256:84bb2bc31ae4eebce27d974c6655039e3094b8b64b782df53082482cbf458c1d",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "aaymrlkzf9u4adzzq7icpf281jf6twqkuncz1vntqr4": {
    "status": "pinned",
@@ -10280,7 +10280,7 @@
    "repo": "youlianvr/oper-share",
    "branch": "master",
    "digest": "sha256:1fd0bed0afa9965a6422005de8d930bdf17e1823d5319ca911a621be9e2c6d6d",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "abjvduzhjav8oirts3ehqc8rglg9qa3hd-iw5toi2sk": {
    "status": "upstream_changed",
@@ -10573,7 +10573,7 @@
    "repo": "yanacuti1121/Yana-AI",
    "branch": "main",
    "digest": "sha256:d37478268d979001cf3382ab3322c04ed329e47f4c06b8f2af16ece5b989f0be",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "ag_r2sc9r_aldfyuj7qksxbnr8apmbqpxcbcfkcsjbc": {
    "status": "bundled_files",
@@ -11007,7 +11007,7 @@
    "repo": "wso2/labs-agentic-engineer",
    "branch": "main",
    "digest": "sha256:cb01f66bebfaa25fa1f88e6b7e769cd9fd9f35b1120b8563749820738814c927",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "anh59evbd1yqaw5lvlcdj3zz2cdqm8m2hkr4ozmwlw4": {
    "status": "bundled_files",
@@ -11059,7 +11059,7 @@
    "repo": "backnotprop/pstack",
    "branch": "main",
    "digest": "sha256:216a758b8711e64d19a55e6032c496527daac6364d010611040f3c04ef1a448f",
-   "checked_at": "2026-10-31T06:11:23+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "aoeft7vwae5jsp7l5ip4yuruuaclxk05iaunxhhybe8": {
    "status": "upstream_changed",
@@ -11699,7 +11699,7 @@
    "repo": "sinhoneyy/master-skills",
    "branch": "master",
    "digest": "sha256:e2549f6539ce07b1fdd135980846e4a72097a79f956b15051e57f5f8d67fea8a",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "az69pbm7dzqtslinqofubvjuz_bicg5v8fr-rsgyvua": {
    "status": "bundled_files",
@@ -11942,7 +11942,7 @@
    "repo": "sinhoneyy/master-skills",
    "branch": "master",
    "digest": "sha256:35bc4f00511cdb9996745841014ff8792cb3e38a3682b0890a461920b7839a62",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "b5gxgsm2ffudsmtcjz_zchxcc6degezavsyxv7sqvwc": {
    "status": "upstream_changed",
@@ -12111,8 +12111,8 @@
    "repo": "backnotprop/pstack",
    "branch": "main",
    "digest": "sha256:bdb23cdbd82a1e6af094b495691c832a6f7f3ab9706ba9edbeb664ef51a726e1",
-   "checked_at": "2026-10-31T06:11:23+00:00",
-   "commit": "25abb38559ddbabec563646224d09eff9a250eca",
+   "checked_at": "2026-11-07T06:30:36+00:00",
+   "commit": "f104aa8f821a3f7397318b0dc8ad2f7e4a1f8bc7",
    "name": "figure-it-out",
    "description": "Design an auditable playbook when no narrower one fits: a large migration, an ambitious multi-part change, or work a human reviews after stepping away. Scales rigor to the task, runs a hypothesis loop, and logs decisions. Use for /figure-it-out or 'figure it out'."
   },
@@ -12384,7 +12384,7 @@
    "repo": "yanacuti1121/Yana-AI",
    "branch": "main",
    "digest": "sha256:f74f4f312e2cca732e3764f618caebcc43aea3e62b0a59cccca041941d7302d9",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "bif1qtjfofviuhjtvancne3a4jhktc2zlub6mbsgsii": {
    "status": "ambiguous",
@@ -12392,7 +12392,7 @@
    "repo": "yanacuti1121/Yana-AI",
    "branch": "main",
    "digest": "sha256:f46f4941251cd3f2cad2b572c9f0401df28f5c47be27f51e06f09edae4a55268",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "bioj4vy9lt7yexihyusotgidxvvkyauq5obxkedrsc8": {
    "status": "pinned",
@@ -12530,12 +12530,12 @@
    "checked_at": "2026-11-01T06:29:36+00:00"
   },
   "bkuk2i_3zl-mj8lqq9f1wbkhl_q7agx0fltuu31tlzs": {
-   "status": "bundled_files",
+   "status": "upstream_changed",
    "archive_path": "other/form-cro-alirezarezvani-claude-skills/SKILL.md",
    "repo": "alirezarezvani/claude-skills",
    "branch": "main",
    "digest": "sha256:613b78af57e61291c106c34115b6f0da1618a644c1918d158bc66320a90c62d4",
-   "checked_at": "2026-10-31T06:11:23+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "bl3pg6akamg9_k5ihp5vetwnkythg-jkuanuxtv1p6s": {
    "status": "pinned",
@@ -12767,7 +12767,7 @@
    "repo": "yanacuti1121/Yana-AI",
    "branch": "main",
    "digest": "sha256:aafb9a3d95f9e29c8ee59792e2ef6fb8a109fd263af440200a2abbfdc7653c3f",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "bo73c06fjqew88z6qwic1w0wkefn7nylt04lp8bufwa": {
    "status": "ambiguous",
@@ -13568,7 +13568,7 @@
    "repo": "tmcfarlane/team-avatar",
    "branch": "main",
    "digest": "sha256:7f9b920d49be5a45baa4ea7a129c04b40a5675ee4103e31cd3cb2ffe91bf19d3",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "c8cvcxubimpb_j0h0ibb234hboodgrcu5azhambdbey": {
    "status": "bundled_files",
@@ -13651,7 +13651,7 @@
    "repo": "wso2/labs-agentic-engineer",
    "branch": "main",
    "digest": "sha256:9d8114f8ef0b31f535a265fc05c364bd8cf2e2895a830040e06c22acb11f54b0",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "c_ga6tdpyv2a2ozuqrwcdchnzgqxeqler1ruhbeb7mo": {
    "status": "upstream_changed",
@@ -14667,7 +14667,7 @@
    "repo": "youlianvr/oper-share",
    "branch": "master",
    "digest": "sha256:ae1750f715fc99d776f334ade390f913f77ba41335d8db96d3f7a97a7a518959",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "cvpyxdua_9vzbq__fba34ei7cxhjmx-9df3inmzptf0": {
    "status": "upstream_changed",
@@ -15353,7 +15353,7 @@
    "repo": "yanacuti1121/Yana-AI",
    "branch": "main",
    "digest": "sha256:200179d515f9961a469f30a4fa072b08d1527a3906ba46162b64a6011ce3c57d",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "dga_hhmee1soynmdtzvft6ggneax02ardydzgoaadws": {
    "status": "bundled_files",
@@ -15932,7 +15932,7 @@
    "repo": "tt-a1i/matt-skills-with-to-goal",
    "branch": "main",
    "digest": "sha256:849198df88cdb65fd0d97236604c1fca7ff2f22d2f705f9724a800d0266b118d",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "dorwqbwnhunr3hx2smik_fccsrb-utpuces-8fticuw": {
    "status": "upstream_changed",
@@ -16168,7 +16168,7 @@
    "repo": "yanacuti1121/Yana-AI",
    "branch": "main",
    "digest": "sha256:6229a3c98861a28d8f1c48b048e21f17b3b8ab61a9f8cf35bf8fc9f87aac9b53",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "ds4asukqbmtuouhbgarql0go7odqhvifuqta3e-ouu0": {
    "status": "upstream_changed",
@@ -16764,7 +16764,7 @@
    "repo": "sinhoneyy/master-skills",
    "branch": "master",
    "digest": "sha256:f4f45e4d32a9fe298a479a2fd0afa5333cdd2f120ab7cf0618604ed02a970d55",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "e2se7wnybu8tp4kpbivw9roexxmt_ws9i1fiaq6o1o8": {
    "status": "upstream_changed",
@@ -16788,7 +16788,7 @@
    "repo": "wso2/labs-agentic-engineer",
    "branch": "main",
    "digest": "sha256:d1ac25511a936ff4250a48dbcefda363837d6bb9321b3cba73df99fa37270a75",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "e3q1jams6-rlgue_adfyrrlza1funvmb8orbtldm1hm": {
    "status": "ambiguous",
@@ -17379,7 +17379,7 @@
    "repo": "yanacuti1121/Yana-AI",
    "branch": "main",
    "digest": "sha256:879f43d7fade4d436a62bdd32714ceb52bde7060bcba1e45b7b864d3b209b98d",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "eharb1bzcafou44nqy71ol7dounwnr3d4tbo3ahenmk": {
    "status": "bundled_files",
@@ -17856,7 +17856,7 @@
    "repo": "xanderc123/Zhizhu-Tong-BA-RAG",
    "branch": "main",
    "digest": "sha256:065792428305a7d98e1a956d7c48d9c7af198ed55a952712c50a547af95061c1",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "erjt8rou8tpvc6wkr-wkk9sejy8vk0wmt183exsjgoi": {
    "status": "pinned",
@@ -18031,7 +18031,7 @@
    "repo": "thcjp/hermes-skills",
    "branch": "main",
    "digest": "sha256:72190c88b2b5a67a96b91d66aa72b9161913e10e8769da3f28a226f4cc7b99d0",
-   "checked_at": "2026-10-30T10:36:21+00:00",
+   "checked_at": "2026-11-07T06:30:36+00:00",
    "commit": "c2717e57d026b05d04e0fa37a0bf543b0e021fd2",
    "name": "writing-plans",
    "description": "Use when you have a spec or requirements for a multi-step task, before touching code"
@@ -18605,7 +18605,7 @@
    "repo": "yanacuti1121/Yana-AI",
    "branch": "main",
    "digest": "sha256:7a0ca9c3cec89b2e86cca698c9b947fe136345b5117001b85c4a665515381c94",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "f8rvg7v2qxm4vxwrc6xgfl68uawza1setl-eevykr0c": {
    "status": "upstream_changed",
@@ -18785,7 +18785,7 @@
    "repo": "wso2/labs-agentic-engineer",
    "branch": "main",
    "digest": "sha256:b25d86fb36b1d294eeead5d7db529f86135f9671f2afcd607579a63bb2213769",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "fcrvfp0j8yrczo_lr3a5zgwxlgfupd3sdktpghvlory": {
    "status": "bundled_files",
@@ -19164,12 +19164,12 @@
    "checked_at": "2026-11-01T06:29:36+00:00"
   },
   "fiwmqlglgc7t4rw_3d4q-kx8sqwoa_ukzbdj7ckhp4c": {
-   "status": "bundled_files",
+   "status": "upstream_changed",
    "archive_path": "other/skill-tester-alirezarezvani-claude-skills/SKILL.md",
    "repo": "alirezarezvani/claude-skills",
    "branch": "main",
    "digest": "sha256:a62efa4e6d596e442083543f86a6bfc5724b0d06a4921d9a31bbc1c5d12e23e0",
-   "checked_at": "2026-10-31T06:11:23+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "fj6sgpyefmwq4zergv1cyrwmswlqawgscizxiuejexg": {
    "status": "pinned",
@@ -19282,8 +19282,8 @@
    "repo": "backnotprop/pstack",
    "branch": "main",
    "digest": "sha256:62ac2862c2caa22dd14531f51c9c6bb445ceb198ca98a687e25b4d47c1f10a28",
-   "checked_at": "2026-10-31T06:11:23+00:00",
-   "commit": "25abb38559ddbabec563646224d09eff9a250eca",
+   "checked_at": "2026-11-07T06:30:36+00:00",
+   "commit": "f104aa8f821a3f7397318b0dc8ad2f7e4a1f8bc7",
    "name": "principle-boundary-discipline",
    "description": "Apply when wiring validation, error handling, or framework adapters. Concentrate guards at system boundaries (CLI, config, network, external APIs); trust internal types and keep business logic in pure functions."
   },
@@ -19708,8 +19708,8 @@
    "repo": "backnotprop/pstack",
    "branch": "main",
    "digest": "sha256:1be6e7a435f26a75a76eb848b9c3d611b9977d0f5822361753244da25ca3ca45",
-   "checked_at": "2026-10-31T06:11:23+00:00",
-   "commit": "25abb38559ddbabec563646224d09eff9a250eca",
+   "checked_at": "2026-11-07T06:30:36+00:00",
+   "commit": "f104aa8f821a3f7397318b0dc8ad2f7e4a1f8bc7",
    "name": "principle-laziness-protocol",
    "description": "Apply when refactoring, evaluating diff size, or tempted to add abstractions, layers, or signal threading. Bias toward deletion and the smallest change that solves the problem."
   },
@@ -19719,7 +19719,7 @@
    "repo": "yanacuti1121/Yana-AI",
    "branch": "main",
    "digest": "sha256:4c130ad682003589622dccae004f6180a472648179919ec23677aef1b743b5a4",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "fsn4y7nwin1mybrrwbify7nu4qpwpgt_lai0at_thak": {
    "status": "pinned",
@@ -20068,7 +20068,7 @@
    "repo": "tt-a1i/matt-skills-with-to-goal",
    "branch": "main",
    "digest": "sha256:483bdc4ccf4ac31d86ac7beeaa0d0db80313e71e120bb8c59b3196ae5decd53d",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "fze5tdtsbxernafgozwnxaf_73e8cpbl8gum9rqskys": {
    "status": "ambiguous",
@@ -20108,7 +20108,7 @@
    "repo": "sinhoneyy/master-skills",
    "branch": "master",
    "digest": "sha256:e7893d31b5e32271d2e3399d5ff8686236812827ab10f6b6d575396915d9b368",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "g--okrawdcqzmx4qe2-ousl_fvckkdkml5afvgmplec": {
    "status": "ambiguous",
@@ -20394,7 +20394,7 @@
    "repo": "yanacuti1121/Yana-AI",
    "branch": "main",
    "digest": "sha256:611838ee7002ac995b26116b51bbb5189e087f63aa04c61e65d4b6ea9fcb2c36",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "gai1usjua3uwxdnmmsgtd5oyfgkjxo4v3fhqfanq8la": {
    "status": "upstream_changed",
@@ -20577,7 +20577,7 @@
    "repo": "yanacuti1121/Yana-AI",
    "branch": "main",
    "digest": "sha256:b26af6b3320dd48d855d8ac54dc45ea19f6a8cccb4d214f9ec6667ebb1b79e24",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "gdputcfrwy36kfczghbjtawoua0kn4mhc4csledvnzo": {
    "status": "pinned",
@@ -20668,12 +20668,12 @@
    "description": "Analyze a screen recording of a manual process and produce targeted, working automation scripts. Extracts frames and audio narration from video files, reconstructs the step-by-step workflow, and proposes automation at multiple complexity levels using tools already installed on the user machine."
   },
   "gfg-ponpjfr-rdgztdppw7dkix0pxe-zax5ypzyx8ps": {
-   "status": "bundled_files",
+   "status": "upstream_changed",
    "archive_path": "other/tc-tracker-alirezarezvani-claude-skills/SKILL.md",
    "repo": "alirezarezvani/claude-skills",
    "branch": "main",
    "digest": "sha256:988e40e73758bbaed5dc553dc80656448fd32ba9715c016ef414d67f7912b047",
-   "checked_at": "2026-10-31T06:11:23+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "gfnbdaugzkmngnfkntguwbgihoz8gliobmzk22g4qfk": {
    "status": "ambiguous",
@@ -21292,7 +21292,7 @@
    "repo": "yanacuti1121/Yana-AI",
    "branch": "main",
    "digest": "sha256:b322fcd60bf7a13d752688f83d99fcf4e3a0354185e73ea2bbf35d9842356de8",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "gponntnpgdhqcmyapp1a-5tztxgbgrmksznf_qicx3i": {
    "status": "pinned",
@@ -21332,7 +21332,7 @@
    "repo": "wso2/labs-agentic-engineer",
    "branch": "main",
    "digest": "sha256:e3f44e3ccbc0e7b62f20ba70b295fc9c9f4aa3f96c77168faee1c71bacbf4215",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "gqeaagxpn254y0oxbl7bcfq7rx7zlhn0ximhem5spbm": {
    "status": "bundled_files",
@@ -21527,7 +21527,7 @@
    "repo": "vedantlavale/billy",
    "branch": "main",
    "digest": "sha256:10ff989e7498b23b5acb49d5048f11dcd906757d2f79c5cdf8a00001381296f2",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "guvgbqpbrabtfhtr-hgf6fcixxtffkui8fkrepnlhak": {
    "status": "upstream_changed",
@@ -21551,7 +21551,7 @@
    "repo": "sinhoneyy/master-skills",
    "branch": "master",
    "digest": "sha256:1a1ccf89e3dd94bfcce5869459499d3cb6f11eb888ad023fe7675e024664b430",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "gv79m9fxzqy9oymjhp__okk_iaqu_y-ntqhwqr7pvnm": {
    "status": "pinned",
@@ -21858,7 +21858,7 @@
    "repo": "sinhoneyy/master-skills",
    "branch": "master",
    "digest": "sha256:c8d4cb29afd6b487b2c9d06f641d26b5e0fb315cc5a1c1319f6bd4f226ad1fda",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "h1m7oughs9m8yjfhweuw9c9rgz19h9u9zg0uooskqfq": {
    "status": "pinned",
@@ -22048,7 +22048,7 @@
    "repo": "yanacuti1121/Yana-AI",
    "branch": "main",
    "digest": "sha256:136294ee660ed4f05c2b4bac282197d0058416cf9dc1bc60a5343b73988ec488",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "h9cehdsfw58zmqqatamiywsb77yuapwfcdpsa4390ck": {
    "status": "ambiguous",
@@ -22236,7 +22236,7 @@
    "repo": "wso2/labs-agentic-engineer",
    "branch": "main",
    "digest": "sha256:fee6e1d0c50f0e736b4ef8a599060c959afae904c9a97d82c97f049fcc3aa0f1",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "hdzkxb1xcs4t0f4pzgjckfbnrzuf3fxqvdyorwa2-f4": {
    "status": "bundled_files",
@@ -22710,7 +22710,7 @@
    "repo": "shortcuts/locationjoystick",
    "branch": "main",
    "digest": "sha256:b9e49e46ede956e0c1633eae82a695c996f728bc48f3903f001d301068a2b0ea",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "hmxrmpgsiwrcn2hvtxyox_azp8yqznwpljvlni3ttf8": {
    "status": "pinned",
@@ -23549,8 +23549,8 @@
    "repo": "backnotprop/pstack",
    "branch": "main",
    "digest": "sha256:05294b40448e927c5da1c7b6f5c6b9fed3744637e3833d2d948b9154a9dd00bb",
-   "checked_at": "2026-10-31T06:11:23+00:00",
-   "commit": "25abb38559ddbabec563646224d09eff9a250eca",
+   "checked_at": "2026-11-07T06:30:36+00:00",
+   "commit": "f104aa8f821a3f7397318b0dc8ad2f7e4a1f8bc7",
    "name": "principle-separate-before-serializing-shared-state",
    "description": "Apply when concurrent actors might write to the same file, branch, key, or state object. Eliminate the sharing first; serialize structurally only when one shared writer is a real invariant."
   },
@@ -24350,12 +24350,12 @@
    "checked_at": "2026-11-01T06:29:36+00:00"
   },
   "ina8jfmfn41ujahpuwcdlyprlx8vgcsgyyljxmtshpm": {
-   "status": "bundled_files",
+   "status": "upstream_changed",
    "archive_path": "security/red-team-alirezarezvani-claude-skills-2/SKILL.md",
    "repo": "alirezarezvani/claude-skills",
    "branch": "main",
    "digest": "sha256:86c488d786387de64bb99036ba6091a1179c73258997093e2fede45abd5bb292",
-   "checked_at": "2026-10-31T06:11:23+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "ins9_hyptoqrcv0ya2a8-dapztq8-zardpgbxeab3yc": {
    "status": "ambiguous",
@@ -24491,7 +24491,7 @@
    "repo": "wellingtonspdev/skills-wsp",
    "branch": "main",
    "digest": "sha256:9c800745c7410aad263e2081f9bbcf68c2a653b0b4173b67b6fceb1c61a339bb",
-   "checked_at": "2026-10-30T10:36:21+00:00",
+   "checked_at": "2026-11-07T06:30:36+00:00",
    "commit": "f3f9b58f3f9a1c9879bd297bac33888d4d8b801f",
    "name": "agentmail",
    "description": "Email infrastructure for AI agents. Create accounts, send/receive emails, manage webhooks, and check karma balance via the AgentMail API."
@@ -24946,7 +24946,7 @@
    "repo": "vamseeachanta/workspace-hub",
    "branch": "main",
    "digest": "sha256:6338f959dd6a2218c37af64fbc81d7621afd3e77ffdcd19ecb23efc4df81285c",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "ixv1u3gavbhtywnqkn9cbq54n_pf6nz6xgoftas_hr4": {
    "status": "pinned",
@@ -25451,12 +25451,12 @@
    "description": "Create and edit JSON Canvas files (.canvas) with nodes, edges, groups, and connections. Use when working with .canvas files, creating visual canvases, mind maps, flowcharts, or when the user mentions Canvas files in Obsidian."
   },
   "jboekl_zzgcmmzbzadtmc46ia67zk62b_ovm1meay48": {
-   "status": "bundled_files",
+   "status": "upstream_changed",
    "archive_path": "devops/ship-gate-alirezarezvani-claude-skills/SKILL.md",
    "repo": "alirezarezvani/claude-skills",
    "branch": "main",
    "digest": "sha256:05f7eee0d78735f3076fc02c732e4c660f55e2f058922e1ef46280a414294fa5",
-   "checked_at": "2026-10-31T06:11:23+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "jc5jofnk7wu04gjcu6clpqebhiseoig32lyniostfw4": {
    "status": "upstream_changed",
@@ -25959,18 +25959,6 @@
    "commit": "d07ff4b06b62f43771bc0c927d0211b734d6149e",
    "name": "pint-compute",
    "description": "Unit-aware computation with Pint - convert units, dimensional analysis, unit arithmetic"
-  },
-  "jloumd4yeyyzezzzpsxg5ucyayywketgs9v8teigrzk": {
-   "status": "pinned",
-   "path": ".github/skills/copilot-spaces/SKILL.md",
-   "archive_path": "other/copilot-spaces-trumedia-creative-live-events-dashboar/SKILL.md",
-   "repo": "TruMedia-Creative/live-events-dashboard",
-   "branch": "main",
-   "digest": "sha256:c347924bb11b4a506d0f2ed584d004f04191a9ca4c3acdd0a5e72796d2cf8e7a",
-   "checked_at": "2026-11-01T06:29:36+00:00",
-   "commit": "ba021c0846a53566a3bfde95009077974d2da535",
-   "name": "copilot-spaces",
-   "description": "Use Copilot Spaces to provide project-specific context to conversations. Use this skill when users mention a \"Copilot space\", want to load context from a shared knowledge base, discover available spaces, or ask questions grounded in curated project documentation, code, and instructions."
   },
   "jluhpgqiowaygeveh6qoacftin5f16er4ejd2vh7noe": {
    "status": "bundled_files",
@@ -27316,7 +27304,7 @@
    "repo": "xanderc123/Zhizhu-Tong-BA-RAG",
    "branch": "main",
    "digest": "sha256:9e28e027326a20ba8f7fa93d931452725a5ad9e0a1c8d89b13eba76de5ed2e4a",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "kfcqrviurxciw-3n6aqcsmsnztkx9x58nmy8ro5jqyw": {
    "status": "ambiguous",
@@ -27612,8 +27600,8 @@
    "repo": "backnotprop/pstack",
    "branch": "main",
    "digest": "sha256:5a3cbe63360c9f6373b6cb6c79a1eaf7e0eba181bfaa1577e2e6431af3407282",
-   "checked_at": "2026-10-31T06:11:23+00:00",
-   "commit": "25abb38559ddbabec563646224d09eff9a250eca",
+   "checked_at": "2026-11-07T06:30:36+00:00",
+   "commit": "f104aa8f821a3f7397318b0dc8ad2f7e4a1f8bc7",
    "name": "setup-benny",
    "description": "Configure Benny and prepare its triage and repro automations. Use when installing Benny or changing its Slack, tracker, repository, routing, control, model, or budget settings."
   },
@@ -27782,7 +27770,7 @@
    "repo": "yanacuti1121/Yana-AI",
    "branch": "main",
    "digest": "sha256:939d8443d65b7e50c437045ab56790386f39c37d06baa2090ae395a362ccf742",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "kpntvggznvymjwov3kz2jtgtqliuahtvecpjxaqdazo": {
    "status": "bundled_files",
@@ -27858,7 +27846,7 @@
    "repo": "wso2/labs-agentic-engineer",
    "branch": "main",
    "digest": "sha256:7c62de979fdc7ac32fb5ddb2146156c917f80ee070d30fadc9d40343c4b6ed25",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "krrryecfg40-jc2mwrdx-reppibv0rhekhsuczjyhm0": {
    "status": "upstream_changed",
@@ -28177,7 +28165,7 @@
    "repo": "sinhoneyy/master-skills",
    "branch": "master",
    "digest": "sha256:8867e51eb0fcdfd054039aa139a55db8565a4ed14f5e14fea976b504aa33c643",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "kypmq7tiddmtanhwnlxaqw7ul1k7ms6l5-y8rkzx2so": {
    "status": "ambiguous",
@@ -28480,7 +28468,7 @@
    "repo": "tt-a1i/matt-skills-with-to-goal",
    "branch": "main",
    "digest": "sha256:714de632d116bb73f65cdb5a882db15b9369a6713b9a47c0fad827848f0bfbe3",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "l5uuy8kjdn05lwjq8ppr93qx7_fojm7vcq-f_5qbmbk": {
    "status": "bundled_files",
@@ -28524,7 +28512,7 @@
    "repo": "yanacuti1121/Yana-AI",
    "branch": "main",
    "digest": "sha256:b5b2bac1adbd3ffc0b34f589ff26b06ececc7d9f896c5a305b89aa834b0bb254",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "l6syoxok0odqwck1ghj3wjil_v6deu52pkrzcbq-_t0": {
    "status": "upstream_changed",
@@ -28619,7 +28607,7 @@
    "repo": "xanderc123/Zhizhu-Tong-BA-RAG",
    "branch": "main",
    "digest": "sha256:8a48c76ee18eddf8887ddbc221b5fcb3396760ff55b002f71131820068b01f1d",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "laa2dzyxytwgs8t7wdxxhahup4qy7j9_zjxql4frvna": {
    "status": "bundled_files",
@@ -29096,12 +29084,12 @@
    "description": "Prompt for creating the high-level technical architecture for an Epic, based on a Product Requirements Document."
   },
   "ljvxiqdxvx-4yzniykacw9neldizkogwlcmkw8-_-tc": {
-   "status": "bundled_files",
+   "status": "upstream_changed",
    "archive_path": "other/aeo-alirezarezvani-claude-skills/SKILL.md",
    "repo": "alirezarezvani/claude-skills",
    "branch": "main",
    "digest": "sha256:c2b1fe51416b7e4e951ce55072d937c4c5783b92573c88714c58e27cefa862fe",
-   "checked_at": "2026-10-31T06:11:23+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "ljwkcbwgt3_c1ll0s3au1_ksidlmb4vdhptfoeaitsw": {
    "status": "bundled_files",
@@ -29284,7 +29272,7 @@
    "repo": "thai06052003/Tool-Kit-for-AI-Agent",
    "branch": "main",
    "digest": "sha256:79ec7275734ceb97dedc22af22a826c81e8b738739059ff6486ab9189279152f",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "loo5_i_fovq-v0yxzlukeak6grfzdiibflts_fl3x-c": {
    "status": "ambiguous",
@@ -29719,8 +29707,8 @@
    "repo": "backnotprop/pstack",
    "branch": "main",
    "digest": "sha256:bd286e5a6290673be2cd28aef7af2ec7f1fb138e6bce156ea657368c7e7fc8a4",
-   "checked_at": "2026-10-31T06:11:23+00:00",
-   "commit": "25abb38559ddbabec563646224d09eff9a250eca",
+   "checked_at": "2026-11-07T06:30:36+00:00",
+   "commit": "f104aa8f821a3f7397318b0dc8ad2f7e4a1f8bc7",
    "name": "teach",
    "description": "Explain a body of work plainly so a person actually understands it. Runs the `how` and `why` skills and weaves what they find into one clear explanation. Use for 'teach me this', 'help me really understand X', 'explain this change or subsystem to me'."
   },
@@ -29742,7 +29730,7 @@
    "repo": "yanacuti1121/Yana-AI",
    "branch": "main",
    "digest": "sha256:51d5b461ebd92f5c6f26eca1bb07c46ad4978dfae876b4d122ce802871a66326",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "lwt9btbjstgdxslqswjifzmsnbinogktwxly7tqltmg": {
    "status": "pinned",
@@ -29895,8 +29883,8 @@
    "repo": "backnotprop/pstack",
    "branch": "main",
    "digest": "sha256:aa329d0ceeeecb6822a7174ad76bb07a7826a3c52ceb6a588dec4138815084bb",
-   "checked_at": "2026-10-31T06:11:23+00:00",
-   "commit": "25abb38559ddbabec563646224d09eff9a250eca",
+   "checked_at": "2026-11-07T06:30:36+00:00",
+   "commit": "f104aa8f821a3f7397318b0dc8ad2f7e4a1f8bc7",
    "name": "bro",
    "description": "Restate the last message in plain human language, with no jargon."
   },
@@ -29998,7 +29986,7 @@
    "repo": "yanacuti1121/Yana-AI",
    "branch": "main",
    "digest": "sha256:fd578d63aace6efb41f311a8692cb0f75e866ff9b774cadcdd4bec2dc9992053",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "m42jo32_kpp7qje4nd4a_cpbfnbaybgjzui2nysewtu": {
    "status": "pinned",
@@ -30299,7 +30287,7 @@
    "repo": "wellingtonspdev/skills-wsp",
    "branch": "main",
    "digest": "sha256:5125235cd4c461c00e07ec686339677f6b2b9262a526d5134354d3a920c475d5",
-   "checked_at": "2026-10-30T10:36:21+00:00",
+   "checked_at": "2026-11-07T06:30:36+00:00",
    "commit": "f3f9b58f3f9a1c9879bd297bac33888d4d8b801f",
    "name": "issues",
    "description": "Interact with GitHub issues - create, list, and view issues."
@@ -31101,7 +31089,7 @@
    "repo": "sinhoneyy/master-skills",
    "branch": "master",
    "digest": "sha256:5485b7643d174d316bbd7afc3f8e57dc9edf32bc3d3ab8ef2f10c55b5d8e0e66",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "mp_kuobuxvytbo7boz96wr4lj-qlszmliobajj66wp0": {
    "status": "bundled_files",
@@ -31899,7 +31887,7 @@
    "repo": "shortcuts/locationjoystick",
    "branch": "main",
    "digest": "sha256:9ea361c8617aaabb0dada200c0bbe3f3eb9e4a28d44366b1d3a6e4ef600e96e2",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "n6wa6c5kkumonvfk63yn42qabhcymkp4tkmysrlw704": {
    "status": "pinned",
@@ -32014,7 +32002,7 @@
    "repo": "yanacuti1121/Yana-AI",
    "branch": "main",
    "digest": "sha256:1eddd49bbd960624850f7d9668bf00bbc626b6fc05ecb642a80f9965b5cefe9a",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "nbd_e8w2moa8lzqdgigfyabbflqqae-rymlp_ggebaa": {
    "status": "upstream_changed",
@@ -32106,7 +32094,7 @@
    "repo": "tt-a1i/matt-skills-with-to-goal",
    "branch": "main",
    "digest": "sha256:5505d25bbaa8fc14a79e4d20163936958992a2995b7f1dd1d6197edc9ed722e0",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "ndhayeyuzbabtvqfy8efhhlvd9-xxxfimssnw9ewvsm": {
    "status": "bundled_files",
@@ -32258,7 +32246,7 @@
    "repo": "sinhoneyy/master-skills",
    "branch": "master",
    "digest": "sha256:39dcfb0d50983bbfaf2b25876ce5fe4fb23b2cf5b3d5469191de9c349743af20",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "nexatup00denvuqb-tslptaryjkeahncmibmzejlo8g": {
    "status": "pinned",
@@ -32668,7 +32656,7 @@
    "repo": "sinhoneyy/master-skills",
    "branch": "master",
    "digest": "sha256:490d49b6be9169c3e992b2ddbce7c8e4f88c95a5c574a9007cef7d1b2d7937a2",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "nlqxcn1wmndpsblblnwbrszsxgtqenzqm_qdzdb8a64": {
    "status": "ambiguous",
@@ -32794,7 +32782,7 @@
    "repo": "vedantlavale/billy",
    "branch": "main",
    "digest": "sha256:327a2b50620e2fd70abc6893cd6965e76b20f8d0adb0dc2c8d5eb3845efb643e",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "nnikcbmsowg3cpabplw-t5z3t99f6w78_nlttuo-_es": {
    "status": "bundled_files",
@@ -33255,7 +33243,7 @@
    "repo": "wellingtonspdev/skills-wsp",
    "branch": "main",
    "digest": "sha256:d983d65da72ba3f8b2af9814fa16eb9e28f99d9b1012434adeb2ed430fc3a133",
-   "checked_at": "2026-10-30T10:36:21+00:00",
+   "checked_at": "2026-11-07T06:30:36+00:00",
    "commit": "f3f9b58f3f9a1c9879bd297bac33888d4d8b801f",
    "name": "qiskit",
    "description": "Qiskit is the world's most popular open-source quantum computing framework with 13M+ downloads. Build quantum circuits, optimize for hardware, execute on simulators or real quantum computers, and analyze results. Supports IBM Quantum (100+ qubit systems), IonQ, Amazon Braket, and other providers."
@@ -33405,8 +33393,8 @@
    "repo": "backnotprop/pstack",
    "branch": "main",
    "digest": "sha256:ccab208e315ce05e2fab8eeee2f7879f1289b5c6844840b2d307adf31c79144f",
-   "checked_at": "2026-10-31T06:11:23+00:00",
-   "commit": "25abb38559ddbabec563646224d09eff9a250eca",
+   "checked_at": "2026-11-07T06:30:36+00:00",
+   "commit": "f104aa8f821a3f7397318b0dc8ad2f7e4a1f8bc7",
    "name": "unslop",
    "description": "Cut AI tells from any writing."
   },
@@ -33439,7 +33427,7 @@
    "repo": "sinhoneyy/master-skills",
    "branch": "master",
    "digest": "sha256:4f94a5087913ccf3b8ff64c06d09a9774ce97025f9b3a2d414b4013e6490bcbb",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "nzsdzfz2ghol8uhvdg11jjnphd5boixzfzyx8bjk-ei": {
    "status": "pinned",
@@ -33719,7 +33707,7 @@
    "repo": "yanacuti1121/Yana-AI",
    "branch": "main",
    "digest": "sha256:4df675e996fce9e6a0b059231db36b0b53eeb937201c447ccccceaeb561748e5",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "o9ham8zjfmhqlr8yydsj_pildo4spjy5hscr8bl_ybw": {
    "status": "pinned",
@@ -34255,7 +34243,7 @@
    "repo": "yanacuti1121/Yana-AI",
    "branch": "main",
    "digest": "sha256:dcd78a3718c3f2227695033c42cd194fbc073c8decc663fd5140a2c76e68f162",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "ok1a4ghdg1uzy67w6ncgywom4ajro1skyrxwpw1u7ry": {
    "status": "ambiguous",
@@ -36774,7 +36762,7 @@
    "repo": "vamseeachanta/workspace-hub",
    "branch": "main",
    "digest": "sha256:1f792db420a1002fb724d75574f864a5257027dec25f00fa1906d9e70a7985a7",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "q2oupao3qqkv2qtmcwjn9-iuqxmqf_a_sywsffu9psk": {
    "status": "ambiguous",
@@ -37256,7 +37244,7 @@
    "repo": "yanacuti1121/Yana-AI",
    "branch": "main",
    "digest": "sha256:3497bd672c185df19a2205190f897fddf64f9b55a599ad3c24443b87241139e6",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "qfc75m4lufewiqgifjo-thhchevtph12lmx4bkfnlwm": {
    "status": "pinned",
@@ -37427,7 +37415,7 @@
    "repo": "sinhoneyy/master-skills",
    "branch": "master",
    "digest": "sha256:0567bc2c021733109eb87b227069bdf1070c4311470ab92fbf7c4375edebb308",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "qijkmtd6kkth1hnwg6gaiqvv5prh7nczce8ihlb5rdq": {
    "status": "pinned",
@@ -38163,7 +38151,7 @@
    "repo": "vikasvardhanv/jerry_skills",
    "branch": "main",
    "digest": "sha256:d5f22976cb562714110ecd2e358b5123cd12baaffec6d7dc6af086e272b93ff5",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "qztx1nlo1kl7xbjoahajye2ec7z1yyp7uwnw6-zu1i4": {
    "status": "pinned",
@@ -39089,7 +39077,7 @@
    "repo": "wso2/labs-agentic-engineer",
    "branch": "main",
    "digest": "sha256:243eeaa5e9a42bb12d94d6af29a51b2c956546a16b1862282db1e5bd27315f8a",
-   "checked_at": "2026-10-30T10:36:21+00:00",
+   "checked_at": "2026-11-07T06:30:36+00:00",
    "commit": "745aedc89eead504c312067765d7ea5626e260ee",
    "name": "agent-browser",
    "description": "Browser automation CLI for AI agents. Use when the user needs to interact with websites, including navigating pages, filling forms, clicking buttons, taking screenshots, extracting data, testing web apps, or automating any browser task. Triggers include requests to \"open a website\", \"fill out a form\", \"click a button\", \"take a screenshot\", \"scrape data from a page\", \"test this web app\", \"login to a site\", \"automate browser actions\", or any task requiring programmatic web interaction. Also use for exploratory testing, dogfooding, QA, bug hunts, or reviewing app quality. Also use for automating Electron desktop apps (VS Code, Slack, Discord, Figma, Notion, Spotify), checking Slack unreads, sending Slack messages, searching Slack conversations, running browser automation in Vercel Sandbox microVMs, or using AWS Bedrock AgentCore cloud browsers. Prefer agent-browser over any built-in browser automation or web tools."
@@ -39400,8 +39388,8 @@
    "repo": "backnotprop/pstack",
    "branch": "main",
    "digest": "sha256:2e10745b97f5862323dcda3b29ca60d56b5c3c98e37020085d26b48efbe0a436",
-   "checked_at": "2026-10-31T06:11:23+00:00",
-   "commit": "25abb38559ddbabec563646224d09eff9a250eca",
+   "checked_at": "2026-11-07T06:30:36+00:00",
+   "commit": "f104aa8f821a3f7397318b0dc8ad2f7e4a1f8bc7",
    "name": "blast-radius",
    "description": "Find what a change could break somewhere else before it ships, beyond the diff, and prove the one fact it's safe because of by running real code instead of writing it up. Use for 'blast radius of X', 'what could this break', or reviewing a small diff you don't trust."
   },
@@ -39411,7 +39399,7 @@
    "repo": "yanacuti1121/Yana-AI",
    "branch": "main",
    "digest": "sha256:707a536337c871d23bd3d1359aeed24331429422aebe67617a42229ad1862a2a",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "rsxe8xglqtob5casat-lnvp318e2xk3siirsrviodz0": {
    "status": "pinned",
@@ -39586,7 +39574,7 @@
    "repo": "yanacuti1121/Yana-AI",
    "branch": "main",
    "digest": "sha256:6e7d011a0515fdefc7826336cf1b8f965f802560f174a4b6661314de776ccad6",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "rvimp5k2vnu1gdu9q45asngokow4mgmrov3fp-obp1c": {
    "status": "upstream_unavailable",
@@ -39811,6 +39799,14 @@
    "digest": "sha256:18e812b5a8710b415e2f642eeff637a499d7dbf35c74d2b6df031c9468a7e8bf",
    "checked_at": "2026-11-01T06:29:36+00:00"
   },
+  "ryszaqke75z77qpafn8k3hnqjjufqnhookkpmmf68ws": {
+   "status": "bundled_files",
+   "archive_path": "other/rag-architect-youlianvr-oper-share/SKILL.md",
+   "repo": "youlianvr/oper-share",
+   "branch": "master",
+   "digest": "sha256:5cdf05a3ea5645f04a9e9eb08a5a1d1dd332c280b3ddd2eb5624e348f7a0bb27",
+   "checked_at": "2026-11-07T06:30:36+00:00"
+  },
   "rywmyrbm9z3wtpizuxvg0dgji09-hdvfplmlf2j7hlm": {
    "status": "upstream_changed",
    "archive_path": "development/matlab-k-dense-ai-claude-scientific-sk/SKILL.md",
@@ -39873,7 +39869,7 @@
    "repo": "yanacuti1121/Yana-AI",
    "branch": "main",
    "digest": "sha256:c411d3d9ade2cb11f297d4281087cc60fe38cadde22189761fb8cdcfa0d98db3",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "s0lyinxcdf2egimcmpx0bcu66relfwmguwyzc_extj8": {
    "status": "upstream_changed",
@@ -41351,7 +41347,7 @@
    "repo": "shortcuts/locationjoystick",
    "branch": "main",
    "digest": "sha256:6a93e68b5d843ab6da3290dfe81cfdf26de166be7f3feca5acb52744f63db593",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "svt3gzaii6y39vqx1vks9s7ul--sxfn3xrfapdnet8m": {
    "status": "upstream_changed",
@@ -41895,7 +41891,7 @@
    "repo": "yehia-alhaddad/workout-logger-flutter",
    "branch": "main",
    "digest": "sha256:854518b991d4ba2fc0a4c1870ca0a61d3fbd8090107083de15e5492bcdcc3053",
-   "checked_at": "2026-10-30T10:36:21+00:00",
+   "checked_at": "2026-11-07T06:30:36+00:00",
    "commit": "0f469f5a8b92db04e3f44c2b0cb9865491862d53",
    "name": "plotly",
    "description": "Interactive visualization library. Use when you need hover info, zoom, pan, or web-embeddable charts. Best for dashboards, exploratory analysis, and presentations. For static publication figures use matplotlib or scientific-visualization."
@@ -41992,7 +41988,7 @@
    "repo": "wso2/labs-agentic-engineer",
    "branch": "main",
    "digest": "sha256:6d3fd9e83b8f36e5213854779db49b256a457a7ebb4a503e53fa7dcff696adc3",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "tdnst978vn5wyfjg4y_wbe_uen_31g7y9sx673b-v6o": {
    "status": "upstream_changed",
@@ -42232,7 +42228,7 @@
    "repo": "vedantlavale/billy",
    "branch": "main",
    "digest": "sha256:c861ee8c94debe24e28fe3f7d567883ed95ad9741fb8a4227fe217db8667fa78",
-   "checked_at": "2026-10-30T10:36:21+00:00",
+   "checked_at": "2026-11-07T06:30:36+00:00",
    "commit": "90efab5f329ee8ca115ff996f8781c6be0db4861",
    "name": "unslop",
    "description": "Cut AI tells from text you write or edit for a human reader (commit messages, PR titles and bodies, docs, code comments, replies). Apply before committing, posting, or sending; leave prose you didn't touch alone."
@@ -42458,7 +42454,7 @@
    "repo": "sinhoneyy/master-skills",
    "branch": "master",
    "digest": "sha256:a3a5c9728f6df53f0eb13038f73a0ae0ee507d96a088eb396c443ed9251a4221",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "tmm15_ufosb5fs7fareenrhrok6o-f1cy_2dfrde10y": {
    "status": "upstream_unavailable",
@@ -42557,7 +42553,7 @@
    "repo": "yanacuti1121/Yana-AI",
    "branch": "main",
    "digest": "sha256:3e560c9da02ca529eda939bd3634635288a252ada6be18c16ad527bb8fab851e",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "topvqdbnyj0snximnkvxet6t6kdfdpdikzv59vqcgdc": {
    "status": "ambiguous",
@@ -42645,7 +42641,7 @@
    "repo": "yanacuti1121/Yana-AI",
    "branch": "main",
    "digest": "sha256:d90261fd5e38625bb0c7aadacca1a954a16f6d0101c451511a6f049dd1769416",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "tqlzvgad7p9zxwuh9g8dszfvjfu6ge-r8bvuekaanwk": {
    "status": "upstream_changed",
@@ -42753,7 +42749,7 @@
    "repo": "youlianvr/oper-share",
    "branch": "master",
    "digest": "sha256:4cfde3d91a559bb2f65898ebac50c0b3260e0aeab9c5f733b346d50021f1d1aa",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "tsjen9hmhtg69y8gtli1yxnmolz843v-lyzqcgwm9u8": {
    "status": "upstream_changed",
@@ -42947,7 +42943,7 @@
    "repo": "tt-a1i/matt-skills-with-to-goal",
    "branch": "main",
    "digest": "sha256:09eb147f793e4647949edd32dbad278f0554dfb56e0d46b699cd4c2c55bf0357",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "twc3rx2gsmytrnmef1z4u0ku7thafksvivu7z6v6ag4": {
    "status": "bundled_files",
@@ -43051,7 +43047,7 @@
    "repo": "yanacuti1121/Yana-AI",
    "branch": "main",
    "digest": "sha256:b773edca0b17021248381c801316c8e1677f3c3c0e0a4e33e21df8d42285956c",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "tym0dsftqwqf1wy3jrg0h2id6jm70zk3cpb6u6wh0h4": {
    "status": "upstream_changed",
@@ -43478,7 +43474,7 @@
    "repo": "vedantlavale/billy",
    "branch": "main",
    "digest": "sha256:2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "u9rk1gjv76w44pralhmql3ynfd34gq_fmtn__pzwhui": {
    "status": "pinned",
@@ -43812,8 +43808,8 @@
    "repo": "tmcfarlane/team-avatar",
    "branch": "main",
    "digest": "sha256:e38e0eaa609316b10423a9a138ed95e35099accd3f735585295c8a8f165c28a3",
-   "checked_at": "2026-10-30T10:36:21+00:00",
-   "commit": "1a301358f7fa8786a5fb8151aea47d93ca547f54",
+   "checked_at": "2026-11-07T06:30:36+00:00",
+   "commit": "3c96f323423abf9fbb9235aac3f259f9ddec5cb6",
    "name": "vercel-composition-patterns",
    "description": "React composition patterns that scale. Use when refactoring components with boolean prop proliferation, building flexible component libraries, or designing reusable APIs. Triggers on tasks involving compound components, render props, context providers, or component architecture. Includes React 19 API changes."
   },
@@ -43929,7 +43925,7 @@
    "repo": "yanacuti1121/Yana-AI",
    "branch": "main",
    "digest": "sha256:0f48302235ffcbc341825f54d7d51ff11b0a93f2fc3d939d0151b98b2750b1e4",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "uhi3ae2fgnmkk9gctanncf6lgdjc5xkffntygenijis": {
    "status": "bundled_files",
@@ -43954,7 +43950,7 @@
    "repo": "sinhoneyy/master-skills",
    "branch": "master",
    "digest": "sha256:ac90d59f83c7fcb4a3e63376d6546aa17f5d134f204bc08881a0f7fff4777ade",
-   "checked_at": "2026-10-30T10:36:21+00:00",
+   "checked_at": "2026-11-07T06:30:36+00:00",
    "commit": "8e70b780359915a1f197ca37a1add2d4016115a2",
    "name": "promote",
    "description": "Graduate a proven pattern from auto-memory (MEMORY.md) to CLAUDE.md or .claude/rules/ for permanent enforcement. Use when the user runs /si:promote or asks to make a learned behavior permanent."
@@ -44397,8 +44393,8 @@
    "repo": "shengdabai/Tony-Claude-Code-Skills",
    "branch": "main",
    "digest": "sha256:71caee1a977ed307df1fa74adb9b0e9c13ee168e6fda964f602f0b4dba6b7ea0",
-   "checked_at": "2026-10-30T10:36:21+00:00",
-   "commit": "c05bc40081435302a8861ee1dac134b323a2adac",
+   "checked_at": "2026-11-07T06:30:36+00:00",
+   "commit": "7850740bd837adb32f0a109ab2af82482196c6f2",
    "name": "optimize",
    "description": "Diagnoses and fixes UI performance across loading speed, rendering, animations, images, and bundle size. Use when the user mentions slow, laggy, janky, performance, bundle size, load time, or wants a faster, smoother experience."
   },
@@ -44601,7 +44597,7 @@
    "repo": "wellingtonspdev/skills-wsp",
    "branch": "main",
    "digest": "sha256:d642004848db1a1d5fecb15770f1666423b9b26f52cfee8809a7876934a9915c",
-   "checked_at": "2026-10-30T10:36:21+00:00",
+   "checked_at": "2026-11-07T06:30:36+00:00",
    "commit": "f3f9b58f3f9a1c9879bd297bac33888d4d8b801f",
    "name": "speed",
    "description": "Launch RSVP speed reader for text"
@@ -44753,8 +44749,8 @@
    "repo": "backnotprop/pstack",
    "branch": "main",
    "digest": "sha256:ec79a15025bac8d33d62011c54f3b612733fd2a024e623b531b3637aa75070e2",
-   "checked_at": "2026-10-31T06:11:23+00:00",
-   "commit": "25abb38559ddbabec563646224d09eff9a250eca",
+   "checked_at": "2026-11-07T06:30:36+00:00",
+   "commit": "f104aa8f821a3f7397318b0dc8ad2f7e4a1f8bc7",
    "name": "principle-prove-it-works",
    "description": "Apply after completing a task, before declaring done. Verify against the real artifact (run the feature, read the actual value, inspect the diff), not a proxy, self-report, or 'it compiles.'"
   },
@@ -44797,8 +44793,8 @@
    "repo": "backnotprop/pstack",
    "branch": "main",
    "digest": "sha256:eeb868e2dfebee528d730a67d7b17498fac4bb85dec2e38bc5c5176aca4d5d2f",
-   "checked_at": "2026-10-31T06:11:23+00:00",
-   "commit": "25abb38559ddbabec563646224d09eff9a250eca",
+   "checked_at": "2026-11-07T06:30:36+00:00",
+   "commit": "f104aa8f821a3f7397318b0dc8ad2f7e4a1f8bc7",
    "name": "tdd",
    "description": "Use only when the user explicitly asks for TDD, a failing test, or a regression test, OR when the bug has an obvious cheap local test target. Skip when the test path is unclear, expensive, integration-heavy, or not requested."
   },
@@ -45014,12 +45010,12 @@
    "description": "Automates browser interactions for web testing, form filling, screenshots, and data extraction. Use when the user needs to navigate websites, interact with web pages, fill forms, take screenshots, test web applications, or extract information from web pages."
   },
   "v2tyof5wgndzoy8ivphvb-inlbsc-kl0sc05zqay0i8": {
-   "status": "bundled_files",
+   "status": "upstream_changed",
    "archive_path": "other/capa-officer-alirezarezvani-claude-skills/SKILL.md",
    "repo": "alirezarezvani/claude-skills",
    "branch": "main",
    "digest": "sha256:3a3577e78544216783cd5aadf0cfa8c5b0c7539934d139d87dc964bb8a076a95",
-   "checked_at": "2026-10-31T06:11:23+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "v3uddit0jkdmpyx7wqqwqsvbybc5dlolkxhzs78tvu8": {
    "status": "upstream_unavailable",
@@ -45042,7 +45038,7 @@
    "repo": "vamseeachanta/workspace-hub",
    "branch": "main",
    "digest": "sha256:bc68b1648e301409bc25b1084ec26766213ca9f3c1b2fd3d3d6ebe3dbde9e967",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "v57qrg-so23yugnbklinybxsrefcoma5ovt_q_lx5zc": {
    "status": "upstream_changed",
@@ -45519,8 +45515,8 @@
    "repo": "backnotprop/pstack",
    "branch": "main",
    "digest": "sha256:10eb91633aa570355ba4bb37088fcade2b22e498df7a58edc749e65bc5a78e2d",
-   "checked_at": "2026-10-31T06:11:23+00:00",
-   "commit": "25abb38559ddbabec563646224d09eff9a250eca",
+   "checked_at": "2026-11-07T06:30:36+00:00",
+   "commit": "f104aa8f821a3f7397318b0dc8ad2f7e4a1f8bc7",
    "name": "principle-outcome-oriented-execution",
    "description": "Apply during planned rewrites and migrations with explicit phase boundaries. Converge on the target architecture; don't preserve smooth intermediate states with throwaway compatibility code."
   },
@@ -46395,7 +46391,7 @@
    "repo": "vamseeachanta/workspace-hub",
    "branch": "main",
    "digest": "sha256:c6281df359af0182aa8e7fcc6d293bcdaf22b8e8b6d9e8e7efe65fa3eb5c0762",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "vxpivlhumdqi4chc8um01j97quhhpvnylcy0hxhz-fo": {
    "status": "pinned",
@@ -47875,7 +47871,7 @@
    "repo": "yanacuti1121/Yana-AI",
    "branch": "main",
    "digest": "sha256:410f63421118bf740f66d3c8fff5f7c4c4c945edc5e673c3675239de50795e86",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "wv9ahohxpzv8zqxdqr2t_kzvsqpm44nyw4ysavh_q4a": {
    "status": "upstream_unavailable",
@@ -48657,7 +48653,7 @@
    "repo": "backnotprop/pstack",
    "branch": "main",
    "digest": "sha256:1363cc07343fe86aab42853b1bd4563288cbcbdf12f1c265b3b3b1afa25c09cb",
-   "checked_at": "2026-10-31T06:11:23+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "xi3l3kfhhqwic3ukwnv3t8jyxafof4eo6pqvv6kpxym": {
    "status": "bundled_files",
@@ -49900,7 +49896,7 @@
    "repo": "yanacuti1121/Yana-AI",
    "branch": "main",
    "digest": "sha256:3affa17eba5719673d182a86c0843a68742c7cdd7377de5706e216eccae9239b",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "yc4edgp7zlujpcqskd98fsitr5hofuiyuhlr_n5dqm8": {
    "status": "ambiguous",
@@ -49916,7 +49912,7 @@
    "repo": "wso2/labs-agentic-engineer",
    "branch": "main",
    "digest": "sha256:623a2ed692bdc77d2090e2a3dea3b627dd722ad3bbaca0be83aada75292c8fc4",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "ycdf4blmhgdye53zuwx9jnnzvkk2pea-9yeaicvanzo": {
    "status": "bundled_files",
@@ -50578,7 +50574,7 @@
    "repo": "sinhoneyy/master-skills",
    "branch": "master",
    "digest": "sha256:70e12e32f9ed0eec5e2d447e1c58d53744c71bccbda4f36d5ddc1e655367a931",
-   "checked_at": "2026-10-30T10:36:21+00:00",
+   "checked_at": "2026-11-07T06:30:36+00:00",
    "commit": "8e70b780359915a1f197ca37a1add2d4016115a2",
    "name": "browserstack",
    "description": "Run tests on BrowserStack. Use when user mentions \"browserstack\", \"cross-browser\", \"cloud testing\", \"browser matrix\", \"test on safari\", \"test on firefox\", or \"browser compatibility\"."
@@ -51187,8 +51183,8 @@
    "repo": "tmcfarlane/team-avatar",
    "branch": "main",
    "digest": "sha256:50b55178a2da8ee931850193596601fa0517cd800e171366a903769f25bf4dda",
-   "checked_at": "2026-10-30T10:36:21+00:00",
-   "commit": "1a301358f7fa8786a5fb8151aea47d93ca547f54",
+   "checked_at": "2026-11-07T06:30:36+00:00",
+   "commit": "3c96f323423abf9fbb9235aac3f259f9ddec5cb6",
    "name": "vercel-react-best-practices",
    "description": "React and Next.js performance optimization guidelines from Vercel Engineering. This skill should be used when writing, reviewing, or refactoring React/Next.js code to ensure optimal performance patterns. Triggers on tasks involving React components, Next.js pages, data fetching, bundle optimization, or performance improvements."
   },
@@ -51360,7 +51356,7 @@
    "repo": "shortcuts/locationjoystick",
    "branch": "main",
    "digest": "sha256:b74f374f6aae6e9a31e78e7d876860406fe5833378e9298536edf176c12f379b",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "zawqqdhvkrnpsaendjlyo59xiuxc445ofpcfwb-pa5e": {
    "status": "ambiguous",
@@ -51524,7 +51520,7 @@
    "repo": "sinhoneyy/master-skills",
    "branch": "master",
    "digest": "sha256:689947e18e7841dd8293f9084a5225940a5c51932d96118f80c13d038b4962dc",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "zdm2hpzbbn5fucg8nstmcatn63nr8z-yefylkmxyaae": {
    "status": "ambiguous",
@@ -51556,7 +51552,7 @@
    "repo": "wso2/labs-agentic-engineer",
    "branch": "main",
    "digest": "sha256:2bcd89e97777cdb705914424e39c97d5db524c8eb4eafac8120778a07774f0ec",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "ze_xwhh3k1vajphfunilazztk-7ib9ja1jr9vjycstk": {
    "status": "invalid_frontmatter",
@@ -51907,7 +51903,7 @@
    "repo": "yanacuti1121/Yana-AI",
    "branch": "main",
    "digest": "sha256:05efdb1872e815c60d909642c6d16f2f277dbaf0b9112d0736c83f9d6777be61",
-   "checked_at": "2026-10-30T10:36:21+00:00"
+   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "zlqwwodzerjd-shb-mw-lcs5ywwk6k-korqhtsft4cy": {
    "status": "upstream_changed",

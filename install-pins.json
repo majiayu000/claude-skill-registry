@@ -365,7 +365,7 @@
    "error": "GitHub API 404: {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/branches/branches#get-a-branch\",\"status\":\"404\"}",
    "archive_path": "development/api-dev-whyzsm-tiny-agents/SKILL.md",
    "digest": "sha256:101f9a313cff52ef047071d66b75b3b041efdcd57837634ebc8fb16b24b9fd93",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "-h4oiompxyjhn4pudjrwi67tlvah2vwzu7wsursxmag": {
    "status": "pinned",
@@ -504,7 +504,7 @@
    "repo": "yigityildiz0/universal-ai-skill-library",
    "branch": "main",
    "digest": "sha256:9099c8a9924a5d1d2583c3a5fa7363a2ab66f7d9e0670616f6eed96574c672d7",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "-mjc7pespyoqsuwlsegtw-tt3sgaqs4st_2yr-pswqa": {
    "status": "bundled_files",
@@ -617,7 +617,7 @@
    "repo": "Prasanth595/agentic-awesome-skills",
    "branch": "main",
    "digest": "sha256:552f9936c83baeda5f6e3cb37aa0727c3b082d187ec044e1b31ebb954d1728f9",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "bbc23d18a5d4a680c3017fc9eed88d5e0dcd040e",
    "name": "anywrite",
    "description": "Compiled CLI covering all 52 endpoints of the Anytype local API — objects, properties, tags, search, chat, files — one binary, no MCP server needed."
@@ -680,7 +680,7 @@
    "repo": "xuyinfor-crypto/claude-agent-engineer",
    "branch": "main",
    "digest": "sha256:8a01567022ae51d4cb26a4d36c359b5f1c278055ada8dc1e3568899c2636fdee",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "-tcjw6wpi9_fq6sxbqzzamt0k6uoaaojr_trmmazedm": {
    "status": "pinned",
@@ -950,7 +950,7 @@
    "repo": "RUS-TICurtis/Match_Maker_RenamHer",
    "branch": "main",
    "digest": "sha256:658a3ca4a167596fd5e8ab99cafa77165f0e2d19eddc6baf5bae5e39c89ba4d8",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "1b808c1e3ac8ba000c50d1b080c25cc15f2472c4",
    "name": "wordpress",
    "description": "Complete WordPress development workflow covering theme development, plugin creation, WooCommerce integration, performance optimization, and security hardening."
@@ -977,7 +977,7 @@
    "repo": "ruvnet/ruflo",
    "branch": "main",
    "digest": "sha256:7a888e3a30bf7880aa6c98dd0e05128d82893c966b2cded22550c26ac627c6c7",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "032xlkdj8ecmygrz9whyg9g-tjmu24seocjr3gatebo": {
    "status": "upstream_changed",
@@ -1084,7 +1084,7 @@
    "repo": "Zauwad/my-agentic-rig",
    "branch": "main",
    "digest": "sha256:590d6c6c17254bda56d18da7cc9d0bf252aeec5d1c78b77dd7ae4cabb8404f89",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "0ce-jy6ozk8w3bbure24eeed0gb22lvtzoi3jknzmfm": {
    "status": "bundled_files",
@@ -1215,7 +1215,7 @@
    "repo": "Bonny94ITA/BottegaWeb",
    "branch": "main",
    "digest": "sha256:e7193cfa7082217ef89d9dd942c06e578774c0a52808703417e4d83fd3b3104c",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "0i3kzmry-frdntin8eby9cgkg5oullyegkx95c6uldk": {
    "status": "pinned",
@@ -1224,7 +1224,7 @@
    "repo": "ndai0454-gif/Game_thanhgiong",
    "branch": "main",
    "digest": "sha256:ce8813df00b1b1f513c935fa6fcefd560c293e96fee02040a7705063a6afa7d2",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "ad2d6b9e69fd9d4ef9f177f1c4a66bf031c5b22b",
    "name": "launch-checklist",
    "description": "Launch readiness across every department: code, content, store, marketing, community, infrastructure, legal, go/no-go sign-offs."
@@ -1379,7 +1379,7 @@
    "repo": "Robertjam954/multimodal_rag_application",
    "branch": "main",
    "digest": "sha256:d3018c0de4b700f805cab55a40a16de7bab4ba3ed747f69819450c6edca891d7",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "0pimv4_cuwfpxcqherjh46wvxlli680sj56d7qudcwy": {
    "status": "bundled_files",
@@ -1387,7 +1387,7 @@
    "repo": "lovits/skills-manager-backup",
    "branch": "main",
    "digest": "sha256:24058eabf0aafce6def3fb937ac93cbe3fa341c653c658dc589edb77f73d6152",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "0qkzz6b6n88n7nlhezay_nfqlooqq3yelnl54ddj_8g": {
    "status": "bundled_files",
@@ -1615,7 +1615,7 @@
    "repo": "xenodeve/xeno-skills",
    "branch": "main",
    "digest": "sha256:2e64c269953f2656c21bf5a0fa6b4568e82fe0c72b36e8f84758e090349966a5",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "1-ilu1-hgyrwptmt47lifiqorflxs7vrvhgmsu8xk-m": {
    "status": "upstream_unavailable",
@@ -1818,7 +1818,7 @@
    "repo": "ibrdot/swe-re-expert",
    "branch": "main",
    "digest": "sha256:50f1cdd8e12a85a1fb4bc91454bef5b351f5d33073678f9547081ff7f4b8b105",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "27bc1374d177748b396fb37af7aab05f4619ea81",
    "name": "odw",
    "description": "Dynamic multi-agent workflows — plan first, then orchestrate parallel agents with adversarial verification via the local odw daemon. Use when the user asks for a \"workflow\", says \"ultracode\", or hands you a task spanning many files/items that benefits from parallel agents."
@@ -1899,7 +1899,7 @@
    "repo": "SriramGandhiS/Skills",
    "branch": "master",
    "digest": "sha256:b604608e30ac2b8f4f62dea3023efe2d3247b41a38c4156a6b6297173f2405a8",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "1i-8owcvpzpz0vy7t171ejhuz5n1ntgcgto2pathy1k": {
    "status": "upstream_unavailable",
@@ -1962,7 +1962,7 @@
    "repo": "RUS-TICurtis/Match_Maker_RenamHer",
    "branch": "main",
    "digest": "sha256:daae890f609e2c04ada9c09d55dff5833130edb4c45d39d8af1136533bf43a92",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "1b808c1e3ac8ba000c50d1b080c25cc15f2472c4",
    "name": "appdeploy",
    "description": "Deploy web apps with backend APIs, database, and file storage. Use when the user asks to deploy or publish a website or web app and wants a public URL. Uses HTTP API via curl."
@@ -1993,7 +1993,7 @@
    "repo": "SriramGandhiS/Skills",
    "branch": "master",
    "digest": "sha256:e92c9d8c58fdbd413299677642bcbd8815984fa32eacf2ef02d0567be7edd609",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "1lwiagrkkmealtte1pvtcps4atobskvccuj6qs5290a": {
    "status": "upstream_changed",
@@ -2130,7 +2130,7 @@
    "repo": "ruvnet/ruflo",
    "branch": "main",
    "digest": "sha256:a52792a1fd058b618e3916755f5b934d36c97fd46533268bc38c3fda3e3f4422",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "29be054e85636b61788f3955d0bd4d0bcbcfe3f6",
    "name": "agent-workflow",
    "description": "Agent skill for workflow - invoke with $agent-workflow"
@@ -2237,7 +2237,7 @@
    "repo": "Prasanth595/agentic-awesome-skills",
    "branch": "main",
    "digest": "sha256:a7b25eba12500321bc4cfbd1c797a16032fd02fd5a1e72170503f4e938a23831",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "1u5ydys7jc1rmivzjlrowcbsw4d8jblbmfbazywnotm": {
    "status": "upstream_changed",
@@ -2331,7 +2331,7 @@
    "error": "GitHub API 404: {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest\",\"status\":\"404\"}",
    "archive_path": "integration/hevy-moltbot-skills/SKILL.md",
    "digest": "sha256:bb0beb3ae533db3ba072c1f8b91f26dc8acfddd140e57bbaa455865c8fc34064",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "1vtq88r4lm8abvxhujybd1g51opwbk1q5qm8c7j6dfy": {
    "status": "ambiguous",
@@ -2339,7 +2339,7 @@
    "repo": "Prasanth595/agentic-awesome-skills",
    "branch": "main",
    "digest": "sha256:51ede785406b6bbd30a2c579d1e313dc939d121d8bfd91f8ac6addadb7b1c6ae",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "1wjxgeu9chifdm8vnefgogqi7eo_h8fyosqj4vgpayk": {
    "status": "pinned",
@@ -2547,7 +2547,7 @@
    "repo": "SeaXen/agentskills",
    "branch": "main",
    "digest": "sha256:11299c8a170286b24a040e965fc19d74d9d631b32a021678286e4480a24d1408",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "29qitdwbjqi3rzj6na47se4honm19y29gv9sh-m2s48": {
    "status": "bundled_files",
@@ -2677,7 +2677,7 @@
    "repo": "agisota/old-one",
    "branch": "main",
    "digest": "sha256:56d7fd86d73051e469092ce62a96b0954b6178c0ee2489a49f2d687b5a14a9d2",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "2dok6njb0qwdu5xotyixkvnluq648x4vzq5x693thpw": {
    "status": "upstream_unavailable",
@@ -2705,7 +2705,7 @@
    "repo": "RUS-TICurtis/Match_Maker_RenamHer",
    "branch": "main",
    "digest": "sha256:aa1b458f2614b4acd30c1747dc5ddc5ea5d5f50441e0ea1c2fcbaf2ff1320237",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "1b808c1e3ac8ba000c50d1b080c25cc15f2472c4",
    "name": "wiki-qa",
    "description": "Answers questions about a code repository using source file analysis. Use when the user asks a question about how something works, wants to understand a component, or needs help navigating the code..."
@@ -2736,7 +2736,7 @@
    "repo": "spencermarx/open-code-review",
    "branch": "main",
    "digest": "sha256:25858e4c4325f0d3db1227c657ff81ba62281566301c03ed4b4238e18a3aa177",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "2eoc0jo5nyufqsgfotsd0sbzsd2d6ka3ymem3_tldt4": {
    "status": "pinned",
@@ -2840,7 +2840,7 @@
    "repo": "spencermarx/open-code-review",
    "branch": "main",
    "digest": "sha256:4853ec2fec84a07772f804f7eb53599df347d2325fdf0b221392548791ca61f5",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "2ibwwr4uvt_elgxat6ntq4r5jqmustb-xpahq85rwyw": {
    "status": "bundled_files",
@@ -2988,7 +2988,7 @@
    "repo": "punkouter26/PoSumo",
    "branch": "master",
    "digest": "sha256:ed83e4ce20a6ca55c35d8dea8e2df6121debec87fef5fd62b5cc4c43cc622ef4",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "2nzkjtwgdxmhf6r2xr3wf-ckfmy6zaqgb6tmw2rfh2y": {
    "status": "ambiguous",
@@ -2996,7 +2996,7 @@
    "repo": "Prasanth595/agentic-awesome-skills",
    "branch": "main",
    "digest": "sha256:5beef01a81f4571fa7ff6fc8ac5c83902c2b16ce5588de737734fd650e11ccfe",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "2o2x_pdn8f9jrjtksbdvr5iqkn6xc6iqlotrenqcf0w": {
    "status": "bundled_files",
@@ -3032,7 +3032,7 @@
    "repo": "punkouter26/PoSumo",
    "branch": "master",
    "digest": "sha256:f45e767b29e905d879870200d27819036fce0615d647420dca205444c86e20b8",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "2pfgepbgkhpsm1dswoigqq_wnbhyknngfqfvmahtqt4": {
    "status": "ambiguous",
@@ -3056,7 +3056,7 @@
    "repo": "wearedevpunks/skills",
    "branch": "main",
    "digest": "sha256:2121fc72ffa476492c1b91ccf96c7b26aade9d1a332dc5834ba3526e1102b00d",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "2pxwv_-w1dgo0elyyakjhkihigg7lmysrpmylx8a-hq": {
    "status": "bundled_files",
@@ -3287,7 +3287,7 @@
    "repo": "ArndtGold/ai-native-governance-delivery-framework",
    "branch": "main",
    "digest": "sha256:07079efd0dc76f05fade424e5dfb048dce1de2df7626e1a4f56292a4f3f92228",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "2x-qailfq7girs0zmnvrkeeomtpechxwrhom-1atexk": {
    "status": "pinned",
@@ -3411,7 +3411,7 @@
    "repo": "publieople/hermes-config-kit",
    "branch": "master",
    "digest": "sha256:806c5f0fe2d4d0df8da91f720032bb6524b4dbecf6b4532aee9b3a7914401c89",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "2cd115c9a59092e1d0cf18805c164d7a57a7f123",
    "name": "kanban-worker",
    "description": "Pitfalls, examples, and edge cases for Hermes Kanban workers. The lifecycle itself is auto-injected into every worker's system prompt as KANBAN_GUIDANCE (from agent/prompt_builder.py); this skill is what you load when you want deeper detail on specific scenarios."
@@ -3625,7 +3625,7 @@
    "repo": "SriramGandhiS/Skills",
    "branch": "master",
    "digest": "sha256:b334bb86e4e41386fec0227fe87104f7f6669ec3734a9ba6e684364ac89f3c1c",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "3evjricvjho4ie5tj393soqmnrxqtz0gdjddfd_gvdm": {
    "status": "pinned",
@@ -3710,7 +3710,7 @@
    "repo": "Sahil-958/dots",
    "branch": "main",
    "digest": "sha256:7cd36cbcd1f57d5216931d1c231b3e8774e4b5c9fec42e9ee1cb689e457bf33f",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "e125985e9d45c8a14e06d60810ff09e7271a6680",
    "name": "assessment-validity-checker",
    "description": "Audit a proposed assessment for construct validity, reliability, and alignment to learning objectives. Use when reviewing or quality-assuring assessments before deployment."
@@ -3774,7 +3774,7 @@
    "repo": "RUS-TICurtis/Match_Maker_RenamHer",
    "branch": "main",
    "digest": "sha256:5b0eecd54dcbfb352d46a69a9f42882073e5d9bc86326ea4dcf62bd4375b69a2",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "1b808c1e3ac8ba000c50d1b080c25cc15f2472c4",
    "name": "seo-audit",
    "description": "Diagnose and audit SEO issues affecting crawlability, indexation, rankings, and organic performance."
@@ -3860,7 +3860,7 @@
    "repo": "Prasanth595/agentic-awesome-skills",
    "branch": "main",
    "digest": "sha256:a49a97498721a76541da781f3a9e5d9d0403af90c9bbf2587fda21eb8b9b1ffe",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "3mexvbiu3edk0dhbzculnh9jjjskq9eocy6duqdawuk": {
    "status": "ambiguous",
@@ -4259,7 +4259,7 @@
    "repo": "SriramGandhiS/Skills",
    "branch": "master",
    "digest": "sha256:a23a9e4e74a87e3f458d53cbff60adbc666e7a1e8633d43f9e213111e48f69b0",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "4bohjvkvkw2cxt_zylmtpxger8fwtbybbjeoszcgmtk": {
    "status": "pinned",
@@ -4295,7 +4295,7 @@
    "repo": "Prasanth595/agentic-awesome-skills",
    "branch": "main",
    "digest": "sha256:51d37672b21e3a38c1a1386cafb185a51da69bf3c9e85959e90cf66a882a6c4f",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "4c-3eudld_xuwidkjcsapo1yeisaw8g4se4ybrjx75q": {
    "status": "ambiguous",
@@ -4328,7 +4328,7 @@
    "repo": "mturac/everything-openai-codex",
    "branch": "main",
    "digest": "sha256:c7c4f2cb78f647e8a597d3da1b980475691ad08dc34b7168b6efe4d500ca5944",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "b5057da5f42ed6b12cd3a59e89af0ccd12cff7c2",
    "name": "seo",
    "description": "审计、规划并实施SEO改进，涵盖技术SEO、页面优化、结构化数据、核心网页指标和内容策略。当用户希望提升搜索可见性、进行SEO修复、使用架构标记、处理站点地图/robots文件或进行关键词映射时使用。"
@@ -4415,7 +4415,7 @@
    "repo": "punkouter26/PoSumo",
    "branch": "master",
    "digest": "sha256:a25ca73daf06621b4f4276d64e7056a62216aaffb51a2a666686417d5f31e6dc",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "4fozxblnjdmyrefysgunxd8ytovszuiy715-k7fzmio": {
    "status": "pinned",
@@ -4459,7 +4459,7 @@
    "repo": "smartrickpicks/substrate-bk-airlock-skills-library",
    "branch": "master",
    "digest": "sha256:78a845cbff7ceb2c9e57d60e502a54b9e51781e88afe67b01a279fa3dba690f8",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "4hjjxhmedus1gbxfomto-blpcucv6ebu3ufebsgpre0": {
    "status": "bundled_files",
@@ -4500,7 +4500,7 @@
    "repo": "Sahil-958/dots",
    "branch": "main",
    "digest": "sha256:7a5306d9a9e72846b9816d79ce1fbb81a0ef579db72ad9f0c0f3b0bef532d585",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "e125985e9d45c8a14e06d60810ff09e7271a6680",
    "name": "ai-feedback-design-principles",
    "description": "Audit and redesign AI-generated feedback for pedagogical quality, timing, and learning impact. Use when building or reviewing automated feedback in digital learning tools."
@@ -4698,7 +4698,7 @@
    "repo": "Prasanth595/agentic-awesome-skills",
    "branch": "main",
    "digest": "sha256:21a99a8b6abcf9b19c86e1135428c15cf831e95a87261700872d10bca9cc67da",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "4sckupikcp1v10w_muidpy3sxqzxufkhkl8pxj8977m": {
    "status": "upstream_changed",
@@ -4842,7 +4842,7 @@
    "repo": "RUS-TICurtis/Match_Maker_RenamHer",
    "branch": "main",
    "digest": "sha256:b7b6e5af65e0669fc91f37d8b12a6f09580b30a47d337ba5434d1e4d26e38bdb",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "1b808c1e3ac8ba000c50d1b080c25cc15f2472c4",
    "name": "fal-workflow",
    "description": "Generate workflow JSON files for chaining AI models"
@@ -4973,7 +4973,7 @@
    "repo": "ShunDa002/my-portfolio-website",
    "branch": "main",
    "digest": "sha256:4fc56f0a67983d36cf8d2d1377d06cc982d71bb96eda09d444ee7c3a6e4128dc",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "42e51460a3784d8057d982985b21c2cc89e57537",
    "name": "openspec-verify-change",
    "description": "Verify implementation matches OpenSpec change artifacts. Use when the user wants to validate that implementation is complete, correct, and coherent before archiving. Also use when the user says \"openspec verify\" or \"opsx verify\"."
@@ -4984,7 +4984,7 @@
    "repo": "kimzhang375-bit/my-first-repo",
    "branch": "main",
    "digest": "sha256:538e5db262e7c237cff2bac191480f81688b8679167740af7405fcda1340511e",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "53lbnmqrq5pi2kzuqbml8kusmmpn9i3fhjimvis5jwo": {
    "status": "upstream_unavailable",
@@ -5051,7 +5051,7 @@
    "repo": "SriramGandhiS/Skills",
    "branch": "master",
    "digest": "sha256:b9ea58b1e80df6332254e84d274b52eddd0eba28ea096eaf18149025ff2115f4",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "57ceqyyguhctukilt98y_8jugd8ou1kzhj6sodbnzue": {
    "status": "bundled_files",
@@ -5452,7 +5452,7 @@
    "repo": "RUS-TICurtis/Match_Maker_RenamHer",
    "branch": "main",
    "digest": "sha256:0204a0766e6dd86772befc3ca344252687cf8032998b155666b26fc041538956",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "5jqmkug2pf-1aqjb-as_ovocumvc3n7ee4ojpjeovjs": {
    "status": "pinned",
@@ -5529,7 +5529,7 @@
    "repo": "Sahil-958/dots",
    "branch": "main",
    "digest": "sha256:06c952800aa5430c50624f8127d8768647561c84d0711b1c776ff52ba3ba4796",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "e125985e9d45c8a14e06d60810ff09e7271a6680",
    "name": "ai-learning-boundary-mapper",
    "description": "Map which elements of an assignment benefit from AI assistance vs. which AI use undermines. Use when redesigning tasks for AI-age classrooms or setting defensible AI use policies for specific assignments."
@@ -5560,7 +5560,7 @@
    "repo": "punkouter26/PoSumo",
    "branch": "master",
    "digest": "sha256:3a79c95c1ecb21e6bd3185d6a2d11f2358c3fdc0e7a4cbca0056108dd138996a",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "5nbxp28_esjihoknnve7wcd9jw2vmya1boubdd8nm74": {
    "status": "pinned",
@@ -6032,7 +6032,7 @@
    "repo": "Gitruck/cli",
    "branch": "main",
    "digest": "sha256:31ae04cbf1fe3af0f5e8d321ae270d90aa2e711108fb4d19057d52830c3cf68a",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "6aiyxzufzzun0dmfaph-8duqtmobws-fvkt3xf8yz78": {
    "status": "upstream_changed",
@@ -6072,7 +6072,7 @@
    "repo": "punkouter26/PoSumo",
    "branch": "master",
    "digest": "sha256:0c7511acc9f083b5d07cbe4bec57e7b703f3d6d6cc2a1cac3bb7b2c6cbe174ab",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "6bac4mdiszy4krnszuy_mzhkcnxa3breym3ztfp0gtw": {
    "status": "bundled_files",
@@ -6289,7 +6289,7 @@
    "repo": "ruvnet/ruflo",
    "branch": "main",
    "digest": "sha256:be53dc6cf55efdd8974aacf67f84c9dc58078a31d643c7ec5981807420f6d6af",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "29be054e85636b61788f3955d0bd4d0bcbcfe3f6",
    "name": "agent-scout-explorer",
    "description": "Agent skill for scout-explorer - invoke with $agent-scout-explorer"
@@ -6469,7 +6469,7 @@
    "repo": "huing7373/catc",
    "branch": "main",
    "digest": "sha256:344ee5a895878611f0241ad36352d3331871dc204bc6c5efce527927266bf8bc",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "6qlcvqtmi6wsxuokm685ifr4zn1mqe1ef0lxg2zy3oe": {
    "status": "pinned",
@@ -6573,7 +6573,7 @@
    "repo": "ArndtGold/ai-native-governance-delivery-framework",
    "branch": "main",
    "digest": "sha256:d68b77e5bbb34dedab89d134da52855f140fc4b4299b80104f534e3b9e98f8ee",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "6umjh9dcdgwujcf66e9pl7mnweaf5zz4yzu0xodlo3e": {
    "status": "pinned",
@@ -6810,7 +6810,7 @@
    "repo": "ruvnet/ruflo",
    "branch": "main",
    "digest": "sha256:f39ecc5a84a2f81828308e16ec16836c336b8115937a8c744e71e7152ecbf7f9",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "29be054e85636b61788f3955d0bd4d0bcbcfe3f6",
    "name": "agent-neural-network",
    "description": "Agent skill for neural-network - invoke with $agent-neural-network"
@@ -6822,7 +6822,7 @@
    "repo": "AmidVoshakul/opencode-secops-blueprint",
    "branch": "main",
    "digest": "sha256:0373f756ef435d4b90759865643c10bc9b66766b0240ad71c105b78c3f4babc2",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "0c93058c49eee621c027aab135d3c9075b52e60f",
    "name": "favicon",
    "description": "Generate favicons from a source image"
@@ -6853,7 +6853,7 @@
    "repo": "Robertjam954/multimodal_rag_application",
    "branch": "main",
    "digest": "sha256:9060994a74a9c8510c6e64d01edcef55440cefbba399c93cda18980651fff186",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "7avp0paqkreh1kvkmhah2c3huyvdccjuiehj_lztdma": {
    "status": "bundled_files",
@@ -7040,7 +7040,7 @@
    "repo": "modbender/skill-library-mcp",
    "branch": "main",
    "digest": "sha256:6551362393d71a97dd13835c4092d3e89ef27fdf0bebd603e86808f1f7e91987",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "7ikzc8axx-8mfj1zbh8hixx7itzjgjyaelk0htlfnc4": {
    "status": "bundled_files",
@@ -7157,7 +7157,7 @@
    "repo": "Donchitos/Claude-Code-Game-Studios",
    "branch": "main",
    "digest": "sha256:cd1ad9ab08b98b978f7dc5188822597b602e4f8170a811f0ca2ccab2f7f96122",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418",
    "name": "soak-test",
    "description": "Soak test protocol for extended play — what to observe and log for slow leaks, fatigue, late-appearing edge cases."
@@ -7204,7 +7204,7 @@
    "repo": "xenodeve/xeno-skills",
    "branch": "main",
    "digest": "sha256:007f9d03ac0f308179a9147b99562658ead6ca9f6fa9b7abbcb07dd26e9f18a5",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "7qbekbbr7wkrapturnbod1f05ao5wyxqmf6kb6luose": {
    "status": "bundled_files",
@@ -7261,7 +7261,7 @@
    "repo": "AmidVoshakul/opencode-secops-blueprint",
    "branch": "main",
    "digest": "sha256:a4644c2c94827af57eea4c0b77179cdaad7f1b89f81ada486498293282e89d65",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "0c93058c49eee621c027aab135d3c9075b52e60f",
    "name": "fp-errors",
    "description": "Stop throwing everywhere - handle errors as values using Either and TaskEither for cleaner, more predictable code"
@@ -7348,7 +7348,7 @@
    "repo": "Robertjam954/multimodal_rag_application",
    "branch": "main",
    "digest": "sha256:1f35685eadc0aa9f0c3299c248425d83740271e679170f8048356926fc1403aa",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "7tzjynyzk0taethk-jgcke9cegk5ntn_9yc3hrgkspq": {
    "status": "ambiguous",
@@ -7579,7 +7579,7 @@
    "repo": "RUS-TICurtis/Match_Maker_RenamHer",
    "branch": "main",
    "digest": "sha256:bb43b2dd6681b199ab2482e6c4ffd7da5faa7ac7e6182c04b4a8dff61ab8e4b9",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "836u-enb9yhq50i-hetqhyq5rj_abpyum8a10k8aws4": {
    "status": "pinned",
@@ -8131,7 +8131,7 @@
    "repo": "RUS-TICurtis/Match_Maker_RenamHer",
    "branch": "main",
    "digest": "sha256:1fb4423ab58110e5623d4e84d61e38f66a00fdfab313c13969067c67f952f0aa",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "1b808c1e3ac8ba000c50d1b080c25cc15f2472c4",
    "name": "clean-code",
    "description": "Applies principles from Robert C. Martin's 'Clean Code'. Use this skill when writing, reviewing, or refactoring code to ensure high quality, readability, and maintainability. Covers naming, functio..."
@@ -8262,7 +8262,7 @@
    "repo": "Pabloprogramador23/loja",
    "branch": "master",
    "digest": "sha256:d74a875a96471d860c920c2e6854399bc24d56e35a331823bb376e9fcc3b977c",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "8yad2bhe8h_kudvmaxpt97b7o0_d3kzputqu-508k4k": {
    "status": "upstream_changed",
@@ -8472,7 +8472,7 @@
    "repo": "trailofbits/skills",
    "branch": "main",
    "digest": "sha256:5404e73526105c064eb051abe726097a9699ba39a2aaa23fb1b195d2835bd9c4",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "9deq6zosi4ufzj11s9vucsy9x-tso2tcynug4stqvsq": {
    "status": "invalid_frontmatter",
@@ -8570,7 +8570,7 @@
    "repo": "Prasanth595/agentic-awesome-skills",
    "branch": "main",
    "digest": "sha256:9e4105c69c0398111058b874d1dc89ba7dedd9cd9ca319d874faccd09c7be2ca",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "9ik3bvmyo1cvayp5okklmwbhimvq81al8l3fn2almoe": {
    "status": "bundled_files",
@@ -8654,7 +8654,7 @@
    "repo": "AmidVoshakul/opencode-secops-blueprint",
    "branch": "main",
    "digest": "sha256:faa4f2b2ab87de0ec18b6f7d8ab13df98becb38dc8cd6f930b9a6265363b9c62",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "9lzbmc0tdmnyawfe27jhlx42dhs8eznab4ylcrap7u4": {
    "status": "upstream_unavailable",
@@ -8689,7 +8689,7 @@
    "repo": "Prasanth595/agentic-awesome-skills",
    "branch": "main",
    "digest": "sha256:bc03648fc0d4d70f5a10150397f7ecf60644b28dff7aace22e36f3128532cb4f",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "9myh4tpb375s5dsqksuefokcm5xpwctt6enccyqo1l4": {
    "status": "pinned",
@@ -8997,7 +8997,7 @@
    "repo": "Sahil-958/dots",
    "branch": "main",
    "digest": "sha256:1436d874e706d5cb7ed01df8755af87ad221322baf853ca4306c964882ef686f",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "e125985e9d45c8a14e06d60810ff09e7271a6680",
    "name": "backwards-design-unit-planner",
    "description": "Plan a unit using backwards design from desired outcomes through assessment evidence to learning activities. Use when starting a new unit or redesigning an existing one from standards."
@@ -9056,7 +9056,7 @@
    "repo": "AmidVoshakul/opencode-secops-blueprint",
    "branch": "main",
    "digest": "sha256:93a8b50b6832fa3a87b5a7bfc5640a963aeef7d8d0c782d7d4fc4be037c11ee6",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "0c93058c49eee621c027aab135d3c9075b52e60f",
    "name": "satori",
    "description": "Clinically informed wisdom companion blending psychology and philosophy into a structured thinking partner"
@@ -9373,7 +9373,7 @@
    "repo": "Prasanth595/agentic-awesome-skills",
    "branch": "main",
    "digest": "sha256:bd914e98908b171b0952c14cf802594c3f226680fa51d13a66969912d38a5e70",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "_fe0gg_a2a6l9tiq6jcpl4afvraswwe7pk0wbmpyaue": {
    "status": "ambiguous",
@@ -9425,7 +9425,7 @@
    "repo": "SeaXen/agentskills",
    "branch": "main",
    "digest": "sha256:41b5da0f88e72acd6bc3a4fd368d5de83f9340d11dc33cfa3e45e0f084f468f0",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "_hxo0smydtfxo45h9z_waeaevpohdh-tmzv3deb3e_8": {
    "status": "tree_truncated",
@@ -9536,7 +9536,7 @@
    "repo": "SriramGandhiS/Skills",
    "branch": "master",
    "digest": "sha256:01a9ae310ad4426bb05660dda6cefdeaac9513417585c09c8bb1b94738649a78",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "_nwws-g2apgma_7tat_c-swja6j78suofbkdz9u9ila": {
    "status": "pinned",
@@ -9591,7 +9591,7 @@
    "repo": "xenodeve/xeno-skills",
    "branch": "main",
    "digest": "sha256:f9747e9e93bf939a1eff4a1c845146f38d8f9e06655be58653a9f95f36c342cc",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "_pnymsbytjhclo-4asragwwylbwb8qbg6wfzdcf8olc": {
    "status": "ambiguous",
@@ -9743,7 +9743,7 @@
    "repo": "xenodeve/xeno-skills",
    "branch": "main",
    "digest": "sha256:1c24139633e2ebf11da4f97eaeb1c0564f8658a40b3ad779387a5b8c6cb76dbc",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "_vapnpjpjwncb15yzylothihi2xrq1lx9g-ntevoq2i": {
    "status": "pinned",
@@ -9783,7 +9783,7 @@
    "repo": "sinhoneyy/master-skills",
    "branch": "master",
    "digest": "sha256:60ae71507d3752a1c7504ae92e0a503a2c00cb57c1d1a025fcacdd6b9cb02a8f",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "_wnfwmnzgfriq28s48_7wzkb0m766r_lezklbnckpdi": {
    "status": "bundled_files",
@@ -9866,7 +9866,7 @@
    "repo": "Prasanth595/agentic-awesome-skills",
    "branch": "main",
    "digest": "sha256:43be842ce4c6a025c33375712cdc21347ec8209836a2b1596dae236c42257894",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "a1cvfdnq5ulb6fhgappf7ryqfwmu_e2qhhz7v3-tahy": {
    "status": "bundled_files",
@@ -9882,7 +9882,7 @@
    "repo": "punkouter26/PoSumo",
    "branch": "master",
    "digest": "sha256:cbbf517098e547ef7171be6276fee982d5a1bb81c7d5af4f23a36d93976269f6",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "a1nt_0kjfdhhwayfzy2p5e3rdaix6mnz4vk_ep570g4": {
    "status": "bundled_files",
@@ -9914,7 +9914,7 @@
    "repo": "Hassaan146/event",
    "branch": "main",
    "digest": "sha256:beb4f6dac3dc1380548230bd278664e850af7bd8930142be2e2051f97bd85b6f",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "a3_v7fk9wypup2h_uamfrogkzbmpxuarzx9wpqy-maa": {
    "status": "upstream_changed",
@@ -10269,7 +10269,7 @@
    "repo": "punkouter27/PoFootball",
    "branch": "master",
    "digest": "sha256:883d87e6754a6aaa6b2c3f049c28c262351eca37bd256a764f1ec0ecea48f72a",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "494d40c6e00b5aaf73b83ec20b1bf46bfd9c629e",
    "name": "scene-set-active",
    "description": "Mark an opened scene as the Editor's active scene (the one new GameObjects are added to and that's used as the default for many operations). Use 'scene-list-opened' to enumerate opened scenes first."
@@ -10308,7 +10308,7 @@
    "repo": "Prasanth595/agentic-awesome-skills",
    "branch": "main",
    "digest": "sha256:9ef20a6b22940cda9e650cc2e31a83d474ab7933d4bc63892fdcff88a269b980",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "aeay6rysyaluuck_qy_68zeyokveo5fqf_dppg10exg": {
    "status": "bundled_files",
@@ -10391,7 +10391,7 @@
    "repo": "tt-a1i/matt-skills-with-to-goal",
    "branch": "main",
    "digest": "sha256:29acca66ac99d4532e2a6f0370d8125d7cba1e87c9ac66573203c75189d3e6c7",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "aeqm07et0gra6vzsqy1do3b-z9tlcbhnvllwvdcpfsc": {
    "status": "ambiguous",
@@ -10399,7 +10399,7 @@
    "repo": "ArndtGold/ai-native-governance-delivery-framework",
    "branch": "main",
    "digest": "sha256:681ddb4ad6d06a2acc78a3535b583f8d0c1ea800ecda3d56370d3310fd2cd4ba",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "af64mcuk5px-aah4rrbv2kgkrbe07ujkpglroffa4xe": {
    "status": "bundled_files",
@@ -10474,7 +10474,7 @@
    "repo": "LeoYeAI/agent-master-skills",
    "branch": "main",
    "digest": "sha256:5beb82c2dc0fe5a79f1022f0b8a0cf87310bf4a03306953e4699f224a7f17a95",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "agb4xwldhairjohfkdmk5in-aksolxvjvgzft6yx8gq": {
    "status": "bundled_files",
@@ -10576,7 +10576,7 @@
    "repo": "Trompetilla/Skills",
    "branch": "main",
    "digest": "sha256:a56954d8d037f41c299480bce36083d3e09c0369d07166a0b4825ccbc5be04ed",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "ai8fcwztclxu7om7ryyby9rzmsxbuxwlxqc2chuk8qo": {
    "status": "pinned",
@@ -10745,7 +10745,7 @@
    "repo": "RUS-TICurtis/Match_Maker_RenamHer",
    "branch": "main",
    "digest": "sha256:7bc5cd491d26e774650e4fbc4cf4b51e32c34fab848117c834ff50e267a9959d",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "1b808c1e3ac8ba000c50d1b080c25cc15f2472c4",
    "name": "idor-testing",
    "description": "This skill should be used when the user asks to \"test for insecure direct object references,\" \"find IDOR vulnerabilities,\" \"exploit broken access control,\" \"enumerate user IDs or obje..."
@@ -10764,7 +10764,7 @@
    "repo": "abdulsami786/BrowserBaseAgent",
    "branch": "main",
    "digest": "sha256:10b6e56b5470e8e7e8d103ff87d54e7ab44d33661ef074274f9e93ac9911bcfd",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "alljj55ogqc52vcghubxgjl_-qivcskjegbnwrivlom": {
    "status": "pinned",
@@ -10917,7 +10917,7 @@
    "repo": "Sahil-958/dots",
    "branch": "main",
    "digest": "sha256:6368ddea1a5f1562f9c2b4ac070d489cbf1645ef312cb5d0eeb0c9dc40761b1c",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "e125985e9d45c8a14e06d60810ff09e7271a6680",
    "name": "cognitive-load-analyser",
    "description": "Analyse a learning task for cognitive load problems and recommend specific design improvements. Use when tasks overwhelm students, instructions feel complex, or materials need simplifying."
@@ -11094,7 +11094,7 @@
    "repo": "Prasanth595/agentic-awesome-skills",
    "branch": "main",
    "digest": "sha256:9bffd148d1dd2d790a506c793809b161a73eed56d3655cea8a847d771315a161",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "ardihmrrk8euj4op3pscj1anfxhhtbjildkcenyey28": {
    "status": "tree_truncated",
@@ -11278,7 +11278,7 @@
    "repo": "AmidVoshakul/opencode-secops-blueprint",
    "branch": "main",
    "digest": "sha256:f05bd883ff828c9a7b13db7f52384151375d95ef41bead787877b8ab0e26ea8f",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "0c93058c49eee621c027aab135d3c9075b52e60f",
    "name": "fp-async",
    "description": "Practical async patterns using TaskEither - clean pipelines instead of try/catch hell, with real API examples"
@@ -11337,7 +11337,7 @@
    "repo": "Robertjam954/multimodal_rag_application",
    "branch": "main",
    "digest": "sha256:6304fe3ccbb6f36a4dcafe1bfe30d0c03618019d68fb4a933fd716bf8763d84c",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "avire4bohcqgjyf4g1nlheqghocq53dnrxgrsdqykwy": {
    "status": "upstream_changed",
@@ -11361,7 +11361,7 @@
    "repo": "LeoYeAI/agent-master-skills",
    "branch": "main",
    "digest": "sha256:eba0d129cc4c2cf9c08116d4b136cc6800322985e831a9e04da4e97f3dca137a",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "avlsjwdlctur33noycii95lseb_hjwr9flikl-b4sgk": {
    "status": "ambiguous",
@@ -11493,7 +11493,7 @@
    "repo": "ruvnet/ruflo",
    "branch": "main",
    "digest": "sha256:f077218d3566f04bcd6ba97e1e3b50f2dd1127cfc83b7e8e784580aa72144ddc",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "29be054e85636b61788f3955d0bd4d0bcbcfe3f6",
    "name": "agent-payments",
    "description": "Agent skill for payments - invoke with $agent-payments"
@@ -11764,7 +11764,7 @@
    "repo": "backnotprop/pstack",
    "branch": "main",
    "digest": "sha256:2ccbbacc56ace5afdfb8670cef19d7bd009fb2a0033b9a741cbdf2b6baf72187",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "0b239bbfa26674efd5c371055eadfc5f488ac1be",
    "name": "principle-sequence-verifiable-units",
    "description": "Apply to multi-step work (sweeps, migrations, runs of similar edits) and to how you stack commits and PRs. Break work into small units that each end in a verifiable state, check each before the next, and order delivery so the sequence proves itself to a reviewer."
@@ -11903,7 +11903,7 @@
    "repo": "stanfish06/skillquarium",
    "branch": "master",
    "digest": "sha256:1a6d919ff80f83b262daf650552af6eb6d2c32b19d0c529b70efe0c116b675cf",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "b_ffjusgxsnku26tvfu81lwrwcf6w_9tv-cz1n4vrkw": {
    "status": "ambiguous",
@@ -11935,7 +11935,7 @@
    "repo": "Endsi3g/uprising-coldoutreach",
    "branch": "master",
    "digest": "sha256:b7a4f7eae47acd3a68f4de92493173480eda366cf55017a5374e604ffcbc48b6",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "bafayuj2fhgsgodczgy4qhlamjlmgpkjhfm6bcc6g4c": {
    "status": "upstream_changed",
@@ -12320,7 +12320,7 @@
    "repo": "Prasanth595/agentic-awesome-skills",
    "branch": "main",
    "digest": "sha256:4b3b511bd5e1150781b5cc3f1abacacc22cd254f4fe394cc97a173138e926cf8",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "bj8eulczurticapzsne4tkkc365dlqvrimasukrjwu8": {
    "status": "upstream_changed",
@@ -12484,7 +12484,7 @@
    "repo": "Prasanth595/agentic-awesome-skills",
    "branch": "main",
    "digest": "sha256:d31eb78a7bd48b037891f1e65a9891aa70e48c58cf26d3b6ce1131cf0b1fe3b0",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "bm0ukilnm22ckvmcopppwlogy6gn4e7ae8hg0ppzsgg": {
    "status": "bundled_files",
@@ -12672,7 +12672,7 @@
    "repo": "Prasanth595/agentic-awesome-skills",
    "branch": "main",
    "digest": "sha256:e488c502823d3a5edc92980311649ec9c48085342e3b18fa5cac61c74cc0852c",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "bo7p16tavn1s-wfx1zv3t71y08vyo42llr4-ixk8b7c": {
    "status": "bundled_files",
@@ -12850,7 +12850,7 @@
    "repo": "Elogic360/software-factory",
    "branch": "main",
    "digest": "sha256:4fc440a720536fef741eff824755b190f053496772c2ae25412fb3a3a1261b3d",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "bsj_siq2sbqvispxgaq_kjnmehu25l9nnlfnjt7phh8": {
    "status": "bundled_files",
@@ -12913,7 +12913,7 @@
    "repo": "SeaXen/agentskills",
    "branch": "main",
    "digest": "sha256:affcdaf907eb0cc08ed7ab85797c788d9279f4316146c8f249bdcbf50af0910f",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "btobbgcxtzvjhfsel_p9pl4e6u5ora72pwxeyz1rzc8": {
    "status": "bundled_files",
@@ -13076,7 +13076,7 @@
    "repo": "xenodeve/xeno-skills",
    "branch": "main",
    "digest": "sha256:174bfb2676bfd49611ff71fa0205b7d1130e7bb0caba45923cd61946201cf8ac",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "bxxncg4frponbvvnt5q7r4tquhgqsfjm3sk72m_efq0": {
    "status": "pinned",
@@ -13152,7 +13152,7 @@
    "repo": "punkouter27/PoFootball",
    "branch": "master",
    "digest": "sha256:0e3bf1eaaab9e4499eb98432be9ba283d9ee961c3700135b327ff8ebaa46a94c",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "494d40c6e00b5aaf73b83ec20b1bf46bfd9c629e",
    "name": "gameobject-modify",
    "description": "Modify GameObject fields and properties in opened Prefab or in a Scene. You can modify multiple GameObjects at once. Just provide the same number of GameObject references and SerializedMember objects. Three modification surfaces are available per GameObject (gameObjectDiffs, pathPatchesPerGameObject, jsonPatchesPerGameObject) — see the skill body for details."
@@ -13184,7 +13184,7 @@
    "repo": "AmidVoshakul/opencode-secops-blueprint",
    "branch": "main",
    "digest": "sha256:e71c098996ab5ab037718b3bb28e3fbefeedb4c924ce77c1c9e399664d661f3b",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "0c93058c49eee621c027aab135d3c9075b52e60f",
    "name": "vexor-cli",
    "description": "Semantic file discovery via `vexor`. Use whenever locating where something is implemented/loaded/defined in a medium or large repo, or when the file location is unclear. Prefer this over manual browsing."
@@ -13256,7 +13256,7 @@
    "repo": "satyasaibhushan/Agents-config",
    "branch": "main",
    "digest": "sha256:d59de4ba6cc1fe2dd267e8b9b5a1fd88e3e739e2130bc9dd78061d2a072830b8",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "644a7fecf0b568eacd22f0a130a3b0ea21dbe097",
    "name": "request-refactor-plan",
    "description": "Create a detailed refactor plan with tiny commits via user interview, then file it as a GitHub issue. Use when user wants to plan a refactor, create a refactoring RFC, or break a refactor into safe incremental steps."
@@ -13299,7 +13299,7 @@
    "repo": "sinhoneyy/master-skills",
    "branch": "master",
    "digest": "sha256:37d338a1d58c5f1b77b2ef3c9fe8212450b0d391c24dd0eeffe4b9a30a5ccb73",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "c2raepbqwvy3r8h1cip2vpgpav5rvl3umjb9xww_eo8": {
    "status": "pinned",
@@ -13308,7 +13308,7 @@
    "repo": "Donchitos/Claude-Code-Game-Studios",
    "branch": "main",
    "digest": "sha256:c4a1775aabdac131a0fde02fa380bd741eaffb380516f4e004ae34cfedb363c9",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418",
    "name": "skill-test",
    "description": "Validate skill files for structural compliance and behavioral correctness. Four modes: static linter, spec, category rubric, audit."
@@ -13382,7 +13382,7 @@
    "repo": "xenodeve/xeno-skills",
    "branch": "main",
    "digest": "sha256:033d45af1ed23832730642f95f40ab49db7fb5222848489a6c5656144bfc6dae",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "c4toegxg83w0n5dzftjp9eca5iv56ok-1k5wsobyqdg": {
    "status": "upstream_changed",
@@ -13406,7 +13406,7 @@
    "repo": "marysatasselshaped667/skills-collection-1",
    "branch": "main",
    "digest": "sha256:c3a13a659ce26e9d067b5a97c321e8abec6d8e878afce31b7e841dfcf2635c3a",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "c5gzx9yc-jzj8qdvjj3ll3jr6tt9x8e9bvqf5no90bw": {
    "status": "upstream_unavailable",
@@ -13497,7 +13497,7 @@
    "repo": "Endsi3g/uprising-coldoutreach",
    "branch": "master",
    "digest": "sha256:c692ad60f525869df56a7b3004b0f2fa61596552beb11845a592ad7506825dc8",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "c9j4srqcozrmnxbysoa9efkdamrvbtbcm08zuatcgna": {
    "status": "tree_truncated",
@@ -13628,7 +13628,7 @@
    "repo": "alexj11324/Mikka",
    "branch": "main",
    "digest": "sha256:0c9fa96791aebf3b7d654cf35c6aadde97d81f57c17b07d13b27c14d9c46561f",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "ccfxd9esquhafry6bw9ljvpxzzxqamnym_hwtn6zuqa": {
    "status": "pinned",
@@ -13692,7 +13692,7 @@
    "repo": "michael-denyer/pstack-claude",
    "branch": "main",
    "digest": "sha256:6948335a00f9fed7a29204b9f08f74a9d9596d90989fd06f58f02d984ceab6f3",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "cduplhqjnefltbdasiczp_awfsyhmdhx9w9j1imue4q": {
    "status": "upstream_changed",
@@ -14012,7 +14012,7 @@
    "repo": "RUS-TICurtis/Match_Maker_RenamHer",
    "branch": "main",
    "digest": "sha256:c20d4dc71c9bce31ec4ee6787d599d0d74ccc207e614ef692b45963565017d19",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "1b808c1e3ac8ba000c50d1b080c25cc15f2472c4",
    "name": "c4-context",
    "description": "Expert C4 Context-level documentation specialist. Creates high-level system context diagrams, documents personas, user journeys, system features, and external dependencies."
@@ -14024,7 +14024,7 @@
    "repo": "RUS-TICurtis/Match_Maker_RenamHer",
    "branch": "main",
    "digest": "sha256:46333c7e4fb2d41ce672a18d1ec31cb6feabdb9efd29fd370c2672ca17e3117e",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "1b808c1e3ac8ba000c50d1b080c25cc15f2472c4",
    "name": "fal-audio",
    "description": "Text-to-speech and speech-to-text using fal.ai audio models"
@@ -14067,7 +14067,7 @@
    "repo": "SeaXen/agentskills",
    "branch": "main",
    "digest": "sha256:4d80134bb27f2809cf30368b23798a4e6972b32b8944c99bdef4d1d3daab5de8",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "cm2il71_rr2lk0i00ht6u966nzuhsic0a9-pcslm2d8": {
    "status": "tree_truncated",
@@ -14536,7 +14536,7 @@
    "repo": "ThomasMoreAI/legal-skills-open",
    "branch": "main",
    "digest": "sha256:fff3beeef8dff37754dc9f960ee21d45e752d39bfc578a3d3e3633228ce63a2d",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "cvf1o9nqglq5j4em5m9m3isbeh-vznmmw-ipssjduq4": {
    "status": "tree_truncated",
@@ -14629,7 +14629,7 @@
    "repo": "AmidVoshakul/opencode-secops-blueprint",
    "branch": "main",
    "digest": "sha256:c0ab47036b02bd6126990e7b0dea57c7209da4cef5f328860255a8628f4a3e03",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "0c93058c49eee621c027aab135d3c9075b52e60f",
    "name": "ux-audit",
    "description": "Audit screens against Nielsen's heuristics and mobile UX best practices using the StyleSeed Toss design language as the implementation context."
@@ -14743,7 +14743,7 @@
    "repo": "Robertjam954/multimodal_rag_application",
    "branch": "main",
    "digest": "sha256:56b6ce64bca0630e42a3691a08b624227fd5c45e082adc328bfd4ef356a00b20",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "czcasapyxktq-hflicngo2rpl18kcjwpxy3ajow3vbc": {
    "status": "pinned",
@@ -14839,7 +14839,7 @@
    "repo": "Wanfeng1028/muse",
    "branch": "main",
    "digest": "sha256:b8ede161270458e6ae2e45e8a1985373515d4c63de5568ddb0f9012d7634356c",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "d3wr9uvbck_-sjacos_nhdrjjo7kfptquyhmyojp7fu": {
    "status": "tree_truncated",
@@ -14903,7 +14903,7 @@
    "repo": "Robertjam954/multimodal_rag_application",
    "branch": "main",
    "digest": "sha256:b517e29b50ba07dc42dd4fd356c0c15d5d41435415f6835ddb2ad874d6997237",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "d6ofghe1mnc5exi4pi6arzcxkf65gcy5ancnlgf3fju": {
    "status": "upstream_changed",
@@ -14947,7 +14947,7 @@
    "repo": "SeaXen/agentskills",
    "branch": "main",
    "digest": "sha256:dbd5a5e2d563d83ca6d4d033206f285f503296eabff4a35545cdb4cb5302bd9a",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "d8_4vqkonlz_k2tdrfgdi9nokytiestk30ysd2vblrk": {
    "status": "pinned",
@@ -15199,7 +15199,7 @@
    "repo": "RUS-TICurtis/Match_Maker_RenamHer",
    "branch": "main",
    "digest": "sha256:0fb2410c011862cdd6a094db9ccbc87ae2dd1a48684c4edd752e9bb12833edc4",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "1b808c1e3ac8ba000c50d1b080c25cc15f2472c4",
    "name": "design-md",
    "description": "Analyze Stitch projects and synthesize a semantic design system into DESIGN.md files"
@@ -15210,7 +15210,7 @@
    "repo": "SriramGandhiS/Skills",
    "branch": "master",
    "digest": "sha256:a64c6df93125b77c7199df086e4aedeecae0ea578d30e8c2ac73f9957688b52c",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "dfb6pvthki-_4mrn-_97bm65ue2py4bvs6bpb8s2czw": {
    "status": "bundled_files",
@@ -15306,7 +15306,7 @@
    "repo": "Wanfeng1028/muse",
    "branch": "main",
    "digest": "sha256:478ff04a7e3ecf9157b14fc2c24b4ae3fef7460debf27c4ecbe361bf26b0ac29",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "dh_h3tan1-3go1xil2gsm7nepsdbklu7fhppiirt_oa": {
    "status": "pinned",
@@ -15377,7 +15377,7 @@
    "repo": "wlue/config",
    "branch": "master",
    "digest": "sha256:042f01c76b63b436c71797c8a1b84470c5b6e0c7cd2400aa0928f733da96facf",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "diadmr2yntjofgr7swkhonfal65qgozpn20hgz2s2mg": {
    "status": "ambiguous",
@@ -15393,7 +15393,7 @@
    "repo": "Prasanth595/agentic-awesome-skills",
    "branch": "main",
    "digest": "sha256:e064122351672a46dd2de55b1d1c8eab4ee668a180651a6db28757a6529c3b20",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "diojfppkbk2robzqyi-7x35ahb0b3j-eh5yxhayur6a": {
    "status": "pinned",
@@ -15679,7 +15679,7 @@
    "repo": "AmidVoshakul/opencode-secops-blueprint",
    "branch": "main",
    "digest": "sha256:bc219a7cc85f05a1eddc05f8440ca9efe0b104ed3dddfc7e75938709f98c1aa2",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "0c93058c49eee621c027aab135d3c9075b52e60f",
    "name": "agents-md",
    "description": "This skill should be used when the user asks to \"create AGENTS.md\", \"update AGENTS.md\", \"maintain agent docs\", \"set up CLAUDE.md\", or needs to keep agent instructions concise. Enforces research-backed best practices for minimal, high-signal agent documentation."
@@ -15699,7 +15699,7 @@
    "repo": "Ronak1167/aura-vega-tv",
    "branch": "master",
    "digest": "sha256:f006dbb878f407b76616fdb5479565f84c2069f5ccde524a823e0a016e37d7ae",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "195ca0acd2fd666fb583686c10a1fe8cb9985ec2",
    "name": "doc2math",
    "description": "Convert narrative technical documents into grounded Mathematical Problem Specifications with variables, constraints, objectives, and uncertainty."
@@ -15710,7 +15710,7 @@
    "repo": "Erin-1919/claude-skills",
    "branch": "main",
    "digest": "sha256:d57b6e3a44535b9c0ef454dad5c86f5df78185fc80a65c7092885b4b5e10f81b",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "dn76te36ome9mxczuwaug_k7f9b2w933-nmczb2fure": {
    "status": "bundled_files",
@@ -15903,7 +15903,7 @@
    "repo": "RUS-TICurtis/Match_Maker_RenamHer",
    "branch": "main",
    "digest": "sha256:4e41974765136ac58bccf44c9e278de34102a21aec9c395caa3d1876ae175495",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "1b808c1e3ac8ba000c50d1b080c25cc15f2472c4",
    "name": "agentfolio",
    "description": "Skill for discovering and researching autonomous AI agents, tools, and ecosystems using the AgentFolio directory."
@@ -15942,7 +15942,7 @@
    "repo": "RUS-TICurtis/Match_Maker_RenamHer",
    "branch": "main",
    "digest": "sha256:517c0b73e1a2b9ef63023f627a59da7f6ade9f986ffd5cc59bba3ea60519be8b",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "dpqsgpy6vkh8fxn2fyyrbwz9eqyoca9ljg3j_2vy800": {
    "status": "tree_truncated",
@@ -15950,7 +15950,7 @@
    "repo": "SeaXen/agentskills",
    "branch": "main",
    "digest": "sha256:8c73cb1c1dbe02464076db63eab44b63bb07005cd1f758c872d4c8d35e2de55c",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "dprxvpycv3mblzyl6plu3123ycxw6lohgi5xuus_4ny": {
    "status": "upstream_changed",
@@ -15967,7 +15967,7 @@
    "repo": "RUS-TICurtis/Match_Maker_RenamHer",
    "branch": "main",
    "digest": "sha256:fe778798a133cf22f45e1b203d74798a04e67b4654e2400708b96a0a71c34710",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "1b808c1e3ac8ba000c50d1b080c25cc15f2472c4",
    "name": "network-101",
    "description": "This skill should be used when the user asks to \"set up a web server\", \"configure HTTP or HTTPS\", \"perform SNMP enumeration\", \"configure SMB shares\", \"test network services\", or ne..."
@@ -16122,7 +16122,7 @@
    "repo": "Prasanth595/agentic-awesome-skills",
    "branch": "main",
    "digest": "sha256:cdc55839d22a4d16b0510e3e3633ff4f663eaf71d554ee7f95701b3a0ba472bd",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "dsoj-3lj6mzejdr2psdfzbobrkr85wkd-ngekngi7vw": {
    "status": "upstream_changed",
@@ -16452,7 +16452,7 @@
    "repo": "achrafbenamrane/TK-link",
    "branch": "main",
    "digest": "sha256:3e35025119ba03efe7983dfdec3c8b96918142e3978512f3c2bf66d428310c7e",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "dy8w1liyt5-9sar-skrcxxdm8irp2dmmily4sp2hz3g": {
    "status": "ambiguous",
@@ -16460,7 +16460,7 @@
    "repo": "Robertjam954/multimodal_rag_application",
    "branch": "main",
    "digest": "sha256:a21b4ddbcaea5c2655ea1ba7593fe3268d07ab9f6a0ca98209f07282f3636cb7",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "dylj8nuwxwccdb-i61zyqzmamkiexq56wsivsn05wpc": {
    "status": "bundled_files",
@@ -16801,7 +16801,7 @@
    "repo": "wasdqwerty81972/Stai-Project",
    "branch": "main",
    "digest": "sha256:ed0664f44307b1243cd7fa7521b05ca3f50a1dd4460e93b55edb8bcda988e815",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "e6qxp8s41fy_rs4kerneqpzcpddz_th9dlcgxi0-j2k": {
    "status": "pinned",
@@ -16927,7 +16927,7 @@
    "repo": "Prasanth595/agentic-awesome-skills",
    "branch": "main",
    "digest": "sha256:d686175588bddf69e58f3e8d97e16736420329505c6dc6f088f5626f81aef60b",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "eayy41iubpuojor5uohmavw-3wllqo5fdoy7xpvo56s": {
    "status": "pinned",
@@ -17154,7 +17154,7 @@
    "repo": "smartrickpicks/substrate-bk-airlock-skills-library",
    "branch": "master",
    "digest": "sha256:f147e0080893f6595b53c8a7ab9d8f3561f0f191b84af34f3dc996be30500967",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "efkmhwbclh58gjeyzxy3y87wh4qjaasnwjkkqedwjuo": {
    "status": "pinned",
@@ -17175,7 +17175,7 @@
    "repo": "ndai0454-gif/Game_thanhgiong",
    "branch": "main",
    "digest": "sha256:a7bd13a309e683c5a2b8a39f18df753d423d9d0b02ccf384802e3882cac4cfd5",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "ad2d6b9e69fd9d4ef9f177f1c4a66bf031c5b22b",
    "name": "release-checklist",
    "description": "Pre-release checklist — build verification, certification requirements, store metadata, launch readiness."
@@ -17211,7 +17211,7 @@
    "repo": "Akbaralfajar5/hermes-agent-share",
    "branch": "main",
    "digest": "sha256:b85be5a9b86b90287266dd142a0ae9740be926298fbcb772f56b8a4d6451bb12",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "cf4d8d9c329e0a98698b3af1d407ad55c540799a",
    "name": "blogwatcher",
    "description": "Monitor blogs and RSS/Atom feeds via blogwatcher-cli tool."
@@ -17255,7 +17255,7 @@
    "repo": "RUS-TICurtis/Match_Maker_RenamHer",
    "branch": "main",
    "digest": "sha256:3d187d781578becddfc6baa06d0b3833b7c33b5731350a536c445fca22da4658",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "1b808c1e3ac8ba000c50d1b080c25cc15f2472c4",
    "name": "agents-v2-py",
    "description": "Build container-based Foundry Agents with Azure AI Projects SDK (ImageBasedHostedAgentDefinition). Use when creating hosted agents with custom container images in Azure AI Foundry."
@@ -17412,7 +17412,7 @@
    "repo": "wlue/config",
    "branch": "master",
    "digest": "sha256:5f21170914d4e3cf5b1a5503fa2e68d4e48ebe2b9792cb44cb3dead9cdf52117",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "ejza-2irfrdf3yt7jlplpzbtrcely2arqlce1oyfm0u": {
    "status": "bundled_files",
@@ -17449,7 +17449,7 @@
    "repo": "RUS-TICurtis/Match_Maker_RenamHer",
    "branch": "main",
    "digest": "sha256:59eb1273c737d0c0348ed7aebc848f7118e987de2bb9a00065aebeda149be2d0",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "1b808c1e3ac8ba000c50d1b080c25cc15f2472c4",
    "name": "popup-cro",
    "description": "Create and optimize popups, modals, overlays, slide-ins, and banners to increase conversions without harming user experience or brand trust."
@@ -17532,7 +17532,7 @@
    "repo": "ruvnet/ruflo",
    "branch": "main",
    "digest": "sha256:dab377158f222be0b49f355a1f650aa234cd1de075a2c3cc4ba471835b7b48f7",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "29be054e85636b61788f3955d0bd4d0bcbcfe3f6",
    "name": "agent-data-ml-model",
    "description": "Agent skill for data-ml-model - invoke with $agent-data-ml-model"
@@ -17779,7 +17779,7 @@
    "repo": "haresh-sai06/SapSynk-AI",
    "branch": "main",
    "digest": "sha256:a6317ac1417c1b9cd810b2ff104a149ad0aef5646897e9a67b5571c95db1b3d2",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "835716bfbede9677a779d77bfd04befb81c069ac",
    "name": "status",
    "description": "Show DAG state, agent progress, and branch status for an AgentHub session. Use when the user runs /hub:status or asks how the AgentHub agents are doing."
@@ -17824,7 +17824,7 @@
    "repo": "erikpr1994/nextjs-template",
    "branch": "main",
    "digest": "sha256:250fd5f924455a810e2fd7ab69a7f303f9a784b666b5bed74d5be2c6973c6861",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "es_7e4ri6h4u2uozqtf_svzdjmxogw-yl__txrkxnlc": {
    "status": "upstream_changed",
@@ -18023,7 +18023,7 @@
    "repo": "sinhoneyy/master-skills",
    "branch": "master",
    "digest": "sha256:3ff41a2044b5af5be74bfb0c3d390d3749aedb3299c6bf23df0dc055f8ee043f",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "8e70b780359915a1f197ca37a1add2d4016115a2",
    "name": "boardroom",
    "description": "/cs:boardroom <brief> — 6-phase multi-role deliberation across the C-suite with Phase 2 isolation, critic pre-screen, and synthesis. Outputs a board memo. Use when a decision spans multiple executive domains — e.g. a pricing change touching finance, positioning, and product, or a raise-vs-cut runway call."
@@ -18056,7 +18056,7 @@
    "repo": "Pabloprogramador23/loja",
    "branch": "master",
    "digest": "sha256:11a6f2c421161f8655f82a6b3c25187761622dd9f1d1f9cf2143ca0cb849f5af",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "ewfqjzchk4z3mjktu1vijzod1svhwyhsm_taw3lb3aw": {
    "status": "ambiguous",
@@ -18238,7 +18238,7 @@
    "repo": "AmidVoshakul/opencode-secops-blueprint",
    "branch": "main",
    "digest": "sha256:9da3fb0fb7ca37c9babf2c2d4ec4cd0a6dd7f53d3c4460c32da0928d97c8e55b",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "0c93058c49eee621c027aab135d3c9075b52e60f",
    "name": "crewai",
    "description": "Expert in CrewAI - the leading role-based multi-agent framework used by 60% of Fortune 500 companies."
@@ -18727,7 +18727,7 @@
    "repo": "PickleBoxer/pstack",
    "branch": "main",
    "digest": "sha256:644f2551403c1bca01a2855b34611b6e7be0ce0dc5b204514c376c0f6a6e6ac4",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "fcul-j_laqks3ayhhigcdfpmvamzpcfxi1cdxfobu24": {
    "status": "upstream_changed",
@@ -18802,7 +18802,7 @@
    "repo": "Prasanth595/agentic-awesome-skills",
    "branch": "main",
    "digest": "sha256:b7ee0e40a73d5f71179b494aa787dcb2fcd6944774b210291fd53ffeac42a879",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "fdzlcv-lvbzf7lvo3wx-tjnqiplrb0db9la42gjncdc": {
    "status": "pinned",
@@ -18871,7 +18871,7 @@
    "repo": "RUS-TICurtis/Match_Maker_RenamHer",
    "branch": "main",
    "digest": "sha256:3114b756cd1521c2d869cf98aab459e929081a804b9882a5d47ea50ce7a563bf",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "1b808c1e3ac8ba000c50d1b080c25cc15f2472c4",
    "name": "e2e-testing",
    "description": "End-to-end testing workflow with Playwright for browser automation, visual regression, cross-browser testing, and CI/CD integration."
@@ -19036,7 +19036,7 @@
    "repo": "yigityildiz0/universal-ai-skill-library",
    "branch": "main",
    "digest": "sha256:a1d864b2232aa1dda3252648c8efad5ede9baed3ebed14d82f862e8990a0aa96",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "df3d7d789e2f1928177b50829e023a4af15bf365",
    "name": "two-factor-authentication-best-practices",
    "description": "Configure TOTP authenticator apps, send OTP codes via email/SMS, manage backup codes, handle trusted devices, and implement 2FA sign-in flows using Better."
@@ -19067,7 +19067,7 @@
    "repo": "spencermarx/open-code-review",
    "branch": "main",
    "digest": "sha256:0438ee74207accce878f510cfd1699aaf1a267b6e7d5a6571a27dfbd7d2009e9",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "fimwg8brldhlbanojsgsgmo5fqqcszmhkawahsn-vtw": {
    "status": "pinned",
@@ -19159,7 +19159,7 @@
    "repo": "SeaXen/agentskills",
    "branch": "main",
    "digest": "sha256:ffbe68e6007fb42cb8149f089b400a1ca007d59ba23e8948e2be4476f3175939",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "fkwus8bvcsz2xxb3ivq7zjhnnzbdgolxc4-mzgnozbo": {
    "status": "upstream_changed",
@@ -19287,7 +19287,7 @@
    "repo": "SriramGandhiS/Skills",
    "branch": "master",
    "digest": "sha256:f162695cb70e05f608adab14913b775adf23c70a4c8aea801987678f15190282",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "d6ca01da0f24a3b0e26e4a8b7b66cbd25d429f5d",
    "name": "quarkus-tdd",
    "description": "Test-driven development for Quarkus 3.x LTS using JUnit 5, Mockito, REST Assured, Camel testing, and JaCoCo. Use when adding features, fixing bugs, or refactoring event-driven services."
@@ -19505,7 +19505,7 @@
    "repo": "Pabloprogramador23/loja",
    "branch": "master",
    "digest": "sha256:ee11dac2d8189c885462c519b63a7f2cda9107fc59dbdf4675c85e1a10490b67",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "fqov8katccfgxieni_s4dofobokncd5hcflclsbf5sw": {
    "status": "upstream_changed",
@@ -19565,7 +19565,7 @@
    "repo": "SeaXen/agentskills",
    "branch": "main",
    "digest": "sha256:6fa1fcd8420c28daf7e53c5b08b0f20b907911efd2a6d9bce0b9740da20a4008",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "frfpopfactrt7rmbzmvug1qxlxebjcsz7eravzfs-qs": {
    "status": "bundled_files",
@@ -19677,7 +19677,7 @@
    "repo": "Prasanth595/agentic-awesome-skills",
    "branch": "main",
    "digest": "sha256:a1c6e19e3a9266c88ead5a13314481c90e4efec8873b5900a7fb0638feaf65fd",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "ftesozbrpyypjirj7nhbqx-fdbqnnbevdebbj7tj-uc": {
    "status": "upstream_changed",
@@ -19990,7 +19990,7 @@
    "repo": "SriramGandhiS/Skills",
    "branch": "master",
    "digest": "sha256:1e7594bd364e871e97683274c1e9b9768422033d7f9011861d61d5ad0650e23d",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "fzh-qaydjkg0z6bpo_txalxyajedfz4lfz70qzpfqz0": {
    "status": "pinned",
@@ -20030,7 +20030,7 @@
    "repo": "sinhoneyy/master-skills",
    "branch": "master",
    "digest": "sha256:ebc8f16b476522b1dd6fc59fb6079a5aa550e2d312a8be3b7759c856f1952f68",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "g-cbeay1ypil_kadkpmrx9zhgdbt0_p-oovyw5_et00": {
    "status": "upstream_changed",
@@ -20054,7 +20054,7 @@
    "repo": "xenodeve/xeno-skills",
    "branch": "main",
    "digest": "sha256:2fb912c851db124e212afdd2e80b5213f756ca62af6e2eb50de320f6f8ba4f9e",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "g028gjxp9ciohaoie4bedfr4yqhkmh-x-bguug2kusm": {
    "status": "pinned",
@@ -20229,7 +20229,7 @@
    "repo": "SriramGandhiS/Skills",
    "branch": "master",
    "digest": "sha256:b0eecbd9841e8f0ab2fd8d91ebede698c66b1bf3ab6b235417ae1ee53b5e2aa1",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "g7hkciyhe6fpt7q1zh5jx4vxryuk5luezok8sfefq2y": {
    "status": "upstream_changed",
@@ -20326,7 +20326,7 @@
    "repo": "AmidVoshakul/opencode-secops-blueprint",
    "branch": "main",
    "digest": "sha256:8632fb7cfb56643805cf73ea65b6c838483dc333bafc77acbe6023e05e84d013",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "0c93058c49eee621c027aab135d3c9075b52e60f",
    "name": "ui-review",
    "description": "Review UI code for StyleSeed design-system compliance, accessibility, mobile ergonomics, spacing discipline, and implementation quality."
@@ -20633,7 +20633,7 @@
    "repo": "AmidVoshakul/opencode-secops-blueprint",
    "branch": "main",
    "digest": "sha256:576906453d8e66e8966244e3d18fc44d1b81a3ee71a7a37f3508cee262e38b2e",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "0c93058c49eee621c027aab135d3c9075b52e60f",
    "name": "ux-flow",
    "description": "Design user flows and screen structure using StyleSeed UX patterns such as progressive disclosure, hub-and-spoke navigation, and information pyramids."
@@ -20773,7 +20773,7 @@
    "repo": "ruvnet/ruflo",
    "branch": "main",
    "digest": "sha256:0178f2d55f19b1c470396750eb795ea24c137e04a20931ce83071c10d6d69ed3",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "29be054e85636b61788f3955d0bd4d0bcbcfe3f6",
    "name": "agent-authentication",
    "description": "Agent skill for authentication - invoke with $agent-authentication"
@@ -20919,7 +20919,7 @@
    "repo": "nguyentrunghieutcu/ctxora-engine",
    "branch": "main",
    "digest": "sha256:9f0f2b632f3feb1bd4ca7bae119fe05454668ab763b7d3c3d304f8740b8fd415",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "gl_mg26jtnwwglf71gtl6gweahdln0trqsajn2ym4xw": {
    "status": "pinned",
@@ -20928,7 +20928,7 @@
    "repo": "RUS-TICurtis/Match_Maker_RenamHer",
    "branch": "main",
    "digest": "sha256:d022d24e4ff8924b58b950ad5f4c8dbda69c1c9823637b04746f537c215533b7",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "1b808c1e3ac8ba000c50d1b080c25cc15f2472c4",
    "name": "testing-qa",
    "description": "Comprehensive testing and QA workflow covering unit testing, integration testing, E2E testing, browser automation, and quality assurance."
@@ -21263,7 +21263,7 @@
    "repo": "kimzhang375-bit/my-first-repo",
    "branch": "main",
    "digest": "sha256:e1ae63105ccc2e4da7c40e8a2f40d031dd8f2a77270be626df780f0c39eb0b1b",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "grdkbueasdprwlvdtlytf8joutfsatkjk360_fmsvam": {
    "status": "bundled_files",
@@ -21486,7 +21486,7 @@
    "repo": "AmidVoshakul/opencode-secops-blueprint",
    "branch": "main",
    "digest": "sha256:febbbfb8806a9286a7e1a0a72f6ec76346c2118f7671b4b394505a217d30a914",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "gvlvyci7oxxyybrv2jiipkv-wwaezbdicp5o25i7deo": {
    "status": "pinned",
@@ -21574,7 +21574,7 @@
    "repo": "SeaXen/agentskills",
    "branch": "main",
    "digest": "sha256:609e5fdcb1cbf4fc37ade12cbfb5d9821b4825bf748ea2887c4f7da3d275e6f6",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "gxn2yxzfevcmjwu9nnqpadqbyl2uqqb3so1p_bpwdiu": {
    "status": "upstream_changed",
@@ -21670,7 +21670,7 @@
    "repo": "Robertjam954/multimodal_rag_application",
    "branch": "main",
    "digest": "sha256:bc3ebaf7b6b8148d322e4155e9a490ad01985265deaa4d669ef0dfd1b19d4d43",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "gzr10l11btzrzhkeoo68y9bca5yi08hzsmml7je7yiu": {
    "status": "invalid_frontmatter",
@@ -21849,7 +21849,7 @@
    "repo": "SeaXen/agentskills",
    "branch": "main",
    "digest": "sha256:5c5e95830754bbdd838213fa05fc8f07523f591fd558fd3c86031ffd479f7a9e",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "h48zpuietj0miz30ji-_tsadjgwgbjihowa6xja1uec": {
    "status": "pinned",
@@ -22115,7 +22115,7 @@
    "repo": "xenodeve/xeno-skills",
    "branch": "main",
    "digest": "sha256:aa194351b246b8b4799099d4ed7b033d29eab6e6e3d58d8d2172978be7b3ec89",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "hdeyleuxgyy1ig0ri0zeknntqtd9ekm0relmob8rolo": {
    "status": "pinned",
@@ -22215,7 +22215,7 @@
    "repo": "AmidVoshakul/opencode-secops-blueprint",
    "branch": "main",
    "digest": "sha256:fbb4311252173f925a4a532743c15591fff928c9e97c2bcf20e8f3ed759eba94",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "0c93058c49eee621c027aab135d3c9075b52e60f",
    "name": "adhx",
    "description": "Fetch any X/Twitter post as clean LLM-friendly JSON. Converts x.com, twitter.com, or adhx.com links into structured data with full article content, author info, and engagement metrics. No scraping or browser required."
@@ -22226,7 +22226,7 @@
    "repo": "Pabloprogramador23/loja",
    "branch": "master",
    "digest": "sha256:9692a24f64b70e445b03d0cb3abce23cbd9c36c7dfda51c51979d16f0665eeb9",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "hfi_tokw0kweqpw6ys0qk_tyzes3nj9sp0iqnfkbkie": {
    "status": "pinned",
@@ -22319,7 +22319,7 @@
    "repo": "Sahil-958/dots",
    "branch": "main",
    "digest": "sha256:c1179e338bf45d1e8c5001278fc88a47c780bd2e6eacd2ab645e2ce2ebb197de",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "e125985e9d45c8a14e06d60810ff09e7271a6680",
    "name": "close-reading-skill-builder",
    "description": "Build students' capacity to read historical documents closely — attending to word choice, tone, and rhetoric as evidence of perspective. Use when students summarise sources without analysing language."
@@ -22498,7 +22498,7 @@
    "repo": "Pabloprogramador23/loja",
    "branch": "master",
    "digest": "sha256:99582be8b1a25eb20d43ced173b55efef7af9a83aeec895eae81087a41df99de",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "hkd3udzopd29j8iruesgx3crejk3tr4yszxe44fuugs": {
    "status": "bundled_files",
@@ -22515,7 +22515,7 @@
    "repo": "AmidVoshakul/opencode-secops-blueprint",
    "branch": "main",
    "digest": "sha256:b378e2c3ba33c5e5d0456f15f5c2722718cc066bbe27aac5c269d1eb834ca802",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "0c93058c49eee621c027aab135d3c9075b52e60f",
    "name": "blueprint",
    "description": "Turn a one-line objective into a step-by-step construction plan any coding agent can execute cold. Each step has a self-contained context brief — a fresh agent in a new session can pick up any step without reading prior steps."
@@ -22622,7 +22622,7 @@
    "repo": "Zauwad/my-agentic-rig",
    "branch": "main",
    "digest": "sha256:e8899b76601f827042f338fdaac279a96e254f2f2470b7d896c96c99b90dd252",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "b2fae58766cd13c990efeac58d788914a3b1ed3e",
    "name": "ck",
    "description": "Claude Code 的每个项目持久化记忆。在会话启动时自动加载项目上下文，通过 git 活动追踪会话，并写入原生记忆。命令运行确定性的 Node.js 脚本——行为在不同模型版本间保持一致。"
@@ -22716,7 +22716,7 @@
    "repo": "Prasanth595/agentic-awesome-skills",
    "branch": "main",
    "digest": "sha256:4694bac4666d69d896e7b666d4abce8b45188ab0de11c96021f7fd1b14e4bee9",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "hp4k45xyqkoou7oqcpynmmr7alexbk29lmgqi8ch0tg": {
    "status": "bundled_files",
@@ -22840,7 +22840,7 @@
    "repo": "tt-a1i/matt-skills-with-to-goal",
    "branch": "main",
    "digest": "sha256:7a22dd2e60b8fcece478ced9d2533582adf3520d695acd3ab715341535c9e56d",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "hrrwfwpdxezanyx8d-2vgg7actvn_0yxyjk8jmtw3a0": {
    "status": "tree_truncated",
@@ -22848,7 +22848,7 @@
    "repo": "SeaXen/agentskills",
    "branch": "main",
    "digest": "sha256:42f1d9ae5e767395279c7ddff947659de68492d96769de8ee172b1f302367512",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "hrs8j3zjohbffxxtkrwgrmps7pa1k3v-j6lu1xu32dy": {
    "status": "upstream_changed",
@@ -22904,7 +22904,7 @@
    "repo": "xenodeve/xeno-skills",
    "branch": "main",
    "digest": "sha256:37b0a6fb2470feca368cf96f8058456b81dd17385a9c35334b794628d7c7981b",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "hsawpkgw4eewncxyo0air1hlank7cj6rp1gzpuu4en4": {
    "status": "pinned",
@@ -22945,7 +22945,7 @@
    "repo": "ndai0454-gif/Game_thanhgiong",
    "branch": "main",
    "digest": "sha256:be78698fe68ddc7fa79a0d763a1f5e474b1b4c2947237c4ca741071ac1b8f4b8",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "ad2d6b9e69fd9d4ef9f177f1c4a66bf031c5b22b",
    "name": "project-stage-detect",
    "description": "Analyze project state, detect stage, identify gaps, recommend next steps. 'Where are we in development?'"
@@ -22980,7 +22980,7 @@
    "repo": "Prasanth595/agentic-awesome-skills",
    "branch": "main",
    "digest": "sha256:c8ca5603699011777eb483848c8fffb5a933620ac930c98b6eddd185e5f60c3d",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "htyfcb94sl28ogxh9thbm0-cr0kipp80w7hqspyyq4s": {
    "status": "pinned",
@@ -23067,7 +23067,7 @@
    "repo": "punkouter26/PoSumo",
    "branch": "master",
    "digest": "sha256:7191b8c6973fae98d14713c76acc7e97f47e2a632775e0ccccb5bde250c212a2",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "hvkoz-myyks1jfofk3ozcweyhtotep64tne4qarkj0m": {
    "status": "pinned",
@@ -23135,7 +23135,7 @@
    "repo": "Solizardking/skillhub-main",
    "branch": "main",
    "digest": "sha256:42abe11ba6c0cb0c135deed1d591d844838fe0b61fc8c6d675a832435508a61b",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "hwxtueyccuz22jdzoaddbw1zjhnuoe0z6-xxvhzgbos": {
    "status": "bundled_files",
@@ -23143,7 +23143,7 @@
    "repo": "kbarbel640-del/skills",
    "branch": "main",
    "digest": "sha256:dd370b8625677931c0619ff59b12d39d801986d8926fe6f21a5afa2582a13d69",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "hx2paw7sa-fsgx20nk3i4x9okyye7or1r5wtmtpofsk": {
    "status": "upstream_unavailable",
@@ -23250,7 +23250,7 @@
    "repo": "Trompetilla/Skills",
    "branch": "main",
    "digest": "sha256:190eeddbff1b823020662c98faa1df00f11a0a3e17b7a87a815c5001d0f3a99e",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "hzmqa7u-feiwtdmcdm5ka3lvzy702wtqnih5gl7rv8c": {
    "status": "pinned",
@@ -23326,7 +23326,7 @@
    "repo": "AmidVoshakul/opencode-secops-blueprint",
    "branch": "main",
    "digest": "sha256:a9a0dc0e60e035cfcbaedc8032d4c2a1e3586f0009ef37998b2a720ed834a3b3",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "0c93058c49eee621c027aab135d3c9075b52e60f",
    "name": "langfuse",
    "description": "Expert in Langfuse - the open-source LLM observability platform. Covers tracing, prompt management, evaluation, datasets, and integration with LangChain, LlamaIndex, and OpenAI. Essential for debugging, monitoring, and improving LLM applications in production."
@@ -23354,7 +23354,7 @@
    "repo": "RUS-TICurtis/Match_Maker_RenamHer",
    "branch": "main",
    "digest": "sha256:9f47ef79323e7ebd0d54a8d6c43fec9dfcede725e31efac83c7c0fe1f1986080",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "1b808c1e3ac8ba000c50d1b080c25cc15f2472c4",
    "name": "fix-review",
    "description": "Verify fix commits address audit findings without new bugs"
@@ -23544,7 +23544,7 @@
    "repo": "ShunDa002/my-portfolio-website",
    "branch": "main",
    "digest": "sha256:3c78bc8b0c5406c4f2d4654b8e1e1202b144498929391c72c1809c4ab3a03b45",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "42e51460a3784d8057d982985b21c2cc89e57537",
    "name": "openspec-apply-change",
    "description": "Implement tasks from an OpenSpec change. Use when the user wants to start implementing, continue implementation, or work through tasks. Also use when the user says \"openspec apply\", \"opsx apply\", or \"openspec implement\"."
@@ -23661,7 +23661,7 @@
    "repo": "AmidVoshakul/opencode-secops-blueprint",
    "branch": "main",
    "digest": "sha256:8a5f0a3a9211236fbc9e830b1a1d6f9137b2afe153a76c8cf8dfa3e2b1819254",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "0c93058c49eee621c027aab135d3c9075b52e60f",
    "name": "tmux",
    "description": "Expert tmux session, window, and pane management for terminal multiplexing, persistent remote workflows, and shell scripting automation."
@@ -23807,7 +23807,7 @@
    "repo": "lingxling/awesome-skills-cn",
    "branch": "main",
    "digest": "sha256:562d7e2cb2febef14ab722bc29cd33983b523da287fb02b64eadf18702d4a9d1",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "iex4eiz3j-fdtxs-tosiynbrqw5gzg4xa-0czvjh8ns": {
    "status": "tree_truncated",
@@ -23907,7 +23907,7 @@
    "repo": "LeoYeAI/agent-master-skills",
    "branch": "main",
    "digest": "sha256:3b61caa428283c0a45787b9ca008202b9cd76e0adbbedf2f32a130b7af9e2d48",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "igbgkznsbfotktljby6wko35_qy-tajfzusauszeaiw": {
    "status": "ambiguous",
@@ -23922,7 +23922,7 @@
    "error": "GitHub API 404: {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/branches/branches#get-a-branch\",\"status\":\"404\"}",
    "archive_path": "design/find-skills-whyzsm-tiny-agents/SKILL.md",
    "digest": "sha256:deddc03b4b5f50755b97fcdb737a786676992ef7e9be614d2cd2c71e0320bebf",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "igiq-bg0fiqsjfsfyhzhunpmrdufzlbk-akv04gmite": {
    "status": "bundled_files",
@@ -23970,7 +23970,7 @@
    "repo": "Donchitos/Claude-Code-Game-Studios",
    "branch": "main",
    "digest": "sha256:7d420f14829ba4062dcaf354a91808e41523c091516160593bac048533679973",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "ihkzoov29ep5atksqg5l63vb-xfnyboldmpfjrepbpo": {
    "status": "pinned",
@@ -24571,7 +24571,7 @@
    "repo": "RUS-TICurtis/Match_Maker_RenamHer",
    "branch": "main",
    "digest": "sha256:fce644e493aab8dc3270c393f72b743104deae141cd9811bcf276ac30e162e68",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "1b808c1e3ac8ba000c50d1b080c25cc15f2472c4",
    "name": "aws-skills",
    "description": "AWS development with infrastructure automation and cloud architecture patterns"
@@ -24708,7 +24708,7 @@
    "repo": "Akbaralfajar5/hermes-agent-share",
    "branch": "main",
    "digest": "sha256:f8fb7c879411f3942cf7c5cdae011a84af13e26279216782d7c27778d0e76f1f",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "iuzim0c2h3fi6kcupia1wudjs_m7piz1xwefud7zw0i": {
    "status": "pinned",
@@ -24924,7 +24924,7 @@
    "repo": "Ronak1167/aura-vega-tv",
    "branch": "master",
    "digest": "sha256:6309098dbcb79a69181b285a737ff725d771efc6a3509813b271a5c70af085d3",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "iz1i-cdx5hki52vetqq_7_ahqsnxw7szwlpfs2k-o4s": {
    "status": "pinned",
@@ -25079,7 +25079,7 @@
    "repo": "xenodeve/xeno-skills",
    "branch": "main",
    "digest": "sha256:b24dc96c7a854ab97fa797a8e20d6bf981f155dfc625fd1ef347042395b7754c",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "j2sdgpdqh-udjxqwb4xsp65yyy6zkn_ml1-ope-sxsu": {
    "status": "pinned",
@@ -25167,7 +25167,7 @@
    "repo": "SeaXen/agentskills",
    "branch": "main",
    "digest": "sha256:75109695e954e0db2fb73bc6f68357e9e63f95c7a4cda8fb1234460231be26b7",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "j6520xhlq1nnq5hur5ws-4jr2to6eix7yarsqgebkhu": {
    "status": "pinned",
@@ -25238,7 +25238,7 @@
    "repo": "SeaXen/agentskills",
    "branch": "main",
    "digest": "sha256:3b0d1ecb222cb2245b0fe3f118a3630f46fdf4be5c597ad047575cd115f466a1",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "j_fd-vjrhmhpee-jn3ickd_-xfzs5oyezjylnaeixbk": {
    "status": "bundled_files",
@@ -25375,7 +25375,7 @@
    "repo": "ndai0454-gif/Game_thanhgiong",
    "branch": "main",
    "digest": "sha256:66b923ff3dd13b9e633d3ba05885bb5f53b1294c5765ab3a891205dbd8dea8c3",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "ad2d6b9e69fd9d4ef9f177f1c4a66bf031c5b22b",
    "name": "team-narrative",
    "description": "Orchestrate the narrative team — narrative-director, writer, world-builder, level-designer — for story, world lore, narrative-driven levels."
@@ -25495,7 +25495,7 @@
    "repo": "PickleBoxer/pstack",
    "branch": "main",
    "digest": "sha256:6460f338b42b33c19afe83319d49011951a394463e0325a1045a1b454ddfc374",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "01a302959b3b1645687ed8692d24945daf7b031a",
    "name": "principle-test-behavior-not-implementation",
    "description": "Test Behavior, Not Implementation"
@@ -25587,7 +25587,7 @@
    "repo": "Donchitos/Claude-Code-Game-Studios",
    "branch": "main",
    "digest": "sha256:382ee117ffbcade9c0b598db075a43087762da6873c5e7c7af67b0472e1d42b3",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418",
    "name": "test-flakiness",
    "description": "Find flaky tests from CI logs — aggregates pass rates, spots intermittent failures, recommends quarantine. After multiple runs."
@@ -25911,7 +25911,7 @@
    "repo": "Robertjam954/multimodal_rag_application",
    "branch": "main",
    "digest": "sha256:db31a871e00002b6895c5e32ade22244d3a92fbf3db88314474cef8c74b354ef",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "jnteib4ifj6wjrvx9ffr8bx6zx4n3bmuigpaf52urzq": {
    "status": "bundled_files",
@@ -25947,7 +25947,7 @@
    "repo": "SeaXen/agentskills",
    "branch": "main",
    "digest": "sha256:19e71897e18a8e1da5f216cd22ec8c87fd6e64c049ca7aeddfa351f0a1ba264b",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "jowkfrgoq6npv6uqlvxiz168cfucnuszyo-jlcyzdia": {
    "status": "ambiguous",
@@ -26094,7 +26094,7 @@
    "repo": "jahitchcock/Northwatch-Wardens---HomeBrew-",
    "branch": "main",
    "digest": "sha256:5af403bfcf8516c2cccf2d4c59a7c0fd04f30533ea738f968ce46c85741bbe5c",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "jrsbye1rb2-jsl3r9gvaghrave20t2jhkkoi2m1ln1s": {
    "status": "pinned",
@@ -26135,7 +26135,7 @@
    "repo": "RUS-TICurtis/Match_Maker_RenamHer",
    "branch": "main",
    "digest": "sha256:db3e7cf28601afc03cab049a60963d04028c40be2b07c1f6a0bef2edca062f5f",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "1b808c1e3ac8ba000c50d1b080c25cc15f2472c4",
    "name": "sharp-edges",
    "description": "Identify error-prone APIs and dangerous configurations"
@@ -26599,7 +26599,7 @@
    "repo": "SeaXen/agentskills",
    "branch": "main",
    "digest": "sha256:d6a48f1167fa892a9bfe6312786f00efdb4fe69e409b54b97bd1f805c10174d4",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "k2jd69dkdllab45jchhmdd0ujn1lp-nytiff4qs4ybq": {
    "status": "upstream_changed",
@@ -26685,7 +26685,7 @@
    "repo": "xenodeve/xeno-skills",
    "branch": "main",
    "digest": "sha256:efa99e1b5148c7aafe5f0632f24e4357dff20bc3641e34ec13587d003b89ba13",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "k4qdppqta7ayhgjajnmhmmhq3t3hucl9zl4sugv5iyu": {
    "status": "bundled_files",
@@ -26778,7 +26778,7 @@
    "repo": "ndai0454-gif/Game_thanhgiong",
    "branch": "main",
    "digest": "sha256:503d55d2b3a0144dfdc287e6dc3ba8c6da998e2611fe62ef0cd0d546438286fe",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "ad2d6b9e69fd9d4ef9f177f1c4a66bf031c5b22b",
    "name": "playtest-report",
    "description": "Structured playtest report template, or turn existing playtest notes into structured feedback."
@@ -26805,7 +26805,7 @@
    "repo": "RUS-TICurtis/Match_Maker_RenamHer",
    "branch": "main",
    "digest": "sha256:ed230aa68f0df490eeac616c10e8fcd3e0415a2c72af413841c831cb305356a8",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "1b808c1e3ac8ba000c50d1b080c25cc15f2472c4",
    "name": "screenshots",
    "description": "Generate marketing screenshots of your app using Playwright. Use when the user wants to create screenshots for Product Hunt, social media, landing pages, or documentation."
@@ -26880,7 +26880,7 @@
    "repo": "Sahil-958/dots",
    "branch": "main",
    "digest": "sha256:5434b12011c02ee249c4dcf64e55d2c09eea3d68912a9fe94ccf147c814db2d6",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "e125985e9d45c8a14e06d60810ff09e7271a6680",
    "name": "assessment-design-orchestrator",
    "description": "Routes between five assessment pathways — formative, rubric/criteria, authentic/performance, peer/self, and diagnostic — with validity and equity checks. Use when a teacher needs help choosing how to assess."
@@ -27074,7 +27074,7 @@
    "repo": "punkouter26/PoSumo",
    "branch": "master",
    "digest": "sha256:7ca14a2591470f1afd6a6ccad27e6e39c9ae880f2c8b046ddfb9a5e45d3962c5",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "kdbgzwakbhsh4ibrjrtjk9kowvcpq4qepk_8u6aahwg": {
    "status": "pinned",
@@ -27130,7 +27130,7 @@
    "repo": "SriramGandhiS/Skills",
    "branch": "master",
    "digest": "sha256:87a5278f1fdb2e2e51c7506b69aed58efbf261185e524e37450b866e594dd102",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "kdvrr0rvgznbhgtkaajssaix8lgvihqm0q5u8jrudfk": {
    "status": "bundled_files",
@@ -27162,7 +27162,7 @@
    "repo": "ndai0454-gif/Game_thanhgiong",
    "branch": "main",
    "digest": "sha256:c498c673b8f1b8d5634e33839b6117b17a827c2f41207acb115eb276f716189a",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "ad2d6b9e69fd9d4ef9f177f1c4a66bf031c5b22b",
    "name": "reverse-document",
    "description": "Generate missing design or architecture docs from existing implementation — works backwards from code and prototypes."
@@ -27318,7 +27318,7 @@
    "repo": "RUS-TICurtis/Match_Maker_RenamHer",
    "branch": "main",
    "digest": "sha256:e2951e5a847eb4e11dcc20b71feb83cd9e7920a06a6fc5158be8eedc89704f2d",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "1b808c1e3ac8ba000c50d1b080c25cc15f2472c4",
    "name": "c4-component",
    "description": "Expert C4 Component-level documentation specialist. Synthesizes C4 Code-level documentation into Component-level architecture, defining component boundaries, interfaces, and relationships."
@@ -27452,7 +27452,7 @@
    "repo": "kimzhang375-bit/my-first-repo",
    "branch": "main",
    "digest": "sha256:05d64a001190b516bc922bac616483c3109a6d29c3e9950e3e2d6c31b9415e79",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "kk1xw1gahawi0r0e9eoooqwcwhsneerkxi5uaa2bjyq": {
    "status": "invalid_frontmatter",
@@ -27484,7 +27484,7 @@
    "repo": "xenodeve/xeno-skills",
    "branch": "main",
    "digest": "sha256:46bdb08fee2dded38b6ba0a051230a502d6ac6e4044afd47592cb40c256028b5",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "kklyd2f8vk7lpfjl8pryzv8azvmres7zpdzccgzmxqm": {
    "status": "ambiguous",
@@ -27492,7 +27492,7 @@
    "repo": "Prasanth595/agentic-awesome-skills",
    "branch": "main",
    "digest": "sha256:08e8b7c38e142210b880b50cd81ee11aa62ead00632080002d949d625ee9fb93",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "kl8geex_ryst2qoi9hx2vaka6tyso91db-ykad4_oym": {
    "status": "upstream_changed",
@@ -27544,7 +27544,7 @@
    "repo": "SriramGandhiS/Skills",
    "branch": "master",
    "digest": "sha256:8854cbffa4a5447b3e86b66e71f7ff2a7850738cd69c1b7098bf508edf9ca53d",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "klxc_ndta3qwchzvi6i3ywrd_np_gj_2rktpgupigha": {
    "status": "pinned",
@@ -27633,7 +27633,7 @@
    "repo": "Rakshit-or-shadow/Aim-Labs",
    "branch": "main",
    "digest": "sha256:55b5da9a8180dd0d62a6babffd63dc2cbcc6d5156a2dbcc2528b427253a1606e",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "615d69ab2dbb42c5921eaf62198dea8876f031af",
    "name": "sprint-plan",
    "description": "New or updated sprint plan from the current milestone, completed work, and available capacity."
@@ -27645,7 +27645,7 @@
    "repo": "RUS-TICurtis/Match_Maker_RenamHer",
    "branch": "main",
    "digest": "sha256:c8060c6df55348fa3a20079a3fbd2e95c639412bf892e4bd7a9ebff7663b6e4f",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "1b808c1e3ac8ba000c50d1b080c25cc15f2472c4",
    "name": "create-pr",
    "description": "Create pull requests following Sentry conventions. Use when opening PRs, writing PR descriptions, or preparing changes for review. Follows Sentry's code review guidelines."
@@ -27950,7 +27950,7 @@
    "repo": "yehia-alhaddad/workout-logger-flutter",
    "branch": "main",
    "digest": "sha256:00edc97e4d6f1ac786817b679ff849e27bd353120632580c6bcb759aa3704d18",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "kupaovtm1avmlcea22-unx8hkeydzcdtefrtlwgvggw": {
    "status": "pinned",
@@ -28014,7 +28014,7 @@
    "repo": "Hassaan146/event",
    "branch": "main",
    "digest": "sha256:fd4232fa8ae704fadd92f57ebd698efe616e64a6d5fabcaafa45802347736965",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "kwmcntboxw6e8suseo30uusrmmcj40uqklnapb160rk": {
    "status": "bundled_files",
@@ -28066,7 +28066,7 @@
    "repo": "LeoYeAI/agent-master-skills",
    "branch": "main",
    "digest": "sha256:6234697e11dba69808d105f9cf9c96879a23301a707ceb37f0a0ae50fa2e381b",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "kye4c6it0yt2ycjamlhdhsy3hui3bmohtjr9nxruehk": {
    "status": "pinned",
@@ -28142,7 +28142,7 @@
    "repo": "FuDesign2008/open-skills",
    "branch": "main",
    "digest": "sha256:29290495eeb687c60d3aa8f461a8607ef2e087fb4a901617f72a78977b29b75e",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "340569032c43892a1588d360e08ce7f839935fee",
    "name": "openspec-new-change",
    "description": "Start a new OpenSpec change using the experimental artifact workflow. Use when the user wants to create a new feature, fix, or modification with a structured step-by-step approach."
@@ -28366,7 +28366,7 @@
    "repo": "Sahil-958/dots",
    "branch": "main",
    "digest": "sha256:25983f25bbad2febf317b7056ca90fbb62b07e06647f48a320658349de61132b",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "e125985e9d45c8a14e06d60810ff09e7271a6680",
    "name": "ai-socratic-dialogue-designer",
    "description": "Design a multi-round questioning sequence for interrogating AI chatbot answers, tracking how responses shift and distinguishing genuine updates from sycophantic capitulation. Use when teaching students to probe AI critically."
@@ -28604,7 +28604,7 @@
    "repo": "Prasanth595/agentic-awesome-skills",
    "branch": "main",
    "digest": "sha256:8e3029fc48844e76cd7ee002d70f25480fe3fcd4404083704789d6a7cf5fe1ea",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "lbvv9s1hopwlr57bputcwy8jwcarwca15jegimna9os": {
    "status": "bundled_files",
@@ -28750,7 +28750,7 @@
    "repo": "wearedevpunks/skills",
    "branch": "main",
    "digest": "sha256:f6317335da2662e92270dc0a6128bea95d7216cd751f86628e3ac6b72804e805",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "leh43edd2ke9uhsrozphngbmky5vpwhtttfbms2qyjo": {
    "status": "pinned",
@@ -28771,7 +28771,7 @@
    "repo": "sinhoneyy/master-skills",
    "branch": "master",
    "digest": "sha256:39aaad9cd0c148de43890ac71532a39df8139beeed191b7fe261fe948670e232",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "8e70b780359915a1f197ca37a1add2d4016115a2",
    "name": "hard-call",
    "description": "/em:hard-call — Framework for decisions with no good options. Use when every option is painful and a structured 10/10/10 + regret-minimization pass is needed — e.g. choosing between a layoff and a down round, or killing a beloved product line."
@@ -28854,7 +28854,7 @@
    "repo": "Prasanth595/agentic-awesome-skills",
    "branch": "main",
    "digest": "sha256:56ca1a929b7bc360d42f66324a4e735f44b5ac913c9e43bc70a5b16d68b04d61",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "lgkfzyuetdx_1xkiai3ek8x0kkmkgmeougsbf1eyk9g": {
    "status": "bundled_files",
@@ -28899,7 +28899,7 @@
    "repo": "ShunDa002/my-portfolio-website",
    "branch": "main",
    "digest": "sha256:ee64aecff9ae4f9e8052c3d077e63c9530d6acfe4eafe62c30dd9f3db188feea",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "42e51460a3784d8057d982985b21c2cc89e57537",
    "name": "openspec-continue-change",
    "description": "Continue working on an OpenSpec change by creating the next artifact. Use when the user wants to progress their change, create the next artifact, or continue their workflow. Also use when the user says \"openspec continue\" or \"opsx continue\"."
@@ -28943,7 +28943,7 @@
    "repo": "PickleBoxer/pstack",
    "branch": "main",
    "digest": "sha256:bf482bacc972b3f124a4af8bf9364b4b3e280cb5845e44c326ea4f4565e5c904",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "01a302959b3b1645687ed8692d24945daf7b031a",
    "name": "correct",
    "description": "Find the mistakes agents keep repeating in this repo and make each one impossible. Try architecture first, then types, then a lint whose error names the fix, then a test, and write docs last. Prove each check fails on a real past mistake. Repeat this each time the operator corrects you. Use for /correct."
@@ -29117,7 +29117,7 @@
    "repo": "Prasanth595/agentic-awesome-skills",
    "branch": "main",
    "digest": "sha256:a647d34fdffb7340ba17403ebd903a4231ad79b96eca51219294e814343c6755",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "lltlprpq5dwit-jggfztxzmvqtoisa40fcxhyyaiyek": {
    "status": "pinned",
@@ -29217,7 +29217,7 @@
    "repo": "Solizardking/skillhub-main",
    "branch": "main",
    "digest": "sha256:e10fba546f45357fe0aaa7494b9e186910d4525818d19f9b2ad6f28cc506aa5e",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "loon-3e3k0279yo59fo2uketu11uj_yhf2d23xvw-c0": {
    "status": "upstream_changed",
@@ -29373,7 +29373,7 @@
    "repo": "Robertjam954/multimodal_rag_application",
    "branch": "main",
    "digest": "sha256:89652e09aae17485d4f72e7417480c39289ac444a4985355ffbf2821e17fdd96",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "lrw4tch31acf1agbaipjbnolxdrzqgilrgi4rentkhq": {
    "status": "ambiguous",
@@ -29507,7 +29507,7 @@
    "repo": "alirezarezvani/claude-skills",
    "branch": "main",
    "digest": "sha256:5017f078d779365a6f6b7326804270857475a24535f278eb1b1dc436ef5a343a",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "luouixulzuf0-gygu9buis29ywxexxjnnemwv45xvyc": {
    "status": "upstream_changed",
@@ -29796,7 +29796,7 @@
    "repo": "PickleBoxer/pstack",
    "branch": "main",
    "digest": "sha256:1510979b0b71b54284427a19c09918f8b1fdfc168f9b7f9e30098793a5ec88ef",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "01a302959b3b1645687ed8692d24945daf7b031a",
    "name": "automate-me",
    "description": "Use for \"automate me\", \"create/update/refresh my -mode skill\", \"turn/capture my preferences or working style into a skill\", or wanting agents to follow how the user works. Drafts or revises a personal -mode skill via create-skill + unslop, optionally pulling fresh evidence from recent transcripts."
@@ -29991,7 +29991,7 @@
    "repo": "modbender/skill-library-mcp",
    "branch": "main",
    "digest": "sha256:4f38aa35e80e5f3b600c5324955a3008973b5d1be84d2390d82991091c0c1afe",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "m5wucxmzlh8fkfcferumzeiwbpfsklh5ghk-ietkikc": {
    "status": "tree_truncated",
@@ -30168,7 +30168,7 @@
    "repo": "eylulsenakumral/auto-company-clean",
    "branch": "main",
    "digest": "sha256:dd0537f1533226414b1c0861aad33befbd67ff6c9641febdc5b4493e0a3aaa21",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "6c487556abf5d3cf3a19b419147564bfff356895",
    "name": "premortem",
    "description": "Pre-mortem analysis that imagines a plan has failed, then works backward to identify causes and preventions. Use before launches, major decisions, or risky initiatives to surface hidden risks."
@@ -30211,7 +30211,7 @@
    "repo": "alexj11324/Mikka",
    "branch": "main",
    "digest": "sha256:1993a473cec40ac85d081c112cdffdc63ec3267c2e412055ad09e013a2f623d1",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "mbfedouqmsl1kndu1er-7cwbhq3zotdgpvfdpsnubcu": {
    "status": "bundled_files",
@@ -30279,7 +30279,7 @@
    "repo": "sickn33/antigravity-awesome-skills",
    "branch": "main",
    "digest": "sha256:7e38bae10d0df33400530075c9b0d2037f97bcbf7c8532bacc3e373a55a74e34",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "mccgmvuizo-briz9ve1xidv2cg-u4th3pp6wdesumek": {
    "status": "bundled_files",
@@ -30395,7 +30395,7 @@
    "repo": "xuyinfor-crypto/claude-agent-engineer",
    "branch": "main",
    "digest": "sha256:3a1c1cbac86961ee4cf539e6c7eb62328e90a4133084ba016a312c691e65b9cd",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "meicmwpib5zpz88s8kbh6mix0y58lxgeo_ogos7a4eq": {
    "status": "ambiguous",
@@ -30756,7 +30756,7 @@
    "repo": "RUS-TICurtis/Match_Maker_RenamHer",
    "branch": "main",
    "digest": "sha256:f9f8f703194acd25db8e590fc2426e0254adba22b7fc4fb3214a240351e46c3c",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "1b808c1e3ac8ba000c50d1b080c25cc15f2472c4",
    "name": "nosql-expert",
    "description": "Expert guidance for distributed NoSQL databases (Cassandra, DynamoDB). Focuses on mental models, query-first modeling, single-table design, and avoiding hot partitions in high-scale systems."
@@ -31050,7 +31050,7 @@
    "repo": "wshobson/agents",
    "branch": "main",
    "digest": "sha256:376e4bc7fa04d037025ef7c83fc994b5aedfdee96c76f3a1c3e5da0379e3f706",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "mpazr-2hsbxg2pjjebayerwvfalsv_upkjzr8c2gs4i": {
    "status": "pinned",
@@ -31118,7 +31118,7 @@
    "repo": "IntranetFactory/semantius-copilot",
    "branch": "main",
    "digest": "sha256:a45cddd4511f8262df05b20506f4d52be8210a9ee05a13d9e36d4ee321bab593",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "mqnk5-xkgd0yfluq4ebbuzbwmzf_e0-0bcppmjzsfxs": {
    "status": "pinned",
@@ -31189,7 +31189,7 @@
    "repo": "SeaXen/agentskills",
    "branch": "main",
    "digest": "sha256:8bf29c312cb81524c0527fcde29eca11d08ef4bdc2ba84617714260bf6940356",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "mrpt24fu3sig08u8omlaknqpfr540hl3kuepmsjd3pe": {
    "status": "pinned",
@@ -31198,7 +31198,7 @@
    "repo": "RUS-TICurtis/Match_Maker_RenamHer",
    "branch": "main",
    "digest": "sha256:4e5daf2ff5f1867e43a6e3dee28ab5f9ad9ef58aa44c04169a8ba2cd33ef7955",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "1b808c1e3ac8ba000c50d1b080c25cc15f2472c4",
    "name": "ai-product",
    "description": "Every product will be AI-powered. The question is whether you'll build it right or ship a demo that falls apart in production. This skill covers LLM integration patterns, RAG architecture, prompt ..."
@@ -31250,7 +31250,7 @@
    "repo": "sinhoneyy/master-skills",
    "branch": "master",
    "digest": "sha256:8e2f5bcb185c4c01fe65ddd4a75dbade26bb15e849e4110a99b940bdaf02af79",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "8e70b780359915a1f197ca37a1add2d4016115a2",
    "name": "execute",
    "description": "/cs:execute <decision> — Generate a 90-day execution plan with weekly milestones, DRIs, and check-in cadence from an approved decision. Use when a logged decision needs to become an operating plan — e.g. turning an approved market-entry call into weekly milestones with DRIs."
@@ -31277,7 +31277,7 @@
    "repo": "SriramGandhiS/Skills",
    "branch": "master",
    "digest": "sha256:0ec0993c0441d0b035da6b9bf246feb41a3fe6825158ee41af4931b5bce17347",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "mspnvnfbxbkyymgq5d-przh8eefysv-eyb94hi85xz0": {
    "status": "pinned",
@@ -32275,7 +32275,7 @@
    "repo": "SeaXen/agentskills",
    "branch": "main",
    "digest": "sha256:2b24eca6a8c0d83034c09562ec5a644f4c185fbb7ae9a2c3df031207b09e368d",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "ng4d-ppowf4ko7rzdcjma5ponk9drtoqta7opbhgema": {
    "status": "pinned",
@@ -32330,7 +32330,7 @@
    "repo": "LeoYeAI/agent-master-skills",
    "branch": "main",
    "digest": "sha256:cc29a57a369e5c6ee832e9086a652e4b5acacb1f66a7c713dc072856df7eba5b",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "ngjuww3ka-cdlxroud8p-1bmwskslkjxly1w8krlala": {
    "status": "tree_truncated",
@@ -32375,7 +32375,7 @@
    "repo": "tjsasakifln/extra-cli",
    "branch": "main",
    "digest": "sha256:1355b748919c7750cc87be94534192e5ff227229c14cbd34ca993a5f977a4ce2",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "c25939e9b7806c7d646fa5f4dfddf6ce740c79af",
    "name": "speckit-converge",
    "description": "Assess the current codebase against the feature's spec, plan, and tasks, then append any remaining unbuilt work as new tasks to tasks.md so implement can complete it."
@@ -32497,7 +32497,7 @@
    "repo": "RUS-TICurtis/Match_Maker_RenamHer",
    "branch": "main",
    "digest": "sha256:02587bbb40e9bf327ecff79a5f0aff7a148fb46424d2a9972520daa76af0b540",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "nk01do6ycx1w5fzr8b5snhxubjukzhc7w8nmfjjvyks": {
    "status": "tree_truncated",
@@ -32513,7 +32513,7 @@
    "repo": "RUS-TICurtis/Match_Maker_RenamHer",
    "branch": "main",
    "digest": "sha256:49170550ada71c59522729d3e99bd2acfb3b610a8126a4ad0eedd9c2736264ec",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "nkaernqtbgky9gwxbugikhgphigkkws3b4uqwkp93r8": {
    "status": "ambiguous",
@@ -32537,7 +32537,7 @@
    "repo": "Robertjam954/multimodal_rag_application",
    "branch": "main",
    "digest": "sha256:0bb1208ef49ffcce3400d803139b682901b0df93a7c0b72518b01543da244fe6",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "nkoamn5arandw7zswyrtxcc0xpardliebxzwuntqw-w": {
    "status": "bundled_files",
@@ -32688,7 +32688,7 @@
    "repo": "LeoYeAI/agent-master-skills",
    "branch": "main",
    "digest": "sha256:ad146d4d2a3ae66720728c7fa4720c1b54123ebf75cda4a922a0d0b8a5bb78f9",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "nmp3m1cq-cd-vlkuadim1bgbtguv_uoguswzqxyufqy": {
    "status": "pinned",
@@ -32720,7 +32720,7 @@
    "repo": "Prasanth595/agentic-awesome-skills",
    "branch": "main",
    "digest": "sha256:ebaf3f2d3da481fd17c27f2d127b91f08df3af299943b695b58969d55127714b",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "nn4v-oqimppm-k_q75erz6eottdk9el1uwgd_xfi-u4": {
    "status": "upstream_changed",
@@ -32787,7 +32787,7 @@
    "repo": "Prasanth595/agentic-awesome-skills",
    "branch": "main",
    "digest": "sha256:2a8a19b5445a34e72a29ce79ebf95b2cb5fbab22a406bf4f121ebf9bac60d855",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "nnkegkfupbc8dddiv208ff1cfwcji6rzmxakb8-ttne": {
    "status": "pinned",
@@ -33055,7 +33055,7 @@
    "repo": "modbender/skill-library-mcp",
    "branch": "main",
    "digest": "sha256:3a9525983f0189fe5bed5965a7d476b1e4be28b3af109df427a645bf81c1bd8f",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "nsjbgofc-hgupvp5srz0ndhh08u4uvdpfakbikgdw3g": {
    "status": "upstream_changed",
@@ -33180,7 +33180,7 @@
    "repo": "SriramGandhiS/Skills",
    "branch": "master",
    "digest": "sha256:a67d04fc9f1dde4a249bf19a1ecb064f048410083d7dd232e7c2b733db43407a",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "d6ca01da0f24a3b0e26e4a8b7b66cbd25d429f5d",
    "name": "git-workflow",
    "description": "Git workflow patterns including branching strategies, commit conventions, merge vs rebase, conflict resolution, and collaborative development best practices for teams of all sizes."
@@ -33203,7 +33203,7 @@
    "repo": "alirezarezvani/claude-skills",
    "branch": "main",
    "digest": "sha256:87351be1779ec4f02c72543afc620ce1543865cfceaaf857d7488302eb5f0d45",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "nveo02prafkkgtmyltzy1d7akuklx1onzg3rnxauuci": {
    "status": "bundled_files",
@@ -33239,7 +33239,7 @@
    "repo": "SeaXen/agentskills",
    "branch": "main",
    "digest": "sha256:a43727559fc2d7b973f65922397158dcfa14b2d3c648efb834f1201aec207257",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "nw9hv_cm7fj6mzalr0d76eoxnedkyhxxx5bylxzbcu8": {
    "status": "bundled_files",
@@ -34010,7 +34010,7 @@
    "repo": "RUS-TICurtis/Match_Maker_RenamHer",
    "branch": "main",
    "digest": "sha256:dd68e3894caba0aa3ac3e7e55e859b60c57340bb2e759e3df250b64b880b4988",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "1b808c1e3ac8ba000c50d1b080c25cc15f2472c4",
    "name": "development",
    "description": "Comprehensive web, mobile, and backend development workflow bundling frontend, backend, full-stack, and mobile development skills for end-to-end application delivery."
@@ -34060,7 +34060,7 @@
    "repo": "IntranetFactory/semantius-copilot",
    "branch": "main",
    "digest": "sha256:6e1697f6728f131cfbbb6b53543438921ce11faafcc4d5e0cc361b1643324e71",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "oieoyu_6iwirxjrq1v6jz5-pyuxrvzdpxb1gqvxsgyg": {
    "status": "pinned",
@@ -34079,7 +34079,7 @@
    "error": "GitHub API 404: {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest\",\"status\":\"404\"}",
    "archive_path": "data/entr/SKILL.md",
    "digest": "sha256:86a7ce70451830b940b24eccef43e10089581376e63052cb2e943564bf784ea6",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "oiipfsiwpignod3amglmeypal1xlgao3y65wqoanmec": {
    "status": "upstream_changed",
@@ -34110,7 +34110,7 @@
    "repo": "AmidVoshakul/opencode-secops-blueprint",
    "branch": "main",
    "digest": "sha256:f19345234a4aab9f5279073ea4e26b3142f34f6a9e96562e1422e35d7fbfa525",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "oj8huk9gww0w4lceldt-pkmmdajjckvgjxaajjsa5g8": {
    "status": "ambiguous",
@@ -34194,7 +34194,7 @@
    "repo": "RUS-TICurtis/Match_Maker_RenamHer",
    "branch": "main",
    "digest": "sha256:3c992361d8346b6947948a3ba5d5f1c4f1b75acd23d05e06da9d97f3cd357ed9",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "ojnjfeltvfdmdyzx5bft0fncpxpfn7ektygbtgmzy3u": {
    "status": "tree_truncated",
@@ -34202,7 +34202,7 @@
    "repo": "SeaXen/agentskills",
    "branch": "main",
    "digest": "sha256:a88b4d9b399d636b3c8423996841cdd2e5fa6403bf806707ed797c83ffff6a18",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "ojujunxpiazyn0pj2eor4k49nx_ziz1c6e3rgiryxrw": {
    "status": "upstream_changed",
@@ -34234,7 +34234,7 @@
    "repo": "SeaXen/agentskills",
    "branch": "main",
    "digest": "sha256:8f28eca99f2208872fc2483fcc93326b628f4f73116e91309a95e05da86a0ab5",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "ok2c_hbx0j4kw73xztpo3vtdrpixocs-xxt0gh0s0po": {
    "status": "pinned",
@@ -34302,7 +34302,7 @@
    "repo": "AmidVoshakul/opencode-secops-blueprint",
    "branch": "main",
    "digest": "sha256:bde207b8299d95ff44192423caa597bf652f8bd0996a3ea187d8514a5833c27d",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "0c93058c49eee621c027aab135d3c9075b52e60f",
    "name": "graphql",
    "description": "GraphQL gives clients exactly the data they need - no more, no less. One endpoint, typed schema, introspection. But the flexibility that makes it powerful also makes it dangerous. Without proper controls, clients can craft queries that bring down your server."
@@ -34428,7 +34428,7 @@
    "repo": "Bonny94ITA/BottegaWeb",
    "branch": "main",
    "digest": "sha256:f2e2a354e2ccb0b1b177872b7683e429ca6b79642e4aaac374859a9aefa40f25",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "e60775df0a500d98c6d7344c082742f88a88c95d",
    "name": "performance",
    "description": "Optimize web performance for faster loading and better user experience. Use when asked to \"speed up my site\", \"optimize performance\", \"reduce load time\", \"fix slow loading\", \"improve page speed\", or \"performance audit\"."
@@ -34472,7 +34472,7 @@
    "repo": "PickleBoxer/pstack",
    "branch": "main",
    "digest": "sha256:21d806e06340e1443f05be07a9a39c34648db1a20e5fdc95517b6736eccacd16",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "01a302959b3b1645687ed8692d24945daf7b031a",
    "name": "principle-redesign-from-first-principles",
    "description": "Redesign From First Principles"
@@ -34492,7 +34492,7 @@
    "repo": "wshobson/agents",
    "branch": "main",
    "digest": "sha256:ac36f91040ebd1d592974b8660c6abba58501e1f01d1f6c8ab7b32b74d06e818",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "9c61ab243def98f72da12abd41cfcf5bcd91af9d",
    "name": "superself",
    "description": "Use when a project keeps its state in Superself (a `<!-- superself:begin` block in AGENTS.md or CLAUDE.md, or `self setup` resolves the directory to a registered project): read `self context` at session start, attach work to a work unit, report with evidence, and record confirmed decisions so the next session picks up where this one left off."
@@ -34576,7 +34576,7 @@
    "repo": "RUS-TICurtis/Match_Maker_RenamHer",
    "branch": "main",
    "digest": "sha256:47cd1e7d253a38229ed3c8bede37469d7a4f784205aecaf116292bdf5c557cb7",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "1b808c1e3ac8ba000c50d1b080c25cc15f2472c4",
    "name": "clerk-auth",
    "description": "Expert patterns for Clerk auth implementation, middleware, organizations, webhooks, and user sync Use when: adding authentication, clerk auth, user authentication, sign in, sign up."
@@ -34624,7 +34624,7 @@
    "repo": "FuDesign2008/open-skills",
    "branch": "main",
    "digest": "sha256:1f1f574b299ea050b6020f6e8b2655f9b07bdd7e65da7929255200ef730038f1",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "340569032c43892a1588d360e08ce7f839935fee",
    "name": "openspec-sync-specs",
    "description": "Sync delta specs from a change to main specs. Use when the user wants to update main specs with changes from a delta spec, without archiving the change."
@@ -34801,7 +34801,7 @@
    "repo": "Endsi3g/uprising-coldoutreach",
    "branch": "master",
    "digest": "sha256:bc032fb7a05e8bc7b0fbb8b418db973db95b470b1c7b1e2f342cf609426a5943",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "ovgvuc9rgdttyqth1ccvczh3hn_wspumn3bkhgnpcgm": {
    "status": "upstream_unavailable",
@@ -34948,7 +34948,7 @@
    "repo": "Robertjam954/multimodal_rag_application",
    "branch": "main",
    "digest": "sha256:084bd2ef7dce6fabaec77f02c48c1d794072fa6770f18c4f180f0c17c703a4c9",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "oyv5eddv51t2wevoi39g031dei9mmulu6grrcjodank": {
    "status": "pinned",
@@ -35044,7 +35044,7 @@
    "repo": "Donchitos/Claude-Code-Game-Studios",
    "branch": "main",
    "digest": "sha256:a7ab49090d3018910d1efc2a43bb16f8239c9150bc3b180bdfdaf8bca208c96f",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418",
    "name": "test-evidence-review",
    "description": "Quality review of test files and evidence — goes beyond existence, evaluates assertion coverage. ADEQUATE/INCOMPLETE/MISSING/NOT ASSESSED per story."
@@ -35111,7 +35111,7 @@
    "repo": "wearedevpunks/skills",
    "branch": "main",
    "digest": "sha256:a842323e664e5af104eac5c97ad22fda929ebeb62d81c501161ac1f6f482db58",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "p2m0a2iuyj0iew5wcda4pn2-lrbydmwohkj6aqjbmou": {
    "status": "bundled_files",
@@ -35195,7 +35195,7 @@
    "repo": "Prasanth595/agentic-awesome-skills",
    "branch": "main",
    "digest": "sha256:3633d538ce5e2bbef175c2d637b6130d2c5b0ddd90eb4f77ab08672ee1acc2a4",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "p64f4qpigkq48lb68sf_isyx4xsd5bkrrlqdtcyumo4": {
    "status": "ambiguous",
@@ -35228,7 +35228,7 @@
    "repo": "RUS-TICurtis/Match_Maker_RenamHer",
    "branch": "main",
    "digest": "sha256:d90468b97c4ed43ad1de717950dbb8c4ea10d6f3e463af289523147e21aef308",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "1b808c1e3ac8ba000c50d1b080c25cc15f2472c4",
    "name": "bash-linux",
    "description": "Bash/Linux terminal patterns. Critical commands, piping, error handling, scripting. Use when working on macOS or Linux systems."
@@ -35260,7 +35260,7 @@
    "repo": "multiplex-ai/muggle-ai-teams",
    "branch": "main",
    "digest": "sha256:f65da15aabeb9dca7ae08525739e72ab16e79a78ff4004f7cab6ad2de1c2a79b",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "a242d3257cf4af737fb9c0741b3d748e8debe698",
    "name": "nextjs-turbopack",
    "description": "Next.js 16+ and Turbopack — incremental bundling, FS caching, dev speed, and when to use Turbopack vs webpack."
@@ -35280,7 +35280,7 @@
    "repo": "ruvnet/ruflo",
    "branch": "main",
    "digest": "sha256:348c1f1f5a33fcc309ddbfea48e5ec1e2e64c04ce88f11c14bcc5e656b2b59e4",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "29be054e85636b61788f3955d0bd4d0bcbcfe3f6",
    "name": "agent-specification",
    "description": "Agent skill for specification - invoke with $agent-specification"
@@ -35327,7 +35327,7 @@
    "repo": "SriramGandhiS/Skills",
    "branch": "master",
    "digest": "sha256:8eaea4af3b14018b4c8ef180419556b9cab4a8b931133dfdaedc70c787b56165",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "p_sujwy8tnxtmuc4r8puxv0txznpeemsjbbb6bo9ly4": {
    "status": "bundled_files",
@@ -35367,7 +35367,7 @@
    "repo": "ibrdot/swe-re-expert",
    "branch": "main",
    "digest": "sha256:80ad1ba638bfe6664d3f378a8b75c986ad1af0cd329d99be98468b25cd34b060",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "pbrpwazkvxpbefc9llss6zkpfg1uqilx_kkzjfmbzai": {
    "status": "upstream_changed",
@@ -35439,7 +35439,7 @@
    "repo": "kbarbel640-del/skills",
    "branch": "main",
    "digest": "sha256:ed52008bab2fa80d01b6ae22f1db3f9d4ee19d53833e6bec52056c574cdf4620",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "pdnrll8mewcvwd8ag9w8swbdkcru3aebqrhne1swc-o": {
    "status": "invalid_frontmatter",
@@ -35447,7 +35447,7 @@
    "repo": "spencermarx/open-code-review",
    "branch": "main",
    "digest": "sha256:5e52ac69d8804930e420302fff517cfba81a0ff0b8f54ba77fb366f412998232",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "pdsx_cgxnmmajox31zovh06puox6yf0jwb-ugv7pnnu": {
    "status": "bundled_files",
@@ -35487,7 +35487,7 @@
    "repo": "Solizardking/skillhub-main",
    "branch": "main",
    "digest": "sha256:a23bc544d1a964431b61fb451b25ff988e6622046d80111835c8f13210baee43",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "pecemfmx_dmb0vokdbmzg3zqnmi5fpdmbuk_2nr9x04": {
    "status": "upstream_changed",
@@ -35495,7 +35495,7 @@
    "repo": "wrg32786/aigent-os",
    "branch": "master",
    "digest": "sha256:832994fe1dfcce2aa7ceca9a1b7b708eca94becef242713999855f4e946cf4d5",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "pegxbou9zziq3wzceqqsx7wo4evgz_qm8thqd2ggtva": {
    "status": "ambiguous",
@@ -35542,7 +35542,7 @@
    "repo": "sinhoneyy/master-skills",
    "branch": "master",
    "digest": "sha256:ac2805dcd835f09b68a59d2476ff1f79f94a70cf19d3c8517adf9cd20c390295",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "peq9rcoeun6a6hzvpvozogd4vszc3ktyrly9mrpebjo": {
    "status": "ambiguous",
@@ -35655,7 +35655,7 @@
    "repo": "AmidVoshakul/opencode-secops-blueprint",
    "branch": "main",
    "digest": "sha256:7770f93066118b7c0f48d7c8f78e922e4c09d31f2f108332b00eda10d77689da",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "0c93058c49eee621c027aab135d3c9075b52e60f",
    "name": "ux-copy",
    "description": "Generate UX microcopy in StyleSeed's Toss-inspired voice for buttons, empty states, errors, toasts, confirmations, and form guidance."
@@ -35666,7 +35666,7 @@
    "repo": "SriramGandhiS/Skills",
    "branch": "master",
    "digest": "sha256:48259261aa52c6f99f92c8dc9d981d5ca312d7e499b2caf67788e6d0569bb4f2",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "pgiot1yobeeu9pltiqm-gx8gr_aec2dafqc4dyi2dbc": {
    "status": "pinned",
@@ -35695,7 +35695,7 @@
    "repo": "Zauwad/my-agentic-rig",
    "branch": "main",
    "digest": "sha256:430224f40a0d4daa5ed72cfedc13bb1877f369695372283ded7b36e1d924150c",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "b2fae58766cd13c990efeac58d788914a3b1ed3e",
    "name": "ck",
    "description": "Claude Codeの永続的なプロジェクト単位のメモリ。セッション開始時にプロジェクトコンテキストを自動読み込み、gitアクティビティでセッションを追跡し、ネイティブメモリに書き込みます。コマンドは決定的なNode.jsスクリプトを実行します — 動作はモデルバージョン間で一貫しています。"
@@ -35777,7 +35777,7 @@
    "repo": "Ronak1167/aura-vega-tv",
    "branch": "master",
    "digest": "sha256:be79b2bace5353af26e4c5ef1da57b8cb8a235e67ba8a2f3d3bb53baf2c8ca07",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "195ca0acd2fd666fb583686c10a1fe8cb9985ec2",
    "name": "moatmri",
    "description": "Analyze AI disruption pressure across a business, map competitive exposure, and produce a 90-day defensive action plan."
@@ -35939,7 +35939,7 @@
    "repo": "LeoYeAI/agent-master-skills",
    "branch": "main",
    "digest": "sha256:7a1a038467aec8069ed0746b69863751c058590f241218a25ff779bbf3b38b4e",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "pmdfdgusvxedlejhs_086ii2lqkmix3vtf_iuuvpyxc": {
    "status": "ambiguous",
@@ -35947,7 +35947,7 @@
    "repo": "Endsi3g/The-Uprising--Trading-Floor-",
    "branch": "main",
    "digest": "sha256:483933684f0555b962b3b7ecf4934ab9bc91b9078540208888da5b51a9cccb61",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "pmhpdwegznhzfvzun23sx0_jhtduz5ylt3xcpe43en4": {
    "status": "ambiguous",
@@ -35955,7 +35955,7 @@
    "repo": "Robertjam954/multimodal_rag_application",
    "branch": "main",
    "digest": "sha256:c95e095025be0579170293652ff89a0515870e2585e238cdbb2491f53d6f4fde",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "pnbfkjn07zog8opwsaldwytdqgispifblvbacssu3ok": {
    "status": "pinned",
@@ -36745,7 +36745,7 @@
    "repo": "Pabloprogramador23/loja",
    "branch": "master",
    "digest": "sha256:7b592b50e41e6a7a7e9f409078f566fffa594343c77d7d673417c2dcafe59be3",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "q2u3e3hjocfc2a4nntpvz4qwrmegybp6jqd52r7vwh8": {
    "status": "upstream_changed",
@@ -36873,7 +36873,7 @@
    "repo": "Prasanth595/agentic-awesome-skills",
    "branch": "main",
    "digest": "sha256:9d963a6e5253e90f16be19f2a3daecf61573cd9fa0f450386bf93ad97e8702e1",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "q61keirt80olpjhjvh2uqjy2vdunrfrthi45g2sq1xs": {
    "status": "pinned",
@@ -36921,7 +36921,7 @@
    "repo": "shortcuts/locationjoystick",
    "branch": "main",
    "digest": "sha256:8b0d64c622d8a70411bbd86e736ac23cc0465fca1943a37f081e58e9d3afd210",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "q6whsh6eegotpxlcbtpxcw7rcfjoou9b5liapbr3go4": {
    "status": "ambiguous",
@@ -36929,7 +36929,7 @@
    "repo": "Prasanth595/agentic-awesome-skills",
    "branch": "main",
    "digest": "sha256:e16ae1c2eaed038148af845991a7a575e229967b5d1c7144b62e3933b6516665",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "q7gihrdyzdwmfbxzcln0-0pmjdmhc2fk-kwjxtawce4": {
    "status": "pinned",
@@ -36989,7 +36989,7 @@
    "repo": "wlue/config",
    "branch": "master",
    "digest": "sha256:b78bf0e158d841aa710e0c3fd1906dad412d5f191abafc8ee228a5609de38ac2",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "q97lfcfqv3cnd6dpbni-f8_aldg0jon0d2cgccldyfe": {
    "status": "bundled_files",
@@ -37093,7 +37093,7 @@
    "repo": "SriramGandhiS/Skills",
    "branch": "master",
    "digest": "sha256:f36a89926fab1e895e7e2e2522e4104e1d7b07452244f31ff09ef1eeb069495c",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "qciibz1fldsmfp2od0kctstrurf9udgbediqee9oqbw": {
    "status": "bundled_files",
@@ -37171,7 +37171,7 @@
    "repo": "RUS-TICurtis/Match_Maker_RenamHer",
    "branch": "main",
    "digest": "sha256:4f9eab656528a63a3b9b3619bf1e976ebffec836ef63f8c23e26914ba83e7624",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "qeo6cm5yjkrzev25fuka4i6n439zlws6b5nyuwg37io": {
    "status": "repo_root",
@@ -37247,7 +37247,7 @@
    "repo": "smartrickpicks/substrate-bk-airlock-skills-library",
    "branch": "master",
    "digest": "sha256:b1e00603abd4100dde788ff9ecb0f0c240bcce25d1dec6f84f0d07e2408f2753",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "qg8cfuged5acv03y1mxsfoqvzxx5ehor7-tccgpxddo": {
    "status": "bundled_files",
@@ -37446,7 +37446,7 @@
    "repo": "xenodeve/xeno-skills",
    "branch": "main",
    "digest": "sha256:505abfc560b3738be60bae33a45d17898779bdcd5211ae9f2bb8ff58cc8cf434",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "qjyybmlwifeyfjlpoiqu-d5plfhtlj8cnyv3n7f_42g": {
    "status": "tree_truncated",
@@ -37462,7 +37462,7 @@
    "repo": "LeoYeAI/agent-master-skills",
    "branch": "main",
    "digest": "sha256:ed7441ad12273233f3c2b85b66be8e42cf33d0652592c8fe42cdd066c437ed6f",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "qkio1swrg3qmtrlj5hahfyrpxrn0vx87nmnifqya644": {
    "status": "pinned",
@@ -37522,7 +37522,7 @@
    "repo": "ruvnet/ruflo",
    "branch": "main",
    "digest": "sha256:4f81d20aa289f44161a96134b18cf8087daa1158799c881ffc4730cad4183dea",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "29be054e85636b61788f3955d0bd4d0bcbcfe3f6",
    "name": "flow-nexus-platform",
    "description": "Comprehensive Flow Nexus platform management - authentication, sandboxes, app deployment, payments, and challenges"
@@ -37613,7 +37613,7 @@
    "repo": "Endsi3g/The-Uprising--Trading-Floor-",
    "branch": "main",
    "digest": "sha256:ec5b8b01c74cedf810f50ded9830e9a16fa15733ec932d233b4d6a45d7c73991",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "qmot_vsdcinqwyqycndsexemunr1ddnjoeh3uelfcyq": {
    "status": "upstream_changed",
@@ -37661,7 +37661,7 @@
    "repo": "sinhoneyy/master-skills",
    "branch": "master",
    "digest": "sha256:995f6cf365634ab96d9124203e8f9d9a05997dbbd89786f217cd7cade884d367",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "qnymtewu3ylfsmfenqyqzoy-wj2cjotmutj19mlrhpq": {
    "status": "bundled_files",
@@ -37861,7 +37861,7 @@
    "repo": "Akbaralfajar5/hermes-agent-share",
    "branch": "main",
    "digest": "sha256:b69fdd300045a3e68b4886c5c5c714f904c9277ac40b2da371bf9e156fd9fa88",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "cf4d8d9c329e0a98698b3af1d407ad55c540799a",
    "name": "ascii-art",
    "description": "ASCII art: pyfiglet, cowsay, boxes, image-to-ascii."
@@ -37899,7 +37899,7 @@
    "repo": "spencermarx/open-code-review",
    "branch": "main",
    "digest": "sha256:516a5357177cc65909277b639af151b393388e5f5eaaa3fc9d29cff6526b0cf7",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "qtm82swipj7r6a_it2qtnh1j8jqb-levo9g4gk0mrzi": {
    "status": "pinned",
@@ -37927,7 +37927,7 @@
    "repo": "Wanfeng1028/muse",
    "branch": "main",
    "digest": "sha256:730476ba02cc56c8a59b3e4a897801923f463289cd386bccb56d01833be4441f",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "qtq-noixaia51oppn4wbslbzmcg6wvpc1x1w739sk94": {
    "status": "pinned",
@@ -38190,7 +38190,7 @@
    "repo": "xuyinfor-crypto/claude-agent-engineer",
    "branch": "main",
    "digest": "sha256:4453b4aa9bf923a911ee0c44249e74a95b91b5da7daee16c61652a8a7c8595ae",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "r1ztzf62ukqptqjdo5a-je8zgmx4xpjiurlf6g0bz3w": {
    "status": "bundled_files",
@@ -38214,7 +38214,7 @@
    "repo": "Prasanth595/agentic-awesome-skills",
    "branch": "main",
    "digest": "sha256:8d07464bdf99f32a64d44376d99d18c85b1bbe543b2c3c5485f35861db880a48",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "r2mzah51wgvdgextdhirvngc_aasi4av3qlqypm8ec4": {
    "status": "bundled_files",
@@ -38230,7 +38230,7 @@
    "repo": "Prasanth595/agentic-awesome-skills",
    "branch": "main",
    "digest": "sha256:d9b882fc29e0170303a282bf1aaa1c79439006ff29f8b3803fd06657126c3b84",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "r34k2ff0tytvnfsxwdsi8h2x9itduveks6vgpml9qbq": {
    "status": "bundled_files",
@@ -38345,7 +38345,7 @@
    "repo": "Prasanth595/agentic-awesome-skills",
    "branch": "main",
    "digest": "sha256:e9b925ee16d1fa26813cb16a2add874d01ec5f2d1e0e1a9d4db71cde59775901",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "r6bp4nwo_m-d6wm2-jqjgaoavz8ldcn6t-dc4bvaylu": {
    "status": "pinned",
@@ -38381,7 +38381,7 @@
    "repo": "VelimirMueller/ai-development-skills",
    "branch": "main",
    "digest": "sha256:74db1441ba286b5d4cb6f36607f2a6010e86b359e0be9147b751b23aa16f063d",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "r6z-6vooz_u5y-9yxxcd3nqrx0olmcv8lmhpjjidb4a": {
    "status": "bundled_files",
@@ -38565,7 +38565,7 @@
    "repo": "agisota/old-one",
    "branch": "main",
    "digest": "sha256:f1a58d753f152daf71b78e58df13f414415540409ea2dcd139b7ec52ad542238",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "f37de8f681f0c0ca0e0ebab6e5fddf764ca7553d",
    "name": "extract",
    "description": "Turn a proven pattern or debugging solution into a standalone reusable skill with SKILL.md, reference docs, and examples."
@@ -38636,7 +38636,7 @@
    "repo": "Prasanth595/agentic-awesome-skills",
    "branch": "main",
    "digest": "sha256:4f71b739baf4fa48dbf10ec9ee0ff120540d21de054e5b488043301136552d91",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "rdwfxrhiuljzewtuiyctncsnsrx7rkjxpja-dypmsou": {
    "status": "upstream_changed",
@@ -38653,7 +38653,7 @@
    "repo": "LeoYeAI/agent-master-skills",
    "branch": "main",
    "digest": "sha256:02e8fab07e66768e32eb5c20afccd00c2c1ed52d142ec533fbe608a0037edba1",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "8f88f9a0dd5a1075d4f0c7626f9d960844d57575",
    "name": "hads",
    "description": "Use when writing technical documentation that needs to be readable by both humans and AI models, converting existing docs to HADS format, validating a HADS document, or optimizing documentation for token-efficient AI consumption."
@@ -38685,7 +38685,7 @@
    "repo": "RUS-TICurtis/Match_Maker_RenamHer",
    "branch": "main",
    "digest": "sha256:0777edd5095b6fe36ac90720a35c01b2c94ae4d9611f943a7a6a51dd2360064a",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "1b808c1e3ac8ba000c50d1b080c25cc15f2472c4",
    "name": "tool-design",
    "description": "Build tools that agents can use effectively, including architectural reduction patterns"
@@ -38696,7 +38696,7 @@
    "repo": "Endsi3g/The-Uprising--Trading-Floor-",
    "branch": "main",
    "digest": "sha256:2507310b75e4acfec79e25b706749737911a6e83bd10829198598f361c6beffe",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "rekmovy3oskyg67_8df32uubngbpmxpd6nkh5h-viks": {
    "status": "upstream_changed",
@@ -38967,7 +38967,7 @@
    "repo": "LeoYeAI/agent-master-skills",
    "branch": "main",
    "digest": "sha256:93bafbd0c5c3ce34565025c15d9294ec05d518bcb509c2da745b6920a72fa13c",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "rkwbjzegozwa_di6s3jynbsay-x4d4u_nrja9ndgbl0": {
    "status": "bundled_files",
@@ -39170,7 +39170,7 @@
    "repo": "wrg32786/aigent-os",
    "branch": "master",
    "digest": "sha256:1316a2f3f95741d2300b116fe0c2d81ce4a9568656ed0a62643f54aaf09957f2",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "ro5ren-rjane-fgk13qzx9iys6owjpgdo_xxen6yezc": {
    "status": "tree_truncated",
@@ -39481,7 +39481,7 @@
    "repo": "FuDesign2008/open-skills",
    "branch": "main",
    "digest": "sha256:9acef8431bfb385bcb73fcaf9094c343246dcdeb053cc0f13a0408d8a225dbcc",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "340569032c43892a1588d360e08ce7f839935fee",
    "name": "openspec-ff-change",
    "description": "Fast-forward through OpenSpec artifact creation. Use when the user wants to quickly create all artifacts needed for implementation without stepping through each one individually."
@@ -39505,7 +39505,7 @@
    "repo": "ratnesh-maurya/tracker.ratnesh-maurya.com",
    "branch": "main",
    "digest": "sha256:371dd4d628b56942f6c37570782293726d024319649b06f82ccd3c4e8885b52b",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "4a8bb7ab2a0948da395f32ca4225036a03a02de3",
    "name": "react-ui-patterns",
    "description": "Modern React UI patterns for loading states, error handling, and data fetching. Use when building UI components, handling async data, or managing UI states."
@@ -39567,7 +39567,7 @@
    "repo": "Robertjam954/multimodal_rag_application",
    "branch": "main",
    "digest": "sha256:c3e877d874cac1834753e7b3b35a8a33e1257b3b5f3c429dcab238bd19c28601",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "rvs_y3x5u01a2frazexvflo8lurvghaavjkrj18jxym": {
    "status": "pinned",
@@ -39867,7 +39867,7 @@
    "repo": "SeaXen/agentskills",
    "branch": "main",
    "digest": "sha256:2f8a9a2544c556dd37fc488af72c15f383f2d46b4fd8d9e3195973cdb189d46d",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "s0tw8xuqv-tkghn3ea3ctd44avcykr3grlcushm-jd4": {
    "status": "bundled_files",
@@ -39998,7 +39998,7 @@
    "repo": "n2g7/agent-skills",
    "branch": "main",
    "digest": "sha256:1f5fa186a0e447a32d949daf7e7047d4e985b424cbbe089196cafee62495a486",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "s588qkfclj3f8volbveedc7c1a_5lvsailcheyjwh9u": {
    "status": "bundled_files",
@@ -40143,7 +40143,7 @@
    "repo": "RUS-TICurtis/Match_Maker_RenamHer",
    "branch": "main",
    "digest": "sha256:3e91f15885f5133fe32af5224e8c26719e8f7320aa2d59a7f69e3d27c13d354f",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "1b808c1e3ac8ba000c50d1b080c25cc15f2472c4",
    "name": "find-bugs",
    "description": "Find bugs, security vulnerabilities, and code quality issues in local branch changes. Use when asked to review changes, find bugs, security review, or audit code on the current branch."
@@ -40279,7 +40279,7 @@
    "repo": "Sahil-958/dots",
    "branch": "main",
    "digest": "sha256:f7491dd4e9c38cf707067f8e4b1818069c501f39963d3628852f65bdd7031b46",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "e125985e9d45c8a14e06d60810ff09e7271a6680",
    "name": "competency-unpacker",
    "description": "Unpack a broad standard or competency descriptor into specific, assessable success criteria and sub-skills. Use when interpreting curriculum standards or writing learning objectives."
@@ -40446,7 +40446,7 @@
    "repo": "RUS-TICurtis/Match_Maker_RenamHer",
    "branch": "main",
    "digest": "sha256:3d52c44ec0211185a8345177f429e2a4499825c37f5fab799d715000677e3c17",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "1b808c1e3ac8ba000c50d1b080c25cc15f2472c4",
    "name": "shopify-apps",
    "description": "Expert patterns for Shopify app development including Remix/React Router apps, embedded apps with App Bridge, webhook handling, GraphQL Admin API, Polaris components, billing, and app extensions. U..."
@@ -40578,7 +40578,7 @@
    "repo": "Sahil-958/dots",
    "branch": "main",
    "digest": "sha256:cd430b7410f250810a77c46fc192f6a0132023dcdbb442fdf09b39e787012b56",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "e125985e9d45c8a14e06d60810ff09e7271a6680",
    "name": "aspirational-systems-iceberg",
    "description": "Design the deeper patterns, structures, artefacts, and mental models needed to grow a desired event. Use when a class imagines a better future."
@@ -40590,7 +40590,7 @@
    "repo": "AmidVoshakul/opencode-secops-blueprint",
    "branch": "main",
    "digest": "sha256:b9f572c33ff2915618bc911730d66e4b98217538ee28393ea1b1fddb14ecd428",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "0c93058c49eee621c027aab135d3c9075b52e60f",
    "name": "ui-setup",
    "description": "Interactive StyleSeed setup wizard for choosing app type, brand color, visual style, typography, and the first screen scaffold."
@@ -40674,7 +40674,7 @@
    "repo": "AmidVoshakul/opencode-secops-blueprint",
    "branch": "main",
    "digest": "sha256:f1c2bbab5749c4d65da1a6dad4a370d64b51fa8465c87d73150e972e53bbee64",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "0c93058c49eee621c027aab135d3c9075b52e60f",
    "name": "agentflow",
    "description": "Orchestrate autonomous AI development pipelines through your Kanban board (Asana, GitHub Projects, Linear). Manages multi-worker Claude Code dispatch, deterministic quality gates, adversarial review, per-task cost tracking, and crash-proof pipeline execution."
@@ -41109,7 +41109,7 @@
    "repo": "Hassaan146/event",
    "branch": "main",
    "digest": "sha256:e5833cf7a539bc84147512b7e55cfb91e5e7223d72276a2cd92e6ee99a7bd002",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "sqqxxg0gtgtsljjsnoy-akxfmcjgqrg0wgzmpfejsrg": {
    "status": "upstream_changed",
@@ -41225,7 +41225,7 @@
    "repo": "Prasanth595/agentic-awesome-skills",
    "branch": "main",
    "digest": "sha256:e82e82a30da4440d18940dc67796fa5f9d3df55fce22da0394a2105a7ed779fc",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "sspmnpzt43tkx0xaayojmhytx77j--grzbez3g_ucfk": {
    "status": "pinned",
@@ -41342,7 +41342,7 @@
    "repo": "Bonny94ITA/BottegaWeb",
    "branch": "main",
    "digest": "sha256:a06ca86d0b0cc75982ee10651bd7398c0242a13d91d3b4c8eae0bf1360d18b92",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "e60775df0a500d98c6d7344c082742f88a88c95d",
    "name": "seo",
    "description": "Optimize for search engine visibility and ranking. Use when asked to \"improve SEO\", \"optimize for search\", \"fix meta tags\", \"add structured data\", \"sitemap optimization\", or \"search engine optimization\"."
@@ -41525,7 +41525,7 @@
    "repo": "SriramGandhiS/Skills",
    "branch": "master",
    "digest": "sha256:ec40c3b976429de3628f66bcbf6c1176b8525d508f38bd32c4d6c152a0c00145",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "sz4j8avtafhvsfnwyukmibt0dpfp3tod1hfmk4ast8u": {
    "status": "bundled_files",
@@ -41533,7 +41533,7 @@
    "repo": "xenodeve/xeno-skills",
    "branch": "main",
    "digest": "sha256:4c060a8064a8b13380bc2ef3d6e6a1d0b1e316aa093cd9807d0ce9e4eeb037fa",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "szdummkajsmp7fmjdmxhnb-o4zkc0tobvgaetn51tyg": {
    "status": "upstream_changed",
@@ -41757,7 +41757,7 @@
    "repo": "xenodeve/xeno-skills",
    "branch": "main",
    "digest": "sha256:cfb107ae328e100ad1ca89554fbf590a15330daa1ba861540bb0481948f77553",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "t6zxqhcueva9vtwmssdmnwlvt349sjenoz935qhn5kk": {
    "status": "ambiguous",
@@ -41784,7 +41784,7 @@
    "error": "GitHub API 404: {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/branches/branches#get-a-branch\",\"status\":\"404\"}",
    "archive_path": "bash/hatch-pet-whyzsm-tiny-agents/SKILL.md",
    "digest": "sha256:7ab0f01e8561085d1b494a6ca74abed766c655da8ec98284fb38a362c19d6871",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "t8evfzbzdx_z7of3a1aaohrsogunykxzk2cyirm4l8a": {
    "status": "ambiguous",
@@ -41809,7 +41809,7 @@
    "repo": "AmidVoshakul/opencode-secops-blueprint",
    "branch": "main",
    "digest": "sha256:605a13d8d5b18535c2e80b0ea5f04b255e8d1eb9a2908f5cc3847b140f17da34",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "0c93058c49eee621c027aab135d3c9075b52e60f",
    "name": "ui-a11y",
    "description": "Audit a StyleSeed-based component or page for WCAG 2.2 AA issues and apply practical accessibility fixes where the code makes them safe."
@@ -41872,7 +41872,7 @@
    "repo": "JadeGate/jadegate",
    "branch": "main",
    "digest": "sha256:93b2fcf35ef3fc3926632aa9d3b09780c527d21dc0304f59b1baf8e887726b7d",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "ta4alish1efx-fgo_8zqjn01_tjrsio69vd8-a4p8um": {
    "status": "upstream_unavailable",
@@ -42029,7 +42029,7 @@
    "repo": "punkouter26/PoSumo",
    "branch": "master",
    "digest": "sha256:6fe0f2a6c5a9031a28a1dbbfff6efb95d9342ec70a1306e9e25fbce408ad202e",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "teambzgr-gvplm5pgbkf4zkzkqigjapde4icyed4wis": {
    "status": "ambiguous",
@@ -42037,7 +42037,7 @@
    "repo": "yanacuti1121/Yana-AI",
    "branch": "main",
    "digest": "sha256:0727c9b53ea976a412fc52d0cec769e056b2c9b0a96069eeb98bd7fd757df476",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "tearl5e4h-prqauw6skfsk-l2okuxx58z0blfhqdzya": {
    "status": "ambiguous",
@@ -42045,7 +42045,7 @@
    "repo": "Robertjam954/multimodal_rag_application",
    "branch": "main",
    "digest": "sha256:81357bebb50b2a9cbfe46386eae4643d565445562882de4f891801b8b5dbfed1",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "tec0bmj-qv90jyha3wbj3h4llhmouwx3iley55ecfnw": {
    "status": "pinned",
@@ -42388,7 +42388,7 @@
    "repo": "PickleBoxer/pstack",
    "branch": "main",
    "digest": "sha256:55143de0f97d2391fcf0fb10e3b8c267cd256db48e4e8bdef3501eb7e7f69bb5",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "01a302959b3b1645687ed8692d24945daf7b031a",
    "name": "principle-migrate-callers-then-delete-legacy-apis",
    "description": "Migrate Callers Then Delete Legacy APIs"
@@ -42423,7 +42423,7 @@
    "repo": "Pabloprogramador23/loja",
    "branch": "master",
    "digest": "sha256:63d89eef8cc37b83475a8c6f3f2e6fd2ae4914ef9098c3cadd30cdbed9761ecf",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "tl_tdtf9zxvrltcqygpe3rrxk3b6q_borpi_ob8shk8": {
    "status": "upstream_changed",
@@ -42542,7 +42542,7 @@
    "repo": "Robertjam954/multimodal_rag_application",
    "branch": "main",
    "digest": "sha256:91b3ce958de44f728453572747504e8c9146f119892aa690546fd19f8d96a344",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "tohyqqjskm-vjkpb6odhxf8dc4ngawz9pnfmj-zuhyc": {
    "status": "ambiguous",
@@ -42730,7 +42730,7 @@
    "repo": "sinhoneyy/master-skills",
    "branch": "master",
    "digest": "sha256:dc6c4227a1512112717675a3a2b73a9f4dff4b6bbf34f3f1c6f198b39a4ef2f9",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "tshf5rsf4nrqknm700vl0tcuo3m_xgvaautmjilqjbm": {
    "status": "bundled_files",
@@ -42921,7 +42921,7 @@
    "repo": "ruvnet/ruflo",
    "branch": "main",
    "digest": "sha256:28aa40972ed82ed01cc04af2402a5f5044004abe3dfcb865de76290c0e69c37d",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "29be054e85636b61788f3955d0bd4d0bcbcfe3f6",
    "name": "neural-training",
    "description": "Neural pattern training with SONA (Self-Optimizing Neural Architecture), MoE (Mixture of Experts), and EWC++ for knowledge consolidation. Use when: pattern learning, model optimization, knowledge transfer, adaptive routing. Skip when: simple tasks, no learning required, one-off operations."
@@ -42964,7 +42964,7 @@
    "repo": "Prasanth595/agentic-awesome-skills",
    "branch": "main",
    "digest": "sha256:a0dd69fc9af31532fcd700497c45db621adbfab146243880699a5d5f4ee44aa6",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "twjid9hnknk-ji2x0ydvgo07rug0vqxpgl10sgzqzpa": {
    "status": "bundled_files",
@@ -43089,7 +43089,7 @@
    "repo": "ndai0454-gif/Game_thanhgiong",
    "branch": "main",
    "digest": "sha256:1028ff3cc2f0f1ad609efb5c91d62b40be9644a0d39cc1fb3bb8c0fd42ca29df",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "ad2d6b9e69fd9d4ef9f177f1c4a66bf031c5b22b",
    "name": "milestone-review",
    "description": "Milestone progress review — completeness, quality metrics, risk, go/no-go recommendation. At checkpoints or before a deadline."
@@ -43240,7 +43240,7 @@
    "repo": "SriramGandhiS/Skills",
    "branch": "master",
    "digest": "sha256:7c02f890c783033a4cf804aed686a6431ec57102936e7765b1e01c0936d6d046",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "u3ttcmrtm8ubad0pf8tc0r1zp8xyd-9qfg-dse_f7uu": {
    "status": "pinned",
@@ -43515,7 +43515,7 @@
    "repo": "alexj11324/Mikka",
    "branch": "main",
    "digest": "sha256:1f629e18ab899412683bc6a1c4efb4339999e27c2fdac328f26ee10a8c031d33",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "uamnybwhkavdfyhrtycaxagxpsx4ozba0pwgoquy5qo": {
    "status": "bundled_files",
@@ -43579,7 +43579,7 @@
    "repo": "Hassaan146/event",
    "branch": "main",
    "digest": "sha256:c8af49f0c29b87c80b9e2d2f266f410d989a21ecee29b584e59e5e89a0d2f65f",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "ub3tt4fukxilvlextid097g8gyyrvhkfxlks5o0vo4u": {
    "status": "bundled_files",
@@ -43628,7 +43628,7 @@
    "repo": "sakamoto-family-smile/agent_monorepo",
    "branch": "main",
    "digest": "sha256:54f769ac5ad4a15e47e42d34d4715b9f9cf1061d2f6e94f3c1ba976cbea4b77b",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "b106399a19157a40cc47fe87c9a91ae69811492a",
    "name": "production-audit",
    "description": "Local-evidence production readiness audit for shipped apps, pre-launch reviews, post-merge checks, and \"what breaks in prod?\" questions without sending repo data to an external audit service."
@@ -43781,7 +43781,7 @@
    "repo": "Prasanth595/agentic-awesome-skills",
    "branch": "main",
    "digest": "sha256:d59322a7a66925e2c4119bb5d70dd7071ba96c1be82b93423c1d8c8b7bfdf16d",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "ueac0ojgmqwaq9t_i7nd35jbupy2kmy2p5sb8tb6nfo": {
    "status": "tree_truncated",
@@ -43886,7 +43886,7 @@
    "repo": "punkouter26/PoSumo",
    "branch": "master",
    "digest": "sha256:61eb39c0e00f5e62fa206317ed13710ea74fe74920145dd9aedaf7bb8b983e41",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "ugnf91ngc2o0hgr_fkgjfockr6ekrew-_ba33o_eg6s": {
    "status": "tree_truncated",
@@ -44082,7 +44082,7 @@
    "repo": "spencermarx/open-code-review",
    "branch": "main",
    "digest": "sha256:beecdac71c19e0ed3506737d5cb8704e6ceeb7dfa6052b425607cda0c548a5af",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "ukbu4c4k5nfeff98tab3kj8d2jba87kky6cenu1n3xy": {
    "status": "ambiguous",
@@ -44098,7 +44098,7 @@
    "repo": "Robertjam954/multimodal_rag_application",
    "branch": "main",
    "digest": "sha256:0086a38ba8dcb1be0e828f5d86d768d73110729bce51be9c60431ec59c47106c",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "ukjniebiehuliwfs1h3dp44gvumvmmm0zwpoyps_geq": {
    "status": "upstream_unavailable",
@@ -44114,7 +44114,7 @@
    "repo": "RUS-TICurtis/Match_Maker_RenamHer",
    "branch": "main",
    "digest": "sha256:b711c3da2de72bca1e2d058466f222ac21137cdc3696414df2e7ae6a27870bb0",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "1b808c1e3ac8ba000c50d1b080c25cc15f2472c4",
    "name": "segment-cdp",
    "description": "Expert patterns for Segment Customer Data Platform including Analytics.js, server-side tracking, tracking plans with Protocols, identity resolution, destinations configuration, and data governance ..."
@@ -44445,7 +44445,7 @@
    "repo": "SeaXen/agentskills",
    "branch": "main",
    "digest": "sha256:e6ff6383eed44f4d63be6a246c15a7505fb4d567fd97ea904b457ee77e38fa59",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "uqtzfv4h0swzbicrykbl3ungthjwptxjidfiazykzq0": {
    "status": "ambiguous",
@@ -44653,7 +44653,7 @@
    "repo": "LeoYeAI/agent-master-skills",
    "branch": "main",
    "digest": "sha256:3cb7a75336e338faa9be15dd8b97479721ac8ceac6f1ff4061c9b9eefccd9983",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "uv075hqt_hinz5dlahxv_hgbgpdn9bhx8cinrc3brjq": {
    "status": "tree_truncated",
@@ -44845,7 +44845,7 @@
    "repo": "SeaXen/agentskills",
    "branch": "main",
    "digest": "sha256:15d13de80448f2cc152819429e569f93b95261f6dadc12864e6e237717c3f8a9",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "uxzy1pdd9jvgm6kklrjormlm24ljooibfhqnhiuheyi": {
    "status": "pinned",
@@ -44960,7 +44960,7 @@
    "repo": "meghal86/stacksignal",
    "branch": "main",
    "digest": "sha256:7882b935772edf23c3c363f384cf2c3589e3f94fa2ff11cc33315dfb7020abf8",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "v1i3jqima9nxp3xv1syioj4ozeg3kcsgjacvd4yzgka": {
    "status": "pinned",
@@ -44969,7 +44969,7 @@
    "repo": "AmidVoshakul/opencode-secops-blueprint",
    "branch": "main",
    "digest": "sha256:8fdfa44137132b83aba3c89a2f720499f61a1d3f1c4485298f7a5b1d71b566f0",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "0c93058c49eee621c027aab135d3c9075b52e60f",
    "name": "polars",
    "description": "Fast in-memory DataFrame library for datasets that fit in RAM. Use when pandas is too slow but data still fits in memory. Lazy evaluation, parallel execution, Apache Arrow backend. Best for 1-100GB datasets, ETL pipelines, faster pandas replacement. For larger-than-RAM data use dask or vaex."
@@ -45311,7 +45311,7 @@
    "repo": "AmidVoshakul/opencode-secops-blueprint",
    "branch": "main",
    "digest": "sha256:2cfa65ab1ddb9591162f162bb6c1c605ba2c3338ea93da8fb515f422845c600d",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "0c93058c49eee621c027aab135d3c9075b52e60f",
    "name": "cirq",
    "description": "Cirq is Google Quantum AI's open-source framework for designing, simulating, and running quantum circuits on quantum computers and simulators."
@@ -45638,7 +45638,7 @@
    "repo": "Robertjam954/multimodal_rag_application",
    "branch": "main",
    "digest": "sha256:a0dd18d0f49514e53c0683b32f93c60c34fab454e941e28cdff72444cd5d4440",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "vhinbn5rooirtuymrmlnkebp2dlmmgpiqqhgkelejwk": {
    "status": "upstream_changed",
@@ -45859,7 +45859,7 @@
    "repo": "Ronak1167/aura-vega-tv",
    "branch": "master",
    "digest": "sha256:561b576ebdd10745006581699733938c606b1dca63c4d57ded0333d688041af3",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "195ca0acd2fd666fb583686c10a1fe8cb9985ec2",
    "name": "langfuse",
    "description": "Expert in Langfuse - the open-source LLM observability platform. Covers tracing, prompt management, evaluation, datasets, and integration with LangChain, LlamaIndex, and OpenAI. Essential for debugging, monitoring, and improving LLM applications in production."
@@ -45891,7 +45891,7 @@
    "repo": "RUS-TICurtis/Match_Maker_RenamHer",
    "branch": "main",
    "digest": "sha256:e1155868615fa513b23e56bc813f4052ab3a74e827b94b0d7eeceb4859242e1f",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "1b808c1e3ac8ba000c50d1b080c25cc15f2472c4",
    "name": "copywriting",
    "description": "Write rigorous, conversion-focused marketing copy for landing pages and emails. Enforces brief confirmation and strict no-fabrication rules."
@@ -45954,7 +45954,7 @@
    "repo": "xenodeve/xeno-skills",
    "branch": "main",
    "digest": "sha256:59469635bbbd21acddbc664d95e8d97147f454b2d8f4a0a89c7d2c5afbe67577",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "vpg81oxyzd2atrgvyomvia_qlxnwgr4do7m1nchwyvq": {
    "status": "pinned",
@@ -46066,7 +46066,7 @@
    "repo": "SeaXen/agentskills",
    "branch": "main",
    "digest": "sha256:d24a63a48a20b3fc7634f760340e8cb4fed5c0ddb71a21a9cad3c973389487da",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "vr5mwtfttzhc0n3p45zeaw94cpgzf8dynt4_51whcuc": {
    "status": "tree_truncated",
@@ -46091,7 +46091,7 @@
    "repo": "RUS-TICurtis/Match_Maker_RenamHer",
    "branch": "main",
    "digest": "sha256:9aa9bed1880b5ff5646c7b0ea05f095a1d6b11dd21e0e9222c1e800cf1f4456b",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "1b808c1e3ac8ba000c50d1b080c25cc15f2472c4",
    "name": "copilot-sdk",
    "description": "Build applications powered by GitHub Copilot using the Copilot SDK. Use when creating programmatic integrations with Copilot across Node.js/TypeScript, Python, Go, or .NET. Covers session managemen..."
@@ -46186,7 +46186,7 @@
    "repo": "AmidVoshakul/opencode-secops-blueprint",
    "branch": "main",
    "digest": "sha256:17d93bd6b53814334f8ba02ff9f2e81c1bf9d47d9eda22887b66a42f3e4f4b81",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "0c93058c49eee621c027aab135d3c9075b52e60f",
    "name": "jq",
    "description": "Expert jq usage for JSON querying, filtering, transformation, and pipeline integration. Practical patterns for real shell workflows."
@@ -46222,7 +46222,7 @@
    "repo": "Donchitos/Claude-Code-Game-Studios",
    "branch": "main",
    "digest": "sha256:b368b009a8abd6fd9282ce55b6a88aaccb512535cd9622b405b1f5a3f98053c1",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418",
    "name": "test-helpers",
    "description": "Generate engine-specific test helper libraries — assertion utilities, factory functions, mocks in the engine's test folder. Reduces boilerplate."
@@ -46305,7 +46305,7 @@
    "repo": "RUS-TICurtis/Match_Maker_RenamHer",
    "branch": "main",
    "digest": "sha256:ffec0f6324ba5d4e9449da5d77e2612b2a3b059f807672238eab015772f81406",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "1b808c1e3ac8ba000c50d1b080c25cc15f2472c4",
    "name": "ai-engineer",
    "description": "Build production-ready LLM applications, advanced RAG systems, and intelligent agents. Implements vector search, multimodal AI, agent orchestration, and enterprise AI integrations."
@@ -46544,7 +46544,7 @@
    "repo": "Prasanth595/agentic-awesome-skills",
    "branch": "main",
    "digest": "sha256:b709ab46803bba1b01f53757da8898ac3a6938ddd60e88abf7b9625f5910eef2",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "vzpqmtwad5gubyyqtdhsv4aeqht1nketpejjf28xrmk": {
    "status": "bundled_files",
@@ -46561,7 +46561,7 @@
    "repo": "RUS-TICurtis/Match_Maker_RenamHer",
    "branch": "main",
    "digest": "sha256:6821b12ba72e301a44225cad9ff805898c3668f96549ecd0fb373659d644921f",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "1b808c1e3ac8ba000c50d1b080c25cc15f2472c4",
    "name": "trigger-dev",
    "description": "Trigger.dev expert for background jobs, AI workflows, and reliable async execution with excellent developer experience and TypeScript-first design. Use when: trigger.dev, trigger dev, background ta..."
@@ -46656,7 +46656,7 @@
    "repo": "SriramGandhiS/Skills",
    "branch": "master",
    "digest": "sha256:6d3500c25874d41b4dd094c83ec10b7ce09cc43a46cea7551f2244316c349eb6",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "w3ej2f42wb7wiocttbjijrrhk9g3bv2nlu4ur33aaxk": {
    "status": "pinned",
@@ -46883,7 +46883,7 @@
    "repo": "nicanac/blanmont",
    "branch": "master",
    "digest": "sha256:58bf5dd817d4871fdeea0137cdc7cdf2d7f6bab9182b229fdd478fe4c36059a9",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "wa9i1_sa6xwj6jfptcdnjtyby36hkm5ow5wjxi4gg7m": {
    "status": "ambiguous",
@@ -46947,7 +46947,7 @@
    "repo": "Robertjam954/multimodal_rag_application",
    "branch": "main",
    "digest": "sha256:2229d5e496d19e159bc97a7cc8b818be18a39d0a65578473d623af088aa21b4e",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "wc1wme_i16omddzslyi0lrl8auhlxwzarut3t4vfz3m": {
    "status": "pinned",
@@ -46984,7 +46984,7 @@
    "repo": "PickleBoxer/pstack",
    "branch": "main",
    "digest": "sha256:195411d320b5b328f9f642baf59757ed19aaf0931c0838740e0aca273d538dc1",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "01a302959b3b1645687ed8692d24945daf7b031a",
    "name": "unslop",
    "description": "Cut AI tells from any writing. Must always apply."
@@ -47213,7 +47213,7 @@
    "repo": "punkouter26/PoSumo",
    "branch": "master",
    "digest": "sha256:803f20b409300d92784966e166f4288e6e4c2a2c29d27cf773a0cb51e82f896a",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "wiwticm25e2akghvcdey6gyhboksg1xevisjstz6u1m": {
    "status": "pinned",
@@ -47234,7 +47234,7 @@
    "repo": "AmidVoshakul/opencode-secops-blueprint",
    "branch": "main",
    "digest": "sha256:2abf801e0f2a7b02274b566aea1f0222381aa70db7c631572e65a6598b9c49ce",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "0c93058c49eee621c027aab135d3c9075b52e60f",
    "name": "find-bugs",
    "description": "Find bugs, security vulnerabilities, and code quality issues in local branch changes. Use when asked to review changes, find bugs, security review, or audit code on the current branch."
@@ -47274,7 +47274,7 @@
    "repo": "RUS-TICurtis/Match_Maker_RenamHer",
    "branch": "main",
    "digest": "sha256:569b026964c7cf91a227da1c82a3b4977516bfb00baa0371d38ea9264a95bca1",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "1b808c1e3ac8ba000c50d1b080c25cc15f2472c4",
    "name": "evaluation",
    "description": "Build evaluation frameworks for agent systems"
@@ -47448,7 +47448,7 @@
    "repo": "praxstack/markdown-viewer-app",
    "branch": "main",
    "digest": "sha256:3b69a709c2f8f0cfcf57d40a3186e166f307865cc8ed924be4098e549a121e9c",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "wmbfka0eohkopynqpt0xfeigr2ndmhe1gxg2wta7r3y": {
    "status": "upstream_changed",
@@ -47480,7 +47480,7 @@
    "repo": "RUS-TICurtis/Match_Maker_RenamHer",
    "branch": "main",
    "digest": "sha256:f2586412b628bd70d2633966ed54be21c8d7530b0699873e929aa751efecd0fa",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "wn-leukcntmu0aitokndt3fo1n1o2ms4bwyyjs4qole": {
    "status": "ambiguous",
@@ -47576,7 +47576,7 @@
    "repo": "Pabloprogramador23/loja",
    "branch": "master",
    "digest": "sha256:17bca02971e7fe4bb7b61a48488df6d2d8a87447b9558035b4b8ac988a10e28f",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "wpcvulsas_vn2ntnolbz67ot01swiiydbkr-td0tfj8": {
    "status": "ambiguous",
@@ -47660,7 +47660,7 @@
    "repo": "xenodeve/xeno-skills",
    "branch": "main",
    "digest": "sha256:062b0120b59067744c135ec5d49d71e468b8e16de92ec2dec6fc19c41c4a9a24",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "wqdobdcxkb1irrn9jzf1yvtcxv5-oublyzmujpel_7k": {
    "status": "bundled_files",
@@ -47684,7 +47684,7 @@
    "repo": "Trompetilla/Skills",
    "branch": "main",
    "digest": "sha256:00580a04f7da49448dc6c94da74eaaa24e232a0b436f1bf3f8bcd64f8560aae2",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "wqlaiycezt6uwfrbxyktgcljpmukpvfsp0aehh8jqmo": {
    "status": "bundled_files",
@@ -47716,7 +47716,7 @@
    "repo": "punkouter26/PoSumo",
    "branch": "master",
    "digest": "sha256:3a33b19fad7165376883592bee7c36f4b1a3e8d52048f091999843e1bb301fc8",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "wrrmmgnedvfgr7j3zkynh4jetimf09bddh7s3yeutxy": {
    "status": "bundled_files",
@@ -47971,7 +47971,7 @@
    "repo": "Endsi3g/The-Uprising--Trading-Floor-",
    "branch": "main",
    "digest": "sha256:c583ed1a20c1fee609a51f1eefa6a303bb4ebda0b16d937bc536be794f3c8949",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "wwcb3vfrxkmpt326am4mrwkvlrchc8sozccu5trxcai": {
    "status": "upstream_changed",
@@ -48184,7 +48184,7 @@
    "repo": "Sahil-958/dots",
    "branch": "main",
    "digest": "sha256:a34dca38c15a7ef696c824e6d838fef06ba6616797f21bbe2f7660453e55a09f",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "e125985e9d45c8a14e06d60810ff09e7271a6680",
    "name": "coherent-rubric-logic-builder",
    "description": "Build a five-level rubric with coherent logic for a learning target within a developmental band. Use for Manning methodology programmes where Competent = success. For general curriculum rubrics, use criterion-referenced-rubric-generator instead."
@@ -48196,7 +48196,7 @@
    "repo": "RUS-TICurtis/Match_Maker_RenamHer",
    "branch": "main",
    "digest": "sha256:af005b8f3871b13ff79d69adc88a070669112d2a500b1d278ad72e593e57aa44",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "1b808c1e3ac8ba000c50d1b080c25cc15f2472c4",
    "name": "commit",
    "description": "Create commit messages following Sentry conventions. Use when committing code changes, writing commit messages, or formatting git history. Follows conventional commits with Sentry-specific issue re..."
@@ -48267,7 +48267,7 @@
    "repo": "Endsi3g/The-Uprising--Trading-Floor-",
    "branch": "main",
    "digest": "sha256:7e4703013b5c720bbe5960c5d9699e21ee3e622ca9b8925245b9f93e0354c431",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "x9bh3yym05nclvlfk4xt3_mx-pw_qj861_gqu_1uzaq": {
    "status": "ambiguous",
@@ -48332,7 +48332,7 @@
    "repo": "vstakhovsky/shokunin-review",
    "branch": "main",
    "digest": "sha256:23ee3856c727129f87ab850985f9e9ed6368f10449816aa7ff043bf2dd45ab4d",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "2cebc97efba26e8af9273941b608ca9825a1a407",
    "name": "ponytail-help",
    "description": "Quick-reference card for all ponytail modes, skills, and commands. One-shot display, not a persistent mode. Trigger: /ponytail-help, \"ponytail help\", \"what ponytail commands\", \"how do I use ponytail\"."
@@ -48344,7 +48344,7 @@
    "repo": "RUS-TICurtis/Match_Maker_RenamHer",
    "branch": "main",
    "digest": "sha256:3b71e0f157810614edd35592ad0fc8d024ac940d32f2d2d91638086e0907cc5f",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "1b808c1e3ac8ba000c50d1b080c25cc15f2472c4",
    "name": "haskell-pro",
    "description": "Expert Haskell engineer specializing in advanced type systems, pure"
@@ -48440,7 +48440,7 @@
    "repo": "RUS-TICurtis/Match_Maker_RenamHer",
    "branch": "main",
    "digest": "sha256:0604f168fcac26cf12fb0259b7c2eb6c819b868a36a9f8797774f6efd8d5c8c5",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "1b808c1e3ac8ba000c50d1b080c25cc15f2472c4",
    "name": "convex",
    "description": "Convex reactive backend expert: schema design, TypeScript functions, real-time subscriptions, auth, file storage, scheduling, and deployment."
@@ -48495,7 +48495,7 @@
    "repo": "SriramGandhiS/Skills",
    "branch": "master",
    "digest": "sha256:f6006b8554c68f32858b2706b97df5ff132f00f45e93fa3d9ffd927b941be959",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "xfavuckfwmk8fq1ryfnrmixp3i6lwqsk3rs2v7sclfg": {
    "status": "pinned",
@@ -48594,7 +48594,7 @@
    "repo": "SriramGandhiS/Skills",
    "branch": "master",
    "digest": "sha256:3b4058cc7964a234eb0a7db985e9c5e8e0de8cacfe2abc8693be0fb171f85d04",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "xhel34mgqwnha_jcrjeht7ezqecq7vilnbftnzjebt0": {
    "status": "tree_truncated",
@@ -48651,7 +48651,7 @@
    "repo": "AmidVoshakul/opencode-secops-blueprint",
    "branch": "main",
    "digest": "sha256:bfb501718e88f4700501ef9a007269a1b68b771e5379d23c56a846fe64a07708",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "0c93058c49eee621c027aab135d3c9075b52e60f",
    "name": "ui-page",
    "description": "Scaffold a new mobile-first page using StyleSeed Toss layout patterns, section rhythm, and existing shell components."
@@ -48695,7 +48695,7 @@
    "repo": "AmidVoshakul/opencode-secops-blueprint",
    "branch": "main",
    "digest": "sha256:99e93a8964e5389fb8c81626cfc57d55d4515c4129800301f34e584fc6c111d2",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "0c93058c49eee621c027aab135d3c9075b52e60f",
    "name": "molykit",
    "description": "CRITICAL: Use for MolyKit AI chat toolkit. Triggers on:\nBotClient, OpenAI, SSE streaming, AI chat, molykit,\nPlatformSend, spawn(), ThreadToken, cross-platform async,\nChat widget, Messages, PromptInput, Avatar, LLM"
@@ -48750,7 +48750,7 @@
    "repo": "xenodeve/xeno-skills",
    "branch": "main",
    "digest": "sha256:6b5c2256522fdba1e3313eafa3d743b960a7b13ec029d3e6586e04b23327c1f8",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "xkh2nx1e461xpymqv5hkao4tsev5xs2w8211kpwchzo": {
    "status": "pinned",
@@ -48771,7 +48771,7 @@
    "repo": "AmidVoshakul/opencode-secops-blueprint",
    "branch": "main",
    "digest": "sha256:3d9b746ac4a078f0ad0de4aaf5fb54cb18da3e116b6dc2396a4055d0a9b8288e",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "0c93058c49eee621c027aab135d3c9075b52e60f",
    "name": "commit",
    "description": "ALWAYS use this skill when committing code changes — never commit directly without it. Creates commits following Sentry conventions with proper conventional commit format and issue references. Trigger on any commit, git commit, save changes, or commit message task."
@@ -49065,7 +49065,7 @@
    "repo": "huytran1120/vietnam-agentic-skills",
    "branch": "main",
    "digest": "sha256:605053ad1a87bf76f56a865203986c477e211aff5a62b7075b11d3e8f5119b41",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "xsomvqjgkb6doljxuaqfeqyzypti1nsz747s57rcama": {
    "status": "upstream_changed",
@@ -49117,7 +49117,7 @@
    "repo": "spencermarx/open-code-review",
    "branch": "main",
    "digest": "sha256:32ef344d86f63817fefbadc949ecafee891fc91ab1de97c21031e7540bb61108",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "xttjvjoiwedp5s-kvr4til7zoyopwkckthsufeoxv4u": {
    "status": "ambiguous",
@@ -49353,7 +49353,7 @@
    "repo": "RUS-TICurtis/Match_Maker_RenamHer",
    "branch": "main",
    "digest": "sha256:42614ddb96c0f82206c65a78b2b14419ac013872e048b06a150899da82f1fc03",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "1b808c1e3ac8ba000c50d1b080c25cc15f2472c4",
    "name": "tdd-workflow",
    "description": "Test-Driven Development workflow principles. RED-GREEN-REFACTOR cycle."
@@ -49431,7 +49431,7 @@
    "repo": "SriramGandhiS/Skills",
    "branch": "master",
    "digest": "sha256:ce3ab2e576e0863086453b78ca171e4a998f4d56d2b4c59fc530f920d88f5bf1",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "y0-q3kep8t9xbwa8tddc8dlspmx2nbe9rdnds-x7hys": {
    "status": "pinned",
@@ -49570,7 +49570,7 @@
    "repo": "Bonny94ITA/BottegaWeb",
    "branch": "main",
    "digest": "sha256:6129e8dfdb38965242c0d11e4af6a7670c50484ddfe335d07ce3f4ec636d8ffb",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "y5ictl0f6eept7wx2s1mbemmehkbdq8eyqlgsoddbio": {
    "status": "upstream_unavailable",
@@ -49633,7 +49633,7 @@
    "repo": "Gitruck/cli",
    "branch": "main",
    "digest": "sha256:3ab1863d6ce9955547e1985aca1635b29a00b714a60c371b88feff5a98d25aab",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "y7qty_ztn-chb0qajjzui1etzt5dd-aeeimsgcubdey": {
    "status": "pinned",
@@ -49932,7 +49932,7 @@
    "repo": "SriramGandhiS/Skills",
    "branch": "master",
    "digest": "sha256:94253ce76b0aa5064e859b6393d0c80cbaa002fa349598b8e43d3e27e747dcdb",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "yd9qtxssu-gzosnxmmt3lrgosambzh-ben22lvmkj8m": {
    "status": "bundled_files",
@@ -49972,7 +49972,7 @@
    "repo": "xenodeve/xeno-skills",
    "branch": "main",
    "digest": "sha256:8a33389979f3074fa0926678e266ad2eb9234624472254469fc1ad916b9caa24",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "ydxadn3ienhu3m6eciscnltl-lwgkxp6nntyn76wgl4": {
    "status": "upstream_changed",
@@ -50191,7 +50191,7 @@
    "error": "GitHub API 404: {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest\",\"status\":\"404\"}",
    "archive_path": "generation/xkcd-moltbot-skills/SKILL.md",
    "digest": "sha256:bd99c1a1599baec0a8e3d1426ae8744b5b3a663397b6a601d12c235cab7d5267",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "yig9bvm1peqmq7z8m4tqvs7g7v83nhivvyuo0uq9wnm": {
    "status": "ambiguous",
@@ -50199,7 +50199,7 @@
    "repo": "Prasanth595/agentic-awesome-skills",
    "branch": "main",
    "digest": "sha256:b16aad5cbaf24035a62a72bf0867239312b322091a245f81c7384d1f83a2470b",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "yir_mpqh0vqpox4gxw7gdpftg3roqe3wqnyujtnqkqs": {
    "status": "ambiguous",
@@ -50227,7 +50227,7 @@
    "repo": "LeoYeAI/agent-master-skills",
    "branch": "main",
    "digest": "sha256:9801a7dde4106af5ec10c261cf4335cc6bec1cf98760f25829353d40f87906e6",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "yj4uaipkvifch7qnicrgteq1bw5t0ckzug9yv1zvvsc": {
    "status": "upstream_changed",
@@ -50244,7 +50244,7 @@
    "repo": "Zauwad/my-agentic-rig",
    "branch": "main",
    "digest": "sha256:2224e1e0dddb1e126d111e0760f105128d60f51a3bd374e23c0e538a0bfb937b",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "b2fae58766cd13c990efeac58d788914a3b1ed3e",
    "name": "ponytail",
    "description": "Forces the laziest solution that actually works, simplest, shortest, most minimal. Channels a senior dev who has seen everything: question whether the task needs to exist at all (YAGNI), reach for the standard library before custom code, native platform features before dependencies, one line before fifty. Supports intensity levels: lite, full (default), ultra. Use whenever the user says \"ponytail\", \"be lazy\", \"lazy mode\", \"simplest solution\", \"minimal solution\", \"yagni\", \"do less\", or \"shortest path\", and whenever they complain about over-engineering, bloat, boilerplate, or unnecessary dependencies."
@@ -50343,7 +50343,7 @@
    "repo": "Prasanth595/agentic-awesome-skills",
    "branch": "main",
    "digest": "sha256:154b54ded3b088e8b6e6a5cd38a811747015286d3d622b67457f2b4fb67d9b99",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "ylc-bkc9rkhtdiavelajgzbxakmidnec_bsedgknqru": {
    "status": "ambiguous",
@@ -50589,7 +50589,7 @@
    "repo": "PickleBoxer/pstack",
    "branch": "main",
    "digest": "sha256:28f9e61710e205f6f3c5476f333483cff0e988f6a5b639e2faad536344b40c5e",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "yrinhgdbgjzkkf0jtcqkctiqplghpjforbsthcjxm6a": {
    "status": "upstream_changed",
@@ -50715,7 +50715,7 @@
    "repo": "trailofbits/skills",
    "branch": "main",
    "digest": "sha256:6fb9ecf9cf3d8d7ed3246c50bac72181e2e7747794a2a121ccdf47a409d9f5ec",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "yujskmlysevdabmxxoqetzkgv-fz58ghhdw2wen0t_m": {
    "status": "pinned",
@@ -50926,7 +50926,7 @@
    "repo": "punkouter26/PoSumo",
    "branch": "master",
    "digest": "sha256:1421c9bc2c64edd4557b32a82293db37f822ffbdd9d218e32df7991799eea110",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "yxxfsrhmc9ma5ii2jfaqxh7mxwp17p4of3tpwk6t7iu": {
    "status": "ambiguous",
@@ -50958,7 +50958,7 @@
    "repo": "alirezarezvani/claude-skills",
    "branch": "main",
    "digest": "sha256:5eef58af568f11f0c5bac3fe529c6e1105f49ab7900789001faab0f118897e5d",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "yymyrdew9o2r5fwrasqpfamrsciybiw3writcjqjflu": {
    "status": "bundled_files",
@@ -50966,7 +50966,7 @@
    "repo": "Trompetilla/Skills",
    "branch": "main",
    "digest": "sha256:4d9fda9d822274ffefb997884510e4246e7d6b04e53fbdd2806b2ec326316d59",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "yyzwcq4naunipinzzdmziyipcgsoa3buhraxu-bj88m": {
    "status": "pinned",
@@ -51159,7 +51159,7 @@
    "repo": "AmidVoshakul/opencode-secops-blueprint",
    "branch": "main",
    "digest": "sha256:f67dbaf3487adcb9b0cff3c8d296090b9dd0e31829be1e1972f598a779d7e2d2",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "0c93058c49eee621c027aab135d3c9075b52e60f",
    "name": "inngest",
    "description": "Inngest expert for serverless-first background jobs, event-driven workflows, and durable execution without managing queues or workers."
@@ -51256,7 +51256,7 @@
    "repo": "RUS-TICurtis/Match_Maker_RenamHer",
    "branch": "main",
    "digest": "sha256:b1bdda1ac813a82cedf7c003f21c8409c1fe026038cd11126db05014ae820bb7",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "z_glmzfz-87ss_6tun81rfo9psbx9hmhm7zazid_mqw": {
    "status": "bundled_files",
@@ -51372,7 +51372,7 @@
    "repo": "Prasanth595/agentic-awesome-skills",
    "branch": "main",
    "digest": "sha256:b177c7c8b5599055149e70130bf95242d4deb23d38753d3c08a5fa8e3a65c22a",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "zbk1_o3_gaiezxtcl7yntyu0ipv8pzorml1akcr4bd8": {
    "status": "bundled_files",
@@ -51380,7 +51380,7 @@
    "repo": "Elogic360/software-factory",
    "branch": "main",
    "digest": "sha256:81f1d3a07186d9bfe3be54ae90fdb0addfef7c23b8845affd981c9e04a57fe54",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "zbket9fj2sjfcmwx_lhyjdbii6jczn9pedw5z3cylmk": {
    "status": "bundled_files",
@@ -51408,7 +51408,7 @@
    "repo": "Prasanth595/agentic-awesome-skills",
    "branch": "main",
    "digest": "sha256:44ad015dc7e8861fedf24a94c1531e9e22fc2e11df8e2c798ab19222bd1fb9d0",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "zbpe8zwz7c2_rgasywtaxhdzkfkkapaum5ssciv3nna": {
    "status": "pinned",
@@ -51440,7 +51440,7 @@
    "repo": "Prasanth595/agentic-awesome-skills",
    "branch": "main",
    "digest": "sha256:66ce800c3b83b557b38ff3728d0e89434237ea2c1e1e15d658512f3c3a3eef34",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "zcksgf3cg8al7xw6x9552vpa7pmla2ojuha1n_vuali": {
    "status": "upstream_changed",
@@ -51500,7 +51500,7 @@
    "repo": "SeaXen/agentskills",
    "branch": "main",
    "digest": "sha256:af87c679d04646816dda7e1c238db83ab1979e22508a8c8ecd9b999908485777",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "zd9vjcepj-4lcas0igtat_au6ihx1lxssz5h8k7jxuw": {
    "status": "ambiguous",
@@ -51564,7 +51564,7 @@
    "repo": "spencermarx/open-code-review",
    "branch": "main",
    "digest": "sha256:5edfd5e1e6755ef437832e0457e166856546146e991a6f411722909a80bb1c60",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "zefcfcsmkxkwfjdkvhg6i9ofpalj0nyqog6zpgk3xbg": {
    "status": "ambiguous",
@@ -51599,7 +51599,7 @@
    "error": "GitHub API 404: {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest\",\"status\":\"404\"}",
    "archive_path": "integration/otter-moltbot-skills/SKILL.md",
    "digest": "sha256:9a467f6d8e0b0127dbd4fd9331678dc1a038043dea2968b5ce760d8e9259c596",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "zewiignbrfkidnq_c9_v8skaeqx5ie_hav8tr7a3otw": {
    "status": "ambiguous",
@@ -51607,7 +51607,7 @@
    "repo": "Pabloprogramador23/loja",
    "branch": "master",
    "digest": "sha256:ff52b4380d6670af57d3985b530290c752d68989c093680de6589a922e93d034",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "zewnykpfsukzldw3n-yvjxwaoz9ihneiq-ffev8x-cy": {
    "status": "bundled_files",
@@ -51660,7 +51660,7 @@
    "repo": "Sahil-958/dots",
    "branch": "main",
    "digest": "sha256:4f59e3a5e681dbeb72db4c703a96f1dc53c44c4c9ec18df534071fcd7972882a",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "e125985e9d45c8a14e06d60810ff09e7271a6680",
    "name": "adaptive-hint-sequence-designer",
    "description": "Generate a cascading hint sequence for a problem type, revealing progressively without giving answers. Use when designing tutoring dialogues or scaffolded worksheets."
@@ -51867,7 +51867,7 @@
    "repo": "xenodeve/xeno-skills",
    "branch": "main",
    "digest": "sha256:bbae14f6bd724f7a394d3f9e5b6326661806d4f171f81b8e92c03ad8c86f7f9d",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "zlddgbknenq-_lvqwpi43j48tlr9ivzb0lgkrnpnz48": {
    "status": "ambiguous",
@@ -51875,7 +51875,7 @@
    "repo": "SriramGandhiS/Skills",
    "branch": "master",
    "digest": "sha256:11fd42cf56e09cc2e27c3f08afc84cfb78cb5f25c3617dc0ecaa53676d8b337b",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "zlibihlurajbl2llveheefwyld9m1o6pony5gt5miuy": {
    "status": "bundled_files",
@@ -52050,7 +52050,7 @@
    "repo": "HelixDevelopment/agent",
    "branch": "main",
    "digest": "sha256:567d2f5f44db2cd0e7eaeab8ec6eecddb89a6de91750f866c809b963d37f51e7",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "zo1vsipii-wfwym2lr8gqgilbygcl6kceookyi72kvi": {
    "status": "bundled_files",
@@ -52226,7 +52226,7 @@
    "repo": "FuDesign2008/open-skills",
    "branch": "main",
    "digest": "sha256:587115c43fff191718d413c0aacb162df5bdb2ee3b6bfe57eccd7ad09c0f9952",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "340569032c43892a1588d360e08ce7f839935fee",
    "name": "openspec-continue-change",
    "description": "Continue working on an OpenSpec change by creating the next artifact. Use when the user wants to progress their change, create the next artifact, or continue their workflow."
@@ -52265,7 +52265,7 @@
    "repo": "punkouter26/PoSumo",
    "branch": "master",
    "digest": "sha256:027db62d88e3373653a109fd2b1afe7196eba98f0db54284f8ea8fc69e04f832",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "zr5iej68fenyaacplpqo8odibqcbp_7d-0t4mjs9tn4": {
    "status": "upstream_changed",
@@ -52502,7 +52502,7 @@
    "repo": "AmidVoshakul/opencode-secops-blueprint",
    "branch": "main",
    "digest": "sha256:64429cb9ea227ca6f447bfe87c61b742813d8a6529f0c07f20027f6c33f7c33d",
-   "checked_at": "2026-11-09T10:57:49+00:00",
+   "checked_at": "2026-11-09T11:27:06+00:00",
    "commit": "0c93058c49eee621c027aab135d3c9075b52e60f",
    "name": "seaborn",
    "description": "Seaborn is a Python visualization library for creating publication-quality statistical graphics. Use this skill for dataset-oriented plotting, multivariate analysis, automatic statistical estimation, and complex multi-panel figures with minimal code."
@@ -52561,7 +52561,7 @@
    "repo": "Robertjam954/multimodal_rag_application",
    "branch": "main",
    "digest": "sha256:e3d6313af788327dc409c1515029209a362db9ce7ace999b95653e85fa9b688e",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "zxmmyhy-5mauxumjuv3k-fngmndph1ze7siygg8ppcs": {
    "status": "tree_truncated",
@@ -52621,7 +52621,7 @@
    "repo": "NeelakshSaxena/Drishti",
    "branch": "main",
    "digest": "sha256:b0afb2e2b7c1dfcea92c01e6dcf0fa07cfadb8b657375cb1950d48d2456cead8",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "zz21vhallmc9mycbarw5f5zgoearpzbnc3hzeutwo-0": {
    "status": "pinned",
@@ -52664,7 +52664,7 @@
    "repo": "Pabloprogramador23/loja",
    "branch": "master",
    "digest": "sha256:d80764b8bfd532a26e1265aa914b65881cc01c03eeae784364225dc46d2deece",
-   "checked_at": "2026-11-09T10:57:49+00:00"
+   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "zzyhgg75w-9w9cd0i0evkfc3scfkkjkrzkqrtghmb2m": {
    "status": "upstream_changed",

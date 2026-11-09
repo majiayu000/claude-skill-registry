@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-09T10:34:57.392797Z",
+  "updated_at": "2026-11-09T12:12:40.876565Z",
   "archive_skill_md_count_raw": 368412,
   "archive_metadata_count_raw": 368410,
-  "indexed_skill_count_scan_shape": 325675,
-  "registry_skill_count_dedup": 325243,
+  "indexed_skill_count_scan_shape": 325676,
+  "registry_skill_count_dedup": 325244,
   "total_plugins": 5,
   "categories": 40,
   "category_counts": [
@@ -26,7 +26,7 @@
     {
       "name": "analysis",
       "code": "analysis",
-      "count": 3759
+      "count": 3760
     },
     {
       "name": "api",
@@ -209,7 +209,7 @@
       "count": 2169
     }
   ],
-  "unique_repo_count": 15565,
+  "unique_repo_count": 15566,
   "official_skill_count": 0,
   "top_repositories": [
     {
@@ -254,7 +254,7 @@
     }
   ],
   "featured_count": 100,
-  "independent_skill_count": 207300,
+  "independent_skill_count": 207301,
   "static_skill_page_count": 5800,
   "asset_state_counts": {
     "verified": 31
@@ -270,8 +270,8 @@
   "search_largest_shard_gzip_bytes": 2004298,
   "category_shard_count": 66,
   "category_largest_part_bytes": 8388737,
-  "category_largest_part_gzip_bytes": 2001512,
-  "lite_index_count": 325675,
+  "category_largest_part_gzip_bytes": 2001513,
+  "lite_index_count": 325676,
   "lite_index_included_count": 5000,
   "lite_index_size_bytes": 4268194,
   "lite_index_gzip_size_bytes": 835349,
@@ -286,10 +286,10 @@
   "security_largest_shard_bytes": 8388662,
   "security_largest_shard_gzip_bytes": 1234572,
   "ranking_index_size_bytes": 364,
-  "ranking_index_gzip_size_bytes": 238,
+  "ranking_index_gzip_size_bytes": 237,
   "ranking_shard_count": 10,
   "ranking_largest_shard_bytes": 8388720,
-  "ranking_largest_shard_gzip_bytes": 1749873,
+  "ranking_largest_shard_gzip_bytes": 1749868,
   "largest_generated_file_bytes": 10552332,
   "security_scan": {
     "total": 368410,

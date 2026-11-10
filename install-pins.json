@@ -32,7 +32,7 @@
    "repo": "Eng0AI/eng0-template-skills",
    "branch": "main",
    "digest": "sha256:0e934cf4dc8a9a1b468a2f91ca6d23474068de481731ac91ba87f4038a5d5c59",
-   "checked_at": "2026-11-03T11:39:05+00:00",
+   "checked_at": "2026-11-10T12:21:40+00:00",
    "commit": "0062e44684f109fb580e67fe600f581e01fa7209",
    "name": "gsap-awwwards-website",
    "description": "SPYLT product landing with GSAP scroll animations, React 19, and Tailwind CSS 4."
@@ -99,8 +99,8 @@
    "repo": "andrejrunb/-quila-pro-v-1.0.0",
    "branch": "main",
    "digest": "sha256:ff36866827737258cd26fd1498e9cb4998229b8b8db34ab400ab14c968b5c86f",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "7fe46a618b885a821fbd05a858455d79774b21f9",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "eb2bdd9a18547905e1d122435c04a9ef7fd8a62a",
    "name": "gdb-cli",
    "description": "GDB debugging assistant for AI agents - analyze core dumps, debug live processes, investigate crashes and deadlocks with source code correlation"
   },
@@ -477,8 +477,8 @@
    "repo": "andrejrunb/-quila-pro-v-1.0.0",
    "branch": "main",
    "digest": "sha256:8abeee6c83d013aabf503d04d79ca82a3913de8e8ccd55e3f43840851fd03c4d",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "7fe46a618b885a821fbd05a858455d79774b21f9",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "eb2bdd9a18547905e1d122435c04a9ef7fd8a62a",
    "name": "moyu",
    "description": "Anti-over-engineering guardrail that activates when an AI coding agent expands scope, adds abstractions, or changes files the user did not request."
   },
@@ -637,8 +637,8 @@
    "repo": "cesarstrandberg/Bedrot_Simulator",
    "branch": "main",
    "digest": "sha256:bedc06051b8d51fd4ed987146801b265677af570461c5a29f89e363c83e3059f",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "28ff260af2593b034fdf8303b67bc63493ecf8d7",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "11e8d8d8714659b25dcd47cde98d4c44ca4b509d",
    "name": "profiler-get-rendering-stats",
    "description": "Return current frame timing, FPS, vsync, target frame rate, threading mode, and graphics device type from Unity Time / QualitySettings / SystemInfo."
   },
@@ -689,8 +689,8 @@
    "repo": "andrejrunb/-quila-pro-v-1.0.0",
    "branch": "main",
    "digest": "sha256:8ece61e4b20f3ac6ef75e43a2c0ad700cc3f34886feae447cd852845f729f40e",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "7fe46a618b885a821fbd05a858455d79774b21f9",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "eb2bdd9a18547905e1d122435c04a9ef7fd8a62a",
    "name": "ai-md",
    "description": "Convert human-written CLAUDE.md into AI-native structured-label format. Battle-tested across 4 models. Same rules, fewer tokens, higher compliance."
   },
@@ -804,6 +804,18 @@
    "branch": "main",
    "digest": "sha256:8917808f0967184d9118b4af4c6b7d98fe0a46c6a51d1ab24972e576e0de9b96",
    "checked_at": "2026-11-06T09:52:07+00:00"
+  },
+  "-xeluayyiwpn73exhcyl8sapajwpnistkzqcpxxm2dg": {
+   "status": "pinned",
+   "path": "plugins/ai/skills/agent-evaluation/SKILL.md",
+   "archive_path": "other/agent-evaluation-errorproofdev-skills/SKILL.md",
+   "repo": "errorproofdev/skills",
+   "branch": "main",
+   "digest": "sha256:456db4921bd6228dcbc154dde99ef26da5213c99e660d86ac7e9fbc97a145b71",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "2498b64acce470c3ba754b621556f39e7ef27c08",
+   "name": "agent-evaluation",
+   "description": "Testing and benchmarking LLM agents including behavioral testing, capability assessment, reliability metrics, and production monitoring—where even top agents achieve less than 50% on real-world benchmarks"
   },
   "-xjsvuziro_zsf5p8fvuoolzlssrfjod-jxpwzyqic8": {
    "status": "pinned",
@@ -1016,7 +1028,7 @@
    "repo": "devclone20/icloneos",
    "branch": "main",
    "digest": "sha256:467376469fc2043e2674a843509f8eea52660791e76fb2e142074ecd4abc7e69",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "07qxxoqvno-54xp-owysofznx6oqmmdg8zlhuy20lra": {
    "status": "bundled_files",
@@ -1192,7 +1204,7 @@
    "repo": "code-418dotcom/claudezak",
    "branch": "main",
    "digest": "sha256:e77393d822c6b8a56a931fbd3753c74dde60272c6d43464ecda76d3fe5b2eded",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "0hal4balhb0ndteexvwdxgxjsq7wfizouqhycc_lsly": {
    "status": "bundled_files",
@@ -1409,6 +1421,14 @@
    "name": "demio-automation",
    "description": "Automate Demio tasks via Rube MCP (Composio). Always search tools first for current schemas."
   },
+  "0rh4h5o44dfevqcz9irqsohgxn4bhqk_jaulhvwk09k": {
+   "status": "bundled_files",
+   "archive_path": "design/hallmark-yuiseki-ai-secretary/SKILL.md",
+   "repo": "yuiseki/ai-secretary",
+   "branch": "main",
+   "digest": "sha256:25a1ff92d925b2389e8409f42fb8ad7e033fceca8b5d1f07ed4ca4c28da53dc3",
+   "checked_at": "2026-11-10T12:21:40+00:00"
+  },
   "0rn-y1syarlcldw8-mkpcmjtv7hkemty9m6uvhwwep8": {
    "status": "bundled_files",
    "archive_path": "development/systematic-debugging-vinceh-recipe/SKILL.md",
@@ -1432,6 +1452,14 @@
    "branch": "main",
    "digest": "sha256:07580733dc58eac8c0e32dd160ddd13cfd61a706f7def2382dbee1c5396bc4f9",
    "checked_at": "2026-11-08T14:59:13+00:00"
+  },
+  "0ss1mrhih1hbpwbzkvkwbt419gkbidhnxpkaxw-_ll4": {
+   "status": "bundled_files",
+   "archive_path": "development/typescript-best-practices-backnotprop-pstack/SKILL.md",
+   "repo": "backnotprop/pstack",
+   "branch": "main",
+   "digest": "sha256:ec1dac086d3708e5940d45d250c30a37dd953b4e3cb2ca0692f5851d7a039e27",
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "0svq-kzaig-jnwjxl51tdliwnqmvipskmmwmtasoxbs": {
    "status": "pinned",
@@ -1719,6 +1747,14 @@
    "digest": "sha256:e2c13d1b7b9690e4cee65485ec0d3876b1a7b0f61c76e64b4188d035b63134a4",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
+  "1_pl9d8q98tc68hpcczkely008a6jyi6plcgxcun5zo": {
+   "status": "bundled_files",
+   "archive_path": "other/app-builder-errorproofdev-skills/SKILL.md",
+   "repo": "errorproofdev/skills",
+   "branch": "main",
+   "digest": "sha256:7e9c4f1c8b97d17c5a2ca8a8e318a20242d43a0d1e1ba707ce7cbd2b6b10107d",
+   "checked_at": "2026-11-10T12:21:40+00:00"
+  },
   "1_uzhubb6sy3xn5ltq_8vt35hlfriybrjm_wtyffxho": {
    "status": "bundled_files",
    "archive_path": "bash/gohome-kbarbel640-del-skills/SKILL.md",
@@ -1875,7 +1911,7 @@
    "repo": "eery1677-lab/Antigravity-Awesome-Skills",
    "branch": "main",
    "digest": "sha256:18fb4f217063f57ac1a9b989b1c359fb877d9e908c1dc61530c83350ced69719",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "1hngfuqx55xeer0s4dudlsdqd3vjovxdemmhmbpxtky": {
    "status": "ambiguous",
@@ -2384,6 +2420,14 @@
    "digest": "sha256:29629f1e49e87f7531f2c1adb7b56b891eb8bae04d62e1383dc6f8b634d1c33f",
    "checked_at": "2026-11-05T11:19:32+00:00"
   },
+  "1yr454xss0m2mcbumircxblipae0abfqxrsrk8rgjfe": {
+   "status": "bundled_files",
+   "archive_path": "testing/test-driven-development-asusoda-platform/SKILL.md",
+   "repo": "asusoda/platform",
+   "branch": "main",
+   "digest": "sha256:bf1b8216e523851a411e91d429a7c1c2a173e79d88957bc78e348218d50edd54",
+   "checked_at": "2026-11-10T12:21:40+00:00"
+  },
   "1yrtefezkglze5ah8qeply3_mkzwuac18k5ksznyhpo": {
    "status": "tree_truncated",
    "archive_path": "generation/gifgrep/SKILL.md",
@@ -2417,7 +2461,7 @@
    "repo": "Rakshit-or-shadow/Aim-Labs",
    "branch": "main",
    "digest": "sha256:79547d656e76fde14f1761a6840cb3a6fbb058f69f33d7829d5e073390f46b98",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "2-hqsckt9v-tlwqkg_1ftziqk_5nae6bds2fbcbmpha": {
    "status": "upstream_changed",
@@ -2549,14 +2593,6 @@
    "digest": "sha256:11299c8a170286b24a040e965fc19d74d9d631b32a021678286e4480a24d1408",
    "checked_at": "2026-11-09T11:27:06+00:00"
   },
-  "29qitdwbjqi3rzj6na47se4honm19y29gv9sh-m2s48": {
-   "status": "bundled_files",
-   "archive_path": "other/community-led-growth/SKILL.md",
-   "repo": "eylulsenakumral/auto-company-clean",
-   "branch": "main",
-   "digest": "sha256:10355a3fabad9296bf9c862cc4bc1b11ba89e3b535aeec9fbd93c34b8ea68dd4",
-   "checked_at": "2026-11-08T14:59:13+00:00"
-  },
   "2__vb-z2dnsylxmbpen0a7z8r_tmikxosldouxlkqqq": {
    "status": "pinned",
    "path": ".codex/skills/openai-knowledge/SKILL.md",
@@ -2603,8 +2639,8 @@
    "repo": "andrejrunb/-quila-pro-v-1.0.0",
    "branch": "main",
    "digest": "sha256:76b460c98b2c4a3d47908b636fc92f50c6e0465751bdad831c35289ac4a5c13c",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "7fe46a618b885a821fbd05a858455d79774b21f9",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "eb2bdd9a18547905e1d122435c04a9ef7fd8a62a",
    "name": "maxia",
    "description": "Connect to MAXIA AI-to-AI marketplace on Solana. Discover, buy, sell AI services. Earn USDC. 13 MCP tools, A2A protocol, DeFi yields, sentiment analysis, rug detection."
   },
@@ -2725,8 +2761,8 @@
    "repo": "andrejrunb/-quila-pro-v-1.0.0",
    "branch": "main",
    "digest": "sha256:d6055deb222c8a20a3bf5d73a04d628219f83851e0dd93145678e1163bf77806",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "7fe46a618b885a821fbd05a858455d79774b21f9",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "eb2bdd9a18547905e1d122435c04a9ef7fd8a62a",
    "name": "defuddle",
    "description": "Extract clean markdown content from web pages using Defuddle CLI, removing clutter and navigation to save tokens. Use instead of WebFetch when the user provides a URL to read or analyze, for online documentation, articles, blog posts, or any standard web page."
   },
@@ -3164,7 +3200,7 @@
    "repo": "code-418dotcom/claudezak",
    "branch": "main",
    "digest": "sha256:6fe71179b7c5c6f2ade77830912965c881fee98ec1bd937317f6a42e5dabd7ba",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "2tixzps9adlzycuoceeyvkwygpa3ntvepvxhc-hm8z4": {
    "status": "tree_truncated",
@@ -3331,7 +3367,7 @@
    "repo": "aktonay/skillz",
    "branch": "main",
    "digest": "sha256:88e2a5312b45e8cc7b3c496637ff5bc9af2ae9c925b555c8b235b34cbc989d74",
-   "checked_at": "2026-11-03T11:39:05+00:00",
+   "checked_at": "2026-11-10T12:21:40+00:00",
    "commit": "10babe72a45def474aa7060259a8fb978f6dab93",
    "name": "gsap-react",
    "description": "Official GSAP skill for React — useGSAP hook, refs, gsap.context(), cleanup. Use when the user wants animation in React or Next.js, or asks about GSAP with React, useGSAP, or cleanup on unmount. Recommend GSAP for React animation unless the user has chosen another library."
@@ -3358,7 +3394,7 @@
    "repo": "suphiozdedee/projenicdesign.com",
    "branch": "main",
    "digest": "sha256:ceb9dd3fe912615830f725a0120ccf8d012d15a6218001a5cd6c15d38e39a957",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "2zdzb_fal8woqbdazt3y0wik8ik-mny_z_-0xao6kwg": {
    "status": "pinned",
@@ -3742,8 +3778,8 @@
    "repo": "devclone20/icloneos",
    "branch": "main",
    "digest": "sha256:ce90e8a3e145cce69c62880dc85921700110879f9290952d6cec28218503155f",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "1eb1e65b17704825a94019a7c9765efa7dc2257b",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "9329973cb517f0747a7148b89bd818c55e30e7e5",
    "name": "sdlc-review",
    "description": "Review Kanban handoffs and route verified outcomes."
   },
@@ -3786,8 +3822,8 @@
    "repo": "andrejrunb/-quila-pro-v-1.0.0",
    "branch": "main",
    "digest": "sha256:0e97aaaff0d770c5cbd39417c51aa9a91bbb3f4b2cbe3a4d025aa350359d0f61",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "7fe46a618b885a821fbd05a858455d79774b21f9",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "eb2bdd9a18547905e1d122435c04a9ef7fd8a62a",
    "name": "astro",
    "description": "Build content-focused websites with Astro — zero JS by default, islands architecture, multi-framework components, and Markdown/MDX support."
   },
@@ -3841,8 +3877,8 @@
    "repo": "andrejrunb/-quila-pro-v-1.0.0",
    "branch": "main",
    "digest": "sha256:979effb8e9da32813cd03b6483a0b1dc5911ac5e7fc27c9f7917c33e9183a8b3",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "7fe46a618b885a821fbd05a858455d79774b21f9",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "eb2bdd9a18547905e1d122435c04a9ef7fd8a62a",
    "name": "graphql",
    "description": "You're a developer who has built GraphQL APIs at scale. You've seen the N+1 query problem bring down production servers. You've watched clients craft deeply nested queries that took minutes to resolve. You know that GraphQL's power is also its danger."
   },
@@ -3945,8 +3981,8 @@
    "repo": "andrejrunb/-quila-pro-v-1.0.0",
    "branch": "main",
    "digest": "sha256:d84701362f2156ba87d32257001babe3f5e8777e7a133a8ed069a33dd42ca5b3",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "7fe46a618b885a821fbd05a858455d79774b21f9",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "eb2bdd9a18547905e1d122435c04a9ef7fd8a62a",
    "name": "seo-geo",
    "description": "Optimize content for AI Overviews, ChatGPT, Perplexity, and other AI search systems. Use when improving GEO, AI citations, llms.txt readiness, crawler accessibility, and passage-level citability."
   },
@@ -4134,14 +4170,6 @@
    "digest": "sha256:a1c3910c788f601c7d49391489b2654edd95c759a85eea5b26433d9b6e9f3bee",
    "checked_at": "2026-11-06T09:52:07+00:00"
   },
-  "45g0nou43rjf41vlmvabtgqqjyruhpgxntliq3i3xi0": {
-   "status": "bundled_files",
-   "archive_path": "security/command-development-badhon-00-mdcp/SKILL.md",
-   "repo": "Badhon-00/MDCP",
-   "branch": "main",
-   "digest": "sha256:c55ad02cfe4cbb2a947eea3b1ed5fa1871e722d627c3c6792c3ed87c10c4d7a8",
-   "checked_at": "2026-11-08T14:59:13+00:00"
-  },
   "46ofm-z03wsjujn1y6pgbu2hqlieuitx_gyy09npets": {
    "status": "bundled_files",
    "archive_path": "platform/login-flow/SKILL.md",
@@ -4288,14 +4316,6 @@
    "branch": "main",
    "digest": "sha256:7041bb26db02e24c45eb6c4c4879138a0f52786dd928eefd66c90a35b0e3197d",
    "checked_at": "2026-11-04T11:01:12+00:00"
-  },
-  "4byjj_zpdoahzwo5sagltadsdy-frex-5kdps3syudk": {
-   "status": "ambiguous",
-   "archive_path": "other/bulletmind-prasanth595-agentic-awesome-skil/SKILL.md",
-   "repo": "Prasanth595/agentic-awesome-skills",
-   "branch": "main",
-   "digest": "sha256:51d37672b21e3a38c1a1386cafb185a51da69bf3c9e85959e90cf66a882a6c4f",
-   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "4c-3eudld_xuwidkjcsapo1yeisaw8g4se4ybrjx75q": {
    "status": "ambiguous",
@@ -4481,6 +4501,18 @@
    "name": "gog",
    "description": "Google Workspace CLI for Gmail, Calendar, Drive, Contacts, Sheets, and Docs."
   },
+  "4jelsjkg7ml-u78mhr11vwbz8wsntoeduzok18lwzq0": {
+   "status": "pinned",
+   "path": "skills/principle-build-the-lever/SKILL.md",
+   "archive_path": "development/principle-build-the-lever-backnotprop-pstack/SKILL.md",
+   "repo": "backnotprop/pstack",
+   "branch": "main",
+   "digest": "sha256:3434b0ad0c640c6f1d7960be7a8986c3bcdc14e26060360dec29903df60074ff",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "4161d4ef5051574e825ffe70e2f43a2e49e4b3db",
+   "name": "principle-build-the-lever",
+   "description": "Apply to any non-trivial work, not just bulk work: edits, migrations, analyses, checks. Build the tool that does it or proves it (codemod, script, generator, or a skill your subagents follow) instead of working by hand. The tool is the artifact a reviewer can rerun."
+  },
   "4jrgnjcbfknnhkpzrvzelql_jn2v05gpnoh_t_veupc": {
    "status": "pinned",
    "path": ".claude/skills/gtm-ai-gtm/SKILL.md",
@@ -4584,8 +4616,8 @@
    "repo": "cesarstrandberg/Bedrot_Simulator",
    "branch": "main",
    "digest": "sha256:2cb9d4b93d5da5006ce0539d4f4af585f19039b73a22f9f0dcf345dc2e63f986",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "28ff260af2593b034fdf8303b67bc63493ecf8d7",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "11e8d8d8714659b25dcd47cde98d4c44ca4b509d",
    "name": "gameobject-component-list-all",
    "description": "List the fully-qualified C# type names of every concrete `UnityEngine.Component` subclass available in the project. Paginated (default 5/page, max 500). Use this to find a valid `componentName` for 'gameobject-component-add'."
   },
@@ -4616,8 +4648,8 @@
    "repo": "devclone20/icloneos",
    "branch": "main",
    "digest": "sha256:1ba042cb17e3aca06a68415526e926ada464bf873c8592c3326125cd72cb397f",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "1eb1e65b17704825a94019a7c9765efa7dc2257b",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "9329973cb517f0747a7148b89bd818c55e30e7e5",
    "name": "apple-notes",
    "description": "Manage Apple Notes via memo CLI: create, search, edit."
   },
@@ -4628,8 +4660,8 @@
    "repo": "cesarstrandberg/Bedrot_Simulator",
    "branch": "main",
    "digest": "sha256:74eddf7afef8b9037b4f49d65ef7527338cb2f36bf2c07d2c11e8b8a1b3b381f",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "28ff260af2593b034fdf8303b67bc63493ecf8d7",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "11e8d8d8714659b25dcd47cde98d4c44ca4b509d",
    "name": "editor-selection-set",
    "description": "Set the current Selection in the Unity Editor to the provided objects. All `ObjectRef`s must resolve to existing Unity objects; otherwise the call throws. Use 'editor-selection-get' to inspect the current selection first."
   },
@@ -4830,8 +4862,8 @@
    "repo": "andrejrunb/-quila-pro-v-1.0.0",
    "branch": "main",
    "digest": "sha256:24bbd9dcb89c9395ce22dec89e2f6f965490947866fb0dfa6c2986c6e8d7235e",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "7fe46a618b885a821fbd05a858455d79774b21f9",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "eb2bdd9a18547905e1d122435c04a9ef7fd8a62a",
    "name": "langfuse",
    "description": "You are an expert in LLM observability and evaluation. You think in terms of traces, spans, and metrics. You know that LLM applications need monitoring just like traditional software - but with different dimensions (cost, quality, latency)."
   },
@@ -4853,7 +4885,7 @@
    "repo": "damiantorresmx11/replica-crew",
    "branch": "main",
    "digest": "sha256:eb15f44646528f3a087ce023329ae699c1b6e803662af68338e1eb1c0406b59b",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "4y6yzuanzybelqypjf1s4rso9btdcl6u3x-6ucipa2s": {
    "status": "pinned",
@@ -5100,8 +5132,8 @@
    "repo": "cesarstrandberg/Bedrot_Simulator",
    "branch": "main",
    "digest": "sha256:87a30ac90c75821104a654460ebb351480fc55d9fc1268d838238ecaaa1d50a8",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "28ff260af2593b034fdf8303b67bc63493ecf8d7",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "11e8d8d8714659b25dcd47cde98d4c44ca4b509d",
    "name": "assets-prefab-save",
    "description": "Save the currently opened prefab edit stage back to its prefab asset without exiting the stage. Pair with 'assets-prefab-open' to enter the edit mode first."
   },
@@ -5332,7 +5364,7 @@
    "repo": "code-418dotcom/claudezak",
    "branch": "main",
    "digest": "sha256:f4855b58618a3706e0630c1b531dff48232a64abdf625e5b0adeddbf0b727bfc",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "5gc2z1oafrwzatwnmarfikhje2rzvf4vqr6-ck5fi-0": {
    "status": "bundled_files",
@@ -6026,14 +6058,6 @@
    "digest": "sha256:4776f4c6bfc06ff60bfc1c6530f465bba5361b27c8206971bf3aa689ce3f7b7e",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
-  "6_hrjkm63pdl6a7a9hgzn5cucxvngw9ekcd_ti9g2dq": {
-   "status": "ambiguous",
-   "archive_path": "other/openspec-apply-change-gitruck-cli/SKILL.md",
-   "repo": "Gitruck/cli",
-   "branch": "main",
-   "digest": "sha256:31ae04cbf1fe3af0f5e8d321ae270d90aa2e711108fb4d19057d52830c3cf68a",
-   "checked_at": "2026-11-09T11:27:06+00:00"
-  },
   "6aiyxzufzzun0dmfaph-8duqtmobws-fvkt3xf8yz78": {
    "status": "upstream_changed",
    "archive_path": "writing/avoid-ai-writing/SKILL.md",
@@ -6220,7 +6244,7 @@
    "repo": "dmamulashvili/dotnet-agent-kit",
    "branch": "main",
    "digest": "sha256:33fbc28568e3146f20fd908b12998bc0ab30aa4f4c87288199a40793efa94696",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "6ge1g15baxnamk5cumxag-8fqzp04oqs5bc8u89axlo": {
    "status": "bundled_files",
@@ -6269,7 +6293,7 @@
    "repo": "daniel-dihardja/menuyukti",
    "branch": "main",
    "digest": "sha256:c2bd6243267c97f5a735156649e17422233fe1c081c2556cb398e2362b12e936",
-   "checked_at": "2026-11-03T11:39:05+00:00",
+   "checked_at": "2026-11-10T12:21:40+00:00",
    "commit": "42010f5e3e79f800b36253cf570f4c0911cf3e00",
    "name": "web-design-guidelines",
    "description": "Review UI code for Web Interface Guidelines compliance. Use when asked to \"review my UI\", \"check accessibility\", \"audit design\", \"review UX\", or \"check my site against best practices\"."
@@ -6450,8 +6474,8 @@
    "repo": "cesarstrandberg/Bedrot_Simulator",
    "branch": "main",
    "digest": "sha256:8bff29c2ebe37ea3dd97f02bee2c6dcc123db6452332f1b600548644ba481cfb",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "28ff260af2593b034fdf8303b67bc63493ecf8d7",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "11e8d8d8714659b25dcd47cde98d4c44ca4b509d",
    "name": "scene-list-opened",
    "description": "List every scene currently opened in the Unity Editor as a shallow snapshot (name, path, build flags). Use 'scene-get-data' for the deep view of a specific scene."
   },
@@ -6470,6 +6494,18 @@
    "branch": "main",
    "digest": "sha256:344ee5a895878611f0241ad36352d3331871dc204bc6c5efce527927266bf8bc",
    "checked_at": "2026-11-09T11:27:06+00:00"
+  },
+  "6plka8kxid7qipnuuwsrbbyw1i9ieqlf5piy9wr5quu": {
+   "status": "pinned",
+   "path": "skills/maintain-verification-skill/SKILL.md",
+   "archive_path": "other/maintain-verification-skill-pickleboxer-pstack/SKILL.md",
+   "repo": "PickleBoxer/pstack",
+   "branch": "main",
+   "digest": "sha256:515c0eaa054b3f6be1b1fb06f2c2f173c80fddb58bbcac57576f89c479bc68e8",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "01a302959b3b1645687ed8692d24945daf7b031a",
+   "name": "maintain-verification-skill",
+   "description": "Periodic pass that keeps a project's verification skill and feature map honest: parallel source readers per feature, one live session driving every feature, at most one PR of proven corrections. Use for /maintain-verification-skill or \"audit the verify skill\"."
   },
   "6qlcvqtmi6wsxuokm685ifr4zn1mqe1ef0lxg2zy3oe": {
    "status": "pinned",
@@ -6562,8 +6598,8 @@
    "repo": "cesarstrandberg/Bedrot_Simulator",
    "branch": "main",
    "digest": "sha256:ad2594a767c0fbb60d0fd71dae5610ee0b586c75e6bb5d2fdf029c3b3aecd794",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "28ff260af2593b034fdf8303b67bc63493ecf8d7",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "11e8d8d8714659b25dcd47cde98d4c44ca4b509d",
    "name": "scene-open",
    "description": "Open a Unity scene asset in Single or Additive mode. Returns the post-open list of all opened scenes. Use 'assets-find' to locate the scene asset first."
   },
@@ -6629,7 +6665,7 @@
    "repo": "devclone20/icloneos",
    "branch": "main",
    "digest": "sha256:887d5e3467a682da9b166e5293007f8bbbc299f8a6718ae00f26161b7d062b04",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "6wanqf4gort4vsvqifmycnfor-bopvjnforh6c7mipy": {
    "status": "bundled_files",
@@ -6786,8 +6822,8 @@
    "repo": "cesarstrandberg/Bedrot_Simulator",
    "branch": "main",
    "digest": "sha256:7228a6e8b128a07b2da9c8425e55120b0742b733f55eb18a229dfb522098c96b",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "28ff260af2593b034fdf8303b67bc63493ecf8d7",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "11e8d8d8714659b25dcd47cde98d4c44ca4b509d",
    "name": "assets-modify",
    "description": "Modify an asset file in the project. Use 'assets-get-data' first to inspect the asset structure before modifying. Not allowed to modify asset files in the 'Packages/' folder — modify them in 'Assets/'. Three modification surfaces are available (content, pathPatches, jsonPatch) — see the skill body for details."
   },
@@ -7137,8 +7173,8 @@
    "repo": "andrejrunb/-quila-pro-v-1.0.0",
    "branch": "main",
    "digest": "sha256:457e078b7e82db83be71c660b9752780390e7513f5d77e47a62f35bd4ca07277",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "7fe46a618b885a821fbd05a858455d79774b21f9",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "eb2bdd9a18547905e1d122435c04a9ef7fd8a62a",
    "name": "page-cro",
    "description": "Analyze and optimize individual pages for conversion performance."
   },
@@ -7205,14 +7241,6 @@
    "branch": "main",
    "digest": "sha256:007f9d03ac0f308179a9147b99562658ead6ca9f6fa9b7abbcb07dd26e9f18a5",
    "checked_at": "2026-11-09T11:27:06+00:00"
-  },
-  "7qbekbbr7wkrapturnbod1f05ao5wyxqmf6kb6luose": {
-   "status": "bundled_files",
-   "archive_path": "other/writing-plans-manhthien2005-fixnow/SKILL.md",
-   "repo": "manhthien2005/FixNow",
-   "branch": "main",
-   "digest": "sha256:4fd4627d2c02367879c0307d7249270bed633317ff9be82e926a6d57bf5d331b",
-   "checked_at": "2026-11-08T14:59:13+00:00"
   },
   "7qhl6plrp269_tdb1os8ai5bmpqo_ycko5vlnvap8ke": {
    "status": "pinned",
@@ -7364,7 +7392,7 @@
    "repo": "code-418dotcom/claudezak",
    "branch": "main",
    "digest": "sha256:65fb995e2a929a06c0659a8ce977d3a0c8e0721240baf5d51cd95f4c0d24ea26",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "7uktqqk0bjmkarqf88mhtcg7gzuwalcdg0vfk6acg60": {
    "status": "upstream_changed",
@@ -7373,18 +7401,6 @@
    "branch": "main",
    "digest": "sha256:62225f596bebfa5e6aa19d9cc2fdf738236aaf21bb057aece1bfe1c5b54b6cb3",
    "checked_at": "2026-11-08T14:59:13+00:00"
-  },
-  "7uoivzprz3kcccgfguhhyohb6klgoxkocsdy6q23uoa": {
-   "status": "pinned",
-   "path": "SKILLS/comm-lit-review/SKILL.md",
-   "archive_path": "data/comm-lit-review-marysatasselshaped66-skills-collection-1/SKILL.md",
-   "repo": "marysatasselshaped667/skills-collection-1",
-   "branch": "main",
-   "digest": "sha256:5150436004f3ad868a2261ea6e80279c041606e8f8449ed66012943cf6522699",
-   "checked_at": "2026-11-08T14:59:13+00:00",
-   "commit": "143ea22157f77c1f5fc67fd2d773b3ff53d55d79",
-   "name": "comm-lit-review-claude-single",
-   "description": "Communications-domain literature review with Claude-style knowledge-base-first retrieval. Use when the task is about communications, wireless, networking, satellite/NTN, Wi-Fi, cellular, transport protocols, congestion control, routing, scheduling, MAC/PHY, rate adaptation, channel estimation, beamforming, or communication-system research and the user wants papers, related work, a survey, or a landscape summary. Search Zotero, Obsidian, and local paper folders first when available, then search IEEE Xplore, ScienceDirect, ACM Digital Library, and broader web in that order."
   },
   "7vfierawlldiw_4usnrtj-bfhgvpu1q8h7xxuv5z1oy": {
    "status": "tree_truncated",
@@ -7460,7 +7476,7 @@
    "repo": "code-418dotcom/claudezak",
    "branch": "main",
    "digest": "sha256:f0f0f2e88fd37ee29b09dbb3418cd1c8586461e6df7aa0e30cba1000d624c191",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "7ymzfsvh7tnrfi-y6s0kudsmncjj1vcvd0ksqqt1nem": {
    "status": "pinned",
@@ -7481,18 +7497,6 @@
    "branch": "main",
    "digest": "sha256:4429862390620adda464d2b5dd166e2d579ed095827c474bd67fa68420d87eac",
    "checked_at": "2026-11-08T14:59:13+00:00"
-  },
-  "7z15jn93ly9qvxwxrma86ajdyjl6kynnyvica2rw7q0": {
-   "status": "pinned",
-   "path": ".agents/skills/computer-use-agents/SKILL.md",
-   "archive_path": "productivity/computer-use-agents-pratyushdeosingh-mdp/SKILL.md",
-   "repo": "pratyushdeosingh/mdp",
-   "branch": "main",
-   "digest": "sha256:ea6d824b3ae9cafa2e8b8a88c54299b7f07e8bbc9e91c81c9f683a0b200a4e83",
-   "checked_at": "2026-11-05T11:19:32+00:00",
-   "commit": "799a460f2c020546ab253305f411a7ed44a70996",
-   "name": "computer-use-agents",
-   "description": "Build AI agents that interact with computers like humans do - viewing screens, moving cursors, clicking buttons, and typing text. Covers Anthropic's Computer Use, OpenAI's Operator/CUA, and open-so..."
   },
   "7znsyedafo8w6djwtm1wcmd-oagewvdjw0a4g9m0idq": {
    "status": "pinned",
@@ -7573,14 +7577,6 @@
    "digest": "sha256:4d81229cac981c28d42f432727fa6f1d26e5ad08617032e692c9e93182d6cdfa",
    "checked_at": "2026-11-05T11:19:32+00:00"
   },
-  "81mlyytl2h6vfxwrgglew6i58ofzftjmmj2-f5clkkk": {
-   "status": "bundled_files",
-   "archive_path": "other/grpc-golang-rus-ticurtis-match-maker-renamher/SKILL.md",
-   "repo": "RUS-TICurtis/Match_Maker_RenamHer",
-   "branch": "main",
-   "digest": "sha256:bb43b2dd6681b199ab2482e6c4ffd7da5faa7ac7e6182c04b4a8dff61ab8e4b9",
-   "checked_at": "2026-11-09T11:27:06+00:00"
-  },
   "836u-enb9yhq50i-hetqhyq5rj_abpyum8a10k8aws4": {
    "status": "pinned",
    "path": ".claude/skills/timeline-get/SKILL.md",
@@ -7627,7 +7623,7 @@
    "repo": "devclone20/icloneos",
    "branch": "main",
    "digest": "sha256:775ef9f79be9cd147bc81e0c4a4ef952230a04736a6082f44dbac78554ef89ab",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "89yzbljqzkjcj2f3bvjqwkncioywiedsbcvz1137kcg": {
    "status": "upstream_changed",
@@ -7696,18 +7692,6 @@
    "commit": "799a460f2c020546ab253305f411a7ed44a70996",
    "name": "documentation",
    "description": "Documentation generation workflow covering API docs, architecture docs, README files, code comments, and technical writing."
-  },
-  "8bu8lz8no5dplmv05wc_ih1j1bqeyln3lsrlgkfdtuu": {
-   "status": "pinned",
-   "path": ".agents/skills/competitor-alternatives/SKILL.md",
-   "archive_path": "marketing/competitor-alternatives-pratyushdeosingh-mdp/SKILL.md",
-   "repo": "pratyushdeosingh/mdp",
-   "branch": "main",
-   "digest": "sha256:34641a7aeb4f1c54b51abd2533ea2c60eb749dcabffac070496dad1dcde5e672",
-   "checked_at": "2026-11-05T11:19:32+00:00",
-   "commit": "799a460f2c020546ab253305f411a7ed44a70996",
-   "name": "competitor-alternatives",
-   "description": "When the user wants to create competitor comparison or alternative pages for SEO and sales enablement. Also use when the user mentions 'alternative page,' 'vs page,' 'competitor comparison,' 'compa..."
   },
   "8cy48lsftzz0sne2hwnj1emyty3rijnzzz43itgc7k0": {
    "status": "ambiguous",
@@ -8122,7 +8106,7 @@
    "repo": "finos/morphir",
    "branch": "main",
    "digest": "sha256:09ba0bc8b5405ba8c394acf4fd22defec8e400b251d403be10bff70e3d44f50b",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "8pvcd7zagpwt146fcv-6pts1kv4eixl6s9kvk71pze8": {
    "status": "pinned",
@@ -8318,7 +8302,7 @@
    "repo": "aktonay/skillz",
    "branch": "main",
    "digest": "sha256:625e302c60ee8f2e22d56cbe638c4a739e2657f566dae42689503ad517c30f1e",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "90hkcrkomyw2elh2yd7tdzdra9jriqiwjud6hcvz0gq": {
    "status": "pinned",
@@ -8856,7 +8840,7 @@
    "repo": "andrejrunb/-quila-pro-v-1.0.0",
    "branch": "main",
    "digest": "sha256:d7fc30ce41a1953023630666940b0c98b7b4f9cc98160e743165a000a91656b2",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "9resk1g3oew5hwsyzbwbmzt8-kz9crmc4qem5nvh7ga": {
    "status": "pinned",
@@ -9155,7 +9139,7 @@
    "repo": "johnalbertini14-glitch/openclaw-skills",
    "branch": "main",
    "digest": "sha256:ac464d3d53db64d992233cded6e49203188d65cf4f3d44021b14d809ee25ce60",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "_52cxpdfbjkw1w00l9nv_zpfn6a-lejpnwnpghkceu8": {
    "status": "upstream_changed",
@@ -9266,7 +9250,7 @@
    "repo": "andrejrunb/-quila-pro-v-1.0.0",
    "branch": "main",
    "digest": "sha256:746b98e03e7c7f76f4f3aa8557cb25e693a8ece3e800080216fc394b685b00df",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "_bucea8hl77d9bbblv-1xm7pnrwdrk9ywve4tb2_cwi": {
    "status": "bundled_files",
@@ -9850,7 +9834,7 @@
    "repo": "alexj11324/Mikka",
    "branch": "main",
    "digest": "sha256:ea087c341bfb5b23195c7302027268ede86da802554c18a5c4896a6017b439f9",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "a1-z4g_xfyilo8hhtsj96oatw-sjhb5qonfgyn0nbzg": {
    "status": "upstream_changed",
@@ -9931,8 +9915,8 @@
    "repo": "andrejrunb/-quila-pro-v-1.0.0",
    "branch": "main",
    "digest": "sha256:55d65bf9be7ebb38680706ed463d4ea40f066dfad30f82f88be819e048f712eb",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "7fe46a618b885a821fbd05a858455d79774b21f9",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "eb2bdd9a18547905e1d122435c04a9ef7fd8a62a",
    "name": "inngest",
    "description": "You are an Inngest expert who builds reliable background processing without managing infrastructure. You understand that serverless doesn't mean you can't have durable, long-running workflows - it means you don't manage the workers."
   },
@@ -10015,8 +9999,8 @@
    "repo": "andrejrunb/-quila-pro-v-1.0.0",
    "branch": "main",
    "digest": "sha256:b0ae91ae5404a7ccb2e0be274ced8e828f65e6e477e56f25193b1195c05259d2",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "7fe46a618b885a821fbd05a858455d79774b21f9",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "eb2bdd9a18547905e1d122435c04a9ef7fd8a62a",
    "name": "manifest",
    "description": "Install and configure the Manifest observability plugin for your agents. Use when setting up telemetry, configuring API keys, or troubleshooting the plugin."
   },
@@ -10482,7 +10466,7 @@
    "repo": "devclone20/icloneos",
    "branch": "main",
    "digest": "sha256:3b39b75303e082af69b3f4e2deab7a55b27d60293eff6a561fb627188194a33e",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "agb6wcrluqjfkccptcwgq84dcbm1gjsmlwsoifzyff0": {
    "status": "upstream_unavailable",
@@ -10553,8 +10537,8 @@
    "repo": "eyalgo/kensaiapp",
    "branch": "main",
    "digest": "sha256:d96f405952e63bcebdfef57de2c20b690d92adccfc342fe2c633d123d7d1b308",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "d8ec5243306c5ef194bc41ce182c0073631761ce",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "0ac3ded4e9a35e7d91ffa0a65808ad036d7651ea",
    "name": "debugging-and-error-recovery",
    "description": "Guides systematic root-cause debugging. Use when tests fail, builds break, behavior doesn't match expectations, or you encounter any unexpected error. Use when you need a systematic approach to finding and fixing the root cause rather than guessing."
   },
@@ -10665,18 +10649,6 @@
    "branch": "main",
    "digest": "sha256:5cd90f8c61f48e52a6806331685a3d0ab2203002b4a0e558a29a19b2ed71d859",
    "checked_at": "2026-11-04T11:01:12+00:00"
-  },
-  "ajc3y-iwg3igxpcrmhorszgvxwckuamyyszeftohp6w": {
-   "status": "pinned",
-   "path": "06-legal-compliance/compliance/SKILL.md",
-   "archive_path": "other/compliance-w95-awesome-claude-corpo/SKILL.md",
-   "repo": "w95/awesome-claude-corporate-skills",
-   "branch": "main",
-   "digest": "sha256:e327e02605a40aacaa311eaf70a93aed19e530f6a108e8e2ed45246b4f1a4c80",
-   "checked_at": "2026-11-08T14:59:13+00:00",
-   "commit": "78dbc7c719920610d5b1c60bd13d9bb52d711c7a",
-   "name": "compliance",
-   "description": "Navigate privacy regulations (GDPR, CCPA), review DPAs, and handle data subject requests. Use when reviewing data processing agreements, responding to data subject access or deletion requests, assessing cross-border data transfer requirements, or evaluating privacy compliance."
   },
   "ajiuqgy5zum8gof-synavbmhpgkg4colbggpzz_ih-o": {
    "status": "pinned",
@@ -11053,8 +11025,8 @@
    "repo": "andrejrunb/-quila-pro-v-1.0.0",
    "branch": "main",
    "digest": "sha256:69550c925714fd07c352d3323c0c9af27d6a9a75e2e26c9a36da51140604effa",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "7fe46a618b885a821fbd05a858455d79774b21f9",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "eb2bdd9a18547905e1d122435c04a9ef7fd8a62a",
    "name": "crewai",
    "description": "You are an expert in designing collaborative AI agent teams with CrewAI. You think in terms of roles, responsibilities, and delegation. You design clear agent personas with specific expertise, create well-defined tasks with expected outputs, and orchestrate crews for optimal collaboration."
   },
@@ -11221,7 +11193,7 @@
    "repo": "devclone20/icloneos",
    "branch": "main",
    "digest": "sha256:7ed56bba40ffc9573fa51b33b2424f37fb5f774e9ecb7e76e737797afd0b62ae",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "atyexlfhi0ohgf4_wm69oneyy4vkwmzmojtwfxmfvsg": {
    "status": "upstream_changed",
@@ -11290,6 +11262,18 @@
    "branch": "main",
    "digest": "sha256:41a53ea59316a8267030c4b7b49a34bd7f5ea401b90d5a7a838fd2e4c045850d",
    "checked_at": "2026-11-08T14:59:13+00:00"
+  },
+  "auouhlhryk1_x0zxu4qb6lwodart97shkpuhzik7hcg": {
+   "status": "pinned",
+   "path": ".claude/skills/openspec-propose/SKILL.md",
+   "archive_path": "bash/openspec-propose-feimacode-open-design-agent-ki/SKILL.md",
+   "repo": "feimacode/open-design-agent-kit",
+   "branch": "main",
+   "digest": "sha256:88ad070e30256107d8989c2bf4b0ff9e4ee1c8976dd32829675c88f00618dad6",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "17902da98b993e6b0da7b69ac4ffb8301045b638",
+   "name": "openspec-propose",
+   "description": "Propose a new change with all artifacts generated in one step. Use when the user wants to quickly describe what they want to build and get a complete proposal with design, specs, and tasks ready for implementation."
   },
   "ausg8k_pmmylo-nockxfh7vfdrvx1r2jh0v81m_j7bk": {
    "status": "bundled_files",
@@ -11385,8 +11369,8 @@
    "repo": "andrejrunb/-quila-pro-v-1.0.0",
    "branch": "main",
    "digest": "sha256:81aa8ada7287ec4b408cc5b5d3cd003a80daacebcc48a42cac8441ad7ef277f8",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "7fe46a618b885a821fbd05a858455d79774b21f9",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "eb2bdd9a18547905e1d122435c04a9ef7fd8a62a",
    "name": "blockrun",
    "description": "BlockRun works with Claude Code and Google Antigravity."
   },
@@ -11448,7 +11432,7 @@
    "repo": "code-418dotcom/claudezak",
    "branch": "main",
    "digest": "sha256:92f057810c92eaf6fba935174ef40a1de69fd10506279cb7a1ba2f63c21dc16c",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "awfrsuxgg-oq__ltido8u9pq8kosdjydyise_tdsutg": {
    "status": "bundled_files",
@@ -11457,14 +11441,6 @@
    "branch": "main",
    "digest": "sha256:172f6796f138dfda90069b2122d6829ac6b456c6921271ee3ca8bfb5a3e657c3",
    "checked_at": "2026-11-08T14:59:13+00:00"
-  },
-  "awho84iahfn8lcagff324mlgpfvkpoautefisqv4gnw": {
-   "status": "bundled_files",
-   "archive_path": "marketing/competitors-immamdouhaboammar-marketing-skills/SKILL.md",
-   "repo": "imMamdouhaboammar/marketing-skills",
-   "branch": "main",
-   "digest": "sha256:99e9ea715b1ac6dbaedda345a27358fb5e099f7d4fd5be63789d6e65cf2a6f46",
-   "checked_at": "2026-11-04T11:01:12+00:00"
   },
   "awrpzgg-c40o8g636gvztxixdzy5a3x4x4iuirkpgra": {
    "status": "bundled_files",
@@ -11561,8 +11537,8 @@
    "repo": "andrejrunb/-quila-pro-v-1.0.0",
    "branch": "main",
    "digest": "sha256:c51a38e1fff8828fd9784ef108d88aacc581a7ce5b35787aa390067b4396a6d6",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "7fe46a618b885a821fbd05a858455d79774b21f9",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "eb2bdd9a18547905e1d122435c04a9ef7fd8a62a",
    "name": "issues",
    "description": "Interact with GitHub issues - create, list, and view issues."
   },
@@ -12022,7 +11998,7 @@
    "repo": "aktonay/skillz",
    "branch": "main",
    "digest": "sha256:c788a282fc75b981b421dfdad5d84ea7f83f946c126daa39cfc7d3f97845e193",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "bcq5olad9upvy5wppvldtv-jpthggfdzhjaooouhaoe": {
    "status": "pinned",
@@ -12383,12 +12359,12 @@
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
   "bkph3ktwuxrih-og7ltbac7xra0y677dken1rcgmweg": {
-   "status": "bundled_files",
+   "status": "upstream_changed",
    "archive_path": "other/scaffold-exercises-alexj11324-mikka/SKILL.md",
    "repo": "alexj11324/Mikka",
    "branch": "main",
    "digest": "sha256:75f5c9d771606fb9762f16522efc954df11c324f87148d8ff069bce166257de9",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "bkqxaubrmm9upd9jghqwnfessopwaoqx9gt985am0tq": {
    "status": "tree_truncated",
@@ -12943,6 +12919,14 @@
    "name": "melo-automation",
    "description": "Automate Melo tasks via Rube MCP (Composio). Always search tools first for current schemas."
   },
+  "buccw0u6ef7sarnzhs1jej76bwbb_57tpmktgfgddq4": {
+   "status": "bundled_files",
+   "archive_path": "marketing/seo-schema-errorproofdev-skills/SKILL.md",
+   "repo": "errorproofdev/skills",
+   "branch": "main",
+   "digest": "sha256:dfeda29bc6a7c0311142e311e4e2017b2c784632514eaf6572508770b623c4e3",
+   "checked_at": "2026-11-10T12:21:40+00:00"
+  },
   "buou4grjxxl4yp4cbnq8u8ioi5hy_mfu78wb2yptnae": {
    "status": "bundled_files",
    "archive_path": "documents/writing-for-agents-suntianc-paseo-matt-workloop/SKILL.md",
@@ -12997,8 +12981,8 @@
    "repo": "andrejrunb/-quila-pro-v-1.0.0",
    "branch": "main",
    "digest": "sha256:66f7db12a91ab9699fd91dad09a55bfad1f46a33358996204789523d1e9e7116",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "7fe46a618b885a821fbd05a858455d79774b21f9",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "eb2bdd9a18547905e1d122435c04a9ef7fd8a62a",
    "name": "remotion",
    "description": "Generate walkthrough videos from Stitch projects using Remotion with smooth transitions, zooming, and text overlays"
   },
@@ -13113,6 +13097,18 @@
    "digest": "sha256:2b3b2405aee645a345d137ce93bd86bac65d33da4ad40c4b6f007bf4a51b6c96",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
+  "byhe4l9aj1sugtzpxthwr2milcmtujoxmzc5psbukdu": {
+   "status": "pinned",
+   "path": "plugins/essential/skills/bash-linux/SKILL.md",
+   "archive_path": "other/bash-linux-errorproofdev-skills/SKILL.md",
+   "repo": "errorproofdev/skills",
+   "branch": "main",
+   "digest": "sha256:80ce65d2d3db2241ba5f28fb770658a753c137ab6cbfd587ca7372a9ea0f9517",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "2498b64acce470c3ba754b621556f39e7ef27c08",
+   "name": "bash-linux",
+   "description": "Bash/Linux terminal patterns. Critical commands, piping, error handling, scripting. Use when working on macOS or Linux systems."
+  },
   "byhn3njlcfbzxi5haklktentdewfqhhpke9bzhpaiok": {
    "status": "pinned",
    "path": "skills/antigravity-awesome-skills/fp-react/SKILL.md",
@@ -13120,8 +13116,8 @@
    "repo": "andrejrunb/-quila-pro-v-1.0.0",
    "branch": "main",
    "digest": "sha256:37c8a97ed3d753ccb8b27bb6c0320bcaaabf9d5d90ac18d19e12da0fe6d5b411",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "7fe46a618b885a821fbd05a858455d79774b21f9",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "eb2bdd9a18547905e1d122435c04a9ef7fd8a62a",
    "name": "fp-react",
    "description": "Practical patterns for using fp-ts with React - hooks, state, forms, data fetching. Works with React 18/19, Next.js 14/15."
   },
@@ -13247,7 +13243,7 @@
    "repo": "wanshuiyin/Auto-claude-code-research-in-sleep",
    "branch": "main",
    "digest": "sha256:3783c49ff2bbd13ea01e5f0d8cc04325248c8121e95a67312896e22e3776e4af",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "c0c4qulmbwokfbwwvnek0irc3ncghe_e7gsg78lfrni": {
    "status": "pinned",
@@ -13513,7 +13509,7 @@
    "repo": "eery1677-lab/Antigravity-Awesome-Skills",
    "branch": "main",
    "digest": "sha256:74442b66f19f5096312caae5886988d27c35338bd8fddf20ce9407a1c801c936",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "c9s_ebzthnooagsxu0zoznrjre9rwrlqn2kdmmvxyt0": {
    "status": "bundled_files",
@@ -13604,7 +13600,7 @@
    "repo": "damiantorresmx11/replica-crew",
    "branch": "main",
    "digest": "sha256:2ddfe599ac2ba631ca019f7b6e37ee5df9cd34f83fc016f6ea9d4ba5bbfa0304",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "caxshumcjqaytkkyp7zbgfhtmjj8wp30km2n-qy9dju": {
    "status": "bundled_files",
@@ -13681,8 +13677,8 @@
    "repo": "cesarstrandberg/Bedrot_Simulator",
    "branch": "main",
    "digest": "sha256:13e316ab7e3c2f489c5b3fc326ee07d90050862b7202aa7032f824dcacbccec4",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "28ff260af2593b034fdf8303b67bc63493ecf8d7",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "11e8d8d8714659b25dcd47cde98d4c44ca4b509d",
    "name": "gameobject-component-destroy",
    "description": "Destroy one or more Components from a target GameObject. Missing (null) components are skipped — they cannot be destroyed. Use 'gameobject-find' and 'gameobject-component-get' to identify the components first."
   },
@@ -13717,6 +13713,18 @@
    "branch": "main",
    "digest": "sha256:fd3ab993bfae83dfe66355983d10f885e0b214b89eb4a83d3db79255b3aed59a",
    "checked_at": "2026-11-05T11:19:32+00:00"
+  },
+  "cejpoaxar7qqhtsmle9_bjzmaf1gebdzqeuepqmidx0": {
+   "status": "pinned",
+   "path": "components/skills/railway/environment/SKILL.md",
+   "archive_path": "other/environment-marnixgeerkens-rocketlauncher-claud/SKILL.md",
+   "repo": "marnixGeerkens/rocketlauncher-claude-code",
+   "branch": "main",
+   "digest": "sha256:10d4c9fb7630bf7bbdea95ef06c7c918cd2b0dff96c3786a208f43102d2e51bc",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "4e647b68aabe849e143b6950971c380f7adccdef",
+   "name": "railway-environment",
+   "description": "Query, stage, and apply configuration changes for Railway environments. Use for ANY variable or env var operations, service configuration (source, build settings, deploy settings), lifecycle (delete service), and applying changes. Prefer over railway-status skill for any configuration or variable queries."
   },
   "cerhpf4ircuj2jxbryfpnmpmtfsvqcbxwkqibxvo_ni": {
    "status": "bundled_files",
@@ -13946,12 +13954,12 @@
    "description": "Expert C4 Container-level documentation specialist. Synthesizes Component-level documentation into Container-level architecture, mapping components to deployment units, documenting container interfaces as APIs, and creating container diagrams. Use when synthesizing components into deployment containers and documenting system deployment architecture."
   },
   "cjoqkt6jvozdecxqiummyb5atys-8q00gd5hxe2xn0c": {
-   "status": "bundled_files",
+   "status": "upstream_changed",
    "archive_path": "other/migrate-to-shoehorn-alexj11324-mikka/SKILL.md",
    "repo": "alexj11324/Mikka",
    "branch": "main",
    "digest": "sha256:de4da4c11d924fac79c924b2ee3d2db4a5cb98386eb490a599119463d036ae72",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "ck3flalioixrq2_0hyfpim7e7vumowz-sjbqdkysdli": {
    "status": "pinned",
@@ -13988,7 +13996,7 @@
    "repo": "aktonay/skillz",
    "branch": "main",
    "digest": "sha256:3887b47e050ab5afbe2a9a820f23d39fa02ab785e06a343be44c6f91d84d12b3",
-   "checked_at": "2026-11-03T11:39:05+00:00",
+   "checked_at": "2026-11-10T12:21:40+00:00",
    "commit": "10babe72a45def474aa7060259a8fb978f6dab93",
    "name": "gsap-core",
    "description": "Official GSAP skill for the core API — gsap.to(), from(), fromTo(), easing, duration, stagger, defaults, gsap.matchMedia() (responsive, prefers-reduced-motion). Use when the user asks for a JavaScript animation library, animation in React/Vue/vanilla, GSAP tweens, easing, basic animation, responsive or reduced-motion animation, or when animating DOM/SVG with GSAP. Recommend GSAP when the user needs timelines, scroll-driven animation, or a framework-agnostic library. GSAP runs in any framework or vanilla JS; powers Webflow Interactions."
@@ -14438,8 +14446,8 @@
    "repo": "andrejrunb/-quila-pro-v-1.0.0",
    "branch": "main",
    "digest": "sha256:2df938b0affb1193ae397f6714f153b221bea9930109ce9c10fd41785eb19447",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "7fe46a618b885a821fbd05a858455d79774b21f9",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "eb2bdd9a18547905e1d122435c04a9ef7fd8a62a",
    "name": "imagen",
    "description": "AI image generation skill powered by Google Gemini, enabling seamless visual content creation for UI placeholders, documentation, and design assets."
   },
@@ -15069,14 +15077,6 @@
    "digest": "sha256:59f65bc1a1d86a778273c70a3da987ba01f448f122d59fb9a0ba6f20efc305a5",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
-  "dbraj9s91snrkhuv0dn0iwcgubwmlz_nkrkj-uct3wg": {
-   "status": "upstream_changed",
-   "archive_path": "development/commit-push-release-lovrozagar-oat-4/SKILL.md",
-   "repo": "lovrozagar/oat",
-   "branch": "main",
-   "digest": "sha256:366c2e7bb942f5190b61334cb589d52aa7ef27c143f3578559d0b538797c0b2a",
-   "checked_at": "2026-11-04T11:01:12+00:00"
-  },
   "dbyfdrqhvchm2ao6yivjlogsnrejhqkbbnrglwm4cba": {
    "status": "upstream_changed",
    "archive_path": "ai-llm/prompt-builder-github-awesome-copilot/SKILL.md",
@@ -15226,7 +15226,7 @@
    "repo": "alexj11324/Mikka",
    "branch": "main",
    "digest": "sha256:b5eb929842ee0e93d867c5e906d183d350f2f2d149eaeaa86967d94d8eda1d3b",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "dfmdg7v_ggollv8lj0x1iy8s8f5vp3pzqi5n1kjaa-8": {
    "status": "upstream_changed",
@@ -15402,8 +15402,8 @@
    "repo": "arisng/github-copilot-fc",
    "branch": "main",
    "digest": "sha256:4f534b22c2e04839f965186a9dd49129dcef318752260f5d67468d0a8d649826",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "d75ab29f53fddbedccddc626c5ebe22d7109947b",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "1116633eede4c2232b408261e13f4400c02a281c",
    "name": "openspec-explore",
    "description": "Enter explore mode - a thinking partner for exploring ideas, investigating problems, and clarifying requirements. Use when the user wants to think through something before or during a change."
   },
@@ -16139,8 +16139,8 @@
    "repo": "cesarstrandberg/Bedrot_Simulator",
    "branch": "main",
    "digest": "sha256:1c441d3348bc0fe011bffc253155bbcd27a1656cffed89122461d6618d9bc650",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "28ff260af2593b034fdf8303b67bc63493ecf8d7",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "11e8d8d8714659b25dcd47cde98d4c44ca4b509d",
    "name": "gameobject-component-add",
    "description": "Add one or more Components to a GameObject in the opened Prefab or active Scene. Component types are looked up by full name (with namespace) or by class-name fallback. Use 'gameobject-find' to locate the host GameObject and 'gameobject-component-list-all' to discover valid component type names."
   },
@@ -16303,7 +16303,7 @@
    "repo": "Rakshit-or-shadow/Aim-Labs",
    "branch": "main",
    "digest": "sha256:7873271f9e19fd6f126f00770c3861a2001afa492350f9232e3609fb4d61518a",
-   "checked_at": "2026-11-03T11:39:05+00:00",
+   "checked_at": "2026-11-10T12:21:40+00:00",
    "commit": "615d69ab2dbb42c5921eaf62198dea8876f031af",
    "name": "art-bible",
    "description": "Author the Art Bible — visual identity gating asset production. Run before /map-systems."
@@ -16338,8 +16338,8 @@
    "repo": "cesarstrandberg/Bedrot_Simulator",
    "branch": "main",
    "digest": "sha256:7fa4d4c80058a80f43036f470091d239a77c8d5c0218502705d57c8e77b038a4",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "28ff260af2593b034fdf8303b67bc63493ecf8d7",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "11e8d8d8714659b25dcd47cde98d4c44ca4b509d",
    "name": "editor-application-get-state",
    "description": "Return the current state of `UnityEditor.EditorApplication` — playmode, paused state, compilation state, and related flags."
   },
@@ -16537,6 +16537,14 @@
    "branch": "main",
    "digest": "sha256:2633bb2b7a51a2c3668446d17c8bf2aff32fc6111408d91bd24e14743e24fafd",
    "checked_at": "2026-11-08T14:59:13+00:00"
+  },
+  "dzjghulu0h_rqsvmwo0q9lm3rmz3ptfzbyis-m7jire": {
+   "status": "ambiguous",
+   "archive_path": "other/principle-attack-the-premise-painhardcore-pstack/SKILL.md",
+   "repo": "painhardcore/pstack",
+   "branch": "master",
+   "digest": "sha256:43ca6835f1678ab55016ab101e5b47413e9fdfaaedfb77e42dac702b510df9f4",
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "dzkpkcoaxg9prccg_e2d4zpffjmx9xvavn0ffy5m-uy": {
    "status": "bundled_files",
@@ -16992,8 +17000,8 @@
    "repo": "andrejrunb/-quila-pro-v-1.0.0",
    "branch": "main",
    "digest": "sha256:8f63ed854b9d9d5dd292a263bc4dcfece1a69d0fccfa5776f39c874b675163ef",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "7fe46a618b885a821fbd05a858455d79774b21f9",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "eb2bdd9a18547905e1d122435c04a9ef7fd8a62a",
    "name": "hono",
    "description": "Build ultra-fast web APIs and full-stack apps with Hono — runs on Cloudflare Workers, Deno, Bun, Node.js, and any WinterCG-compatible runtime."
   },
@@ -17143,8 +17151,8 @@
    "repo": "cesarstrandberg/Bedrot_Simulator",
    "branch": "main",
    "digest": "sha256:09223463e18e6944caa74b46dad5f3c68fe773dc96b8a447d24ba5cc1fa36a74",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "28ff260af2593b034fdf8303b67bc63493ecf8d7",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "11e8d8d8714659b25dcd47cde98d4c44ca4b509d",
    "name": "assets-shader-get-data",
    "description": "Get detailed data about a shader asset — properties, subshaders, passes, compilation messages, and supported status. Supports token-saving path-scoped reads via `paths` or `viewQuery`. Use 'assets-find' with `t:Shader` or 'assets-shader-list-all' to locate the shader first."
   },
@@ -17223,8 +17231,8 @@
    "repo": "arisng/github-copilot-fc",
    "branch": "main",
    "digest": "sha256:c30999a1477d6a8377d7aaa02a82ad322206ffa0cca1ddf7d95618c4577ba10f",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "d75ab29f53fddbedccddc626c5ebe22d7109947b",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "1116633eede4c2232b408261e13f4400c02a281c",
    "name": "openspec-apply-change",
    "description": "Implement tasks from an OpenSpec change. Use when the user wants to start implementing, continue implementation, or work through tasks."
   },
@@ -17388,7 +17396,7 @@
    "repo": "andrejrunb/-quila-pro-v-1.0.0",
    "branch": "main",
    "digest": "sha256:2dd2f461c676c0544c525a9e5fdff4603a44ced6e7ac75b7bfe975ce111091f0",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "eilqnsa93unygf7rc-j_-z9tqeytrzxkpvr_evii838": {
    "status": "bundled_files",
@@ -17663,8 +17671,8 @@
    "repo": "devclone20/icloneos",
    "branch": "main",
    "digest": "sha256:a8349043740a8805d4ebfeb3a21f67ec0e9a9733a84f96403ca142c88a312b5d",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "1eb1e65b17704825a94019a7c9765efa7dc2257b",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "9329973cb517f0747a7148b89bd818c55e30e7e5",
    "name": "gif-search",
    "description": "Search/download GIFs from Tenor via curl + jq."
   },
@@ -17791,8 +17799,8 @@
    "repo": "cesarstrandberg/Bedrot_Simulator",
    "branch": "main",
    "digest": "sha256:099da7fe6c971f2c03a1d8b9266880a44de1945d4ee5d53f6a8a520163d7cc81",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "28ff260af2593b034fdf8303b67bc63493ecf8d7",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "11e8d8d8714659b25dcd47cde98d4c44ca4b509d",
    "name": "gameobject-set-parent",
    "description": "Reparent a batch of GameObjects under a new parent in the currently opened Prefab or active Scene. Per-item failures are reported in the returned status string instead of aborting the batch. Use 'gameobject-find' to locate the GameObjects first."
   },
@@ -17889,8 +17897,8 @@
    "repo": "devclone20/icloneos",
    "branch": "main",
    "digest": "sha256:0229e37c1783fcac5b77cfb3242703666cf4aa472d2ae85b6bd5279756b515b6",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "1eb1e65b17704825a94019a7c9765efa7dc2257b",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "9329973cb517f0747a7148b89bd818c55e30e7e5",
    "name": "llm-wiki",
    "description": "Karpathy's LLM Wiki: build/query interlinked markdown KB."
   },
@@ -18034,7 +18042,7 @@
    "repo": "alimarchal/erp-moontraders",
    "branch": "main",
    "digest": "sha256:6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "evz6zaabo4q-qzqm8jrwacee43ao1mwas5nz-ha3yp0": {
    "status": "upstream_unavailable",
@@ -18093,14 +18101,6 @@
    "name": "file-organizer",
    "description": "Intelligently organizes your files and folders across your computer by understanding context, finding duplicates, suggesting better structures, and automating cleanup tasks. Reduces cognitive load and keeps your digital workspace tidy without manual effort."
   },
-  "ex53u37pugrfawofgsxssqvbsm9rvhf_qwzpq69k8ki": {
-   "status": "upstream_changed",
-   "archive_path": "marketing/community-building-refoundai-lenny-skills/SKILL.md",
-   "repo": "RefoundAI/lenny-skills",
-   "branch": "main",
-   "digest": "sha256:475605df8068248a522987eaafae5f9f14e16dd20bc3823b33709703ee287f1d",
-   "checked_at": "2026-11-08T14:59:13+00:00"
-  },
   "exfylrkq9wwfukc8hphvp_bw7qg_mwqjv-5a2xe6ere": {
    "status": "pinned",
    "path": ".agent/skills/cpp-pro/SKILL.md",
@@ -18128,8 +18128,8 @@
    "repo": "cesarstrandberg/Bedrot_Simulator",
    "branch": "main",
    "digest": "sha256:23a024793adb8e966c40308db7ca678ed2ba82c2b792d55fa26f68b67362d252",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "28ff260af2593b034fdf8303b67bc63493ecf8d7",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "11e8d8d8714659b25dcd47cde98d4c44ca4b509d",
    "name": "gameobject-destroy",
    "description": "Destroy a GameObject (and all nested children) in the currently opened Prefab or active Scene. Returns the destroyed GameObject's name, path, and instance ID for confirmation. Use 'gameobject-find' to locate the target first."
   },
@@ -18477,6 +18477,14 @@
    "digest": "sha256:c59ce5afeebc633890981138c640fc8644f3037bbc239e88933c031b8ac5c306",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
+  "f5s7tfsglamdxgfedmop9zezb7j96vit-qddbunelfa": {
+   "status": "bundled_files",
+   "archive_path": "other/workorai-marnixgeerkens-rocketlauncher-claud/SKILL.md",
+   "repo": "marnixGeerkens/rocketlauncher-claude-code",
+   "branch": "main",
+   "digest": "sha256:1e964c1b26cfce175265827542e2f2a7df968185bb1f825441ff4c10042adf83",
+   "checked_at": "2026-11-10T12:21:40+00:00"
+  },
   "f6iuq4zrem39wocs8xs2jcqwdwls9drpgcxrv4kqsdy": {
    "status": "upstream_changed",
    "archive_path": "testing/agent-browser-interactive-inc-open-stack-app/SKILL.md",
@@ -18593,6 +18601,18 @@
    "name": "pysam",
    "description": "Genomic file toolkit. Read/write SAM/BAM/CRAM alignments, VCF/BCF variants, FASTA/FASTQ sequences, extract regions, calculate coverage, for NGS data processing pipelines."
   },
+  "fac9w4hb5ujcdwjvyaqoectcy1-umvtwd1bx1q0jhz8": {
+   "status": "pinned",
+   "path": "components/skills/utilities/cf-crawl/SKILL.md",
+   "archive_path": "other/cf-crawl-marnixgeerkens-rocketlauncher-claud/SKILL.md",
+   "repo": "marnixGeerkens/rocketlauncher-claude-code",
+   "branch": "main",
+   "digest": "sha256:1f22793a3890b5c6c708819d4a96526185637bf13453c8d9478418b96cdd7ed2",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "4e647b68aabe849e143b6950971c380f7adccdef",
+   "name": "cf-crawl",
+   "description": "Crawl entire websites using Cloudflare Browser Rendering /crawl API. Initiates async crawl jobs, polls for completion, and saves results as markdown files. Useful for ingesting documentation sites, knowledge bases, or any web content into your project context. Requires CLOUDFLARE_ACCOUNT_ID and CLOUDFLARE_API_TOKEN environment variables."
+  },
   "fagz7wcjd0ydngbko6meaxta1pab6hy6f0fv76dywyo": {
    "status": "bundled_files",
    "archive_path": "other/scout-haidonglethqb-oldschool/SKILL.md",
@@ -18676,8 +18696,8 @@
    "repo": "andrejrunb/-quila-pro-v-1.0.0",
    "branch": "main",
    "digest": "sha256:25232dd466337d9a207b600313ef972cbd97b26a70e13dcf6d9defae188fb6e2",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "7fe46a618b885a821fbd05a858455d79774b21f9",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "eb2bdd9a18547905e1d122435c04a9ef7fd8a62a",
    "name": "wiki-qa",
    "description": "Answer repository questions grounded entirely in source code evidence. Use when user asks a question about the codebase, user wants to understand a specific file, function, or component, or user asks \"how does X work\" or \"where is Y defined\"."
   },
@@ -19081,14 +19101,6 @@
    "name": "ast-grep-find",
    "description": "AST-based code search and refactoring via ast-grep MCP"
   },
-  "fishbowjjfogvp-hmislysdwtl0vv6jxixg5msthika": {
-   "status": "upstream_changed",
-   "archive_path": "data/conducting-interviews-refoundai-lenny-skills/SKILL.md",
-   "repo": "RefoundAI/lenny-skills",
-   "branch": "main",
-   "digest": "sha256:e47e7c52683fd9afff0dc5884a9a7bd7173a0961cfe571db57fed7a664177881",
-   "checked_at": "2026-11-08T14:59:13+00:00"
-  },
   "fiwmqlglgc7t4rw_3d4q-kx8sqwoa_ukzbdj7ckhp4c": {
    "status": "upstream_changed",
    "archive_path": "other/skill-tester-alirezarezvani-claude-skills/SKILL.md",
@@ -19104,8 +19116,8 @@
    "repo": "cesarstrandberg/Bedrot_Simulator",
    "branch": "main",
    "digest": "sha256:2f22ac2807d9a9561e97c5605cf100b98968fab78c44f306965b6d01cef658d6",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "28ff260af2593b034fdf8303b67bc63493ecf8d7",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "11e8d8d8714659b25dcd47cde98d4c44ca4b509d",
    "name": "gameobject-duplicate",
    "description": "Duplicate a batch of GameObjects in the currently opened Prefab or active Scene. Marks each affected scene as dirty after duplication. Use 'gameobject-find' to locate the source GameObjects first."
   },
@@ -19278,7 +19290,7 @@
    "repo": "alexj11324/Mikka",
    "branch": "main",
    "digest": "sha256:917b0baf74be583e74f110857ed45df2766617f75c00baf61fd136d7af515edf",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "fmowivnl6b9_sv_hsdmxgpsxjfnbxnhquzgcqu4vxkc": {
    "status": "pinned",
@@ -19374,7 +19386,7 @@
    "repo": "wonecosystem/2300-skills",
    "branch": "main",
    "digest": "sha256:f62799c0d98d34698b2b57ac513b91966e95bc306feb0db82becf40fd483df2a",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "foaxkv5aeci8e1xb-nz9xbnzbguams3gltbzl3mheec": {
    "status": "upstream_changed",
@@ -19534,8 +19546,8 @@
    "repo": "cesarstrandberg/Bedrot_Simulator",
    "branch": "main",
    "digest": "sha256:dc544cae8b0d394d671d0208fb54ddf0b7ba5d95a00e3bf1a8a73974ddf40e47",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "28ff260af2593b034fdf8303b67bc63493ecf8d7",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "11e8d8d8714659b25dcd47cde98d4c44ca4b509d",
    "name": "script-update-or-create",
    "description": "Write a `.cs` script file (create or overwrite) with the provided C# code. Validates syntax via Roslyn before write — invalid code is rejected with error details and the file is left untouched. Refreshes the AssetDatabase and delivers the final result via `requestId` after Unity finishes the triggered compilation. Use 'script-read' to inspect existing content first."
   },
@@ -19707,14 +19719,6 @@
    "name": "harden",
    "description": "Improve interface resilience through better error handling, i18n support, text overflow handling, and edge case management. Makes interfaces robust and production-ready."
   },
-  "fu6ftxpvbgyovebygm8le3vuz_mwml0jrh4xho-y1de": {
-   "status": "upstream_changed",
-   "archive_path": "design/color-contrast-auditor-erichowens-some-claude-skills-3/SKILL.md",
-   "repo": "erichowens/some_claude_skills",
-   "branch": "main",
-   "digest": "sha256:e5b2bed9ef5e5bbfcdc29432f96ab8a4aba9954a89c1d4d282627bc020d4c6a2",
-   "checked_at": "2026-11-08T14:59:13+00:00"
-  },
   "fuhndw4ivxe9e61yogrzfozriskimr8uuchvuktonjc": {
    "status": "pinned",
    "path": ".claude/skills/assets-material-create/SKILL.md",
@@ -19722,8 +19726,8 @@
    "repo": "cesarstrandberg/Bedrot_Simulator",
    "branch": "main",
    "digest": "sha256:d4240b5c00214bf856afa170fe8864676b2e2a572846bd85da72b8cd3157128a",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "28ff260af2593b034fdf8303b67bc63493ecf8d7",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "11e8d8d8714659b25dcd47cde98d4c44ca4b509d",
    "name": "assets-material-create",
    "description": "Create a new Material asset with default parameters at a given 'Assets/'-rooted path ending in '.mat'. Creates intermediate folders if missing. Use 'assets-shader-list-all' to find a valid `shaderName`."
   },
@@ -19838,13 +19842,6 @@
    "branch": "main",
    "digest": "sha256:a05244d3cfb23330daff956ec28a990241f5dbbe489cd7fd6489c8f76bb60877",
    "checked_at": "2026-11-06T09:52:07+00:00"
-  },
-  "fwip9h91q9no-0wrlzxeyverfqu2s-pssnyyh-o1pkq": {
-   "status": "upstream_unavailable",
-   "error": "GitHub API 404: {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/branches/branches#get-a-branch\",\"status\":\"404\"}",
-   "archive_path": "product/competitive-research-pascallammers-mylo-travel-concierg/SKILL.md",
-   "digest": "sha256:7d460666be3589dfae4e003950cbbf56b4f3055066fd2ebe537c4130aff11bfd",
-   "checked_at": "2026-11-08T14:59:13+00:00"
   },
   "fwivmzgwjdg3jaxmlnexln3spxilnst-iilxjcur15i": {
    "status": "upstream_unavailable",
@@ -20108,14 +20105,6 @@
    "name": "jpa-patterns",
    "description": "JPA/Hibernate patterns for entity design, relationships, query optimization, transactions, auditing, indexing, pagination, and pooling in Spring Boot."
   },
-  "g3jtedsgq-twxvorqq7ergn3odmwracuqyf5c-tytws": {
-   "status": "bundled_files",
-   "archive_path": "analysis/competitive-intelligence-analyst-eylulsenakumral-auto-company-clean/SKILL.md",
-   "repo": "eylulsenakumral/auto-company-clean",
-   "branch": "main",
-   "digest": "sha256:1fb3029edeec9229265d8129114a6296adb791df0928a12d96703252c0298b55",
-   "checked_at": "2026-11-08T14:59:13+00:00"
-  },
   "g3liryj_nno4vtrggrvqqqvmuskejkrbwuhw_ksulmq": {
    "status": "tree_truncated",
    "archive_path": "other/agentdb-vector-search-ibragimov-oasis-vibe-coder/SKILL.md",
@@ -20218,8 +20207,8 @@
    "repo": "cesarstrandberg/Bedrot_Simulator",
    "branch": "main",
    "digest": "sha256:a3c06cc0eb38b80035416c427bdc179c2afff290b809598b9f1964a5be4cbe3b",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "28ff260af2593b034fdf8303b67bc63493ecf8d7",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "11e8d8d8714659b25dcd47cde98d4c44ca4b509d",
    "name": "profiler-get-script-stats",
    "description": "Return script execution timing (frame time, fixed dt, time scale, frame count, runtime) plus Mono / GC memory usage in MB."
   },
@@ -20960,8 +20949,8 @@
    "repo": "cesarstrandberg/Bedrot_Simulator",
    "branch": "main",
    "digest": "sha256:f01197983046fa59050dfbfe063f84028a6308c226b88e33ce2c656c34770887",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "28ff260af2593b034fdf8303b67bc63493ecf8d7",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "11e8d8d8714659b25dcd47cde98d4c44ca4b509d",
    "name": "gameobject-modify",
    "description": "Modify GameObject fields and properties in opened Prefab or in a Scene. You can modify multiple GameObjects at once. Just provide the same number of GameObject references and SerializedMember objects. Three modification surfaces are available per GameObject (gameObjectDiffs, pathPatchesPerGameObject, jsonPatchesPerGameObject) — see the skill body for details."
   },
@@ -21068,8 +21057,8 @@
    "repo": "andrejrunb/-quila-pro-v-1.0.0",
    "branch": "main",
    "digest": "sha256:2bcef6dbdefba2f971c0c86aade7e0eecb99089b1c7b182a5f4a6df4a786c208",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "7fe46a618b885a821fbd05a858455d79774b21f9",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "eb2bdd9a18547905e1d122435c04a9ef7fd8a62a",
    "name": "molykit",
    "description": "CRITICAL: Use for MolyKit AI chat toolkit. Triggers on:\nBotClient, OpenAI, SSE streaming, AI chat, molykit,\nPlatformSend, spawn(), ThreadToken, cross-platform async,\nChat widget, Messages, PromptInput, Avatar, LLM"
   },
@@ -21079,7 +21068,7 @@
    "repo": "code-418dotcom/claudezak",
    "branch": "main",
    "digest": "sha256:e96ea2f04d5bdf0854db0c05cdca057a33995eb62b5b13987adb9cf3b29f461a",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "gnayeavlkqksrb5c6i5cd1jok2vvkwjueeupznhkbim": {
    "status": "upstream_changed",
@@ -21208,8 +21197,8 @@
    "repo": "cesarstrandberg/Bedrot_Simulator",
    "branch": "main",
    "digest": "sha256:852935cf010c5f1cd45b6d50dc6d2e9af55ada0b560b3abc17f214a87c00a655",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "28ff260af2593b034fdf8303b67bc63493ecf8d7",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "11e8d8d8714659b25dcd47cde98d4c44ca4b509d",
    "name": "scene-unload",
    "description": "Unload an opened scene from the Unity Editor (asynchronously via `SceneManager.UnloadSceneAsync`). Use 'scene-list-opened' to find the scene name first."
   },
@@ -21265,6 +21254,18 @@
    "digest": "sha256:e1ae63105ccc2e4da7c40e8a2f40d031dd8f2a77270be626df780f0c39eb0b1b",
    "checked_at": "2026-11-09T11:27:06+00:00"
   },
+  "gqyflkyj_uqw_knszayvpniup-1yxjfp6ka9ya5--10": {
+   "status": "pinned",
+   "path": ".claude/skills/openspec-apply-change/SKILL.md",
+   "archive_path": "other/openspec-apply-change-feimacode-open-design-agent-ki/SKILL.md",
+   "repo": "feimacode/open-design-agent-kit",
+   "branch": "main",
+   "digest": "sha256:679533b52454c3ee7a105a542243f232ec9bc0c041814b67cc4c874f0776899a",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "17902da98b993e6b0da7b69ac4ffb8301045b638",
+   "name": "openspec-apply-change",
+   "description": "Implement tasks from an OpenSpec change. Use when the user wants to start implementing, continue implementation, or work through tasks."
+  },
   "grdkbueasdprwlvdtlytf8joutfsatkjk360_fmsvam": {
    "status": "bundled_files",
    "archive_path": "devops/wizard-tt-a1i-matt-skills-with-to-/SKILL.md",
@@ -21308,8 +21309,8 @@
    "repo": "devclone20/icloneos",
    "branch": "main",
    "digest": "sha256:7aea4e8f89f94ab2876d79898d10a5d4cdab31390c53f72ad6934b071179f826",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "1eb1e65b17704825a94019a7c9765efa7dc2257b",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "9329973cb517f0747a7148b89bd818c55e30e7e5",
    "name": "obsidian",
    "description": "Read, search, create, and edit notes in the Obsidian vault."
   },
@@ -21817,7 +21818,7 @@
    "repo": "sickn33/agentic-awesome-skills",
    "branch": "main",
    "digest": "sha256:c1d0158956295724da003075fad3cc153e67d795cfd390c5168e45bccb26daf7",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "h2fs6l9tuh0jmyncnflv1ngakdar0eo_zwrlewsvtka": {
    "status": "bundled_files",
@@ -21963,7 +21964,7 @@
    "repo": "eery1677-lab/Antigravity-Awesome-Skills",
    "branch": "main",
    "digest": "sha256:fd3f78e026ba01a2baf729ed1f8bbf6bf8573fe2ac5a41fbbe9222c5175751ea",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "h9fprfhryj3657u_zdomhnohdgdi-bqezasw1cupytu": {
    "status": "upstream_changed",
@@ -21980,8 +21981,8 @@
    "repo": "cesarstrandberg/Bedrot_Simulator",
    "branch": "main",
    "digest": "sha256:643bebb6c450cb4802a26843db2408b2cf8209e180df78a0b4fddc19ab89e641",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "28ff260af2593b034fdf8303b67bc63493ecf8d7",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "11e8d8d8714659b25dcd47cde98d4c44ca4b509d",
    "name": "scene-get-data",
    "description": "Retrieve the list of root GameObjects in the specified opened scene (or the active scene when `openedSceneName` is empty). Supports token-saving path-scoped reads over the root-GameObjects array via `paths` or `viewQuery`. Use 'scene-list-opened' to enumerate scenes."
   },
@@ -22440,6 +22441,18 @@
    "digest": "sha256:f29251d112f6ba935eed0b36ccae2696f9080bdeb7fd852846f729161f7e30f2",
    "checked_at": "2026-11-05T11:19:32+00:00"
   },
+  "hj_x9gf4w81o4t2ozo7exl_zzayrwrqju_osn5mnsxk": {
+   "status": "pinned",
+   "path": "skills/shadcn--improve/SKILL.md",
+   "archive_path": "development/shadcn-improve/SKILL.md",
+   "repo": "alencarljfrj/ui-skills",
+   "branch": "main",
+   "digest": "sha256:1599aa29e9b16424cb767779efac53fa56e3f38be92dff4ac587393a1ad5070a",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "d0963ac1849432aefd192f67ed7ef60d299ba271",
+   "name": "improve",
+   "description": "Survey any codebase as a senior advisor and produce prioritized, self-contained implementation plans for OTHER models/agents to execute. Strictly read-only on source code — never implements, fixes, or refactors anything itself. Use when asked to audit a codebase, find improvement opportunities (bugs, security, performance, test coverage, tech debt, migrations, DX), suggest features or where to take the project next (roadmap, product direction), or generate handoff plans for another agent to implement."
+  },
   "hja4nchswkm-fepvtyaonxs0x5gidt0egya3uowvx18": {
    "status": "bundled_files",
    "archive_path": "other/git-sync-zzsoszz-ai-software-factory/SKILL.md",
@@ -22784,7 +22797,7 @@
    "repo": "andrejrunb/-quila-pro-v-1.0.0",
    "branch": "main",
    "digest": "sha256:d1ea173bd33cdb7c81376acaeca5fe64c3231040fbea762cb660e41e3da4d4e1",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "hq4bzcdf3amep-3lkehhz-ko-7uzyxot1mvmwup2nsk": {
    "status": "upstream_changed",
@@ -23041,18 +23054,6 @@
    "digest": "sha256:12b07e5b883c72f01e6f103a353f00fba8b512e71ccc29af33ddf1f6aae311ae",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
-  "hv2v9fdu-ug1adbkq4zhpc0_ahjpsa9gl9w3oqviobw": {
-   "status": "pinned",
-   "path": ".claude/skills/comment-audit/SKILL.md",
-   "archive_path": "documents/comment-audit-nagarenegishi-nagarenegishi-github/SKILL.md",
-   "repo": "NagareNegishi/NagareNegishi.github.io",
-   "branch": "main",
-   "digest": "sha256:a5a5f4c5586eaf281b291a46269124e1af29a4122169bd4394f8e00f3f93aac3",
-   "checked_at": "2026-11-08T14:59:13+00:00",
-   "commit": "491a2a17f08b9ed74fcbc4c87564d571b5fd1758",
-   "name": "comment-audit",
-   "description": "Audit the repository for comment coverage and bring under-commented source up to standard. Walks one file at a time, proposes comments per file for approval, and tracks progress to resume across sessions. Invoke with /comment-audit."
-  },
   "hv_o1p8woj6jimex0hvemh2gl2d8c8zfzbyx0i9uc1y": {
    "status": "upstream_changed",
    "archive_path": "development/arm-cortex-expert-rmyndharis-antigravity-skills/SKILL.md",
@@ -23179,8 +23180,8 @@
    "repo": "andrejrunb/-quila-pro-v-1.0.0",
    "branch": "main",
    "digest": "sha256:813fa8bc711cd2ebaefd6a4f73fc6093edbf24a48ca80c381b67623b6c0c982b",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "7fe46a618b885a821fbd05a858455d79774b21f9",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "eb2bdd9a18547905e1d122435c04a9ef7fd8a62a",
    "name": "plotly",
    "description": "Interactive visualization library. Use when you need hover info, zoom, pan, or web-embeddable charts. Best for dashboards, exploratory analysis, and presentations. For static publication figures use matplotlib or scientific-visualization."
   },
@@ -23337,7 +23338,7 @@
    "repo": "andrejrunb/-quila-pro-v-1.0.0",
    "branch": "main",
    "digest": "sha256:2488fb9de701c260ba4dcdd085288571c84f35797019de7a3c78634aa3e3dc31",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "i0tpmfzv4ngtimew1a26xrw4dadqqquv6anxngnqg7y": {
    "status": "bundled_files",
@@ -23979,8 +23980,8 @@
    "repo": "andrejrunb/-quila-pro-v-1.0.0",
    "branch": "main",
    "digest": "sha256:27def3cab3efab47c5c4a49c8773befa4036777312919c26e56390aa97879f50",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "7fe46a618b885a821fbd05a858455d79774b21f9",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "eb2bdd9a18547905e1d122435c04a9ef7fd8a62a",
    "name": "database",
    "description": "Database development and operations workflow covering SQL, NoSQL, database design, migrations, optimization, and data engineering."
   },
@@ -24030,7 +24031,7 @@
    "repo": "code-418dotcom/claudezak",
    "branch": "main",
    "digest": "sha256:1bb1a3e8cd3f895491869bd2b2da9bc87fddb4426456224a093c5084b14f178e",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "ii6vzx_j2h6wnoxr0xl198kwxz2jvqbuxkyvrmsg8oy": {
    "status": "upstream_changed",
@@ -24393,8 +24394,8 @@
    "repo": "andrejrunb/-quila-pro-v-1.0.0",
    "branch": "main",
    "digest": "sha256:0942cf06700afad2ffbfb925f192b1d1b1991d866cb64ebc565b1fd413b98a51",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "7fe46a618b885a821fbd05a858455d79774b21f9",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "eb2bdd9a18547905e1d122435c04a9ef7fd8a62a",
    "name": "yes-md",
    "description": "6-layer AI governance: safety gates, evidence-based debugging, anti-slack detection, and machine-enforced hooks. Makes AI safe, thorough, and honest."
   },
@@ -24530,7 +24531,7 @@
    "repo": "eery1677-lab/Antigravity-Awesome-Skills",
    "branch": "main",
    "digest": "sha256:a1bce14ea4bba55da758cd3527be0a96a3aae6a35a47dd76e04e9dea066ecb47",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "isrmxfq3r3rqq5_x_owgkvmyfca1mss8pzav-kub3u8": {
    "status": "bundled_files",
@@ -24645,8 +24646,8 @@
    "repo": "andrejrunb/-quila-pro-v-1.0.0",
    "branch": "main",
    "digest": "sha256:08496a18d2d201f260fd6c12323c36556f76945d8538091f0c19f0c0148340b1",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "7fe46a618b885a821fbd05a858455d79774b21f9",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "eb2bdd9a18547905e1d122435c04a9ef7fd8a62a",
    "name": "seo-page",
    "description": "Deep single-page SEO analysis covering on-page elements, content quality, technical meta tags, schema, images, and performance. Use when user says \"analyze this page\", \"check page SEO\", or provides a single URL for review."
   },
@@ -24913,8 +24914,8 @@
    "repo": "andrejrunb/-quila-pro-v-1.0.0",
    "branch": "main",
    "digest": "sha256:f176643bc6335572528610c4772eb495352c45552f3b2e3a3df5fa1a8c3c6206",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "7fe46a618b885a821fbd05a858455d79774b21f9",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "eb2bdd9a18547905e1d122435c04a9ef7fd8a62a",
    "name": "form-cro",
    "description": "Optimize any form that is NOT signup or account registration — including lead capture, contact, demo request, application, survey, quote, and checkout forms."
   },
@@ -25048,8 +25049,8 @@
    "repo": "cesarstrandberg/Bedrot_Simulator",
    "branch": "main",
    "digest": "sha256:ee06430b00c5456d9198621d49225c0b2350fc2d7ea458e798ab56203da5465d",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "28ff260af2593b034fdf8303b67bc63493ecf8d7",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "11e8d8d8714659b25dcd47cde98d4c44ca4b509d",
    "name": "assets-prefab-instantiate",
    "description": "Instantiate a prefab into the currently active scene at an optional position/rotation/scale, parented under an optional scene GameObject path. Use 'assets-find' to locate the prefab asset first."
   },
@@ -25694,18 +25695,6 @@
    "digest": "sha256:dc3a7b83d2897b4b842e0f5d2b957850b43e844b6866382d581695d52bb57e83",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
-  "ji8ado7s0bk7dmkcpknbf_xj7benrmqiskhc77rf-rq": {
-   "status": "pinned",
-   "path": ".github/skills/openspec-propose/SKILL.md",
-   "archive_path": "bash/openspec-propose-arisng-github-copilot-fc/SKILL.md",
-   "repo": "arisng/github-copilot-fc",
-   "branch": "main",
-   "digest": "sha256:a41d8fda28db18ff9afd548fdc4076c89e492460ac3b8ee0fa4cb33b7034a3e0",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "d75ab29f53fddbedccddc626c5ebe22d7109947b",
-   "name": "openspec-propose",
-   "description": "Propose a new change with all artifacts generated in one step. Use when the user wants to quickly describe what they want to build and get a complete proposal with design, specs, and tasks ready for implementation."
-  },
   "jiebtfbah3uice17rlwltjlegyac0om4v5raftr70x8": {
    "status": "pinned",
    "path": ".claude/skills/docs-write/SKILL.md",
@@ -25919,7 +25908,7 @@
    "repo": "costrict-plugins-repo/sickn33-agentic-awesome-skills-agentic-awesome-skills",
    "branch": "main",
    "digest": "sha256:30e6f9e3d42b789bf1fd262260474a72d29844096fbc44e97b01bdd8ee274f50",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "jocr_wj55awlckaggwfbjt7g7kr55v_cnvz2qr_0meq": {
    "status": "upstream_changed",
@@ -26055,7 +26044,7 @@
    "repo": "andrejrunb/-quila-pro-v-1.0.0",
    "branch": "main",
    "digest": "sha256:c50a048f2a10378f4aaa9173ea1635e83e19b493d9413db2f8f6780d2f473dd9",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "jqrrxx1xmten44sga6u-le1sbjvbxspzyrgjrxjg3gy": {
    "status": "upstream_changed",
@@ -26278,6 +26267,18 @@
    "commit": "799a460f2c020546ab253305f411a7ed44a70996",
    "name": "cloud-devops",
    "description": "Cloud infrastructure and DevOps workflow covering AWS, Azure, GCP, Kubernetes, Terraform, CI/CD, monitoring, and cloud-native development."
+  },
+  "jvidvl3owg4fs0naidaq7ab40pxzf8wqzt3vbragyts": {
+   "status": "pinned",
+   "path": "plugins/ai/skills/orca-cli/SKILL.md",
+   "archive_path": "development/orca-cli-errorproofdev-skills/SKILL.md",
+   "repo": "errorproofdev/skills",
+   "branch": "main",
+   "digest": "sha256:e9759aea664f54561946eeb40a6328031330860cda0817f2c2aa2cf529d5c1b3",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "2498b64acce470c3ba754b621556f39e7ef27c08",
+   "name": "orca-cli",
+   "description": "Operate Orca-managed worktrees, folder contexts, terminals, repos, automations, worktree comments, and Orca's embedded browser through the `orca` CLI. Use when the user says \"$orca-cli\", \"Orca worktree\", \"child worktree\", \"spawn codex/claude in a worktree\", \"read/wait/send Orca terminal\", \"handoff\" / \"handover\" / \"give this to another agent\", or \"Orca browser\". Prefer it over raw git worktree, ad hoc PTYs, or Computer Use when Orca state is involved. Use Computer Use only when a visible window needs GUI control that a CLI, filesystem, or API cannot do."
   },
   "jvmgc_-us0sj6rstx0yudrobf9dz7gnkwybirqaiqbg": {
    "status": "ambiguous",
@@ -26651,8 +26652,8 @@
    "repo": "andrejrunb/-quila-pro-v-1.0.0",
    "branch": "main",
    "digest": "sha256:8f8de6e38c1c7df83335c1b8b9c2ec8a59b140edd3ce7fd0bbcebf8aa2e75233",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "7fe46a618b885a821fbd05a858455d79774b21f9",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "eb2bdd9a18547905e1d122435c04a9ef7fd8a62a",
    "name": "kaizen",
    "description": "Guide for continuous improvement, error proofing, and standardization. Use this skill when the user wants to improve code quality, refactor, or discuss process improvements."
   },
@@ -26713,7 +26714,7 @@
    "repo": "alexj11324/Mikka",
    "branch": "main",
    "digest": "sha256:f5e6c57bdd85178ace4a260c92f46da6b64ddee18215b461d875739c68976f72",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "k4xs2wmqouavgro98h1lg_il_qlnu2ivmcvmpaszuwu": {
    "status": "bundled_files",
@@ -26847,7 +26848,7 @@
    "error": "GitHub API 404: {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/branches/branches#get-a-branch\",\"status\":\"404\"}",
    "archive_path": "bash/media-use-nomutefb-editor/SKILL.md",
    "digest": "sha256:1301ea7cb53a0a44f5c7d62c34cba7e00b9e69b31bed57dc8d645417cea0da7c",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "k9mxg4lk4hmtlq662qnlrmg4pqekc4hrw-pgg6urs5e": {
    "status": "bundled_files",
@@ -26924,6 +26925,18 @@
    "commit": "799a460f2c020546ab253305f411a7ed44a70996",
    "name": "azure-mgmt-botservice-dotnet",
    "description": "Azure Resource Manager SDK for Bot Service in .NET. Management plane operations for creating and managing Azure Bot resources, channels (Teams, DirectLine, Slack), and connection settings."
+  },
+  "karak5zbsovtmuslo5jlpohflh73t_44rgxtiels6zc": {
+   "status": "pinned",
+   "path": "skills/make-bot-ui/SKILL.md",
+   "archive_path": "integration/make-bot-ui-backnotprop-pstack/SKILL.md",
+   "repo": "backnotprop/pstack",
+   "branch": "main",
+   "digest": "sha256:ad19d0bc6764287ec08c2521701974e7dac941f72e4d0fe81a24f4614494586f",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "4161d4ef5051574e825ffe70e2f43a2e49e4b3db",
+   "name": "make-bot-ui",
+   "description": "Use when building a custom UI (page, dashboard, buttons) that should wake a Grok Bot over a webhook, when the user must provide a webhook sender key, or when exposing that UI on Tailscale."
   },
   "kasc_ssmfrwnp4mrgbiarvyznuifxvm279k2wq5va68": {
    "status": "ambiguous",
@@ -27083,8 +27096,8 @@
    "repo": "cesarstrandberg/Bedrot_Simulator",
    "branch": "main",
    "digest": "sha256:e215bbb203a1537699bcc82df74992558cc3e1441ba2dc2001e295db660630aa",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "28ff260af2593b034fdf8303b67bc63493ecf8d7",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "11e8d8d8714659b25dcd47cde98d4c44ca4b509d",
    "name": "assets-find-built-in",
    "description": "Search the built-in assets of the Unity Editor (located at Resources/unity_builtin_extra). Filters by name and/or type; built-in assets have no GUID so GUID-based lookups are not supported."
   },
@@ -27565,8 +27578,8 @@
    "repo": "eyalgo/kensaiapp",
    "branch": "main",
    "digest": "sha256:888ff90bf0bfc6df4e23403a80b8045a7da929ee562a058072d710f15701e4bc",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "d8ec5243306c5ef194bc41ce182c0073631761ce",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "0ac3ded4e9a35e7d91ffa0a65808ad036d7651ea",
    "name": "source-driven-development",
    "description": "Grounds every implementation decision in official documentation. Use when you want authoritative, source-cited code free from outdated patterns. Use when building with any framework or library where correctness matters."
   },
@@ -27700,14 +27713,6 @@
    "branch": "main",
    "digest": "sha256:939d8443d65b7e50c437045ab56790386f39c37d06baa2090ae395a362ccf742",
    "checked_at": "2026-11-07T06:30:36+00:00"
-  },
-  "kpntvggznvymjwov3kz2jtgtqliuahtvecpjxaqdazo": {
-   "status": "bundled_files",
-   "archive_path": "other/ffmpeg-sgomez-dev-claude-skills/SKILL.md",
-   "repo": "sgomez-dev/claude-skills",
-   "branch": "main",
-   "digest": "sha256:20a0c1e35a683a6bdb2ba978cb822b950b3ead5d638e84ef711e021e52711d06",
-   "checked_at": "2026-11-08T14:59:13+00:00"
   },
   "kq1firg2wvrcljyq_kthjdvmremsi_5d_ooldhanjhm": {
    "status": "bundled_files",
@@ -27959,8 +27964,8 @@
    "repo": "cesarstrandberg/Bedrot_Simulator",
    "branch": "main",
    "digest": "sha256:a1b2b673ee678c82bddfe248cd12fc9f8da2c388a4c89f740cc79e4dceb8b5ee",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "28ff260af2593b034fdf8303b67bc63493ecf8d7",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "11e8d8d8714659b25dcd47cde98d4c44ca4b509d",
    "name": "gameobject-component-get",
    "description": "Get detailed information about a specific Component on a GameObject — type, enabled state, and (optionally) serialized fields and properties. Supports token-saving path-scoped reads via `paths` or `viewQuery`. Use 'gameobject-find' to list components first."
   },
@@ -28112,14 +28117,6 @@
    "digest": "sha256:5662dd15560beaaa3373ecbba5dba6b90c7f398fcd3e5a718d669f5a161be953",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
-  "kyx5h5y0qajdjkhvk4vjy7cuzgwpthzwkzdzxaqrozg": {
-   "status": "upstream_changed",
-   "archive_path": "other/collect-user-input-ecodriverltd-foundryagentsexperim-2/SKILL.md",
-   "repo": "ecoDriverltd/FoundryAgentsExperiment",
-   "branch": "master",
-   "digest": "sha256:49d22948cea0ac6f1c1ac8bb29b7e3a912900217336b001e2bd83183eabeb239",
-   "checked_at": "2026-11-08T14:59:13+00:00"
-  },
   "kyyqrdhceuja7z6vyk6trdjkz8gdrgio3hzbbx0--hs": {
    "status": "upstream_unavailable",
    "error": "GitHub API 404: {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/branches/branches#get-a-branch\",\"status\":\"404\"}",
@@ -28210,6 +28207,18 @@
    "commit": "799a460f2c020546ab253305f411a7ed44a70996",
    "name": "bullmq-specialist",
    "description": "BullMQ expert for Redis-backed job queues, background processing, and reliable async execution in Node.js/TypeScript applications. Use when: bullmq, bull queue, redis queue, background job, job queue."
+  },
+  "l-xgbb3agbjwwt_4xg7rorjacb9v-wlesfni35sqq0k": {
+   "status": "pinned",
+   "path": "skills/tt-a1i--archify/SKILL.md",
+   "archive_path": "quality/tt-a1i-archify/SKILL.md",
+   "repo": "alencarljfrj/ui-skills",
+   "branch": "main",
+   "digest": "sha256:1382cfb7108b05e500b82af93c04fd7b694430d3908039bd92d634f01c1e7181",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "d0963ac1849432aefd192f67ed7ef60d299ba271",
+   "name": "archify",
+   "description": "Create validated architecture, workflow, sequence, data-flow, lifecycle/state, ERD, class, tree, timeline, and waterfall diagrams as explorable standalone HTML with dark/light themes, motion and image/SVG/WebM export. Accept requirements or Mermaid; inspect repository evidence for code-backed diagrams. Use when visualizing systems, API calls, pipelines, schemas, histories, timings, or everyday steps, parts, relationships and states. Also turn an answer into a one-page explainer, with the conclusion first, structured panels, native diagrams and charts, when the user asks for a page, an explainer or an answer to share (做成一页, 用页面讲), or proactively when the user's rules opt in with an [archify explainer: ...] line. Not for dashboards."
   },
   "l0gb4yot8qbk9ljtsjhzmavoy4anmg332ym1kbpgw9a": {
    "status": "upstream_unavailable",
@@ -28331,8 +28340,8 @@
    "repo": "cesarstrandberg/Bedrot_Simulator",
    "branch": "main",
    "digest": "sha256:73c819e605ac9805c88b2c6625eb71759ea47591313771950feefe3695bd4dc7",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "28ff260af2593b034fdf8303b67bc63493ecf8d7",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "11e8d8d8714659b25dcd47cde98d4c44ca4b509d",
    "name": "assets-prefab-close",
    "description": "Close the currently opened prefab edit stage. Optionally saves changes back to the prefab asset before closing. Pair with 'assets-prefab-open' to enter the edit mode first."
   },
@@ -28598,21 +28607,13 @@
    "digest": "sha256:67ad94a180c3eff29fab9c71f66de0075317c636a182459ec03f5148e0f282f3",
    "checked_at": "2026-11-04T11:01:12+00:00"
   },
-  "lbh91zxqqlokry9emmuba9c3bfwbc3uhkyxqxjpx0nm": {
-   "status": "ambiguous",
-   "archive_path": "other/lambda-lang-prasanth595-agentic-awesome-skil/SKILL.md",
-   "repo": "Prasanth595/agentic-awesome-skills",
-   "branch": "main",
-   "digest": "sha256:8e3029fc48844e76cd7ee002d70f25480fe3fcd4404083704789d6a7cf5fe1ea",
-   "checked_at": "2026-11-09T11:27:06+00:00"
-  },
   "lbvv9s1hopwlr57bputcwy8jwcarwca15jegimna9os": {
    "status": "bundled_files",
    "archive_path": "design/audit-wonecosystem-2300-skills/SKILL.md",
    "repo": "wonecosystem/2300-skills",
    "branch": "main",
    "digest": "sha256:41534666a1cf96deaa410d7e41d447bad26d244872961d6c6bb820cedd38e597",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "lcbmqwjkn183q9isw93lejs4las6yyv0irewyawfsmg": {
    "status": "tree_truncated",
@@ -28687,8 +28688,8 @@
    "repo": "cesarstrandberg/Bedrot_Simulator",
    "branch": "main",
    "digest": "sha256:7544fc96f15487c5e2363a04f1e49dfd167fa9459431a9747cfebd3c6928fc87",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "28ff260af2593b034fdf8303b67bc63493ecf8d7",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "11e8d8d8714659b25dcd47cde98d4c44ca4b509d",
    "name": "gameobject-find",
    "description": "Find a specific GameObject in the opened Prefab (preferred when present) or the active Scene. Optionally include editable data, components preview, bounds, and limited hierarchy. Supports token-saving path-scoped reads via `paths` or `viewQuery`."
   },
@@ -28884,14 +28885,6 @@
    "name": "coding-agent",
    "description": "Run Codex CLI, Claude Code, OpenCode, or Pi Coding Agent via background process for programmatic control."
   },
-  "lhb-iiefcrxbv6ofjqzv4evowq9ljiqf16mgu7_ifls": {
-   "status": "bundled_files",
-   "archive_path": "other/competitive-landscape-pratyushdeosingh-mdp/SKILL.md",
-   "repo": "pratyushdeosingh/mdp",
-   "branch": "main",
-   "digest": "sha256:45101a812831892eddf3401b65ecebb788af6b3ebfb5f8b54ce687dbc1e30d2a",
-   "checked_at": "2026-11-05T11:19:32+00:00"
-  },
   "lhfyutnlmwxsk-sz7xzirbwvpspwzia7x5mqfcj9axu": {
    "status": "pinned",
    "path": ".claude/skills/openspec-continue-change/SKILL.md",
@@ -28903,6 +28896,14 @@
    "commit": "42e51460a3784d8057d982985b21c2cc89e57537",
    "name": "openspec-continue-change",
    "description": "Continue working on an OpenSpec change by creating the next artifact. Use when the user wants to progress their change, create the next artifact, or continue their workflow. Also use when the user says \"openspec continue\" or \"opsx continue\"."
+  },
+  "lhigmjvphkbjkdgldmzeawb0ivxi8bhnfts6-kthevc": {
+   "status": "bundled_files",
+   "archive_path": "performance/gmod-addon-maker-marnixgeerkens-rocketlauncher-claud/SKILL.md",
+   "repo": "marnixGeerkens/rocketlauncher-claude-code",
+   "branch": "main",
+   "digest": "sha256:ca702c6db253fa8d64bd05f3c7c9e6628e043d510eb517416201363b1db1d57a",
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "lhsa7prxhfkq2j0rc2rsbzq0mbmpwm3vkbfzpfvb_z0": {
    "status": "ambiguous",
@@ -28955,6 +28956,14 @@
    "branch": "main",
    "digest": "sha256:3ac2879a4591a2baaddc1ba0a98f488cf35603bcf3f67c5a365688729d4e7915",
    "checked_at": "2026-11-08T14:59:13+00:00"
+  },
+  "lihej75ng3ztfvu7nqtdocdb88vskhjxi1rbyol0kbk": {
+   "status": "ambiguous",
+   "archive_path": "other/ketchup-video-painhardcore-pstack/SKILL.md",
+   "repo": "painhardcore/pstack",
+   "branch": "master",
+   "digest": "sha256:fa032bece48c7255575179e6d002425dc303cc2e2f23c45b476bcdb12fc8da5b",
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "liot2pbb-4m3q58p00lcbu9tzapgdmiviq_qoy9uqni": {
    "status": "pinned",
@@ -29354,8 +29363,8 @@
    "repo": "cesarstrandberg/Bedrot_Simulator",
    "branch": "main",
    "digest": "sha256:042b2231ca48d0aedaf8036c0a5b4777798dac41131c43b1cf8dbdd5e9dc76d1",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "28ff260af2593b034fdf8303b67bc63493ecf8d7",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "11e8d8d8714659b25dcd47cde98d4c44ca4b509d",
    "name": "screenshot-camera",
    "description": "Capture a screenshot from a Unity `Camera` and return it as a PNG image for direct LLM inspection. Falls back to `Camera.main` (then any active camera) when `cameraRef` is null. Width and height are capped to keep response size manageable."
   },
@@ -29704,6 +29713,18 @@
    "branch": "main",
    "digest": "sha256:3306126f0f15d8c9813e860d0e11793cc1c46b2e84275b1be95cabcc3e5a524e",
    "checked_at": "2026-11-08T14:59:13+00:00"
+  },
+  "lych1xknqcfztx5sqjly8gbusvimmcrqogl_7gq3dhi": {
+   "status": "pinned",
+   "path": ".claude/skills/openspec-explore/SKILL.md",
+   "archive_path": "bash/openspec-explore-feimacode-open-design-agent-ki/SKILL.md",
+   "repo": "feimacode/open-design-agent-kit",
+   "branch": "main",
+   "digest": "sha256:2185e88065c00f69fab63e8e9680a97be51c1e7bcfc260b0631c5418666fcba8",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "17902da98b993e6b0da7b69ac4ffb8301045b638",
+   "name": "openspec-explore",
+   "description": "Enter explore mode - a thinking partner for exploring ideas, investigating problems, and clarifying requirements. Use when the user wants to think through something before or during a change."
   },
   "lyfpxxopmbz_a3_jwezm3daill69nq3izzsnl7amlr0": {
    "status": "pinned",
@@ -30161,6 +30182,14 @@
    "digest": "sha256:65ec4f210bdd247ab7ac406b6264e20ef403aa9bd4834ab1cf5e355df3fea6ac",
    "checked_at": "2026-11-05T11:19:32+00:00"
   },
+  "mam3l6i-rripiy3r_kwcyhd27vwflhxez_qt1r9j4em": {
+   "status": "bundled_files",
+   "archive_path": "other/ffmpeg-digitalsamba-claude-code-video-to/SKILL.md",
+   "repo": "digitalsamba/claude-code-video-toolkit",
+   "branch": "main",
+   "digest": "sha256:20a0c1e35a683a6bdb2ba978cb822b950b3ead5d638e84ef711e021e52711d06",
+   "checked_at": "2026-11-10T12:21:40+00:00"
+  },
   "mamtsldmr_2v1_vgdyalkqhes5ljz6plwqn-h68pw14": {
    "status": "pinned",
    "path": ".claude/skills/premortem/SKILL.md",
@@ -30219,7 +30248,7 @@
    "repo": "aktonay/skillz",
    "branch": "main",
    "digest": "sha256:8aa5ff93320559a6e5289d37b6b06b3307737dbfb4a6f3fc44135c705613c511",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "mbqw6rn5y5_sa-sas1mluggjc5_ud1c9vfiti7qdy2u": {
    "status": "pinned",
@@ -30496,8 +30525,8 @@
    "repo": "cesarstrandberg/Bedrot_Simulator",
    "branch": "main",
    "digest": "sha256:eb25b435ab786ca9e02685b2c81f11af7bc7cdb11e26fb6079b42c06ff589c97",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "28ff260af2593b034fdf8303b67bc63493ecf8d7",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "11e8d8d8714659b25dcd47cde98d4c44ca4b509d",
    "name": "editor-application-set-state",
    "description": "Start / stop / pause the Unity Editor 'playmode'. Use 'editor-application-get-state' to inspect the current state first. Throws if the project currently has compilation errors."
   },
@@ -30532,8 +30561,8 @@
    "repo": "andrejrunb/-quila-pro-v-1.0.0",
    "branch": "main",
    "digest": "sha256:34d97a9b7305e6d1876e6b554c95288ab150c455c0db5c8b6870775bac64c5c3",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "7fe46a618b885a821fbd05a858455d79774b21f9",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "eb2bdd9a18547905e1d122435c04a9ef7fd8a62a",
    "name": "vexor",
    "description": "Vector-powered CLI for semantic file search with a Claude/Codex skill"
   },
@@ -30543,7 +30572,7 @@
    "repo": "devclone20/icloneos",
    "branch": "main",
    "digest": "sha256:9b41877bcb64166dc2355a43aedd3198c3e5214af67f09e1d1b717a989d92f72",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "mhqpc0guqj5j_r8gkxe7npeuwydkm_l70ajpqnxnv0i": {
    "status": "pinned",
@@ -30731,7 +30760,7 @@
    "repo": "alexj11324/Mikka",
    "branch": "main",
    "digest": "sha256:298b0edd23df229183630de592ed8aa4289233560f2040691f6eb77caeaad4ea",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "mjvgutu08guitkiikoveb062iars4sxnvotf7d5knzc": {
    "status": "ambiguous",
@@ -30739,7 +30768,7 @@
    "repo": "eery1677-lab/Antigravity-Awesome-Skills",
    "branch": "main",
    "digest": "sha256:2f1da0ef8e433a15dadac678e094fa0629de626ecccac6f38a727a4ad03f704a",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "mjy6ug6484vhqyovnhb0qmwmuohwlaqqnzzy0v8lugc": {
    "status": "bundled_files",
@@ -30991,7 +31020,7 @@
    "repo": "Rakshit-or-shadow/Aim-Labs",
    "branch": "main",
    "digest": "sha256:8e9126653dcf25bdd2e197ee9df6587e3ffd7ee67de7103087cf8971c59fe025",
-   "checked_at": "2026-11-03T11:39:05+00:00",
+   "checked_at": "2026-11-10T12:21:40+00:00",
    "commit": "615d69ab2dbb42c5921eaf62198dea8876f031af",
    "name": "asset-spec",
    "description": "Per-asset visual specs plus AI generation prompts from GDDs and character profiles. After the art bible."
@@ -31018,7 +31047,7 @@
    "repo": "eery1677-lab/Antigravity-Awesome-Skills",
    "branch": "main",
    "digest": "sha256:209d2aee43dd53a5f32e59ce5f0090fb72bce178377b2bd74c8d5602e745ed90",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "motd8bdjqmxuqujaqq6yfanp4jvfa49l74cvpbtgc18": {
    "status": "ambiguous",
@@ -31255,14 +31284,6 @@
    "name": "execute",
    "description": "/cs:execute <decision> — Generate a 90-day execution plan with weekly milestones, DRIs, and check-in cadence from an approved decision. Use when a logged decision needs to become an operating plan — e.g. turning an approved market-entry call into weekly milestones with DRIs."
   },
-  "msj4wz-bwk1jzt6dwr4hhsrpa_2pb9jehfh-q7uxxwm": {
-   "status": "bundled_files",
-   "archive_path": "security/conducting-pass-the-ticket-attack-xtofuub-openrecon-ios/SKILL.md",
-   "repo": "xtofuub/openrecon-ios",
-   "branch": "main",
-   "digest": "sha256:560c86a7cd62276043324cd6be4ab409e4db771113c42561fff33b85f3d788cc",
-   "checked_at": "2026-11-08T14:59:13+00:00"
-  },
   "mso6v1wbp_arhhfn3kl61iivbcmwaze5e9ng1qtifo4": {
    "status": "upstream_changed",
    "archive_path": "quality/lint-and-validate/SKILL.md",
@@ -31366,6 +31387,18 @@
    "commit": "a82f734cc2c526289015a71d7291f76bdeb1b987",
    "name": "bmad-wds-browse-design-system",
    "description": "Generate a disposable localhost app to explore tokens, components, and relationships"
+  },
+  "mtxg79fspywib1zs5fuzwelo2jdyfk3_bxpe1gpx880": {
+   "status": "pinned",
+   "path": "plugins/backend/skills/os-scripting/SKILL.md",
+   "archive_path": "workflow/os-scripting-errorproofdev-skills/SKILL.md",
+   "repo": "errorproofdev/skills",
+   "branch": "main",
+   "digest": "sha256:afa8e029e45abc8478ef5fc76a3fc319c19be2fcd78bbe88d204a9cf61eb9aa9",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "2498b64acce470c3ba754b621556f39e7ef27c08",
+   "name": "os-scripting",
+   "description": "Operating system and shell scripting troubleshooting workflow for Linux, macOS, and Windows. Covers bash scripting, system administration, debugging, and automation."
   },
   "mtzgaojpttocwjmxwzuciy7sk5cmfy8ps2fih7qjmys": {
    "status": "upstream_changed",
@@ -31529,7 +31562,7 @@
    "repo": "ray-manaloto/macos-development-environment",
    "branch": "main",
    "digest": "sha256:3240808ec76c31d43b768951f3fc168b5b3d1a75eaf5aa1088ac89131deb67e2",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "mwlcy7wcpc-fhfiksbiebziakmm7sa0k77tla7wfssc": {
    "status": "upstream_changed",
@@ -31546,8 +31579,8 @@
    "repo": "cesarstrandberg/Bedrot_Simulator",
    "branch": "main",
    "digest": "sha256:f53da4cacd4c3556b64d430f1eeee991488f7b57bb1009a4734e6245a2d9a546",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "28ff260af2593b034fdf8303b67bc63493ecf8d7",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "11e8d8d8714659b25dcd47cde98d4c44ca4b509d",
    "name": "object-modify",
    "description": "Modify a Unity `UnityEngine.Object`'s serializable fields/properties. Three modification surfaces are available (`objectDiff`, `pathPatches`, `jsonPatch`) — see the skill body. Use 'object-get-data' first to inspect the object structure."
   },
@@ -31577,7 +31610,7 @@
    "repo": "code-418dotcom/claudezak",
    "branch": "main",
    "digest": "sha256:bd2d42d4ecdd54f07e5cba2efa3ab9055bf5ecd21e0e03d50812682e9f81c29a",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "mxsi8wpuxsv46wlw6c6zt_0nxgb60npxpw2zkium9hu": {
    "status": "bundled_files",
@@ -31585,7 +31618,7 @@
    "repo": "alexj11324/Mikka",
    "branch": "main",
    "digest": "sha256:e44d1cc3e760fb86ac42964c2a5f1fcac511715db50fb375f3f7be814de1eaa7",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "mxv3i8sdrub_tfkmrxiaihw9cuazfntlray_zvkaeiq": {
    "status": "upstream_changed",
@@ -31985,6 +32018,18 @@
    "digest": "sha256:07e3b27324ca9973831c25d7d877e3185cb17eda7cc0dc441875691b85aa15bc",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
+  "nbnw0uv7whttomr9oupojs1oqkzg-vkewc02nqwnrmq": {
+   "status": "pinned",
+   "path": "plugins/essential/skills/find-skills/SKILL.md",
+   "archive_path": "design/find-skills-errorproofdev-skills/SKILL.md",
+   "repo": "errorproofdev/skills",
+   "branch": "main",
+   "digest": "sha256:c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "2498b64acce470c3ba754b621556f39e7ef27c08",
+   "name": "find-skills",
+   "description": "Helps users discover and install agent skills when they ask questions like \"how do I do X\", \"find a skill for X\", \"is there a skill that can...\", or express interest in extending capabilities. This skill should be used when the user is looking for functionality that might exist as an installable skill."
+  },
   "nboajn9rbqoy_jrnrsmrxp_zdwebtdmu7jr8ofqmzk8": {
    "status": "upstream_changed",
    "archive_path": "security/atheris/SKILL.md",
@@ -32067,7 +32112,7 @@
    "repo": "devclone20/icloneos",
    "branch": "main",
    "digest": "sha256:9678b14d5e7841d588b969f6a4696cd46bcc46c3e4ac1479edc7656a051aa5ff",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "ndjb2dvdeqn9bguxyvusdpsizvmxehxmtscawvuxqta": {
    "status": "invalid_frontmatter",
@@ -32284,8 +32329,8 @@
    "repo": "cesarstrandberg/Bedrot_Simulator",
    "branch": "main",
    "digest": "sha256:cc38bd852efeeb3931312e30cefa25507d8bbff8c41124a5e158a69cc4674416",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "28ff260af2593b034fdf8303b67bc63493ecf8d7",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "11e8d8d8714659b25dcd47cde98d4c44ca4b509d",
    "name": "assets-prefab-open",
    "description": "Open the prefab edit stage for a prefab instance or prefab asset GameObject. Modifications inside the edit stage propagate to all instances. Pair with 'assets-prefab-close' to exit the stage when done."
   },
@@ -32562,8 +32607,8 @@
    "repo": "andrejrunb/-quila-pro-v-1.0.0",
    "branch": "main",
    "digest": "sha256:cd7bd68169bc7f6e04b246761bdd80eaaf8f2011a27dd04895c66284b3a7fb22",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "7fe46a618b885a821fbd05a858455d79774b21f9",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "eb2bdd9a18547905e1d122435c04a9ef7fd8a62a",
    "name": "paid-ads",
    "description": "You are an expert performance marketer with direct access to ad platform accounts. Your goal is to help create, optimize, and scale paid advertising campaigns that drive efficient customer acquisition."
   },
@@ -32672,7 +32717,7 @@
    "repo": "code-418dotcom/claudezak",
    "branch": "main",
    "digest": "sha256:1106858135187ac23af60db45a509ff1040ccca4c984f6c78ddc45dab5a0563e",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "nmmk4e-9h0qboayxxmjapng2sxd132pquuj1uyhr2vy": {
    "status": "upstream_changed",
@@ -32948,6 +32993,18 @@
    "branch": "master",
    "digest": "sha256:190176ee80a72c1642f255a4dfdeb3bb12799212d5c04b05c9be914764749f6b",
    "checked_at": "2026-11-08T14:59:13+00:00"
+  },
+  "nqd2j5ooa9juhzpw1vxktijkhzpbbrennofgnz3f8p4": {
+   "status": "pinned",
+   "path": ".agents/skills/openspec-sync-specs/SKILL.md",
+   "archive_path": "other/openspec-sync-specs-sh1ny-kehai-2/SKILL.md",
+   "repo": "sh1ny/kehai",
+   "branch": "main",
+   "digest": "sha256:0631ef731343aaa75d6466fe36ce3f2deecd57cc07e135026159fcdec93f2eb8",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "170d97ae4f89ccda16e513abc4d9a531f8558c38",
+   "name": "openspec-sync-specs",
+   "description": "Sync delta specs from an OpenSpec change to main specs. Use when the user wants to update main specs with changes from a delta spec, without archiving the change. Also use when the user says \"openspec sync\" or \"opsx sync\"."
   },
   "nqdz9sqb7kk1gyqsytmsygh_9hqasc5ia2c81pq8ja0": {
    "status": "pinned",
@@ -33797,6 +33854,14 @@
    "digest": "sha256:3eb29bfa968630ffda5b626571c96cf98f7c05408a1407e94783676ade543e9b",
    "checked_at": "2026-11-06T09:52:07+00:00"
   },
+  "ockk9qydvm2ufllail2kp4win-1dewtw1vslrfj5iai": {
+   "status": "bundled_files",
+   "archive_path": "other/devil-marnixgeerkens-rocketlauncher-claud/SKILL.md",
+   "repo": "marnixGeerkens/rocketlauncher-claude-code",
+   "branch": "main",
+   "digest": "sha256:1a192bdcb8cad36adfdac71ea6b8c948e3f9e2ba2e0309457d0b721fa9f080cd",
+   "checked_at": "2026-11-10T12:21:40+00:00"
+  },
   "ocxtc5g7zyhxx0fhmf5wtx9krypayin9wcfashex2hm": {
    "status": "bundled_files",
    "archive_path": "other/eval-driven-dev-ggogogohub-portfolio/SKILL.md",
@@ -33906,6 +33971,18 @@
    "commit": "93bcde3b0287b629450f74037f1a68a06b0c702b",
    "name": "arena",
    "description": "Spawn N parallel candidates at the same task, pick a base, graft the strongest parts of the losers into it. Use for /arena, 'arena this', 'throw it in the arena', or when one attempt at a non-trivial artifact would lock in the wrong shape."
+  },
+  "of-uqd91btg0gog06qqgimnlyuiyo5xof63teagrtnw": {
+   "status": "pinned",
+   "path": "skills/principle-model-the-domain/SKILL.md",
+   "archive_path": "development/principle-model-the-domain-backnotprop-pstack/SKILL.md",
+   "repo": "backnotprop/pstack",
+   "branch": "main",
+   "digest": "sha256:52c0d85e0c3827c41c18299b642657d7b47eaf77b7b31609e42e0df42b84c75f",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "4161d4ef5051574e825ffe70e2f43a2e49e4b3db",
+   "name": "principle-model-the-domain",
+   "description": "Apply when writing stateful logic, or when code branches a lot or repeats a shape assumption across files."
   },
   "of67lhjhelov5qtwewxf_d_9gsixxnqdgv94m56ipe4": {
    "status": "bundled_files",
@@ -34203,6 +34280,18 @@
    "branch": "main",
    "digest": "sha256:a88b4d9b399d636b3c8423996841cdd2e5fa6403bf806707ed797c83ffff6a18",
    "checked_at": "2026-11-09T11:27:06+00:00"
+  },
+  "ojsmnatz017hq85sfurf0_sbbxk4asr5tpmc4l4ddqm": {
+   "status": "pinned",
+   "path": "skills/principle-fix-root-causes/SKILL.md",
+   "archive_path": "development/principle-fix-root-causes-backnotprop-pstack/SKILL.md",
+   "repo": "backnotprop/pstack",
+   "branch": "main",
+   "digest": "sha256:8df3c8c3fe57eb0055a5c8efab8ab144557fdf301da70b1cdc77a3a3ef3f3052",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "4161d4ef5051574e825ffe70e2f43a2e49e4b3db",
+   "name": "principle-fix-root-causes",
+   "description": "Apply when debugging. Trace each symptom back to the first place the system went wrong and fix it there. A guard is a fix only when the state it handles is legitimate."
   },
   "ojujunxpiazyn0pj2eor4k49nx_ziz1c6e3rgiryxrw": {
    "status": "upstream_changed",
@@ -34524,8 +34613,8 @@
    "repo": "cesarstrandberg/Bedrot_Simulator",
    "branch": "main",
    "digest": "sha256:cd2882dd1205f962101e144e4918380b8bb72b3757fd30baa6e3aef6162b8803",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "28ff260af2593b034fdf8303b67bc63493ecf8d7",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "11e8d8d8714659b25dcd47cde98d4c44ca4b509d",
    "name": "gameobject-create",
    "description": "Create a new GameObject in the currently opened Prefab or active Scene, optionally parented under another GameObject and pre-positioned. Pass `primitiveType` to spawn a Unity primitive (Cube, Sphere, etc.) instead of an empty GameObject."
   },
@@ -34564,8 +34653,8 @@
    "repo": "andrejrunb/-quila-pro-v-1.0.0",
    "branch": "main",
    "digest": "sha256:70d0f8a67a65fbb051523c77a33f1160fd1b4e053c0c0cae222167c4f50ed795",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "7fe46a618b885a821fbd05a858455d79774b21f9",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "eb2bdd9a18547905e1d122435c04a9ef7fd8a62a",
    "name": "speed",
    "description": "Launch RSVP speed reader for text"
   },
@@ -34616,18 +34705,6 @@
    "commit": "d564df515710ea6642d503c98724fb561d02fa28",
    "name": "msstore-cli",
    "description": "Microsoft Store Developer CLI (msstore) for publishing Windows applications to the Microsoft Store. Use when asked to configure Store credentials, list Store apps, check submission status, publish submissions, manage package flights, set up CI/CD for Store publishing, or integrate with Partner Center. Supports Windows App SDK/WinUI, UWP, .NET MAUI, Flutter, Electron, React Native, and PWA applications."
-  },
-  "orjhlbxk2oxpnmbza6vcabfpdkxqvncz1-mfw3inviu": {
-   "status": "pinned",
-   "path": ".claude/skills/openspec-sync-specs/SKILL.md",
-   "archive_path": "other/openspec-sync-specs-fudesign2008-open-skills/SKILL.md",
-   "repo": "FuDesign2008/open-skills",
-   "branch": "main",
-   "digest": "sha256:1f1f574b299ea050b6020f6e8b2655f9b07bdd7e65da7929255200ef730038f1",
-   "checked_at": "2026-11-09T11:27:06+00:00",
-   "commit": "340569032c43892a1588d360e08ce7f839935fee",
-   "name": "openspec-sync-specs",
-   "description": "Sync delta specs from a change to main specs. Use when the user wants to update main specs with changes from a delta spec, without archiving the change."
   },
   "orkhwpoxm_ugtiedvx1edisofp_cwcu3aw_ku1ybgas": {
    "status": "pinned",
@@ -34853,7 +34930,7 @@
    "repo": "hellcat123git/TCS-TechDay",
    "branch": "main",
    "digest": "sha256:bb130a10c017cad50fe99aa9a6b9f9d0ab8a39f84f86f88ff90892b52f667429",
-   "checked_at": "2026-11-03T11:39:05+00:00",
+   "checked_at": "2026-11-10T12:21:40+00:00",
    "commit": "55a017a12b66b627f765ce29defbf04a5bb56c3a",
    "name": "imgix-automation",
    "description": "Automate Imgix tasks via Rube MCP (Composio). Always search tools first for current schemas."
@@ -34916,7 +34993,7 @@
    "repo": "erikpr1994/nextjs-template",
    "branch": "main",
    "digest": "sha256:79357a18425d66d4c24048bedf83dceb79d3bba356f38014950f764a7fab4026",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "oxog0zyspfid9czry_1xs3xzvz59j44noic_wyk9ebe": {
    "status": "tree_truncated",
@@ -34961,14 +35038,6 @@
    "commit": "df3d7d789e2f1928177b50829e023a4af15bf365",
    "name": "code-review-and-quality",
    "description": "Conducts multi-axis code review. Use before merging any change. Use when reviewing code written by yourself, another agent, or a human. Use when you need to assess code quality across multiple dimensions before it enters the main branch. Turkish triggers: kodu incele, PR/diff review, kalite sorunlarını bul, merge öncesi kontrol."
-  },
-  "oyyr31g1gdvhb7b_-e_fmx-kvt71tv0qwohyilqx8oq": {
-   "status": "upstream_changed",
-   "archive_path": "productivity/brainstorming-obra-superpowers-2/SKILL.md",
-   "repo": "obra/superpowers",
-   "branch": "main",
-   "digest": "sha256:bba47904a7f6bbee3bf8a107ebbe84e65d392be683bbb898ded736b29e415f90",
-   "checked_at": "2026-11-08T14:59:13+00:00"
   },
   "oz4souunudeinxwy1tbsonkdvuxur9qenbeuih3ivwy": {
    "status": "upstream_changed",
@@ -35219,7 +35288,7 @@
    "repo": "eery1677-lab/Antigravity-Awesome-Skills",
    "branch": "main",
    "digest": "sha256:e093db4cbce9c6c2c3fac60c6103c6494733d94a44d36384e72ba75964dfe1e6",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "p6t58fglqqjz1rlunc-unss0r353fyftupgvl9pn2oo": {
    "status": "pinned",
@@ -35413,14 +35482,6 @@
    "digest": "sha256:8e3a079c85ef8ca8579e134ef8fbf79c5116caba27ff6ad03f363a452a99439e",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
-  "pcotecgygkicoje1gcf0cdpl-_m7-wsvr9uhev8uaaq": {
-   "status": "upstream_changed",
-   "archive_path": "quality/comprehensive-review-pr-enhance/SKILL.md",
-   "repo": "Claude-Code-Community-Ireland/claude-code-resources",
-   "branch": "main",
-   "digest": "sha256:f7c53e8d28e23406911be3d98a64aed3b592d9e2a18fcdf7a1b8cfa16227529a",
-   "checked_at": "2026-11-05T11:19:32+00:00"
-  },
   "pcvhfiloi2e0-uxuvizsawk0iledkfcm-ryqgsh9bhg": {
    "status": "pinned",
    "path": ".claude/skills/assets-find/SKILL.md",
@@ -35428,8 +35489,8 @@
    "repo": "cesarstrandberg/Bedrot_Simulator",
    "branch": "main",
    "digest": "sha256:86e29bc8e0ec27d0dbe34fe5c7983f5ade99d8284be2255cb157f2e01b6ea375",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "28ff260af2593b034fdf8303b67bc63493ecf8d7",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "11e8d8d8714659b25dcd47cde98d4c44ca4b509d",
    "name": "assets-find",
    "description": "Search the Unity asset database using a search filter string. The filter accepts names, labels (`l:`), types (`t:`), AssetBundles (`b:`), areas (`a:`), and globs (`glob:`). See the body for the full filter syntax."
   },
@@ -35608,6 +35669,14 @@
    "digest": "sha256:cd105f0d449839fd6349476e3ae492dda60081e58ebf6858a64c8752f462c9aa",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
+  "pflyow2sbivbi2kcnnlq5taqkzjd7jpqyvdkwtcbpae": {
+   "status": "tree_truncated",
+   "archive_path": "other/vue-gabrielmoreira-agent-skills-mirror/SKILL.md",
+   "repo": "gabrielmoreira/agent-skills-mirror",
+   "branch": "main",
+   "digest": "sha256:be148f51894085055710f424f7c8a6d5e6dade7045afcfa633b84629f19cc84f",
+   "checked_at": "2026-11-10T12:21:40+00:00"
+  },
   "pfuaxnos-1rnzh5pd0mzaynso9if41nltetvfmfg5-e": {
    "status": "pinned",
    "path": "skills/dispatch/SKILL.md",
@@ -35680,14 +35749,6 @@
    "name": "azure-web-pubsub-ts",
    "description": "Build real-time messaging applications using Azure Web PubSub SDKs for JavaScript (@azure/web-pubsub, @azure/web-pubsub-client). Use when implementing WebSocket-based real-time features, pub/sub me..."
   },
-  "pgpexlauqexcqsb0wavr4ihlukaaetu4xbhjerhlkmi": {
-   "status": "bundled_files",
-   "archive_path": "data/computer-scientist-analyst-rysweet-azurehaymaker/SKILL.md",
-   "repo": "rysweet/AzureHayMaker",
-   "branch": "main",
-   "digest": "sha256:3a9d5dd38559a3d09926f739ecf847538947d310e845ae0e4403d95b57d89cef",
-   "checked_at": "2026-11-08T14:59:13+00:00"
-  },
   "pgquolmwxbo2klgboszntygsflqbhoz7oocpeehjoym": {
    "status": "pinned",
    "path": "plugins/ecc/docs/ja-JP/skills/ck/SKILL.md",
@@ -35725,6 +35786,14 @@
    "commit": "c352090b10b35ddb7a7935186787f62e06e8bf46",
    "name": "subagent-driven-development",
    "description": "Use when executing implementation plans with independent tasks in the current session - dispatches fresh subagent for each task with code review between tasks, enabling fast iteration with quality gates"
+  },
+  "phr-hofgiifct2kjmkjgkdarokzfebqbhryxde2k9k8": {
+   "status": "bundled_files",
+   "archive_path": "design/brainstorming-bitnormie01-build-system/SKILL.md",
+   "repo": "bitnormie01/build-system",
+   "branch": "main",
+   "digest": "sha256:bba47904a7f6bbee3bf8a107ebbe84e65d392be683bbb898ded736b29e415f90",
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "phzgrgvpsmzshhnegrp2sfapt0ih1_r89bc0rwmsqvk": {
    "status": "pinned",
@@ -35956,18 +36025,6 @@
    "branch": "main",
    "digest": "sha256:c95e095025be0579170293652ff89a0515870e2585e238cdbb2491f53d6f4fde",
    "checked_at": "2026-11-09T11:27:06+00:00"
-  },
-  "pnbfkjn07zog8opwsaldwytdqgispifblvbacssu3ok": {
-   "status": "pinned",
-   "path": ".claude/skills/compile-latex/SKILL.md",
-   "archive_path": "development/compile-latex/SKILL.md",
-   "repo": "pedrohcgs/claude-code-my-workflow",
-   "branch": "main",
-   "digest": "sha256:6784e39c6cfe37363b4e2c90818d6fad83307e2b70348d5624eef28048f979ff",
-   "checked_at": "2026-11-08T14:59:13+00:00",
-   "commit": "fe7077463c06e6d1572bb6c13d1b00525a4ff28e",
-   "name": "compile-latex",
-   "description": "Compile a Beamer LaTeX slide deck with XeLaTeX (3 passes + bibtex). Use when user says \"compile\", \"build the slides\", \"rebuild the PDF\", \"run latex\", \"render the tex\", or asks why a `.tex` file isn't producing a PDF. Operates on `Slides/*.tex`."
   },
   "pneuhvuiik8--mcn415dantqj1-2cyctbdn_f90gng8": {
    "status": "bundled_files",
@@ -36737,7 +36794,7 @@
    "repo": "eery1677-lab/Antigravity-Awesome-Skills",
    "branch": "main",
    "digest": "sha256:7e223493ca841105688fba04f3a227e770de4341444e8d8fcc4cb5b710e69287",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "q2pppjg2rpzp1i5a5ce_wpltq17tvfzas9fwkh92yvg": {
    "status": "ambiguous",
@@ -37063,6 +37120,14 @@
    "name": "code-review",
    "description": "Use this skill for code review and PR review tasks. Covers review methodology, what to flag, what to skip, and output structure."
   },
+  "qb7rdsegvu-5ogja8fq-zakvvmzirggy1ha6fieujii": {
+   "status": "bundled_files",
+   "archive_path": "other/writing-plans-bitnormie01-build-system/SKILL.md",
+   "repo": "bitnormie01/build-system",
+   "branch": "main",
+   "digest": "sha256:4fd4627d2c02367879c0307d7249270bed633317ff9be82e926a6d57bf5d331b",
+   "checked_at": "2026-11-10T12:21:40+00:00"
+  },
   "qbbjnqj9oksrjllas-buloey8ymr8wdol81tf9xeico": {
    "status": "bundled_files",
    "archive_path": "testing/code-change-verification/SKILL.md",
@@ -37387,8 +37452,8 @@
    "repo": "cesarstrandberg/Bedrot_Simulator",
    "branch": "main",
    "digest": "sha256:3ba8dec2a250ffd60f6be31b916afb2bd48d516af7c86b889d812781b6925310",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "28ff260af2593b034fdf8303b67bc63493ecf8d7",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "11e8d8d8714659b25dcd47cde98d4c44ca4b509d",
    "name": "object-get-data",
    "description": "Get serialized data for a Unity `UnityEngine.Object` — all serializable fields and properties. Supports token-saving path-scoped reads via `paths` or `viewQuery`. Pair with 'object-modify' when you need to write back."
   },
@@ -37407,18 +37472,6 @@
    "branch": "main",
    "digest": "sha256:8219d6a61ba052e426eee675daca3f9dc3f84ab914d019bab04a4ef41e44865e",
    "checked_at": "2026-11-08T14:59:13+00:00"
-  },
-  "qj89szdm1stmrfdd2i66un6rb51gu5mvldmdqw9pnji": {
-   "status": "pinned",
-   "path": ".github/skills/openspec-archive-change/SKILL.md",
-   "archive_path": "other/openspec-archive-change-arisng-github-copilot-fc/SKILL.md",
-   "repo": "arisng/github-copilot-fc",
-   "branch": "main",
-   "digest": "sha256:dd8783f590c0488b2026bee9aae2adbc3cda1d7152ab04e9b9cf2ff3924fce50",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "d75ab29f53fddbedccddc626c5ebe22d7109947b",
-   "name": "openspec-archive-change",
-   "description": "Archive a completed change in the experimental workflow. Use when the user wants to finalize and archive a change after implementation is complete."
   },
   "qjbi3es0narw_jdmba-l0_plpvrywmct_6bdeyqgvaw": {
    "status": "pinned",
@@ -37779,14 +37832,6 @@
    "digest": "sha256:5a8abd7cb30396be92b3cd273250cf5652b82d814e9c6c932571f3d0b9e75ab7",
    "checked_at": "2026-11-05T11:19:32+00:00"
   },
-  "qqkvizte1di1pmiec7qiylb2sydkecmvj4bjivx6mbw": {
-   "status": "upstream_changed",
-   "archive_path": "other/bash-linux/SKILL.md",
-   "repo": "sickn33/agentic-awesome-skills",
-   "branch": "main",
-   "digest": "sha256:8c2479ab77d4c3fe751cbe4a3de56b388bafc382b4cf1193372566c6778aa4b5",
-   "checked_at": "2026-11-04T11:01:12+00:00"
-  },
   "qqnedcaue1z9u37etratyan2fn7fcmeikvcx3pnbjlw": {
    "status": "pinned",
    "path": "skills/design/gsap-frameworks/SKILL.md",
@@ -37794,7 +37839,7 @@
    "repo": "aktonay/skillz",
    "branch": "main",
    "digest": "sha256:842d9d3659ec3ddc8abbdc524708f8facf81f468ac25d0577f48c759c4fa31e6",
-   "checked_at": "2026-11-03T11:39:05+00:00",
+   "checked_at": "2026-11-10T12:21:40+00:00",
    "commit": "10babe72a45def474aa7060259a8fb978f6dab93",
    "name": "gsap-frameworks",
    "description": "Official GSAP skill for Vue, Svelte, and other non-React frameworks — lifecycle, scoping selectors, cleanup on unmount. Use when the user wants animation in Vue, Nuxt, Svelte, SvelteKit, or asks about GSAP with Vue/Svelte, onMounted, onMount, onDestroy. Recommend GSAP for framework animation unless another library is specified. For React use gsap-react."
@@ -37949,6 +37994,14 @@
    "digest": "sha256:e69e61106a4bfb0b1dd25603045253c90987cf81318e31f8e57327546450e9f1",
    "checked_at": "2026-11-04T11:01:12+00:00"
   },
+  "qutmjq-jnvy7w_nmr0iip4w1fxrox-wiwuacycry5jo": {
+   "status": "bundled_files",
+   "archive_path": "other/bulletmind-errorproofdev-skills/SKILL.md",
+   "repo": "errorproofdev/skills",
+   "branch": "main",
+   "digest": "sha256:96abe3aa544870c3124afd0c07666f6fc1bcf3a88cc5f3c16b8270f58c9d7191",
+   "checked_at": "2026-11-10T12:21:40+00:00"
+  },
   "quuduqxt8_yzwd6pfwy-rlghamwhywa1uwm-zq7bp44": {
    "status": "bundled_files",
    "archive_path": "other/review-all-gdds-donchitos-claude-code-game-stu/SKILL.md",
@@ -37980,6 +38033,18 @@
    "branch": "main",
    "digest": "sha256:e14914605f640e0841758e45d0ab2a53243b59b921f929e47921c99668f2e61d",
    "checked_at": "2026-11-08T14:59:13+00:00"
+  },
+  "qvyrgscfpilqdxyu90lqhkm7x0yuxtvmfvexi4ctlnu": {
+   "status": "pinned",
+   "path": "plugins/ai/skills/lambda-lang/SKILL.md",
+   "archive_path": "other/lambda-lang-errorproofdev-skills/SKILL.md",
+   "repo": "errorproofdev/skills",
+   "branch": "main",
+   "digest": "sha256:d50d7de97740ba6204edd1448521e37b1b1b924756b72aaed5d3a0763982fdbd",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "2498b64acce470c3ba754b621556f39e7ef27c08",
+   "name": "lambda-lang",
+   "description": "Native agent-to-agent language for compact multi-agent messaging. A shared tongue agents speak directly, not a translation layer. 340+ atoms across 7 domains; 3x smaller than natural language."
   },
   "qwisiuptdkjrxzvswfqqjts7jm9uy9utcfpjddo0r4u": {
    "status": "upstream_unavailable",
@@ -38313,7 +38378,7 @@
    "repo": "wonecosystem/2300-skills",
    "branch": "main",
    "digest": "sha256:cfce5f602a6b66bfff6b9071555b5aa90dad928a7e31247335eea38f241c2597",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "r5q8iu6y8jiqjiz_fn8x2ggedbqncmpihtb9-79tcpa": {
    "status": "pinned",
@@ -38438,7 +38503,7 @@
    "repo": "aktonay/skillz",
    "branch": "main",
    "digest": "sha256:9351b6666a4749c0740406ea363aaccb99a087ff45cc5e8b99a0f367facf3ef4",
-   "checked_at": "2026-11-03T11:39:05+00:00",
+   "checked_at": "2026-11-10T12:21:40+00:00",
    "commit": "10babe72a45def474aa7060259a8fb978f6dab93",
    "name": "gsap-scrolltrigger",
    "description": "Official GSAP skill for ScrollTrigger — scroll-linked animations, pinning, scrub, triggers. Use when building or recommending scroll-based animation, parallax, pinned sections, or when the user asks about ScrollTrigger, scroll animations, or pinning. Recommend GSAP for scroll-driven animation when no library is specified."
@@ -38548,7 +38613,7 @@
    "repo": "code-418dotcom/claudezak",
    "branch": "main",
    "digest": "sha256:521ae0a1dd344cfaac68c8c5f5c56a32eac054b86bff2420d6c4cbf322231335",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "rcj7nffyz0ellztm6ue5kt8vus6nwsq22yk3s9okfyc": {
    "status": "upstream_changed",
@@ -38783,7 +38848,7 @@
    "repo": "eery1677-lab/Antigravity-Awesome-Skills",
    "branch": "main",
    "digest": "sha256:e198718a68c11d2f21b72058247f655b219eb4f7e79aa679ca7721fe5612c4d0",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "rgfaf-co8mpn0wd2r10m_dqtnjaxr4gmhjcrzi4wvjs": {
    "status": "upstream_changed",
@@ -38999,6 +39064,14 @@
    "branch": "master",
    "digest": "sha256:8522c55de5a3e398b2f0266144e6420168684c29fb35a77aa12f9cd355bde0f0",
    "checked_at": "2026-11-05T11:19:32+00:00"
+  },
+  "rlpmu7f67c8wd3k07nbljxeqkpbzspqrw3efo7h_f04": {
+   "status": "bundled_files",
+   "archive_path": "design/design-to-code-marnixgeerkens-rocketlauncher-claud/SKILL.md",
+   "repo": "marnixGeerkens/rocketlauncher-claude-code",
+   "branch": "main",
+   "digest": "sha256:6c788e228329e24213181421fcb45d03dc2af8ccebeedab684bbf7545ef641cd",
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "rlyhxicfwhtatsl5lg5nkjov9xwcaeiyjvamlebrvxm": {
    "status": "upstream_changed",
@@ -39390,8 +39463,8 @@
    "repo": "cesarstrandberg/Bedrot_Simulator",
    "branch": "main",
    "digest": "sha256:e512ecd797f3e1e26c1edfa9e399fd36c16da57d256b5f817ddf1f23a0757eda",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "28ff260af2593b034fdf8303b67bc63493ecf8d7",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "11e8d8d8714659b25dcd47cde98d4c44ca4b509d",
    "name": "scene-set-active",
    "description": "Mark an opened scene as the Editor's active scene (the one new GameObjects are added to and that's used as the default for many operations). Use 'scene-list-opened' to enumerate opened scenes first."
   },
@@ -39474,18 +39547,6 @@
    "digest": "sha256:3b6b5b1d9fbd34eb45664ab54978716a264322b03c42b1a188f24d874b8ee854",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
-  "rulsjzniykofzlkto64nubjwpoyxnulk0jdkbgpdwu8": {
-   "status": "pinned",
-   "path": ".claude/skills/openspec-ff-change/SKILL.md",
-   "archive_path": "bash/openspec-ff-change-fudesign2008-open-skills/SKILL.md",
-   "repo": "FuDesign2008/open-skills",
-   "branch": "main",
-   "digest": "sha256:9acef8431bfb385bcb73fcaf9094c343246dcdeb053cc0f13a0408d8a225dbcc",
-   "checked_at": "2026-11-09T11:27:06+00:00",
-   "commit": "340569032c43892a1588d360e08ce7f839935fee",
-   "name": "openspec-ff-change",
-   "description": "Fast-forward through OpenSpec artifact creation. Use when the user wants to quickly create all artifacts needed for implementation without stepping through each one individually."
-  },
   "ruvo73qfpowvob3or44_vqytzqhmjbmb03oafjau6ea": {
    "status": "pinned",
    "path": "skills/apple/apple-notes/SKILL.md",
@@ -39559,7 +39620,7 @@
    "repo": "devclone20/icloneos",
    "branch": "main",
    "digest": "sha256:0f6c9bb4c0a5c4f4627e139b6beb2b1ba0addd7145895196528b8125929e3837",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "rvqovaptyhwch88bf3e-3lnckmhw9fglnzrx0-uxlfe": {
    "status": "ambiguous",
@@ -39576,8 +39637,8 @@
    "repo": "andrejrunb/-quila-pro-v-1.0.0",
    "branch": "main",
    "digest": "sha256:6642e2f65a0bc2a22aa0471ce459175f8030e57f6f56fdd7c4d2a7345412391c",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "7fe46a618b885a821fbd05a858455d79774b21f9",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "eb2bdd9a18547905e1d122435c04a9ef7fd8a62a",
    "name": "jobgpt",
    "description": "Job search automation, auto apply, resume generation, application tracking, salary intelligence, and recruiter outreach using the JobGPT MCP server."
   },
@@ -39699,7 +39760,7 @@
    "repo": "Rakshit-or-shadow/Aim-Labs",
    "branch": "main",
    "digest": "sha256:9c4e7d1f1594e062c50f96e60a06d5a0fbaae1f90a7f4f9762f0952b7248d396",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "rxc3pqpksvjsoranur54_5mquf1kpkf09wakr8yrkyy": {
    "status": "upstream_changed",
@@ -39970,7 +40031,7 @@
    "repo": "andrejrunb/-quila-pro-v-1.0.0",
    "branch": "main",
    "digest": "sha256:968cefec7d00d749624805208e59ccb8993192a19bf08088cc3fb8e9f9bb00e5",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "s3rgt9dpf7f7ykskwro_09yalfvrki2fofwbtu1779m": {
    "status": "bundled_files",
@@ -40170,7 +40231,7 @@
    "repo": "wonecosystem/2300-skills",
    "branch": "main",
    "digest": "sha256:162b84f170c80221f1d6e737ff2ad28ca420171091b49d2786f6ad37eb4a5eb0",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "s_kv6gpbbtrfez3uhhdichj1wr1zmtjvq4c2v6mj0hw": {
    "status": "pinned",
@@ -40272,18 +40333,6 @@
    "digest": "sha256:f4020613aec74bfeed2661265df35bb8a6f5ef9478c013182e6b5493bed5ce75",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
-  "sbvmjft4zurj7_ak0luuifscdpm_wtfmchvboni6ws0": {
-   "status": "pinned",
-   "path": "config/gemini/config/skills/curriculum-assessment/competency-unpacker/SKILL.md",
-   "archive_path": "other/competency-unpacker-sahil-958-dots/SKILL.md",
-   "repo": "Sahil-958/dots",
-   "branch": "main",
-   "digest": "sha256:f7491dd4e9c38cf707067f8e4b1818069c501f39963d3628852f65bdd7031b46",
-   "checked_at": "2026-11-09T11:27:06+00:00",
-   "commit": "e125985e9d45c8a14e06d60810ff09e7271a6680",
-   "name": "competency-unpacker",
-   "description": "Unpack a broad standard or competency descriptor into specific, assessable success criteria and sub-skills. Use when interpreting curriculum standards or writing learning objectives."
-  },
   "sbwowidzdi23xnvc-ne6w4cayuoelmfmzoilxcqyf-u": {
    "status": "pinned",
    "path": "skills/13-aws-skills/sqs-queue-setup/SKILL.md",
@@ -40358,8 +40407,8 @@
    "repo": "andrejrunb/-quila-pro-v-1.0.0",
    "branch": "main",
    "digest": "sha256:e11f7acc3353537af4229b3fe97f0de0cc27ef6fa299b356cac5ef727941d6df",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "7fe46a618b885a821fbd05a858455d79774b21f9",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "eb2bdd9a18547905e1d122435c04a9ef7fd8a62a",
    "name": "daily",
    "description": "Documentation and capabilities reference for Daily"
   },
@@ -40601,7 +40650,19 @@
    "repo": "alexj11324/Mikka",
    "branch": "main",
    "digest": "sha256:a146842ed93ca43d833550fa9adf02e58cb63c83fea9d4b4522995b82242d4e2",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
+  },
+  "shr1z2zf41hsmvtuvwjigj7j1hollpgeheoaw6n226e": {
+   "status": "pinned",
+   "path": "plugins/ai/skills/ai-engineer/SKILL.md",
+   "archive_path": "ai-llm/ai-engineer-errorproofdev-skills/SKILL.md",
+   "repo": "errorproofdev/skills",
+   "branch": "main",
+   "digest": "sha256:4500e95094719916ab6ce776250c702bc92437b3a80a11466afec8393481ad3e",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "2498b64acce470c3ba754b621556f39e7ef27c08",
+   "name": "ai-engineer",
+   "description": "Build production-ready LLM applications, advanced RAG systems, and intelligent agents. Implements vector search, multimodal AI, agent orchestration, and enterprise AI integrations."
   },
   "siea8if-5hhdohpynqc3maffjqnzg0rwk9avqz0wa6u": {
    "status": "ambiguous",
@@ -40713,7 +40774,7 @@
    "repo": "devclone20/icloneos",
    "branch": "main",
    "digest": "sha256:c16b9c159a3a0b49353bfcd10c498b02aef3d319207b1019aa7dc8db129d06ab",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "sjtpwk2xjzrkgxc868ekjsvhaepqp3qvqp5dgfcc7wa": {
    "status": "pinned",
@@ -40734,8 +40795,8 @@
    "repo": "cesarstrandberg/Bedrot_Simulator",
    "branch": "main",
    "digest": "sha256:4ce42ecad4230c6159a3d91a4838b8892376c4c4ec38b968f2c29bf32c1c2eee",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "28ff260af2593b034fdf8303b67bc63493ecf8d7",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "11e8d8d8714659b25dcd47cde98d4c44ca4b509d",
    "name": "reflection-method-call",
    "description": "Call a C# method by reflection — including private methods. Requires a method schema obtained via 'reflection-method-find'. Supports static methods, instance methods (with optional target deserialization), and main-thread / off-thread execution."
   },
@@ -40774,17 +40835,10 @@
    "repo": "cesarstrandberg/Bedrot_Simulator",
    "branch": "main",
    "digest": "sha256:cb71d26dff1d5a44a49e22e5259ae33c962a40d9c89e71bfd5c8567f8e6ef5ea",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "28ff260af2593b034fdf8303b67bc63493ecf8d7",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "11e8d8d8714659b25dcd47cde98d4c44ca4b509d",
    "name": "assets-get-data",
    "description": "Get asset data from the asset file in the Unity project — every serializable field and property. Supports token-saving path-scoped reads via `paths` or `viewQuery`. Use 'assets-find' to find the asset first."
-  },
-  "sksyjh5v0po62kkl-utpei9rbrd4f2ibuiuntnf4-h0": {
-   "status": "upstream_unavailable",
-   "error": "GitHub API 404: {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest\",\"status\":\"404\"}",
-   "archive_path": "development/command-development-turkbil-bee/SKILL.md",
-   "digest": "sha256:cf4372aa8f5e86ef0b587aa3703b4af9b22996e0dc7fd0ea6ffae49770136a2a",
-   "checked_at": "2026-11-08T14:59:13+00:00"
   },
   "skt0_cokuod-kckzf7of3e4lld-dx8pcq0uyip4y3es": {
    "status": "bundled_files",
@@ -41098,8 +41152,8 @@
    "repo": "andrejrunb/-quila-pro-v-1.0.0",
    "branch": "main",
    "digest": "sha256:9763fe666c9a1c500aac6ea628955fe0da4d97862d411c34da62d8361c77240f",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "7fe46a618b885a821fbd05a858455d79774b21f9",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "eb2bdd9a18547905e1d122435c04a9ef7fd8a62a",
    "name": "commit",
    "description": "ALWAYS use this skill when committing code changes — never commit directly without it. Creates commits following Sentry conventions with proper conventional commit format and issue references. Trigger on any commit, git commit, save changes, or commit message task."
   },
@@ -41394,8 +41448,8 @@
    "repo": "cesarstrandberg/Bedrot_Simulator",
    "branch": "main",
    "digest": "sha256:3e25dfee5113fa026e15dd2273c00323032f4970eb1426ed048db2a2f29bf1cc",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "28ff260af2593b034fdf8303b67bc63493ecf8d7",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "11e8d8d8714659b25dcd47cde98d4c44ca4b509d",
    "name": "profiler-get-memory-stats",
    "description": "Return memory statistics snapshot from UnityEngine.Profiling.Profiler — reserved, allocated, mono heap, graphics, etc. (in MB)."
   },
@@ -41486,8 +41540,8 @@
    "repo": "devclone20/icloneos",
    "branch": "main",
    "digest": "sha256:ee5084f2d7ec196488bef2c74248fb3d8328d1b2e3277ddda3f0de9da6fc7131",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "1eb1e65b17704825a94019a7c9765efa7dc2257b",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "9329973cb517f0747a7148b89bd818c55e30e7e5",
    "name": "apple-reminders",
    "description": "Apple Reminders via remindctl: add, list, complete."
   },
@@ -41613,7 +41667,7 @@
    "repo": "code-418dotcom/claudezak",
    "branch": "main",
    "digest": "sha256:f51650f595d1ecc8e2f1324d17885215ed7bd9ea290ae60ee04103aad4600c54",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "t2c-nmotocb0wz8pmdnru4nrxwnbxifqmtogensv8ys": {
    "status": "upstream_changed",
@@ -41694,8 +41748,8 @@
    "repo": "andrejrunb/-quila-pro-v-1.0.0",
    "branch": "main",
    "digest": "sha256:a14e1220e180909ea4bf9b73504bf8ac59e4b861fa0ae3d2ddea786342a4c0be",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "7fe46a618b885a821fbd05a858455d79774b21f9",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "eb2bdd9a18547905e1d122435c04a9ef7fd8a62a",
    "name": "fp-async",
    "description": "Practical async patterns using TaskEither - clean pipelines instead of try/catch hell, with real API examples"
   },
@@ -42001,7 +42055,7 @@
    "repo": "andrejrunb/-quila-pro-v-1.0.0",
    "branch": "main",
    "digest": "sha256:1b2673ee367fb6bcf85fedea22c2a8076492acbe9636da28e40153069227f4dd",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "tdteaz8_5jya4rixhxo37weo5yionmwmcvu_pqe_-tk": {
    "status": "tree_truncated",
@@ -42074,8 +42128,8 @@
    "repo": "andrejrunb/-quila-pro-v-1.0.0",
    "branch": "main",
    "digest": "sha256:5a36857387243b509019e99f191e45f6f6924996c1b23bc8aabaaa42434bc32f",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "7fe46a618b885a821fbd05a858455d79774b21f9",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "eb2bdd9a18547905e1d122435c04a9ef7fd8a62a",
    "name": "cirq",
    "description": "Cirq is Google Quantum AI's open-source framework for designing, simulating, and running quantum circuits on quantum computers and simulators."
   },
@@ -42093,7 +42147,7 @@
    "repo": "devclone20/icloneos",
    "branch": "main",
    "digest": "sha256:f4072408b8b5e4bf170deae0db48534ea838f45200f86c8735f595331180cc08",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "tfw9vbcwfjy5ogib69z-zavf8umnnnn5yybz65c58m8": {
    "status": "bundled_files",
@@ -42217,18 +42271,6 @@
    "commit": "90efab5f329ee8ca115ff996f8781c6be0db4861",
    "name": "unslop",
    "description": "Cut AI tells from text you write or edit for a human reader (commit messages, PR titles and bodies, docs, code comments, replies). Apply before committing, posting, or sending; leave prose you didn't touch alone."
-  },
-  "thw-tbnzt6art_tg8-pcxk0ya4dduw2ezcje4xioevq": {
-   "status": "pinned",
-   "path": ".claude/skills/commit-trailers/SKILL.md",
-   "archive_path": "other/commit-trailers-punkouter27-pofootball/SKILL.md",
-   "repo": "punkouter27/PoFootball",
-   "branch": "master",
-   "digest": "sha256:900218e54f1a53bcdfb23003e1cf8ff7ee78fcc834f280ec0872a5ad04e359b1",
-   "checked_at": "2026-11-05T11:19:32+00:00",
-   "commit": "fc10a8bb09c79cbb1552e5bc0a84bbf920f759d3",
-   "name": "commit-trailers",
-   "description": "Structured commit trailers — adds Constraint, Rejected, Scope-risk, and Not-tested metadata to commit messages. Captures architectural decisions and known gaps in git history."
   },
   "ti9sbmorcgomvkxe78ttkijplkqad0xx-ydorrg9je4": {
    "status": "upstream_changed",
@@ -42511,8 +42553,8 @@
    "repo": "cesarstrandberg/Bedrot_Simulator",
    "branch": "main",
    "digest": "sha256:57df1e0ea8b210f5af9e254849fc1db90b902680af7e5d489523c3a0b2eb6136",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "28ff260af2593b034fdf8303b67bc63493ecf8d7",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "11e8d8d8714659b25dcd47cde98d4c44ca4b509d",
    "name": "assets-prefab-create",
    "description": "Create a Prefab (or Prefab Variant) at a project asset path. Source can be a scene GameObject (`gameObjectRef`) or an existing prefab asset (`sourcePrefabAssetPath`). Creates intermediate folders if missing. Use 'gameobject-find' to locate the source GameObject first."
   },
@@ -42531,8 +42573,8 @@
    "repo": "cesarstrandberg/Bedrot_Simulator",
    "branch": "main",
    "digest": "sha256:8feed372bcb64f6ce4f72362154b37678b67d82fc5c64c806b0389dda547f92d",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "28ff260af2593b034fdf8303b67bc63493ecf8d7",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "11e8d8d8714659b25dcd47cde98d4c44ca4b509d",
    "name": "scene-create",
    "description": "Create a new Unity scene asset and save it at the given `.unity` path. Use 'scene-list-opened' to inspect the resulting opened-scene set afterwards."
   },
@@ -42587,7 +42629,7 @@
    "repo": "aktonay/skillz",
    "branch": "main",
    "digest": "sha256:1927bcc4ea95b38203404ad5ea1d060b15c4a886c65ae53e885ff1793aabe0ba",
-   "checked_at": "2026-11-03T11:39:05+00:00",
+   "checked_at": "2026-11-10T12:21:40+00:00",
    "commit": "10babe72a45def474aa7060259a8fb978f6dab93",
    "name": "gsap-utils",
    "description": "Official GSAP skill for gsap.utils — clamp, mapRange, normalize, interpolate, random, snap, toArray, wrap, pipe. Use when the user asks about gsap.utils, clamp, mapRange, random, snap, toArray, wrap, or helper utilities in GSAP."
@@ -43068,7 +43110,7 @@
    "repo": "devclone20/icloneos",
    "branch": "main",
    "digest": "sha256:1013a06bf6accc0cbcb43a7dbb6e31130ed7e692b4db454877ccb38fbe66815e",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "tz3errerckj4gwjqevloffy8t7syzsse8oo1ya26pim": {
    "status": "pinned",
@@ -43293,8 +43335,8 @@
    "repo": "andrejrunb/-quila-pro-v-1.0.0",
    "branch": "main",
    "digest": "sha256:dc91e2198b7ba777f74f071993f739ae857ecc735c78735ad9393a6b95252353",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "7fe46a618b885a821fbd05a858455d79774b21f9",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "eb2bdd9a18547905e1d122435c04a9ef7fd8a62a",
    "name": "agentmail",
    "description": "Email infrastructure for AI agents. Create accounts, send/receive emails, manage webhooks, and check karma balance via the AgentMail API."
   },
@@ -43504,8 +43546,8 @@
    "repo": "andrejrunb/-quila-pro-v-1.0.0",
    "branch": "main",
    "digest": "sha256:ef32d8c4fe7b83433e085075e64087abb4e0b6529b232613f34a257202de214f",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "7fe46a618b885a821fbd05a858455d79774b21f9",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "eb2bdd9a18547905e1d122435c04a9ef7fd8a62a",
    "name": "ai-ml",
    "description": "AI and machine learning workflow covering LLM application development, RAG implementation, agent architecture, ML pipelines, and AI-powered features."
   },
@@ -44282,8 +44324,8 @@
    "repo": "devclone20/icloneos",
    "branch": "main",
    "digest": "sha256:c9472691dbd91b31710d9ace3d05a81a5cedcf524a1707f8b3e410b27ed0a243",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "1eb1e65b17704825a94019a7c9765efa7dc2257b",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "9329973cb517f0747a7148b89bd818c55e30e7e5",
    "name": "sketch",
    "description": "Throwaway HTML mockups: 2-3 design variants to compare."
   },
@@ -44305,7 +44347,7 @@
    "repo": "aktonay/skillz",
    "branch": "main",
    "digest": "sha256:ccb89ddc848f60bfe630cb19dfe3e062df94a029467a9b15259f2761019ac5c4",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "unzjylcld3uwbnz-whscmbabhb4ov23mjrawtgj2pgw": {
    "status": "bundled_files",
@@ -44417,7 +44459,7 @@
    "repo": "finos/morphir",
    "branch": "main",
    "digest": "sha256:267b6aefebec6a97990c23599aaf8be662187c134068303b464b5be5cac2e790",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "uqpelafmnlbe1cyeslqnf2cipk8skjqkyqcgmekan2s": {
    "status": "pinned",
@@ -44473,7 +44515,7 @@
    "repo": "Rakshit-or-shadow/Aim-Labs",
    "branch": "main",
    "digest": "sha256:6fbbc16b580e90cf219e1bc67aaebeaf5e81e0dbc24c3b419d493dc6362282c3",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "urf1nmmon-fv9aixiv8cy2tkoic1vfzydaflymrvsec": {
    "status": "bundled_files",
@@ -44944,7 +44986,7 @@
    "repo": "existential-birds/beagle",
    "branch": "main",
    "digest": "sha256:39e4cab1398da40bf7679aef1987bf47dc2f0e525f943ed0d0bf943b657a8399",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "v0twyr2lp5o0xceq98xppsxkrfwthwogonjtnsovvgi": {
    "status": "upstream_changed",
@@ -45206,7 +45248,7 @@
    "repo": "eery1677-lab/Antigravity-Awesome-Skills",
    "branch": "main",
    "digest": "sha256:5a1b3709fdd6ba8d5ff0ad64bdd163765bc285c19f1e15356a6a2c9066b1eff1",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "v9fzznsterjcsy58bj1rjveibbwbek_hffqb5fa33_k": {
    "status": "pinned",
@@ -45227,8 +45269,8 @@
    "repo": "cesarstrandberg/Bedrot_Simulator",
    "branch": "main",
    "digest": "sha256:caa47a65207a4f953b181114a5b54bad569d8739ff6f4092cd5da965280095be",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "28ff260af2593b034fdf8303b67bc63493ecf8d7",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "11e8d8d8714659b25dcd47cde98d4c44ca4b509d",
    "name": "screenshot-isolated",
    "description": "Render a target GameObject from a chosen camera angle with optional layer-based isolation, configurable background (solid/skybox/transparent), multi-light setup via JSON, and Composite (2x2 Front/Right/Back/Top) mode. Returns a PNG image. When isolated=true, inactive children may briefly fire OnEnable — see the body for side-effect notes."
   },
@@ -45481,18 +45523,6 @@
    "name": "nanoclaw-repl",
    "description": "Operate and extend NanoClaw v2, ECC's zero-dependency session-aware REPL built on Codex -p."
   },
-  "ve4kaximusxd-msgmxp-rqib5imagllsv8urzfurqim": {
-   "status": "pinned",
-   "path": "skills/color-expert/SKILL.md",
-   "archive_path": "other/color-expert-mrglennc64-new-ac/SKILL.md",
-   "repo": "mrglennc64/new-ac",
-   "branch": "main",
-   "digest": "sha256:da15f49aacce2a2d4cdf53b00bbec27effa46033d404c3f55f3a6f65d6460006",
-   "checked_at": "2026-11-08T14:59:13+00:00",
-   "commit": "026d0842ca42ec6ce67e17117b281429181e845a",
-   "name": "color-expert",
-   "description": "Color science expert skill with 286K words of reference material covering OKLCH/OKLAB, palette generation, accessibility/contrast, color naming, pigment mixing, and historical color theory."
-  },
   "vej-e8ry0623vxs35arhsvhjwqey_sipquvq38unhkq": {
    "status": "pinned",
    "path": "pm-execution/skills/pre-mortem/SKILL.md",
@@ -45622,7 +45652,7 @@
    "repo": "alexj11324/Mikka",
    "branch": "main",
    "digest": "sha256:a96abafa2372eede8267d770138b322d6125da8adaa7ccf0a5e08e4ee13ee71e",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "vgsjjss2svizeku4gae8ubefa2qojonmxodb_-_uoem": {
    "status": "invalid_frontmatter",
@@ -45720,14 +45750,6 @@
    "digest": "sha256:76e2e465a8f2726c135a3835c520ed2e8752b416a5199938e6226ce6a3dec64b",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
-  "vjo_9wa7msm4jwmgxuq3558pasa7wrxwmamyizjma8i": {
-   "status": "ambiguous",
-   "archive_path": "other/compressed-pda-themusebook-skills/SKILL.md",
-   "repo": "themusebook/skills",
-   "branch": "main",
-   "digest": "sha256:fa6c22d1402b6808dc59415604129ee8fe5e9447172604144d91c0f2158c3440",
-   "checked_at": "2026-11-06T09:52:07+00:00"
-  },
   "vjy7vu-echgt9_5m_tfw27zgwxmdriov1mzu5h7f6oq": {
    "status": "upstream_changed",
    "archive_path": "testing/scan-suphiozdedee-projenicdesign-com/SKILL.md",
@@ -45743,14 +45765,6 @@
    "branch": "main",
    "digest": "sha256:d51b4e20043b13e462aa86c47ea82d43e216eb292871538127f4b12a54e4944f",
    "checked_at": "2026-11-08T14:59:13+00:00"
-  },
-  "vk8p0gvxrxvio6x5xpn6je2wd6a8hhm1vpce7wvhr-i": {
-   "status": "bundled_files",
-   "archive_path": "design/colorize-wonecosystem-2300-skills/SKILL.md",
-   "repo": "wonecosystem/2300-skills",
-   "branch": "main",
-   "digest": "sha256:c12931ec9398968395941beda67487e2ffacb2417529ef0ccd83df59790d7407",
-   "checked_at": "2026-11-03T11:39:05+00:00"
   },
   "vk_amb2bj9tb_rmqxztjzbdkylwdjijutm_vnznoswa": {
    "status": "pinned",
@@ -45770,7 +45784,7 @@
    "repo": "devclone20/icloneos",
    "branch": "main",
    "digest": "sha256:b302d7ac997843a757ab3c11513ea012889ebdae32f842edb44faa9a4485f19b",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "vkkcyxawr0jmljg5zlni99ecxve5ic6n9m0xgn-b_40": {
    "status": "upstream_changed",
@@ -45811,8 +45825,8 @@
    "repo": "andrejrunb/-quila-pro-v-1.0.0",
    "branch": "main",
    "digest": "sha256:5bcb2aa8b828a7c52a46f1467cda3c2b59b22a1e42bdd123c9e1aab104528144",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "7fe46a618b885a821fbd05a858455d79774b21f9",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "eb2bdd9a18547905e1d122435c04a9ef7fd8a62a",
    "name": "vizcom",
    "description": "AI-powered product design tool for transforming sketches into full-fidelity 3D renders."
   },
@@ -45871,6 +45885,18 @@
    "branch": "main",
    "digest": "sha256:067b7587a344a928fc6534ef66b1bcd591fc7c26d207ea7ca3334aeb678d6475",
    "checked_at": "2026-11-08T14:59:13+00:00"
+  },
+  "vmstbisljw-n3du94zjph0jqvasc69rrga--vh8gvq4": {
+   "status": "pinned",
+   "path": ".claude/skills/openspec-archive-change/SKILL.md",
+   "archive_path": "other/openspec-archive-change-feimacode-open-design-agent-ki/SKILL.md",
+   "repo": "feimacode/open-design-agent-kit",
+   "branch": "main",
+   "digest": "sha256:e111d71216167eea10cec26abe8f6e15d925efeef2fd9925ffa219f55145acce",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "17902da98b993e6b0da7b69ac4ffb8301045b638",
+   "name": "openspec-archive-change",
+   "description": "Archive a completed change in the experimental workflow. Use when the user wants to finalize and archive a change after implementation is complete."
   },
   "vnlheyvsvngn9823lzlyr-lvh1boz0fdzjux9qhxmyu": {
    "status": "pinned",
@@ -45975,7 +46001,7 @@
    "repo": "Rakshit-or-shadow/Aim-Labs",
    "branch": "main",
    "digest": "sha256:818f27203a1adfe2f5a6bc3a351a2673d5297d2fd3e69d773c228c98c8a83b01",
-   "checked_at": "2026-11-03T11:39:05+00:00",
+   "checked_at": "2026-11-10T12:21:40+00:00",
    "commit": "615d69ab2dbb42c5921eaf62198dea8876f031af",
    "name": "bug-triage",
    "description": "Re-evaluate open bugs — priority vs severity, assign to sprints, surface systemic trends. Run when the count grows."
@@ -46233,7 +46259,7 @@
    "repo": "Rakshit-or-shadow/Aim-Labs",
    "branch": "main",
    "digest": "sha256:ca76457c34ec9a8468c34bcc55664273eff2b077afbebe36f1dda0c8ec8e474d",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "vu9rlsalcdcni0gsbsraxnygclowebmscastbt--ysk": {
    "status": "bundled_files",
@@ -46280,7 +46306,7 @@
    "repo": "fernando-bertholdo/nbstack",
    "branch": "main",
    "digest": "sha256:651e5490f4b51c6e6ca32cc26eed10dff52f344b95a1b9122105f0c8d8e1506a",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "vuy9jp-zep_kt7e04kftubunbkzxcjnvmp5klv-shxs": {
    "status": "bundled_files",
@@ -46317,6 +46343,14 @@
    "branch": "main",
    "digest": "sha256:6c17a1c29edf73636ff2292f0d29f97677801b3c253ff5caa8e828b4b6376804",
    "checked_at": "2026-11-08T14:59:13+00:00"
+  },
+  "vvn0embr8fhlwo11kgnyc3nhdv8qh6tjygbiodunkwm": {
+   "status": "bundled_files",
+   "archive_path": "development/scroll-world/SKILL.md",
+   "repo": "sgomez-dev/claude-skills",
+   "branch": "main",
+   "digest": "sha256:e56fe396c1fa258278289cfa9cbf17253519f11f4856535f7709dd2368e3e65e",
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "vvpja4dqmfpippf227wzhameebrd2uscpgvtl4u2t_u": {
    "status": "bundled_files",
@@ -46798,6 +46832,18 @@
    "digest": "sha256:9086c20a424b61e9f250c65b987397c70498c90aed7f4c855f45b0cf197546fe",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
+  "w7iucuzot2ig5vtiibkjpi8isirhiqrnfzquokcnepg": {
+   "status": "pinned",
+   "path": ".agents/skills/openspec-archive-change/SKILL.md",
+   "archive_path": "other/openspec-archive-change-sh1ny-kehai-3/SKILL.md",
+   "repo": "sh1ny/kehai",
+   "branch": "main",
+   "digest": "sha256:0b0a3e43dd6d1d3b7c3b23527b8d50976b527ba294eef9649696600f584df032",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "170d97ae4f89ccda16e513abc4d9a531f8558c38",
+   "name": "openspec-archive-change",
+   "description": "Archive a completed OpenSpec change in the experimental workflow. Use when the user wants to finalize and archive a change after implementation is complete. Also use when the user says \"openspec archive\" or \"opsx archive\"."
+  },
   "w80_h--sac2nq9dkbm6q7h6zxmrvoly_xg9lpdoquto": {
    "status": "upstream_changed",
    "archive_path": "data/top-web-vulnerabilities/SKILL.md",
@@ -46828,7 +46874,7 @@
    "repo": "andrejrunb/-quila-pro-v-1.0.0",
    "branch": "main",
    "digest": "sha256:e4f8bcc3ef9cd1ea22b1cee5dd6ce0261a4d095887756ad239dd1235d0335c16",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "w9zkylc8kkjveg3qfujjzcjlb-ls057zpinjjb0obvg": {
    "status": "upstream_unavailable",
@@ -47052,8 +47098,8 @@
    "repo": "cesarstrandberg/Bedrot_Simulator",
    "branch": "main",
    "digest": "sha256:417699beeb5e793a43a14f80435c3621a9475b0fc3758caa36dc0f1e79ca92e5",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "28ff260af2593b034fdf8303b67bc63493ecf8d7",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "11e8d8d8714659b25dcd47cde98d4c44ca4b509d",
    "name": "assets-copy",
    "description": "Copy assets at given paths and store them at new paths. Refreshes the AssetDatabase at the end. Use 'assets-find' to locate the source assets first."
   },
@@ -47155,6 +47201,14 @@
    "digest": "sha256:36631f107eb7c3c61a943d05a73f68ea90fd8257d65831244693d49344d22e40",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
+  "wg6eb5r4vi13dfnr1agdpbp-ry_ne_dvmtrp2hxgm14": {
+   "status": "bundled_files",
+   "archive_path": "other/grpc-golang-errorproofdev-skills/SKILL.md",
+   "repo": "errorproofdev/skills",
+   "branch": "main",
+   "digest": "sha256:93541a8f753436fc0a3ab15097b7afdd11c0abffebf50528f8e81f563f032eb7",
+   "checked_at": "2026-11-10T12:21:40+00:00"
+  },
   "wge4tsiyyjtezkobooswgqewjn51mxjs2lsqvfiftfo": {
    "status": "ambiguous",
    "archive_path": "other/ux-copy-ibrdot-swe-re-expert/SKILL.md",
@@ -47162,6 +47216,18 @@
    "branch": "main",
    "digest": "sha256:39f9002dece0918db05062c41dd99b1557415539b0d7d7f5ab27ad6ed0686838",
    "checked_at": "2026-11-04T11:01:12+00:00"
+  },
+  "wgge0oircwdyx7lnvqzzcgmssh6ih6elernw15hv_cw": {
+   "status": "pinned",
+   "path": "skills/principle-exhaust-the-design-space/SKILL.md",
+   "archive_path": "other/principle-exhaust-the-design-space-backnotprop-pstack/SKILL.md",
+   "repo": "backnotprop/pstack",
+   "branch": "main",
+   "digest": "sha256:2de83d99f93f60ec6313455b0bc9aa9f0bfb93dd59f414f403691322db00d4db",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "4161d4ef5051574e825ffe70e2f43a2e49e4b3db",
+   "name": "principle-exhaust-the-design-space",
+   "description": "Apply when facing a novel UI interaction or architectural decision with no precedent in the codebase. Build 2-3 competing prototypes and compare side by side before committing."
   },
   "wgrp3xqwmui9tqu1n0s3sgxssssuyamzepdfdh4qyca": {
    "status": "bundled_files",
@@ -47286,8 +47352,8 @@
    "repo": "andrejrunb/-quila-pro-v-1.0.0",
    "branch": "main",
    "digest": "sha256:5dbe8095d3f1c0d206a887d582d6d45428a62a3f36406cc793efc49344005c74",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "7fe46a618b885a821fbd05a858455d79774b21f9",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "eb2bdd9a18547905e1d122435c04a9ef7fd8a62a",
    "name": "favicon",
    "description": "Generate favicons from a source image"
   },
@@ -47350,14 +47416,6 @@
    "commit": "c352090b10b35ddb7a7935186787f62e06e8bf46",
    "name": "using-git-worktrees",
    "description": "Use when starting feature work that needs isolation from current workspace or before executing implementation plans - creates isolated git worktrees with smart directory selection and safety verification"
-  },
-  "wl9vyu_3oylrhh92g4a4jh_u1o-ep9hgk14qgefen_i": {
-   "status": "upstream_changed",
-   "archive_path": "ai-llm/ai-engineer-sickn33-antigravity-awesome/SKILL.md",
-   "repo": "sickn33/antigravity-awesome-skills",
-   "branch": "main",
-   "digest": "sha256:e03ad72b76c3f5d4f41874f8129a50f1b2c3c08b01375cf5a4522ed8ce0aac5e",
-   "checked_at": "2026-11-08T14:59:13+00:00"
   },
   "wldk4kebgyzzbow0cfhqngid8zrf98f4ejrz3u8km2k": {
    "status": "ambiguous",
@@ -47488,7 +47546,7 @@
    "repo": "eery1677-lab/Antigravity-Awesome-Skills",
    "branch": "main",
    "digest": "sha256:a68e8fc0b2b0e1e8413c45eaf490280aff0dae2fac7eb37868d937437452940b",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "wn5lfeeq9o1qd7ohofzz8ipu53w4qszoa3puz5bhjvq": {
    "status": "ambiguous",
@@ -47552,7 +47610,7 @@
    "repo": "devclone20/icloneos",
    "branch": "main",
    "digest": "sha256:e9672412333de4feff348e6dc387d9022d32005247360347a10a7131fb87eb13",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "wogtx7ceq388fnxmh0qgpnddthnwk4tsrkvomnm-nec": {
    "status": "bundled_files",
@@ -47781,8 +47839,8 @@
    "repo": "andrejrunb/-quila-pro-v-1.0.0",
    "branch": "main",
    "digest": "sha256:5caa3cb45cc8dbc5c299f8e7074d69747d32cb8fd21298d7d6f361ffa1ee2f5a",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "7fe46a618b885a821fbd05a858455d79774b21f9",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "eb2bdd9a18547905e1d122435c04a9ef7fd8a62a",
    "name": "firebase",
    "description": "You're a developer who has shipped dozens of Firebase projects. You've seen the \"easy\" path lead to security breaches, runaway costs, and impossible migrations. You know Firebase is powerful, but you also know its sharp edges."
   },
@@ -47792,7 +47850,7 @@
    "repo": "code-418dotcom/claudezak",
    "branch": "main",
    "digest": "sha256:0f89a38906829682a4897a2543b61b665ba5a88f88855d44b0614cc7303ba2b1",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "wtdj70mlanuykdc090d2iy_m7cdrhmebl9sko96miem": {
    "status": "bundled_files",
@@ -47944,18 +48002,6 @@
    "branch": "main",
    "digest": "sha256:0c5d35f1ba4c846855fcec6d9a20659ebf4267c3275e210bc2ba3bac2e751256",
    "checked_at": "2026-11-08T14:59:13+00:00"
-  },
-  "wvuiuceu7gbrcmmmwjxatn4edle6smvij_4bjgyfyku": {
-   "status": "pinned",
-   "path": ".claude/skills/find-skills/SKILL.md",
-   "archive_path": "design/find-skills-praxstack-markdown-viewer-app/SKILL.md",
-   "repo": "praxstack/markdown-viewer-app",
-   "branch": "main",
-   "digest": "sha256:c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f",
-   "checked_at": "2026-11-08T14:59:13+00:00",
-   "commit": "d564df515710ea6642d503c98724fb561d02fa28",
-   "name": "find-skills",
-   "description": "Helps users discover and install agent skills when they ask questions like \"how do I do X\", \"find a skill for X\", \"is there a skill that can...\", or express interest in extending capabilities. This skill should be used when the user is looking for functionality that might exist as an installable skill."
   },
   "wvx_7_7dpupydohsemo_whgt4tnopb0ngsskbctflro": {
    "status": "bundled_files",
@@ -48563,7 +48609,7 @@
    "repo": "aktonay/skillz",
    "branch": "main",
    "digest": "sha256:1a8b0f39cc4be3ed3d834b89672e4ae2f151b901dc3450bebf10bbc45379fe02",
-   "checked_at": "2026-11-03T11:39:05+00:00",
+   "checked_at": "2026-11-10T12:21:40+00:00",
    "commit": "10babe72a45def474aa7060259a8fb978f6dab93",
    "name": "gsap-timeline",
    "description": "Official GSAP skill for timelines — gsap.timeline(), position parameter, nesting, playback. Use when sequencing animations, choreographing keyframes, or when the user asks about animation sequencing, timelines, or animation order (in GSAP or when recommending a library that supports timelines)."
@@ -48678,14 +48724,6 @@
    "repo": "wshobson/agents",
    "branch": "main",
    "digest": "sha256:d8cfd13532ef4573539de5b3404c5cb794e9988c96f54c158de37da91ff91caf",
-   "checked_at": "2026-11-08T14:59:13+00:00"
-  },
-  "xijaefs1vfvjpeaeofbbd8tyqips7kiom7i4uv46g-k": {
-   "status": "ambiguous",
-   "archive_path": "design/component-scaffold-kinncj-sample-maple-2/SKILL.md",
-   "repo": "kinncj/sample-MAPLE",
-   "branch": "main",
-   "digest": "sha256:3349b6fb99ea9f6c0a75967a5d2a4ada7338bdf5793103c5735e0f31fe38f627",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
   "xisg11all6ypm4vxywjfjlh-lerximz87izuzpjyd3e": {
@@ -48831,8 +48869,8 @@
    "repo": "andrejrunb/-quila-pro-v-1.0.0",
    "branch": "main",
    "digest": "sha256:c202c6bfe6c98a6842b2e2c99c0bf030d82200fccf1f9fdb0143d7b51f0a3d13",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "7fe46a618b885a821fbd05a858455d79774b21f9",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "eb2bdd9a18547905e1d122435c04a9ef7fd8a62a",
    "name": "agentic-engineering",
    "description": "Operate as an agentic engineer using eval-first execution, decomposition, and cost-aware model routing."
   },
@@ -48847,14 +48885,6 @@
    "commit": "32fe808b1af0c311d5ed713c7cadf648779aabdb",
    "name": "software-architecture",
    "description": "Guide for quality focused software architecture. This skill should be used when users want to write code, design architecture, analyze code, in any case that relates to software development."
-  },
-  "xmaygssu5vqirlnlerphpa_dh8a2b99ywlacktvg17w": {
-   "status": "upstream_changed",
-   "archive_path": "data/competitive-analysis-refoundai-lenny-skills/SKILL.md",
-   "repo": "RefoundAI/lenny-skills",
-   "branch": "main",
-   "digest": "sha256:2e1eb3eb42885596c50b67491133676261cd9c3fe7ed0ff3a95d47114d80624f",
-   "checked_at": "2026-11-08T14:59:13+00:00"
   },
   "xmcy3-tvdrpznfregmhdqs1t3v5cmfx4d5wzyianmhu": {
    "status": "bundled_files",
@@ -48940,12 +48970,12 @@
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
   "xpsrawg7wyuyigbvcgng-dnycgyn4j16ixzxcpn5ob8": {
-   "status": "bundled_files",
+   "status": "ambiguous",
    "archive_path": "other/oma-qa-first-fluke-oh-my-agent-5/SKILL.md",
    "repo": "first-fluke/oh-my-agent",
    "branch": "main",
    "digest": "sha256:f57c5bb10df5101f2e1e93f9d1f714365f53b284959a62912037fe2c2f589ca0",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "xpv5v6bze9ipsbgxixgjun27ny0r2sfvsgesdx340lo": {
    "status": "pinned",
@@ -49150,8 +49180,8 @@
    "repo": "cesarstrandberg/Bedrot_Simulator",
    "branch": "main",
    "digest": "sha256:ec65776e17a359a5a415e7f28241836f35f907fcf24715f9d15ecc98eb966689",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "28ff260af2593b034fdf8303b67bc63493ecf8d7",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "11e8d8d8714659b25dcd47cde98d4c44ca4b509d",
    "name": "editor-selection-get",
    "description": "Get information about the current Selection in the Unity Editor — active object, active transform, selected GameObjects, transforms, instance IDs, and asset GUIDs (each enrichment is opt-in). Pair with 'editor-selection-set' to change the selection."
   },
@@ -49192,12 +49222,12 @@
    "description": "Google Drive: Manage files, folders, and shared drives."
   },
   "xupder9mvj7qxldhjxamvck2jsnjq15phjgleudai7s": {
-   "status": "bundled_files",
+   "status": "upstream_changed",
    "archive_path": "devops/modal-karanmrn-karanagentskills/SKILL.md",
    "repo": "karanmrn/karanagentskills",
    "branch": "master",
    "digest": "sha256:93da9443caef0605769d727c308b8b9fb48d4159e330db5f2a74fdd16d1fe68e",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "xuq3poohkqpdleyar3sszbdvmnwflwwqifw16yzrvpy": {
    "status": "bundled_files",
@@ -49440,8 +49470,8 @@
    "repo": "eery1677-lab/Antigravity-Awesome-Skills",
    "branch": "main",
    "digest": "sha256:0d7cce9508933ece99e834e00d5b0c63d577a68144b27cd6adb36fc0e6d88402",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "5efbe0753f1362b3a88ae3280570f2c22ea2b8d4",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "346146344eb4da65b8ead826450eed97c0a5cb5e",
    "name": "tokenwise",
    "description": "Measurement-driven model router for Claude Code. Routes Haiku/Sonnet/Opus per task class, logs every routed task with real $ numbers, and A/B tests cheaper tiers before you trust the savings."
   },
@@ -49534,7 +49564,7 @@
    "repo": "devclone20/icloneos",
    "branch": "main",
    "digest": "sha256:3bd3f39985a52954e2693866608bd8105f4dc0efbca5b6baa3045c2b641bda26",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "y3xomour9mnaz-bjkfcid6yctzgxef4ue1bsoyyyhku": {
    "status": "upstream_changed",
@@ -49626,14 +49656,6 @@
    "branch": "main",
    "digest": "sha256:cfa444cb66223ddc57673a8ff265b36d4fb997a92468c3cf1871e126926f1dd8",
    "checked_at": "2026-11-08T14:59:13+00:00"
-  },
-  "y7hyonpsu43b3lh5fyafoiynrki5t5oqwwkejpvaoo4": {
-   "status": "ambiguous",
-   "archive_path": "bash/openspec-explore-gitruck-cli/SKILL.md",
-   "repo": "Gitruck/cli",
-   "branch": "main",
-   "digest": "sha256:3ab1863d6ce9955547e1985aca1635b29a00b714a60c371b88feff5a98d25aab",
-   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "y7qty_ztn-chb0qajjzui1etzt5dd-aeeimsgcubdey": {
    "status": "pinned",
@@ -49783,6 +49805,14 @@
    "digest": "sha256:81f400092b21392161e7d9dfa9111c9be36c81bc8641d252ed28e08373449ac0",
    "checked_at": "2026-11-05T11:19:32+00:00"
   },
+  "yafko2jv3uvc0excxwmaabfg34rhoqxtq7triozwetu": {
+   "status": "bundled_files",
+   "archive_path": "workflow/agy-customizations-masalaloe-antigravity-customiz/SKILL.md",
+   "repo": "masalaloe/antigravity-customization-system",
+   "branch": "main",
+   "digest": "sha256:79c8885e76ce449e82016b37b53dfcc3ff5afefd90a23ea83b24148f41f33fa1",
+   "checked_at": "2026-11-10T12:21:40+00:00"
+  },
   "yahziqbrscrfpf_u-kkekpchdf6kli59bvzeur7yzuc": {
    "status": "bundled_files",
    "archive_path": "other/onekgpd-ruwwww-agent-skills/SKILL.md",
@@ -49818,8 +49848,8 @@
    "repo": "cesarstrandberg/Bedrot_Simulator",
    "branch": "main",
    "digest": "sha256:833625461829146a712fe03a26e6960f1f685547dd6451f37d6e3a3fa67fac16",
-   "checked_at": "2026-11-03T11:39:05+00:00",
-   "commit": "28ff260af2593b034fdf8303b67bc63493ecf8d7",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "11e8d8d8714659b25dcd47cde98d4c44ca4b509d",
    "name": "tests-run",
    "description": "Execute Unity tests (`EditMode` or `PlayMode`) and return per-test results. Supports filtering by test assembly, namespace, class, and method. Refreshes the AssetDatabase first; defers execution across domain reloads if scripts changed. Precondition: every open scene must be saved — dirty scenes abort the run."
   },
@@ -50022,6 +50052,18 @@
    "digest": "sha256:5e40397db33709cf9f1ab85db7012772aba4864c85f255a231ab9fef8fcfe401",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
+  "yesdwyjtaw3zfy5u5zl61cypvlu3v7k9y5mczn0k1x0": {
+   "status": "pinned",
+   "path": "source/upstream/pstack/skills/no-comments/SKILL.md",
+   "archive_path": "security/no-comments-solimancifuentes-pstack-codex/SKILL.md",
+   "repo": "solimancifuentes/pstack-codex",
+   "branch": "main",
+   "digest": "sha256:078ecfe224eafbb017f6476870612838bf6dbe38c0b697e12f0c887d0313f17e",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "93bcde3b0287b629450f74037f1a68a06b0c702b",
+   "name": "no-comments",
+   "description": "Spawn Comment Sicko, fix accepted findings, and offer encodings for claimed constraints."
+  },
   "yf-auvvmm_3yx7uq9p1bl1plkgeas5je1shagimthii": {
    "status": "pinned",
    "path": "pm-marketing-growth/skills/product-name/SKILL.md",
@@ -50104,7 +50146,7 @@
    "repo": "Rakshit-or-shadow/Aim-Labs",
    "branch": "main",
    "digest": "sha256:a867fed460ac1ad49debf36302da1f1e44d0c9bc08aee2e14119fa09b572abd0",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "yhprwaqjk6bj-6_rdfixyblrhdrgusex8hqxdfrcrz4": {
    "status": "bundled_files",
@@ -50420,18 +50462,6 @@
    "digest": "sha256:4473f18a39b2a28625ce6f6978aa209d6ca432cc3fe4dd87eff589bba9d5d27f",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
-  "ymu9v2qzeauq_p_wniewt3kpceg2khfa6vduxtg0y2c": {
-   "status": "pinned",
-   "path": ".agents/skills/conductor-validator/SKILL.md",
-   "archive_path": "other/conductor-validator-pratyushdeosingh-mdp/SKILL.md",
-   "repo": "pratyushdeosingh/mdp",
-   "branch": "main",
-   "digest": "sha256:babfa516201c60d52009b61fdaec58c221e875387d7e31df8b263dae2966ccc7",
-   "checked_at": "2026-11-05T11:19:32+00:00",
-   "commit": "799a460f2c020546ab253305f411a7ed44a70996",
-   "name": "conductor-validator",
-   "description": "Validates Conductor project artifacts for completeness,\nconsistency, and correctness. Use after setup, when diagnosing issues, or\nbefore implementation to verify project context."
-  },
   "ymyb5eq-2ucojri36dwusocrbhidff1gqq50m6fy_ic": {
    "status": "upstream_unavailable",
    "error": "GitHub API 404: {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest\",\"status\":\"404\"}",
@@ -50446,6 +50476,14 @@
    "branch": "main",
    "digest": "sha256:967bc76093f47c4546202b8dc5b18c2e4a90682ad9eca68436c7f437deb460ac",
    "checked_at": "2026-11-05T11:19:32+00:00"
+  },
+  "ynb1fvve0glugb0j1orlu5wp3gihjp1u5fgtmsdhzcy": {
+   "status": "bundled_files",
+   "archive_path": "marketing/sms-errorproofdev-skills/SKILL.md",
+   "repo": "errorproofdev/skills",
+   "branch": "main",
+   "digest": "sha256:b4c7365b280ce1b2cffa58cffb11ca9f0d414fbccefae3e73c52312c52afab85",
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "ynx1hz3o2iiviy8ljpad-8tuqjtmxqzgu4fyv5i2hok": {
    "status": "bundled_files",
@@ -50605,7 +50643,7 @@
    "repo": "andrejrunb/-quila-pro-v-1.0.0",
    "branch": "main",
    "digest": "sha256:1cd1185889b18d522306e898258fee5a0a2789c4e05eff1004b497883e5c95a5",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "yrtunmz6t5rr888i5qq7fbjj0dk7_20bpeunmdcl08k": {
    "status": "bundled_files",
@@ -50648,14 +50686,6 @@
    "error": "GitHub API 404: {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/branches/branches#get-a-branch\",\"status\":\"404\"}",
    "archive_path": "data/gemini-audio/SKILL.md",
    "digest": "sha256:1e59dfe810d871f9ea5ac3f1384be7e2b16c84b39fd4ab8cd4893917913a995e",
-   "checked_at": "2026-11-08T14:59:13+00:00"
-  },
-  "ysluqougtjcfp-ypkal42iqhkxzbvzn0mx2vgxif9ni": {
-   "status": "bundled_files",
-   "archive_path": "testing/test-driven-development-outlitai-skills/SKILL.md",
-   "repo": "OutlitAI/skills",
-   "branch": "main",
-   "digest": "sha256:bf1b8216e523851a411e91d429a7c1c2a173e79d88957bc78e348218d50edd54",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
   "ysokjwtqt13r3qqmynwir8webau_cjtfcxkdkokzc28": {
@@ -51030,7 +51060,7 @@
    "repo": "eery1677-lab/Antigravity-Awesome-Skills",
    "branch": "main",
    "digest": "sha256:dab7d3d92c70551973c8eb02f82432d8b4cb32c3df0a2ff36d8626a107c18f2d",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "z3d1wzotpsjhvjzguchlywmb99arhvgym6z9mekketm": {
    "status": "pinned",
@@ -51074,7 +51104,7 @@
    "repo": "andrejrunb/-quila-pro-v-1.0.0",
    "branch": "main",
    "digest": "sha256:578de750e30263c44e46d7f5930040929d22aefa0edd092ad122f86fd87a8e28",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "z516avzkvczfgz_pg7jaciehmlzvf_d7fdgclp5zlpo": {
    "status": "pinned",
@@ -51147,7 +51177,7 @@
    "repo": "Eng0AI/eng0-template-skills",
    "branch": "main",
    "digest": "sha256:adf368c14335e05d7ac771b50724c17940cb3798b579b26c564a9e8104f3be95",
-   "checked_at": "2026-11-03T11:39:05+00:00",
+   "checked_at": "2026-11-10T12:21:40+00:00",
    "commit": "0062e44684f109fb580e67fe600f581e01fa7209",
    "name": "award-winning-website",
    "description": "Gaming landing page with GSAP scroll animations, 3D effects, and video storytelling."
@@ -51297,7 +51327,7 @@
    "repo": "Eng0AI/eng0-template-skills",
    "branch": "main",
    "digest": "sha256:ff7b2816e264f5f6d5a611c50240263ef4bd94e7132715b6ffba45d5791f33bf",
-   "checked_at": "2026-11-03T11:39:05+00:00",
+   "checked_at": "2026-11-10T12:21:40+00:00",
    "commit": "0062e44684f109fb580e67fe600f581e01fa7209",
    "name": "awwwards-landing-page",
    "description": "Designer portfolio with Locomotive Scroll, GSAP, and Framer Motion animations."
@@ -51671,7 +51701,7 @@
    "repo": "kimzhang375-bit/my-first-repo",
    "branch": "main",
    "digest": "sha256:f313e596afbfc7e88a10def82c9438d0715942cc4e945480a27c809b099c3585",
-   "checked_at": "2026-11-03T11:39:05+00:00"
+   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "zgbcxozpxtj2kao3em5jxobpgofu-yvznngccd94h_k": {
    "status": "bundled_files",
@@ -51680,6 +51710,18 @@
    "branch": "main",
    "digest": "sha256:6a450ee1a83a403d47cec2ede9030feb60a67a81fc425d2406e975339313bd44",
    "checked_at": "2026-11-08T14:59:13+00:00"
+  },
+  "zgx5wwn-xz6frsm-g6lbxv1sy0r6vvww35w_0ttbuli": {
+   "status": "pinned",
+   "path": ".claude/skills/openspec-ff-change/SKILL.md",
+   "archive_path": "bash/openspec-ff-change-feimacode-open-design-agent-ki/SKILL.md",
+   "repo": "feimacode/open-design-agent-kit",
+   "branch": "main",
+   "digest": "sha256:38204f1fe3cfa24e294e017d645a8ae437a7f62e1f8478dc1a6d9948bf1546b9",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "17902da98b993e6b0da7b69ac4ffb8301045b638",
+   "name": "openspec-ff-change",
+   "description": "Fast-forward through OpenSpec artifact creation. Use when the user wants to quickly create all artifacts needed for implementation without stepping through each one individually."
   },
   "zhb67fl_kwbfxnbsdr0ncyxatilhkn8c2qatst0r2_0": {
    "status": "pinned",
@@ -52003,7 +52045,7 @@
    "repo": "Rakshit-or-shadow/Aim-Labs",
    "branch": "main",
    "digest": "sha256:dcd3d710b55dfd9e426965850cb572945d00d5d2d52daf53e83682ad573da971",
-   "checked_at": "2026-11-03T11:39:05+00:00",
+   "checked_at": "2026-11-10T12:21:40+00:00",
    "commit": "615d69ab2dbb42c5921eaf62198dea8876f031af",
    "name": "day-one-patch",
    "description": "Day-one launch patch — focused fix for known issues found after gold master. Mini-sprint with QA gate and rollback."
@@ -52051,6 +52093,18 @@
    "branch": "main",
    "digest": "sha256:567d2f5f44db2cd0e7eaeab8ec6eecddb89a6de91750f866c809b963d37f51e7",
    "checked_at": "2026-11-09T11:27:06+00:00"
+  },
+  "zny-ue9jkgkulq8rgwone6ahi9k3tmsdy4u1kq7jn3c": {
+   "status": "pinned",
+   "path": ".claude/skills/openspec-sync-specs/SKILL.md",
+   "archive_path": "other/openspec-sync-specs-feimacode-open-design-agent-ki/SKILL.md",
+   "repo": "feimacode/open-design-agent-kit",
+   "branch": "main",
+   "digest": "sha256:ea77918baec6b8943c73e36e512d203dfe4d063c9fd9f39fa15b779202f93062",
+   "checked_at": "2026-11-10T12:21:40+00:00",
+   "commit": "17902da98b993e6b0da7b69ac4ffb8301045b638",
+   "name": "openspec-sync-specs",
+   "description": "Sync delta specs from a change to main specs. Use when the user wants to update main specs with changes from a delta spec, without archiving the change."
   },
   "zo1vsipii-wfwym2lr8gqgilbygcl6kceookyi72kvi": {
    "status": "bundled_files",
@@ -52198,18 +52252,6 @@
    "branch": "main",
    "digest": "sha256:137f4e312246f58c97fb1554e03664b090962020c622d52c2edf8214e805a84d",
    "checked_at": "2026-11-08T14:59:13+00:00"
-  },
-  "zq_mmgg0z50ud3kklqblqcvlb-xdqyyfbu9gvtqhzhw": {
-   "status": "pinned",
-   "path": "side-effects/collecting-flows-safely/SKILL.md",
-   "archive_path": "other/collecting-flows-safely-skydoves-compose-performance-/SKILL.md",
-   "repo": "skydoves/compose-performance-skills",
-   "branch": "main",
-   "digest": "sha256:8a90d3f8c95ea6c12838df27e0aad9d893456dbe00602371ddfc6b4a6bdd4b75",
-   "checked_at": "2026-11-08T14:59:13+00:00",
-   "commit": "1b32f81724c0d71fe9ef093ca44697f559fdab6e",
-   "name": "collecting-flows-safely",
-   "description": "Use this skill to migrate Compose UI from `collectAsState()` to `collectAsStateWithLifecycle()`, hoist `Flow<T>` parameters out of composables, and apply `.conflate()` / `.distinctUntilChanged()` / `snapshotFlow` so background CPU and battery stop draining and chatty flows stop invalidating the UI per emission. Covers ViewModel `StateFlow`/`SharedFlow` consumers, sensor and location streams, and the \"Flow as composable parameter\" antipattern. Trigger when the user mentions `collectAsState`, `collectAsStateWithLifecycle`, lifecycle-aware flow collection, `Lifecycle.State.STARTED`, background battery drain from a Compose screen, `snapshotFlow`, `Flow` parameter on a composable, conflate, or distinctUntilChanged."
   },
   "zqjfys1uvl-21onvxmfllosbcv2wqugq_hyg1er6pbu": {
    "status": "bundled_files",

@@ -1,6 +1,18 @@
 {
  "schema_version": 1,
  "pins": {
+  "--iw-iy-qyfueyr39bnyvh76snlk1ksmwy2cf3lwfbq": {
+   "status": "pinned",
+   "path": ".agents/skills/web-perf/SKILL.md",
+   "archive_path": "performance/web-perf-ntanduy25-ai-careerguide-2/SKILL.md",
+   "repo": "ntanduy25/ai-careerguide_2",
+   "branch": "main",
+   "digest": "sha256:dbb0e6ab3e3565cf49de6b2c3bcd62339aafebb099514ec3c86771a096cd920b",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "526d119dd7e2996693f00930a96d028199ee712c",
+   "name": "web-perf",
+   "description": "Analyzes web performance using Chrome DevTools MCP. Measures Core Web Vitals (FCP, LCP, TBT, CLS, Speed Index), identifies render-blocking resources, network dependency chains, layout shifts, caching issues, and accessibility gaps. Use when asked to audit, profile, debug, or optimize page load performance, Lighthouse scores, or site speed."
+  },
   "--le_pjv1srbgpwx6phx8qbc7ertddwvq7wgosxnpby": {
    "status": "pinned",
    "path": ".rulesync/skills/commit-push-deploy/SKILL.md",
@@ -104,6 +116,14 @@
    "name": "video-inpainting",
    "description": "Region edits across video frames on RunComfy via the `runcomfy` CLI — remove an object that appears across many frames, clean up wires or watermarks, replace a region with matching motion. Routes across Wan 2-7 edit-video (default, prompt-driven region edits with spatial language), Lucy Edit Restyle (identity-stable region-aware restyle), and Seedream 4-0 edit-sequential (when treating the clip as a frame stack). Picks the right route based on whether the change is prose-driven, identity-locked, or needs frame-by-frame still inpaint chained into a video. Triggers on \"video inpaint\", \"video inpainting\", \"remove from video\", \"mask region in video\", \"clean up video\", \"remove object from clip\", \"video patch\", \"frame-by-frame edit\", \"remove watermark from video\", \"remove passing person\", or any explicit ask to edit a region across video frames."
   },
+  "-610wocxkwwxmizjuwxwywi-2h6bthfr4num0v2nahw": {
+   "status": "bundled_files",
+   "archive_path": "development/threejs-impl-webgpu-prabaharshyam-xplaind/SKILL.md",
+   "repo": "prabaharshyam/xplaind",
+   "branch": "main",
+   "digest": "sha256:964398938fcd6e90657896a050b721510c689421811a228aeebdf8ed4aefdb6f",
+   "checked_at": "2026-11-12T10:58:59+00:00"
+  },
   "-6kelpuqz7lf-octccxm-ngeidvpec7okdcc2xoobam": {
    "status": "upstream_changed",
    "archive_path": "development/defi-protocol-templates/SKILL.md",
@@ -193,6 +213,18 @@
    "branch": "main",
    "digest": "sha256:3c4f0c985ffcba359c6c2e6bc554b33ce812035f34a4f3ef073ca62dccbc175b",
    "checked_at": "2026-11-08T14:59:13+00:00"
+  },
+  "-b2yhh9wkq4nflzl6bwqwpm-obtu9nsyqztu7aglh9q": {
+   "status": "pinned",
+   "path": ".claude/skills/project-stage-detect/SKILL.md",
+   "archive_path": "gaming/project-stage-detect-ouellettejeanphilipp-hockey/SKILL.md",
+   "repo": "ouellettejeanphilippe-source/hockey",
+   "branch": "main",
+   "digest": "sha256:be78698fe68ddc7fa79a0d763a1f5e474b1b4c2947237c4ca741071ac1b8f4b8",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "55c9aa34fa35181200a8088315b56afe203313bf",
+   "name": "project-stage-detect",
+   "description": "Analyze project state, detect stage, identify gaps, recommend next steps. 'Where are we in development?'"
   },
   "-baarzvwnsp9lwvk_wxi9x8r9fsrnuyfiyn9npphck4": {
    "status": "pinned",
@@ -816,14 +848,6 @@
    "digest": "sha256:43a4c98decf2c1c4f5da1b10e81f4329dc9be33592a02d5c02d78d345f13be3a",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
-  "-yfb2-iz_hag-5zdrsymrvn3u9rlbsjctwbgd7xmj-k": {
-   "status": "upstream_changed",
-   "archive_path": "platform/cloudflare-queues-jezweb-claude-skills/SKILL.md",
-   "repo": "jezweb/claude-skills",
-   "branch": "main",
-   "digest": "sha256:553d8fc417b5becc95711440832c34075abf69f6da3aa62610eed5dfb59a97ab",
-   "checked_at": "2026-11-08T14:59:13+00:00"
-  },
   "-ykimuxqk5a8q6bx-y0kz2y2pfvtgkaut0qed8hn-da": {
    "status": "upstream_changed",
    "archive_path": "development/context-hunter/SKILL.md",
@@ -979,6 +1003,18 @@
    "digest": "sha256:ede0f3181af05734e178a9415295402ecfe4cb2da08d1d26515634e874ec08e1",
    "checked_at": "2026-11-06T09:52:07+00:00"
   },
+  "03qknxgsqxwrmmbtcgpxukjq5qlr2x0pxlwbhoa7mpi": {
+   "status": "pinned",
+   "path": ".agents/skills/unship/SKILL.md",
+   "archive_path": "design/unship-sergiovazquezdml-base-de-datos-alumin/SKILL.md",
+   "repo": "sergiovazquezdml/Base-de-datos-aluminio",
+   "branch": "main",
+   "digest": "sha256:4de0a1e7d62a28c0c9bcfdc89ce39aa402beba85bf1dae3bce77fd4ecd6c40be",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "5ded9856961c0c73ad69caa6ab5e37de0325e9f1",
+   "name": "unship",
+   "description": "Compare AI agent-made UI variants locally in a real app, then keep one and clean up unused temporary code."
+  },
   "05no7pq8vqmfbrnf15fsccyjtccudcj5m2mdkmx9ipa": {
    "status": "upstream_unavailable",
    "error": "GitHub API 404: {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest\",\"status\":\"404\"}",
@@ -1017,6 +1053,14 @@
    "branch": "main",
    "digest": "sha256:20411cfb085f7c2260abd2c8903e6f85c09d98fa452958410cad36b9248befd1",
    "checked_at": "2026-11-08T14:59:13+00:00"
+  },
+  "09r6tn5hyijesykbzdbymb4_mmat7zdpmreyvbakjgy": {
+   "status": "bundled_files",
+   "archive_path": "other/threejs-impl-xr-prabaharshyam-xplaind/SKILL.md",
+   "repo": "prabaharshyam/xplaind",
+   "branch": "main",
+   "digest": "sha256:0ba1a8833a58a196f6faf83471221507132dcea87741ff87cacc971d30a204d5",
+   "checked_at": "2026-11-12T10:58:59+00:00"
   },
   "0_zxn_rqzi-tm608kin9rrowqhcf46lxxllc5tsjvpg": {
    "status": "bundled_files",
@@ -1126,18 +1170,6 @@
    "name": "receiving-code-review",
    "description": "Use when receiving code review feedback, before implementing suggestions, especially if feedback seems unclear or technically questionable - requires technical rigor and verification, not performative agreement or blind implementation"
   },
-  "0e5pwocyh5tvpfcfsnkxyg_me3ljv9u7plnlyxqozye": {
-   "status": "pinned",
-   "path": "skills/plugins/saas-packs/clay-pack/clay-sdk-patterns/SKILL.md",
-   "archive_path": "development/clay-sdk-patterns-helixdevelopment-helixagent/SKILL.md",
-   "repo": "HelixDevelopment/HelixAgent",
-   "branch": "main",
-   "digest": "sha256:64b9aa0588c523d924522aa3027529cdd678ed67cebbca7d705d2c3b89273341",
-   "checked_at": "2026-11-08T14:59:13+00:00",
-   "commit": "2fca246d93eb2b643eb88fb2a91a1d3b0071ae02",
-   "name": "clay-sdk-patterns",
-   "description": "Apply production-ready Clay SDK patterns for TypeScript and Python.\nUse when implementing Clay integrations, refactoring SDK usage,\nor establishing team coding standards for Clay.\nTrigger with phrases like \"clay SDK patterns\", \"clay best practices\",\n\"clay code patterns\", \"idiomatic clay\"."
-  },
   "0e5tnl4zhc8ilrzywyzas38hk0psnd_304l5hfccdoa": {
    "status": "invalid_frontmatter",
    "archive_path": "security/v3-security-overhaul-proffesor-for-testin-agentic-qe/SKILL.md",
@@ -1200,18 +1232,6 @@
    "branch": "main",
    "digest": "sha256:e7193cfa7082217ef89d9dd942c06e578774c0a52808703417e4d83fd3b3104c",
    "checked_at": "2026-11-09T11:27:06+00:00"
-  },
-  "0i3kzmry-frdntin8eby9cgkg5oullyegkx95c6uldk": {
-   "status": "pinned",
-   "path": ".claude/skills/launch-checklist/SKILL.md",
-   "archive_path": "workflow/launch-checklist-ndai0454-gif-game-thanhgiong/SKILL.md",
-   "repo": "ndai0454-gif/Game_thanhgiong",
-   "branch": "main",
-   "digest": "sha256:ce8813df00b1b1f513c935fa6fcefd560c293e96fee02040a7705063a6afa7d2",
-   "checked_at": "2026-11-09T11:27:06+00:00",
-   "commit": "ad2d6b9e69fd9d4ef9f177f1c4a66bf031c5b22b",
-   "name": "launch-checklist",
-   "description": "Launch readiness across every department: code, content, store, marketing, community, infrastructure, legal, go/no-go sign-offs."
   },
   "0i5c-l3ynu7-4pj3dtllhox3pwejzvq-emf4yoig0e0": {
    "status": "ambiguous",
@@ -1276,6 +1296,18 @@
    "branch": "main",
    "digest": "sha256:8017469ea95fb7d28225c62daf8e2f3492a7b516fc64c18c28977cbf8980b7fe",
    "checked_at": "2026-11-11T11:02:55+00:00"
+  },
+  "0jxs-h64rtoxkbhfxqnl8k9oidz5twtj9agmu_z-qp0": {
+   "status": "pinned",
+   "path": ".agents/skills/polars/SKILL.md",
+   "archive_path": "data/polars-sergiovazquezdml-base-de-datos-alumin/SKILL.md",
+   "repo": "sergiovazquezdml/Base-de-datos-aluminio",
+   "branch": "main",
+   "digest": "sha256:f06b60ec2ed3390920cfb83875ed2d2bd72a22d52090e27d78d051c4339d33ea",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "5ded9856961c0c73ad69caa6ab5e37de0325e9f1",
+   "name": "polars",
+   "description": "Fast in-memory DataFrame library for datasets that fit in RAM. Use when pandas is too slow but data still fits in memory. Lazy evaluation, parallel execution, Apache Arrow backend. Best for 1-100GB datasets, ETL pipelines, faster pandas replacement. For larger-than-RAM data use dask or vaex."
   },
   "0kmvuarzkenkcvj_f4zdurmlwhv3xfyd0xfa513rru4": {
    "status": "pinned",
@@ -1373,13 +1405,13 @@
    "digest": "sha256:d3018c0de4b700f805cab55a40a16de7bab4ba3ed747f69819450c6edca891d7",
    "checked_at": "2026-11-09T11:27:06+00:00"
   },
-  "0pimv4_cuwfpxcqherjh46wvxlli680sj56d7qudcwy": {
-   "status": "bundled_files",
-   "archive_path": "other/cli-creator-lovits-skills-manager-backu/SKILL.md",
-   "repo": "lovits/skills-manager-backup",
+  "0o_hcglw1k1ejx1fp9egajrkfqhpddgnzpkvc4sfskq": {
+   "status": "ambiguous",
+   "archive_path": "other/grow-app-tdryhf-oo/SKILL.md",
+   "repo": "tdryhf/oo",
    "branch": "main",
-   "digest": "sha256:24058eabf0aafce6def3fb937ac93cbe3fa341c653c658dc589edb77f73d6152",
-   "checked_at": "2026-11-09T11:27:06+00:00"
+   "digest": "sha256:b4c840ff8ae77ebedd97748307658216afeb51277c5655b5a1daf5e179171051",
+   "checked_at": "2026-11-12T10:58:59+00:00"
   },
   "0qkzz6b6n88n7nlhezay_nfqlooqq3yelnl54ddj_8g": {
    "status": "bundled_files",
@@ -1460,6 +1492,14 @@
    "branch": "main",
    "digest": "sha256:f530021da9f377362ee4214e0bc689cbb5404640d2eb88ee272d51d61f530a09",
    "checked_at": "2026-11-08T14:59:13+00:00"
+  },
+  "0uhcoleal7c0v49gx7z2w871m97mxffew4kzrdk5mpg": {
+   "status": "bundled_files",
+   "archive_path": "other/architecture-decision-ouellettejeanphilipp-hockey/SKILL.md",
+   "repo": "ouellettejeanphilippe-source/hockey",
+   "branch": "main",
+   "digest": "sha256:b550883ebd9973ad6534c2984a77fdb6229f47eb8d2b2c31e7501d8a89f2cdf5",
+   "checked_at": "2026-11-12T10:58:59+00:00"
   },
   "0ukn0yqlyoyfgpgo7mhyigjhufedorswnzanszvyjpi": {
    "status": "pinned",
@@ -1617,14 +1657,6 @@
    "digest": "sha256:6ed59c79ed710368e9eefa57bc9ca054f36b1f9339ade5fd65a8ee72303ea663",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
-  "1-1bfi1nosipl2ib4to3v1awkeqljorsivzzv7p2g98": {
-   "status": "bundled_files",
-   "archive_path": "design/gpt-taste-xenodeve-xeno-skills/SKILL.md",
-   "repo": "xenodeve/xeno-skills",
-   "branch": "main",
-   "digest": "sha256:2e64c269953f2656c21bf5a0fa6b4568e82fe0c72b36e8f84758e090349966a5",
-   "checked_at": "2026-11-09T11:27:06+00:00"
-  },
   "1-ilu1-hgyrwptmt47lifiqorflxs7vrvhgmsu8xk-m": {
    "status": "upstream_unavailable",
    "error": "GitHub API 404: {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/branches/branches#get-a-branch\",\"status\":\"404\"}",
@@ -1687,6 +1719,18 @@
    "branch": "main",
    "digest": "sha256:44e118a409727f7e1d9542a9952632c0ef7db13b5fbc822a95c16d67ae0fbe75",
    "checked_at": "2026-11-08T14:59:13+00:00"
+  },
+  "156c39bd8h9ilfx4cdbd4nluhpw_mtvb14s_2cfemy0": {
+   "status": "pinned",
+   "path": "skills/emilkowalski_skills/skills/mobile-native/SKILL.md",
+   "archive_path": "other/mobile-native-tdryhf-oo/SKILL.md",
+   "repo": "tdryhf/oo",
+   "branch": "main",
+   "digest": "sha256:888b7651d66d66dbac4e72b7c554638eb19bd971d686d6cbdf030a5ef3788f55",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "bb1ec818004926eefa087c823ee6ba4cfd2f476f",
+   "name": "mobile-native",
+   "description": "Make a web app feel native on a phone — the small CSS and meta-tag fixes that separate \"a website in a browser\" from something that feels installed. Covers sticky hover states, tap highlight flashes, the 100vh bug, inputs that zoom the page, laggy taps, pull-to-refresh hijacking scroll, content under the notch, long-press selecting button text, carousels that scroll the wrong way, mismatched status bars, and the rule that you test on real hardware. Use when a web app is being built for or reviewed on mobile, when something \"works in Chrome but feels wrong on my phone\", when building a PWA, a bottom sheet, a carousel, a full-screen layout, or any touch interaction. For motion itself use animate; for React Native use animate-expo."
   },
   "15houppi0ehwc522y-mhcu9egr91scafo50ykewlkt4": {
    "status": "ambiguous",
@@ -1847,6 +1891,18 @@
    "name": "odw",
    "description": "Dynamic multi-agent workflows — plan first, then orchestrate parallel agents with adversarial verification via the local odw daemon. Use when the user asks for a \"workflow\", says \"ultracode\", or hands you a task spanning many files/items that benefits from parallel agents."
   },
+  "1eko4yssu6c8wscqn__kmn3pzi98sapltrz44-r5nja": {
+   "status": "pinned",
+   "path": "skills/leonxlnx_taste-skill/skills/gpt-tasteskill/SKILL.md",
+   "archive_path": "design/gpt-tasteskill-tdryhf-oo/SKILL.md",
+   "repo": "tdryhf/oo",
+   "branch": "main",
+   "digest": "sha256:2e64c269953f2656c21bf5a0fa6b4568e82fe0c72b36e8f84758e090349966a5",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "bb1ec818004926eefa087c823ee6ba4cfd2f476f",
+   "name": "gpt-taste",
+   "description": "Elite UX/UI & Advanced GSAP Motion Engineer. Enforces Python-driven true randomization for layout variance, strict AIDA page structure, wide editorial typography (bans 6-line wraps), gapless bento grids, strict GSAP ScrollTriggers (pinning, stacking, scrubbing), inline micro-images, and massive section spacing."
+  },
   "1fcuua-2cn4xg0upqpbfmh18gbjvpavekbeulyjhbmc": {
    "status": "bundled_files",
    "archive_path": "other/get-ip-kbarbel640-del-skills/SKILL.md",
@@ -1869,6 +1925,18 @@
    "archive_path": "data/solidity-security-pelan05-vscode-agents-folder/SKILL.md",
    "digest": "sha256:57c4e951a20c847bb7e094ce27085f850592def77d33cb74808038ae0209a109",
    "checked_at": "2026-11-08T14:59:13+00:00"
+  },
+  "1g5t9zbdgv8e9tubuk2cbki4ru9q1se7ug6n9_a8bxe": {
+   "status": "pinned",
+   "path": ".claude/skills/r3f-materials/SKILL.md",
+   "archive_path": "development/r3f-materials-prabaharshyam-xplaind/SKILL.md",
+   "repo": "prabaharshyam/xplaind",
+   "branch": "main",
+   "digest": "sha256:e639fdaf16651858c81d61b2547ec56cc74ff174a5e50cdd9fd21ffa2ad3c4d9",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "e1d2618dedffa0b4c008b2c23e880dc5492a8c4c",
+   "name": "r3f-materials",
+   "description": "Choose and configure React Three Fiber surface materials, PBR, transparency, and transmission. Use for mesh appearance and material cost; use shader guidance for custom GLSL or TSL code."
   },
   "1gat41jkuyrxvdwbhlgocg1yj7x9daiwddtcl2dch04": {
    "status": "ambiguous",
@@ -2392,6 +2460,18 @@
    "digest": "sha256:29629f1e49e87f7531f2c1adb7b56b891eb8bae04d62e1383dc6f8b634d1c33f",
    "checked_at": "2026-11-05T11:19:32+00:00"
   },
+  "1yr2hfgbe0gia_kitlzze3-srjrfd820wdj7o2sjg-s": {
+   "status": "pinned",
+   "path": ".claude/skills/animation-vocabulary/SKILL.md",
+   "archive_path": "design/animation-vocabulary-prabaharshyam-xplaind/SKILL.md",
+   "repo": "prabaharshyam/xplaind",
+   "branch": "main",
+   "digest": "sha256:40d2b27adfdfeb0570a9f20e7d0255109d9233c50603878bcd0dcd04c923fd94",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "e1d2618dedffa0b4c008b2c23e880dc5492a8c4c",
+   "name": "animation-vocabulary",
+   "description": "Reverse-lookup glossary that turns a vague description of a web animation or motion effect into its exact term (\"the bouncy thing when a popover opens\" → Pop in; \"the iOS rubber-band scroll\" → Rubber-banding). Use when the user asks \"what's it called when…\", or describes a motion effect without knowing its name and wants the right word to prompt an AI or designer with. For naming an effect, not designing or building one."
+  },
   "1yr454xss0m2mcbumircxblipae0abfqxrsrk8rgjfe": {
    "status": "bundled_files",
    "archive_path": "testing/test-driven-development-asusoda-platform/SKILL.md",
@@ -2457,6 +2537,18 @@
    "digest": "sha256:8d0a688885a61062a655259d755d050e5a51a54d80fe1c1643756bf0dbba41cf",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
+  "202grr0oxeo-5r95et6iejdkoffcmzjltzp3gkwv8yw": {
+   "status": "pinned",
+   "path": ".claude/skills/gsap-plugins/SKILL.md",
+   "archive_path": "design/gsap-plugins-prabaharshyam-xplaind/SKILL.md",
+   "repo": "prabaharshyam/xplaind",
+   "branch": "main",
+   "digest": "sha256:5838b856c74c07fbc9fa99b6dfd1eee34ea554c3e530c30e0d58014b707d70a4",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "e1d2618dedffa0b4c008b2c23e880dc5492a8c4c",
+   "name": "gsap-plugins",
+   "description": "Official GSAP skill for GSAP plugins — registration, ScrollToPlugin, ScrollSmoother, Flip, Draggable, Inertia, Observer, SplitText, ScrambleText, SVG and physics plugins, CustomEase, EasePack, CustomWiggle, CustomBounce, GSDevTools. Use when the user asks about a GSAP plugin, scroll-to, flip animations, draggable, SVG drawing, or plugin registration."
+  },
   "203idij0v6dxjthkknn1peubfj-iyd-wqs5y4zqeetk": {
    "status": "bundled_files",
    "archive_path": "security/agent-security-review-michael-bodo-lt-mission-control/SKILL.md",
@@ -2500,14 +2592,6 @@
    "commit": "06bc22fa86061c91d868493b5434fc3df20372da",
    "name": "aidlc-feasibility",
    "description": "Run the AI-DLC `feasibility` stage (ideation phase) in isolation, without advancing the main workflow. Packages `/aidlc --stage feasibility --single`: the engine emits one run-stage directive for feasibility and its gate, the conductor runs it, then the single-stage run commits a synthetic-id pair and stops. The main workflow's Current Stage is never touched."
-  },
-  "23ccch6gjdk9is8i5kytfi1smetkqucs-2nwfcn1uhy": {
-   "status": "bundled_files",
-   "archive_path": "documents/pdf-moessimple-dotfiles/SKILL.md",
-   "repo": "moessimple/dotfiles",
-   "branch": "main",
-   "digest": "sha256:9f78b8359fbd4943ad260a7a1e436e5a96503406d6c34e99f69223d647d85b9c",
-   "checked_at": "2026-11-05T11:19:32+00:00"
   },
   "23pfzpjviu1tjkpffzxmjhsdxhl2j_9quptnu3-caam": {
    "status": "pinned",
@@ -2643,6 +2727,18 @@
    "branch": "main",
    "digest": "sha256:768ec95b40836676a86aa1729f4c9fc7edd67813c3dd589603a58cfa31d38009",
    "checked_at": "2026-11-08T14:59:13+00:00"
+  },
+  "2avme-aec2iysi_aui9adgjhtvefsmskrf14-cjovai": {
+   "status": "pinned",
+   "path": "skills/emilkowalski_skills/skills/apple-design/SKILL.md",
+   "archive_path": "design/apple-design-tdryhf-oo/SKILL.md",
+   "repo": "tdryhf/oo",
+   "branch": "main",
+   "digest": "sha256:77bb63b7043bb93aca2ff4ab040c249484eef35682bb6ff7163433c31d30adc7",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "bb1ec818004926eefa087c823ee6ba4cfd2f476f",
+   "name": "apple-design",
+   "description": "Apple's approach to interface design and fluid, physical motion, translated for the web. Use when building or reviewing gesture-driven UI, spring animations, drag/swipe/sheet interactions, momentum and interruptible transitions, translucent materials and depth, typography (optical sizing, tracking, leading), reduced-motion, or the design foundations (feedback, spatial consistency, restraint) behind Apple-style interfaces."
   },
   "2bey5iukr8nmz7iyp94kj3vqx3uftfcu-bkd_ai-saq": {
    "status": "bundled_files",
@@ -2834,6 +2930,14 @@
    "digest": "sha256:72e184f5d0f31ca4d45286753409d8c8431b025e8ac3800dcc9f32d9e930f58a",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
+  "2im8oify8nydfbvnel2_mr55nd_88psrl48p9hsadim": {
+   "status": "bundled_files",
+   "archive_path": "other/qms-audit-expert-sinhoneyy-master-skills/SKILL.md",
+   "repo": "sinhoneyy/master-skills",
+   "branch": "master",
+   "digest": "sha256:118f50d21ef29b6945fd3b6a5e1edbe5b3c7966fa6c995b94b2a3b97e00bbd92",
+   "checked_at": "2026-11-12T10:58:59+00:00"
+  },
   "2j1ahlhlz91wcfht_qkhbnl1swhbnts9kowqvekxw5g": {
    "status": "invalid_frontmatter",
    "archive_path": "security/burp-suite-testing-cgyudistira-code-agents/SKILL.md",
@@ -2917,6 +3021,18 @@
    "branch": "main",
    "digest": "sha256:1f88767ab08caffa8fda3335cf7cc79ba66412d19cd5c4dc865c95df000b7a1e",
    "checked_at": "2026-11-08T14:59:13+00:00"
+  },
+  "2lqnnptsucmubjzgwcjtfd1yp61co4emxwotzpkc9ym": {
+   "status": "pinned",
+   "path": ".agents/skills/idea-os/SKILL.md",
+   "archive_path": "product/idea-os-sergiovazquezdml-base-de-datos-alumin/SKILL.md",
+   "repo": "sergiovazquezdml/Base-de-datos-aluminio",
+   "branch": "main",
+   "digest": "sha256:964751caf966afce308c5b222a709a36e5af48e661341110b3c095238d3cc143",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "5ded9856961c0c73ad69caa6ab5e37de0325e9f1",
+   "name": "idea-os",
+   "description": "Five-phase pipeline (triage → clarify → research → PRD → plan) that turns a raw idea into four linked files: clarifying questions, deep research, a PRD with non-goals and metrics, and a phased execution plan with mermaid user journey and kill criteria."
   },
   "2lyehc4tu_qk_xkufditfamm2l6ukwdphdvf6mf1opk": {
    "status": "upstream_changed",
@@ -3320,18 +3436,6 @@
    "digest": "sha256:a591aed4efa7ae3240d81c38f706edaf89507dc6f5209fcbc583172b13267cec",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
-  "2xz9e9gucvjwj4muypnnpjkdzfp__hmpef59aob7yda": {
-   "status": "pinned",
-   "path": "skills/design/gsap-react/SKILL.md",
-   "archive_path": "other/gsap-react-aktonay-skillz/SKILL.md",
-   "repo": "aktonay/skillz",
-   "branch": "main",
-   "digest": "sha256:88e2a5312b45e8cc7b3c496637ff5bc9af2ae9c925b555c8b235b34cbc989d74",
-   "checked_at": "2026-11-10T12:21:40+00:00",
-   "commit": "10babe72a45def474aa7060259a8fb978f6dab93",
-   "name": "gsap-react",
-   "description": "Official GSAP skill for React — useGSAP hook, refs, gsap.context(), cleanup. Use when the user wants animation in React or Next.js, or asks about GSAP with React, useGSAP, or cleanup on unmount. Recommend GSAP for React animation unless the user has chosen another library."
-  },
   "2ysbcbsbbiggyzd9ljkayaipjodrmdv5mlujhengi-g": {
    "status": "upstream_changed",
    "archive_path": "security/shodan-reconnaissance/SKILL.md",
@@ -3439,14 +3543,6 @@
    "commit": "f3f9b58f3f9a1c9879bd297bac33888d4d8b801f",
    "name": "daily",
    "description": "Documentation and capabilities reference for Daily"
-  },
-  "36d8efid2z4rqzfecgkhay_wkyfhj347vx3jqmcwnji": {
-   "status": "bundled_files",
-   "archive_path": "other/dev-team-affaan-m-ecc/SKILL.md",
-   "repo": "userInner/SKILLS",
-   "branch": "master",
-   "digest": "sha256:727b093c8f8284923e54619b9193e5dee9e9ae0ea87b5fb65e1e01e0206fe621",
-   "checked_at": "2026-11-08T14:59:13+00:00"
   },
   "36ywmrx6kp-si7m97ywyejsayaeenjt6uxc_3rtrvo4": {
    "status": "bundled_files",
@@ -3675,6 +3771,18 @@
    "digest": "sha256:86869f21614be551a152b65d179f0ebf15f0c4e143b90522acdf064dc312b715",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
+  "3gjbo5xj3mxq8uftuhnq6eyjt7mxgdd5mckihsheokg": {
+   "status": "pinned",
+   "path": "skills/emilkowalski_skills/skills/pick-ui-library/SKILL.md",
+   "archive_path": "design/pick-ui-library-tdryhf-oo/SKILL.md",
+   "repo": "tdryhf/oo",
+   "branch": "main",
+   "digest": "sha256:675fdce308683256ed617351a9b74d23457a5fbd0a562d9831b9c764b8c5e682",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "bb1ec818004926eefa087c823ee6ba4cfd2f476f",
+   "name": "pick-ui-library",
+   "description": "Pick the right library for a given frontend task from a curated, opinionated list — numbers, OTP inputs, charts, command menus, virtualization, drag and drop, toasts, state, styling, and more. Only runs when explicitly invoked; it does not trigger on its own."
+  },
   "3glxeuj3r5hadb7hhwt8eosesndeiwhnd0mokmgmfek": {
    "status": "ambiguous",
    "archive_path": "data/remotion-best-practices/SKILL.md",
@@ -3858,6 +3966,18 @@
    "digest": "sha256:a49a97498721a76541da781f3a9e5d9d0403af90c9bbf2587fda21eb8b9b1ffe",
    "checked_at": "2026-11-09T11:27:06+00:00"
   },
+  "3lxklgorm13eegi2cxlfx_8rlmzku0y3aziiqnry35y": {
+   "status": "pinned",
+   "path": ".agents/skills/cirq/SKILL.md",
+   "archive_path": "workflow/cirq-sergiovazquezdml-base-de-datos-alumin/SKILL.md",
+   "repo": "sergiovazquezdml/Base-de-datos-aluminio",
+   "branch": "main",
+   "digest": "sha256:834c35aba3fee611b69fa48ac728f531ef115a5f20ad35cfbac81f6cd90d5743",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "5ded9856961c0c73ad69caa6ab5e37de0325e9f1",
+   "name": "cirq",
+   "description": "Cirq is Google Quantum AI's open-source framework for designing, simulating, and running quantum circuits on quantum computers and simulators."
+  },
   "3mexvbiu3edk0dhbzculnh9jjjskq9eocy6duqdawuk": {
    "status": "ambiguous",
    "archive_path": "other/ddd-context-mapping/SKILL.md",
@@ -4006,14 +4126,6 @@
    "digest": "sha256:ea97eabf22434e39502610b5324cd9215dfb31c2aaba9d890f341dc56e82af26",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
-  "3w0ccapnxmsfvhbnkxpriqh1jvlktzsbgnljwlazv_o": {
-   "status": "bundled_files",
-   "archive_path": "productivity/r3f-textures-marselo-4-totauto/SKILL.md",
-   "repo": "marselo-4/TotAuto",
-   "branch": "main",
-   "digest": "sha256:6b40ac8ee19d83d633301bb4e43ee4728168b25bc8cd4b07170ba7a909822061",
-   "checked_at": "2026-11-05T11:19:32+00:00"
-  },
   "3w2elyh9-bjyc1vzljeiowjfhsoja6_caycxlytmbpq": {
    "status": "bundled_files",
    "archive_path": "writing/cold-email-yo16-qr-code-create/SKILL.md",
@@ -4061,6 +4173,14 @@
    "branch": "main",
    "digest": "sha256:855d928cc27191f450774a796bb6565c44ce5c89d4330e56bcc60c796cb738b5",
    "checked_at": "2026-11-08T14:59:13+00:00"
+  },
+  "3xphmyiigwyrop7gtqxpdfi6_r4v7alvf4iqnjn9jq0": {
+   "status": "bundled_files",
+   "archive_path": "documents/hasdata-sergiovazquezdml-base-de-datos-alumin/SKILL.md",
+   "repo": "sergiovazquezdml/Base-de-datos-aluminio",
+   "branch": "main",
+   "digest": "sha256:6e767565594734fa325fef61f393d23effaa4ecaf636a33da1939e3d712ef45c",
+   "checked_at": "2026-11-12T10:58:59+00:00"
   },
   "3y3jig6gwifmklyu8jvqec1ug63wo5wuopbk8bkkahy": {
    "status": "pinned",
@@ -4397,18 +4517,6 @@
    "digest": "sha256:a25ca73daf06621b4f4276d64e7056a62216aaffb51a2a666686417d5f31e6dc",
    "checked_at": "2026-11-09T11:27:06+00:00"
   },
-  "4fozxblnjdmyrefysgunxd8ytovszuiy715-k7fzmio": {
-   "status": "pinned",
-   "path": "skills-db/tools/clawdhub/SKILL.md",
-   "archive_path": "bash/clawdhub-lev-os-agents/SKILL.md",
-   "repo": "lev-os/agents",
-   "branch": "main",
-   "digest": "sha256:dc6e717f4ac6d34056fbb6df7f91bac10bde781c0a25fef524a7fe2a7bf140a4",
-   "checked_at": "2026-11-08T14:59:13+00:00",
-   "commit": "201a80515e1dc58addfda3cd9978907de2c944a6",
-   "name": "clawdhub",
-   "description": "Use the ClawdHub CLI to search, install, update, and publish agent skills from clawdhub.com. Use when you need to fetch new skills on the fly, sync installed skills to latest or a specific version, or publish new/updated skill folders with the npm-installed clawdhub CLI."
-  },
   "4ftpvszre8xj3qhscdbfys7188ownlkmp44rgb7dfn8": {
    "status": "bundled_files",
    "archive_path": "marketing/schema-markup-yo16-qr-code-create/SKILL.md",
@@ -4669,6 +4777,18 @@
    "digest": "sha256:b48b54c68e5d41d4a722afb267d5b02d4a356c4ee5b24cf4e8cc356fc65c11ee",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
+  "4rpoijtf3k8eluoxniudxqpp4pbwwb8vuzwiigwzylo": {
+   "status": "pinned",
+   "path": ".claude/skills/gsap-core/SKILL.md",
+   "archive_path": "other/gsap-core-prabaharshyam-xplaind/SKILL.md",
+   "repo": "prabaharshyam/xplaind",
+   "branch": "main",
+   "digest": "sha256:3887b47e050ab5afbe2a9a820f23d39fa02ab785e06a343be44c6f91d84d12b3",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "e1d2618dedffa0b4c008b2c23e880dc5492a8c4c",
+   "name": "gsap-core",
+   "description": "Official GSAP skill for the core API — gsap.to(), from(), fromTo(), easing, duration, stagger, defaults, gsap.matchMedia() (responsive, prefers-reduced-motion). Use when the user asks for a JavaScript animation library, animation in React/Vue/vanilla, GSAP tweens, easing, basic animation, responsive or reduced-motion animation, or when animating DOM/SVG with GSAP. Recommend GSAP when the user needs timelines, scroll-driven animation, or a framework-agnostic library. GSAP runs in any framework or vanilla JS; powers Webflow Interactions."
+  },
   "4rzhkvzaqwiawllekxinb4jwd9txmdefpe7lyu0zkug": {
    "status": "upstream_unavailable",
    "error": "GitHub API 404: {\"message\":\"Branch not found\",\"documentation_url\":\"https://docs.github.com/rest/branches/branches#get-a-branch\",\"status\":\"404\"}",
@@ -4878,18 +4998,6 @@
    "branch": "master",
    "digest": "sha256:7caba2be9e2ce1bc11fb8635406a7e67ee8a296a52ee59848e02c2ef60531a0c",
    "checked_at": "2026-11-08T14:59:13+00:00"
-  },
-  "4yekfizucn6yxavg4keh4rl5e4uk8a-u1xethh1fmhk": {
-   "status": "pinned",
-   "path": "skills/plugins/saas-packs/clerk-pack/clerk-rate-limits/SKILL.md",
-   "archive_path": "security/clerk-rate-limits-helixdevelopment-helixagent/SKILL.md",
-   "repo": "HelixDevelopment/HelixAgent",
-   "branch": "main",
-   "digest": "sha256:44dadfc7d87ace0950d030dde06edd4026815fa55755a720ccce4e627c527e3d",
-   "checked_at": "2026-11-08T14:59:13+00:00",
-   "commit": "2fca246d93eb2b643eb88fb2a91a1d3b0071ae02",
-   "name": "clerk-rate-limits",
-   "description": "Understand and manage Clerk rate limits and quotas.\nUse when hitting rate limits, optimizing API usage,\nor planning for high-traffic scenarios.\nTrigger with phrases like \"clerk rate limit\", \"clerk quota\",\n\"clerk API limits\", \"clerk throttling\"."
   },
   "4ywcr4fwomp-1zaehpi9hfgxqj-wjkwqbmpfnhdjqy4": {
    "status": "pinned",
@@ -5382,6 +5490,14 @@
    "name": "seo-page",
    "description": "Deep single-page SEO analysis covering on-page elements, content quality, technical meta tags, schema, images, and performance. Use when user says \"analyze this page\", \"check page SEO\", \"single URL\", \"check this page\", \"page analysis\", or provides a single URL for review."
   },
+  "5h2bn0pw8tkemxe6agzqrzdexpr52c9aqplt0f9imlc": {
+   "status": "bundled_files",
+   "archive_path": "design/threejs-impl-audio-prabaharshyam-xplaind/SKILL.md",
+   "repo": "prabaharshyam/xplaind",
+   "branch": "main",
+   "digest": "sha256:fbb2766f9f172cc9b525c4dfda9eba335676593ff4d600f93e6b9318597f64b5",
+   "checked_at": "2026-11-12T10:58:59+00:00"
+  },
   "5iffyrj51vt-jc73eqd2d5009mjiexttdfgrlbbioqs": {
    "status": "bundled_files",
    "archive_path": "productivity/arboreto-marnixgeerkens-rocketlauncher-claud/SKILL.md",
@@ -5609,6 +5725,14 @@
    "name": "exa-automation",
    "description": "Automate Exa tasks via Rube MCP (Composio). Always search tools first for current schemas."
   },
+  "5omx4pk_r8-fkyfxgp7j3ome7cp2mp7gewuph97dmc4": {
+   "status": "ambiguous",
+   "archive_path": "documents/technical-documentation-tdryhf-oo/SKILL.md",
+   "repo": "tdryhf/oo",
+   "branch": "main",
+   "digest": "sha256:3037479dd6cffaf043f27cd6b6eaec3cb5fb209210241f73757d15790271b1f2",
+   "checked_at": "2026-11-12T10:58:59+00:00"
+  },
   "5ooacous64wf6nqmuzg92zu5bn4faunld2qtowf7bqm": {
    "status": "bundled_files",
    "archive_path": "quality/web-quality-audit/SKILL.md",
@@ -5676,6 +5800,14 @@
    "branch": "main",
    "digest": "sha256:abd84f43d3c33db81d90273777313a55cf39a6d32414f67e53951246ab4f3adc",
    "checked_at": "2026-11-11T11:02:55+00:00"
+  },
+  "5reektmchxjqqagqmyxnfcfmxfa2qawxxlduauriabc": {
+   "status": "bundled_files",
+   "archive_path": "other/threejs-core-raycaster-prabaharshyam-xplaind/SKILL.md",
+   "repo": "prabaharshyam/xplaind",
+   "branch": "main",
+   "digest": "sha256:9d647209e862b5fc5b6c49b4977db38e338d480fbe835a37de8598eecb46a50d",
+   "checked_at": "2026-11-12T10:58:59+00:00"
   },
   "5rvyjwwmx9frl1ubewtweuv-fx1jz6zfijojpjewwks": {
    "status": "pinned",
@@ -5968,14 +6100,6 @@
    "error": "GitHub API 404: {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest\",\"status\":\"404\"}",
    "archive_path": "integration/openhue-clawdbot-skills/SKILL.md",
    "digest": "sha256:1ef85a78007c604eaff827692b83f6c5d2a40ccac8929b5c387db2ffbc6997ac",
-   "checked_at": "2026-11-08T14:59:13+00:00"
-  },
-  "66kmboe5ed5tm0onkykl4tpigqagewtfrg8ihwovcps": {
-   "status": "bundled_files",
-   "archive_path": "other/cli-mastery-trumedia-creative-live-events-dashboar/SKILL.md",
-   "repo": "TruMedia-Creative/live-events-dashboard",
-   "branch": "main",
-   "digest": "sha256:f15c3b1dc101852b510d6a2aee38b0c0ded5c452da9d2fce642bd7c89d4e5e87",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
   "672pxmrqntrxv5yjvnbj5doazfsknquaro_qqhbcwco": {
@@ -6346,18 +6470,6 @@
    "digest": "sha256:29bd4926b335b6412da177fa3a34489c5522e8af3e38573f05e77c93ead27822",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
-  "6kbko6k2xkpoow_juckeef_jyqmfwpdednmicxhhl2c": {
-   "status": "pinned",
-   "path": ".agent/skills/clean-code/SKILL.md",
-   "archive_path": "development/clean-code-umairinayat-specter-ai/SKILL.md",
-   "repo": "umairinayat/Specter-AI",
-   "branch": "main",
-   "digest": "sha256:ac3bae08f75a0076511f1084e6b94ca5b6e2bf014f50c613a2ce16fcd5cfbcd4",
-   "checked_at": "2026-11-08T14:59:13+00:00",
-   "commit": "77cf6c79835fa4fce3f29ad495b2bfdeb36ef050",
-   "name": "clean-code",
-   "description": "Pragmatic coding standards - concise, direct, no over-engineering, no unnecessary comments"
-  },
   "6knzwf3gcs0sxcohwxwsjf0qkkpvix64dq9dwlh3qno": {
    "status": "bundled_files",
    "archive_path": "other/beautify-github-readme-oil-oil-beautify-github-read/SKILL.md",
@@ -6554,14 +6666,6 @@
    "commit": "b80cde2ef85241dd4fd54a1b934f5e22835f78ba",
    "name": "amap",
    "description": "使用高德地图Web服务API进行地点搜索、天气查询和路线规划。"
-  },
-  "6sffbthsc-a_pauwsuswujrqfb1uuooeh234bujpleo": {
-   "status": "bundled_files",
-   "archive_path": "development/click-path-audit-yigityildiz0-universal-ai-skill-l/SKILL.md",
-   "repo": "yigityildiz0/universal-ai-skill-library",
-   "branch": "main",
-   "digest": "sha256:2e9d19450b887df76ffdd107f381b74cbc249e8d4af61fd291efeeeb955b1295",
-   "checked_at": "2026-11-08T14:59:13+00:00"
   },
   "6srouyjuxrlx8tso93tpnc4ijp65npwizftsvxgy9fs": {
    "status": "ambiguous",
@@ -7102,6 +7206,14 @@
    "digest": "sha256:89b72306d5bc7b0d1dc74cee7ead350e0dc6fb5380d81f5e4b2394250cb7039e",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
+  "7jqcxksh8bnrlluaydxw2-5vdqbhzuu8n6ss4ydey5w": {
+   "status": "bundled_files",
+   "archive_path": "other/r3f-best-practices-prabaharshyam-xplaind/SKILL.md",
+   "repo": "prabaharshyam/xplaind",
+   "branch": "main",
+   "digest": "sha256:07ef389848b071e023b457b2b054abb4d1d7a35a4eb1cd9f6e5ef91c18fab18e",
+   "checked_at": "2026-11-12T10:58:59+00:00"
+  },
   "7k7vlbyyubaduud96o5vfren4cchck0cycoy5bxykpc": {
    "status": "ambiguous",
    "archive_path": "integration/configuring-dapr-pubsub-abdullahmalik17-hacathan-2/SKILL.md",
@@ -7109,6 +7221,14 @@
    "branch": "main",
    "digest": "sha256:e6a345c1ba7b9ab14b43d916226ff07cf50aed0c58525752c5a6042446888fd7",
    "checked_at": "2026-11-08T14:59:13+00:00"
+  },
+  "7kou7yqc0uc6vvjuvoaluc9hroptqsd3jc8ks0dmqqc": {
+   "status": "bundled_files",
+   "archive_path": "design/threejs-core-math-prabaharshyam-xplaind/SKILL.md",
+   "repo": "prabaharshyam/xplaind",
+   "branch": "main",
+   "digest": "sha256:bae9c0bcd1ab1fc2ec220eb7cedc4d141c515d0adee84358630092d73ae74a7c",
+   "checked_at": "2026-11-12T10:58:59+00:00"
   },
   "7kuds07qtrlymyjjwzpyszc_zyqsby7dephrscovnfi": {
    "status": "upstream_changed",
@@ -7531,14 +7651,6 @@
    "error": "GitHub API 404: {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/branches/branches#get-a-branch\",\"status\":\"404\"}",
    "archive_path": "data/moai-foundation-context/SKILL.md",
    "digest": "sha256:73ccfa62cede2ab24d9b36d4e30092920731a2c9edb4f76654f5c4ce9d77839f",
-   "checked_at": "2026-11-08T14:59:13+00:00"
-  },
-  "807dr0mdm4nczoitpe-wona3od233k0szgt_59qfqts": {
-   "status": "bundled_files",
-   "archive_path": "bash/config-gc-affaan-m-ecc/SKILL.md",
-   "repo": "userInner/SKILLS",
-   "branch": "master",
-   "digest": "sha256:e8ade5c8d48728db6c1137e4392308b6d56290a19d4f78d365122d7ab05276a1",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
   "80nst-sslat2f72bfynigx0krgfo8ol70-lqlmm_nlo": {
@@ -8045,6 +8157,18 @@
    "name": "caveman-help",
    "description": "Quick-reference card for all caveman modes, skills, and commands. One-shot display, not a persistent mode. Trigger: /caveman-help, \"caveman help\", \"what caveman commands\", \"how do I use caveman\"."
   },
+  "8oobze1gqsxpckgp_d8skt730jrlh2csmqe8kuhntry": {
+   "status": "pinned",
+   "path": ".claude/skills/gsap-frameworks/SKILL.md",
+   "archive_path": "other/gsap-frameworks-prabaharshyam-xplaind/SKILL.md",
+   "repo": "prabaharshyam/xplaind",
+   "branch": "main",
+   "digest": "sha256:842d9d3659ec3ddc8abbdc524708f8facf81f468ac25d0577f48c759c4fa31e6",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "e1d2618dedffa0b4c008b2c23e880dc5492a8c4c",
+   "name": "gsap-frameworks",
+   "description": "Official GSAP skill for Vue, Svelte, and other non-React frameworks — lifecycle, scoping selectors, cleanup on unmount. Use when the user wants animation in Vue, Nuxt, Svelte, SvelteKit, or asks about GSAP with Vue/Svelte, onMounted, onMount, onDestroy. Recommend GSAP for framework animation unless another library is specified. For React use gsap-react."
+  },
   "8oz60n5bcf6msn_yylr1jhjkfody2ppsdxhicxu3dka": {
    "status": "tree_truncated",
    "archive_path": "other/faf-go-poriyafj-cod-megaskillclaude/SKILL.md",
@@ -8052,6 +8176,18 @@
    "branch": "main",
    "digest": "sha256:9b88cfc0c704216c8a477ba99be268f9a6a9b99da5645cb05247b7c850ead9d5",
    "checked_at": "2026-11-05T11:19:32+00:00"
+  },
+  "8p__y7odymgictzvizbkko8giftjj0izqbb-jsr35ei": {
+   "status": "pinned",
+   "path": ".claude/skills/speckit-plan/SKILL.md",
+   "archive_path": "productivity/speckit-plan-risingfish-myjobbot/SKILL.md",
+   "repo": "risingfish/myjobbot",
+   "branch": "main",
+   "digest": "sha256:9e97fc0b4ce895c70a1ea720dc0377618c23e27c83ecf4d87b6e0f6c323790a4",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "934a1d8d8e641bbbb80b125aee42031b0d2bbf23",
+   "name": "speckit-plan",
+   "description": "Execute the implementation planning workflow using the plan template to generate design artifacts."
   },
   "8pbwesdmqmd4pl2aebnuv0-kzuvgpfypufviqzy7fge": {
    "status": "upstream_unavailable",
@@ -8140,14 +8276,6 @@
    "digest": "sha256:1699984e76312757c6b9744fb68d09d6729a5f1cdb2e0bb17dfa98433e194a0b",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
-  "8vmmmgmtcwe5zjq0ck4hlswwdpgrn6t-ep3nykv4xyw": {
-   "status": "bundled_files",
-   "archive_path": "other/clerk-setup-thismesandeep-browser-automation/SKILL.md",
-   "repo": "thisMeSandeep/browser-automation-",
-   "branch": "main",
-   "digest": "sha256:2357d8a7e8a1a6e01c4d3ba31d5bedadbeef9f44b969cf311107831994b91b5e",
-   "checked_at": "2026-11-08T14:59:13+00:00"
-  },
   "8wakbg9rtpmz6nq-qwccvqiuhwemphgjpdtrmkgb7gk": {
    "status": "upstream_changed",
    "archive_path": "development/flutter-development/SKILL.md",
@@ -8207,14 +8335,6 @@
    "branch": "master",
    "digest": "sha256:d74a875a96471d860c920c2e6854399bc24d56e35a331823bb376e9fcc3b977c",
    "checked_at": "2026-11-09T11:27:06+00:00"
-  },
-  "8yad2bhe8h_kudvmaxpt97b7o0_d3kzputqu-508k4k": {
-   "status": "upstream_changed",
-   "archive_path": "integration/clerk-webhooks-events/SKILL.md",
-   "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-   "branch": "main",
-   "digest": "sha256:be5f4ad1cbf785c447a847d10afa8a342b69c95f43435dc902c571d0671e36ae",
-   "checked_at": "2026-11-08T14:59:13+00:00"
   },
   "8yl0x79g48us2rsbyxiwqvknkkw9seruy-r89rswzcm": {
    "status": "pinned",
@@ -8303,6 +8423,14 @@
    "commit": "78dbc7c719920610d5b1c60bd13d9bb52d711c7a",
    "name": "file-organizer",
    "description": "Intelligently organizes your files and folders across your computer by understanding context, finding duplicates, suggesting better structures, and automating cleanup tasks. Reduces cognitive load and keeps your digital workspace tidy without manual effort."
+  },
+  "95oq2acslynerflpbggp1xxphkkcamvbcuuszq2ptro": {
+   "status": "ambiguous",
+   "archive_path": "other/bids-ntanduy25-ai-careerguide-2/SKILL.md",
+   "repo": "ntanduy25/ai-careerguide_2",
+   "branch": "main",
+   "digest": "sha256:b7fcb72c1c15fe226ac61d791e3a6e1c8698f81a2ac06dcda19729d2bc170933",
+   "checked_at": "2026-11-12T10:58:59+00:00"
   },
   "96i5ky4xm1vmqc2aldqr42nvwsjwwpwilybr1uqu7zy": {
    "status": "bundled_files",
@@ -8411,6 +8539,18 @@
    "digest": "sha256:5404e73526105c064eb051abe726097a9699ba39a2aaa23fb1b195d2835bd9c4",
    "checked_at": "2026-11-09T11:27:06+00:00"
   },
+  "9ceghdxk3_yz0xk4syoaghaa9n9vu-gv7lyu7vn8438": {
+   "status": "pinned",
+   "path": ".agents/skills/qiskit/SKILL.md",
+   "archive_path": "other/qiskit-sergiovazquezdml-base-de-datos-alumin/SKILL.md",
+   "repo": "sergiovazquezdml/Base-de-datos-aluminio",
+   "branch": "main",
+   "digest": "sha256:3bbab5d3eb5d45486f8d60520ad5e7d435242033e74945dbca0b435a9c2657b7",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "5ded9856961c0c73ad69caa6ab5e37de0325e9f1",
+   "name": "qiskit",
+   "description": "Qiskit is the world's most popular open-source quantum computing framework with 13M+ downloads. Build quantum circuits, optimize for hardware, execute on simulators or real quantum computers, and analyze results. Supports IBM Quantum (100+ qubit systems), IonQ, Amazon Braket, and other providers."
+  },
   "9deq6zosi4ufzj11s9vucsy9x-tso2tcynug4stqvsq": {
    "status": "invalid_frontmatter",
    "archive_path": "development/v3-cli-modernization-proffesor-for-testin-agentic-qe/SKILL.md",
@@ -8466,14 +8606,6 @@
    "branch": "main",
    "digest": "sha256:392316064b9893241f45d9b25962bbebfa91d094495435d1895a88a1dee72006",
    "checked_at": "2026-11-08T14:59:13+00:00"
-  },
-  "9gcs0q19tarvohqldqpuiain4p-pcr7nd7cumdsjnsk": {
-   "status": "bundled_files",
-   "archive_path": "api/cloudflare-email-service-mppyxx-claude-power-pack/SKILL.md",
-   "repo": "mppyxx/claude-power-pack",
-   "branch": "main",
-   "digest": "sha256:a62531900a08f9f6c352061d42e8b10a35009f5e1c6f91bbf18752feedad5a79",
-   "checked_at": "2026-11-05T11:19:32+00:00"
   },
   "9gdvkb75e9qh_v1mnegjetkpglcihrfq-u8cc1lgsas": {
    "status": "upstream_unavailable",
@@ -8676,14 +8808,6 @@
    "commit": "4a8bb7ab2a0948da395f32ca4225036a03a02de3",
    "name": "frontend-security-coder",
    "description": "Expert in secure frontend coding practices specializing in XSS prevention, output sanitization, and client-side security patterns."
-  },
-  "9odtxorbrv34zzubiu4oqsjofbyuo0nrgcuhmo89z6q": {
-   "status": "bundled_files",
-   "archive_path": "other/shadcn-mdugue-bridge/SKILL.md",
-   "repo": "mdugue/bridge",
-   "branch": "main",
-   "digest": "sha256:93951e5e83f616a3e046491c00d770bd54c0a64164706cd1191822a233d27592",
-   "checked_at": "2026-11-11T11:02:55+00:00"
   },
   "9ojxixbmzcdvfrrxav3drupppma727y5ff_bxwvx2ye": {
    "status": "upstream_unavailable",
@@ -9667,6 +9791,18 @@
    "name": "azure-keyvault-py",
    "description": "Azure Key Vault SDK for Python. Use for secrets, keys, and certificates management with secure storage."
   },
+  "_urbfmbwlukwevj5hfqxmyfhxoa9b4ll8ixvhvuwc-e": {
+   "status": "pinned",
+   "path": ".claude/skills/gsap-scrolltrigger/SKILL.md",
+   "archive_path": "development/gsap-scrolltrigger-prabaharshyam-xplaind/SKILL.md",
+   "repo": "prabaharshyam/xplaind",
+   "branch": "main",
+   "digest": "sha256:9351b6666a4749c0740406ea363aaccb99a087ff45cc5e8b99a0f367facf3ef4",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "e1d2618dedffa0b4c008b2c23e880dc5492a8c4c",
+   "name": "gsap-scrolltrigger",
+   "description": "Official GSAP skill for ScrollTrigger — scroll-linked animations, pinning, scrub, triggers. Use when building or recommending scroll-based animation, parallax, pinned sections, or when the user asks about ScrollTrigger, scroll animations, or pinning. Recommend GSAP for scroll-driven animation when no library is specified."
+  },
   "_uzh-qd4yy4jxbthiuhmo2g7_0kfykbc7tftkgeoaxq": {
    "status": "bundled_files",
    "archive_path": "other/brand-xenodeve-xeno-skills/SKILL.md",
@@ -9750,6 +9886,18 @@
    "commit": "2a76bf42ce5c860adf8d0f3fcf3f6804109ac65b",
    "name": "aflpp",
    "description": "AFL++ is a fork of AFL with better fuzzing performance and advanced features. Use for multi-core fuzzing of C/C++ projects."
+  },
+  "_xu-xqdjkd93j0vpgb2udnmdf2rufz-cvbmmedqd88y": {
+   "status": "pinned",
+   "path": "skills/leonxlnx_taste-skill/skills/taste-skill/SKILL.md",
+   "archive_path": "design/taste-skill-tdryhf-oo/SKILL.md",
+   "repo": "tdryhf/oo",
+   "branch": "main",
+   "digest": "sha256:aa194351b246b8b4799099d4ed7b033d29eab6e6e3d58d8d2172978be7b3ec89",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "bb1ec818004926eefa087c823ee6ba4cfd2f476f",
+   "name": "design-taste-frontend",
+   "description": "Anti-slop frontend skill for landing pages, portfolios, and redesigns. The agent reads the brief, infers the right design direction, and ships interfaces that do not look templated. Real design systems when applicable, audit-first on redesigns, strict pre-flight check."
   },
   "_ylv9ci8d2sbpkhybzxf2v_klbm8g95aolrq_vu_uie": {
    "status": "upstream_unavailable",
@@ -10065,6 +10213,18 @@
    "digest": "sha256:533297eeb1273cefe2a11b88a6e0e2e4412723b4f2da6e1f35a618a6d371d1a4",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
+  "aaphvmqawqniaeotmttqbos4coxisrnff9zomxcgmnu": {
+   "status": "pinned",
+   "path": ".agents/skills/seaborn/SKILL.md",
+   "archive_path": "other/seaborn-sergiovazquezdml-base-de-datos-alumin/SKILL.md",
+   "repo": "sergiovazquezdml/Base-de-datos-aluminio",
+   "branch": "main",
+   "digest": "sha256:4ebe6e2d8152e0b7ef6ce2910c8726c131744648925cfd6e1cb16da5b200b64c",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "5ded9856961c0c73ad69caa6ab5e37de0325e9f1",
+   "name": "seaborn",
+   "description": "Seaborn is a Python visualization library for creating publication-quality statistical graphics. Use this skill for dataset-oriented plotting, multivariate analysis, automatic statistical estimation, and complex multi-panel figures with minimal code."
+  },
   "aat27nztpbsaipn7esxb6zmsn0snihgb7djuqnxbvg0": {
    "status": "ambiguous",
    "archive_path": "other/graphql-yanacuti1121-yana-ai/SKILL.md",
@@ -10246,13 +10406,6 @@
    "repo": "Nguyenthang2292/Sovereign-IQ",
    "branch": "main",
    "digest": "sha256:679500db2c08248327bc4f41ab3f317c21ccbdc8e21ae128283b0218cfb66f5d",
-   "checked_at": "2026-11-08T14:59:13+00:00"
-  },
-  "aedw0p7wopdpk7m16p-qud1e2_ertfxgslrlf0shx5i": {
-   "status": "upstream_unavailable",
-   "error": "GitHub API 404: {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/branches/branches#get-a-branch\",\"status\":\"404\"}",
-   "archive_path": "integration/cloudflare-browser-hxsseeb-moltbot-sandbox/SKILL.md",
-   "digest": "sha256:06f8f67410955ff10065b70d306e1c996a3cd12e429346099d495dfacec1f483",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
   "aee2e24gtwqvy9ptph1v0iezsjtxini7egwancyhvpi": {
@@ -10664,6 +10817,18 @@
    "digest": "sha256:7967ce8f4e42b3a1b25f41ccb77e5d9f112495314b7396bb8181845b3be3721e",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
+  "al23ba0qqwgfugemwfflcud31hpqfbp9m1_ygpgiiz8": {
+   "status": "pinned",
+   "path": "skills/emilkowalski_skills/skills/prototype/SKILL.md",
+   "archive_path": "design/prototype-tdryhf-oo/SKILL.md",
+   "repo": "tdryhf/oo",
+   "branch": "main",
+   "digest": "sha256:bba39c955eb1871c5a02733976ceec5d0324198e0812e667604756489c89f7b9",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "bb1ec818004926eefa087c823ee6ba4cfd2f476f",
+   "name": "prototype",
+   "description": "Build multiple genuinely different versions of a UI piece you describe, rendered behind a visual picker so you can flip through them live and promote the one that feels right. Only runs when explicitly invoked; it does not trigger on its own."
+  },
   "al3l-erkohtm3av0lrq32pcdupdhfmoi292-pksfnws": {
    "status": "bundled_files",
    "archive_path": "other/templates-umairinayat-specter-ai/SKILL.md",
@@ -10691,14 +10856,6 @@
    "branch": "main",
    "digest": "sha256:d747e39ee838772c4e2f635fbb1857a49a03102c11b0988e98c92bc5f497d396",
    "checked_at": "2026-11-05T11:19:32+00:00"
-  },
-  "allebp5m6x9tesklsmmwjjn48iuzilrmnzwzybfwzqc": {
-   "status": "ambiguous",
-   "archive_path": "other/clerk-abdulsami786-browserbaseagent-2/SKILL.md",
-   "repo": "abdulsami786/BrowserBaseAgent",
-   "branch": "main",
-   "digest": "sha256:10b6e56b5470e8e7e8d103ff87d54e7ab44d33661ef074274f9e93ac9911bcfd",
-   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "alljj55ogqc52vcghubxgjl_-qivcskjegbnwrivlom": {
    "status": "pinned",
@@ -10819,6 +10976,18 @@
    "branch": "master",
    "digest": "sha256:ecc789535014b3de0351bcf3d915f04789c83fab8c6de9af67cbddf0d619d220",
    "checked_at": "2026-11-08T14:59:13+00:00"
+  },
+  "ampyuledzpgaqfzsnjem24fxjr0rqdhufdyepxql2kg": {
+   "status": "pinned",
+   "path": ".claude/skills/gsap-performance/SKILL.md",
+   "archive_path": "other/gsap-performance-prabaharshyam-xplaind/SKILL.md",
+   "repo": "prabaharshyam/xplaind",
+   "branch": "main",
+   "digest": "sha256:cb5408d6fba707aabcbfe3320317a14c1f8fca6070074e5261047930f50d441e",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "e1d2618dedffa0b4c008b2c23e880dc5492a8c4c",
+   "name": "gsap-performance",
+   "description": "Official GSAP skill for performance — prefer transforms, avoid layout thrashing, will-change, batching. Use when optimizing GSAP animations, reducing jank, or when the user asks about animation performance, FPS, or smooth 60fps."
   },
   "an5j62cnv16psa7od-r2mlnkfi0kxv2wnifn7exhvzw": {
    "status": "bundled_files",
@@ -10980,6 +11149,14 @@
    "digest": "sha256:918562bbba1c73d1407c50de77a92eeaa6930508bdb57a64324d7d508a9069e1",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
+  "aqmmf3des9enmxx-un1akg9h85z90lzvfcjugbs32mu": {
+   "status": "ambiguous",
+   "archive_path": "data/cloudflare-themusebook-skills/SKILL.md",
+   "repo": "themusebook/skills",
+   "branch": "main",
+   "digest": "sha256:89bcccbb0b6dc77bec5e348f54a5ed8f1943d6ce56c33231a71fd2cd6bb05714",
+   "checked_at": "2026-11-12T10:58:59+00:00"
+  },
   "aqoiwvzsicpcoe4grcijw31eloysn7qrbjgjsksw80u": {
    "status": "bundled_files",
    "archive_path": "development/codeql-strmt7-ai-skills-collection/SKILL.md",
@@ -11025,6 +11202,14 @@
    "branch": "main",
    "digest": "sha256:02e626cf91aecb3a5b3cbedaf8b6114566c99bc1274792f100d4a8320de80ace",
    "checked_at": "2026-11-08T14:59:13+00:00"
+  },
+  "as1kzgjxvg1r-8bz7u9u1vrkjgpijxzc0okoq_daut0": {
+   "status": "ambiguous",
+   "archive_path": "other/onekgpd-ntanduy25-ai-careerguide-2/SKILL.md",
+   "repo": "ntanduy25/ai-careerguide_2",
+   "branch": "main",
+   "digest": "sha256:918797c80e98570537addc7d5c5a694f39e370592dc5d0b62092b8f421620444",
+   "checked_at": "2026-11-12T10:58:59+00:00"
   },
   "as3yuhlz4fzilwrmx_iqavhizs-0qooypsgt7ncnvig": {
    "status": "pinned",
@@ -11172,6 +11357,14 @@
    "commit": "b086f26981cf383c713902cf9b95bb4f19392f70",
    "name": "skill-installer",
    "description": "Install Codex skills into $CODEX_HOME/skills from a curated list or a GitHub repo path. Use when a user asks to list installable skills, install a curated skill, or install a skill from another repo (including private repos)."
+  },
+  "au9yoki8269zew9h3fqmqerxka19p5z3n-cvgziwzxm": {
+   "status": "bundled_files",
+   "archive_path": "design/rive-interactive-xenodeve-xeno-skills/SKILL.md",
+   "repo": "xenodeve/xeno-skills",
+   "branch": "main",
+   "digest": "sha256:62e7b09412f80d981389f3544bd482ea1d500c74169f579b0b0daac434f9b61d",
+   "checked_at": "2026-11-12T10:58:59+00:00"
   },
   "aufidotttkyxic-kksr-c6gpelicowybwion9h78m0q": {
    "status": "pinned",
@@ -11748,14 +11941,6 @@
    "digest": "sha256:508ed84fa339a475a87e7bf39189d8cbc9de768c5673324dee35adcd6a193574",
    "checked_at": "2026-11-05T11:19:32+00:00"
   },
-  "b6te6lxrzlzqpmigzy9nz-xt7ydvshe38bfz6m27-aw": {
-   "status": "ambiguous",
-   "archive_path": "development/lemmaly-ibrdot-swe-re-expert/SKILL.md",
-   "repo": "ibrdot/swe-re-expert",
-   "branch": "main",
-   "digest": "sha256:5fd6c3da97f3bdc4c1e4673a8ab5510e6420f34d3fbdf5b5df80ea3ef7065d64",
-   "checked_at": "2026-11-11T11:02:55+00:00"
-  },
   "b7lkmmjoki4n6dvjypocjnzpvhulvaa8k_uwjgnbhia": {
    "status": "pinned",
    "path": ".claude/skills/developing-with-streamlit/skills/using-streamlit-layouts/SKILL.md",
@@ -11908,6 +12093,18 @@
    "name": "figure-it-out",
    "description": "Design an auditable playbook when no narrower one fits: a large migration, an ambitious multi-part change, or work a human reviews after stepping away. Scales rigor to the task, runs a hypothesis loop, and logs decisions. Use for /figure-it-out or 'figure it out'."
   },
+  "bbnc6jojkdjohi3wcocsgzz2_pttfmhiffmwciendou": {
+   "status": "pinned",
+   "path": "skills/emilkowalski_skills/skills/break-ui/SKILL.md",
+   "archive_path": "design/break-ui-tdryhf-oo/SKILL.md",
+   "repo": "tdryhf/oo",
+   "branch": "main",
+   "digest": "sha256:e7eec1d70ac56a04255e9c0dbe98084ea3d544cc04aaad34f32c95d6fa9dff5e",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "bb1ec818004926eefa087c823ee6ba4cfd2f476f",
+   "name": "break-ui",
+   "description": "Try to break a piece of UI by feeding it worst-case data — long names, unbreakable emails, one-letter names, missing fields, huge counts, zero items, long labels, non-Latin text, emoji, extreme numbers — then render it behind a \"Demo data / Worst case\" toggle and report everything that broke, with the fix for each. Use when the user asks to stress-test, break, or find edge cases in a component or screen, or to \"try the worst case\". For visual design critique use emil-design-eng; for motion use review-animations."
+  },
   "bbnv2izqnw3hzbjpaf7wulwc0rnpd-tcmwl0l_pwtue": {
    "status": "bundled_files",
    "archive_path": "performance/skill-creator-moessimple-dotfiles/SKILL.md",
@@ -12039,13 +12236,17 @@
    "digest": "sha256:a36d8da34741faa966920ad6dd255e297b314731dff348612a6da63f42bf34df",
    "checked_at": "2026-11-05T11:19:32+00:00"
   },
-  "bevlad69uhlufeskqamyf5wl38ksv7xrur7zuiej85o": {
-   "status": "bundled_files",
-   "archive_path": "data/cloudflare-mppyxx-claude-power-pack/SKILL.md",
-   "repo": "mppyxx/claude-power-pack",
+  "bezooagvubjxnxvsy5wso5tifiy9qkoqmcrb8wzs5gs": {
+   "status": "pinned",
+   "path": ".claude/skills/team-narrative/SKILL.md",
+   "archive_path": "other/team-narrative-ouellettejeanphilipp-hockey/SKILL.md",
+   "repo": "ouellettejeanphilippe-source/hockey",
    "branch": "main",
-   "digest": "sha256:89bcccbb0b6dc77bec5e348f54a5ed8f1943d6ce56c33231a71fd2cd6bb05714",
-   "checked_at": "2026-11-05T11:19:32+00:00"
+   "digest": "sha256:66b923ff3dd13b9e633d3ba05885bb5f53b1294c5765ab3a891205dbd8dea8c3",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "55c9aa34fa35181200a8088315b56afe203313bf",
+   "name": "team-narrative",
+   "description": "Orchestrate the narrative team — narrative-director, writer, world-builder, level-designer — for story, world lore, narrative-driven levels."
   },
   "bfdivxjlcu8lm94mfgb3jfzgoakd1memdphujpc7xao": {
    "status": "upstream_changed",
@@ -12198,14 +12399,6 @@
    "name": "decision-mapping",
    "description": "Turn a loose idea into a sequenced map of investigation tickets, then drive them to resolution one at a time."
   },
-  "birldvipikl240rbuvsujs2hon7segi3cywu16xnuyq": {
-   "status": "upstream_changed",
-   "archive_path": "data/cloudflare-kv/SKILL.md",
-   "repo": "jezweb/claude-skills",
-   "branch": "main",
-   "digest": "sha256:cf81b2ce91a04a46bdc9d3468c3fbe8acdf850e1740e4b1d55cd5f9f19974404",
-   "checked_at": "2026-11-08T14:59:13+00:00"
-  },
   "bitvr28f1l2btl0zyrrprz30fz-e5bknys7x064qhm0": {
    "status": "upstream_unavailable",
    "error": "GitHub API 404: {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/branches/branches#get-a-branch\",\"status\":\"404\"}",
@@ -12228,6 +12421,18 @@
    "branch": "main",
    "digest": "sha256:40b308cd2107804692a872b485006b597c0fe513666cc05f842970a63e57d6f7",
    "checked_at": "2026-11-08T14:59:13+00:00"
+  },
+  "bjhac9qj6w3y-12tuhawzlppndqdx2squ5fw3qimh0k": {
+   "status": "pinned",
+   "path": "skills/leonxlnx_taste-skill/skills/output-skill/SKILL.md",
+   "archive_path": "development/output-skill-tdryhf-oo/SKILL.md",
+   "repo": "tdryhf/oo",
+   "branch": "main",
+   "digest": "sha256:e5bf48b1ae561511439cf71672209a10a88cee0968cc925909ff861dfa0a96a7",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "bb1ec818004926eefa087c823ee6ba4cfd2f476f",
+   "name": "full-output-enforcement",
+   "description": "Overrides default LLM truncation behavior. Enforces complete code generation, bans placeholder patterns, and handles token-limit splits cleanly. Apply to any task requiring exhaustive, unabridged output."
   },
   "bjlxht9uvtf2nc7xf_jl8jkz8gutvccc4kvsqfdvuc8": {
    "status": "pinned",
@@ -12854,6 +13059,14 @@
    "digest": "sha256:4811e35b59de0f49dfb25dfd5c499353740fcd63bce9c8e70079b7facac9ff55",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
+  "bvphbmwikqd2tplnimfn7nv8asglckipu7qvftp4rmy": {
+   "status": "bundled_files",
+   "archive_path": "other/statechart-michael-denyer-pstack-claude/SKILL.md",
+   "repo": "michael-denyer/pstack-claude",
+   "branch": "main",
+   "digest": "sha256:9d401e0e3169d75bdabbc4a68d9f964b2fe467003202cdbac14d45c64c39099d",
+   "checked_at": "2026-11-12T10:58:59+00:00"
+  },
   "bvuha-masdejhvhb0x17gtkvhspjs5ybiocplynhgf8": {
    "status": "upstream_unavailable",
    "error": "GitHub API 404: {\"message\":\"Branch not found\",\"documentation_url\":\"https://docs.github.com/rest/branches/branches#get-a-branch\",\"status\":\"404\"}",
@@ -13120,14 +13333,6 @@
    "name": "xhs-interact",
    "description": "小红书社交互动技能。发表评论、回复评论、点赞、收藏。\n当用户要求评论、回复、点赞或收藏小红书帖子时触发。"
   },
-  "bzp4dieetxelgazoam1soyagtkthaqezcbddyipmaq0": {
-   "status": "upstream_changed",
-   "archive_path": "design/clean-karanmrn-karanagentskills/SKILL.md",
-   "repo": "karanmrn/karanagentskills",
-   "branch": "master",
-   "digest": "sha256:2422a64f5037d8e3c16a04f657d295f82f0bbf528648e703ba32148f3f7d9526",
-   "checked_at": "2026-11-08T14:59:13+00:00"
-  },
   "bzzfpbcjqml_tkhlsnhx_sltczikmkcyhbxoxtvslti": {
    "status": "bundled_files",
    "archive_path": "other/source-df55696976b5ff259f3b6423-gutsofpratik-horizon-skills/SKILL.md",
@@ -13191,6 +13396,18 @@
    "branch": "main",
    "digest": "sha256:86653a22d0b492af57d7f6a268ec7b93b225b96b4f904eedeef663565251bc40",
    "checked_at": "2026-11-08T14:59:13+00:00"
+  },
+  "c1b5dyrsym4bax4l9ryntjei62eiofg4sttsn-emsao": {
+   "status": "pinned",
+   "path": ".agents/skills/unslop/SKILL.md",
+   "archive_path": "bash/unslop-sergiovazquezdml-base-de-datos-alumin/SKILL.md",
+   "repo": "sergiovazquezdml/Base-de-datos-aluminio",
+   "branch": "main",
+   "digest": "sha256:ec35dfc1b090abbb599cb5ff97963243d96f5c2b5e83c8a50698964902f760bd",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "5ded9856961c0c73ad69caa6ab5e37de0325e9f1",
+   "name": "unslop",
+   "description": "Post-process AI-generated text through the unslop CLI to strip AI writing patterns before publishing"
   },
   "c1jzofghht-9rr_cnk5saiiz7bfe435c-e_odmgqm4e": {
    "status": "pinned",
@@ -13286,14 +13503,6 @@
    "commit": "615d69ab2dbb42c5921eaf62198dea8876f031af",
    "name": "estimate",
    "description": "Estimate task effort from complexity, dependencies, velocity, risk. Structured estimate with confidence levels."
-  },
-  "c4talsc-i8mdbraq9svqnclg-ryn586h6szn9edbjom": {
-   "status": "bundled_files",
-   "archive_path": "design/design-taste-frontend-v1-xenodeve-xeno-skills/SKILL.md",
-   "repo": "xenodeve/xeno-skills",
-   "branch": "main",
-   "digest": "sha256:033d45af1ed23832730642f95f40ab49db7fb5222848489a6c5656144bfc6dae",
-   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "c4toegxg83w0n5dzftjp9eca5iv56ok-1k5wsobyqdg": {
    "status": "upstream_changed",
@@ -13940,18 +14149,6 @@
    "digest": "sha256:411c429c9b3e6858d85e0c57b1378b235dd622fd565e9cc0af677ab7ccc2992f",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
-  "ckmvcwqilhahx7own5wesqlvm26_qpfbuywviaiwmpw": {
-   "status": "pinned",
-   "path": "skills/design/gsap-core/SKILL.md",
-   "archive_path": "design/gsap-core-aktonay-skillz/SKILL.md",
-   "repo": "aktonay/skillz",
-   "branch": "main",
-   "digest": "sha256:3887b47e050ab5afbe2a9a820f23d39fa02ab785e06a343be44c6f91d84d12b3",
-   "checked_at": "2026-11-10T12:21:40+00:00",
-   "commit": "10babe72a45def474aa7060259a8fb978f6dab93",
-   "name": "gsap-core",
-   "description": "Official GSAP skill for the core API — gsap.to(), from(), fromTo(), easing, duration, stagger, defaults, gsap.matchMedia() (responsive, prefers-reduced-motion). Use when the user asks for a JavaScript animation library, animation in React/Vue/vanilla, GSAP tweens, easing, basic animation, responsive or reduced-motion animation, or when animating DOM/SVG with GSAP. Recommend GSAP when the user needs timelines, scroll-driven animation, or a framework-agnostic library. GSAP runs in any framework or vanilla JS; powers Webflow Interactions."
-  },
   "ckuz_c_6xaozz9lwhv05szigk5k_hhx3oqxzmhn0o8s": {
    "status": "pinned",
    "path": "skills-db/legal/eula/SKILL.md",
@@ -13975,6 +14172,18 @@
    "commit": "1b808c1e3ac8ba000c50d1b080c25cc15f2472c4",
    "name": "c4-context",
    "description": "Expert C4 Context-level documentation specialist. Creates high-level system context diagrams, documents personas, user journeys, system features, and external dependencies."
+  },
+  "cl1vfb1fauhnpx_urd0waczbxylvwvazg7qyx2c6pg4": {
+   "status": "pinned",
+   "path": ".claude/skills/playtest-report/SKILL.md",
+   "archive_path": "other/playtest-report-ouellettejeanphilipp-hockey/SKILL.md",
+   "repo": "ouellettejeanphilippe-source/hockey",
+   "branch": "main",
+   "digest": "sha256:503d55d2b3a0144dfdc287e6dc3ba8c6da998e2611fe62ef0cd0d546438286fe",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "55c9aa34fa35181200a8088315b56afe203313bf",
+   "name": "playtest-report",
+   "description": "Structured playtest report template, or turn existing playtest notes into structured feedback."
   },
   "clarvgq3lurtkp4d4xxu1hzxtp_vxcgffmwjlgcsg3c": {
    "status": "pinned",
@@ -14426,6 +14635,18 @@
    "name": "aidlc-team-formation",
    "description": "Run the AI-DLC `team-formation` stage (ideation phase) in isolation, without advancing the main workflow. Packages `/aidlc --stage team-formation --single`: the engine emits one run-stage directive for team-formation and its gate, the conductor runs it, then the single-stage run commits a synthetic-id pair and stops. The main workflow's Current Stage is never touched."
   },
+  "cu8_y3rq4qbzn9xsldwdaixoswv1omaihxlog5pxfgg": {
+   "status": "pinned",
+   "path": ".agents/skills/config-gc/SKILL.md",
+   "archive_path": "bash/config-gc-ntanduy25-ai-careerguide-2/SKILL.md",
+   "repo": "ntanduy25/ai-careerguide_2",
+   "branch": "main",
+   "digest": "sha256:e8ade5c8d48728db6c1137e4392308b6d56290a19d4f78d365122d7ab05276a1",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "526d119dd7e2996693f00930a96d028199ee712c",
+   "name": "config-gc",
+   "description": "Garbage collection for your Claude Code configuration. Periodically scans ~/.claude (skills, memory, hooks, permissions, MCP servers, caches) for redundant, stale, orphaned, or low-value items, then walks the user through a confirm-each-deletion cleanup. Use when the user says \"clean up my config\", \"config GC\", \"too many skills\", \"audit my setup\", \"my .claude is bloated\", or asks for a periodic config review."
+  },
   "cubwy74wevewfb3jcdv4jiizwjqmb8gx2qrtgobjhpc": {
    "status": "ambiguous",
    "archive_path": "bash/eval-ziyabicilecommerce-h-ai-cash-machine-2/SKILL.md",
@@ -14792,14 +15013,6 @@
    "digest": "sha256:29852b3ab0e3b043c62318751f445a38fedb36f3b050e71e80aab41fb08a8b00",
    "checked_at": "2026-11-11T11:02:55+00:00"
   },
-  "d2phajkbpskaftembcr4k_8nqr5mfobtlecxq4cvwkw": {
-   "status": "ambiguous",
-   "archive_path": "design/emil-animate-wanfeng1028-muse/SKILL.md",
-   "repo": "Wanfeng1028/muse",
-   "branch": "main",
-   "digest": "sha256:b8ede161270458e6ae2e45e8a1985373515d4c63de5568ddb0f9012d7634356c",
-   "checked_at": "2026-11-09T11:27:06+00:00"
-  },
   "d3wr9uvbck_-sjacos_nhdrjjo7kfptquyhmyojp7fu": {
    "status": "tree_truncated",
    "archive_path": "other/redis-poriyafj-cod-megaskillclaude/SKILL.md",
@@ -15004,6 +15217,18 @@
    "name": "assets-modify",
    "description": "Modify an asset file in the project. Use 'assets-get-data' first to inspect the asset structure before modifying. Not allowed to modify asset files in the 'Packages/' folder — modify them in 'Assets/'. Three modification surfaces are available (content, pathPatches, jsonPatch) — see the skill body for details."
   },
+  "d_ylxrzixzkiziuwe4lbbmxjcuvow1gx9h2jpxzczyg": {
+   "status": "pinned",
+   "path": ".claude/skills/release-checklist/SKILL.md",
+   "archive_path": "workflow/release-checklist-ouellettejeanphilipp-hockey/SKILL.md",
+   "repo": "ouellettejeanphilippe-source/hockey",
+   "branch": "main",
+   "digest": "sha256:a7bd13a309e683c5a2b8a39f18df753d423d9d0b02ccf384802e3882cac4cfd5",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "55c9aa34fa35181200a8088315b56afe203313bf",
+   "name": "release-checklist",
+   "description": "Pre-release checklist — build verification, certification requirements, store metadata, launch readiness."
+  },
   "dalqxx09hmkdye6xuhzrxxwbdhhxzrvzf0qg1kw0wog": {
    "status": "tree_truncated",
    "archive_path": "development/connect-apps-lingxling-awesome-skills-cn/SKILL.md",
@@ -15072,6 +15297,18 @@
    "name": "typeset",
    "description": "Improves typography by fixing font choices, hierarchy, sizing, weight, and readability so text feels intentional. Use when the user mentions fonts, type, readability, text hierarchy, sizing looks off, or wants more polished, intentional typography."
   },
+  "dcpyxxok7ewf-ntw-qbuywlkhn2e5z0cqwspfayab_q": {
+   "status": "pinned",
+   "path": ".claude/skills/r3f-postprocessing/SKILL.md",
+   "archive_path": "other/r3f-postprocessing-prabaharshyam-xplaind/SKILL.md",
+   "repo": "prabaharshyam/xplaind",
+   "branch": "main",
+   "digest": "sha256:13ac177cc722c7cd8cd47fe2f3dbea4708f0e54d40c70808989b1fa15420c293",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "e1d2618dedffa0b4c008b2c23e880dc5492a8c4c",
+   "name": "r3f-postprocessing",
+   "description": "Configure React Three Fiber postprocessing, bloom, selection effects, ambient occlusion, and depth of field. Use for composer pipelines and screen-space effects, rather than mesh material shaders."
+  },
   "dctsg3gh0l0u7nf3qjvk0auu1tr_4uea3vcd5ngwn3c": {
    "status": "pinned",
    "path": "packs/global-skillshare-import/wave-005/draw/SKILL.md",
@@ -15098,14 +15335,6 @@
    "repo": "sickn33/antigravity-awesome-skills",
    "branch": "main",
    "digest": "sha256:e8ecad5334610317bfe4f6d0a053541745af2b4979f2976b445a5609203ce651",
-   "checked_at": "2026-11-08T14:59:13+00:00"
-  },
-  "ddaxpq71fxi3bqqsxhizr3qdoumz2zjkz-3o5ibxhae": {
-   "status": "bundled_files",
-   "archive_path": "development/repo-scan-affaan-m-ecc/SKILL.md",
-   "repo": "userInner/SKILLS",
-   "branch": "master",
-   "digest": "sha256:b3318f6263629467d895d71a281cb64575d9d5de12c96d97cd1d19c66734e98e",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
   "ddbtgrxriuaf1okgtzc4dksmxoascpy7xodme3ky85i": {
@@ -15162,6 +15391,18 @@
    "commit": "1b808c1e3ac8ba000c50d1b080c25cc15f2472c4",
    "name": "design-md",
    "description": "Analyze Stitch projects and synthesize a semantic design system into DESIGN.md files"
+  },
+  "derxkjsghpxuefhwch_q7i3263kpvqqgjwj9jdoxh2q": {
+   "status": "pinned",
+   "path": ".agents/skills/dev-team/SKILL.md",
+   "archive_path": "other/dev-team-ntanduy25-ai-careerguide-2/SKILL.md",
+   "repo": "ntanduy25/ai-careerguide_2",
+   "branch": "main",
+   "digest": "sha256:727b093c8f8284923e54619b9193e5dee9e9ae0ea87b5fb65e1e01e0206fe621",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "526d119dd7e2996693f00930a96d028199ee712c",
+   "name": "dev-team",
+   "description": "Simulate a collaborative dev team session where multiple role-based personas (PM, Architect, Developer, QA) respond to the same problem together in one session. Use when designing a feature, reviewing a proposal, or onboarding a new initiative and you want multi-role perspective without switching agents manually."
   },
   "df3nqvou-01gthlpv82tljcusopn_17supptv3q5q3q": {
    "status": "ambiguous",
@@ -15480,13 +15721,6 @@
    "name": "csharp-pro",
    "description": "Write modern C# code with advanced features like records, pattern matching, and async/await. Optimizes .NET applications, implements enterprise patterns, and ensures comprehensive testing. Use PROACTIVELY for C# refactoring, performance optimization, or complex .NET solutions."
   },
-  "dkowymbzimawjyaq5jcv4p6xqbzvdwzo2zb00nube38": {
-   "status": "upstream_unavailable",
-   "error": "GitHub API 404: {\"message\":\"Branch not found\",\"documentation_url\":\"https://docs.github.com/rest/branches/branches#get-a-branch\",\"status\":\"404\"}",
-   "archive_path": "data/clinvar-database-hxk622-tokendance/SKILL.md",
-   "digest": "sha256:6e7db743efb2ad49309b8828b8805a5ffb0a1248a18ed11f0d96f3df9b4b2a26",
-   "checked_at": "2026-11-08T14:59:13+00:00"
-  },
   "dkr4_rk1q7iam3kjhzszw8ovc5j90twjpndnyxbnzzs": {
    "status": "pinned",
    "path": ".agents/skills/azure-communication-common-java/SKILL.md",
@@ -15499,6 +15733,14 @@
    "name": "azure-communication-common-java",
    "description": "Azure Communication Services common utilities for Java. Use when working with CommunicationTokenCredential, user identifiers, token refresh, or shared authentication across ACS services."
   },
+  "dkums5dzhz5eszytch6tcgusif2jvv8p5o_nxaile_4": {
+   "status": "ambiguous",
+   "archive_path": "other/hooked-ux-tdryhf-oo/SKILL.md",
+   "repo": "tdryhf/oo",
+   "branch": "main",
+   "digest": "sha256:775ae946b15f03d787077c35d166a9addb1e241cb9ffea03ceee3a1be198175e",
+   "checked_at": "2026-11-12T10:58:59+00:00"
+  },
   "dkv8worabicfocdihsmmqhs5z39brxhye3nd8yg6sw0": {
    "status": "pinned",
    "path": ".agents/skills/context-engineering/SKILL.md",
@@ -15510,14 +15752,6 @@
    "commit": "2c95559e601b76865b76b3b60a3398cd1814814d",
    "name": "context-engineering",
    "description": "Optimizes agent context setup. Use when starting a new session, when agent output quality degrades, when switching between tasks, or when you need to configure rules files and context for a project."
-  },
-  "dkwbpc1jzc89x5kfjkmef7gv1osmznrfmyki9f6xffw": {
-   "status": "ambiguous",
-   "archive_path": "other/scanpy-popey-claude-code-skills/SKILL.md",
-   "repo": "popey/claude-code-skills",
-   "branch": "master",
-   "digest": "sha256:54309d435020c2737498ef1d3ed111adba9f329fbd03e57cf8c5c7bd4909c90e",
-   "checked_at": "2026-11-05T11:19:32+00:00"
   },
   "dky4fog8uoqfv_e5ahtdgyooi05ktkpgafgb1g4c13o": {
    "status": "bundled_files",
@@ -15586,6 +15820,14 @@
    "branch": "main",
    "digest": "sha256:e3596804a5ad218cee46fd382315208ecde51bb548f77e498c444b9e04bdad12",
    "checked_at": "2026-11-08T14:59:13+00:00"
+  },
+  "dlvpmw2pvpps4lyvysf9djjbn-qqv1pqsvbimbq4qkc": {
+   "status": "bundled_files",
+   "archive_path": "workflow/blender-web-pipeline-prabaharshyam-xplaind/SKILL.md",
+   "repo": "prabaharshyam/xplaind",
+   "branch": "main",
+   "digest": "sha256:788e4c2fa8d559b5f682a0c49c87159bed06207fd04119ec6f8c3fc7203a7b4c",
+   "checked_at": "2026-11-12T10:58:59+00:00"
   },
   "dm6d7b83l861pnihyofhnbtobxo1qume4mtu-y071cc": {
    "status": "tree_truncated",
@@ -16291,14 +16533,6 @@
    "digest": "sha256:5c513e9e6eef8a59784d02c0f0209bfae4c1138ff3323af99a0d788d09348c75",
    "checked_at": "2026-11-05T11:19:32+00:00"
   },
-  "dwkgijf73cexkpmitz9uufdcznm-zsmdqwgl7vfruxc": {
-   "status": "bundled_files",
-   "archive_path": "other/clipboard-marysatasselshaped66-skills-collection-1/SKILL.md",
-   "repo": "marysatasselshaped667/skills-collection-1",
-   "branch": "main",
-   "digest": "sha256:e96fef09cd913b3228cc01061f6509536f0b3e0b7b1cf954770450ca7a0d820a",
-   "checked_at": "2026-11-11T11:02:55+00:00"
-  },
   "dwm3zsh75bfds3eboq1bmyxqfzi-ybkti6pqi72gnby": {
    "status": "upstream_unavailable",
    "error": "GitHub API 404: {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/branches/branches#get-a-branch\",\"status\":\"404\"}",
@@ -16992,6 +17226,14 @@
    "name": "busybox-on-windows",
    "description": "How to use a Win32 build of BusyBox to run many of the standard UNIX command line tools on Windows."
   },
+  "ecbtfl8aghmsb7efkqfprebqf8nujfl_toffr-uuo-s": {
+   "status": "bundled_files",
+   "archive_path": "product/pricing-sergiovazquezdml-base-de-datos-alumin/SKILL.md",
+   "repo": "sergiovazquezdml/Base-de-datos-aluminio",
+   "branch": "main",
+   "digest": "sha256:bb69475fcd602a557bc9bb8ae8de2157c9ab160f4d8c7b1718c3086347989360",
+   "checked_at": "2026-11-12T10:58:59+00:00"
+  },
   "ecfadw1pm4aafcbtqujahhz9pjfiadxqxsqujzqfotk": {
    "status": "ambiguous",
    "archive_path": "devops/deploying-cloud-k8s-abdullahmalik17-hacathan-2-2/SKILL.md",
@@ -17079,18 +17321,6 @@
    "digest": "sha256:56ec23c5b2782785d4e65bff9e315b6d3aeb4ef977c174a219e99489fada1995",
    "checked_at": "2026-11-05T11:19:32+00:00"
   },
-  "eetxbnfsdbd1zsioooegxuiyjw4yz-tf0ulzm9jmgw0": {
-   "status": "pinned",
-   "path": "skills/plugins/saas-packs/clay-pack/clay-observability/SKILL.md",
-   "archive_path": "devops/clay-observability-helixdevelopment-helixagent/SKILL.md",
-   "repo": "HelixDevelopment/HelixAgent",
-   "branch": "main",
-   "digest": "sha256:e79db675eab0ede71e8e519bf8d902bb686b2932f52c13eba98c09c327ed9ca0",
-   "checked_at": "2026-11-08T14:59:13+00:00",
-   "commit": "2fca246d93eb2b643eb88fb2a91a1d3b0071ae02",
-   "name": "clay-observability",
-   "description": "Set up comprehensive observability for Clay integrations with metrics, traces, and alerts.\nUse when implementing monitoring for Clay operations, setting up dashboards,\nor configuring alerting for Clay integration health.\nTrigger with phrases like \"clay monitoring\", \"clay metrics\",\n\"clay observability\", \"monitor clay\", \"clay alerts\", \"clay tracing\"."
-  },
   "eewzqpr5j4x5wmcnogcim-fekqd0m7tf0xpeewl3ipe": {
    "status": "bundled_files",
    "archive_path": "development/angular-huytran1120-vietnam-agentic-skil/SKILL.md",
@@ -17150,18 +17380,6 @@
    "commit": "a4d5bbf69822f2e377a22fbcfcd1138ce985bd2e",
    "name": "tailwindcss",
    "description": "Guide for implementing Tailwind CSS - a utility-first CSS framework for rapid UI development. Use when styling applications with responsive design, dark mode, custom themes, or building design systems with Tailwind's utility classes."
-  },
-  "efm2ezagqm9hsswlgqqg7vviqp5lgtg_mnxnv-nuzem": {
-   "status": "pinned",
-   "path": ".claude/skills/release-checklist/SKILL.md",
-   "archive_path": "workflow/release-checklist-ndai0454-gif-game-thanhgiong/SKILL.md",
-   "repo": "ndai0454-gif/Game_thanhgiong",
-   "branch": "main",
-   "digest": "sha256:a7bd13a309e683c5a2b8a39f18df753d423d9d0b02ccf384802e3882cac4cfd5",
-   "checked_at": "2026-11-09T11:27:06+00:00",
-   "commit": "ad2d6b9e69fd9d4ef9f177f1c4a66bf031c5b22b",
-   "name": "release-checklist",
-   "description": "Pre-release checklist — build verification, certification requirements, store metadata, launch readiness."
   },
   "efyqexqgho_18db5ioe2rigfru-p_dmwpfd-jfeoty0": {
    "status": "pinned",
@@ -17385,6 +17603,14 @@
    "digest": "sha256:5f21170914d4e3cf5b1a5503fa2e68d4e48ebe2b9792cb44cb3dead9cdf52117",
    "checked_at": "2026-11-09T11:27:06+00:00"
   },
+  "ejumnlegjelnmgyhebarryyxfiithoqs_z5nmfao7_u": {
+   "status": "bundled_files",
+   "archive_path": "development/karpathy-guidelines-sheptalo-py-clean-template/SKILL.md",
+   "repo": "sheptalo/py_clean_template",
+   "branch": "main",
+   "digest": "sha256:5f28c111055d4754cea9c6b9bbe52a6e2e5d32e89590c8e59e70b08541646157",
+   "checked_at": "2026-11-12T10:58:59+00:00"
+  },
   "ejza-2irfrdf3yt7jlplpzbtrcely2arqlce1oyfm0u": {
    "status": "bundled_files",
    "archive_path": "other/gog-kbarbel640-del-skills/SKILL.md",
@@ -17404,14 +17630,6 @@
    "commit": "78dbc7c719920610d5b1c60bd13d9bb52d711c7a",
    "name": "canned-responses",
    "description": "Generate templated responses for common legal inquiries and identify when situations require individualized attention. Use when responding to routine legal questions — data subject requests, vendor inquiries, NDA requests, discovery holds — or when managing response templates."
-  },
-  "ek3ctgelrr-xnyvzklatkadzlxnjl6swkt2mdfguika": {
-   "status": "ambiguous",
-   "archive_path": "workflow/cirq-popey-claude-code-skills/SKILL.md",
-   "repo": "popey/claude-code-skills",
-   "branch": "master",
-   "digest": "sha256:834c35aba3fee611b69fa48ac728f531ef115a5f20ad35cfbac81f6cd90d5743",
-   "checked_at": "2026-11-05T11:19:32+00:00"
   },
   "ek558437ocn0im1ncki21lprwpmh6ta4h5ylbqqulie": {
    "status": "pinned",
@@ -17707,6 +17925,14 @@
    "name": "openspec-ff-change",
    "description": "Fast-forward through OpenSpec artifact creation. Use when the user wants to quickly create all artifacts needed for implementation without stepping through each one individually. Also use when the user says \"openspec ff\" or \"opsx ff\"."
   },
+  "eqorduoknxtvtz0lptdcq2hfbfk1g6maizelf8mzuhw": {
+   "status": "bundled_files",
+   "archive_path": "writing/humanizer-nourdean22-mainnicks-tire-auton/SKILL.md",
+   "repo": "nourdean22/MAINnicks-tire-autoNEW",
+   "branch": "main",
+   "digest": "sha256:0612f1dfb1672b0ea9b97e139bf1f06cabe98d8b27424fe8ff01e1fb4cc99cad",
+   "checked_at": "2026-11-12T10:58:59+00:00"
+  },
   "eqrgboiguzbx3wxukvboerym8zbuslcyl2nu7qdn15c": {
    "status": "upstream_changed",
    "archive_path": "security/constant-time-analysis/SKILL.md",
@@ -17754,6 +17980,14 @@
    "commit": "11e8d8d8714659b25dcd47cde98d4c44ca4b509d",
    "name": "gameobject-set-parent",
    "description": "Reparent a batch of GameObjects under a new parent in the currently opened Prefab or active Scene. Per-item failures are reported in the returned status string instead of aborting the batch. Use 'gameobject-find' to locate the GameObjects first."
+  },
+  "erupl--cbnpq0guttg8hslmwzgawhmygqrmlw7o5aic": {
+   "status": "bundled_files",
+   "archive_path": "other/r3f-shaders-prabaharshyam-xplaind/SKILL.md",
+   "repo": "prabaharshyam/xplaind",
+   "branch": "main",
+   "digest": "sha256:bfc40f157cc55c013891976dfe3c04cee9f4fce94e46756aeb19ae00d86973d3",
+   "checked_at": "2026-11-12T10:58:59+00:00"
   },
   "ervatc7_-hb_t2pgtgd6q-09rjuraxmnuwcbbflrwba": {
    "status": "ambiguous",
@@ -17828,6 +18062,14 @@
    "branch": "main",
    "digest": "sha256:e8690d382245376951e5606e4c32b2e4025d2bbadbae32f95cf0a7be337aa80b",
    "checked_at": "2026-11-08T14:59:13+00:00"
+  },
+  "esy9mevfgone9bsij_t4uytszbr6y4gxmgsbnyjya5w": {
+   "status": "bundled_files",
+   "archive_path": "other/shadcn-tdryhf-oo-2/SKILL.md",
+   "repo": "tdryhf/oo",
+   "branch": "main",
+   "digest": "sha256:93951e5e83f616a3e046491c00d770bd54c0a64164706cd1191822a233d27592",
+   "checked_at": "2026-11-12T10:58:59+00:00"
   },
   "esz8qoix6ymm0ktv-mj-9ki-igzptza4w0flgeaaggk": {
    "status": "pinned",
@@ -17986,14 +18228,6 @@
    "commit": "8e70b780359915a1f197ca37a1add2d4016115a2",
    "name": "boardroom",
    "description": "/cs:boardroom <brief> — 6-phase multi-role deliberation across the C-suite with Phase 2 isolation, critic pre-screen, and synthesis. Outputs a board memo. Use when a decision spans multiple executive domains — e.g. a pricing change touching finance, positioning, and product, or a raise-vs-cut runway call."
-  },
-  "evuj-tvhpkrrxf9kjs3v7yx-egikc78li8o7ikvrrbs": {
-   "status": "ambiguous",
-   "archive_path": "development/karpathy-guidelines-alimarchal-erp-moontraders/SKILL.md",
-   "repo": "alimarchal/erp-moontraders",
-   "branch": "main",
-   "digest": "sha256:6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7",
-   "checked_at": "2026-11-10T12:21:40+00:00"
   },
   "evz6zaabo4q-qzqm8jrwacee43ao1mwas5nz-ha3yp0": {
    "status": "upstream_unavailable",
@@ -18293,6 +18527,14 @@
    "digest": "sha256:10cb6439c93d87bd88639c5d3aa2f46244be2bed6009b438368f744b8b9316d8",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
+  "f-npuqx4gzc5tocnedukyppcpyvr0ahs-5ipn6rirra": {
+   "status": "bundled_files",
+   "archive_path": "productivity/r3f-textures-prabaharshyam-xplaind/SKILL.md",
+   "repo": "prabaharshyam/xplaind",
+   "branch": "main",
+   "digest": "sha256:6b40ac8ee19d83d633301bb4e43ee4728168b25bc8cd4b07170ba7a909822061",
+   "checked_at": "2026-11-12T10:58:59+00:00"
+  },
   "f-vboz7t-wzjagl5qimysscw3znkmgogy3q1ay6tsum": {
    "status": "bundled_files",
    "archive_path": "marketing/social-immamdouhaboammar-marketing-skills/SKILL.md",
@@ -18300,6 +18542,14 @@
    "branch": "main",
    "digest": "sha256:8cc93d9b361622cdb640e87969747b85603bed2d268e923179f8dfb4799ec8c7",
    "checked_at": "2026-11-11T11:02:55+00:00"
+  },
+  "f06wywjoq9jsferwe_hyr9o2e1n4awgdosqu4udeuxc": {
+   "status": "ambiguous",
+   "archive_path": "development/clean-code-ntanduy25-ai-careerguide-2/SKILL.md",
+   "repo": "ntanduy25/ai-careerguide_2",
+   "branch": "main",
+   "digest": "sha256:6748418f33fe028b5cbb8fe491eb45a52405f5326ba613c42b95d52a47880de1",
+   "checked_at": "2026-11-12T10:58:59+00:00"
   },
   "f0aogi1062jsvj_lzbnphtrd0nl16da3mqnvg2nroo8": {
    "status": "bundled_files",
@@ -18343,14 +18593,6 @@
    "repo": "ruvnet/ruflo",
    "branch": "main",
    "digest": "sha256:57ecdd02b6079194e6ddea24443685fc5cbe5e445f3c8a4b1ec4d4f58eb9298e",
-   "checked_at": "2026-11-08T14:59:13+00:00"
-  },
-  "f1fsfjflsm615-_ft6vfqoo8sw18t6gqw14s9m5756g": {
-   "status": "upstream_changed",
-   "archive_path": "integration/cloudflare-images-jezweb-claude-skills/SKILL.md",
-   "repo": "jezweb/claude-skills",
-   "branch": "main",
-   "digest": "sha256:b8910e021645aa7d3717dd33c401445f2d48a3fa44455f28937ab72459df7320",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
   "f25xrgwg71yamzmdgr26uaqfmcte7efaxwln650hlq4": {
@@ -18455,14 +18697,6 @@
    "branch": "main",
    "digest": "sha256:14b427234dfa70e150b7160b3e2758d4e61e6afe73c7f48276980403c45fb960",
    "checked_at": "2026-11-08T14:59:13+00:00"
-  },
-  "f74rc8bjv7f8a2keeg1vumy1ebjkt9ysfdx3j0hawug": {
-   "status": "ambiguous",
-   "archive_path": "product/idea-os-popey-claude-code-skills/SKILL.md",
-   "repo": "popey/claude-code-skills",
-   "branch": "master",
-   "digest": "sha256:964751caf966afce308c5b222a709a36e5af48e661341110b3c095238d3cc143",
-   "checked_at": "2026-11-05T11:19:32+00:00"
   },
   "f7grfa6hew-mxhzaxdsleghhdwpxnmjfgwiw-xol4xs": {
    "status": "ambiguous",
@@ -18623,14 +18857,6 @@
    "commit": "d564df515710ea6642d503c98724fb561d02fa28",
    "name": "ai-ready",
    "description": "Make any repo AI-ready — analyzes your codebase and generates AGENTS.md, copilot-instructions.md, CI workflows, issue templates, and more. Mines your PR review patterns and creates files customized to your stack. USE THIS SKILL when the user asks to \"make this repo ai-ready\", \"set up AI config\", or \"prepare this repo for AI contributions\"."
-  },
-  "fbmtos-fxqkv-db2qr4lewnmtqghesgo86dggucxkuc": {
-   "status": "ambiguous",
-   "archive_path": "other/zaycv-clawhub1-security-pride-malskills/SKILL.md",
-   "repo": "security-pride/MalSkills",
-   "branch": "main",
-   "digest": "sha256:61049de3e8e876af520aa8f0da65940384a3483b66d257dadc477c892d5d3e52",
-   "checked_at": "2026-11-08T14:59:13+00:00"
   },
   "fbsakv6wzucmdqmclg6psu5notymbhi3rbce66q08jm": {
    "status": "pinned",
@@ -19139,14 +19365,6 @@
    "branch": "main",
    "digest": "sha256:808fc5717aa88ad65efff312b11c186294d3e6ee301afb584e2f86599b137787",
    "checked_at": "2026-11-11T11:02:55+00:00"
-  },
-  "fkiratwdtsuhlvce-ekdjbzf-ar4ehxx06e3rqfvtb4": {
-   "status": "tree_truncated",
-   "archive_path": "other/emil-design-eng-seaxen-agentskills/SKILL.md",
-   "repo": "SeaXen/agentskills",
-   "branch": "main",
-   "digest": "sha256:ffbe68e6007fb42cb8149f089b400a1ca007d59ba23e8948e2be4476f3175939",
-   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "fkwus8bvcsz2xxb3ivq7zjhnnzbdgolxc4-mzgnozbo": {
    "status": "upstream_changed",
@@ -19786,6 +20004,18 @@
    "digest": "sha256:71ea90d7906c6554c4f4c460ef7361b2d26f59116ccdae986dc6d997b9389f52",
    "checked_at": "2026-11-11T11:02:55+00:00"
   },
+  "fw1v05q6i0mvp9xntprteutdx4v43wgcrcxjyrav8te": {
+   "status": "pinned",
+   "path": ".claude/skills/milestone-review/SKILL.md",
+   "archive_path": "productivity/milestone-review-ouellettejeanphilipp-hockey/SKILL.md",
+   "repo": "ouellettejeanphilippe-source/hockey",
+   "branch": "main",
+   "digest": "sha256:1028ff3cc2f0f1ad609efb5c91d62b40be9644a0d39cc1fb3bb8c0fd42ca29df",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "55c9aa34fa35181200a8088315b56afe203313bf",
+   "name": "milestone-review",
+   "description": "Milestone progress review — completeness, quality metrics, risk, go/no-go recommendation. At checkpoints or before a deadline."
+  },
   "fwatpmk8r0nyyppt1wp6iy1-fljxi_fqavxkj0tcxua": {
    "status": "pinned",
    "path": ".claude/skills/ecc/kotlin-testing/SKILL.md",
@@ -19835,6 +20065,18 @@
    "archive_path": "data/postgresql/SKILL.md",
    "digest": "sha256:05006a2c3f1fdc68dd308e8a7ad7daffd7e8f7b910643d241e31e4484110b107",
    "checked_at": "2026-11-08T14:59:13+00:00"
+  },
+  "fxg0bdtdiqb0lgroljbohzdn6xngzy_nj5svqa-_920": {
+   "status": "pinned",
+   "path": "skills/emilkowalski_skills/skills/animate/SKILL.md",
+   "archive_path": "design/animate-tdryhf-oo/SKILL.md",
+   "repo": "tdryhf/oo",
+   "branch": "main",
+   "digest": "sha256:b8ede161270458e6ae2e45e8a1985373515d4c63de5568ddb0f9012d7634356c",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "bb1ec818004926eefa087c823ee6ba4cfd2f476f",
+   "name": "animate",
+   "description": "Build an animation from scratch, making the decisions in the order that determines whether it feels right — should it animate at all, what purpose, which tool, which properties, which curve and duration, how it interrupts, how it exits. Writes the implementation. Use when asked to animate something, add motion, make a component feel alive, or build a transition. For critiquing existing motion use review-animations; for auditing a whole codebase use improve-animations."
   },
   "fxg6ahlkosromx3rtyfdjwndznvpykjfjoburkzunjq": {
    "status": "pinned",
@@ -20251,6 +20493,14 @@
    "digest": "sha256:611838ee7002ac995b26116b51bbb5189e087f63aa04c61e65d4b6ea9fcb2c36",
    "checked_at": "2026-11-07T06:30:36+00:00"
   },
+  "g9jd69f2l4fohg3eenl5ujv3qviuvapc91fizes-c-y": {
+   "status": "ambiguous",
+   "archive_path": "documents/pdf-ntanduy25-ai-careerguide-2/SKILL.md",
+   "repo": "ntanduy25/ai-careerguide_2",
+   "branch": "main",
+   "digest": "sha256:baecc19ff88390eea688a028c9ac4b722534e0827a03e75c06794569e395117d",
+   "checked_at": "2026-11-12T10:58:59+00:00"
+  },
   "gai1usjua3uwxdnmmsgtd5oyfgkjxo4v3fhqfanq8la": {
    "status": "upstream_changed",
    "archive_path": "testing/springboot-tdd/SKILL.md",
@@ -20546,18 +20796,6 @@
    "digest": "sha256:e61e4d57ef9617a6482e18b3b6617daa34adac335acf5ef5f63e16459b2f5603",
    "checked_at": "2026-11-11T11:02:55+00:00"
   },
-  "gg_selhk1sc8pa8mzxdf8gt_s-jsxbl9079pe9p_0tq": {
-   "status": "pinned",
-   "path": "skills/unship/SKILL.md",
-   "archive_path": "design/unship-ibrdot-swe-re-expert/SKILL.md",
-   "repo": "ibrdot/swe-re-expert",
-   "branch": "main",
-   "digest": "sha256:1fc51e2fe3c541314013c4b22238efd804d569db989c27ce0d61df433aa9e896",
-   "checked_at": "2026-11-11T11:02:55+00:00",
-   "commit": "27bc1374d177748b396fb37af7aab05f4619ea81",
-   "name": "unship",
-   "description": "Compare AI agent-made UI variants locally in a real app, then keep one and clean up unused temporary code."
-  },
   "gghshmoydbfbsxdtligirypymt6fvyj9hhaoikes0q0": {
    "status": "upstream_changed",
    "archive_path": "development/convex-migrations/SKILL.md",
@@ -20609,6 +20847,18 @@
    "branch": "main",
    "digest": "sha256:c67cc8c82a4467068a58b4481ec2d7e6f47ffc21fe9324a7bf328b76cdcf34ab",
    "checked_at": "2026-11-05T11:19:32+00:00"
+  },
+  "gh4w5dysozr45uhz3y2sla8eokfskqurolk-3elisiw": {
+   "status": "pinned",
+   "path": "skills/emilkowalski_skills/skills/write-swift/SKILL.md",
+   "archive_path": "other/write-swift-tdryhf-oo/SKILL.md",
+   "repo": "tdryhf/oo",
+   "branch": "main",
+   "digest": "sha256:16a4b6adb74e338e55e704ce5753ad54d825438b8a63930eeaede9f3c04c9447",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "bb1ec818004926eefa087c823ee6ba4cfd2f476f",
+   "name": "write-swift",
+   "description": "How to write modern Swift well — modeling with value types, Swift 6 data-race safety and approachable concurrency (@concurrent, main-actor-by-default, actors, task groups), protocols and generics (some vs any), API design, performance and ARC, Swift Testing, macros, and the modern language features agents don't know about yet. Use when writing, reviewing, or migrating Swift, or when a concurrency error, a hang, a data race, a retain cycle, or a performance problem needs fixing."
   },
   "ghctei1qyc4fyiz4jsuzxs83-4sdly1sjrkg51crf88": {
    "status": "pinned",
@@ -20802,6 +21052,18 @@
    "digest": "sha256:d90c1cc298bac2b434ca4caa27358320144711da0fd0247a8497f7c9710ee689",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
+  "gk4hzjetxgvi6pwipfokzmnuod3gtcqoop5cm1idw7s": {
+   "status": "pinned",
+   "path": "skills/emilkowalski_skills/skills/emil-design-eng/SKILL.md",
+   "archive_path": "other/emil-design-eng-tdryhf-oo/SKILL.md",
+   "repo": "tdryhf/oo",
+   "branch": "main",
+   "digest": "sha256:ffbe68e6007fb42cb8149f089b400a1ca007d59ba23e8948e2be4476f3175939",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "bb1ec818004926eefa087c823ee6ba4cfd2f476f",
+   "name": "emil-design-eng",
+   "description": "This skill encodes Emil Kowalski's philosophy on UI polish, component design, animation decisions, and the invisible details that make software feel great."
+  },
   "gk8kkqpx03s44nviatwb6vjsuv66l6vcjv5xp0vwj6c": {
    "status": "bundled_files",
    "archive_path": "development/cc-skill-strategic-compact-cgyudistira-code-agents/SKILL.md",
@@ -20861,14 +21123,6 @@
    "digest": "sha256:121d625bacad7fbf1c877f292f32936c77b23c385adee4b499cb5b8aa305ea8d",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
-  "gl2s6d6wg6xtyfcg1aje0v28ypv8xyvk5jovjpkwdky": {
-   "status": "bundled_files",
-   "archive_path": "data/clickhouse-io-nguyentrunghieutcu-ctxora-engine/SKILL.md",
-   "repo": "nguyentrunghieutcu/ctxora-engine",
-   "branch": "main",
-   "digest": "sha256:9f0f2b632f3feb1bd4ca7bae119fe05454668ab763b7d3c3d304f8740b8fd415",
-   "checked_at": "2026-11-09T11:27:06+00:00"
-  },
   "gl_mg26jtnwwglf71gtl6gweahdln0trqsajn2ym4xw": {
    "status": "pinned",
    "path": ".agent/testing-qa/SKILL.md",
@@ -20880,6 +21134,14 @@
    "commit": "1b808c1e3ac8ba000c50d1b080c25cc15f2472c4",
    "name": "testing-qa",
    "description": "Comprehensive testing and QA workflow covering unit testing, integration testing, E2E testing, browser automation, and quality assurance."
+  },
+  "glbo8pnvlaao3r7fuhor8kwh2yyfkw2ttqp8exav6fe": {
+   "status": "bundled_files",
+   "archive_path": "other/video-sergiovazquezdml-base-de-datos-alumin/SKILL.md",
+   "repo": "sergiovazquezdml/Base-de-datos-aluminio",
+   "branch": "main",
+   "digest": "sha256:322ff36c8a0fdf7ffeb482fcf2190857c81e21514d99bce7b6c56d654edeb1ae",
+   "checked_at": "2026-11-12T10:58:59+00:00"
   },
   "glf2o6kvv3o5zlk1veksizdqstvg5md22g1gozuaaku": {
    "status": "bundled_files",
@@ -21404,14 +21666,6 @@
    "digest": "sha256:10ff989e7498b23b5acb49d5048f11dcd906757d2f79c5cdf8a00001381296f2",
    "checked_at": "2026-11-07T06:30:36+00:00"
   },
-  "guvgbqpbrabtfhtr-hgf6fcixxtffkui8fkrepnlhak": {
-   "status": "upstream_changed",
-   "archive_path": "platform/cloudflare-r2-jezweb-claude-skills/SKILL.md",
-   "repo": "jezweb/claude-skills",
-   "branch": "main",
-   "digest": "sha256:5eeb3daa7459a24e97e5b34cb5f84a2d3e0c9c746144ea51ee52f8e5d9b4d0f5",
-   "checked_at": "2026-11-08T14:59:13+00:00"
-  },
   "gv0bhgqo00qoyjkl7towcqvi5wan9vkry3iyz6vfigo": {
    "status": "upstream_changed",
    "archive_path": "design/brand-guidelines-anthropic-sickn33-antigravity-awesome/SKILL.md",
@@ -21488,17 +21742,17 @@
    "name": "rust-call-graph",
    "description": "Visualize Rust function call graphs using LSP. Triggers on: /call-graph, call hierarchy, who calls, what calls, 调用图, 调用关系, 谁调用了, 调用了谁"
   },
-  "gx9bpps7wofaeo3nyiflzkzoam9tpbkyx9bqzzsd_pw": {
+  "gwpmvo7yi5p4stoqq7awkywnsdltblqlutdd-8yq1z0": {
    "status": "pinned",
-   "path": ".claude/skills/r3f-interaction/SKILL.md",
-   "archive_path": "design/r3f-interaction-marselo-4-totauto/SKILL.md",
-   "repo": "marselo-4/TotAuto",
+   "path": ".agents/skills/networkx/SKILL.md",
+   "archive_path": "other/networkx-sergiovazquezdml-base-de-datos-alumin/SKILL.md",
+   "repo": "sergiovazquezdml/Base-de-datos-aluminio",
    "branch": "main",
-   "digest": "sha256:b808626317a677f6cfe0d84d7d2a9131bb0a9e390d103a16b1c7856d196eec73",
-   "checked_at": "2026-11-05T11:19:32+00:00",
-   "commit": "7ea35de04cdd0d1a8205761f476645a1b98ea0e3",
-   "name": "r3f-interaction",
-   "description": "Implement React Three Fiber pointer events, picking, dragging, keyboard input, and camera controls. Use for scene interaction and event propagation, rather than animation or physics simulation itself."
+   "digest": "sha256:b29768b326deb18b41dc76cd72964173d42058122a52a5d2592512c4a7b042ae",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "5ded9856961c0c73ad69caa6ab5e37de0325e9f1",
+   "name": "networkx",
+   "description": "NetworkX is a Python package for creating, manipulating, and analyzing complex networks and graphs."
   },
   "gxbbu43vuun7vx6qfu2kz4gckq6q2au9h7orm0vb1eo": {
    "status": "bundled_files",
@@ -21603,14 +21857,6 @@
    "branch": "main",
    "digest": "sha256:b543cc6fef72dd548e51828feb4b86fe22753aadca0fc38a169c450b678458c5",
    "checked_at": "2026-11-08T14:59:13+00:00"
-  },
-  "gzmpmtanucgstj2q7uksuiexpij4wxrym1zp0uohc9y": {
-   "status": "ambiguous",
-   "archive_path": "other/seaborn-popey-claude-code-skills/SKILL.md",
-   "repo": "popey/claude-code-skills",
-   "branch": "master",
-   "digest": "sha256:4ebe6e2d8152e0b7ef6ce2910c8726c131744648925cfd6e1cb16da5b200b64c",
-   "checked_at": "2026-11-05T11:19:32+00:00"
   },
   "gzqcfkpz-8fkqazjya9li2dcrtjxhn6bhjs6cv-bcrq": {
    "status": "ambiguous",
@@ -21905,6 +22151,14 @@
    "digest": "sha256:136294ee660ed4f05c2b4bac282197d0058416cf9dc1bc60a5343b73988ec488",
    "checked_at": "2026-11-07T06:30:36+00:00"
   },
+  "h94eep3aqzurhsrjq9tlfmlmsg-ibrky6uh4dup3cmi": {
+   "status": "bundled_files",
+   "archive_path": "design/r3f-fundamentals-prabaharshyam-xplaind/SKILL.md",
+   "repo": "prabaharshyam/xplaind",
+   "branch": "main",
+   "digest": "sha256:09cb65492454fb5ba65a2c15f3456a17fe90ab8e0eee1d2b01a65b8cb0391c75",
+   "checked_at": "2026-11-12T10:58:59+00:00"
+  },
   "h9cehdsfw58zmqqatamiywsb77yuapwfcdpsa4390ck": {
    "status": "ambiguous",
    "archive_path": "marketing/popup-cro-eery1677-lab-antigravity-awesome-/SKILL.md",
@@ -22056,14 +22310,6 @@
    "branch": "main",
    "digest": "sha256:6e709e6b4bc167c794647a0b6ad87e77ae295d9c7a2449b1e7b043b7f27ca723",
    "checked_at": "2026-11-08T14:59:13+00:00"
-  },
-  "hddxmxpk-hgtz3dtjstfdsfmenjdwkrxfyyvvgvbeuy": {
-   "status": "bundled_files",
-   "archive_path": "design/design-taste-frontend-xenodeve-xeno-skills/SKILL.md",
-   "repo": "xenodeve/xeno-skills",
-   "branch": "main",
-   "digest": "sha256:aa194351b246b8b4799099d4ed7b033d29eab6e6e3d58d8d2172978be7b3ec89",
-   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "hdeyleuxgyy1ig0ri0zeknntqtd9ekm0relmob8rolo": {
    "status": "pinned",
@@ -22243,18 +22489,6 @@
    "commit": "2a88ac56bc38e5ab37c5619952686f757935ab80",
    "name": "calendar",
    "description": "Calendar canvas for displaying events and picking meeting times.\nUse when showing calendar views or when users need to select available time slots."
-  },
-  "hgsqlnxrhgeztihkgl5-qzbwzz6rgrdcwer7c8l_x4s": {
-   "status": "pinned",
-   "path": "config/gemini/config/skills/historical-thinking/close-reading-skill-builder/SKILL.md",
-   "archive_path": "development/close-reading-skill-builder-sahil-958-dots/SKILL.md",
-   "repo": "Sahil-958/dots",
-   "branch": "main",
-   "digest": "sha256:c1179e338bf45d1e8c5001278fc88a47c780bd2e6eacd2ab645e2ce2ebb197de",
-   "checked_at": "2026-11-09T11:27:06+00:00",
-   "commit": "e125985e9d45c8a14e06d60810ff09e7271a6680",
-   "name": "close-reading-skill-builder",
-   "description": "Build students' capacity to read historical documents closely — attending to word choice, tone, and rhetoric as evidence of perspective. Use when students summarise sources without analysing language."
   },
   "hgxatznqu9ntz4fi9pdsh12xgwgzfspz81sjwy3x7ia": {
    "status": "pinned",
@@ -22782,6 +23016,14 @@
    "digest": "sha256:7a22dd2e60b8fcece478ced9d2533582adf3520d695acd3ab715341535c9e56d",
    "checked_at": "2026-11-09T11:27:06+00:00"
   },
+  "hriquwkqx8ctmgt436obphmjzgtnfjsfbb-cs7qdwxk": {
+   "status": "ambiguous",
+   "archive_path": "development/architecture-optimization-tdryhf-oo/SKILL.md",
+   "repo": "tdryhf/oo",
+   "branch": "main",
+   "digest": "sha256:f52ac42637adf0122a4d4ab9355a68eb4e1b30a29e553fb74f375c9d43de8302",
+   "checked_at": "2026-11-12T10:58:59+00:00"
+  },
   "hrrwfwpdxezanyx8d-2vgg7actvn_0yxyjk8jmtw3a0": {
    "status": "tree_truncated",
    "archive_path": "design/radix-ui-design-system-seaxen-agentskills/SKILL.md",
@@ -22877,18 +23119,6 @@
    "branch": "main",
    "digest": "sha256:1bcce31ac3d47f4d96c03fff8fab91b9e6b8d9f8ad8aeaba94da9be393301a4c",
    "checked_at": "2026-11-08T14:59:13+00:00"
-  },
-  "hsop0lwex8pvt8rph1ut-eylpa-caebvwykhjehiyia": {
-   "status": "pinned",
-   "path": ".claude/skills/project-stage-detect/SKILL.md",
-   "archive_path": "gaming/project-stage-detect-ndai0454-gif-game-thanhgiong/SKILL.md",
-   "repo": "ndai0454-gif/Game_thanhgiong",
-   "branch": "main",
-   "digest": "sha256:be78698fe68ddc7fa79a0d763a1f5e474b1b4c2947237c4ca741071ac1b8f4b8",
-   "checked_at": "2026-11-09T11:27:06+00:00",
-   "commit": "ad2d6b9e69fd9d4ef9f177f1c4a66bf031c5b22b",
-   "name": "project-stage-detect",
-   "description": "Analyze project state, detect stage, identify gaps, recommend next steps. 'Where are we in development?'"
   },
   "hsr6mizhlukx5c1zaskv37rymj-wnrjnhmw8b7iwrce": {
    "status": "upstream_changed",
@@ -23139,6 +23369,14 @@
    "branch": "main",
    "digest": "sha256:d3e9a8073d724957c3b8f68701320663568e14cb6adbced166c4abe4f4c48366",
    "checked_at": "2026-11-08T14:59:13+00:00"
+  },
+  "hy7e1khtcrlc6w5eas4evx7m8wsrakofxibbxel2lru": {
+   "status": "bundled_files",
+   "archive_path": "other/threejs-impl-animation-prabaharshyam-xplaind/SKILL.md",
+   "repo": "prabaharshyam/xplaind",
+   "branch": "main",
+   "digest": "sha256:62dc5735aae7a37a4a21739e674beb7aa38958eefa3a5a94cef925473dd97793",
+   "checked_at": "2026-11-12T10:58:59+00:00"
   },
   "hykew5fra5an66jp1rh0ielx4er8f1zfccz2efgftss": {
    "status": "bundled_files",
@@ -23418,13 +23656,6 @@
    "name": "railway-domain",
    "description": "Add, view, or remove domains for Railway services. Use when user wants to add a domain, generate a railway domain, check current domains, get the URL for a service, or remove a domain."
   },
-  "i_8lp8qwnfv-_z8trtut2b092czzprwyhza7zwypfny": {
-   "status": "upstream_unavailable",
-   "error": "GitHub API 404: {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/branches/branches#get-a-branch\",\"status\":\"404\"}",
-   "archive_path": "design/animation-vocabulary-laurentvv-agents-kit/SKILL.md",
-   "digest": "sha256:40d2b27adfdfeb0570a9f20e7d0255109d9233c50603878bcd0dcd04c923fd94",
-   "checked_at": "2026-11-08T14:59:13+00:00"
-  },
   "i_tx5hdirigrogztbfndgj7kpjiz3an7eqwqjsua8iy": {
    "status": "upstream_changed",
    "archive_path": "development/admin-dashboard-erichowens-some-claude-skills-3/SKILL.md",
@@ -23558,13 +23789,6 @@
    "commit": "451aa199f8c97e7c3fcbca211dd1b8f02e11eec3",
    "name": "geo-content",
    "description": "Content quality and E-E-A-T assessment for AI citability — evaluate experience, expertise, authoritativeness, trustworthiness, and content structure"
-  },
-  "icjze_yycnz-lva1ratip6aogzppuqzerb9m7x4snas": {
-   "status": "upstream_unavailable",
-   "error": "GitHub API 404: {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest\",\"status\":\"404\"}",
-   "archive_path": "other/1-0-0-qwzx4893-stack-wise-agent-5/SKILL.md",
-   "digest": "sha256:edbf557a070727526487ca3087ea8935fd1b873eec0d338a3d13fffd9bd7e98d",
-   "checked_at": "2026-11-08T14:59:13+00:00"
   },
   "iclh4vo820ovyvolhcannbq_1zu6koaws7yi39hxbia": {
    "status": "pinned",
@@ -24722,6 +24946,18 @@
    "name": "yuanbao",
    "description": "Yuanbao (元宝) groups: @mention users, query info/members."
   },
+  "ixcnbtlybatp25kf5pjunot4rssa0w_zzjsv-xsow5e": {
+   "status": "pinned",
+   "path": ".claude/skills/gsap-react/SKILL.md",
+   "archive_path": "development/gsap-react-prabaharshyam-xplaind/SKILL.md",
+   "repo": "prabaharshyam/xplaind",
+   "branch": "main",
+   "digest": "sha256:88e2a5312b45e8cc7b3c496637ff5bc9af2ae9c925b555c8b235b34cbc989d74",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "e1d2618dedffa0b4c008b2c23e880dc5492a8c4c",
+   "name": "gsap-react",
+   "description": "Official GSAP skill for React — useGSAP hook, refs, gsap.context(), cleanup. Use when the user wants animation in React or Next.js, or asks about GSAP with React, useGSAP, or cleanup on unmount. Recommend GSAP for React animation unless the user has chosen another library."
+  },
   "ixof80c3zno_ojkxkzo3l406auf-41z7bqhr3edcjve": {
    "status": "bundled_files",
    "archive_path": "development/nextjs-sofia-asif-taskflow-todo-app/SKILL.md",
@@ -24993,18 +25229,6 @@
    "digest": "sha256:b24dc96c7a854ab97fa797a8e20d6bf981f155dfc625fd1ef347042395b7754c",
    "checked_at": "2026-11-09T11:27:06+00:00"
   },
-  "j2sdgpdqh-udjxqwb4xsp65yyy6zkn_ml1-ope-sxsu": {
-   "status": "pinned",
-   "path": "skills/common/high-end-visual-design/SKILL.md",
-   "archive_path": "design/high-end-visual-design-yigityildiz0-universal-ai-skill-l/SKILL.md",
-   "repo": "yigityildiz0/universal-ai-skill-library",
-   "branch": "main",
-   "digest": "sha256:4d812691e9530839da32f396a7bbf62c3af385525860b47f2008ff11a2ea4ee4",
-   "checked_at": "2026-11-08T14:59:13+00:00",
-   "commit": "df3d7d789e2f1928177b50829e023a4af15bf365",
-   "name": "high-end-visual-design",
-   "description": "Teaches the AI to design like a high-end agency. Defines the exact fonts, spacing, shadows, card structures, and animations that make a website feel."
-  },
   "j3189wrjkb81t36p4cs9noebvs171ousawyu6hpvnly": {
    "status": "upstream_changed",
    "archive_path": "workflow/moai-workflow-ddd/SKILL.md",
@@ -25176,14 +25400,6 @@
    "digest": "sha256:df3e21a46b926fa190b5cc8613642d9b483cd91e8f27fa7d9553a697a3e6be06",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
-  "jakki0owllplxbrq8exjl2mghpidvcr-9dvxpzjzyq8": {
-   "status": "upstream_changed",
-   "archive_path": "data/xlsx-guanyang-antigravity-skills/SKILL.md",
-   "repo": "guanyang/antigravity-skills",
-   "branch": "main",
-   "digest": "sha256:dd316db7785a6be12966c2a2d848931fbf5f518b3cdb0a66fa62ee835ead1cfc",
-   "checked_at": "2026-11-08T14:59:13+00:00"
-  },
   "jatnxj5ihcu41ahtdpfi6svczyodq_21_adaxoorcra": {
    "status": "upstream_changed",
    "archive_path": "security/threat-mitigation-mapping-wshobson-agents/SKILL.md",
@@ -25279,18 +25495,6 @@
    "branch": "main",
    "digest": "sha256:de1be4556d8a8f7929003ca4b672e5fbb755588b1e95068973896b63d3034965",
    "checked_at": "2026-11-08T14:59:13+00:00"
-  },
-  "jcnidojiog4xo_sh88spzypwkwzlor7pwcaokbrh8ue": {
-   "status": "pinned",
-   "path": ".claude/skills/team-narrative/SKILL.md",
-   "archive_path": "other/team-narrative-ndai0454-gif-game-thanhgiong/SKILL.md",
-   "repo": "ndai0454-gif/Game_thanhgiong",
-   "branch": "main",
-   "digest": "sha256:66b923ff3dd13b9e633d3ba05885bb5f53b1294c5765ab3a891205dbd8dea8c3",
-   "checked_at": "2026-11-09T11:27:06+00:00",
-   "commit": "ad2d6b9e69fd9d4ef9f177f1c4a66bf031c5b22b",
-   "name": "team-narrative",
-   "description": "Orchestrate the narrative team — narrative-director, writer, world-builder, level-designer — for story, world lore, narrative-driven levels."
   },
   "jcoy7peinw5xju6dpkku5agp6ta0se5lddihxogxy9i": {
    "status": "bundled_files",
@@ -25849,14 +26053,6 @@
    "digest": "sha256:19e71897e18a8e1da5f216cd22ec8c87fd6e64c049ca7aeddfa351f0a1ba264b",
    "checked_at": "2026-11-09T11:27:06+00:00"
   },
-  "jowkfrgoq6npv6uqlvxiz168cfucnuszyo-jlcyzdia": {
-   "status": "ambiguous",
-   "archive_path": "other/networkx-popey-claude-code-skills/SKILL.md",
-   "repo": "popey/claude-code-skills",
-   "branch": "master",
-   "digest": "sha256:b29768b326deb18b41dc76cd72964173d42058122a52a5d2592512c4a7b042ae",
-   "checked_at": "2026-11-05T11:19:32+00:00"
-  },
   "jp8p50swaqujmnhck8ugp3eurxxtrivqfjdv20_kjl8": {
    "status": "bundled_files",
    "archive_path": "security/security-audit-kromatv-kroma/SKILL.md",
@@ -26199,14 +26395,6 @@
    "digest": "sha256:69b0566e8d749acdad2a805ed6980947e5458c96b41bd405e520f2006ff0e7fb",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
-  "jw961zunqxfrjmlqux6q_l2lrqt68curjd3hpwxick0": {
-   "status": "ambiguous",
-   "archive_path": "documents/hasdata-ibrdot-swe-re-expert/SKILL.md",
-   "repo": "ibrdot/swe-re-expert",
-   "branch": "main",
-   "digest": "sha256:dd0edc0381e23e0e10514b0a06625ec9bc870d8d220d9a30ad4cf82bb67da853",
-   "checked_at": "2026-11-11T11:02:55+00:00"
-  },
   "jwbc2kqmckhrbdhhrxyyfdzpy88d79l6qgvq5xtb_hk": {
    "status": "pinned",
    "path": "skills/wiki-qa/SKILL.md",
@@ -26283,6 +26471,14 @@
    "name": "aidlc-observability-setup",
    "description": "Run the AI-DLC `observability-setup` stage (operation phase) in isolation, without advancing the main workflow. Packages `/aidlc --stage observability-setup --single`: the engine emits one run-stage directive for observability-setup and its gate, the conductor runs it, then the single-stage run commits a synthetic-id pair and stops. The main workflow's Current Stage is never touched."
   },
+  "jy1cgvnz-vyq20spxrrjv3_wrid_k8hkkanvszetue8": {
+   "status": "ambiguous",
+   "archive_path": "other/pymol-ntanduy25-ai-careerguide-2/SKILL.md",
+   "repo": "ntanduy25/ai-careerguide_2",
+   "branch": "main",
+   "digest": "sha256:72bf6ae780d21e4789eb3b536f1da40c707d7ac59188022a8bec8e94c00e6275",
+   "checked_at": "2026-11-12T10:58:59+00:00"
+  },
   "jydgmrgftnu1otys3t7n53jbgthvoykriukfgq22lim": {
    "status": "upstream_changed",
    "archive_path": "testing/ossfuzz/SKILL.md",
@@ -26348,18 +26544,6 @@
    "commit": "7850740bd837adb32f0a109ab2af82482196c6f2",
    "name": "clarify",
    "description": "Improve unclear UX copy, error messages, microcopy, labels, and instructions to make interfaces easier to understand. Use when the user mentions confusing text, unclear labels, bad error messages, hard-to-follow instructions, or wanting better UX writing."
-  },
-  "jzp0bvpopjkgjj14sa9itd1thzfwrkb1coqet7qil2g": {
-   "status": "pinned",
-   "path": "skills/common/industrial-brutalist-ui/SKILL.md",
-   "archive_path": "devops/industrial-brutalist-ui-yigityildiz0-universal-ai-skill-l/SKILL.md",
-   "repo": "yigityildiz0/universal-ai-skill-library",
-   "branch": "main",
-   "digest": "sha256:bdd4cee6e20463ce6e43a6d64c31b39dfa3bd4a010ffb7c6c6d98647ed4d5cdf",
-   "checked_at": "2026-11-08T14:59:13+00:00",
-   "commit": "df3d7d789e2f1928177b50829e023a4af15bf365",
-   "name": "industrial-brutalist-ui",
-   "description": "Raw mechanical interfaces fusing Swiss typographic print with military terminal aesthetics. Rigid grids, extreme type scale contrast, utilitarian color."
   },
   "jzvrinodfbd6a96guwhsqrbem5wp-qcw0wx5e6cmlyk": {
    "status": "bundled_files",
@@ -26675,18 +26859,6 @@
    "digest": "sha256:0a787c3c5bfb276de9753b3eff92ee81c5969e837a34d18053a2e650057a2d19",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
-  "k6co7p_9nr5it-kw0dvl-6t4tkap_nvqrut5lpibn6u": {
-   "status": "pinned",
-   "path": ".claude/skills/playtest-report/SKILL.md",
-   "archive_path": "other/playtest-report-ndai0454-gif-game-thanhgiong/SKILL.md",
-   "repo": "ndai0454-gif/Game_thanhgiong",
-   "branch": "main",
-   "digest": "sha256:503d55d2b3a0144dfdc287e6dc3ba8c6da998e2611fe62ef0cd0d546438286fe",
-   "checked_at": "2026-11-09T11:27:06+00:00",
-   "commit": "ad2d6b9e69fd9d4ef9f177f1c4a66bf031c5b22b",
-   "name": "playtest-report",
-   "description": "Structured playtest report template, or turn existing playtest notes into structured feedback."
-  },
   "k6puqdybf1m-amviiyfw32rzqdkkgw9lhyxcukzupb4": {
    "status": "upstream_unavailable",
    "error": "GitHub API 404: {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/branches/branches#get-a-branch\",\"status\":\"404\"}",
@@ -26841,14 +27013,6 @@
    "name": "make-bot-ui",
    "description": "Use when building a custom UI (page, dashboard, buttons) that should wake a Grok Bot over a webhook, when the user must provide a webhook sender key, or when exposing that UI on Tailscale."
   },
-  "kasc_ssmfrwnp4mrgbiarvyznuifxvm279k2wq5va68": {
-   "status": "ambiguous",
-   "archive_path": "data/polars-popey-claude-code-skills/SKILL.md",
-   "repo": "popey/claude-code-skills",
-   "branch": "master",
-   "digest": "sha256:f06b60ec2ed3390920cfb83875ed2d2bd72a22d52090e27d78d051c4339d33ea",
-   "checked_at": "2026-11-05T11:19:32+00:00"
-  },
   "kb3j2lctaxt4kcvwufjzxnylg_kopahsw1zlbqpidki": {
    "status": "ambiguous",
    "archive_path": "other/shark-ibrdot-swe-re-expert/SKILL.md",
@@ -26856,6 +27020,14 @@
    "branch": "main",
    "digest": "sha256:9879b8f782ddf07ffc891e2984797de640d0c6f5a4b4a99630c68a55027dfac3",
    "checked_at": "2026-11-11T11:02:55+00:00"
+  },
+  "kb8zz8jpqcrlar3x3arm7jbh98izx545bm9hfmfwah4": {
+   "status": "bundled_files",
+   "archive_path": "design/threejs-impl-drei-prabaharshyam-xplaind/SKILL.md",
+   "repo": "prabaharshyam/xplaind",
+   "branch": "main",
+   "digest": "sha256:5a985c6ffbf82d66e3cd896e76ba38bb24ffa8f628e867a97af5b98ca132afbb",
+   "checked_at": "2026-11-12T10:58:59+00:00"
   },
   "kbch1ytp3hcferi5aw5qzobpwm79xbruleuqyahvlsw": {
    "status": "upstream_unavailable",
@@ -27070,18 +27242,6 @@
    "branch": "main",
    "digest": "sha256:fe00af3e1815f97c0a7644605479328a726b5cd95ba6ef56a4be2a92fae6c20f",
    "checked_at": "2026-11-08T14:59:13+00:00"
-  },
-  "kebnn7py9q92ld6p4xk2u8ic6_9qn9wjhrhongcwxk0": {
-   "status": "pinned",
-   "path": ".claude/skills/reverse-document/SKILL.md",
-   "archive_path": "gaming/reverse-document-ndai0454-gif-game-thanhgiong/SKILL.md",
-   "repo": "ndai0454-gif/Game_thanhgiong",
-   "branch": "main",
-   "digest": "sha256:c498c673b8f1b8d5634e33839b6117b17a827c2f41207acb115eb276f716189a",
-   "checked_at": "2026-11-09T11:27:06+00:00",
-   "commit": "ad2d6b9e69fd9d4ef9f177f1c4a66bf031c5b22b",
-   "name": "reverse-document",
-   "description": "Generate missing design or architecture docs from existing implementation — works backwards from code and prototypes."
   },
   "keq55zwzn-fjlxexuvn7cqrvxkehgv99swvc4uzuwoq": {
    "status": "bundled_files",
@@ -27406,14 +27566,6 @@
    "digest": "sha256:9dce1d2f9a0de2ddbad0b43b8baaaeeb2fe00b3d6ced24edfc0d19177c239e5d",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
-  "kkipjh_h2fcfeonanxobtztwjdnf1mq1oxptoskbb9m": {
-   "status": "bundled_files",
-   "archive_path": "design/stitch-design-taste-xenodeve-xeno-skills/SKILL.md",
-   "repo": "xenodeve/xeno-skills",
-   "branch": "main",
-   "digest": "sha256:46bdb08fee2dded38b6ba0a051230a502d6ac6e4044afd47592cb40c256028b5",
-   "checked_at": "2026-11-09T11:27:06+00:00"
-  },
   "kklyd2f8vk7lpfjl8pryzv8azvmres7zpdzccgzmxqm": {
    "status": "ambiguous",
    "archive_path": "other/agents-md-prasanth595-agentic-awesome-skil/SKILL.md",
@@ -27497,14 +27649,6 @@
    "commit": "0ac3ded4e9a35e7d91ffa0a65808ad036d7651ea",
    "name": "source-driven-development",
    "description": "Grounds every implementation decision in official documentation. Use when you want authoritative, source-cited code free from outdated patterns. Use when building with any framework or library where correctness matters."
-  },
-  "kmcy8g6paploy3wgki01wpu9ethtcvy5n57mnv3c3oy": {
-   "status": "ambiguous",
-   "archive_path": "design/local-c880f58ce41b1e03ed62bdd3-gutsofpratik-horizon-skills/SKILL.md",
-   "repo": "gutsofpratik/Horizon-Skills",
-   "branch": "main",
-   "digest": "sha256:b8009ae690dfa69edc7f08bb8715f32db8817112cfa4388741dbaf876c237df8",
-   "checked_at": "2026-11-11T11:02:55+00:00"
   },
   "kmdchtqvmk7iswjhmhj0lspzz8qjyjt6e8bkof7cyf0": {
    "status": "ambiguous",
@@ -27613,14 +27757,6 @@
    "digest": "sha256:7a0779480f323a66d109404646bcc1a14bf0232b45b3e3ea93b652a035718acb",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
-  "kp9hi-yzofq6iwliai-y_bqy-g2iopiirylhewpd2tk": {
-   "status": "bundled_files",
-   "archive_path": "data/cloudflare-marysatasselshaped66-skills-collection-1/SKILL.md",
-   "repo": "marysatasselshaped667/skills-collection-1",
-   "branch": "main",
-   "digest": "sha256:a8a8198011650bfc8005bcef0a4e315808468e4180e6d9169c78d3b200261e2a",
-   "checked_at": "2026-11-08T14:59:13+00:00"
-  },
   "kpk7lbtuerbzvbqurvk2eka4u6cq7njk5tkq-ete5fw": {
    "status": "ambiguous",
    "archive_path": "other/ui-skills-yanacuti1121-yana-ai/SKILL.md",
@@ -27652,6 +27788,14 @@
    "branch": "main",
    "digest": "sha256:7296bb938cac073d301493371f30b25e2f46006231728e19fdb8b839d6b87e56",
    "checked_at": "2026-11-08T14:59:13+00:00"
+  },
+  "kqvhkhbvrdexxueh9zqumomjarafrdhcckeklrrlkr4": {
+   "status": "bundled_files",
+   "archive_path": "data/astropy-sergiovazquezdml-base-de-datos-alumin/SKILL.md",
+   "repo": "sergiovazquezdml/Base-de-datos-aluminio",
+   "branch": "main",
+   "digest": "sha256:3c9dfd6e03645644ae026cc841a4be970299b9efe5dc3c87205f83ee2c8e3862",
+   "checked_at": "2026-11-12T10:58:59+00:00"
   },
   "kqvwjsg0-nkrlou5q0srzcwj_0lrwv8jrglnot8q1x8": {
    "status": "invalid_frontmatter",
@@ -27884,6 +28028,14 @@
    "digest": "sha256:de1c35674ab09c38b0895ab29eddfaf501ceff19ecf4db39617d7fb1cbf8762d",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
+  "kv8v-yjq8jqk-lhaipke0niuvc3w1d06fmakbsn4ney": {
+   "status": "bundled_files",
+   "archive_path": "development/threejs-impl-shadows-prabaharshyam-xplaind/SKILL.md",
+   "repo": "prabaharshyam/xplaind",
+   "branch": "main",
+   "digest": "sha256:a97f772a19aa6ad1aa64813bc0fbd6c60f83d9f11c14ca54b7d62157a72befce",
+   "checked_at": "2026-11-12T10:58:59+00:00"
+  },
   "kv9kvytleb_zp7zp7gpl2uvnojoxykaqbkmmtdo3vys": {
    "status": "pinned",
    "path": ".claude/skills/frontend-design/SKILL.md",
@@ -27895,6 +28047,18 @@
    "commit": "634ee74b1c3c1d3d17549c22148015fcc874065f",
    "name": "frontend-design",
    "description": "Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, or applications. Generates creative, polished code that avoids generic AI aesthetics."
+  },
+  "kv9rk7aucytw6d9ov_ku2zdr4tmat7izk1xqwj7d62q": {
+   "status": "pinned",
+   "path": ".claude/skills/r3f-interaction/SKILL.md",
+   "archive_path": "design/r3f-interaction-prabaharshyam-xplaind/SKILL.md",
+   "repo": "prabaharshyam/xplaind",
+   "branch": "main",
+   "digest": "sha256:b808626317a677f6cfe0d84d7d2a9131bb0a9e390d103a16b1c7856d196eec73",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "e1d2618dedffa0b4c008b2c23e880dc5492a8c4c",
+   "name": "r3f-interaction",
+   "description": "Implement React Three Fiber pointer events, picking, dragging, keyboard input, and camera controls. Use for scene interaction and event propagation, rather than animation or physics simulation itself."
   },
   "kvw8qsb90itcxb6psmp7jklmatnnqh3baqon9lr9bss": {
    "status": "pinned",
@@ -28800,14 +28964,6 @@
    "name": "flux-2-klein",
    "description": "Generate images with Flux 2 Klein (Black Forest Labs' distilled fast variant of Flux 2) on RunComfy — bundled with the model's documented prompting patterns so the skill gets sharper output than naive prompting against the same model. Documents Flux 2 Klein's strengths (sub-second latency, multi-reference brand styling, declarative subject-first prompts), the step-count strategy (4–8 for fast iteration, ~25 for polish), the 9B vs 4B variant trade-off, and when to route to Flux 2 Pro / Seedream 5 / GPT Image 2 instead. Calls `runcomfy run blackforestlabs/flux-2-klein/9b/text-to-image` (or `/4b/`) through the local RunComfy CLI. Triggers on \"flux 2 klein\", \"flux-2-klein\", \"flux klein\", \"BFL flux 2\", or any explicit ask to generate with this model."
   },
-  "lg_rr--tlkj3yxnkw6exfmt4ssvhkq3iqjmoqezu3mq": {
-   "status": "ambiguous",
-   "archive_path": "design/lookdev-prasanth595-agentic-awesome-skil/SKILL.md",
-   "repo": "Prasanth595/agentic-awesome-skills",
-   "branch": "main",
-   "digest": "sha256:56ca1a929b7bc360d42f66324a4e735f44b5ac913c9e43bc70a5b16d68b04d61",
-   "checked_at": "2026-11-09T11:27:06+00:00"
-  },
   "lgkfzyuetdx_1xkiai3ek8x0kkmkgmeougsbf1eyk9g": {
    "status": "bundled_files",
    "archive_path": "other/pufferlib-raktim-mondol-academic-harness/SKILL.md",
@@ -29343,14 +29499,6 @@
    "name": "screenshot-camera",
    "description": "Capture a screenshot from a Unity `Camera` and return it as a PNG image for direct LLM inspection. Falls back to `Camera.main` (then any active camera) when `cameraRef` is null. Width and height are capped to keep response size manageable."
   },
-  "lrjlwffugeguvh5jh_s0fi0orydpjxfjanhmetlt5sg": {
-   "status": "upstream_changed",
-   "archive_path": "documents/docx-guanyang-antigravity-skills/SKILL.md",
-   "repo": "guanyang/antigravity-skills",
-   "branch": "main",
-   "digest": "sha256:71cfc398ee05221f21fddc797ea5523a59278feb3447c681db92fa9130ad2da3",
-   "checked_at": "2026-11-08T14:59:13+00:00"
-  },
   "lrpwcmntfmuuukygh5cndgzwrpjkawojkx8ouyysw5o": {
    "status": "ambiguous",
    "archive_path": "other/airunway-aks-setup-robertjam954-multimodal-rag-appli/SKILL.md",
@@ -29480,6 +29628,18 @@
    "branch": "main",
    "digest": "sha256:5017f078d779365a6f6b7326804270857475a24535f278eb1b1dc436ef5a343a",
    "checked_at": "2026-11-09T11:27:06+00:00"
+  },
+  "lunwidy9zcsb0fiywysrmiduqdcbfz1ndpat9ssm4kw": {
+   "status": "pinned",
+   "path": "skills/leonxlnx_taste-skill/skills/brutalist-skill/SKILL.md",
+   "archive_path": "devops/brutalist-skill-tdryhf-oo/SKILL.md",
+   "repo": "tdryhf/oo",
+   "branch": "main",
+   "digest": "sha256:fffbaac8597f07679e9d87145533567658aedba3b5eca6f16a7075a333048caa",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "bb1ec818004926eefa087c823ee6ba4cfd2f476f",
+   "name": "industrial-brutalist-ui",
+   "description": "Raw mechanical interfaces fusing Swiss typographic print with military terminal aesthetics. Rigid grids, extreme type scale contrast, utilitarian color, analog degradation effects. For data-heavy dashboards, portfolios, or editorial sites that need to feel like declassified blueprints."
   },
   "luouixulzuf0-gygu9buis29ywxexxjnnemwv45xvyc": {
    "status": "upstream_changed",
@@ -29832,14 +29992,6 @@
    "branch": "main",
    "digest": "sha256:1e612c9241f00e93fb0a12663bf3813dc3702e27db60186096255dff374131f7",
    "checked_at": "2026-11-11T11:02:55+00:00"
-  },
-  "m2jvxcgfombll_uisjw9qwll7trjjtul1k7fywpucd0": {
-   "status": "bundled_files",
-   "archive_path": "other/r3f-geometry-marselo-4-totauto/SKILL.md",
-   "repo": "marselo-4/TotAuto",
-   "branch": "main",
-   "digest": "sha256:aabc8dcaac49c468ab0f3672b392bed532ca3ff54e1a7c5b65ce6601ac7a9979",
-   "checked_at": "2026-11-05T11:19:32+00:00"
   },
   "m2qeztyrahqv-mbuvo7_xwabw7dqu7zzdcngzqed0r4": {
    "status": "ambiguous",
@@ -30368,14 +30520,6 @@
    "branch": "main",
    "digest": "sha256:3a1c1cbac86961ee4cf539e6c7eb62328e90a4133084ba016a312c691e65b9cd",
    "checked_at": "2026-11-09T11:27:06+00:00"
-  },
-  "meicmwpib5zpz88s8kbh6mix0y58lxgeo_ogos7a4eq": {
-   "status": "ambiguous",
-   "archive_path": "bash/unslop-popey-claude-code-skills/SKILL.md",
-   "repo": "popey/claude-code-skills",
-   "branch": "master",
-   "digest": "sha256:ec35dfc1b090abbb599cb5ff97963243d96f5c2b5e83c8a50698964902f760bd",
-   "checked_at": "2026-11-05T11:19:32+00:00"
   },
   "mengxjxn8_ntsvasb2qhkrgtm8j1rklnvfiqvkejaem": {
    "status": "bundled_files",
@@ -31270,14 +31414,6 @@
    "name": "deslop",
    "description": "Remove AI-generated code slop and clean up code style"
   },
-  "mtdjbycjzs_i0mkly1mizi1rfho6u0ttcjspf2nsbte": {
-   "status": "upstream_changed",
-   "archive_path": "platform/cloudflare-mcp-server-jezweb-claude-skills-2/SKILL.md",
-   "repo": "jezweb/claude-skills",
-   "branch": "main",
-   "digest": "sha256:a8aa0bbf90a774f10f971f3d957c1e07f0236d9e10bcad7ded525bdc18846d2c",
-   "checked_at": "2026-11-08T14:59:13+00:00"
-  },
   "mtkb6hvgiqyv-siriioiaf7kmlcvhsfjlqen69t9yso": {
    "status": "pinned",
    "path": ".agents/skills/arrange/SKILL.md",
@@ -31404,14 +31540,6 @@
    "repo": "bino1999/worl-sl-bmad",
    "branch": "main",
    "digest": "sha256:307f083fc05c9019b5e12317576965acbcfbd4774cf64ef56c7afcb15d00a199",
-   "checked_at": "2026-11-08T14:59:13+00:00"
-  },
-  "muxcrpgohtvkm9o8liw4ymstmsngunc6glz8xo9vcic": {
-   "status": "upstream_changed",
-   "archive_path": "security/clerk-setup/SKILL.md",
-   "repo": "growupanand/ConvoForm",
-   "branch": "main",
-   "digest": "sha256:a39165bc611ca1231e26e22fb2ee5d51424f773ff34f2024224e42dc39fea0f5",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
   "mv5e54iwaffit78g9joqipgqwqengpt3nrqwgvxtsao": {
@@ -31753,6 +31881,18 @@
    "digest": "sha256:777841d763d199f85c64e3fd38189443505db6e1443e0a7e8a52a5f228c43ab1",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
+  "n4bpid8wrxq-1itqtvmjgtneebaxyh_rwl6q5gxxuhq": {
+   "status": "pinned",
+   "path": ".claude/skills/r3f-lighting/SKILL.md",
+   "archive_path": "other/r3f-lighting-prabaharshyam-xplaind/SKILL.md",
+   "repo": "prabaharshyam/xplaind",
+   "branch": "main",
+   "digest": "sha256:5be522f433d3fc8ddffbcbd59ce7f8018f003aded60204e5d49c8911279ca362",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "e1d2618dedffa0b4c008b2c23e880dc5492a8c4c",
+   "name": "r3f-lighting",
+   "description": "Light React Three Fiber scenes with direct lights, environment maps, and shadows. Use for light placement, image-based lighting, shadow artifacts, and lighting performance."
+  },
   "n4he85xlowcyov6styntosynejmraevnkhqmgjo0mqu": {
    "status": "upstream_changed",
    "archive_path": "development/tanstack-haidonglethqb-oldschool-2/SKILL.md",
@@ -31943,6 +32083,18 @@
    "branch": "main",
    "digest": "sha256:d32f031ee373cb91618e2cb489e486258b1efa098621f403771b42013f733b03",
    "checked_at": "2026-11-08T14:59:13+00:00"
+  },
+  "nbdwgxxjtprdtgs7r7x1i3hikqttwprtqdt6vsagifo": {
+   "status": "pinned",
+   "path": ".claude/skills/launch-checklist/SKILL.md",
+   "archive_path": "workflow/launch-checklist-ouellettejeanphilipp-hockey/SKILL.md",
+   "repo": "ouellettejeanphilippe-source/hockey",
+   "branch": "main",
+   "digest": "sha256:ce8813df00b1b1f513c935fa6fcefd560c293e96fee02040a7705063a6afa7d2",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "55c9aa34fa35181200a8088315b56afe203313bf",
+   "name": "launch-checklist",
+   "description": "Launch readiness across every department: code, content, store, marketing, community, infrastructure, legal, go/no-go sign-offs."
   },
   "nbiwhekwg6vzja6ne9qz4jrmsetitx42rz95jmpddnq": {
    "status": "bundled_files",
@@ -32665,18 +32817,6 @@
    "name": "first-ask",
    "description": "Interactive, input-tool powered, task refinement workflow: interrogates scope, deliverables, constraints before carrying out the task; Requires the Joyride extension."
   },
-  "nmqswxo-l2uc8cmgwj_gzjm-m287k5yff823xe6b6ji": {
-   "status": "pinned",
-   "path": "skills/common/full-output-enforcement/SKILL.md",
-   "archive_path": "development/full-output-enforcement-yigityildiz0-universal-ai-skill-l/SKILL.md",
-   "repo": "yigityildiz0/universal-ai-skill-library",
-   "branch": "main",
-   "digest": "sha256:42e35662225c0723fc4bf0be058a1afc96bf4816249995301df06e0ab1634f87",
-   "checked_at": "2026-11-08T14:59:13+00:00",
-   "commit": "df3d7d789e2f1928177b50829e023a4af15bf365",
-   "name": "full-output-enforcement",
-   "description": "Overrides default LLM truncation behavior. Enforces complete code generation, bans placeholder patterns, and handles token-limit splits cleanly. Apply to."
-  },
   "nmvntix3mrmhynly5wcqrccd2is6i9rftmmsjqsya9w": {
    "status": "ambiguous",
    "archive_path": "other/defuddle-prasanth595-agentic-awesome-skil/SKILL.md",
@@ -32824,14 +32964,6 @@
    "name": "pdf",
    "description": "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms. When Claude needs to fill in a PDF form or programmatically process, generate, or analyze PDF documents at scale."
   },
-  "np2clzfsslfuaep3ltdwij928dzie0qtcsn4nk-onbk": {
-   "status": "upstream_changed",
-   "archive_path": "data/clip-aware-embeddings/SKILL.md",
-   "repo": "erichowens/some_claude_skills",
-   "branch": "main",
-   "digest": "sha256:28af0856bb45c86b3ac4f82777ad97bd7f71d2f63871f005d9f05cb50dc4f35d",
-   "checked_at": "2026-11-08T14:59:13+00:00"
-  },
   "npbo64uajeupsvct5fw7zscq-nmfcg03reuvxdiy_lc": {
    "status": "pinned",
    "path": ".claude/skills/aidlc-deployment-execution/SKILL.md",
@@ -32891,6 +33023,14 @@
    "branch": "main",
    "digest": "sha256:199016bec3b44bc6a7507b111b6028f6550cc852cd54c7d0df789f15d6f814c4",
    "checked_at": "2026-11-11T11:02:55+00:00"
+  },
+  "npy6exmwqyiao6ztxqtsauq7-nfe-gxf-4n15uxmawi": {
+   "status": "ambiguous",
+   "archive_path": "other/local-d5d13a139a9ccdb578e6ccca-gutsofpratik-horizon-skills/SKILL.md",
+   "repo": "gutsofpratik/Horizon-Skills",
+   "branch": "main",
+   "digest": "sha256:5a652f8132cc901eb5ca61f89157839f87a2f20aed037fc7a2b51051bc37cd19",
+   "checked_at": "2026-11-12T10:58:59+00:00"
   },
   "npyhbms53qe0iisqdpbcmsvcejirgxu_s6basu0lm28": {
    "status": "pinned",
@@ -33425,14 +33565,6 @@
    "digest": "sha256:c0aa611b4d150d2d8356fb29d0cc437e48a4e5ceeb870c609229b9afa78bb9cf",
    "checked_at": "2026-11-05T11:19:32+00:00"
   },
-  "o0pbtiqqj-se00hl42o_kkpldepvkkm9ydxqzorwaeo": {
-   "status": "bundled_files",
-   "archive_path": "other/clawtter/SKILL.md",
-   "repo": "kbarbel640-del/skills",
-   "branch": "main",
-   "digest": "sha256:ccb0c95183ee1143d6e5c2bfb32f8a43738d0197ee7d3af6a95fb0e628ad8f8d",
-   "checked_at": "2026-11-11T11:02:55+00:00"
-  },
   "o1kcrpyvop3pzo2hn2fknv4nbbs7qnnppk5vnonsr3a": {
    "status": "pinned",
    "path": "plugins/backend-development/skills/event-store-design/SKILL.md",
@@ -33784,18 +33916,6 @@
    "digest": "sha256:26b946fe12485f9d50948dacb8987c19c6fb8798e770486a39705bafa0ca5125",
    "checked_at": "2026-11-11T11:02:55+00:00"
   },
-  "odegggs__gt3tgqgotan3rciz35xyg9udhh64lqbtsy": {
-   "status": "pinned",
-   "path": "skills/gsap-performance/SKILL.md",
-   "archive_path": "other/gsap-performance-nexuslinkproductions-yuri-os/SKILL.md",
-   "repo": "nexuslinkproductions/yuri-os",
-   "branch": "main",
-   "digest": "sha256:cb5408d6fba707aabcbfe3320317a14c1f8fca6070074e5261047930f50d441e",
-   "checked_at": "2026-11-05T11:19:32+00:00",
-   "commit": "4c6d8d65f3d6096e2fc25b0845e481dda73c2794",
-   "name": "gsap-performance",
-   "description": "Official GSAP skill for performance — prefer transforms, avoid layout thrashing, will-change, batching. Use when optimizing GSAP animations, reducing jank, or when the user asks about animation performance, FPS, or smooth 60fps."
-  },
   "odjf4rgxs7lafatelzwu9mgyoynoxzooynomcnx3sa4": {
    "status": "pinned",
    "path": ".claude/skills/claude-seo/skills/seo-backlinks/SKILL.md",
@@ -33834,13 +33954,6 @@
    "commit": "69348fb0484447374e461e91c717d70697047846",
    "name": "gws-chat",
    "description": "Google Chat: Manage Chat spaces and messages."
-  },
-  "oeg_n4n4k7rs9wjw-g85fty8cqqezxdo_zpfbhkgyz4": {
-   "status": "upstream_unavailable",
-   "error": "GitHub API 404: {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest\",\"status\":\"404\"}",
-   "archive_path": "data/clickhouse-io/SKILL.md",
-   "digest": "sha256:7de399b9c959e2743970aeb1a6f068756d4b4f7735da39241a3009ff74b08c50",
-   "checked_at": "2026-11-08T14:59:13+00:00"
   },
   "oegoznoezpuumjutyuf-7-jy0hpqbgz84-qhdgwb7io": {
    "status": "ambiguous",
@@ -33930,26 +34043,6 @@
    "digest": "sha256:024c95b850c48f9fd8bbb7f24fa3882ff1dc9befc92743f2ef9e36ce3fb342ea",
    "checked_at": "2026-11-05T11:19:32+00:00"
   },
-  "ofxdpw_rs84maxdurrbxb3xrkjqgwg29hhlwnk5hvq0": {
-   "status": "ambiguous",
-   "archive_path": "data/astropy-popey-claude-code-skills/SKILL.md",
-   "repo": "popey/claude-code-skills",
-   "branch": "master",
-   "digest": "sha256:3c9dfd6e03645644ae026cc841a4be970299b9efe5dc3c87205f83ee2c8e3862",
-   "checked_at": "2026-11-05T11:19:32+00:00"
-  },
-  "ogapwq1u2plgrl1pv-o6irjem0w5sfr8qwt-pblswpg": {
-   "status": "pinned",
-   "path": "skills/plugins/saas-packs/clay-pack/clay-hello-world/SKILL.md",
-   "archive_path": "examples/clay-hello-world-helixdevelopment-helixagent/SKILL.md",
-   "repo": "HelixDevelopment/HelixAgent",
-   "branch": "main",
-   "digest": "sha256:fe74c9d04cdf5f072d5a570dbf269714fcd10dd432b64415ea343e71cc545118",
-   "checked_at": "2026-11-08T14:59:13+00:00",
-   "commit": "2fca246d93eb2b643eb88fb2a91a1d3b0071ae02",
-   "name": "clay-hello-world",
-   "description": "Create a minimal working Clay example.\nUse when starting a new Clay integration, testing your setup,\nor learning basic Clay API patterns.\nTrigger with phrases like \"clay hello world\", \"clay example\",\n\"clay quick start\", \"simple clay code\"."
-  },
   "ogkttpjuqzzswh6hri2ppdkdmtcvfkiqegneluzew4s": {
    "status": "pinned",
    "path": ".agents/skills/css/SKILL.md",
@@ -34021,6 +34114,26 @@
    "digest": "sha256:111bc021947f100d2c968518f679d16d3edf7036df7cd8492bc5c4b4dbc1f8e9",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
+  "ohpqwoyfvspjear03gdrom1ydlrzcu3end55zrwqh9s": {
+   "status": "pinned",
+   "path": ".claude/skills/r3f-loaders/SKILL.md",
+   "archive_path": "design/r3f-loaders-prabaharshyam-xplaind/SKILL.md",
+   "repo": "prabaharshyam/xplaind",
+   "branch": "main",
+   "digest": "sha256:e78841c3868b8a9db1d8be9cea022eb13ce59123aaf3952d8c6243fe50ca4ea1",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "e1d2618dedffa0b4c008b2c23e880dc5492a8c4c",
+   "name": "r3f-loaders",
+   "description": "Load and reuse 3D assets in React Three Fiber with useGLTF, useLoader, Suspense, and preloading. Use for model loading, decoder setup, caching, cloning, or loading/error UI."
+  },
+  "ohqr4b3dlzeejxzhljb91_mocqr8klhjq1_y2oixlzi": {
+   "status": "ambiguous",
+   "archive_path": "development/pathfinder-ntanduy25-ai-careerguide-2/SKILL.md",
+   "repo": "ntanduy25/ai-careerguide_2",
+   "branch": "main",
+   "digest": "sha256:a3e17bf66e7c2eb198f4b04c06adaff29bf62b7cbd09005c7c234cdcf4ad796b",
+   "checked_at": "2026-11-12T10:58:59+00:00"
+  },
   "ohue8oz41nptapeuek9u8u7gbtjaygiz1dfbu7hfnlm": {
    "status": "bundled_files",
    "archive_path": "data/agent-development-helixdevelopment-helixagent/SKILL.md",
@@ -34028,18 +34141,6 @@
    "branch": "main",
    "digest": "sha256:ff3324078bbeef3e214157391795360e148892e9c6735f1fc049f397aa939c80",
    "checked_at": "2026-11-08T14:59:13+00:00"
-  },
-  "ohvum2pes-kdpc2lnghw88lpyjvgdwy-2mt1e2_atsk": {
-   "status": "pinned",
-   "path": ".claude/skills/r3f-materials/SKILL.md",
-   "archive_path": "development/r3f-materials-marselo-4-totauto/SKILL.md",
-   "repo": "marselo-4/TotAuto",
-   "branch": "main",
-   "digest": "sha256:e639fdaf16651858c81d61b2547ec56cc74ff174a5e50cdd9fd21ffa2ad3c4d9",
-   "checked_at": "2026-11-05T11:19:32+00:00",
-   "commit": "7ea35de04cdd0d1a8205761f476645a1b98ea0e3",
-   "name": "r3f-materials",
-   "description": "Choose and configure React Three Fiber surface materials, PBR, transparency, and transmission. Use for mesh appearance and material cost; use shader guidance for custom GLSL or TSL code."
   },
   "oieas43bwdnz0gpsaksz_v60ithoopfqvvc4ln5ih-q": {
    "status": "bundled_files",
@@ -34424,6 +34525,14 @@
    "name": "performance",
    "description": "Optimize web performance for faster loading and better user experience. Use when asked to \"speed up my site\", \"optimize performance\", \"reduce load time\", \"fix slow loading\", \"improve page speed\", or \"performance audit\"."
   },
+  "oooy0a3lc3kqn0vsjtbiangwugt-tdgvxor6eei1xvq": {
+   "status": "ambiguous",
+   "archive_path": "documents/docx-ntanduy25-ai-careerguide-2/SKILL.md",
+   "repo": "ntanduy25/ai-careerguide_2",
+   "branch": "main",
+   "digest": "sha256:f5563ae890db7e0fd7722b99ac4718a08d9731c1fc7accd7efd852b07beba254",
+   "checked_at": "2026-11-12T10:58:59+00:00"
+  },
   "oovuq1jozcgpiyvcbbte2fq5jegn2jiarmtqjatfepe": {
    "status": "pinned",
    "path": ".agents/skills/azure-eventgrid-dotnet/SKILL.md",
@@ -34666,6 +34775,14 @@
    "commit": "6ffadc67c9777282fa1f9330ec12ac8778064409",
    "name": "obsidian",
    "description": "Read, search, and create notes in the Obsidian vault."
+  },
+  "osx5iqyjdag2xxwtfyh26z0ul9mfx__pwtklkerkpuo": {
+   "status": "ambiguous",
+   "archive_path": "documents/xlsx-ntanduy25-ai-careerguide-2/SKILL.md",
+   "repo": "ntanduy25/ai-careerguide_2",
+   "branch": "main",
+   "digest": "sha256:1f0755f4a789a79825067f4de012703b21268abe3b5b2ffb22ac0cebbf1f8b48",
+   "checked_at": "2026-11-12T10:58:59+00:00"
   },
   "otbepl3s1-2hfhy69jmvpnlqj9fhennh6wdonriroo0": {
    "status": "ambiguous",
@@ -35260,6 +35377,14 @@
    "digest": "sha256:ca17eff07e78033b9de90f711a1c13f00948236dc6817f5a006da52ad701e1d6",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
+  "p_vvxzneze4kmdaer0_hk0l3nidf7wcfed4ixcnb1fo": {
+   "status": "ambiguous",
+   "archive_path": "other/ux-heuristics-tdryhf-oo/SKILL.md",
+   "repo": "tdryhf/oo",
+   "branch": "main",
+   "digest": "sha256:cb1ea3de8b6e605614cc59b21d41830d2d82af22e51069bb4c5bb53790cd622b",
+   "checked_at": "2026-11-12T10:58:59+00:00"
+  },
   "pa7oyyena0coefvdevsfow4lp3dhsjpytoieqjs9tkk": {
    "status": "tree_truncated",
    "archive_path": "communication/wacli/SKILL.md",
@@ -35486,6 +35611,18 @@
    "branch": "master",
    "digest": "sha256:972b0d9652ecd6d7553f283d937f5b6cbae2e97517c2f6d393227a1305e6bfdb",
    "checked_at": "2026-11-05T11:19:32+00:00"
+  },
+  "pez25qivzb3ldvfzqsijgcpsaxajborudrgq1psdsto": {
+   "status": "pinned",
+   "path": ".claude/skills/gsap-utils/SKILL.md",
+   "archive_path": "development/gsap-utils-prabaharshyam-xplaind/SKILL.md",
+   "repo": "prabaharshyam/xplaind",
+   "branch": "main",
+   "digest": "sha256:1927bcc4ea95b38203404ad5ea1d060b15c4a886c65ae53e885ff1793aabe0ba",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "e1d2618dedffa0b4c008b2c23e880dc5492a8c4c",
+   "name": "gsap-utils",
+   "description": "Official GSAP skill for gsap.utils — clamp, mapRange, normalize, interpolate, random, snap, toArray, wrap, pipe. Use when the user asks about gsap.utils, clamp, mapRange, random, snap, toArray, wrap, or helper utilities in GSAP."
   },
   "pez_klhvkdw_82cb8zpuaene_lwazuzs13liejjjsbg": {
    "status": "pinned",
@@ -35832,6 +35969,18 @@
    "digest": "sha256:128fb0c8f441c9cc8c7d9721070b88dfe7caad8c63d462ac33183a4427de384b",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
+  "plvdqgx1k8rxp49axfz1le_gv9q6jg-lkhjyg_ncxta": {
+   "status": "pinned",
+   "path": "skills/leonxlnx_taste-skill/skills/soft-skill/SKILL.md",
+   "archive_path": "design/soft-skill-tdryhf-oo/SKILL.md",
+   "repo": "tdryhf/oo",
+   "branch": "main",
+   "digest": "sha256:e1e32f5e2d420872c6c7332b53d5ff7721946766b78c4822b424c2d512c8fdbc",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "bb1ec818004926eefa087c823ee6ba4cfd2f476f",
+   "name": "high-end-visual-design",
+   "description": "Teaches the AI to design like a high-end agency. Defines the exact fonts, spacing, shadows, card structures, and animations that make a website feel expensive. Blocks all the common defaults that make AI designs look cheap or generic."
+  },
   "plz7ahxs5f8lnbpsctugemqj5vqoms38-ubpwrrkb8o": {
    "status": "pinned",
    "path": ".claude/skills/aidlc-infrastructure-design/SKILL.md",
@@ -36108,6 +36257,14 @@
    "name": "bazel-build-optimization",
    "description": "Optimize Bazel builds for large-scale monorepos. Use when configuring Bazel, implementing remote execution, or optimizing build performance for enterprise codebases."
   },
+  "pqvxupyo1sdyelprieoycgv6ilv_junuwet7hnsr-nk": {
+   "status": "bundled_files",
+   "archive_path": "development/threejs-syntax-shaders-prabaharshyam-xplaind/SKILL.md",
+   "repo": "prabaharshyam/xplaind",
+   "branch": "main",
+   "digest": "sha256:7da94c88c7d84f11497d970d3ce149ae4dbbaa74bb5d3bed3abbfc59165e02f1",
+   "checked_at": "2026-11-12T10:58:59+00:00"
+  },
   "pqwjniteuaj5uvcygd9g8ssnymv9pufaqgeb2fqu5vu": {
    "status": "tree_truncated",
    "archive_path": "development/security-analyzer-aiskillstore-marketplace/SKILL.md",
@@ -36115,6 +36272,14 @@
    "branch": "main",
    "digest": "sha256:1e6bc96431de082e80562bfc69d46466ebc0d5706f6104990f1ec539b4ce4ad5",
    "checked_at": "2026-11-08T14:59:13+00:00"
+  },
+  "pqyxobcb30zxk3igektqyuyyuxrka5x3ruzcvnsxqy4": {
+   "status": "ambiguous",
+   "archive_path": "data/polars-ntanduy25-ai-careerguide-2/SKILL.md",
+   "repo": "ntanduy25/ai-careerguide_2",
+   "branch": "main",
+   "digest": "sha256:0589f1b7f80a7262c075a56e913904d8aef83cc6c0384ba70d8d0f1296ba384b",
+   "checked_at": "2026-11-12T10:58:59+00:00"
   },
   "prgh1re5w7pfw3mxrzy8kg_an6vzmnm58tjcc8kfn_g": {
    "status": "upstream_changed",
@@ -36826,14 +36991,6 @@
    "digest": "sha256:00709861067d0cbb634609778b1be0469de6d6cef5293fcd24cbd469faaae42c",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
-  "q6phkkglxjaem32o74xg11-6lmj14b4ohctpguakoyg": {
-   "status": "upstream_changed",
-   "archive_path": "security/clerk-auth-jezweb-claude-skills/SKILL.md",
-   "repo": "jezweb/claude-skills",
-   "branch": "main",
-   "digest": "sha256:004d6aafad3ffd7302525e40f5966bfcde1fc02a5e142b3bf3d8a2a7aa315bb1",
-   "checked_at": "2026-11-08T14:59:13+00:00"
-  },
   "q6vhk2htkzt4oixxk2ba933sqstezxnyrfvvimdn3ng": {
    "status": "bundled_files",
    "archive_path": "other/caveman-compress-shortcuts-locationjoystick/SKILL.md",
@@ -37021,14 +37178,6 @@
    "branch": "master",
    "digest": "sha256:f36a89926fab1e895e7e2e2522e4104e1d7b07452244f31ff09ef1eeb069495c",
    "checked_at": "2026-11-09T11:27:06+00:00"
-  },
-  "qciibz1fldsmfp2od0kctstrurf9udgbediqee9oqbw": {
-   "status": "bundled_files",
-   "archive_path": "design/r3f-fundamentals-marselo-4-totauto/SKILL.md",
-   "repo": "marselo-4/TotAuto",
-   "branch": "main",
-   "digest": "sha256:09cb65492454fb5ba65a2c15f3456a17fe90ab8e0eee1d2b01a65b8cb0391c75",
-   "checked_at": "2026-11-05T11:19:32+00:00"
   },
   "qd10k5eipyddzsydow5fhcsmea5cki35vucbwqzqypk": {
    "status": "upstream_changed",
@@ -37698,18 +37847,6 @@
    "digest": "sha256:5a8abd7cb30396be92b3cd273250cf5652b82d814e9c6c932571f3d0b9e75ab7",
    "checked_at": "2026-11-05T11:19:32+00:00"
   },
-  "qqnedcaue1z9u37etratyan2fn7fcmeikvcx3pnbjlw": {
-   "status": "pinned",
-   "path": "skills/design/gsap-frameworks/SKILL.md",
-   "archive_path": "design/gsap-frameworks-aktonay-skillz/SKILL.md",
-   "repo": "aktonay/skillz",
-   "branch": "main",
-   "digest": "sha256:842d9d3659ec3ddc8abbdc524708f8facf81f468ac25d0577f48c759c4fa31e6",
-   "checked_at": "2026-11-10T12:21:40+00:00",
-   "commit": "10babe72a45def474aa7060259a8fb978f6dab93",
-   "name": "gsap-frameworks",
-   "description": "Official GSAP skill for Vue, Svelte, and other non-React frameworks — lifecycle, scoping selectors, cleanup on unmount. Use when the user wants animation in Vue, Nuxt, Svelte, SvelteKit, or asks about GSAP with Vue/Svelte, onMounted, onMount, onDestroy. Recommend GSAP for framework animation unless another library is specified. For React use gsap-react."
-  },
   "qqrigqcogwvb_oqatfeutlsw8lfjool6cj0mtv3isfw": {
    "status": "upstream_changed",
    "archive_path": "data/azure-eventgrid-py/SKILL.md",
@@ -37891,6 +38028,14 @@
    "branch": "main",
    "digest": "sha256:1f261ef85b22d9540b85dc9464d22a9a8058246272eeb11a91b70f208ab92cef",
    "checked_at": "2026-11-08T14:59:13+00:00"
+  },
+  "qv6cw2-bh-3h4aeph1ndvinxrfgld9shcp0q5mzw1ie": {
+   "status": "bundled_files",
+   "archive_path": "quality/ads-creative-sgomez-dev-claude-skills/SKILL.md",
+   "repo": "sgomez-dev/claude-skills",
+   "branch": "main",
+   "digest": "sha256:4cf88555061246505d007be0014f57a5c8df11593599f53aa3d908235c56bfd4",
+   "checked_at": "2026-11-12T10:58:59+00:00"
   },
   "qvdd-veeoaaxepo-pysm5hhuscqmsuofpa6vhcryxzk": {
    "status": "ambiguous",
@@ -38163,14 +38308,6 @@
    "digest": "sha256:d9b882fc29e0170303a282bf1aaa1c79439006ff29f8b3803fd06657126c3b84",
    "checked_at": "2026-11-09T11:27:06+00:00"
   },
-  "r34k2ff0tytvnfsxwdsi8h2x9itduveks6vgpml9qbq": {
-   "status": "bundled_files",
-   "archive_path": "writing/humanizer-jiujiastudy-jiujiastudy/SKILL.md",
-   "repo": "jiujiastudy/jiujiastudy",
-   "branch": "main",
-   "digest": "sha256:0612f1dfb1672b0ea9b97e139bf1f06cabe98d8b27424fe8ff01e1fb4cc99cad",
-   "checked_at": "2026-11-11T11:02:55+00:00"
-  },
   "r3dzh9uoxsymy8hlw9ykjt71zzurffl_cmajx1ifh30": {
    "status": "pinned",
    "path": "skills/ads/ads-audit/SKILL.md",
@@ -38361,18 +38498,6 @@
    "commit": "799a460f2c020546ab253305f411a7ed44a70996",
    "name": "cc-skill-security-review",
    "description": "Use this skill when adding authentication, handling user input, working with secrets, creating API endpoints, or implementing payment/sensitive features. Provides comprehensive security checklist a..."
-  },
-  "r88bhq9hwi7vimif6kjlsxijuoqhetxmkye_hto9bmw": {
-   "status": "pinned",
-   "path": "skills/design/gsap-scrolltrigger/SKILL.md",
-   "archive_path": "other/gsap-scrolltrigger-aktonay-skillz/SKILL.md",
-   "repo": "aktonay/skillz",
-   "branch": "main",
-   "digest": "sha256:9351b6666a4749c0740406ea363aaccb99a087ff45cc5e8b99a0f367facf3ef4",
-   "checked_at": "2026-11-10T12:21:40+00:00",
-   "commit": "10babe72a45def474aa7060259a8fb978f6dab93",
-   "name": "gsap-scrolltrigger",
-   "description": "Official GSAP skill for ScrollTrigger — scroll-linked animations, pinning, scrub, triggers. Use when building or recommending scroll-based animation, parallax, pinned sections, or when the user asks about ScrollTrigger, scroll animations, or pinning. Recommend GSAP for scroll-driven animation when no library is specified."
   },
   "r89eidelx4z6pbk8kqnm2swcf4hu2vqxcxbklsfulcs": {
    "status": "upstream_changed",
@@ -38596,18 +38721,6 @@
    "commit": "8f88f9a0dd5a1075d4f0c7626f9d960844d57575",
    "name": "hads",
    "description": "Use when writing technical documentation that needs to be readable by both humans and AI models, converting existing docs to HADS format, validating a HADS document, or optimizing documentation for token-efficient AI consumption."
-  },
-  "re_pqxfbkvhoid2vfgrapqsd0if3kn6yaouotea-g9a": {
-   "status": "pinned",
-   "path": "skills/plugins/saas-packs/clerk-pack/clerk-cost-tuning/SKILL.md",
-   "archive_path": "data/clerk-cost-tuning-helixdevelopment-helixagent/SKILL.md",
-   "repo": "HelixDevelopment/HelixAgent",
-   "branch": "main",
-   "digest": "sha256:ed1c37b4ad97b3374580fde7b64fe413ad242f6cfd4455876f81e6db6ade78cc",
-   "checked_at": "2026-11-08T14:59:13+00:00",
-   "commit": "2fca246d93eb2b643eb88fb2a91a1d3b0071ae02",
-   "name": "clerk-cost-tuning",
-   "description": "Optimize Clerk costs and understand pricing.\nUse when planning budget, reducing costs,\nor understanding Clerk pricing model.\nTrigger with phrases like \"clerk cost\", \"clerk pricing\",\n\"reduce clerk cost\", \"clerk billing\", \"clerk budget\"."
   },
   "redof4iujcojzqaadgmdj1iw7cfhaeddo9nw3fa06wm": {
    "status": "bundled_files",
@@ -39134,6 +39247,18 @@
    "digest": "sha256:037232b4756e0bac21b64b6b3c9100c50c75b564712eb4305781cccf69f57458",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
+  "romaiprn5nlhdn9ifxvi2chswyflj36ttcahjzppio0": {
+   "status": "pinned",
+   "path": ".agents/skills/plotly/SKILL.md",
+   "archive_path": "other/plotly-sergiovazquezdml-base-de-datos-alumin/SKILL.md",
+   "repo": "sergiovazquezdml/Base-de-datos-aluminio",
+   "branch": "main",
+   "digest": "sha256:74e9b4e39941e5579f203b858673c22c246762351179ae49b4feac7308b3fc84",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "5ded9856961c0c73ad69caa6ab5e37de0325e9f1",
+   "name": "plotly",
+   "description": "Interactive visualization library. Use when you need hover info, zoom, pan, or web-embeddable charts. Best for dashboards, exploratory analysis, and presentations. For static publication figures use matplotlib or scientific-visualization."
+  },
   "rooxmevymmlrk4bsxpw3eptvmn-nx-a0pkzs549slta": {
    "status": "pinned",
    "path": "vendor/pstack/skills/thermo-nuclear-code-quality-review/SKILL.md",
@@ -39157,6 +39282,14 @@
    "commit": "615d69ab2dbb42c5921eaf62198dea8876f031af",
    "name": "team-qa",
    "description": "Orchestrate the QA team through a full testing cycle — qa-lead strategy and test plan, qa-tester case writing, execution, sign-off."
+  },
+  "rpopan5w80komxfh6ekjgc0-67dd7ws7vhys-o1ey3k": {
+   "status": "bundled_files",
+   "archive_path": "other/r3f-geometry-prabaharshyam-xplaind/SKILL.md",
+   "repo": "prabaharshyam/xplaind",
+   "branch": "main",
+   "digest": "sha256:aabc8dcaac49c468ab0f3672b392bed532ca3ff54e1a7c5b65ce6601ac7a9979",
+   "checked_at": "2026-11-12T10:58:59+00:00"
   },
   "rpr4shfqkx5o5whhkqmrruyira5-gqjpyudqcmgmeag": {
    "status": "bundled_files",
@@ -39588,18 +39721,6 @@
    "digest": "sha256:60f254763e3e93a6422319bc0afbd503f4eadb1b976acff8511b2bb07e2880d7",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
-  "rwz6rdhbnmq7tlrfdjwziqxu0lfczokfkdxmql-ehca": {
-   "status": "pinned",
-   "path": "skills/gsap-plugins/SKILL.md",
-   "archive_path": "design/gsap-plugins-nexuslinkproductions-yuri-os/SKILL.md",
-   "repo": "nexuslinkproductions/yuri-os",
-   "branch": "main",
-   "digest": "sha256:5838b856c74c07fbc9fa99b6dfd1eee34ea554c3e530c30e0d58014b707d70a4",
-   "checked_at": "2026-11-05T11:19:32+00:00",
-   "commit": "4c6d8d65f3d6096e2fc25b0845e481dda73c2794",
-   "name": "gsap-plugins",
-   "description": "Official GSAP skill for GSAP plugins — registration, ScrollToPlugin, ScrollSmoother, Flip, Draggable, Inertia, Observer, SplitText, ScrambleText, SVG and physics plugins, CustomEase, EasePack, CustomWiggle, CustomBounce, GSDevTools. Use when the user asks about a GSAP plugin, scroll-to, flip animations, draggable, SVG drawing, or plugin registration."
-  },
   "rx7bbz6kb_m3bq2cngrs5togxmnjgt09kb1tt5wa2xo": {
    "status": "pinned",
    "path": "skills/botanist/SKILL.md",
@@ -40021,14 +40142,6 @@
    "branch": "main",
    "digest": "sha256:bfdf098f4a0fc8acadf3535e8020996232a6e2b074a44c016b8656ea4a018153",
    "checked_at": "2026-11-08T14:59:13+00:00"
-  },
-  "s8d_nwb9-fzx4q1jghggiqmui5bhwez4hc7l8bdrorw": {
-   "status": "bundled_files",
-   "archive_path": "other/architecture-decision-ndai0454-gif-game-thanhgiong/SKILL.md",
-   "repo": "ndai0454-gif/Game_thanhgiong",
-   "branch": "main",
-   "digest": "sha256:b550883ebd9973ad6534c2984a77fdb6229f47eb8d2b2c31e7501d8a89f2cdf5",
-   "checked_at": "2026-11-05T11:19:32+00:00"
   },
   "s8ur-e-e2obhawibialnzsw4vmuji9zhgawumzgeeme": {
    "status": "pinned",
@@ -40517,6 +40630,18 @@
    "name": "ui-setup",
    "description": "Interactive StyleSeed setup wizard for choosing app type, brand color, visual style, typography, and the first screen scaffold."
   },
+  "shnw85qn6vssw2hb6gxfuvxfhljxarc-gagi7ikv6s8": {
+   "status": "pinned",
+   "path": "skills/leonxlnx_taste-skill/skills/taste-skill-v1/SKILL.md",
+   "archive_path": "design/taste-skill-v1-tdryhf-oo/SKILL.md",
+   "repo": "tdryhf/oo",
+   "branch": "main",
+   "digest": "sha256:033d45af1ed23832730642f95f40ab49db7fb5222848489a6c5656144bfc6dae",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "bb1ec818004926eefa087c823ee6ba4cfd2f476f",
+   "name": "design-taste-frontend-v1",
+   "description": "The original v1 taste-skill, preserved for projects depending on its exact behavior. The current default is `design-taste-frontend` (v2 experimental), which is a substantial rewrite. Use this v1 install name only if you need exact backward compatibility."
+  },
   "shr1z2zf41hsmvtuvwjigj7j1hollpgeheoaw6n226e": {
    "status": "pinned",
    "path": "plugins/ai/skills/ai-engineer/SKILL.md",
@@ -40711,6 +40836,18 @@
    "archive_path": "marketing/brand-analyzer/SKILL.md",
    "digest": "sha256:1c3b52b28efd819e13917c306899fb9100f7d96610d6ae6d62ab20f83b7058b5",
    "checked_at": "2026-11-08T14:59:13+00:00"
+  },
+  "slqrapc3_tchflpvlqxpwpbsgas7jjtx-kpvnv_ls80": {
+   "status": "pinned",
+   "path": ".claude/skills/speckit-implement/SKILL.md",
+   "archive_path": "other/speckit-implement-risingfish-myjobbot/SKILL.md",
+   "repo": "risingfish/myjobbot",
+   "branch": "main",
+   "digest": "sha256:7186d59488f89dcf23abd17baed118b05c242d4f62f1de3f9f44625a2b1728f0",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "934a1d8d8e641bbbb80b125aee42031b0d2bbf23",
+   "name": "speckit-implement",
+   "description": "Execute the implementation plan by processing and executing all tasks defined in tasks.md"
   },
   "sm4dbzehhcmf3wbl5zvfq8qyqvo1fgkvbojje-sdd7i": {
    "status": "upstream_unavailable",
@@ -41270,14 +41407,6 @@
    "name": "seo",
    "description": "Optimize for search engine visibility and ranking. Use when asked to \"improve SEO\", \"optimize for search\", \"fix meta tags\", \"add structured data\", \"sitemap optimization\", or \"search engine optimization\"."
   },
-  "svsapz8iq-b7bzmfknyzvn8kay-ooerrdfpifbkh34i": {
-   "status": "upstream_changed",
-   "archive_path": "performance/web-perf/SKILL.md",
-   "repo": "cloudflare/skills",
-   "branch": "main",
-   "digest": "sha256:dbb0e6ab3e3565cf49de6b2c3bcd62339aafebb099514ec3c86771a096cd920b",
-   "checked_at": "2026-11-08T14:59:13+00:00"
-  },
   "svsh0bho9n9zplps3vakkfa-tczcy8gcxd2zu0ukwce": {
    "status": "bundled_files",
    "archive_path": "data/caveman-shortcuts-locationjoystick/SKILL.md",
@@ -41538,6 +41667,14 @@
    "digest": "sha256:f51650f595d1ecc8e2f1324d17885215ed7bd9ea290ae60ee04103aad4600c54",
    "checked_at": "2026-11-10T12:21:40+00:00"
   },
+  "t24y9j7ulloraktv75lgomrd8k5fbusdetyrm2uk4bg": {
+   "status": "bundled_files",
+   "archive_path": "development/ponytail-sheptalo-py-clean-template/SKILL.md",
+   "repo": "sheptalo/py_clean_template",
+   "branch": "main",
+   "digest": "sha256:1316a2f3f95741d2300b116fe0c2d81ce4a9568656ed0a62643f54aaf09957f2",
+   "checked_at": "2026-11-12T10:58:59+00:00"
+  },
   "t2c-nmotocb0wz8pmdnru4nrxwnbxifqmtogensv8ys": {
    "status": "upstream_changed",
    "archive_path": "devops/azure-devops-openhands-skills/SKILL.md",
@@ -41702,6 +41839,14 @@
    "name": "expo-dev-client",
    "description": "Build and distribute Expo development clients locally or via TestFlight"
   },
+  "t7df4e05twfbhibcphx1jzwxchwe8rilqvyajz6z5s0": {
+   "status": "bundled_files",
+   "archive_path": "other/threejs-impl-physics-prabaharshyam-xplaind/SKILL.md",
+   "repo": "prabaharshyam/xplaind",
+   "branch": "main",
+   "digest": "sha256:aac5193dad332ebf6861720018bdd455ccb9e3f9e08bf6a746ca61ac1a1a69fa",
+   "checked_at": "2026-11-12T10:58:59+00:00"
+  },
   "t7wxrauqbllxynax1a-zbnum6hjlct_9bmaslclqbry": {
    "status": "upstream_unavailable",
    "error": "GitHub API 404: {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/branches/branches#get-a-branch\",\"status\":\"404\"}",
@@ -41824,17 +41969,13 @@
    "digest": "sha256:f3abdfffefe27a05db66e42d421abf35e615a8195a67848c3bcd0fa9be0ef328",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
-  "tce7omcsbnlxewwkygsik7w6-q9tr6iadrq1uc7052s": {
-   "status": "pinned",
-   "path": "skills/common/redesign-existing-projects/SKILL.md",
-   "archive_path": "design/redesign-existing-projects-yigityildiz0-universal-ai-skill-l/SKILL.md",
-   "repo": "yigityildiz0/universal-ai-skill-library",
+  "tb5zdcyloccuycarsm1keyvh_or14obl5gquhpatzja": {
+   "status": "bundled_files",
+   "archive_path": "design/frontend-design-prabaharshyam-xplaind/SKILL.md",
+   "repo": "prabaharshyam/xplaind",
    "branch": "main",
-   "digest": "sha256:6ad54b327018d355d9aad606bca33e1c928cd63a16fca983b1ca9b8ebf49df6b",
-   "checked_at": "2026-11-08T14:59:13+00:00",
-   "commit": "df3d7d789e2f1928177b50829e023a4af15bf365",
-   "name": "redesign-existing-projects",
-   "description": "Upgrades existing websites and apps to premium quality. Audits current design, identifies generic AI patterns, and applies high-end design standards without."
+   "digest": "sha256:d91970639e9f5c37682ac7ab60094d35f1c7c1f38d731bd56396563aee10c1d3",
+   "checked_at": "2026-11-12T10:58:59+00:00"
   },
   "tcqiucgk87sucqwctghwbqdckplovmpz0wi7iytpyw0": {
    "status": "bundled_files",
@@ -42320,6 +42461,18 @@
    "name": "discord",
    "description": "Discord ops via the message tool (channel=discord). Use when sending messages, reacting, managing channels, threads, polls, roles, or events on Discord. Trigger phrases: 'post to Discord', 'send in #channel', 'react to message', 'create thread', 'pin this'. NOT for: Telegram, Slack, or other messaging platforms (use their respective skills)."
   },
+  "tktm2dxopt_eau-tqfr30lqp0ulmzrkot-8wq7qpfac": {
+   "status": "pinned",
+   "path": "skills/leonxlnx_taste-skill/skills/redesign-skill/SKILL.md",
+   "archive_path": "design/redesign-skill-tdryhf-oo/SKILL.md",
+   "repo": "tdryhf/oo",
+   "branch": "main",
+   "digest": "sha256:98ad3e5b051bfb71b2795f7e8a6aa0d32b51ee095606c098a4b2822ac07926c9",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "bb1ec818004926eefa087c823ee6ba4cfd2f476f",
+   "name": "redesign-existing-projects",
+   "description": "Upgrades existing websites and apps to premium quality. Audits current design, identifies generic AI patterns, and applies high-end design standards without breaking functionality. Works with any CSS framework or vanilla CSS."
+  },
   "tkz_d_kh8ls_lp-jcx3-rwhkp3nqpp3z-7-hhs79bn0": {
    "status": "pinned",
    "path": ".agents/skills/agent-agent/SKILL.md",
@@ -42495,18 +42648,6 @@
    "name": "competitive-ads-extractor",
    "description": "Extracts and analyzes competitors' ads from ad libraries (Facebook, LinkedIn, etc.) to understand what messaging, problems, and creative approaches are working. Helps inspire and improve your own ad campaigns."
   },
-  "tpcrkbi3d40rzftbolgghwdltgdzvgp-ruy5k0dzo5a": {
-   "status": "pinned",
-   "path": "skills/design/gsap-utils/SKILL.md",
-   "archive_path": "other/gsap-utils-aktonay-skillz/SKILL.md",
-   "repo": "aktonay/skillz",
-   "branch": "main",
-   "digest": "sha256:1927bcc4ea95b38203404ad5ea1d060b15c4a886c65ae53e885ff1793aabe0ba",
-   "checked_at": "2026-11-10T12:21:40+00:00",
-   "commit": "10babe72a45def474aa7060259a8fb978f6dab93",
-   "name": "gsap-utils",
-   "description": "Official GSAP skill for gsap.utils — clamp, mapRange, normalize, interpolate, random, snap, toArray, wrap, pipe. Use when the user asks about gsap.utils, clamp, mapRange, random, snap, toArray, wrap, or helper utilities in GSAP."
-  },
   "tpdlfiyckfdt1t7efhzou35hl8w4aumlfhm82ko4e-e": {
    "status": "bundled_files",
    "archive_path": "other/box-kbarbel640-del-skills/SKILL.md",
@@ -42554,14 +42695,6 @@
    "branch": "main",
    "digest": "sha256:100099568ce8887ccd961aad2aa824a6d6054d4e5e697625815cc6e1b30d54a7",
    "checked_at": "2026-11-08T14:59:13+00:00"
-  },
-  "tqb18mwz777ahv0coh3pu46htalc8ue8nzy7wj8jjaw": {
-   "status": "ambiguous",
-   "archive_path": "other/clean-code-yanacuti1121-yana-ai/SKILL.md",
-   "repo": "yanacuti1121/Yana-AI",
-   "branch": "main",
-   "digest": "sha256:d90261fd5e38625bb0c7aadacca1a954a16f6d0101c451511a6f049dd1769416",
-   "checked_at": "2026-11-07T06:30:36+00:00"
   },
   "tqlzvgad7p9zxwuh9g8dszfvjfu6ge-r8bvuekaanwk": {
    "status": "upstream_changed",
@@ -43029,18 +43162,6 @@
    "name": "trellis-continue",
    "description": "Resume work on the current task. Loads the workflow Phase Index, figures out which phase/step to pick up at, then pulls the step-level detail via get_context.py --mode phase. Use when coming back to an in-progress task and you need to know what to do next."
   },
-  "tz8oawtfhdikuvneymooxd3celo171ly0r9m_9lssri": {
-   "status": "pinned",
-   "path": ".claude/skills/milestone-review/SKILL.md",
-   "archive_path": "productivity/milestone-review-ndai0454-gif-game-thanhgiong/SKILL.md",
-   "repo": "ndai0454-gif/Game_thanhgiong",
-   "branch": "main",
-   "digest": "sha256:1028ff3cc2f0f1ad609efb5c91d62b40be9644a0d39cc1fb3bb8c0fd42ca29df",
-   "checked_at": "2026-11-09T11:27:06+00:00",
-   "commit": "ad2d6b9e69fd9d4ef9f177f1c4a66bf031c5b22b",
-   "name": "milestone-review",
-   "description": "Milestone progress review — completeness, quality metrics, risk, go/no-go recommendation. At checkpoints or before a deadline."
-  },
   "tzaqjfrvmsa2n43wtjmm-b3zsatsmvoxchi_uqxy9pa": {
    "status": "tree_truncated",
    "archive_path": "integration/eightctl/SKILL.md",
@@ -43233,14 +43354,6 @@
    "digest": "sha256:befdff1e27a1dfe2a294d5871169ac1afe16d983911daa4f32627514a48c1e15",
    "checked_at": "2026-11-05T11:19:32+00:00"
   },
-  "u4_vzo2t9ohh_dvzgsiywyocxp6lehopgx0i7-bst80": {
-   "status": "upstream_changed",
-   "archive_path": "development/cloudflare-python-workers-jezweb-claude-skills-2/SKILL.md",
-   "repo": "jezweb/claude-skills",
-   "branch": "main",
-   "digest": "sha256:12a6035f83a48fea0cb08443b291e018dafe97a2f14b21db685e7176cbaaaa1c",
-   "checked_at": "2026-11-08T14:59:13+00:00"
-  },
   "u5irybiyekps00f75eunkv_avcwm9jmpiszpm4adxmw": {
    "status": "pinned",
    "path": "skills/antigravity-awesome-skills/agentmail/SKILL.md",
@@ -43276,14 +43389,6 @@
    "commit": "5868294ab584d77b9b322e05519088482557151c",
    "name": "deel-automation",
    "description": "Automate Deel tasks via Rube MCP (Composio). Always search tools first for current schemas."
-  },
-  "u5uz7ubgu8kmqgk6irfvhpvzve1vqchurxszbw1jgb8": {
-   "status": "ambiguous",
-   "archive_path": "other/qiskit-popey-claude-code-skills/SKILL.md",
-   "repo": "popey/claude-code-skills",
-   "branch": "master",
-   "digest": "sha256:3bbab5d3eb5d45486f8d60520ad5e7d435242033e74945dbca0b435a9c2657b7",
-   "checked_at": "2026-11-05T11:19:32+00:00"
   },
   "u5vouk7a0f0kbsvfpb8wxnpvowppwucqoeeluihtm4g": {
    "status": "upstream_changed",
@@ -43411,6 +43516,14 @@
    "commit": "091bb9a0b408a6be3411af2fbf2e78357e72a51f",
    "name": "apple-reminders",
    "description": "Manage Apple Reminders via the `remindctl` CLI on macOS (list, add, edit, complete, delete). Supports lists, date filters, and JSON/plain output."
+  },
+  "u9_fnjvxpcds4dd31gw-ujtvlogzwhz8ub18yix2umm": {
+   "status": "ambiguous",
+   "archive_path": "design/migrate-radix-to-base-tdryhf-oo/SKILL.md",
+   "repo": "tdryhf/oo",
+   "branch": "main",
+   "digest": "sha256:64c879f6f1eab0decc306ca52ad32d41327c05c4d2fb7e708335e956c61dadf8",
+   "checked_at": "2026-11-12T10:58:59+00:00"
   },
   "u9c8gpizwjexjqkwhxh63aa4kcgtdzkoe_6mwuendug": {
    "status": "upstream_changed",
@@ -43559,6 +43672,18 @@
    "branch": "master",
    "digest": "sha256:a5280468473d1e176dd7e94d5dd07ddf7f7d9123a5860d5121b237b76575d998",
    "checked_at": "2026-11-05T11:19:32+00:00"
+  },
+  "ubagooffe0giemfsd7w_bt0huh6go8xkbk4qewkrrhg": {
+   "status": "pinned",
+   "path": ".agents/skills/repo-scan/SKILL.md",
+   "archive_path": "development/repo-scan-ntanduy25-ai-careerguide-2/SKILL.md",
+   "repo": "ntanduy25/ai-careerguide_2",
+   "branch": "main",
+   "digest": "sha256:b3318f6263629467d895d71a281cb64575d9d5de12c96d97cd1d19c66734e98e",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "526d119dd7e2996693f00930a96d028199ee712c",
+   "name": "repo-scan",
+   "description": "Bootstrap pointer that installs the external repo-scan skill from a pinned, reviewable commit. Use when repo-scan must be installed before running its cross-stack source-code asset audit; this ECC pointer does not perform the audit itself."
   },
   "ubbgtod6qszhck8yo9mlpmgykunke-hpklhywfvvheg": {
    "status": "upstream_changed",
@@ -43730,6 +43855,14 @@
    "digest": "sha256:2cc34c9b1c7c9fcd4f593a64334ac4e2f40eca543ee12039d04c013e74090108",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
+  "udsubenrpac86qtxjq3sn5l9rbb_jfywqw_sp4dxztu": {
+   "status": "ambiguous",
+   "archive_path": "product/lean-ux-tdryhf-oo/SKILL.md",
+   "repo": "tdryhf/oo",
+   "branch": "main",
+   "digest": "sha256:4fe0a10132650ad36bc79676b12c8f58b19035a40ac6587c864387d0f808cf04",
+   "checked_at": "2026-11-12T10:58:59+00:00"
+  },
   "uduc6dlf_yqkzmevjhtt0yutmymcrg_iecagnqo2xbc": {
    "status": "ambiguous",
    "archive_path": "development/bash-pro-prasanth595-agentic-awesome-skil/SKILL.md",
@@ -43760,6 +43893,14 @@
    "branch": "main",
    "digest": "sha256:aca2572716e765776abe332fe54bf816f6270ef706fb673b5bb6325ebadfff81",
    "checked_at": "2026-11-08T14:59:13+00:00"
+  },
+  "uew2pawj0z7vvadxse1jmlnr6imnz3jofxer_72wsqy": {
+   "status": "bundled_files",
+   "archive_path": "development/three-best-practices-prabaharshyam-xplaind/SKILL.md",
+   "repo": "prabaharshyam/xplaind",
+   "branch": "main",
+   "digest": "sha256:b19d75e0dc620ed6e44682876f943989e3184a1d3f92d9a1da95cc9d8c50879a",
+   "checked_at": "2026-11-12T10:58:59+00:00"
   },
   "uf707h1wgzmjvvef0sqothwm40lwwb9_i3mgxhnjthg": {
    "status": "pinned",
@@ -43826,6 +43967,18 @@
    "commit": "1f3a2a98c17e0444297944d3685c2c4aa2d59023",
    "name": "rich-terminal-output",
    "description": "Create beautiful terminal output with Rich library including tables, progress bars, panels, and syntax highlighting. Use when building CLI applications or enhancing terminal output in Python."
+  },
+  "ufzatkg5yqhs4exiq5mgg5fyoy7s5sjrnylw_omewjg": {
+   "status": "pinned",
+   "path": ".claude/skills/gsap-timeline/SKILL.md",
+   "archive_path": "other/gsap-timeline-prabaharshyam-xplaind/SKILL.md",
+   "repo": "prabaharshyam/xplaind",
+   "branch": "main",
+   "digest": "sha256:1a8b0f39cc4be3ed3d834b89672e4ae2f151b901dc3450bebf10bbc45379fe02",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "e1d2618dedffa0b4c008b2c23e880dc5492a8c4c",
+   "name": "gsap-timeline",
+   "description": "Official GSAP skill for timelines — gsap.timeline(), position parameter, nesting, playback. Use when sequencing animations, choreographing keyframes, or when the user asks about animation sequencing, timelines, or animation order (in GSAP or when recommending a library that supports timelines)."
   },
   "ugidiq6eeznkdlqqoeij1f3oqptcv8ykks_ikc1x1cy": {
    "status": "bundled_files",
@@ -44039,6 +44192,18 @@
    "digest": "sha256:beecdac71c19e0ed3506737d5cb8704e6ceeb7dfa6052b425607cda0c548a5af",
    "checked_at": "2026-11-09T11:27:06+00:00"
   },
+  "ukarvupz8irlmmsbs3kqosm1o3d1fmugrcqqb2jds4w": {
+   "status": "pinned",
+   "path": "skills/leonxlnx_taste-skill/skills/stitch-skill/SKILL.md",
+   "archive_path": "design/stitch-skill-tdryhf-oo/SKILL.md",
+   "repo": "tdryhf/oo",
+   "branch": "main",
+   "digest": "sha256:46bdb08fee2dded38b6ba0a051230a502d6ac6e4044afd47592cb40c256028b5",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "bb1ec818004926eefa087c823ee6ba4cfd2f476f",
+   "name": "stitch-design-taste",
+   "description": "Semantic Design System Skill for Google Stitch. Generates agent-friendly DESIGN.md files that enforce premium, anti-generic UI standards — strict typography, calibrated color, asymmetric layouts, perpetual micro-motion, and hardware-accelerated performance."
+  },
   "ukbu4c4k5nfeff98tab3kj8d2jba87kky6cenu1n3xy": {
    "status": "ambiguous",
    "archive_path": "security/bb-methodology-marcboggs-bmad-appsec-orchestr-2/SKILL.md",
@@ -44205,6 +44370,14 @@
    "branch": "master",
    "digest": "sha256:a966567d1043777c8cb7653c61a236d1b77c7873c03fbbdafbf8abe7a96bee45",
    "checked_at": "2026-11-08T14:59:13+00:00"
+  },
+  "undrwk8wqekpqipp9r94rrs3nlgnnwkx-jcssfrvtai": {
+   "status": "ambiguous",
+   "archive_path": "other/aeon-ntanduy25-ai-careerguide-2/SKILL.md",
+   "repo": "ntanduy25/ai-careerguide_2",
+   "branch": "main",
+   "digest": "sha256:fab3474f7b11ef9f41092cc722b1d64c2080c117e2225644548de2ddba99c2ce",
+   "checked_at": "2026-11-12T10:58:59+00:00"
   },
   "ung_sruuhey3kg43y15cz5eoqkkstfdvu9ybiw6gppo": {
    "status": "pinned",
@@ -44770,14 +44943,6 @@
    "digest": "sha256:a2d666e311f48289625e8611c09eb7db988b67e831e49db60d8b4285248cf7a9",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
-  "uwyltd9lfeyiradytlwpaaeszzsg4pel_hmhb3vdxbk": {
-   "status": "ambiguous",
-   "archive_path": "other/plotly-popey-claude-code-skills/SKILL.md",
-   "repo": "popey/claude-code-skills",
-   "branch": "master",
-   "digest": "sha256:74e9b4e39941e5579f203b858673c22c246762351179ae49b4feac7308b3fc84",
-   "checked_at": "2026-11-05T11:19:32+00:00"
-  },
   "ux-uhw4e51eq5lp7kiyb_ppectmvjrok9ufqkqp5hm0": {
    "status": "pinned",
    "path": "packages/opencode/altrucoder-skill-packs/awesome-claude-skills/composio-skills/moz-automation/SKILL.md",
@@ -44797,6 +44962,18 @@
    "branch": "main",
    "digest": "sha256:6fc5f0d03bc37d412139853599ac57133c0729e4b2c7eb40ba7c05d71d954c90",
    "checked_at": "2026-11-08T14:59:13+00:00"
+  },
+  "uxepu4abgxui3v6wnuzoue8ma6f3yylwqhpr8blve3y": {
+   "status": "pinned",
+   "path": ".agents/skills/code-tour/SKILL.md",
+   "archive_path": "other/code-tour-ntanduy25-ai-careerguide-2/SKILL.md",
+   "repo": "ntanduy25/ai-careerguide_2",
+   "branch": "main",
+   "digest": "sha256:416c7eb9229554a1ef113bbb873ff0b260a2ad9ae6e6075a75c375955d3fcf6f",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "526d119dd7e2996693f00930a96d028199ee712c",
+   "name": "code-tour",
+   "description": "Create CodeTour `.tour` files — persona-targeted, step-by-step walkthroughs with real file and line anchors. Use for onboarding tours, architecture walkthroughs, PR tours, RCA tours, and structured \"explain how this works\" requests. Use when the user asks for a code tour, onboarding walkthrough, PR tour, or an explanation of how a subsystem works."
   },
   "uxjghata45qhc_pa0ql3lqipao14axz_3hpzfzsqxze": {
    "status": "tree_truncated",
@@ -45219,6 +45396,14 @@
    "digest": "sha256:981a213f33ddca21ec327ecee13e8ef8b85b7986274b84a10268ee73310df5be",
    "checked_at": "2026-11-11T11:02:55+00:00"
   },
+  "v9nld09e20qq-iccvh6bbmgn-6ysfinf_qdjstpqlh4": {
+   "status": "bundled_files",
+   "archive_path": "other/lottie-animations-xenodeve-xeno-skills/SKILL.md",
+   "repo": "xenodeve/xeno-skills",
+   "branch": "main",
+   "digest": "sha256:13e64ab83e3fe5af75ce2f2ab730966d89aa5ab6b6a2209a53dc22229525de18",
+   "checked_at": "2026-11-12T10:58:59+00:00"
+  },
   "v9t4aczm5huokoieu_gpgvhgsbfruamiawb8jl4nvbu": {
    "status": "upstream_changed",
    "archive_path": "quality/kaizen/SKILL.md",
@@ -45286,18 +45471,6 @@
    "commit": "0c93058c49eee621c027aab135d3c9075b52e60f",
    "name": "cirq",
    "description": "Cirq is Google Quantum AI's open-source framework for designing, simulating, and running quantum circuits on quantum computers and simulators."
-  },
-  "vaqm8zfinp3xghlxmthjdocfxyrulmqad3vqu58uh4y": {
-   "status": "pinned",
-   "path": "SKILLS/cloud-uploader/SKILL.md",
-   "archive_path": "bash/cloud-uploader-marysatasselshaped66-skills-collection-1/SKILL.md",
-   "repo": "marysatasselshaped667/skills-collection-1",
-   "branch": "main",
-   "digest": "sha256:2a5a1aaed4cd03d48749e97c78a88ed1a329652b7cd004857fc6474f14f76256",
-   "checked_at": "2026-11-11T11:02:55+00:00",
-   "commit": "143ea22157f77c1f5fc67fd2d773b3ff53d55d79",
-   "name": "cloud-uploader",
-   "description": "Uploads promo videos and content to Cloudflare R2 or AWS S3. Use when the user wants to host promo content for social media or distribution."
   },
   "vbacjmfuba2phfvpihqchsrrryggjarkrzydttaw2qs": {
    "status": "tree_truncated",
@@ -45409,14 +45582,6 @@
    "digest": "sha256:05cd2c6a58ea45114a262f966fe9738015ca0f098857d097c0a4add49cce7169",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
-  "vd3hxdp8hb5iqsvn_jwooy8ghd9r2_nkt5_wbkibfq0": {
-   "status": "bundled_files",
-   "archive_path": "development/clean-code-spencergeee-spentrade/SKILL.md",
-   "repo": "SpencerGeee/SpenTrade",
-   "branch": "main",
-   "digest": "sha256:5e27da83f9154eb85dfad66d95bbf771575b7f6946380add1ebc0f8c05d57638",
-   "checked_at": "2026-11-08T14:59:13+00:00"
-  },
   "vd3np_m0ctu5frds_ppidwig05c7wm6fibdzdg8jjna": {
    "status": "upstream_changed",
    "archive_path": "devops/python-observability-wshobson-agents-2/SKILL.md",
@@ -45512,14 +45677,6 @@
    "digest": "sha256:bb61a0053efd3932747510ad58384d2b5b70281c5ee9adefe7f5017f73243020",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
-  "vgcehtfwdzamike5jmkgjne9lzhyum7yizak8gyf_v0": {
-   "status": "bundled_files",
-   "archive_path": "other/bids-lilinji-genetind-life-skills/SKILL.md",
-   "repo": "lilinji/GeneTind-Life-Skills",
-   "branch": "main",
-   "digest": "sha256:b7fcb72c1c15fe226ac61d791e3a6e1c8698f81a2ac06dcda19729d2bc170933",
-   "checked_at": "2026-11-11T11:02:55+00:00"
-  },
   "vgg8iqehhsb5ssmzolhnsnlfpvlnmq0wyn8kx407uqw": {
    "status": "tree_truncated",
    "archive_path": "other/json-canvas-lingxling-awesome-skills-cn/SKILL.md",
@@ -45562,6 +45719,18 @@
    "branch": "main",
    "digest": "sha256:36c4998e1d7c567f1f210e301b99d5bba86064de607c64d6b60a3148792a8921",
    "checked_at": "2026-11-08T14:59:13+00:00"
+  },
+  "vgu03kxbg_8u3hjyzcytlpjbt5wt8mh8ralv6lgxhj0": {
+   "status": "pinned",
+   "path": ".agents/skills/lookdev/SKILL.md",
+   "archive_path": "design/lookdev-sergiovazquezdml-base-de-datos-alumin/SKILL.md",
+   "repo": "sergiovazquezdml/Base-de-datos-aluminio",
+   "branch": "main",
+   "digest": "sha256:56ca1a929b7bc360d42f66324a4e735f44b5ac913c9e43bc70a5b16d68b04d61",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "5ded9856961c0c73ad69caa6ab5e37de0325e9f1",
+   "name": "lookdev",
+   "description": "Human-in-the-loop web studio to tune AI-generated output by eye. Stand up a local interactive studio (sliders, pickers, drag handles) or an inline edit/highlight/comment annotation studio for prose & media, instead of guessing values or shipping a static comparison grid."
   },
   "vhc3zysi-xpcwxvpqtmasjzwk3ktiexpke1dzxy0fnk": {
    "status": "ambiguous",
@@ -45718,6 +45887,18 @@
    "branch": "main",
    "digest": "sha256:ec3675d2ab763e7050e5cc2975326b4a37c68ebbc2f4d27458d552f4071939d4",
    "checked_at": "2026-11-08T14:59:13+00:00"
+  },
+  "vllzjoldsuhjem_oncrggiwris5xansbyuxaqzf82k0": {
+   "status": "pinned",
+   "path": "skills/emilkowalski_skills/skills/ask-sonner/SKILL.md",
+   "archive_path": "design/ask-sonner-tdryhf-oo/SKILL.md",
+   "repo": "tdryhf/oo",
+   "branch": "main",
+   "digest": "sha256:39f3ee185b3aa2cf70a689052ff078953ce7ba5915ed7a9391d232e9d4dcf57f",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "bb1ec818004926eefa087c823ee6ba4cfd2f476f",
+   "name": "ask-sonner",
+   "description": "Guide to Sonner, the React toast library — install and wire up the Toaster, pick the right toast() call, promise and loading toasts, updating, dismissing and persisting toasts, styling, theming and icons, positioning and multiple toasters. Use when working with Sonner or troubleshooting it — toasts that don't appear, appear twice, lose their styles, ignore Tailwind classes, sit behind a modal, or don't follow dark mode."
   },
   "vlt30lixm7mzoaav2drxyxwusn3mzrgntyt9xpsh114": {
    "status": "upstream_changed",
@@ -45891,14 +46072,6 @@
    "digest": "sha256:64915b51fab7af2111809a3c787fcf572d3944dcc1310d2478e97e3f9df5ee3c",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
-  "vpb3l2rje5nyhev4pbskz5zj0jklmxu8_tqphkjkfe0": {
-   "status": "bundled_files",
-   "archive_path": "design/hallmark-xenodeve-xeno-skills/SKILL.md",
-   "repo": "xenodeve/xeno-skills",
-   "branch": "main",
-   "digest": "sha256:59469635bbbd21acddbc664d95e8d97147f454b2d8f4a0a89c7d2c5afbe67577",
-   "checked_at": "2026-11-09T11:27:06+00:00"
-  },
   "vpg81oxyzd2atrgvyomvia_qlxnwgr4do7m1nchwyvq": {
    "status": "pinned",
    "path": ".claude/skills/aidlc-nfr-design/SKILL.md",
@@ -46010,6 +46183,18 @@
    "branch": "main",
    "digest": "sha256:efa3308857557b29085138ccaa005176920a7a8de06db65f62a8b2d683fa876b",
    "checked_at": "2026-11-08T14:59:13+00:00"
+  },
+  "vra2x9juvzqmucod4pt92bj6k5wn3pijxn-i78mly24": {
+   "status": "pinned",
+   "path": ".agents/skills/scanpy/SKILL.md",
+   "archive_path": "other/scanpy-sergiovazquezdml-base-de-datos-alumin/SKILL.md",
+   "repo": "sergiovazquezdml/Base-de-datos-aluminio",
+   "branch": "main",
+   "digest": "sha256:54309d435020c2737498ef1d3ed111adba9f329fbd03e57cf8c5c7bd4909c90e",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "5ded9856961c0c73ad69caa6ab5e37de0325e9f1",
+   "name": "scanpy",
+   "description": "Scanpy is a scalable Python toolkit for analyzing single-cell RNA-seq data, built on AnnData. Apply this skill for complete single-cell workflows including quality control, normalization, dimensionality reduction, clustering, marker gene identification, visualization, and trajectory analysis."
   },
   "vrcmty_d384w-qtk5gmydl8mllaodmmyprycqyuppy0": {
    "status": "upstream_changed",
@@ -46253,6 +46438,18 @@
    "digest": "sha256:6c17a1c29edf73636ff2292f0d29f97677801b3c253ff5caa8e828b4b6376804",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
+  "vvbscabvc4clrogksxbhrwde1fs0lqumd5frzsitxwe": {
+   "status": "pinned",
+   "path": ".agents/skills/lemmaly/SKILL.md",
+   "archive_path": "development/lemmaly-sergiovazquezdml-base-de-datos-alumin/SKILL.md",
+   "repo": "sergiovazquezdml/Base-de-datos-aluminio",
+   "branch": "main",
+   "digest": "sha256:09277b8d3a340739a757af04d0a97b6d8257f1caa6a7a395a1642a9d393c53aa",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "5ded9856961c0c73ad69caa6ab5e37de0325e9f1",
+   "name": "lemmaly",
+   "description": "Algorithm-first discipline: state Big-O, data structure, and algorithm family BEFORE writing loops, queries, or recursion. Catches O(n^2), N+1, and brute-force defaults."
+  },
   "vvn0embr8fhlwo11kgnyc3nhdv8qh6tjygbiodunkwm": {
    "status": "bundled_files",
    "archive_path": "development/scroll-world/SKILL.md",
@@ -46276,6 +46473,14 @@
    "branch": "main",
    "digest": "sha256:0560c8218d081be3be8ec9551f12675e4180d609e38501e0e8cf2939b6882d63",
    "checked_at": "2026-11-08T14:59:13+00:00"
+  },
+  "vvxhasvxueoxlnnxt9gqw7ra5wwi6hkfdpfe9hjijc8": {
+   "status": "ambiguous",
+   "archive_path": "data/monopoly-seafeetstarken-antigravity-awesome-/SKILL.md",
+   "repo": "seafeetstarken/antigravity-awesome-skills",
+   "branch": "main",
+   "digest": "sha256:906c0859e7ba7b7464b81038e67cef568c2ea9ab86f300d3804a62c9215f2f58",
+   "checked_at": "2026-11-12T10:58:59+00:00"
   },
   "vw-2ad2wh5wntld3roqdir8b0m3vpducwl57rvd7eb8": {
    "status": "pinned",
@@ -46580,6 +46785,14 @@
    "branch": "main",
    "digest": "sha256:39ed3b4766caf0cdd69028474117f5b2a46d23a8131826a3744fc8a989cd3e74",
    "checked_at": "2026-11-05T11:19:32+00:00"
+  },
+  "w2-0it79w8g3wccawlw0udm3o4sxgrwlkvpqwmeawda": {
+   "status": "bundled_files",
+   "archive_path": "other/threejs-impl-lighting-prabaharshyam-xplaind/SKILL.md",
+   "repo": "prabaharshyam/xplaind",
+   "branch": "main",
+   "digest": "sha256:e3e2d3b70e2f7096a0d4d259f77efd1960896930843d62407ccb690aa23f909f",
+   "checked_at": "2026-11-12T10:58:59+00:00"
   },
   "w2ra7ixdgy99m_8xxv8scthyupfxlsnill2jdbb1als": {
    "status": "pinned",
@@ -47103,6 +47316,18 @@
    "name": "deployment-procedures",
    "description": "Production deployment principles and decision-making. Safe deployment workflows, rollback strategies, and verification. Teaches thinking, not scripts."
   },
+  "wfvfvdxz6rfca8uvgi4-62bglz4er99hv-jutfbumaa": {
+   "status": "pinned",
+   "path": "skills/hardikpandya_stop-slop/SKILL.md",
+   "archive_path": "other/hardikpandya-stop-slop-tdryhf-oo/SKILL.md",
+   "repo": "tdryhf/oo",
+   "branch": "main",
+   "digest": "sha256:7432a1d9ebdd42b27666da8458af252edf549f723fb14bcd4791425103930310",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "bb1ec818004926eefa087c823ee6ba4cfd2f476f",
+   "name": "stop-slop",
+   "description": "Remove AI writing patterns from prose. Use when drafting, editing, or reviewing text to eliminate predictable AI tells."
+  },
   "wg2mrrjim_hlxhicu6kch-4ahrzfctv4gk9zrxededs": {
    "status": "upstream_unavailable",
    "error": "GitHub API 404: {\"message\":\"Branch not found\",\"documentation_url\":\"https://docs.github.com/rest/branches/branches#get-a-branch\",\"status\":\"404\"}",
@@ -47436,14 +47661,6 @@
    "branch": "main",
    "digest": "sha256:d39fe07f980eda217bb408ef1070f0c7e51492fe56c488dc68234f9790536c41",
    "checked_at": "2026-11-08T14:59:13+00:00"
-  },
-  "wmg2cs2xe8d8zptwwagowuaxzdojos_rthqwedsomiq": {
-   "status": "bundled_files",
-   "archive_path": "design/r3f-animation-marselo-4-totauto/SKILL.md",
-   "repo": "marselo-4/TotAuto",
-   "branch": "main",
-   "digest": "sha256:dad05ca685441657103a7c2963645f9650dd2286dc31195e53c56857cc7e0b4d",
-   "checked_at": "2026-11-05T11:19:32+00:00"
   },
   "wmv9lsmqyv9mqjsglvcrhiscmwjnamlps4qq_gsr52k": {
    "status": "bundled_files",
@@ -47861,18 +48078,6 @@
    "digest": "sha256:d2f094fb06675efad0bd2ee8c9bdf49e4456aa42570dc50ca8a870721f851376",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
-  "wuudvn0v0kyn3lposv2n8zvzmckbxeyrk5ddyguscoe": {
-   "status": "pinned",
-   "path": ".agents/skills/clinical-scope-review/SKILL.md",
-   "archive_path": "other/clinical-scope-review-reblocke-stewart-light/SKILL.md",
-   "repo": "reblocke/stewart-light",
-   "branch": "main",
-   "digest": "sha256:b1177ffea0f5041bc3db6522f353e8a4d36322da4897ca369cc795481b5a46c6",
-   "checked_at": "2026-11-08T14:59:13+00:00",
-   "commit": "f277cac54801d85366cbadbf11804f6643f6a869",
-   "name": "clinical-scope-review",
-   "description": "Use when repository copy, calculations, examples, or UI text could be interpreted as clinical guidance or medical-device functionality."
-  },
   "wuzmyw1nusehory0a7tha2x6cll48oi_jq31tk2itqu": {
    "status": "pinned",
    "path": ".claude/skills/changelog-automation/SKILL.md",
@@ -48204,17 +48409,13 @@
    "digest": "sha256:4f6b700280f6396661d8f94a764a9e8153dbfa81a037b7cbd0bf9d8b98de8168",
    "checked_at": "2026-11-08T14:59:13+00:00"
   },
-  "x5eftcie_ir5zj_75qihorae_nqtfsfjsi56bcswvn4": {
-   "status": "pinned",
-   "path": ".claude/skills/r3f-lighting/SKILL.md",
-   "archive_path": "other/r3f-lighting-marselo-4-totauto/SKILL.md",
-   "repo": "marselo-4/TotAuto",
+  "x5geks-3dwnw5dqbo3cn8vrdtzpy5ekqw7qvwjv47cs": {
+   "status": "bundled_files",
+   "archive_path": "design/r3f-animation-prabaharshyam-xplaind/SKILL.md",
+   "repo": "prabaharshyam/xplaind",
    "branch": "main",
-   "digest": "sha256:5be522f433d3fc8ddffbcbd59ce7f8018f003aded60204e5d49c8911279ca362",
-   "checked_at": "2026-11-05T11:19:32+00:00",
-   "commit": "7ea35de04cdd0d1a8205761f476645a1b98ea0e3",
-   "name": "r3f-lighting",
-   "description": "Light React Three Fiber scenes with direct lights, environment maps, and shadows. Use for light placement, image-based lighting, shadow artifacts, and lighting performance."
+   "digest": "sha256:dad05ca685441657103a7c2963645f9650dd2286dc31195e53c56857cc7e0b4d",
+   "checked_at": "2026-11-12T10:58:59+00:00"
   },
   "x7cu6oyqfjzr2nuujqqrsvjbxt52oie8r8r503rysnc": {
    "status": "upstream_changed",
@@ -48351,6 +48552,14 @@
    "branch": "main",
    "digest": "sha256:0bd90681fcab2e282025ee14acf508b60bbd6c41ac6c3bf83c0dc14d52c37933",
    "checked_at": "2026-11-08T14:59:13+00:00"
+  },
+  "xcfgvuc2ae0icrviiseqfgga_szh5bqtr8t4ym-ifzw": {
+   "status": "ambiguous",
+   "archive_path": "api/tamarind-ntanduy25-ai-careerguide-2/SKILL.md",
+   "repo": "ntanduy25/ai-careerguide_2",
+   "branch": "main",
+   "digest": "sha256:05332a8580d151fce7622cea5ee162cc59319f80fd59847887c2f12194d72c77",
+   "checked_at": "2026-11-12T10:58:59+00:00"
   },
   "xchbtomy3igemj1rcgcpk20-jbcb3vzsuxbgcgddlyy": {
    "status": "pinned",
@@ -48510,18 +48719,6 @@
    "branch": "main",
    "digest": "sha256:a4d229676a303e631b6e31db1a4c530ab896b804a1683c470c4455d952e00ca2",
    "checked_at": "2026-11-08T14:59:13+00:00"
-  },
-  "xggmz9688hb42nmklxqpvcf0xlv68jm66codfxwy36i": {
-   "status": "pinned",
-   "path": "skills/design/gsap-timeline/SKILL.md",
-   "archive_path": "design/gsap-timeline-aktonay-skillz/SKILL.md",
-   "repo": "aktonay/skillz",
-   "branch": "main",
-   "digest": "sha256:1a8b0f39cc4be3ed3d834b89672e4ae2f151b901dc3450bebf10bbc45379fe02",
-   "checked_at": "2026-11-10T12:21:40+00:00",
-   "commit": "10babe72a45def474aa7060259a8fb978f6dab93",
-   "name": "gsap-timeline",
-   "description": "Official GSAP skill for timelines — gsap.timeline(), position parameter, nesting, playback. Use when sequencing animations, choreographing keyframes, or when the user asks about animation sequencing, timelines, or animation order (in GSAP or when recommending a library that supports timelines)."
   },
   "xgsoji92uqpvcsfstf_9teungllez7dyqao-spgemwu": {
    "status": "pinned",
@@ -48982,6 +49179,18 @@
    "digest": "sha256:88c534bba29b7d5e2d3e076fe430bb7364ae20110a4bd01085e1504a7b2cf582",
    "checked_at": "2026-11-05T11:19:32+00:00"
   },
+  "xrovn8stsgqel-xdex_sodb3ut7e6wboxjbjqncmghs": {
+   "status": "pinned",
+   "path": "skills/emilkowalski_skills/skills/animate-expo/SKILL.md",
+   "archive_path": "other/animate-expo-tdryhf-oo/SKILL.md",
+   "repo": "tdryhf/oo",
+   "branch": "main",
+   "digest": "sha256:9a01a91701e6563c67677dde6b66ab30f066a5341d42c21a90ba51d99679274a",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "bb1ec818004926eefa087c823ee6ba4cfd2f476f",
+   "name": "animate-expo",
+   "description": "Build animations in React Native and Expo, making the decisions in the order that determines whether they feel right — should it animate, which thread it runs on, which properties, spring or timing, how the gesture hands off, how it degrades. Writes the implementation with Reanimated, Gesture Handler, Expo Router and expo-haptics. Use when animating anything in an Expo app, adding gestures, sheets, screen transitions, press feedback or haptics, or fixing motion that stutters on device. For web animation use `animate`."
+  },
   "xsd_v_bq-_wrhjsrpayh6xc9e5gogbg_oh9imuf0ye0": {
    "status": "bundled_files",
    "archive_path": "design/stitch-design-taste-yigityildiz0-universal-ai-skill-l/SKILL.md",
@@ -48997,14 +49206,6 @@
    "branch": "main",
    "digest": "sha256:0d28d9cf41dc7c3af9e57ec9681a333dccc79e8c682944c6c06019434c45ad4f",
    "checked_at": "2026-11-08T14:59:13+00:00"
-  },
-  "xshxpuz8g6p0bnvozgest0cepmnnnx3fttbzoaamtwc": {
-   "status": "bundled_files",
-   "archive_path": "other/pymol-huytran1120-vietnam-agentic-skil/SKILL.md",
-   "repo": "huytran1120/vietnam-agentic-skills",
-   "branch": "main",
-   "digest": "sha256:605053ad1a87bf76f56a865203986c477e211aff5a62b7075b11d3e8f5119b41",
-   "checked_at": "2026-11-09T11:27:06+00:00"
   },
   "xsomvqjgkb6doljxuaqfeqyzypti1nsz747s57rcama": {
    "status": "upstream_changed",
@@ -49503,14 +49704,6 @@
    "digest": "sha256:3bd3f39985a52954e2693866608bd8105f4dc0efbca5b6baa3045c2b641bda26",
    "checked_at": "2026-11-10T12:21:40+00:00"
   },
-  "y3xomour9mnaz-bjkfcid6yctzgxef4ue1bsoyyyhku": {
-   "status": "upstream_changed",
-   "archive_path": "data/cloudflare-agents/SKILL.md",
-   "repo": "jezweb/claude-skills",
-   "branch": "main",
-   "digest": "sha256:e07c1bf4672388a41066baa42e06c5214044db355ab42ea599a804ac9968ab16",
-   "checked_at": "2026-11-08T14:59:13+00:00"
-  },
   "y4carihkzqjsy_4yid_0cofvh5lfbufmmrn4doepyzo": {
    "status": "bundled_files",
    "archive_path": "other/medchem-raktim-mondol-academic-harness/SKILL.md",
@@ -49738,14 +49931,6 @@
    "digest": "sha256:79c8885e76ce449e82016b37b53dfcc3ff5afefd90a23ea83b24148f41f33fa1",
    "checked_at": "2026-11-10T12:21:40+00:00"
   },
-  "yahziqbrscrfpf_u-kkekpchdf6kli59bvzeur7yzuc": {
-   "status": "bundled_files",
-   "archive_path": "other/onekgpd-ruwwww-agent-skills/SKILL.md",
-   "repo": "ruwwww/agent-skills",
-   "branch": "main",
-   "digest": "sha256:918797c80e98570537addc7d5c5a694f39e370592dc5d0b62092b8f421620444",
-   "checked_at": "2026-11-05T11:19:32+00:00"
-  },
   "yaj5j55dzl03nrimrzm6h6nrsvebd23uc3yqbyij6cm": {
    "status": "bundled_files",
    "archive_path": "documents/technical-writing-lengjingxu-pstack-for-codex/SKILL.md",
@@ -49785,6 +49970,18 @@
    "commit": "11e8d8d8714659b25dcd47cde98d4c44ca4b509d",
    "name": "tests-run",
    "description": "Execute Unity tests (`EditMode` or `PlayMode`) and return per-test results. Supports filtering by test assembly, namespace, class, and method. Refreshes the AssetDatabase first; defers execution across domain reloads if scripts changed. Precondition: every open scene must be saved — dirty scenes abort the run."
+  },
+  "yaoymzt1txavyefqiznur9xeo26oevs-xq-welrqsfs": {
+   "status": "pinned",
+   "path": ".claude/skills/reverse-document/SKILL.md",
+   "archive_path": "gaming/reverse-document-ouellettejeanphilipp-hockey/SKILL.md",
+   "repo": "ouellettejeanphilippe-source/hockey",
+   "branch": "main",
+   "digest": "sha256:c498c673b8f1b8d5634e33839b6117b17a827c2f41207acb115eb276f716189a",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "55c9aa34fa35181200a8088315b56afe203313bf",
+   "name": "reverse-document",
+   "description": "Generate missing design or architecture docs from existing implementation — works backwards from code and prototypes."
   },
   "yaxu8o219d1-_t1ierlq11w_p00cdy9w2urpvqquil0": {
    "status": "ambiguous",
@@ -50598,6 +50795,18 @@
    "name": "find-skills",
    "description": "Helps users discover and install agent skills when they ask questions like \"how do I do X\", \"find a skill for X\", \"is there a skill that can...\", or express interest in extending capabilities. This skill should be used when the user is looking for functionality that might exist as an installable skill."
   },
+  "yscmg_2qv49zhdoxgxaxu7dsqni2e85svfc01i18ci0": {
+   "status": "pinned",
+   "path": "skills/nutlope_hallmark/skills/hallmark/SKILL.md",
+   "archive_path": "design/hallmark-tdryhf-oo/SKILL.md",
+   "repo": "tdryhf/oo",
+   "branch": "main",
+   "digest": "sha256:59469635bbbd21acddbc664d95e8d97147f454b2d8f4a0a89c7d2c5afbe67577",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "bb1ec818004926eefa087c823ee6ba4cfd2f476f",
+   "name": "hallmark",
+   "description": "Anti-AI-slop design skill for greenfield pages, audits, redesigns, and design extraction from URLs or screenshots. Use when the user asks to build a new app or landing page, wants to redesign something, invokes Hallmark by name, or uses audit/redesign/study."
+  },
   "ysdmwbh98xpayycrt7o4g569qpjdyu043rdsjgwb21e": {
    "status": "upstream_changed",
    "archive_path": "development/typescript-pro-rmyndharis-antigravity-skills/SKILL.md",
@@ -50644,6 +50853,18 @@
    "commit": "df3d7d789e2f1928177b50829e023a4af15bf365",
    "name": "shipping-and-launch",
    "description": "Prepares production launches. Use when preparing to deploy to production. Use when you need a pre-launch checklist, when setting up monitoring, when."
+  },
+  "ythetmo2vc63xct8c__wmkpkx0x3suqjtd19irs_7uo": {
+   "status": "pinned",
+   "path": ".agents/skills/sympy/SKILL.md",
+   "archive_path": "other/sympy-sergiovazquezdml-base-de-datos-alumin/SKILL.md",
+   "repo": "sergiovazquezdml/Base-de-datos-aluminio",
+   "branch": "main",
+   "digest": "sha256:9f66b1e1ff7f75aa2b8d27f873f3fa50210a6ef27fbef0c9bc7c5d3920c1bea1",
+   "checked_at": "2026-11-12T10:58:59+00:00",
+   "commit": "5ded9856961c0c73ad69caa6ab5e37de0325e9f1",
+   "name": "sympy",
+   "description": "SymPy is a Python library for symbolic mathematics that enables exact computation using mathematical symbols rather than numerical approximations."
   },
   "ytjmg1x_ed-2aqybu7pdfgwal7uixqikpbex_sszdu4": {
    "status": "pinned",
@@ -50822,6 +51043,14 @@
    "archive_path": "data/stride-analysis-patterns/SKILL.md",
    "digest": "sha256:89fbcf55aa17a12aa14d12be95a3cd1c9886004326733897fbac1e3666fadace",
    "checked_at": "2026-11-08T14:59:13+00:00"
+  },
+  "ywrzdaxe-dhrqnrfsm4nxly2iwsxhfw2v_yvgzgll1g": {
+   "status": "bundled_files",
+   "archive_path": "development/threejs-core-renderer-prabaharshyam-xplaind/SKILL.md",
+   "repo": "prabaharshyam/xplaind",
+   "branch": "main",
+   "digest": "sha256:ee5b1ace6f0d112f7c20e80c9b6c34957fe0c1bd48e2bd7c6e238fde26b654ac",
+   "checked_at": "2026-11-12T10:58:59+00:00"
   },
   "ywtilybuygazxywwrjxfhoxn92jlmkodg0ckeuhifui": {
    "status": "pinned",
@@ -51042,14 +51271,6 @@
    "branch": "main",
    "digest": "sha256:dc3e4a3b73bcaf08572f2957324acee0662a5ca8484cf5e5407efed5f051faad",
    "checked_at": "2026-11-08T14:59:13+00:00"
-  },
-  "z4g1opser2_vpzslfyux228gnqo3bzaydiuxavmdm8s": {
-   "status": "ambiguous",
-   "archive_path": "other/sympy-popey-claude-code-skills/SKILL.md",
-   "repo": "popey/claude-code-skills",
-   "branch": "master",
-   "digest": "sha256:9f66b1e1ff7f75aa2b8d27f873f3fa50210a6ef27fbef0c9bc7c5d3920c1bea1",
-   "checked_at": "2026-11-05T11:19:32+00:00"
   },
   "z4zvjsokquqcvxq0ncjamp9hcljsow5nuxeuh_dvkb8": {
    "status": "bundled_files",
@@ -51497,14 +51718,6 @@
    "name": "code-review",
    "description": "Perform code reviews following Sentry engineering practices. Use when reviewing pull requests, examining code changes, or providing feedback on code quality. Covers security, performance, testing, and design review."
   },
-  "zd5fxeyapdd0szoiymvqjvmqtnhjtt3rm1uboddmpzq": {
-   "status": "tree_truncated",
-   "archive_path": "development/clean-code-seaxen-agentskills/SKILL.md",
-   "repo": "SeaXen/agentskills",
-   "branch": "main",
-   "digest": "sha256:af87c679d04646816dda7e1c238db83ab1979e22508a8c8ecd9b999908485777",
-   "checked_at": "2026-11-09T11:27:06+00:00"
-  },
   "zd9vjcepj-4lcas0igtat_au6ihx1lxssz5h8k7jxuw": {
    "status": "ambiguous",
    "archive_path": "other/behuman-sinhoneyy-master-skills/SKILL.md",
@@ -51827,6 +52040,14 @@
    "branch": "main",
    "digest": "sha256:15a802ffb73828730aba90b740426fbb8d2070721ee92d6f8737de4704e8ff0f",
    "checked_at": "2026-11-11T11:02:55+00:00"
+  },
+  "zk6ia3_wfuys1evyd4knximyn_wvauqnmfofm475faa": {
+   "status": "bundled_files",
+   "archive_path": "design/threejs-syntax-loaders-prabaharshyam-xplaind/SKILL.md",
+   "repo": "prabaharshyam/xplaind",
+   "branch": "main",
+   "digest": "sha256:ef1e404eb8f5d0a5fcc44a9e4207faec3c121ff663c12c3442a585844acae01c",
+   "checked_at": "2026-11-12T10:58:59+00:00"
   },
   "zkjvixitilqsvm9_1fpjbwvg4ssvqofeg6buqwhxyva": {
    "status": "upstream_changed",
@@ -52357,14 +52578,6 @@
    "branch": "main",
    "digest": "sha256:893f7e0c1534ad402182443928996f9583313207f0ffb31a09fae897bfc4f44f",
    "checked_at": "2026-11-05T11:19:32+00:00"
-  },
-  "ztfowqnnab4tzs-ixpt1n0hlcgxbgwsdnmvwierol7w": {
-   "status": "bundled_files",
-   "archive_path": "other/code-tour-nguyentrunghieutcu-ctxora-engine/SKILL.md",
-   "repo": "nguyentrunghieutcu/ctxora-engine",
-   "branch": "main",
-   "digest": "sha256:416c7eb9229554a1ef113bbb873ff0b260a2ad9ae6e6075a75c375955d3fcf6f",
-   "checked_at": "2026-11-08T14:59:13+00:00"
   },
   "ztihal0cpzd3phwnkpcyub9vicfwbhugono2hljhhci": {
    "status": "bundled_files",

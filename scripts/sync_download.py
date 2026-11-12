@@ -17,10 +17,10 @@ ROOT_DIR = SCRIPT_DIR.parent
 sys.path.insert(0, str(ROOT_DIR))
 sys.path.insert(0, str(SCRIPT_DIR))
 
-from listed_skills import load_listed_skills, source_identity
+from listed_skills import load_listed_skills, source_identity  # noqa: I001  # line budget: paired resolver imports share one line below
 from security_blocklist import blocked_metadata_source, load_security_blocklist
 from sync_download_support import (
-    GPL_SOURCE_LICENSES,
+    GPL_SOURCE_LICENSES, ROOT_LEGAL_RETENTION_LICENSES,
     asset_redistribution_approved,
     build_archived_skill_metadata,
     classify_download_result,
@@ -31,7 +31,7 @@ from sync_download_support import (
     download_source_label,
     exact_source_branch,
     read_response_bytes_limited,
-    resolve_exact_commit_sha,
+    resolve_exact_commit_sha, resolve_reviewed_commit_ref,
 )
 from sync_pipeline_support import (
     DEFAULT_LEARNING_PRIORS_PATH,
@@ -361,7 +361,7 @@ async def download_skills(
         branch: str,
         resolved_skill_path: str,
         *,
-        include_license: bool = False,
+        include_license: bool = False, include_root_legal: bool = False,
     ) -> tuple[list[dict], bool]:
         return await collect_contents_bundled_file_entries(
             session,
@@ -369,7 +369,7 @@ async def download_skills(
             branch,
             resolved_skill_path,
             listing_fetcher=fetch_contents_listing,
-            include_license=include_license,
+            include_license=include_license, include_root_legal=include_root_legal,
         )
 
     async def try_download(session: aiohttp.ClientSession, skill: dict) -> bool | None:
@@ -464,11 +464,11 @@ async def download_skills(
                 })
                 if pin_commit_sha:
                     try:
-                        download_ref = await resolve_exact_commit_sha(
+                        download_ref = await resolve_reviewed_commit_ref(
                             session,
                             repo,
-                            branch,
-                            timeout=request_timeout,
+                            branch, source_entry, resolve_exact_commit_sha,
+                            exact_paths_only=exact_paths_only, timeout=request_timeout,
                             security_blocklist=security_blocklist,
                             repo_cache=repo_identity_cache,
                             commit_cache=commit_sha_cache,
@@ -536,7 +536,7 @@ async def download_skills(
                                     # This request shares the surrounding download semaphore.
                                     license_name = await repo_license(session, repo)
                                 skill = with_resolved_license(source_entry, license_name)
-                                require_license = license_name in GPL_SOURCE_LICENSES
+                                require_license, include_root_legal = license_name in GPL_SOURCE_LICENSES, license_name in ROOT_LEGAL_RETENTION_LICENSES
                                 content = (
                                     source_text
                                     if require_license
@@ -611,10 +611,10 @@ async def download_skills(
                                             timeout=request_timeout,
                                             tree_cache=tree_cache,
                                             contents_collector=collect_bundled_file_entries,
-                                            # GPL adds root-license and complete-source checks
-                                            # to the already cached immutable tree.
-                                            pinned_tree_result=(None if require_license else pinned_tree_result),
-                                            require_license=require_license,
+                                            # GPL/Apache add root-legal retention checks to the
+                                            # cached immutable tree, so re-collect with fallbacks.
+                                            pinned_tree_result=(None if (require_license or include_root_legal) else pinned_tree_result),
+                                            require_license=require_license, include_root_legal=include_root_legal,
                                         )
                                         if redistribution_approved
                                         else ([], [], "", {}, {})

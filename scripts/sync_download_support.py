@@ -26,10 +26,18 @@ from sync_pipeline_support import MAX_BUNDLED_FILE_BYTES as MAX_BUNDLED_FILE_BYT
 from utils import build_legal_metadata, classify_license, normalize_license
 
 SHA_PATTERN = re.compile(r"[0-9a-fA-F]{40}")
+GITHUB_COMMIT_URL_RE = re.compile(
+    r"^https://github\.com/([A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+)/(?:blob|tree)/([0-9a-fA-F]{40})(?:/|$)"
+)
 MAX_SKILL_FILE_BYTES = 1_000_000
 GITHUB_RAW_BASE = "https://raw.githubusercontent.com"
 GPL_SOURCE_LICENSES = {"GPL-3.0", "GPL-3.0-only", "GPL-3.0-or-later"}
 LICENSE_FILENAMES = {"LICENSE", "LICENSE.md"}
+NOTICE_FILENAMES = {"NOTICE", "NOTICE.md", "NOTICE.txt"}
+# Apache-2.0 §4 asks redistributors to carry the license and any upstream NOTICE.
+# Retention is keep-when-present: absent or invalid upstream files never block a
+# download, unlike the GPL fail-closed license requirement.
+ROOT_LEGAL_RETENTION_LICENSES = {"Apache-2.0"}
 
 
 def asset_redistribution_approved(skill: dict) -> bool:
@@ -69,6 +77,7 @@ async def collect_contents_bundled_file_entries(
     *,
     listing_fetcher: Any,
     include_license: bool = False,
+    include_root_legal: bool = False,
 ) -> tuple[list[dict], bool]:
     """Collect ordinary Contents API entries and report any support-scope omission."""
     source_dir = skill_source_dir(resolved_skill_path)
@@ -147,8 +156,47 @@ async def collect_contents_bundled_file_entries(
                     "sha": entry.get("sha") or "",
                 }
             )
+    if include_root_legal and source_dir:
+        # Keep-when-present root legal retention (Apache-2.0): local skill-dir
+        # files win; absent or invalid upstream files are skipped, never fatal.
+        local_names = {entry["relative_path"] for entry in candidates}
+        wanted = (LICENSE_FILENAMES | NOTICE_FILENAMES) - local_names
+        if wanted:
+            for entry in await listing_fetcher(session, repo, branch, ""):
+                repo_path = entry.get("path")
+                if repo_path not in wanted:
+                    continue
+                if entry.get("type") != "file" or is_submodule_contents_entry(entry):
+                    continue
+                size = entry.get("size")
+                if not isinstance(size, int) or not is_safe_bundled_file(repo_path, size):
+                    continue
+                candidates.append(
+                    {
+                        "repo_path": repo_path,
+                        "relative_path": repo_path,
+                        "download_url": entry.get("download_url") or "",
+                        "size": size,
+                        "sha": entry.get("sha") or "",
+                    }
+                )
     selected, truncated = select_bundled_file_entries(candidates)
     return selected, truncated or incomplete
+
+
+def reviewed_commit_pin(skill: dict, repo: str) -> str:
+    """Return the reviewed commit SHA cited by a GitHub source_url, or ''.
+
+    Only blob/tree URLs at a full 40-hex SHA for the same repository count;
+    branch-name URLs stay unpinned (point-in-time intake).
+    """
+    match = GITHUB_COMMIT_URL_RE.match(str(skill.get("source_url") or "").strip())
+    if not match:
+        return ""
+    url_repo, sha = match.group(1), match.group(2)
+    if url_repo.casefold() != repo.casefold():
+        return ""
+    return sha.lower()
 
 
 def exact_source_branch(skill: dict) -> str:
@@ -225,6 +273,51 @@ async def resolve_exact_commit_sha(
     return commit_sha.lower()
 
 
+async def resolve_reviewed_commit_ref(
+    session: Any,
+    repo: str,
+    branch: str,
+    skill: dict,
+    resolve: Any,
+    *,
+    exact_paths_only: bool,
+    timeout: Any,
+    security_blocklist: dict,
+    repo_cache: dict[str, str],
+    commit_cache: dict[tuple[str, str], str],
+) -> str:
+    """Resolve the download SHA, honoring an intake-reviewed commit pin.
+
+    Community rows whose source_url cites a specific commit are archived at
+    that reviewed commit instead of the moving branch head. Exact/backfill
+    mode keeps its recorded-branch semantics. Resolution failures propagate
+    so the caller fails closed when the reviewed commit is gone. ``resolve``
+    is the caller's commit resolver (resolve_exact_commit_sha), injected so
+    the caller's failure-injection seams keep intercepting resolution.
+    """
+    download_ref = await resolve(
+        session,
+        repo,
+        branch,
+        timeout=timeout,
+        security_blocklist=security_blocklist,
+        repo_cache=repo_cache,
+        commit_cache=commit_cache,
+    )
+    reviewed_pin = reviewed_commit_pin(skill, repo) if not exact_paths_only else ""
+    if reviewed_pin and download_ref != reviewed_pin:
+        download_ref = await resolve(
+            session,
+            repo,
+            reviewed_pin,
+            timeout=timeout,
+            security_blocklist=security_blocklist,
+            repo_cache=repo_cache,
+            commit_cache=commit_cache,
+        )
+    return download_ref
+
+
 async def collect_pinned_tree_entries(
     session: Any,
     repo: str,
@@ -234,6 +327,7 @@ async def collect_pinned_tree_entries(
     timeout: Any,
     tree_cache: dict[tuple[str, str], list[dict]],
     include_license: bool = False,
+    include_root_legal: bool = False,
 ) -> tuple[list[dict], bool, dict]:
     """Collect a complete, regular-file-only bundle from one immutable Git tree."""
     cache_key = (repo, commit_sha)
@@ -289,6 +383,7 @@ async def collect_pinned_tree_entries(
         f"{source_dir}/{name}" if source_dir else name for name in LICENSE_FILENAMES
     }
     has_local_license = any(entry.get("path") in local_license_paths for entry in entries)
+    entry_paths = {entry.get("path") for entry in entries}
     candidates = []
     omitted_eligible_file = False
     for entry in entries:
@@ -298,6 +393,17 @@ async def collect_pinned_tree_entries(
         rel_path = bundled_relative_path(source_dir, repo_path)
         if include_license and not has_local_license and repo_path in LICENSE_FILENAMES:
             rel_path = repo_path
+        # Keep-when-present root legal fallback: unlike the GPL path above, an
+        # invalid root file is skipped instead of failing the whole archive.
+        root_legal_fallback = False
+        # Local precedence is per filename, matching the Contents collector.
+        if (
+            include_root_legal
+            and not rel_path
+            and repo_path in LICENSE_FILENAMES | NOTICE_FILENAMES
+            and f"{source_dir}/{repo_path}" not in entry_paths
+        ):
+            rel_path, root_legal_fallback = repo_path, True
         if not rel_path:
             continue
         try:
@@ -315,17 +421,19 @@ async def collect_pinned_tree_entries(
         if entry_type == "tree" and mode == "040000":
             continue
         if entry_type != "blob" or mode not in {"100644", "100755"}:
-            if in_support_scope or include_license:
+            if (in_support_scope and not root_legal_fallback) or include_license:
                 raise BundledListingError(repo_path, f"unsupported Git object mode {mode}")
             continue
         if not eligible_at_size:
             if include_license:
                 raise BundledListingError(repo_path, "GPL source file is outside supported archive scope")
-            if eligible_without_size_limit:
+            if eligible_without_size_limit and not root_legal_fallback:
                 omitted_eligible_file = True
             continue
         blob_sha = entry.get("sha")
         if not isinstance(blob_sha, str) or not SHA_PATTERN.fullmatch(blob_sha):
+            if root_legal_fallback:
+                continue
             raise BundledListingError(repo_path, "regular blob lacks a valid object ID")
         candidates.append(
             {
@@ -381,6 +489,7 @@ async def download_bundled_files_to_directory(
     contents_collector: Any,
     pinned_tree_result: tuple[list[dict], bool, dict] | None = None,
     require_license: bool = False,
+    include_root_legal: bool = False,
 ) -> tuple[list[str], list[str], str, dict[str, str], dict[str, str]]:
     """Download a validated support bundle and return its immutable blob map."""
     archived: list[str] = []
@@ -400,10 +509,13 @@ async def download_bundled_files_to_directory(
                     timeout=timeout,
                     tree_cache=tree_cache,
                     include_license=require_license,
+                    include_root_legal=include_root_legal,
                 )
             )
         else:
             kwargs = {"include_license": True} if require_license else {}
+            if include_root_legal:
+                kwargs["include_root_legal"] = True
             entries, truncated = await contents_collector(
                 session, repo, branch, resolved_skill_path, **kwargs
             )
@@ -487,7 +599,9 @@ async def download_bundled_files_to_directory(
         target_path.write_bytes(content)
         target_path.chmod(0o755 if entry.get("mode") == "100755" else 0o644)
         archived.append(rel_path)
-        if require_license and rel_path in LICENSE_FILENAMES:
+        if (require_license and rel_path in LICENSE_FILENAMES) or (
+            include_root_legal and rel_path in LICENSE_FILENAMES | NOTICE_FILENAMES
+        ):
             license_sources[rel_path] = entry["repo_path"]
         if pin_commit_sha:
             blob_ids[rel_path] = entry["sha"]

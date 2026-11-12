@@ -34,6 +34,9 @@ BUNDLED_ROOT_FILE_ALLOWLIST = {
     "README.md",
     "LICENSE",
     "LICENSE.md",
+    "NOTICE",
+    "NOTICE.md",
+    "NOTICE.txt",
 }
 
 _URL_RE = re.compile(r"https?://\S+")

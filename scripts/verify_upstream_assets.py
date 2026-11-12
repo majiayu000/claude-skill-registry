@@ -25,6 +25,8 @@ from skill_asset_audit import classify_files, fetch_repo_tree, verdict_from_coun
 from sync_download_support import (
     GPL_SOURCE_LICENSES,
     LICENSE_FILENAMES,
+    NOTICE_FILENAMES,
+    ROOT_LEGAL_RETENTION_LICENSES,
     bundled_file_blobs_match,
     exact_source_branch,
 )
@@ -389,13 +391,21 @@ def verify_targets(targets: list[Target], client: GitHubClient, checked_at: str)
                 continue
             for target in branch_targets:
                 source_dir = PurePosixPath(target.source_path).parent
-                expected_assets = {
-                    target.metadata["license_source_paths"][bundled_file]
-                    if target.metadata.get("license") in GPL_SOURCE_LICENSES
-                    and bundled_file in LICENSE_FILENAMES
-                    else (source_dir / bundled_file).as_posix()
-                    for bundled_file in target.bundled_files
-                }
+                provenance = target.metadata.get("license_source_paths")
+                provenance = provenance if isinstance(provenance, dict) else {}
+                expected_assets = set()
+                for bundled_file in target.bundled_files:
+                    if (target.metadata.get("license") in GPL_SOURCE_LICENSES
+                            and bundled_file in LICENSE_FILENAMES):
+                        expected_assets.add(provenance[bundled_file])
+                    elif (target.metadata.get("license") in ROOT_LEGAL_RETENTION_LICENSES
+                            and bundled_file in LICENSE_FILENAMES | NOTICE_FILENAMES
+                            and bundled_file in provenance):
+                        # Root-retained Apache legal files live upstream at their
+                        # recorded provenance path, not under the skill directory.
+                        expected_assets.add(provenance[bundled_file])
+                    else:
+                        expected_assets.add((source_dir / bundled_file).as_posix())
                 missing_assets = sorted(expected_assets - upstream_paths)
                 if target.source_path not in upstream_paths:
                     status = "moved"

@@ -60,6 +60,29 @@ GPL downloads fail if any source file falls outside the supported archive
 scope. License provenance records the selected upstream path so liveness
 checks cannot substitute a different license when the original disappears.
 
+Community rows whose `source_url` cites a specific commit
+(`/blob/<40-hex-sha>/` or `/tree/<40-hex-sha>/`) are archived at that exact
+commit: sync verifies the commit still exists and fails closed rather than
+substituting the branch head. Rows citing a branch (or no URL) are archived
+at the probed branch head at acquisition time; for those, intake review is a
+point-in-time review. Existing archives are never re-downloaded by sync; a
+pin change only affects new acquisitions.
+
+For Apache-2.0 sources with approved redistribution, the archive step keeps
+the upstream `LICENSE`/`LICENSE.md` and any `NOTICE`/`NOTICE.md`/`NOTICE.txt`
+when they exist, honoring Apache-2.0 section 4's license and NOTICE
+conditions. Files in the skill directory take precedence over repository-root
+files of the same name; root files are copied from the same archived
+revision. Retention is keep-when-present: a missing or invalid upstream legal
+file never blocks acquisition (unlike the GPL fail-closed license
+requirement), because many repositories declare their license only in
+metadata or a README. The selected upstream path of every retained legal
+file is recorded in `license_source_paths`, and asset liveness checks track
+those exact upstream paths so a disappearing root LICENSE or NOTICE is
+reported as `partial` rather than silently ignored. Existing archives are
+not retroactively backfilled by this policy; remediation of already-published
+Apache-2.0 archives requires a separate maintainer-approved backfill.
+
 ## Upstream-only listings
 
 For a source that should be discoverable without mirroring its instruction body,

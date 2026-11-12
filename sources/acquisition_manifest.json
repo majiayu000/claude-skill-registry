@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updated_at": "2026-11-07T05:31:43.404111Z",
-  "total_count": 1719,
+  "updated_at": "2026-11-12T07:44:13.302780Z",
+  "total_count": 1741,
   "entries": {
     "Xquik-dev/x-twitter-scraper": {
       "repo": "Xquik-dev/x-twitter-scraper",
@@ -10315,8 +10315,161 @@
       "repo": "financeailab/skills-financas-br",
       "branch": "main",
       "relative_path": "plugins/auditor-de-tarifas/skills/auditor-de-tarifas/SKILL.md",
-      "commit_sha": "62c6f18cd67e96a80985583ecb42324c2f74c355",
       "updated_at": "2026-11-07T05:31:26.725762Z"
+    },
+    "inhotel-io/govisit-toolkit:skills/govisit-get-destination-overview/SKILL.md": {
+      "repo": "inhotel-io/govisit-toolkit",
+      "branch": "main",
+      "relative_path": "skills/govisit-get-destination-overview/SKILL.md",
+      "commit_sha": "953d5eb308b76b6855c254d12f3d1aad12042a0c",
+      "updated_at": "2026-11-12T07:44:01.668041Z"
+    },
+    "inhotel-io/govisit-toolkit:skills/govisit-get-category-section/SKILL.md": {
+      "repo": "inhotel-io/govisit-toolkit",
+      "branch": "main",
+      "relative_path": "skills/govisit-get-category-section/SKILL.md",
+      "commit_sha": "953d5eb308b76b6855c254d12f3d1aad12042a0c",
+      "updated_at": "2026-11-12T07:44:01.676237Z"
+    },
+    "inhotel-io/govisit-toolkit:skills/govisit-get-documentation-page/SKILL.md": {
+      "repo": "inhotel-io/govisit-toolkit",
+      "branch": "main",
+      "relative_path": "skills/govisit-get-documentation-page/SKILL.md",
+      "commit_sha": "953d5eb308b76b6855c254d12f3d1aad12042a0c",
+      "updated_at": "2026-11-12T07:44:01.690875Z"
+    },
+    "inhotel-io/govisit-toolkit:skills/govisit-get-collection-overview/SKILL.md": {
+      "repo": "inhotel-io/govisit-toolkit",
+      "branch": "main",
+      "relative_path": "skills/govisit-get-collection-overview/SKILL.md",
+      "commit_sha": "953d5eb308b76b6855c254d12f3d1aad12042a0c",
+      "updated_at": "2026-11-12T07:44:01.696881Z"
+    },
+    "inhotel-io/govisit-toolkit:skills/govisit-get-collection-section/SKILL.md": {
+      "repo": "inhotel-io/govisit-toolkit",
+      "branch": "main",
+      "relative_path": "skills/govisit-get-collection-section/SKILL.md",
+      "commit_sha": "953d5eb308b76b6855c254d12f3d1aad12042a0c",
+      "updated_at": "2026-11-12T07:44:01.703281Z"
+    },
+    "inhotel-io/govisit-toolkit:skills/govisit-search-places/SKILL.md": {
+      "repo": "inhotel-io/govisit-toolkit",
+      "branch": "main",
+      "relative_path": "skills/govisit-search-places/SKILL.md",
+      "commit_sha": "953d5eb308b76b6855c254d12f3d1aad12042a0c",
+      "updated_at": "2026-11-12T07:44:01.714641Z"
+    },
+    "inhotel-io/govisit-toolkit:skills/govisit-list-category-places/SKILL.md": {
+      "repo": "inhotel-io/govisit-toolkit",
+      "branch": "main",
+      "relative_path": "skills/govisit-list-category-places/SKILL.md",
+      "commit_sha": "953d5eb308b76b6855c254d12f3d1aad12042a0c",
+      "updated_at": "2026-11-12T07:44:01.720482Z"
+    },
+    "inhotel-io/govisit-toolkit:skills/govisit-list-destination-places/SKILL.md": {
+      "repo": "inhotel-io/govisit-toolkit",
+      "branch": "main",
+      "relative_path": "skills/govisit-list-destination-places/SKILL.md",
+      "commit_sha": "953d5eb308b76b6855c254d12f3d1aad12042a0c",
+      "updated_at": "2026-11-12T07:44:01.735939Z"
+    },
+    "inhotel-io/govisit-toolkit:skills/govisit-get-statistics/SKILL.md": {
+      "repo": "inhotel-io/govisit-toolkit",
+      "branch": "main",
+      "relative_path": "skills/govisit-get-statistics/SKILL.md",
+      "commit_sha": "953d5eb308b76b6855c254d12f3d1aad12042a0c",
+      "updated_at": "2026-11-12T07:44:01.745814Z"
+    },
+    "inhotel-io/govisit-toolkit:skills/govisit-get-place-section/SKILL.md": {
+      "repo": "inhotel-io/govisit-toolkit",
+      "branch": "main",
+      "relative_path": "skills/govisit-get-place-section/SKILL.md",
+      "commit_sha": "953d5eb308b76b6855c254d12f3d1aad12042a0c",
+      "updated_at": "2026-11-12T07:44:01.754452Z"
+    },
+    "inhotel-io/govisit-toolkit:skills/govisit-search-documentation/SKILL.md": {
+      "repo": "inhotel-io/govisit-toolkit",
+      "branch": "main",
+      "relative_path": "skills/govisit-search-documentation/SKILL.md",
+      "commit_sha": "953d5eb308b76b6855c254d12f3d1aad12042a0c",
+      "updated_at": "2026-11-12T07:44:01.759480Z"
+    },
+    "inhotel-io/govisit-toolkit:skills/govisit-search-destinations/SKILL.md": {
+      "repo": "inhotel-io/govisit-toolkit",
+      "branch": "main",
+      "relative_path": "skills/govisit-search-destinations/SKILL.md",
+      "commit_sha": "953d5eb308b76b6855c254d12f3d1aad12042a0c",
+      "updated_at": "2026-11-12T07:44:01.765970Z"
+    },
+    "inhotel-io/govisit-toolkit:skills/govisit-get-place-overview/SKILL.md": {
+      "repo": "inhotel-io/govisit-toolkit",
+      "branch": "main",
+      "relative_path": "skills/govisit-get-place-overview/SKILL.md",
+      "commit_sha": "953d5eb308b76b6855c254d12f3d1aad12042a0c",
+      "updated_at": "2026-11-12T07:44:01.772844Z"
+    },
+    "inhotel-io/govisit-toolkit:skills/govisit-list-collection-places/SKILL.md": {
+      "repo": "inhotel-io/govisit-toolkit",
+      "branch": "main",
+      "relative_path": "skills/govisit-list-collection-places/SKILL.md",
+      "commit_sha": "953d5eb308b76b6855c254d12f3d1aad12042a0c",
+      "updated_at": "2026-11-12T07:44:01.778283Z"
+    },
+    "inhotel-io/govisit-toolkit:skills/govisit-get-page-faq/SKILL.md": {
+      "repo": "inhotel-io/govisit-toolkit",
+      "branch": "main",
+      "relative_path": "skills/govisit-get-page-faq/SKILL.md",
+      "commit_sha": "953d5eb308b76b6855c254d12f3d1aad12042a0c",
+      "updated_at": "2026-11-12T07:44:01.783743Z"
+    },
+    "inhotel-io/govisit-toolkit:skills/govisit-list-related-places/SKILL.md": {
+      "repo": "inhotel-io/govisit-toolkit",
+      "branch": "main",
+      "relative_path": "skills/govisit-list-related-places/SKILL.md",
+      "commit_sha": "953d5eb308b76b6855c254d12f3d1aad12042a0c",
+      "updated_at": "2026-11-12T07:44:01.788740Z"
+    },
+    "inhotel-io/govisit-toolkit:skills/govisit-get-place-visit-facts/SKILL.md": {
+      "repo": "inhotel-io/govisit-toolkit",
+      "branch": "main",
+      "relative_path": "skills/govisit-get-place-visit-facts/SKILL.md",
+      "commit_sha": "953d5eb308b76b6855c254d12f3d1aad12042a0c",
+      "updated_at": "2026-11-12T07:44:01.795034Z"
+    },
+    "inhotel-io/govisit-toolkit:skills/govisit-list-destination-activities/SKILL.md": {
+      "repo": "inhotel-io/govisit-toolkit",
+      "branch": "main",
+      "relative_path": "skills/govisit-list-destination-activities/SKILL.md",
+      "commit_sha": "953d5eb308b76b6855c254d12f3d1aad12042a0c",
+      "updated_at": "2026-11-12T07:44:01.818748Z"
+    },
+    "inhotel-io/govisit-toolkit:skills/govisit-list-destination-categories/SKILL.md": {
+      "repo": "inhotel-io/govisit-toolkit",
+      "branch": "main",
+      "relative_path": "skills/govisit-list-destination-categories/SKILL.md",
+      "commit_sha": "953d5eb308b76b6855c254d12f3d1aad12042a0c",
+      "updated_at": "2026-11-12T07:44:02.037624Z"
+    },
+    "inhotel-io/govisit-toolkit:skills/govisit-list-destination-highlights/SKILL.md": {
+      "repo": "inhotel-io/govisit-toolkit",
+      "branch": "main",
+      "relative_path": "skills/govisit-list-destination-highlights/SKILL.md",
+      "commit_sha": "953d5eb308b76b6855c254d12f3d1aad12042a0c",
+      "updated_at": "2026-11-12T07:44:02.043299Z"
+    },
+    "inhotel-io/govisit-toolkit:skills/govisit-get-category-overview/SKILL.md": {
+      "repo": "inhotel-io/govisit-toolkit",
+      "branch": "main",
+      "relative_path": "skills/govisit-get-category-overview/SKILL.md",
+      "commit_sha": "953d5eb308b76b6855c254d12f3d1aad12042a0c",
+      "updated_at": "2026-11-12T07:44:02.048613Z"
+    },
+    "inhotel-io/govisit-toolkit:skills/govisit-get-destination-section/SKILL.md": {
+      "repo": "inhotel-io/govisit-toolkit",
+      "branch": "main",
+      "relative_path": "skills/govisit-get-destination-section/SKILL.md",
+      "commit_sha": "953d5eb308b76b6855c254d12f3d1aad12042a0c",
+      "updated_at": "2026-11-12T07:44:02.196666Z"
     }
   }
 }

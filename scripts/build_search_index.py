@@ -32,6 +32,7 @@ from build_static_skill_pages import (
 from category_taxonomy import get_category_code, get_taxonomy, resolve_category
 from index_artifacts import write_category_artifacts, write_search_artifacts, write_signal_artifacts
 from listed_skills import load_listed_skills, merge_listed_skills
+from official_sources import is_official_repo
 from plugin_index import build_plugins_index, load_plugins_with_fallback
 from rebuild_registry import safe_write_gzip_json, safe_write_json
 from search_sources import (
@@ -709,7 +710,7 @@ def build_search_index(
         for category in category_artifacts.categories
     ]
     official_skill_count = sum(
-        category["count"] for category in category_counts if category["code"] == "off"
+        1 for group in independent_skills if is_official_repo(str(group.get("repo") or ""))
     )
     asset_state_counts = Counter(
         record["asset_state"]

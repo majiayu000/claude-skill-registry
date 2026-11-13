@@ -1,0 +1,7 @@
+{
+  "schema_version": 1,
+  "description": "GitHub owners whose repositories publish official, first-party skills. A copy from one of these owners is the primary source of a group of identical copies.",
+  "owners": [
+    "anthropics"
+  ]
+}

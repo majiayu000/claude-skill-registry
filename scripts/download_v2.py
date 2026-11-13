@@ -32,6 +32,7 @@ from typing import Dict, List, Optional, Tuple
 
 import aiohttp
 from listed_skills import load_listed_skills, source_identity
+from official_sources import is_official_repo
 from utils import (
     build_legal_metadata,
     build_skill_key,
@@ -51,9 +52,6 @@ BATCH_SIZE = 200
 
 GITHUB_RAW_BASE = "https://raw.githubusercontent.com"
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "")
-
-# Official repos get priority
-OFFICIAL_REPOS = {"anthropics/skills", "anthropics/claude-code"}
 
 # Logging
 logging.basicConfig(
@@ -175,12 +173,12 @@ class SkillRegistry:
         # Conflict! Determine if this skill should get the base name
         # Priority: official > higher stars > existing keeps base name
 
-        is_official = repo in OFFICIAL_REPOS
+        is_official = is_official_repo(repo)
 
         # Check if any existing has the base name
         if base_name in existing:
             existing_info = existing[base_name]
-            existing_is_official = existing_info.get("repo") in OFFICIAL_REPOS
+            existing_is_official = is_official_repo(existing_info.get("repo", ""))
             existing_stars = existing_info.get("stars", 0)
 
             # Should this new skill take over the base name?

@@ -542,8 +542,10 @@ def test_publish_static_pages_preserves_data_checkout(tmp_path, mirror_skills):
         archive = main / "skills"
         shutil.copytree(data, archive)
     (main / "scripts").mkdir(parents=True)
-    for script in ("build_static_skill_pages.py", "security_rules.py"):
+    for script in ("build_static_skill_pages.py", "official_sources.py", "security_rules.py"):
         shutil.copy2(ROOT / "scripts" / script, main / "scripts")
+    (main / "policy").mkdir()
+    shutil.copy2(ROOT / "policy" / "official-sources.json", main / "policy")
     docs = main / "docs"
     docs.mkdir()
     (docs / "page-catalog.json").write_text(json.dumps({"skills": [{

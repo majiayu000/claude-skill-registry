@@ -74,6 +74,7 @@ from utils import (
     resolve_license,
     with_resolved_license,
 )
+from withheld_archives import body_allowed, is_withheld_metadata, read_metadata, withhold_archive
 
 
 async def download_skills(
@@ -141,13 +142,15 @@ async def download_skills(
     existing = set()
     for dirpath, dirnames, filenames in os.walk(output_dir):
         dirnames[:] = [d for d in dirnames if d not in exclude]
-        if "metadata.json" in filenames and "SKILL.md" in filenames:
+        if "metadata.json" in filenames:
             meta_path = Path(dirpath) / "metadata.json"
             try:
                 meta = json.loads(meta_path.read_text(encoding="utf-8"))
             except Exception:
                 meta = {}
-            existing.add(skill_key(meta))
+            # Withheld archives keep metadata only and must not be downloaded again.
+            if "SKILL.md" in filenames or (filenames == ["metadata.json"] and is_withheld_metadata(meta)):
+                existing.add(skill_key(meta))
 
     logger.info(f"Already downloaded: {len(existing)}")
 
@@ -702,6 +705,9 @@ async def download_skills(
                                             ", ".join(issue_types[:8]),
                                         )
                                         return False
+                                    if not body_allowed(skill):
+                                        # Without an open-source license only metadata is archived.
+                                        withhold_archive(skill_dir, read_metadata(skill_dir))
                                     stats["bundled_files"] += len(bundled_files)
                                     preferred_branch_by_repo[repo] = branch
                                     if manifest_file is not None:

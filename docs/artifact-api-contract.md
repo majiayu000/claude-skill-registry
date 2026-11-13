@@ -87,8 +87,10 @@ are not identity. `copies` counts distinct source repositories, so multiple
 paths or branches in one repository count once.
 
 `canonical_id` is the stable source id of the group's selected representative;
-`is_canonical` identifies that record. Selection uses existing scan, install,
-license, quality and star signals and does not establish original authorship.
+`is_canonical` identifies that record. Selection prefers a copy whose owner is
+listed in `policy/official-sources.json`, then uses existing scan, install,
+license, quality and star signals; that fallback does not establish original
+authorship.
 The selected source id may change when those signals change; static guide URLs
 remain based on the group identity. Fetch the representative's detail shard
 using the first character of `canonical_id`. Only its record has

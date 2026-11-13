@@ -57,10 +57,38 @@ def utils():
         ("CC BY-NC 4.0", "CC-BY-NC-4.0"),
         ("CC-BY-SA", "CC-BY-SA-4.0"),
         ("CC-BY", "CC-BY-4.0"),
+        ("Apache-2.0 license", "Apache-2.0"),
+        ("BSD-3-Clause license", "BSD-3-Clause"),
+        ("3-clause BSD license", "BSD-3-Clause"),
+        ("The MIT License.", "MIT"),
+        ("  mit   LICENSE ", "MIT"),
+        ("apache-2.0", "Apache-2.0"),
+        ("gplv3", "GPL-3.0"),
+        ("agpl-3.0", "AGPL-3.0"),
     ],
 )
 def test_normalize_license_canonicalizes_known_aliases(utils, raw, expected):
     assert utils.normalize_license(raw) == expected
+
+
+@pytest.mark.parametrize(
+    "raw,expected",
+    [
+        ("Apache-2.0 license", True),
+        ("MIT License", True),
+        ("AGPL-3.0", True),
+        ("GPL-3.0-or-later", True),
+        ("CC-BY-SA-4.0", True),
+        ("CC BY-NC 4.0", False),
+        ("CC-BY-ND-4.0", False),
+        ("Proprietary. LICENSE.txt has complete terms", False),
+        ("NOASSERTION", False),
+        ("", False),
+        (None, False),
+    ],
+)
+def test_is_open_source_license(utils, raw, expected):
+    assert utils.is_open_source_license(raw) is expected
 
 
 def test_normalize_license_maps_empty_to_noassertion(utils):

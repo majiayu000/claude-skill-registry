@@ -19,6 +19,7 @@ from collections import defaultdict
 from pathlib import Path
 from typing import Dict, List
 
+from official_sources import is_official_repo
 from utils import (
     build_legal_metadata,
     build_skill_key,
@@ -29,8 +30,6 @@ from utils import (
     normalize_repo,
     short_hash,
 )
-
-OFFICIAL_REPOS = {"anthropics/skills", "anthropics/claude-code"}
 
 
 def derive_base_name(dir_name: str, meta: dict) -> str:
@@ -97,7 +96,7 @@ def plan_normalization(skills_dir: Path) -> Dict[str, List[dict]]:
 
             def sort_key(e: dict):
                 return (
-                    e["repo"] in OFFICIAL_REPOS,
+                    is_official_repo(e["repo"]),
                     e["stars"],
                     e["repo"],
                     e["dir_name"],

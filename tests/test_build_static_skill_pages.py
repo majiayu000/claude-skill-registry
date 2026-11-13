@@ -203,6 +203,31 @@ def test_copy_identity_uses_content_not_shared_description():
     assert group_skill_copies([copy, first, other]) == groups
 
 
+def test_official_copy_is_primary_source_over_better_scored_copies():
+    official = skill(
+        "pdf", content_fingerprint="c" * 64, repo="anthropics/skills",
+        install="anthropics/skills/skills/pdf/SKILL.md", license="Apache-2.0", author="anthropics",
+        stars=0, quality_score=60, install_status="unknown",
+    )
+    copy = skill(
+        "pdf", content_fingerprint="c" * 64, repo="moessimple/dotfiles",
+        install="moessimple/dotfiles/home/.claude/skills/pdf/SKILL.md",
+        license="Proprietary. LICENSE.txt has complete terms", author="moessimple",
+        stars=5000, quality_score=95,
+    )
+    relicensed = dict(copy, repo="northseadl/skillwisp", install="northseadl/skillwisp/pdf",
+                      license="MIT", author="northseadl")
+    for order in ([copy, official, relicensed], [relicensed, copy, official]):
+        [group] = group_skill_copies(order)
+        assert (group["repo"], group["author"], group["license"], group["install"]) == (
+            "anthropics/skills", "anthropics", "Apache-2.0", "anthropics/skills/skills/pdf/SKILL.md"
+        )
+        assert group["repository_count"] == 3
+    # Without an official copy the existing scan/install/quality ranking still applies.
+    [group] = group_skill_copies([copy, relicensed])
+    assert group["repo"] in {"moessimple/dotfiles", "northseadl/skillwisp"}
+
+
 def test_selection_quality_and_first_wave_limit():
     records = [skill(f"safe-{i}", id=f"id-{i}", quality_score=80) for i in range(5810)]
     records += [skill("thin", description="Short"), skill("poor", quality_score=60)]

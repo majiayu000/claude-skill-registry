@@ -25,6 +25,7 @@ from utils import (
     load_metadata,
     normalize_category,
 )
+from withheld_archives import iter_withheld_metadata_only_dirs
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(message)s")
 logger = logging.getLogger(__name__)
@@ -323,10 +324,14 @@ def scan_skills(skills_dir: Path) -> list:
     list(iter_canonical_archive_paths(skills_dir, strict_registry=True))
     # Sorted traversal keeps duplicate resolution and record order independent of
     # filesystem directory-listing order.
-    for skill_md in sorted(skills_dir.rglob("SKILL.md")):
-        if is_declared_bundled_skill_file(skill_md, skills_dir):
-            continue
-        skill_dir = skill_md.parent
+    archived = [
+        (skill_md.parent, skill_md)
+        for skill_md in sorted(skills_dir.rglob("SKILL.md"))
+        if not is_declared_bundled_skill_file(skill_md, skills_dir)
+    ]
+    # Withheld archives keep metadata only; they are registered as upstream listings.
+    withheld = [(skill_dir, None) for skill_dir, _ in iter_withheld_metadata_only_dirs(skills_dir)]
+    for skill_dir, skill_md in archived + withheld:
         rel_dir = skill_dir.relative_to(skills_dir)
         rel_parts = rel_dir.parts
 
@@ -343,7 +348,7 @@ def scan_skills(skills_dir: Path) -> list:
 
         # Read SKILL.md for description
         try:
-            content = skill_md.read_text(encoding="utf-8")
+            content = skill_md.read_text(encoding="utf-8") if skill_md is not None else ""
             description = metadata.get("description")
             if not description or str(description).strip() in {"|", ">", "|-", ">-", "|+", ">+"}:
                 description = extract_description(content)
@@ -369,7 +374,11 @@ def scan_skills(skills_dir: Path) -> list:
             "tags": metadata.get("tags", []),
             "stars": metadata.get("stars", 0),
             "source": metadata.get("source", "local"),
-            **verified_asset_fields(metadata, skill_dir, skills_dir),
+            **(
+                verified_asset_fields(metadata, skill_dir, skills_dir)
+                if skill_md is not None
+                else {"tier": "listed"}
+            ),
         }
 
         for key in ("author", "source_url", "license", "distribution", "permission_note"):
@@ -384,11 +393,13 @@ def scan_skills(skills_dir: Path) -> list:
 
 def cleanup_orphan_metadata(skills_dir: Path) -> int:
     """
-    Remove metadata.json files whose directories do not contain SKILL.md.
+    Remove metadata.json files whose directories do not contain SKILL.md,
+    except withheld archives, which intentionally keep metadata only.
 
     This keeps archive parity clean without enforcing strict metadata schema checks.
     """
     skill_dirs = {p.parent for p in skills_dir.rglob("SKILL.md")}
+    skill_dirs.update(skill_dir for skill_dir, _ in iter_withheld_metadata_only_dirs(skills_dir))
     removed = 0
 
     for metadata_path in skills_dir.rglob("metadata.json"):

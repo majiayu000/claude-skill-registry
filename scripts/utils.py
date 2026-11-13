@@ -61,7 +61,74 @@ RESTRICTED_LICENSE_PATTERNS = (
     "UNKNOWN",
 )
 
+# OSI-approved licenses (including copyleft) and open content licenses whose terms
+# allow the archive to keep a skill's SKILL.md body with its license metadata.
+# Licenses outside this set (none declared, proprietary, NC/ND) keep metadata only.
+OPEN_SOURCE_LICENSES = PERMISSIVE_LICENSES | {
+    "AFL-3.0",
+    "AGPL-3.0",
+    "AGPL-3.0-only",
+    "AGPL-3.0-or-later",
+    "Artistic-2.0",
+    "BSL-1.0",
+    "CC-BY-3.0",
+    "CC-BY-4.0",
+    "CC-BY-SA-3.0",
+    "CC-BY-SA-4.0",
+    "CDDL-1.0",
+    "ECL-2.0",
+    "EPL-1.0",
+    "EPL-2.0",
+    "EUPL-1.1",
+    "EUPL-1.2",
+    "GPL-2.0",
+    "GPL-2.0-only",
+    "GPL-2.0-or-later",
+    "GPL-3.0",
+    "GPL-3.0-only",
+    "GPL-3.0-or-later",
+    "LGPL-2.1",
+    "LGPL-2.1-only",
+    "LGPL-2.1-or-later",
+    "LGPL-3.0",
+    "LGPL-3.0-only",
+    "LGPL-3.0-or-later",
+    "MPL-2.0",
+    "MulanPSL-2.0",
+    "OFL-1.1",
+    "OSL-3.0",
+    "PostgreSQL",
+    "UPL-1.0",
+}
+
 PLACEHOLDER_AUTHOR_VALUES = {"", "n/a", "na", "none", "null", "tbd", "unknown"}
+
+_KNOWN_LICENSE_IDS = OPEN_SOURCE_LICENSES | {
+    "CC-BY-NC-4.0",
+    "CC-BY-NC-ND-4.0",
+    "CC-BY-NC-SA-4.0",
+    "CC-BY-ND-4.0",
+    "PolyForm-Noncommercial-1.0.0",
+}
+_LICENSE_ID_BY_KEY = {license_id.lower(): license_id for license_id in _KNOWN_LICENSE_IDS}
+_LICENSE_ALIASES = {
+    "apache-2": "Apache-2.0",
+    "apache-license-2.0": "Apache-2.0",
+    "apache-license-version-2.0": "Apache-2.0",
+    "apache-license-v2.0": "Apache-2.0",
+    "bsd-2-clause": "BSD-2-Clause",
+    "bsd-3-clause": "BSD-3-Clause",
+    "2-clause-bsd": "BSD-2-Clause",
+    "3-clause-bsd": "BSD-3-Clause",
+    "gplv2": "GPL-2.0",
+    "gpl-v2": "GPL-2.0",
+    "gplv3": "GPL-3.0",
+    "gpl-v3": "GPL-3.0",
+    "agplv3": "AGPL-3.0",
+    "agpl-v3": "AGPL-3.0",
+    "lgplv3": "LGPL-3.0",
+    "mpl-2": "MPL-2.0",
+}
 
 
 def normalize_license(license_name: str) -> str:
@@ -71,16 +138,15 @@ def normalize_license(license_name: str) -> str:
         return "NOASSERTION"
 
     lowered = text.lower()
-    hyphenated = re.sub(r"[\s_]+", "-", lowered).strip("-")
+    # "MIT License", "Apache-2.0 license", "The MIT license." name the same id.
+    core = re.sub(r"^the\s+", "", lowered)
+    core = re.sub(r"[\s,;:.]+licen[cs]e\.?$", "", core).strip()
+    hyphenated = re.sub(r"[\s_]+", "-", core).strip("-")
     hyphenated = re.sub(r"-+", "-", hyphenated)
-    if lowered in {"mit", "mit license"}:
-        return "MIT"
-    if lowered in {"apache-2.0", "apache 2.0", "apache license 2.0", "apache license version 2.0"}:
-        return "Apache-2.0"
-    if lowered in {"bsd-2-clause", "bsd 2-clause", "bsd 2 clause"}:
-        return "BSD-2-Clause"
-    if lowered in {"bsd-3-clause", "bsd 3-clause", "bsd 3 clause"}:
-        return "BSD-3-Clause"
+    if hyphenated in _LICENSE_ID_BY_KEY:
+        return _LICENSE_ID_BY_KEY[hyphenated]
+    if hyphenated in _LICENSE_ALIASES:
+        return _LICENSE_ALIASES[hyphenated]
     if hyphenated in {"cc-by-nc-sa-4.0", "cc-by-nc-sa"}:
         return "CC-BY-NC-SA-4.0"
     if hyphenated in {"cc-by-nc-4.0", "cc-by-nc"}:
@@ -115,6 +181,11 @@ def resolve_license(*candidates: str | None) -> str:
         if not is_unresolved_license(candidate):
             return normalize_license(candidate)
     return "NOASSERTION"
+
+
+def is_open_source_license(license_name: str | None) -> bool:
+    """Return whether a declared license lets the archive keep the skill body."""
+    return normalize_license(str(license_name or "")) in OPEN_SOURCE_LICENSES
 
 
 def classify_license(license_name: str) -> str:

@@ -16,6 +16,7 @@ from pathlib import Path
 from typing import Any, Iterable
 from urllib.parse import quote
 
+from official_sources import is_official_repo
 from security_rules import SECURITY_CHECK_GROUPS
 
 PUBLIC_SITE = "https://majiayu000.github.io/claude-skill-registry/"
@@ -70,9 +71,11 @@ def group_skill_copies(records: Iterable[dict[str, Any]]) -> list[dict[str, Any]
         groups[identity].append(record)
     grouped = []
     for identity, copies in sorted(groups.items()):
-        # Choose a documented, scanned copy. This ranking does not establish
+        # An official publisher's copy is the primary source; otherwise choose a
+        # documented, scanned copy. The fallback ranking does not establish
         # original authorship; every matching source remains attributed.
         representative = max(copies, key=lambda item: (
+            is_official_repo(str(item.get("repo") or "")),
             item.get("security_status") == "passed",
             item.get("install_status") == "known_good",
             bool(item.get("license") and item.get("license") != "NOASSERTION"),

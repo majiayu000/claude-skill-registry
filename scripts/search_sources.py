@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """Source loaders for search index generation."""
 
-import hashlib
 import json
 import logging
 import re
@@ -20,8 +19,8 @@ from utils import (
     is_declared_bundled_skill_file,
     is_registry_repo,
     load_metadata,
-    split_frontmatter_content,
 )
+from withheld_archives import body_fingerprint, iter_withheld_metadata_only_dirs
 
 logger = logging.getLogger(__name__)
 SHA_PATTERN = re.compile(r"^[0-9a-fA-F]{40}$")
@@ -278,10 +277,14 @@ def scan_skills_v2(skills_dir: Path) -> List[Dict]:
 
     list(iter_canonical_archive_paths(skills_dir, strict_registry=True))
     # Sorted traversal keeps generated artifact order filesystem-independent.
-    for skill_md in sorted(skills_dir.rglob("SKILL.md")):
-        if is_declared_bundled_skill_file(skill_md, skills_dir):
-            continue
-        skill_dir = skill_md.parent
+    archived = [
+        (skill_md.parent, skill_md)
+        for skill_md in sorted(skills_dir.rglob("SKILL.md"))
+        if not is_declared_bundled_skill_file(skill_md, skills_dir)
+    ]
+    # Withheld archives keep metadata only; they are indexed as upstream listings.
+    withheld = [(skill_dir, None) for skill_dir, _ in iter_withheld_metadata_only_dirs(skills_dir)]
+    for skill_dir, skill_md in archived + withheld:
         rel_parts = skill_dir.relative_to(skills_dir).parts
         category_name = rel_parts[0] if rel_parts else "other"
         metadata = load_metadata(skill_dir)
@@ -289,15 +292,14 @@ def scan_skills_v2(skills_dir: Path) -> List[Dict]:
         if is_registry_repo(metadata.get("repo", "")):
             continue
         content = ""
-        try:
-            content = skill_md.read_text(encoding="utf-8")
-        except Exception as exc:
-            logger.warning("Failed to read skill content from %s: %s", skill_md, exc)
-        _frontmatter, body = split_frontmatter_content(content)
-        normalized_body = body.replace("\r\n", "\n").strip()
+        if skill_md is not None:
+            try:
+                content = skill_md.read_text(encoding="utf-8")
+            except Exception as exc:
+                logger.warning("Failed to read skill content from %s: %s", skill_md, exc)
         content_fingerprint = (
-            hashlib.sha256(normalized_body.encode("utf-8")).hexdigest()
-            if normalized_body else ""
+            body_fingerprint(content) if skill_md is not None
+            else str(metadata.get("content_fingerprint") or "")
         )
 
 
@@ -310,7 +312,9 @@ def scan_skills_v2(skills_dir: Path) -> List[Dict]:
                 name = dir_name[: -(len(suffix) + 1)]
 
         description = metadata.get("description", "")
-        if not description or str(description).strip() in {"|", ">", "|-", ">-", "|+", ">+"}:
+        if skill_md is not None and (
+            not description or str(description).strip() in {"|", ">", "|-", ">-", "|+", ">+"}
+        ):
             try:
                 content = skill_md.read_text(encoding="utf-8")
                 description = extract_description(content)
@@ -324,7 +328,9 @@ def scan_skills_v2(skills_dir: Path) -> List[Dict]:
         repo = metadata.get("repo", "")
         github_path = metadata_source_path(metadata, "/".join(rel_parts))
         github_branch = metadata.get("github_branch") or metadata.get("branch") or "main"
-        asset_fields = verified_asset_fields(metadata, skill_dir, skills_dir)
+        asset_fields = (
+            verified_asset_fields(metadata, skill_dir, skills_dir) if skill_md is not None else {}
+        )
         if asset_fields:
             repo = asset_fields["repo"]
             github_path = asset_fields["path"]
@@ -356,13 +362,14 @@ def scan_skills_v2(skills_dir: Path) -> List[Dict]:
             "description": description,
             "repo": repo,
             "path": github_path,
-            "archive_path": skill_md.relative_to(skills_dir).as_posix(),
+            "archive_path": skill_md.relative_to(skills_dir).as_posix() if skill_md else "",
             "branch": github_branch,
             "category": category,
             "tags": tags,
             "stars": stars,
             "source": metadata.get("source", "downloaded"),
             "install": install,
+            **({"tier": "listed"} if skill_md is None else {}),
             **asset_fields,
         }
 

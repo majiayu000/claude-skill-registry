@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-13T07:35:43.535322Z",
+  "updated_at": "2026-11-14T17:31:19.292926Z",
   "archive_skill_md_count_raw": 69295,
   "archive_metadata_count_raw": 372718,
   "indexed_skill_count_scan_shape": 329236,
@@ -260,20 +260,20 @@
     "verified": 51
   },
   "asset_liveness_counts": {
-    "live": 51
+    "live": 50
   },
   "index_size_bytes": 324,
-  "index_size_gzip_bytes": 211,
+  "index_size_gzip_bytes": 212,
   "search_shard_count": 14,
-  "search_largest_shard_bytes": 8388680,
-  "search_largest_shard_gzip_bytes": 1921303,
+  "search_largest_shard_bytes": 8388684,
+  "search_largest_shard_gzip_bytes": 1921331,
   "category_shard_count": 66,
   "category_largest_part_bytes": 8388730,
-  "category_largest_part_gzip_bytes": 1982668,
+  "category_largest_part_gzip_bytes": 1982607,
   "lite_index_count": 329236,
   "lite_index_included_count": 5000,
-  "lite_index_size_bytes": 4262446,
-  "lite_index_gzip_size_bytes": 817248,
+  "lite_index_size_bytes": 4262088,
+  "lite_index_gzip_size_bytes": 817333,
   "quality_index_size_bytes": 364,
   "quality_index_gzip_size_bytes": 238,
   "quality_shard_count": 12,
@@ -287,12 +287,12 @@
   "ranking_index_size_bytes": 364,
   "ranking_index_gzip_size_bytes": 238,
   "ranking_shard_count": 10,
-  "ranking_largest_shard_bytes": 8388673,
-  "ranking_largest_shard_gzip_bytes": 1752290,
+  "ranking_largest_shard_bytes": 8388663,
+  "ranking_largest_shard_gzip_bytes": 1752258,
   "largest_generated_file_bytes": 10221271,
   "security_scan": {
     "total": 69293,
-    "passed": 69292,
-    "failed": 1
+    "passed": 69293,
+    "failed": 0
   }
 }

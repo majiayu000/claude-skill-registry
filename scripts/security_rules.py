@@ -4,7 +4,10 @@ import re
 
 DANGEROUS_PATTERNS = {
     # Code execution
-    "eval": r"\beval\s*\(",
+    # "eval (prompt tuning, hill-climbing)" is an evaluation heading, and its
+    # parenthetical cannot be parsed as a code argument. Keep matching calls
+    # with whitespace and other uses of eval on the same line.
+    "eval": r"\beval\s*\((?!prompt tuning, hill-climbing\):\*\*)",
     "exec": r"\bexec\s*\(",
     "__import__": r"\b__import__\s*\(",
     "compile": r"\bcompile\s*\(",

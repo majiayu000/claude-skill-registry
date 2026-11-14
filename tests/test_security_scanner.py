@@ -305,6 +305,30 @@ def test_scanner_does_not_treat_markdown_dash_runs_as_frontmatter_delimiters(tmp
     assert not any(issue.get("type") == "yaml_parse_error" for issue in issues)
 
 
+@pytest.mark.parametrize(
+    ("extra", "expected_lines"),
+    [
+        ("", []),
+        (' `eval("unsafe")`', [6]),
+        ('\n\n```python\neval("unsafe")\n```', [9]),
+    ],
+)
+def test_scanner_distinguishes_evaluation_prose_from_eval_calls(tmp_path, extra, expected_lines):
+    module = load_module()
+    skill_file = tmp_path / "SKILL.md"
+    skill_file.write_text(
+        "---\nname: demo\ndescription: Demo skill for scanning evaluation prose.\n---\n\n"
+        "**Iteratively improving an app against an eval (prompt tuning, hill-climbing):**"
+        f"{extra}\n",
+        encoding="utf-8",
+    )
+
+    is_safe, issues = module.SecurityScanner().scan_file(skill_file)
+
+    assert is_safe == (not expected_lines)
+    assert [item["line"] for item in issues if item.get("pattern") == "eval"] == expected_lines
+
+
 def test_single_file_scan_exits_nonzero_for_unsafe_skill(tmp_path):
     skill_dir = tmp_path / "demo"
     skill_dir.mkdir(parents=True)

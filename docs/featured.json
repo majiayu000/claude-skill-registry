@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-16T15:50:10.945605Z",
+  "updated_at": "2026-11-16T16:27:52.535283Z",
   "count": 100,
   "skills": [
     {
@@ -561,7 +561,7 @@
         "Codex CLI"
       ],
       "canonical_id": "57ceqyyguhctukilt98y_8jugd8ou1kzhj6sodbnzue",
-      "copies": 53,
+      "copies": 54,
       "is_canonical": false,
       "u": "skills/skill-creator-efe5cd29f4b3/"
     },
@@ -2053,7 +2053,7 @@
         "Claude Code"
       ],
       "canonical_id": "0uogss1djcxkk3yeodqtnte6-cambf4hialvpvz0ega",
-      "copies": 88,
+      "copies": 89,
       "is_canonical": true,
       "u": "skills/internal-comms-75ef6b7c1d3a/"
     },
@@ -2177,7 +2177,7 @@
       "trust_score": 100,
       "compatible_agents": [],
       "canonical_id": "hkf1eajyj2nw8k800n3pum3d65eitqfmmxkoeq1ieds",
-      "copies": 117,
+      "copies": 118,
       "is_canonical": true,
       "u": "skills/webapp-testing-d77a2080404e/"
     },

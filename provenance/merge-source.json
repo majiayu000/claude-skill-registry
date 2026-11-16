@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-16T15:59:21Z",
+  "generated_at": "2026-11-16T16:33:45Z",
   "core_repo": "majiayu000/claude-skill-registry-core",
-  "core_sha": "af53f67037ba390b099f8436ea6905bf1e0ac7d4",
+  "core_sha": "34f95f4fc1b3fc09c3232c93d04df8ec78aeabca",
   "data_repo": "majiayu000/claude-skill-registry-data",
-  "data_sha": "dc2236a75133d2f4879a63d51ad5c61958bcfcb9"
+  "data_sha": "3e759539159bb5e3f5da351ef8dc5f474620aabe"
 }

@@ -8,7 +8,7 @@ NOASSERTION, proprietary, non-commercial or no-derivatives) is "withheld": the
 directory keeps ``metadata.json`` with its source link and no upstream content.
 
 Dry-run is the default; ``--apply`` removes bodies and ``--check`` fails when any
-withheld archive still carries files.
+withheld archive still carries files or obsolete bundle metadata.
 """
 
 from __future__ import annotations
@@ -89,7 +89,10 @@ def withheld_metadata(metadata: dict, skill_text: str | None) -> dict:
     # Bundled-file evidence must not describe files that are no longer archived.
     if "bundled_files" in updated:
         updated["bundled_files"] = []
-    for key in ("bundled_file_blobs", "license_source_paths"):
+    for key in (
+        "bundled_file_blobs", "license_source_paths",
+        "asset_liveness", "assets_liveness_checked_at", "assets_liveness_sha",
+    ):
         updated.pop(key, None)
     if updated.get("archive_mode") == "directory":
         updated["archive_mode"] = "skill-md"
@@ -115,11 +118,12 @@ def withhold_archive(skill_dir: Path, metadata: dict) -> None:
 
 
 def plan_withholding(skills_dir: Path) -> dict:
-    """Return counts and the withheld archives that still carry content."""
+    """Return content removals and metadata-only records needing normalization."""
     archives = 0
     body_kept = 0
     withheld_clean = 0
     pending: list[tuple[Path, dict]] = []
+    metadata_pending: list[tuple[Path, dict]] = []
     for skill_dir in iter_archive_dirs(skills_dir):
         archives += 1
         metadata = read_metadata(skill_dir)
@@ -130,11 +134,14 @@ def plan_withholding(skills_dir: Path) -> dict:
             pending.append((skill_dir, metadata))
         else:
             withheld_clean += 1
+            if withheld_metadata(metadata, None) != metadata:
+                metadata_pending.append((skill_dir, metadata))
     return {
         "archives": archives,
         "body_kept": body_kept,
         "withheld_metadata_only": withheld_clean,
         "pending": pending,
+        "metadata_pending": metadata_pending,
     }
 
 
@@ -142,28 +149,34 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--skills-dir", type=Path, default=Path("skills"))
     mode = parser.add_mutually_exclusive_group()
-    mode.add_argument("--apply", action="store_true", help="remove withheld bodies")
-    mode.add_argument("--check", action="store_true", help="fail if any body remains")
+    mode.add_argument("--apply", action="store_true", help="remove withheld bodies and obsolete bundle metadata")
+    mode.add_argument("--check", action="store_true", help="fail if any body or obsolete bundle metadata remains")
     parser.add_argument("--report", type=Path, help="write a JSON summary here")
     args = parser.parse_args(argv)
 
     plan = plan_withholding(args.skills_dir)
     pending = plan.pop("pending")
+    metadata_pending = plan.pop("metadata_pending")
     if args.apply:
-        for skill_dir, metadata in pending:
+        for skill_dir, metadata in pending + metadata_pending:
             withhold_archive(skill_dir, metadata)
     summary = {
         **plan,
         "withheld_with_content": len(pending),
+        "withheld_metadata_needing_cleanup": len(metadata_pending),
         "applied": bool(args.apply),
         "examples": [p.relative_to(args.skills_dir).as_posix() for p, _ in pending[:20]],
+        "metadata_cleanup_examples": [
+            p.relative_to(args.skills_dir).as_posix() for p, _ in metadata_pending[:20]
+        ],
     }
     if args.report:
         args.report.write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(summary, indent=2))
-    if args.check and pending:
+    if args.check and (pending or metadata_pending):
         print(
-            f"error: {len(pending)} archives without an open-source license still carry content",
+            f"error: {len(pending)} archives without an open-source license still carry content; "
+            f"{len(metadata_pending)} metadata-only archives carry obsolete bundle metadata",
             file=sys.stderr,
         )
         return 1

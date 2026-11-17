@@ -31,7 +31,7 @@ Copies with the same normalized name and exact Markdown-body fingerprint count a
 
 The maintainer of this mirror is not necessarily the skill author. Follow the original source or the archive metadata's `author`, `source_url`, `license`, and `permission_note`. See [how to trace an archived skill](https://github.com/majiayu000/claude-skill-registry-data#trace-an-archived-skill).
 
-For maintained task bundles, see [Spellbook](https://github.com/majiayu000/spellbook#install). For programmatic access, see [Direct API](#option-3-direct-api).
+For maintained task bundles, see [Spellbook](https://github.com/majiayu000/spellbook#quick-start). For programmatic access, see [Direct API](#option-3-direct-api).
 
 ## Highlights
 
@@ -65,25 +65,16 @@ Visit [https://majiayu000.github.io/claude-skill-registry/](https://majiayu000.g
 
 For clone/update tips on large repositories, see [docs/FAST_CLONE.md](docs/FAST_CLONE.md).
 
-### Option 2: CLI (sk)
+### Option 2: CLI
+
+After reviewing the skill's source, run the [Skills CLI](https://github.com/vercel-labs/skills)
+from your project directory and select your coding agent when prompted:
 
 ```bash
-# Install sk
-go install github.com/majiayu000/claude-skill-manager@latest
-# Go names the executable claude-skill-manager; expose the documented sk command.
-sk_bin_dir="$(go env GOBIN)"
-if [ -z "$sk_bin_dir" ]; then sk_bin_dir="$(go env GOPATH)/bin"; fi
-mv "$sk_bin_dir/claude-skill-manager" "$sk_bin_dir/sk"
-# Ensure sk_bin_dir is on your PATH.
-
-# Search skills
-sk search testing
-sk search pdf
-sk search --popular
-
-# Install a skill
-sk install anthropics/skills/skills/docx
+npx skills add https://github.com/anthropics/skills/tree/main/skills/docx
 ```
+
+The earlier `sk` CLI is maintained separately without new features.
 
 ### Option 3: Direct API
 
@@ -153,8 +144,8 @@ curl https://majiayu000.github.io/claude-skill-registry/categories/development.j
 ┌─────────────────────────────────────────────────────────────────┐
 │  Layer 3: Consumption                                           │
 │  ┌────────────────┐  ┌────────────────┐  ┌────────────────┐    │
-│  │ Web UI         │  │ sk CLI         │  │ API            │    │
-│  │ (GitHub Pages) │  │ (Go)           │  │ (JSON)         │    │
+│  │ Web UI         │  │ Skills CLI     │  │ API            │    │
+│  │ (GitHub Pages) │  │ (npx)          │  │ (JSON)         │    │
 │  └────────────────┘  └────────────────┘  └────────────────┘    │
 └─────────────────────────────────────────────────────────────────┘
 ```
@@ -280,7 +271,7 @@ Common category codes include:
 - [x] **Archive size:** tracked by badge (raw `SKILL.md` count from `stats.json`)
 - [x] **Daily auto-update** via GitHub Actions
 - [x] **Security scanning** for all skills
-- [x] **sk CLI** for installation
+- [x] **Skills CLI** installation guidance
 
 ### In Progress
 
@@ -384,7 +375,7 @@ In this stack, the registry is the **Extend** layer — the front door where you
 
 | Project | Description |
 |---------|-------------|
-| [claude-skill-manager](https://github.com/majiayu000/claude-skill-manager) | CLI tool for installing skills (`sk`) |
+| [claude-skill-manager](https://github.com/majiayu000/claude-skill-manager) | Earlier `sk` install CLI (maintenance only) |
 | [anthropics/skills](https://github.com/anthropics/skills) | Official Anthropic skills |
 | [SkillsMP](https://skillsmp.com) | Web-based skill marketplace |
 | [awesome-claude-skills](https://github.com/travisvn/awesome-claude-skills) | Curated skill list |

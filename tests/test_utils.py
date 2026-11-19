@@ -65,6 +65,11 @@ def utils():
         ("apache-2.0", "Apache-2.0"),
         ("gplv3", "GPL-3.0"),
         ("agpl-3.0", "AGPL-3.0"),
+        ("Apache License, Version 2.0", "Apache-2.0"),
+        ("Apache2.0", "Apache-2.0"),
+        ("The MIT License (MIT)", "MIT"),
+        ("BSD-3-Clause", "BSD-3-Clause"),
+        ("bsd-2-clause", "BSD-2-Clause"),
     ],
 )
 def test_normalize_license_canonicalizes_known_aliases(utils, raw, expected):
@@ -75,6 +80,8 @@ def test_normalize_license_canonicalizes_known_aliases(utils, raw, expected):
     "raw,expected",
     [
         ("Apache-2.0 license", True),
+        ("Apache License, Version 2.0", True),
+        ("The MIT License (MIT)", True),
         ("MIT License", True),
         ("AGPL-3.0", True),
         ("GPL-3.0-or-later", True),
@@ -100,6 +107,10 @@ def test_normalize_license_maps_empty_to_noassertion(utils):
 def test_normalize_license_keeps_unknown_text_verbatim(utils):
     # Unrecognised licenses fall through unchanged so reviewers can spot them.
     assert utils.normalize_license("Custom Internal EULA") == "Custom Internal EULA"
+    # Punctuation is only folded when the whole value then names one license.
+    for text in ("MIT, with the Commons Clause", "Proprietary. LICENSE.txt has complete terms"):
+        assert utils.normalize_license(text) == text
+        assert utils.is_open_source_license(text) is False
 
 
 # ---------------------------------------------------------------------------

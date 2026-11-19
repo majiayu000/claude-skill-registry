@@ -116,8 +116,8 @@ _LICENSE_ALIASES = {
     "apache-license-2.0": "Apache-2.0",
     "apache-license-version-2.0": "Apache-2.0",
     "apache-license-v2.0": "Apache-2.0",
-    "bsd-2-clause": "BSD-2-Clause",
-    "bsd-3-clause": "BSD-3-Clause",
+    "apache2.0": "Apache-2.0",
+    "mit-license-(mit)": "MIT",
     "2-clause-bsd": "BSD-2-Clause",
     "3-clause-bsd": "BSD-3-Clause",
     "gplv2": "GPL-2.0",
@@ -141,7 +141,7 @@ def normalize_license(license_name: str) -> str:
     # "MIT License", "Apache-2.0 license", "The MIT license." name the same id.
     core = re.sub(r"^the\s+", "", lowered)
     core = re.sub(r"[\s,;:.]+licen[cs]e\.?$", "", core).strip()
-    hyphenated = re.sub(r"[\s_]+", "-", core).strip("-")
+    hyphenated = re.sub(r"[\s_,]+", "-", core).strip("-")
     hyphenated = re.sub(r"-+", "-", hyphenated)
     if hyphenated in _LICENSE_ID_BY_KEY:
         return _LICENSE_ID_BY_KEY[hyphenated]

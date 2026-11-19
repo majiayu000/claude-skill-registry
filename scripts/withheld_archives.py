@@ -65,13 +65,28 @@ def is_withheld_metadata(metadata: dict) -> bool:
     return bool(str(metadata.get("repo") or "").strip()) and not body_allowed(metadata)
 
 
+def awaits_body(metadata: dict) -> bool:
+    """A withheld archive whose license was accepted after its body was removed.
+
+    The stored content_fingerprint shows that withholding removed a body. Until a
+    download archives it again the directory is still an upstream listing; it is
+    not a withheld archive, so the downloader does not skip its source.
+    """
+    return (
+        bool(str(metadata.get("repo") or "").strip())
+        and bool(metadata.get("content_fingerprint"))
+        and body_allowed(metadata)
+    )
+
+
 def iter_withheld_metadata_only_dirs(skills_dir: Path):
-    """Yield (skill_dir, metadata) for withheld archives that carry no SKILL.md."""
+    """Yield (skill_dir, metadata) for metadata-only archives that are upstream listings:
+    withheld archives and those that await their body again."""
     for skill_dir in iter_archive_dirs(skills_dir):
         if (skill_dir / "SKILL.md").exists():
             continue
         metadata = read_metadata(skill_dir)
-        if is_withheld_metadata(metadata):
+        if is_withheld_metadata(metadata) or awaits_body(metadata):
             yield skill_dir, metadata
 
 

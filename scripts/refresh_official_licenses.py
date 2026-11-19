@@ -5,10 +5,15 @@ Archives are never re-downloaded, so a later upstream relicense would otherwise
 never reach the registry. For every archive whose repo is listed in
 ``policy/official-sources.json`` this reads the upstream SKILL.md and license
 files from raw.githubusercontent.com (no API quota) and applies the upstream
-license when the archived Markdown body still matches the upstream body. An
+license when the archived Markdown body still matches the upstream body. When
+upstream declares no license and has no license file this script can identify,
+the recorded license is kept and the archive is reported as
+``license_unidentified``. An
 older archived version keeps the terms it was published under, unless it is a
 single-file archive without an open-source license and upstream now has one:
-then the archived SKILL.md is replaced with the current upstream file.
+then the archived SKILL.md is replaced with the current upstream file. A
+withheld archive (metadata only) whose stored body fingerprint matches upstream
+gets the upstream SKILL.md back as soon as its license allows the body.
 
 Dry-run is the default; ``--apply`` writes changes. Fetch errors exit nonzero.
 """
@@ -97,7 +102,7 @@ def archived_fingerprint(skill_dir: Path, metadata: dict) -> str:
 def refresh_archives(skills_dir: Path, *, apply: bool, fetch: Fetcher = fetch_raw) -> dict:
     summary: dict = {"official": 0, "updated": [], "body_refreshed": [], "unchanged": 0,
                      "body_differs": [], "upstream_missing": [], "no_source_path": [],
-                     "errors": []}
+                     "license_unidentified": [], "errors": []}
     for skill_dir in iter_archive_dirs(skills_dir):
         metadata = read_metadata(skill_dir)
         if not is_official_repo(str(metadata.get("repo") or "")):
@@ -117,12 +122,23 @@ def refresh_archives(skills_dir: Path, *, apply: bool, fetch: Fetcher = fetch_ra
         if not upstream_text:
             summary["upstream_missing"].append(label)
             continue
+        if is_unresolved_license(license_name) and not is_unresolved_license(metadata.get("license")):
+            # Upstream declares nothing and carries no license file this script can
+            # name (only Apache-2.0 and MIT texts are detected). That is not a
+            # relicense, so the recorded license stays.
+            summary["license_unidentified"].append(label)
+            license_name = resolve_license(metadata.get("license"))
         refreshed = with_resolved_license(metadata, license_name)
         refreshed["author"] = infer_author(repo, str(metadata.get("author") or ""))
-        if archived_fingerprint(skill_dir, metadata) != body_fingerprint(upstream_text):
+        body_matches = archived_fingerprint(skill_dir, metadata) == body_fingerprint(upstream_text)
+        # A withheld archive holds metadata.json alone. Once its license allows the
+        # body, a metadata-only update would leave it neither archived nor listed, so
+        # the matching upstream SKILL.md is written back.
+        restore = body_matches and not (skill_dir / "SKILL.md").is_file() and body_allowed(refreshed)
+        if restore or not body_matches:
             single_file = not metadata.get("bundled_files") and not metadata.get("github_commit_sha")
             relicensed = not body_allowed(metadata) and body_allowed(refreshed)
-            if not (single_file and relicensed):
+            if not restore and not (single_file and relicensed):
                 summary["body_differs"].append(label)
                 continue
             summary["body_refreshed"].append(f"{label}: {metadata.get('license')} -> {refreshed['license']}")

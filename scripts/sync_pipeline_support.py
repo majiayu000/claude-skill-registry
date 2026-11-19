@@ -577,7 +577,13 @@ def validate_existing_archive_sources(
 
     for dirpath, dirnames, filenames in os.walk(output_dir):
         dirnames[:] = [dirname for dirname in dirnames if dirname not in exclude]
-        if "metadata.json" not in filenames or "SKILL.md" not in filenames:
+        if "metadata.json" not in filenames:
+            continue
+        # A withheld archive is <category>/<skill>/metadata.json without SKILL.md and is
+        # still published as a listing, so it is validated like an archive with a body.
+        if "SKILL.md" not in filenames and (
+            len(Path(dirpath).relative_to(output_dir).parts) != 2
+        ):
             continue
 
         meta_path = Path(dirpath) / "metadata.json"

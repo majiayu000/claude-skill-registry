@@ -19,6 +19,7 @@ from rebuild_registry import cleanup_orphan_metadata  # noqa: E402
 from rebuild_registry import scan_skills as scan_registry_skills  # noqa: E402
 from refresh_official_licenses import detect_license_text, refresh_archives  # noqa: E402
 from search_sources import scan_skills_v2  # noqa: E402
+from security_scope import resolve_scan_paths  # noqa: E402
 from test_sync_and_download import FakeResponse, install_fake_aiohttp  # noqa: E402
 from test_sync_and_download import load_module as load_sync_module  # noqa: E402
 
@@ -94,6 +95,16 @@ def test_apply_removes_body_and_keeps_identity_metadata(tmp_path):
     # Copyleft and odd spellings of open-source licenses keep the body; NC does not.
     assert (agpl / "SKILL.md").exists() and (spelled / "SKILL.md").exists()
     assert [p.name for p in noncommercial.iterdir()] == ["metadata.json"]
+
+
+def test_apply_keeps_body_for_formal_license_names(tmp_path):
+    formal = "Apache License, Version 2.0"
+    kept = write_archive(tmp_path, "documents/pdf-formal",
+                         {**restricted_metadata("acme/formal"), "license": formal}, skill_md(formal))
+
+    assert withheld_archives.main(["--skills-dir", str(tmp_path), "--check"]) == 0
+    assert withheld_archives.main(["--skills-dir", str(tmp_path), "--apply"]) == 0
+    assert (kept / "SKILL.md").exists()
 
 
 def test_archive_without_legal_metadata_is_withheld(tmp_path):
@@ -224,6 +235,70 @@ def test_refresh_dry_run_writes_nothing_and_cli_fails_on_fetch_errors(tmp_path, 
     assert refresh_archives(tmp_path, apply=False, fetch=lambda url: None)["no_source_path"]
 
 
+def test_refresh_keeps_recorded_license_when_upstream_license_is_unidentified(tmp_path):
+    undeclared = skill_md("x").replace("license: x\n", "")
+    kept = write_archive(tmp_path, "documents/pdf",
+                         compatible_metadata("anthropics/skills", "BSD-3-Clause"), undeclared)
+    bsd_text = "BSD 3-Clause License\n\nRedistribution and use in source and binary forms ...\n"
+
+    # A license file this script cannot name is not a relicense.
+    summary = refresh_archives(
+        tmp_path, apply=True, fetch=FakeUpstream({"skills/pdf/SKILL.md": undeclared, "LICENSE": bsd_text})
+    )
+    refreshed = json.loads((kept / "metadata.json").read_text(encoding="utf-8"))
+    assert (refreshed["license"], refreshed["distribution"]) == ("BSD-3-Clause", "compatible")
+    assert summary["license_unidentified"] == ["documents/pdf"]
+    # Neither is a license file under a name this script does not look for.
+    summary = refresh_archives(tmp_path, apply=True, fetch=FakeUpstream({"skills/pdf/SKILL.md": undeclared}))
+    assert summary["updated"] == [] and summary["unchanged"] == 1
+    assert summary["license_unidentified"] == ["documents/pdf"]
+    withheld_archives.main(["--skills-dir", str(tmp_path), "--apply"])
+    assert (kept / "SKILL.md").exists()
+
+    # An explicit upstream declaration still replaces the recorded license.
+    declared = FakeUpstream({"skills/pdf/SKILL.md": skill_md("Proprietary"), "LICENSE": bsd_text})
+    summary = refresh_archives(tmp_path, apply=True, fetch=declared)
+    assert summary["updated"] == ["documents/pdf: BSD-3-Clause -> Proprietary"]
+    assert summary["license_unidentified"] == []
+    withheld_archives.main(["--skills-dir", str(tmp_path), "--apply"])
+    assert [p.name for p in kept.iterdir()] == ["metadata.json"]
+
+
+def test_refresh_restores_withheld_body_when_upstream_license_allows_it(tmp_path):
+    undeclared = skill_md("x").replace("license: x\n", "")
+    withheld = write_archive(tmp_path, "documents/pdf", restricted_metadata("anthropics/skills"), undeclared)
+    withheld_archives.main(["--skills-dir", str(tmp_path), "--apply"])
+    assert [p.name for p in withheld.iterdir()] == ["metadata.json"]
+    before = (withheld / "metadata.json").read_bytes()
+    # Upstream keeps the body and adds a license: the stored fingerprint still matches.
+    upstream_text = undeclared.replace("Work with PDF files.", "Read and write PDF files.")
+    upstream = FakeUpstream({"skills/pdf/SKILL.md": upstream_text, "LICENSE": APACHE_TEXT})
+
+    dry_run = refresh_archives(tmp_path, apply=False, fetch=upstream)
+    assert dry_run["body_refreshed"] == ["documents/pdf: NOASSERTION -> Apache-2.0"]
+    assert {p.name: p.read_bytes() for p in withheld.iterdir()} == {"metadata.json": before}
+
+    summary = refresh_archives(tmp_path, apply=True, fetch=upstream)
+
+    assert summary["body_refreshed"] == dry_run["body_refreshed"] and summary["updated"] == []
+    assert (withheld / "SKILL.md").read_text(encoding="utf-8") == upstream_text
+    metadata = json.loads((withheld / "metadata.json").read_text(encoding="utf-8"))
+    assert (metadata["license"], metadata["distribution"]) == ("Apache-2.0", "compatible")
+    assert "content_fingerprint" not in metadata
+    assert withheld_archives.main(["--skills-dir", str(tmp_path), "--apply"]) == 0
+    assert (withheld / "SKILL.md").exists()
+    # The relicensed skill stays in the registry and the search index, now as an archive.
+    [registered] = scan_registry_skills(tmp_path)
+    [searchable] = scan_skills_v2(tmp_path)
+    assert registered["repo"] == searchable["repo"] == "anthropics/skills"
+    assert "tier" not in registered and "tier" not in searchable
+    # The incremental security scope maps the changed metadata to the restored body.
+    assert resolve_scan_paths(tmp_path, ["documents/pdf/metadata.json"], fail_unmapped=True) == [
+        withheld / "SKILL.md"
+    ]
+    assert refresh_archives(tmp_path, apply=True, fetch=upstream)["unchanged"] == 1
+
+
 def test_detect_license_text():
     assert detect_license_text(APACHE_TEXT) == "Apache-2.0"
     assert detect_license_text(
@@ -269,3 +344,86 @@ def test_sync_archives_metadata_only_and_never_readds_the_body(tmp_path, monkeyp
     assert second["downloaded"] == 0
     assert [path.name for path in skill_dir.iterdir()] == ["metadata.json"]
     assert len(list(output_dir.glob("development/*"))) == 1
+
+
+def test_withheld_archive_with_accepted_license_stays_listed_until_archived_again(tmp_path, monkeypatch):
+    module = load_sync_module()
+    registry_path = tmp_path / "registry.json"
+    output_dir = tmp_path / "skills"
+    registry_path.write_text(json.dumps({"skills": [{
+        "name": "demo", "repo": "acme/demo", "path": "SKILL.md", "category": "development",
+    }]}), encoding="utf-8")
+    routes = {
+        "https://raw.githubusercontent.com/acme/demo/main/SKILL.md": FakeResponse(
+            200, text="---\nname: demo\ndescription: Standalone skill.\n---\n# Demo\n\nUse it for archive demos.\n",
+        ),
+        "https://api.github.com/repos/acme/demo/license": FakeResponse(404),
+    }
+    install_fake_aiohttp(monkeypatch, routes)
+    asyncio.run(module.download_skills(registry_path, output_dir, manifest_path=None))
+    [skill_dir] = output_dir.glob("development/*")
+    assert [path.name for path in skill_dir.iterdir()] == ["metadata.json"]
+
+    # The license is accepted afterwards: a corrected value or a newly recognized spelling.
+    metadata = json.loads((skill_dir / "metadata.json").read_text(encoding="utf-8"))
+    assert metadata["content_fingerprint"]
+    (skill_dir / "metadata.json").write_text(json.dumps({**metadata, "license": "MIT"}), encoding="utf-8")
+
+    assert [record.get("tier") for record in scan_registry_skills(output_dir)] == ["listed"]
+    assert [record.get("tier") for record in scan_skills_v2(output_dir)] == ["listed"]
+    assert cleanup_orphan_metadata(output_dir) == 0
+    assert withheld_archives.main(["--skills-dir", str(output_dir), "--check"]) == 0
+
+    # It is not an existing archive: the next download of its source brings the body back.
+    routes["https://api.github.com/repos/acme/demo/license"] = FakeResponse(
+        200, json_payload={"license": {"spdx_id": "MIT"}}
+    )
+    stats = asyncio.run(module.download_skills(registry_path, output_dir, manifest_path=None))
+    assert stats["downloaded"] == 1
+    assert sorted(path.name for path in skill_dir.iterdir()) == ["SKILL.md", "metadata.json"]
+    assert len(list(output_dir.glob("development/*"))) == 1
+    [record] = scan_registry_skills(output_dir)
+    assert "tier" not in record and record["license"] == "MIT"
+
+
+def test_blocklist_purge_covers_withheld_listings(tmp_path):
+    module = load_sync_module()
+    blocklist = {"evil/skills": {"repo": "evil/skills", "reason": "test", "action": "reject"}}
+    blocked = write_archive(tmp_path, "security/pdf-evil", restricted_metadata("Evil/Skills"),
+                            skill_md("Proprietary"))
+    blocked_by_url = write_archive(
+        tmp_path, "security/pdf-mirror",
+        {**restricted_metadata("mirror/skills"),
+         "source_url": "https://github.com/evil/skills/blob/main/skills/pdf/SKILL.md"},
+        skill_md("Proprietary"),
+    )
+    listed = write_archive(tmp_path, "documents/pdf-brixtonpham", restricted_metadata(),
+                           skill_md("Proprietary"))
+    # A bundled data file named metadata.json is not an archive record.
+    kept = write_archive(tmp_path, "documents/pdf-acme", compatible_metadata(), skill_md("MIT"),
+                         extra=("assets/metadata.json",))
+    withheld_archives.main(["--skills-dir", str(tmp_path), "--apply"])
+    for skill_dir in (blocked, blocked_by_url, listed):
+        assert [p.name for p in skill_dir.iterdir()] == ["metadata.json"]
+
+    with pytest.raises(RuntimeError, match="Existing archive contains blocked source repos"):
+        module.validate_existing_archive_sources(tmp_path, blocklist)
+    removed = module.validate_existing_archive_sources(tmp_path, blocklist, remove_blocked=True)
+
+    assert len(removed) == 2
+    assert not blocked.exists() and not blocked_by_url.exists()
+    assert (listed / "metadata.json").exists()
+    assert (kept / "SKILL.md").exists() and (kept / "assets" / "metadata.json").exists()
+    indexed = {"brixtonpham/claude-config", "acme/skills"}
+    assert {record["repo"] for record in scan_registry_skills(tmp_path)} == indexed
+    assert {record["repo"] for record in scan_skills_v2(tmp_path)} == indexed
+
+
+def test_blocklist_validation_fails_closed_on_unreadable_listing_metadata(tmp_path):
+    module = load_sync_module()
+    listing = write_archive(tmp_path, "documents/pdf-brixtonpham", restricted_metadata())
+    (listing / "metadata.json").write_text("{not json", encoding="utf-8")
+
+    with pytest.raises(RuntimeError, match="Cannot validate existing archive metadata"):
+        module.validate_existing_archive_sources(tmp_path, {}, remove_blocked=True)
+    assert (listing / "metadata.json").exists()

@@ -15,7 +15,8 @@ from typing import Any
 
 from catalog_retirement import LEDGER_PATH, load_ledger, validate_retirement
 from category_taxonomy import category_slug, get_taxonomy
-from utils import classify_license
+from sync_download_support import reviewed_commit_pin
+from utils import build_source_url, classify_license
 
 
 @dataclass(frozen=True)
@@ -170,6 +171,43 @@ def _is_final_skill_metadata_correction(
     return base_lines[:last_skill_line] == head_lines[:last_skill_line]
 
 
+def _is_only_reviewed_pin_refresh(
+    base_text: str, head_text: str, base_skills: list[Any], head_skills: list[Any]
+) -> bool:
+    if len(base_skills) != len(head_skills):
+        return False
+
+    expected_text = base_text
+    for base_entry, head_entry in zip(base_skills, head_skills, strict=True):
+        if base_entry == head_entry:
+            continue
+        if _changed_skill_fields(base_entry, head_entry) != {"source_url"}:
+            return False
+
+        repo = base_entry.get("repo")
+        if not isinstance(repo, str) or not repo:
+            return False
+        old_pin = reviewed_commit_pin(base_entry, repo)
+        new_pin = reviewed_commit_pin(head_entry, repo)
+        if not old_pin or not new_pin or old_pin == new_pin:
+            return False
+
+        path = base_entry.get("path") or "SKILL.md"
+        if not isinstance(path, str):
+            return False
+        old_url = build_source_url(repo, path, old_pin)
+        new_url = build_source_url(repo, path, new_pin)
+        if base_entry["source_url"] != old_url or head_entry["source_url"] != new_url:
+            return False
+        expected_text = expected_text.replace(
+            json.dumps(old_url, ensure_ascii=False),
+            json.dumps(new_url, ensure_ascii=False),
+            1,
+        )
+
+    return head_text == expected_text
+
+
 def _existing_entries_are_preserved_or_canonicalized(
     base_skills: list[Any], head_skills: list[Any]
 ) -> tuple[bool, bool]:
@@ -228,6 +266,9 @@ def validate_community_intake_text(base_text: str, head_text: str) -> list[str]:
         return errors
 
     if _is_final_skill_metadata_correction(base_text, head_text, base_skills, head_skills):
+        return errors
+
+    if _is_only_reviewed_pin_refresh(base_text, head_text, base_skills, head_skills):
         return errors
 
     existing_entries_ok, normalized_existing_entries = (

@@ -401,7 +401,7 @@ def verify_targets(targets: list[Target], client: GitHubClient, checked_at: str)
                     elif (target.metadata.get("license") in ROOT_LEGAL_RETENTION_LICENSES
                             and bundled_file in LICENSE_FILENAMES | NOTICE_FILENAMES
                             and bundled_file in provenance):
-                        # Root-retained Apache legal files live upstream at their
+                        # Root-retained legal files live upstream at their
                         # recorded provenance path, not under the skill directory.
                         expected_assets.add(provenance[bundled_file])
                     else:

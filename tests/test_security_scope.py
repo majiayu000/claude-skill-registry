@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import subprocess
 import sys
 from pathlib import Path
@@ -113,3 +114,122 @@ def test_resolve_scope_main_writes_full_target_list(monkeypatch, tmp_path, capsy
     assert resolve_scope_main() == 0
     assert output.read_bytes() == b"development/demo/SKILL.md\0"
     assert capsys.readouterr().out == "1\n"
+
+
+def _withheld_tree(tmp_path, metadata=None):
+    skills = _skill_tree(tmp_path)
+    archive = skills / "bash" / "ahrefs-research"
+    archive.mkdir(parents=True)
+    (archive / "metadata.json").write_text(
+        json.dumps(
+            metadata if metadata is not None else {"repo": "owner/repo", "license": "NOASSERTION"}
+        )
+    )
+    return skills, archive
+
+
+def test_withheld_metadata_only_does_not_hide_normal_scan_targets(tmp_path):
+    skills, archive = _withheld_tree(tmp_path)
+    assert resolve_scan_paths(
+        skills,
+        ["bash/ahrefs-research/metadata.json", "development/demo/references/notes.md"],
+        fail_unmapped=True,
+    ) == [skills / "development/demo/SKILL.md"]
+
+
+@pytest.mark.parametrize(
+    "metadata",
+    [
+        {"repo": "owner/repo", "license": "MIT"},
+        {"license": "NOASSERTION"},
+        [],
+        {"repo": "owner/repo", "license": "NOASSERTION", "bundled_files": ["evil.sh"]},
+    ],
+)
+def test_orphan_or_stale_metadata_still_fails(tmp_path, metadata):
+    skills, archive = _withheld_tree(tmp_path, metadata)
+    with pytest.raises(SecurityScopeError, match="no owning SKILL.md"):
+        resolve_scan_paths(skills, ["bash/ahrefs-research/metadata.json"], fail_unmapped=True)
+
+
+@pytest.mark.parametrize("extra", ["payload.sh", "subdir", "SKILL.md"])
+def test_withheld_with_retained_content_is_not_exempt(tmp_path, extra):
+    skills, archive = _withheld_tree(tmp_path)
+    if extra == "subdir":
+        (archive / extra).mkdir()
+    else:
+        (archive / extra).write_text("payload")
+    if extra == "SKILL.md":
+        assert resolve_scan_paths(
+            skills, ["bash/ahrefs-research/metadata.json"], fail_unmapped=True
+        ) == [archive / "SKILL.md"]
+    else:
+        with pytest.raises(SecurityScopeError, match="no owning SKILL.md"):
+            resolve_scan_paths(skills, ["bash/ahrefs-research/metadata.json"], fail_unmapped=True)
+
+
+def test_withheld_metadata_symlink_is_rejected(tmp_path):
+    skills, archive = _withheld_tree(tmp_path)
+    metadata = archive / "metadata.json"
+    outside = tmp_path / "outside.json"
+    metadata.rename(outside)
+    metadata.symlink_to(outside)
+    with pytest.raises(SecurityScopeError, match="symlink"):
+        resolve_scan_paths(skills, ["bash/ahrefs-research/metadata.json"], fail_unmapped=True)
+
+
+def test_malformed_withheld_metadata_is_not_exempt(tmp_path):
+    skills, archive = _withheld_tree(tmp_path)
+    (archive / "metadata.json").write_text("{")
+    with pytest.raises(SecurityScopeError, match="no owning SKILL.md"):
+        resolve_scan_paths(skills, ["bash/ahrefs-research/metadata.json"], fail_unmapped=True)
+
+
+def test_incremental_scope_after_license_withholding(monkeypatch, tmp_path, capsys):
+    from withheld_archives import withhold_archive
+
+    skills = _skill_tree(tmp_path)
+    archive = skills / "development/demo"
+    metadata = {
+        "repo": "owner/repo",
+        "license": "NOASSERTION",
+        "bundled_files": ["references/notes.md"],
+    }
+    (archive / "metadata.json").write_text(json.dumps(metadata))
+    subprocess.run(["git", "init", "-q", str(skills)], check=True)
+    subprocess.run(["git", "-C", str(skills), "add", "."], check=True)
+    subprocess.run(
+        [
+            "git",
+            "-C",
+            str(skills),
+            "-c",
+            "user.name=Test",
+            "-c",
+            "user.email=test@example.invalid",
+            "commit",
+            "-qm",
+            "baseline",
+        ],
+        check=True,
+    )
+    withhold_archive(archive, metadata)
+    output = tmp_path / "targets.bin"
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        [
+            "resolve_security_scope.py",
+            "--skills-dir",
+            str(skills),
+            "--mode",
+            "incremental",
+            "--output",
+            str(output),
+        ],
+    )
+    assert _git_paths(skills) == ["development/demo/metadata.json"]
+    assert resolve_scope_main() == 0
+    assert output.read_bytes() == b""
+    assert capsys.readouterr().out == "0\n"
+    assert sorted(p.name for p in archive.iterdir()) == ["metadata.json"]

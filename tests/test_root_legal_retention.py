@@ -103,16 +103,20 @@ def apache_routes(files: dict, *, pinned: bool, invalid_notice: bool = False) ->
 
 
 def run_apache_download(tmp_path, monkeypatch, files: dict, *, pinned: bool,
-                        invalid_notice: bool = False, row: dict | None = None):
+                        invalid_notice: bool = False, row: dict | None = None,
+                        root_spdx: str | None = None):
     module = load_module()
     registry_path = tmp_path / "registry.json"
     output_dir = tmp_path / "skills"
     registry_path.write_text(
         json.dumps({"skills": [row or apache_registry_row()]}), encoding="utf-8"
     )
-    install_fake_aiohttp(
-        monkeypatch, apache_routes(files, pinned=pinned, invalid_notice=invalid_notice)
-    )
+    routes = apache_routes(files, pinned=pinned, invalid_notice=invalid_notice)
+    if root_spdx is not None:
+        routes[f"https://api.github.com/repos/{REPO}/license?ref={SHA}"] = FakeResponse(
+            200, json_payload={"license": {"spdx_id": root_spdx}}
+        )
+    install_fake_aiohttp(monkeypatch, routes)
     stats = asyncio.run(
         module.download_skills(
             registry_path,
@@ -123,6 +127,36 @@ def run_apache_download(tmp_path, monkeypatch, files: dict, *, pinned: bool,
         )
     )
     return stats, output_dir
+
+
+@pytest.mark.parametrize("root_spdx", ["MIT", "AGPL-3.0"])
+def test_reviewed_mit_archive_only_retains_matching_root_license(tmp_path, monkeypatch, root_spdx):
+    files = {
+        SOURCE_PATH: SKILL_BODY,
+        REFERENCE_PATH: REFERENCE_BODY,
+        "LICENSE": f"{root_spdx} License\nCopyright 2026 Demo Authors\n".encode(),
+    }
+    row = apache_registry_row(
+        license="MIT", source_url=f"https://github.com/{REPO}/blob/{SHA}/{SOURCE_PATH}"
+    )
+    if root_spdx != "MIT":
+        files[f"{SOURCE_DIR}/LICENSE.md"] = b"MIT License\nCopyright 2026 Skill Author\n"
+    stats, output_dir = run_apache_download(
+        tmp_path, monkeypatch, files, pinned=True, row=row, root_spdx=root_spdx
+    )
+    archive = next(output_dir.glob("development/*"))
+    assert stats["downloaded"] == 1
+    assert (archive / "LICENSE").is_file() == (root_spdx == "MIT")
+    if root_spdx != "MIT":
+        assert (archive / "LICENSE.md").read_bytes() == files[f"{SOURCE_DIR}/LICENSE.md"]
+    else:
+        assert (archive / "LICENSE").read_bytes() == files["LICENSE"]
+        metadata = json.loads((archive / "metadata.json").read_text())
+        assert metadata["license_source_paths"] == {"LICENSE": "LICENSE"}
+        targets, errors = liveness.load_targets(output_dir)
+        assert not errors
+        [result] = liveness.verify_targets(targets, FakeLivenessClient(set(files)), "now")
+        assert result["status"] == "live"
 
 
 @pytest.mark.parametrize("pinned", [False, True])

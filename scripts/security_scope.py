@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import Iterable
 
 from utils import is_declared_bundled_skill_file
+from withheld_archives import is_withheld_metadata, read_metadata, withheld_metadata
 
 
 class SecurityScopeError(RuntimeError):
@@ -36,6 +37,26 @@ def _owning_skill_file(candidate: Path, root: Path) -> Path | None:
         if current == root:
             return None
         current = current.parent
+
+
+def _is_withheld_metadata_only(candidate: Path, root: Path) -> bool:
+    """Recognize only canonical, normalized archives with no retained content."""
+    relative = candidate.relative_to(root)
+    if (
+        len(relative.parts) != 3
+        or relative.name != "metadata.json"
+        or relative.parts[0].startswith(".")
+        or not candidate.is_file()
+    ):
+        return False
+    # Do not exempt stray files, directories, or symlinks alongside the record.
+    if any(child.name != "metadata.json" for child in candidate.parent.iterdir()):
+        return False
+    try:
+        metadata = read_metadata(candidate.parent)
+    except (OSError, ValueError):
+        return False
+    return is_withheld_metadata(metadata) and withheld_metadata(metadata, None) == metadata
 
 
 def resolve_scan_paths(
@@ -68,6 +89,8 @@ def resolve_scan_paths(
 
         skill_file = _owning_skill_file(candidate, root)
         if skill_file is None:
+            if _is_withheld_metadata_only(candidate, root):
+                continue
             if fail_unmapped:
                 raise SecurityScopeError(f"changed security path has no owning SKILL.md: {line}")
             continue

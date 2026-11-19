@@ -68,6 +68,13 @@ at the probed branch head at acquisition time; for those, intake review is a
 point-in-time review. Existing archives are never re-downloaded by sync; a
 pin change only affects new acquisitions.
 
+For a reviewed refresh of an existing pin, open a PR that changes only the
+commit SHA in that row's source URL. Keep the same repository and skill path.
+
+For a reviewed MIT source at an exact commit, new archives also retain upstream
+legal files when GitHub identifies the repository-root license at that commit as
+MIT. This preserves the notice for skills whose license lives at the root.
+
 For Apache-2.0 sources with approved redistribution, the archive step keeps
 the upstream `LICENSE`/`LICENSE.md` and any `NOTICE`/`NOTICE.md`/`NOTICE.txt`
 when they exist, honoring Apache-2.0 section 4's license and NOTICE

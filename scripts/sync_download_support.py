@@ -18,6 +18,7 @@ from sync_pipeline_support import (
     is_safe_bundled_file,
     is_submodule_contents_entry,
     is_valid_git_source_ref,
+    logger,
     should_recurse_bundled_dir,
     skill_source_dir,
 )
@@ -37,7 +38,25 @@ NOTICE_FILENAMES = {"NOTICE", "NOTICE.md", "NOTICE.txt"}
 # Apache-2.0 §4 asks redistributors to carry the license and any upstream NOTICE.
 # Retention is keep-when-present: absent or invalid upstream files never block a
 # download, unlike the GPL fail-closed license requirement.
-ROOT_LEGAL_RETENTION_LICENSES = {"Apache-2.0"}
+ROOT_LEGAL_RETENTION_LICENSES = {"Apache-2.0", "MIT"}
+
+
+async def fetch_repo_license(session: Any, repo: str, *, ref: str, timeout: Any) -> str:
+    """Return the detected SPDX identifier of the repository-root license."""
+    url = f"{GITHUB_API_BASE}/repos/{repo}/license"
+    if ref:
+        url = f"{url}?ref={ref}"
+    try:
+        async with session.get(url, timeout=timeout) as response:
+            if response.status != 200:
+                return "NOASSERTION"
+            payload = await response.json()
+    except Exception as exc:
+        logger.warning("Repository license lookup failed for %s: %s", repo, exc)
+        return "NOASSERTION"
+    license_info = payload.get("license") if isinstance(payload, dict) else None
+    spdx_id = license_info.get("spdx_id") if isinstance(license_info, dict) else ""
+    return normalize_license(str(spdx_id or ""))
 
 
 def asset_redistribution_approved(skill: dict) -> bool:
@@ -157,7 +176,7 @@ async def collect_contents_bundled_file_entries(
                 }
             )
     if include_root_legal and source_dir:
-        # Keep-when-present root legal retention (Apache-2.0): local skill-dir
+        # Keep-when-present root legal retention: local skill-dir
         # files win; absent or invalid upstream files are skipped, never fatal.
         local_names = {entry["relative_path"] for entry in candidates}
         wanted = (LICENSE_FILENAMES | NOTICE_FILENAMES) - local_names

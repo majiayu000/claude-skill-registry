@@ -30,8 +30,10 @@ from sync_download_support import (
     download_bundled_files_to_directory,
     download_source_label,
     exact_source_branch,
+    fetch_repo_license,
     read_response_bytes_limited,
     resolve_exact_commit_sha, resolve_reviewed_commit_ref,
+    reviewed_commit_pin,
 )
 from sync_pipeline_support import (
     DEFAULT_LEARNING_PRIORS_PATH,
@@ -69,7 +71,6 @@ from utils import (
     ensure_unique_dir,
     extract_frontmatter,
     is_unresolved_license,
-    normalize_license,
     normalize_name,
     resolve_license,
     with_resolved_license,
@@ -309,29 +310,17 @@ async def download_skills(
     commit_sha_cache: dict[tuple[str, str], str] = {}
     repo_identity_cache: dict[str, str] = {}
     tree_cache: dict[tuple[str, str], list[dict]] = {}
-    repo_license_tasks: dict[str, asyncio.Task] = {}
+    repo_license_tasks: dict[tuple[str, str], asyncio.Task] = {}
 
-    async def fetch_repo_license(session: aiohttp.ClientSession, repo: str) -> str:
-        """Return GitHub's detected root license for a repo, or NOASSERTION if none."""
-        url = f"{GITHUB_API_BASE}/repos/{repo}/license"
-        try:
-            async with session.get(url, timeout=request_timeout) as resp:
-                if resp.status != 200:
-                    return "NOASSERTION"
-                payload = await resp.json()
-        except Exception as exc:
-            logger.warning("Repository license lookup failed for %s: %s", repo, exc)
-            return "NOASSERTION"
-        license_info = payload.get("license") if isinstance(payload, dict) else None
-        spdx_id = license_info.get("spdx_id") if isinstance(license_info, dict) else ""
-        return normalize_license(str(spdx_id or ""))
-
-    async def repo_license(session: aiohttp.ClientSession, repo: str) -> str:
-        # Skills of one repo download concurrently; share a single lookup per repo.
-        task = repo_license_tasks.get(repo)
+    async def repo_license(session: aiohttp.ClientSession, repo: str, ref: str = "") -> str:
+        # Skills from one repository revision share a single license lookup.
+        key = (repo, ref)
+        task = repo_license_tasks.get(key)
         if task is None:
-            task = asyncio.ensure_future(fetch_repo_license(session, repo))
-            repo_license_tasks[repo] = task
+            task = asyncio.ensure_future(
+                fetch_repo_license(session, repo, ref=ref, timeout=request_timeout)
+            )
+            repo_license_tasks[key] = task
         return await task
 
     async def fetch_contents_listing(
@@ -539,7 +528,13 @@ async def download_skills(
                                     # This request shares the surrounding download semaphore.
                                     license_name = await repo_license(session, repo)
                                 skill = with_resolved_license(source_entry, license_name)
-                                require_license, include_root_legal = license_name in GPL_SOURCE_LICENSES, license_name in ROOT_LEGAL_RETENTION_LICENSES
+                                require_license = license_name in GPL_SOURCE_LICENSES
+                                include_root_legal = license_name in ROOT_LEGAL_RETENTION_LICENSES
+                                if license_name == "MIT":
+                                    include_root_legal = (
+                                        reviewed_commit_pin(source_entry, repo) == download_ref
+                                        and await repo_license(session, repo, download_ref) == "MIT"
+                                    )
                                 content = (
                                     source_text
                                     if require_license
@@ -614,7 +609,7 @@ async def download_skills(
                                             timeout=request_timeout,
                                             tree_cache=tree_cache,
                                             contents_collector=collect_bundled_file_entries,
-                                            # GPL/Apache add root-legal retention checks to the
+                                            # Root license retention checks use the
                                             # cached immutable tree, so re-collect with fallbacks.
                                             pinned_tree_result=(None if (require_license or include_root_legal) else pinned_tree_result),
                                             require_license=require_license, include_root_legal=include_root_legal,

@@ -411,6 +411,26 @@ def test_accepts_final_existing_entry_metadata_correction():
     assert validate_community_intake_text(base, head) == []
 
 
+def test_accepts_same_path_commit_refresh_for_an_existing_entry():
+    alpha = make_skill("alpha") | {
+        "path": "skills/alpha/SKILL.md",
+        "source_url": f"https://github.com/acme/alpha/blob/{'a' * 40}/skills/alpha/SKILL.md",
+    }
+    beta = make_skill("beta")
+    updated_url = f"https://github.com/acme/alpha/blob/{'b' * 40}/skills/alpha/SKILL.md"
+    base = render_catalog([alpha, beta])
+    head = render_catalog([alpha | {"source_url": updated_url}, beta])
+
+    assert validate_community_intake_text(base, head) == []
+    assert validate_community_intake_text(base, head.replace("  ", " ", 1))
+    assert validate_community_intake_text(base, head.replace("skills/alpha/", "other/"))
+    assert validate_community_intake_text(base, head.replace("acme/alpha/blob", "other/alpha/blob"))
+    assert validate_community_intake_text(base, head.replace("b" * 40, "main"))
+    assert validate_community_intake_text(
+        base, render_catalog([alpha | {"source_url": updated_url}, beta | {"description": "New"}])
+    )
+
+
 def test_rejects_final_existing_entry_identity_rewrite():
     base = render_catalog(
         [

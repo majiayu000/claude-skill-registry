@@ -1,8 +1,9 @@
 # Claude Skills Registry
 
-> **This repo (main):** the published catalog and JSON artifacts. Browse it at https://majiayu000.github.io/claude-skill-registry/  
-> **Core repo (pipeline, index, site; send PRs here):** https://github.com/majiayu000/claude-skill-registry-core  
-> **Data repo (skills archive):** https://github.com/majiayu000/claude-skill-registry-data  
+Find a skill for your next coding task. Search community skills, inspect the original source, and install only what you need.
+
+**[Search skills →](https://majiayu000.github.io/claude-skill-registry/)** · [Browse by category](https://majiayu000.github.io/claude-skill-registry/skills/) · [Install your first skill](https://majiayu000.github.io/claude-skill-registry/choose-a-skill.html)
+
 <p align="center">
   <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fmajiayu000.github.io%2Fclaude-skill-registry%2Fstats.json&query=%24.archive_skill_md_count_raw&label=SKILL.md%20files%20(raw)&color=blueviolet&style=flat-square" alt="SKILL.md files (raw)">
   <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fmajiayu000.github.io%2Fclaude-skill-registry%2Fstats.json&query=%24.independent_skill_count&label=Independent%20skills&color=purple&style=flat-square" alt="Independent skills">
@@ -12,45 +13,25 @@
   <a href="https://majiayu000.github.io/claude-skill-registry/"><img src="https://img.shields.io/badge/Web-Search-blue?style=flat-square" alt="Web Search"></a>
 </p>
 
-> A searchable Claude Code skills catalog, published from pinned core and data commits.
+## Start with one task
 
-## What is this?
+1. **Search for the job** — code review, testing, PDF processing, design, or another task you do repeatedly.
+2. **Open a skill's guide** — check the original repository, instructions, license, and available registry signals.
+3. **Install its exact directory** — follow the guide's command or source instructions. Try it on one project before expanding.
 
-Search skill descriptions, inspect source links and registry signals, and find installation guidance. This repository publishes the merged browsing catalog and JSON artifacts produced by the core pipeline and skill archive.
+For a worked example, follow the **[code review setup guide](https://majiayu000.github.io/claude-skill-registry/guides/code-review.html)**, from choosing a skill to running a first review and removing it.
 
-The same skill copied into multiple repositories counts once. Independent skills use a normalized name and an exact Markdown-body fingerprint; sources without a fingerprint count separately by install path and branch.
+The catalog includes skills from many authors. A listing or scan result is not a safety guarantee; review the source and its license before installing. You do not need to clone this archive to use a skill.
 
-**Three ways to use:**
-1. **[Web Search](https://majiayu000.github.io/claude-skill-registry/)** - Fast browser-based search
-2. **[sk CLI](https://github.com/majiayu000/claude-skill-manager)** - Terminal package manager
-3. **API** - Direct JSON access
+Found something useful? **[Star the catalog](https://github.com/majiayu000/claude-skill-registry)** to find it again, or [suggest a missing skill](https://github.com/majiayu000/claude-skill-registry-core/issues/new).
 
-Or [browse the skill guides by category](https://majiayu000.github.io/claude-skill-registry/skills/): each guide links the original source and shows its install command, license and scan results.
+## What the counts mean
 
-**Repo layout note:** `core` owns workflows/pipeline logic, `data` stores `skills/**`, and `main` is generated from `core + data`. See `SCHEME2_SPLIT.md`.
+Copies with the same normalized name and exact Markdown-body fingerprint count as one independent skill. Sources without a fingerprint count separately by installation path and branch. The badges show the latest published counts.
 
-## Choose a skill, not the whole archive
+The maintainer of this mirror is not necessarily the skill author. Follow the original source or the archive metadata's `author`, `source_url`, `license`, and `permission_note`. See [how to trace an archived skill](https://github.com/majiayu000/claude-skill-registry-data#trace-an-archived-skill).
 
-This is an aggregate catalog, not a single plugin or a first-party skill pack.
-Search for your task, open the original source and review the skill's own license
-before installing its exact directory. A registry listing or scan signal does
-not establish authorship, safety or permission to redistribute.
-
-The maintainer of this mirror is not necessarily the author of a listed skill.
-Follow its source link or the archive metadata's `author`, `source_url`, `license`
-and `permission_note`. See [how to trace an archived skill](https://github.com/majiayu000/claude-skill-registry-data#trace-an-archived-skill).
-
-Read the [choose and install one skill guide](https://majiayu000.github.io/claude-skill-registry/choose-a-skill.html)
-for a worked example and troubleshooting. For a maintained collection of task
-bundles, see [Spellbook](https://github.com/majiayu000/spellbook#install).
-
-## Generated Mirror Notice
-
-This repository is the merged publish artifact for browsing and compatibility consumers. Source changes for discovery, download, security scanning, index generation, search, Pages, or publish orchestration belong in [`claude-skill-registry-core`](https://github.com/majiayu000/claude-skill-registry-core). Archived skill body and archive metadata issues belong in [`claude-skill-registry-data`](https://github.com/majiayu000/claude-skill-registry-data).
-
-- **Do not submit normal source PRs here** unless the change is explicitly main-owned, such as publish workflow routing or mirror-only repository metadata.
-- **Release status**: this mirror does not cut independent GitHub Releases for daily generated data. Use `provenance/merge-source.json`, `registry_summary.json`, and the generated timestamps to identify the exact `core_sha` and `data_sha` behind an artifact.
-- **Use issues here only for mirror artifact problems**, such as mismatched generated files, broken compatibility paths, or incorrect provenance after publish.
+For maintained task bundles, see [Spellbook](https://github.com/majiayu000/spellbook#quick-start). For programmatic access, see [Direct API](#option-3-direct-api).
 
 ## Highlights
 
@@ -59,6 +40,14 @@ This repository is the merged publish artifact for browsing and compatibility co
 - **Daily Updates** - Automated crawling/validation by core scheduled workflows
 - **Quality Indexed** - Metadata, descriptions, and star counts
 - **Lightweight Search** - Gzip-compressed index for fast client-side search
+
+## Generated Mirror Notice
+
+This repository is the merged publish artifact for browsing and compatibility consumers. Source changes for discovery, download, security scanning, index generation, search, Pages, or publish orchestration belong in [`claude-skill-registry-core`](https://github.com/majiayu000/claude-skill-registry-core). Archived skill body and archive metadata issues belong in [`claude-skill-registry-data`](https://github.com/majiayu000/claude-skill-registry-data).
+
+- **Do not submit normal source PRs here** unless the change is explicitly main-owned, such as publish workflow routing or mirror-only repository metadata.
+- **Release status**: this mirror does not cut independent GitHub Releases for daily generated data. Use `provenance/merge-source.json`, `registry_summary.json`, and the generated timestamps to identify the exact `core_sha` and `data_sha` behind an artifact.
+- **Use issues here only for mirror artifact problems**, such as mismatched generated files, broken compatibility paths, or incorrect provenance after publish.
 
 ## Operational Ownership
 
@@ -76,25 +65,16 @@ Visit [https://majiayu000.github.io/claude-skill-registry/](https://majiayu000.g
 
 For clone/update tips on large repositories, see [docs/FAST_CLONE.md](docs/FAST_CLONE.md).
 
-### Option 2: CLI (sk)
+### Option 2: CLI
+
+After reviewing the skill's source, run the [Skills CLI](https://github.com/vercel-labs/skills)
+from your project directory and select your coding agent when prompted:
 
 ```bash
-# Install sk
-go install github.com/majiayu000/claude-skill-manager@latest
-# Go names the executable claude-skill-manager; expose the documented sk command.
-sk_bin_dir="$(go env GOBIN)"
-if [ -z "$sk_bin_dir" ]; then sk_bin_dir="$(go env GOPATH)/bin"; fi
-mv "$sk_bin_dir/claude-skill-manager" "$sk_bin_dir/sk"
-# Ensure sk_bin_dir is on your PATH.
-
-# Search skills
-sk search testing
-sk search pdf
-sk search --popular
-
-# Install a skill
-sk install anthropics/skills/skills/docx
+npx skills add https://github.com/anthropics/skills/tree/main/skills/docx
 ```
+
+The earlier `sk` CLI is maintained separately without new features.
 
 ### Option 3: Direct API
 
@@ -164,8 +144,8 @@ curl https://majiayu000.github.io/claude-skill-registry/categories/development.j
 ┌─────────────────────────────────────────────────────────────────┐
 │  Layer 3: Consumption                                           │
 │  ┌────────────────┐  ┌────────────────┐  ┌────────────────┐    │
-│  │ Web UI         │  │ sk CLI         │  │ API            │    │
-│  │ (GitHub Pages) │  │ (Go)           │  │ (JSON)         │    │
+│  │ Web UI         │  │ Skills CLI     │  │ API            │    │
+│  │ (GitHub Pages) │  │ (npx)          │  │ (JSON)         │    │
 │  └────────────────┘  └────────────────┘  └────────────────┘    │
 └─────────────────────────────────────────────────────────────────┘
 ```
@@ -291,7 +271,7 @@ Common category codes include:
 - [x] **Archive size:** tracked by badge (raw `SKILL.md` count from `stats.json`)
 - [x] **Daily auto-update** via GitHub Actions
 - [x] **Security scanning** for all skills
-- [x] **sk CLI** for installation
+- [x] **Skills CLI** installation guidance
 
 ### In Progress
 
@@ -395,7 +375,7 @@ In this stack, the registry is the **Extend** layer — the front door where you
 
 | Project | Description |
 |---------|-------------|
-| [claude-skill-manager](https://github.com/majiayu000/claude-skill-manager) | CLI tool for installing skills (`sk`) |
+| [claude-skill-manager](https://github.com/majiayu000/claude-skill-manager) | Earlier `sk` install CLI (maintenance only) |
 | [anthropics/skills](https://github.com/anthropics/skills) | Official Anthropic skills |
 | [SkillsMP](https://skillsmp.com) | Web-based skill marketplace |
 | [awesome-claude-skills](https://github.com/travisvn/awesome-claude-skills) | Curated skill list |

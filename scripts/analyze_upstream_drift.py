@@ -83,7 +83,7 @@ from urllib.parse import quote, urlsplit
 
 import yaml
 from audit_skill_assets import canonical_source_identity_from_metadata
-from build_static_skill_pages import PUBLIC_SITE, skill_page_slug
+from build_static_skill_pages import PUBLIC_SITE, REGISTRY_REPO_URL, skill_page_slug
 from resolve_install_pins import sha256_digest
 from skill_content_history import load_history
 from utils import split_frontmatter_content
@@ -610,20 +610,32 @@ def render_report(data: dict) -> str:
 <meta name="twitter:card" content="summary"><meta name="twitter:title" content="{esc(title)}"><meta name="twitter:description" content="{esc(description)}">
 <script type="application/ld+json">{json.dumps(structured).replace('<', chr(92) + 'u003c')}</script>
 <style>
-:root{{--ink:#182238;--muted:#647087;--border:#e1e6ef;--accent:#4b46c6;--page:#f7f8fc;--surface:#fff;--code:#eef0f8;color-scheme:light}}
-*{{box-sizing:border-box}}body{{margin:0;background:var(--page);color:var(--ink);font:16px/1.7 system-ui,sans-serif}}
-a{{color:var(--accent);overflow-wrap:anywhere}}header,main,footer{{max-width:808px;margin:auto;padding:1.5rem}}
-header,footer{{border-bottom:1px solid var(--border)}}h1{{font-size:clamp(2rem,5vw,3rem);line-height:1.2;margin:.7rem 0 1.4rem}}
-h2{{font-size:1.4rem;line-height:1.3}}h3{{font-size:1.1rem}}section{{margin:2.5rem 0}}.intro{{font-size:1.18rem}}.note,footer{{color:var(--muted);font-size:.9rem}}
-.numbers{{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin:1.5rem 0}}.numbers div{{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1rem}}
-.numbers strong{{display:block;font-size:2rem;line-height:1.3;color:var(--accent)}}.table-scroll{{overflow-x:auto}}table{{width:100%;min-width:480px;border-collapse:collapse;background:var(--surface)}}
-th,td{{text-align:left;padding:.65rem;border-bottom:1px solid var(--border)}}td{{text-align:right;white-space:nowrap}}th{{font-weight:500}}
-pre{{white-space:pre;overflow-x:auto;background:var(--code);padding:1rem;border-radius:8px;font:14px/1.6 ui-monospace,SFMono-Regular,Consolas,monospace}}
-code{{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}}li{{margin:.7rem 0;overflow-wrap:anywhere}}.examples{{padding-left:1.4rem}}.examples>li{{margin-bottom:2.5rem}}
-details{{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem}}summary{{cursor:pointer;font-weight:600}}.limits{{font-size:.9rem;color:var(--muted)}}
-@media(prefers-color-scheme:dark){{:root{{--ink:#e3e6f6;--muted:#a3aec3;--border:#35405a;--accent:#b2adff;--page:#131a29;--surface:#1c2538;--code:#202b41;color-scheme:dark}}}}
-@media(max-width:600px){{main,header,footer{{padding:1rem}}.numbers{{gap:.6rem}}.numbers div{{padding:.8rem}}.numbers strong{{font-size:1.6rem}}}}
-</style><script defer src="../../js/analytics.js"></script></head><body><header><a href="{PUBLIC_SITE}">Claude Skill Registry</a> / Research reports</header><main><article>
+:root{{--bg:#0a0a0b;--bg-2:#0f0f11;--surface:#111113;--surface-3:#1c1c1f;--border:#1f1f23;--border-2:#2a2a2f;--text:#f4f4f5;--text-2:#a1a1aa;--text-3:#71717a;--accent:#4f7cff;--accent-hover:#6b90ff;--font-sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;--font-mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;color-scheme:dark}}
+*{{box-sizing:border-box}}body{{margin:0;background:var(--bg);color:var(--text);font:15px/1.65 var(--font-sans);-webkit-font-smoothing:antialiased}}
+a{{color:var(--accent-hover);text-decoration:none;overflow-wrap:anywhere}}a:hover{{text-decoration:underline;text-underline-offset:3px}}
+.site-header{{max-width:1180px;margin:0 auto;padding:0 clamp(16px,4vw,32px);min-height:60px;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;border-bottom:1px solid var(--border)}}
+.brand{{display:inline-flex;align-items:center;gap:.6rem;color:var(--text);font-weight:600;font-size:15px}}.brand:hover{{text-decoration:none}}
+.brand-mark{{width:26px;height:26px;padding:5px;border-radius:6px;background:var(--text);color:var(--bg);flex:none}}
+.brand-eyebrow{{font-size:12px;font-weight:500;color:var(--text-3);padding:2px 7px;border:1px solid var(--border-2);border-radius:999px;white-space:nowrap}}
+.header-links{{display:flex;align-items:center;gap:.4rem 1.3rem;flex-wrap:wrap;font-size:14px}}.header-links a{{color:var(--text-2)}}.header-links a:hover{{color:var(--text);text-decoration:none}}
+.header-links .star{{padding:7px 12px;border-radius:6px;background:var(--text);color:var(--bg);font-weight:600;font-size:13px}}.header-links .star:hover{{opacity:.88}}
+main{{max-width:808px;margin:0 auto;padding:1.6rem clamp(16px,4vw,32px) 0}}
+.crumbs{{font-family:var(--font-mono);font-size:12px;color:var(--text-3);margin:0 0 1.4rem}}.crumbs a{{color:var(--text-3)}}.crumbs a:hover{{color:var(--text)}}
+h1{{font-size:clamp(30px,4.5vw,44px);line-height:1.12;letter-spacing:-.03em;font-weight:600;margin:.3rem 0 1rem;text-wrap:balance}}
+h2{{font-size:20px;line-height:1.25;letter-spacing:-.02em;font-weight:600;margin:0 0 .7rem}}h3{{font-size:16px;font-weight:600;margin:0 0 .3rem}}
+section{{margin:2.4rem 0}}.intro{{font-size:17px;line-height:1.55;color:var(--text-2)}}.note{{color:var(--text-3);font-size:13px}}
+.numbers{{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem;margin:1.5rem 0}}.numbers div{{background:var(--bg-2);border:1px solid var(--border);border-radius:12px;padding:1rem 1.1rem}}
+.numbers strong{{display:block;font-size:28px;line-height:1.2;letter-spacing:-.02em;font-variant-numeric:tabular-nums;margin-bottom:.15rem}}
+.table-scroll{{overflow-x:auto;border:1px solid var(--border);border-radius:10px}}table{{width:100%;min-width:480px;border-collapse:collapse;background:var(--surface);font-size:14px}}
+th,td{{text-align:left;padding:.6rem .9rem;border-bottom:1px solid var(--border)}}tr:last-child td,tr:last-child th{{border-bottom:0}}thead th{{background:var(--bg-2);color:var(--text-2);font-weight:500;font-size:12.5px}}
+td{{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}}th{{font-weight:500}}
+pre{{white-space:pre;overflow-x:auto;background:var(--bg);border:1px solid var(--border-2);padding:.9rem 1rem;border-radius:8px;font:13px/1.6 var(--font-mono);color:#d4d4d8}}
+code{{font-family:var(--font-mono);font-size:.9em;padding:.1em .4em;border-radius:4px;background:var(--surface-3)}}pre code{{padding:0;background:transparent;font-size:inherit}}
+li{{margin:.6rem 0;overflow-wrap:anywhere}}.examples{{padding-left:1.4rem}}.examples>li{{margin-bottom:2.2rem}}
+details{{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem}}summary{{cursor:pointer;font-weight:600}}.limits{{font-size:14px;color:var(--text-2)}}
+.site-footer{{max-width:1180px;margin:4rem auto 0;padding:1.4rem clamp(16px,4vw,32px) 2.5rem;border-top:1px solid var(--border);font-size:13px;color:var(--text-3);display:flex;gap:.4rem .6rem;flex-wrap:wrap}}.site-footer a{{color:var(--text-2)}}
+@media(max-width:600px){{.numbers{{gap:.6rem}}.numbers div{{padding:.8rem}}.numbers strong{{font-size:24px}}.brand-eyebrow{{display:none}}}}
+</style><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"><script defer src="../../js/analytics.js"></script></head><body><header class="site-header"><a class="brand" href="{PUBLIC_SITE}"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h7l2.2 2.6H20V19H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M4 12h16" stroke="currentColor" stroke-width="1.8"/></svg><span>Skills Registry</span><span class="brand-eyebrow">Claude Code</span></a><nav class="header-links"><a href="{PUBLIC_SITE}">Search</a><a href="{PUBLIC_SITE}skills/">Guides</a><a class="star" href="{REGISTRY_REPO_URL}">Star on GitHub</a></nav></header><main><nav class="crumbs" aria-label="Breadcrumb"><a href="{PUBLIC_SITE}">Registry</a> / <span aria-current="page">Research reports</span></nav><article>
 <p class="note">Observed {esc(observed[:10])} · October 2026 snapshot</p>
 <h1>When skill guides change after a registry scan</h1>
 <p class="intro">The registry’s checks flagged {summary['changed_total']:,} of {summary['pins_total']:,} skill guides ({share:.1f}%) as no longer matching the version it scanned.</p>
@@ -662,7 +674,7 @@ details{{background:var(--surface);border:1px solid var(--border);border-radius:
 <section class="limits" id="limits"><h2>Limits</h2><p>{counts['path_missing_unchecked']:,} missing-path searches could not be completed; {counts['fetch_failed']:,} content comparisons and {moved_failures:,} moved-file comparisons failed; {availability['other']:,} availability checks remain unresolved. Every affected row retains its reason in the data. Unchecked paths are neither confirmed moves nor confirmed removals.</p>
 <p>Textual heuristics can miss unfenced code, prose permissions and non-HTTP links. Formatting normalization can hide meaningful small edits. Cached errors and missing responses reflect the observation, not guaranteed current availability.</p></section>
 <p><a href="data.json">Download the complete data</a> · <a href="https://github.com/majiayu000/claude-skill-registry-core/blob/main/scripts/analyze_upstream_drift.py">Analyzer source</a></p>
-</article></main><footer>Claude Skill Registry · Observations with explicit uncertainty.</footer></body></html>
+</article></main><footer class="site-footer"><a href="{PUBLIC_SITE}">Claude Skills Registry</a> · <a href="{PUBLIC_SITE}skills/">All guides</a> · <a href="{REGISTRY_REPO_URL}">Star on GitHub</a> · Observations with explicit uncertainty.</footer></body></html>
 '''
 
 

@@ -490,7 +490,9 @@ def test_report_escapes_evidence_and_survives_repeated_site_builds(tmp_path):
     assert "How we measured" in report
     assert "What this means for you" in report
     assert "<details>" in report
-    assert "prefers-color-scheme:dark" in report
+    # The report shares the site's dark theme and declares it so form controls match.
+    assert "color-scheme:dark" in report
+    assert 'class="site-header"' in report
     assert "overflow-x:auto" in report
     assert f"https://github.com/{DATA_REPO}/blob/{COMMIT}/tools/example/SKILL.md" in report
     assert "Deterministic primary order:" not in report

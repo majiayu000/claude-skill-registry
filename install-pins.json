@@ -8,8 +8,8 @@
    "repo": "ntanduy25/ai-careerguide_2",
    "branch": "main",
    "digest": "sha256:dbb0e6ab3e3565cf49de6b2c3bcd62339aafebb099514ec3c86771a096cd920b",
-   "checked_at": "2026-11-12T10:58:59+00:00",
-   "commit": "526d119dd7e2996693f00930a96d028199ee712c",
+   "checked_at": "2026-11-20T07:03:25+00:00",
+   "commit": "f0a8bef7833cdfacc5e1e8d3911465fb489815aa",
    "name": "web-perf",
    "description": "Analyzes web performance using Chrome DevTools MCP. Measures Core Web Vitals (FCP, LCP, TBT, CLS, Speed Index), identifies render-blocking resources, network dependency chains, layout shifts, caching issues, and accessibility gaps. Use when asked to audit, profile, debug, or optimize page load performance, Lighthouse scores, or site speed."
   },
@@ -94,7 +94,7 @@
    "repo": "prabaharshyam/xplaind",
    "branch": "main",
    "digest": "sha256:964398938fcd6e90657896a050b721510c689421811a228aeebdf8ed4aefdb6f",
-   "checked_at": "2026-11-12T10:58:59+00:00"
+   "checked_at": "2026-11-20T07:03:25+00:00"
   },
   "-6odzxaprkzblvdcvq95da0kcr2_xpveeofkx1m1md8": {
    "status": "bundled_files",
@@ -291,6 +291,14 @@
    "archive_path": "domains/knowledge-query/SKILL.md",
    "digest": "sha256:d055270b64b8bcf31834d3188b0aa43e26c882b83ff6e7b00715ef83a41387ca",
    "checked_at": "2026-11-14T17:14:23+00:00"
+  },
+  "-gdtjmprtcszq0xkhienp2pct2ulvlo_iwxee10ecai": {
+   "status": "tree_truncated",
+   "archive_path": "security/citation-crosscheck-lisresearchgroup-math-rsi/SKILL.md",
+   "repo": "lisresearchgroup/math-rsi",
+   "branch": "main",
+   "digest": "sha256:8556f29c677b93d465df6b7309914e0b1c387213f73d132b5182fa4d0af42758",
+   "checked_at": "2026-11-20T07:03:25+00:00"
   },
   "-gfcxkf1gmnyzeohr-d0p-9te8fshaxft_4bow8rado": {
    "status": "pinned",
@@ -752,7 +760,7 @@
    "repo": "sergiovazquezdml/Base-de-datos-aluminio",
    "branch": "main",
    "digest": "sha256:4de0a1e7d62a28c0c9bcfdc89ce39aa402beba85bf1dae3bce77fd4ecd6c40be",
-   "checked_at": "2026-11-12T10:58:59+00:00",
+   "checked_at": "2026-11-20T07:03:25+00:00",
    "commit": "5ded9856961c0c73ad69caa6ab5e37de0325e9f1",
    "name": "unship",
    "description": "Compare AI agent-made UI variants locally in a real app, then keep one and clean up unused temporary code."
@@ -849,7 +857,7 @@
    "repo": "prabaharshyam/xplaind",
    "branch": "main",
    "digest": "sha256:0ba1a8833a58a196f6faf83471221507132dcea87741ff87cacc971d30a204d5",
-   "checked_at": "2026-11-12T10:58:59+00:00"
+   "checked_at": "2026-11-20T07:03:25+00:00"
   },
   "09sd8hfxcidjbdu9arteyazqnpwgdjncy5b2ntjmpky": {
    "status": "bundled_files",
@@ -1216,7 +1224,7 @@
    "repo": "tdryhf/oo",
    "branch": "main",
    "digest": "sha256:b4c840ff8ae77ebedd97748307658216afeb51277c5655b5a1daf5e179171051",
-   "checked_at": "2026-11-12T10:58:59+00:00"
+   "checked_at": "2026-11-20T07:03:25+00:00"
   },
   "0pbh4tdq170ouieb4dyaqgd-qv0epni8ifxssxbk3wi": {
    "status": "ambiguous",
@@ -1516,7 +1524,7 @@
    "repo": "tdryhf/oo",
    "branch": "main",
    "digest": "sha256:888b7651d66d66dbac4e72b7c554638eb19bd971d686d6cbdf030a5ef3788f55",
-   "checked_at": "2026-11-12T10:58:59+00:00",
+   "checked_at": "2026-11-20T07:03:25+00:00",
    "commit": "bb1ec818004926eefa087c823ee6ba4cfd2f476f",
    "name": "mobile-native",
    "description": "Make a web app feel native on a phone — the small CSS and meta-tag fixes that separate \"a website in a browser\" from something that feels installed. Covers sticky hover states, tap highlight flashes, the 100vh bug, inputs that zoom the page, laggy taps, pull-to-refresh hijacking scroll, content under the notch, long-press selecting button text, carousels that scroll the wrong way, mismatched status bars, and the rule that you test on real hardware. Use when a web app is being built for or reviewed on mobile, when something \"works in Chrome but feels wrong on my phone\", when building a PWA, a bottom sheet, a carousel, a full-screen layout, or any touch interaction. For motion itself use animate; for React Native use animate-expo."
@@ -1762,7 +1770,7 @@
    "repo": "tdryhf/oo",
    "branch": "main",
    "digest": "sha256:2e64c269953f2656c21bf5a0fa6b4568e82fe0c72b36e8f84758e090349966a5",
-   "checked_at": "2026-11-12T10:58:59+00:00",
+   "checked_at": "2026-11-20T07:03:25+00:00",
    "commit": "bb1ec818004926eefa087c823ee6ba4cfd2f476f",
    "name": "gpt-taste",
    "description": "Elite UX/UI & Advanced GSAP Motion Engineer. Enforces Python-driven true randomization for layout variance, strict AIDA page structure, wide editorial typography (bans 6-line wraps), gapless bento grids, strict GSAP ScrollTriggers (pinning, stacking, scrubbing), inline micro-images, and massive section spacing."
@@ -1894,14 +1902,6 @@
    "branch": "main",
    "digest": "sha256:d6878a7279d80fa0124160cea0a4b67902f68dca34ae76309c2b325bf460a7d4",
    "checked_at": "2026-11-16T13:51:03+00:00"
-  },
-  "1keq7se-rtsn6vlgl__x7q6gd9om-7qrxetccsmctna": {
-   "status": "upstream_changed",
-   "archive_path": "data/langchain-hello-world/SKILL.md",
-   "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-   "branch": "main",
-   "digest": "sha256:f01f30572a8cd2c9a0e3933aa795c70c50d260e33d121f03f937c3a1ff025548",
-   "checked_at": "2026-11-14T17:14:23+00:00"
   },
   "1kjsbb04om23v1aydph2l75jxxdnibpzhfblugfkvyy": {
    "status": "ambiguous",
@@ -2450,7 +2450,7 @@
    "repo": "tdryhf/oo",
    "branch": "main",
    "digest": "sha256:77bb63b7043bb93aca2ff4ab040c249484eef35682bb6ff7163433c31d30adc7",
-   "checked_at": "2026-11-12T10:58:59+00:00",
+   "checked_at": "2026-11-20T07:03:25+00:00",
    "commit": "bb1ec818004926eefa087c823ee6ba4cfd2f476f",
    "name": "apple-design",
    "description": "Apple's approach to interface design and fluid, physical motion, translated for the web. Use when building or reviewing gesture-driven UI, spring animations, drag/swipe/sheet interactions, momentum and interruptible transitions, translucent materials and depth, typography (optical sizing, tracking, leading), reduced-motion, or the design foundations (feedback, spatial consistency, restraint) behind Apple-style interfaces."
@@ -2518,14 +2518,6 @@
    "branch": "main",
    "digest": "sha256:e170f2fb41a08f31ac350789c6ada53199100eba9ec2587c0789654f0a92f6a4",
    "checked_at": "2026-11-16T16:17:55+00:00"
-  },
-  "2dhxtcbrivqdf2gnqouty49ssszztf99j05uteioyew": {
-   "status": "bundled_files",
-   "archive_path": "data/langfuse/SKILL.md",
-   "repo": "omer-metin/skills-for-antigravity",
-   "branch": "main",
-   "digest": "sha256:a17a51347b35c9f79216f685ce226dda9e6f385b4987cb63a39ad1e6ab93785e",
-   "checked_at": "2026-11-14T17:14:23+00:00"
   },
   "2diejaqsds0lxgfnb6bf3hxhtnpcwvn_gjoivhsy8z4": {
    "status": "ambiguous",
@@ -2817,7 +2809,7 @@
    "repo": "sergiovazquezdml/Base-de-datos-aluminio",
    "branch": "main",
    "digest": "sha256:964751caf966afce308c5b222a709a36e5af48e661341110b3c095238d3cc143",
-   "checked_at": "2026-11-12T10:58:59+00:00",
+   "checked_at": "2026-11-20T07:03:25+00:00",
    "commit": "5ded9856961c0c73ad69caa6ab5e37de0325e9f1",
    "name": "idea-os",
    "description": "Five-phase pipeline (triage → clarify → research → PRD → plan) that turns a raw idea into four linked files: clarifying questions, deep research, a PRD with non-goals and metrics, and a phased execution plan with mermaid user journey and kill criteria."
@@ -3381,7 +3373,7 @@
    "repo": "tdryhf/oo",
    "branch": "main",
    "digest": "sha256:675fdce308683256ed617351a9b74d23457a5fbd0a562d9831b9c764b8c5e682",
-   "checked_at": "2026-11-12T10:58:59+00:00",
+   "checked_at": "2026-11-20T07:03:25+00:00",
    "commit": "bb1ec818004926eefa087c823ee6ba4cfd2f476f",
    "name": "pick-ui-library",
    "description": "Pick the right library for a given frontend task from a curated, opinionated list — numbers, OTP inputs, charts, command menus, virtualization, drag and drop, toasts, state, styling, and more. Only runs when explicitly invoked; it does not trigger on its own."
@@ -3508,7 +3500,7 @@
    "repo": "sergiovazquezdml/Base-de-datos-aluminio",
    "branch": "main",
    "digest": "sha256:834c35aba3fee611b69fa48ac728f531ef115a5f20ad35cfbac81f6cd90d5743",
-   "checked_at": "2026-11-12T10:58:59+00:00",
+   "checked_at": "2026-11-20T07:03:25+00:00",
    "commit": "5ded9856961c0c73ad69caa6ab5e37de0325e9f1",
    "name": "cirq",
    "description": "Cirq is Google Quantum AI's open-source framework for designing, simulating, and running quantum circuits on quantum computers and simulators."
@@ -3727,7 +3719,7 @@
    "repo": "sergiovazquezdml/Base-de-datos-aluminio",
    "branch": "main",
    "digest": "sha256:6e767565594734fa325fef61f393d23effaa4ecaf636a33da1939e3d712ef45c",
-   "checked_at": "2026-11-12T10:58:59+00:00"
+   "checked_at": "2026-11-20T07:03:25+00:00"
   },
   "3ygqdmbqwgl_f_trpphd0qqarmjnhqcto9vrhx-ti1q": {
    "status": "ambiguous",
@@ -4757,7 +4749,7 @@
    "repo": "prabaharshyam/xplaind",
    "branch": "main",
    "digest": "sha256:fbb2766f9f172cc9b525c4dfda9eba335676593ff4d600f93e6b9318597f64b5",
-   "checked_at": "2026-11-12T10:58:59+00:00"
+   "checked_at": "2026-11-20T07:03:25+00:00"
   },
   "5hcktqheb3pmg1dxjsirgwhzklullzjghoi6tpgvixi": {
    "status": "upstream_changed",
@@ -5024,7 +5016,7 @@
    "repo": "tdryhf/oo",
    "branch": "main",
    "digest": "sha256:3037479dd6cffaf043f27cd6b6eaec3cb5fb209210241f73757d15790271b1f2",
-   "checked_at": "2026-11-12T10:58:59+00:00"
+   "checked_at": "2026-11-20T07:03:25+00:00"
   },
   "5pgfzgtjocspvwlbzfjz54qjsvidn71yuuuwb6holqg": {
    "status": "bundled_files",
@@ -5088,7 +5080,7 @@
    "repo": "prabaharshyam/xplaind",
    "branch": "main",
    "digest": "sha256:9d647209e862b5fc5b6c49b4977db38e338d480fbe835a37de8598eecb46a50d",
-   "checked_at": "2026-11-12T10:58:59+00:00"
+   "checked_at": "2026-11-20T07:03:25+00:00"
   },
   "5ro9xjhqhyruvbyecibs_j9sc6gdok1zl4uuxv8diek": {
    "status": "upstream_unavailable",
@@ -6238,7 +6230,7 @@
    "repo": "prabaharshyam/xplaind",
    "branch": "main",
    "digest": "sha256:07ef389848b071e023b457b2b054abb4d1d7a35a4eb1cd9f6e5ef91c18fab18e",
-   "checked_at": "2026-11-12T10:58:59+00:00"
+   "checked_at": "2026-11-20T07:03:25+00:00"
   },
   "7jz7opcgrnhpwvjgtug86pal0tcdji77j-133j-k9ls": {
    "status": "bundled_files",
@@ -6262,7 +6254,7 @@
    "repo": "prabaharshyam/xplaind",
    "branch": "main",
    "digest": "sha256:bae9c0bcd1ab1fc2ec220eb7cedc4d141c515d0adee84358630092d73ae74a7c",
-   "checked_at": "2026-11-12T10:58:59+00:00"
+   "checked_at": "2026-11-20T07:03:25+00:00"
   },
   "7kuds07qtrlymyjjwzpyszc_zyqsby7dephrscovnfi": {
    "status": "upstream_changed",
@@ -6649,14 +6641,6 @@
    "repo": "erichowens/some_claude_skills",
    "branch": "main",
    "digest": "sha256:09047afaa988b9bd0496feae874228f72dd712586b65ad9f200d9aad7050fe63",
-   "checked_at": "2026-11-14T17:14:23+00:00"
-  },
-  "7ya2izqohq27tkeoiwmqcjn9g2xbuaod5xtrzvh9cwm": {
-   "status": "upstream_changed",
-   "archive_path": "development/language-patterns/SKILL.md",
-   "repo": "sequenzia/claude-alchemy",
-   "branch": "main",
-   "digest": "sha256:85ca0bb52b483afbe063d87233c9a7481be6be61ca689586e5f8a44f783c9bb4",
    "checked_at": "2026-11-14T17:14:23+00:00"
   },
   "7yvschve_vs6z7don9rixntqbgal3u6fyomykjjz7c8": {
@@ -7096,8 +7080,8 @@
    "repo": "risingfish/myjobbot",
    "branch": "main",
    "digest": "sha256:9e97fc0b4ce895c70a1ea720dc0377618c23e27c83ecf4d87b6e0f6c323790a4",
-   "checked_at": "2026-11-12T10:58:59+00:00",
-   "commit": "934a1d8d8e641bbbb80b125aee42031b0d2bbf23",
+   "checked_at": "2026-11-20T07:03:25+00:00",
+   "commit": "aab7ef87cecedc66b7ed21a5b31577cddd3594f7",
    "name": "speckit-plan",
    "description": "Execute the implementation planning workflow using the plan template to generate design artifacts."
   },
@@ -7606,7 +7590,7 @@
    "repo": "sergiovazquezdml/Base-de-datos-aluminio",
    "branch": "main",
    "digest": "sha256:3bbab5d3eb5d45486f8d60520ad5e7d435242033e74945dbca0b435a9c2657b7",
-   "checked_at": "2026-11-12T10:58:59+00:00",
+   "checked_at": "2026-11-20T07:03:25+00:00",
    "commit": "5ded9856961c0c73ad69caa6ab5e37de0325e9f1",
    "name": "qiskit",
    "description": "Qiskit is the world's most popular open-source quantum computing framework with 13M+ downloads. Build quantum circuits, optimize for hardware, execute on simulators or real quantum computers, and analyze results. Supports IBM Quantum (100+ qubit systems), IonQ, Amazon Braket, and other providers."
@@ -7774,6 +7758,14 @@
    "digest": "sha256:12f6748e65270bfd7cc0a8f05fa252830c1a40c39396fc4cf78cfec9bf0ae5b0",
    "checked_at": "2026-11-14T17:14:23+00:00"
   },
+  "9j95pyqv5q0fua1b6bn58zmv_x9xl5je74bsoln0ccc": {
+   "status": "tree_truncated",
+   "archive_path": "development/paper-compile-lisresearchgroup-math-rsi/SKILL.md",
+   "repo": "lisresearchgroup/math-rsi",
+   "branch": "main",
+   "digest": "sha256:ca064e9b7dffe80d9c3bcabb060f81c651e4926eb1c069a04c6416a8e58fed93",
+   "checked_at": "2026-11-20T07:03:25+00:00"
+  },
   "9k-anfpdwaokathf8co2dwgb0fb57f-uujg8rjfwrs4": {
    "status": "pinned",
    "path": "skills/adhx/SKILL.md",
@@ -7817,14 +7809,6 @@
    "branch": "main",
    "digest": "sha256:faa4f2b2ab87de0ec18b6f7d8ab13df98becb38dc8cd6f930b9a6265363b9c62",
    "checked_at": "2026-11-16T13:51:03+00:00"
-  },
-  "9m9237ktfycfw77dtmiwsmzdhljq5at-b9b6byi3tl4": {
-   "status": "bundled_files",
-   "archive_path": "testing/source-cb9b7312312d016e978d17bd-gutsofpratik-horizon-skills/SKILL.md",
-   "repo": "gutsofpratik/Horizon-Skills",
-   "branch": "main",
-   "digest": "sha256:28e23e184c3cc2cd6755a9c676e9eb8a1e07b816a41a4928f8763fdf86864cd0",
-   "checked_at": "2026-11-14T17:14:23+00:00"
   },
   "9mamlauuuilcfcksrcjuqhqin0ckua0ywmyzuxxiwmm": {
    "status": "pinned",
@@ -9201,7 +9185,7 @@
    "repo": "sergiovazquezdml/Base-de-datos-aluminio",
    "branch": "main",
    "digest": "sha256:4ebe6e2d8152e0b7ef6ce2910c8726c131744648925cfd6e1cb16da5b200b64c",
-   "checked_at": "2026-11-12T10:58:59+00:00",
+   "checked_at": "2026-11-20T07:03:25+00:00",
    "commit": "5ded9856961c0c73ad69caa6ab5e37de0325e9f1",
    "name": "seaborn",
    "description": "Seaborn is a Python visualization library for creating publication-quality statistical graphics. Use this skill for dataset-oriented plotting, multivariate analysis, automatic statistical estimation, and complex multi-panel figures with minimal code."
@@ -9616,14 +9600,6 @@
    "digest": "sha256:09a4d5edbeb919890d04cb13e09867240ed8756f85392678d7b53deb0509b477",
    "checked_at": "2026-11-14T17:14:23+00:00"
   },
-  "ailafmk86i1gncjz19h866g3ubgrhy-uum6pmgw5g7m": {
-   "status": "bundled_files",
-   "archive_path": "development/source-1b097b25457b03cfc3acec04-gutsofpratik-horizon-skills/SKILL.md",
-   "repo": "gutsofpratik/Horizon-Skills",
-   "branch": "main",
-   "digest": "sha256:075d9e53b3b010cfe2745ff7b77232083bda445334c36098158bdb0943c49ca6",
-   "checked_at": "2026-11-14T17:14:23+00:00"
-  },
   "aipze-3u_e2jpencxgvagbmaq5d1jfrgctq47qb01zi": {
    "status": "upstream_changed",
    "archive_path": "marketing/competitor-alternatives-im5tu-claude/SKILL.md",
@@ -9783,7 +9759,7 @@
    "repo": "tdryhf/oo",
    "branch": "main",
    "digest": "sha256:bba39c955eb1871c5a02733976ceec5d0324198e0812e667604756489c89f7b9",
-   "checked_at": "2026-11-12T10:58:59+00:00",
+   "checked_at": "2026-11-20T07:03:25+00:00",
    "commit": "bb1ec818004926eefa087c823ee6ba4cfd2f476f",
    "name": "prototype",
    "description": "Build multiple genuinely different versions of a UI piece you describe, rendered behind a visual picker so you can flip through them live and promote the one that feels right. Only runs when explicitly invoked; it does not trigger on its own."
@@ -9982,6 +9958,14 @@
    "commit": "99825ad3f3bcc6597ddcc7294a14e6e922f2b67b",
    "name": "pdf-generator",
    "description": "Generate pdf generator operations. Auto-activating skill for Business Automation.\nTriggers on: pdf generator, pdf generator\nPart of the Business Automation skill category. Use when working with pdf generator functionality. Trigger with phrases like \"pdf generator\", \"pdf generator\", \"pdf\"."
+  },
+  "apaadlusabm1u2ebykfqihrzf3bjkkkoku9gxp9ief0": {
+   "status": "tree_truncated",
+   "archive_path": "development/formula-derivation-lisresearchgroup-math-rsi/SKILL.md",
+   "repo": "lisresearchgroup/math-rsi",
+   "branch": "main",
+   "digest": "sha256:2e5f5ce665023cdc460126c9c8403503c17961145a2b052d25200f9bbd9a9b4d",
+   "checked_at": "2026-11-20T07:03:25+00:00"
   },
   "aplmy2dqpkg9pkcdpooutaki081upmx70kkyfybijrk": {
    "status": "pinned",
@@ -10244,14 +10228,6 @@
    "repo": "mdbabumiamssm/LLMs-Universal-Life-Science-and-Clinical-Skills-",
    "branch": "main",
    "digest": "sha256:3f6a40ac41e867ef6922ffaf138f9cc2d93b20b0a99e594ab64647a9684655fc",
-   "checked_at": "2026-11-14T17:14:23+00:00"
-  },
-  "auksiqzjrfgokjtl7epxtpo3jkb9n3hs7t9tvmyxso8": {
-   "status": "upstream_changed",
-   "archive_path": "data/kubernetes-specialist/SKILL.md",
-   "repo": "Jeffallan/claude-skills",
-   "branch": "main",
-   "digest": "sha256:15f375675189313a58326a90b87e2806a03b5d41755dea3a1417bc3a24b67aa6",
    "checked_at": "2026-11-14T17:14:23+00:00"
   },
   "aulugaplyajtcjhtgp1msgww4oqydr8l1fwewm90gik": {
@@ -10897,7 +10873,7 @@
    "repo": "tdryhf/oo",
    "branch": "main",
    "digest": "sha256:e7eec1d70ac56a04255e9c0dbe98084ea3d544cc04aaad34f32c95d6fa9dff5e",
-   "checked_at": "2026-11-12T10:58:59+00:00",
+   "checked_at": "2026-11-20T07:03:25+00:00",
    "commit": "bb1ec818004926eefa087c823ee6ba4cfd2f476f",
    "name": "break-ui",
    "description": "Try to break a piece of UI by feeding it worst-case data — long names, unbreakable emails, one-letter names, missing fields, huge counts, zero items, long labels, non-Latin text, emoji, extreme numbers — then render it behind a \"Demo data / Worst case\" toggle and report everything that broke, with the fix for each. Use when the user asks to stress-test, break, or find edge cases in a component or screen, or to \"try the worst case\". For visual design critique use emil-design-eng; for motion use review-animations."
@@ -11119,6 +11095,14 @@
    "digest": "sha256:14a4592ceb8064a4431294303cc7e78b4237a067575e822f6efd77acf52318fc",
    "checked_at": "2026-11-14T17:14:23+00:00"
   },
+  "bgbt-iivwtxen29daktn_zoiom0t9njgrjgp2mndpmk": {
+   "status": "tree_truncated",
+   "archive_path": "other/system-profile-lisresearchgroup-math-rsi/SKILL.md",
+   "repo": "lisresearchgroup/math-rsi",
+   "branch": "main",
+   "digest": "sha256:9d31e32d2a63cf2f27a843e171c652327596c3f9e911c265660618d4ba27c48e",
+   "checked_at": "2026-11-20T07:03:25+00:00"
+  },
   "bh2x_mwdwifis1df1apwyptnv3ec2m8lqa85ul8x2rs": {
    "status": "upstream_changed",
    "archive_path": "data/data-viz-2025/SKILL.md",
@@ -11321,7 +11305,7 @@
    "repo": "tdryhf/oo",
    "branch": "main",
    "digest": "sha256:e5bf48b1ae561511439cf71672209a10a88cee0968cc925909ff861dfa0a96a7",
-   "checked_at": "2026-11-12T10:58:59+00:00",
+   "checked_at": "2026-11-20T07:03:25+00:00",
    "commit": "bb1ec818004926eefa087c823ee6ba4cfd2f476f",
    "name": "full-output-enforcement",
    "description": "Overrides default LLM truncation behavior. Enforces complete code generation, bans placeholder patterns, and handles token-limit splits cleanly. Apply to any task requiring exhaustive, unabridged output."
@@ -11836,7 +11820,7 @@
    "repo": "michael-denyer/pstack-claude",
    "branch": "main",
    "digest": "sha256:9d401e0e3169d75bdabbc4a68d9f964b2fe467003202cdbac14d45c64c39099d",
-   "checked_at": "2026-11-12T10:58:59+00:00"
+   "checked_at": "2026-11-20T07:03:25+00:00"
   },
   "bvphr1epz7s-kcg_cskhjwnyd1jnicgwreyx-5ouyau": {
    "status": "upstream_changed",
@@ -12114,7 +12098,7 @@
    "repo": "sergiovazquezdml/Base-de-datos-aluminio",
    "branch": "main",
    "digest": "sha256:ec35dfc1b090abbb599cb5ff97963243d96f5c2b5e83c8a50698964902f760bd",
-   "checked_at": "2026-11-12T10:58:59+00:00",
+   "checked_at": "2026-11-20T07:03:25+00:00",
    "commit": "5ded9856961c0c73ad69caa6ab5e37de0325e9f1",
    "name": "unslop",
    "description": "Post-process AI-generated text through the unslop CLI to strip AI writing patterns before publishing"
@@ -12670,6 +12654,14 @@
    "branch": "main",
    "digest": "sha256:0d73d6b5b619adef0df0b74d877d95be63820bcd83eaa2c74561d9ebb7f0395c",
    "checked_at": "2026-11-16T13:51:03+00:00"
+  },
+  "chdzbsujwvz0csulpozzdlgktuf0v7f9pu1djklcejc": {
+   "status": "tree_truncated",
+   "archive_path": "data/exa-search-lisresearchgroup-math-rsi/SKILL.md",
+   "repo": "lisresearchgroup/math-rsi",
+   "branch": "main",
+   "digest": "sha256:c9ffd1e95004f591d6bc17e1a5bf16864f0c0230f446d60c6fc2b3890afb71de",
+   "checked_at": "2026-11-20T07:03:25+00:00"
   },
   "chinfvlc54l8w8eecjoz_xfz5ag76nhedldud975fm0": {
    "status": "ambiguous",
@@ -13229,8 +13221,8 @@
    "repo": "ntanduy25/ai-careerguide_2",
    "branch": "main",
    "digest": "sha256:e8ade5c8d48728db6c1137e4392308b6d56290a19d4f78d365122d7ab05276a1",
-   "checked_at": "2026-11-12T10:58:59+00:00",
-   "commit": "526d119dd7e2996693f00930a96d028199ee712c",
+   "checked_at": "2026-11-20T07:03:25+00:00",
+   "commit": "f0a8bef7833cdfacc5e1e8d3911465fb489815aa",
    "name": "config-gc",
    "description": "Garbage collection for your Claude Code configuration. Periodically scans ~/.claude (skills, memory, hooks, permissions, MCP servers, caches) for redundant, stale, orphaned, or low-value items, then walks the user through a confirm-each-deletion cleanup. Use when the user says \"clean up my config\", \"config GC\", \"too many skills\", \"audit my setup\", \"my .claude is bloated\", or asks for a periodic config review."
   },
@@ -13969,8 +13961,8 @@
    "repo": "ntanduy25/ai-careerguide_2",
    "branch": "main",
    "digest": "sha256:727b093c8f8284923e54619b9193e5dee9e9ae0ea87b5fb65e1e01e0206fe621",
-   "checked_at": "2026-11-12T10:58:59+00:00",
-   "commit": "526d119dd7e2996693f00930a96d028199ee712c",
+   "checked_at": "2026-11-20T07:03:25+00:00",
+   "commit": "f0a8bef7833cdfacc5e1e8d3911465fb489815aa",
    "name": "dev-team",
    "description": "Simulate a collaborative dev team session where multiple role-based personas (PM, Architect, Developer, QA) respond to the same problem together in one session. Use when designing a feature, reviewing a proposal, or onboarding a new initiative and you want multi-role perspective without switching agents manually."
   },
@@ -14261,7 +14253,7 @@
    "repo": "tdryhf/oo",
    "branch": "main",
    "digest": "sha256:775ae946b15f03d787077c35d166a9addb1e241cb9ffea03ceee3a1be198175e",
-   "checked_at": "2026-11-12T10:58:59+00:00"
+   "checked_at": "2026-11-20T07:03:25+00:00"
   },
   "dlbripjc3cv0pcu1hcafvvdnvos4ub39qlgmdrdc8eu": {
    "status": "ambiguous",
@@ -16187,12 +16179,11 @@
    "description": "Fast-forward through OpenSpec artifact creation. Use when the user wants to quickly create all artifacts needed for implementation without stepping through each one individually. Also use when the user says \"openspec ff\" or \"opsx ff\"."
   },
   "eqorduoknxtvtz0lptdcq2hfbfk1g6maizelf8mzuhw": {
-   "status": "bundled_files",
+   "status": "upstream_unavailable",
+   "error": "GitHub API 404: {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/branches/branches#get-a-branch\",\"status\":\"404\"}",
    "archive_path": "writing/humanizer-nourdean22-mainnicks-tire-auton/SKILL.md",
-   "repo": "nourdean22/MAINnicks-tire-autoNEW",
-   "branch": "main",
    "digest": "sha256:0612f1dfb1672b0ea9b97e139bf1f06cabe98d8b27424fe8ff01e1fb4cc99cad",
-   "checked_at": "2026-11-12T10:58:59+00:00"
+   "checked_at": "2026-11-20T07:03:25+00:00"
   },
   "eqr2plwvgwibvpqxocwfosgaitdqhqxydlbyu6fv6j8": {
    "status": "pinned",
@@ -16308,7 +16299,7 @@
    "repo": "tdryhf/oo",
    "branch": "main",
    "digest": "sha256:93951e5e83f616a3e046491c00d770bd54c0a64164706cd1191822a233d27592",
-   "checked_at": "2026-11-12T10:58:59+00:00"
+   "checked_at": "2026-11-20T07:03:25+00:00"
   },
   "et1wcbz0zojva3mculxsr6i2yoico4jj5lm6nus6kci": {
    "status": "pinned",
@@ -16606,7 +16597,7 @@
    "repo": "ntanduy25/ai-careerguide_2",
    "branch": "main",
    "digest": "sha256:6748418f33fe028b5cbb8fe491eb45a52405f5326ba613c42b95d52a47880de1",
-   "checked_at": "2026-11-12T10:58:59+00:00"
+   "checked_at": "2026-11-20T07:03:25+00:00"
   },
   "f0elckzureq5iwn0z03jkpwnlbgmgyca_muz49hys44": {
    "status": "ambiguous",
@@ -17444,14 +17435,6 @@
    "digest": "sha256:35a81c4aced27d0718c77bb87104c3b36b0fe0766c50b283efdc9f7ef85ea1f5",
    "checked_at": "2026-11-16T13:51:03+00:00"
   },
-  "fl5i71tppiebxi5xrwyfxdua6s9som-30hsy15x9hke": {
-   "status": "upstream_changed",
-   "archive_path": "marketing/landing-alirezarezvani-claude-skills/SKILL.md",
-   "repo": "alirezarezvani/claude-skills",
-   "branch": "main",
-   "digest": "sha256:74e1d9266012254c6481c8702e9cc43662d037d05161772f06e39b4883436b47",
-   "checked_at": "2026-11-14T17:14:23+00:00"
-  },
   "flcztx3js3rmjyz2kj2svir3zckdoifiit54dqibfhw": {
    "status": "ambiguous",
    "archive_path": "other/brand-voice-yanacuti1121-yana-ai-2/SKILL.md",
@@ -17988,7 +17971,7 @@
    "repo": "tdryhf/oo",
    "branch": "main",
    "digest": "sha256:b8ede161270458e6ae2e45e8a1985373515d4c63de5568ddb0f9012d7634356c",
-   "checked_at": "2026-11-12T10:58:59+00:00",
+   "checked_at": "2026-11-20T07:03:25+00:00",
    "commit": "bb1ec818004926eefa087c823ee6ba4cfd2f476f",
    "name": "animate",
    "description": "Build an animation from scratch, making the decisions in the order that determines whether it feels right — should it animate at all, what purpose, which tool, which properties, which curve and duration, how it interrupts, how it exits. Writes the implementation. Use when asked to animate something, add motion, make a component feel alive, or build a transition. For critiquing existing motion use review-animations; for auditing a whole codebase use improve-animations."
@@ -18980,7 +18963,7 @@
    "repo": "tdryhf/oo",
    "branch": "main",
    "digest": "sha256:16a4b6adb74e338e55e704ce5753ad54d825438b8a63930eeaede9f3c04c9447",
-   "checked_at": "2026-11-12T10:58:59+00:00",
+   "checked_at": "2026-11-20T07:03:25+00:00",
    "commit": "bb1ec818004926eefa087c823ee6ba4cfd2f476f",
    "name": "write-swift",
    "description": "How to write modern Swift well — modeling with value types, Swift 6 data-race safety and approachable concurrency (@concurrent, main-actor-by-default, actors, task groups), protocols and generics (some vs any), API design, performance and ARC, Swift Testing, macros, and the modern language features agents don't know about yet. Use when writing, reviewing, or migrating Swift, or when a concurrency error, a hang, a data race, a retain cycle, or a performance problem needs fixing."
@@ -19116,7 +19099,7 @@
    "repo": "tdryhf/oo",
    "branch": "main",
    "digest": "sha256:ffbe68e6007fb42cb8149f089b400a1ca007d59ba23e8948e2be4476f3175939",
-   "checked_at": "2026-11-12T10:58:59+00:00",
+   "checked_at": "2026-11-20T07:03:25+00:00",
    "commit": "bb1ec818004926eefa087c823ee6ba4cfd2f476f",
    "name": "emil-design-eng",
    "description": "This skill encodes Emil Kowalski's philosophy on UI polish, component design, animation decisions, and the invisible details that make software feel great."
@@ -19828,7 +19811,7 @@
    "repo": "sergiovazquezdml/Base-de-datos-aluminio",
    "branch": "main",
    "digest": "sha256:b29768b326deb18b41dc76cd72964173d42058122a52a5d2592512c4a7b042ae",
-   "checked_at": "2026-11-12T10:58:59+00:00",
+   "checked_at": "2026-11-20T07:03:25+00:00",
    "commit": "5ded9856961c0c73ad69caa6ab5e37de0325e9f1",
    "name": "networkx",
    "description": "NetworkX is a Python package for creating, manipulating, and analyzing complex networks and graphs."
@@ -21271,7 +21254,7 @@
    "repo": "tdryhf/oo",
    "branch": "main",
    "digest": "sha256:f52ac42637adf0122a4d4ab9355a68eb4e1b30a29e553fb74f375c9d43de8302",
-   "checked_at": "2026-11-12T10:58:59+00:00"
+   "checked_at": "2026-11-20T07:03:25+00:00"
   },
   "hrrwfwpdxezanyx8d-2vgg7actvn_0yxyjk8jmtw3a0": {
    "status": "tree_truncated",
@@ -21554,7 +21537,7 @@
    "repo": "prabaharshyam/xplaind",
    "branch": "main",
    "digest": "sha256:62dc5735aae7a37a4a21739e674beb7aa38958eefa3a5a94cef925473dd97793",
-   "checked_at": "2026-11-12T10:58:59+00:00"
+   "checked_at": "2026-11-20T07:03:25+00:00"
   },
   "hyg1gnpf98f5jr4qpxwchyt2ojj52dhf_b9r_vc9wi0": {
    "status": "ambiguous",
@@ -23847,18 +23830,6 @@
    "digest": "sha256:d305d6176cd34c25eb60dd8c16b1d7ece4bb5548057b0bbd34afc032282a84ef",
    "checked_at": "2026-11-14T17:14:23+00:00"
   },
-  "jdogepdpwpeaqrbjitcp7cx86-uawgsoqzlxw4df_c4": {
-   "status": "pinned",
-   "path": "plugins/llm-application-dev/skills/langchain-architecture/SKILL.md",
-   "archive_path": "ai-llm/langchain-architecture-ccf-claude-code-ccf-mark/SKILL.md",
-   "repo": "ccf/claude-code-ccf-marketplace",
-   "branch": "main",
-   "digest": "sha256:a386c82c12f77d8a3bb32ce4785507550518446686d800dbf6dc4842b30b5912",
-   "checked_at": "2026-11-14T17:14:23+00:00",
-   "commit": "0cfb7e6e974802605b215fa56c4fe7767203d604",
-   "name": "langchain-architecture",
-   "description": "Design LLM applications using the LangChain framework with agents, memory, and tool integration patterns. Use when building LangChain applications, implementing AI agents, or creating complex LLM workflows."
-  },
   "jdqvl5kqogwixqt7eicd46p88_mjjinfmpoh5mlmxky": {
    "status": "pinned",
    "path": ".agents/skills/hunt-dom/SKILL.md",
@@ -24753,7 +24724,7 @@
    "repo": "ntanduy25/ai-careerguide_2",
    "branch": "main",
    "digest": "sha256:72bf6ae780d21e4789eb3b536f1da40c707d7ac59188022a8bec8e94c00e6275",
-   "checked_at": "2026-11-12T10:58:59+00:00"
+   "checked_at": "2026-11-20T07:03:25+00:00"
   },
   "jy2ps8xqqju_2kdejvimf__ti6yi7rnezrhkr8cfh4w": {
    "status": "upstream_changed",
@@ -25140,7 +25111,7 @@
    "repo": "prabaharshyam/xplaind",
    "branch": "main",
    "digest": "sha256:5a985c6ffbf82d66e3cd896e76ba38bb24ffa8f628e867a97af5b98ca132afbb",
-   "checked_at": "2026-11-12T10:58:59+00:00"
+   "checked_at": "2026-11-20T07:03:25+00:00"
   },
   "kbd9cqbfxsihidqabu87surtsjj3n-unjrt6bu4gzu4": {
    "status": "bundled_files",
@@ -25905,7 +25876,7 @@
    "repo": "sergiovazquezdml/Base-de-datos-aluminio",
    "branch": "main",
    "digest": "sha256:3c9dfd6e03645644ae026cc841a4be970299b9efe5dc3c87205f83ee2c8e3862",
-   "checked_at": "2026-11-12T10:58:59+00:00"
+   "checked_at": "2026-11-20T07:03:25+00:00"
   },
   "kqxofw_vkzyfex1kbjbejzgv9bkxe5t340trl5dgzlq": {
    "status": "ambiguous",
@@ -26116,7 +26087,7 @@
    "repo": "prabaharshyam/xplaind",
    "branch": "main",
    "digest": "sha256:a97f772a19aa6ad1aa64813bc0fbd6c60f83d9f11c14ca54b7d62157a72befce",
-   "checked_at": "2026-11-12T10:58:59+00:00"
+   "checked_at": "2026-11-20T07:03:25+00:00"
   },
   "kvgr-v2sxavtyx3wxntnkc7nfpu6sz5-0ymyb2w7nnk": {
    "status": "bundled_files",
@@ -26225,6 +26196,14 @@
    "branch": "main",
    "digest": "sha256:b5840a295f66c7d720b6f0da530c81fbc8a44619a6ed2da7b5d8d76e3a8adfc8",
    "checked_at": "2026-11-14T17:14:23+00:00"
+  },
+  "kxsygjwc9nd4rex9howysp9ogci7hwxavazx5-2n80k": {
+   "status": "tree_truncated",
+   "archive_path": "other/alphaxiv-lisresearchgroup-math-rsi/SKILL.md",
+   "repo": "lisresearchgroup/math-rsi",
+   "branch": "main",
+   "digest": "sha256:f313e596afbfc7e88a10def82c9438d0715942cc4e945480a27c809b099c3585",
+   "checked_at": "2026-11-20T07:03:25+00:00"
   },
   "kxuq4hayplhbjl0vpszlvkbvy67sfks98lkzveaon1a": {
    "status": "ambiguous",
@@ -27739,7 +27718,7 @@
    "repo": "tdryhf/oo",
    "branch": "main",
    "digest": "sha256:fffbaac8597f07679e9d87145533567658aedba3b5eca6f16a7075a333048caa",
-   "checked_at": "2026-11-12T10:58:59+00:00",
+   "checked_at": "2026-11-20T07:03:25+00:00",
    "commit": "bb1ec818004926eefa087c823ee6ba4cfd2f476f",
    "name": "industrial-brutalist-ui",
    "description": "Raw mechanical interfaces fusing Swiss typographic print with military terminal aesthetics. Rigid grids, extreme type scale contrast, utilitarian color, analog degradation effects. For data-heavy dashboards, portfolios, or editorial sites that need to feel like declassified blueprints."
@@ -30532,7 +30511,7 @@
    "repo": "gutsofpratik/Horizon-Skills",
    "branch": "main",
    "digest": "sha256:5a652f8132cc901eb5ca61f89157839f87a2f20aed037fc7a2b51051bc37cd19",
-   "checked_at": "2026-11-12T10:58:59+00:00"
+   "checked_at": "2026-11-20T07:03:25+00:00"
   },
   "nqbrjirv6yuqdqmbixkx9783cssf6ecm-gmwyshh9mg": {
    "status": "upstream_changed",
@@ -30927,6 +30906,14 @@
    "archive_path": "devops/version-checker-arbgjr-satra/SKILL.md",
    "digest": "sha256:62ae7614b7e227debe77868d083a1b7bc86f1ac8cd436367780aa83dd7d721a8",
    "checked_at": "2026-11-14T17:14:23+00:00"
+  },
+  "nzmeqfgvvh9euejkhufzzu6ll0khmotmothhooft4oi": {
+   "status": "tree_truncated",
+   "archive_path": "other/proof-writer-lisresearchgroup-math-rsi-3/SKILL.md",
+   "repo": "lisresearchgroup/math-rsi",
+   "branch": "main",
+   "digest": "sha256:bef68a5cb664e212f299667773f6367b90ad3447b68cacc399186655fb02f9f8",
+   "checked_at": "2026-11-20T07:03:25+00:00"
   },
   "nzwrcn-z-5xojc19d59-w4cj2c7wwff9es23ip3rjgi": {
    "status": "pinned",
@@ -31650,7 +31637,7 @@
    "repo": "ntanduy25/ai-careerguide_2",
    "branch": "main",
    "digest": "sha256:a3e17bf66e7c2eb198f4b04c06adaff29bf62b7cbd09005c7c234cdcf4ad796b",
-   "checked_at": "2026-11-12T10:58:59+00:00"
+   "checked_at": "2026-11-20T07:03:25+00:00"
   },
   "ohwfzcrxazyd1syaqigckdifp8grqzrlbith8tzoczw": {
    "status": "pinned",
@@ -32777,7 +32764,7 @@
    "repo": "tdryhf/oo",
    "branch": "main",
    "digest": "sha256:cb1ea3de8b6e605614cc59b21d41830d2d82af22e51069bb4c5bb53790cd622b",
-   "checked_at": "2026-11-12T10:58:59+00:00"
+   "checked_at": "2026-11-20T07:03:25+00:00"
   },
   "p_xfkljz5vvljjjjjfjetxorp0hx4eodndell0ewnvk": {
    "status": "bundled_files",
@@ -33326,7 +33313,7 @@
    "repo": "tdryhf/oo",
    "branch": "main",
    "digest": "sha256:e1e32f5e2d420872c6c7332b53d5ff7721946766b78c4822b424c2d512c8fdbc",
-   "checked_at": "2026-11-12T10:58:59+00:00",
+   "checked_at": "2026-11-20T07:03:25+00:00",
    "commit": "bb1ec818004926eefa087c823ee6ba4cfd2f476f",
    "name": "high-end-visual-design",
    "description": "Teaches the AI to design like a high-end agency. Defines the exact fonts, spacing, shadows, card structures, and animations that make a website feel expensive. Blocks all the common defaults that make AI designs look cheap or generic."
@@ -33645,7 +33632,7 @@
    "repo": "prabaharshyam/xplaind",
    "branch": "main",
    "digest": "sha256:7da94c88c7d84f11497d970d3ce149ae4dbbaa74bb5d3bed3abbfc59165e02f1",
-   "checked_at": "2026-11-12T10:58:59+00:00"
+   "checked_at": "2026-11-20T07:03:25+00:00"
   },
   "prf3_mocnjvod0it59natv9_ir4iosplte9gyinlxpe": {
    "status": "upstream_changed",
@@ -34619,6 +34606,18 @@
    "name": "game-designer",
    "description": "Use when designing game feel, player feedback systems, or when creating animations that enhance gameplay and player satisfaction."
   },
+  "qfhh3atziiwhy2lmp0vmibqwmdjcqposcjwyyppro1y": {
+   "status": "pinned",
+   "path": "skills/keenable-search/SKILL.md",
+   "archive_path": "other/keenable-search/SKILL.md",
+   "repo": "wanshuiyin/Auto-claude-code-research-in-sleep",
+   "branch": "main",
+   "digest": "sha256:c37659e338982b7f4559df21734d4140cfae5199a69a9a2a2ac13d48660bd780",
+   "checked_at": "2026-11-20T07:03:25+00:00",
+   "commit": "4ba94ae2a1c1fbbb14858750dd8764cabf6c28bd",
+   "name": "keenable-search",
+   "description": "Keyless web search and page fetch via Keenable. Use when user says \"keenable search\", \"web search without an API key\", \"fetch this page as markdown\", or needs broad web results beyond academic databases (arXiv, Semantic Scholar) with no search API key set up."
+  },
   "qfwhuoj0qex7b6aomgbab1gmb61yw1kcgft30boit-s": {
    "status": "pinned",
    "path": "elevenlabs-music-generation/SKILL.md",
@@ -35220,6 +35219,14 @@
    "branch": "main",
    "digest": "sha256:6595feee7d95694a7bc6ec0f1209d9a4a54e0248269059e367f7904ff2db37e4",
    "checked_at": "2026-11-14T17:14:23+00:00"
+  },
+  "qshgqw-g9__vj0z_hkj2sl9ct9sylzluyvxphxuvbv8": {
+   "status": "tree_truncated",
+   "archive_path": "development/paper-compile-lisresearchgroup-math-rsi-2/SKILL.md",
+   "repo": "lisresearchgroup/math-rsi",
+   "branch": "main",
+   "digest": "sha256:c2467ad7b4c915d6e3d51b975d60d2626cc1da58f3b202fc03b753907f737b0c",
+   "checked_at": "2026-11-20T07:03:25+00:00"
   },
   "qsjgkzaeuak2yfwmkhp08ph_hz5qlm4diuiuwaqcjse": {
    "status": "upstream_unavailable",
@@ -36282,14 +36289,6 @@
    "digest": "sha256:af10359be29ca95b0d22502b0f8484b149fb272f1770791682c30f8d6ae2bbc0",
    "checked_at": "2026-11-14T17:14:23+00:00"
   },
-  "rh1ff8_fhveg15xpgbysmpnk1_84mzkhhokxvvgsdhe": {
-   "status": "ambiguous",
-   "archive_path": "other/startup-landing-page-yanacuti1121-yana-ai/SKILL.md",
-   "repo": "yanacuti1121/Yana-AI",
-   "branch": "main",
-   "digest": "sha256:fc4591cb953ced390a56ad5405cd7b72e6bb7d0a11c066436a6ec00c3fa23d38",
-   "checked_at": "2026-11-16T16:17:55+00:00"
-  },
   "rhkygt8yvcyr998dekdcdc8zwqiiojdxbaacfszz8ou": {
    "status": "ambiguous",
    "archive_path": "other/issues-popey-claude-code-skills/SKILL.md",
@@ -36620,7 +36619,7 @@
    "repo": "sergiovazquezdml/Base-de-datos-aluminio",
    "branch": "main",
    "digest": "sha256:74e9b4e39941e5579f203b858673c22c246762351179ae49b4feac7308b3fc84",
-   "checked_at": "2026-11-12T10:58:59+00:00",
+   "checked_at": "2026-11-20T07:03:25+00:00",
    "commit": "5ded9856961c0c73ad69caa6ab5e37de0325e9f1",
    "name": "plotly",
    "description": "Interactive visualization library. Use when you need hover info, zoom, pan, or web-embeddable charts. Best for dashboards, exploratory analysis, and presentations. For static publication figures use matplotlib or scientific-visualization."
@@ -37109,6 +37108,14 @@
    "branch": "main",
    "digest": "sha256:9c4e7d1f1594e062c50f96e60a06d5a0fbaae1f90a7f4f9762f0952b7248d396",
    "checked_at": "2026-11-19T04:05:35+00:00"
+  },
+  "rxdphdxomn3qde7brfgozpzyvmupi1pkoo1dxc8lz5g": {
+   "status": "tree_truncated",
+   "archive_path": "other/arxiv-lisresearchgroup-math-rsi/SKILL.md",
+   "repo": "lisresearchgroup/math-rsi",
+   "branch": "main",
+   "digest": "sha256:474be36fb19d0dd99ddc8c6fa2d684836a45dca9d02051d98b5c79ac979307ed",
+   "checked_at": "2026-11-20T07:03:25+00:00"
   },
   "rxeiuoqxez-xasfy2gymyrd56xepp_od8sbeklckxzu": {
    "status": "upstream_changed",
@@ -37985,7 +37992,7 @@
    "repo": "tdryhf/oo",
    "branch": "main",
    "digest": "sha256:033d45af1ed23832730642f95f40ab49db7fb5222848489a6c5656144bfc6dae",
-   "checked_at": "2026-11-12T10:58:59+00:00",
+   "checked_at": "2026-11-20T07:03:25+00:00",
    "commit": "bb1ec818004926eefa087c823ee6ba4cfd2f476f",
    "name": "design-taste-frontend-v1",
    "description": "The original v1 taste-skill, preserved for projects depending on its exact behavior. The current default is `design-taste-frontend` (v2 experimental), which is a substantial rewrite. Use this v1 install name only if you need exact backward compatibility."
@@ -38235,8 +38242,8 @@
    "repo": "risingfish/myjobbot",
    "branch": "main",
    "digest": "sha256:7186d59488f89dcf23abd17baed118b05c242d4f62f1de3f9f44625a2b1728f0",
-   "checked_at": "2026-11-12T10:58:59+00:00",
-   "commit": "934a1d8d8e641bbbb80b125aee42031b0d2bbf23",
+   "checked_at": "2026-11-20T07:03:25+00:00",
+   "commit": "aab7ef87cecedc66b7ed21a5b31577cddd3594f7",
    "name": "speckit-implement",
    "description": "Execute the implementation plan by processing and executing all tasks defined in tasks.md"
   },
@@ -39011,7 +39018,7 @@
    "repo": "sheptalo/py_clean_template",
    "branch": "main",
    "digest": "sha256:1316a2f3f95741d2300b116fe0c2d81ce4a9568656ed0a62643f54aaf09957f2",
-   "checked_at": "2026-11-12T10:58:59+00:00"
+   "checked_at": "2026-11-20T07:03:25+00:00"
   },
   "t2ybrl9mdrl0sso2rwgrh02iftssol5zdbmmxdahrmc": {
    "status": "bundled_files",
@@ -39174,7 +39181,7 @@
    "repo": "prabaharshyam/xplaind",
    "branch": "main",
    "digest": "sha256:aac5193dad332ebf6861720018bdd455ccb9e3f9e08bf6a746ca61ac1a1a69fa",
-   "checked_at": "2026-11-12T10:58:59+00:00"
+   "checked_at": "2026-11-20T07:03:25+00:00"
   },
   "t8evfzbzdx_z7of3a1aaohrsogunykxzk2cyirm4l8a": {
    "status": "ambiguous",
@@ -39779,14 +39786,6 @@
    "name": "cost-latency-optimizer",
    "description": "Reduces LLM costs and improves response times through caching, model selection, batching, and prompt optimization. Provides cost breakdowns, latency hotspots, and configuration recommendations. Use for \"cost reduction\", \"performance optimization\", \"latency improvement\", or \"efficiency\"."
   },
-  "tkerdn9cd7ovszhechzemfdcrp_gpqtnochsg-b1uqq": {
-   "status": "ambiguous",
-   "archive_path": "testing/lambdatest-agent-skills-yanacuti1121-yana-ai-2/SKILL.md",
-   "repo": "yanacuti1121/Yana-AI",
-   "branch": "main",
-   "digest": "sha256:c518402898f0be862b84a209c30728abd863a6dc773498cb67d05c366248e0c3",
-   "checked_at": "2026-11-16T16:17:55+00:00"
-  },
   "tko9bcidnu-rf4paxow85ngqxd7lwdeq53hmknff9fe": {
    "status": "bundled_files",
    "archive_path": "development/conventional-commits-aaaaqwq-agi-super-skills/SKILL.md",
@@ -39802,7 +39801,7 @@
    "repo": "tdryhf/oo",
    "branch": "main",
    "digest": "sha256:98ad3e5b051bfb71b2795f7e8a6aa0d32b51ee095606c098a4b2822ac07926c9",
-   "checked_at": "2026-11-12T10:58:59+00:00",
+   "checked_at": "2026-11-20T07:03:25+00:00",
    "commit": "bb1ec818004926eefa087c823ee6ba4cfd2f476f",
    "name": "redesign-existing-projects",
    "description": "Upgrades existing websites and apps to premium quality. Audits current design, identifies generic AI patterns, and applies high-end design standards without breaking functionality. Works with any CSS framework or vanilla CSS."
@@ -40454,6 +40453,14 @@
    "digest": "sha256:4d938c97ca36bcb8e4c968bf05dc964bbf2dd21b168922becb918516f159a926",
    "checked_at": "2026-11-14T17:14:23+00:00"
   },
+  "txsolknjjzowtteblrqhzecr-9s6cla6gtbnuwnyspk": {
+   "status": "tree_truncated",
+   "archive_path": "analysis/analyze-results-lisresearchgroup-math-rsi-2/SKILL.md",
+   "repo": "lisresearchgroup/math-rsi",
+   "branch": "main",
+   "digest": "sha256:1a5f798558018fe6c8faa8b9997ac4cd1076aceb73cfb5bdc261e5de5727f7e2",
+   "checked_at": "2026-11-20T07:03:25+00:00"
+  },
   "txvza7tzquiyjttsg14wulk7ymr3ck2iq4dkzczvy8a": {
    "status": "upstream_unavailable",
    "error": "GitHub API 404: {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/branches/branches#get-a-branch\",\"status\":\"404\"}",
@@ -40800,7 +40807,7 @@
    "repo": "tdryhf/oo",
    "branch": "main",
    "digest": "sha256:64c879f6f1eab0decc306ca52ad32d41327c05c4d2fb7e708335e956c61dadf8",
-   "checked_at": "2026-11-12T10:58:59+00:00"
+   "checked_at": "2026-11-20T07:03:25+00:00"
   },
   "u9c8gpizwjexjqkwhxh63aa4kcgtdzkoe_6mwuendug": {
    "status": "upstream_changed",
@@ -40931,8 +40938,8 @@
    "repo": "ntanduy25/ai-careerguide_2",
    "branch": "main",
    "digest": "sha256:b3318f6263629467d895d71a281cb64575d9d5de12c96d97cd1d19c66734e98e",
-   "checked_at": "2026-11-12T10:58:59+00:00",
-   "commit": "526d119dd7e2996693f00930a96d028199ee712c",
+   "checked_at": "2026-11-20T07:03:25+00:00",
+   "commit": "f0a8bef7833cdfacc5e1e8d3911465fb489815aa",
    "name": "repo-scan",
    "description": "Bootstrap pointer that installs the external repo-scan skill from a pinned, reviewable commit. Use when repo-scan must be installed before running its cross-stack source-code asset audit; this ECC pointer does not perform the audit itself."
   },
@@ -41092,7 +41099,7 @@
    "repo": "tdryhf/oo",
    "branch": "main",
    "digest": "sha256:4fe0a10132650ad36bc79676b12c8f58b19035a40ac6587c864387d0f808cf04",
-   "checked_at": "2026-11-12T10:58:59+00:00"
+   "checked_at": "2026-11-20T07:03:25+00:00"
   },
   "uduc6dlf_yqkzmevjhtt0yutmymcrg_iecagnqo2xbc": {
    "status": "ambiguous",
@@ -41124,7 +41131,7 @@
    "repo": "prabaharshyam/xplaind",
    "branch": "main",
    "digest": "sha256:b19d75e0dc620ed6e44682876f943989e3184a1d3f92d9a1da95cc9d8c50879a",
-   "checked_at": "2026-11-12T10:58:59+00:00"
+   "checked_at": "2026-11-20T07:03:25+00:00"
   },
   "uf-tzo29ynh4gcs53uowq0lp8qaz6utnmqhqfrfyo5w": {
    "status": "ambiguous",
@@ -41236,14 +41243,6 @@
    "branch": "main",
    "digest": "sha256:b0d27e2e2ee1c664db8c299e518c42e07068b76c1d77b63732f36a2c1a3149d6",
    "checked_at": "2026-11-16T16:17:55+00:00"
-  },
-  "ugslo2av-abizbg6yapnogydke0ohdzlhgqlsxpz0wq": {
-   "status": "upstream_changed",
-   "archive_path": "devops/kubernetes-service-manager/SKILL.md",
-   "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-   "branch": "main",
-   "digest": "sha256:ae606c8e3998f65985f2482f85a385f70fac8d314ccea8e76b265fc8f2794887",
-   "checked_at": "2026-11-14T17:14:23+00:00"
   },
   "ugwj2r088ftwuxjzu4g3fio0bnczu0-cc6aeck2t-ue": {
    "status": "bundled_files",
@@ -41386,7 +41385,7 @@
    "repo": "tdryhf/oo",
    "branch": "main",
    "digest": "sha256:46bdb08fee2dded38b6ba0a051230a502d6ac6e4044afd47592cb40c256028b5",
-   "checked_at": "2026-11-12T10:58:59+00:00",
+   "checked_at": "2026-11-20T07:03:25+00:00",
    "commit": "bb1ec818004926eefa087c823ee6ba4cfd2f476f",
    "name": "stitch-design-taste",
    "description": "Semantic Design System Skill for Google Stitch. Generates agent-friendly DESIGN.md files that enforce premium, anti-generic UI standards — strict typography, calibrated color, asymmetric layouts, perpetual micro-motion, and hardware-accelerated performance."
@@ -41531,7 +41530,7 @@
    "repo": "ntanduy25/ai-careerguide_2",
    "branch": "main",
    "digest": "sha256:fab3474f7b11ef9f41092cc722b1d64c2080c117e2225644548de2ddba99c2ce",
-   "checked_at": "2026-11-12T10:58:59+00:00"
+   "checked_at": "2026-11-20T07:03:25+00:00"
   },
   "unsx8dsnf2kx-xc_h1z49ls2qt0zsbiobaembnojvmi": {
    "status": "ambiguous",
@@ -41781,14 +41780,6 @@
    "branch": "main",
    "digest": "sha256:3b6d4864bae49dd3d60e7f6218e0de0803633989d68bdcf093a3771307387ac2",
    "checked_at": "2026-11-19T04:05:35+00:00"
-  },
-  "urqoxswnyxixbu837p7g8ernjnq8ztxvlx0wz-ghsds": {
-   "status": "upstream_changed",
-   "archive_path": "security/kubernetes-security-policies/SKILL.md",
-   "repo": "NickCrew/claude-cortex",
-   "branch": "main",
-   "digest": "sha256:d161d94a3a0b9fe4a78657fdf6e30af6e4bd52fc61c7c6d4f8852d01ae67328e",
-   "checked_at": "2026-11-14T17:14:23+00:00"
   },
   "ursje8z_hu2j66iqnvqnymarfo6qpohd9exqsuf6s_w": {
    "status": "bundled_files",
@@ -42049,8 +42040,8 @@
    "repo": "ntanduy25/ai-careerguide_2",
    "branch": "main",
    "digest": "sha256:416c7eb9229554a1ef113bbb873ff0b260a2ad9ae6e6075a75c375955d3fcf6f",
-   "checked_at": "2026-11-12T10:58:59+00:00",
-   "commit": "526d119dd7e2996693f00930a96d028199ee712c",
+   "checked_at": "2026-11-20T07:03:25+00:00",
+   "commit": "f0a8bef7833cdfacc5e1e8d3911465fb489815aa",
    "name": "code-tour",
    "description": "Create CodeTour `.tour` files — persona-targeted, step-by-step walkthroughs with real file and line anchors. Use for onboarding tours, architecture walkthroughs, PR tours, RCA tours, and structured \"explain how this works\" requests. Use when the user asks for a code tour, onboarding walkthrough, PR tour, or an explanation of how a subsystem works."
   },
@@ -42345,18 +42336,6 @@
    "branch": "main",
    "digest": "sha256:3a3577e78544216783cd5aadf0cfa8c5b0c7539934d139d87dc964bb8a076a95",
    "checked_at": "2026-11-14T17:14:23+00:00"
-  },
-  "v47u_a-xbvpheyvzdot2c_to137_ndrorh3nyojeooc": {
-   "status": "pinned",
-   "path": "harness/skills/kustomize/SKILL.md",
-   "archive_path": "devops/kustomize-aeroalgo-dev-hub/SKILL.md",
-   "repo": "aeroalgo/dev-hub",
-   "branch": "master",
-   "digest": "sha256:47b7a56e0f50ae7be2ee3bd7ebce8cf046d784e2c16f86d9bbed346ff7243399",
-   "checked_at": "2026-11-14T17:14:23+00:00",
-   "commit": "6afd82404843540f5a44d929a8738661d4ee1a46",
-   "name": "kustomize",
-   "description": "Customize Kubernetes manifests without templating using Kustomize. Create base configurations with environment overlays, manage configuration variants, and patch resources declaratively. Use when managing Kubernetes configurations across multiple environments without Helm."
   },
   "v4e4cgjlsqxvwge4w4ph3pyu-c2swdly1nguem1-i1i": {
    "status": "ambiguous",
@@ -42834,7 +42813,7 @@
    "repo": "sergiovazquezdml/Base-de-datos-aluminio",
    "branch": "main",
    "digest": "sha256:56ca1a929b7bc360d42f66324a4e735f44b5ac913c9e43bc70a5b16d68b04d61",
-   "checked_at": "2026-11-12T10:58:59+00:00",
+   "checked_at": "2026-11-20T07:03:25+00:00",
    "commit": "5ded9856961c0c73ad69caa6ab5e37de0325e9f1",
    "name": "lookdev",
    "description": "Human-in-the-loop web studio to tune AI-generated output by eye. Stand up a local interactive studio (sliders, pickers, drag handles) or an inline edit/highlight/comment annotation studio for prose & media, instead of guessing values or shipping a static comparison grid."
@@ -43098,7 +43077,7 @@
    "repo": "tdryhf/oo",
    "branch": "main",
    "digest": "sha256:39f3ee185b3aa2cf70a689052ff078953ce7ba5915ed7a9391d232e9d4dcf57f",
-   "checked_at": "2026-11-12T10:58:59+00:00",
+   "checked_at": "2026-11-20T07:03:25+00:00",
    "commit": "bb1ec818004926eefa087c823ee6ba4cfd2f476f",
    "name": "ask-sonner",
    "description": "Guide to Sonner, the React toast library — install and wire up the Toaster, pick the right toast() call, promise and loading toasts, updating, dismissing and persisting toasts, styling, theming and icons, positioning and multiple toasters. Use when working with Sonner or troubleshooting it — toasts that don't appear, appear twice, lose their styles, ignore Tailwind classes, sit behind a modal, or don't follow dark mode."
@@ -43593,7 +43572,7 @@
    "repo": "sergiovazquezdml/Base-de-datos-aluminio",
    "branch": "main",
    "digest": "sha256:09277b8d3a340739a757af04d0a97b6d8257f1caa6a7a395a1642a9d393c53aa",
-   "checked_at": "2026-11-12T10:58:59+00:00",
+   "checked_at": "2026-11-20T07:03:25+00:00",
    "commit": "5ded9856961c0c73ad69caa6ab5e37de0325e9f1",
    "name": "lemmaly",
    "description": "Algorithm-first discipline: state Big-O, data structure, and algorithm family BEFORE writing loops, queries, or recursion. Catches O(n^2), N+1, and brute-force defaults."
@@ -43668,7 +43647,7 @@
    "repo": "seafeetstarken/antigravity-awesome-skills",
    "branch": "main",
    "digest": "sha256:906c0859e7ba7b7464b81038e67cef568c2ea9ab86f300d3804a62c9215f2f58",
-   "checked_at": "2026-11-12T10:58:59+00:00"
+   "checked_at": "2026-11-20T07:03:25+00:00"
   },
   "vvxhtwkfiw_emc2xlwvk_e3_4t9lwwynkqv6z5kel-a": {
    "status": "ambiguous",
@@ -44016,7 +43995,7 @@
    "repo": "prabaharshyam/xplaind",
    "branch": "main",
    "digest": "sha256:e3e2d3b70e2f7096a0d4d259f77efd1960896930843d62407ccb690aa23f909f",
-   "checked_at": "2026-11-12T10:58:59+00:00"
+   "checked_at": "2026-11-20T07:03:25+00:00"
   },
   "w2lw6mwl4oqzhff1ryqb0x4idd6unibbf_shfpus0cu": {
    "status": "bundled_files",
@@ -44555,7 +44534,7 @@
    "repo": "tdryhf/oo",
    "branch": "main",
    "digest": "sha256:7432a1d9ebdd42b27666da8458af252edf549f723fb14bcd4791425103930310",
-   "checked_at": "2026-11-12T10:58:59+00:00",
+   "checked_at": "2026-11-20T07:03:25+00:00",
    "commit": "bb1ec818004926eefa087c823ee6ba4cfd2f476f",
    "name": "stop-slop",
    "description": "Remove AI writing patterns from prose. Use when drafting, editing, or reviewing text to eliminate predictable AI tells."
@@ -46133,6 +46112,18 @@
    "digest": "sha256:271e77e4c2e518edffb87e29beb6d2dafc581e274aac25ddadac2309af2b3ddd",
    "checked_at": "2026-11-16T16:17:55+00:00"
   },
+  "xj9aix2-7tnvsdwwd6ah4e5088jzcqiabpfz7kktrdc": {
+   "status": "pinned",
+   "path": "skills/firecrawl-search/SKILL.md",
+   "archive_path": "documents/firecrawl-search-wanshuiyin-auto-claude-code-res/SKILL.md",
+   "repo": "wanshuiyin/Auto-claude-code-research-in-sleep",
+   "branch": "main",
+   "digest": "sha256:927f66090591c44daa6da6cc3cf7547bd8a305aba02694fb9ecbc4046dcfe19a",
+   "checked_at": "2026-11-20T07:03:25+00:00",
+   "commit": "4ba94ae2a1c1fbbb14858750dd8764cabf6c28bd",
+   "name": "firecrawl-search",
+   "description": "Web search and page scraping via Firecrawl, returning full-page markdown. Use when user says \"firecrawl search\", \"firecrawl scrape\" or \"/firecrawl-search\"."
+  },
   "xjjtqd5vekzbx2gnbbmkh78x-tu5xvtncsgkh4qvm1e": {
    "status": "pinned",
    "path": ".claude/skills/aidlc-market-research/SKILL.md",
@@ -46450,7 +46441,7 @@
    "repo": "tdryhf/oo",
    "branch": "main",
    "digest": "sha256:9a01a91701e6563c67677dde6b66ab30f066a5341d42c21a90ba51d99679274a",
-   "checked_at": "2026-11-12T10:58:59+00:00",
+   "checked_at": "2026-11-20T07:03:25+00:00",
    "commit": "bb1ec818004926eefa087c823ee6ba4cfd2f476f",
    "name": "animate-expo",
    "description": "Build animations in React Native and Expo, making the decisions in the order that determines whether they feel right — should it animate, which thread it runs on, which properties, spring or timing, how the gesture hands off, how it degrades. Writes the implementation with Reanimated, Gesture Handler, Expo Router and expo-haptics. Use when animating anything in an Expo app, adding gestures, sheets, screen transitions, press feedback or haptics, or fixing motion that stutters on device. For web animation use `animate`."
@@ -47872,6 +47863,14 @@
    "digest": "sha256:7947f49681dd4107f2795a6e33e9ea36a187e65bc3addf5a24be094b1efee2e3",
    "checked_at": "2026-11-14T17:14:23+00:00"
   },
+  "yr28ca66ksqcz0m3heftcv3kz0ewjk3id--flyl3toi": {
+   "status": "tree_truncated",
+   "archive_path": "development/arxiv-lisresearchgroup-math-rsi/SKILL.md",
+   "repo": "lisresearchgroup/math-rsi",
+   "branch": "main",
+   "digest": "sha256:f984dc04545e7cab0781fc518e9bc7ed5121175cac15a53707e8fc5bbd97c95f",
+   "checked_at": "2026-11-20T07:03:25+00:00"
+  },
   "yr6xhmgxfqhyfatjtoi0v_ksoczevdhywsp4p4azvx0": {
    "status": "upstream_changed",
    "archive_path": "data/contact-hunter/SKILL.md",
@@ -47927,7 +47926,7 @@
    "repo": "tdryhf/oo",
    "branch": "main",
    "digest": "sha256:59469635bbbd21acddbc664d95e8d97147f454b2d8f4a0a89c7d2c5afbe67577",
-   "checked_at": "2026-11-12T10:58:59+00:00",
+   "checked_at": "2026-11-20T07:03:25+00:00",
    "commit": "bb1ec818004926eefa087c823ee6ba4cfd2f476f",
    "name": "hallmark",
    "description": "Anti-AI-slop design skill for greenfield pages, audits, redesigns, and design extraction from URLs or screenshots. Use when the user asks to build a new app or landing page, wants to redesign something, invokes Hallmark by name, or uses audit/redesign/study."
@@ -48190,7 +48189,7 @@
    "repo": "prabaharshyam/xplaind",
    "branch": "main",
    "digest": "sha256:ee5b1ace6f0d112f7c20e80c9b6c34957fe0c1bd48e2bd7c6e238fde26b654ac",
-   "checked_at": "2026-11-12T10:58:59+00:00"
+   "checked_at": "2026-11-20T07:03:25+00:00"
   },
   "ywsb-8cd2ib_2arbbl2u92tcw0ammh-mybhmnt1bflk": {
    "status": "ambiguous",
@@ -49154,7 +49153,7 @@
    "repo": "prabaharshyam/xplaind",
    "branch": "main",
    "digest": "sha256:ef1e404eb8f5d0a5fcc44a9e4207faec3c121ff663c12c3442a585844acae01c",
-   "checked_at": "2026-11-12T10:58:59+00:00"
+   "checked_at": "2026-11-20T07:03:25+00:00"
   },
   "zkduo108gqhi1qpk-ts9aif54wpdw6zam2gpdkridvo": {
    "status": "pinned",

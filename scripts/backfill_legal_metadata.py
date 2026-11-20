@@ -152,7 +152,8 @@ def should_refetch_cached_license(result: dict[str, str]) -> bool:
 def is_transient_license_result(result: dict[str, str]) -> bool:
     """Return True for fetch failures that should not be persisted across runs."""
     error = str(result.get("error") or "")
-    return error.startswith("fetch_error:") or error == "fetch_failed"
+    # GitHub can use 403 for a rate limit or missing token access.
+    return error.startswith("fetch_error:") or error in {"fetch_failed", "http_403"}
 
 
 def durable_license_cache(cache: dict[str, dict[str, str]]) -> dict[str, dict[str, str]]:

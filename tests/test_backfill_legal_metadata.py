@@ -5,6 +5,8 @@ import sys
 import urllib.error
 from pathlib import Path
 
+import pytest
+
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPTS_DIR = ROOT / "scripts"
 if str(SCRIPTS_DIR) not in sys.path:
@@ -226,9 +228,11 @@ def test_durable_license_cache_excludes_transient_fetch_errors():
     assert module.durable_license_cache(cache) == {"owner/durable": cache["owner/durable"]}
 
 
+@pytest.mark.parametrize("error", ["fetch_error:tls eof", "http_403"])
 def test_main_keeps_transient_fetch_failure_stable_but_not_persisted(
     tmp_path,
     monkeypatch,
+    error,
 ):
     module = load_module()
     first_metadata = tmp_path / "skills" / "development" / "demo-a" / "metadata.json"
@@ -236,6 +240,10 @@ def test_main_keeps_transient_fetch_failure_stable_but_not_persisted(
     write_metadata(first_metadata)
     write_metadata(second_metadata)
     cache_path = tmp_path / "cache.json"
+    cache_path.write_text(
+        json.dumps({"owner/repo": {"license": "NOASSERTION", "copyright": "", "error": error}}),
+        encoding="utf-8",
+    )
     calls = []
 
     def fetch_repo_license(repo, *args, **kwargs):
@@ -243,7 +251,7 @@ def test_main_keeps_transient_fetch_failure_stable_but_not_persisted(
         return {
             "license": "NOASSERTION",
             "copyright": "",
-            "error": "fetch_error:tls eof",
+            "error": error,
         }
 
     monkeypatch.chdir(tmp_path)

@@ -1,7 +1,7 @@
 {
-  "discovered_at": "2026-11-20T06:33:13.582337Z",
+  "discovered_at": "2026-11-21T06:26:57.775255Z",
   "total_repos": 300,
-  "total_skills": 145,
+  "total_skills": 36,
   "scanned_repos": 300,
   "limits": {
     "max_repos": 300,
@@ -55,9 +55,9 @@
     "JuneYaooo/teacher-to-skills",
     "JuneYaooo/xhs-writer-skill",
     "K-Dense-AI/scientific-agent-skills",
-    "KadenMc/work-buddy",
     "Kaelio/ktx",
     "Klotzkette/claude-fuer-deutsches-recht",
+    "Leonxlnx/cinetic",
     "LukasNiessen/terrashark",
     "MIKOTOKAWAII25/local-ai-code-assistant",
     "Mahanaicoach/google-maps-scraper-kit",
@@ -213,6 +213,7 @@
     "kharmanskyi/open-steps",
     "khendzel/skills-janitor",
     "kishormorol/cli-faq-shortcuts",
+    "kjagsadvisors/keeran.ai",
     "kromahlusenii-ops/ham",
     "latent-spaces/brag",
     "levi-qiao/longgraph-skill",
@@ -231,7 +232,6 @@
     "michael-denyer/pstack-claude",
     "michtio/craftcms-claude-skills",
     "microsoft/power-platform-skills",
-    "minsight-ai-info/AI-Search-Hub",
     "mliu98/awesome-human-distillation",
     "mohitagw15856/pm-claude-skills",
     "morganlinton/BeautifulRust",
@@ -314,584 +314,148 @@
   ],
   "skills": [
     {
-      "repo": "JimLiu/baoyu-skills",
-      "path": "skills/baoyu-podcast-summary/SKILL.md"
+      "repo": "Jeffallan/claude-skills",
+      "path": "skills/nuxt-expert/SKILL.md"
     },
     {
-      "repo": "dembrandt/dembrandt-skills",
-      "path": "directory/skills/app-shell/SKILL.md"
+      "repo": "Jeffallan/claude-skills",
+      "path": "skills/flask-expert/SKILL.md"
     },
     {
-      "repo": "dembrandt/dembrandt-skills",
-      "path": "directory/skills/dembrandt/SKILL.md"
+      "repo": "Jeffallan/claude-skills",
+      "path": "skills/firebase-expert/SKILL.md"
     },
     {
-      "repo": "dembrandt/dembrandt-skills",
-      "path": "directory/skills/ui-density/SKILL.md"
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "path": "aktenanleger/skills/akte-anlegen/SKILL.md"
     },
     {
-      "repo": "dembrandt/dembrandt-skills",
-      "path": "directory/skills/form-design/SKILL.md"
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "path": "aktenanleger/skills/amt-oder-mandat-klaeren/SKILL.md"
     },
     {
-      "repo": "dembrandt/dembrandt-skills",
-      "path": "directory/skills/scroll-areas/SKILL.md"
+      "repo": "bitwize-music-studio/claude-ai-music-skills",
+      "path": "skills/lyric-video/SKILL.md"
     },
     {
-      "repo": "dembrandt/dembrandt-skills",
-      "path": "directory/skills/sizing-units/SKILL.md"
+      "repo": "bitwize-music-studio/claude-ai-music-skills",
+      "path": "skills/music-video/SKILL.md"
     },
     {
-      "repo": "dembrandt/dembrandt-skills",
-      "path": "directory/skills/clone-website/SKILL.md"
+      "repo": "kjagsadvisors/keeran.ai",
+      "path": "link-edit/SKILL.md"
     },
     {
-      "repo": "dembrandt/dembrandt-skills",
-      "path": "directory/skills/button-states/SKILL.md"
+      "repo": "kjagsadvisors/keeran.ai",
+      "path": "match-frame/SKILL.md"
     },
     {
-      "repo": "dembrandt/dembrandt-skills",
-      "path": "directory/skills/extract-design/SKILL.md"
+      "repo": "kjagsadvisors/keeran.ai",
+      "path": "in-this-town/SKILL.md"
     },
     {
-      "repo": "dembrandt/dembrandt-skills",
-      "path": "directory/skills/tab-navigation/SKILL.md"
+      "repo": "kjagsadvisors/keeran.ai",
+      "path": "reverse-video/SKILL.md"
     },
     {
-      "repo": "dembrandt/dembrandt-skills",
-      "path": "directory/skills/micro-interactions/SKILL.md"
+      "repo": "kjagsadvisors/keeran.ai",
+      "path": "reverse-growth/SKILL.md"
     },
     {
-      "repo": "dembrandt/dembrandt-skills",
-      "path": "directory/skills/surface-separation/SKILL.md"
+      "repo": "kjagsadvisors/keeran.ai",
+      "path": "rank-your-name/SKILL.md"
     },
     {
-      "repo": "dembrandt/dembrandt-skills",
-      "path": "directory/skills/wcag-accessibility/SKILL.md"
+      "repo": "kjagsadvisors/keeran.ai",
+      "path": "window-visualizer/SKILL.md"
     },
     {
-      "repo": "dembrandt/dembrandt-skills",
-      "path": "directory/skills/elevation-and-depth/SKILL.md"
+      "repo": "kjagsadvisors/keeran.ai",
+      "path": "hormozi-lead-magnet/SKILL.md"
     },
     {
-      "repo": "dembrandt/dembrandt-skills",
-      "path": "directory/skills/ui-context-and-scope/SKILL.md"
+      "repo": "motherduckdb/agent-skills",
+      "path": "plugins/motherduck-skills-copilot/skills/motherduck-cli/SKILL.md"
     },
     {
-      "repo": "dembrandt/dembrandt-skills",
-      "path": "directory/skills/real-world-metaphors/SKILL.md"
+      "repo": "motherduckdb/agent-skills",
+      "path": "plugins/motherduck-skills-copilot/skills/motherduck-query/SKILL.md"
     },
     {
-      "repo": "dembrandt/dembrandt-skills",
-      "path": "directory/skills/responsive-paradigms/SKILL.md"
+      "repo": "motherduckdb/agent-skills",
+      "path": "plugins/motherduck-skills-copilot/skills/motherduck-connect/SKILL.md"
     },
     {
-      "repo": "dembrandt/dembrandt-skills",
-      "path": "directory/skills/color-mode-and-theme/SKILL.md"
+      "repo": "motherduckdb/agent-skills",
+      "path": "plugins/motherduck-skills-copilot/skills/motherduck-explore/SKILL.md"
     },
     {
-      "repo": "dembrandt/dembrandt-skills",
-      "path": "directory/skills/brand-visual-language/SKILL.md"
+      "repo": "motherduckdb/agent-skills",
+      "path": "plugins/motherduck-skills-copilot/skills/motherduck-ducklake/SKILL.md"
     },
     {
-      "repo": "dembrandt/dembrandt-skills",
-      "path": "directory/skills/semantic-html-and-seo/SKILL.md"
+      "repo": "motherduckdb/agent-skills",
+      "path": "plugins/motherduck-skills-copilot/skills/motherduck-rest-api/SKILL.md"
     },
     {
-      "repo": "dembrandt/dembrandt-skills",
-      "path": "directory/skills/generate-ui-from-brand/SKILL.md"
+      "repo": "motherduckdb/agent-skills",
+      "path": "plugins/motherduck-skills-copilot/skills/motherduck-load-data/SKILL.md"
     },
     {
-      "repo": "dembrandt/dembrandt-skills",
-      "path": "directory/skills/coordinated-data-views/SKILL.md"
+      "repo": "motherduckdb/agent-skills",
+      "path": "plugins/motherduck-skills-copilot/skills/motherduck-duckdb-sql/SKILL.md"
     },
     {
-      "repo": "dembrandt/dembrandt-skills",
-      "path": "directory/skills/gestalt-ui-organisation/SKILL.md"
+      "repo": "motherduckdb/agent-skills",
+      "path": "plugins/motherduck-skills-copilot/skills/motherduck-share-data/SKILL.md"
     },
     {
-      "repo": "dembrandt/dembrandt-skills",
-      "path": "directory/skills/global-toolbar-controls/SKILL.md"
+      "repo": "motherduckdb/agent-skills",
+      "path": "plugins/motherduck-skills-copilot/skills/motherduck-model-data/SKILL.md"
     },
     {
-      "repo": "dembrandt/dembrandt-skills",
-      "path": "directory/skills/motion-and-storytelling/SKILL.md"
+      "repo": "motherduckdb/agent-skills",
+      "path": "plugins/motherduck-skills-copilot/skills/motherduck-create-dive/SKILL.md"
     },
     {
-      "repo": "dembrandt/dembrandt-skills",
-      "path": "directory/skills/information-architecture/SKILL.md"
+      "repo": "motherduckdb/agent-skills",
+      "path": "plugins/motherduck-skills-copilot/skills/motherduck-pricing-roi/SKILL.md"
     },
     {
-      "repo": "dembrandt/dembrandt-skills",
-      "path": "directory/skills/modular-scale-typography/SKILL.md"
+      "repo": "motherduckdb/agent-skills",
+      "path": "plugins/motherduck-skills-copilot/skills/motherduck-create-flight/SKILL.md"
     },
     {
-      "repo": "dembrandt/dembrandt-skills",
-      "path": "directory/skills/status-colors-and-errors/SKILL.md"
+      "repo": "motherduckdb/agent-skills",
+      "path": "plugins/motherduck-skills-copilot/skills/motherduck-manage-guides/SKILL.md"
     },
     {
-      "repo": "dembrandt/dembrandt-skills",
-      "path": "directory/skills/sticky-and-fixed-elements/SKILL.md"
+      "repo": "motherduckdb/agent-skills",
+      "path": "plugins/motherduck-skills-copilot/skills/motherduck-build-cfa-app/SKILL.md"
     },
     {
-      "repo": "dembrandt/dembrandt-skills",
-      "path": "directory/skills/algorithmic-color-palette/SKILL.md"
+      "repo": "motherduckdb/agent-skills",
+      "path": "plugins/motherduck-skills-copilot/skills/motherduck-build-dashboard/SKILL.md"
     },
     {
-      "repo": "dembrandt/dembrandt-skills",
-      "path": "directory/skills/data-display-and-selection/SKILL.md"
+      "repo": "motherduckdb/agent-skills",
+      "path": "plugins/motherduck-skills-copilot/skills/motherduck-partner-delivery/SKILL.md"
     },
     {
-      "repo": "dembrandt/dembrandt-skills",
-      "path": "directory/skills/notifications-and-recovery/SKILL.md"
+      "repo": "motherduckdb/agent-skills",
+      "path": "plugins/motherduck-skills-copilot/skills/motherduck-build-data-pipeline/SKILL.md"
     },
     {
-      "repo": "dembrandt/dembrandt-skills",
-      "path": "directory/skills/performance-and-web-vitals/SKILL.md"
+      "repo": "motherduckdb/agent-skills",
+      "path": "plugins/motherduck-skills-copilot/skills/motherduck-security-governance/SKILL.md"
     },
     {
-      "repo": "dembrandt/dembrandt-skills",
-      "path": "directory/skills/operational-expert-tool-ui/SKILL.md"
+      "repo": "motherduckdb/agent-skills",
+      "path": "plugins/motherduck-skills-copilot/skills/motherduck-migrate-to-motherduck/SKILL.md"
     },
     {
-      "repo": "dembrandt/dembrandt-skills",
-      "path": "directory/skills/modal-and-overlay-patterns/SKILL.md"
-    },
-    {
-      "repo": "dembrandt/dembrandt-skills",
-      "path": "directory/skills/marketing-vs-product-system/SKILL.md"
-    },
-    {
-      "repo": "dembrandt/dembrandt-skills",
-      "path": "directory/skills/user-flows-and-guided-paths/SKILL.md"
-    },
-    {
-      "repo": "dembrandt/dembrandt-skills",
-      "path": "directory/skills/domain-expert-configuration/SKILL.md"
-    },
-    {
-      "repo": "dembrandt/dembrandt-skills",
-      "path": "directory/skills/nielsen-usability-heuristics/SKILL.md"
-    },
-    {
-      "repo": "dembrandt/dembrandt-skills",
-      "path": "directory/skills/repeated-component-alignment/SKILL.md"
-    },
-    {
-      "repo": "dembrandt/dembrandt-skills",
-      "path": "directory/skills/component-family-consistency/SKILL.md"
-    },
-    {
-      "repo": "dembrandt/dembrandt-skills",
-      "path": "directory/skills/visual-emphasis-and-hierarchy/SKILL.md"
-    },
-    {
-      "repo": "dembrandt/dembrandt-skills",
-      "path": "directory/skills/layout-paradigms-and-consistency/SKILL.md"
-    },
-    {
-      "repo": "dembrandt/dembrandt-skills",
-      "path": "directory/skills/authentic-product-representation/SKILL.md"
-    },
-    {
-      "repo": "dembrandt/dembrandt-skills",
-      "path": "directory/skills/loading-states-and-perceived-performance/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/arxiv/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/deepxiv/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/openalex/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/alphaxiv/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/exa-search/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/meta-apply/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/wiki-enrich/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/render-html/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/research-lit/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/proof-writer/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/paper-compile/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/mathrsi-prove/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/gemini-search/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/research-wiki/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/meta-optimize/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/novelty-check/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/proof-checker/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/citation-audit/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/training-check/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/system-profile/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/mathrsi-verify/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/lean-formalize/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/mathrsi-survey/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/mathrsi-specify/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/mathrsi-prepare/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/keenable-search/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/research-review/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/analyze-results/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/result-to-claim/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/mathrsi-handoff/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/firecrawl-search/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/web-debug-search/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/mathrsi-research/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/mathrsi-assemble/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/semantic-scholar/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/paper-claim-audit/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "plugins/ecc/skills/mathrsi-ecc/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/proof-orchestrator/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/skills-codex/arxiv/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/mathrsi-route-loop/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/formula-derivation/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/mathrsi-meta-evolve/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/citation-crosscheck/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/skills-codex/deepxiv/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/skills-codex/alphaxiv/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/skills-codex/openalex/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "plugins/ecc/skills/ecc-certificate/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/skills-codex/meta-apply/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/skills-codex/exa-search/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/skills-codex/wiki-enrich/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/skills-codex/render-html/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/skills-codex/proof-writer/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/skills-codex/research-lit/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/skills-codex/paper-compile/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/skills-codex/proof-checker/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/skills-codex/meta-optimize/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/skills-codex/novelty-check/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/skills-codex/gemini-search/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/skills-codex/research-wiki/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/skills-codex/training-check/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/skills-codex/system-profile/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/skills-codex/citation-audit/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/skills-codex/lean-formalize/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/skills-codex/keenable-search/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/skills-codex/result-to-claim/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/skills-codex/analyze-results/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/skills-codex/research-review/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/skills-codex/web-debug-search/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/skills-codex/auto-review-loop/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/skills-codex/semantic-scholar/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/skills-codex/firecrawl-search/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/skills-codex/paper-claim-audit/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "plugins/propertyb/skills/mathrsi-propertyb/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/skills-codex/proof-orchestrator/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/skills-codex/formula-derivation/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "base/skills/skills-codex/citation-crosscheck/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "plugins/propertyb/skills/propertyb-bound-lab/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "plugins/propertyb/skills/propertyb-literature/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "plugins/propertyb/skills/propertyb-certificate/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "plugins/degree-diameter/skills/dd-construction/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "plugins/happy-ending/skills/mathrsi-happy-ending/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "plugins/degree-diameter/skills/dd-transfer-diagnosis/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "plugins/happy-ending/skills/happy-ending-certificate/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "plugins/degree-diameter/skills/mathrsi-degree-diameter/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "plugins/degree-diameter/skills/dd-obstruction-certificate/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "plugins/hypercube-extremal/skills/mathrsi-hypercube-extremal/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "plugins/hypercube-hamilton/skills/mathrsi-hypercube-hamilton/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "plugins/degree-diameter/archive/dd-latest-two-parameters-20261116/framework_snapshot/base/skills/mathrsi-research/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "plugins/degree-diameter/archive/dd-latest-two-parameters-20261116/framework_snapshot/base/skills/mathrsi-route-loop/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "plugins/propertyb/knowledge/archive/context/skill-evaluation/lean-formalize/local-install-20261007/before/codex/proof-writer/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "plugins/propertyb/knowledge/archive/context/skill-evaluation/lean-formalize/local-install-20261007/before/claude/proof-writer/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "plugins/propertyb/knowledge/archive/context/skill-evaluation/lean-formalize/local-install-20261007/before/codex/proof-checker/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "plugins/propertyb/knowledge/archive/context/skill-evaluation/lean-formalize/local-install-20261007/before/claude/proof-checker/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "plugins/propertyb/knowledge/archive/context/skill-evaluation/lean-formalize/cross-model-r2/input/aris-skill-drafts/lean-formalize/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "plugins/propertyb/knowledge/archive/context/skill-evaluation/lean-formalize/cross-model-r1/input/aris-skill-drafts/lean-formalize/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "plugins/propertyb/knowledge/archive/context/skill-evaluation/lean-formalize/local-install-20261007/before/codex/research-pipeline/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "plugins/propertyb/knowledge/archive/context/skill-evaluation/lean-formalize/local-install-20261007/before/codex/proof-orchestrator/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "plugins/propertyb/knowledge/archive/context/skill-evaluation/lean-formalize/local-install-20261007/before/codex/formula-derivation/SKILL.md"
-    },
-    {
-      "repo": "lisresearchgroup/math-rsi",
-      "path": "plugins/propertyb/knowledge/archive/context/skill-evaluation/lean-formalize/local-install-20261007/before/claude/research-pipeline/SKILL.md"
+      "repo": "motherduckdb/agent-skills",
+      "path": "plugins/motherduck-skills-copilot/skills/motherduck-enable-self-serve-analytics/SKILL.md"
     }
   ]
 }

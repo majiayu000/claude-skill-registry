@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-21T07:23:52.664374Z",
-  "archive_skill_md_count_raw": 73781,
-  "archive_metadata_count_raw": 377740,
-  "indexed_skill_count_scan_shape": 334258,
-  "registry_skill_count_dedup": 333828,
+  "updated_at": "2026-11-22T06:18:06.309275Z",
+  "archive_skill_md_count_raw": 73788,
+  "archive_metadata_count_raw": 377747,
+  "indexed_skill_count_scan_shape": 334265,
+  "registry_skill_count_dedup": 333835,
   "total_plugins": 5,
   "categories": 40,
   "category_counts": [
@@ -36,7 +36,7 @@
     {
       "name": "bash",
       "code": "bash",
-      "count": 10303
+      "count": 10304
     },
     {
       "name": "business",
@@ -76,7 +76,7 @@
     {
       "name": "development",
       "code": "dev",
-      "count": 52889
+      "count": 52890
     },
     {
       "name": "devops",
@@ -141,7 +141,7 @@
     {
       "name": "other",
       "code": "oth",
-      "count": 88036
+      "count": 88041
     },
     {
       "name": "performance",
@@ -246,7 +246,7 @@
     },
     {
       "repo": "sickn33/agentic-awesome-skills",
-      "count": 924
+      "count": 925
     },
     {
       "repo": "aiskillstore/marketplace",
@@ -254,7 +254,7 @@
     }
   ],
   "featured_count": 100,
-  "independent_skill_count": 211673,
+  "independent_skill_count": 211680,
   "static_skill_page_count": 5800,
   "asset_state_counts": {
     "verified": 54
@@ -263,36 +263,36 @@
     "live": 52
   },
   "index_size_bytes": 324,
-  "index_size_gzip_bytes": 212,
+  "index_size_gzip_bytes": 211,
   "search_shard_count": 14,
-  "search_largest_shard_bytes": 8388679,
+  "search_largest_shard_bytes": 8388685,
   "search_largest_shard_gzip_bytes": 1923768,
   "category_shard_count": 66,
-  "category_largest_part_bytes": 8388749,
-  "category_largest_part_gzip_bytes": 1980410,
-  "lite_index_count": 334258,
+  "category_largest_part_bytes": 8388734,
+  "category_largest_part_gzip_bytes": 1980409,
+  "lite_index_count": 334265,
   "lite_index_included_count": 5000,
   "lite_index_size_bytes": 4261856,
-  "lite_index_gzip_size_bytes": 817472,
+  "lite_index_gzip_size_bytes": 817471,
   "quality_index_size_bytes": 364,
   "quality_index_gzip_size_bytes": 238,
   "quality_shard_count": 12,
-  "quality_largest_shard_bytes": 8388710,
-  "quality_largest_shard_gzip_bytes": 1550676,
+  "quality_largest_shard_bytes": 8388707,
+  "quality_largest_shard_gzip_bytes": 1550729,
   "security_index_size_bytes": 368,
-  "security_index_gzip_size_bytes": 238,
+  "security_index_gzip_size_bytes": 237,
   "security_shard_count": 16,
-  "security_largest_shard_bytes": 8388708,
-  "security_largest_shard_gzip_bytes": 1983439,
+  "security_largest_shard_bytes": 8388721,
+  "security_largest_shard_gzip_bytes": 1983316,
   "ranking_index_size_bytes": 364,
   "ranking_index_gzip_size_bytes": 238,
   "ranking_shard_count": 10,
-  "ranking_largest_shard_bytes": 8388702,
-  "ranking_largest_shard_gzip_bytes": 1760202,
+  "ranking_largest_shard_bytes": 8388717,
+  "ranking_largest_shard_gzip_bytes": 1760221,
   "largest_generated_file_bytes": 10410733,
   "security_scan": {
-    "total": 73779,
-    "passed": 73779,
+    "total": 73786,
+    "passed": 73786,
     "failed": 0
   }
 }

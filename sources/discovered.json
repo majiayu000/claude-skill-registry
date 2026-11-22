@@ -1,7 +1,7 @@
 {
-  "discovered_at": "2026-11-21T06:26:57.775255Z",
+  "discovered_at": "2026-11-22T05:59:00.323606Z",
   "total_repos": 300,
-  "total_skills": 36,
+  "total_skills": 7,
   "scanned_repos": 300,
   "limits": {
     "max_repos": 300,
@@ -30,6 +30,7 @@
     "DozenTwelve/Papermorph",
     "EL4CTEO/blender-skills",
     "Egonex-AI/Understand-Anything",
+    "EricJujianZou/rederive",
     "FRACerqueira/PromptPlus",
     "Frappucc1no/recall-loom",
     "GaZmagik/iso-24495",
@@ -47,6 +48,7 @@
     "JayPokale/Chisle",
     "JayantDevkar/claude-code-karma",
     "Jeffallan/claude-skills",
+    "JensHeitmann/rocket-fuel-skill",
     "JimLiu/baoyu-skills",
     "JuneYaooo/gpt-image2-ppt-skills",
     "JuneYaooo/nihaisha-nishi-tcm",
@@ -65,7 +67,6 @@
     "Natively-AI-assistant/natively-cluely-ai-assistant",
     "NevaMind-AI/memU",
     "NiazMorshed2007/reanimate",
-    "NulightJens/rocket-fuel-skill",
     "OneMoh/html-explainer",
     "OpenRaiser/NanoResearch",
     "Orchestra-Research/AI-Research-SKILLs",
@@ -159,7 +160,6 @@
     "coldteadotai/abide",
     "coldteadotai/pr-lens",
     "composio-community/awesome-claude-plugins",
-    "conorluddy/ios-simulator-skill",
     "coreyhaines31/marketingskills",
     "damionrashford/RivalSearchMCP",
     "davepoon/buildwithclaude",
@@ -314,148 +314,32 @@
   ],
   "skills": [
     {
-      "repo": "Jeffallan/claude-skills",
-      "path": "skills/nuxt-expert/SKILL.md"
+      "repo": "alirezarezvani/claude-skills",
+      "path": "video/skills/video-conform/SKILL.md"
     },
     {
-      "repo": "Jeffallan/claude-skills",
-      "path": "skills/flask-expert/SKILL.md"
+      "repo": "alirezarezvani/claude-skills",
+      "path": "video/skills/video-director/SKILL.md"
     },
     {
-      "repo": "Jeffallan/claude-skills",
-      "path": "skills/firebase-expert/SKILL.md"
+      "repo": "alirezarezvani/claude-skills",
+      "path": "video/skills/video-animatic/SKILL.md"
     },
     {
-      "repo": "Klotzkette/claude-fuer-deutsches-recht",
-      "path": "aktenanleger/skills/akte-anlegen/SKILL.md"
+      "repo": "alirezarezvani/claude-skills",
+      "path": "video/skills/video-beat-board/SKILL.md"
     },
     {
-      "repo": "Klotzkette/claude-fuer-deutsches-recht",
-      "path": "aktenanleger/skills/amt-oder-mandat-klaeren/SKILL.md"
+      "repo": "scenario-labs/skills",
+      "path": "skills/scenario-delete-restore/SKILL.md"
     },
     {
-      "repo": "bitwize-music-studio/claude-ai-music-skills",
-      "path": "skills/lyric-video/SKILL.md"
+      "repo": "sickn33/agentic-awesome-skills",
+      "path": "skills/linkdr/SKILL.md"
     },
     {
-      "repo": "bitwize-music-studio/claude-ai-music-skills",
-      "path": "skills/music-video/SKILL.md"
-    },
-    {
-      "repo": "kjagsadvisors/keeran.ai",
-      "path": "link-edit/SKILL.md"
-    },
-    {
-      "repo": "kjagsadvisors/keeran.ai",
-      "path": "match-frame/SKILL.md"
-    },
-    {
-      "repo": "kjagsadvisors/keeran.ai",
-      "path": "in-this-town/SKILL.md"
-    },
-    {
-      "repo": "kjagsadvisors/keeran.ai",
-      "path": "reverse-video/SKILL.md"
-    },
-    {
-      "repo": "kjagsadvisors/keeran.ai",
-      "path": "reverse-growth/SKILL.md"
-    },
-    {
-      "repo": "kjagsadvisors/keeran.ai",
-      "path": "rank-your-name/SKILL.md"
-    },
-    {
-      "repo": "kjagsadvisors/keeran.ai",
-      "path": "window-visualizer/SKILL.md"
-    },
-    {
-      "repo": "kjagsadvisors/keeran.ai",
-      "path": "hormozi-lead-magnet/SKILL.md"
-    },
-    {
-      "repo": "motherduckdb/agent-skills",
-      "path": "plugins/motherduck-skills-copilot/skills/motherduck-cli/SKILL.md"
-    },
-    {
-      "repo": "motherduckdb/agent-skills",
-      "path": "plugins/motherduck-skills-copilot/skills/motherduck-query/SKILL.md"
-    },
-    {
-      "repo": "motherduckdb/agent-skills",
-      "path": "plugins/motherduck-skills-copilot/skills/motherduck-connect/SKILL.md"
-    },
-    {
-      "repo": "motherduckdb/agent-skills",
-      "path": "plugins/motherduck-skills-copilot/skills/motherduck-explore/SKILL.md"
-    },
-    {
-      "repo": "motherduckdb/agent-skills",
-      "path": "plugins/motherduck-skills-copilot/skills/motherduck-ducklake/SKILL.md"
-    },
-    {
-      "repo": "motherduckdb/agent-skills",
-      "path": "plugins/motherduck-skills-copilot/skills/motherduck-rest-api/SKILL.md"
-    },
-    {
-      "repo": "motherduckdb/agent-skills",
-      "path": "plugins/motherduck-skills-copilot/skills/motherduck-load-data/SKILL.md"
-    },
-    {
-      "repo": "motherduckdb/agent-skills",
-      "path": "plugins/motherduck-skills-copilot/skills/motherduck-duckdb-sql/SKILL.md"
-    },
-    {
-      "repo": "motherduckdb/agent-skills",
-      "path": "plugins/motherduck-skills-copilot/skills/motherduck-share-data/SKILL.md"
-    },
-    {
-      "repo": "motherduckdb/agent-skills",
-      "path": "plugins/motherduck-skills-copilot/skills/motherduck-model-data/SKILL.md"
-    },
-    {
-      "repo": "motherduckdb/agent-skills",
-      "path": "plugins/motherduck-skills-copilot/skills/motherduck-create-dive/SKILL.md"
-    },
-    {
-      "repo": "motherduckdb/agent-skills",
-      "path": "plugins/motherduck-skills-copilot/skills/motherduck-pricing-roi/SKILL.md"
-    },
-    {
-      "repo": "motherduckdb/agent-skills",
-      "path": "plugins/motherduck-skills-copilot/skills/motherduck-create-flight/SKILL.md"
-    },
-    {
-      "repo": "motherduckdb/agent-skills",
-      "path": "plugins/motherduck-skills-copilot/skills/motherduck-manage-guides/SKILL.md"
-    },
-    {
-      "repo": "motherduckdb/agent-skills",
-      "path": "plugins/motherduck-skills-copilot/skills/motherduck-build-cfa-app/SKILL.md"
-    },
-    {
-      "repo": "motherduckdb/agent-skills",
-      "path": "plugins/motherduck-skills-copilot/skills/motherduck-build-dashboard/SKILL.md"
-    },
-    {
-      "repo": "motherduckdb/agent-skills",
-      "path": "plugins/motherduck-skills-copilot/skills/motherduck-partner-delivery/SKILL.md"
-    },
-    {
-      "repo": "motherduckdb/agent-skills",
-      "path": "plugins/motherduck-skills-copilot/skills/motherduck-build-data-pipeline/SKILL.md"
-    },
-    {
-      "repo": "motherduckdb/agent-skills",
-      "path": "plugins/motherduck-skills-copilot/skills/motherduck-security-governance/SKILL.md"
-    },
-    {
-      "repo": "motherduckdb/agent-skills",
-      "path": "plugins/motherduck-skills-copilot/skills/motherduck-migrate-to-motherduck/SKILL.md"
-    },
-    {
-      "repo": "motherduckdb/agent-skills",
-      "path": "plugins/motherduck-skills-copilot/skills/motherduck-enable-self-serve-analytics/SKILL.md"
+      "repo": "wondelai/skills",
+      "path": "harness-audit/SKILL.md"
     }
   ]
 }

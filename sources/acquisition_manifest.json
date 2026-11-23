@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updated_at": "2026-11-19T03:44:42.883750Z",
-  "total_count": 1744,
+  "updated_at": "2026-11-23T07:48:46.442072Z",
+  "total_count": 1746,
   "entries": {
     "Xquik-dev/x-twitter-scraper": {
       "repo": "Xquik-dev/x-twitter-scraper",
@@ -10459,15 +10459,27 @@
       "repo": "qrdxinc/qrdx",
       "branch": "main",
       "relative_path": "skills/generate-qr/SKILL.md",
-      "commit_sha": "ee6b82e4254cac29e4ed6a943dd018e0808915fb",
       "updated_at": "2026-11-19T03:44:32.956348Z"
     },
     "aaygan29/council-of-elrond:plugins/council-review/skills/council-review/SKILL.md": {
       "repo": "aaygan29/council-of-elrond",
       "branch": "main",
       "relative_path": "plugins/council-review/skills/council-review/SKILL.md",
-      "commit_sha": "f7a57fcf1c00d2b8ef13e637b5c5a47840fb0f44",
       "updated_at": "2026-11-19T03:44:33.297225Z"
+    },
+    "kochetkov-ma/brewpage-publish-plugins:skills/brewpage-publish/SKILL.md": {
+      "repo": "kochetkov-ma/brewpage-publish-plugins",
+      "branch": "main",
+      "relative_path": "skills/brewpage-publish/SKILL.md",
+      "commit_sha": "93ec9f13759cd4266eed4d232940a96dbd766ec4",
+      "updated_at": "2026-11-23T07:48:35.243395Z"
+    },
+    "questionpunk/research-skills:skills/survey-bias-check/SKILL.md": {
+      "repo": "questionpunk/research-skills",
+      "branch": "main",
+      "relative_path": "skills/survey-bias-check/SKILL.md",
+      "commit_sha": "668a5d0755adac02ef01c31d306c47b6d3d08f8f",
+      "updated_at": "2026-11-23T07:48:35.333013Z"
     }
   }
 }

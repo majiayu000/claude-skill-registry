@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-23T18:31:17.328208Z",
+  "updated_at": "2026-11-24T12:24:34.867253Z",
   "count": 100,
   "skills": [
     {
@@ -651,7 +651,7 @@
         "Claude Code"
       ],
       "canonical_id": "tgd-pouw1a1od652jwmfpfpdqcb3kucs_vhmxtxa3uq",
-      "copies": 12,
+      "copies": 13,
       "is_canonical": true
     },
     {
@@ -2021,7 +2021,7 @@
         "Claude Code"
       ],
       "canonical_id": "okcxnkqx-_ns9qlkunanovhytiafcj-oy8wvakjgo_4",
-      "copies": 27,
+      "copies": 28,
       "is_canonical": true,
       "u": "skills/docx-9942d5845041/"
     },
@@ -2083,7 +2083,7 @@
       "trust_score": 100,
       "compatible_agents": [],
       "canonical_id": "484erhznudvufrqwhskhgj7q8yjise4vkjwmubgltlq",
-      "copies": 2,
+      "copies": 3,
       "is_canonical": true,
       "u": "skills/mcp-builder-b8bb47777eee/"
     },
@@ -2114,7 +2114,7 @@
         "Claude Code"
       ],
       "canonical_id": "8awwjtnivdhk3b7vxjcn1hhhbl4m2izrn1cjgejhe4g",
-      "copies": 103,
+      "copies": 106,
       "is_canonical": true,
       "u": "skills/pdf-46fd5befeeda/"
     },
@@ -2177,7 +2177,7 @@
       "trust_score": 100,
       "compatible_agents": [],
       "canonical_id": "hkf1eajyj2nw8k800n3pum3d65eitqfmmxkoeq1ieds",
-      "copies": 119,
+      "copies": 120,
       "is_canonical": true,
       "u": "skills/webapp-testing-d77a2080404e/"
     },

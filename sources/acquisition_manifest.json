@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updated_at": "2026-11-23T07:48:46.442072Z",
-  "total_count": 1746,
+  "updated_at": "2026-11-24T10:36:40.201240Z",
+  "total_count": 1747,
   "entries": {
     "Xquik-dev/x-twitter-scraper": {
       "repo": "Xquik-dev/x-twitter-scraper",
@@ -10471,15 +10471,20 @@
       "repo": "kochetkov-ma/brewpage-publish-plugins",
       "branch": "main",
       "relative_path": "skills/brewpage-publish/SKILL.md",
-      "commit_sha": "93ec9f13759cd4266eed4d232940a96dbd766ec4",
       "updated_at": "2026-11-23T07:48:35.243395Z"
     },
     "questionpunk/research-skills:skills/survey-bias-check/SKILL.md": {
       "repo": "questionpunk/research-skills",
       "branch": "main",
       "relative_path": "skills/survey-bias-check/SKILL.md",
-      "commit_sha": "668a5d0755adac02ef01c31d306c47b6d3d08f8f",
       "updated_at": "2026-11-23T07:48:35.333013Z"
+    },
+    "jiangxingfan1-coder/Open-Agent-API:integrations/open-agent-api/SKILL.md": {
+      "repo": "jiangxingfan1-coder/Open-Agent-API",
+      "branch": "main",
+      "relative_path": "integrations/open-agent-api/SKILL.md",
+      "commit_sha": "82350d6d44b903bd0184fe8cc285de89612417e5",
+      "updated_at": "2026-11-24T10:36:29.375959Z"
     }
   }
 }

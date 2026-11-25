@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-25T09:43:22.425833Z",
+  "updated_at": "2026-11-25T10:35:25.946786Z",
   "count": 100,
   "skills": [
     {
@@ -2114,7 +2114,7 @@
         "Claude Code"
       ],
       "canonical_id": "8awwjtnivdhk3b7vxjcn1hhhbl4m2izrn1cjgejhe4g",
-      "copies": 106,
+      "copies": 108,
       "is_canonical": true,
       "u": "skills/pdf-46fd5befeeda/"
     },

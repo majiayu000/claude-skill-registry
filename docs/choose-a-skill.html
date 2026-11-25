@@ -38,20 +38,17 @@
 <p>For a document-editing example, Anthropic's skill lives at <a href="https://github.com/anthropics/skills/tree/main/skills/docx">anthropics/skills → skills/docx</a>. Read that directory's <a href="https://github.com/anthropics/skills/blob/main/skills/docx/LICENSE.txt">license</a> before reuse. Each third-party skill retains its own terms; the registry pipeline's MIT license does not relicense it.</p>
 <p class="aside">A scan signal records a check against content at a point in time. It does not guarantee safe behavior, current upstream contents or permission to redistribute. Unknown licenses require an upstream permission check.</p></section>
 <section id="install"><h2>3. Select the exact installation path</h2>
-<p>If you use <a href="https://github.com/majiayu000/claude-skill-manager">sk, the Claude Code skill manager</a>, review the source first, then install the exact subdirectory:</p>
-<pre class="cmd multi"><code>sk install anthropics/skills/skills/docx
-sk list
-sk info docx
-sk doctor</code></pre>
-<p>The first <strong>skills</strong> is the repository name; the second is the directory inside it. A short path selects that directory directly. <strong>sk info</strong> describes an installed skill, while <strong>sk doctor</strong> checks local installation health.</p>
-<p>For other agent runtimes, follow their installation instructions. <a href="https://github.com/vercel-labs/skills">Vercel's skills CLI</a> documents agent selection and project/global scopes. For a maintained collection organized into task bundles, see <a href="https://github.com/majiayu000/spellbook#install">Spellbook</a>. Do not copy the entire aggregate archive as one skill.</p></section>
+<p>After reviewing the source, run <a href="https://github.com/vercel-labs/skills">the Skills CLI</a> from your project directory and select your coding agent when prompted. This URL selects the <code>skills/docx</code> directory:</p>
+<pre class="cmd"><code>npx skills add https://github.com/anthropics/skills/tree/main/skills/docx</code></pre>
+<p>Run <code>npx skills list</code> from the same project to check the installation. The <a href="guides/code-review.html">code review setup guide</a> walks through the location, a first task, and removal in Claude Code.</p>
+<p>For ready-to-use task bundles, see <a href="https://github.com/majiayu000/spellbook#quick-start">Spellbook</a>.</p></section>
 <section id="faq"><h2>Common questions</h2>
 <h3>The skill installed, but my agent cannot see it. What next?</h3>
-<p>Compare the installed location with the directory read by your agent and session. For sk, run <strong>sk info &lt;name&gt;</strong> and check its path against the configured Claude Code skills directory. Installation into one runtime's directory does not establish visibility in another.</p>
+<p>Compare the path shown by <code>npx skills list</code> with the skill paths supported by your agent, then start a new session in the same project. Each agent reads its own supported directories.</p>
 <h3>Does a catalog entry belong to majiayu000?</h3>
 <p>Not necessarily. Check the source link and archive metadata's <strong>author</strong>, <strong>source_url</strong>, <strong>license</strong> and <strong>permission_note</strong>. The <a href="https://github.com/majiayu000/claude-skill-registry-data#trace-an-archived-skill">archive README</a> explains how to trace these fields.</p>
 <h3>Where do I report a problem?</h3>
-<p>Send skill behavior questions to its upstream repository. Report search, attribution or catalog problems to <a href="https://github.com/majiayu000/claude-skill-registry-core/issues">the core issue tracker</a>; authors can follow the <a href="https://github.com/majiayu000/claude-skill-registry-core/blob/main/REMOVAL.md">removal and attribution request procedure</a>. Report sk installation problems to <a href="https://github.com/majiayu000/claude-skill-manager/issues">the CLI issue tracker</a>.</p></section>
+<p>Send skill behavior questions to its upstream repository. Report search, attribution or catalog problems to <a href="https://github.com/majiayu000/claude-skill-registry-core/issues">the core issue tracker</a>. Authors can follow the <a href="https://github.com/majiayu000/claude-skill-registry-core/blob/main/REMOVAL.md">removal and attribution request procedure</a>. Report Skills CLI problems to <a href="https://github.com/vercel-labs/skills/issues">the installer issue tracker</a>.</p></section>
 </article></main>
 <footer class="site-footer"><a href="./">Search skills</a> · <a href="skills/">All guides</a> · <a href="https://github.com/majiayu000/claude-skill-registry-core">Pipeline source and license</a></footer>
 </body>

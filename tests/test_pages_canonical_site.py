@@ -22,6 +22,16 @@ def test_homepage_declares_main_registry_as_its_public_identity():
     assert '<meta name="twitter:title" content="Claude Skills Registry">' in homepage
 
 
+def test_choose_a_skill_guide_matches_the_current_installation_path():
+    guide = read_repo_file("docs/choose-a-skill.html")
+
+    assert "npx skills add https://github.com/anthropics/skills/tree/main/skills/docx" in guide
+    assert "npx skills list" in guide
+    assert 'href="guides/code-review.html"' in guide
+    assert 'href="https://github.com/majiayu000/spellbook#quick-start"' in guide
+    assert "sk install" not in guide
+
+
 def test_robots_and_sitemap_publish_only_the_main_registry_url():
     robots = read_repo_file("docs/robots.txt")
     sitemap = ElementTree.fromstring(read_repo_file("docs/sitemap.xml"))

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updated_at": "2026-11-24T10:36:40.201240Z",
-  "total_count": 1747,
+  "updated_at": "2026-11-26T08:50:08.720198Z",
+  "total_count": 1748,
   "entries": {
     "Xquik-dev/x-twitter-scraper": {
       "repo": "Xquik-dev/x-twitter-scraper",
@@ -10483,8 +10483,14 @@
       "repo": "jiangxingfan1-coder/Open-Agent-API",
       "branch": "main",
       "relative_path": "integrations/open-agent-api/SKILL.md",
-      "commit_sha": "82350d6d44b903bd0184fe8cc285de89612417e5",
       "updated_at": "2026-11-24T10:36:29.375959Z"
+    },
+    "ABO3SKRALMASAOODI/valmera-mcp:skills/website-demo-video": {
+      "repo": "ABO3SKRALMASAOODI/valmera-mcp",
+      "branch": "main",
+      "relative_path": "skills/website-demo-video/SKILL.md",
+      "commit_sha": "50951f7dbabfc710c547d0401dd5d14a5377607b",
+      "updated_at": "2026-11-26T08:49:57.365893Z"
     }
   }
 }

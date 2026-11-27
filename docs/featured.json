@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-26T11:13:10.022927Z",
+  "updated_at": "2026-11-27T10:05:58.874453Z",
   "count": 100,
   "skills": [
     {
@@ -1417,7 +1417,7 @@
         "Claude Code"
       ],
       "canonical_id": "tmy83rsrmroo5jffn-nags1ewgyh5_axywhpxtppaog",
-      "copies": 8,
+      "copies": 9,
       "is_canonical": true,
       "u": "skills/applying-brand-guidelines-63a99b57de16/"
     },
@@ -2021,7 +2021,7 @@
         "Claude Code"
       ],
       "canonical_id": "okcxnkqx-_ns9qlkunanovhytiafcj-oy8wvakjgo_4",
-      "copies": 28,
+      "copies": 29,
       "is_canonical": true,
       "u": "skills/docx-9942d5845041/"
     },
@@ -2114,7 +2114,7 @@
         "Claude Code"
       ],
       "canonical_id": "8awwjtnivdhk3b7vxjcn1hhhbl4m2izrn1cjgejhe4g",
-      "copies": 108,
+      "copies": 109,
       "is_canonical": true,
       "u": "skills/pdf-46fd5befeeda/"
     },

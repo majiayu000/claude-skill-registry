@@ -2,7 +2,7 @@
 
 Find a skill for your next coding task. Search community skills, inspect the original source, and install only what you need.
 
-**[Search skills →](https://majiayu000.github.io/claude-skill-registry/)** · [Browse by category](https://majiayu000.github.io/claude-skill-registry/skills/) · [Install your first skill](https://majiayu000.github.io/claude-skill-registry/choose-a-skill.html)
+**[Search skills →](https://majiayu000.github.io/claude-skill-registry/)** · [Browse by category](https://majiayu000.github.io/claude-skill-registry/skills/) · [Browse the archive on GitHub](https://github.com/majiayu000/claude-skill-registry-data/tree/main) · [Install your first skill](https://majiayu000.github.io/claude-skill-registry/choose-a-skill.html)
 
 <p align="center">
   <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fmajiayu000.github.io%2Fclaude-skill-registry%2Fstats.json&query=%24.archive_skill_md_count_raw&label=SKILL.md%20files%20(raw)&color=blueviolet&style=flat-square" alt="SKILL.md files (raw)">
@@ -198,7 +198,10 @@ claude-skill-registry-core/
 ```
 
 The merged `claude-skill-registry` publish artifact additionally contains
-`registry-manifest.json` and `registry-shards/**`.
+`registry-manifest.json` and `registry-shards/**`. Its [`skills/`](skills/)
+directory preserves links for older GitHub URLs. Browse the
+[current archive](https://github.com/majiayu000/claude-skill-registry-data/tree/main)
+for newly added skills and their source metadata.
 
 ---
 

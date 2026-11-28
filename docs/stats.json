@@ -1,27 +1,27 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-27T10:40:57.357099Z",
-  "archive_skill_md_count_raw": 82996,
-  "archive_metadata_count_raw": 393378,
-  "indexed_skill_count_scan_shape": 349898,
-  "registry_skill_count_dedup": 349468,
+  "updated_at": "2026-11-28T07:43:36.099374Z",
+  "archive_skill_md_count_raw": 83232,
+  "archive_metadata_count_raw": 393623,
+  "indexed_skill_count_scan_shape": 350143,
+  "registry_skill_count_dedup": 349713,
   "total_plugins": 5,
   "categories": 40,
   "category_counts": [
     {
       "name": "agent",
       "code": "agent",
-      "count": 1622
+      "count": 1623
     },
     {
       "name": "ai-llm",
       "code": "ai-llm",
-      "count": 3474
+      "count": 3477
     },
     {
       "name": "ai-ml",
       "code": "ai-ml",
-      "count": 3869
+      "count": 3870
     },
     {
       "name": "analysis",
@@ -31,17 +31,17 @@
     {
       "name": "api",
       "code": "api",
-      "count": 2618
+      "count": 2620
     },
     {
       "name": "bash",
       "code": "bash",
-      "count": 11074
+      "count": 11079
     },
     {
       "name": "business",
       "code": "business",
-      "count": 1108
+      "count": 1109
     },
     {
       "name": "c-level",
@@ -51,12 +51,12 @@
     {
       "name": "communication",
       "code": "communication",
-      "count": 904
+      "count": 905
     },
     {
       "name": "context-management",
       "code": "context-management",
-      "count": 2012
+      "count": 2016
     },
     {
       "name": "creative",
@@ -66,27 +66,27 @@
     {
       "name": "data",
       "code": "dat",
-      "count": 36358
+      "count": 36365
     },
     {
       "name": "design",
       "code": "des",
-      "count": 21843
+      "count": 21851
     },
     {
       "name": "development",
       "code": "dev",
-      "count": 54455
+      "count": 54505
     },
     {
       "name": "devops",
       "code": "ops",
-      "count": 11875
+      "count": 11886
     },
     {
       "name": "documents",
       "code": "doc",
-      "count": 13462
+      "count": 13472
     },
     {
       "name": "domains",
@@ -131,7 +131,7 @@
     {
       "name": "marketing",
       "code": "mkt",
-      "count": 8257
+      "count": 8264
     },
     {
       "name": "orchestration",
@@ -141,12 +141,12 @@
     {
       "name": "other",
       "code": "oth",
-      "count": 96120
+      "count": 96230
     },
     {
       "name": "performance",
       "code": "performance",
-      "count": 2209
+      "count": 2210
     },
     {
       "name": "personal-development",
@@ -161,27 +161,27 @@
     {
       "name": "platform",
       "code": "platform",
-      "count": 1634
+      "count": 1636
     },
     {
       "name": "product",
       "code": "prd",
-      "count": 5322
+      "count": 5323
     },
     {
       "name": "productivity",
       "code": "pro",
-      "count": 8097
+      "count": 8105
     },
     {
       "name": "quality",
       "code": "quality",
-      "count": 6930
+      "count": 6932
     },
     {
       "name": "security",
       "code": "sec",
-      "count": 10072
+      "count": 10077
     },
     {
       "name": "skills",
@@ -196,7 +196,7 @@
     {
       "name": "testing",
       "code": "tst",
-      "count": 12022
+      "count": 12026
     },
     {
       "name": "workflow",
@@ -206,10 +206,10 @@
     {
       "name": "writing",
       "code": "writing",
-      "count": 2352
+      "count": 2353
     }
   ],
-  "unique_repo_count": 16171,
+  "unique_repo_count": 16175,
   "official_skill_count": 35,
   "top_repositories": [
     {
@@ -242,7 +242,7 @@
     },
     {
       "repo": "Klotzkette/claude-fuer-deutsches-recht",
-      "count": 974
+      "count": 976
     },
     {
       "repo": "marysatasselshaped667/skills-collection-1",
@@ -254,7 +254,7 @@
     }
   ],
   "featured_count": 100,
-  "independent_skill_count": 221528,
+  "independent_skill_count": 221715,
   "static_skill_page_count": 5800,
   "asset_state_counts": {
     "verified": 58
@@ -266,34 +266,34 @@
   "index_size_bytes": 324,
   "index_size_gzip_bytes": 212,
   "search_shard_count": 14,
-  "search_largest_shard_bytes": 8388674,
-  "search_largest_shard_gzip_bytes": 1947356,
+  "search_largest_shard_bytes": 8388640,
+  "search_largest_shard_gzip_bytes": 1946801,
   "category_shard_count": 69,
-  "category_largest_part_bytes": 8388708,
+  "category_largest_part_bytes": 8388735,
   "category_largest_part_gzip_bytes": 1976023,
-  "lite_index_count": 349898,
+  "lite_index_count": 350143,
   "lite_index_included_count": 5000,
-  "lite_index_size_bytes": 4259064,
-  "lite_index_gzip_size_bytes": 819227,
+  "lite_index_size_bytes": 4258911,
+  "lite_index_gzip_size_bytes": 819369,
   "quality_index_size_bytes": 364,
   "quality_index_gzip_size_bytes": 238,
   "quality_shard_count": 13,
-  "quality_largest_shard_bytes": 8388709,
-  "quality_largest_shard_gzip_bytes": 1527798,
+  "quality_largest_shard_bytes": 8388679,
+  "quality_largest_shard_gzip_bytes": 1527550,
   "security_index_size_bytes": 368,
   "security_index_gzip_size_bytes": 239,
   "security_shard_count": 18,
-  "security_largest_shard_bytes": 8388686,
-  "security_largest_shard_gzip_bytes": 1955479,
+  "security_largest_shard_bytes": 8388720,
+  "security_largest_shard_gzip_bytes": 1956879,
   "ranking_index_size_bytes": 364,
   "ranking_index_gzip_size_bytes": 238,
   "ranking_shard_count": 11,
-  "ranking_largest_shard_bytes": 8388714,
-  "ranking_largest_shard_gzip_bytes": 1768072,
-  "largest_generated_file_bytes": 10891385,
+  "ranking_largest_shard_bytes": 8388678,
+  "ranking_largest_shard_gzip_bytes": 1766351,
+  "largest_generated_file_bytes": 10899268,
   "security_scan": {
-    "total": 82994,
-    "passed": 82994,
+    "total": 83230,
+    "passed": 83230,
     "failed": 0
   }
 }

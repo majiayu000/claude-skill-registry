@@ -1,25 +1,25 @@
 {
   "version": 1,
-  "runs": 221,
-  "updated_at": "2026-11-27T08:22:20.966210Z",
+  "runs": 222,
+  "updated_at": "2026-11-28T07:10:59.399023Z",
   "repo_priors": {
     "shanraisshan/claude-code-best-practice": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 360,
-      "topic_hits": 184,
+      "topic_hits": 185,
       "code_hits": 0,
-      "max_stars": 69301,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
+      "max_stars": 69469,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "wshobson/agents": {
-      "seen_runs": 113,
-      "selected_runs": 106,
+      "seen_runs": 114,
+      "selected_runs": 107,
       "downloaded_skills": 3404,
-      "topic_hits": 145,
+      "topic_hits": 146,
       "code_hits": 0,
-      "max_stars": 42781,
-      "last_seen_at": "2026-11-27T08:20:50.400817Z"
+      "max_stars": 42995,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "sickn33/antigravity-awesome-skills": {
       "seen_runs": 74,
@@ -40,49 +40,49 @@
       "last_seen_at": "2026-05-23T03:35:32.115033Z"
     },
     "VoltAgent/awesome-agent-skills": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 0,
-      "topic_hits": 382,
+      "topic_hits": 384,
       "code_hits": 0,
-      "max_stars": 37432,
-      "last_seen_at": "2026-11-23T07:47:15.135202Z"
+      "max_stars": 37600,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "alirezarezvani/claude-skills": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 657,
-      "topic_hits": 382,
+      "topic_hits": 384,
       "code_hits": 0,
-      "max_stars": 30264,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
+      "max_stars": 30599,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "wanshuiyin/Auto-claude-code-research-in-sleep": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 3911,
-      "topic_hits": 184,
+      "topic_hits": 185,
       "code_hits": 0,
-      "max_stars": 19569,
-      "last_seen_at": "2026-11-27T08:20:50.400817Z"
+      "max_stars": 20023,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "zebbern/claude-code-guide": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 1087,
-      "topic_hits": 184,
+      "topic_hits": 185,
       "code_hits": 0,
       "max_stars": 4719,
-      "last_seen_at": "2026-11-27T08:20:50.400817Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "parcadei/Continuous-Claude-v3": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 3925,
-      "topic_hits": 368,
+      "topic_hits": 370,
       "code_hits": 0,
-      "max_stars": 3952,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
+      "max_stars": 3953,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "KhazP/vibe-coding-prompt-template": {
       "seen_runs": 116,
@@ -94,22 +94,22 @@
       "last_seen_at": "2026-08-20T01:46:55.457830Z"
     },
     "rohitg00/pro-workflow": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 1239,
-      "topic_hits": 368,
+      "topic_hits": 370,
       "code_hits": 0,
-      "max_stars": 2967,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
+      "max_stars": 2972,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "ljagiello/ctf-skills": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 401,
-      "topic_hits": 191,
+      "topic_hits": 192,
       "code_hits": 0,
-      "max_stars": 3762,
-      "last_seen_at": "2026-11-25T09:00:22.617955Z"
+      "max_stars": 3808,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "theDakshJaitly/mex": {
       "seen_runs": 62,
@@ -121,94 +121,94 @@
       "last_seen_at": "2026-06-21T04:52:12.111931Z"
     },
     "23blocks-OS/ai-maestro": {
-      "seen_runs": 184,
-      "selected_runs": 184,
+      "seen_runs": 185,
+      "selected_runs": 185,
       "downloaded_skills": 1,
-      "topic_hits": 191,
+      "topic_hits": 192,
       "code_hits": 0,
-      "max_stars": 857,
-      "last_seen_at": "2026-11-22T11:44:02.365816Z"
+      "max_stars": 859,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "keskinonur/claude-code-ios-dev-guide": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 0,
-      "topic_hits": 184,
+      "topic_hits": 185,
       "code_hits": 0,
       "max_stars": 863,
-      "last_seen_at": "2026-11-25T09:00:22.617955Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "wondelai/skills": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 1757,
-      "topic_hits": 375,
+      "topic_hits": 377,
       "code_hits": 0,
-      "max_stars": 2761,
-      "last_seen_at": "2026-11-27T08:20:50.400817Z"
+      "max_stars": 2808,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "a5c-ai/babysitter": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 3623,
-      "topic_hits": 382,
+      "topic_hits": 384,
       "code_hits": 17,
-      "max_stars": 1931,
-      "last_seen_at": "2026-11-23T07:47:15.135202Z"
+      "max_stars": 1941,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "jiweiyeah/Skills-Manager": {
-      "seen_runs": 190,
-      "selected_runs": 183,
+      "seen_runs": 191,
+      "selected_runs": 184,
       "downloaded_skills": 1,
-      "topic_hits": 190,
+      "topic_hits": 191,
       "code_hits": 0,
-      "max_stars": 1065,
-      "last_seen_at": "2026-11-25T09:00:22.617955Z"
+      "max_stars": 1069,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "decebals/claude-code-java": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 738,
-      "topic_hits": 184,
+      "topic_hits": 185,
       "code_hits": 0,
-      "max_stars": 778,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
+      "max_stars": 779,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "VikashLoomba/copilot-mcp": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 0,
-      "topic_hits": 322,
+      "topic_hits": 323,
       "code_hits": 0,
       "max_stars": 508,
-      "last_seen_at": "2026-11-23T07:47:15.135202Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "mliu98/awesome-human-distillation": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 0,
-      "topic_hits": 191,
+      "topic_hits": 192,
       "code_hits": 0,
-      "max_stars": 764,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
+      "max_stars": 766,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "levnikolaevich/claude-code-skills": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 4167,
-      "topic_hits": 191,
+      "topic_hits": 192,
       "code_hits": 0,
       "max_stars": 598,
-      "last_seen_at": "2026-11-25T09:00:22.617955Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "Weizhena/Deep-Research-skills": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 820,
-      "topic_hits": 184,
+      "topic_hits": 185,
       "code_hits": 0,
-      "max_stars": 2588,
-      "last_seen_at": "2026-11-23T07:47:15.135202Z"
+      "max_stars": 2622,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "jabrena/cursor-rules-java": {
       "seen_runs": 65,
@@ -220,67 +220,67 @@
       "last_seen_at": "2026-06-29T04:34:31.257978Z"
     },
     "nWave-ai/nWave": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 4205,
-      "topic_hits": 184,
+      "topic_hits": 185,
       "code_hits": 0,
       "max_stars": 636,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "kazukinagata/shinkoku": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 984,
-      "topic_hits": 191,
+      "topic_hits": 192,
       "code_hits": 0,
       "max_stars": 373,
-      "last_seen_at": "2026-11-25T09:00:22.617955Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "marketingjuliancongdanh79-pixel/skill-generator": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 21,
-      "topic_hits": 184,
+      "topic_hits": 185,
       "code_hits": 0,
       "max_stars": 342,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "tzachbon/smart-ralph": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 1232,
-      "topic_hits": 311,
+      "topic_hits": 312,
       "code_hits": 0,
       "max_stars": 567,
-      "last_seen_at": "2026-11-27T08:20:50.400817Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "karanb192/awesome-claude-skills": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 0,
-      "topic_hits": 307,
+      "topic_hits": 308,
       "code_hits": 0,
-      "max_stars": 605,
-      "last_seen_at": "2026-11-25T09:00:22.617955Z"
+      "max_stars": 615,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "oliver-kriska/claude-elixir-phoenix": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 2344,
-      "topic_hits": 324,
+      "topic_hits": 325,
       "code_hits": 0,
-      "max_stars": 577,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
+      "max_stars": 578,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "browser-act/skills": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 1483,
-      "topic_hits": 333,
+      "topic_hits": 335,
       "code_hits": 0,
-      "max_stars": 6413,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
+      "max_stars": 6443,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "BrianRWagner/ai-marketing-claude-code-skills": {
       "seen_runs": 184,
@@ -292,247 +292,247 @@
       "last_seen_at": "2026-11-22T11:44:02.365816Z"
     },
     "mxyhi/ok-skills": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 1907,
-      "topic_hits": 198,
+      "topic_hits": 199,
       "code_hits": 0,
-      "max_stars": 517,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
+      "max_stars": 518,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "ombulabs/claude-code_rails-upgrade-skill": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 63,
-      "topic_hits": 184,
+      "topic_hits": 185,
       "code_hits": 0,
-      "max_stars": 409,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
+      "max_stars": 413,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "giuseppe-trisciuoglio/developer-kit": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 3842,
-      "topic_hits": 225,
+      "topic_hits": 226,
       "code_hits": 0,
       "max_stars": 372,
-      "last_seen_at": "2026-11-25T09:00:22.617955Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "y49/tlive": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 43,
-      "topic_hits": 184,
+      "topic_hits": 185,
       "code_hits": 0,
-      "max_stars": 215,
-      "last_seen_at": "2026-11-27T08:20:50.400817Z"
+      "max_stars": 216,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "gbessoni/seobuild-onpage": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 40,
-      "topic_hits": 191,
+      "topic_hits": 192,
       "code_hits": 0,
       "max_stars": 267,
-      "last_seen_at": "2026-11-25T09:00:22.617955Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "JayantDevkar/claude-code-karma": {
-      "seen_runs": 185,
-      "selected_runs": 184,
+      "seen_runs": 186,
+      "selected_runs": 185,
       "downloaded_skills": 12,
-      "topic_hits": 184,
+      "topic_hits": 185,
       "code_hits": 0,
       "max_stars": 341,
-      "last_seen_at": "2026-11-22T11:44:02.365816Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "microsoft/power-platform-skills": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 1656,
-      "topic_hits": 184,
+      "topic_hits": 185,
       "code_hits": 0,
-      "max_stars": 1167,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
+      "max_stars": 1196,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "LukasNiessen/terrashark": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 39,
-      "topic_hits": 241,
+      "topic_hits": 242,
       "code_hits": 0,
       "max_stars": 722,
-      "last_seen_at": "2026-11-23T07:47:15.135202Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "aofp/yume": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 0,
-      "topic_hits": 184,
+      "topic_hits": 185,
       "code_hits": 0,
       "max_stars": 155,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "secondsky/claude-skills": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 4021,
-      "topic_hits": 184,
+      "topic_hits": 185,
       "code_hits": 0,
-      "max_stars": 250,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
+      "max_stars": 256,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "AlpacaLabsLLC/skills-for-architects": {
-      "seen_runs": 184,
-      "selected_runs": 184,
-      "downloaded_skills": 1534,
-      "topic_hits": 184,
+      "seen_runs": 185,
+      "selected_runs": 185,
+      "downloaded_skills": 1537,
+      "topic_hits": 185,
       "code_hits": 0,
-      "max_stars": 428,
-      "last_seen_at": "2026-11-22T11:44:02.365816Z"
+      "max_stars": 441,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "nexscope-ai/eCommerce-Skills": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 3561,
-      "topic_hits": 293,
+      "topic_hits": 295,
       "code_hits": 0,
-      "max_stars": 1488,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
+      "max_stars": 1557,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "bitwize-music-studio/claude-ai-music-skills": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 2128,
-      "topic_hits": 191,
+      "topic_hits": 192,
       "code_hits": 0,
-      "max_stars": 687,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
+      "max_stars": 720,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "haddock-development/claude-reflect-system": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 80,
-      "topic_hits": 191,
+      "topic_hits": 192,
       "code_hits": 0,
-      "max_stars": 385,
-      "last_seen_at": "2026-11-25T09:00:22.617955Z"
+      "max_stars": 386,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "ToluVictor/canvas-apps-tools": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 39,
-      "topic_hits": 184,
+      "topic_hits": 185,
       "code_hits": 0,
       "max_stars": 152,
-      "last_seen_at": "2026-11-23T07:47:15.135202Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "wrsmith108/linear-claude-skill": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 40,
-      "topic_hits": 191,
+      "topic_hits": 192,
       "code_hits": 0,
-      "max_stars": 141,
-      "last_seen_at": "2026-11-27T08:20:50.400817Z"
+      "max_stars": 142,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "damionrashford/RivalSearchMCP": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 45,
-      "topic_hits": 190,
+      "topic_hits": 191,
       "code_hits": 0,
       "max_stars": 141,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "ilang-ai/autocode": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 2710,
-      "topic_hits": 184,
+      "topic_hits": 185,
       "code_hits": 0,
-      "max_stars": 108,
-      "last_seen_at": "2026-11-25T09:00:22.617955Z"
+      "max_stars": 109,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "claude-world/claude-skill-antivirus": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 61,
-      "topic_hits": 184,
+      "topic_hits": 185,
       "code_hits": 0,
-      "max_stars": 85,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
+      "max_stars": 87,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "claude-world/director-mode-lite": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 1252,
-      "topic_hits": 184,
+      "topic_hits": 185,
       "code_hits": 0,
       "max_stars": 82,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "fvadicamo/dev-agent-skills": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 202,
-      "topic_hits": 184,
+      "topic_hits": 185,
       "code_hits": 0,
       "max_stars": 73,
-      "last_seen_at": "2026-11-25T09:00:22.617955Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "Ashad001/remotion-transitions": {
-      "seen_runs": 184,
-      "selected_runs": 184,
+      "seen_runs": 185,
+      "selected_runs": 185,
       "downloaded_skills": 40,
-      "topic_hits": 184,
-      "code_hits": 0,
-      "max_stars": 71,
-      "last_seen_at": "2026-11-22T11:44:02.365816Z"
-    },
-    "tamtom/play-console-cli": {
-      "seen_runs": 191,
-      "selected_runs": 184,
-      "downloaded_skills": 0,
-      "topic_hits": 198,
-      "code_hits": 0,
-      "max_stars": 298,
-      "last_seen_at": "2026-11-27T08:20:50.400817Z"
-    },
-    "avibebuilder/claude-prime": {
-      "seen_runs": 191,
-      "selected_runs": 184,
-      "downloaded_skills": 834,
-      "topic_hits": 196,
-      "code_hits": 0,
-      "max_stars": 128,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
-    },
-    "kromahlusenii-ops/ham": {
-      "seen_runs": 191,
-      "selected_runs": 184,
-      "downloaded_skills": 80,
-      "topic_hits": 191,
+      "topic_hits": 185,
       "code_hits": 0,
       "max_stars": 72,
-      "last_seen_at": "2026-11-25T09:00:22.617955Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
+    },
+    "tamtom/play-console-cli": {
+      "seen_runs": 192,
+      "selected_runs": 185,
+      "downloaded_skills": 0,
+      "topic_hits": 199,
+      "code_hits": 0,
+      "max_stars": 301,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
+    },
+    "avibebuilder/claude-prime": {
+      "seen_runs": 192,
+      "selected_runs": 185,
+      "downloaded_skills": 834,
+      "topic_hits": 197,
+      "code_hits": 0,
+      "max_stars": 134,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
+    },
+    "kromahlusenii-ops/ham": {
+      "seen_runs": 192,
+      "selected_runs": 185,
+      "downloaded_skills": 80,
+      "topic_hits": 192,
+      "code_hits": 0,
+      "max_stars": 73,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "2389-research/claude-plugins": {
-      "seen_runs": 184,
-      "selected_runs": 184,
+      "seen_runs": 185,
+      "selected_runs": 185,
       "downloaded_skills": 1,
-      "topic_hits": 184,
+      "topic_hits": 185,
       "code_hits": 0,
-      "max_stars": 106,
-      "last_seen_at": "2026-11-22T11:44:02.365816Z"
+      "max_stars": 108,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "Tibsfox/gsd-skill-creator": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 3958,
-      "topic_hits": 191,
+      "topic_hits": 192,
       "code_hits": 0,
-      "max_stars": 71,
-      "last_seen_at": "2026-11-23T07:47:15.135202Z"
+      "max_stars": 72,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "alec-c4/claude-rails-dev": {
       "seen_runs": 186,
@@ -571,13 +571,13 @@
       "last_seen_at": "2026-11-26T08:48:34.115351Z"
     },
     "baidu-netdisk/bdpan-storage": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 61,
-      "topic_hits": 198,
+      "topic_hits": 199,
       "code_hits": 0,
-      "max_stars": 354,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
+      "max_stars": 365,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "radekamirko/C.R.I.S.P": {
       "seen_runs": 186,
@@ -616,13 +616,13 @@
       "last_seen_at": "2026-11-26T08:48:34.115351Z"
     },
     "oprogramadorreal/optimus-claude": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 636,
-      "topic_hits": 184,
+      "topic_hits": 185,
       "code_hits": 0,
       "max_stars": 75,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "sequenzia/agent-alchemy": {
       "seen_runs": 186,
@@ -634,13 +634,13 @@
       "last_seen_at": "2026-11-26T08:48:34.115351Z"
     },
     "michtio/craftcms-claude-skills": {
-      "seen_runs": 191,
-      "selected_runs": 184,
-      "downloaded_skills": 316,
-      "topic_hits": 192,
+      "seen_runs": 192,
+      "selected_runs": 185,
+      "downloaded_skills": 318,
+      "topic_hits": 193,
       "code_hits": 0,
-      "max_stars": 89,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
+      "max_stars": 90,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "theogbrand/yoink": {
       "seen_runs": 170,
@@ -670,13 +670,13 @@
       "last_seen_at": "2026-11-23T07:47:15.135202Z"
     },
     "Hainrixz/skill-vault": {
-      "seen_runs": 184,
-      "selected_runs": 184,
+      "seen_runs": 185,
+      "selected_runs": 185,
       "downloaded_skills": 0,
-      "topic_hits": 184,
+      "topic_hits": 185,
       "code_hits": 0,
-      "max_stars": 81,
-      "last_seen_at": "2026-11-22T11:44:02.365816Z"
+      "max_stars": 82,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "Othmane-Khadri/gtm-engineer-playbook": {
       "seen_runs": 191,
@@ -715,13 +715,13 @@
       "last_seen_at": "2026-11-24T10:35:06.120253Z"
     },
     "netresearch/claude-code-marketplace": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 0,
-      "topic_hits": 184,
+      "topic_hits": 185,
       "code_hits": 0,
-      "max_stars": 93,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
+      "max_stars": 97,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "massimodeluisa/recursive-decomposition-skill": {
       "seen_runs": 186,
@@ -760,13 +760,13 @@
       "last_seen_at": "2026-05-27T04:33:13.147929Z"
     },
     "khendzel/skills-janitor": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 304,
-      "topic_hits": 189,
+      "topic_hits": 190,
       "code_hits": 0,
-      "max_stars": 140,
-      "last_seen_at": "2026-11-25T09:00:22.617955Z"
+      "max_stars": 146,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "Shelpuk-AI-Technology-Consulting/agent-skill-tdd": {
       "seen_runs": 154,
@@ -940,13 +940,13 @@
       "last_seen_at": "2026-04-19T01:55:30.558920Z"
     },
     "MetcalfSolutions/Satori": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 44,
-      "topic_hits": 193,
+      "topic_hits": 194,
       "code_hits": 0,
-      "max_stars": 124,
-      "last_seen_at": "2026-11-23T07:47:15.135202Z"
+      "max_stars": 125,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "maigentic/stratarts": {
       "seen_runs": 186,
@@ -994,13 +994,13 @@
       "last_seen_at": "2026-11-24T10:35:06.120253Z"
     },
     "flysheep-ai/education-skills": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 200,
-      "topic_hits": 196,
+      "topic_hits": 197,
       "code_hits": 0,
-      "max_stars": 128,
-      "last_seen_at": "2026-11-25T09:00:22.617955Z"
+      "max_stars": 131,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "2dubu/liquid-glass": {
       "seen_runs": 104,
@@ -1165,13 +1165,13 @@
       "last_seen_at": "2026-11-27T08:20:50.400817Z"
     },
     "REMvisual/claude-handoff": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 2,
-      "topic_hits": 191,
+      "topic_hits": 192,
       "code_hits": 0,
       "max_stars": 76,
-      "last_seen_at": "2026-11-23T07:47:15.135202Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "johnkozaris/jko-claude-plugins": {
       "seen_runs": 62,
@@ -1273,22 +1273,22 @@
       "last_seen_at": "2026-11-26T08:48:34.115351Z"
     },
     "dream-num/skills": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 99,
-      "topic_hits": 184,
+      "topic_hits": 185,
       "code_hits": 0,
-      "max_stars": 80,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
+      "max_stars": 83,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "gcpdev/llm-council-skill": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 41,
-      "topic_hits": 191,
+      "topic_hits": 192,
       "code_hits": 0,
-      "max_stars": 511,
-      "last_seen_at": "2026-11-25T09:00:22.617955Z"
+      "max_stars": 516,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "tuan3w/obsidian-vault-agent": {
       "seen_runs": 185,
@@ -1354,13 +1354,13 @@
       "last_seen_at": "2026-11-27T08:20:50.400817Z"
     },
     "ahacker-1/cre-agent-skills": {
-      "seen_runs": 184,
-      "selected_runs": 177,
+      "seen_runs": 185,
+      "selected_runs": 178,
       "downloaded_skills": 230,
-      "topic_hits": 177,
+      "topic_hits": 178,
       "code_hits": 0,
-      "max_stars": 142,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
+      "max_stars": 146,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "huzaifa525/claude-code-optimizer": {
       "seen_runs": 35,
@@ -1372,13 +1372,13 @@
       "last_seen_at": "2026-11-25T09:00:22.617955Z"
     },
     "meshy-dev/meshy-3d-agent": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 120,
-      "topic_hits": 195,
+      "topic_hits": 196,
       "code_hits": 0,
-      "max_stars": 122,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
+      "max_stars": 129,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "proyecto26/autoresearch-ai-plugin": {
       "seen_runs": 44,
@@ -1471,13 +1471,13 @@
       "last_seen_at": "2026-11-26T08:48:34.115351Z"
     },
     "getaero-io/gtm-eng-skills": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 416,
-      "topic_hits": 191,
+      "topic_hits": 192,
       "code_hits": 0,
-      "max_stars": 86,
-      "last_seen_at": "2026-11-25T09:00:22.617955Z"
+      "max_stars": 87,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "tmssoftware/skills": {
       "seen_runs": 81,
@@ -1804,22 +1804,22 @@
       "last_seen_at": "2026-11-24T10:35:06.120253Z"
     },
     "thedotmack/claude-mem": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 443,
-      "topic_hits": 184,
+      "topic_hits": 185,
       "code_hits": 0,
-      "max_stars": 118927,
-      "last_seen_at": "2026-11-27T08:20:50.400817Z"
+      "max_stars": 120260,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "code-yeongyu/oh-my-openagent": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 153,
-      "topic_hits": 184,
+      "topic_hits": 185,
       "code_hits": 0,
-      "max_stars": 71052,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
+      "max_stars": 71159,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "qwibitai/nanoclaw": {
       "seen_runs": 21,
@@ -1831,67 +1831,67 @@
       "last_seen_at": "2026-05-04T02:20:36.627747Z"
     },
     "OthmanAdi/planning-with-files": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 618,
-      "topic_hits": 288,
+      "topic_hits": 290,
       "code_hits": 0,
-      "max_stars": 28185,
-      "last_seen_at": "2026-11-23T07:47:15.135202Z"
+      "max_stars": 28271,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "K-Dense-AI/scientific-agent-skills": {
-      "seen_runs": 185,
-      "selected_runs": 184,
+      "seen_runs": 186,
+      "selected_runs": 185,
       "downloaded_skills": 4123,
-      "topic_hits": 191,
+      "topic_hits": 192,
       "code_hits": 0,
-      "max_stars": 58074,
-      "last_seen_at": "2026-11-22T11:44:02.365816Z"
+      "max_stars": 58719,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "JimLiu/baoyu-skills": {
-      "seen_runs": 185,
-      "selected_runs": 184,
+      "seen_runs": 186,
+      "selected_runs": 185,
       "downloaded_skills": 914,
-      "topic_hits": 198,
+      "topic_hits": 199,
       "code_hits": 0,
-      "max_stars": 27788,
-      "last_seen_at": "2026-11-22T11:44:02.365816Z"
+      "max_stars": 27940,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "NevaMind-AI/memU": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 2,
-      "topic_hits": 184,
+      "topic_hits": 185,
       "code_hits": 0,
-      "max_stars": 14634,
-      "last_seen_at": "2026-11-23T07:47:15.135202Z"
+      "max_stars": 14647,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "yusufkaraaslan/Skill_Seekers": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 106,
-      "topic_hits": 184,
+      "topic_hits": 185,
       "code_hits": 0,
-      "max_stars": 15354,
-      "last_seen_at": "2026-11-27T08:20:50.400817Z"
+      "max_stars": 15378,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "travisvn/awesome-claude-skills": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 0,
-      "topic_hits": 184,
+      "topic_hits": 185,
       "code_hits": 0,
-      "max_stars": 15901,
-      "last_seen_at": "2026-11-27T08:20:50.400817Z"
+      "max_stars": 15957,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "teng-lin/notebooklm-py": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 40,
-      "topic_hits": 184,
+      "topic_hits": 185,
       "code_hits": 0,
-      "max_stars": 20328,
-      "last_seen_at": "2026-11-27T08:20:50.400817Z"
+      "max_stars": 20414,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "Lum1104/Understand-Anything": {
       "seen_runs": 49,
@@ -1903,76 +1903,76 @@
       "last_seen_at": "2026-06-08T04:40:12.291893Z"
     },
     "Jeffallan/claude-skills": {
-      "seen_runs": 185,
-      "selected_runs": 184,
-      "downloaded_skills": 2644,
-      "topic_hits": 184,
+      "seen_runs": 186,
+      "selected_runs": 185,
+      "downloaded_skills": 2715,
+      "topic_hits": 185,
       "code_hits": 0,
-      "max_stars": 12478,
-      "last_seen_at": "2026-11-22T11:44:02.365816Z"
+      "max_stars": 12544,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "Orchestra-Research/AI-Research-SKILLs": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 3658,
-      "topic_hits": 184,
+      "topic_hits": 185,
       "code_hits": 7,
-      "max_stars": 14736,
-      "last_seen_at": "2026-11-23T07:47:15.135202Z"
+      "max_stars": 14874,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "ikaijua/Awesome-AITools": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 0,
-      "topic_hits": 191,
+      "topic_hits": 192,
       "code_hits": 0,
-      "max_stars": 6374,
-      "last_seen_at": "2026-11-25T09:00:22.617955Z"
+      "max_stars": 6390,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "nidhinjs/prompt-master": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 40,
-      "topic_hits": 184,
+      "topic_hits": 185,
       "code_hits": 0,
-      "max_stars": 16228,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
+      "max_stars": 16390,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "gosom/google-maps-scraper": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 40,
-      "topic_hits": 198,
+      "topic_hits": 199,
       "code_hits": 0,
-      "max_stars": 8306,
-      "last_seen_at": "2026-11-25T09:00:22.617955Z"
+      "max_stars": 8459,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "deanpeters/Product-Manager-Skills": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 2009,
-      "topic_hits": 184,
+      "topic_hits": 185,
       "code_hits": 0,
-      "max_stars": 8118,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
+      "max_stars": 8178,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "glitternetwork/pinme": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 160,
-      "topic_hits": 184,
+      "topic_hits": 185,
       "code_hits": 0,
-      "max_stars": 3763,
-      "last_seen_at": "2026-11-25T09:00:22.617955Z"
+      "max_stars": 3766,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "davepoon/buildwithclaude": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 4002,
-      "topic_hits": 184,
+      "topic_hits": 185,
       "code_hits": 0,
-      "max_stars": 3786,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
+      "max_stars": 3807,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "lackeyjb/playwright-skill": {
       "seen_runs": 122,
@@ -1984,31 +1984,31 @@
       "last_seen_at": "2026-11-25T09:00:22.617955Z"
     },
     "codeaashu/claude-code": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 39,
-      "topic_hits": 184,
+      "topic_hits": 185,
       "code_hits": 0,
-      "max_stars": 3445,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
+      "max_stars": 3459,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "addyosmani/web-quality-skills": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 234,
-      "topic_hits": 191,
+      "topic_hits": 192,
       "code_hits": 0,
-      "max_stars": 3117,
-      "last_seen_at": "2026-11-23T07:47:15.135202Z"
+      "max_stars": 3142,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "timescale/pg-aiguide": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 324,
-      "topic_hits": 184,
+      "topic_hits": 185,
       "code_hits": 0,
-      "max_stars": 1886,
-      "last_seen_at": "2026-11-27T08:20:50.400817Z"
+      "max_stars": 1889,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "maxritter/pilot-shell": {
       "seen_runs": 133,
@@ -2020,13 +2020,13 @@
       "last_seen_at": "2026-10-22T05:17:23.149805Z"
     },
     "antonbabenko/terraform-skill": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 41,
-      "topic_hits": 191,
+      "topic_hits": 192,
       "code_hits": 0,
-      "max_stars": 2483,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
+      "max_stars": 2493,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "foryourhealth111-pixel/Vibe-Skills": {
       "seen_runs": 22,
@@ -2038,22 +2038,22 @@
       "last_seen_at": "2026-11-25T09:00:22.617955Z"
     },
     "feiskyer/claude-code-settings": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 852,
-      "topic_hits": 184,
+      "topic_hits": 185,
       "code_hits": 0,
-      "max_stars": 1684,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
+      "max_stars": 1689,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "geekjourneyx/md2wechat-skill": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 82,
-      "topic_hits": 184,
+      "topic_hits": 185,
       "code_hits": 0,
-      "max_stars": 3820,
-      "last_seen_at": "2026-11-25T09:00:22.617955Z"
+      "max_stars": 3829,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "ComposioHQ/awesome-claude-plugins": {
       "seen_runs": 76,
@@ -2065,13 +2065,13 @@
       "last_seen_at": "2026-07-10T03:57:18.825985Z"
     },
     "Prat011/awesome-llm-skills": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 1269,
-      "topic_hits": 184,
+      "topic_hits": 185,
       "code_hits": 0,
-      "max_stars": 1874,
-      "last_seen_at": "2026-11-23T07:47:15.135202Z"
+      "max_stars": 1886,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "itsmostafa/aws-agent-skills": {
       "seen_runs": 185,
@@ -2101,22 +2101,22 @@
       "last_seen_at": "2026-11-26T08:48:34.115351Z"
     },
     "Natively-AI-assistant/natively-cluely-ai-assistant": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 112,
-      "topic_hits": 184,
+      "topic_hits": 185,
       "code_hits": 0,
-      "max_stars": 3364,
-      "last_seen_at": "2026-11-23T07:47:15.135202Z"
+      "max_stars": 3404,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "BayramAnnakov/claude-reflect": {
-      "seen_runs": 184,
-      "selected_runs": 184,
+      "seen_runs": 185,
+      "selected_runs": 185,
       "downloaded_skills": 41,
-      "topic_hits": 184,
+      "topic_hits": 185,
       "code_hits": 0,
-      "max_stars": 1976,
-      "last_seen_at": "2026-11-22T11:44:02.365816Z"
+      "max_stars": 1990,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "instavm/coderunner": {
       "seen_runs": 181,
@@ -2146,13 +2146,13 @@
       "last_seen_at": "2026-11-25T09:00:22.617955Z"
     },
     "bevibing/tutor-skills": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 78,
-      "topic_hits": 191,
+      "topic_hits": 192,
       "code_hits": 0,
-      "max_stars": 1414,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
+      "max_stars": 1429,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "OpenRaiser/NanoResearch": {
       "seen_runs": 191,
@@ -2191,13 +2191,13 @@
       "last_seen_at": "2026-11-27T08:20:50.400817Z"
     },
     "zanwei/design-dna": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 40,
-      "topic_hits": 198,
+      "topic_hits": 199,
       "code_hits": 1,
-      "max_stars": 2144,
-      "last_seen_at": "2026-11-27T08:20:50.400817Z"
+      "max_stars": 2174,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "mhattingpete/claude-skills-marketplace": {
       "seen_runs": 171,
@@ -2299,13 +2299,13 @@
       "last_seen_at": "2026-10-27T05:41:24.000295Z"
     },
     "romainsimon/paperasse": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 233,
-      "topic_hits": 191,
+      "topic_hits": 192,
       "code_hits": 0,
-      "max_stars": 2612,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
+      "max_stars": 2639,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "memvid/claude-brain": {
       "seen_runs": 157,
@@ -2515,13 +2515,13 @@
       "last_seen_at": "2026-11-23T07:47:15.135202Z"
     },
     "Shanyin-ai/shanyin-screenwriting-master": {
-      "seen_runs": 191,
-      "selected_runs": 184,
+      "seen_runs": 192,
+      "selected_runs": 185,
       "downloaded_skills": 0,
-      "topic_hits": 184,
+      "topic_hits": 185,
       "code_hits": 0,
-      "max_stars": 1526,
-      "last_seen_at": "2026-11-23T07:47:15.135202Z"
+      "max_stars": 1547,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "sanjay3290/ai-skills": {
       "seen_runs": 66,
@@ -2740,13 +2740,13 @@
       "last_seen_at": "2026-11-22T11:44:02.365816Z"
     },
     "arvindrk/extract-design-system": {
-      "seen_runs": 189,
-      "selected_runs": 182,
+      "seen_runs": 190,
+      "selected_runs": 183,
       "downloaded_skills": 39,
-      "topic_hits": 196,
+      "topic_hits": 197,
       "code_hits": 0,
-      "max_stars": 293,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
+      "max_stars": 338,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "nelson820125/iforgeai": {
       "seen_runs": 18,
@@ -2785,13 +2785,13 @@
       "last_seen_at": "2026-04-16T01:59:07.479180Z"
     },
     "omergocmen/vibe-coder-kit": {
-      "seen_runs": 188,
-      "selected_runs": 181,
+      "seen_runs": 189,
+      "selected_runs": 182,
       "downloaded_skills": 333,
-      "topic_hits": 181,
+      "topic_hits": 182,
       "code_hits": 0,
       "max_stars": 102,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "leejpsd/typescript-react-patterns": {
       "seen_runs": 75,
@@ -2821,13 +2821,13 @@
       "last_seen_at": "2026-05-03T02:21:08.483350Z"
     },
     "hesamsheikh/octogent": {
-      "seen_runs": 188,
-      "selected_runs": 181,
+      "seen_runs": 189,
+      "selected_runs": 182,
       "downloaded_skills": 0,
-      "topic_hits": 181,
+      "topic_hits": 182,
       "code_hits": 0,
       "max_stars": 1426,
-      "last_seen_at": "2026-11-25T09:00:22.617955Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "Kanevry/session-orchestrator": {
       "seen_runs": 136,
@@ -2848,13 +2848,13 @@
       "last_seen_at": "2026-11-26T08:48:34.115351Z"
     },
     "DheerG/swarms": {
-      "seen_runs": 173,
-      "selected_runs": 173,
+      "seen_runs": 174,
+      "selected_runs": 174,
       "downloaded_skills": 305,
-      "topic_hits": 173,
+      "topic_hits": 174,
       "code_hits": 0,
       "max_stars": 86,
-      "last_seen_at": "2026-11-22T11:44:02.365816Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "aayushsoam/motionsites.ai": {
       "seen_runs": 32,
@@ -2875,13 +2875,13 @@
       "last_seen_at": "2026-11-23T07:47:15.135202Z"
     },
     "shanraisshan/claude-code-hooks": {
-      "seen_runs": 185,
-      "selected_runs": 178,
+      "seen_runs": 186,
+      "selected_runs": 179,
       "downloaded_skills": 0,
-      "topic_hits": 178,
+      "topic_hits": 179,
       "code_hits": 0,
-      "max_stars": 572,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
+      "max_stars": 575,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "respira-press/claude-skills-wordpress": {
       "seen_runs": 15,
@@ -2947,13 +2947,13 @@
       "last_seen_at": "2026-07-21T03:16:09.282191Z"
     },
     "ronnythedev/dotnet-clean-architecture-skills": {
-      "seen_runs": 182,
-      "selected_runs": 175,
+      "seen_runs": 183,
+      "selected_runs": 176,
       "downloaded_skills": 928,
-      "topic_hits": 175,
+      "topic_hits": 176,
       "code_hits": 0,
-      "max_stars": 77,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
+      "max_stars": 79,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "backblaze-labs/claude-skill-b2-cloud-storage": {
       "seen_runs": 20,
@@ -2974,40 +2974,40 @@
       "last_seen_at": "2026-11-26T08:48:34.115351Z"
     },
     "jeecgboot/skills": {
-      "seen_runs": 181,
-      "selected_runs": 174,
+      "seen_runs": 182,
+      "selected_runs": 175,
       "downloaded_skills": 309,
-      "topic_hits": 174,
+      "topic_hits": 175,
       "code_hits": 0,
-      "max_stars": 253,
-      "last_seen_at": "2026-11-25T09:00:22.617955Z"
+      "max_stars": 255,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "ginuim/skill-base": {
-      "seen_runs": 181,
-      "selected_runs": 174,
+      "seen_runs": 182,
+      "selected_runs": 175,
       "downloaded_skills": 3,
-      "topic_hits": 179,
+      "topic_hits": 180,
       "code_hits": 0,
       "max_stars": 123,
-      "last_seen_at": "2026-11-25T09:00:22.617955Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "JuneYaooo/gpt-image2-ppt-skills": {
-      "seen_runs": 175,
-      "selected_runs": 174,
+      "seen_runs": 176,
+      "selected_runs": 175,
       "downloaded_skills": 27,
-      "topic_hits": 174,
+      "topic_hits": 175,
       "code_hits": 0,
-      "max_stars": 1475,
-      "last_seen_at": "2026-11-22T11:44:02.365816Z"
+      "max_stars": 1495,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "JuneYaooo/social-account-doctor": {
-      "seen_runs": 175,
-      "selected_runs": 174,
+      "seen_runs": 176,
+      "selected_runs": 175,
       "downloaded_skills": 10,
-      "topic_hits": 174,
+      "topic_hits": 175,
       "code_hits": 0,
-      "max_stars": 387,
-      "last_seen_at": "2026-11-22T11:44:02.365816Z"
+      "max_stars": 396,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "bjwanneng/veriflow-cc": {
       "seen_runs": 174,
@@ -3019,13 +3019,13 @@
       "last_seen_at": "2026-11-24T10:35:06.120253Z"
     },
     "SnailSploit/Claude-Red": {
-      "seen_runs": 181,
-      "selected_runs": 174,
+      "seen_runs": 182,
+      "selected_runs": 175,
       "downloaded_skills": 55,
-      "topic_hits": 174,
+      "topic_hits": 175,
       "code_hits": 0,
-      "max_stars": 11361,
-      "last_seen_at": "2026-11-23T07:47:15.135202Z"
+      "max_stars": 11657,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "imarvinle/Claude-Pro": {
       "seen_runs": 85,
@@ -3046,13 +3046,13 @@
       "last_seen_at": "2026-11-24T10:35:06.120253Z"
     },
     "JuneYaooo/xhs-writer-skill": {
-      "seen_runs": 173,
-      "selected_runs": 172,
+      "seen_runs": 174,
+      "selected_runs": 173,
       "downloaded_skills": 29,
-      "topic_hits": 172,
+      "topic_hits": 173,
       "code_hits": 0,
-      "max_stars": 213,
-      "last_seen_at": "2026-11-22T11:44:02.365816Z"
+      "max_stars": 218,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "worldwonderer/oh-story-claudecode": {
       "seen_runs": 107,
@@ -3091,13 +3091,13 @@
       "last_seen_at": "2026-11-09T06:39:18.809774Z"
     },
     "chengzhongwei/Prompt-sensei": {
-      "seen_runs": 176,
-      "selected_runs": 169,
+      "seen_runs": 177,
+      "selected_runs": 170,
       "downloaded_skills": 19,
-      "topic_hits": 176,
+      "topic_hits": 177,
       "code_hits": 0,
       "max_stars": 119,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "2389-research/simmer": {
       "seen_runs": 38,
@@ -3145,13 +3145,13 @@
       "last_seen_at": "2026-11-24T10:35:06.120253Z"
     },
     "dembrandt/dembrandt-skills": {
-      "seen_runs": 162,
-      "selected_runs": 155,
+      "seen_runs": 163,
+      "selected_runs": 156,
       "downloaded_skills": 378,
-      "topic_hits": 167,
+      "topic_hits": 168,
       "code_hits": 0,
-      "max_stars": 197,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
+      "max_stars": 242,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "OdradekAI/bundles-forge": {
       "seen_runs": 43,
@@ -3190,13 +3190,13 @@
       "last_seen_at": "2026-11-25T09:00:22.617955Z"
     },
     "ciembor/agent-rules-books": {
-      "seen_runs": 170,
-      "selected_runs": 163,
+      "seen_runs": 171,
+      "selected_runs": 164,
       "downloaded_skills": 14,
-      "topic_hits": 177,
+      "topic_hits": 178,
       "code_hits": 0,
-      "max_stars": 3330,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
+      "max_stars": 3380,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "nostrband/ServiceGraph": {
       "seen_runs": 167,
@@ -3253,13 +3253,13 @@
       "last_seen_at": "2026-11-26T08:48:34.115351Z"
     },
     "scdenney/open-science-skills": {
-      "seen_runs": 170,
-      "selected_runs": 163,
-      "downloaded_skills": 293,
-      "topic_hits": 163,
+      "seen_runs": 171,
+      "selected_runs": 164,
+      "downloaded_skills": 302,
+      "topic_hits": 164,
       "code_hits": 0,
-      "max_stars": 71,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
+      "max_stars": 72,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "redhat-community-ai-tools/claude-code-setup-evaluator": {
       "seen_runs": 30,
@@ -3307,13 +3307,13 @@
       "last_seen_at": "2026-11-27T08:20:50.400817Z"
     },
     "nanocoai/nanoclaw": {
-      "seen_runs": 170,
-      "selected_runs": 163,
+      "seen_runs": 171,
+      "selected_runs": 164,
       "downloaded_skills": 1139,
-      "topic_hits": 163,
+      "topic_hits": 164,
       "code_hits": 0,
-      "max_stars": 31138,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
+      "max_stars": 31174,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "nowork-studio/toprank": {
       "seen_runs": 13,
@@ -3325,13 +3325,13 @@
       "last_seen_at": "2026-05-24T04:14:58.954855Z"
     },
     "WenyuChiou/awesome-agentic-ai-zh": {
-      "seen_runs": 170,
-      "selected_runs": 163,
+      "seen_runs": 171,
+      "selected_runs": 164,
       "downloaded_skills": 1,
-      "topic_hits": 163,
+      "topic_hits": 164,
       "code_hits": 0,
-      "max_stars": 8850,
-      "last_seen_at": "2026-11-23T07:47:15.135202Z"
+      "max_stars": 8959,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "jherrodthomas/robotics-skills-suite": {
       "seen_runs": 44,
@@ -3379,13 +3379,13 @@
       "last_seen_at": "2026-11-24T10:35:06.120253Z"
     },
     "hqhq1025/skill-optimizer": {
-      "seen_runs": 167,
-      "selected_runs": 160,
+      "seen_runs": 168,
+      "selected_runs": 161,
       "downloaded_skills": 51,
-      "topic_hits": 174,
+      "topic_hits": 175,
       "code_hits": 0,
-      "max_stars": 196,
-      "last_seen_at": "2026-11-25T09:00:22.617955Z"
+      "max_stars": 197,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "ursazoo/lanhu-to-code": {
       "seen_runs": 67,
@@ -3406,13 +3406,13 @@
       "last_seen_at": "2026-11-12T07:43:24.539120Z"
     },
     "adityaarsharma/youtube-marketing-skills": {
-      "seen_runs": 166,
-      "selected_runs": 159,
+      "seen_runs": 167,
+      "selected_runs": 160,
       "downloaded_skills": 8,
-      "topic_hits": 159,
+      "topic_hits": 160,
       "code_hits": 0,
-      "max_stars": 88,
-      "last_seen_at": "2026-11-23T07:47:15.135202Z"
+      "max_stars": 90,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "BharathKumarSuresh/claude-design-system-hooks": {
       "seen_runs": 4,
@@ -3460,40 +3460,40 @@
       "last_seen_at": "2026-11-23T07:47:15.135202Z"
     },
     "hypnguyen1209/offensive-claude": {
-      "seen_runs": 161,
-      "selected_runs": 154,
+      "seen_runs": 162,
+      "selected_runs": 155,
       "downloaded_skills": 216,
-      "topic_hits": 154,
+      "topic_hits": 155,
       "code_hits": 0,
-      "max_stars": 428,
-      "last_seen_at": "2026-11-25T09:00:22.617955Z"
+      "max_stars": 430,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "mohitagw15856/pm-claude-skills": {
-      "seen_runs": 157,
-      "selected_runs": 151,
+      "seen_runs": 158,
+      "selected_runs": 152,
       "downloaded_skills": 1427,
-      "topic_hits": 157,
+      "topic_hits": 158,
       "code_hits": 2,
-      "max_stars": 1588,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
+      "max_stars": 1612,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "Klotzkette/claude-fuer-deutsches-recht": {
-      "seen_runs": 157,
-      "selected_runs": 154,
-      "downloaded_skills": 1706,
-      "topic_hits": 154,
+      "seen_runs": 158,
+      "selected_runs": 155,
+      "downloaded_skills": 1708,
+      "topic_hits": 155,
       "code_hits": 20,
-      "max_stars": 1867,
-      "last_seen_at": "2026-11-22T11:44:02.365816Z"
+      "max_stars": 1890,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "elementalsouls/Claude-BugHunter": {
-      "seen_runs": 159,
-      "selected_runs": 152,
-      "downloaded_skills": 401,
-      "topic_hits": 152,
+      "seen_runs": 160,
+      "selected_runs": 153,
+      "downloaded_skills": 402,
+      "topic_hits": 153,
       "code_hits": 0,
-      "max_stars": 16658,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
+      "max_stars": 26404,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "larajuniorlara/Claude-Design-Studio": {
       "seen_runs": 2,
@@ -3514,13 +3514,13 @@
       "last_seen_at": "2026-05-25T04:30:09.993570Z"
     },
     "Frappucc1no/recall-loom": {
-      "seen_runs": 150,
-      "selected_runs": 150,
+      "seen_runs": 151,
+      "selected_runs": 151,
       "downloaded_skills": 7,
-      "topic_hits": 163,
+      "topic_hits": 164,
       "code_hits": 0,
       "max_stars": 156,
-      "last_seen_at": "2026-11-22T11:44:02.365816Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "majiayu000/claude-arsenal": {
       "seen_runs": 5,
@@ -3541,13 +3541,13 @@
       "last_seen_at": "2026-08-12T02:29:32.489626Z"
     },
     "existential-birds/beagle": {
-      "seen_runs": 155,
-      "selected_runs": 148,
-      "downloaded_skills": 503,
-      "topic_hits": 149,
+      "seen_runs": 156,
+      "selected_runs": 149,
+      "downloaded_skills": 570,
+      "topic_hits": 150,
       "code_hits": 0,
-      "max_stars": 89,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
+      "max_stars": 91,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "zhristophe/Claude-Mythos-AI-Anthropic-App": {
       "seen_runs": 8,
@@ -3559,13 +3559,13 @@
       "last_seen_at": "2026-06-03T04:46:54.936780Z"
     },
     "alookai/alook": {
-      "seen_runs": 155,
-      "selected_runs": 148,
+      "seen_runs": 156,
+      "selected_runs": 149,
       "downloaded_skills": 0,
-      "topic_hits": 148,
+      "topic_hits": 149,
       "code_hits": 0,
-      "max_stars": 1529,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
+      "max_stars": 1547,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "rampstackco/claude-skills": {
       "seen_runs": 144,
@@ -3595,31 +3595,31 @@
       "last_seen_at": "2026-06-09T04:10:07.333767Z"
     },
     "longbridge/skills": {
-      "seen_runs": 153,
-      "selected_runs": 146,
+      "seen_runs": 154,
+      "selected_runs": 147,
       "downloaded_skills": 309,
-      "topic_hits": 153,
+      "topic_hits": 154,
       "code_hits": 0,
-      "max_stars": 73,
-      "last_seen_at": "2026-11-25T09:00:22.617955Z"
+      "max_stars": 75,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "activeloopai/hivemind": {
-      "seen_runs": 153,
-      "selected_runs": 146,
+      "seen_runs": 154,
+      "selected_runs": 147,
       "downloaded_skills": 29,
-      "topic_hits": 146,
+      "topic_hits": 147,
       "code_hits": 0,
-      "max_stars": 1659,
-      "last_seen_at": "2026-11-23T07:47:15.135202Z"
+      "max_stars": 1660,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "majiayu000/spellbook": {
-      "seen_runs": 152,
-      "selected_runs": 145,
+      "seen_runs": 153,
+      "selected_runs": 146,
       "downloaded_skills": 190,
-      "topic_hits": 159,
+      "topic_hits": 160,
       "code_hits": 3,
-      "max_stars": 300,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
+      "max_stars": 301,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "JuneYaooo/nihaixia": {
       "seen_runs": 3,
@@ -3703,22 +3703,22 @@
       "last_seen_at": "2026-06-02T04:38:18.315515Z"
     },
     "CesiumGS/cesiumjs-skills": {
-      "seen_runs": 142,
-      "selected_runs": 142,
+      "seen_runs": 143,
+      "selected_runs": 143,
       "downloaded_skills": 15,
-      "topic_hits": 149,
+      "topic_hits": 150,
       "code_hits": 0,
       "max_stars": 198,
-      "last_seen_at": "2026-11-22T11:44:02.365816Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "Kaelio/ktx": {
-      "seen_runs": 143,
-      "selected_runs": 142,
+      "seen_runs": 144,
+      "selected_runs": 143,
       "downloaded_skills": 16,
-      "topic_hits": 149,
+      "topic_hits": 150,
       "code_hits": 0,
-      "max_stars": 1633,
-      "last_seen_at": "2026-11-22T11:44:02.365816Z"
+      "max_stars": 1641,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "JuneYaooo/nihaisha-tcm": {
       "seen_runs": 3,
@@ -3757,13 +3757,13 @@
       "last_seen_at": "2026-10-18T09:02:37.652382Z"
     },
     "ComPDFKit/compdf-skills": {
-      "seen_runs": 139,
-      "selected_runs": 139,
+      "seen_runs": 140,
+      "selected_runs": 140,
       "downloaded_skills": 18,
-      "topic_hits": 146,
+      "topic_hits": 147,
       "code_hits": 0,
-      "max_stars": 110,
-      "last_seen_at": "2026-11-22T11:44:02.365816Z"
+      "max_stars": 111,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "iziqing/-disk-cleaner": {
       "seen_runs": 122,
@@ -3775,13 +3775,13 @@
       "last_seen_at": "2026-11-25T09:00:22.617955Z"
     },
     "cgallic/kai-cmo-harness": {
-      "seen_runs": 146,
-      "selected_runs": 139,
+      "seen_runs": 147,
+      "selected_runs": 140,
       "downloaded_skills": 131,
-      "topic_hits": 139,
+      "topic_hits": 140,
       "code_hits": 0,
       "max_stars": 68,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "ergrelet/windiff": {
       "seen_runs": 47,
@@ -3802,58 +3802,58 @@
       "last_seen_at": "2026-06-13T04:25:33.712284Z"
     },
     "JuneYaooo/nihaisha-nishi-tcm": {
-      "seen_runs": 139,
-      "selected_runs": 138,
+      "seen_runs": 140,
+      "selected_runs": 139,
       "downloaded_skills": 1,
-      "topic_hits": 145,
+      "topic_hits": 146,
       "code_hits": 0,
-      "max_stars": 2282,
-      "last_seen_at": "2026-11-22T11:44:02.365816Z"
+      "max_stars": 2309,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "anbeime/skill": {
-      "seen_runs": 145,
-      "selected_runs": 138,
+      "seen_runs": 146,
+      "selected_runs": 139,
       "downloaded_skills": 114,
-      "topic_hits": 145,
+      "topic_hits": 146,
       "code_hits": 0,
-      "max_stars": 9799,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
+      "max_stars": 9975,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "syahiidkamil/Software-Engineer-AI-Agent-Atlas": {
-      "seen_runs": 143,
-      "selected_runs": 136,
+      "seen_runs": 144,
+      "selected_runs": 137,
       "downloaded_skills": 26,
-      "topic_hits": 136,
+      "topic_hits": 137,
       "code_hits": 0,
       "max_stars": 406,
-      "last_seen_at": "2026-11-27T08:20:50.400817Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "Egonex-AI/Understand-Anything": {
-      "seen_runs": 135,
-      "selected_runs": 135,
+      "seen_runs": 136,
+      "selected_runs": 136,
       "downloaded_skills": 9,
-      "topic_hits": 142,
+      "topic_hits": 143,
       "code_hits": 0,
-      "max_stars": 93591,
-      "last_seen_at": "2026-11-22T11:44:02.365816Z"
+      "max_stars": 94746,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "laolaoshiren/claude-code-skills-zh": {
-      "seen_runs": 127,
-      "selected_runs": 120,
+      "seen_runs": 128,
+      "selected_runs": 121,
       "downloaded_skills": 22,
-      "topic_hits": 121,
+      "topic_hits": 122,
       "code_hits": 0,
       "max_stars": 927,
-      "last_seen_at": "2026-11-25T09:00:22.617955Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "pedrohcgs/claude-code-my-workflow": {
-      "seen_runs": 140,
-      "selected_runs": 133,
+      "seen_runs": 141,
+      "selected_runs": 134,
       "downloaded_skills": 98,
-      "topic_hits": 135,
+      "topic_hits": 136,
       "code_hits": 0,
-      "max_stars": 1729,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
+      "max_stars": 1740,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "Benkapner/claude-code-basecamp": {
       "seen_runs": 27,
@@ -3874,13 +3874,13 @@
       "last_seen_at": "2026-11-26T08:48:34.115351Z"
     },
     "specstoryai/getspecstory": {
-      "seen_runs": 139,
-      "selected_runs": 132,
+      "seen_runs": 140,
+      "selected_runs": 133,
       "downloaded_skills": 2,
-      "topic_hits": 146,
+      "topic_hits": 147,
       "code_hits": 0,
-      "max_stars": 1377,
-      "last_seen_at": "2026-11-27T08:20:50.400817Z"
+      "max_stars": 1379,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "bawadou/claude-engineer": {
       "seen_runs": 85,
@@ -4009,13 +4009,13 @@
       "last_seen_at": "2026-11-24T10:35:06.120253Z"
     },
     "mex-memory/mex": {
-      "seen_runs": 129,
-      "selected_runs": 122,
+      "seen_runs": 130,
+      "selected_runs": 123,
       "downloaded_skills": 7,
-      "topic_hits": 129,
+      "topic_hits": 130,
       "code_hits": 0,
       "max_stars": 1797,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "x0c/doc-skills": {
       "seen_runs": 24,
@@ -4027,13 +4027,13 @@
       "last_seen_at": "2026-07-20T03:41:41.139968Z"
     },
     "plugin87/ux-ui-agent-skills": {
-      "seen_runs": 129,
-      "selected_runs": 122,
+      "seen_runs": 130,
+      "selected_runs": 123,
       "downloaded_skills": 27,
-      "topic_hits": 122,
+      "topic_hits": 123,
       "code_hits": 0,
-      "max_stars": 3217,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
+      "max_stars": 3243,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "zebbern/skills": {
       "seen_runs": 86,
@@ -4045,13 +4045,13 @@
       "last_seen_at": "2026-11-27T08:20:50.400817Z"
     },
     "wanshuiyin/Anti-Autoresearch": {
-      "seen_runs": 127,
-      "selected_runs": 120,
+      "seen_runs": 128,
+      "selected_runs": 121,
       "downloaded_skills": 12,
-      "topic_hits": 120,
+      "topic_hits": 121,
       "code_hits": 0,
-      "max_stars": 182,
-      "last_seen_at": "2026-11-27T08:20:50.400817Z"
+      "max_stars": 183,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "EAIconsulting/cowork-skills-library": {
       "seen_runs": 44,
@@ -4072,49 +4072,49 @@
       "last_seen_at": "2026-11-23T07:47:15.135202Z"
     },
     "jabrena/plinth": {
-      "seen_runs": 126,
-      "selected_runs": 119,
+      "seen_runs": 127,
+      "selected_runs": 120,
       "downloaded_skills": 123,
-      "topic_hits": 167,
+      "topic_hits": 168,
       "code_hits": 0,
-      "max_stars": 465,
-      "last_seen_at": "2026-11-25T09:00:22.617955Z"
+      "max_stars": 468,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "rse/ase": {
-      "seen_runs": 126,
-      "selected_runs": 119,
-      "downloaded_skills": 74,
-      "topic_hits": 119,
+      "seen_runs": 127,
+      "selected_runs": 120,
+      "downloaded_skills": 77,
+      "topic_hits": 120,
       "code_hits": 0,
       "max_stars": 78,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "slimeglitch/gryffin-calorai-ventus": {
-      "seen_runs": 125,
-      "selected_runs": 118,
+      "seen_runs": 126,
+      "selected_runs": 119,
       "downloaded_skills": 0,
-      "topic_hits": 118,
+      "topic_hits": 119,
       "code_hits": 0,
       "max_stars": 152,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "Vitorlindo201/Themata-Claude-Scribe": {
-      "seen_runs": 125,
-      "selected_runs": 118,
+      "seen_runs": 126,
+      "selected_runs": 119,
       "downloaded_skills": 0,
-      "topic_hits": 118,
+      "topic_hits": 119,
       "code_hits": 0,
       "max_stars": 152,
-      "last_seen_at": "2026-11-23T07:47:15.135202Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "MIKOTOKAWAII25/local-ai-code-assistant": {
-      "seen_runs": 125,
-      "selected_runs": 118,
+      "seen_runs": 126,
+      "selected_runs": 119,
       "downloaded_skills": 0,
-      "topic_hits": 118,
+      "topic_hits": 119,
       "code_hits": 0,
       "max_stars": 157,
-      "last_seen_at": "2026-11-23T07:47:15.135202Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "appleboy/skills": {
       "seen_runs": 49,
@@ -4135,13 +4135,13 @@
       "last_seen_at": "2026-07-28T03:07:06.983687Z"
     },
     "XiaoMaColtAI/math-modeling-skill": {
-      "seen_runs": 122,
-      "selected_runs": 115,
+      "seen_runs": 123,
+      "selected_runs": 116,
       "downloaded_skills": 12,
-      "topic_hits": 115,
+      "topic_hits": 116,
       "code_hits": 0,
-      "max_stars": 1969,
-      "last_seen_at": "2026-11-23T07:47:15.135202Z"
+      "max_stars": 2009,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "wesammustafa/Claude-Code-Everything-You-Need-to-Know": {
       "seen_runs": 110,
@@ -4153,40 +4153,40 @@
       "last_seen_at": "2026-11-06T06:31:46.444574Z"
     },
     "billy-enrizky/openbrowser-ai": {
-      "seen_runs": 120,
-      "selected_runs": 113,
+      "seen_runs": 121,
+      "selected_runs": 114,
       "downloaded_skills": 7,
-      "topic_hits": 120,
+      "topic_hits": 121,
       "code_hits": 0,
       "max_stars": 279,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "sickn33/agentic-awesome-skills": {
-      "seen_runs": 117,
-      "selected_runs": 110,
+      "seen_runs": 118,
+      "selected_runs": 111,
       "downloaded_skills": 926,
-      "topic_hits": 124,
+      "topic_hits": 125,
       "code_hits": 6,
-      "max_stars": 50123,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
+      "max_stars": 50457,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "composio-community/awesome-claude-plugins": {
-      "seen_runs": 115,
-      "selected_runs": 108,
+      "seen_runs": 116,
+      "selected_runs": 109,
       "downloaded_skills": 23,
-      "topic_hits": 108,
+      "topic_hits": 109,
       "code_hits": 0,
-      "max_stars": 2005,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
+      "max_stars": 2010,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "vitaecontext/vitaecontext": {
-      "seen_runs": 114,
-      "selected_runs": 107,
+      "seen_runs": 115,
+      "selected_runs": 108,
       "downloaded_skills": 26,
-      "topic_hits": 114,
+      "topic_hits": 115,
       "code_hits": 0,
-      "max_stars": 91,
-      "last_seen_at": "2026-11-27T08:20:50.400817Z"
+      "max_stars": 92,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "nexscope-ai/Amazon-Skills": {
       "seen_runs": 98,
@@ -4225,13 +4225,13 @@
       "last_seen_at": "2026-07-18T03:02:40.858047Z"
     },
     "Gabberflast/academic-pptx-skill": {
-      "seen_runs": 104,
-      "selected_runs": 104,
+      "seen_runs": 105,
+      "selected_runs": 105,
       "downloaded_skills": 1,
-      "topic_hits": 111,
+      "topic_hits": 112,
       "code_hits": 0,
-      "max_stars": 1658,
-      "last_seen_at": "2026-11-22T11:44:02.365816Z"
+      "max_stars": 1715,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "noluyorAbi/claude-code-recap": {
       "seen_runs": 68,
@@ -4252,13 +4252,13 @@
       "last_seen_at": "2026-11-26T08:48:34.115351Z"
     },
     "sergebulaev/linkedin-skills": {
-      "seen_runs": 104,
-      "selected_runs": 97,
+      "seen_runs": 105,
+      "selected_runs": 98,
       "downloaded_skills": 26,
-      "topic_hits": 104,
+      "topic_hits": 105,
       "code_hits": 0,
-      "max_stars": 6113,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
+      "max_stars": 6255,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "artokun/comfyui-mcp": {
       "seen_runs": 25,
@@ -4288,22 +4288,22 @@
       "last_seen_at": "2026-11-23T07:47:15.135202Z"
     },
     "ayghri/i-have-adhd": {
-      "seen_runs": 106,
-      "selected_runs": 99,
+      "seen_runs": 107,
+      "selected_runs": 100,
       "downloaded_skills": 2,
-      "topic_hits": 99,
+      "topic_hits": 100,
       "code_hits": 0,
-      "max_stars": 61920,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
+      "max_stars": 62809,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "Vincentwei1021/video-shotcraft": {
-      "seen_runs": 102,
-      "selected_runs": 96,
+      "seen_runs": 103,
+      "selected_runs": 97,
       "downloaded_skills": 1,
-      "topic_hits": 197,
+      "topic_hits": 199,
       "code_hits": 0,
-      "max_stars": 22025,
-      "last_seen_at": "2026-11-23T07:47:15.135202Z"
+      "max_stars": 23157,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "0xwilliamortiz/agents-council": {
       "seen_runs": 21,
@@ -4333,13 +4333,13 @@
       "last_seen_at": "2026-10-09T05:26:06.081976Z"
     },
     "UiPath/coder_eval": {
-      "seen_runs": 104,
-      "selected_runs": 97,
+      "seen_runs": 105,
+      "selected_runs": 98,
       "downloaded_skills": 5,
-      "topic_hits": 110,
+      "topic_hits": 111,
       "code_hits": 0,
       "max_stars": 160,
-      "last_seen_at": "2026-11-23T07:47:15.135202Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "indranilbanerjee/digital-marketing-pro": {
       "seen_runs": 94,
@@ -4351,13 +4351,13 @@
       "last_seen_at": "2026-11-25T09:00:22.617955Z"
     },
     "joeyvansommeren/journey-mapper": {
-      "seen_runs": 103,
-      "selected_runs": 96,
+      "seen_runs": 104,
+      "selected_runs": 97,
       "downloaded_skills": 1,
-      "topic_hits": 96,
+      "topic_hits": 97,
       "code_hits": 0,
       "max_stars": 95,
-      "last_seen_at": "2026-11-25T09:00:22.617955Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "fcavalcantirj/claude-code-eyes": {
       "seen_runs": 98,
@@ -4369,31 +4369,31 @@
       "last_seen_at": "2026-11-24T10:35:06.120253Z"
     },
     "nuwa-skills/awesome-nuwa": {
-      "seen_runs": 101,
-      "selected_runs": 94,
+      "seen_runs": 102,
+      "selected_runs": 95,
       "downloaded_skills": 0,
-      "topic_hits": 101,
+      "topic_hits": 102,
       "code_hits": 0,
-      "max_stars": 511,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
+      "max_stars": 516,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "Cassette-Editor/oh-my-cassette": {
-      "seen_runs": 94,
-      "selected_runs": 94,
+      "seen_runs": 95,
+      "selected_runs": 95,
       "downloaded_skills": 5,
-      "topic_hits": 101,
+      "topic_hits": 102,
       "code_hits": 0,
       "max_stars": 219,
-      "last_seen_at": "2026-11-22T11:44:02.365816Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "arbiterForge/codeArbiter": {
-      "seen_runs": 101,
-      "selected_runs": 94,
+      "seen_runs": 102,
+      "selected_runs": 95,
       "downloaded_skills": 164,
-      "topic_hits": 108,
+      "topic_hits": 109,
       "code_hits": 0,
       "max_stars": 155,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "worldwonderer/novel-to-game": {
       "seen_runs": 26,
@@ -4423,13 +4423,13 @@
       "last_seen_at": "2026-08-10T02:21:48.449123Z"
     },
     "amElnagdy/delegate-skills": {
-      "seen_runs": 96,
-      "selected_runs": 89,
+      "seen_runs": 97,
+      "selected_runs": 90,
       "downloaded_skills": 21,
-      "topic_hits": 96,
+      "topic_hits": 97,
       "code_hits": 0,
-      "max_stars": 2647,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
+      "max_stars": 2671,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "evanca/flutter-ai-rules": {
       "seen_runs": 74,
@@ -4495,13 +4495,13 @@
       "last_seen_at": "2026-11-24T10:35:06.120253Z"
     },
     "levi-qiao/longgraph-skill": {
-      "seen_runs": 76,
-      "selected_runs": 73,
+      "seen_runs": 77,
+      "selected_runs": 74,
       "downloaded_skills": 5,
-      "topic_hits": 74,
+      "topic_hits": 75,
       "code_hits": 0,
       "max_stars": 79,
-      "last_seen_at": "2026-11-25T09:00:22.617955Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "costiash/claude-code-docs": {
       "seen_runs": 85,
@@ -4513,49 +4513,49 @@
       "last_seen_at": "2026-11-24T10:35:06.120253Z"
     },
     "aaddrick/attention-control": {
-      "seen_runs": 90,
-      "selected_runs": 83,
+      "seen_runs": 91,
+      "selected_runs": 84,
       "downloaded_skills": 2,
-      "topic_hits": 89,
+      "topic_hits": 90,
       "code_hits": 0,
-      "max_stars": 159,
-      "last_seen_at": "2026-11-23T07:47:15.135202Z"
+      "max_stars": 165,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "agiwhitelist/auteur": {
-      "seen_runs": 90,
-      "selected_runs": 83,
+      "seen_runs": 91,
+      "selected_runs": 84,
       "downloaded_skills": 1,
-      "topic_hits": 89,
+      "topic_hits": 90,
       "code_hits": 0,
       "max_stars": 1102,
-      "last_seen_at": "2026-11-23T07:47:15.135202Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "FRACerqueira/PromptPlus": {
-      "seen_runs": 82,
-      "selected_runs": 82,
+      "seen_runs": 83,
+      "selected_runs": 83,
       "downloaded_skills": 0,
-      "topic_hits": 89,
+      "topic_hits": 90,
       "code_hits": 0,
       "max_stars": 68,
-      "last_seen_at": "2026-11-22T11:44:02.365816Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "serejaris/personal-corp-os": {
-      "seen_runs": 88,
-      "selected_runs": 81,
+      "seen_runs": 89,
+      "selected_runs": 82,
       "downloaded_skills": 49,
-      "topic_hits": 88,
+      "topic_hits": 89,
       "code_hits": 0,
-      "max_stars": 248,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
+      "max_stars": 250,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "JasonColapietro/suede-creator-skills": {
-      "seen_runs": 82,
-      "selected_runs": 81,
+      "seen_runs": 83,
+      "selected_runs": 82,
       "downloaded_skills": 88,
-      "topic_hits": 93,
+      "topic_hits": 94,
       "code_hits": 0,
       "max_stars": 153,
-      "last_seen_at": "2026-11-22T11:44:02.365816Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "vasilyu1983/AI-Agents-public": {
       "seen_runs": 69,
@@ -4576,13 +4576,13 @@
       "last_seen_at": "2026-08-10T02:21:48.449123Z"
     },
     "seb1n/awesome-ai-agent-skills": {
-      "seen_runs": 85,
-      "selected_runs": 78,
+      "seen_runs": 86,
+      "selected_runs": 79,
       "downloaded_skills": 96,
-      "topic_hits": 99,
+      "topic_hits": 100,
       "code_hits": 0,
-      "max_stars": 261,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
+      "max_stars": 262,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "Optim-Agent/optim-plans": {
       "seen_runs": 18,
@@ -4603,31 +4603,31 @@
       "last_seen_at": "2026-11-25T09:00:22.617955Z"
     },
     "jangviktor-web/nihaixia": {
-      "seen_runs": 83,
-      "selected_runs": 76,
+      "seen_runs": 84,
+      "selected_runs": 77,
       "downloaded_skills": 1,
-      "topic_hits": 83,
+      "topic_hits": 84,
       "code_hits": 1,
-      "max_stars": 4214,
-      "last_seen_at": "2026-11-25T09:00:22.617955Z"
+      "max_stars": 4321,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "tance-mang/chinese-webnovel-skills": {
-      "seen_runs": 83,
-      "selected_runs": 76,
+      "seen_runs": 84,
+      "selected_runs": 77,
       "downloaded_skills": 39,
-      "topic_hits": 76,
+      "topic_hits": 77,
       "code_hits": 0,
-      "max_stars": 110,
-      "last_seen_at": "2026-11-27T08:20:50.400817Z"
+      "max_stars": 173,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "zenbu-labs/terminal-browser": {
-      "seen_runs": 83,
-      "selected_runs": 76,
+      "seen_runs": 84,
+      "selected_runs": 77,
       "downloaded_skills": 1,
-      "topic_hits": 76,
+      "topic_hits": 77,
       "code_hits": 0,
-      "max_stars": 4750,
-      "last_seen_at": "2026-11-27T08:20:50.400817Z"
+      "max_stars": 5020,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "karanb192/itr-wala": {
       "seen_runs": 73,
@@ -4639,22 +4639,22 @@
       "last_seen_at": "2026-11-25T09:00:22.617955Z"
     },
     "JuneYaooo/self-media-compliance-review": {
-      "seen_runs": 76,
-      "selected_runs": 75,
+      "seen_runs": 77,
+      "selected_runs": 76,
       "downloaded_skills": 1,
-      "topic_hits": 75,
+      "topic_hits": 76,
       "code_hits": 0,
-      "max_stars": 138,
-      "last_seen_at": "2026-11-22T11:44:02.365816Z"
+      "max_stars": 140,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "nowork-studio/notfair-plugin": {
-      "seen_runs": 82,
-      "selected_runs": 75,
+      "seen_runs": 83,
+      "selected_runs": 76,
       "downloaded_skills": 96,
-      "topic_hits": 75,
+      "topic_hits": 76,
       "code_hits": 0,
-      "max_stars": 4291,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
+      "max_stars": 4325,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "Leutenegger/book-to-skill": {
       "seen_runs": 9,
@@ -4666,40 +4666,40 @@
       "last_seen_at": "2026-08-23T01:51:41.964274Z"
     },
     "liustack/modlens": {
+      "seen_runs": 82,
+      "selected_runs": 75,
+      "downloaded_skills": 1,
+      "topic_hits": 82,
+      "code_hits": 0,
+      "max_stars": 5105,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
+    },
+    "seyedehsanhadi/sloptrim": {
       "seen_runs": 81,
       "selected_runs": 74,
       "downloaded_skills": 1,
-      "topic_hits": 81,
+      "topic_hits": 74,
       "code_hits": 0,
-      "max_stars": 5055,
-      "last_seen_at": "2026-11-25T09:00:22.617955Z"
-    },
-    "seyedehsanhadi/sloptrim": {
-      "seen_runs": 80,
-      "selected_runs": 73,
-      "downloaded_skills": 1,
-      "topic_hits": 73,
-      "code_hits": 0,
-      "max_stars": 428,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
+      "max_stars": 436,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "drobins25/craft": {
-      "seen_runs": 80,
-      "selected_runs": 73,
+      "seen_runs": 81,
+      "selected_runs": 74,
       "downloaded_skills": 11,
-      "topic_hits": 73,
+      "topic_hits": 74,
       "code_hits": 0,
       "max_stars": 74,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "motiful/product-shots": {
-      "seen_runs": 79,
-      "selected_runs": 72,
+      "seen_runs": 80,
+      "selected_runs": 73,
       "downloaded_skills": 7,
-      "topic_hits": 77,
+      "topic_hits": 78,
       "code_hits": 0,
-      "max_stars": 151,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
+      "max_stars": 158,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "titanwings/colleague-skill": {
       "seen_runs": 5,
@@ -4711,22 +4711,22 @@
       "last_seen_at": "2026-08-23T01:51:41.964274Z"
     },
     "Avijit07x/claude-db": {
-      "seen_runs": 70,
-      "selected_runs": 70,
+      "seen_runs": 71,
+      "selected_runs": 71,
       "downloaded_skills": 3,
-      "topic_hits": 77,
+      "topic_hits": 78,
       "code_hits": 0,
-      "max_stars": 236,
-      "last_seen_at": "2026-11-22T11:44:02.365816Z"
+      "max_stars": 237,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "GaZmagik/iso-24495": {
-      "seen_runs": 70,
-      "selected_runs": 70,
+      "seen_runs": 71,
+      "selected_runs": 71,
       "downloaded_skills": 8,
-      "topic_hits": 84,
+      "topic_hits": 85,
       "code_hits": 0,
-      "max_stars": 213,
-      "last_seen_at": "2026-11-22T11:44:02.365816Z"
+      "max_stars": 217,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "HIDORAKAI002/ai-workspace-archive": {
       "seen_runs": 52,
@@ -4747,22 +4747,22 @@
       "last_seen_at": "2026-11-26T08:48:34.115351Z"
     },
     "mattgierhart/PRD-driven-context-engineering": {
-      "seen_runs": 76,
-      "selected_runs": 69,
+      "seen_runs": 77,
+      "selected_runs": 70,
       "downloaded_skills": 70,
-      "topic_hits": 76,
+      "topic_hits": 77,
       "code_hits": 0,
       "max_stars": 194,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "sunchaokun/PPT-Design-Skill": {
-      "seen_runs": 76,
-      "selected_runs": 69,
+      "seen_runs": 77,
+      "selected_runs": 70,
       "downloaded_skills": 1,
-      "topic_hits": 76,
+      "topic_hits": 77,
       "code_hits": 0,
       "max_stars": 1224,
-      "last_seen_at": "2026-11-27T08:20:50.400817Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "Leutenegger/watermarks-remover": {
       "seen_runs": 4,
@@ -4774,13 +4774,13 @@
       "last_seen_at": "2026-08-23T01:51:41.964274Z"
     },
     "titanwings/distilly": {
-      "seen_runs": 72,
-      "selected_runs": 65,
+      "seen_runs": 73,
+      "selected_runs": 66,
       "downloaded_skills": 4,
-      "topic_hits": 79,
+      "topic_hits": 80,
       "code_hits": 0,
-      "max_stars": 26768,
-      "last_seen_at": "2026-11-27T08:20:50.400817Z"
+      "max_stars": 26911,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "ShadowAqueduct/watermark-remover": {
       "seen_runs": 12,
@@ -4792,40 +4792,40 @@
       "last_seen_at": "2026-09-04T03:46:36.728019Z"
     },
     "zenstory-ai/novel-to-game": {
-      "seen_runs": 71,
-      "selected_runs": 64,
+      "seen_runs": 72,
+      "selected_runs": 65,
       "downloaded_skills": 8,
-      "topic_hits": 120,
+      "topic_hits": 121,
       "code_hits": 0,
-      "max_stars": 1183,
-      "last_seen_at": "2026-11-27T08:20:50.400817Z"
+      "max_stars": 1286,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "zenstory-ai/oh-story-claudecode": {
-      "seen_runs": 71,
-      "selected_runs": 64,
+      "seen_runs": 72,
+      "selected_runs": 65,
       "downloaded_skills": 14,
-      "topic_hits": 115,
+      "topic_hits": 117,
       "code_hits": 0,
-      "max_stars": 8828,
-      "last_seen_at": "2026-11-27T08:20:50.400817Z"
+      "max_stars": 8977,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "kharmanskyi/open-steps": {
-      "seen_runs": 69,
-      "selected_runs": 62,
+      "seen_runs": 70,
+      "selected_runs": 63,
       "downloaded_skills": 8,
-      "topic_hits": 69,
+      "topic_hits": 70,
       "code_hits": 0,
       "max_stars": 1364,
-      "last_seen_at": "2026-11-25T09:00:22.617955Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "ScrapeCreators/social-media-research-skills": {
-      "seen_runs": 69,
-      "selected_runs": 62,
+      "seen_runs": 70,
+      "selected_runs": 63,
       "downloaded_skills": 13,
-      "topic_hits": 69,
+      "topic_hits": 70,
       "code_hits": 0,
-      "max_stars": 6952,
-      "last_seen_at": "2026-11-23T07:47:15.135202Z"
+      "max_stars": 8172,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "pale-knight/redteam-skill": {
       "seen_runs": 63,
@@ -4837,13 +4837,13 @@
       "last_seen_at": "2026-11-26T08:48:34.115351Z"
     },
     "cbrock84/headcount": {
-      "seen_runs": 55,
-      "selected_runs": 50,
+      "seen_runs": 56,
+      "selected_runs": 51,
       "downloaded_skills": 110,
-      "topic_hits": 50,
+      "topic_hits": 51,
       "code_hits": 0,
-      "max_stars": 2548,
-      "last_seen_at": "2026-11-03T07:19:24.936437Z"
+      "max_stars": 2573,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "wdhwg001/csift": {
       "seen_runs": 35,
@@ -4873,13 +4873,13 @@
       "last_seen_at": "2026-11-23T07:47:15.135202Z"
     },
     "Appllama/appllama-skills": {
-      "seen_runs": 54,
-      "selected_runs": 54,
+      "seen_runs": 55,
+      "selected_runs": 55,
       "downloaded_skills": 2,
-      "topic_hits": 61,
+      "topic_hits": 62,
       "code_hits": 0,
-      "max_stars": 5623,
-      "last_seen_at": "2026-11-22T11:44:02.365816Z"
+      "max_stars": 5689,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "aiworkskills/wechat-article-skills": {
       "seen_runs": 36,
@@ -4891,67 +4891,67 @@
       "last_seen_at": "2026-11-24T10:35:06.120253Z"
     },
     "Ryze-AI-Adgent/open-seo-mcp-skills": {
+      "seen_runs": 59,
+      "selected_runs": 52,
+      "downloaded_skills": 8,
+      "topic_hits": 52,
+      "code_hits": 0,
+      "max_stars": 10707,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
+    },
+    "alexgreensh/attention-span": {
       "seen_runs": 58,
       "selected_runs": 51,
       "downloaded_skills": 8,
       "topic_hits": 51,
       "code_hits": 0,
-      "max_stars": 10682,
-      "last_seen_at": "2026-11-23T07:47:15.135202Z"
-    },
-    "alexgreensh/attention-span": {
-      "seen_runs": 57,
-      "selected_runs": 50,
-      "downloaded_skills": 8,
-      "topic_hits": 50,
-      "code_hits": 0,
-      "max_stars": 1606,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
+      "max_stars": 1620,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "coldteadotai/pr-lens": {
-      "seen_runs": 57,
-      "selected_runs": 50,
+      "seen_runs": 58,
+      "selected_runs": 51,
       "downloaded_skills": 3,
-      "topic_hits": 57,
+      "topic_hits": 58,
       "code_hits": 0,
-      "max_stars": 2430,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
+      "max_stars": 2453,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "michael-denyer/pstack-claude": {
-      "seen_runs": 56,
-      "selected_runs": 49,
+      "seen_runs": 57,
+      "selected_runs": 50,
       "downloaded_skills": 69,
-      "topic_hits": 93,
+      "topic_hits": 95,
       "code_hits": 0,
-      "max_stars": 4685,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
+      "max_stars": 4968,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "irinabuht12-oss/marketing-skills": {
-      "seen_runs": 56,
-      "selected_runs": 49,
+      "seen_runs": 57,
+      "selected_runs": 50,
       "downloaded_skills": 1,
-      "topic_hits": 49,
+      "topic_hits": 50,
       "code_hits": 0,
-      "max_stars": 8392,
-      "last_seen_at": "2026-11-25T09:00:22.617955Z"
+      "max_stars": 8494,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "ilyautov/humanizer-ru": {
-      "seen_runs": 55,
-      "selected_runs": 48,
+      "seen_runs": 56,
+      "selected_runs": 49,
       "downloaded_skills": 3,
-      "topic_hits": 62,
+      "topic_hits": 63,
       "code_hits": 0,
-      "max_stars": 602,
-      "last_seen_at": "2026-11-25T09:00:22.617955Z"
+      "max_stars": 619,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "zenstory-ai/drama-skills": {
-      "seen_runs": 53,
-      "selected_runs": 46,
+      "seen_runs": 54,
+      "selected_runs": 47,
       "downloaded_skills": 13,
-      "topic_hits": 97,
+      "topic_hits": 99,
       "code_hits": 0,
-      "max_stars": 4626,
-      "last_seen_at": "2026-11-27T08:20:50.400817Z"
+      "max_stars": 5147,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "LLMQuant/awesome-trading-agents": {
       "seen_runs": 42,
@@ -4999,13 +4999,13 @@
       "last_seen_at": "2026-11-26T08:48:34.115351Z"
     },
     "JayPokale/Chisle": {
-      "seen_runs": 42,
-      "selected_runs": 41,
+      "seen_runs": 43,
+      "selected_runs": 42,
       "downloaded_skills": 4,
-      "topic_hits": 53,
+      "topic_hits": 54,
       "code_hits": 0,
-      "max_stars": 1251,
-      "last_seen_at": "2026-11-22T11:44:02.365816Z"
+      "max_stars": 1287,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "suboss87/FDEOps": {
       "seen_runs": 40,
@@ -5017,13 +5017,13 @@
       "last_seen_at": "2026-11-27T08:20:50.400817Z"
     },
     "coldteadotai/abide": {
-      "seen_runs": 46,
-      "selected_runs": 39,
+      "seen_runs": 47,
+      "selected_runs": 40,
       "downloaded_skills": 1,
-      "topic_hits": 39,
+      "topic_hits": 40,
       "code_hits": 0,
-      "max_stars": 632,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
+      "max_stars": 635,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "filtalgo/Filtmall-Shopping-Skill": {
       "seen_runs": 34,
@@ -5035,67 +5035,67 @@
       "last_seen_at": "2026-11-24T10:35:06.120253Z"
     },
     "kishormorol/cli-faq-shortcuts": {
+      "seen_runs": 43,
+      "selected_runs": 36,
+      "downloaded_skills": 1,
+      "topic_hits": 41,
+      "code_hits": 0,
+      "max_stars": 135,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
+    },
+    "OneMoh/html-explainer": {
       "seen_runs": 42,
       "selected_runs": 35,
       "downloaded_skills": 1,
-      "topic_hits": 40,
+      "topic_hits": 49,
       "code_hits": 0,
-      "max_stars": 135,
-      "last_seen_at": "2026-11-25T09:00:22.617955Z"
+      "max_stars": 327,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
-    "OneMoh/html-explainer": {
+    "Jakeschincariol/linkedin-agent-skill": {
+      "seen_runs": 36,
+      "selected_runs": 35,
+      "downloaded_skills": 11,
+      "topic_hits": 42,
+      "code_hits": 0,
+      "max_stars": 4046,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
+    },
+    "sevenevesai/riso-windowseat": {
+      "seen_runs": 41,
+      "selected_runs": 34,
+      "downloaded_skills": 3,
+      "topic_hits": 34,
+      "code_hits": 0,
+      "max_stars": 326,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
+    },
+    "eatmoreduck/boss-zhipin-scraper": {
       "seen_runs": 41,
       "selected_runs": 34,
       "downloaded_skills": 1,
-      "topic_hits": 48,
-      "code_hits": 0,
-      "max_stars": 322,
-      "last_seen_at": "2026-11-23T07:47:15.135202Z"
-    },
-    "Jakeschincariol/linkedin-agent-skill": {
-      "seen_runs": 35,
-      "selected_runs": 34,
-      "downloaded_skills": 11,
       "topic_hits": 41,
       "code_hits": 0,
-      "max_stars": 3823,
-      "last_seen_at": "2026-11-22T11:44:02.365816Z"
-    },
-    "sevenevesai/riso-windowseat": {
-      "seen_runs": 40,
-      "selected_runs": 33,
-      "downloaded_skills": 3,
-      "topic_hits": 33,
-      "code_hits": 0,
-      "max_stars": 324,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
-    },
-    "eatmoreduck/boss-zhipin-scraper": {
-      "seen_runs": 40,
-      "selected_runs": 33,
-      "downloaded_skills": 1,
-      "topic_hits": 40,
-      "code_hits": 0,
-      "max_stars": 1784,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
+      "max_stars": 1824,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "prekuter/dryforge": {
-      "seen_runs": 39,
-      "selected_runs": 32,
+      "seen_runs": 40,
+      "selected_runs": 33,
       "downloaded_skills": 18,
-      "topic_hits": 39,
+      "topic_hits": 40,
       "code_hits": 0,
       "max_stars": 452,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "tonone-ai/tonone": {
-      "seen_runs": 39,
-      "selected_runs": 32,
+      "seen_runs": 40,
+      "selected_runs": 33,
       "downloaded_skills": 114,
-      "topic_hits": 32,
+      "topic_hits": 33,
       "code_hits": 19,
-      "max_stars": 82,
-      "last_seen_at": "2026-11-27T08:20:50.400817Z"
+      "max_stars": 84,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "superdesigndev/superdesign-skill": {
       "seen_runs": 15,
@@ -5107,85 +5107,85 @@
       "last_seen_at": "2026-11-27T08:20:50.400817Z"
     },
     "undefined-ui/second-brain-os": {
-      "seen_runs": 38,
-      "selected_runs": 31,
+      "seen_runs": 39,
+      "selected_runs": 32,
       "downloaded_skills": 23,
-      "topic_hits": 38,
+      "topic_hits": 39,
       "code_hits": 0,
-      "max_stars": 1595,
-      "last_seen_at": "2026-11-27T08:20:50.400817Z"
+      "max_stars": 1610,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "aaddrick/building-with-typesafe-jev": {
-      "seen_runs": 37,
-      "selected_runs": 30,
+      "seen_runs": 38,
+      "selected_runs": 31,
       "downloaded_skills": 1,
-      "topic_hits": 36,
+      "topic_hits": 37,
       "code_hits": 0,
       "max_stars": 158,
-      "last_seen_at": "2026-11-23T07:47:15.135202Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "joetawil7/first-pass": {
-      "seen_runs": 37,
-      "selected_runs": 30,
+      "seen_runs": 38,
+      "selected_runs": 31,
       "downloaded_skills": 10,
-      "topic_hits": 30,
+      "topic_hits": 31,
       "code_hits": 0,
       "max_stars": 142,
-      "last_seen_at": "2026-11-25T09:00:22.617955Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "scenario-labs/skills": {
-      "seen_runs": 36,
-      "selected_runs": 29,
+      "seen_runs": 37,
+      "selected_runs": 30,
       "downloaded_skills": 127,
-      "topic_hits": 36,
+      "topic_hits": 37,
       "code_hits": 4,
-      "max_stars": 3970,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
+      "max_stars": 4130,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "alexgreensh/anidoodle": {
-      "seen_runs": 35,
-      "selected_runs": 28,
+      "seen_runs": 36,
+      "selected_runs": 29,
       "downloaded_skills": 2,
-      "topic_hits": 35,
+      "topic_hits": 36,
       "code_hits": 0,
-      "max_stars": 1940,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
+      "max_stars": 2100,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "kaankiziltug/logo-design-skill": {
-      "seen_runs": 35,
-      "selected_runs": 28,
+      "seen_runs": 36,
+      "selected_runs": 29,
       "downloaded_skills": 1,
-      "topic_hits": 35,
+      "topic_hits": 36,
       "code_hits": 0,
-      "max_stars": 7492,
-      "last_seen_at": "2026-11-25T09:00:22.617955Z"
+      "max_stars": 7952,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "justxor/claude-code-pro-course": {
-      "seen_runs": 33,
-      "selected_runs": 26,
+      "seen_runs": 34,
+      "selected_runs": 27,
       "downloaded_skills": 9,
-      "topic_hits": 26,
+      "topic_hits": 27,
       "code_hits": 0,
-      "max_stars": 354,
-      "last_seen_at": "2026-11-25T09:00:22.617955Z"
+      "max_stars": 357,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "latent-spaces/brag": {
+      "seen_runs": 34,
+      "selected_runs": 27,
+      "downloaded_skills": 2,
+      "topic_hits": 34,
+      "code_hits": 0,
+      "max_stars": 22752,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
+    },
+    "rebelytics/one-skill-to-rule-them-all": {
       "seen_runs": 33,
       "selected_runs": 26,
       "downloaded_skills": 2,
-      "topic_hits": 33,
+      "topic_hits": 59,
       "code_hits": 0,
-      "max_stars": 22195,
-      "last_seen_at": "2026-11-25T09:00:22.617955Z"
-    },
-    "rebelytics/one-skill-to-rule-them-all": {
-      "seen_runs": 32,
-      "selected_runs": 25,
-      "downloaded_skills": 2,
-      "topic_hits": 57,
-      "code_hits": 0,
-      "max_stars": 3995,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
+      "max_stars": 4051,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "wanshuiyin/ALIGN-Agentic-Loop-Image-GeneratioN": {
       "seen_runs": 27,
@@ -5197,22 +5197,22 @@
       "last_seen_at": "2026-11-27T08:20:50.400817Z"
     },
     "Ar9av/obsidian-wiki": {
-      "seen_runs": 25,
-      "selected_runs": 25,
-      "downloaded_skills": 81,
-      "topic_hits": 32,
+      "seen_runs": 26,
+      "selected_runs": 26,
+      "downloaded_skills": 82,
+      "topic_hits": 33,
       "code_hits": 0,
-      "max_stars": 3795,
-      "last_seen_at": "2026-11-22T11:44:02.365816Z"
+      "max_stars": 3829,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "voygr-tech/placecall": {
-      "seen_runs": 24,
-      "selected_runs": 17,
+      "seen_runs": 25,
+      "selected_runs": 18,
       "downloaded_skills": 2,
-      "topic_hits": 18,
+      "topic_hits": 19,
       "code_hits": 0,
       "max_stars": 122,
-      "last_seen_at": "2026-11-27T08:20:50.400817Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "maxritter/open-claude-design": {
       "seen_runs": 14,
@@ -11452,13 +11452,13 @@
       "last_seen_at": "2026-11-22T11:44:02.365816Z"
     },
     "zhuyansen/awesome-claude-video-skills": {
-      "seen_runs": 22,
-      "selected_runs": 15,
+      "seen_runs": 23,
+      "selected_runs": 16,
       "downloaded_skills": 0,
-      "topic_hits": 22,
+      "topic_hits": 23,
       "code_hits": 0,
-      "max_stars": 2524,
-      "last_seen_at": "2026-11-27T08:20:50.400817Z"
+      "max_stars": 2913,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "agamm/claude-code-owasp": {
       "seen_runs": 14,
@@ -11704,13 +11704,13 @@
       "last_seen_at": "2026-11-27T08:20:50.400817Z"
     },
     "arjun988/blender-skills": {
-      "seen_runs": 22,
-      "selected_runs": 15,
+      "seen_runs": 23,
+      "selected_runs": 16,
       "downloaded_skills": 100,
-      "topic_hits": 22,
+      "topic_hits": 23,
       "code_hits": 0,
-      "max_stars": 4611,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
+      "max_stars": 5243,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "danjdewhurst/story-skills": {
       "seen_runs": 14,
@@ -11731,13 +11731,13 @@
       "last_seen_at": "2026-11-23T07:47:15.135202Z"
     },
     "haidrrrry/claude-remotion-skill": {
-      "seen_runs": 14,
-      "selected_runs": 7,
+      "seen_runs": 15,
+      "selected_runs": 8,
       "downloaded_skills": 1,
-      "topic_hits": 7,
+      "topic_hits": 8,
       "code_hits": 0,
-      "max_stars": 1236,
-      "last_seen_at": "2026-11-25T09:00:22.617955Z"
+      "max_stars": 1407,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "ArabelaTso/Skills-4-SE": {
       "seen_runs": 7,
@@ -11929,13 +11929,13 @@
       "last_seen_at": "2026-11-23T07:47:15.135202Z"
     },
     "Jakeschincariol/arena-skill": {
-      "seen_runs": 18,
-      "selected_runs": 17,
+      "seen_runs": 19,
+      "selected_runs": 18,
       "downloaded_skills": 1,
-      "topic_hits": 17,
+      "topic_hits": 18,
       "code_hits": 0,
-      "max_stars": 1572,
-      "last_seen_at": "2026-11-22T11:44:02.365816Z"
+      "max_stars": 1637,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "tamdogood/builder-essential-skills": {
       "seen_runs": 14,
@@ -18040,13 +18040,13 @@
       "last_seen_at": "2026-11-26T08:48:34.115351Z"
     },
     "tt-a1i/archify": {
-      "seen_runs": 31,
-      "selected_runs": 24,
+      "seen_runs": 32,
+      "selected_runs": 25,
       "downloaded_skills": 6,
-      "topic_hits": 30,
+      "topic_hits": 31,
       "code_hits": 0,
-      "max_stars": 98677,
-      "last_seen_at": "2026-11-27T08:20:50.400817Z"
+      "max_stars": 101045,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "ComposioHQ/awesome-claude-skills": {
       "seen_runs": 7,
@@ -19003,13 +19003,13 @@
       "last_seen_at": "2026-11-24T10:35:06.120253Z"
     },
     "alchaincyf/huashu-skills": {
-      "seen_runs": 19,
-      "selected_runs": 12,
+      "seen_runs": 20,
+      "selected_runs": 13,
       "downloaded_skills": 22,
-      "topic_hits": 21,
+      "topic_hits": 23,
       "code_hits": 0,
-      "max_stars": 2323,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
+      "max_stars": 2355,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "fy-agent/fyagent": {
       "seen_runs": 14,
@@ -48577,67 +48577,67 @@
       "last_seen_at": "2026-11-23T07:47:15.135202Z"
     },
     "QingYunA/answer-me-with-html": {
-      "seen_runs": 27,
-      "selected_runs": 21,
+      "seen_runs": 28,
+      "selected_runs": 22,
       "downloaded_skills": 1,
-      "topic_hits": 21,
+      "topic_hits": 22,
       "code_hits": 0,
-      "max_stars": 6597,
-      "last_seen_at": "2026-11-23T07:47:15.135202Z"
+      "max_stars": 6703,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "oil-oil/oil-ui": {
-      "seen_runs": 27,
-      "selected_runs": 21,
+      "seen_runs": 28,
+      "selected_runs": 22,
       "downloaded_skills": 1,
-      "topic_hits": 27,
+      "topic_hits": 28,
       "code_hits": 0,
-      "max_stars": 3813,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
+      "max_stars": 4048,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "coreyhaines31/marketingskills": {
-      "seen_runs": 26,
-      "selected_runs": 20,
+      "seen_runs": 27,
+      "selected_runs": 21,
       "downloaded_skills": 39,
-      "topic_hits": 26,
+      "topic_hits": 27,
       "code_hits": 0,
-      "max_stars": 61945,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
+      "max_stars": 63064,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "Jakeschincariol/replica-skill": {
-      "seen_runs": 20,
-      "selected_runs": 20,
+      "seen_runs": 21,
+      "selected_runs": 21,
       "downloaded_skills": 11,
-      "topic_hits": 26,
+      "topic_hits": 27,
       "code_hits": 0,
-      "max_stars": 10285,
-      "last_seen_at": "2026-11-22T11:44:02.365816Z"
+      "max_stars": 10848,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "sno-ai/sno-station-skills": {
-      "seen_runs": 25,
-      "selected_runs": 19,
+      "seen_runs": 26,
+      "selected_runs": 20,
       "downloaded_skills": 52,
-      "topic_hits": 31,
+      "topic_hits": 32,
       "code_hits": 0,
-      "max_stars": 869,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
+      "max_stars": 874,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "firecrawl/firecrawl-claude-plugin": {
-      "seen_runs": 25,
-      "selected_runs": 19,
+      "seen_runs": 26,
+      "selected_runs": 20,
       "downloaded_skills": 31,
-      "topic_hits": 21,
+      "topic_hits": 22,
       "code_hits": 0,
-      "max_stars": 264,
-      "last_seen_at": "2026-11-25T09:00:22.617955Z"
+      "max_stars": 272,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "firecrawl/skills": {
-      "seen_runs": 24,
-      "selected_runs": 18,
+      "seen_runs": 25,
+      "selected_runs": 19,
       "downloaded_skills": 37,
-      "topic_hits": 23,
+      "topic_hits": 24,
       "code_hits": 0,
-      "max_stars": 163,
-      "last_seen_at": "2026-11-25T09:00:22.617955Z"
+      "max_stars": 179,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "qa-aman/claude-skills": {
       "seen_runs": 12,
@@ -49018,13 +49018,13 @@
       "last_seen_at": "2026-11-23T07:47:15.135202Z"
     },
     "Jakeschincariol/founder-skill": {
-      "seen_runs": 16,
-      "selected_runs": 16,
+      "seen_runs": 17,
+      "selected_runs": 17,
       "downloaded_skills": 11,
-      "topic_hits": 16,
+      "topic_hits": 17,
       "code_hits": 0,
-      "max_stars": 4578,
-      "last_seen_at": "2026-11-22T11:44:02.365816Z"
+      "max_stars": 5236,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "Aryanutkarsh/SeeCode": {
       "seen_runs": 6,
@@ -49072,13 +49072,13 @@
       "last_seen_at": "2026-11-25T09:00:22.617955Z"
     },
     "Leonxlnx/cinetic": {
-      "seen_runs": 14,
-      "selected_runs": 8,
+      "seen_runs": 15,
+      "selected_runs": 9,
       "downloaded_skills": 1,
-      "topic_hits": 14,
+      "topic_hits": 15,
       "code_hits": 0,
-      "max_stars": 1349,
-      "last_seen_at": "2026-11-23T07:47:15.135202Z"
+      "max_stars": 1408,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "phuryn/work-humanizer": {
       "seen_runs": 12,
@@ -49144,13 +49144,13 @@
       "last_seen_at": "2026-11-27T08:20:50.400817Z"
     },
     "Illyism/seo-skills": {
-      "seen_runs": 10,
-      "selected_runs": 10,
+      "seen_runs": 11,
+      "selected_runs": 11,
       "downloaded_skills": 30,
-      "topic_hits": 15,
+      "topic_hits": 16,
       "code_hits": 0,
-      "max_stars": 1846,
-      "last_seen_at": "2026-11-22T11:44:02.365816Z"
+      "max_stars": 2193,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "sebastianhaba/book-to-course-skill": {
       "seen_runs": 12,
@@ -52942,31 +52942,31 @@
       "last_seen_at": "2026-10-17T19:10:16.439551Z"
     },
     "0xS4N4TG/papercut-explainer": {
-      "seen_runs": 15,
-      "selected_runs": 15,
+      "seen_runs": 16,
+      "selected_runs": 16,
       "downloaded_skills": 9,
-      "topic_hits": 17,
+      "topic_hits": 18,
       "code_hits": 0,
-      "max_stars": 256,
-      "last_seen_at": "2026-11-22T11:44:02.365816Z"
+      "max_stars": 266,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "ShadowSwaps/REA-Reconstruction-Companion": {
-      "seen_runs": 20,
-      "selected_runs": 15,
+      "seen_runs": 21,
+      "selected_runs": 16,
       "downloaded_skills": 1,
-      "topic_hits": 27,
+      "topic_hits": 28,
       "code_hits": 0,
-      "max_stars": 139,
-      "last_seen_at": "2026-11-23T07:47:15.135202Z"
+      "max_stars": 142,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "matteotitta/repo-structure-in-house": {
-      "seen_runs": 20,
-      "selected_runs": 15,
+      "seen_runs": 21,
+      "selected_runs": 16,
       "downloaded_skills": 6,
-      "topic_hits": 20,
+      "topic_hits": 21,
       "code_hits": 0,
-      "max_stars": 73,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
+      "max_stars": 74,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "dvwinck/capybara-toolbox": {
       "seen_runs": 10,
@@ -53320,49 +53320,49 @@
       "last_seen_at": "2026-11-24T10:35:06.120253Z"
     },
     "paperclipai/paperclip": {
-      "seen_runs": 20,
-      "selected_runs": 15,
+      "seen_runs": 21,
+      "selected_runs": 16,
       "downloaded_skills": 81,
-      "topic_hits": 20,
+      "topic_hits": 21,
       "code_hits": 0,
-      "max_stars": 115778,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
+      "max_stars": 117650,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "oil-oil/oil-motion": {
-      "seen_runs": 20,
-      "selected_runs": 15,
+      "seen_runs": 21,
+      "selected_runs": 16,
       "downloaded_skills": 1,
-      "topic_hits": 20,
+      "topic_hits": 21,
       "code_hits": 0,
-      "max_stars": 2952,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
+      "max_stars": 3003,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "oil-oil/beautify-github-readme": {
-      "seen_runs": 20,
-      "selected_runs": 15,
+      "seen_runs": 21,
+      "selected_runs": 16,
       "downloaded_skills": 1,
-      "topic_hits": 20,
+      "topic_hits": 21,
       "code_hits": 0,
-      "max_stars": 2001,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
+      "max_stars": 2022,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "Mahanaicoach/google-maps-scraper-kit": {
-      "seen_runs": 20,
-      "selected_runs": 15,
+      "seen_runs": 21,
+      "selected_runs": 16,
       "downloaded_skills": 1,
-      "topic_hits": 25,
+      "topic_hits": 26,
       "code_hits": 0,
-      "max_stars": 2577,
-      "last_seen_at": "2026-11-23T07:47:15.135202Z"
+      "max_stars": 2652,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "zhuyansen/new-term-radar": {
-      "seen_runs": 20,
-      "selected_runs": 15,
+      "seen_runs": 21,
+      "selected_runs": 16,
       "downloaded_skills": 3,
-      "topic_hits": 20,
+      "topic_hits": 21,
       "code_hits": 0,
-      "max_stars": 2207,
-      "last_seen_at": "2026-11-27T08:20:50.400817Z"
+      "max_stars": 2244,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "hanlulong/awesome-ai-for-economists": {
       "seen_runs": 10,
@@ -53383,13 +53383,13 @@
       "last_seen_at": "2026-11-26T08:48:34.115351Z"
     },
     "juliobsz/skills": {
-      "seen_runs": 15,
-      "selected_runs": 10,
+      "seen_runs": 16,
+      "selected_runs": 11,
       "downloaded_skills": 2,
-      "topic_hits": 15,
+      "topic_hits": 16,
       "code_hits": 0,
-      "max_stars": 1394,
-      "last_seen_at": "2026-11-25T09:00:22.617955Z"
+      "max_stars": 1434,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "oil-oil/oil-icon": {
       "seen_runs": 10,
@@ -53491,13 +53491,13 @@
       "last_seen_at": "2026-11-24T10:35:06.120253Z"
     },
     "EL4CTEO/blender-skills": {
-      "seen_runs": 9,
-      "selected_runs": 9,
+      "seen_runs": 10,
+      "selected_runs": 10,
       "downloaded_skills": 28,
-      "topic_hits": 13,
+      "topic_hits": 14,
       "code_hits": 0,
-      "max_stars": 2650,
-      "last_seen_at": "2026-11-22T11:44:02.365816Z"
+      "max_stars": 3012,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "sfrangulov/claude-code-handbook-ru": {
       "seen_runs": 10,
@@ -53545,13 +53545,13 @@
       "last_seen_at": "2026-11-22T11:44:02.365816Z"
     },
     "Jakeschincariol/trader-skill": {
-      "seen_runs": 11,
-      "selected_runs": 11,
+      "seen_runs": 12,
+      "selected_runs": 12,
       "downloaded_skills": 11,
-      "topic_hits": 11,
+      "topic_hits": 12,
       "code_hits": 0,
-      "max_stars": 2009,
-      "last_seen_at": "2026-11-22T11:44:02.365816Z"
+      "max_stars": 2159,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "revfactory/showreel": {
       "seen_runs": 10,
@@ -53761,13 +53761,13 @@
       "last_seen_at": "2026-11-27T08:20:50.400817Z"
     },
     "kaomei/stickman-video-director": {
-      "seen_runs": 13,
-      "selected_runs": 8,
+      "seen_runs": 14,
+      "selected_runs": 9,
       "downloaded_skills": 1,
-      "topic_hits": 9,
+      "topic_hits": 10,
       "code_hits": 0,
-      "max_stars": 7398,
-      "last_seen_at": "2026-11-25T09:00:22.617955Z"
+      "max_stars": 8770,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "kajisho5/ffmpeg-skill": {
       "seen_runs": 10,
@@ -53806,13 +53806,13 @@
       "last_seen_at": "2026-11-26T08:48:34.115351Z"
     },
     "sno-ai/sno-station": {
-      "seen_runs": 19,
-      "selected_runs": 14,
+      "seen_runs": 20,
+      "selected_runs": 15,
       "downloaded_skills": 11,
-      "topic_hits": 18,
+      "topic_hits": 19,
       "code_hits": 0,
       "max_stars": 1088,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "morluto/awesome-reverse-engineering": {
       "seen_runs": 10,
@@ -55750,22 +55750,22 @@
       "last_seen_at": "2026-10-22T05:17:23.149805Z"
     },
     "georgeguimaraes/elixir-agent-tools": {
-      "seen_runs": 18,
-      "selected_runs": 14,
+      "seen_runs": 19,
+      "selected_runs": 15,
       "downloaded_skills": 5,
-      "topic_hits": 14,
+      "topic_hits": 15,
       "code_hits": 0,
       "max_stars": 193,
-      "last_seen_at": "2026-11-25T09:00:22.617955Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "actionow-ai/c2c_img": {
-      "seen_runs": 18,
-      "selected_runs": 14,
+      "seen_runs": 19,
+      "selected_runs": 15,
       "downloaded_skills": 1,
-      "topic_hits": 18,
+      "topic_hits": 19,
       "code_hits": 0,
-      "max_stars": 133,
-      "last_seen_at": "2026-11-23T07:47:15.135202Z"
+      "max_stars": 135,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "SubhiSec/claude-ai-cyber-security-skills": {
       "seen_runs": 13,
@@ -55777,22 +55777,22 @@
       "last_seen_at": "2026-11-23T07:47:15.135202Z"
     },
     "alchaincyf/huashu-design": {
-      "seen_runs": 18,
-      "selected_runs": 14,
+      "seen_runs": 19,
+      "selected_runs": 15,
       "downloaded_skills": 1,
-      "topic_hits": 25,
+      "topic_hits": 27,
       "code_hits": 0,
-      "max_stars": 30333,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
+      "max_stars": 31145,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "Jakeschincariol/day-trader-skill": {
-      "seen_runs": 13,
-      "selected_runs": 13,
+      "seen_runs": 14,
+      "selected_runs": 14,
       "downloaded_skills": 11,
-      "topic_hits": 13,
+      "topic_hits": 14,
       "code_hits": 0,
-      "max_stars": 9102,
-      "last_seen_at": "2026-11-22T11:44:02.365816Z"
+      "max_stars": 9930,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "devohmycode/Skills-Atlas": {
       "seen_runs": 8,
@@ -56083,22 +56083,22 @@
       "last_seen_at": "2026-11-25T09:00:22.617955Z"
     },
     "DozenTwelve/Papermorph": {
-      "seen_runs": 10,
-      "selected_runs": 10,
+      "seen_runs": 11,
+      "selected_runs": 11,
       "downloaded_skills": 1,
-      "topic_hits": 10,
+      "topic_hits": 11,
       "code_hits": 0,
-      "max_stars": 1902,
-      "last_seen_at": "2026-11-22T11:44:02.365816Z"
+      "max_stars": 2269,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "UnderleveledBuilder/awesome-short-drama-skills": {
-      "seen_runs": 16,
-      "selected_runs": 12,
+      "seen_runs": 17,
+      "selected_runs": 13,
       "downloaded_skills": 1,
-      "topic_hits": 16,
+      "topic_hits": 17,
       "code_hits": 0,
-      "max_stars": 2695,
-      "last_seen_at": "2026-11-23T07:47:15.135202Z"
+      "max_stars": 2925,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "zhuyansen/wx-favorites-report": {
       "seen_runs": 8,
@@ -56110,13 +56110,13 @@
       "last_seen_at": "2026-11-27T08:20:50.400817Z"
     },
     "google/elephant-goldfish-model": {
-      "seen_runs": 16,
-      "selected_runs": 12,
+      "seen_runs": 17,
+      "selected_runs": 13,
       "downloaded_skills": 15,
-      "topic_hits": 16,
+      "topic_hits": 17,
       "code_hits": 0,
-      "max_stars": 21995,
-      "last_seen_at": "2026-11-25T09:00:22.617955Z"
+      "max_stars": 23439,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "koki7o/claude-code-for-beginners": {
       "seen_runs": 8,
@@ -56137,13 +56137,13 @@
       "last_seen_at": "2026-11-27T08:20:50.400817Z"
     },
     "morganlinton/BeautifulRust": {
-      "seen_runs": 16,
-      "selected_runs": 12,
+      "seen_runs": 17,
+      "selected_runs": 13,
       "downloaded_skills": 3,
-      "topic_hits": 15,
+      "topic_hits": 16,
       "code_hits": 0,
-      "max_stars": 2084,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
+      "max_stars": 2167,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "appariciojunior/video-editor-skills": {
       "seen_runs": 8,
@@ -56155,13 +56155,13 @@
       "last_seen_at": "2026-11-24T10:35:06.120253Z"
     },
     "EricJujianZou/rederive": {
-      "seen_runs": 5,
-      "selected_runs": 5,
+      "seen_runs": 6,
+      "selected_runs": 6,
       "downloaded_skills": 1,
-      "topic_hits": 9,
+      "topic_hits": 10,
       "code_hits": 0,
-      "max_stars": 1432,
-      "last_seen_at": "2026-11-22T11:44:02.365816Z"
+      "max_stars": 1801,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "Jakeschincariol/console-skill": {
       "seen_runs": 4,
@@ -56380,13 +56380,13 @@
       "last_seen_at": "2026-11-22T11:44:02.365816Z"
     },
     "alchaincyf/huashu-motion": {
-      "seen_runs": 13,
-      "selected_runs": 9,
+      "seen_runs": 14,
+      "selected_runs": 10,
       "downloaded_skills": 1,
-      "topic_hits": 18,
+      "topic_hits": 20,
       "code_hits": 0,
-      "max_stars": 2957,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
+      "max_stars": 3282,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "nucliweb/webperf-snippets": {
       "seen_runs": 8,
@@ -58729,22 +58729,22 @@
       "last_seen_at": "2026-10-25T09:26:14.261923Z"
     },
     "backnotprop/pstack": {
-      "seen_runs": 14,
-      "selected_runs": 11,
+      "seen_runs": 15,
+      "selected_runs": 12,
       "downloaded_skills": 62,
-      "topic_hits": 14,
+      "topic_hits": 15,
       "code_hits": 0,
-      "max_stars": 4741,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
+      "max_stars": 5349,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "DUNHKpcc/Claude-Guardian": {
-      "seen_runs": 11,
-      "selected_runs": 11,
+      "seen_runs": 12,
+      "selected_runs": 12,
       "downloaded_skills": 1,
-      "topic_hits": 14,
+      "topic_hits": 15,
       "code_hits": 0,
-      "max_stars": 2215,
-      "last_seen_at": "2026-11-22T11:44:02.365816Z"
+      "max_stars": 2281,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "Savagecount/flow-map-resp": {
       "seen_runs": 3,
@@ -59062,22 +59062,22 @@
       "last_seen_at": "2026-11-22T11:44:02.365816Z"
     },
     "HeyChengC/vibe-knowledge-film": {
-      "seen_runs": 7,
-      "selected_runs": 7,
+      "seen_runs": 8,
+      "selected_runs": 8,
       "downloaded_skills": 1,
-      "topic_hits": 10,
+      "topic_hits": 11,
       "code_hits": 0,
-      "max_stars": 1485,
-      "last_seen_at": "2026-11-22T11:44:02.365816Z"
+      "max_stars": 1639,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "NiazMorshed2007/reanimate": {
-      "seen_runs": 12,
-      "selected_runs": 9,
+      "seen_runs": 13,
+      "selected_runs": 10,
       "downloaded_skills": 1,
-      "topic_hits": 12,
+      "topic_hits": 13,
       "code_hits": 0,
-      "max_stars": 2116,
-      "last_seen_at": "2026-11-23T07:47:15.135202Z"
+      "max_stars": 2702,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "MiniMax-AI/mcode-stack": {
       "seen_runs": 6,
@@ -62716,265 +62716,265 @@
       "last_seen_at": "2026-11-03T07:19:24.936437Z"
     },
     "wesammustafa/Claude-Code-Quest": {
-      "seen_runs": 10,
-      "selected_runs": 8,
+      "seen_runs": 11,
+      "selected_runs": 9,
       "downloaded_skills": 15,
-      "topic_hits": 10,
+      "topic_hits": 11,
       "code_hits": 0,
-      "max_stars": 3720,
-      "last_seen_at": "2026-11-27T08:20:50.400817Z"
+      "max_stars": 3733,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "me2resh/apexyard": {
-      "seen_runs": 10,
-      "selected_runs": 8,
+      "seen_runs": 11,
+      "selected_runs": 9,
       "downloaded_skills": 76,
-      "topic_hits": 8,
+      "topic_hits": 9,
       "code_hits": 0,
       "max_stars": 553,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "JuneYaooo/teacher-to-skills": {
-      "seen_runs": 8,
-      "selected_runs": 8,
+      "seen_runs": 9,
+      "selected_runs": 9,
       "downloaded_skills": 1,
-      "topic_hits": 10,
+      "topic_hits": 11,
       "code_hits": 0,
-      "max_stars": 488,
-      "last_seen_at": "2026-11-22T11:44:02.365816Z"
+      "max_stars": 496,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "yanstd888/humanizer-lint": {
-      "seen_runs": 10,
-      "selected_runs": 8,
+      "seen_runs": 11,
+      "selected_runs": 9,
       "downloaded_skills": 1,
-      "topic_hits": 8,
+      "topic_hits": 9,
       "code_hits": 0,
       "max_stars": 119,
-      "last_seen_at": "2026-11-27T08:20:50.400817Z"
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "DataWithBaraa/claude-code-data-engineering-skills": {
-      "seen_runs": 8,
-      "selected_runs": 8,
+      "seen_runs": 9,
+      "selected_runs": 9,
       "downloaded_skills": 16,
-      "topic_hits": 8,
+      "topic_hits": 9,
       "code_hits": 0,
-      "max_stars": 107,
-      "last_seen_at": "2026-11-22T11:44:02.365816Z"
+      "max_stars": 117,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "caru-ini/stack-diagram": {
+      "seen_runs": 11,
+      "selected_runs": 9,
+      "downloaded_skills": 1,
+      "topic_hits": 11,
+      "code_hits": 0,
+      "max_stars": 2980,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
+    },
+    "alchaincyf/nuwa-skill": {
+      "seen_runs": 10,
+      "selected_runs": 8,
+      "downloaded_skills": 16,
+      "topic_hits": 18,
+      "code_hits": 0,
+      "max_stars": 39221,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
+    },
+    "alchaincyf/zhangxuefeng-skill": {
+      "seen_runs": 10,
+      "selected_runs": 8,
+      "downloaded_skills": 1,
+      "topic_hits": 18,
+      "code_hits": 0,
+      "max_stars": 10836,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
+    },
+    "alchaincyf/darwin-skill": {
+      "seen_runs": 10,
+      "selected_runs": 8,
+      "downloaded_skills": 1,
+      "topic_hits": 18,
+      "code_hits": 0,
+      "max_stars": 7082,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
+    },
+    "alchaincyf/huashu-art-motion": {
+      "seen_runs": 10,
+      "selected_runs": 8,
+      "downloaded_skills": 1,
+      "topic_hits": 18,
+      "code_hits": 0,
+      "max_stars": 7827,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
+    },
+    "alchaincyf/x-mentor-skill": {
+      "seen_runs": 10,
+      "selected_runs": 8,
+      "downloaded_skills": 1,
+      "topic_hits": 17,
+      "code_hits": 0,
+      "max_stars": 1355,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
+    },
+    "alchaincyf/steve-jobs-skill": {
+      "seen_runs": 10,
+      "selected_runs": 8,
+      "downloaded_skills": 1,
+      "topic_hits": 12,
+      "code_hits": 0,
+      "max_stars": 988,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
+    },
+    "alchaincyf/huashu-md-html": {
+      "seen_runs": 10,
+      "selected_runs": 8,
+      "downloaded_skills": 1,
+      "topic_hits": 12,
+      "code_hits": 0,
+      "max_stars": 951,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
+    },
+    "alchaincyf/elon-musk-skill": {
+      "seen_runs": 10,
+      "selected_runs": 8,
+      "downloaded_skills": 1,
+      "topic_hits": 12,
+      "code_hits": 0,
+      "max_stars": 587,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
+    },
+    "alchaincyf/huashu-report": {
+      "seen_runs": 10,
+      "selected_runs": 8,
+      "downloaded_skills": 1,
+      "topic_hits": 12,
+      "code_hits": 0,
+      "max_stars": 511,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
+    },
+    "alchaincyf/huashu-excel": {
+      "seen_runs": 10,
+      "selected_runs": 8,
+      "downloaded_skills": 1,
+      "topic_hits": 12,
+      "code_hits": 0,
+      "max_stars": 484,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
+    },
+    "alchaincyf/munger-skill": {
+      "seen_runs": 10,
+      "selected_runs": 8,
+      "downloaded_skills": 1,
+      "topic_hits": 12,
+      "code_hits": 0,
+      "max_stars": 410,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
+    },
+    "alchaincyf/huashu-mac-use": {
+      "seen_runs": 10,
+      "selected_runs": 8,
+      "downloaded_skills": 1,
+      "topic_hits": 12,
+      "code_hits": 0,
+      "max_stars": 352,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
+    },
+    "alchaincyf/karpathy-skill": {
+      "seen_runs": 10,
+      "selected_runs": 8,
+      "downloaded_skills": 1,
+      "topic_hits": 12,
+      "code_hits": 0,
+      "max_stars": 335,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
+    },
+    "alchaincyf/feynman-skill": {
+      "seen_runs": 10,
+      "selected_runs": 8,
+      "downloaded_skills": 1,
+      "topic_hits": 12,
+      "code_hits": 0,
+      "max_stars": 325,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
+    },
+    "alchaincyf/trump-skill": {
+      "seen_runs": 10,
+      "selected_runs": 8,
+      "downloaded_skills": 1,
+      "topic_hits": 12,
+      "code_hits": 0,
+      "max_stars": 279,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
+    },
+    "alchaincyf/naval-skill": {
+      "seen_runs": 10,
+      "selected_runs": 8,
+      "downloaded_skills": 1,
+      "topic_hits": 12,
+      "code_hits": 0,
+      "max_stars": 277,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
+    },
+    "alchaincyf/sun-yuchen-perspective": {
+      "seen_runs": 10,
+      "selected_runs": 8,
+      "downloaded_skills": 1,
+      "topic_hits": 12,
+      "code_hits": 0,
+      "max_stars": 256,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
+    },
+    "alchaincyf/zhang-yiming-skill": {
+      "seen_runs": 10,
+      "selected_runs": 8,
+      "downloaded_skills": 1,
+      "topic_hits": 12,
+      "code_hits": 0,
+      "max_stars": 185,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
+    },
+    "alchaincyf/huashu-weread": {
+      "seen_runs": 10,
+      "selected_runs": 8,
+      "downloaded_skills": 1,
+      "topic_hits": 11,
+      "code_hits": 0,
+      "max_stars": 164,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
+    },
+    "alchaincyf/taleb-skill": {
       "seen_runs": 10,
       "selected_runs": 8,
       "downloaded_skills": 1,
       "topic_hits": 10,
       "code_hits": 0,
-      "max_stars": 2700,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
+      "max_stars": 136,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
-    "alchaincyf/nuwa-skill": {
-      "seen_runs": 9,
-      "selected_runs": 7,
-      "downloaded_skills": 16,
-      "topic_hits": 16,
-      "code_hits": 0,
-      "max_stars": 38783,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
-    },
-    "alchaincyf/zhangxuefeng-skill": {
-      "seen_runs": 9,
-      "selected_runs": 7,
-      "downloaded_skills": 1,
-      "topic_hits": 16,
-      "code_hits": 0,
-      "max_stars": 10811,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
-    },
-    "alchaincyf/darwin-skill": {
-      "seen_runs": 9,
-      "selected_runs": 7,
-      "downloaded_skills": 1,
-      "topic_hits": 16,
-      "code_hits": 0,
-      "max_stars": 7026,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
-    },
-    "alchaincyf/huashu-art-motion": {
-      "seen_runs": 9,
-      "selected_runs": 7,
-      "downloaded_skills": 1,
-      "topic_hits": 16,
-      "code_hits": 0,
-      "max_stars": 7437,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
-    },
-    "alchaincyf/x-mentor-skill": {
-      "seen_runs": 9,
-      "selected_runs": 7,
-      "downloaded_skills": 1,
-      "topic_hits": 16,
-      "code_hits": 0,
-      "max_stars": 1346,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
-    },
-    "alchaincyf/steve-jobs-skill": {
-      "seen_runs": 9,
-      "selected_runs": 7,
-      "downloaded_skills": 1,
-      "topic_hits": 11,
-      "code_hits": 0,
-      "max_stars": 984,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
-    },
-    "alchaincyf/huashu-md-html": {
-      "seen_runs": 9,
-      "selected_runs": 7,
-      "downloaded_skills": 1,
-      "topic_hits": 11,
-      "code_hits": 0,
-      "max_stars": 948,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
-    },
-    "alchaincyf/elon-musk-skill": {
-      "seen_runs": 9,
-      "selected_runs": 7,
-      "downloaded_skills": 1,
-      "topic_hits": 11,
-      "code_hits": 0,
-      "max_stars": 582,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
-    },
-    "alchaincyf/huashu-report": {
-      "seen_runs": 9,
-      "selected_runs": 7,
-      "downloaded_skills": 1,
-      "topic_hits": 11,
-      "code_hits": 0,
-      "max_stars": 503,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
-    },
-    "alchaincyf/huashu-excel": {
-      "seen_runs": 9,
-      "selected_runs": 7,
-      "downloaded_skills": 1,
-      "topic_hits": 11,
-      "code_hits": 0,
-      "max_stars": 478,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
-    },
-    "alchaincyf/munger-skill": {
-      "seen_runs": 9,
-      "selected_runs": 7,
-      "downloaded_skills": 1,
-      "topic_hits": 11,
-      "code_hits": 0,
-      "max_stars": 405,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
-    },
-    "alchaincyf/huashu-mac-use": {
-      "seen_runs": 9,
-      "selected_runs": 7,
-      "downloaded_skills": 1,
-      "topic_hits": 11,
-      "code_hits": 0,
-      "max_stars": 348,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
-    },
-    "alchaincyf/karpathy-skill": {
-      "seen_runs": 9,
-      "selected_runs": 7,
-      "downloaded_skills": 1,
-      "topic_hits": 11,
-      "code_hits": 0,
-      "max_stars": 332,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
-    },
-    "alchaincyf/feynman-skill": {
-      "seen_runs": 9,
-      "selected_runs": 7,
-      "downloaded_skills": 1,
-      "topic_hits": 11,
-      "code_hits": 0,
-      "max_stars": 322,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
-    },
-    "alchaincyf/trump-skill": {
-      "seen_runs": 9,
-      "selected_runs": 7,
-      "downloaded_skills": 1,
-      "topic_hits": 11,
-      "code_hits": 0,
-      "max_stars": 278,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
-    },
-    "alchaincyf/naval-skill": {
-      "seen_runs": 9,
-      "selected_runs": 7,
-      "downloaded_skills": 1,
-      "topic_hits": 11,
-      "code_hits": 0,
-      "max_stars": 276,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
-    },
-    "alchaincyf/sun-yuchen-perspective": {
-      "seen_runs": 9,
-      "selected_runs": 7,
-      "downloaded_skills": 1,
-      "topic_hits": 11,
-      "code_hits": 0,
-      "max_stars": 256,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
-    },
-    "alchaincyf/zhang-yiming-skill": {
-      "seen_runs": 9,
-      "selected_runs": 7,
-      "downloaded_skills": 1,
-      "topic_hits": 11,
-      "code_hits": 0,
-      "max_stars": 182,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
-    },
-    "alchaincyf/huashu-weread": {
-      "seen_runs": 9,
-      "selected_runs": 7,
+    "alchaincyf/mrbeast-skill": {
+      "seen_runs": 10,
+      "selected_runs": 8,
       "downloaded_skills": 1,
       "topic_hits": 10,
       "code_hits": 0,
-      "max_stars": 161,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
-    },
-    "alchaincyf/taleb-skill": {
-      "seen_runs": 9,
-      "selected_runs": 7,
-      "downloaded_skills": 1,
-      "topic_hits": 9,
-      "code_hits": 0,
-      "max_stars": 135,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
-    },
-    "alchaincyf/mrbeast-skill": {
-      "seen_runs": 9,
-      "selected_runs": 7,
-      "downloaded_skills": 1,
-      "topic_hits": 9,
-      "code_hits": 0,
-      "max_stars": 125,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
+      "max_stars": 126,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "alchaincyf/huashu-flash": {
-      "seen_runs": 9,
-      "selected_runs": 7,
+      "seen_runs": 10,
+      "selected_runs": 8,
       "downloaded_skills": 1,
-      "topic_hits": 9,
+      "topic_hits": 10,
       "code_hits": 0,
-      "max_stars": 113,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
+      "max_stars": 114,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "alchaincyf/paul-graham-skill": {
-      "seen_runs": 9,
-      "selected_runs": 7,
+      "seen_runs": 10,
+      "selected_runs": 8,
       "downloaded_skills": 1,
-      "topic_hits": 9,
+      "topic_hits": 10,
       "code_hits": 0,
-      "max_stars": 107,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
+      "max_stars": 108,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "Galehashoid/flow-map-resp": {
       "seen_runs": 3,
@@ -62986,31 +62986,31 @@
       "last_seen_at": "2026-11-22T11:44:02.365816Z"
     },
     "alchaincyf/agent-skills-orange-book": {
-      "seen_runs": 9,
-      "selected_runs": 7,
+      "seen_runs": 10,
+      "selected_runs": 8,
       "downloaded_skills": 0,
-      "topic_hits": 9,
+      "topic_hits": 10,
       "code_hits": 0,
-      "max_stars": 65,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
+      "max_stars": 70,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "alchaincyf/seedance-skill": {
-      "seen_runs": 9,
-      "selected_runs": 7,
+      "seen_runs": 10,
+      "selected_runs": 8,
       "downloaded_skills": 1,
-      "topic_hits": 9,
+      "topic_hits": 10,
       "code_hits": 0,
-      "max_stars": 68,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
+      "max_stars": 71,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "alchaincyf/freud-skill": {
-      "seen_runs": 9,
-      "selected_runs": 7,
+      "seen_runs": 10,
+      "selected_runs": 8,
       "downloaded_skills": 1,
-      "topic_hits": 9,
+      "topic_hits": 10,
       "code_hits": 0,
-      "max_stars": 62,
-      "last_seen_at": "2026-11-24T10:35:06.120253Z"
+      "max_stars": 64,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "alchaincyf/tramstop-skill": {
       "seen_runs": 4,
@@ -65443,58 +65443,58 @@
       "last_seen_at": "2026-11-27T08:20:50.400817Z"
     },
     "off-grid-ai/skills": {
-      "seen_runs": 6,
-      "selected_runs": 5,
+      "seen_runs": 7,
+      "selected_runs": 6,
       "downloaded_skills": 63,
-      "topic_hits": 7,
+      "topic_hits": 8,
       "code_hits": 0,
-      "max_stars": 179,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
+      "max_stars": 187,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "obsidianmd/obsidian-skills": {
-      "seen_runs": 6,
-      "selected_runs": 5,
+      "seen_runs": 7,
+      "selected_runs": 6,
       "downloaded_skills": 7,
-      "topic_hits": 5,
-      "code_hits": 0,
-      "max_stars": 53414,
-      "last_seen_at": "2026-11-26T08:48:34.115351Z"
-    },
-    "iart-ai/motion-skills": {
-      "seen_runs": 6,
-      "selected_runs": 5,
-      "downloaded_skills": 0,
       "topic_hits": 6,
       "code_hits": 0,
-      "max_stars": 2020,
-      "last_seen_at": "2026-11-25T09:00:22.617955Z"
+      "max_stars": 54411,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
+    },
+    "iart-ai/motion-skills": {
+      "seen_runs": 7,
+      "selected_runs": 6,
+      "downloaded_skills": 0,
+      "topic_hits": 7,
+      "code_hits": 0,
+      "max_stars": 2310,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "lisresearchgroup/math-rsi": {
-      "seen_runs": 5,
-      "selected_runs": 4,
+      "seen_runs": 6,
+      "selected_runs": 5,
       "downloaded_skills": 99,
-      "topic_hits": 4,
+      "topic_hits": 5,
       "code_hits": 0,
-      "max_stars": 63,
-      "last_seen_at": "2026-11-25T09:00:22.617955Z"
+      "max_stars": 66,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "kjagsadvisors/keeran.ai": {
-      "seen_runs": 4,
-      "selected_runs": 3,
-      "downloaded_skills": 8,
-      "topic_hits": 4,
+      "seen_runs": 5,
+      "selected_runs": 4,
+      "downloaded_skills": 10,
+      "topic_hits": 5,
       "code_hits": 0,
-      "max_stars": 63,
-      "last_seen_at": "2026-11-25T09:00:22.617955Z"
+      "max_stars": 67,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "JensHeitmann/rocket-fuel-skill": {
-      "seen_runs": 2,
-      "selected_runs": 2,
+      "seen_runs": 3,
+      "selected_runs": 3,
       "downloaded_skills": 0,
-      "topic_hits": 2,
+      "topic_hits": 3,
       "code_hits": 0,
-      "max_stars": 81,
-      "last_seen_at": "2026-11-22T11:44:02.365816Z"
+      "max_stars": 82,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     },
     "serejaris/telegram-skills": {
       "seen_runs": 2,
@@ -69914,18 +69914,54 @@
       "code_hits": 1,
       "max_stars": 0,
       "last_seen_at": "2026-11-25T09:00:22.617955Z"
+    },
+    "BrianRWagner/ai-marketing-skills": {
+      "seen_runs": 1,
+      "selected_runs": 1,
+      "downloaded_skills": 20,
+      "topic_hits": 1,
+      "code_hits": 0,
+      "max_stars": 462,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
+    },
+    "LCY000/zh-tw-writing": {
+      "seen_runs": 1,
+      "selected_runs": 1,
+      "downloaded_skills": 1,
+      "topic_hits": 1,
+      "code_hits": 0,
+      "max_stars": 104,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
+    },
+    "adamentwistle/fable-skills": {
+      "seen_runs": 1,
+      "selected_runs": 1,
+      "downloaded_skills": 37,
+      "topic_hits": 1,
+      "code_hits": 0,
+      "max_stars": 98,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
+    },
+    "kinlace/parent-recap": {
+      "seen_runs": 1,
+      "selected_runs": 1,
+      "downloaded_skills": 26,
+      "topic_hits": 1,
+      "code_hits": 0,
+      "max_stars": 64,
+      "last_seen_at": "2026-11-28T07:10:59.399023Z"
     }
   },
   "topic_yield": {
     "claude-code-skills": {
-      "repo_hits": 42400,
-      "repo_selected": 36512,
-      "downloaded_skills": 128629
+      "repo_hits": 42600,
+      "repo_selected": 36712,
+      "downloaded_skills": 128799
     },
     "claude-skills": {
-      "repo_hits": 27359,
-      "repo_selected": 21371,
-      "downloaded_skills": 106821
+      "repo_hits": 27480,
+      "repo_selected": 21492,
+      "downloaded_skills": 106896
     },
     "agent-skills": {
       "repo_hits": 6995,
